@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenRouter
@@ -58,7 +56,7 @@ namespace OpenRouter
         /// Models to use for completion
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("models")]
-        public global::System.Collections.Generic.IList<object>? Models { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? Models { get; set; }
 
         /// <summary>
         /// Frequency penalty (-2.0 to 2.0)
@@ -328,7 +326,7 @@ namespace OpenRouter
             string? sessionId,
             global::OpenRouter.ChatRequestTrace? trace,
             string? model,
-            global::System.Collections.Generic.IList<object>? models,
+            global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? models,
             double? frequencyPenalty,
             global::System.Collections.Generic.Dictionary<string, double>? logitBias,
             bool? logprobs,

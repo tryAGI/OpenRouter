@@ -126,7 +126,7 @@ namespace OpenRouter
             string? sessionId = default,
             global::OpenRouter.ChatRequestTrace? trace = default,
             string? model = default,
-            global::System.Collections.Generic.IList<object>? models = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? models = default,
             double? frequencyPenalty = default,
             global::System.Collections.Generic.Dictionary<string, double>? logitBias = default,
             bool? logprobs = default,

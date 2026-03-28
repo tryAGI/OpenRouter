@@ -18,25 +18,25 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion")]
-        public object? Completion { get; set; }
+        public global::OpenRouter.MessagesRequestProviderMaxPriceCompletion? Completion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        public object? Image { get; set; }
+        public global::OpenRouter.MessagesRequestProviderMaxPriceImage? Image { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        public object? Audio { get; set; }
+        public global::OpenRouter.MessagesRequestProviderMaxPriceAudio? Audio { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request")]
-        public object? Request { get; set; }
+        public global::OpenRouter.MessagesRequestProviderMaxPriceRequest? Request { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,10 +59,10 @@ namespace OpenRouter
 #endif
         public MessagesRequestProviderMaxPrice(
             string? prompt,
-            object? completion,
-            object? image,
-            object? audio,
-            object? request)
+            global::OpenRouter.MessagesRequestProviderMaxPriceCompletion? completion,
+            global::OpenRouter.MessagesRequestProviderMaxPriceImage? image,
+            global::OpenRouter.MessagesRequestProviderMaxPriceAudio? audio,
+            global::OpenRouter.MessagesRequestProviderMaxPriceRequest? request)
         {
             this.Prompt = prompt;
             this.Completion = completion;

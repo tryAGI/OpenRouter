@@ -63,7 +63,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quantization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Quantization { get; set; }
+        public required global::OpenRouter.PublicEndpointQuantization Quantization { get; set; }
 
         /// <summary>
         /// 
@@ -158,7 +158,7 @@ namespace OpenRouter
             global::OpenRouter.PublicEndpointPricing pricing,
             global::OpenRouter.ProviderName providerName,
             string tag,
-            object quantization,
+            global::OpenRouter.PublicEndpointQuantization quantization,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             bool supportsImplicitCaching,
             global::OpenRouter.PercentileStats latencyLast30m,

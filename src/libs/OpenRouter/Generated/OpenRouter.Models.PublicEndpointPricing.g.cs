@@ -13,80 +13,80 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Prompt { get; set; }
+        public required global::OpenRouter.PublicEndpointPricingPrompt Prompt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Completion { get; set; }
+        public required global::OpenRouter.PublicEndpointPricingCompletion Completion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request")]
-        public object? Request { get; set; }
+        public global::OpenRouter.PublicEndpointPricingRequest? Request { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        public object? Image { get; set; }
+        public global::OpenRouter.PublicEndpointPricingImage? Image { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_token")]
-        public object? ImageToken { get; set; }
+        public global::OpenRouter.PublicEndpointPricingImageToken? ImageToken { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_output")]
-        public object? ImageOutput { get; set; }
+        public global::OpenRouter.PublicEndpointPricingImageOutput? ImageOutput { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        public object? Audio { get; set; }
+        public global::OpenRouter.PublicEndpointPricingAudio? Audio { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_output")]
-        public object? AudioOutput { get; set; }
+        public global::OpenRouter.PublicEndpointPricingAudioOutput? AudioOutput { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_cache")]
-        public object? InputAudioCache { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInputAudioCache? InputAudioCache { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_search")]
-        public object? WebSearch { get; set; }
+        public global::OpenRouter.PublicEndpointPricingWebSearch? WebSearch { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("internal_reasoning")]
-        public object? InternalReasoning { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInternalReasoning? InternalReasoning { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_read")]
-        public object? InputCacheRead { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInputCacheRead? InputCacheRead { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write")]
-        public object? InputCacheWrite { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInputCacheWrite? InputCacheWrite { get; set; }
 
         /// <summary>
         /// 
@@ -121,19 +121,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicEndpointPricing(
-            object prompt,
-            object completion,
-            object? request,
-            object? image,
-            object? imageToken,
-            object? imageOutput,
-            object? audio,
-            object? audioOutput,
-            object? inputAudioCache,
-            object? webSearch,
-            object? internalReasoning,
-            object? inputCacheRead,
-            object? inputCacheWrite,
+            global::OpenRouter.PublicEndpointPricingPrompt prompt,
+            global::OpenRouter.PublicEndpointPricingCompletion completion,
+            global::OpenRouter.PublicEndpointPricingRequest? request,
+            global::OpenRouter.PublicEndpointPricingImage? image,
+            global::OpenRouter.PublicEndpointPricingImageToken? imageToken,
+            global::OpenRouter.PublicEndpointPricingImageOutput? imageOutput,
+            global::OpenRouter.PublicEndpointPricingAudio? audio,
+            global::OpenRouter.PublicEndpointPricingAudioOutput? audioOutput,
+            global::OpenRouter.PublicEndpointPricingInputAudioCache? inputAudioCache,
+            global::OpenRouter.PublicEndpointPricingWebSearch? webSearch,
+            global::OpenRouter.PublicEndpointPricingInternalReasoning? internalReasoning,
+            global::OpenRouter.PublicEndpointPricingInputCacheRead? inputCacheRead,
+            global::OpenRouter.PublicEndpointPricingInputCacheWrite? inputCacheWrite,
             double? discount)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));

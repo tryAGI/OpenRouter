@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Tokenizer { get; set; }
+        public required global::OpenRouter.ListEndpointsResponseArchitectureTokenizer Tokenizer { get; set; }
 
         /// <summary>
         /// Instruction format type
@@ -69,7 +69,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListEndpointsResponseArchitecture(
-            object tokenizer,
+            global::OpenRouter.ListEndpointsResponseArchitectureTokenizer tokenizer,
             global::OpenRouter.InstructType2 instructType,
             global::System.Collections.Generic.IList<global::OpenRouter.InputModality> inputModalities,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> outputModalities,
