@@ -71,7 +71,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        public object? Sort { get; set; }
+        public global::OpenRouter.ProviderPreferencesSort? Sort { get; set; }
 
         /// <summary>
         /// The object specifying the maximum price you want to pay for this request. USD price per million tokens, for prompt and completion.
@@ -156,7 +156,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOnlyItems>? only,
             global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesIgnoreItems>? ignore,
             global::System.Collections.Generic.IList<global::OpenRouter.Quantization>? quantizations,
-            object? sort,
+            global::OpenRouter.ProviderPreferencesSort? sort,
             global::OpenRouter.ProviderPreferencesMaxPrice? maxPrice,
             global::OpenRouter.PreferredMinThroughput? preferredMinThroughput,
             global::OpenRouter.PreferredMaxLatency? preferredMaxLatency)
