@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <NoWarn>$(NoWarn);SYSLIB1031;CS3002;CS3003;CS1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget">
+    <Description>C# SDK for the OpenRouter API -- LLM gateway with 500+ models, model discovery, routing, and generation stats.</Description>
+    <PackageTags>api;client;sdk;dotnet;openapi;openrouter;llm;ai;chat-completion</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.AI" Version="10.4.1" />
+  </ItemGroup>
+
+</Project>

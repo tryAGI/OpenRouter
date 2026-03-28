@@ -1,0 +1,83 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class MessagesRequestSystemOneOf1ItemsCitationsItems3
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestSystemOneOf1ItemsCitationsItemsOneOf3TypeJsonConverter))]
+        public global::OpenRouter.MessagesRequestSystemOneOf1ItemsCitationsItemsOneOf3Type Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CitedText { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string EncryptedIndex { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Url { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessagesRequestSystemOneOf1ItemsCitationsItems3" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="citedText"></param>
+        /// <param name="encryptedIndex"></param>
+        /// <param name="title"></param>
+        /// <param name="url"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public MessagesRequestSystemOneOf1ItemsCitationsItems3(
+            string citedText,
+            string encryptedIndex,
+            string url,
+            global::OpenRouter.MessagesRequestSystemOneOf1ItemsCitationsItemsOneOf3Type type,
+            string? title)
+        {
+            this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
+            this.EncryptedIndex = encryptedIndex ?? throw new global::System.ArgumentNullException(nameof(encryptedIndex));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Type = type;
+            this.Title = title;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessagesRequestSystemOneOf1ItemsCitationsItems3" /> class.
+        /// </summary>
+        public MessagesRequestSystemOneOf1ItemsCitationsItems3()
+        {
+        }
+    }
+}
