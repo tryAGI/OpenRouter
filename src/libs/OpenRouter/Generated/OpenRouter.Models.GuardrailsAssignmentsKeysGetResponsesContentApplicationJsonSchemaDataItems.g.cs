@@ -80,11 +80,11 @@ namespace OpenRouter
         /// <param name="keyLabel">
         /// Label of the API key
         /// </param>
-        /// <param name="assignedBy">
-        /// User ID of who made the assignment
-        /// </param>
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the assignment was created
+        /// </param>
+        /// <param name="assignedBy">
+        /// User ID of who made the assignment
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -103,8 +103,8 @@ namespace OpenRouter
             this.GuardrailId = guardrailId;
             this.KeyName = keyName ?? throw new global::System.ArgumentNullException(nameof(keyName));
             this.KeyLabel = keyLabel ?? throw new global::System.ArgumentNullException(nameof(keyLabel));
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.AssignedBy = assignedBy;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
         }
 
         /// <summary>

@@ -31,8 +31,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="InputAudio" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="inputAudio1"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace OpenRouter
             global::OpenRouter.InputAudioInputAudio inputAudio1,
             global::OpenRouter.InputAudioType type)
         {
-            this.InputAudio1 = inputAudio1 ?? throw new global::System.ArgumentNullException(nameof(inputAudio1));
             this.Type = type;
+            this.InputAudio1 = inputAudio1 ?? throw new global::System.ArgumentNullException(nameof(inputAudio1));
         }
 
         /// <summary>

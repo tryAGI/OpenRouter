@@ -76,8 +76,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="McpServerTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="serverLabel"></param>
+        /// <param name="type"></param>
         /// <param name="allowedTools"></param>
         /// <param name="authorization"></param>
         /// <param name="connectorId"></param>
@@ -99,8 +99,8 @@ namespace OpenRouter
             string? serverDescription,
             string? serverUrl)
         {
-            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Type = type;
+            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.AllowedTools = allowedTools;
             this.Authorization = authorization;
             this.ConnectorId = connectorId;

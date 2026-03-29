@@ -31,8 +31,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="toolName"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace OpenRouter
             string toolName,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf2Type type)
         {
-            this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.Type = type;
+            this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
         }
 
         /// <summary>

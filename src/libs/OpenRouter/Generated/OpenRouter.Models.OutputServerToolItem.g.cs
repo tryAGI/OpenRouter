@@ -41,8 +41,8 @@ namespace OpenRouter
         /// <param name="type">
         /// Server tool type (e.g. openrouter:datetime, openrouter:web_search)
         /// </param>
-        /// <param name="id"></param>
         /// <param name="status"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,8 +52,8 @@ namespace OpenRouter
             string? id)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Status = status;
             this.Id = id;
+            this.Status = status;
         }
 
         /// <summary>

@@ -69,8 +69,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="InputsOneOf1Items6" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="id"></param>
+        /// <param name="type"></param>
         /// <param name="content"></param>
         /// <param name="summary"></param>
         /// <param name="encryptedContent"></param>
@@ -94,8 +94,8 @@ namespace OpenRouter
             string? signature,
             global::OpenRouter.OneOf<global::OpenRouter.OutputReasoningItemFormat?, object>? format)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Content = content;
             this.Summary = summary;
             this.EncryptedContent = encryptedContent;

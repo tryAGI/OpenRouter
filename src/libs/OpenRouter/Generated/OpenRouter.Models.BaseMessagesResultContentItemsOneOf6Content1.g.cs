@@ -45,9 +45,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BaseMessagesResultContentItemsOneOf6Content1" /> class.
         /// </summary>
         /// <param name="content"></param>
+        /// <param name="url"></param>
         /// <param name="retrievedAt"></param>
         /// <param name="type"></param>
-        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,9 +58,9 @@ namespace OpenRouter
             global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1Type type)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.RetrievedAt = retrievedAt;
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

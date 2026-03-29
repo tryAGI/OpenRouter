@@ -50,10 +50,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsCreateEmbeddingsResponse200" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="model"></param>
+        /// <param name="id"></param>
+        /// <param name="object"></param>
         /// <param name="usage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,10 +65,10 @@ namespace OpenRouter
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaObject @object,
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsage? usage)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Id = id;
             this.Object = @object;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Usage = usage;
         }
 

@@ -43,8 +43,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputText" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         /// <param name="annotations"></param>
         /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
@@ -56,8 +56,8 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.OpenAIResponsesAnnotation>? annotations,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItems>? logprobs)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations;
             this.Logprobs = logprobs;
         }

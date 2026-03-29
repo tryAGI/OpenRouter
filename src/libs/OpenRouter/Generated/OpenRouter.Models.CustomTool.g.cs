@@ -44,8 +44,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="name"></param>
+        /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="format"></param>
 #if NET7_0_OR_GREATER
@@ -57,8 +57,8 @@ namespace OpenRouter
             string? description,
             global::OpenRouter.CustomToolFormat? format)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Format = format;
         }

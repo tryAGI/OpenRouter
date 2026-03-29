@@ -37,10 +37,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatFunctionTool0" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="function">
         /// Function definition for tool calling
         /// </param>
+        /// <param name="type"></param>
         /// <param name="cacheControl">
         /// Cache control for the content part
         /// </param>
@@ -52,8 +52,8 @@ namespace OpenRouter
             global::OpenRouter.ChatFunctionToolOneOf0Type type,
             global::OpenRouter.ChatContentCacheControl? cacheControl)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.CacheControl = cacheControl;
         }
 

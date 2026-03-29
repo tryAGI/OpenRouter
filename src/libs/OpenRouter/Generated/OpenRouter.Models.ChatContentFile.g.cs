@@ -31,8 +31,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatContentFile" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="file"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentFileFile file,
             global::OpenRouter.ChatContentFileType type)
         {
-            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Type = type;
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
         }
 
         /// <summary>

@@ -38,8 +38,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="source"></param>
+        /// <param name="type"></param>
         /// <param name="cacheControl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -49,8 +49,8 @@ namespace OpenRouter
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1ItemsOneOf1Type type,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1ItemsOneOf1CacheControl? cacheControl)
         {
-            this.Source = source;
             this.Type = type;
+            this.Source = source;
             this.CacheControl = cacheControl;
         }
 

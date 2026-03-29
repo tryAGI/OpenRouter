@@ -51,8 +51,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesRequestToolsItems0" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="inputSchema"></param>
+        /// <param name="description"></param>
         /// <param name="type"></param>
         /// <param name="cacheControl"></param>
 #if NET7_0_OR_GREATER
@@ -66,8 +66,8 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestToolsItemsOneOf0CacheControl? cacheControl)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Description = description;
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Type = type;
             this.CacheControl = cacheControl;
         }

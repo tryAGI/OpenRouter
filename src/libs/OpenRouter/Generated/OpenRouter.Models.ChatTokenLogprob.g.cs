@@ -50,11 +50,11 @@ namespace OpenRouter
         /// <param name="logprob">
         /// Log probability of the token
         /// </param>
-        /// <param name="bytes">
-        /// UTF-8 bytes of the token
-        /// </param>
         /// <param name="topLogprobs">
         /// Top alternative tokens with probabilities
+        /// </param>
+        /// <param name="bytes">
+        /// UTF-8 bytes of the token
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,8 +67,8 @@ namespace OpenRouter
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;
-            this.TopLogprobs = topLogprobs ?? throw new global::System.ArgumentNullException(nameof(topLogprobs));
             this.Bytes = bytes;
+            this.TopLogprobs = topLogprobs ?? throw new global::System.ArgumentNullException(nameof(topLogprobs));
         }
 
         /// <summary>

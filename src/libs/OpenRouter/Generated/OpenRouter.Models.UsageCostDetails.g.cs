@@ -37,9 +37,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageCostDetails" /> class.
         /// </summary>
-        /// <param name="upstreamInferenceCost"></param>
         /// <param name="upstreamInferenceInputCost"></param>
         /// <param name="upstreamInferenceOutputCost"></param>
+        /// <param name="upstreamInferenceCost"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -48,9 +48,9 @@ namespace OpenRouter
             double upstreamInferenceOutputCost,
             double? upstreamInferenceCost)
         {
+            this.UpstreamInferenceCost = upstreamInferenceCost;
             this.UpstreamInferenceInputCost = upstreamInferenceInputCost;
             this.UpstreamInferenceOutputCost = upstreamInferenceOutputCost;
-            this.UpstreamInferenceCost = upstreamInferenceCost;
         }
 
         /// <summary>

@@ -32,8 +32,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterServerTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="container"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace OpenRouter
             global::OpenRouter.CodeInterpreterServerToolContainer container,
             global::OpenRouter.CodeInterpreterServerToolType type)
         {
-            this.Container = container;
             this.Type = type;
+            this.Container = container;
         }
 
         /// <summary>

@@ -37,8 +37,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatContentText" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         /// <param name="cacheControl">
         /// Cache control for the content part
         /// </param>
@@ -50,8 +50,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentTextType type,
             global::OpenRouter.ChatContentCacheControl? cacheControl)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.CacheControl = cacheControl;
         }
 

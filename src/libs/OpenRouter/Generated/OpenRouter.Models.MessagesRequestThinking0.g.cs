@@ -31,8 +31,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesRequestThinking0" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="budgetTokens"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace OpenRouter
             double budgetTokens,
             global::OpenRouter.MessagesRequestThinkingOneOf0Type type)
         {
-            this.BudgetTokens = budgetTokens;
             this.Type = type;
+            this.BudgetTokens = budgetTokens;
         }
 
         /// <summary>

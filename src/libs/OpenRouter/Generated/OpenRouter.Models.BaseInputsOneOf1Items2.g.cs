@@ -52,10 +52,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseInputsOneOf1Items2" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="id"></param>
         /// <param name="callId"></param>
         /// <param name="output"></param>
+        /// <param name="type"></param>
+        /// <param name="id"></param>
         /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,10 +67,10 @@ namespace OpenRouter
             string? id,
             global::OpenRouter.ToolCallStatusEnum? status)
         {
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.Output = output;
             this.Type = type;
             this.Id = id;
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Output = output;
             this.Status = status;
         }
 

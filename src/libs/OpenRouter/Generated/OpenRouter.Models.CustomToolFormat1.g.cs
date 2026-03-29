@@ -39,9 +39,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomToolFormat1" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="definition"></param>
         /// <param name="syntax"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace OpenRouter
             global::OpenRouter.CustomToolFormatOneOf1Syntax syntax,
             global::OpenRouter.CustomToolFormatOneOf1Type type)
         {
+            this.Type = type;
             this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
             this.Syntax = syntax;
-            this.Type = type;
         }
 
         /// <summary>

@@ -50,8 +50,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="FileSearchServerTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="vectorStoreIds"></param>
+        /// <param name="type"></param>
         /// <param name="filters"></param>
         /// <param name="maxNumResults"></param>
         /// <param name="rankingOptions"></param>
@@ -65,8 +65,8 @@ namespace OpenRouter
             int? maxNumResults,
             global::OpenRouter.FileSearchServerToolRankingOptions? rankingOptions)
         {
-            this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));
             this.Type = type;
+            this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));
             this.Filters = filters;
             this.MaxNumResults = maxNumResults;
             this.RankingOptions = rankingOptions;

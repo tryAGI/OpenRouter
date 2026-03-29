@@ -58,12 +58,12 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf9ContentItemsCitationsItems2" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
         /// <param name="startBlockIndex"></param>
         /// <param name="endBlockIndex"></param>
+        /// <param name="type"></param>
+        /// <param name="documentTitle"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,12 +75,12 @@ namespace OpenRouter
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf9ContentItemsCitationsItemsOneOf2Type type,
             string? documentTitle)
         {
+            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
+            this.DocumentTitle = documentTitle;
             this.StartBlockIndex = startBlockIndex;
             this.EndBlockIndex = endBlockIndex;
-            this.Type = type;
-            this.DocumentTitle = documentTitle;
         }
 
         /// <summary>

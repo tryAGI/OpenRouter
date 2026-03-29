@@ -239,20 +239,27 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OpenResponsesResult" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object"></param>
         /// <param name="createdAt"></param>
         /// <param name="model"></param>
         /// <param name="status"></param>
-        /// <param name="completedAt"></param>
         /// <param name="output"></param>
-        /// <param name="user"></param>
-        /// <param name="outputText"></param>
-        /// <param name="promptCacheKey"></param>
-        /// <param name="safetyIdentifier"></param>
         /// <param name="error">
         /// Error information returned from the API
         /// </param>
         /// <param name="incompleteDetails"></param>
+        /// <param name="instructions"></param>
+        /// <param name="metadata">
+        /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
+        /// </param>
+        /// <param name="tools"></param>
+        /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls"></param>
+        /// <param name="object"></param>
+        /// <param name="completedAt"></param>
+        /// <param name="user"></param>
+        /// <param name="outputText"></param>
+        /// <param name="promptCacheKey"></param>
+        /// <param name="safetyIdentifier"></param>
         /// <param name="usage">
         /// Token usage information for the response
         /// </param>
@@ -263,13 +270,6 @@ namespace OpenRouter
         /// <param name="topP"></param>
         /// <param name="presencePenalty"></param>
         /// <param name="frequencyPenalty"></param>
-        /// <param name="instructions"></param>
-        /// <param name="metadata">
-        /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
-        /// </param>
-        /// <param name="tools"></param>
-        /// <param name="toolChoice"></param>
-        /// <param name="parallelToolCalls"></param>
         /// <param name="prompt"></param>
         /// <param name="background"></param>
         /// <param name="previousResponseId"></param>
@@ -320,23 +320,18 @@ namespace OpenRouter
             global::OpenRouter.TextConfig? text)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Status = status;
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.IncompleteDetails = incompleteDetails ?? throw new global::System.ArgumentNullException(nameof(incompleteDetails));
-            this.Instructions = instructions;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.ToolChoice = toolChoice;
-            this.ParallelToolCalls = parallelToolCalls;
-            this.Object = @object;
             this.CompletedAt = completedAt;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.User = user;
             this.OutputText = outputText;
             this.PromptCacheKey = promptCacheKey;
             this.SafetyIdentifier = safetyIdentifier;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.IncompleteDetails = incompleteDetails ?? throw new global::System.ArgumentNullException(nameof(incompleteDetails));
             this.Usage = usage;
             this.MaxToolCalls = maxToolCalls;
             this.TopLogprobs = topLogprobs;
@@ -345,6 +340,11 @@ namespace OpenRouter
             this.TopP = topP;
             this.PresencePenalty = presencePenalty;
             this.FrequencyPenalty = frequencyPenalty;
+            this.Instructions = instructions;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
+            this.ToolChoice = toolChoice;
+            this.ParallelToolCalls = parallelToolCalls;
             this.Prompt = prompt;
             this.Background = background;
             this.PreviousResponseId = previousResponseId;

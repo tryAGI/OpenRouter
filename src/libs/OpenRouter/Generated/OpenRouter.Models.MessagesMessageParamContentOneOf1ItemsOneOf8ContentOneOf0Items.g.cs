@@ -51,10 +51,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="encryptedContent"></param>
         /// <param name="title"></param>
         /// <param name="url"></param>
+        /// <param name="type"></param>
         /// <param name="pageAge"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace OpenRouter
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0ItemsType type,
             string? pageAge)
         {
+            this.Type = type;
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
             this.PageAge = pageAge;
         }
 

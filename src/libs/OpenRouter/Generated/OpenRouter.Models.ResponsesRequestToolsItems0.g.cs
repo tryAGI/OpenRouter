@@ -49,8 +49,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponsesRequestToolsItems0" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="name"></param>
+        /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="strict"></param>
         /// <param name="parameters"></param>
@@ -64,8 +64,8 @@ namespace OpenRouter
             bool? strict,
             object? parameters)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Strict = strict;
             this.Parameters = parameters;

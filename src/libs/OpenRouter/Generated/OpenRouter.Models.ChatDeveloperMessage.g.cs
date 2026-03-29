@@ -38,10 +38,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatDeveloperMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content">
         /// Developer message content
         /// </param>
+        /// <param name="role"></param>
         /// <param name="name">
         /// Optional name for the developer message
         /// </param>
@@ -53,8 +53,8 @@ namespace OpenRouter
             global::OpenRouter.ChatDeveloperMessageRole role,
             string? name)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
             this.Name = name;
         }
 

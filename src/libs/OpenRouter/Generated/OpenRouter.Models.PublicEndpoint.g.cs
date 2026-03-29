@@ -137,16 +137,16 @@ namespace OpenRouter
         /// <param name="providerName"></param>
         /// <param name="tag"></param>
         /// <param name="quantization"></param>
-        /// <param name="maxCompletionTokens"></param>
-        /// <param name="maxPromptTokens"></param>
         /// <param name="supportedParameters"></param>
-        /// <param name="status"></param>
-        /// <param name="uptimeLast30m"></param>
         /// <param name="supportsImplicitCaching"></param>
         /// <param name="latencyLast30m">
         /// Latency percentiles in milliseconds over the last 30 minutes. Latency measures time to first token. Only visible when authenticated with an API key or cookie; returns null for unauthenticated requests.
         /// </param>
         /// <param name="throughputLast30m"></param>
+        /// <param name="maxCompletionTokens"></param>
+        /// <param name="maxPromptTokens"></param>
+        /// <param name="status"></param>
+        /// <param name="uptimeLast30m"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -176,14 +176,14 @@ namespace OpenRouter
             this.ProviderName = providerName;
             this.Tag = tag ?? throw new global::System.ArgumentNullException(nameof(tag));
             this.Quantization = quantization ?? throw new global::System.ArgumentNullException(nameof(quantization));
+            this.MaxCompletionTokens = maxCompletionTokens;
+            this.MaxPromptTokens = maxPromptTokens;
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
+            this.Status = status;
+            this.UptimeLast30m = uptimeLast30m;
             this.SupportsImplicitCaching = supportsImplicitCaching;
             this.LatencyLast30m = latencyLast30m ?? throw new global::System.ArgumentNullException(nameof(latencyLast30m));
             this.ThroughputLast30m = throughputLast30m ?? throw new global::System.ArgumentNullException(nameof(throughputLast30m));
-            this.MaxCompletionTokens = maxCompletionTokens;
-            this.MaxPromptTokens = maxPromptTokens;
-            this.Status = status;
-            this.UptimeLast30m = uptimeLast30m;
         }
 
         /// <summary>

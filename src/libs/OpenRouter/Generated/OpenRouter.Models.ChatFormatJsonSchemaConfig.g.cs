@@ -31,10 +31,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatFormatJsonSchemaConfig" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="jsonSchema">
         /// JSON Schema configuration object
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace OpenRouter
             global::OpenRouter.ChatJsonSchemaConfig jsonSchema,
             global::OpenRouter.ChatFormatJsonSchemaConfigType type)
         {
-            this.JsonSchema = jsonSchema ?? throw new global::System.ArgumentNullException(nameof(jsonSchema));
             this.Type = type;
+            this.JsonSchema = jsonSchema ?? throw new global::System.ArgumentNullException(nameof(jsonSchema));
         }
 
         /// <summary>

@@ -99,11 +99,11 @@ namespace OpenRouter
         /// </summary>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
+        /// <param name="cacheCreation"></param>
+        /// <param name="serverToolUse"></param>
         /// <param name="cacheCreationInputTokens"></param>
         /// <param name="cacheReadInputTokens"></param>
-        /// <param name="cacheCreation"></param>
         /// <param name="inferenceGeo"></param>
-        /// <param name="serverToolUse"></param>
         /// <param name="serviceTier"></param>
         /// <param name="speed"></param>
         /// <param name="cost"></param>
@@ -128,11 +128,11 @@ namespace OpenRouter
         {
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
-            this.CacheCreation = cacheCreation;
-            this.ServerToolUse = serverToolUse;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
+            this.CacheCreation = cacheCreation;
             this.InferenceGeo = inferenceGeo;
+            this.ServerToolUse = serverToolUse;
             this.ServiceTier = serviceTier;
             this.Speed = speed;
             this.Cost = cost;

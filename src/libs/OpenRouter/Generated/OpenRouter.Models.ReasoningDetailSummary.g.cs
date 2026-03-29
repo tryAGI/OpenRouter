@@ -50,8 +50,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningDetailSummary" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="summary"></param>
+        /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="format"></param>
         /// <param name="index"></param>
@@ -65,8 +65,8 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.ReasoningDetailSummaryFormat?, object>? format,
             double? index)
         {
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Type = type;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Id = id;
             this.Format = format;
             this.Index = index;

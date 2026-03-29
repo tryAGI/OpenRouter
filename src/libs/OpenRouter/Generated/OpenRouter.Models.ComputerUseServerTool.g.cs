@@ -46,10 +46,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerUseServerTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="displayHeight"></param>
         /// <param name="displayWidth"></param>
         /// <param name="environment"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -59,10 +59,10 @@ namespace OpenRouter
             global::OpenRouter.ComputerUseServerToolEnvironment environment,
             global::OpenRouter.ComputerUseServerToolType type)
         {
+            this.Type = type;
             this.DisplayHeight = displayHeight;
             this.DisplayWidth = displayWidth;
             this.Environment = environment;
-            this.Type = type;
         }
 
         /// <summary>

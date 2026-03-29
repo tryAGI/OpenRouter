@@ -70,10 +70,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputReasoningItem" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="id"></param>
-        /// <param name="content"></param>
         /// <param name="summary"></param>
+        /// <param name="type"></param>
+        /// <param name="content"></param>
         /// <param name="encryptedContent"></param>
         /// <param name="status"></param>
         /// <param name="signature">
@@ -95,10 +95,10 @@ namespace OpenRouter
             string? signature,
             global::OpenRouter.OneOf<global::OpenRouter.OutputReasoningItemFormat?, object>? format)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Type = type;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Content = content;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.EncryptedContent = encryptedContent;
             this.Status = status;
             this.Signature = signature;

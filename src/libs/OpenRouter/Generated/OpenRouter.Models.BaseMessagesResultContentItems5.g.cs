@@ -47,10 +47,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseMessagesResultContentItems5" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="caller"></param>
         /// <param name="toolUseId"></param>
         /// <param name="content"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,10 +60,10 @@ namespace OpenRouter
             global::OpenRouter.BaseMessagesResultContentItemsOneOf5Content content,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf5Type type)
         {
+            this.Type = type;
             this.Caller = caller;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Content = content;
-            this.Type = type;
         }
 
         /// <summary>

@@ -37,9 +37,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesResultUsageCostDetails" /> class.
         /// </summary>
-        /// <param name="upstreamInferenceCost"></param>
         /// <param name="upstreamInferencePromptCost"></param>
         /// <param name="upstreamInferenceCompletionsCost"></param>
+        /// <param name="upstreamInferenceCost"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -48,9 +48,9 @@ namespace OpenRouter
             double upstreamInferenceCompletionsCost,
             double? upstreamInferenceCost)
         {
+            this.UpstreamInferenceCost = upstreamInferenceCost;
             this.UpstreamInferencePromptCost = upstreamInferencePromptCost;
             this.UpstreamInferenceCompletionsCost = upstreamInferenceCompletionsCost;
-            this.UpstreamInferenceCost = upstreamInferenceCost;
         }
 
         /// <summary>
