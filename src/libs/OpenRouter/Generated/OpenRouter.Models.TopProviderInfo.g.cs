@@ -36,14 +36,14 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="TopProviderInfo" /> class.
         /// </summary>
+        /// <param name="isModerated">
+        /// Whether the top provider moderates content
+        /// </param>
         /// <param name="contextLength">
         /// Context length from the top provider
         /// </param>
         /// <param name="maxCompletionTokens">
         /// Maximum completion tokens from the top provider
-        /// </param>
-        /// <param name="isModerated">
-        /// Whether the top provider moderates content
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -53,9 +53,9 @@ namespace OpenRouter
             double? contextLength,
             double? maxCompletionTokens)
         {
-            this.IsModerated = isModerated;
             this.ContextLength = contextLength;
             this.MaxCompletionTokens = maxCompletionTokens;
+            this.IsModerated = isModerated;
         }
 
         /// <summary>

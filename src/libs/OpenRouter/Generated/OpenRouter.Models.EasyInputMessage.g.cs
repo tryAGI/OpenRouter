@@ -46,8 +46,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="EasyInputMessage" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="role"></param>
+        /// <param name="type"></param>
         /// <param name="content"></param>
         /// <param name="phase">
         /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
@@ -61,8 +61,8 @@ namespace OpenRouter
             global::OpenRouter.EasyInputMessageContent? content,
             global::OpenRouter.EasyInputMessagePhase? phase)
         {
-            this.Role = role;
             this.Type = type;
+            this.Role = role;
             this.Content = content;
             this.Phase = phase;
         }

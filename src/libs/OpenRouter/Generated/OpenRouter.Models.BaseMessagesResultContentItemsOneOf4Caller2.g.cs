@@ -31,8 +31,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseMessagesResultContentItemsOneOf4Caller2" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="toolId"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace OpenRouter
             string toolId,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf4CallerOneOf2Type type)
         {
-            this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));
             this.Type = type;
+            this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));
         }
 
         /// <summary>

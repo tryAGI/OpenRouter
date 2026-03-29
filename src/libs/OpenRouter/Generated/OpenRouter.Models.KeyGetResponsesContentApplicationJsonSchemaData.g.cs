@@ -148,9 +148,6 @@ namespace OpenRouter
         /// <param name="label">
         /// Human-readable label for the API key
         /// </param>
-        /// <param name="limit">
-        /// Spending limit for the API key in USD
-        /// </param>
         /// <param name="usage">
         /// Total OpenRouter credit usage (in USD) for the API key
         /// </param>
@@ -184,23 +181,26 @@ namespace OpenRouter
         /// <param name="isProvisioningKey">
         /// Whether this is a management key
         /// </param>
+        /// <param name="includeByokInLimit">
+        /// Whether to include external BYOK usage in the credit limit
+        /// </param>
+        /// <param name="rateLimit">
+        /// Legacy rate limit information about a key. Will always return -1.
+        /// </param>
+        /// <param name="limit">
+        /// Spending limit for the API key in USD
+        /// </param>
         /// <param name="limitRemaining">
         /// Remaining spending limit in USD
         /// </param>
         /// <param name="limitReset">
         /// Type of limit reset for the API key
         /// </param>
-        /// <param name="includeByokInLimit">
-        /// Whether to include external BYOK usage in the credit limit
-        /// </param>
         /// <param name="expiresAt">
         /// ISO 8601 UTC timestamp when the API key expires, or null if no expiration
         /// </param>
         /// <param name="creatorUserId">
         /// The user ID of the key creator. For organization-owned keys, this is the member who created the key. For individual users, this is the user's own ID.
-        /// </param>
-        /// <param name="rateLimit">
-        /// Legacy rate limit information about a key. Will always return -1.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -227,6 +227,7 @@ namespace OpenRouter
             string? creatorUserId)
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
+            this.Limit = limit;
             this.Usage = usage;
             this.UsageDaily = usageDaily;
             this.UsageWeekly = usageWeekly;
@@ -238,13 +239,12 @@ namespace OpenRouter
             this.IsFreeTier = isFreeTier;
             this.IsManagementKey = isManagementKey;
             this.IsProvisioningKey = isProvisioningKey;
-            this.IncludeByokInLimit = includeByokInLimit;
-            this.RateLimit = rateLimit ?? throw new global::System.ArgumentNullException(nameof(rateLimit));
-            this.Limit = limit;
             this.LimitRemaining = limitRemaining;
             this.LimitReset = limitReset;
+            this.IncludeByokInLimit = includeByokInLimit;
             this.ExpiresAt = expiresAt;
             this.CreatorUserId = creatorUserId;
+            this.RateLimit = rateLimit ?? throw new global::System.ArgumentNullException(nameof(rateLimit));
         }
 
         /// <summary>

@@ -59,11 +59,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionCallItem" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="callId"></param>
         /// <param name="name"></param>
         /// <param name="arguments"></param>
         /// <param name="id"></param>
+        /// <param name="type"></param>
         /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,11 +76,11 @@ namespace OpenRouter
             global::OpenRouter.FunctionCallItemType type,
             global::OpenRouter.ToolCallStatusEnum? status)
         {
+            this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type;
             this.Status = status;
         }
 

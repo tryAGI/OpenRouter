@@ -32,8 +32,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf8Content1" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="errorCode"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace OpenRouter
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf1ErrorCode errorCode,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf1Type type)
         {
-            this.ErrorCode = errorCode;
             this.Type = type;
+            this.ErrorCode = errorCode;
         }
 
         /// <summary>

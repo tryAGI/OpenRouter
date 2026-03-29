@@ -51,6 +51,12 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelArchitecture" /> class.
         /// </summary>
+        /// <param name="inputModalities">
+        /// Supported input modalities
+        /// </param>
+        /// <param name="outputModalities">
+        /// Supported output modalities
+        /// </param>
         /// <param name="tokenizer">
         /// Tokenizer type used by the model
         /// </param>
@@ -59,12 +65,6 @@ namespace OpenRouter
         /// </param>
         /// <param name="modality">
         /// Primary modality of the model
-        /// </param>
-        /// <param name="inputModalities">
-        /// Supported input modalities
-        /// </param>
-        /// <param name="outputModalities">
-        /// Supported output modalities
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,11 +76,11 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.ModelArchitectureInstructType?, object>? instructType,
             string? modality)
         {
-            this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
-            this.OutputModalities = outputModalities ?? throw new global::System.ArgumentNullException(nameof(outputModalities));
             this.Tokenizer = tokenizer;
             this.InstructType = instructType;
             this.Modality = modality;
+            this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
+            this.OutputModalities = outputModalities ?? throw new global::System.ArgumentNullException(nameof(outputModalities));
         }
 
         /// <summary>

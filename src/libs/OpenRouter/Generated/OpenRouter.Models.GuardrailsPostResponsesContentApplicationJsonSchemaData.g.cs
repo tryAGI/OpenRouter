@@ -93,6 +93,9 @@ namespace OpenRouter
         /// <param name="name">
         /// Name of the guardrail
         /// </param>
+        /// <param name="createdAt">
+        /// ISO 8601 timestamp of when the guardrail was created
+        /// </param>
         /// <param name="description">
         /// Description of the guardrail
         /// </param>
@@ -113,9 +116,6 @@ namespace OpenRouter
         /// </param>
         /// <param name="enforceZdr">
         /// Whether to enforce zero data retention
-        /// </param>
-        /// <param name="createdAt">
-        /// ISO 8601 timestamp of when the guardrail was created
         /// </param>
         /// <param name="updatedAt">
         /// ISO 8601 timestamp of when the guardrail was last updated
@@ -138,7 +138,6 @@ namespace OpenRouter
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Description = description;
             this.LimitUsd = limitUsd;
             this.ResetInterval = resetInterval;
@@ -146,6 +145,7 @@ namespace OpenRouter
             this.IgnoredProviders = ignoredProviders;
             this.AllowedModels = allowedModels;
             this.EnforceZdr = enforceZdr;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt;
         }
 

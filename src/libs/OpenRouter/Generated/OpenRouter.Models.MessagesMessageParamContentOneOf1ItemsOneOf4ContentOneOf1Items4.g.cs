@@ -57,8 +57,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="source"></param>
+        /// <param name="type"></param>
         /// <param name="citations"></param>
         /// <param name="context"></param>
         /// <param name="title"></param>
@@ -74,8 +74,8 @@ namespace OpenRouter
             string? title,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4CacheControl? cacheControl)
         {
-            this.Source = source;
             this.Type = type;
+            this.Source = source;
             this.Citations = citations;
             this.Context = context;
             this.Title = title;

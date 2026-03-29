@@ -64,12 +64,12 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseMessagesResultContentItemsOneOf0CitationsItems1" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
         /// <param name="startPageNumber"></param>
         /// <param name="endPageNumber"></param>
+        /// <param name="type"></param>
+        /// <param name="documentTitle"></param>
         /// <param name="fileId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -83,12 +83,12 @@ namespace OpenRouter
             string? documentTitle,
             string? fileId)
         {
+            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
+            this.DocumentTitle = documentTitle;
             this.StartPageNumber = startPageNumber;
             this.EndPageNumber = endPageNumber;
-            this.Type = type;
-            this.DocumentTitle = documentTitle;
             this.FileId = fileId;
         }
 

@@ -31,10 +31,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatFormatGrammarConfig" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="grammar">
         /// Custom grammar for text generation
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace OpenRouter
             string grammar,
             global::OpenRouter.ChatFormatGrammarConfigType type)
         {
-            this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
             this.Type = type;
+            this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
         }
 
         /// <summary>

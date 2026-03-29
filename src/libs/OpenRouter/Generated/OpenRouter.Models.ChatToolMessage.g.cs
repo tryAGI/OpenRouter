@@ -39,13 +39,13 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content">
         /// Tool response content
         /// </param>
         /// <param name="toolCallId">
         /// ID of the assistant message tool call this message responds to
         /// </param>
+        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,9 +54,9 @@ namespace OpenRouter
             string toolCallId,
             global::OpenRouter.ChatToolMessageRole role)
         {
+            this.Role = role;
             this.Content = content;
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
-            this.Role = role;
         }
 
         /// <summary>

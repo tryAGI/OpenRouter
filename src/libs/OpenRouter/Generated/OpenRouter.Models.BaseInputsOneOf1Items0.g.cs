@@ -47,9 +47,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseInputsOneOf1Items0" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="role"></param>
         /// <param name="content"></param>
+        /// <param name="type"></param>
         /// <param name="phase"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,9 +60,9 @@ namespace OpenRouter
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Type? type,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase? phase)
         {
+            this.Type = type;
             this.Role = role;
             this.Content = content;
-            this.Type = type;
             this.Phase = phase;
         }
 

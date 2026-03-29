@@ -45,9 +45,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1Items8" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="toolUseId"></param>
         /// <param name="content"></param>
+        /// <param name="type"></param>
         /// <param name="cacheControl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace OpenRouter
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Type type,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8CacheControl? cacheControl)
         {
+            this.Type = type;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Content = content;
-            this.Type = type;
             this.CacheControl = cacheControl;
         }
 

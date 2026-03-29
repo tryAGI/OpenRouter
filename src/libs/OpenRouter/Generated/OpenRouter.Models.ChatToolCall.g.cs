@@ -41,8 +41,8 @@ namespace OpenRouter
         /// <param name="id">
         /// Tool call identifier
         /// </param>
-        /// <param name="type"></param>
         /// <param name="function"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,8 +52,8 @@ namespace OpenRouter
             global::OpenRouter.ChatToolCallType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

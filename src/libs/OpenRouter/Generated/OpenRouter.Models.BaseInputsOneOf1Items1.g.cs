@@ -47,9 +47,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BaseInputsOneOf1Items1" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="type"></param>
         /// <param name="role"></param>
         /// <param name="content"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,9 +60,9 @@ namespace OpenRouter
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Type? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Type = type;
         }
 
         /// <summary>

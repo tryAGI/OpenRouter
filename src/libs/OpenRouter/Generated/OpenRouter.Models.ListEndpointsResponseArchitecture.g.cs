@@ -56,14 +56,14 @@ namespace OpenRouter
         /// <param name="instructType">
         /// Instruction format type
         /// </param>
-        /// <param name="modality">
-        /// Primary modality of the model
-        /// </param>
         /// <param name="inputModalities">
         /// Supported input modalities
         /// </param>
         /// <param name="outputModalities">
         /// Supported output modalities
+        /// </param>
+        /// <param name="modality">
+        /// Primary modality of the model
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,9 +77,9 @@ namespace OpenRouter
         {
             this.Tokenizer = tokenizer ?? throw new global::System.ArgumentNullException(nameof(tokenizer));
             this.InstructType = instructType;
+            this.Modality = modality;
             this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
             this.OutputModalities = outputModalities ?? throw new global::System.ArgumentNullException(nameof(outputModalities));
-            this.Modality = modality;
         }
 
         /// <summary>

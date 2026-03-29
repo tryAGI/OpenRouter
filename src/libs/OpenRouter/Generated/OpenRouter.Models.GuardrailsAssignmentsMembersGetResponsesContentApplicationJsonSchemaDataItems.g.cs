@@ -70,11 +70,11 @@ namespace OpenRouter
         /// <param name="guardrailId">
         /// ID of the guardrail
         /// </param>
-        /// <param name="assignedBy">
-        /// User ID of who made the assignment
-        /// </param>
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the assignment was created
+        /// </param>
+        /// <param name="assignedBy">
+        /// User ID of who made the assignment
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -91,8 +91,8 @@ namespace OpenRouter
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
             this.GuardrailId = guardrailId;
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.AssignedBy = assignedBy;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
         }
 
         /// <summary>

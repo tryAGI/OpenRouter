@@ -39,9 +39,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf1Source0" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="mediaType"></param>
         /// <param name="data"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace OpenRouter
             string data,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf1SourceOneOf0Type type)
         {
+            this.Type = type;
             this.MediaType = mediaType;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Type = type;
         }
 
         /// <summary>

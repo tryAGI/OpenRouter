@@ -245,23 +245,35 @@ namespace OpenRouter
         /// <param name="id">
         /// Unique identifier for the generation
         /// </param>
-        /// <param name="upstreamId">
-        /// Upstream provider's identifier for this generation
-        /// </param>
         /// <param name="totalCost">
         /// Total cost of the generation in USD
-        /// </param>
-        /// <param name="cacheDiscount">
-        /// Discount applied due to caching
-        /// </param>
-        /// <param name="upstreamInferenceCost">
-        /// Cost charged by the upstream provider
         /// </param>
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the generation was created
         /// </param>
         /// <param name="model">
         /// Model used for the generation
+        /// </param>
+        /// <param name="origin">
+        /// Origin URL of the request
+        /// </param>
+        /// <param name="usage">
+        /// Usage amount in USD
+        /// </param>
+        /// <param name="isByok">
+        /// Whether this used bring-your-own-key
+        /// </param>
+        /// <param name="apiType">
+        /// Type of API used for the generation
+        /// </param>
+        /// <param name="upstreamId">
+        /// Upstream provider's identifier for this generation
+        /// </param>
+        /// <param name="cacheDiscount">
+        /// Discount applied due to caching
+        /// </param>
+        /// <param name="upstreamInferenceCost">
+        /// Cost charged by the upstream provider
         /// </param>
         /// <param name="appId">
         /// ID of the app that made the request
@@ -320,23 +332,11 @@ namespace OpenRouter
         /// <param name="numSearchResults">
         /// Number of search results included
         /// </param>
-        /// <param name="origin">
-        /// Origin URL of the request
-        /// </param>
-        /// <param name="usage">
-        /// Usage amount in USD
-        /// </param>
-        /// <param name="isByok">
-        /// Whether this used bring-your-own-key
-        /// </param>
         /// <param name="nativeFinishReason">
         /// Native finish reason as reported by provider
         /// </param>
         /// <param name="externalUser">
         /// External user identifier
-        /// </param>
-        /// <param name="apiType">
-        /// Type of API used for the generation
         /// </param>
         /// <param name="router">
         /// Router used for the request (e.g., openrouter/auto)
@@ -392,16 +392,12 @@ namespace OpenRouter
             string? httpReferer)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.TotalCost = totalCost;
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Origin = origin ?? throw new global::System.ArgumentNullException(nameof(origin));
-            this.Usage = usage;
-            this.IsByok = isByok;
-            this.ApiType = apiType;
             this.UpstreamId = upstreamId;
+            this.TotalCost = totalCost;
             this.CacheDiscount = cacheDiscount;
             this.UpstreamInferenceCost = upstreamInferenceCost;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.AppId = appId;
             this.Streamed = streamed;
             this.Cancelled = cancelled;
@@ -421,8 +417,12 @@ namespace OpenRouter
             this.NumInputAudioPrompt = numInputAudioPrompt;
             this.NumMediaCompletion = numMediaCompletion;
             this.NumSearchResults = numSearchResults;
+            this.Origin = origin ?? throw new global::System.ArgumentNullException(nameof(origin));
+            this.Usage = usage;
+            this.IsByok = isByok;
             this.NativeFinishReason = nativeFinishReason;
             this.ExternalUser = externalUser;
+            this.ApiType = apiType;
             this.Router = router;
             this.ProviderResponses = providerResponses;
             this.UserAgent = userAgent;

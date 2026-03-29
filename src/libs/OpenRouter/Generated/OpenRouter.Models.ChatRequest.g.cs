@@ -218,6 +218,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatRequest" /> class.
         /// </summary>
+        /// <param name="messages">
+        /// List of messages for the conversation
+        /// </param>
         /// <param name="provider">
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </param>
@@ -232,9 +235,6 @@ namespace OpenRouter
         /// </param>
         /// <param name="trace">
         /// Metadata for observability and tracing. Known keys (trace_id, trace_name, span_name, generation_name, parent_span_id) have special handling. Additional keys are passed through as custom metadata to configured broadcast destinations.
-        /// </param>
-        /// <param name="messages">
-        /// List of messages for the conversation
         /// </param>
         /// <param name="model">
         /// Model to use for completion
@@ -352,12 +352,12 @@ namespace OpenRouter
             global::OpenRouter.ChatRequestCacheControl? cacheControl,
             global::OpenRouter.OneOf<global::OpenRouter.ChatRequestServiceTier?, object>? serviceTier)
         {
-            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Provider = provider;
             this.Plugins = plugins;
             this.User = user;
             this.SessionId = sessionId;
             this.Trace = trace;
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
             this.Models = models;
             this.FrequencyPenalty = frequencyPenalty;

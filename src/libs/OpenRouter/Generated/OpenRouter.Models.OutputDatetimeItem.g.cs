@@ -52,8 +52,6 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputDatetimeItem" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="id"></param>
         /// <param name="status"></param>
         /// <param name="datetime">
         /// ISO 8601 datetime string
@@ -61,6 +59,8 @@ namespace OpenRouter
         /// <param name="timezone">
         /// IANA timezone name
         /// </param>
+        /// <param name="type"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,11 +71,11 @@ namespace OpenRouter
             global::OpenRouter.OutputDatetimeItemType type,
             string? id)
         {
+            this.Type = type;
+            this.Id = id;
             this.Status = status;
             this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
-            this.Type = type;
-            this.Id = id;
         }
 
         /// <summary>

@@ -43,8 +43,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         /// <param name="citations"></param>
         /// <param name="cacheControl"></param>
 #if NET7_0_OR_GREATER
@@ -56,8 +56,8 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1ItemsOneOf0CitationsItems>? citations,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1ItemsOneOf0CacheControl? cacheControl)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Citations = citations;
             this.CacheControl = cacheControl;
         }

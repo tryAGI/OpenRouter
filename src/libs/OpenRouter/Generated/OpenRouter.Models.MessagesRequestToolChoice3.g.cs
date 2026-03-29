@@ -37,8 +37,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesRequestToolChoice3" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="name"></param>
+        /// <param name="type"></param>
         /// <param name="disableParallelToolUse"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestToolChoiceOneOf3Type type,
             bool? disableParallelToolUse)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DisableParallelToolUse = disableParallelToolUse;
         }
 

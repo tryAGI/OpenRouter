@@ -31,10 +31,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="LegacyChatContentVideo" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="videoUrl">
         /// Video input object
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentVideoInput videoUrl,
             global::OpenRouter.LegacyChatContentVideoType type)
         {
-            this.VideoUrl = videoUrl ?? throw new global::System.ArgumentNullException(nameof(videoUrl));
             this.Type = type;
+            this.VideoUrl = videoUrl ?? throw new global::System.ArgumentNullException(nameof(videoUrl));
         }
 
         /// <summary>

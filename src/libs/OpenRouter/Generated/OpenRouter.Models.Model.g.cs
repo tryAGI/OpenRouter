@@ -123,23 +123,14 @@ namespace OpenRouter
         /// <param name="canonicalSlug">
         /// Canonical slug for the model
         /// </param>
-        /// <param name="huggingFaceId">
-        /// Hugging Face model identifier, if applicable
-        /// </param>
         /// <param name="name">
         /// Display name of the model
         /// </param>
         /// <param name="created">
         /// Unix timestamp of when the model was created
         /// </param>
-        /// <param name="description">
-        /// Description of the model
-        /// </param>
         /// <param name="pricing">
         /// Pricing information for the model
-        /// </param>
-        /// <param name="contextLength">
-        /// Maximum context length in tokens
         /// </param>
         /// <param name="architecture">
         /// Model architecture information
@@ -155,6 +146,15 @@ namespace OpenRouter
         /// </param>
         /// <param name="defaultParameters">
         /// Default parameters for this model
+        /// </param>
+        /// <param name="huggingFaceId">
+        /// Hugging Face model identifier, if applicable
+        /// </param>
+        /// <param name="description">
+        /// Description of the model
+        /// </param>
+        /// <param name="contextLength">
+        /// Maximum context length in tokens
         /// </param>
         /// <param name="knowledgeCutoff">
         /// The date up to which the model was trained on data. ISO 8601 date string (YYYY-MM-DD) or null if unknown.
@@ -184,17 +184,17 @@ namespace OpenRouter
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CanonicalSlug = canonicalSlug ?? throw new global::System.ArgumentNullException(nameof(canonicalSlug));
+            this.HuggingFaceId = huggingFaceId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Created = created;
+            this.Description = description;
             this.Pricing = pricing ?? throw new global::System.ArgumentNullException(nameof(pricing));
+            this.ContextLength = contextLength;
             this.Architecture = architecture ?? throw new global::System.ArgumentNullException(nameof(architecture));
             this.TopProvider = topProvider ?? throw new global::System.ArgumentNullException(nameof(topProvider));
             this.PerRequestLimits = perRequestLimits ?? throw new global::System.ArgumentNullException(nameof(perRequestLimits));
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
             this.DefaultParameters = defaultParameters ?? throw new global::System.ArgumentNullException(nameof(defaultParameters));
-            this.HuggingFaceId = huggingFaceId;
-            this.Description = description;
-            this.ContextLength = contextLength;
             this.KnowledgeCutoff = knowledgeCutoff;
             this.ExpirationDate = expirationDate;
         }

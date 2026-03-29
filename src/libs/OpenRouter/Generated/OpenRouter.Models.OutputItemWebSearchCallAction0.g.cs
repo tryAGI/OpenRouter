@@ -43,8 +43,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemWebSearchCallAction0" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="query"></param>
+        /// <param name="type"></param>
         /// <param name="queries"></param>
         /// <param name="sources"></param>
 #if NET7_0_OR_GREATER
@@ -56,8 +56,8 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? queries,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItemWebSearchCallActionOneOf0SourcesItems>? sources)
         {
-            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Type = type;
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Queries = queries;
             this.Sources = sources;
         }

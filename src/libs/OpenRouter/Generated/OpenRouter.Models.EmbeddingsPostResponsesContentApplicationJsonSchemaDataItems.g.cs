@@ -38,8 +38,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="embedding"></param>
+        /// <param name="object"></param>
         /// <param name="index"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -49,8 +49,8 @@ namespace OpenRouter
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsObject @object,
             double? index)
         {
-            this.Embedding = embedding;
             this.Object = @object;
+            this.Embedding = embedding;
             this.Index = index;
         }
 

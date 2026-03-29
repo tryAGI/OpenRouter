@@ -89,14 +89,14 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesResult" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="type"></param>
-        /// <param name="role"></param>
         /// <param name="container"></param>
         /// <param name="content"></param>
         /// <param name="model"></param>
         /// <param name="stopReason"></param>
-        /// <param name="stopSequence"></param>
         /// <param name="usage"></param>
+        /// <param name="type"></param>
+        /// <param name="role"></param>
+        /// <param name="stopSequence"></param>
         /// <param name="provider"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -114,14 +114,14 @@ namespace OpenRouter
             global::OpenRouter.MessagesResultProvider? provider)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
+            this.Role = role;
             this.Container = container;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.StopReason = stopReason;
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Type = type;
-            this.Role = role;
             this.StopSequence = stopSequence;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Provider = provider;
         }
 

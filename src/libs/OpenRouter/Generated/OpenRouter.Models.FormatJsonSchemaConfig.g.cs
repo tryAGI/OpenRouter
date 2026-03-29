@@ -50,11 +50,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="FormatJsonSchemaConfig" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="name"></param>
+        /// <param name="schema"></param>
+        /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="strict"></param>
-        /// <param name="schema"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,11 +65,11 @@ namespace OpenRouter
             string? description,
             bool? strict)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Strict = strict;
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
         }
 
         /// <summary>

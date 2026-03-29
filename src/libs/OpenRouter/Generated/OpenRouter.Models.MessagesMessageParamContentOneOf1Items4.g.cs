@@ -50,8 +50,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1Items4" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="toolUseId"></param>
+        /// <param name="type"></param>
         /// <param name="content"></param>
         /// <param name="isError"></param>
         /// <param name="cacheControl"></param>
@@ -65,8 +65,8 @@ namespace OpenRouter
             bool? isError,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4CacheControl? cacheControl)
         {
-            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Type = type;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Content = content;
             this.IsError = isError;
             this.CacheControl = cacheControl;

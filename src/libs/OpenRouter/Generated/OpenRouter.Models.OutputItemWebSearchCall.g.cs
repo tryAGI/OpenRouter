@@ -47,10 +47,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemWebSearchCall" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="action"></param>
         /// <param name="status"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,10 +60,10 @@ namespace OpenRouter
             global::OpenRouter.WebSearchStatus status,
             global::OpenRouter.OutputItemWebSearchCallType type)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Action = action;
             this.Status = status;
-            this.Type = type;
         }
 
         /// <summary>

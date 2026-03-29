@@ -44,9 +44,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessageItem" /> class.
         /// </summary>
+        /// <param name="role"></param>
         /// <param name="id"></param>
         /// <param name="type"></param>
-        /// <param name="role"></param>
         /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,9 +57,9 @@ namespace OpenRouter
             global::OpenRouter.InputMessageItemType? type,
             global::System.Collections.Generic.IList<global::OpenRouter.InputMessageItemContentItems>? content)
         {
-            this.Role = role;
             this.Id = id;
             this.Type = type;
+            this.Role = role;
             this.Content = content;
         }
 

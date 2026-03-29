@@ -38,8 +38,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessageItemContentItems1" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="detail"></param>
+        /// <param name="type"></param>
         /// <param name="imageUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -49,8 +49,8 @@ namespace OpenRouter
             global::OpenRouter.InputImageType type,
             string? imageUrl)
         {
-            this.Detail = detail;
             this.Type = type;
+            this.Detail = detail;
             this.ImageUrl = imageUrl;
         }
 

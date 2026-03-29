@@ -38,9 +38,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemWebSearchCallAction2" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="pattern"></param>
         /// <param name="url"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,9 +49,9 @@ namespace OpenRouter
             string url,
             global::OpenRouter.OutputItemWebSearchCallActionOneOf2Type type)
         {
+            this.Type = type;
             this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
         }
 
         /// <summary>

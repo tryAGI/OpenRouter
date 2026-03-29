@@ -52,11 +52,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="URLCitation" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="url"></param>
         /// <param name="title"></param>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,11 +67,11 @@ namespace OpenRouter
             double endIndex,
             global::OpenRouter.UrlCitationType type)
         {
+            this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.StartIndex = startIndex;
             this.EndIndex = endIndex;
-            this.Type = type;
         }
 
         /// <summary>

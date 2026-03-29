@@ -163,15 +163,6 @@ namespace OpenRouter
         /// <param name="disabled">
         /// Whether the API key is disabled
         /// </param>
-        /// <param name="limit">
-        /// Spending limit for the API key in USD
-        /// </param>
-        /// <param name="limitRemaining">
-        /// Remaining spending limit in USD
-        /// </param>
-        /// <param name="limitReset">
-        /// Type of limit reset for the API key
-        /// </param>
         /// <param name="includeByokInLimit">
         /// Whether to include external BYOK usage in the credit limit
         /// </param>
@@ -201,6 +192,15 @@ namespace OpenRouter
         /// </param>
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the API key was created
+        /// </param>
+        /// <param name="limit">
+        /// Spending limit for the API key in USD
+        /// </param>
+        /// <param name="limitRemaining">
+        /// Remaining spending limit in USD
+        /// </param>
+        /// <param name="limitReset">
+        /// Type of limit reset for the API key
         /// </param>
         /// <param name="updatedAt">
         /// ISO 8601 timestamp of when the API key was last updated
@@ -240,6 +240,9 @@ namespace OpenRouter
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Disabled = disabled;
+            this.Limit = limit;
+            this.LimitRemaining = limitRemaining;
+            this.LimitReset = limitReset;
             this.IncludeByokInLimit = includeByokInLimit;
             this.Usage = usage;
             this.UsageDaily = usageDaily;
@@ -250,9 +253,6 @@ namespace OpenRouter
             this.ByokUsageWeekly = byokUsageWeekly;
             this.ByokUsageMonthly = byokUsageMonthly;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Limit = limit;
-            this.LimitRemaining = limitRemaining;
-            this.LimitReset = limitReset;
             this.UpdatedAt = updatedAt;
             this.ExpiresAt = expiresAt;
             this.CreatorUserId = creatorUserId;

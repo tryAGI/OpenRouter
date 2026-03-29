@@ -58,11 +58,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputFunctionCallItem" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="arguments"></param>
         /// <param name="callId"></param>
+        /// <param name="type"></param>
+        /// <param name="id"></param>
         /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -75,11 +75,11 @@ namespace OpenRouter
             string? id,
             global::OpenRouter.OutputItemFunctionCallStatus? status)
         {
+            this.Type = type;
+            this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.Type = type;
-            this.Id = id;
             this.Status = status;
         }
 

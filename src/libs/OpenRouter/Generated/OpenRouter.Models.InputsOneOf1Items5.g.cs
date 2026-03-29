@@ -61,10 +61,10 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="InputsOneOf1Items5" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="content"></param>
         /// <param name="role"></param>
         /// <param name="type"></param>
         /// <param name="status"></param>
-        /// <param name="content"></param>
         /// <param name="phase">
         /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
         /// </param>
@@ -80,10 +80,10 @@ namespace OpenRouter
             global::OpenRouter.OutputMessagePhase? phase)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content;
             this.Role = role;
             this.Type = type;
             this.Status = status;
+            this.Content = content;
             this.Phase = phase;
         }
 

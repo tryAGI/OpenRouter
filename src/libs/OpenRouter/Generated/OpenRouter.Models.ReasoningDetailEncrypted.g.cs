@@ -50,8 +50,8 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningDetailEncrypted" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="data"></param>
+        /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="format"></param>
         /// <param name="index"></param>
@@ -65,8 +65,8 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.ReasoningDetailEncryptedFormat?, object>? format,
             double? index)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Type = type;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Id = id;
             this.Format = format;
             this.Index = index;

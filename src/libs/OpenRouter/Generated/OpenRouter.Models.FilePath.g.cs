@@ -38,9 +38,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="FilePath" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="fileId"></param>
         /// <param name="index"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,9 +49,9 @@ namespace OpenRouter
             double index,
             global::OpenRouter.FilePathType type)
         {
+            this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Index = index;
-            this.Type = type;
         }
 
         /// <summary>
