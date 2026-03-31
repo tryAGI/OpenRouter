@@ -6,40 +6,27 @@ namespace OpenRouter
     public partial class SubpackageCreditsClient
     {
         partial void PrepareCreateCoinbaseChargeArguments(
-            global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.CreateChargeRequest request);
+            global::System.Net.Http.HttpClient httpClient);
         partial void PrepareCreateCoinbaseChargeRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.CreateChargeRequest request);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
         partial void ProcessCreateCoinbaseChargeResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateCoinbaseChargeResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// Create a Coinbase charge for crypto payment<br/>
-        /// Create a Coinbase charge for crypto payment
+        /// Deprecated Coinbase Commerce charge endpoint<br/>
+        /// Deprecated. The Coinbase APIs used by this endpoint have been deprecated, so Coinbase Commerce charges have been removed. Use the web credits purchase flow instead.
         /// </summary>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.CreditsCreateCoinbaseChargeResponse200> CreateCoinbaseChargeAsync(
-
-            global::OpenRouter.CreateChargeRequest request,
+        public async global::System.Threading.Tasks.Task CreateCoinbaseChargeAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateCoinbaseChargeArguments(
-                httpClient: HttpClient,
-                request: request);
+                httpClient: HttpClient);
 
             var __pathBuilder = new global::OpenRouter.PathBuilder(
                 path: "/credits/coinbase",
@@ -68,20 +55,13 @@ namespace OpenRouter
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
             PrepareCreateCoinbaseChargeRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
+                httpRequestMessage: __httpRequest);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -94,152 +74,38 @@ namespace OpenRouter
             ProcessCreateCoinbaseChargeResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request - Invalid credit amount or request body
-            if ((int)__response.StatusCode == 400)
+            // Gone - Coinbase Commerce charge creation has been removed
+            if ((int)__response.StatusCode == 410)
             {
-                string? __content_400 = null;
-                global::System.Exception? __exception_400 = null;
-                global::OpenRouter.BadRequestResponse? __value_400 = null;
+                string? __content_410 = null;
+                global::System.Exception? __exception_410 = null;
+                global::OpenRouter.GoneResponse? __value_410 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                        __content_410 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_410 = global::OpenRouter.GoneResponse.FromJson(__content_410, JsonSerializerContext);
                     }
                     else
                     {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __content_410 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_410 = global::OpenRouter.GoneResponse.FromJson(__content_410, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
                 {
-                    __exception_400 = __ex;
+                    __exception_410 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>(
-                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_400,
+                throw new global::OpenRouter.ApiException<global::OpenRouter.GoneResponse>(
+                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_410,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_400,
-                    ResponseObject = __value_400,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Unauthorized - Authentication required or invalid credentials
-            if ((int)__response.StatusCode == 401)
-            {
-                string? __content_401 = null;
-                global::System.Exception? __exception_401 = null;
-                global::OpenRouter.UnauthorizedResponse? __value_401 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_401 = __ex;
-                }
-
-                throw new global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>(
-                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_401,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_401,
-                    ResponseObject = __value_401,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Too Many Requests - Rate limit exceeded
-            if ((int)__response.StatusCode == 429)
-            {
-                string? __content_429 = null;
-                global::System.Exception? __exception_429 = null;
-                global::OpenRouter.TooManyRequestsResponse? __value_429 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_429 = __ex;
-                }
-
-                throw new global::OpenRouter.ApiException<global::OpenRouter.TooManyRequestsResponse>(
-                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_429,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_429,
-                    ResponseObject = __value_429,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Internal Server Error - Unexpected server error
-            if ((int)__response.StatusCode == 500)
-            {
-                string? __content_500 = null;
-                global::System.Exception? __exception_500 = null;
-                global::OpenRouter.InternalServerResponse? __value_500 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
-                    }
-                    else
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_500 = __ex;
-                }
-
-                throw new global::OpenRouter.ApiException<global::OpenRouter.InternalServerResponse>(
-                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_500,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_500,
-                    ResponseObject = __value_500,
+                    ResponseBody = __content_410,
+                    ResponseObject = __value_410,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -259,18 +125,11 @@ namespace OpenRouter
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateCoinbaseChargeResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
 
                 try
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::OpenRouter.CreditsCreateCoinbaseChargeResponse200.FromJson(__content, JsonSerializerContext) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -299,9 +158,6 @@ namespace OpenRouter
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::OpenRouter.CreditsCreateCoinbaseChargeResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -331,32 +187,6 @@ namespace OpenRouter
                     };
                 }
             }
-        }
-        /// <summary>
-        /// Create a Coinbase charge for crypto payment<br/>
-        /// Create a Coinbase charge for crypto payment
-        /// </summary>
-        /// <param name="amount"></param>
-        /// <param name="sender"></param>
-        /// <param name="chainId"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.CreditsCreateCoinbaseChargeResponse200> CreateCoinbaseChargeAsync(
-            double amount,
-            string sender,
-            global::OpenRouter.CreateChargeRequestChainId chainId,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::OpenRouter.CreateChargeRequest
-            {
-                Amount = amount,
-                Sender = sender,
-                ChainId = chainId,
-            };
-
-            return await CreateCoinbaseChargeAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

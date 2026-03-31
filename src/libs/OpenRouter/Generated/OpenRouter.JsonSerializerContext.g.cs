@@ -1841,10 +1841,6 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ChatResultObjectNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.CreateChargeRequestChainIdJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.CreateChargeRequestChainIdNullableJsonConverter),
-
             typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0TypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0TypeNullableJsonConverter),
@@ -3456,14 +3452,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ChatChoice>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsGetResponsesContentApplicationJsonSchemaData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsGetCreditsResponse200))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateChargeRequestChainId), TypeInfoPropertyName = "CreateChargeRequestChainId2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateChargeRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentMetadata))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntent))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3Data))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsCreateCoinbaseChargeResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GoneResponseErrorData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GoneResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0Type), TypeInfoPropertyName = "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1Type), TypeInfoPropertyName = "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1Type2")]
