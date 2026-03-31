@@ -41,6 +41,12 @@ namespace OpenRouter
         public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("creator_user_id")]
+        public string? CreatorUserId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -64,6 +70,9 @@ namespace OpenRouter
         /// <param name="expiresAt">
         /// Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected
         /// </param>
+        /// <param name="creatorUserId">
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,13 +81,15 @@ namespace OpenRouter
             double? limit,
             global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset,
             bool? includeByokInLimit,
-            global::System.DateTime? expiresAt)
+            global::System.DateTime? expiresAt,
+            string? creatorUserId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Limit = limit;
             this.LimitReset = limitReset;
             this.IncludeByokInLimit = includeByokInLimit;
             this.ExpiresAt = expiresAt;
+            this.CreatorUserId = creatorUserId;
         }
 
         /// <summary>

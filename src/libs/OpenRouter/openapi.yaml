@@ -1497,6 +1497,13 @@
                     ],
                     "format": "date-time",
                     "description": "Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected"
+                  },
+                  "creator_user_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "description": "Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key."
                   }
                 },
                 "required": [
@@ -21474,6 +21481,13 @@
               "null"
             ],
             "description": "Referer header from the request"
+          },
+          "request_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Unique identifier grouping all generations from a single API request"
           }
         },
         "required": [

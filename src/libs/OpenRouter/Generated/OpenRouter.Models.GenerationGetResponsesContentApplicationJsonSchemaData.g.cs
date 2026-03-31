@@ -234,6 +234,12 @@ namespace OpenRouter
         public string? HttpReferer { get; set; }
 
         /// <summary>
+        /// Unique identifier grouping all generations from a single API request
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
+        public string? RequestId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -350,6 +356,9 @@ namespace OpenRouter
         /// <param name="httpReferer">
         /// Referer header from the request
         /// </param>
+        /// <param name="requestId">
+        /// Unique identifier grouping all generations from a single API request
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -389,7 +398,8 @@ namespace OpenRouter
             string? router,
             global::System.Collections.Generic.IList<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems>? providerResponses,
             string? userAgent,
-            string? httpReferer)
+            string? httpReferer,
+            string? requestId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.UpstreamId = upstreamId;
@@ -427,6 +437,7 @@ namespace OpenRouter
             this.ProviderResponses = providerResponses;
             this.UserAgent = userAgent;
             this.HttpReferer = httpReferer;
+            this.RequestId = requestId;
         }
 
         /// <summary>
