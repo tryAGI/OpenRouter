@@ -34,6 +34,9 @@ namespace OpenRouter
         /// <param name="expiresAt">
         /// Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected
         /// </param>
+        /// <param name="creatorUserId">
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysCreateKeysResponse201> CreateKeysAsync(
@@ -42,6 +45,7 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
             bool? includeByokInLimit = default,
             global::System.DateTime? expiresAt = default,
+            string? creatorUserId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
