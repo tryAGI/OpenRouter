@@ -717,73 +717,27 @@
     "/credits/coinbase": {
       "post": {
         "operationId": "create-coinbase-charge",
-        "summary": "Create a Coinbase charge for crypto payment",
-        "description": "Create a Coinbase charge for crypto payment",
+        "summary": "Deprecated Coinbase Commerce charge endpoint",
+        "description": "Deprecated. The Coinbase APIs used by this endpoint have been deprecated, so Coinbase Commerce charges have been removed. Use the web credits purchase flow instead.",
         "tags": [
           "subpackage_credits"
         ],
-        "parameters": [],
         "responses": {
           "200": {
-            "description": "Returns the calldata to fulfill the transaction",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Credits_createCoinbaseCharge_Response_200"
-                }
-              }
-            }
+            "description": "Successful response"
           },
-          "400": {
-            "description": "Bad Request - Invalid credit amount or request body",
+          "410": {
+            "description": "Gone - Coinbase Commerce charge creation has been removed",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - Authentication required or invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UnauthorizedResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests - Rate limit exceeded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TooManyRequestsResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - Unexpected server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerResponse"
+                  "$ref": "#/components/schemas/GoneResponse"
                 }
               }
             }
           }
         },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateChargeRequest"
-              }
-            }
-          }
-        }
+        "parameters": []
       }
     },
     "/embeddings": {
@@ -20172,169 +20126,50 @@
         "description": "Total credits purchased and used",
         "title": "Credits_getCredits_Response_200"
       },
-      "CreateChargeRequestChainId": {
-        "type": "string",
-        "enum": [
-          "1",
-          "137",
-          "8453"
-        ],
-        "title": "CreateChargeRequestChainId"
-      },
-      "CreateChargeRequest": {
+      "GoneResponseErrorData": {
         "type": "object",
         "properties": {
-          "amount": {
-            "type": "number",
-            "format": "double"
+          "code": {
+            "type": "integer"
           },
-          "sender": {
+          "message": {
             "type": "string"
-          },
-          "chain_id": {
-            "$ref": "#/components/schemas/CreateChargeRequestChainId"
-          }
-        },
-        "required": [
-          "amount",
-          "sender",
-          "chain_id"
-        ],
-        "description": "Create a Coinbase charge for crypto payment",
-        "title": "CreateChargeRequest"
-      },
-      "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData": {
-        "type": "object",
-        "properties": {
-          "deadline": {
-            "type": "string"
-          },
-          "fee_amount": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "operator": {
-            "type": "string"
-          },
-          "prefix": {
-            "type": "string"
-          },
-          "recipient": {
-            "type": "string"
-          },
-          "recipient_amount": {
-            "type": "string"
-          },
-          "recipient_currency": {
-            "type": "string"
-          },
-          "refund_destination": {
-            "type": "string"
-          },
-          "signature": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "deadline",
-          "fee_amount",
-          "id",
-          "operator",
-          "prefix",
-          "recipient",
-          "recipient_amount",
-          "recipient_currency",
-          "refund_destination",
-          "signature"
-        ],
-        "title": "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData"
-      },
-      "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentMetadata": {
-        "type": "object",
-        "properties": {
-          "chain_id": {
-            "type": "number",
-            "format": "double"
-          },
-          "contract_address": {
-            "type": "string"
-          },
-          "sender": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "chain_id",
-          "contract_address",
-          "sender"
-        ],
-        "title": "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentMetadata"
-      },
-      "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntent": {
-        "type": "object",
-        "properties": {
-          "call_data": {
-            "$ref": "#/components/schemas/CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData"
           },
           "metadata": {
-            "$ref": "#/components/schemas/CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentMetadata"
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           }
         },
         "required": [
-          "call_data",
-          "metadata"
+          "code",
+          "message"
         ],
-        "title": "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntent"
+        "description": "Error data for GoneResponse",
+        "title": "GoneResponseErrorData"
       },
-      "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3Data": {
+      "GoneResponse": {
         "type": "object",
         "properties": {
-          "transfer_intent": {
-            "$ref": "#/components/schemas/CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntent"
+          "error": {
+            "$ref": "#/components/schemas/GoneResponseErrorData"
+          },
+          "user_id": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         },
         "required": [
-          "transfer_intent"
+          "error"
         ],
-        "title": "CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3Data"
-      },
-      "CreditsCoinbasePostResponsesContentApplicationJsonSchemaData": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "expires_at": {
-            "type": "string"
-          },
-          "web3_data": {
-            "$ref": "#/components/schemas/CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3Data"
-          }
-        },
-        "required": [
-          "id",
-          "created_at",
-          "expires_at",
-          "web3_data"
-        ],
-        "title": "CreditsCoinbasePostResponsesContentApplicationJsonSchemaData"
-      },
-      "Credits_createCoinbaseCharge_Response_200": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/CreditsCoinbasePostResponsesContentApplicationJsonSchemaData"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "title": "Credits_createCoinbaseCharge_Response_200"
+        "description": "Gone - Endpoint has been permanently removed or deprecated",
+        "title": "GoneResponse"
       },
       "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0Type": {
         "type": "string",

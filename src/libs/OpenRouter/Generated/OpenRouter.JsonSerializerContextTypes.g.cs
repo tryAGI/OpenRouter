@@ -4604,731 +4604,707 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateChargeRequestChainId? Type1144 { get; set; }
+        public global::OpenRouter.GoneResponseErrorData? Type1144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateChargeRequest? Type1145 { get; set; }
+        public global::OpenRouter.GoneResponse? Type1145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData? Type1146 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0Type? Type1146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentMetadata? Type1147 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? Type1147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntent? Type1148 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1Type? Type1148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3Data? Type1149 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1ImageUrl? Type1149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaData? Type1150 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? Type1150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreditsCreateCoinbaseChargeResponse200? Type1151 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems? Type1151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0Type? Type1152 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items? Type1152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? Type1153 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems>? Type1153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1Type? Type1154 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>? Type1154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1ImageUrl? Type1155 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput? Type1155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? Type1156 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type1156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems? Type1157 { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat? Type1157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items? Type1158 { get; set; }
+        public global::OpenRouter.ProviderPreferencesOrderItems? Type1158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems>? Type1159 { get; set; }
+        public global::OpenRouter.ProviderPreferencesOnlyItems? Type1159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>? Type1160 { get; set; }
+        public global::OpenRouter.ProviderPreferencesIgnoreItems? Type1160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput? Type1161 { get; set; }
+        public global::OpenRouter.ProviderPreferencesSort? Type1161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type1162 { get; set; }
+        public global::OpenRouter.ProviderPreferencesMaxPriceCompletion? Type1162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat? Type1163 { get; set; }
+        public global::OpenRouter.ProviderPreferencesMaxPriceImage? Type1163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesOrderItems? Type1164 { get; set; }
+        public global::OpenRouter.ProviderPreferencesMaxPriceAudio? Type1164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesOnlyItems? Type1165 { get; set; }
+        public global::OpenRouter.ProviderPreferencesMaxPriceRequest? Type1165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesIgnoreItems? Type1166 { get; set; }
+        public global::OpenRouter.ProviderPreferencesMaxPrice? Type1166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesSort? Type1167 { get; set; }
+        public global::OpenRouter.ProviderPreferences? Type1167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesMaxPriceCompletion? Type1168 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOrderItems>? Type1168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesMaxPriceImage? Type1169 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOnlyItems>? Type1169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesMaxPriceAudio? Type1170 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesIgnoreItems>? Type1170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesMaxPriceRequest? Type1171 { get; set; }
+        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaObject? Type1171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferencesMaxPrice? Type1172 { get; set; }
+        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsObject? Type1172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderPreferences? Type1173 { get; set; }
+        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding? Type1173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOrderItems>? Type1174 { get; set; }
+        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems? Type1174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOnlyItems>? Type1175 { get; set; }
+        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsage? Type1175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesIgnoreItems>? Type1176 { get; set; }
+        public global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200? Type1176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaObject? Type1177 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems>? Type1177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsObject? Type1178 { get; set; }
+        public global::OpenRouter.PublicPricingPrompt? Type1178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding? Type1179 { get; set; }
+        public global::OpenRouter.PublicPricingCompletion? Type1179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems? Type1180 { get; set; }
+        public global::OpenRouter.PublicPricingRequest? Type1180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsage? Type1181 { get; set; }
+        public global::OpenRouter.PublicPricingImage? Type1181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200? Type1182 { get; set; }
+        public global::OpenRouter.PublicPricingImageToken? Type1182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems>? Type1183 { get; set; }
+        public global::OpenRouter.PublicPricingImageOutput? Type1183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingPrompt? Type1184 { get; set; }
+        public global::OpenRouter.PublicPricingAudio? Type1184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingCompletion? Type1185 { get; set; }
+        public global::OpenRouter.PublicPricingAudioOutput? Type1185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingRequest? Type1186 { get; set; }
+        public global::OpenRouter.PublicPricingInputAudioCache? Type1186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingImage? Type1187 { get; set; }
+        public global::OpenRouter.PublicPricingWebSearch? Type1187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingImageToken? Type1188 { get; set; }
+        public global::OpenRouter.PublicPricingInternalReasoning? Type1188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingImageOutput? Type1189 { get; set; }
+        public global::OpenRouter.PublicPricingInputCacheRead? Type1189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingAudio? Type1190 { get; set; }
+        public global::OpenRouter.PublicPricingInputCacheWrite? Type1190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingAudioOutput? Type1191 { get; set; }
+        public global::OpenRouter.PublicPricing? Type1191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingInputAudioCache? Type1192 { get; set; }
+        public global::OpenRouter.ModelGroup? Type1192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingWebSearch? Type1193 { get; set; }
+        public global::OpenRouter.ModelArchitectureInstructType? Type1193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingInternalReasoning? Type1194 { get; set; }
+        public global::OpenRouter.InputModality? Type1194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingInputCacheRead? Type1195 { get; set; }
+        public global::OpenRouter.OutputModality? Type1195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricingInputCacheWrite? Type1196 { get; set; }
+        public global::OpenRouter.ModelArchitecture? Type1196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicPricing? Type1197 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.ModelArchitectureInstructType?, object>? Type1197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ModelGroup? Type1198 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.InputModality>? Type1198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ModelArchitectureInstructType? Type1199 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputModality>? Type1199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.InputModality? Type1200 { get; set; }
+        public global::OpenRouter.TopProviderInfo? Type1200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OutputModality? Type1201 { get; set; }
+        public global::OpenRouter.PerRequestLimits? Type1201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ModelArchitecture? Type1202 { get; set; }
+        public global::OpenRouter.Parameter? Type1202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.ModelArchitectureInstructType?, object>? Type1203 { get; set; }
+        public global::OpenRouter.DefaultParameters? Type1203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.InputModality>? Type1204 { get; set; }
+        public global::OpenRouter.Model? Type1204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputModality>? Type1205 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.Parameter>? Type1205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.TopProviderInfo? Type1206 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.Model>? Type1206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PerRequestLimits? Type1207 { get; set; }
+        public global::OpenRouter.ModelsListResponse? Type1207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.Parameter? Type1208 { get; set; }
+        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType? Type1208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.DefaultParameters? Type1209 { get; set; }
+        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItemsProviderName? Type1209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.Model? Type1210 { get; set; }
+        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems? Type1210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.Parameter>? Type1211 { get; set; }
+        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData? Type1211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.Model>? Type1212 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object>? Type1212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ModelsListResponse? Type1213 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems>? Type1213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType? Type1214 { get; set; }
+        public global::OpenRouter.GenerationsGetGenerationResponse200? Type1214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItemsProviderName? Type1215 { get; set; }
+        public global::OpenRouter.ModelsCountResponseData? Type1215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems? Type1216 { get; set; }
+        public global::OpenRouter.ModelsCountResponse? Type1216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData? Type1217 { get; set; }
+        public global::OpenRouter.ModelsGetParametersCategory? Type1217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object>? Type1218 { get; set; }
+        public global::OpenRouter.ListEndpointsResponseArchitectureTokenizer? Type1218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems>? Type1219 { get; set; }
+        public global::OpenRouter.InstructType2? Type1219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GenerationsGetGenerationResponse200? Type1220 { get; set; }
+        public global::OpenRouter.ListEndpointsResponseArchitecture? Type1220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ModelsCountResponseData? Type1221 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingPrompt? Type1221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ModelsCountResponse? Type1222 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingCompletion? Type1222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ModelsGetParametersCategory? Type1223 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingRequest? Type1223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ListEndpointsResponseArchitectureTokenizer? Type1224 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingImage? Type1224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.InstructType2? Type1225 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingImageToken? Type1225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ListEndpointsResponseArchitecture? Type1226 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingImageOutput? Type1226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingPrompt? Type1227 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingAudio? Type1227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingCompletion? Type1228 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingAudioOutput? Type1228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingRequest? Type1229 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInputAudioCache? Type1229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingImage? Type1230 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingWebSearch? Type1230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingImageToken? Type1231 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInternalReasoning? Type1231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingImageOutput? Type1232 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInputCacheRead? Type1232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingAudio? Type1233 { get; set; }
+        public global::OpenRouter.PublicEndpointPricingInputCacheWrite? Type1233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingAudioOutput? Type1234 { get; set; }
+        public global::OpenRouter.PublicEndpointPricing? Type1234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingInputAudioCache? Type1235 { get; set; }
+        public global::OpenRouter.PublicEndpointQuantization? Type1235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingWebSearch? Type1236 { get; set; }
+        public global::OpenRouter.EndpointStatus? Type1236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingInternalReasoning? Type1237 { get; set; }
+        public global::OpenRouter.PercentileStats? Type1237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingInputCacheRead? Type1238 { get; set; }
+        public global::OpenRouter.PublicEndpointThroughputLast30M? Type1238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricingInputCacheWrite? Type1239 { get; set; }
+        public global::OpenRouter.PublicEndpoint? Type1239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointPricing? Type1240 { get; set; }
+        public global::OpenRouter.ListEndpointsResponse? Type1240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointQuantization? Type1241 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.PublicEndpoint>? Type1241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EndpointStatus? Type1242 { get; set; }
+        public global::OpenRouter.EndpointsListEndpointsResponse200? Type1242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PercentileStats? Type1243 { get; set; }
+        public global::OpenRouter.EndpointsListEndpointsZdrResponse200? Type1243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpointThroughputLast30M? Type1244 { get; set; }
+        public global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters? Type1244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PublicEndpoint? Type1245 { get; set; }
+        public global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems? Type1245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ListEndpointsResponse? Type1246 { get; set; }
+        public global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItems? Type1246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.PublicEndpoint>? Type1247 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>? Type1247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EndpointsListEndpointsResponse200? Type1248 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems>? Type1248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.EndpointsListEndpointsZdrResponse200? Type1249 { get; set; }
+        public global::OpenRouter.ProvidersListProvidersResponse200? Type1249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters? Type1250 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItems>? Type1250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems? Type1251 { get; set; }
+        public global::OpenRouter.KeysGetResponsesContentApplicationJsonSchemaDataItems? Type1251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItems? Type1252 { get; set; }
+        public global::System.DateTime? Type1252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>? Type1253 { get; set; }
+        public global::OpenRouter.ApiKeysListResponse200? Type1253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems>? Type1254 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.KeysGetResponsesContentApplicationJsonSchemaDataItems>? Type1254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProvidersListProvidersResponse200? Type1255 { get; set; }
+        public global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? Type1255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItems>? Type1256 { get; set; }
+        public global::OpenRouter.KeysPostResponsesContentApplicationJsonSchemaData? Type1256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeysGetResponsesContentApplicationJsonSchemaDataItems? Type1257 { get; set; }
+        public global::OpenRouter.ApiKeysCreateKeysResponse201? Type1257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type1258 { get; set; }
+        public global::OpenRouter.KeysHashGetResponsesContentApplicationJsonSchemaData? Type1258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ApiKeysListResponse200? Type1259 { get; set; }
+        public global::OpenRouter.ApiKeysGetKeyResponse200? Type1259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.KeysGetResponsesContentApplicationJsonSchemaDataItems>? Type1260 { get; set; }
+        public global::OpenRouter.ApiKeysDeleteKeysResponse200? Type1260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? Type1261 { get; set; }
+        public global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset? Type1261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeysPostResponsesContentApplicationJsonSchemaData? Type1262 { get; set; }
+        public global::OpenRouter.KeysHashPatchResponsesContentApplicationJsonSchemaData? Type1262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ApiKeysCreateKeysResponse201? Type1263 { get; set; }
+        public global::OpenRouter.ApiKeysUpdateKeysResponse200? Type1263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeysHashGetResponsesContentApplicationJsonSchemaData? Type1264 { get; set; }
+        public global::OpenRouter.KeyGetResponsesContentApplicationJsonSchemaDataRateLimit? Type1264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ApiKeysGetKeyResponse200? Type1265 { get; set; }
+        public global::OpenRouter.KeyGetResponsesContentApplicationJsonSchemaData? Type1265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ApiKeysDeleteKeysResponse200? Type1266 { get; set; }
+        public global::OpenRouter.ApiKeysGetCurrentKeyResponse200? Type1266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset? Type1267 { get; set; }
+        public global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItemsResetInterval? Type1267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeysHashPatchResponsesContentApplicationJsonSchemaData? Type1268 { get; set; }
+        public global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItems? Type1268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ApiKeysUpdateKeysResponse200? Type1269 { get; set; }
+        public global::System.Guid? Type1269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeyGetResponsesContentApplicationJsonSchemaDataRateLimit? Type1270 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItemsResetInterval?, object>? Type1270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.KeyGetResponsesContentApplicationJsonSchemaData? Type1271 { get; set; }
+        public global::OpenRouter.GuardrailsListGuardrailsResponse200? Type1271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ApiKeysGetCurrentKeyResponse200? Type1272 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItems>? Type1272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItemsResetInterval? Type1273 { get; set; }
+        public global::OpenRouter.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetInterval? Type1273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItems? Type1274 { get; set; }
+        public global::OpenRouter.GuardrailsPostResponsesContentApplicationJsonSchemaDataResetInterval? Type1274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type1275 { get; set; }
+        public global::OpenRouter.GuardrailsPostResponsesContentApplicationJsonSchemaData? Type1275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItemsResetInterval?, object>? Type1276 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsPostResponsesContentApplicationJsonSchemaDataResetInterval?, object>? Type1276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsListGuardrailsResponse200? Type1277 { get; set; }
+        public global::OpenRouter.GuardrailsCreateGuardrailResponse201? Type1277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsGetResponsesContentApplicationJsonSchemaDataItems>? Type1278 { get; set; }
+        public global::OpenRouter.GuardrailsIdGetResponsesContentApplicationJsonSchemaDataResetInterval? Type1278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetInterval? Type1279 { get; set; }
+        public global::OpenRouter.GuardrailsIdGetResponsesContentApplicationJsonSchemaData? Type1279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsPostResponsesContentApplicationJsonSchemaDataResetInterval? Type1280 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsIdGetResponsesContentApplicationJsonSchemaDataResetInterval?, object>? Type1280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsPostResponsesContentApplicationJsonSchemaData? Type1281 { get; set; }
+        public global::OpenRouter.GuardrailsGetGuardrailResponse200? Type1281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsPostResponsesContentApplicationJsonSchemaDataResetInterval?, object>? Type1282 { get; set; }
+        public global::OpenRouter.GuardrailsDeleteGuardrailResponse200? Type1282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsCreateGuardrailResponse201? Type1283 { get; set; }
+        public global::OpenRouter.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval? Type1283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsIdGetResponsesContentApplicationJsonSchemaDataResetInterval? Type1284 { get; set; }
+        public global::OpenRouter.GuardrailsIdPatchResponsesContentApplicationJsonSchemaDataResetInterval? Type1284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsIdGetResponsesContentApplicationJsonSchemaData? Type1285 { get; set; }
+        public global::OpenRouter.GuardrailsIdPatchResponsesContentApplicationJsonSchemaData? Type1285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsIdGetResponsesContentApplicationJsonSchemaDataResetInterval?, object>? Type1286 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsIdPatchResponsesContentApplicationJsonSchemaDataResetInterval?, object>? Type1286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsGetGuardrailResponse200? Type1287 { get; set; }
+        public global::OpenRouter.GuardrailsUpdateGuardrailResponse200? Type1287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsDeleteGuardrailResponse200? Type1288 { get; set; }
+        public global::OpenRouter.GuardrailsAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems? Type1288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval? Type1289 { get; set; }
+        public global::OpenRouter.GuardrailsListKeyAssignmentsResponse200? Type1289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsIdPatchResponsesContentApplicationJsonSchemaDataResetInterval? Type1290 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems>? Type1290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsIdPatchResponsesContentApplicationJsonSchemaData? Type1291 { get; set; }
+        public global::OpenRouter.GuardrailsAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems? Type1291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsIdPatchResponsesContentApplicationJsonSchemaDataResetInterval?, object>? Type1292 { get; set; }
+        public global::OpenRouter.GuardrailsListMemberAssignmentsResponse200? Type1292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsUpdateGuardrailResponse200? Type1293 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems>? Type1293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems? Type1294 { get; set; }
+        public global::OpenRouter.GuardrailsIdAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems? Type1294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsListKeyAssignmentsResponse200? Type1295 { get; set; }
+        public global::OpenRouter.GuardrailsListGuardrailKeyAssignmentsResponse200? Type1295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems>? Type1296 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsIdAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems>? Type1296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems? Type1297 { get; set; }
+        public global::OpenRouter.GuardrailsBulkAssignKeysToGuardrailResponse200? Type1297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsListMemberAssignmentsResponse200? Type1298 { get; set; }
+        public global::OpenRouter.GuardrailsIdAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems? Type1298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems>? Type1299 { get; set; }
+        public global::OpenRouter.GuardrailsListGuardrailMemberAssignmentsResponse200? Type1299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsIdAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems? Type1300 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsIdAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems>? Type1300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsListGuardrailKeyAssignmentsResponse200? Type1301 { get; set; }
+        public global::OpenRouter.GuardrailsBulkAssignMembersToGuardrailResponse200? Type1301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsIdAssignmentsKeysGetResponsesContentApplicationJsonSchemaDataItems>? Type1302 { get; set; }
+        public global::OpenRouter.GuardrailsBulkUnassignKeysFromGuardrailResponse200? Type1302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsBulkAssignKeysToGuardrailResponse200? Type1303 { get; set; }
+        public global::OpenRouter.GuardrailsBulkUnassignMembersFromGuardrailResponse200? Type1303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsIdAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems? Type1304 { get; set; }
+        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type1304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsListGuardrailMemberAssignmentsResponse200? Type1305 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type1305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsIdAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems>? Type1306 { get; set; }
+        public global::OpenRouter.CreateAuthKeysCodeRequest? Type1306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsBulkAssignMembersToGuardrailResponse200? Type1307 { get; set; }
+        public global::OpenRouter.CreateEmbeddingsRequest? Type1307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsBulkUnassignKeysFromGuardrailResponse200? Type1308 { get; set; }
+        public global::OpenRouter.CreateKeysRequest? Type1308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GuardrailsBulkUnassignMembersFromGuardrailResponse200? Type1309 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type1310 { get; set; }
+        public global::OpenRouter.UpdateKeysRequest? Type1310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type1311 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateAuthKeysCodeRequest? Type1312 { get; set; }
+        public global::OpenRouter.CreateGuardrailRequest? Type1312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateEmbeddingsRequest? Type1313 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetInterval?, object>? Type1313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateKeysRequest? Type1314 { get; set; }
+        public global::OpenRouter.UpdateGuardrailRequest? Type1314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1315 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval?, object>? Type1315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UpdateKeysRequest? Type1316 { get; set; }
+        public global::OpenRouter.BulkAssignKeysToGuardrailRequest? Type1316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1317 { get; set; }
+        public global::OpenRouter.BulkAssignMembersToGuardrailRequest? Type1317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateGuardrailRequest? Type1318 { get; set; }
+        public global::OpenRouter.BulkUnassignKeysFromGuardrailRequest? Type1318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetInterval?, object>? Type1319 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.UpdateGuardrailRequest? Type1320 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval?, object>? Type1321 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.BulkAssignKeysToGuardrailRequest? Type1322 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.BulkAssignMembersToGuardrailRequest? Type1323 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.BulkUnassignKeysFromGuardrailRequest? Type1324 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.BulkUnassignMembersFromGuardrailRequest? Type1325 { get; set; }
+        public global::OpenRouter.BulkUnassignMembersFromGuardrailRequest? Type1319 { get; set; }
 
         /// <summary>
         /// 

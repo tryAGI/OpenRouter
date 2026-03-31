@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData
+    public sealed partial class GoneResponseErrorDataMetadata
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData? FromJson(
+        public static global::OpenRouter.GoneResponseErrorDataMetadata? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData),
-                jsonSerializerContext) as global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData;
+                typeof(global::OpenRouter.GoneResponseErrorDataMetadata),
+                jsonSerializerContext) as global::OpenRouter.GoneResponseErrorDataMetadata;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData? FromJson(
+        public static global::OpenRouter.GoneResponseErrorDataMetadata? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.GoneResponseErrorDataMetadata>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.GoneResponseErrorDataMetadata?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData;
+                typeof(global::OpenRouter.GoneResponseErrorDataMetadata),
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.GoneResponseErrorDataMetadata;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.GoneResponseErrorDataMetadata?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentCallData?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.GoneResponseErrorDataMetadata?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
