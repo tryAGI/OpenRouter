@@ -282,37 +282,37 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessage!, typeInfo);
             }
             else if (value.IsOutputItemReasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemReasoning), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemReasoning?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemReasoning).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoning, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoning!, typeInfo);
             }
             else if (value.IsOutputItemFunctionCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFunctionCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCall!, typeInfo);
             }
             else if (value.IsOutputItemWebSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemWebSearchCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCall!, typeInfo);
             }
             else if (value.IsOutputItemFileSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFileSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFileSearchCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFileSearchCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFileSearchCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFileSearchCall!, typeInfo);
             }
             else if (value.IsOutputItemImageGenerationCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemImageGenerationCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemImageGenerationCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemImageGenerationCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemImageGenerationCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemImageGenerationCall!, typeInfo);
             }
         }
     }

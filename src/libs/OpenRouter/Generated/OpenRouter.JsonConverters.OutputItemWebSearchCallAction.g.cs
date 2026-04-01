@@ -162,19 +162,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCallAction0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCallAction0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemWebSearchCallAction0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCallAction0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCallAction0!, typeInfo);
             }
             else if (value.IsOutputItemWebSearchCallAction1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCallAction1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCallAction1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemWebSearchCallAction1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCallAction1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCallAction1!, typeInfo);
             }
             else if (value.IsOutputItemWebSearchCallAction2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCallAction2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCallAction2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemWebSearchCallAction2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCallAction2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCallAction2!, typeInfo);
             }
         }
     }

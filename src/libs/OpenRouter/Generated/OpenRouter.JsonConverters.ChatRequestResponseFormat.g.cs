@@ -226,31 +226,31 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFormatTextConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFormatTextConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatTextConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatTextConfig!, typeInfo);
             }
             else if (value.IsFormatJsonObjectConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FormatJsonObjectConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FormatJsonObjectConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig!, typeInfo);
             }
             else if (value.IsChatFormatJsonSchemaConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFormatJsonSchemaConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFormatJsonSchemaConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatJsonSchemaConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatJsonSchemaConfig!, typeInfo);
             }
             else if (value.IsChatFormatGrammarConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFormatGrammarConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFormatGrammarConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFormatGrammarConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatGrammarConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatGrammarConfig!, typeInfo);
             }
             else if (value.IsChatFormatPythonConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFormatPythonConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFormatPythonConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFormatPythonConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatPythonConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFormatPythonConfig!, typeInfo);
             }
         }
     }

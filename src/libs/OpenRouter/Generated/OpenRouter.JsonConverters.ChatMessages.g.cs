@@ -240,31 +240,31 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSystemMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSystemMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatSystemMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatSystemMessage!, typeInfo);
             }
             else if (value.IsChatUserMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatUserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatUserMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatUserMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatUserMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatUserMessage!, typeInfo);
             }
             else if (value.IsChatDeveloperMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatDeveloperMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatDeveloperMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatDeveloperMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatDeveloperMessage!, typeInfo);
             }
             else if (value.IsChatAssistantMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatAssistantMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatAssistantMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAssistantMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAssistantMessage!, typeInfo);
             }
             else if (value.IsChatToolMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatToolMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatToolMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatToolMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatToolMessage!, typeInfo);
             }
         }
     }
