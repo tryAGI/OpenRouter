@@ -163,19 +163,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText!, typeInfo);
             }
             else if (value.IsInputImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputImage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputImage!, typeInfo);
             }
             else if (value.IsInputFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputFile?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputFile).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile!, typeInfo);
             }
         }
     }

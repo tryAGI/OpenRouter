@@ -192,19 +192,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role0!.Value, typeInfo);
             }
             else if (value.IsBaseInputsOneOf1ItemsOneOf1Role1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role1!.Value, typeInfo);
             }
             else if (value.IsBaseInputsOneOf1ItemsOneOf1Role2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf1Role2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role2!.Value, typeInfo);
             }
         }
     }

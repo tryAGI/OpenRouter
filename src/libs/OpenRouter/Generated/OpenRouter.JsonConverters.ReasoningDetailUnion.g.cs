@@ -169,19 +169,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailSummary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailSummary?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailSummary).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailSummary, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailSummary!, typeInfo);
             }
             else if (value.IsReasoningDetailEncrypted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailEncrypted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailEncrypted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailEncrypted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailEncrypted, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailEncrypted!, typeInfo);
             }
             else if (value.IsReasoningDetailText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailText, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailText!, typeInfo);
             }
         }
     }

@@ -192,19 +192,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCallStatus0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCallStatus0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFunctionCallStatus0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus0!.Value, typeInfo);
             }
             else if (value.IsOutputItemFunctionCallStatus1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCallStatus1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCallStatus1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFunctionCallStatus1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus1!.Value, typeInfo);
             }
             else if (value.IsOutputItemFunctionCallStatus2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCallStatus2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCallStatus2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFunctionCallStatus2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus2!.Value, typeInfo);
             }
         }
     }

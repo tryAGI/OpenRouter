@@ -233,31 +233,31 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText!, typeInfo);
             }
             else if (value.IsEasyInputMessageContentOneOf0Items1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.EasyInputMessageContentOneOf0Items1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.EasyInputMessageContentOneOf0Items1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.EasyInputMessageContentOneOf0Items1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessageContentOneOf0Items1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessageContentOneOf0Items1!, typeInfo);
             }
             else if (value.IsInputFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputFile?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputFile).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile!, typeInfo);
             }
             else if (value.IsInputAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputAudio?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputAudio).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudio!, typeInfo);
             }
             else if (value.IsInputVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputVideo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputVideo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputVideo!, typeInfo);
             }
         }
     }

@@ -160,19 +160,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FormatTextConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FormatTextConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatTextConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatTextConfig!, typeInfo);
             }
             else if (value.IsFormatJsonObjectConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FormatJsonObjectConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FormatJsonObjectConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig!, typeInfo);
             }
             else if (value.IsFormatJsonSchemaConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FormatJsonSchemaConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FormatJsonSchemaConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonSchemaConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonSchemaConfig!, typeInfo);
             }
         }
     }

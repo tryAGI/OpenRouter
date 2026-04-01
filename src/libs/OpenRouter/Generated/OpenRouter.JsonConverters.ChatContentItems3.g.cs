@@ -124,13 +124,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LegacyChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LegacyChatContentVideo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LegacyChatContentVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LegacyChatContentVideo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LegacyChatContentVideo!, typeInfo);
             }
             else if (value.IsChatContentVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatContentVideo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatContentVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentVideo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentVideo!, typeInfo);
             }
         }
     }
