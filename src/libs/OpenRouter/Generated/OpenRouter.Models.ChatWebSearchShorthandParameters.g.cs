@@ -41,13 +41,13 @@ namespace OpenRouter
         public global::OpenRouter.ChatWebSearchShorthandParametersUserLocation? UserLocation { get; set; }
 
         /// <summary>
-        /// Limit search results to these domains. Applies to Exa and Parallel engines. Not supported with Firecrawl or native provider search.
+        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
 
         /// <summary>
-        /// Exclude search results from these domains. Applies to Exa and Parallel engines. Not supported with Firecrawl or native provider search.
+        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excluded_domains")]
         public global::System.Collections.Generic.IList<string>? ExcludedDomains { get; set; }
@@ -77,10 +77,10 @@ namespace OpenRouter
         /// Approximate user location for location-biased results.
         /// </param>
         /// <param name="allowedDomains">
-        /// Limit search results to these domains. Applies to Exa and Parallel engines. Not supported with Firecrawl or native provider search.
+        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
         /// </param>
         /// <param name="excludedDomains">
-        /// Exclude search results from these domains. Applies to Exa and Parallel engines. Not supported with Firecrawl or native provider search.
+        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
