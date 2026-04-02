@@ -13,18 +13,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? StoredPromptTemplateVariablesVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? StoredPromptTemplateVariablesVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StoredPromptTemplateVariablesVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStoredPromptTemplateVariablesVariant1 => StoredPromptTemplateVariablesVariant1 != null;
 
         /// <summary>
         /// Text input content item
@@ -84,14 +84,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(StoredPromptTemplateVariables @this) => @this.Value1;
+        public static implicit operator string?(StoredPromptTemplateVariables @this) => @this.StoredPromptTemplateVariablesVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public StoredPromptTemplateVariables(string? value)
         {
-            Value1 = value;
+            StoredPromptTemplateVariablesVariant1 = value;
         }
 
         /// <summary>
@@ -152,13 +152,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public StoredPromptTemplateVariables(
-            string? value1,
+            string? storedPromptTemplateVariablesVariant1,
             global::OpenRouter.InputText? inputText,
             global::OpenRouter.InputImage? inputImage,
             global::OpenRouter.InputFile? inputFile
             )
         {
-            Value1 = value1;
+            StoredPromptTemplateVariablesVariant1 = storedPromptTemplateVariablesVariant1;
             InputText = inputText;
             InputImage = inputImage;
             InputFile = inputFile;
@@ -171,14 +171,14 @@ namespace OpenRouter
             InputFile as object ??
             InputImage as object ??
             InputText as object ??
-            Value1 as object 
+            StoredPromptTemplateVariablesVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            StoredPromptTemplateVariablesVariant1?.ToString() ??
             InputText?.ToString() ??
             InputImage?.ToString() ??
             InputFile?.ToString() 
@@ -189,14 +189,14 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsInputText && !IsInputImage && !IsInputFile || !IsValue1 && IsInputText && !IsInputImage && !IsInputFile || !IsValue1 && !IsInputText && IsInputImage && !IsInputFile || !IsValue1 && !IsInputText && !IsInputImage && IsInputFile;
+            return IsStoredPromptTemplateVariablesVariant1 && !IsInputText && !IsInputImage && !IsInputFile || !IsStoredPromptTemplateVariablesVariant1 && IsInputText && !IsInputImage && !IsInputFile || !IsStoredPromptTemplateVariablesVariant1 && !IsInputText && IsInputImage && !IsInputFile || !IsStoredPromptTemplateVariablesVariant1 && !IsInputText && !IsInputImage && IsInputFile;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? storedPromptTemplateVariablesVariant1 = null,
             global::System.Func<global::OpenRouter.InputText?, TResult>? inputText = null,
             global::System.Func<global::OpenRouter.InputImage?, TResult>? inputImage = null,
             global::System.Func<global::OpenRouter.InputFile?, TResult>? inputFile = null,
@@ -207,9 +207,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStoredPromptTemplateVariablesVariant1 && storedPromptTemplateVariablesVariant1 != null)
             {
-                return value1(Value1!);
+                return storedPromptTemplateVariablesVariant1(StoredPromptTemplateVariablesVariant1!);
             }
             else if (IsInputText && inputText != null)
             {
@@ -231,7 +231,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? storedPromptTemplateVariablesVariant1 = null,
             global::System.Action<global::OpenRouter.InputText?>? inputText = null,
             global::System.Action<global::OpenRouter.InputImage?>? inputImage = null,
             global::System.Action<global::OpenRouter.InputFile?>? inputFile = null,
@@ -242,9 +242,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStoredPromptTemplateVariablesVariant1)
             {
-                value1?.Invoke(Value1!);
+                storedPromptTemplateVariablesVariant1?.Invoke(StoredPromptTemplateVariablesVariant1!);
             }
             else if (IsInputText)
             {
@@ -267,7 +267,7 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                Value1,
+                StoredPromptTemplateVariablesVariant1,
                 typeof(string),
                 InputText,
                 typeof(global::OpenRouter.InputText),
@@ -291,7 +291,7 @@ namespace OpenRouter
         public bool Equals(StoredPromptTemplateVariables other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(StoredPromptTemplateVariablesVariant1, other.StoredPromptTemplateVariablesVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputText?>.Default.Equals(InputText, other.InputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputImage?>.Default.Equals(InputImage, other.InputImage) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputFile?>.Default.Equals(InputFile, other.InputFile) 

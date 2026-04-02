@@ -13,18 +13,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value1 { get; init; }
+        public double? PreferredMaxLatencyVariant1 { get; init; }
 #else
-        public double? Value1 { get; }
+        public double? PreferredMaxLatencyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMaxLatencyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPreferredMaxLatencyVariant1 => PreferredMaxLatencyVariant1 != null;
 
         /// <summary>
         /// Percentile-based latency cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
@@ -47,18 +47,18 @@ namespace OpenRouter
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? PreferredMaxLatencyVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? PreferredMaxLatencyVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMaxLatencyVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsPreferredMaxLatencyVariant3 => PreferredMaxLatencyVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -67,14 +67,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(PreferredMaxLatency @this) => @this.Value1;
+        public static implicit operator double?(PreferredMaxLatency @this) => @this.PreferredMaxLatencyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public PreferredMaxLatency(double? value)
         {
-            Value1 = value;
+            PreferredMaxLatencyVariant1 = value;
         }
 
         /// <summary>
@@ -99,32 +99,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public PreferredMaxLatency(
-            double? value1,
+            double? preferredMaxLatencyVariant1,
             global::OpenRouter.PercentileLatencyCutoffs? percentileLatencyCutoffs,
-            object? value3
+            object? preferredMaxLatencyVariant3
             )
         {
-            Value1 = value1;
+            PreferredMaxLatencyVariant1 = preferredMaxLatencyVariant1;
             PercentileLatencyCutoffs = percentileLatencyCutoffs;
-            Value3 = value3;
+            PreferredMaxLatencyVariant3 = preferredMaxLatencyVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            PreferredMaxLatencyVariant3 as object ??
             PercentileLatencyCutoffs as object ??
-            Value1 as object 
+            PreferredMaxLatencyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            PreferredMaxLatencyVariant1?.ToString() ??
             PercentileLatencyCutoffs?.ToString() ??
-            Value3?.ToString() 
+            PreferredMaxLatencyVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -132,16 +132,16 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsPercentileLatencyCutoffs && !IsValue3 || !IsValue1 && IsPercentileLatencyCutoffs && !IsValue3 || !IsValue1 && !IsPercentileLatencyCutoffs && IsValue3;
+            return IsPreferredMaxLatencyVariant1 && !IsPercentileLatencyCutoffs && !IsPreferredMaxLatencyVariant3 || !IsPreferredMaxLatencyVariant1 && IsPercentileLatencyCutoffs && !IsPreferredMaxLatencyVariant3 || !IsPreferredMaxLatencyVariant1 && !IsPercentileLatencyCutoffs && IsPreferredMaxLatencyVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<double?, TResult>? value1 = null,
+            global::System.Func<double?, TResult>? preferredMaxLatencyVariant1 = null,
             global::System.Func<global::OpenRouter.PercentileLatencyCutoffs?, TResult>? percentileLatencyCutoffs = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? preferredMaxLatencyVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -149,17 +149,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPreferredMaxLatencyVariant1 && preferredMaxLatencyVariant1 != null)
             {
-                return value1(Value1!);
+                return preferredMaxLatencyVariant1(PreferredMaxLatencyVariant1!);
             }
             else if (IsPercentileLatencyCutoffs && percentileLatencyCutoffs != null)
             {
                 return percentileLatencyCutoffs(PercentileLatencyCutoffs!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsPreferredMaxLatencyVariant3 && preferredMaxLatencyVariant3 != null)
             {
-                return value3(Value3!);
+                return preferredMaxLatencyVariant3(PreferredMaxLatencyVariant3!);
             }
 
             return default(TResult);
@@ -169,9 +169,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<double?>? value1 = null,
+            global::System.Action<double?>? preferredMaxLatencyVariant1 = null,
             global::System.Action<global::OpenRouter.PercentileLatencyCutoffs?>? percentileLatencyCutoffs = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? preferredMaxLatencyVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -179,17 +179,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPreferredMaxLatencyVariant1)
             {
-                value1?.Invoke(Value1!);
+                preferredMaxLatencyVariant1?.Invoke(PreferredMaxLatencyVariant1!);
             }
             else if (IsPercentileLatencyCutoffs)
             {
                 percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
             }
-            else if (IsValue3)
+            else if (IsPreferredMaxLatencyVariant3)
             {
-                value3?.Invoke(Value3!);
+                preferredMaxLatencyVariant3?.Invoke(PreferredMaxLatencyVariant3!);
             }
         }
 
@@ -200,11 +200,11 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                Value1,
+                PreferredMaxLatencyVariant1,
                 typeof(double),
                 PercentileLatencyCutoffs,
                 typeof(global::OpenRouter.PercentileLatencyCutoffs),
-                Value3,
+                PreferredMaxLatencyVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -222,9 +222,9 @@ namespace OpenRouter
         public bool Equals(PreferredMaxLatency other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(PreferredMaxLatencyVariant1, other.PreferredMaxLatencyVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PercentileLatencyCutoffs?>.Default.Equals(PercentileLatencyCutoffs, other.PercentileLatencyCutoffs) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(PreferredMaxLatencyVariant3, other.PreferredMaxLatencyVariant3) 
                 ;
         }
 

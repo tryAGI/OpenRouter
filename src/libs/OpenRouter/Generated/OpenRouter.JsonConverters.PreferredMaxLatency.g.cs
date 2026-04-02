@@ -39,9 +39,9 @@ namespace OpenRouter.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            double? value1 = default;
+            double? preferredMaxLatencyVariant1 = default;
             global::OpenRouter.PercentileLatencyCutoffs? percentileLatencyCutoffs = default;
-            object? value3 = default;
+            object? preferredMaxLatencyVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -50,7 +50,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        preferredMaxLatencyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,7 +80,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        preferredMaxLatencyVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -91,13 +91,13 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && percentileLatencyCutoffs == null && value3 == null)
+            if (preferredMaxLatencyVariant1 == null && percentileLatencyCutoffs == null && preferredMaxLatencyVariant3 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    preferredMaxLatencyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -123,7 +123,7 @@ namespace OpenRouter.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    preferredMaxLatencyVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -134,11 +134,11 @@ namespace OpenRouter.JsonConverters
             }
 
             var __value = new global::OpenRouter.PreferredMaxLatency(
-                value1,
+                preferredMaxLatencyVariant1,
 
                 percentileLatencyCutoffs,
 
-                value3
+                preferredMaxLatencyVariant3
                 );
 
             return __value;
@@ -153,11 +153,11 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsPreferredMaxLatencyVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMaxLatencyVariant1!.Value, typeInfo);
             }
             else if (value.IsPercentileLatencyCutoffs)
             {
@@ -165,11 +165,11 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PercentileLatencyCutoffs).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PercentileLatencyCutoffs!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsPreferredMaxLatencyVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMaxLatencyVariant3!, typeInfo);
             }
         }
     }

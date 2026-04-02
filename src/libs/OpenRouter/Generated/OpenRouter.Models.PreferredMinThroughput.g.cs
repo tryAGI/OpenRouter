@@ -13,18 +13,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value1 { get; init; }
+        public double? PreferredMinThroughputVariant1 { get; init; }
 #else
-        public double? Value1 { get; }
+        public double? PreferredMinThroughputVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMinThroughputVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPreferredMinThroughputVariant1 => PreferredMinThroughputVariant1 != null;
 
         /// <summary>
         /// Percentile-based throughput cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
@@ -47,18 +47,18 @@ namespace OpenRouter
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? PreferredMinThroughputVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? PreferredMinThroughputVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMinThroughputVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsPreferredMinThroughputVariant3 => PreferredMinThroughputVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -67,14 +67,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(PreferredMinThroughput @this) => @this.Value1;
+        public static implicit operator double?(PreferredMinThroughput @this) => @this.PreferredMinThroughputVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public PreferredMinThroughput(double? value)
         {
-            Value1 = value;
+            PreferredMinThroughputVariant1 = value;
         }
 
         /// <summary>
@@ -99,32 +99,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public PreferredMinThroughput(
-            double? value1,
+            double? preferredMinThroughputVariant1,
             global::OpenRouter.PercentileThroughputCutoffs? percentileThroughputCutoffs,
-            object? value3
+            object? preferredMinThroughputVariant3
             )
         {
-            Value1 = value1;
+            PreferredMinThroughputVariant1 = preferredMinThroughputVariant1;
             PercentileThroughputCutoffs = percentileThroughputCutoffs;
-            Value3 = value3;
+            PreferredMinThroughputVariant3 = preferredMinThroughputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            PreferredMinThroughputVariant3 as object ??
             PercentileThroughputCutoffs as object ??
-            Value1 as object 
+            PreferredMinThroughputVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            PreferredMinThroughputVariant1?.ToString() ??
             PercentileThroughputCutoffs?.ToString() ??
-            Value3?.ToString() 
+            PreferredMinThroughputVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -132,16 +132,16 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsPercentileThroughputCutoffs && !IsValue3 || !IsValue1 && IsPercentileThroughputCutoffs && !IsValue3 || !IsValue1 && !IsPercentileThroughputCutoffs && IsValue3;
+            return IsPreferredMinThroughputVariant1 && !IsPercentileThroughputCutoffs && !IsPreferredMinThroughputVariant3 || !IsPreferredMinThroughputVariant1 && IsPercentileThroughputCutoffs && !IsPreferredMinThroughputVariant3 || !IsPreferredMinThroughputVariant1 && !IsPercentileThroughputCutoffs && IsPreferredMinThroughputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<double?, TResult>? value1 = null,
+            global::System.Func<double?, TResult>? preferredMinThroughputVariant1 = null,
             global::System.Func<global::OpenRouter.PercentileThroughputCutoffs?, TResult>? percentileThroughputCutoffs = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? preferredMinThroughputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -149,17 +149,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPreferredMinThroughputVariant1 && preferredMinThroughputVariant1 != null)
             {
-                return value1(Value1!);
+                return preferredMinThroughputVariant1(PreferredMinThroughputVariant1!);
             }
             else if (IsPercentileThroughputCutoffs && percentileThroughputCutoffs != null)
             {
                 return percentileThroughputCutoffs(PercentileThroughputCutoffs!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsPreferredMinThroughputVariant3 && preferredMinThroughputVariant3 != null)
             {
-                return value3(Value3!);
+                return preferredMinThroughputVariant3(PreferredMinThroughputVariant3!);
             }
 
             return default(TResult);
@@ -169,9 +169,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<double?>? value1 = null,
+            global::System.Action<double?>? preferredMinThroughputVariant1 = null,
             global::System.Action<global::OpenRouter.PercentileThroughputCutoffs?>? percentileThroughputCutoffs = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? preferredMinThroughputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -179,17 +179,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPreferredMinThroughputVariant1)
             {
-                value1?.Invoke(Value1!);
+                preferredMinThroughputVariant1?.Invoke(PreferredMinThroughputVariant1!);
             }
             else if (IsPercentileThroughputCutoffs)
             {
                 percentileThroughputCutoffs?.Invoke(PercentileThroughputCutoffs!);
             }
-            else if (IsValue3)
+            else if (IsPreferredMinThroughputVariant3)
             {
-                value3?.Invoke(Value3!);
+                preferredMinThroughputVariant3?.Invoke(PreferredMinThroughputVariant3!);
             }
         }
 
@@ -200,11 +200,11 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                Value1,
+                PreferredMinThroughputVariant1,
                 typeof(double),
                 PercentileThroughputCutoffs,
                 typeof(global::OpenRouter.PercentileThroughputCutoffs),
-                Value3,
+                PreferredMinThroughputVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -222,9 +222,9 @@ namespace OpenRouter
         public bool Equals(PreferredMinThroughput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(PreferredMinThroughputVariant1, other.PreferredMinThroughputVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PercentileThroughputCutoffs?>.Default.Equals(PercentileThroughputCutoffs, other.PercentileThroughputCutoffs) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(PreferredMinThroughputVariant3, other.PreferredMinThroughputVariant3) 
                 ;
         }
 

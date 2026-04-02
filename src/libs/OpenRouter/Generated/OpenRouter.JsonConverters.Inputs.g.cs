@@ -54,7 +54,7 @@ namespace OpenRouter.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            string? value1 = default;
+            string? inputsVariant1 = default;
             global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? inputs1 = default;
             if (__bestIndex >= 0)
             {
@@ -65,7 +65,7 @@ namespace OpenRouter.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,14 +93,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (value1 == null && inputs1 == null)
+            if (inputsVariant1 == null && inputs1 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -125,7 +125,7 @@ namespace OpenRouter.JsonConverters
             }
 
             var __value = new global::OpenRouter.Inputs(
-                value1,
+                inputsVariant1,
 
                 inputs1
                 );
@@ -142,11 +142,11 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsInputsVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsVariant1!, typeInfo);
             }
             else if (value.IsInputs1)
             {

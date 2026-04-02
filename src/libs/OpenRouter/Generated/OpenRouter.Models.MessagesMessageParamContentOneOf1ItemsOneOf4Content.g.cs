@@ -13,18 +13,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 != null;
 
         /// <summary>
         /// 
@@ -50,25 +50,25 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(MessagesMessageParamContentOneOf1ItemsOneOf4Content @this) => @this.Value1;
+        public static implicit operator string?(MessagesMessageParamContentOneOf1ItemsOneOf4Content @this) => @this.MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf4Content(string? value)
         {
-            Value1 = value;
+            MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf4Content(
-            string? value1,
+            string? messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>? messagesMessageParamContentOneOf1ItemsOneOf4Content1
             )
         {
-            Value1 = value1;
+            MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1;
             MessagesMessageParamContentOneOf1ItemsOneOf4Content1 = messagesMessageParamContentOneOf1ItemsOneOf4Content1;
         }
 
@@ -77,14 +77,14 @@ namespace OpenRouter
         /// </summary>
         public object? Object =>
             MessagesMessageParamContentOneOf1ItemsOneOf4Content1 as object ??
-            Value1 as object 
+            MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1?.ToString() ??
             MessagesMessageParamContentOneOf1ItemsOneOf4Content1?.ToString() 
             ;
 
@@ -93,14 +93,14 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1 || !IsValue1 && IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1 || !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 && IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4Content1 = null,
             bool validate = true)
         {
@@ -109,9 +109,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 && messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 != null)
             {
-                return value1(Value1!);
+                return messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1(MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1!);
             }
             else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1 && messagesMessageParamContentOneOf1ItemsOneOf4Content1 != null)
             {
@@ -125,7 +125,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>?>? messagesMessageParamContentOneOf1ItemsOneOf4Content1 = null,
             bool validate = true)
         {
@@ -134,9 +134,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1)
             {
-                value1?.Invoke(Value1!);
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1!);
             }
             else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1)
             {
@@ -151,7 +151,7 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                Value1,
+                MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1,
                 typeof(string),
                 MessagesMessageParamContentOneOf1ItemsOneOf4Content1,
                 typeof(global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>),
@@ -171,7 +171,7 @@ namespace OpenRouter
         public bool Equals(MessagesMessageParamContentOneOf1ItemsOneOf4Content other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1, other.MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4Content1, other.MessagesMessageParamContentOneOf1ItemsOneOf4Content1) 
                 ;
         }

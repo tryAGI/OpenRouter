@@ -47,18 +47,18 @@ namespace OpenRouter
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? ResponsesRequestProviderSortVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? ResponsesRequestProviderSortVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestProviderSortVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsResponsesRequestProviderSortVariant3 => ResponsesRequestProviderSortVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -101,19 +101,19 @@ namespace OpenRouter
         public ResponsesRequestProviderSort(
             global::OpenRouter.ProviderSort? providerSort,
             global::OpenRouter.ProviderSortConfig? providerSortConfig,
-            object? value3
+            object? responsesRequestProviderSortVariant3
             )
         {
             ProviderSort = providerSort;
             ProviderSortConfig = providerSortConfig;
-            Value3 = value3;
+            ResponsesRequestProviderSortVariant3 = responsesRequestProviderSortVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            ResponsesRequestProviderSortVariant3 as object ??
             ProviderSortConfig as object ??
             ProviderSort as object 
             ;
@@ -124,7 +124,7 @@ namespace OpenRouter
         public override string? ToString() =>
             ProviderSort?.ToValueString() ??
             ProviderSortConfig?.ToString() ??
-            Value3?.ToString() 
+            ResponsesRequestProviderSortVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsProviderSort && !IsProviderSortConfig && !IsValue3 || !IsProviderSort && IsProviderSortConfig && !IsValue3 || !IsProviderSort && !IsProviderSortConfig && IsValue3;
+            return IsProviderSort && !IsProviderSortConfig && !IsResponsesRequestProviderSortVariant3 || !IsProviderSort && IsProviderSortConfig && !IsResponsesRequestProviderSortVariant3 || !IsProviderSort && !IsProviderSortConfig && IsResponsesRequestProviderSortVariant3;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderSort?, TResult>? providerSort = null,
             global::System.Func<global::OpenRouter.ProviderSortConfig?, TResult>? providerSortConfig = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? responsesRequestProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace OpenRouter
             {
                 return providerSortConfig(ProviderSortConfig!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsResponsesRequestProviderSortVariant3 && responsesRequestProviderSortVariant3 != null)
             {
-                return value3(Value3!);
+                return responsesRequestProviderSortVariant3(ResponsesRequestProviderSortVariant3!);
             }
 
             return default(TResult);
@@ -171,7 +171,7 @@ namespace OpenRouter
         public void Match(
             global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
             global::System.Action<global::OpenRouter.ProviderSortConfig?>? providerSortConfig = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? responsesRequestProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +187,9 @@ namespace OpenRouter
             {
                 providerSortConfig?.Invoke(ProviderSortConfig!);
             }
-            else if (IsValue3)
+            else if (IsResponsesRequestProviderSortVariant3)
             {
-                value3?.Invoke(Value3!);
+                responsesRequestProviderSortVariant3?.Invoke(ResponsesRequestProviderSortVariant3!);
             }
         }
 
@@ -204,7 +204,7 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ProviderSort),
                 ProviderSortConfig,
                 typeof(global::OpenRouter.ProviderSortConfig),
-                Value3,
+                ResponsesRequestProviderSortVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -224,7 +224,7 @@ namespace OpenRouter
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSort?>.Default.Equals(ProviderSort, other.ProviderSort) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSortConfig?>.Default.Equals(ProviderSortConfig, other.ProviderSortConfig) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ResponsesRequestProviderSortVariant3, other.ResponsesRequestProviderSortVariant3) 
                 ;
         }
 
