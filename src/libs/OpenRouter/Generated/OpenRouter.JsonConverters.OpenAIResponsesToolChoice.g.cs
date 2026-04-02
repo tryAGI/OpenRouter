@@ -12,8 +12,7 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -53,9 +52,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice0).Name}");
-                        openAiResponsesToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openAiResponsesToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice0>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -68,9 +65,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice1).Name}");
-                        openAiResponsesToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openAiResponsesToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -83,9 +78,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice2).Name}");
-                        openAiResponsesToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openAiResponsesToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -98,9 +91,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice3).Name}");
-                        openAiResponsesToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openAiResponsesToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice3>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -113,9 +104,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice4> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice4).Name}");
-                        openAiResponsesToolChoice4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openAiResponsesToolChoice4 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice4>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -130,9 +119,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice0).Name}");
-                    openAiResponsesToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openAiResponsesToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice0>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -143,9 +130,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice1).Name}");
-                    openAiResponsesToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openAiResponsesToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -156,9 +141,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice2).Name}");
-                    openAiResponsesToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openAiResponsesToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -169,9 +152,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice3).Name}");
-                    openAiResponsesToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openAiResponsesToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice3>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -182,9 +163,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice4> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice4).Name}");
-                    openAiResponsesToolChoice4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openAiResponsesToolChoice4 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OpenAiResponsesToolChoice4>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -215,38 +194,27 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.OpenAIResponsesToolChoice value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsOpenAiResponsesToolChoice0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice0> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice0, typeof(global::OpenRouter.OpenAiResponsesToolChoice0), options);
             }
             else if (value.IsOpenAiResponsesToolChoice1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice1, typeof(global::OpenRouter.OpenAiResponsesToolChoice1), options);
             }
             else if (value.IsOpenAiResponsesToolChoice2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice2, typeof(global::OpenRouter.OpenAiResponsesToolChoice2), options);
             }
             else if (value.IsOpenAiResponsesToolChoice3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice3, typeof(global::OpenRouter.OpenAiResponsesToolChoice3), options);
             }
             else if (value.IsOpenAiResponsesToolChoice4)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponsesToolChoice4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponsesToolChoice4?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponsesToolChoice4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice4, typeof(global::OpenRouter.OpenAiResponsesToolChoice4), options);
             }
         }
     }

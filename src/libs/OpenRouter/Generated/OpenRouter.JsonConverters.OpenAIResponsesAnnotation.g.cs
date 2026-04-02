@@ -12,8 +12,7 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -56,9 +55,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FileCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FileCitation> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FileCitation).Name}");
-                        fileCitation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        fileCitation = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.FileCitation>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -71,9 +68,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.URLCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.URLCitation> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.URLCitation).Name}");
-                        uRLCitation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        uRLCitation = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.URLCitation>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -86,9 +81,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FilePath), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FilePath> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FilePath).Name}");
-                        filePath = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        filePath = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.FilePath>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -103,9 +96,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FileCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FileCitation> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FileCitation).Name}");
-                    fileCitation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    fileCitation = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.FileCitation>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -116,9 +107,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.URLCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.URLCitation> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.URLCitation).Name}");
-                    uRLCitation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    uRLCitation = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.URLCitation>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -129,9 +118,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FilePath), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FilePath> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FilePath).Name}");
-                    filePath = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    filePath = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.FilePath>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -158,26 +145,19 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.OpenAIResponsesAnnotation value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsFileCitation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FileCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FileCitation?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FileCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation, typeof(global::OpenRouter.FileCitation), options);
             }
             else if (value.IsURLCitation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.URLCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.URLCitation?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.URLCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.URLCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.URLCitation, typeof(global::OpenRouter.URLCitation), options);
             }
             else if (value.IsFilePath)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FilePath), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FilePath?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FilePath).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePath!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePath, typeof(global::OpenRouter.FilePath), options);
             }
         }
     }

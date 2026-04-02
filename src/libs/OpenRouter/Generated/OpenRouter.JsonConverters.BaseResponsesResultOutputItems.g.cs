@@ -12,8 +12,7 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -83,9 +82,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessage> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessage).Name}");
-                        outputMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        outputMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputMessage>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -98,9 +95,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemReasoning), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemReasoning> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemReasoning).Name}");
-                        outputItemReasoning = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        outputItemReasoning = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemReasoning>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -113,9 +108,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCall> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFunctionCall).Name}");
-                        outputItemFunctionCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        outputItemFunctionCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemFunctionCall>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -128,9 +121,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCall> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemWebSearchCall).Name}");
-                        outputItemWebSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        outputItemWebSearchCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemWebSearchCall>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -143,9 +134,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFileSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFileSearchCall> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFileSearchCall).Name}");
-                        outputItemFileSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        outputItemFileSearchCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemFileSearchCall>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -158,9 +147,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemImageGenerationCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemImageGenerationCall> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemImageGenerationCall).Name}");
-                        outputItemImageGenerationCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        outputItemImageGenerationCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemImageGenerationCall>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -175,9 +162,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessage> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessage).Name}");
-                    outputMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    outputMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputMessage>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -188,9 +173,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemReasoning), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemReasoning> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemReasoning).Name}");
-                    outputItemReasoning = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    outputItemReasoning = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemReasoning>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -201,9 +184,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCall> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFunctionCall).Name}");
-                    outputItemFunctionCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    outputItemFunctionCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemFunctionCall>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -214,9 +195,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCall> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemWebSearchCall).Name}");
-                    outputItemWebSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    outputItemWebSearchCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemWebSearchCall>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -227,9 +206,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFileSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFileSearchCall> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFileSearchCall).Name}");
-                    outputItemFileSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    outputItemFileSearchCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemFileSearchCall>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -240,9 +217,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemImageGenerationCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemImageGenerationCall> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemImageGenerationCall).Name}");
-                    outputItemImageGenerationCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    outputItemImageGenerationCall = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.OutputItemImageGenerationCall>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -275,44 +250,31 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.BaseResponsesResultOutputItems value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsOutputMessage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessage?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessage, typeof(global::OpenRouter.OutputMessage), options);
             }
             else if (value.IsOutputItemReasoning)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemReasoning), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemReasoning?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemReasoning).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoning!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoning, typeof(global::OpenRouter.OutputItemReasoning), options);
             }
             else if (value.IsOutputItemFunctionCall)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFunctionCall?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFunctionCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCall, typeof(global::OpenRouter.OutputItemFunctionCall), options);
             }
             else if (value.IsOutputItemWebSearchCall)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemWebSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemWebSearchCall?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemWebSearchCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemWebSearchCall, typeof(global::OpenRouter.OutputItemWebSearchCall), options);
             }
             else if (value.IsOutputItemFileSearchCall)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemFileSearchCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemFileSearchCall?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemFileSearchCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFileSearchCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFileSearchCall, typeof(global::OpenRouter.OutputItemFileSearchCall), options);
             }
             else if (value.IsOutputItemImageGenerationCall)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemImageGenerationCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemImageGenerationCall?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemImageGenerationCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemImageGenerationCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemImageGenerationCall, typeof(global::OpenRouter.OutputItemImageGenerationCall), options);
             }
         }
     }

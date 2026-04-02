@@ -12,8 +12,7 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -72,9 +71,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems0).Name}");
-                        chatRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems0>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -87,9 +84,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems1).Name}");
-                        chatRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -102,9 +97,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems2).Name}");
-                        chatRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -117,9 +110,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems3).Name}");
-                        chatRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems3>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -132,9 +123,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems4> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems4).Name}");
-                        chatRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems4>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -147,9 +136,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems5> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems5).Name}");
-                        chatRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems5>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -164,9 +151,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems0).Name}");
-                    chatRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems0>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -177,9 +162,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems1).Name}");
-                    chatRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -190,9 +173,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems2).Name}");
-                    chatRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -203,9 +184,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems3).Name}");
-                    chatRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems3>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -216,9 +195,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems4> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems4).Name}");
-                    chatRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems4>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -229,9 +206,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems5> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems5).Name}");
-                    chatRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestPluginsItems5>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -264,44 +239,31 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ChatRequestPluginsItems value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsChatRequestPluginsItems0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems0?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems0, typeof(global::OpenRouter.ChatRequestPluginsItems0), options);
             }
             else if (value.IsChatRequestPluginsItems1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems1, typeof(global::OpenRouter.ChatRequestPluginsItems1), options);
             }
             else if (value.IsChatRequestPluginsItems2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems2, typeof(global::OpenRouter.ChatRequestPluginsItems2), options);
             }
             else if (value.IsChatRequestPluginsItems3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems3, typeof(global::OpenRouter.ChatRequestPluginsItems3), options);
             }
             else if (value.IsChatRequestPluginsItems4)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems4?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems4, typeof(global::OpenRouter.ChatRequestPluginsItems4), options);
             }
             else if (value.IsChatRequestPluginsItems5)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItems5?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItems5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems5, typeof(global::OpenRouter.ChatRequestPluginsItems5), options);
             }
         }
     }

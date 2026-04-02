@@ -12,8 +12,7 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -45,9 +44,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LegacyChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LegacyChatContentVideo> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LegacyChatContentVideo).Name}");
-                        legacyChatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        legacyChatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.LegacyChatContentVideo>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,9 +57,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatContentVideo> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatContentVideo).Name}");
-                        chatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatContentVideo>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,9 +72,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LegacyChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LegacyChatContentVideo> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LegacyChatContentVideo).Name}");
-                    legacyChatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    legacyChatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.LegacyChatContentVideo>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -90,9 +83,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatContentVideo> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatContentVideo).Name}");
-                    chatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatContentVideo>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -117,20 +108,15 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ChatContentItems3 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsLegacyChatContentVideo)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LegacyChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LegacyChatContentVideo?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LegacyChatContentVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LegacyChatContentVideo!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LegacyChatContentVideo, typeof(global::OpenRouter.LegacyChatContentVideo), options);
             }
             else if (value.IsChatContentVideo)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatContentVideo?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatContentVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentVideo!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentVideo, typeof(global::OpenRouter.ChatContentVideo), options);
             }
         }
     }
