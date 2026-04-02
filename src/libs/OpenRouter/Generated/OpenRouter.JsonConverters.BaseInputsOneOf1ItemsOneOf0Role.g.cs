@@ -12,8 +12,7 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
@@ -28,49 +27,9 @@ namespace OpenRouter.JsonConverters
             }
 
             var __score0 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score0++;
-                    }
-                }
-            }
             var __score1 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score1++;
-                    }
-                }
-            }
             var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __score3 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score3++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -89,9 +48,7 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0).Name}");
-                        baseInputsOneOf1ItemsOneOf0Role0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        baseInputsOneOf1ItemsOneOf0Role0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -106,9 +63,7 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1).Name}");
-                        baseInputsOneOf1ItemsOneOf0Role1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        baseInputsOneOf1ItemsOneOf0Role1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,9 +78,7 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2).Name}");
-                        baseInputsOneOf1ItemsOneOf0Role2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        baseInputsOneOf1ItemsOneOf0Role2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -140,9 +93,7 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3).Name}");
-                        baseInputsOneOf1ItemsOneOf0Role3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        baseInputsOneOf1ItemsOneOf0Role3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -158,9 +109,7 @@ namespace OpenRouter.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0).Name}");
-                    baseInputsOneOf1ItemsOneOf0Role0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    baseInputsOneOf1ItemsOneOf0Role0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -172,9 +121,7 @@ namespace OpenRouter.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1).Name}");
-                    baseInputsOneOf1ItemsOneOf0Role1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    baseInputsOneOf1ItemsOneOf0Role1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -186,9 +133,7 @@ namespace OpenRouter.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2).Name}");
-                    baseInputsOneOf1ItemsOneOf0Role2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    baseInputsOneOf1ItemsOneOf0Role2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -200,9 +145,7 @@ namespace OpenRouter.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3).Name}");
-                    baseInputsOneOf1ItemsOneOf0Role3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    baseInputsOneOf1ItemsOneOf0Role3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -231,32 +174,23 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsBaseInputsOneOf1ItemsOneOf0Role0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role0, typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0), options);
             }
             else if (value.IsBaseInputsOneOf1ItemsOneOf0Role1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role1, typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1), options);
             }
             else if (value.IsBaseInputsOneOf1ItemsOneOf0Role2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role2, typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2), options);
             }
             else if (value.IsBaseInputsOneOf1ItemsOneOf0Role3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Role3, typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3), options);
             }
         }
     }

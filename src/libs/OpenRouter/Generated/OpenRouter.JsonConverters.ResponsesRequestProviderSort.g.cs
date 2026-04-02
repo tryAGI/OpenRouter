@@ -12,8 +12,7 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,9 +45,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ProviderSort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ProviderSort> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderSort).Name}");
-                        providerSort = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        providerSort = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ProviderSort>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,9 +58,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ProviderSortConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ProviderSortConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderSortConfig).Name}");
-                        providerSortConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        providerSortConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ProviderSortConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -76,9 +71,7 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        responsesRequestProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,9 +86,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ProviderSort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ProviderSort> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderSort).Name}");
-                    providerSort = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    providerSort = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ProviderSort>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,9 +97,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ProviderSortConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ProviderSortConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderSortConfig).Name}");
-                    providerSortConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    providerSortConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ProviderSortConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -119,9 +108,7 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    responsesRequestProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -148,26 +135,19 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ResponsesRequestProviderSort value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsProviderSort)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ProviderSort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ProviderSort> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderSort).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSort!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSort, typeof(global::OpenRouter.ProviderSort), options);
             }
             else if (value.IsProviderSortConfig)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ProviderSortConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ProviderSortConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderSortConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSortConfig!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSortConfig, typeof(global::OpenRouter.ProviderSortConfig), options);
             }
             else if (value.IsResponsesRequestProviderSortVariant3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestProviderSortVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestProviderSortVariant3, typeof(object), options);
             }
         }
     }
