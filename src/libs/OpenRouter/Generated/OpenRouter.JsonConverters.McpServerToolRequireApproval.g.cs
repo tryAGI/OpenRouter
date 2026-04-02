@@ -44,8 +44,8 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.McpServerToolRequireApproval0? mcpServerToolRequireApproval0 = default;
             global::OpenRouter.McpServerToolRequireApproval1? mcpServerToolRequireApproval1 = default;
             global::OpenRouter.McpServerToolRequireApproval2? mcpServerToolRequireApproval2 = default;
-            object? value4 = default;
-            object? value5 = default;
+            object? mcpServerToolRequireApprovalVariant4 = default;
+            object? mcpServerToolRequireApprovalVariant5 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -99,7 +99,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        mcpServerToolRequireApprovalVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -114,7 +114,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        mcpServerToolRequireApprovalVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -125,7 +125,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (mcpServerToolRequireApproval0 == null && mcpServerToolRequireApproval1 == null && mcpServerToolRequireApproval2 == null && value4 == null && value5 == null)
+            if (mcpServerToolRequireApproval0 == null && mcpServerToolRequireApproval1 == null && mcpServerToolRequireApproval2 == null && mcpServerToolRequireApprovalVariant4 == null && mcpServerToolRequireApprovalVariant5 == null)
             {
                 try
                 {
@@ -170,7 +170,7 @@ namespace OpenRouter.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    mcpServerToolRequireApprovalVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -183,7 +183,7 @@ namespace OpenRouter.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    mcpServerToolRequireApprovalVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -200,9 +200,9 @@ namespace OpenRouter.JsonConverters
 
                 mcpServerToolRequireApproval2,
 
-                value4,
+                mcpServerToolRequireApprovalVariant4,
 
-                value5
+                mcpServerToolRequireApprovalVariant5
                 );
 
             return __value;
@@ -235,17 +235,17 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerToolRequireApproval2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval2!.Value, typeInfo);
             }
-            else if (value.IsValue4)
+            else if (value.IsMcpServerToolRequireApprovalVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApprovalVariant4!, typeInfo);
             }
-            else if (value.IsValue5)
+            else if (value.IsMcpServerToolRequireApprovalVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApprovalVariant5!, typeInfo);
             }
         }
     }

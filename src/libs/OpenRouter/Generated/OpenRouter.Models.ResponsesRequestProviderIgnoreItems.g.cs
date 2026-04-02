@@ -30,18 +30,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? ResponsesRequestProviderIgnoreItemsVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? ResponsesRequestProviderIgnoreItemsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestProviderIgnoreItemsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsResponsesRequestProviderIgnoreItemsVariant2 => ResponsesRequestProviderIgnoreItemsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ResponsesRequestProviderIgnoreItems @this) => @this.Value2;
+        public static implicit operator string?(ResponsesRequestProviderIgnoreItems @this) => @this.ResponsesRequestProviderIgnoreItemsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestProviderIgnoreItems(string? value)
         {
-            Value2 = value;
+            ResponsesRequestProviderIgnoreItemsVariant2 = value;
         }
 
         /// <summary>
@@ -83,18 +83,18 @@ namespace OpenRouter
         /// </summary>
         public ResponsesRequestProviderIgnoreItems(
             global::OpenRouter.ProviderName? providerName,
-            string? value2
+            string? responsesRequestProviderIgnoreItemsVariant2
             )
         {
             ProviderName = providerName;
-            Value2 = value2;
+            ResponsesRequestProviderIgnoreItemsVariant2 = responsesRequestProviderIgnoreItemsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            ResponsesRequestProviderIgnoreItemsVariant2 as object ??
             ProviderName as object 
             ;
 
@@ -103,7 +103,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             ProviderName?.ToValueString() ??
-            Value2?.ToString() 
+            ResponsesRequestProviderIgnoreItemsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsProviderName && !IsValue2 || !IsProviderName && IsValue2;
+            return IsProviderName && !IsResponsesRequestProviderIgnoreItemsVariant2 || !IsProviderName && IsResponsesRequestProviderIgnoreItemsVariant2;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderName?, TResult>? providerName = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? responsesRequestProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -131,9 +131,9 @@ namespace OpenRouter
             {
                 return providerName(ProviderName!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsResponsesRequestProviderIgnoreItemsVariant2 && responsesRequestProviderIgnoreItemsVariant2 != null)
             {
-                return value2(Value2!);
+                return responsesRequestProviderIgnoreItemsVariant2(ResponsesRequestProviderIgnoreItemsVariant2!);
             }
 
             return default(TResult);
@@ -144,7 +144,7 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<string?>? responsesRequestProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +156,9 @@ namespace OpenRouter
             {
                 providerName?.Invoke(ProviderName!);
             }
-            else if (IsValue2)
+            else if (IsResponsesRequestProviderIgnoreItemsVariant2)
             {
-                value2?.Invoke(Value2!);
+                responsesRequestProviderIgnoreItemsVariant2?.Invoke(ResponsesRequestProviderIgnoreItemsVariant2!);
             }
         }
 
@@ -171,7 +171,7 @@ namespace OpenRouter
             {
                 ProviderName,
                 typeof(global::OpenRouter.ProviderName),
-                Value2,
+                ResponsesRequestProviderIgnoreItemsVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,7 +190,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderName?>.Default.Equals(ProviderName, other.ProviderName) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ResponsesRequestProviderIgnoreItemsVariant2, other.ResponsesRequestProviderIgnoreItemsVariant2) 
                 ;
         }
 

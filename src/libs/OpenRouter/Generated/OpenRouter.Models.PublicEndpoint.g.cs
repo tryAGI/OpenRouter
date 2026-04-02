@@ -98,6 +98,18 @@ namespace OpenRouter
         public double? UptimeLast30m { get; set; }
 
         /// <summary>
+        /// Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("uptime_last_5m")]
+        public double? UptimeLast5m { get; set; }
+
+        /// <summary>
+        /// Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("uptime_last_1d")]
+        public double? UptimeLast1d { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supports_implicit_caching")]
@@ -147,6 +159,12 @@ namespace OpenRouter
         /// <param name="maxPromptTokens"></param>
         /// <param name="status"></param>
         /// <param name="uptimeLast30m"></param>
+        /// <param name="uptimeLast5m">
+        /// Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// </param>
+        /// <param name="uptimeLast1d">
+        /// Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -166,7 +184,9 @@ namespace OpenRouter
             double? maxCompletionTokens,
             double? maxPromptTokens,
             global::OpenRouter.EndpointStatus? status,
-            double? uptimeLast30m)
+            double? uptimeLast30m,
+            double? uptimeLast5m,
+            double? uptimeLast1d)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
@@ -181,6 +201,8 @@ namespace OpenRouter
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
             this.Status = status;
             this.UptimeLast30m = uptimeLast30m;
+            this.UptimeLast5m = uptimeLast5m;
+            this.UptimeLast1d = uptimeLast1d;
             this.SupportsImplicitCaching = supportsImplicitCaching;
             this.LatencyLast30m = latencyLast30m ?? throw new global::System.ArgumentNullException(nameof(latencyLast30m));
             this.ThroughputLast30m = throughputLast30m ?? throw new global::System.ArgumentNullException(nameof(throughputLast30m));

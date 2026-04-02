@@ -68,7 +68,7 @@ namespace OpenRouter.JsonConverters
 
             global::OpenRouter.EasyInputMessagePhase0? easyInputMessagePhase0 = default;
             global::OpenRouter.EasyInputMessagePhase1? easyInputMessagePhase1 = default;
-            object? value3 = default;
+            object? easyInputMessagePhaseVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -112,7 +112,7 @@ namespace OpenRouter.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        easyInputMessagePhaseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,7 +123,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (easyInputMessagePhase0 == null && easyInputMessagePhase1 == null && value3 == null)
+            if (easyInputMessagePhase0 == null && easyInputMessagePhase1 == null && easyInputMessagePhaseVariant3 == null)
             {
                 try
                 {
@@ -158,7 +158,7 @@ namespace OpenRouter.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    easyInputMessagePhaseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -173,7 +173,7 @@ namespace OpenRouter.JsonConverters
 
                 easyInputMessagePhase1,
 
-                value3
+                easyInputMessagePhaseVariant3
                 );
 
             return __value;
@@ -200,11 +200,11 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.EasyInputMessagePhase1).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessagePhase1!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsEasyInputMessagePhaseVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessagePhaseVariant3!, typeInfo);
             }
         }
     }

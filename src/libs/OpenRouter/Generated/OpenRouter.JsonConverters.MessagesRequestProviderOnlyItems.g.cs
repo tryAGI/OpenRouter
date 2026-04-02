@@ -55,7 +55,7 @@ namespace OpenRouter.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::OpenRouter.ProviderName? providerName = default;
-            string? value2 = default;
+            string? messagesRequestProviderOnlyItemsVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -82,7 +82,7 @@ namespace OpenRouter.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        messagesRequestProviderOnlyItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +93,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (providerName == null && value2 == null)
+            if (providerName == null && messagesRequestProviderOnlyItemsVariant2 == null)
             {
                 try
                 {
@@ -114,7 +114,7 @@ namespace OpenRouter.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    messagesRequestProviderOnlyItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -127,7 +127,7 @@ namespace OpenRouter.JsonConverters
             var __value = new global::OpenRouter.MessagesRequestProviderOnlyItems(
                 providerName,
 
-                value2
+                messagesRequestProviderOnlyItemsVariant2
                 );
 
             return __value;
@@ -148,11 +148,11 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderName).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderName!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsMessagesRequestProviderOnlyItemsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestProviderOnlyItemsVariant2!, typeInfo);
             }
         }
     }

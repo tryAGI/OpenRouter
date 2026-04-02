@@ -13,18 +13,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? InputsVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? InputsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsInputsVariant1 => InputsVariant1 != null;
 
         /// <summary>
         /// 
@@ -50,25 +50,25 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(Inputs @this) => @this.Value1;
+        public static implicit operator string?(Inputs @this) => @this.InputsVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Inputs(string? value)
         {
-            Value1 = value;
+            InputsVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Inputs(
-            string? value1,
+            string? inputsVariant1,
             global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? inputs1
             )
         {
-            Value1 = value1;
+            InputsVariant1 = inputsVariant1;
             Inputs1 = inputs1;
         }
 
@@ -77,14 +77,14 @@ namespace OpenRouter
         /// </summary>
         public object? Object =>
             Inputs1 as object ??
-            Value1 as object 
+            InputsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            InputsVariant1?.ToString() ??
             Inputs1?.ToString() 
             ;
 
@@ -93,14 +93,14 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsInputs1 || !IsValue1 && IsInputs1;
+            return IsInputsVariant1 && !IsInputs1 || !IsInputsVariant1 && IsInputs1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? inputsVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>?, TResult>? inputs1 = null,
             bool validate = true)
         {
@@ -109,9 +109,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsInputsVariant1 && inputsVariant1 != null)
             {
-                return value1(Value1!);
+                return inputsVariant1(InputsVariant1!);
             }
             else if (IsInputs1 && inputs1 != null)
             {
@@ -125,7 +125,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? inputsVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>?>? inputs1 = null,
             bool validate = true)
         {
@@ -134,9 +134,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsInputsVariant1)
             {
-                value1?.Invoke(Value1!);
+                inputsVariant1?.Invoke(InputsVariant1!);
             }
             else if (IsInputs1)
             {
@@ -151,7 +151,7 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                Value1,
+                InputsVariant1,
                 typeof(string),
                 Inputs1,
                 typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>),
@@ -171,7 +171,7 @@ namespace OpenRouter
         public bool Equals(Inputs other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(InputsVariant1, other.InputsVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>?>.Default.Equals(Inputs1, other.Inputs1) 
                 ;
         }

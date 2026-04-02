@@ -47,18 +47,18 @@ namespace OpenRouter
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? BaseInputsOneOf1ItemsOneOf0PhaseVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? BaseInputsOneOf1ItemsOneOf0PhaseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0PhaseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3 => BaseInputsOneOf1ItemsOneOf0PhaseVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -101,19 +101,19 @@ namespace OpenRouter
         public BaseInputsOneOf1ItemsOneOf0Phase(
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? baseInputsOneOf1ItemsOneOf0Phase0,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? baseInputsOneOf1ItemsOneOf0Phase1,
-            object? value3
+            object? baseInputsOneOf1ItemsOneOf0PhaseVariant3
             )
         {
             BaseInputsOneOf1ItemsOneOf0Phase0 = baseInputsOneOf1ItemsOneOf0Phase0;
             BaseInputsOneOf1ItemsOneOf0Phase1 = baseInputsOneOf1ItemsOneOf0Phase1;
-            Value3 = value3;
+            BaseInputsOneOf1ItemsOneOf0PhaseVariant3 = baseInputsOneOf1ItemsOneOf0PhaseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            BaseInputsOneOf1ItemsOneOf0PhaseVariant3 as object ??
             BaseInputsOneOf1ItemsOneOf0Phase1 as object ??
             BaseInputsOneOf1ItemsOneOf0Phase0 as object 
             ;
@@ -124,7 +124,7 @@ namespace OpenRouter
         public override string? ToString() =>
             BaseInputsOneOf1ItemsOneOf0Phase0?.ToValueString() ??
             BaseInputsOneOf1ItemsOneOf0Phase1?.ToValueString() ??
-            Value3?.ToString() 
+            BaseInputsOneOf1ItemsOneOf0PhaseVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsBaseInputsOneOf1ItemsOneOf0Phase0 && !IsBaseInputsOneOf1ItemsOneOf0Phase1 && !IsValue3 || !IsBaseInputsOneOf1ItemsOneOf0Phase0 && IsBaseInputsOneOf1ItemsOneOf0Phase1 && !IsValue3 || !IsBaseInputsOneOf1ItemsOneOf0Phase0 && !IsBaseInputsOneOf1ItemsOneOf0Phase1 && IsValue3;
+            return IsBaseInputsOneOf1ItemsOneOf0Phase0 && !IsBaseInputsOneOf1ItemsOneOf0Phase1 && !IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3 || !IsBaseInputsOneOf1ItemsOneOf0Phase0 && IsBaseInputsOneOf1ItemsOneOf0Phase1 && !IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3 || !IsBaseInputsOneOf1ItemsOneOf0Phase0 && !IsBaseInputsOneOf1ItemsOneOf0Phase1 && IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?, TResult>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
             global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?, TResult>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace OpenRouter
             {
                 return baseInputsOneOf1ItemsOneOf0Phase1(BaseInputsOneOf1ItemsOneOf0Phase1!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3 && baseInputsOneOf1ItemsOneOf0PhaseVariant3 != null)
             {
-                return value3(Value3!);
+                return baseInputsOneOf1ItemsOneOf0PhaseVariant3(BaseInputsOneOf1ItemsOneOf0PhaseVariant3!);
             }
 
             return default(TResult);
@@ -171,7 +171,7 @@ namespace OpenRouter
         public void Match(
             global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
             global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +187,9 @@ namespace OpenRouter
             {
                 baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase1!);
             }
-            else if (IsValue3)
+            else if (IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3)
             {
-                value3?.Invoke(Value3!);
+                baseInputsOneOf1ItemsOneOf0PhaseVariant3?.Invoke(BaseInputsOneOf1ItemsOneOf0PhaseVariant3!);
             }
         }
 
@@ -204,7 +204,7 @@ namespace OpenRouter
                 typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0),
                 BaseInputsOneOf1ItemsOneOf0Phase1,
                 typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1),
-                Value3,
+                BaseInputsOneOf1ItemsOneOf0PhaseVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -224,7 +224,7 @@ namespace OpenRouter
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0Phase0, other.BaseInputsOneOf1ItemsOneOf0Phase0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0Phase1, other.BaseInputsOneOf1ItemsOneOf0Phase1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0PhaseVariant3, other.BaseInputsOneOf1ItemsOneOf0PhaseVariant3) 
                 ;
         }
 
