@@ -7,11 +7,15 @@ namespace OpenRouter
     {
         partial void PrepareGetUserActivityArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? date);
+            ref string? date,
+            ref string? apiKeyHash,
+            ref string? userId);
         partial void PrepareGetUserActivityRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? date);
+            string? date,
+            string? apiKeyHash,
+            string? userId);
         partial void ProcessGetUserActivityResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,23 +30,31 @@ namespace OpenRouter
         /// Returns user activity data grouped by endpoint for the last 30 (completed) UTC days. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="date"></param>
+        /// <param name="apiKeyHash"></param>
+        /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AnalyticsGetUserActivityResponse200> GetUserActivityAsync(
             string? date = default,
+            string? apiKeyHash = default,
+            string? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetUserActivityArguments(
                 httpClient: HttpClient,
-                date: ref date);
+                date: ref date,
+                apiKeyHash: ref apiKeyHash,
+                userId: ref userId);
 
             var __pathBuilder = new global::OpenRouter.PathBuilder(
                 path: "/activity",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("date", date) 
+                .AddOptionalParameter("date", date)
+                .AddOptionalParameter("api_key_hash", apiKeyHash)
+                .AddOptionalParameter("user_id", userId) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -75,7 +87,9 @@ namespace OpenRouter
             PrepareGetUserActivityRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                date: date);
+                date: date,
+                apiKeyHash: apiKeyHash,
+                userId: userId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -196,6 +210,44 @@ namespace OpenRouter
                 {
                     ResponseBody = __content_403,
                     ResponseObject = __value_403,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Not Found - User is not a member of the organization
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
+                global::OpenRouter.NotFoundResponse? __value_404 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_404 = __ex;
+                }
+
+                throw new global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>(
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,

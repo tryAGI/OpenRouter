@@ -463,6 +463,24 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "api_key_hash",
+            "in": "query",
+            "description": "Filter by API key hash (SHA-256 hex string, as returned by the keys API).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "Filter by org member user ID. Only applicable for organization accounts.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -502,6 +520,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - User is not a member of the organization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
                 }
               }
             }
