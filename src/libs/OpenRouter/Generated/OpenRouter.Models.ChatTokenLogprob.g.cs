@@ -26,7 +26,7 @@ namespace OpenRouter
         /// UTF-8 bytes of the token
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        public global::System.Collections.Generic.IList<double>? Bytes { get; set; }
+        public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
 
         /// <summary>
         /// Top alternative tokens with probabilities
@@ -63,7 +63,7 @@ namespace OpenRouter
             string token,
             double logprob,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatTokenLogprobTopLogprobsItems> topLogprobs,
-            global::System.Collections.Generic.IList<double>? bytes)
+            global::System.Collections.Generic.IList<long>? bytes)
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;

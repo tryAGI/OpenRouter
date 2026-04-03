@@ -18,7 +18,7 @@ namespace OpenRouter
         /// Audio expiration timestamp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public double? ExpiresAt { get; set; }
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
         /// Base64 encoded audio data
@@ -58,7 +58,7 @@ namespace OpenRouter
 #endif
         public ChatAudioOutput(
             string? id,
-            double? expiresAt,
+            int? expiresAt,
             string? data,
             string? transcript)
         {

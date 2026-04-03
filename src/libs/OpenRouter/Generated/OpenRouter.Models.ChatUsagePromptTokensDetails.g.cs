@@ -12,25 +12,25 @@ namespace OpenRouter
         /// Cached prompt tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
-        public double? CachedTokens { get; set; }
+        public int? CachedTokens { get; set; }
 
         /// <summary>
         /// Tokens written to cache. Only returned for models with explicit caching and cache write pricing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_write_tokens")]
-        public double? CacheWriteTokens { get; set; }
+        public int? CacheWriteTokens { get; set; }
 
         /// <summary>
         /// Audio input tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_tokens")]
-        public double? AudioTokens { get; set; }
+        public int? AudioTokens { get; set; }
 
         /// <summary>
         /// Video input tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("video_tokens")]
-        public double? VideoTokens { get; set; }
+        public int? VideoTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,10 +57,10 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatUsagePromptTokensDetails(
-            double? cachedTokens,
-            double? cacheWriteTokens,
-            double? audioTokens,
-            double? videoTokens)
+            int? cachedTokens,
+            int? cacheWriteTokens,
+            int? audioTokens,
+            int? videoTokens)
         {
             this.CachedTokens = cachedTokens;
             this.CacheWriteTokens = cacheWriteTokens;

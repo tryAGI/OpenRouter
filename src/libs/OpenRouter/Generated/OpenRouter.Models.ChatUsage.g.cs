@@ -13,21 +13,21 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double CompletionTokens { get; set; }
+        public required int CompletionTokens { get; set; }
 
         /// <summary>
         /// Number of tokens in the prompt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double PromptTokens { get; set; }
+        public required int PromptTokens { get; set; }
 
         /// <summary>
         /// Total number of tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TotalTokens { get; set; }
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Detailed completion token usage
@@ -71,9 +71,9 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatUsage(
-            double completionTokens,
-            double promptTokens,
-            double totalTokens,
+            int completionTokens,
+            int promptTokens,
+            int totalTokens,
             global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>? completionTokensDetails,
             global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? promptTokensDetails)
         {

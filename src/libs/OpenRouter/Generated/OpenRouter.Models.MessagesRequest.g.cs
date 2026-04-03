@@ -19,7 +19,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
-        public double? MaxTokens { get; set; }
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// 
@@ -212,7 +212,7 @@ namespace OpenRouter
 #endif
         public MessagesRequest(
             string model,
-            double? maxTokens,
+            int? maxTokens,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages,
             global::OpenRouter.MessagesRequestSystem? system,
             global::OpenRouter.MessagesRequestMetadata? metadata,

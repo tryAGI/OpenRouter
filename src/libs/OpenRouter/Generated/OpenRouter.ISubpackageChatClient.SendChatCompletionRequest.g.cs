@@ -87,8 +87,7 @@ namespace OpenRouter
         /// Streaming configuration options
         /// </param>
         /// <param name="temperature">
-        /// Sampling temperature (0-2)<br/>
-        /// Default Value: 1
+        /// Sampling temperature (0-2)
         /// </param>
         /// <param name="parallelToolCalls"></param>
         /// <param name="toolChoice">
@@ -98,8 +97,7 @@ namespace OpenRouter
         /// Available tools for function calling
         /// </param>
         /// <param name="topP">
-        /// Nucleus sampling parameter (0-1)<br/>
-        /// Default Value: 1
+        /// Nucleus sampling parameter (0-1)
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -130,9 +128,9 @@ namespace OpenRouter
             double? frequencyPenalty = default,
             global::System.Collections.Generic.Dictionary<string, double>? logitBias = default,
             bool? logprobs = default,
-            double? topLogprobs = default,
-            double? maxCompletionTokens = default,
-            double? maxTokens = default,
+            int? topLogprobs = default,
+            int? maxCompletionTokens = default,
+            int? maxTokens = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? presencePenalty = default,
             global::OpenRouter.ChatRequestReasoning? reasoning = default,

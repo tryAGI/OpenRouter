@@ -32,13 +32,15 @@ namespace OpenRouter
         /// Discount applied due to caching
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_discount")]
-        public double? CacheDiscount { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double CacheDiscount { get; set; }
 
         /// <summary>
         /// Cost charged by the upstream provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_inference_cost")]
-        public double? UpstreamInferenceCost { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double UpstreamInferenceCost { get; set; }
 
         /// <summary>
         /// ISO 8601 timestamp of when the generation was created
@@ -58,7 +60,8 @@ namespace OpenRouter
         /// ID of the app that made the request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_id")]
-        public double? AppId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int AppId { get; set; }
 
         /// <summary>
         /// Whether the response was streamed
@@ -82,19 +85,22 @@ namespace OpenRouter
         /// Total latency in milliseconds
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latency")]
-        public double? Latency { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Latency { get; set; }
 
         /// <summary>
         /// Moderation latency in milliseconds
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation_latency")]
-        public double? ModerationLatency { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double ModerationLatency { get; set; }
 
         /// <summary>
         /// Time taken for generation in milliseconds
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generation_time")]
-        public double? GenerationTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double GenerationTime { get; set; }
 
         /// <summary>
         /// Reason the generation finished
@@ -106,67 +112,78 @@ namespace OpenRouter
         /// Number of tokens in the prompt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens_prompt")]
-        public double? TokensPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int TokensPrompt { get; set; }
 
         /// <summary>
         /// Number of tokens in the completion
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens_completion")]
-        public double? TokensCompletion { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int TokensCompletion { get; set; }
 
         /// <summary>
         /// Native prompt tokens as reported by provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("native_tokens_prompt")]
-        public double? NativeTokensPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NativeTokensPrompt { get; set; }
 
         /// <summary>
         /// Native completion tokens as reported by provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("native_tokens_completion")]
-        public double? NativeTokensCompletion { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NativeTokensCompletion { get; set; }
 
         /// <summary>
         /// Native completion image tokens as reported by provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("native_tokens_completion_images")]
-        public double? NativeTokensCompletionImages { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NativeTokensCompletionImages { get; set; }
 
         /// <summary>
         /// Native reasoning tokens as reported by provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("native_tokens_reasoning")]
-        public double? NativeTokensReasoning { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NativeTokensReasoning { get; set; }
 
         /// <summary>
         /// Native cached tokens as reported by provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("native_tokens_cached")]
-        public double? NativeTokensCached { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NativeTokensCached { get; set; }
 
         /// <summary>
         /// Number of media items in the prompt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_media_prompt")]
-        public double? NumMediaPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NumMediaPrompt { get; set; }
 
         /// <summary>
         /// Number of audio inputs in the prompt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_input_audio_prompt")]
-        public double? NumInputAudioPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NumInputAudioPrompt { get; set; }
 
         /// <summary>
         /// Number of media items in the completion
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_media_completion")]
-        public double? NumMediaCompletion { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NumMediaCompletion { get; set; }
 
         /// <summary>
         /// Number of search results included
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_search_results")]
-        public double? NumSearchResults { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NumSearchResults { get; set; }
 
         /// <summary>
         /// Origin URL of the request
@@ -254,44 +271,20 @@ namespace OpenRouter
         /// <param name="totalCost">
         /// Total cost of the generation in USD
         /// </param>
-        /// <param name="createdAt">
-        /// ISO 8601 timestamp of when the generation was created
-        /// </param>
-        /// <param name="model">
-        /// Model used for the generation
-        /// </param>
-        /// <param name="origin">
-        /// Origin URL of the request
-        /// </param>
-        /// <param name="usage">
-        /// Usage amount in USD
-        /// </param>
-        /// <param name="isByok">
-        /// Whether this used bring-your-own-key
-        /// </param>
-        /// <param name="apiType">
-        /// Type of API used for the generation
-        /// </param>
-        /// <param name="upstreamId">
-        /// Upstream provider's identifier for this generation
-        /// </param>
         /// <param name="cacheDiscount">
         /// Discount applied due to caching
         /// </param>
         /// <param name="upstreamInferenceCost">
         /// Cost charged by the upstream provider
         /// </param>
+        /// <param name="createdAt">
+        /// ISO 8601 timestamp of when the generation was created
+        /// </param>
+        /// <param name="model">
+        /// Model used for the generation
+        /// </param>
         /// <param name="appId">
         /// ID of the app that made the request
-        /// </param>
-        /// <param name="streamed">
-        /// Whether the response was streamed
-        /// </param>
-        /// <param name="cancelled">
-        /// Whether the generation was cancelled
-        /// </param>
-        /// <param name="providerName">
-        /// Name of the provider that served the request
         /// </param>
         /// <param name="latency">
         /// Total latency in milliseconds
@@ -301,9 +294,6 @@ namespace OpenRouter
         /// </param>
         /// <param name="generationTime">
         /// Time taken for generation in milliseconds
-        /// </param>
-        /// <param name="finishReason">
-        /// Reason the generation finished
         /// </param>
         /// <param name="tokensPrompt">
         /// Number of tokens in the prompt
@@ -338,6 +328,33 @@ namespace OpenRouter
         /// <param name="numSearchResults">
         /// Number of search results included
         /// </param>
+        /// <param name="origin">
+        /// Origin URL of the request
+        /// </param>
+        /// <param name="usage">
+        /// Usage amount in USD
+        /// </param>
+        /// <param name="isByok">
+        /// Whether this used bring-your-own-key
+        /// </param>
+        /// <param name="apiType">
+        /// Type of API used for the generation
+        /// </param>
+        /// <param name="upstreamId">
+        /// Upstream provider's identifier for this generation
+        /// </param>
+        /// <param name="streamed">
+        /// Whether the response was streamed
+        /// </param>
+        /// <param name="cancelled">
+        /// Whether the generation was cancelled
+        /// </param>
+        /// <param name="providerName">
+        /// Name of the provider that served the request
+        /// </param>
+        /// <param name="finishReason">
+        /// Reason the generation finished
+        /// </param>
         /// <param name="nativeFinishReason">
         /// Native finish reason as reported by provider
         /// </param>
@@ -365,34 +382,34 @@ namespace OpenRouter
         public GenerationGetResponsesContentApplicationJsonSchemaData(
             string id,
             double totalCost,
+            double cacheDiscount,
+            double upstreamInferenceCost,
             string createdAt,
             string model,
+            int appId,
+            double latency,
+            double moderationLatency,
+            double generationTime,
+            int tokensPrompt,
+            int tokensCompletion,
+            int nativeTokensPrompt,
+            int nativeTokensCompletion,
+            int nativeTokensCompletionImages,
+            int nativeTokensReasoning,
+            int nativeTokensCached,
+            int numMediaPrompt,
+            int numInputAudioPrompt,
+            int numMediaCompletion,
+            int numSearchResults,
             string origin,
             double usage,
             bool isByok,
             global::OpenRouter.OneOf<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object> apiType,
             string? upstreamId,
-            double? cacheDiscount,
-            double? upstreamInferenceCost,
-            double? appId,
             bool? streamed,
             bool? cancelled,
             string? providerName,
-            double? latency,
-            double? moderationLatency,
-            double? generationTime,
             string? finishReason,
-            double? tokensPrompt,
-            double? tokensCompletion,
-            double? nativeTokensPrompt,
-            double? nativeTokensCompletion,
-            double? nativeTokensCompletionImages,
-            double? nativeTokensReasoning,
-            double? nativeTokensCached,
-            double? numMediaPrompt,
-            double? numInputAudioPrompt,
-            double? numMediaCompletion,
-            double? numSearchResults,
             string? nativeFinishReason,
             string? externalUser,
             string? router,

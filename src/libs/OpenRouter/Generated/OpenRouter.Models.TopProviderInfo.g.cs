@@ -12,13 +12,13 @@ namespace OpenRouter
         /// Context length from the top provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
-        public double? ContextLength { get; set; }
+        public int? ContextLength { get; set; }
 
         /// <summary>
         /// Maximum completion tokens from the top provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        public double? MaxCompletionTokens { get; set; }
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// Whether the top provider moderates content
@@ -50,8 +50,8 @@ namespace OpenRouter
 #endif
         public TopProviderInfo(
             bool isModerated,
-            double? contextLength,
-            double? maxCompletionTokens)
+            int? contextLength,
+            int? maxCompletionTokens)
         {
             this.ContextLength = contextLength;
             this.MaxCompletionTokens = maxCompletionTokens;

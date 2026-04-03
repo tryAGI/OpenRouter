@@ -19,7 +19,8 @@ namespace OpenRouter
         /// Spending limit for the API key in USD
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public double? Limit { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Limit { get; set; }
 
         /// <summary>
         /// Total OpenRouter credit usage (in USD) for the API key
@@ -102,7 +103,8 @@ namespace OpenRouter
         /// Remaining spending limit in USD
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_remaining")]
-        public double? LimitRemaining { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double LimitRemaining { get; set; }
 
         /// <summary>
         /// Type of limit reset for the API key
@@ -148,6 +150,9 @@ namespace OpenRouter
         /// <param name="label">
         /// Human-readable label for the API key
         /// </param>
+        /// <param name="limit">
+        /// Spending limit for the API key in USD
+        /// </param>
         /// <param name="usage">
         /// Total OpenRouter credit usage (in USD) for the API key
         /// </param>
@@ -181,17 +186,14 @@ namespace OpenRouter
         /// <param name="isProvisioningKey">
         /// Whether this is a management key
         /// </param>
+        /// <param name="limitRemaining">
+        /// Remaining spending limit in USD
+        /// </param>
         /// <param name="includeByokInLimit">
         /// Whether to include external BYOK usage in the credit limit
         /// </param>
         /// <param name="rateLimit">
         /// Legacy rate limit information about a key. Will always return -1.
-        /// </param>
-        /// <param name="limit">
-        /// Spending limit for the API key in USD
-        /// </param>
-        /// <param name="limitRemaining">
-        /// Remaining spending limit in USD
         /// </param>
         /// <param name="limitReset">
         /// Type of limit reset for the API key
@@ -207,6 +209,7 @@ namespace OpenRouter
 #endif
         public KeyGetResponsesContentApplicationJsonSchemaData(
             string label,
+            double limit,
             double usage,
             double usageDaily,
             double usageWeekly,
@@ -218,10 +221,9 @@ namespace OpenRouter
             bool isFreeTier,
             bool isManagementKey,
             bool isProvisioningKey,
+            double limitRemaining,
             bool includeByokInLimit,
             global::OpenRouter.KeyGetResponsesContentApplicationJsonSchemaDataRateLimit rateLimit,
-            double? limit,
-            double? limitRemaining,
             string? limitReset,
             global::System.DateTime? expiresAt,
             string? creatorUserId)

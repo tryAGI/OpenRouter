@@ -26,8 +26,9 @@ namespace OpenRouter
         /// Unix timestamp of creation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Created { get; set; }
+        public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
         /// Model used for completion
@@ -98,7 +99,7 @@ namespace OpenRouter
         public ChatResult(
             string id,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatChoice> choices,
-            double created,
+            global::System.DateTimeOffset created,
             string model,
             global::OpenRouter.ChatResultObject @object,
             string? systemFingerprint,

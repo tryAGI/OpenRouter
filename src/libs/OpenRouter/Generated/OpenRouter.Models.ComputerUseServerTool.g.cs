@@ -20,14 +20,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_height")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double DisplayHeight { get; set; }
+        public required int DisplayHeight { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_width")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double DisplayWidth { get; set; }
+        public required int DisplayWidth { get; set; }
 
         /// <summary>
         /// 
@@ -54,8 +54,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerUseServerTool(
-            double displayHeight,
-            double displayWidth,
+            int displayHeight,
+            int displayWidth,
             global::OpenRouter.ComputerUseServerToolEnvironment environment,
             global::OpenRouter.ComputerUseServerToolType type)
         {

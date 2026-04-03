@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigned_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double AssignedCount { get; set; }
+        public required int AssignedCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GuardrailsBulkAssignKeysToGuardrailResponse200(
-            double assignedCount)
+            int assignedCount)
         {
             this.AssignedCount = assignedCount;
         }

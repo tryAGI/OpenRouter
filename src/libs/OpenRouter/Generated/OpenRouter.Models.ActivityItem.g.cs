@@ -62,28 +62,28 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Requests { get; set; }
+        public required int Requests { get; set; }
 
         /// <summary>
         /// Total prompt tokens used
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double PromptTokens { get; set; }
+        public required int PromptTokens { get; set; }
 
         /// <summary>
         /// Total completion tokens generated
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double CompletionTokens { get; set; }
+        public required int CompletionTokens { get; set; }
 
         /// <summary>
         /// Total reasoning tokens used
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ReasoningTokens { get; set; }
+        public required int ReasoningTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -138,10 +138,10 @@ namespace OpenRouter
             string providerName,
             double usage,
             double byokUsageInference,
-            double requests,
-            double promptTokens,
-            double completionTokens,
-            double reasoningTokens)
+            int requests,
+            int promptTokens,
+            int completionTokens,
+            int reasoningTokens)
         {
             this.Date = date ?? throw new global::System.ArgumentNullException(nameof(date));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

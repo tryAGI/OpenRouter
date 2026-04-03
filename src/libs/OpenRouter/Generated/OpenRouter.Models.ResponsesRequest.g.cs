@@ -74,7 +74,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        public double? MaxOutputTokens { get; set; }
+        public int? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// 
@@ -116,7 +116,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
-        public double? TopK { get; set; }
+        public int? TopK { get; set; }
 
         /// <summary>
         /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/features/multimodal/image-generation for more details.
@@ -305,14 +305,14 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? models,
             global::OpenRouter.TextExtendedConfig? text,
             global::OpenRouter.ReasoningConfig? reasoning,
-            double? maxOutputTokens,
+            int? maxOutputTokens,
             double? temperature,
             double? topP,
             int? topLogprobs,
             int? maxToolCalls,
             double? presencePenalty,
             double? frequencyPenalty,
-            double? topK,
+            int? topK,
             object? imageConfig,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputModalityEnum>? modalities,
             string? promptCacheKey,

@@ -53,7 +53,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_compression")]
-        public double? OutputCompression { get; set; }
+        public int? OutputCompression { get; set; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partial_images")]
-        public double? PartialImages { get; set; }
+        public int? PartialImages { get; set; }
 
         /// <summary>
         /// 
@@ -112,9 +112,9 @@ namespace OpenRouter
             global::OpenRouter.ImageGenerationServerToolInputImageMask? inputImageMask,
             global::OpenRouter.ImageGenerationServerToolModel? model,
             global::OpenRouter.ImageGenerationServerToolModeration? moderation,
-            double? outputCompression,
+            int? outputCompression,
             global::OpenRouter.ImageGenerationServerToolOutputFormat? outputFormat,
-            double? partialImages,
+            int? partialImages,
             global::OpenRouter.ImageGenerationServerToolQuality? quality,
             global::OpenRouter.ImageGenerationServerToolSize? size)
         {

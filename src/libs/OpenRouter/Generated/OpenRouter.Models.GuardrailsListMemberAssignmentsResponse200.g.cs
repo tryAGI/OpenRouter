@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TotalCount { get; set; }
+        public required int TotalCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace OpenRouter
 #endif
         public GuardrailsListMemberAssignmentsResponse200(
             global::System.Collections.Generic.IList<global::OpenRouter.GuardrailsAssignmentsMembersGetResponsesContentApplicationJsonSchemaDataItems> data,
-            double totalCount)
+            int totalCount)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.TotalCount = totalCount;

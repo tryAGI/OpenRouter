@@ -93,6 +93,23 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice4))]
 #endif
         public bool IsOpenAiResponsesToolChoice4 => OpenAiResponsesToolChoice4 != null;
+
+        /// <summary>
+        /// Constrains the model to a pre-defined set of allowed tools
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ToolChoiceAllowed? ToolChoiceAllowed { get; init; }
+#else
+        public global::OpenRouter.ToolChoiceAllowed? ToolChoiceAllowed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceAllowed))]
+#endif
+        public bool IsToolChoiceAllowed => ToolChoiceAllowed != null;
         /// <summary>
         /// 
         /// </summary>
@@ -186,12 +203,31 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.ToolChoiceAllowed value) => new OpenAIResponsesToolChoice((global::OpenRouter.ToolChoiceAllowed?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ToolChoiceAllowed?(OpenAIResponsesToolChoice @this) => @this.ToolChoiceAllowed;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OpenAIResponsesToolChoice(global::OpenRouter.ToolChoiceAllowed? value)
+        {
+            ToolChoiceAllowed = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OpenAIResponsesToolChoice(
             global::OpenRouter.OpenAiResponsesToolChoice0? openAiResponsesToolChoice0,
             global::OpenRouter.OpenAiResponsesToolChoice1? openAiResponsesToolChoice1,
             global::OpenRouter.OpenAiResponsesToolChoice2? openAiResponsesToolChoice2,
             global::OpenRouter.OpenAiResponsesToolChoice3? openAiResponsesToolChoice3,
-            global::OpenRouter.OpenAiResponsesToolChoice4? openAiResponsesToolChoice4
+            global::OpenRouter.OpenAiResponsesToolChoice4? openAiResponsesToolChoice4,
+            global::OpenRouter.ToolChoiceAllowed? toolChoiceAllowed
             )
         {
             OpenAiResponsesToolChoice0 = openAiResponsesToolChoice0;
@@ -199,12 +235,14 @@ namespace OpenRouter
             OpenAiResponsesToolChoice2 = openAiResponsesToolChoice2;
             OpenAiResponsesToolChoice3 = openAiResponsesToolChoice3;
             OpenAiResponsesToolChoice4 = openAiResponsesToolChoice4;
+            ToolChoiceAllowed = toolChoiceAllowed;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ToolChoiceAllowed as object ??
             OpenAiResponsesToolChoice4 as object ??
             OpenAiResponsesToolChoice3 as object ??
             OpenAiResponsesToolChoice2 as object ??
@@ -220,7 +258,8 @@ namespace OpenRouter
             OpenAiResponsesToolChoice1?.ToValueString() ??
             OpenAiResponsesToolChoice2?.ToValueString() ??
             OpenAiResponsesToolChoice3?.ToString() ??
-            OpenAiResponsesToolChoice4?.ToString() 
+            OpenAiResponsesToolChoice4?.ToString() ??
+            ToolChoiceAllowed?.ToString() 
             ;
 
         /// <summary>
@@ -228,7 +267,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 || !IsOpenAiResponsesToolChoice0 && IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && IsOpenAiResponsesToolChoice4;
+            return IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed || !IsOpenAiResponsesToolChoice0 && IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && IsToolChoiceAllowed;
         }
 
         /// <summary>
@@ -240,6 +279,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice2?, TResult>? openAiResponsesToolChoice2 = null,
             global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice3?, TResult>? openAiResponsesToolChoice3 = null,
             global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice4?, TResult>? openAiResponsesToolChoice4 = null,
+            global::System.Func<global::OpenRouter.ToolChoiceAllowed?, TResult>? toolChoiceAllowed = null,
             bool validate = true)
         {
             if (validate)
@@ -267,6 +307,10 @@ namespace OpenRouter
             {
                 return openAiResponsesToolChoice4(OpenAiResponsesToolChoice4!);
             }
+            else if (IsToolChoiceAllowed && toolChoiceAllowed != null)
+            {
+                return toolChoiceAllowed(ToolChoiceAllowed!);
+            }
 
             return default(TResult);
         }
@@ -280,6 +324,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice2?>? openAiResponsesToolChoice2 = null,
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice3?>? openAiResponsesToolChoice3 = null,
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice4?>? openAiResponsesToolChoice4 = null,
+            global::System.Action<global::OpenRouter.ToolChoiceAllowed?>? toolChoiceAllowed = null,
             bool validate = true)
         {
             if (validate)
@@ -307,6 +352,10 @@ namespace OpenRouter
             {
                 openAiResponsesToolChoice4?.Invoke(OpenAiResponsesToolChoice4!);
             }
+            else if (IsToolChoiceAllowed)
+            {
+                toolChoiceAllowed?.Invoke(ToolChoiceAllowed!);
+            }
         }
 
         /// <summary>
@@ -326,6 +375,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OpenAiResponsesToolChoice3),
                 OpenAiResponsesToolChoice4,
                 typeof(global::OpenRouter.OpenAiResponsesToolChoice4),
+                ToolChoiceAllowed,
+                typeof(global::OpenRouter.ToolChoiceAllowed),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -346,7 +397,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice1?>.Default.Equals(OpenAiResponsesToolChoice1, other.OpenAiResponsesToolChoice1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice2?>.Default.Equals(OpenAiResponsesToolChoice2, other.OpenAiResponsesToolChoice2) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice3?>.Default.Equals(OpenAiResponsesToolChoice3, other.OpenAiResponsesToolChoice3) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice4?>.Default.Equals(OpenAiResponsesToolChoice4, other.OpenAiResponsesToolChoice4) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice4?>.Default.Equals(OpenAiResponsesToolChoice4, other.OpenAiResponsesToolChoice4) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceAllowed?>.Default.Equals(ToolChoiceAllowed, other.ToolChoiceAllowed) 
                 ;
         }
 

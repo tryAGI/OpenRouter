@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Requests { get; set; }
+        public required int Requests { get; set; }
 
         /// <summary>
         /// Rate limit interval
@@ -51,7 +51,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public KeyGetResponsesContentApplicationJsonSchemaDataRateLimit(
-            double requests,
+            int requests,
             string interval,
             string note)
         {

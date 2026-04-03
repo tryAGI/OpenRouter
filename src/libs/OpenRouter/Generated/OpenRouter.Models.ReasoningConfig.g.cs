@@ -26,7 +26,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
-        public double? MaxTokens { get; set; }
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace OpenRouter
         public ReasoningConfig(
             global::OpenRouter.ReasoningEffortEnum? effort,
             global::OpenRouter.ReasoningSummaryVerbosityEnum? summary,
-            double? maxTokens,
+            int? maxTokens,
             bool? enabled)
         {
             this.Effort = effort;
