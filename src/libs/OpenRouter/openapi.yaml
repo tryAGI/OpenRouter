@@ -1637,6 +1637,78 @@
         }
       }
     },
+    "/organization/members": {
+      "get": {
+        "operationId": "list-organization-members",
+        "summary": "List organization members",
+        "description": "List all members of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_organization"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (max 100)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of organization members",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization_listOrganizationMembers_Response_200"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid authentication",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Organization not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/guardrails": {
       "get": {
         "operationId": "list-guardrails",
@@ -20886,17 +20958,11 @@
         "type": "object",
         "properties": {
           "temperature": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "top_p": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "top_k": {
@@ -20906,24 +20972,15 @@
             ]
           },
           "frequency_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "presence_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "repetition_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           }
         },
@@ -22852,6 +22909,75 @@
           "data"
         ],
         "title": "API Keys_getCurrentKey_Response_200"
+      },
+      "OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRole": {
+        "type": "string",
+        "enum": [
+          "org:admin",
+          "org:member"
+        ],
+        "description": "Role of the member in the organization",
+        "title": "OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRole"
+      },
+      "OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "User ID of the organization member"
+          },
+          "first_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "First name of the member"
+          },
+          "last_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Last name of the member"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email address of the member"
+          },
+          "role": {
+            "$ref": "#/components/schemas/OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRole",
+            "description": "Role of the member in the organization"
+          }
+        },
+        "required": [
+          "id",
+          "first_name",
+          "last_name",
+          "email",
+          "role"
+        ],
+        "title": "OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems"
+      },
+      "Organization_listOrganizationMembers_Response_200": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems"
+            },
+            "description": "List of organization members"
+          },
+          "total_count": {
+            "type": "integer",
+            "description": "Total number of members in the organization"
+          }
+        },
+        "required": [
+          "data",
+          "total_count"
+        ],
+        "title": "Organization_listOrganizationMembers_Response_200"
       },
       "GuardrailsGetResponsesContentApplicationJsonSchemaDataItemsResetInterval": {
         "type": "string",

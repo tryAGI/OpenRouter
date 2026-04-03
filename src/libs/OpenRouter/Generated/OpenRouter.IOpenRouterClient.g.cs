@@ -102,6 +102,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageOrganizationClient SubpackageOrganization { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageProvidersClient SubpackageProviders { get; }
 
     }

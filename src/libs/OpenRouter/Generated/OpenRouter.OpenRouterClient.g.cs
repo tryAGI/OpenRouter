@@ -988,6 +988,8 @@ namespace OpenRouter
                     new global::OpenRouter.JsonConverters.KeysPostRequestBodyContentApplicationJsonSchemaLimitResetNullableJsonConverter(),
                     new global::OpenRouter.JsonConverters.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitResetJsonConverter(),
                     new global::OpenRouter.JsonConverters.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitResetNullableJsonConverter(),
+                    new global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleJsonConverter(),
+                    new global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleNullableJsonConverter(),
                     new global::OpenRouter.JsonConverters.GuardrailsGetResponsesContentApplicationJsonSchemaDataItemsResetIntervalJsonConverter(),
                     new global::OpenRouter.JsonConverters.GuardrailsGetResponsesContentApplicationJsonSchemaDataItemsResetIntervalNullableJsonConverter(),
                     new global::OpenRouter.JsonConverters.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetIntervalJsonConverter(),
@@ -1302,6 +1304,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         public SubpackageOAuthClient SubpackageOAuth => new SubpackageOAuthClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageOrganizationClient SubpackageOrganization => new SubpackageOrganizationClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
