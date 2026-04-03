@@ -27,7 +27,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -48,7 +48,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public double? CompletedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int CompletedAt { get; set; }
 
         /// <summary>
         /// 
@@ -105,43 +106,47 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tool_calls")]
-        public double? MaxToolCalls { get; set; }
+        public int? MaxToolCalls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
-        public double? TopLogprobs { get; set; }
+        public int? TopLogprobs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        public double? MaxOutputTokens { get; set; }
+        public int? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Temperature { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        public double? TopP { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double TopP { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
-        public double? PresencePenalty { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double PresencePenalty { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
-        public double? FrequencyPenalty { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double FrequencyPenalty { get; set; }
 
         /// <summary>
         /// 
@@ -242,11 +247,16 @@ namespace OpenRouter
         /// <param name="createdAt"></param>
         /// <param name="model"></param>
         /// <param name="status"></param>
+        /// <param name="completedAt"></param>
         /// <param name="output"></param>
         /// <param name="error">
         /// Error information returned from the API
         /// </param>
         /// <param name="incompleteDetails"></param>
+        /// <param name="temperature"></param>
+        /// <param name="topP"></param>
+        /// <param name="presencePenalty"></param>
+        /// <param name="frequencyPenalty"></param>
         /// <param name="instructions"></param>
         /// <param name="metadata">
         /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
@@ -255,7 +265,6 @@ namespace OpenRouter
         /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls"></param>
         /// <param name="object"></param>
-        /// <param name="completedAt"></param>
         /// <param name="user"></param>
         /// <param name="outputText"></param>
         /// <param name="promptCacheKey"></param>
@@ -266,10 +275,6 @@ namespace OpenRouter
         /// <param name="maxToolCalls"></param>
         /// <param name="topLogprobs"></param>
         /// <param name="maxOutputTokens"></param>
-        /// <param name="temperature"></param>
-        /// <param name="topP"></param>
-        /// <param name="presencePenalty"></param>
-        /// <param name="frequencyPenalty"></param>
         /// <param name="prompt"></param>
         /// <param name="background"></param>
         /// <param name="previousResponseId"></param>
@@ -285,31 +290,31 @@ namespace OpenRouter
 #endif
         public OpenResponsesResult(
             string id,
-            double createdAt,
+            int createdAt,
             string model,
             global::OpenRouter.OpenAIResponsesResponseStatus status,
+            int completedAt,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItems> output,
             global::OpenRouter.ResponsesErrorField error,
             global::OpenRouter.IncompleteDetails incompleteDetails,
+            double temperature,
+            double topP,
+            double presencePenalty,
+            double frequencyPenalty,
             global::OpenRouter.BaseInputs instructions,
             global::System.Collections.Generic.Dictionary<string, string> metadata,
             global::System.Collections.Generic.IList<global::OpenRouter.BaseResponsesResultToolsItems> tools,
             global::OpenRouter.OpenAIResponsesToolChoice toolChoice,
             bool parallelToolCalls,
             global::OpenRouter.BaseResponsesResultObject @object,
-            double? completedAt,
             string? user,
             string? outputText,
             string? promptCacheKey,
             string? safetyIdentifier,
             global::OpenRouter.Usage? usage,
-            double? maxToolCalls,
-            double? topLogprobs,
-            double? maxOutputTokens,
-            double? temperature,
-            double? topP,
-            double? presencePenalty,
-            double? frequencyPenalty,
+            int? maxToolCalls,
+            int? topLogprobs,
+            int? maxOutputTokens,
             global::OpenRouter.StoredPromptTemplate? prompt,
             bool? background,
             string? previousResponseId,

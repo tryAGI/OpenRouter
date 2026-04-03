@@ -40,13 +40,15 @@ namespace OpenRouter
         /// Spending limit for the API key in USD
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public double? Limit { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Limit { get; set; }
 
         /// <summary>
         /// Remaining spending limit in USD
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_remaining")]
-        public double? LimitRemaining { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double LimitRemaining { get; set; }
 
         /// <summary>
         /// Type of limit reset for the API key
@@ -163,6 +165,12 @@ namespace OpenRouter
         /// <param name="disabled">
         /// Whether the API key is disabled
         /// </param>
+        /// <param name="limit">
+        /// Spending limit for the API key in USD
+        /// </param>
+        /// <param name="limitRemaining">
+        /// Remaining spending limit in USD
+        /// </param>
         /// <param name="includeByokInLimit">
         /// Whether to include external BYOK usage in the credit limit
         /// </param>
@@ -193,12 +201,6 @@ namespace OpenRouter
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the API key was created
         /// </param>
-        /// <param name="limit">
-        /// Spending limit for the API key in USD
-        /// </param>
-        /// <param name="limitRemaining">
-        /// Remaining spending limit in USD
-        /// </param>
         /// <param name="limitReset">
         /// Type of limit reset for the API key
         /// </param>
@@ -219,6 +221,8 @@ namespace OpenRouter
             string name,
             string label,
             bool disabled,
+            double limit,
+            double limitRemaining,
             bool includeByokInLimit,
             double usage,
             double usageDaily,
@@ -229,8 +233,6 @@ namespace OpenRouter
             double byokUsageWeekly,
             double byokUsageMonthly,
             string createdAt,
-            double? limit,
-            double? limitRemaining,
             string? limitReset,
             string? updatedAt,
             global::System.DateTime? expiresAt,

@@ -12,13 +12,13 @@ namespace OpenRouter
         /// Maximum number of search results to return per search call. Defaults to 5.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
-        public double? MaxResults { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
         /// Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_total_results")]
-        public double? MaxTotalResults { get; set; }
+        public int? MaxTotalResults { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,8 +39,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchServerToolOpenRouterParameters(
-            double? maxResults,
-            double? maxTotalResults)
+            int? maxResults,
+            int? maxTotalResults)
         {
             this.MaxResults = maxResults;
             this.MaxTotalResults = maxTotalResults;

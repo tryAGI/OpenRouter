@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double AppId { get; set; }
+        public required int AppId { get; set; }
 
         /// <summary>
         /// ISO 8601 timestamp of when the auth code was created
@@ -52,7 +52,7 @@ namespace OpenRouter
 #endif
         public AuthKeysCodePostResponsesContentApplicationJsonSchemaData(
             string id,
-            double appId,
+            int appId,
             string createdAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

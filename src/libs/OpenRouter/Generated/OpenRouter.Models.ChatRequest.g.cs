@@ -80,19 +80,19 @@ namespace OpenRouter
         /// Number of top log probabilities to return (0-20)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
-        public double? TopLogprobs { get; set; }
+        public int? TopLogprobs { get; set; }
 
         /// <summary>
         /// Maximum tokens in completion
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        public double? MaxCompletionTokens { get; set; }
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// Maximum tokens (deprecated, use max_completion_tokens). Note: some providers enforce a minimum of 16.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
-        public double? MaxTokens { get; set; }
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// Key-value pairs for additional object information (max 16 pairs, 64 char keys, 512 char values)
@@ -146,8 +146,7 @@ namespace OpenRouter
         public global::OpenRouter.ChatStreamOptions? StreamOptions { get; set; }
 
         /// <summary>
-        /// Sampling temperature (0-2)<br/>
-        /// Default Value: 1
+        /// Sampling temperature (0-2)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
@@ -172,8 +171,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatFunctionTool>? Tools { get; set; }
 
         /// <summary>
-        /// Nucleus sampling parameter (0-1)<br/>
-        /// Default Value: 1
+        /// Nucleus sampling parameter (0-1)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
         public double? TopP { get; set; }
@@ -286,8 +284,7 @@ namespace OpenRouter
         /// Streaming configuration options
         /// </param>
         /// <param name="temperature">
-        /// Sampling temperature (0-2)<br/>
-        /// Default Value: 1
+        /// Sampling temperature (0-2)
         /// </param>
         /// <param name="parallelToolCalls"></param>
         /// <param name="toolChoice">
@@ -297,8 +294,7 @@ namespace OpenRouter
         /// Available tools for function calling
         /// </param>
         /// <param name="topP">
-        /// Nucleus sampling parameter (0-1)<br/>
-        /// Default Value: 1
+        /// Nucleus sampling parameter (0-1)
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -330,9 +326,9 @@ namespace OpenRouter
             double? frequencyPenalty,
             global::System.Collections.Generic.Dictionary<string, double>? logitBias,
             bool? logprobs,
-            double? topLogprobs,
-            double? maxCompletionTokens,
-            double? maxTokens,
+            int? topLogprobs,
+            int? maxCompletionTokens,
+            int? maxTokens,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? presencePenalty,
             global::OpenRouter.ChatRequestReasoning? reasoning,

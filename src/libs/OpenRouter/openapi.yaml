@@ -1286,10 +1286,7 @@
                     "description": "Name for the new API key"
                   },
                   "limit": {
-                    "type": [
-                      "number",
-                      "null"
-                    ],
+                    "type": "number",
                     "format": "double",
                     "description": "Optional spending limit for the API key in USD"
                   },
@@ -1571,10 +1568,7 @@
                     "description": "Whether to disable the API key"
                   },
                   "limit": {
-                    "type": [
-                      "number",
-                      "null"
-                    ],
+                    "type": "number",
                     "format": "double",
                     "description": "New spending limit for the API key in USD"
                   },
@@ -1772,10 +1766,7 @@
                     "description": "Description of the guardrail"
                   },
                   "limit_usd": {
-                    "type": [
-                      "number",
-                      "null"
-                    ],
+                    "type": "number",
                     "format": "double",
                     "description": "Spending limit in USD"
                   },
@@ -2051,10 +2042,7 @@
                     "description": "New description for the guardrail"
                   },
                   "limit_usd": {
-                    "type": [
-                      "number",
-                      "null"
-                    ],
+                    "type": "number",
                     "format": "double",
                     "description": "New spending limit in USD"
                   },
@@ -5268,12 +5256,10 @@
             "$ref": "#/components/schemas/ComputerUseServerToolType"
           },
           "display_height": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "display_width": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "environment": {
             "$ref": "#/components/schemas/ComputerUseServerToolEnvironment"
@@ -5648,15 +5634,13 @@
             "$ref": "#/components/schemas/ImageGenerationServerToolModeration"
           },
           "output_compression": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "output_format": {
             "$ref": "#/components/schemas/ImageGenerationServerToolOutputFormat"
           },
           "partial_images": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "quality": {
             "$ref": "#/components/schemas/ImageGenerationServerToolQuality"
@@ -5870,13 +5854,11 @@
         "type": "object",
         "properties": {
           "max_results": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Maximum number of search results to return per search call. Defaults to 5."
           },
           "max_total_results": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results."
           }
         },
@@ -6032,6 +6014,65 @@
         ],
         "title": "OpenAiResponsesToolChoice4"
       },
+      "ToolChoiceAllowedType": {
+        "type": "string",
+        "enum": [
+          "allowed_tools"
+        ],
+        "title": "ToolChoiceAllowedType"
+      },
+      "ToolChoiceAllowedMode0": {
+        "type": "string",
+        "enum": [
+          "auto"
+        ],
+        "title": "ToolChoiceAllowedMode0"
+      },
+      "ToolChoiceAllowedMode1": {
+        "type": "string",
+        "enum": [
+          "required"
+        ],
+        "title": "ToolChoiceAllowedMode1"
+      },
+      "ToolChoiceAllowedMode": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ToolChoiceAllowedMode0"
+          },
+          {
+            "$ref": "#/components/schemas/ToolChoiceAllowedMode1"
+          }
+        ],
+        "title": "ToolChoiceAllowedMode"
+      },
+      "ToolChoiceAllowed": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ToolChoiceAllowedType"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/ToolChoiceAllowedMode"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "description": "Any type"
+              }
+            }
+          }
+        },
+        "required": [
+          "type",
+          "mode",
+          "tools"
+        ],
+        "description": "Constrains the model to a pre-defined set of allowed tools",
+        "title": "ToolChoiceAllowed"
+      },
       "OpenAIResponsesToolChoice": {
         "oneOf": [
           {
@@ -6048,6 +6089,9 @@
           },
           {
             "$ref": "#/components/schemas/OpenAiResponsesToolChoice4"
+          },
+          {
+            "$ref": "#/components/schemas/ToolChoiceAllowed"
           }
         ],
         "title": "OpenAIResponsesToolChoice"
@@ -6207,11 +6251,7 @@
             "$ref": "#/components/schemas/ReasoningSummaryVerbosityEnum"
           },
           "max_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
+            "type": "integer"
           },
           "enabled": {
             "type": [
@@ -7117,55 +7157,32 @@
             "$ref": "#/components/schemas/ReasoningConfig"
           },
           "max_output_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
+            "type": "integer"
           },
           "temperature": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "top_p": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "top_logprobs": {
-            "type": [
-              "integer",
-              "null"
-            ]
+            "type": "integer"
           },
           "max_tool_calls": {
-            "type": [
-              "integer",
-              "null"
-            ]
+            "type": "integer"
           },
           "presence_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "frequency_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "top_k": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "image_config": {
             "type": "object",
@@ -8244,10 +8261,7 @@
         "type": "object",
         "properties": {
           "upstream_inference_cost": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "upstream_inference_input_cost": {
@@ -8322,8 +8336,7 @@
             "$ref": "#/components/schemas/BaseResponsesResultObject"
           },
           "created_at": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "model": {
             "type": "string"
@@ -8332,11 +8345,7 @@
             "$ref": "#/components/schemas/OpenAIResponsesResponseStatus"
           },
           "completed_at": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
+            "type": "integer"
           },
           "output": {
             "type": "array",
@@ -8375,49 +8384,28 @@
             "$ref": "#/components/schemas/Usage"
           },
           "max_tool_calls": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
+            "type": "integer"
           },
           "top_logprobs": {
+            "type": "integer"
+          },
+          "max_output_tokens": {
+            "type": "integer"
+          },
+          "temperature": {
             "type": "number",
             "format": "double"
           },
-          "max_output_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
-          "temperature": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
           "top_p": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "presence_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "frequency_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "instructions": {
@@ -9092,8 +9080,7 @@
             "description": "The authorization code ID to use in the exchange request"
           },
           "app_id": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "The application ID associated with this auth code"
           },
           "created_at": {
@@ -14750,8 +14737,7 @@
             "type": "string"
           },
           "max_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "messages": {
             "type": [
@@ -17439,23 +17425,19 @@
             "description": "BYOK inference cost in USD (external credits spent)"
           },
           "requests": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of requests made"
           },
           "prompt_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total prompt tokens used"
           },
           "completion_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total completion tokens generated"
           },
           "reasoning_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total reasoning tokens used"
           }
         },
@@ -18624,8 +18606,7 @@
             "description": "Audio output identifier"
           },
           "expires_at": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Audio expiration timestamp"
           },
           "data": {
@@ -19610,10 +19591,7 @@
             "$ref": "#/components/schemas/ChatModelNames"
           },
           "frequency_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Frequency penalty (-2.0 to 2.0)"
           },
@@ -19636,27 +19614,15 @@
             "description": "Return log probabilities"
           },
           "top_logprobs": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Number of top log probabilities to return (0-20)"
           },
           "max_completion_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Maximum tokens in completion"
           },
           "max_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Maximum tokens (deprecated, use max_completion_tokens). Note: some providers enforce a minimum of 16."
           },
           "metadata": {
@@ -19667,10 +19633,7 @@
             "description": "Key-value pairs for additional object information (max 16 pairs, 64 char keys, 512 char values)"
           },
           "presence_penalty": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Presence penalty (-2.0 to 2.0)"
           },
@@ -19683,10 +19646,7 @@
             "description": "Response format configuration"
           },
           "seed": {
-            "type": [
-              "integer",
-              "null"
-            ],
+            "type": "integer",
             "description": "Random seed for deterministic outputs"
           },
           "stop": {
@@ -19702,12 +19662,8 @@
             "$ref": "#/components/schemas/ChatStreamOptions"
           },
           "temperature": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
-            "default": 1,
             "description": "Sampling temperature (0-2)"
           },
           "parallel_tool_calls": {
@@ -19727,12 +19683,8 @@
             "description": "Available tools for function calling"
           },
           "top_p": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
-            "default": 1,
             "description": "Nucleus sampling parameter (0-1)"
           },
           "debug": {
@@ -19815,8 +19767,7 @@
               "null"
             ],
             "items": {
-              "type": "number",
-              "format": "double"
+              "type": "integer"
             }
           }
         },
@@ -19845,8 +19796,7 @@
               "null"
             ],
             "items": {
-              "type": "number",
-              "format": "double"
+              "type": "integer"
             },
             "description": "UTF-8 bytes of the token"
           },
@@ -19904,8 +19854,7 @@
             "$ref": "#/components/schemas/ChatChoiceFinishReason"
           },
           "index": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Choice index"
           },
           "message": {
@@ -19934,35 +19883,19 @@
         "type": "object",
         "properties": {
           "reasoning_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Tokens used for reasoning"
           },
           "audio_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Tokens used for audio output"
           },
           "accepted_prediction_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Accepted prediction tokens"
           },
           "rejected_prediction_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Rejected prediction tokens"
           }
         },
@@ -19973,23 +19906,19 @@
         "type": "object",
         "properties": {
           "cached_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Cached prompt tokens"
           },
           "cache_write_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Tokens written to cache. Only returned for models with explicit caching and cache write pricing."
           },
           "audio_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Audio input tokens"
           },
           "video_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Video input tokens"
           }
         },
@@ -20000,18 +19929,15 @@
         "type": "object",
         "properties": {
           "completion_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of tokens in the completion"
           },
           "prompt_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of tokens in the prompt"
           },
           "total_tokens": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total number of tokens"
           },
           "completion_tokens_details": {
@@ -20060,8 +19986,7 @@
             "description": "List of completion choices"
           },
           "created": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Unix timestamp of creation"
           },
           "model": {
@@ -20353,18 +20278,12 @@
             "description": "Total cost of the generation in USD"
           },
           "cache_discount": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Discount applied due to caching"
           },
           "upstream_inference_cost": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Cost charged by the upstream provider"
           },
@@ -20377,11 +20296,7 @@
             "description": "Model used for the generation"
           },
           "app_id": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "ID of the app that made the request"
           },
           "streamed": {
@@ -20406,26 +20321,17 @@
             "description": "Name of the provider that served the request"
           },
           "latency": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Total latency in milliseconds"
           },
           "moderation_latency": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Moderation latency in milliseconds"
           },
           "generation_time": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Time taken for generation in milliseconds"
           },
@@ -20437,91 +20343,47 @@
             "description": "Reason the generation finished"
           },
           "tokens_prompt": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Number of tokens in the prompt"
           },
           "tokens_completion": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Number of tokens in the completion"
           },
           "native_tokens_prompt": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Native prompt tokens as reported by provider"
           },
           "native_tokens_completion": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Native completion tokens as reported by provider"
           },
           "native_tokens_completion_images": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Native completion image tokens as reported by provider"
           },
           "native_tokens_reasoning": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Native reasoning tokens as reported by provider"
           },
           "native_tokens_cached": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Native cached tokens as reported by provider"
           },
           "num_media_prompt": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Number of media items in the prompt"
           },
           "num_input_audio_prompt": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Number of audio inputs in the prompt"
           },
           "num_media_completion": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Number of media items in the completion"
           },
           "num_search_results": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Number of search results included"
           },
           "origin": {
@@ -20660,8 +20522,7 @@
         "type": "object",
         "properties": {
           "count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total number of available models"
           }
         },
@@ -20832,6 +20693,7 @@
           "GPT",
           "Claude",
           "Gemini",
+          "Gemma",
           "Grok",
           "Cohere",
           "Nova",
@@ -20951,19 +20813,11 @@
         "type": "object",
         "properties": {
           "context_length": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Context length from the top provider"
           },
           "max_completion_tokens": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Maximum completion tokens from the top provider"
           },
           "is_moderated": {
@@ -21099,8 +20953,7 @@
             "description": "Display name of the model"
           },
           "created": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Unix timestamp of when the model was created"
           },
           "description": {
@@ -21111,11 +20964,7 @@
             "$ref": "#/components/schemas/PublicPricing"
           },
           "context_length": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double",
+            "type": "integer",
             "description": "Maximum context length in tokens"
           },
           "architecture": {
@@ -21582,8 +21431,7 @@
             "description": "Display name of the model"
           },
           "created": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Unix timestamp of when the model was created"
           },
           "description": {
@@ -22246,18 +22094,12 @@
             "description": "Whether the API key is disabled"
           },
           "limit": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -22408,18 +22250,12 @@
             "description": "Whether the API key is disabled"
           },
           "limit": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -22563,18 +22399,12 @@
             "description": "Whether the API key is disabled"
           },
           "limit": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -22739,18 +22569,12 @@
             "description": "Whether the API key is disabled"
           },
           "limit": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -22873,8 +22697,7 @@
         "type": "object",
         "properties": {
           "requests": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of requests allowed per interval"
           },
           "interval": {
@@ -22902,10 +22725,7 @@
             "description": "Human-readable label for the API key"
           },
           "limit": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
@@ -22962,10 +22782,7 @@
             "description": "Whether this is a management key"
           },
           "limit_remaining": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -23066,10 +22883,7 @@
             "description": "Description of the guardrail"
           },
           "limit_usd": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -23151,8 +22965,7 @@
             "description": "List of guardrails"
           },
           "total_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total number of guardrails"
           }
         },
@@ -23202,10 +23015,7 @@
             "description": "Description of the guardrail"
           },
           "limit_usd": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -23320,10 +23130,7 @@
             "description": "Description of the guardrail"
           },
           "limit_usd": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -23464,10 +23271,7 @@
             "description": "Description of the guardrail"
           },
           "limit_usd": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -23611,8 +23415,7 @@
             "description": "List of key assignments"
           },
           "total_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total number of key assignments for this guardrail"
           }
         },
@@ -23676,8 +23479,7 @@
             "description": "List of member assignments"
           },
           "total_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total number of member assignments"
           }
         },
@@ -23746,8 +23548,7 @@
             "description": "List of key assignments"
           },
           "total_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total number of key assignments for this guardrail"
           }
         },
@@ -23761,8 +23562,7 @@
         "type": "object",
         "properties": {
           "assigned_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of keys successfully assigned"
           }
         },
@@ -23825,8 +23625,7 @@
             "description": "List of member assignments"
           },
           "total_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Total number of member assignments"
           }
         },
@@ -23840,8 +23639,7 @@
         "type": "object",
         "properties": {
           "assigned_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of members successfully assigned"
           }
         },
@@ -23854,8 +23652,7 @@
         "type": "object",
         "properties": {
           "unassigned_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of keys successfully unassigned"
           }
         },
@@ -23868,8 +23665,7 @@
         "type": "object",
         "properties": {
           "unassigned_count": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
             "description": "Number of members successfully unassigned"
           }
         },

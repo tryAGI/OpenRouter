@@ -12,25 +12,25 @@ namespace OpenRouter
         /// Tokens used for reasoning
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
-        public double? ReasoningTokens { get; set; }
+        public int? ReasoningTokens { get; set; }
 
         /// <summary>
         /// Tokens used for audio output
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_tokens")]
-        public double? AudioTokens { get; set; }
+        public int? AudioTokens { get; set; }
 
         /// <summary>
         /// Accepted prediction tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted_prediction_tokens")]
-        public double? AcceptedPredictionTokens { get; set; }
+        public int? AcceptedPredictionTokens { get; set; }
 
         /// <summary>
         /// Rejected prediction tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rejected_prediction_tokens")]
-        public double? RejectedPredictionTokens { get; set; }
+        public int? RejectedPredictionTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,10 +57,10 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatUsageCompletionTokensDetails(
-            double? reasoningTokens,
-            double? audioTokens,
-            double? acceptedPredictionTokens,
-            double? rejectedPredictionTokens)
+            int? reasoningTokens,
+            int? audioTokens,
+            int? acceptedPredictionTokens,
+            int? rejectedPredictionTokens)
         {
             this.ReasoningTokens = reasoningTokens;
             this.AudioTokens = audioTokens;

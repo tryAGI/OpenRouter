@@ -26,8 +26,9 @@ namespace OpenRouter
         /// Unix timestamp of when the model was created
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Created { get; set; }
+        public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
         /// Description of the model
@@ -81,7 +82,7 @@ namespace OpenRouter
         public ListEndpointsResponse(
             string id,
             string name,
-            double created,
+            global::System.DateTimeOffset created,
             string description,
             global::OpenRouter.ListEndpointsResponseArchitecture architecture,
             global::System.Collections.Generic.IList<global::OpenRouter.PublicEndpoint> endpoints)

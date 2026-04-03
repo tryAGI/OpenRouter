@@ -31,6 +31,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Gemma,
+        /// <summary>
+        /// 
+        /// </summary>
         Grok,
         /// <summary>
         /// 
@@ -103,6 +107,7 @@ namespace OpenRouter
                 ModelGroup.DeepSeek => "DeepSeek",
                 ModelGroup.Gpt => "GPT",
                 ModelGroup.Gemini => "Gemini",
+                ModelGroup.Gemma => "Gemma",
                 ModelGroup.Grok => "Grok",
                 ModelGroup.Llama2 => "Llama2",
                 ModelGroup.Llama3 => "Llama3",
@@ -132,6 +137,7 @@ namespace OpenRouter
                 "DeepSeek" => ModelGroup.DeepSeek,
                 "GPT" => ModelGroup.Gpt,
                 "Gemini" => ModelGroup.Gemini,
+                "Gemma" => ModelGroup.Gemma,
                 "Grok" => ModelGroup.Grok,
                 "Llama2" => ModelGroup.Llama2,
                 "Llama3" => ModelGroup.Llama3,

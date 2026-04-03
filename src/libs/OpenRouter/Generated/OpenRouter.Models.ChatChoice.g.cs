@@ -21,7 +21,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Index { get; set; }
+        public required int Index { get; set; }
 
         /// <summary>
         /// Assistant message for requests and responses
@@ -60,7 +60,7 @@ namespace OpenRouter
 #endif
         public ChatChoice(
             global::OpenRouter.ChatChoiceFinishReason finishReason,
-            double index,
+            int index,
             global::OpenRouter.ChatAssistantMessage message,
             global::OpenRouter.ChatTokenLogprobs? logprobs)
         {

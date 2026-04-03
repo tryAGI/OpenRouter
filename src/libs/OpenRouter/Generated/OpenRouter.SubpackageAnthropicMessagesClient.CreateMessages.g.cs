@@ -492,7 +492,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
             string model,
-            double? maxTokens = default,
+            int? maxTokens = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
             global::OpenRouter.MessagesRequestSystem? system = default,
             global::OpenRouter.MessagesRequestMetadata? metadata = default,

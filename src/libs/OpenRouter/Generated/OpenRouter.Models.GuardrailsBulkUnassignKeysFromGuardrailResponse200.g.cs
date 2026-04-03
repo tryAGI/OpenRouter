@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unassigned_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double UnassignedCount { get; set; }
+        public required int UnassignedCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GuardrailsBulkUnassignKeysFromGuardrailResponse200(
-            double unassignedCount)
+            int unassignedCount)
         {
             this.UnassignedCount = unassignedCount;
         }

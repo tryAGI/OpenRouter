@@ -39,8 +39,9 @@ namespace OpenRouter
         /// Unix timestamp of when the model was created
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Created { get; set; }
+        public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
         /// Description of the model
@@ -59,7 +60,8 @@ namespace OpenRouter
         /// Maximum context length in tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
-        public double? ContextLength { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ContextLength { get; set; }
 
         /// <summary>
         /// Model architecture information
@@ -132,6 +134,9 @@ namespace OpenRouter
         /// <param name="pricing">
         /// Pricing information for the model
         /// </param>
+        /// <param name="contextLength">
+        /// Maximum context length in tokens
+        /// </param>
         /// <param name="architecture">
         /// Model architecture information
         /// </param>
@@ -153,9 +158,6 @@ namespace OpenRouter
         /// <param name="description">
         /// Description of the model
         /// </param>
-        /// <param name="contextLength">
-        /// Maximum context length in tokens
-        /// </param>
         /// <param name="knowledgeCutoff">
         /// The date up to which the model was trained on data. ISO 8601 date string (YYYY-MM-DD) or null if unknown.
         /// </param>
@@ -169,8 +171,9 @@ namespace OpenRouter
             string id,
             string canonicalSlug,
             string name,
-            double created,
+            global::System.DateTimeOffset created,
             global::OpenRouter.PublicPricing pricing,
+            int contextLength,
             global::OpenRouter.ModelArchitecture architecture,
             global::OpenRouter.TopProviderInfo topProvider,
             global::OpenRouter.PerRequestLimits perRequestLimits,
@@ -178,7 +181,6 @@ namespace OpenRouter
             global::OpenRouter.DefaultParameters defaultParameters,
             string? huggingFaceId,
             string? description,
-            double? contextLength,
             string? knowledgeCutoff,
             string? expirationDate)
         {

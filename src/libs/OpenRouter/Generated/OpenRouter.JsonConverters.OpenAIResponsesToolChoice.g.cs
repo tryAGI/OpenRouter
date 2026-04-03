@@ -33,6 +33,10 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("type")) __score4++;
+            var __score5 = 0;
+            if (__jsonProps.Contains("mode")) __score5++;
+            if (__jsonProps.Contains("tools")) __score5++;
+            if (__jsonProps.Contains("type")) __score5++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -40,12 +44,14 @@ namespace OpenRouter.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
             if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
+            if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
 
             global::OpenRouter.OpenAiResponsesToolChoice0? openAiResponsesToolChoice0 = default;
             global::OpenRouter.OpenAiResponsesToolChoice1? openAiResponsesToolChoice1 = default;
             global::OpenRouter.OpenAiResponsesToolChoice2? openAiResponsesToolChoice2 = default;
             global::OpenRouter.OpenAiResponsesToolChoice3? openAiResponsesToolChoice3 = default;
             global::OpenRouter.OpenAiResponsesToolChoice4? openAiResponsesToolChoice4 = default;
+            global::OpenRouter.ToolChoiceAllowed? toolChoiceAllowed = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -113,9 +119,22 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 5)
+                {
+                    try
+                    {
+                        toolChoiceAllowed = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ToolChoiceAllowed>(__rawJson, options);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (openAiResponsesToolChoice0 == null && openAiResponsesToolChoice1 == null && openAiResponsesToolChoice2 == null && openAiResponsesToolChoice3 == null && openAiResponsesToolChoice4 == null)
+            if (openAiResponsesToolChoice0 == null && openAiResponsesToolChoice1 == null && openAiResponsesToolChoice2 == null && openAiResponsesToolChoice3 == null && openAiResponsesToolChoice4 == null && toolChoiceAllowed == null)
             {
                 try
                 {
@@ -171,6 +190,17 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+
+                try
+                {
+                    toolChoiceAllowed = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ToolChoiceAllowed>(__rawJson, options);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::OpenRouter.OpenAIResponsesToolChoice(
@@ -182,7 +212,9 @@ namespace OpenRouter.JsonConverters
 
                 openAiResponsesToolChoice3,
 
-                openAiResponsesToolChoice4
+                openAiResponsesToolChoice4,
+
+                toolChoiceAllowed
                 );
 
             return __value;
@@ -215,6 +247,10 @@ namespace OpenRouter.JsonConverters
             else if (value.IsOpenAiResponsesToolChoice4)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoice4, typeof(global::OpenRouter.OpenAiResponsesToolChoice4), options);
+            }
+            else if (value.IsToolChoiceAllowed)
+            {
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolChoiceAllowed, typeof(global::OpenRouter.ToolChoiceAllowed), options);
             }
         }
     }
