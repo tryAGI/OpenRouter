@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Embedding vector as an array of floats or a base64 string
     /// </summary>
     public readonly partial struct EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding : global::System.IEquatable<EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding>
     {

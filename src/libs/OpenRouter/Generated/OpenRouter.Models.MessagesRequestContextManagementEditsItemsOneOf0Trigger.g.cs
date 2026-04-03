@@ -13,97 +13,97 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0? MessagesRequestContextManagementEditsItemsOneOf0Trigger0 { get; init; }
+        public global::OpenRouter.AnthropicInputTokensTrigger? AnthropicInputTokensTrigger { get; init; }
 #else
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0? MessagesRequestContextManagementEditsItemsOneOf0Trigger0 { get; }
+        public global::OpenRouter.AnthropicInputTokensTrigger? AnthropicInputTokensTrigger { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0Trigger0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicInputTokensTrigger))]
 #endif
-        public bool IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0 => MessagesRequestContextManagementEditsItemsOneOf0Trigger0 != null;
+        public bool IsAnthropicInputTokensTrigger => AnthropicInputTokensTrigger != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? MessagesRequestContextManagementEditsItemsOneOf0Trigger1 { get; init; }
+        public global::OpenRouter.AnthropicToolUsesKeep? AnthropicToolUsesKeep { get; init; }
 #else
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? MessagesRequestContextManagementEditsItemsOneOf0Trigger1 { get; }
+        public global::OpenRouter.AnthropicToolUsesKeep? AnthropicToolUsesKeep { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0Trigger1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicToolUsesKeep))]
 #endif
-        public bool IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1 => MessagesRequestContextManagementEditsItemsOneOf0Trigger1 != null;
+        public bool IsAnthropicToolUsesKeep => AnthropicToolUsesKeep != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0 value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0?)value);
+        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicInputTokensTrigger value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.AnthropicInputTokensTrigger?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.MessagesRequestContextManagementEditsItemsOneOf0Trigger0;
+        public static implicit operator global::OpenRouter.AnthropicInputTokensTrigger?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.AnthropicInputTokensTrigger;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0? value)
+        public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicInputTokensTrigger? value)
         {
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger0 = value;
+            AnthropicInputTokensTrigger = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1 value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?)value);
+        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicToolUsesKeep value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.AnthropicToolUsesKeep?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.MessagesRequestContextManagementEditsItemsOneOf0Trigger1;
+        public static implicit operator global::OpenRouter.AnthropicToolUsesKeep?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.AnthropicToolUsesKeep;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? value)
+        public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicToolUsesKeep? value)
         {
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger1 = value;
+            AnthropicToolUsesKeep = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0Trigger(
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0? messagesRequestContextManagementEditsItemsOneOf0Trigger0,
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? messagesRequestContextManagementEditsItemsOneOf0Trigger1
+            global::OpenRouter.AnthropicInputTokensTrigger? anthropicInputTokensTrigger,
+            global::OpenRouter.AnthropicToolUsesKeep? anthropicToolUsesKeep
             )
         {
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger0 = messagesRequestContextManagementEditsItemsOneOf0Trigger0;
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger1 = messagesRequestContextManagementEditsItemsOneOf0Trigger1;
+            AnthropicInputTokensTrigger = anthropicInputTokensTrigger;
+            AnthropicToolUsesKeep = anthropicToolUsesKeep;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger1 as object ??
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger0 as object 
+            AnthropicToolUsesKeep as object ??
+            AnthropicInputTokensTrigger as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger0?.ToString() ??
-            MessagesRequestContextManagementEditsItemsOneOf0Trigger1?.ToString() 
+            AnthropicInputTokensTrigger?.ToString() ??
+            AnthropicToolUsesKeep?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0 && !IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1 || !IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0 && IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1;
+            return IsAnthropicInputTokensTrigger && !IsAnthropicToolUsesKeep || !IsAnthropicInputTokensTrigger && IsAnthropicToolUsesKeep;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0?, TResult>? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?, TResult>? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = null,
+            global::System.Func<global::OpenRouter.AnthropicInputTokensTrigger?, TResult>? anthropicInputTokensTrigger = null,
+            global::System.Func<global::OpenRouter.AnthropicToolUsesKeep?, TResult>? anthropicToolUsesKeep = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0 && messagesRequestContextManagementEditsItemsOneOf0Trigger0 != null)
+            if (IsAnthropicInputTokensTrigger && anthropicInputTokensTrigger != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0Trigger0(MessagesRequestContextManagementEditsItemsOneOf0Trigger0!);
+                return anthropicInputTokensTrigger(AnthropicInputTokensTrigger!);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1 && messagesRequestContextManagementEditsItemsOneOf0Trigger1 != null)
+            else if (IsAnthropicToolUsesKeep && anthropicToolUsesKeep != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0Trigger1(MessagesRequestContextManagementEditsItemsOneOf0Trigger1!);
+                return anthropicToolUsesKeep(AnthropicToolUsesKeep!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0?>? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?>? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = null,
+            global::System.Action<global::OpenRouter.AnthropicInputTokensTrigger?>? anthropicInputTokensTrigger = null,
+            global::System.Action<global::OpenRouter.AnthropicToolUsesKeep?>? anthropicToolUsesKeep = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0)
+            if (IsAnthropicInputTokensTrigger)
             {
-                messagesRequestContextManagementEditsItemsOneOf0Trigger0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger0!);
+                anthropicInputTokensTrigger?.Invoke(AnthropicInputTokensTrigger!);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1)
+            else if (IsAnthropicToolUsesKeep)
             {
-                messagesRequestContextManagementEditsItemsOneOf0Trigger1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger1!);
+                anthropicToolUsesKeep?.Invoke(AnthropicToolUsesKeep!);
             }
         }
 
@@ -169,10 +169,10 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                MessagesRequestContextManagementEditsItemsOneOf0Trigger0,
-                typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0),
-                MessagesRequestContextManagementEditsItemsOneOf0Trigger1,
-                typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1),
+                AnthropicInputTokensTrigger,
+                typeof(global::OpenRouter.AnthropicInputTokensTrigger),
+                AnthropicToolUsesKeep,
+                typeof(global::OpenRouter.AnthropicToolUsesKeep),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -189,8 +189,8 @@ namespace OpenRouter
         public bool Equals(MessagesRequestContextManagementEditsItemsOneOf0Trigger other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0Trigger0, other.MessagesRequestContextManagementEditsItemsOneOf0Trigger0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0Trigger1, other.MessagesRequestContextManagementEditsItemsOneOf0Trigger1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicInputTokensTrigger?>.Default.Equals(AnthropicInputTokensTrigger, other.AnthropicInputTokensTrigger) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolUsesKeep?>.Default.Equals(AnthropicToolUsesKeep, other.AnthropicToolUsesKeep) 
                 ;
         }
 

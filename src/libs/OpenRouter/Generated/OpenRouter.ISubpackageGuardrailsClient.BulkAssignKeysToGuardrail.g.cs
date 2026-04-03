@@ -12,10 +12,10 @@ namespace OpenRouter
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailsBulkAssignKeysToGuardrailResponse200> BulkAssignKeysToGuardrailAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.BulkAssignKeysResponse> BulkAssignKeysToGuardrailAsync(
             global::System.Guid id,
 
-            global::OpenRouter.BulkAssignKeysToGuardrailRequest request,
+            global::OpenRouter.BulkAssignKeysRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk assign keys to a guardrail<br/>
@@ -27,7 +27,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailsBulkAssignKeysToGuardrailResponse200> BulkAssignKeysToGuardrailAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.BulkAssignKeysResponse> BulkAssignKeysToGuardrailAsync(
             global::System.Guid id,
             global::System.Collections.Generic.IList<string> keyHashes,
             global::System.Threading.CancellationToken cancellationToken = default);

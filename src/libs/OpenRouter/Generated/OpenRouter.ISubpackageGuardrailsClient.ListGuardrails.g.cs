@@ -12,9 +12,9 @@ namespace OpenRouter
         /// <param name="limit"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailsListGuardrailsResponse200> ListGuardrailsAsync(
-            string? offset = default,
-            string? limit = default,
+        global::System.Threading.Tasks.Task<global::OpenRouter.ListGuardrailsResponse> ListGuardrailsAsync(
+            int? offset = default,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

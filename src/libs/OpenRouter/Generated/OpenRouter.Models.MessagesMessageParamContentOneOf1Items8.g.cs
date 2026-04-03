@@ -34,7 +34,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8CacheControl? CacheControl { get; set; }
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,7 +56,7 @@ namespace OpenRouter
             string toolUseId,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content content,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Type type,
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8CacheControl? cacheControl)
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
         {
             this.Type = type;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));

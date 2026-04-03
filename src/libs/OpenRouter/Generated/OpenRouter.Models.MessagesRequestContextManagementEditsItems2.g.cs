@@ -31,8 +31,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trigger")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger, object>? Trigger { get; set; }
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger? Trigger { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +53,7 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type type,
             string? instructions,
             bool? pauseAfterCompaction,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger, object>? trigger)
+            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger? trigger)
         {
             this.Type = type;
             this.Instructions = instructions;

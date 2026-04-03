@@ -19,7 +19,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public global::OpenRouter.ChatWebSearchServerToolParameters? Parameters { get; set; }
+        public global::OpenRouter.WebSearchConfig? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace OpenRouter
 #endif
         public ChatWebSearchServerTool(
             global::OpenRouter.ChatWebSearchServerToolType type,
-            global::OpenRouter.ChatWebSearchServerToolParameters? parameters)
+            global::OpenRouter.WebSearchConfig? parameters)
         {
             this.Type = type;
             this.Parameters = parameters;

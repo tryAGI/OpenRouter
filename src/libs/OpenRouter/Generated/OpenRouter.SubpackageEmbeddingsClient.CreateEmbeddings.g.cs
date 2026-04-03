@@ -68,7 +68,7 @@ namespace OpenRouter
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -105,13 +105,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -143,13 +143,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -181,13 +181,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerOptions);
+                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
                     }
                     else
                     {
                         __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerOptions);
+                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -219,13 +219,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -257,13 +257,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -295,13 +295,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -333,13 +333,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_502 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_502 = global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerOptions);
+                        __value_502 = global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerContext);
                     }
                     else
                     {
                         __content_502 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_502 = global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerOptions);
+                        __value_502 = global::OpenRouter.BadGatewayResponse.FromJson(__content_502, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -371,13 +371,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerContext);
                     }
                     else
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_503 = global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::OpenRouter.ServiceUnavailableResponse.FromJson(__content_503, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -421,7 +421,7 @@ namespace OpenRouter
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200.FromJson(__content, JsonSerializerOptions) ??
+                        global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -451,7 +451,7 @@ namespace OpenRouter
                     ).ConfigureAwait(false);
 
                     return
-                        await global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -487,15 +487,27 @@ namespace OpenRouter
         /// Submit an embedding request<br/>
         /// Submits an embedding request to the embeddings router
         /// </summary>
-        /// <param name="input"></param>
-        /// <param name="model"></param>
-        /// <param name="encodingFormat"></param>
-        /// <param name="dimensions"></param>
-        /// <param name="user"></param>
+        /// <param name="input">
+        /// Text, token, or multimodal input(s) to embed
+        /// </param>
+        /// <param name="model">
+        /// The model to use for embeddings
+        /// </param>
+        /// <param name="encodingFormat">
+        /// The format of the output embeddings
+        /// </param>
+        /// <param name="dimensions">
+        /// The number of dimensions for the output embeddings
+        /// </param>
+        /// <param name="user">
+        /// A unique identifier for the end-user
+        /// </param>
         /// <param name="provider">
         /// Provider routing preferences for the request.
         /// </param>
-        /// <param name="inputType"></param>
+        /// <param name="inputType">
+        /// The type of input (e.g. search_query, search_document)
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200> CreateEmbeddingsAsync(

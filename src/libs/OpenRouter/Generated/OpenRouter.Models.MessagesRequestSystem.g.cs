@@ -30,9 +30,9 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestSystemOneOf1Items>? MessagesRequestSystem1 { get; init; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>? MessagesRequestSystem1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestSystemOneOf1Items>? MessagesRequestSystem1 { get; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>? MessagesRequestSystem1 { get; }
 #endif
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace OpenRouter
         /// </summary>
         public MessagesRequestSystem(
             string? messagesRequestSystemVariant1,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestSystemOneOf1Items>? messagesRequestSystem1
+            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>? messagesRequestSystem1
             )
         {
             MessagesRequestSystemVariant1 = messagesRequestSystemVariant1;
@@ -101,7 +101,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string?, TResult>? messagesRequestSystemVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestSystemOneOf1Items>?, TResult>? messagesRequestSystem1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>?, TResult>? messagesRequestSystem1 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,7 +126,7 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<string?>? messagesRequestSystemVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestSystemOneOf1Items>?>? messagesRequestSystem1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>?>? messagesRequestSystem1 = null,
             bool validate = true)
         {
             if (validate)
@@ -154,7 +154,7 @@ namespace OpenRouter
                 MessagesRequestSystemVariant1,
                 typeof(string),
                 MessagesRequestSystem1,
-                typeof(global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestSystemOneOf1Items>),
+                typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -172,7 +172,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MessagesRequestSystemVariant1, other.MessagesRequestSystemVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestSystemOneOf1Items>?>.Default.Equals(MessagesRequestSystem1, other.MessagesRequestSystem1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>?>.Default.Equals(MessagesRequestSystem1, other.MessagesRequestSystem1) 
                 ;
         }
 

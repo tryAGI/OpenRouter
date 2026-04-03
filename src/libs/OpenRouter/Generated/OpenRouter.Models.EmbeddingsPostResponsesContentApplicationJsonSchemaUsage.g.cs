@@ -4,26 +4,26 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Token usage statistics
     /// </summary>
     public sealed partial class EmbeddingsPostResponsesContentApplicationJsonSchemaUsage
     {
         /// <summary>
-        /// 
+        /// Number of tokens in the input
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double PromptTokens { get; set; }
+        public required int PromptTokens { get; set; }
 
         /// <summary>
-        /// 
+        /// Total number of tokens used
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TotalTokens { get; set; }
+        public required int TotalTokens { get; set; }
 
         /// <summary>
-        /// 
+        /// Cost of the request in credits
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         public double? Cost { get; set; }
@@ -37,15 +37,21 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsPostResponsesContentApplicationJsonSchemaUsage" /> class.
         /// </summary>
-        /// <param name="promptTokens"></param>
-        /// <param name="totalTokens"></param>
-        /// <param name="cost"></param>
+        /// <param name="promptTokens">
+        /// Number of tokens in the input
+        /// </param>
+        /// <param name="totalTokens">
+        /// Total number of tokens used
+        /// </param>
+        /// <param name="cost">
+        /// Cost of the request in credits
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbeddingsPostResponsesContentApplicationJsonSchemaUsage(
-            double promptTokens,
-            double totalTokens,
+            int promptTokens,
+            int totalTokens,
             double? cost)
         {
             this.PromptTokens = promptTokens;

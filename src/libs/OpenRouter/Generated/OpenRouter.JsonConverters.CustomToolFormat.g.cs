@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -44,7 +45,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        customToolFormat0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CustomToolFormat0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolFormat0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolFormat0> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolFormat0).Name}");
+                        customToolFormat0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -57,7 +60,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        customToolFormat1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CustomToolFormat1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolFormat1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolFormat1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolFormat1).Name}");
+                        customToolFormat1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,7 +77,9 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    customToolFormat0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CustomToolFormat0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolFormat0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolFormat0> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolFormat0).Name}");
+                    customToolFormat0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -83,7 +90,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    customToolFormat1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CustomToolFormat1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolFormat1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolFormat1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolFormat1).Name}");
+                    customToolFormat1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -108,15 +117,20 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.CustomToolFormat value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsCustomToolFormat0)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolFormat0, typeof(global::OpenRouter.CustomToolFormat0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolFormat0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolFormat0?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolFormat0).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolFormat0!, typeInfo);
             }
             else if (value.IsCustomToolFormat1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolFormat1, typeof(global::OpenRouter.CustomToolFormat1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolFormat1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolFormat1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolFormat1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolFormat1!, typeInfo);
             }
         }
     }

@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -59,7 +60,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        reasoningDetailSummary = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ReasoningDetailSummary>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailSummary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailSummary> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailSummary).Name}");
+                        reasoningDetailSummary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,7 +75,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        reasoningDetailEncrypted = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ReasoningDetailEncrypted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailEncrypted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailEncrypted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailEncrypted).Name}");
+                        reasoningDetailEncrypted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -85,7 +90,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        reasoningDetailText = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ReasoningDetailText>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailText> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailText).Name}");
+                        reasoningDetailText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -100,7 +107,9 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    reasoningDetailSummary = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ReasoningDetailSummary>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailSummary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailSummary> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailSummary).Name}");
+                    reasoningDetailSummary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,7 +120,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    reasoningDetailEncrypted = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ReasoningDetailEncrypted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailEncrypted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailEncrypted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailEncrypted).Name}");
+                    reasoningDetailEncrypted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -122,7 +133,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    reasoningDetailText = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ReasoningDetailText>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailText> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailText).Name}");
+                    reasoningDetailText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -149,19 +162,26 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ReasoningDetailUnion value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsReasoningDetailSummary)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailSummary, typeof(global::OpenRouter.ReasoningDetailSummary), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailSummary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailSummary?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailSummary).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailSummary!, typeInfo);
             }
             else if (value.IsReasoningDetailEncrypted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailEncrypted, typeof(global::OpenRouter.ReasoningDetailEncrypted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailEncrypted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailEncrypted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailEncrypted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailEncrypted!, typeInfo);
             }
             else if (value.IsReasoningDetailText)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailText, typeof(global::OpenRouter.ReasoningDetailText), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailText?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailText).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailText!, typeInfo);
             }
         }
     }

@@ -13,18 +13,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0? MessagesRequestContextManagementEditsItemsOneOf1Keep0 { get; init; }
+        public global::OpenRouter.AnthropicThinkingTurns? AnthropicThinkingTurns { get; init; }
 #else
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0? MessagesRequestContextManagementEditsItemsOneOf1Keep0 { get; }
+        public global::OpenRouter.AnthropicThinkingTurns? AnthropicThinkingTurns { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf1Keep0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicThinkingTurns))]
 #endif
-        public bool IsMessagesRequestContextManagementEditsItemsOneOf1Keep0 => MessagesRequestContextManagementEditsItemsOneOf1Keep0 != null;
+        public bool IsAnthropicThinkingTurns => AnthropicThinkingTurns != null;
 
         /// <summary>
         /// 
@@ -62,19 +62,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf1Keep(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0 value) => new MessagesRequestContextManagementEditsItemsOneOf1Keep((global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0?)value);
+        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf1Keep(global::OpenRouter.AnthropicThinkingTurns value) => new MessagesRequestContextManagementEditsItemsOneOf1Keep((global::OpenRouter.AnthropicThinkingTurns?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0?(MessagesRequestContextManagementEditsItemsOneOf1Keep @this) => @this.MessagesRequestContextManagementEditsItemsOneOf1Keep0;
+        public static implicit operator global::OpenRouter.AnthropicThinkingTurns?(MessagesRequestContextManagementEditsItemsOneOf1Keep @this) => @this.AnthropicThinkingTurns;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesRequestContextManagementEditsItemsOneOf1Keep(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0? value)
+        public MessagesRequestContextManagementEditsItemsOneOf1Keep(global::OpenRouter.AnthropicThinkingTurns? value)
         {
-            MessagesRequestContextManagementEditsItemsOneOf1Keep0 = value;
+            AnthropicThinkingTurns = value;
         }
 
         /// <summary>
@@ -117,12 +117,12 @@ namespace OpenRouter
         /// 
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf1Keep(
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0? messagesRequestContextManagementEditsItemsOneOf1Keep0,
+            global::OpenRouter.AnthropicThinkingTurns? anthropicThinkingTurns,
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1? messagesRequestContextManagementEditsItemsOneOf1Keep1,
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2? messagesRequestContextManagementEditsItemsOneOf1Keep2
             )
         {
-            MessagesRequestContextManagementEditsItemsOneOf1Keep0 = messagesRequestContextManagementEditsItemsOneOf1Keep0;
+            AnthropicThinkingTurns = anthropicThinkingTurns;
             MessagesRequestContextManagementEditsItemsOneOf1Keep1 = messagesRequestContextManagementEditsItemsOneOf1Keep1;
             MessagesRequestContextManagementEditsItemsOneOf1Keep2 = messagesRequestContextManagementEditsItemsOneOf1Keep2;
         }
@@ -133,14 +133,14 @@ namespace OpenRouter
         public object? Object =>
             MessagesRequestContextManagementEditsItemsOneOf1Keep2 as object ??
             MessagesRequestContextManagementEditsItemsOneOf1Keep1 as object ??
-            MessagesRequestContextManagementEditsItemsOneOf1Keep0 as object 
+            AnthropicThinkingTurns as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            MessagesRequestContextManagementEditsItemsOneOf1Keep0?.ToString() ??
+            AnthropicThinkingTurns?.ToString() ??
             MessagesRequestContextManagementEditsItemsOneOf1Keep1?.ToString() ??
             MessagesRequestContextManagementEditsItemsOneOf1Keep2?.ToValueString() 
             ;
@@ -150,14 +150,14 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessagesRequestContextManagementEditsItemsOneOf1Keep0 && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep2 || !IsMessagesRequestContextManagementEditsItemsOneOf1Keep0 && IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep2 || !IsMessagesRequestContextManagementEditsItemsOneOf1Keep0 && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && IsMessagesRequestContextManagementEditsItemsOneOf1Keep2;
+            return IsAnthropicThinkingTurns && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep2 || !IsAnthropicThinkingTurns && IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep2 || !IsAnthropicThinkingTurns && !IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && IsMessagesRequestContextManagementEditsItemsOneOf1Keep2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0?, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep0 = null,
+            global::System.Func<global::OpenRouter.AnthropicThinkingTurns?, TResult>? anthropicThinkingTurns = null,
             global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1?, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep1 = null,
             global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2?, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep2 = null,
             bool validate = true)
@@ -167,9 +167,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep0 && messagesRequestContextManagementEditsItemsOneOf1Keep0 != null)
+            if (IsAnthropicThinkingTurns && anthropicThinkingTurns != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf1Keep0(MessagesRequestContextManagementEditsItemsOneOf1Keep0!);
+                return anthropicThinkingTurns(AnthropicThinkingTurns!);
             }
             else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && messagesRequestContextManagementEditsItemsOneOf1Keep1 != null)
             {
@@ -187,7 +187,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0?>? messagesRequestContextManagementEditsItemsOneOf1Keep0 = null,
+            global::System.Action<global::OpenRouter.AnthropicThinkingTurns?>? anthropicThinkingTurns = null,
             global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1?>? messagesRequestContextManagementEditsItemsOneOf1Keep1 = null,
             global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2?>? messagesRequestContextManagementEditsItemsOneOf1Keep2 = null,
             bool validate = true)
@@ -197,9 +197,9 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep0)
+            if (IsAnthropicThinkingTurns)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep0!);
+                anthropicThinkingTurns?.Invoke(AnthropicThinkingTurns!);
             }
             else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1)
             {
@@ -218,8 +218,8 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                MessagesRequestContextManagementEditsItemsOneOf1Keep0,
-                typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0),
+                AnthropicThinkingTurns,
+                typeof(global::OpenRouter.AnthropicThinkingTurns),
                 MessagesRequestContextManagementEditsItemsOneOf1Keep1,
                 typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1),
                 MessagesRequestContextManagementEditsItemsOneOf1Keep2,
@@ -240,7 +240,7 @@ namespace OpenRouter
         public bool Equals(MessagesRequestContextManagementEditsItemsOneOf1Keep other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep0?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf1Keep0, other.MessagesRequestContextManagementEditsItemsOneOf1Keep0) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicThinkingTurns?>.Default.Equals(AnthropicThinkingTurns, other.AnthropicThinkingTurns) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf1Keep1, other.MessagesRequestContextManagementEditsItemsOneOf1Keep1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf1Keep2, other.MessagesRequestContextManagementEditsItemsOneOf1Keep2) 
                 ;

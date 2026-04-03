@@ -26,7 +26,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.MessagesRequestToolsItemsOneOf2CacheControl? CacheControl { get; set; }
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,7 +46,7 @@ namespace OpenRouter
         public MessagesRequestToolsItems2(
             global::OpenRouter.MessagesRequestToolsItemsOneOf2Type type,
             global::OpenRouter.MessagesRequestToolsItemsOneOf2Name name,
-            global::OpenRouter.MessagesRequestToolsItemsOneOf2CacheControl? cacheControl)
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
         {
             this.Type = type;
             this.Name = name;

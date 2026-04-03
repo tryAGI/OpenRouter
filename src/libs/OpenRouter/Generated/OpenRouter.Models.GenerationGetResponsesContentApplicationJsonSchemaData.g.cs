@@ -236,7 +236,7 @@ namespace OpenRouter
         /// List of provider responses for this generation, including fallback attempts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_responses")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems>? ProviderResponses { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderResponse>? ProviderResponses { get; set; }
 
         /// <summary>
         /// User-Agent header from the request
@@ -413,7 +413,7 @@ namespace OpenRouter
             string? nativeFinishReason,
             string? externalUser,
             string? router,
-            global::System.Collections.Generic.IList<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems>? providerResponses,
+            global::System.Collections.Generic.IList<global::OpenRouter.ProviderResponse>? providerResponses,
             string? userAgent,
             string? httpReferer,
             string? requestId)

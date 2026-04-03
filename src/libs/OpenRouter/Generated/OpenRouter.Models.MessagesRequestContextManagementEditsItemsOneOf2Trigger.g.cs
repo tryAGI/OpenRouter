@@ -12,15 +12,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TriggerTypeJsonConverter))]
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2TriggerType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicInputTokensTriggerTypeJsonConverter))]
+        public global::OpenRouter.AnthropicInputTokensTriggerType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Value { get; set; }
+        public required int Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +37,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestContextManagementEditsItemsOneOf2Trigger(
-            double value,
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2TriggerType type)
+            int value,
+            global::OpenRouter.AnthropicInputTokensTriggerType type)
         {
             this.Type = type;
             this.Value = value;

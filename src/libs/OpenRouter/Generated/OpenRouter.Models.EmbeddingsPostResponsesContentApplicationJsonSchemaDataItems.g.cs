@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// A single embedding object
     /// </summary>
     public sealed partial class EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems
     {
@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsObject Object { get; set; }
 
         /// <summary>
-        /// 
+        /// Embedding vector as an array of floats or a base64 string
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingJsonConverter))]
@@ -24,10 +24,10 @@ namespace OpenRouter
         public required global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding Embedding { get; set; }
 
         /// <summary>
-        /// 
+        /// Index of the embedding in the input list
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public double? Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,16 +38,20 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems" /> class.
         /// </summary>
-        /// <param name="embedding"></param>
+        /// <param name="embedding">
+        /// Embedding vector as an array of floats or a base64 string
+        /// </param>
         /// <param name="object"></param>
-        /// <param name="index"></param>
+        /// <param name="index">
+        /// Index of the embedding in the input list
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems(
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding embedding,
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsObject @object,
-            double? index)
+            int? index)
         {
             this.Object = @object;
             this.Embedding = embedding;

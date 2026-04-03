@@ -14,7 +14,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysListResponse200> ListAsync(
             string? includeDisabled = default,
-            string? offset = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

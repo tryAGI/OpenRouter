@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,7 +49,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        baseMessagesResultContentItemsOneOf1Caller0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0).Name}");
+                        baseMessagesResultContentItemsOneOf1Caller0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +64,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        baseMessagesResultContentItemsOneOf1Caller1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1).Name}");
+                        baseMessagesResultContentItemsOneOf1Caller1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +79,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        baseMessagesResultContentItemsOneOf1Caller2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2).Name}");
+                        baseMessagesResultContentItemsOneOf1Caller2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -89,7 +96,9 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    baseMessagesResultContentItemsOneOf1Caller0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0).Name}");
+                    baseMessagesResultContentItemsOneOf1Caller0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -100,7 +109,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    baseMessagesResultContentItemsOneOf1Caller1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1).Name}");
+                    baseMessagesResultContentItemsOneOf1Caller1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,7 +122,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    baseMessagesResultContentItemsOneOf1Caller2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2).Name}");
+                    baseMessagesResultContentItemsOneOf1Caller2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -138,19 +151,26 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsBaseMessagesResultContentItemsOneOf1Caller0)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf1Caller0, typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller0).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf1Caller0!, typeInfo);
             }
             else if (value.IsBaseMessagesResultContentItemsOneOf1Caller1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf1Caller1, typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf1Caller1!, typeInfo);
             }
             else if (value.IsBaseMessagesResultContentItemsOneOf1Caller2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf1Caller2, typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf1Caller2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf1Caller2!, typeInfo);
             }
         }
     }

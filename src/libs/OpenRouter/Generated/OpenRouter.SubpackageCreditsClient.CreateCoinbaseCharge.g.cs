@@ -85,13 +85,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_410 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_410 = global::OpenRouter.GoneResponse.FromJson(__content_410, JsonSerializerOptions);
+                        __value_410 = global::OpenRouter.GoneResponse.FromJson(__content_410, JsonSerializerContext);
                     }
                     else
                     {
                         __content_410 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_410 = global::OpenRouter.GoneResponse.FromJson(__content_410, JsonSerializerOptions);
+                        __value_410 = global::OpenRouter.GoneResponse.FromJson(__content_410, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)

@@ -11,7 +11,7 @@ namespace OpenRouter
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailsGetGuardrailResponse200> GetGuardrailAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.GetGuardrailResponse> GetGuardrailAsync(
             global::System.Guid id,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

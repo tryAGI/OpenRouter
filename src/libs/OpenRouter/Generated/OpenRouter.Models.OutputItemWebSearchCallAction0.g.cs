@@ -32,7 +32,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemWebSearchCallActionOneOf0SourcesItems>? Sources { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.WebSearchSource>? Sources { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace OpenRouter
             string query,
             global::OpenRouter.OutputItemWebSearchCallActionOneOf0Type type,
             global::System.Collections.Generic.IList<string>? queries,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemWebSearchCallActionOneOf0SourcesItems>? sources)
+            global::System.Collections.Generic.IList<global::OpenRouter.WebSearchSource>? sources)
         {
             this.Type = type;
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));

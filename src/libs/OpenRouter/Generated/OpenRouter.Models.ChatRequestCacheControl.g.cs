@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+    /// 
     /// </summary>
     public sealed partial class ChatRequestCacheControl
     {
@@ -12,15 +12,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestCacheControlTypeJsonConverter))]
-        public global::OpenRouter.ChatRequestCacheControlType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlDirectiveTypeJsonConverter))]
+        public global::OpenRouter.AnthropicCacheControlDirectiveType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestCacheControlTtlJsonConverter))]
-        public global::OpenRouter.ChatRequestCacheControlTtl? Ttl { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlTtlJsonConverter))]
+        public global::OpenRouter.AnthropicCacheControlTtl? Ttl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +37,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatRequestCacheControl(
-            global::OpenRouter.ChatRequestCacheControlType type,
-            global::OpenRouter.ChatRequestCacheControlTtl? ttl)
+            global::OpenRouter.AnthropicCacheControlDirectiveType type,
+            global::OpenRouter.AnthropicCacheControlTtl? ttl)
         {
             this.Type = type;
             this.Ttl = ttl;

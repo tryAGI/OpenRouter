@@ -13,35 +13,35 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 { get; init; }
+        public global::OpenRouter.AnthropicTextBlockParam? AnthropicTextBlockParam { get; init; }
 #else
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 { get; }
+        public global::OpenRouter.AnthropicTextBlockParam? AnthropicTextBlockParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicTextBlockParam))]
 #endif
-        public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 != null;
+        public bool IsAnthropicTextBlockParam => AnthropicTextBlockParam != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 { get; init; }
+        public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; init; }
 #else
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 { get; }
+        public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicImageBlockParam))]
 #endif
-        public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 != null;
+        public bool IsAnthropicImageBlockParam => AnthropicImageBlockParam != null;
 
         /// <summary>
         /// 
@@ -64,69 +64,69 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 { get; init; }
+        public global::OpenRouter.AnthropicSearchResultBlockParam? AnthropicSearchResultBlockParam { get; init; }
 #else
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 { get; }
+        public global::OpenRouter.AnthropicSearchResultBlockParam? AnthropicSearchResultBlockParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicSearchResultBlockParam))]
 #endif
-        public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 != null;
+        public bool IsAnthropicSearchResultBlockParam => AnthropicSearchResultBlockParam != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 { get; init; }
+        public global::OpenRouter.AnthropicDocumentBlockParam? AnthropicDocumentBlockParam { get; init; }
 #else
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 { get; }
+        public global::OpenRouter.AnthropicDocumentBlockParam? AnthropicDocumentBlockParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicDocumentBlockParam))]
 #endif
-        public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 != null;
+        public bool IsAnthropicDocumentBlockParam => AnthropicDocumentBlockParam != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0?)value);
+        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicTextBlockParam value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.AnthropicTextBlockParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0;
+        public static implicit operator global::OpenRouter.AnthropicTextBlockParam?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.AnthropicTextBlockParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0? value)
+        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicTextBlockParam? value)
         {
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 = value;
+            AnthropicTextBlockParam = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?)value);
+        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicImageBlockParam value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.AnthropicImageBlockParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1;
+        public static implicit operator global::OpenRouter.AnthropicImageBlockParam?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.AnthropicImageBlockParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1? value)
+        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicImageBlockParam? value)
         {
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 = value;
+            AnthropicImageBlockParam = value;
         }
 
         /// <summary>
@@ -150,77 +150,77 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?)value);
+        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicSearchResultBlockParam value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.AnthropicSearchResultBlockParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3;
+        public static implicit operator global::OpenRouter.AnthropicSearchResultBlockParam?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.AnthropicSearchResultBlockParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3? value)
+        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicSearchResultBlockParam? value)
         {
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 = value;
+            AnthropicSearchResultBlockParam = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?)value);
+        public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParam value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.AnthropicDocumentBlockParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4;
+        public static implicit operator global::OpenRouter.AnthropicDocumentBlockParam?(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items @this) => @this.AnthropicDocumentBlockParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4? value)
+        public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParam? value)
         {
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 = value;
+            AnthropicDocumentBlockParam = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0,
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1,
+            global::OpenRouter.AnthropicTextBlockParam? anthropicTextBlockParam,
+            global::OpenRouter.AnthropicImageBlockParam? anthropicImageBlockParam,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2,
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3,
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4
+            global::OpenRouter.AnthropicSearchResultBlockParam? anthropicSearchResultBlockParam,
+            global::OpenRouter.AnthropicDocumentBlockParam? anthropicDocumentBlockParam
             )
         {
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 = messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0;
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 = messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1;
+            AnthropicTextBlockParam = anthropicTextBlockParam;
+            AnthropicImageBlockParam = anthropicImageBlockParam;
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2;
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 = messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3;
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 = messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4;
+            AnthropicSearchResultBlockParam = anthropicSearchResultBlockParam;
+            AnthropicDocumentBlockParam = anthropicDocumentBlockParam;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 as object ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 as object ??
+            AnthropicDocumentBlockParam as object ??
+            AnthropicSearchResultBlockParam as object ??
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 as object ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 as object ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 as object 
+            AnthropicImageBlockParam as object ??
+            AnthropicTextBlockParam as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0?.ToString() ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?.ToString() ??
+            AnthropicTextBlockParam?.ToString() ??
+            AnthropicImageBlockParam?.ToString() ??
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?.ToString() ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?.ToString() ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?.ToString() 
+            AnthropicSearchResultBlockParam?.ToString() ??
+            AnthropicDocumentBlockParam?.ToString() 
             ;
 
         /// <summary>
@@ -228,18 +228,18 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 || !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 && IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 || !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 && IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 || !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 || !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 && IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4;
+            return IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsAnthropicSearchResultBlockParam && !IsAnthropicDocumentBlockParam || !IsAnthropicTextBlockParam && IsAnthropicImageBlockParam && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsAnthropicSearchResultBlockParam && !IsAnthropicDocumentBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsAnthropicSearchResultBlockParam && !IsAnthropicDocumentBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && IsAnthropicSearchResultBlockParam && !IsAnthropicDocumentBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && !IsAnthropicSearchResultBlockParam && IsAnthropicDocumentBlockParam;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 = null,
+            global::System.Func<global::OpenRouter.AnthropicTextBlockParam?, TResult>? anthropicTextBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicImageBlockParam?, TResult>? anthropicImageBlockParam = null,
             global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 = null,
+            global::System.Func<global::OpenRouter.AnthropicSearchResultBlockParam?, TResult>? anthropicSearchResultBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParam?, TResult>? anthropicDocumentBlockParam = null,
             bool validate = true)
         {
             if (validate)
@@ -247,25 +247,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 && messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 != null)
+            if (IsAnthropicTextBlockParam && anthropicTextBlockParam != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0!);
+                return anthropicTextBlockParam(AnthropicTextBlockParam!);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 && messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 != null)
+            else if (IsAnthropicImageBlockParam && anthropicImageBlockParam != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1!);
+                return anthropicImageBlockParam(AnthropicImageBlockParam!);
             }
             else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 != null)
             {
                 return messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 && messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 != null)
+            else if (IsAnthropicSearchResultBlockParam && anthropicSearchResultBlockParam != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3!);
+                return anthropicSearchResultBlockParam(AnthropicSearchResultBlockParam!);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 && messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 != null)
+            else if (IsAnthropicDocumentBlockParam && anthropicDocumentBlockParam != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4!);
+                return anthropicDocumentBlockParam(AnthropicDocumentBlockParam!);
             }
 
             return default(TResult);
@@ -275,11 +275,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 = null,
+            global::System.Action<global::OpenRouter.AnthropicTextBlockParam?>? anthropicTextBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParam?>? anthropicImageBlockParam = null,
             global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 = null,
+            global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam?>? anthropicSearchResultBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParam?>? anthropicDocumentBlockParam = null,
             bool validate = true)
         {
             if (validate)
@@ -287,25 +287,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0)
+            if (IsAnthropicTextBlockParam)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0!);
+                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1)
+            else if (IsAnthropicImageBlockParam)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1!);
+                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
             }
             else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2)
             {
                 messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3)
+            else if (IsAnthropicSearchResultBlockParam)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3!);
+                anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4)
+            else if (IsAnthropicDocumentBlockParam)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4!);
+                anthropicDocumentBlockParam?.Invoke(AnthropicDocumentBlockParam!);
             }
         }
 
@@ -316,16 +316,16 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0,
-                typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0),
-                MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1,
-                typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1),
+                AnthropicTextBlockParam,
+                typeof(global::OpenRouter.AnthropicTextBlockParam),
+                AnthropicImageBlockParam,
+                typeof(global::OpenRouter.AnthropicImageBlockParam),
                 MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2,
                 typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2),
-                MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3,
-                typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3),
-                MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4,
-                typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4),
+                AnthropicSearchResultBlockParam,
+                typeof(global::OpenRouter.AnthropicSearchResultBlockParam),
+                AnthropicDocumentBlockParam,
+                typeof(global::OpenRouter.AnthropicDocumentBlockParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -342,11 +342,11 @@ namespace OpenRouter
         public bool Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0, other.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1, other.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParam?>.Default.Equals(AnthropicTextBlockParam, other.AnthropicTextBlockParam) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicImageBlockParam?>.Default.Equals(AnthropicImageBlockParam, other.AnthropicImageBlockParam) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2, other.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3, other.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4, other.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicSearchResultBlockParam?>.Default.Equals(AnthropicSearchResultBlockParam, other.AnthropicSearchResultBlockParam) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDocumentBlockParam?>.Default.Equals(AnthropicDocumentBlockParam, other.AnthropicDocumentBlockParam) 
                 ;
         }
 
