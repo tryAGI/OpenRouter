@@ -32,8 +32,8 @@ namespace OpenRouter
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.Preview20250311WebSearchServerToolEngineJsonConverter))]
-        public global::OpenRouter.Preview20250311WebSearchServerToolEngine? Engine { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchEngineEnumJsonConverter))]
+        public global::OpenRouter.WebSearchEngineEnum? Engine { get; set; }
 
         /// <summary>
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
@@ -45,8 +45,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.Preview20250311WebSearchServerToolFilters, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.Preview20250311WebSearchServerToolFilters, object>? Filters { get; set; }
+        public global::OpenRouter.WebSearchDomainFilter? Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,9 +75,9 @@ namespace OpenRouter
             global::OpenRouter.Preview20250311WebSearchServerToolType type,
             global::OpenRouter.SearchContextSizeEnum? searchContextSize,
             global::OpenRouter.PreviewWebSearchUserLocation? userLocation,
-            global::OpenRouter.Preview20250311WebSearchServerToolEngine? engine,
+            global::OpenRouter.WebSearchEngineEnum? engine,
             double? maxResults,
-            global::OpenRouter.OneOf<global::OpenRouter.Preview20250311WebSearchServerToolFilters, object>? filters)
+            global::OpenRouter.WebSearchDomainFilter? filters)
         {
             this.Type = type;
             this.SearchContextSize = searchContextSize;

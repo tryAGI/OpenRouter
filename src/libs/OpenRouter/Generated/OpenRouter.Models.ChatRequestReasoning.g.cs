@@ -19,8 +19,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningSummaryJsonConverter))]
-        public global::OpenRouter.ChatRequestReasoningSummary? Summary { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatReasoningSummaryVerbosityEnumJsonConverter))]
+        public global::OpenRouter.ChatReasoningSummaryVerbosityEnum? Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace OpenRouter
 #endif
         public ChatRequestReasoning(
             global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? effort,
-            global::OpenRouter.ChatRequestReasoningSummary? summary)
+            global::OpenRouter.ChatReasoningSummaryVerbosityEnum? summary)
         {
             this.Effort = effort;
             this.Summary = summary;

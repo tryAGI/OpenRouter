@@ -47,8 +47,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusEnumJsonConverter))]
-        public global::OpenRouter.ToolCallStatusEnum? Status { get; set; }
+        public global::OpenRouter.FunctionCallItemStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,7 +73,7 @@ namespace OpenRouter
             string arguments,
             string id,
             global::OpenRouter.FunctionCallItemType type,
-            global::OpenRouter.ToolCallStatusEnum? status)
+            global::OpenRouter.FunctionCallItemStatus? status)
         {
             this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));

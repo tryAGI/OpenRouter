@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -54,7 +55,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        messagesRequestToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice0> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice0).Name}");
+                        messagesRequestToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -67,7 +70,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        messagesRequestToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice1).Name}");
+                        messagesRequestToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,7 +85,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        messagesRequestToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice2).Name}");
+                        messagesRequestToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +100,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        messagesRequestToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice3>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice3> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice3).Name}");
+                        messagesRequestToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -108,7 +117,9 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    messagesRequestToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice0> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice0).Name}");
+                    messagesRequestToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -119,7 +130,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    messagesRequestToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice1).Name}");
+                    messagesRequestToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -130,7 +143,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    messagesRequestToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice2).Name}");
+                    messagesRequestToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -141,7 +156,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    messagesRequestToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestToolChoice3>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice3> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice3).Name}");
+                    messagesRequestToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -170,23 +187,32 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.MessagesRequestToolChoice value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsMessagesRequestToolChoice0)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice0, typeof(global::OpenRouter.MessagesRequestToolChoice0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice0?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice0).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice0!, typeInfo);
             }
             else if (value.IsMessagesRequestToolChoice1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice1, typeof(global::OpenRouter.MessagesRequestToolChoice1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice1!, typeInfo);
             }
             else if (value.IsMessagesRequestToolChoice2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice2, typeof(global::OpenRouter.MessagesRequestToolChoice2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice2!, typeInfo);
             }
             else if (value.IsMessagesRequestToolChoice3)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice3, typeof(global::OpenRouter.MessagesRequestToolChoice3), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolChoice3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolChoice3?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolChoice3).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolChoice3!, typeInfo);
             }
         }
     }

@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -36,15 +37,17 @@ namespace OpenRouter.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = default;
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = default;
+            global::OpenRouter.AnthropicInputTokensTrigger? anthropicInputTokensTrigger = default;
+            global::OpenRouter.AnthropicToolUsesKeep? anthropicToolUsesKeep = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
                 {
                     try
                     {
-                        messagesRequestContextManagementEditsItemsOneOf0Trigger0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicInputTokensTrigger), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicInputTokensTrigger> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicInputTokensTrigger).Name}");
+                        anthropicInputTokensTrigger = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -57,7 +60,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        messagesRequestContextManagementEditsItemsOneOf0Trigger1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolUsesKeep), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolUsesKeep> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicToolUsesKeep).Name}");
+                        anthropicToolUsesKeep = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -68,11 +73,13 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestContextManagementEditsItemsOneOf0Trigger0 == null && messagesRequestContextManagementEditsItemsOneOf0Trigger1 == null)
+            if (anthropicInputTokensTrigger == null && anthropicToolUsesKeep == null)
             {
                 try
                 {
-                    messagesRequestContextManagementEditsItemsOneOf0Trigger0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicInputTokensTrigger), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicInputTokensTrigger> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicInputTokensTrigger).Name}");
+                    anthropicInputTokensTrigger = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -83,7 +90,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    messagesRequestContextManagementEditsItemsOneOf0Trigger1 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolUsesKeep), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolUsesKeep> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicToolUsesKeep).Name}");
+                    anthropicToolUsesKeep = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -94,9 +103,9 @@ namespace OpenRouter.JsonConverters
             }
 
             var __value = new global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger(
-                messagesRequestContextManagementEditsItemsOneOf0Trigger0,
+                anthropicInputTokensTrigger,
 
-                messagesRequestContextManagementEditsItemsOneOf0Trigger1
+                anthropicToolUsesKeep
                 );
 
             return __value;
@@ -108,15 +117,20 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0)
+            if (value.IsAnthropicInputTokensTrigger)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestContextManagementEditsItemsOneOf0Trigger0, typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicInputTokensTrigger), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicInputTokensTrigger?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicInputTokensTrigger).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicInputTokensTrigger!, typeInfo);
             }
-            else if (value.IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1)
+            else if (value.IsAnthropicToolUsesKeep)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestContextManagementEditsItemsOneOf0Trigger1, typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolUsesKeep), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolUsesKeep?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicToolUsesKeep).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicToolUsesKeep!, typeInfo);
             }
         }
     }

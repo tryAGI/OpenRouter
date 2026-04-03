@@ -34,7 +34,7 @@ namespace OpenRouter
         /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AnalyticsGetUserActivityResponse200> GetUserActivityAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ActivityResponse> GetUserActivityAsync(
             string? date = default,
             string? apiKeyHash = default,
             string? userId = default,
@@ -113,13 +113,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -151,13 +151,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -189,13 +189,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -227,13 +227,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -265,13 +265,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -315,7 +315,7 @@ namespace OpenRouter
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::OpenRouter.AnalyticsGetUserActivityResponse200.FromJson(__content, JsonSerializerOptions) ??
+                        global::OpenRouter.ActivityResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -345,7 +345,7 @@ namespace OpenRouter
                     ).ConfigureAwait(false);
 
                     return
-                        await global::OpenRouter.AnalyticsGetUserActivityResponse200.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::OpenRouter.ActivityResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

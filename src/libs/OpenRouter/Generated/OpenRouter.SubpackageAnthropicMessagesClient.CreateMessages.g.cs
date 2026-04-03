@@ -68,7 +68,7 @@ namespace OpenRouter
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -99,19 +99,19 @@ namespace OpenRouter
             {
                 string? __content_400 = null;
                 global::System.Exception? __exception_400 = null;
-                global::OpenRouter.CreateMessagesRequestBadRequestError? __value_400 = null;
+                global::OpenRouter.MessagesErrorResponse? __value_400 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::OpenRouter.CreateMessagesRequestBadRequestError.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::OpenRouter.CreateMessagesRequestBadRequestError.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_400, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -119,7 +119,7 @@ namespace OpenRouter
                     __exception_400 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.CreateMessagesRequestBadRequestError>(
+                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_400,
                     statusCode: __response.StatusCode)
@@ -137,19 +137,19 @@ namespace OpenRouter
             {
                 string? __content_401 = null;
                 global::System.Exception? __exception_401 = null;
-                global::OpenRouter.CreateMessagesRequestUnauthorizedError? __value_401 = null;
+                global::OpenRouter.MessagesErrorResponse? __value_401 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::OpenRouter.CreateMessagesRequestUnauthorizedError.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::OpenRouter.CreateMessagesRequestUnauthorizedError.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -157,7 +157,7 @@ namespace OpenRouter
                     __exception_401 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.CreateMessagesRequestUnauthorizedError>(
+                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_401,
                     statusCode: __response.StatusCode)
@@ -175,19 +175,19 @@ namespace OpenRouter
             {
                 string? __content_403 = null;
                 global::System.Exception? __exception_403 = null;
-                global::OpenRouter.CreateMessagesRequestForbiddenError? __value_403 = null;
+                global::OpenRouter.MessagesErrorResponse? __value_403 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::OpenRouter.CreateMessagesRequestForbiddenError.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_403, JsonSerializerContext);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::OpenRouter.CreateMessagesRequestForbiddenError.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_403, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -195,7 +195,7 @@ namespace OpenRouter
                     __exception_403 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.CreateMessagesRequestForbiddenError>(
+                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_403,
                     statusCode: __response.StatusCode)
@@ -213,19 +213,19 @@ namespace OpenRouter
             {
                 string? __content_404 = null;
                 global::System.Exception? __exception_404 = null;
-                global::OpenRouter.CreateMessagesRequestNotFoundError? __value_404 = null;
+                global::OpenRouter.MessagesErrorResponse? __value_404 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::OpenRouter.CreateMessagesRequestNotFoundError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::OpenRouter.CreateMessagesRequestNotFoundError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -233,7 +233,7 @@ namespace OpenRouter
                     __exception_404 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.CreateMessagesRequestNotFoundError>(
+                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_404,
                     statusCode: __response.StatusCode)
@@ -251,19 +251,19 @@ namespace OpenRouter
             {
                 string? __content_429 = null;
                 global::System.Exception? __exception_429 = null;
-                global::OpenRouter.CreateMessagesRequestTooManyRequestsError? __value_429 = null;
+                global::OpenRouter.MessagesErrorResponse? __value_429 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::OpenRouter.CreateMessagesRequestTooManyRequestsError.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_429, JsonSerializerContext);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::OpenRouter.CreateMessagesRequestTooManyRequestsError.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_429, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -271,7 +271,7 @@ namespace OpenRouter
                     __exception_429 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.CreateMessagesRequestTooManyRequestsError>(
+                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_429,
                     statusCode: __response.StatusCode)
@@ -289,19 +289,19 @@ namespace OpenRouter
             {
                 string? __content_500 = null;
                 global::System.Exception? __exception_500 = null;
-                global::OpenRouter.CreateMessagesRequestInternalServerError? __value_500 = null;
+                global::OpenRouter.MessagesErrorResponse? __value_500 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::OpenRouter.CreateMessagesRequestInternalServerError.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::OpenRouter.CreateMessagesRequestInternalServerError.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -309,7 +309,7 @@ namespace OpenRouter
                     __exception_500 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.CreateMessagesRequestInternalServerError>(
+                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_500,
                     statusCode: __response.StatusCode)
@@ -327,19 +327,19 @@ namespace OpenRouter
             {
                 string? __content_503 = null;
                 global::System.Exception? __exception_503 = null;
-                global::OpenRouter.CreateMessagesRequestServiceUnavailableError? __value_503 = null;
+                global::OpenRouter.MessagesErrorResponse? __value_503 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = global::OpenRouter.CreateMessagesRequestServiceUnavailableError.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_503, JsonSerializerContext);
                     }
                     else
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_503 = global::OpenRouter.CreateMessagesRequestServiceUnavailableError.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_503, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -347,7 +347,7 @@ namespace OpenRouter
                     __exception_503 = __ex;
                 }
 
-                throw new global::OpenRouter.ApiException<global::OpenRouter.CreateMessagesRequestServiceUnavailableError>(
+                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_503,
                     statusCode: __response.StatusCode)
@@ -383,7 +383,7 @@ namespace OpenRouter
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::OpenRouter.MessagesResult.FromJson(__content, JsonSerializerOptions) ??
+                        global::OpenRouter.MessagesResult.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -413,7 +413,7 @@ namespace OpenRouter
                     ).ConfigureAwait(false);
 
                     return
-                        await global::OpenRouter.MessagesResult.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::OpenRouter.MessagesResult.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -498,13 +498,13 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             double? temperature = default,
             double? topP = default,
-            double? topK = default,
+            int? topK = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestToolsItems>? tools = default,
             global::OpenRouter.MessagesRequestToolChoice? toolChoice = default,
             global::OpenRouter.MessagesRequestThinking? thinking = default,
             global::OpenRouter.MessagesRequestServiceTier? serviceTier = default,
             global::OpenRouter.MessagesOutputConfig? outputConfig = default,
-            global::OpenRouter.MessagesRequestCacheControl? cacheControl = default,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             bool? stream = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestProvider, object>? provider = default,

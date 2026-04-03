@@ -44,20 +44,19 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_uses")]
-        public double? MaxUses { get; set; }
+        public int? MaxUses { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesRequestToolsItemsOneOf4UserLocation, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestToolsItemsOneOf4UserLocation, object>? UserLocation { get; set; }
+        public global::OpenRouter.PreviewWebSearchUserLocation? UserLocation { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.MessagesRequestToolsItemsOneOf4CacheControl? CacheControl { get; set; }
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -85,9 +84,9 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestToolsItemsOneOf4AllowedCallersItems>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
-            double? maxUses,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestToolsItemsOneOf4UserLocation, object>? userLocation,
-            global::OpenRouter.MessagesRequestToolsItemsOneOf4CacheControl? cacheControl)
+            int? maxUses,
+            global::OpenRouter.PreviewWebSearchUserLocation? userLocation,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
         {
             this.Type = type;
             this.Name = name;

@@ -12,9 +12,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatChoiceFinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFinishReasonEnumJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ChatChoiceFinishReason FinishReason { get; set; }
+        public required global::OpenRouter.ChatFinishReasonEnum FinishReason { get; set; }
 
         /// <summary>
         /// Choice index
@@ -59,7 +59,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatChoice(
-            global::OpenRouter.ChatChoiceFinishReason finishReason,
+            global::OpenRouter.ChatFinishReasonEnum finishReason,
             int index,
             global::OpenRouter.ChatAssistantMessage message,
             global::OpenRouter.ChatTokenLogprobs? logprobs)

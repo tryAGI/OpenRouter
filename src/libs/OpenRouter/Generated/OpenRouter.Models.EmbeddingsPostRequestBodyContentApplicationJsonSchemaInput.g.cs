@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Text, token, or multimodal input(s) to embed
     /// </summary>
     public readonly partial struct EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput : global::System.IEquatable<EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput>
     {

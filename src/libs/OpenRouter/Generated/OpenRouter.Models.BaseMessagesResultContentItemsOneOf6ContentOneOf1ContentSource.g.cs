@@ -30,18 +30,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1? BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 { get; init; }
+        public global::OpenRouter.AnthropicPlainTextSourceResponse? AnthropicPlainTextSourceResponse { get; init; }
 #else
-        public global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1? BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 { get; }
+        public global::OpenRouter.AnthropicPlainTextSourceResponse? AnthropicPlainTextSourceResponse { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicPlainTextSourceResponse))]
 #endif
-        public bool IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 => BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 != null;
+        public bool IsAnthropicPlainTextSourceResponse => AnthropicPlainTextSourceResponse != null;
         /// <summary>
         /// 
         /// </summary>
@@ -63,19 +63,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource(global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 value) => new BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource((global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?)value);
+        public static implicit operator BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource(global::OpenRouter.AnthropicPlainTextSourceResponse value) => new BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource((global::OpenRouter.AnthropicPlainTextSourceResponse?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource @this) => @this.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1;
+        public static implicit operator global::OpenRouter.AnthropicPlainTextSourceResponse?(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource @this) => @this.AnthropicPlainTextSourceResponse;
 
         /// <summary>
         /// 
         /// </summary>
-        public BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource(global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1? value)
+        public BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource(global::OpenRouter.AnthropicPlainTextSourceResponse? value)
         {
-            BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 = value;
+            AnthropicPlainTextSourceResponse = value;
         }
 
         /// <summary>
@@ -83,18 +83,18 @@ namespace OpenRouter
         /// </summary>
         public BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource(
             global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0? baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0,
-            global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1? baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1
+            global::OpenRouter.AnthropicPlainTextSourceResponse? anthropicPlainTextSourceResponse
             )
         {
             BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 = baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0;
-            BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 = baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1;
+            AnthropicPlainTextSourceResponse = anthropicPlainTextSourceResponse;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 as object ??
+            AnthropicPlainTextSourceResponse as object ??
             BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 as object 
             ;
 
@@ -103,7 +103,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?.ToString() ??
-            BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?.ToString() 
+            AnthropicPlainTextSourceResponse?.ToString() 
             ;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 && !IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 || !IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 && IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1;
+            return IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 && !IsAnthropicPlainTextSourceResponse || !IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 && IsAnthropicPlainTextSourceResponse;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?, TResult>? baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 = null,
-            global::System.Func<global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?, TResult>? baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 = null,
+            global::System.Func<global::OpenRouter.AnthropicPlainTextSourceResponse?, TResult>? anthropicPlainTextSourceResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -131,9 +131,9 @@ namespace OpenRouter
             {
                 return baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0!);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 && baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 != null)
+            else if (IsAnthropicPlainTextSourceResponse && anthropicPlainTextSourceResponse != null)
             {
-                return baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1!);
+                return anthropicPlainTextSourceResponse(AnthropicPlainTextSourceResponse!);
             }
 
             return default(TResult);
@@ -144,7 +144,7 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?>? baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 = null,
-            global::System.Action<global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?>? baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 = null,
+            global::System.Action<global::OpenRouter.AnthropicPlainTextSourceResponse?>? anthropicPlainTextSourceResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +156,9 @@ namespace OpenRouter
             {
                 baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?.Invoke(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0!);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1)
+            else if (IsAnthropicPlainTextSourceResponse)
             {
-                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?.Invoke(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1!);
+                anthropicPlainTextSourceResponse?.Invoke(AnthropicPlainTextSourceResponse!);
             }
         }
 
@@ -171,8 +171,8 @@ namespace OpenRouter
             {
                 BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0,
                 typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0),
-                BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1,
-                typeof(global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1),
+                AnthropicPlainTextSourceResponse,
+                typeof(global::OpenRouter.AnthropicPlainTextSourceResponse),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?>.Default.Equals(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0, other.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?>.Default.Equals(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1, other.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicPlainTextSourceResponse?>.Default.Equals(AnthropicPlainTextSourceResponse, other.AnthropicPlainTextSourceResponse) 
                 ;
         }
 

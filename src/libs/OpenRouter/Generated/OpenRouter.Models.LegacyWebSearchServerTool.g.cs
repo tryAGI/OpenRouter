@@ -19,8 +19,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.LegacyWebSearchServerToolFilters, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.LegacyWebSearchServerToolFilters, object>? Filters { get; set; }
+        public global::OpenRouter.WebSearchDomainFilter? Filters { get; set; }
 
         /// <summary>
         /// Size of the search context for web search tools
@@ -39,8 +38,8 @@ namespace OpenRouter
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.LegacyWebSearchServerToolEngineJsonConverter))]
-        public global::OpenRouter.LegacyWebSearchServerToolEngine? Engine { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchEngineEnumJsonConverter))]
+        public global::OpenRouter.WebSearchEngineEnum? Engine { get; set; }
 
         /// <summary>
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
@@ -76,10 +75,10 @@ namespace OpenRouter
 #endif
         public LegacyWebSearchServerTool(
             global::OpenRouter.LegacyWebSearchServerToolType type,
-            global::OpenRouter.OneOf<global::OpenRouter.LegacyWebSearchServerToolFilters, object>? filters,
+            global::OpenRouter.WebSearchDomainFilter? filters,
             global::OpenRouter.SearchContextSizeEnum? searchContextSize,
             global::OpenRouter.WebSearchUserLocation? userLocation,
-            global::OpenRouter.LegacyWebSearchServerToolEngine? engine,
+            global::OpenRouter.WebSearchEngineEnum? engine,
             double? maxResults)
         {
             this.Type = type;

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// The format of the output embeddings
     /// </summary>
     public enum EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat
     {

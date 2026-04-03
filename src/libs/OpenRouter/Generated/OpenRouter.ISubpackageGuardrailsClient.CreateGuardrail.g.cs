@@ -11,7 +11,7 @@ namespace OpenRouter
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailsCreateGuardrailResponse201> CreateGuardrailAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.CreateGuardrailResponse> CreateGuardrailAsync(
 
             global::OpenRouter.CreateGuardrailRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,9 +28,7 @@ namespace OpenRouter
         /// <param name="limitUsd">
         /// Spending limit in USD
         /// </param>
-        /// <param name="resetInterval">
-        /// Interval at which the limit resets (daily, weekly, monthly)
-        /// </param>
+        /// <param name="resetInterval"></param>
         /// <param name="allowedProviders">
         /// List of allowed provider IDs
         /// </param>
@@ -45,11 +43,11 @@ namespace OpenRouter
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.GuardrailsCreateGuardrailResponse201> CreateGuardrailAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.CreateGuardrailResponse> CreateGuardrailAsync(
             string name,
             string? description = default,
             double? limitUsd = default,
-            global::OpenRouter.OneOf<global::OpenRouter.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetInterval?, object>? resetInterval = default,
+            global::OpenRouter.CreateGuardrailRequestResetInterval? resetInterval = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,

@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -47,7 +48,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        preferredMinThroughputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<double>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
+                        preferredMinThroughputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,7 +63,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        percentileThroughputCutoffs = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.PercentileThroughputCutoffs>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PercentileThroughputCutoffs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PercentileThroughputCutoffs> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PercentileThroughputCutoffs).Name}");
+                        percentileThroughputCutoffs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,7 +78,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        preferredMinThroughputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                        preferredMinThroughputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -88,7 +95,9 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    preferredMinThroughputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<double>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
+                    preferredMinThroughputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -99,7 +108,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    percentileThroughputCutoffs = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.PercentileThroughputCutoffs>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PercentileThroughputCutoffs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PercentileThroughputCutoffs> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PercentileThroughputCutoffs).Name}");
+                    percentileThroughputCutoffs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,7 +121,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    preferredMinThroughputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                    preferredMinThroughputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -137,19 +150,26 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.PreferredMinThroughput value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsPreferredMinThroughputVariant1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMinThroughputVariant1, typeof(double), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMinThroughputVariant1!.Value, typeInfo);
             }
             else if (value.IsPercentileThroughputCutoffs)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PercentileThroughputCutoffs, typeof(global::OpenRouter.PercentileThroughputCutoffs), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PercentileThroughputCutoffs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PercentileThroughputCutoffs?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PercentileThroughputCutoffs).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PercentileThroughputCutoffs!, typeInfo);
             }
             else if (value.IsPreferredMinThroughputVariant3)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMinThroughputVariant3, typeof(object), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMinThroughputVariant3!, typeInfo);
             }
         }
     }

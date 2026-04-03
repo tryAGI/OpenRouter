@@ -13,9 +13,9 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>? MessagesMessageParamContentOneOf1ItemsOneOf8Content0 { get; init; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>? MessagesMessageParamContentOneOf1ItemsOneOf8Content0 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>? MessagesMessageParamContentOneOf1ItemsOneOf8Content0 { get; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>? MessagesMessageParamContentOneOf1ItemsOneOf8Content0 { get; }
 #endif
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf8Content(
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>? messagesMessageParamContentOneOf1ItemsOneOf8Content0,
+            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>? messagesMessageParamContentOneOf1ItemsOneOf8Content0,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? messagesMessageParamContentOneOf1ItemsOneOf8Content1
             )
         {
@@ -100,7 +100,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
             global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content1 = null,
             bool validate = true)
         {
@@ -125,7 +125,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>?>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>?>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
             global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?>? messagesMessageParamContentOneOf1ItemsOneOf8Content1 = null,
             bool validate = true)
         {
@@ -152,7 +152,7 @@ namespace OpenRouter
             var fields = new object?[]
             {
                 MessagesMessageParamContentOneOf1ItemsOneOf8Content0,
-                typeof(global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>),
+                typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>),
                 MessagesMessageParamContentOneOf1ItemsOneOf8Content1,
                 typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1),
             };
@@ -171,7 +171,7 @@ namespace OpenRouter
         public bool Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content0, other.MessagesMessageParamContentOneOf1ItemsOneOf8Content0) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content0, other.MessagesMessageParamContentOneOf1ItemsOneOf8Content0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content1, other.MessagesMessageParamContentOneOf1ItemsOneOf8Content1) 
                 ;
         }

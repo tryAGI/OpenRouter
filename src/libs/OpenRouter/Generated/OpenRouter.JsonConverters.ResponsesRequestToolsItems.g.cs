@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -153,7 +154,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        responsesRequestToolsItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ResponsesRequestToolsItems0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestToolsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestToolsItems0> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestToolsItems0).Name}");
+                        responsesRequestToolsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -166,7 +169,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        previewWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.PreviewWebSearchServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PreviewWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PreviewWebSearchServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PreviewWebSearchServerTool).Name}");
+                        previewWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -179,7 +184,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        preview20250311WebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.Preview20250311WebSearchServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.Preview20250311WebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.Preview20250311WebSearchServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.Preview20250311WebSearchServerTool).Name}");
+                        preview20250311WebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -192,7 +199,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        legacyWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.LegacyWebSearchServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LegacyWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LegacyWebSearchServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LegacyWebSearchServerTool).Name}");
+                        legacyWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -205,7 +214,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        webSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.WebSearchServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchServerTool).Name}");
+                        webSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -218,7 +229,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        fileSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.FileSearchServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FileSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FileSearchServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FileSearchServerTool).Name}");
+                        fileSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -231,7 +244,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        computerUseServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ComputerUseServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ComputerUseServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ComputerUseServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ComputerUseServerTool).Name}");
+                        computerUseServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -244,7 +259,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        codeInterpreterServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CodeInterpreterServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CodeInterpreterServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CodeInterpreterServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CodeInterpreterServerTool).Name}");
+                        codeInterpreterServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -257,7 +274,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        mcpServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.McpServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerTool).Name}");
+                        mcpServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -270,7 +289,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        imageGenerationServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ImageGenerationServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerTool).Name}");
+                        imageGenerationServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -283,7 +304,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        codexLocalShellTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CodexLocalShellTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CodexLocalShellTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CodexLocalShellTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CodexLocalShellTool).Name}");
+                        codexLocalShellTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -296,7 +319,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        shellServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ShellServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerTool).Name}");
+                        shellServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -309,7 +334,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        applyPatchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ApplyPatchServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchServerTool).Name}");
+                        applyPatchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -322,7 +349,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        customTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CustomTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomTool).Name}");
+                        customTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -335,7 +364,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.DatetimeServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
+                        datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -348,7 +379,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        webSearchServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.WebSearchServerToolOpenRouter>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchServerToolOpenRouter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchServerToolOpenRouter).Name}");
+                        webSearchServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -363,7 +396,9 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    responsesRequestToolsItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ResponsesRequestToolsItems0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestToolsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestToolsItems0> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestToolsItems0).Name}");
+                    responsesRequestToolsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -374,7 +409,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    previewWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.PreviewWebSearchServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PreviewWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PreviewWebSearchServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PreviewWebSearchServerTool).Name}");
+                    previewWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -385,7 +422,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    preview20250311WebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.Preview20250311WebSearchServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.Preview20250311WebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.Preview20250311WebSearchServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.Preview20250311WebSearchServerTool).Name}");
+                    preview20250311WebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -396,7 +435,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    legacyWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.LegacyWebSearchServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LegacyWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LegacyWebSearchServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LegacyWebSearchServerTool).Name}");
+                    legacyWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -407,7 +448,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    webSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.WebSearchServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchServerTool).Name}");
+                    webSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -418,7 +461,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    fileSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.FileSearchServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FileSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FileSearchServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FileSearchServerTool).Name}");
+                    fileSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -429,7 +474,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    computerUseServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ComputerUseServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ComputerUseServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ComputerUseServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ComputerUseServerTool).Name}");
+                    computerUseServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -440,7 +487,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    codeInterpreterServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CodeInterpreterServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CodeInterpreterServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CodeInterpreterServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CodeInterpreterServerTool).Name}");
+                    codeInterpreterServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -451,7 +500,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    mcpServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.McpServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerTool).Name}");
+                    mcpServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -462,7 +513,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    imageGenerationServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ImageGenerationServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerTool).Name}");
+                    imageGenerationServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -473,7 +526,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    codexLocalShellTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CodexLocalShellTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CodexLocalShellTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CodexLocalShellTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CodexLocalShellTool).Name}");
+                    codexLocalShellTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -484,7 +539,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    shellServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ShellServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerTool).Name}");
+                    shellServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -495,7 +552,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    applyPatchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ApplyPatchServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchServerTool).Name}");
+                    applyPatchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -506,7 +565,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    customTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.CustomTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomTool).Name}");
+                    customTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -517,7 +578,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.DatetimeServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
+                    datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -528,7 +591,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    webSearchServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.WebSearchServerToolOpenRouter>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchServerToolOpenRouter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchServerToolOpenRouter).Name}");
+                    webSearchServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -581,71 +646,104 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ResponsesRequestToolsItems value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsResponsesRequestToolsItems0)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestToolsItems0, typeof(global::OpenRouter.ResponsesRequestToolsItems0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestToolsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestToolsItems0?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestToolsItems0).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestToolsItems0!, typeInfo);
             }
             else if (value.IsPreviewWebSearchServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreviewWebSearchServerTool, typeof(global::OpenRouter.PreviewWebSearchServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PreviewWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PreviewWebSearchServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PreviewWebSearchServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreviewWebSearchServerTool!, typeInfo);
             }
             else if (value.IsPreview20250311WebSearchServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Preview20250311WebSearchServerTool, typeof(global::OpenRouter.Preview20250311WebSearchServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.Preview20250311WebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.Preview20250311WebSearchServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.Preview20250311WebSearchServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Preview20250311WebSearchServerTool!, typeInfo);
             }
             else if (value.IsLegacyWebSearchServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LegacyWebSearchServerTool, typeof(global::OpenRouter.LegacyWebSearchServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LegacyWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LegacyWebSearchServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LegacyWebSearchServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LegacyWebSearchServerTool!, typeInfo);
             }
             else if (value.IsWebSearchServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchServerTool, typeof(global::OpenRouter.WebSearchServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchServerTool!, typeInfo);
             }
             else if (value.IsFileSearchServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerTool, typeof(global::OpenRouter.FileSearchServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FileSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FileSearchServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FileSearchServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerTool!, typeInfo);
             }
             else if (value.IsComputerUseServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerUseServerTool, typeof(global::OpenRouter.ComputerUseServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ComputerUseServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ComputerUseServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ComputerUseServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerUseServerTool!, typeInfo);
             }
             else if (value.IsCodeInterpreterServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreterServerTool, typeof(global::OpenRouter.CodeInterpreterServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CodeInterpreterServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CodeInterpreterServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CodeInterpreterServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreterServerTool!, typeInfo);
             }
             else if (value.IsMcpServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerTool, typeof(global::OpenRouter.McpServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerTool!, typeInfo);
             }
             else if (value.IsImageGenerationServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenerationServerTool, typeof(global::OpenRouter.ImageGenerationServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenerationServerTool!, typeInfo);
             }
             else if (value.IsCodexLocalShellTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodexLocalShellTool, typeof(global::OpenRouter.CodexLocalShellTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CodexLocalShellTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CodexLocalShellTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CodexLocalShellTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodexLocalShellTool!, typeInfo);
             }
             else if (value.IsShellServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShellServerTool, typeof(global::OpenRouter.ShellServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShellServerTool!, typeInfo);
             }
             else if (value.IsApplyPatchServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchServerTool, typeof(global::OpenRouter.ApplyPatchServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchServerTool!, typeInfo);
             }
             else if (value.IsCustomTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomTool, typeof(global::OpenRouter.CustomTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomTool!, typeInfo);
             }
             else if (value.IsDatetimeServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeServerTool, typeof(global::OpenRouter.DatetimeServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeServerTool!, typeInfo);
             }
             else if (value.IsWebSearchServerToolOpenRouter)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchServerToolOpenRouter, typeof(global::OpenRouter.WebSearchServerToolOpenRouter), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchServerToolOpenRouter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchServerToolOpenRouter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchServerToolOpenRouter!, typeInfo);
             }
         }
     }

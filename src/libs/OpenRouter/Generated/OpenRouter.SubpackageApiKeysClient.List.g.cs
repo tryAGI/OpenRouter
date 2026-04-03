@@ -8,12 +8,12 @@ namespace OpenRouter
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? includeDisabled,
-            ref string? offset);
+            ref int? offset);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? includeDisabled,
-            string? offset);
+            int? offset);
         partial void ProcessListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysListResponse200> ListAsync(
             string? includeDisabled = default,
-            string? offset = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -48,7 +48,7 @@ namespace OpenRouter
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("include_disabled", includeDisabled)
-                .AddOptionalParameter("offset", offset) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -106,13 +106,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -144,13 +144,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -182,13 +182,13 @@ namespace OpenRouter
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -232,7 +232,7 @@ namespace OpenRouter
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::OpenRouter.ApiKeysListResponse200.FromJson(__content, JsonSerializerOptions) ??
+                        global::OpenRouter.ApiKeysListResponse200.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -262,7 +262,7 @@ namespace OpenRouter
                     ).ConfigureAwait(false);
 
                     return
-                        await global::OpenRouter.ApiKeysListResponse200.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::OpenRouter.ApiKeysListResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

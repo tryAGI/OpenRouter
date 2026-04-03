@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("budget_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double BudgetTokens { get; set; }
+        public required int BudgetTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestThinking0(
-            double budgetTokens,
+            int budgetTokens,
             global::OpenRouter.MessagesRequestThinkingOneOf0Type type)
         {
             this.Type = type;

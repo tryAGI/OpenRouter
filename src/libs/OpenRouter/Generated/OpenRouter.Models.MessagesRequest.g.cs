@@ -62,7 +62,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
-        public double? TopK { get; set; }
+        public int? TopK { get; set; }
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.MessagesRequestCacheControl? CacheControl { get; set; }
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -219,13 +219,13 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? stopSequences,
             double? temperature,
             double? topP,
-            double? topK,
+            int? topK,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestToolsItems>? tools,
             global::OpenRouter.MessagesRequestToolChoice? toolChoice,
             global::OpenRouter.MessagesRequestThinking? thinking,
             global::OpenRouter.MessagesRequestServiceTier? serviceTier,
             global::OpenRouter.MessagesOutputConfig? outputConfig,
-            global::OpenRouter.MessagesRequestCacheControl? cacheControl,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             bool? stream,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestProvider, object>? provider,

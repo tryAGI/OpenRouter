@@ -20,8 +20,8 @@ namespace OpenRouter
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatWebSearchShorthandEngineJsonConverter))]
-        public global::OpenRouter.ChatWebSearchShorthandEngine? Engine { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchEngineEnumJsonConverter))]
+        public global::OpenRouter.WebSearchEngineEnum? Engine { get; set; }
 
         /// <summary>
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
@@ -39,14 +39,14 @@ namespace OpenRouter
         /// How much context to retrieve per result. Defaults to medium (15000 chars). Only applies when using the Exa engine; ignored with native provider search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatWebSearchShorthandSearchContextSizeJsonConverter))]
-        public global::OpenRouter.ChatWebSearchShorthandSearchContextSize? SearchContextSize { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.SearchQualityLevelJsonConverter))]
+        public global::OpenRouter.SearchQualityLevel? SearchContextSize { get; set; }
 
         /// <summary>
         /// Approximate user location for location-biased results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        public global::OpenRouter.ChatWebSearchShorthandUserLocation? UserLocation { get; set; }
+        public global::OpenRouter.WebSearchUserLocationServerTool? UserLocation { get; set; }
 
         /// <summary>
         /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
@@ -64,7 +64,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public global::OpenRouter.ChatWebSearchShorthandParameters? Parameters { get; set; }
+        public global::OpenRouter.WebSearchConfig? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -103,14 +103,14 @@ namespace OpenRouter
 #endif
         public ChatWebSearchShorthand(
             global::OpenRouter.ChatWebSearchShorthandType type,
-            global::OpenRouter.ChatWebSearchShorthandEngine? engine,
+            global::OpenRouter.WebSearchEngineEnum? engine,
             double? maxResults,
             double? maxTotalResults,
-            global::OpenRouter.ChatWebSearchShorthandSearchContextSize? searchContextSize,
-            global::OpenRouter.ChatWebSearchShorthandUserLocation? userLocation,
+            global::OpenRouter.SearchQualityLevel? searchContextSize,
+            global::OpenRouter.WebSearchUserLocationServerTool? userLocation,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? excludedDomains,
-            global::OpenRouter.ChatWebSearchShorthandParameters? parameters)
+            global::OpenRouter.WebSearchConfig? parameters)
         {
             this.Type = type;
             this.Engine = engine;

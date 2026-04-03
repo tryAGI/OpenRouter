@@ -89,7 +89,9 @@ namespace OpenRouter
         /// <param name="temperature">
         /// Sampling temperature (0-2)
         /// </param>
-        /// <param name="parallelToolCalls"></param>
+        /// <param name="parallelToolCalls">
+        /// Whether to enable parallel function calling during tool use. When true, the model may generate multiple tool calls in a single response.
+        /// </param>
         /// <param name="toolChoice">
         /// Tool choice configuration
         /// </param>
@@ -108,9 +110,7 @@ namespace OpenRouter
         /// <param name="modalities">
         /// Output modalities for the response. Supported values are "text", "image", and "audio".
         /// </param>
-        /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
-        /// </param>
+        /// <param name="cacheControl"></param>
         /// <param name="serviceTier">
         /// The service tier to use for processing this request.
         /// </param>

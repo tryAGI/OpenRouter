@@ -23,13 +23,10 @@ namespace OpenRouter
         public bool? RequireParameters { get; set; }
 
         /// <summary>
-        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
-        /// - allow: (default) allow providers which store user data non-transiently and may train on it<br/>
-        /// - deny: use only providers which do not collect user data.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_collection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.DataCollectionJsonConverter))]
-        public global::OpenRouter.DataCollection? DataCollection { get; set; }
+        public global::OpenRouter.ChatRequestProviderDataCollection? DataCollection { get; set; }
 
         /// <summary>
         /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.
@@ -110,11 +107,7 @@ namespace OpenRouter
         /// <param name="requireParameters">
         /// Whether to filter providers to only those that support the parameters you've provided. If this setting is omitted or set to false, then providers will receive only the parameters they support, and ignore the rest.
         /// </param>
-        /// <param name="dataCollection">
-        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
-        /// - allow: (default) allow providers which store user data non-transiently and may train on it<br/>
-        /// - deny: use only providers which do not collect user data.
-        /// </param>
+        /// <param name="dataCollection"></param>
         /// <param name="zdr">
         /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.
         /// </param>
@@ -149,7 +142,7 @@ namespace OpenRouter
         public ChatRequestProvider(
             bool? allowFallbacks,
             bool? requireParameters,
-            global::OpenRouter.DataCollection? dataCollection,
+            global::OpenRouter.ChatRequestProviderDataCollection? dataCollection,
             bool? zdr,
             bool? enforceDistillableText,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestProviderOrderItems>? order,

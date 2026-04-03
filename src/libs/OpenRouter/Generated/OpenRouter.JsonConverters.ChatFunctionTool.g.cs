@@ -12,7 +12,8 @@ namespace OpenRouter.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -62,7 +63,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        chatFunctionTool0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatFunctionTool0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionTool0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionTool0> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionTool0).Name}");
+                        chatFunctionTool0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,7 +78,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.DatetimeServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
+                        datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -88,7 +93,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        chatWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatWebSearchServerTool>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchServerTool).Name}");
+                        chatWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -101,7 +108,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        chatWebSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatWebSearchShorthand>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchShorthand> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchShorthand).Name}");
+                        chatWebSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -116,7 +125,9 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
-                    chatFunctionTool0 = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatFunctionTool0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionTool0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionTool0> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionTool0).Name}");
+                    chatFunctionTool0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -127,7 +138,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.DatetimeServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
+                    datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -138,7 +151,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    chatWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatWebSearchServerTool>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchServerTool).Name}");
+                    chatWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -149,7 +164,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    chatWebSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatWebSearchShorthand>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchShorthand> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchShorthand).Name}");
+                    chatWebSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -178,23 +195,32 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ChatFunctionTool value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsChatFunctionTool0)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFunctionTool0, typeof(global::OpenRouter.ChatFunctionTool0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionTool0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionTool0?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionTool0).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFunctionTool0!, typeInfo);
             }
             else if (value.IsDatetimeServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeServerTool, typeof(global::OpenRouter.DatetimeServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeServerTool!, typeInfo);
             }
             else if (value.IsChatWebSearchServerTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatWebSearchServerTool, typeof(global::OpenRouter.ChatWebSearchServerTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatWebSearchServerTool!, typeInfo);
             }
             else if (value.IsChatWebSearchShorthand)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatWebSearchShorthand, typeof(global::OpenRouter.ChatWebSearchShorthand), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchShorthand?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchShorthand).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatWebSearchShorthand!, typeInfo);
             }
         }
     }
