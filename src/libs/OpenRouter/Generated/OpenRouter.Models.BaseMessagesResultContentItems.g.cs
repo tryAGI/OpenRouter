@@ -212,6 +212,23 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems11))]
 #endif
         public bool IsBaseMessagesResultContentItems11 => BaseMessagesResultContentItems11 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.BaseMessagesResultContentItems12? BaseMessagesResultContentItems12 { get; init; }
+#else
+        public global::OpenRouter.BaseMessagesResultContentItems12? BaseMessagesResultContentItems12 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems12))]
+#endif
+        public bool IsBaseMessagesResultContentItems12 => BaseMessagesResultContentItems12 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -431,6 +448,24 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BaseMessagesResultContentItems(global::OpenRouter.BaseMessagesResultContentItems12 value) => new BaseMessagesResultContentItems((global::OpenRouter.BaseMessagesResultContentItems12?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.BaseMessagesResultContentItems12?(BaseMessagesResultContentItems @this) => @this.BaseMessagesResultContentItems12;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BaseMessagesResultContentItems(global::OpenRouter.BaseMessagesResultContentItems12? value)
+        {
+            BaseMessagesResultContentItems12 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BaseMessagesResultContentItems(
             global::OpenRouter.BaseMessagesResultContentItems0? baseMessagesResultContentItems0,
             global::OpenRouter.BaseMessagesResultContentItems1? baseMessagesResultContentItems1,
@@ -443,7 +478,8 @@ namespace OpenRouter
             global::OpenRouter.BaseMessagesResultContentItems8? baseMessagesResultContentItems8,
             global::OpenRouter.BaseMessagesResultContentItems9? baseMessagesResultContentItems9,
             global::OpenRouter.BaseMessagesResultContentItems10? baseMessagesResultContentItems10,
-            global::OpenRouter.BaseMessagesResultContentItems11? baseMessagesResultContentItems11
+            global::OpenRouter.BaseMessagesResultContentItems11? baseMessagesResultContentItems11,
+            global::OpenRouter.BaseMessagesResultContentItems12? baseMessagesResultContentItems12
             )
         {
             BaseMessagesResultContentItems0 = baseMessagesResultContentItems0;
@@ -458,12 +494,14 @@ namespace OpenRouter
             BaseMessagesResultContentItems9 = baseMessagesResultContentItems9;
             BaseMessagesResultContentItems10 = baseMessagesResultContentItems10;
             BaseMessagesResultContentItems11 = baseMessagesResultContentItems11;
+            BaseMessagesResultContentItems12 = baseMessagesResultContentItems12;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            BaseMessagesResultContentItems12 as object ??
             BaseMessagesResultContentItems11 as object ??
             BaseMessagesResultContentItems10 as object ??
             BaseMessagesResultContentItems9 as object ??
@@ -493,7 +531,8 @@ namespace OpenRouter
             BaseMessagesResultContentItems8?.ToString() ??
             BaseMessagesResultContentItems9?.ToString() ??
             BaseMessagesResultContentItems10?.ToString() ??
-            BaseMessagesResultContentItems11?.ToString() 
+            BaseMessagesResultContentItems11?.ToString() ??
+            BaseMessagesResultContentItems12?.ToString() 
             ;
 
         /// <summary>
@@ -501,7 +540,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && IsBaseMessagesResultContentItems11;
+            return IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && IsBaseMessagesResultContentItems11 && !IsBaseMessagesResultContentItems12 || !IsBaseMessagesResultContentItems0 && !IsBaseMessagesResultContentItems1 && !IsBaseMessagesResultContentItems2 && !IsBaseMessagesResultContentItems3 && !IsBaseMessagesResultContentItems4 && !IsBaseMessagesResultContentItems5 && !IsBaseMessagesResultContentItems6 && !IsBaseMessagesResultContentItems7 && !IsBaseMessagesResultContentItems8 && !IsBaseMessagesResultContentItems9 && !IsBaseMessagesResultContentItems10 && !IsBaseMessagesResultContentItems11 && IsBaseMessagesResultContentItems12;
         }
 
         /// <summary>
@@ -520,6 +559,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.BaseMessagesResultContentItems9?, TResult>? baseMessagesResultContentItems9 = null,
             global::System.Func<global::OpenRouter.BaseMessagesResultContentItems10?, TResult>? baseMessagesResultContentItems10 = null,
             global::System.Func<global::OpenRouter.BaseMessagesResultContentItems11?, TResult>? baseMessagesResultContentItems11 = null,
+            global::System.Func<global::OpenRouter.BaseMessagesResultContentItems12?, TResult>? baseMessagesResultContentItems12 = null,
             bool validate = true)
         {
             if (validate)
@@ -575,6 +615,10 @@ namespace OpenRouter
             {
                 return baseMessagesResultContentItems11(BaseMessagesResultContentItems11!);
             }
+            else if (IsBaseMessagesResultContentItems12 && baseMessagesResultContentItems12 != null)
+            {
+                return baseMessagesResultContentItems12(BaseMessagesResultContentItems12!);
+            }
 
             return default(TResult);
         }
@@ -595,6 +639,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.BaseMessagesResultContentItems9?>? baseMessagesResultContentItems9 = null,
             global::System.Action<global::OpenRouter.BaseMessagesResultContentItems10?>? baseMessagesResultContentItems10 = null,
             global::System.Action<global::OpenRouter.BaseMessagesResultContentItems11?>? baseMessagesResultContentItems11 = null,
+            global::System.Action<global::OpenRouter.BaseMessagesResultContentItems12?>? baseMessagesResultContentItems12 = null,
             bool validate = true)
         {
             if (validate)
@@ -650,6 +695,10 @@ namespace OpenRouter
             {
                 baseMessagesResultContentItems11?.Invoke(BaseMessagesResultContentItems11!);
             }
+            else if (IsBaseMessagesResultContentItems12)
+            {
+                baseMessagesResultContentItems12?.Invoke(BaseMessagesResultContentItems12!);
+            }
         }
 
         /// <summary>
@@ -683,6 +732,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.BaseMessagesResultContentItems10),
                 BaseMessagesResultContentItems11,
                 typeof(global::OpenRouter.BaseMessagesResultContentItems11),
+                BaseMessagesResultContentItems12,
+                typeof(global::OpenRouter.BaseMessagesResultContentItems12),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -710,7 +761,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItems8?>.Default.Equals(BaseMessagesResultContentItems8, other.BaseMessagesResultContentItems8) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItems9?>.Default.Equals(BaseMessagesResultContentItems9, other.BaseMessagesResultContentItems9) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItems10?>.Default.Equals(BaseMessagesResultContentItems10, other.BaseMessagesResultContentItems10) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItems11?>.Default.Equals(BaseMessagesResultContentItems11, other.BaseMessagesResultContentItems11) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItems11?>.Default.Equals(BaseMessagesResultContentItems11, other.BaseMessagesResultContentItems11) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseMessagesResultContentItems12?>.Default.Equals(BaseMessagesResultContentItems12, other.BaseMessagesResultContentItems12) 
                 ;
         }
 

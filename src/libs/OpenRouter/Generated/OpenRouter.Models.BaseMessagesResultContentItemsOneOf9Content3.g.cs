@@ -18,25 +18,25 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_lines")]
-        public double? NewLines { get; set; }
+        public int? NewLines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_start")]
-        public double? NewStart { get; set; }
+        public int? NewStart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_lines")]
-        public double? OldLines { get; set; }
+        public int? OldLines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_start")]
-        public double? OldStart { get; set; }
+        public int? OldStart { get; set; }
 
         /// <summary>
         /// 
@@ -65,10 +65,10 @@ namespace OpenRouter
 #endif
         public BaseMessagesResultContentItemsOneOf9Content3(
             global::System.Collections.Generic.IList<string>? lines,
-            double? newLines,
-            double? newStart,
-            double? oldLines,
-            double? oldStart,
+            int? newLines,
+            int? newStart,
+            int? oldLines,
+            int? oldStart,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf9ContentOneOf3Type type)
         {
             this.Lines = lines;

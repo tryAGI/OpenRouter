@@ -27,19 +27,19 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_lines")]
-        public double? NumLines { get; set; }
+        public int? NumLines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
-        public double? StartLine { get; set; }
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_lines")]
-        public double? TotalLines { get; set; }
+        public int? TotalLines { get; set; }
 
         /// <summary>
         /// 
@@ -69,9 +69,9 @@ namespace OpenRouter
         public BaseMessagesResultContentItemsOneOf9Content1(
             string content,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf9ContentOneOf1FileType fileType,
-            double? numLines,
-            double? startLine,
-            double? totalLines,
+            int? numLines,
+            int? startLine,
+            int? totalLines,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf9ContentOneOf1Type type)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

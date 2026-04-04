@@ -13,14 +13,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_search_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double WebSearchRequests { get; set; }
+        public required int WebSearchRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_fetch_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double WebFetchRequests { get; set; }
+        public required int WebFetchRequests { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +37,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesResultUsageServerToolUse(
-            double webSearchRequests,
-            double webFetchRequests)
+            int webSearchRequests,
+            int webFetchRequests)
         {
             this.WebSearchRequests = webSearchRequests;
             this.WebFetchRequests = webFetchRequests;

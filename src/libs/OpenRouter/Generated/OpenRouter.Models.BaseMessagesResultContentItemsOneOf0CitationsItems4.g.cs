@@ -27,7 +27,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_result_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double SearchResultIndex { get; set; }
+        public required int SearchResultIndex { get; set; }
 
         /// <summary>
         /// 
@@ -47,14 +47,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double StartBlockIndex { get; set; }
+        public required int StartBlockIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double EndBlockIndex { get; set; }
+        public required int EndBlockIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,10 +77,10 @@ namespace OpenRouter
 #endif
         public BaseMessagesResultContentItemsOneOf0CitationsItems4(
             string citedText,
-            double searchResultIndex,
+            int searchResultIndex,
             string source,
-            double startBlockIndex,
-            double endBlockIndex,
+            int startBlockIndex,
+            int endBlockIndex,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf4Type type,
             string? title)
         {

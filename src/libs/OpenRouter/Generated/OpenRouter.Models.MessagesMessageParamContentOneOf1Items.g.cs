@@ -178,6 +178,23 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicSearchResultBlockParam))]
 #endif
         public bool IsAnthropicSearchResultBlockParam => AnthropicSearchResultBlockParam != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items10? MessagesMessageParamContentOneOf1Items10 { get; init; }
+#else
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items10? MessagesMessageParamContentOneOf1Items10 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items10))]
+#endif
+        public bool IsMessagesMessageParamContentOneOf1Items10 => MessagesMessageParamContentOneOf1Items10 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -361,6 +378,24 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items10 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items10?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items10?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items10;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items10? value)
+        {
+            MessagesMessageParamContentOneOf1Items10 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesMessageParamContentOneOf1Items(
             global::OpenRouter.AnthropicTextBlockParam? anthropicTextBlockParam,
             global::OpenRouter.AnthropicImageBlockParam? anthropicImageBlockParam,
@@ -371,7 +406,8 @@ namespace OpenRouter
             global::OpenRouter.MessagesMessageParamContentOneOf1Items6? messagesMessageParamContentOneOf1Items6,
             global::OpenRouter.MessagesMessageParamContentOneOf1Items7? messagesMessageParamContentOneOf1Items7,
             global::OpenRouter.MessagesMessageParamContentOneOf1Items8? messagesMessageParamContentOneOf1Items8,
-            global::OpenRouter.AnthropicSearchResultBlockParam? anthropicSearchResultBlockParam
+            global::OpenRouter.AnthropicSearchResultBlockParam? anthropicSearchResultBlockParam,
+            global::OpenRouter.MessagesMessageParamContentOneOf1Items10? messagesMessageParamContentOneOf1Items10
             )
         {
             AnthropicTextBlockParam = anthropicTextBlockParam;
@@ -384,12 +420,14 @@ namespace OpenRouter
             MessagesMessageParamContentOneOf1Items7 = messagesMessageParamContentOneOf1Items7;
             MessagesMessageParamContentOneOf1Items8 = messagesMessageParamContentOneOf1Items8;
             AnthropicSearchResultBlockParam = anthropicSearchResultBlockParam;
+            MessagesMessageParamContentOneOf1Items10 = messagesMessageParamContentOneOf1Items10;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            MessagesMessageParamContentOneOf1Items10 as object ??
             AnthropicSearchResultBlockParam as object ??
             MessagesMessageParamContentOneOf1Items8 as object ??
             MessagesMessageParamContentOneOf1Items7 as object ??
@@ -415,7 +453,8 @@ namespace OpenRouter
             MessagesMessageParamContentOneOf1Items6?.ToString() ??
             MessagesMessageParamContentOneOf1Items7?.ToString() ??
             MessagesMessageParamContentOneOf1Items8?.ToString() ??
-            AnthropicSearchResultBlockParam?.ToString() 
+            AnthropicSearchResultBlockParam?.ToString() ??
+            MessagesMessageParamContentOneOf1Items10?.ToString() 
             ;
 
         /// <summary>
@@ -423,7 +462,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && IsAnthropicSearchResultBlockParam;
+            return IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && IsAnthropicSearchResultBlockParam && !IsMessagesMessageParamContentOneOf1Items10 || !IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam && !IsAnthropicDocumentBlockParam && !IsMessagesMessageParamContentOneOf1Items3 && !IsMessagesMessageParamContentOneOf1Items4 && !IsMessagesMessageParamContentOneOf1Items5 && !IsMessagesMessageParamContentOneOf1Items6 && !IsMessagesMessageParamContentOneOf1Items7 && !IsMessagesMessageParamContentOneOf1Items8 && !IsAnthropicSearchResultBlockParam && IsMessagesMessageParamContentOneOf1Items10;
         }
 
         /// <summary>
@@ -440,6 +479,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items7?, TResult>? messagesMessageParamContentOneOf1Items7 = null,
             global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items8?, TResult>? messagesMessageParamContentOneOf1Items8 = null,
             global::System.Func<global::OpenRouter.AnthropicSearchResultBlockParam?, TResult>? anthropicSearchResultBlockParam = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?, TResult>? messagesMessageParamContentOneOf1Items10 = null,
             bool validate = true)
         {
             if (validate)
@@ -487,6 +527,10 @@ namespace OpenRouter
             {
                 return anthropicSearchResultBlockParam(AnthropicSearchResultBlockParam!);
             }
+            else if (IsMessagesMessageParamContentOneOf1Items10 && messagesMessageParamContentOneOf1Items10 != null)
+            {
+                return messagesMessageParamContentOneOf1Items10(MessagesMessageParamContentOneOf1Items10!);
+            }
 
             return default(TResult);
         }
@@ -505,6 +549,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items7?>? messagesMessageParamContentOneOf1Items7 = null,
             global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items8?>? messagesMessageParamContentOneOf1Items8 = null,
             global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam?>? anthropicSearchResultBlockParam = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?>? messagesMessageParamContentOneOf1Items10 = null,
             bool validate = true)
         {
             if (validate)
@@ -552,6 +597,10 @@ namespace OpenRouter
             {
                 anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
             }
+            else if (IsMessagesMessageParamContentOneOf1Items10)
+            {
+                messagesMessageParamContentOneOf1Items10?.Invoke(MessagesMessageParamContentOneOf1Items10!);
+            }
         }
 
         /// <summary>
@@ -581,6 +630,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items8),
                 AnthropicSearchResultBlockParam,
                 typeof(global::OpenRouter.AnthropicSearchResultBlockParam),
+                MessagesMessageParamContentOneOf1Items10,
+                typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items10),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -606,7 +657,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1Items6?>.Default.Equals(MessagesMessageParamContentOneOf1Items6, other.MessagesMessageParamContentOneOf1Items6) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1Items7?>.Default.Equals(MessagesMessageParamContentOneOf1Items7, other.MessagesMessageParamContentOneOf1Items7) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1Items8?>.Default.Equals(MessagesMessageParamContentOneOf1Items8, other.MessagesMessageParamContentOneOf1Items8) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicSearchResultBlockParam?>.Default.Equals(AnthropicSearchResultBlockParam, other.AnthropicSearchResultBlockParam) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicSearchResultBlockParam?>.Default.Equals(AnthropicSearchResultBlockParam, other.AnthropicSearchResultBlockParam) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?>.Default.Equals(MessagesMessageParamContentOneOf1Items10, other.MessagesMessageParamContentOneOf1Items10) 
                 ;
         }
 

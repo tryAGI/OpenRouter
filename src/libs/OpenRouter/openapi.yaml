@@ -8099,10 +8099,7 @@
             "format": "double"
           },
           "cost": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double",
             "description": "Cost of the completion"
           },
@@ -8986,14 +8983,6 @@
         "description": "Conflict - Resource conflict or concurrent modification",
         "title": "ConflictResponse"
       },
-      "MessagesMessageParamRole": {
-        "type": "string",
-        "enum": [
-          "user",
-          "assistant"
-        ],
-        "title": "MessagesMessageParamRole"
-      },
       "AnthropicTextBlockParamType": {
         "type": "string",
         "enum": [
@@ -9288,6 +9277,683 @@
           "text"
         ],
         "title": "AnthropicTextBlockParam"
+      },
+      "MessagesRequestSystem1": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AnthropicTextBlockParam"
+        },
+        "title": "MessagesRequestSystem1"
+      },
+      "MessagesRequestSystem": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestSystem1"
+          }
+        ],
+        "title": "MessagesRequestSystem"
+      },
+      "MessagesRequestMetadata": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "title": "MessagesRequestMetadata"
+      },
+      "MessagesRequestToolsItemsOneOf0InputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "default": "object"
+          },
+          "properties": {
+            "oneOf": [
+              {
+                "description": "Any type"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "title": "MessagesRequestToolsItemsOneOf0InputSchema"
+      },
+      "MessagesRequestToolsItemsOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "custom"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf0Type"
+      },
+      "MessagesRequestToolsItems0": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "input_schema": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf0InputSchema"
+          },
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf0Type"
+          },
+          "cache_control": {
+            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          }
+        },
+        "required": [
+          "name",
+          "input_schema"
+        ],
+        "title": "MessagesRequestToolsItems0"
+      },
+      "MessagesRequestToolsItemsOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "bash_20250124"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf1Type"
+      },
+      "MessagesRequestToolsItemsOneOf1Name": {
+        "type": "string",
+        "enum": [
+          "bash"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf1Name"
+      },
+      "MessagesRequestToolsItems1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf1Type"
+          },
+          "name": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf1Name"
+          },
+          "cache_control": {
+            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "MessagesRequestToolsItems1"
+      },
+      "MessagesRequestToolsItemsOneOf2Type": {
+        "type": "string",
+        "enum": [
+          "text_editor_20250124"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf2Type"
+      },
+      "MessagesRequestToolsItemsOneOf2Name": {
+        "type": "string",
+        "enum": [
+          "str_replace_editor"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf2Name"
+      },
+      "MessagesRequestToolsItems2": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf2Type"
+          },
+          "name": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf2Name"
+          },
+          "cache_control": {
+            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "MessagesRequestToolsItems2"
+      },
+      "MessagesRequestToolsItemsOneOf3Type": {
+        "type": "string",
+        "enum": [
+          "web_search_20250305"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf3Type"
+      },
+      "MessagesRequestToolsItemsOneOf3Name": {
+        "type": "string",
+        "enum": [
+          "web_search"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf3Name"
+      },
+      "MessagesRequestToolsItems3": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf3Type"
+          },
+          "name": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf3Name"
+          },
+          "allowed_domains": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "blocked_domains": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "max_uses": {
+            "type": "integer"
+          },
+          "user_location": {
+            "$ref": "#/components/schemas/Preview_WebSearchUserLocation"
+          },
+          "cache_control": {
+            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "MessagesRequestToolsItems3"
+      },
+      "MessagesRequestToolsItemsOneOf4Type": {
+        "type": "string",
+        "enum": [
+          "web_search_20260209"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf4Type"
+      },
+      "MessagesRequestToolsItemsOneOf4Name": {
+        "type": "string",
+        "enum": [
+          "web_search"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf4Name"
+      },
+      "MessagesRequestToolsItemsOneOf4AllowedCallersItems": {
+        "type": "string",
+        "enum": [
+          "direct",
+          "code_execution_20250825",
+          "code_execution_20260120"
+        ],
+        "title": "MessagesRequestToolsItemsOneOf4AllowedCallersItems"
+      },
+      "MessagesRequestToolsItems4": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf4Type"
+          },
+          "name": {
+            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf4Name"
+          },
+          "allowed_callers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf4AllowedCallersItems"
+            }
+          },
+          "allowed_domains": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "blocked_domains": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "max_uses": {
+            "type": "integer"
+          },
+          "user_location": {
+            "$ref": "#/components/schemas/Preview_WebSearchUserLocation"
+          },
+          "cache_control": {
+            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "MessagesRequestToolsItems4"
+      },
+      "MessagesWebSearchServerToolType": {
+        "type": "string",
+        "enum": [
+          "openrouter:web_search"
+        ],
+        "title": "MessagesWebSearchServerToolType"
+      },
+      "SearchQualityLevel": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "description": "How much context to retrieve per result. Defaults to medium (15000 chars). Only applies when using the Exa engine; ignored with native provider search.",
+        "title": "SearchQualityLevel"
+      },
+      "WebSearchUserLocationServerToolType": {
+        "type": "string",
+        "enum": [
+          "approximate"
+        ],
+        "title": "WebSearchUserLocationServerToolType"
+      },
+      "WebSearchUserLocationServerTool": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/WebSearchUserLocationServerToolType"
+          },
+          "city": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          }
+        },
+        "description": "Approximate user location for location-biased results.",
+        "title": "WebSearchUserLocationServerTool"
+      },
+      "WebSearchConfig": {
+        "type": "object",
+        "properties": {
+          "engine": {
+            "$ref": "#/components/schemas/WebSearchEngineEnum"
+          },
+          "max_results": {
+            "type": "number",
+            "format": "double",
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+          },
+          "max_total_results": {
+            "type": "number",
+            "format": "double",
+            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops."
+          },
+          "search_context_size": {
+            "$ref": "#/components/schemas/SearchQualityLevel"
+          },
+          "user_location": {
+            "$ref": "#/components/schemas/WebSearchUserLocationServerTool"
+          },
+          "allowed_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity."
+          },
+          "excluded_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity."
+          }
+        },
+        "title": "WebSearchConfig"
+      },
+      "MessagesWebSearchServerTool": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesWebSearchServerToolType"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/WebSearchConfig"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "description": "OpenRouter built-in server tool: searches the web for current information",
+        "title": "MessagesWebSearchServerTool"
+      },
+      "MessagesRequestToolsItems": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolsItems0"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolsItems1"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolsItems2"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolsItems3"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolsItems4"
+          },
+          {
+            "$ref": "#/components/schemas/DatetimeServerTool"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesWebSearchServerTool"
+          }
+        ],
+        "title": "MessagesRequestToolsItems"
+      },
+      "MessagesRequestToolChoiceOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "auto"
+        ],
+        "title": "MessagesRequestToolChoiceOneOf0Type"
+      },
+      "MessagesRequestToolChoice0": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf0Type"
+          },
+          "disable_parallel_tool_use": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesRequestToolChoice0"
+      },
+      "MessagesRequestToolChoiceOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "any"
+        ],
+        "title": "MessagesRequestToolChoiceOneOf1Type"
+      },
+      "MessagesRequestToolChoice1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf1Type"
+          },
+          "disable_parallel_tool_use": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesRequestToolChoice1"
+      },
+      "MessagesRequestToolChoiceOneOf2Type": {
+        "type": "string",
+        "enum": [
+          "none"
+        ],
+        "title": "MessagesRequestToolChoiceOneOf2Type"
+      },
+      "MessagesRequestToolChoice2": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf2Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesRequestToolChoice2"
+      },
+      "MessagesRequestToolChoiceOneOf3Type": {
+        "type": "string",
+        "enum": [
+          "tool"
+        ],
+        "title": "MessagesRequestToolChoiceOneOf3Type"
+      },
+      "MessagesRequestToolChoice3": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf3Type"
+          },
+          "name": {
+            "type": "string"
+          },
+          "disable_parallel_tool_use": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "MessagesRequestToolChoice3"
+      },
+      "MessagesRequestToolChoice": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolChoice0"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolChoice1"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolChoice2"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolChoice3"
+          }
+        ],
+        "title": "MessagesRequestToolChoice"
+      },
+      "MessagesRequestThinkingOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "enabled"
+        ],
+        "title": "MessagesRequestThinkingOneOf0Type"
+      },
+      "MessagesRequestThinking0": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestThinkingOneOf0Type"
+          },
+          "budget_tokens": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "type",
+          "budget_tokens"
+        ],
+        "title": "MessagesRequestThinking0"
+      },
+      "MessagesRequestThinkingOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "disabled"
+        ],
+        "title": "MessagesRequestThinkingOneOf1Type"
+      },
+      "MessagesRequestThinking1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestThinkingOneOf1Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesRequestThinking1"
+      },
+      "MessagesRequestThinkingOneOf2Type": {
+        "type": "string",
+        "enum": [
+          "adaptive"
+        ],
+        "title": "MessagesRequestThinkingOneOf2Type"
+      },
+      "MessagesRequestThinking2": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesRequestThinkingOneOf2Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesRequestThinking2"
+      },
+      "MessagesRequestThinking": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MessagesRequestThinking0"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestThinking1"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestThinking2"
+          }
+        ],
+        "title": "MessagesRequestThinking"
+      },
+      "MessagesRequestServiceTier": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "standard_only"
+        ],
+        "title": "MessagesRequestServiceTier"
+      },
+      "MessagesOutputConfigEffort": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "max"
+        ],
+        "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`.",
+        "title": "MessagesOutputConfigEffort"
+      },
+      "MessagesOutputConfigFormatType": {
+        "type": "string",
+        "enum": [
+          "json_schema"
+        ],
+        "title": "MessagesOutputConfigFormatType"
+      },
+      "MessagesOutputConfigFormat": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesOutputConfigFormatType"
+          },
+          "schema": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "schema"
+        ],
+        "description": "A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).",
+        "title": "MessagesOutputConfigFormat"
+      },
+      "MessagesOutputConfig": {
+        "type": "object",
+        "properties": {
+          "effort": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MessagesOutputConfigEffort"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`."
+          },
+          "format": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MessagesOutputConfigFormat"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)."
+          }
+        },
+        "description": "Configuration for controlling output behavior. Supports the effort parameter and structured output format.",
+        "title": "MessagesOutputConfig"
+      },
+      "MessagesMessageParamRole": {
+        "type": "string",
+        "enum": [
+          "user",
+          "assistant"
+        ],
+        "title": "MessagesMessageParamRole"
       },
       "AnthropicImageBlockParamType": {
         "type": "string",
@@ -9961,6 +10627,35 @@
         ],
         "title": "MessagesMessageParamContentOneOf1Items8"
       },
+      "MessagesMessageParamContentOneOf1ItemsOneOf10Type": {
+        "type": "string",
+        "enum": [
+          "compaction"
+        ],
+        "title": "MessagesMessageParamContentOneOf1ItemsOneOf10Type"
+      },
+      "MessagesMessageParamContentOneOf1Items10": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/MessagesMessageParamContentOneOf1ItemsOneOf10Type"
+          },
+          "content": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "cache_control": {
+            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          }
+        },
+        "required": [
+          "type",
+          "content"
+        ],
+        "title": "MessagesMessageParamContentOneOf1Items10"
+      },
       "MessagesMessageParamContentOneOf1Items": {
         "oneOf": [
           {
@@ -9992,6 +10687,9 @@
           },
           {
             "$ref": "#/components/schemas/AnthropicSearchResultBlockParam"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesMessageParamContentOneOf1Items10"
           }
         ],
         "title": "MessagesMessageParamContentOneOf1Items"
@@ -10030,675 +10728,6 @@
         ],
         "description": "Anthropic message with OpenRouter extensions",
         "title": "MessagesMessageParam"
-      },
-      "MessagesRequestSystem1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AnthropicTextBlockParam"
-        },
-        "title": "MessagesRequestSystem1"
-      },
-      "MessagesRequestSystem": {
-        "oneOf": [
-          {
-            "type": "string"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestSystem1"
-          }
-        ],
-        "title": "MessagesRequestSystem"
-      },
-      "MessagesRequestMetadata": {
-        "type": "object",
-        "properties": {
-          "user_id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "title": "MessagesRequestMetadata"
-      },
-      "MessagesRequestToolsItemsOneOf0InputSchema": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "default": "object"
-          },
-          "properties": {
-            "oneOf": [
-              {
-                "description": "Any type"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "required": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "title": "MessagesRequestToolsItemsOneOf0InputSchema"
-      },
-      "MessagesRequestToolsItemsOneOf0Type": {
-        "type": "string",
-        "enum": [
-          "custom"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf0Type"
-      },
-      "MessagesRequestToolsItems0": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "input_schema": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf0InputSchema"
-          },
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf0Type"
-          },
-          "cache_control": {
-            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
-          }
-        },
-        "required": [
-          "name",
-          "input_schema"
-        ],
-        "title": "MessagesRequestToolsItems0"
-      },
-      "MessagesRequestToolsItemsOneOf1Type": {
-        "type": "string",
-        "enum": [
-          "bash_20250124"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf1Type"
-      },
-      "MessagesRequestToolsItemsOneOf1Name": {
-        "type": "string",
-        "enum": [
-          "bash"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf1Name"
-      },
-      "MessagesRequestToolsItems1": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf1Type"
-          },
-          "name": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf1Name"
-          },
-          "cache_control": {
-            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
-          }
-        },
-        "required": [
-          "type",
-          "name"
-        ],
-        "title": "MessagesRequestToolsItems1"
-      },
-      "MessagesRequestToolsItemsOneOf2Type": {
-        "type": "string",
-        "enum": [
-          "text_editor_20250124"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf2Type"
-      },
-      "MessagesRequestToolsItemsOneOf2Name": {
-        "type": "string",
-        "enum": [
-          "str_replace_editor"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf2Name"
-      },
-      "MessagesRequestToolsItems2": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf2Type"
-          },
-          "name": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf2Name"
-          },
-          "cache_control": {
-            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
-          }
-        },
-        "required": [
-          "type",
-          "name"
-        ],
-        "title": "MessagesRequestToolsItems2"
-      },
-      "MessagesRequestToolsItemsOneOf3Type": {
-        "type": "string",
-        "enum": [
-          "web_search_20250305"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf3Type"
-      },
-      "MessagesRequestToolsItemsOneOf3Name": {
-        "type": "string",
-        "enum": [
-          "web_search"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf3Name"
-      },
-      "MessagesRequestToolsItems3": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf3Type"
-          },
-          "name": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf3Name"
-          },
-          "allowed_domains": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string"
-            }
-          },
-          "blocked_domains": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string"
-            }
-          },
-          "max_uses": {
-            "type": "integer"
-          },
-          "user_location": {
-            "$ref": "#/components/schemas/Preview_WebSearchUserLocation"
-          },
-          "cache_control": {
-            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
-          }
-        },
-        "required": [
-          "type",
-          "name"
-        ],
-        "title": "MessagesRequestToolsItems3"
-      },
-      "MessagesRequestToolsItemsOneOf4Type": {
-        "type": "string",
-        "enum": [
-          "web_search_20260209"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf4Type"
-      },
-      "MessagesRequestToolsItemsOneOf4Name": {
-        "type": "string",
-        "enum": [
-          "web_search"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf4Name"
-      },
-      "MessagesRequestToolsItemsOneOf4AllowedCallersItems": {
-        "type": "string",
-        "enum": [
-          "direct",
-          "code_execution_20250825",
-          "code_execution_20260120"
-        ],
-        "title": "MessagesRequestToolsItemsOneOf4AllowedCallersItems"
-      },
-      "MessagesRequestToolsItems4": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf4Type"
-          },
-          "name": {
-            "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf4Name"
-          },
-          "allowed_callers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf4AllowedCallersItems"
-            }
-          },
-          "allowed_domains": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string"
-            }
-          },
-          "blocked_domains": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string"
-            }
-          },
-          "max_uses": {
-            "type": "integer"
-          },
-          "user_location": {
-            "$ref": "#/components/schemas/Preview_WebSearchUserLocation"
-          },
-          "cache_control": {
-            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
-          }
-        },
-        "required": [
-          "type",
-          "name"
-        ],
-        "title": "MessagesRequestToolsItems4"
-      },
-      "MessagesWebSearchServerToolType": {
-        "type": "string",
-        "enum": [
-          "openrouter:web_search"
-        ],
-        "title": "MessagesWebSearchServerToolType"
-      },
-      "SearchQualityLevel": {
-        "type": "string",
-        "enum": [
-          "low",
-          "medium",
-          "high"
-        ],
-        "description": "How much context to retrieve per result. Defaults to medium (15000 chars). Only applies when using the Exa engine; ignored with native provider search.",
-        "title": "SearchQualityLevel"
-      },
-      "WebSearchUserLocationServerToolType": {
-        "type": "string",
-        "enum": [
-          "approximate"
-        ],
-        "title": "WebSearchUserLocationServerToolType"
-      },
-      "WebSearchUserLocationServerTool": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/WebSearchUserLocationServerToolType"
-          },
-          "city": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "country": {
-            "type": "string"
-          },
-          "timezone": {
-            "type": "string"
-          }
-        },
-        "description": "Approximate user location for location-biased results.",
-        "title": "WebSearchUserLocationServerTool"
-      },
-      "WebSearchConfig": {
-        "type": "object",
-        "properties": {
-          "engine": {
-            "$ref": "#/components/schemas/WebSearchEngineEnum"
-          },
-          "max_results": {
-            "type": "number",
-            "format": "double",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
-          },
-          "max_total_results": {
-            "type": "number",
-            "format": "double",
-            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops."
-          },
-          "search_context_size": {
-            "$ref": "#/components/schemas/SearchQualityLevel"
-          },
-          "user_location": {
-            "$ref": "#/components/schemas/WebSearchUserLocationServerTool"
-          },
-          "allowed_domains": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity."
-          },
-          "excluded_domains": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity."
-          }
-        },
-        "title": "WebSearchConfig"
-      },
-      "MessagesWebSearchServerTool": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesWebSearchServerToolType"
-          },
-          "parameters": {
-            "$ref": "#/components/schemas/WebSearchConfig"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "description": "OpenRouter built-in server tool: searches the web for current information",
-        "title": "MessagesWebSearchServerTool"
-      },
-      "MessagesRequestToolsItems": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolsItems0"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolsItems1"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolsItems2"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolsItems3"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolsItems4"
-          },
-          {
-            "$ref": "#/components/schemas/DatetimeServerTool"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesWebSearchServerTool"
-          }
-        ],
-        "title": "MessagesRequestToolsItems"
-      },
-      "MessagesRequestToolChoiceOneOf0Type": {
-        "type": "string",
-        "enum": [
-          "auto"
-        ],
-        "title": "MessagesRequestToolChoiceOneOf0Type"
-      },
-      "MessagesRequestToolChoice0": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf0Type"
-          },
-          "disable_parallel_tool_use": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "MessagesRequestToolChoice0"
-      },
-      "MessagesRequestToolChoiceOneOf1Type": {
-        "type": "string",
-        "enum": [
-          "any"
-        ],
-        "title": "MessagesRequestToolChoiceOneOf1Type"
-      },
-      "MessagesRequestToolChoice1": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf1Type"
-          },
-          "disable_parallel_tool_use": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "MessagesRequestToolChoice1"
-      },
-      "MessagesRequestToolChoiceOneOf2Type": {
-        "type": "string",
-        "enum": [
-          "none"
-        ],
-        "title": "MessagesRequestToolChoiceOneOf2Type"
-      },
-      "MessagesRequestToolChoice2": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf2Type"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "MessagesRequestToolChoice2"
-      },
-      "MessagesRequestToolChoiceOneOf3Type": {
-        "type": "string",
-        "enum": [
-          "tool"
-        ],
-        "title": "MessagesRequestToolChoiceOneOf3Type"
-      },
-      "MessagesRequestToolChoice3": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestToolChoiceOneOf3Type"
-          },
-          "name": {
-            "type": "string"
-          },
-          "disable_parallel_tool_use": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "type",
-          "name"
-        ],
-        "title": "MessagesRequestToolChoice3"
-      },
-      "MessagesRequestToolChoice": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolChoice0"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolChoice1"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolChoice2"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestToolChoice3"
-          }
-        ],
-        "title": "MessagesRequestToolChoice"
-      },
-      "MessagesRequestThinkingOneOf0Type": {
-        "type": "string",
-        "enum": [
-          "enabled"
-        ],
-        "title": "MessagesRequestThinkingOneOf0Type"
-      },
-      "MessagesRequestThinking0": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestThinkingOneOf0Type"
-          },
-          "budget_tokens": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "type",
-          "budget_tokens"
-        ],
-        "title": "MessagesRequestThinking0"
-      },
-      "MessagesRequestThinkingOneOf1Type": {
-        "type": "string",
-        "enum": [
-          "disabled"
-        ],
-        "title": "MessagesRequestThinkingOneOf1Type"
-      },
-      "MessagesRequestThinking1": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestThinkingOneOf1Type"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "MessagesRequestThinking1"
-      },
-      "MessagesRequestThinkingOneOf2Type": {
-        "type": "string",
-        "enum": [
-          "adaptive"
-        ],
-        "title": "MessagesRequestThinkingOneOf2Type"
-      },
-      "MessagesRequestThinking2": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesRequestThinkingOneOf2Type"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "MessagesRequestThinking2"
-      },
-      "MessagesRequestThinking": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/MessagesRequestThinking0"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestThinking1"
-          },
-          {
-            "$ref": "#/components/schemas/MessagesRequestThinking2"
-          }
-        ],
-        "title": "MessagesRequestThinking"
-      },
-      "MessagesRequestServiceTier": {
-        "type": "string",
-        "enum": [
-          "auto",
-          "standard_only"
-        ],
-        "title": "MessagesRequestServiceTier"
-      },
-      "MessagesOutputConfigEffort": {
-        "type": "string",
-        "enum": [
-          "low",
-          "medium",
-          "high",
-          "max"
-        ],
-        "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`.",
-        "title": "MessagesOutputConfigEffort"
-      },
-      "MessagesOutputConfigFormatType": {
-        "type": "string",
-        "enum": [
-          "json_schema"
-        ],
-        "title": "MessagesOutputConfigFormatType"
-      },
-      "MessagesOutputConfigFormat": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MessagesOutputConfigFormatType"
-          },
-          "schema": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          }
-        },
-        "required": [
-          "type",
-          "schema"
-        ],
-        "description": "A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).",
-        "title": "MessagesOutputConfigFormat"
-      },
-      "MessagesOutputConfig": {
-        "type": "object",
-        "properties": {
-          "effort": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/MessagesOutputConfigEffort"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`."
-          },
-          "format": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/MessagesOutputConfigFormat"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)."
-          }
-        },
-        "description": "Configuration for controlling output behavior. Supports the effort parameter and structured output format.",
-        "title": "MessagesOutputConfig"
       },
       "MessagesRequestContextManagementEditsItemsOneOf0Type": {
         "type": "string",
@@ -11405,15 +11434,6 @@
           "max_tokens": {
             "type": "integer"
           },
-          "messages": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "$ref": "#/components/schemas/MessagesMessageParam"
-            }
-          },
           "system": {
             "$ref": "#/components/schemas/MessagesRequestSystem"
           },
@@ -11457,6 +11477,15 @@
           },
           "cache_control": {
             "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          },
+          "messages": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/MessagesMessageParam"
+            }
           },
           "stream": {
             "type": "boolean"
@@ -11573,8 +11602,7 @@
             "type": "string"
           },
           "document_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "document_title": {
             "type": [
@@ -11583,12 +11611,10 @@
             ]
           },
           "start_char_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "end_char_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "file_id": {
             "type": [
@@ -11625,8 +11651,7 @@
             "type": "string"
           },
           "document_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "document_title": {
             "type": [
@@ -11635,12 +11660,10 @@
             ]
           },
           "start_page_number": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "end_page_number": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "file_id": {
             "type": [
@@ -11677,8 +11700,7 @@
             "type": "string"
           },
           "document_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "document_title": {
             "type": [
@@ -11687,12 +11709,10 @@
             ]
           },
           "start_block_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "end_block_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "file_id": {
             "type": [
@@ -11767,8 +11787,7 @@
             "type": "string"
           },
           "search_result_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "source": {
             "type": "string"
@@ -11780,12 +11799,10 @@
             ]
           },
           "start_block_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "end_block_index": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           }
         },
         "required": [
@@ -12753,8 +12770,7 @@
             }
           },
           "return_code": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "stderr": {
             "type": "string"
@@ -12818,8 +12834,7 @@
             "type": "string"
           },
           "return_code": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "stderr": {
             "type": "string"
@@ -12952,8 +12967,7 @@
             }
           },
           "return_code": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "stderr": {
             "type": "string"
@@ -13080,24 +13094,21 @@
           },
           "num_lines": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "start_line": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "total_lines": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "type": {
             "$ref": "#/components/schemas/BaseMessagesResultContentItemsOneOf9ContentOneOf1Type"
@@ -13157,31 +13168,27 @@
           },
           "new_lines": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "new_start": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "old_lines": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "old_start": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "type": {
             "$ref": "#/components/schemas/BaseMessagesResultContentItemsOneOf9ContentOneOf3Type"
@@ -13384,6 +13391,32 @@
         ],
         "title": "BaseMessagesResultContentItems11"
       },
+      "BaseMessagesResultContentItemsOneOf12Type": {
+        "type": "string",
+        "enum": [
+          "compaction"
+        ],
+        "title": "BaseMessagesResultContentItemsOneOf12Type"
+      },
+      "BaseMessagesResultContentItems12": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/BaseMessagesResultContentItemsOneOf12Type"
+          },
+          "content": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "content"
+        ],
+        "title": "BaseMessagesResultContentItems12"
+      },
       "BaseMessagesResultContentItems": {
         "oneOf": [
           {
@@ -13421,6 +13454,9 @@
           },
           {
             "$ref": "#/components/schemas/BaseMessagesResultContentItems11"
+          },
+          {
+            "$ref": "#/components/schemas/BaseMessagesResultContentItems12"
           }
         ],
         "title": "BaseMessagesResultContentItems"
@@ -13433,7 +13469,8 @@
           "stop_sequence",
           "tool_use",
           "pause_turn",
-          "refusal"
+          "refusal",
+          "compaction"
         ],
         "title": "BaseMessagesResultStopReason"
       },
@@ -13441,12 +13478,10 @@
         "type": "object",
         "properties": {
           "ephemeral_5m_input_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "ephemeral_1h_input_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           }
         },
         "required": [
@@ -13459,12 +13494,10 @@
         "type": "object",
         "properties": {
           "web_search_requests": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "web_fetch_requests": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           }
         },
         "required": [
@@ -13490,30 +13523,210 @@
         ],
         "title": "BaseMessagesResultUsageSpeed"
       },
+      "BaseMessagesResultUsageIterationsItemsOneOf0CacheCreation": {
+        "type": "object",
+        "properties": {
+          "ephemeral_5m_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "ephemeral_1h_input_tokens": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "title": "BaseMessagesResultUsageIterationsItemsOneOf0CacheCreation"
+      },
+      "BaseMessagesResultUsageIterationsItemsOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "compaction"
+        ],
+        "title": "BaseMessagesResultUsageIterationsItemsOneOf0Type"
+      },
+      "BaseMessagesResultUsageIterationsItems0": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_read_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItemsOneOf0CacheCreation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItemsOneOf0Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "BaseMessagesResultUsageIterationsItems0"
+      },
+      "BaseMessagesResultUsageIterationsItemsOneOf1CacheCreation": {
+        "type": "object",
+        "properties": {
+          "ephemeral_5m_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "ephemeral_1h_input_tokens": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "title": "BaseMessagesResultUsageIterationsItemsOneOf1CacheCreation"
+      },
+      "BaseMessagesResultUsageIterationsItemsOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "message"
+        ],
+        "title": "BaseMessagesResultUsageIterationsItemsOneOf1Type"
+      },
+      "BaseMessagesResultUsageIterationsItems1": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_read_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItemsOneOf1CacheCreation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItemsOneOf1Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "BaseMessagesResultUsageIterationsItems1"
+      },
+      "BaseMessagesResultUsageIterationsItemsOneOf2CacheCreation": {
+        "type": "object",
+        "properties": {
+          "ephemeral_5m_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "ephemeral_1h_input_tokens": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "title": "BaseMessagesResultUsageIterationsItemsOneOf2CacheCreation"
+      },
+      "BaseMessagesResultUsageIterationsItems2": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_read_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItemsOneOf2CacheCreation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "BaseMessagesResultUsageIterationsItems2"
+      },
+      "BaseMessagesResultUsageIterationsItems": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItems0"
+          },
+          {
+            "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItems1"
+          },
+          {
+            "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItems2"
+          }
+        ],
+        "title": "BaseMessagesResultUsageIterationsItems"
+      },
       "BaseMessagesResultUsage": {
         "type": "object",
         "properties": {
           "input_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "output_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "cache_creation_input_tokens": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "cache_read_input_tokens": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "cache_creation": {
             "oneOf": [
@@ -13560,6 +13773,12 @@
                 "type": "null"
               }
             ]
+          },
+          "iterations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseMessagesResultUsageIterationsItems"
+            }
           }
         },
         "required": [
@@ -13578,12 +13797,10 @@
         "type": "object",
         "properties": {
           "ephemeral_5m_input_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "ephemeral_1h_input_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           }
         },
         "required": [
@@ -13596,12 +13813,10 @@
         "type": "object",
         "properties": {
           "web_search_requests": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "web_fetch_requests": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           }
         },
         "required": [
@@ -13618,14 +13833,195 @@
         ],
         "title": "MessagesResultUsageSpeed"
       },
+      "MessagesResultUsageIterationsItemsOneOf0CacheCreation": {
+        "type": "object",
+        "properties": {
+          "ephemeral_5m_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "ephemeral_1h_input_tokens": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "title": "MessagesResultUsageIterationsItemsOneOf0CacheCreation"
+      },
+      "MessagesResultUsageIterationsItemsOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "compaction"
+        ],
+        "title": "MessagesResultUsageIterationsItemsOneOf0Type"
+      },
+      "MessagesResultUsageIterationsItems0": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_read_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MessagesResultUsageIterationsItemsOneOf0CacheCreation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/MessagesResultUsageIterationsItemsOneOf0Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesResultUsageIterationsItems0"
+      },
+      "MessagesResultUsageIterationsItemsOneOf1CacheCreation": {
+        "type": "object",
+        "properties": {
+          "ephemeral_5m_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "ephemeral_1h_input_tokens": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "title": "MessagesResultUsageIterationsItemsOneOf1CacheCreation"
+      },
+      "MessagesResultUsageIterationsItemsOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "message"
+        ],
+        "title": "MessagesResultUsageIterationsItemsOneOf1Type"
+      },
+      "MessagesResultUsageIterationsItems1": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_read_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MessagesResultUsageIterationsItemsOneOf1CacheCreation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/MessagesResultUsageIterationsItemsOneOf1Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesResultUsageIterationsItems1"
+      },
+      "MessagesResultUsageIterationsItemsOneOf2CacheCreation": {
+        "type": "object",
+        "properties": {
+          "ephemeral_5m_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "ephemeral_1h_input_tokens": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "title": "MessagesResultUsageIterationsItemsOneOf2CacheCreation"
+      },
+      "MessagesResultUsageIterationsItems2": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_read_input_tokens": {
+            "type": "integer",
+            "default": 0
+          },
+          "cache_creation": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MessagesResultUsageIterationsItemsOneOf2CacheCreation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesResultUsageIterationsItems2"
+      },
+      "MessagesResultUsageIterationsItems": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MessagesResultUsageIterationsItems0"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesResultUsageIterationsItems1"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesResultUsageIterationsItems2"
+          }
+        ],
+        "title": "MessagesResultUsageIterationsItems"
+      },
       "MessagesResultUsageCostDetails": {
         "type": "object",
         "properties": {
           "upstream_inference_cost": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "upstream_inference_prompt_cost": {
@@ -13647,26 +14043,22 @@
         "type": "object",
         "properties": {
           "input_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "output_tokens": {
-            "type": "number",
-            "format": "double"
+            "type": "integer"
           },
           "cache_creation_input_tokens": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "cache_read_input_tokens": {
             "type": [
-              "number",
+              "integer",
               "null"
-            ],
-            "format": "double"
+            ]
           },
           "cache_creation": {
             "oneOf": [
@@ -13710,11 +14102,14 @@
               }
             ]
           },
+          "iterations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MessagesResultUsageIterationsItems"
+            }
+          },
           "cost": {
-            "type": [
-              "number",
-              "null"
-            ],
+            "type": "number",
             "format": "double"
           },
           "is_byok": {

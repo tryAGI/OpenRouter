@@ -451,7 +451,6 @@ namespace OpenRouter
         /// </summary>
         /// <param name="model"></param>
         /// <param name="maxTokens"></param>
-        /// <param name="messages"></param>
         /// <param name="system"></param>
         /// <param name="metadata"></param>
         /// <param name="stopSequences"></param>
@@ -466,6 +465,7 @@ namespace OpenRouter
         /// Configuration for controlling output behavior. Supports the effort parameter and structured output format.
         /// </param>
         /// <param name="cacheControl"></param>
+        /// <param name="messages"></param>
         /// <param name="stream"></param>
         /// <param name="contextManagement"></param>
         /// <param name="provider">
@@ -492,7 +492,6 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
             string model,
             int? maxTokens = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
             global::OpenRouter.MessagesRequestSystem? system = default,
             global::OpenRouter.MessagesRequestMetadata? metadata = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
@@ -505,6 +504,7 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestServiceTier? serviceTier = default,
             global::OpenRouter.MessagesOutputConfig? outputConfig = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
             bool? stream = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestProvider, object>? provider = default,
@@ -520,7 +520,6 @@ namespace OpenRouter
             {
                 Model = model,
                 MaxTokens = maxTokens,
-                Messages = messages,
                 System = system,
                 Metadata = metadata,
                 StopSequences = stopSequences,
@@ -533,6 +532,7 @@ namespace OpenRouter
                 ServiceTier = serviceTier,
                 OutputConfig = outputConfig,
                 CacheControl = cacheControl,
+                Messages = messages,
                 Stream = stream,
                 ContextManagement = contextManagement,
                 Provider = provider,

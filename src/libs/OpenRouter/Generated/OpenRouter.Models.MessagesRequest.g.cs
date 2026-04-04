@@ -24,12 +24,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? Messages { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestSystemJsonConverter))]
         public global::OpenRouter.MessagesRequestSystem? System { get; set; }
@@ -106,6 +100,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? Messages { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
 
@@ -171,7 +171,6 @@ namespace OpenRouter
         /// </summary>
         /// <param name="model"></param>
         /// <param name="maxTokens"></param>
-        /// <param name="messages"></param>
         /// <param name="system"></param>
         /// <param name="metadata"></param>
         /// <param name="stopSequences"></param>
@@ -186,6 +185,7 @@ namespace OpenRouter
         /// Configuration for controlling output behavior. Supports the effort parameter and structured output format.
         /// </param>
         /// <param name="cacheControl"></param>
+        /// <param name="messages"></param>
         /// <param name="stream"></param>
         /// <param name="contextManagement"></param>
         /// <param name="provider">
@@ -213,7 +213,6 @@ namespace OpenRouter
         public MessagesRequest(
             string model,
             int? maxTokens,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages,
             global::OpenRouter.MessagesRequestSystem? system,
             global::OpenRouter.MessagesRequestMetadata? metadata,
             global::System.Collections.Generic.IList<string>? stopSequences,
@@ -226,6 +225,7 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestServiceTier? serviceTier,
             global::OpenRouter.MessagesOutputConfig? outputConfig,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
+            global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages,
             bool? stream,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestProvider, object>? provider,
@@ -238,7 +238,6 @@ namespace OpenRouter
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.MaxTokens = maxTokens;
-            this.Messages = messages;
             this.System = system;
             this.Metadata = metadata;
             this.StopSequences = stopSequences;
@@ -251,6 +250,7 @@ namespace OpenRouter
             this.ServiceTier = serviceTier;
             this.OutputConfig = outputConfig;
             this.CacheControl = cacheControl;
+            this.Messages = messages;
             this.Stream = stream;
             this.ContextManagement = contextManagement;
             this.Provider = provider;
