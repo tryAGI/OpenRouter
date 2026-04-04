@@ -11,6 +11,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Compaction,
+        /// <summary>
+        /// 
+        /// </summary>
         EndTurn,
         /// <summary>
         /// 
@@ -46,6 +50,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                BaseMessagesResultStopReason.Compaction => "compaction",
                 BaseMessagesResultStopReason.EndTurn => "end_turn",
                 BaseMessagesResultStopReason.MaxTokens => "max_tokens",
                 BaseMessagesResultStopReason.PauseTurn => "pause_turn",
@@ -62,6 +67,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                "compaction" => BaseMessagesResultStopReason.Compaction,
                 "end_turn" => BaseMessagesResultStopReason.EndTurn,
                 "max_tokens" => BaseMessagesResultStopReason.MaxTokens,
                 "pause_turn" => BaseMessagesResultStopReason.PauseTurn,

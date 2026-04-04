@@ -27,7 +27,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double DocumentIndex { get; set; }
+        public required int DocumentIndex { get; set; }
 
         /// <summary>
         /// 
@@ -40,14 +40,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_char_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double StartCharIndex { get; set; }
+        public required int StartCharIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_char_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double EndCharIndex { get; set; }
+        public required int EndCharIndex { get; set; }
 
         /// <summary>
         /// 
@@ -76,9 +76,9 @@ namespace OpenRouter
 #endif
         public BaseMessagesResultContentItemsOneOf0CitationsItems0(
             string citedText,
-            double documentIndex,
-            double startCharIndex,
-            double endCharIndex,
+            int documentIndex,
+            int startCharIndex,
+            int endCharIndex,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0Type type,
             string? documentTitle,
             string? fileId)

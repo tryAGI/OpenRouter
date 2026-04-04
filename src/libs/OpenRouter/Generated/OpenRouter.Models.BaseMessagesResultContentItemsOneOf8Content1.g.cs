@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ReturnCode { get; set; }
+        public required int ReturnCode { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace OpenRouter
 #endif
         public BaseMessagesResultContentItemsOneOf8Content1(
             global::System.Collections.Generic.IList<global::OpenRouter.BaseMessagesResultContentItemsOneOf8ContentOneOf1ContentItems> content,
-            double returnCode,
+            int returnCode,
             string stderr,
             string stdout,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf8ContentOneOf1Type type)

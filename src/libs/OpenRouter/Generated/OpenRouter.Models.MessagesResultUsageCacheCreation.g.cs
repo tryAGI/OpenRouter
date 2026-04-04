@@ -13,14 +13,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_5m_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Ephemeral5mInputTokens { get; set; }
+        public required int Ephemeral5mInputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_1h_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Ephemeral1hInputTokens { get; set; }
+        public required int Ephemeral1hInputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +37,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesResultUsageCacheCreation(
-            double ephemeral5mInputTokens,
-            double ephemeral1hInputTokens)
+            int ephemeral5mInputTokens,
+            int ephemeral1hInputTokens)
         {
             this.Ephemeral5mInputTokens = ephemeral5mInputTokens;
             this.Ephemeral1hInputTokens = ephemeral1hInputTokens;

@@ -27,7 +27,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ReturnCode { get; set; }
+        public required int ReturnCode { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace OpenRouter
         public BaseMessagesResultContentItemsOneOf7Content2(
             global::System.Collections.Generic.IList<global::OpenRouter.BaseMessagesResultContentItemsOneOf7ContentOneOf2ContentItems> content,
             string encryptedStdout,
-            double returnCode,
+            int returnCode,
             string stderr,
             global::OpenRouter.BaseMessagesResultContentItemsOneOf7ContentOneOf2Type type)
         {

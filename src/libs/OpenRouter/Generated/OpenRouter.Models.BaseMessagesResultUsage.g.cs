@@ -13,26 +13,26 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double InputTokens { get; set; }
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double OutputTokens { get; set; }
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
-        public double? CacheCreationInputTokens { get; set; }
+        public int? CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        public double? CacheReadInputTokens { get; set; }
+        public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// 
@@ -72,6 +72,12 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultUsageSpeed?, object>? Speed { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("iterations")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.BaseMessagesResultUsageIterationsItems>? Iterations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -89,19 +95,21 @@ namespace OpenRouter
         /// <param name="cacheReadInputTokens"></param>
         /// <param name="inferenceGeo"></param>
         /// <param name="speed"></param>
+        /// <param name="iterations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BaseMessagesResultUsage(
-            double inputTokens,
-            double outputTokens,
+            int inputTokens,
+            int outputTokens,
             global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultUsageCacheCreation, object> cacheCreation,
             global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultUsageServerToolUse, object> serverToolUse,
             global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultUsageServiceTier?, object> serviceTier,
-            double? cacheCreationInputTokens,
-            double? cacheReadInputTokens,
+            int? cacheCreationInputTokens,
+            int? cacheReadInputTokens,
             string? inferenceGeo,
-            global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultUsageSpeed?, object>? speed)
+            global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultUsageSpeed?, object>? speed,
+            global::System.Collections.Generic.IList<global::OpenRouter.BaseMessagesResultUsageIterationsItems>? iterations)
         {
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
@@ -112,6 +120,7 @@ namespace OpenRouter
             this.ServerToolUse = serverToolUse;
             this.ServiceTier = serviceTier;
             this.Speed = speed;
+            this.Iterations = iterations;
         }
 
         /// <summary>

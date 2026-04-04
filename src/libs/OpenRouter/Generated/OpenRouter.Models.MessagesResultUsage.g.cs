@@ -13,26 +13,26 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double InputTokens { get; set; }
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double OutputTokens { get; set; }
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
-        public double? CacheCreationInputTokens { get; set; }
+        public int? CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        public double? CacheReadInputTokens { get; set; }
+        public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// 
@@ -72,6 +72,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("iterations")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesResultUsageIterationsItems>? Iterations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         public double? Cost { get; set; }
 
@@ -106,6 +112,7 @@ namespace OpenRouter
         /// <param name="inferenceGeo"></param>
         /// <param name="serviceTier"></param>
         /// <param name="speed"></param>
+        /// <param name="iterations"></param>
         /// <param name="cost"></param>
         /// <param name="isByok"></param>
         /// <param name="costDetails"></param>
@@ -113,15 +120,16 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesResultUsage(
-            double inputTokens,
-            double outputTokens,
+            int inputTokens,
+            int outputTokens,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageCacheCreation, object> cacheCreation,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageServerToolUse, object> serverToolUse,
-            double? cacheCreationInputTokens,
-            double? cacheReadInputTokens,
+            int? cacheCreationInputTokens,
+            int? cacheReadInputTokens,
             string? inferenceGeo,
             string? serviceTier,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageSpeed?, object>? speed,
+            global::System.Collections.Generic.IList<global::OpenRouter.MessagesResultUsageIterationsItems>? iterations,
             double? cost,
             bool? isByok,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageCostDetails, object>? costDetails)
@@ -135,6 +143,7 @@ namespace OpenRouter
             this.ServerToolUse = serverToolUse;
             this.ServiceTier = serviceTier;
             this.Speed = speed;
+            this.Iterations = iterations;
             this.Cost = cost;
             this.IsByok = isByok;
             this.CostDetails = costDetails;
