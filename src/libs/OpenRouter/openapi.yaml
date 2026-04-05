@@ -17430,7 +17430,8 @@
           "image",
           "embeddings",
           "audio",
-          "video"
+          "video",
+          "rerank"
         ],
         "title": "OutputModality"
       },
