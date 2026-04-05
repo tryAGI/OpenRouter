@@ -23,6 +23,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Rerank,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
         /// <summary>
         /// 
@@ -45,6 +49,7 @@ namespace OpenRouter
                 OutputModality.Audio => "audio",
                 OutputModality.Embeddings => "embeddings",
                 OutputModality.Image => "image",
+                OutputModality.Rerank => "rerank",
                 OutputModality.Text => "text",
                 OutputModality.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -60,6 +65,7 @@ namespace OpenRouter
                 "audio" => OutputModality.Audio,
                 "embeddings" => OutputModality.Embeddings,
                 "image" => OutputModality.Image,
+                "rerank" => OutputModality.Rerank,
                 "text" => OutputModality.Text,
                 "video" => OutputModality.Video,
                 _ => null,
