@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Rerank,
+        /// <summary>
+        /// 
+        /// </summary>
         Video,
     }
 
@@ -36,6 +40,7 @@ namespace OpenRouter
             {
                 GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Completions => "completions",
                 GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Embeddings => "embeddings",
+                GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Rerank => "rerank",
                 GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace OpenRouter
             {
                 "completions" => GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Completions,
                 "embeddings" => GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Embeddings,
+                "rerank" => GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Rerank,
                 "video" => GenerationGetResponsesContentApplicationJsonSchemaDataApiType.Video,
                 _ => null,
             };
