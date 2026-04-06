@@ -111,6 +111,13 @@ namespace OpenRouter
         public string? ExpirationDate { get; set; }
 
         /// <summary>
+        /// Related API endpoints and resources for this model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("links")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ModelLinks Links { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -152,6 +159,9 @@ namespace OpenRouter
         /// <param name="defaultParameters">
         /// Default parameters for this model
         /// </param>
+        /// <param name="links">
+        /// Related API endpoints and resources for this model.
+        /// </param>
         /// <param name="huggingFaceId">
         /// Hugging Face model identifier, if applicable
         /// </param>
@@ -179,6 +189,7 @@ namespace OpenRouter
             global::OpenRouter.PerRequestLimits perRequestLimits,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             global::OpenRouter.DefaultParameters defaultParameters,
+            global::OpenRouter.ModelLinks links,
             string? huggingFaceId,
             string? description,
             string? knowledgeCutoff,
@@ -199,6 +210,7 @@ namespace OpenRouter
             this.DefaultParameters = defaultParameters ?? throw new global::System.ArgumentNullException(nameof(defaultParameters));
             this.KnowledgeCutoff = knowledgeCutoff;
             this.ExpirationDate = expirationDate;
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
         }
 
         /// <summary>
