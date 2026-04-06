@@ -109,5 +109,10 @@ namespace OpenRouter
         /// </summary>
         public SubpackageProvidersClient SubpackageProviders { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageRerankClient SubpackageRerank { get; }
+
     }
 }
