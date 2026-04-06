@@ -2871,6 +2871,147 @@
           }
         }
       }
+    },
+    "/rerank": {
+      "post": {
+        "operationId": "create-rerank",
+        "summary": "Submit a rerank request",
+        "description": "Submits a rerank request to the rerank router",
+        "tags": [
+          "subpackage_rerank"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Rerank response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rerank_createRerank_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required - Insufficient credits or quota to complete request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentRequiredResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway - Provider/upstream API failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadGatewayResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable - Service temporarily unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The rerank model to use"
+                  },
+                  "query": {
+                    "type": "string",
+                    "description": "The search query to rerank documents against"
+                  },
+                  "documents": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "The list of documents to rerank"
+                  },
+                  "top_n": {
+                    "type": "integer",
+                    "description": "Number of most relevant documents to return"
+                  },
+                  "provider": {
+                    "$ref": "#/components/schemas/ProviderPreferences"
+                  }
+                },
+                "required": [
+                  "model",
+                  "query",
+                  "documents"
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   },
   "servers": [
@@ -20816,6 +20957,99 @@
         ],
         "description": "Embeddings response containing embedding vectors",
         "title": "Embeddings_createEmbeddings_Response_200"
+      },
+      "RerankPostResponsesContentApplicationJsonSchemaResultsItemsDocument": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The document text"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "description": "The document object containing the original text",
+        "title": "RerankPostResponsesContentApplicationJsonSchemaResultsItemsDocument"
+      },
+      "RerankPostResponsesContentApplicationJsonSchemaResultsItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "Index of the document in the original input list"
+          },
+          "relevance_score": {
+            "type": "number",
+            "format": "double",
+            "description": "Relevance score of the document to the query"
+          },
+          "document": {
+            "$ref": "#/components/schemas/RerankPostResponsesContentApplicationJsonSchemaResultsItemsDocument",
+            "description": "The document object containing the original text"
+          }
+        },
+        "required": [
+          "index",
+          "relevance_score",
+          "document"
+        ],
+        "description": "A single rerank result",
+        "title": "RerankPostResponsesContentApplicationJsonSchemaResultsItems"
+      },
+      "RerankPostResponsesContentApplicationJsonSchemaUsage": {
+        "type": "object",
+        "properties": {
+          "total_tokens": {
+            "type": "integer",
+            "description": "Total number of tokens used"
+          },
+          "search_units": {
+            "type": "integer",
+            "description": "Number of search units consumed (Cohere billing)"
+          },
+          "cost": {
+            "type": "number",
+            "format": "double",
+            "description": "Cost of the request in credits"
+          }
+        },
+        "description": "Usage statistics",
+        "title": "RerankPostResponsesContentApplicationJsonSchemaUsage"
+      },
+      "Rerank_createRerank_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the rerank response (ORID format)"
+          },
+          "model": {
+            "type": "string",
+            "description": "The model used for reranking"
+          },
+          "provider": {
+            "type": "string",
+            "description": "The provider that served the rerank request"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RerankPostResponsesContentApplicationJsonSchemaResultsItems"
+            },
+            "description": "List of rerank results sorted by relevance"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/RerankPostResponsesContentApplicationJsonSchemaUsage",
+            "description": "Usage statistics"
+          }
+        },
+        "required": [
+          "model",
+          "results"
+        ],
+        "description": "Rerank response containing ranked results",
+        "title": "Rerank_createRerank_Response_200"
       }
     },
     "securitySchemes": {
