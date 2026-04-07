@@ -32,14 +32,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ReasoningDetailEncryptedFormat?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ReasoningDetailEncryptedFormat?, object>? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter))]
+        public global::OpenRouter.ReasoningFormat? Format { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public double? Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,8 +62,8 @@ namespace OpenRouter
             string data,
             global::OpenRouter.ReasoningDetailEncryptedType type,
             string? id,
-            global::OpenRouter.OneOf<global::OpenRouter.ReasoningDetailEncryptedFormat?, object>? format,
-            double? index)
+            global::OpenRouter.ReasoningFormat? format,
+            int? index)
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

@@ -50,7 +50,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        public global::OpenRouter.PreviewWebSearchUserLocation? UserLocation { get; set; }
+        public global::OpenRouter.AnthropicWebSearchToolUserLocation? UserLocation { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
             int? maxUses,
-            global::OpenRouter.PreviewWebSearchUserLocation? userLocation,
+            global::OpenRouter.AnthropicWebSearchToolUserLocation? userLocation,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
         {
             this.Type = type;

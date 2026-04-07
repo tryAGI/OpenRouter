@@ -474,6 +474,9 @@ namespace OpenRouter
         /// <param name="plugins">
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
+        /// <param name="route">
+        /// Any type
+        /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters.
         /// </param>
@@ -484,9 +487,7 @@ namespace OpenRouter
         /// Metadata for observability and tracing. Known keys (trace_id, trace_name, span_name, generation_name, parent_span_id) have special handling. Additional keys are passed through as custom metadata to configured broadcast destinations.
         /// </param>
         /// <param name="models"></param>
-        /// <param name="speed">
-        /// Controls output generation speed. When set to `fast`, uses a higher-speed inference configuration at premium pricing. Defaults to `standard` when omitted.
-        /// </param>
+        /// <param name="speed"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
@@ -507,11 +508,12 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
             bool? stream = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestProvider, object>? provider = default,
+            global::OpenRouter.ProviderPreferences? provider = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins = default,
+            object? route = default,
             string? user = default,
             string? sessionId = default,
-            global::OpenRouter.MessagesRequestTrace? trace = default,
+            global::OpenRouter.TraceConfig? trace = default,
             global::System.Collections.Generic.IList<string>? models = default,
             global::OpenRouter.MessagesRequestSpeed? speed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -537,6 +539,7 @@ namespace OpenRouter
                 ContextManagement = contextManagement,
                 Provider = provider,
                 Plugins = plugins,
+                Route = route,
                 User = user,
                 SessionId = sessionId,
                 Trace = trace,

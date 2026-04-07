@@ -54,11 +54,11 @@ namespace OpenRouter
         public string? Signature { get; set; }
 
         /// <summary>
-        /// The format of the reasoning content
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.OutputReasoningItemFormat?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.OutputReasoningItemFormat?, object>? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter))]
+        public global::OpenRouter.ReasoningFormat? Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,9 +78,7 @@ namespace OpenRouter
         /// <param name="signature">
         /// A signature for the reasoning content, used for verification
         /// </param>
-        /// <param name="format">
-        /// The format of the reasoning content
-        /// </param>
+        /// <param name="format"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -92,7 +90,7 @@ namespace OpenRouter
             string? encryptedContent,
             global::OpenRouter.OutputItemReasoningStatus? status,
             string? signature,
-            global::OpenRouter.OneOf<global::OpenRouter.OutputReasoningItemFormat?, object>? format)
+            global::OpenRouter.ReasoningFormat? format)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

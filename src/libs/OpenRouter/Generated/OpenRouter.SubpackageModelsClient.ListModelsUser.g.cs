@@ -79,7 +79,7 @@ namespace OpenRouter
             ProcessListModelsUserResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Unauthorized - Missing or invalid authentication
+            // Unauthorized - Authentication required or invalid credentials
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -117,7 +117,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Not Found - No eligible endpoints found
+            // Not Found - Resource does not exist
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
@@ -155,7 +155,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Internal Server Error
+            // Internal Server Error - Unexpected server error
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;

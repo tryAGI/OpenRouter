@@ -37,14 +37,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ReasoningDetailTextFormat?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ReasoningDetailTextFormat?, object>? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter))]
+        public global::OpenRouter.ReasoningFormat? Format { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public double? Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,8 +69,8 @@ namespace OpenRouter
             string? text,
             string? signature,
             string? id,
-            global::OpenRouter.OneOf<global::OpenRouter.ReasoningDetailTextFormat?, object>? format,
-            double? index)
+            global::OpenRouter.ReasoningFormat? format,
+            int? index)
         {
             this.Type = type;
             this.Text = text;

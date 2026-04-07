@@ -45,7 +45,7 @@ namespace OpenRouter
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
-        public double? MaxResults { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -79,7 +79,7 @@ namespace OpenRouter
             global::OpenRouter.SearchContextSizeEnum? searchContextSize,
             global::OpenRouter.WebSearchUserLocation? userLocation,
             global::OpenRouter.WebSearchEngineEnum? engine,
-            double? maxResults)
+            int? maxResults)
         {
             this.Type = type;
             this.Filters = filters;

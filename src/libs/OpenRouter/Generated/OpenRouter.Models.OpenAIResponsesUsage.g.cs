@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double InputTokens { get; set; }
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double OutputTokens { get; set; }
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TotalTokens { get; set; }
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,11 +61,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenAIResponsesUsage(
-            double inputTokens,
+            int inputTokens,
             global::OpenRouter.OpenAiResponsesUsageInputTokensDetails inputTokensDetails,
-            double outputTokens,
+            int outputTokens,
             global::OpenRouter.OpenAiResponsesUsageOutputTokensDetails outputTokensDetails,
-            double totalTokens)
+            int totalTokens)
         {
             this.InputTokens = inputTokens;
             this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));

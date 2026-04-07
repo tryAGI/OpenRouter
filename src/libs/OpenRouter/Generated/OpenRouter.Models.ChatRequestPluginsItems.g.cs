@@ -13,253 +13,253 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItems0? ChatRequestPluginsItems0 { get; init; }
+        public global::OpenRouter.AutoRouterPlugin? AutoRouterPlugin { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItems0? ChatRequestPluginsItems0 { get; }
+        public global::OpenRouter.AutoRouterPlugin? AutoRouterPlugin { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoRouterPlugin))]
 #endif
-        public bool IsChatRequestPluginsItems0 => ChatRequestPluginsItems0 != null;
+        public bool IsAutoRouterPlugin => AutoRouterPlugin != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItems1? ChatRequestPluginsItems1 { get; init; }
+        public global::OpenRouter.ModerationPlugin? ModerationPlugin { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItems1? ChatRequestPluginsItems1 { get; }
+        public global::OpenRouter.ModerationPlugin? ModerationPlugin { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModerationPlugin))]
 #endif
-        public bool IsChatRequestPluginsItems1 => ChatRequestPluginsItems1 != null;
+        public bool IsModerationPlugin => ModerationPlugin != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItems2? ChatRequestPluginsItems2 { get; init; }
+        public global::OpenRouter.WebSearchPlugin? WebSearchPlugin { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItems2? ChatRequestPluginsItems2 { get; }
+        public global::OpenRouter.WebSearchPlugin? WebSearchPlugin { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchPlugin))]
 #endif
-        public bool IsChatRequestPluginsItems2 => ChatRequestPluginsItems2 != null;
+        public bool IsWebSearchPlugin => WebSearchPlugin != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItems3? ChatRequestPluginsItems3 { get; init; }
+        public global::OpenRouter.FileParserPlugin? FileParserPlugin { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItems3? ChatRequestPluginsItems3 { get; }
+        public global::OpenRouter.FileParserPlugin? FileParserPlugin { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileParserPlugin))]
 #endif
-        public bool IsChatRequestPluginsItems3 => ChatRequestPluginsItems3 != null;
+        public bool IsFileParserPlugin => FileParserPlugin != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItems4? ChatRequestPluginsItems4 { get; init; }
+        public global::OpenRouter.ResponseHealingPlugin? ResponseHealingPlugin { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItems4? ChatRequestPluginsItems4 { get; }
+        public global::OpenRouter.ResponseHealingPlugin? ResponseHealingPlugin { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseHealingPlugin))]
 #endif
-        public bool IsChatRequestPluginsItems4 => ChatRequestPluginsItems4 != null;
+        public bool IsResponseHealingPlugin => ResponseHealingPlugin != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItems5? ChatRequestPluginsItems5 { get; init; }
+        public global::OpenRouter.ContextCompressionPlugin? ContextCompressionPlugin { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItems5? ChatRequestPluginsItems5 { get; }
+        public global::OpenRouter.ContextCompressionPlugin? ContextCompressionPlugin { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextCompressionPlugin))]
 #endif
-        public bool IsChatRequestPluginsItems5 => ChatRequestPluginsItems5 != null;
+        public bool IsContextCompressionPlugin => ContextCompressionPlugin != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems0 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItems0?)value);
+        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.AutoRouterPlugin value) => new ChatRequestPluginsItems((global::OpenRouter.AutoRouterPlugin?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItems0?(ChatRequestPluginsItems @this) => @this.ChatRequestPluginsItems0;
+        public static implicit operator global::OpenRouter.AutoRouterPlugin?(ChatRequestPluginsItems @this) => @this.AutoRouterPlugin;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems0? value)
+        public ChatRequestPluginsItems(global::OpenRouter.AutoRouterPlugin? value)
         {
-            ChatRequestPluginsItems0 = value;
+            AutoRouterPlugin = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems1 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItems1?)value);
+        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ModerationPlugin value) => new ChatRequestPluginsItems((global::OpenRouter.ModerationPlugin?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItems1?(ChatRequestPluginsItems @this) => @this.ChatRequestPluginsItems1;
+        public static implicit operator global::OpenRouter.ModerationPlugin?(ChatRequestPluginsItems @this) => @this.ModerationPlugin;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems1? value)
+        public ChatRequestPluginsItems(global::OpenRouter.ModerationPlugin? value)
         {
-            ChatRequestPluginsItems1 = value;
+            ModerationPlugin = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems2 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItems2?)value);
+        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.WebSearchPlugin value) => new ChatRequestPluginsItems((global::OpenRouter.WebSearchPlugin?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItems2?(ChatRequestPluginsItems @this) => @this.ChatRequestPluginsItems2;
+        public static implicit operator global::OpenRouter.WebSearchPlugin?(ChatRequestPluginsItems @this) => @this.WebSearchPlugin;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems2? value)
+        public ChatRequestPluginsItems(global::OpenRouter.WebSearchPlugin? value)
         {
-            ChatRequestPluginsItems2 = value;
+            WebSearchPlugin = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems3 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItems3?)value);
+        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.FileParserPlugin value) => new ChatRequestPluginsItems((global::OpenRouter.FileParserPlugin?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItems3?(ChatRequestPluginsItems @this) => @this.ChatRequestPluginsItems3;
+        public static implicit operator global::OpenRouter.FileParserPlugin?(ChatRequestPluginsItems @this) => @this.FileParserPlugin;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems3? value)
+        public ChatRequestPluginsItems(global::OpenRouter.FileParserPlugin? value)
         {
-            ChatRequestPluginsItems3 = value;
+            FileParserPlugin = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems4 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItems4?)value);
+        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ResponseHealingPlugin value) => new ChatRequestPluginsItems((global::OpenRouter.ResponseHealingPlugin?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItems4?(ChatRequestPluginsItems @this) => @this.ChatRequestPluginsItems4;
+        public static implicit operator global::OpenRouter.ResponseHealingPlugin?(ChatRequestPluginsItems @this) => @this.ResponseHealingPlugin;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems4? value)
+        public ChatRequestPluginsItems(global::OpenRouter.ResponseHealingPlugin? value)
         {
-            ChatRequestPluginsItems4 = value;
+            ResponseHealingPlugin = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems5 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItems5?)value);
+        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ContextCompressionPlugin value) => new ChatRequestPluginsItems((global::OpenRouter.ContextCompressionPlugin?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItems5?(ChatRequestPluginsItems @this) => @this.ChatRequestPluginsItems5;
+        public static implicit operator global::OpenRouter.ContextCompressionPlugin?(ChatRequestPluginsItems @this) => @this.ContextCompressionPlugin;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItems5? value)
+        public ChatRequestPluginsItems(global::OpenRouter.ContextCompressionPlugin? value)
         {
-            ChatRequestPluginsItems5 = value;
+            ContextCompressionPlugin = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestPluginsItems(
-            global::OpenRouter.ChatRequestPluginsItems0? chatRequestPluginsItems0,
-            global::OpenRouter.ChatRequestPluginsItems1? chatRequestPluginsItems1,
-            global::OpenRouter.ChatRequestPluginsItems2? chatRequestPluginsItems2,
-            global::OpenRouter.ChatRequestPluginsItems3? chatRequestPluginsItems3,
-            global::OpenRouter.ChatRequestPluginsItems4? chatRequestPluginsItems4,
-            global::OpenRouter.ChatRequestPluginsItems5? chatRequestPluginsItems5
+            global::OpenRouter.AutoRouterPlugin? autoRouterPlugin,
+            global::OpenRouter.ModerationPlugin? moderationPlugin,
+            global::OpenRouter.WebSearchPlugin? webSearchPlugin,
+            global::OpenRouter.FileParserPlugin? fileParserPlugin,
+            global::OpenRouter.ResponseHealingPlugin? responseHealingPlugin,
+            global::OpenRouter.ContextCompressionPlugin? contextCompressionPlugin
             )
         {
-            ChatRequestPluginsItems0 = chatRequestPluginsItems0;
-            ChatRequestPluginsItems1 = chatRequestPluginsItems1;
-            ChatRequestPluginsItems2 = chatRequestPluginsItems2;
-            ChatRequestPluginsItems3 = chatRequestPluginsItems3;
-            ChatRequestPluginsItems4 = chatRequestPluginsItems4;
-            ChatRequestPluginsItems5 = chatRequestPluginsItems5;
+            AutoRouterPlugin = autoRouterPlugin;
+            ModerationPlugin = moderationPlugin;
+            WebSearchPlugin = webSearchPlugin;
+            FileParserPlugin = fileParserPlugin;
+            ResponseHealingPlugin = responseHealingPlugin;
+            ContextCompressionPlugin = contextCompressionPlugin;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ChatRequestPluginsItems5 as object ??
-            ChatRequestPluginsItems4 as object ??
-            ChatRequestPluginsItems3 as object ??
-            ChatRequestPluginsItems2 as object ??
-            ChatRequestPluginsItems1 as object ??
-            ChatRequestPluginsItems0 as object 
+            ContextCompressionPlugin as object ??
+            ResponseHealingPlugin as object ??
+            FileParserPlugin as object ??
+            WebSearchPlugin as object ??
+            ModerationPlugin as object ??
+            AutoRouterPlugin as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            ChatRequestPluginsItems0?.ToString() ??
-            ChatRequestPluginsItems1?.ToString() ??
-            ChatRequestPluginsItems2?.ToString() ??
-            ChatRequestPluginsItems3?.ToString() ??
-            ChatRequestPluginsItems4?.ToString() ??
-            ChatRequestPluginsItems5?.ToString() 
+            AutoRouterPlugin?.ToString() ??
+            ModerationPlugin?.ToString() ??
+            WebSearchPlugin?.ToString() ??
+            FileParserPlugin?.ToString() ??
+            ResponseHealingPlugin?.ToString() ??
+            ContextCompressionPlugin?.ToString() 
             ;
 
         /// <summary>
@@ -267,19 +267,19 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatRequestPluginsItems0 && !IsChatRequestPluginsItems1 && !IsChatRequestPluginsItems2 && !IsChatRequestPluginsItems3 && !IsChatRequestPluginsItems4 && !IsChatRequestPluginsItems5 || !IsChatRequestPluginsItems0 && IsChatRequestPluginsItems1 && !IsChatRequestPluginsItems2 && !IsChatRequestPluginsItems3 && !IsChatRequestPluginsItems4 && !IsChatRequestPluginsItems5 || !IsChatRequestPluginsItems0 && !IsChatRequestPluginsItems1 && IsChatRequestPluginsItems2 && !IsChatRequestPluginsItems3 && !IsChatRequestPluginsItems4 && !IsChatRequestPluginsItems5 || !IsChatRequestPluginsItems0 && !IsChatRequestPluginsItems1 && !IsChatRequestPluginsItems2 && IsChatRequestPluginsItems3 && !IsChatRequestPluginsItems4 && !IsChatRequestPluginsItems5 || !IsChatRequestPluginsItems0 && !IsChatRequestPluginsItems1 && !IsChatRequestPluginsItems2 && !IsChatRequestPluginsItems3 && IsChatRequestPluginsItems4 && !IsChatRequestPluginsItems5 || !IsChatRequestPluginsItems0 && !IsChatRequestPluginsItems1 && !IsChatRequestPluginsItems2 && !IsChatRequestPluginsItems3 && !IsChatRequestPluginsItems4 && IsChatRequestPluginsItems5;
+            return IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && IsContextCompressionPlugin;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItems0?, TResult>? chatRequestPluginsItems0 = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItems1?, TResult>? chatRequestPluginsItems1 = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItems2?, TResult>? chatRequestPluginsItems2 = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItems3?, TResult>? chatRequestPluginsItems3 = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItems4?, TResult>? chatRequestPluginsItems4 = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItems5?, TResult>? chatRequestPluginsItems5 = null,
+            global::System.Func<global::OpenRouter.AutoRouterPlugin?, TResult>? autoRouterPlugin = null,
+            global::System.Func<global::OpenRouter.ModerationPlugin?, TResult>? moderationPlugin = null,
+            global::System.Func<global::OpenRouter.WebSearchPlugin?, TResult>? webSearchPlugin = null,
+            global::System.Func<global::OpenRouter.FileParserPlugin?, TResult>? fileParserPlugin = null,
+            global::System.Func<global::OpenRouter.ResponseHealingPlugin?, TResult>? responseHealingPlugin = null,
+            global::System.Func<global::OpenRouter.ContextCompressionPlugin?, TResult>? contextCompressionPlugin = null,
             bool validate = true)
         {
             if (validate)
@@ -287,29 +287,29 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatRequestPluginsItems0 && chatRequestPluginsItems0 != null)
+            if (IsAutoRouterPlugin && autoRouterPlugin != null)
             {
-                return chatRequestPluginsItems0(ChatRequestPluginsItems0!);
+                return autoRouterPlugin(AutoRouterPlugin!);
             }
-            else if (IsChatRequestPluginsItems1 && chatRequestPluginsItems1 != null)
+            else if (IsModerationPlugin && moderationPlugin != null)
             {
-                return chatRequestPluginsItems1(ChatRequestPluginsItems1!);
+                return moderationPlugin(ModerationPlugin!);
             }
-            else if (IsChatRequestPluginsItems2 && chatRequestPluginsItems2 != null)
+            else if (IsWebSearchPlugin && webSearchPlugin != null)
             {
-                return chatRequestPluginsItems2(ChatRequestPluginsItems2!);
+                return webSearchPlugin(WebSearchPlugin!);
             }
-            else if (IsChatRequestPluginsItems3 && chatRequestPluginsItems3 != null)
+            else if (IsFileParserPlugin && fileParserPlugin != null)
             {
-                return chatRequestPluginsItems3(ChatRequestPluginsItems3!);
+                return fileParserPlugin(FileParserPlugin!);
             }
-            else if (IsChatRequestPluginsItems4 && chatRequestPluginsItems4 != null)
+            else if (IsResponseHealingPlugin && responseHealingPlugin != null)
             {
-                return chatRequestPluginsItems4(ChatRequestPluginsItems4!);
+                return responseHealingPlugin(ResponseHealingPlugin!);
             }
-            else if (IsChatRequestPluginsItems5 && chatRequestPluginsItems5 != null)
+            else if (IsContextCompressionPlugin && contextCompressionPlugin != null)
             {
-                return chatRequestPluginsItems5(ChatRequestPluginsItems5!);
+                return contextCompressionPlugin(ContextCompressionPlugin!);
             }
 
             return default(TResult);
@@ -319,12 +319,12 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItems0?>? chatRequestPluginsItems0 = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItems1?>? chatRequestPluginsItems1 = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItems2?>? chatRequestPluginsItems2 = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItems3?>? chatRequestPluginsItems3 = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItems4?>? chatRequestPluginsItems4 = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItems5?>? chatRequestPluginsItems5 = null,
+            global::System.Action<global::OpenRouter.AutoRouterPlugin?>? autoRouterPlugin = null,
+            global::System.Action<global::OpenRouter.ModerationPlugin?>? moderationPlugin = null,
+            global::System.Action<global::OpenRouter.WebSearchPlugin?>? webSearchPlugin = null,
+            global::System.Action<global::OpenRouter.FileParserPlugin?>? fileParserPlugin = null,
+            global::System.Action<global::OpenRouter.ResponseHealingPlugin?>? responseHealingPlugin = null,
+            global::System.Action<global::OpenRouter.ContextCompressionPlugin?>? contextCompressionPlugin = null,
             bool validate = true)
         {
             if (validate)
@@ -332,29 +332,29 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatRequestPluginsItems0)
+            if (IsAutoRouterPlugin)
             {
-                chatRequestPluginsItems0?.Invoke(ChatRequestPluginsItems0!);
+                autoRouterPlugin?.Invoke(AutoRouterPlugin!);
             }
-            else if (IsChatRequestPluginsItems1)
+            else if (IsModerationPlugin)
             {
-                chatRequestPluginsItems1?.Invoke(ChatRequestPluginsItems1!);
+                moderationPlugin?.Invoke(ModerationPlugin!);
             }
-            else if (IsChatRequestPluginsItems2)
+            else if (IsWebSearchPlugin)
             {
-                chatRequestPluginsItems2?.Invoke(ChatRequestPluginsItems2!);
+                webSearchPlugin?.Invoke(WebSearchPlugin!);
             }
-            else if (IsChatRequestPluginsItems3)
+            else if (IsFileParserPlugin)
             {
-                chatRequestPluginsItems3?.Invoke(ChatRequestPluginsItems3!);
+                fileParserPlugin?.Invoke(FileParserPlugin!);
             }
-            else if (IsChatRequestPluginsItems4)
+            else if (IsResponseHealingPlugin)
             {
-                chatRequestPluginsItems4?.Invoke(ChatRequestPluginsItems4!);
+                responseHealingPlugin?.Invoke(ResponseHealingPlugin!);
             }
-            else if (IsChatRequestPluginsItems5)
+            else if (IsContextCompressionPlugin)
             {
-                chatRequestPluginsItems5?.Invoke(ChatRequestPluginsItems5!);
+                contextCompressionPlugin?.Invoke(ContextCompressionPlugin!);
             }
         }
 
@@ -365,18 +365,18 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                ChatRequestPluginsItems0,
-                typeof(global::OpenRouter.ChatRequestPluginsItems0),
-                ChatRequestPluginsItems1,
-                typeof(global::OpenRouter.ChatRequestPluginsItems1),
-                ChatRequestPluginsItems2,
-                typeof(global::OpenRouter.ChatRequestPluginsItems2),
-                ChatRequestPluginsItems3,
-                typeof(global::OpenRouter.ChatRequestPluginsItems3),
-                ChatRequestPluginsItems4,
-                typeof(global::OpenRouter.ChatRequestPluginsItems4),
-                ChatRequestPluginsItems5,
-                typeof(global::OpenRouter.ChatRequestPluginsItems5),
+                AutoRouterPlugin,
+                typeof(global::OpenRouter.AutoRouterPlugin),
+                ModerationPlugin,
+                typeof(global::OpenRouter.ModerationPlugin),
+                WebSearchPlugin,
+                typeof(global::OpenRouter.WebSearchPlugin),
+                FileParserPlugin,
+                typeof(global::OpenRouter.FileParserPlugin),
+                ResponseHealingPlugin,
+                typeof(global::OpenRouter.ResponseHealingPlugin),
+                ContextCompressionPlugin,
+                typeof(global::OpenRouter.ContextCompressionPlugin),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -393,12 +393,12 @@ namespace OpenRouter
         public bool Equals(ChatRequestPluginsItems other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItems0?>.Default.Equals(ChatRequestPluginsItems0, other.ChatRequestPluginsItems0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItems1?>.Default.Equals(ChatRequestPluginsItems1, other.ChatRequestPluginsItems1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItems2?>.Default.Equals(ChatRequestPluginsItems2, other.ChatRequestPluginsItems2) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItems3?>.Default.Equals(ChatRequestPluginsItems3, other.ChatRequestPluginsItems3) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItems4?>.Default.Equals(ChatRequestPluginsItems4, other.ChatRequestPluginsItems4) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItems5?>.Default.Equals(ChatRequestPluginsItems5, other.ChatRequestPluginsItems5) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AutoRouterPlugin?>.Default.Equals(AutoRouterPlugin, other.AutoRouterPlugin) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ModerationPlugin?>.Default.Equals(ModerationPlugin, other.ModerationPlugin) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebSearchPlugin?>.Default.Equals(WebSearchPlugin, other.WebSearchPlugin) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FileParserPlugin?>.Default.Equals(FileParserPlugin, other.FileParserPlugin) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponseHealingPlugin?>.Default.Equals(ResponseHealingPlugin, other.ResponseHealingPlugin) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContextCompressionPlugin?>.Default.Equals(ContextCompressionPlugin, other.ContextCompressionPlugin) 
                 ;
         }
 

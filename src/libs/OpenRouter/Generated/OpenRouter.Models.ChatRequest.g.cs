@@ -12,14 +12,19 @@ namespace OpenRouter
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestProvider, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatRequestProvider, object>? Provider { get; set; }
+        public global::OpenRouter.ProviderPreferences? Provider { get; set; }
 
         /// <summary>
         /// Plugins you want to enable for this request, including their settings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plugins")]
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? Plugins { get; set; }
+
+        /// <summary>
+        /// Any type
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("route")]
+        public object? Route { get; set; }
 
         /// <summary>
         /// Unique user identifier
@@ -37,7 +42,7 @@ namespace OpenRouter
         /// Metadata for observability and tracing. Known keys (trace_id, trace_name, span_name, generation_name, parent_span_id) have special handling. Additional keys are passed through as custom metadata to configured broadcast destinations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace")]
-        public global::OpenRouter.ChatRequestTrace? Trace { get; set; }
+        public global::OpenRouter.TraceConfig? Trace { get; set; }
 
         /// <summary>
         /// List of messages for the conversation
@@ -225,6 +230,9 @@ namespace OpenRouter
         /// <param name="plugins">
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
+        /// <param name="route">
+        /// Any type
+        /// </param>
         /// <param name="user">
         /// Unique user identifier
         /// </param>
@@ -316,11 +324,12 @@ namespace OpenRouter
 #endif
         public ChatRequest(
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestProvider, object>? provider,
+            global::OpenRouter.ProviderPreferences? provider,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? plugins,
+            object? route,
             string? user,
             string? sessionId,
-            global::OpenRouter.ChatRequestTrace? trace,
+            global::OpenRouter.TraceConfig? trace,
             string? model,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? models,
             double? frequencyPenalty,
@@ -350,6 +359,7 @@ namespace OpenRouter
         {
             this.Provider = provider;
             this.Plugins = plugins;
+            this.Route = route;
             this.User = user;
             this.SessionId = sessionId;
             this.Trace = trace;

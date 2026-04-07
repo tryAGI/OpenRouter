@@ -94,7 +94,7 @@ namespace OpenRouter
             ProcessCreateGuardrailResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request - Invalid request parameters
+            // Bad Request - Invalid request parameters or malformed input
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -132,7 +132,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Unauthorized - Missing or invalid authentication
+            // Unauthorized - Authentication required or invalid credentials
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -170,7 +170,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Internal Server Error
+            // Internal Server Error - Unexpected server error
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
@@ -306,7 +306,9 @@ namespace OpenRouter
         /// <param name="limitUsd">
         /// Spending limit in USD
         /// </param>
-        /// <param name="resetInterval"></param>
+        /// <param name="resetInterval">
+        /// Interval at which the limit resets (daily, weekly, monthly)
+        /// </param>
         /// <param name="allowedProviders">
         /// List of allowed provider IDs
         /// </param>
@@ -325,7 +327,7 @@ namespace OpenRouter
             string name,
             string? description = default,
             double? limitUsd = default,
-            global::OpenRouter.CreateGuardrailRequestResetInterval? resetInterval = default,
+            global::OpenRouter.GuardrailInterval? resetInterval = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,

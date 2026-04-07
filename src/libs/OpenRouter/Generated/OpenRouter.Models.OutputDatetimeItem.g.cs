@@ -25,9 +25,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OutputDatetimeItemStatus Status { get; set; }
+        public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
         /// ISO 8601 datetime string
@@ -65,7 +65,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputDatetimeItem(
-            global::OpenRouter.OutputDatetimeItemStatus status,
+            global::OpenRouter.ToolCallStatus status,
             string datetime,
             string timezone,
             global::OpenRouter.OutputDatetimeItemType type,

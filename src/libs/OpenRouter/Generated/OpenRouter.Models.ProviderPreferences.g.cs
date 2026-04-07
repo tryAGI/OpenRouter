@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider routing preferences for the request.
+    /// When multiple model providers are available, optionally indicate your routing preference.
     /// </summary>
     public sealed partial class ProviderPreferences
     {
@@ -23,10 +23,13 @@ namespace OpenRouter
         public bool? RequireParameters { get; set; }
 
         /// <summary>
-        /// 
+        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
+        /// - allow: (default) allow providers which store user data non-transiently and may train on it<br/>
+        /// - deny: use only providers which do not collect user data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_collection")]
-        public global::OpenRouter.ProviderPreferencesDataCollection? DataCollection { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderPreferencesDataCollection?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.ProviderPreferencesDataCollection?, object>? DataCollection { get; set; }
 
         /// <summary>
         /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.
@@ -65,9 +68,10 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.Quantization>? Quantizations { get; set; }
 
         /// <summary>
-        /// 
+        /// The sorting strategy to use for this request, if "order" is not specified. When set, no load balancing is performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderPreferencesSortJsonConverter))]
         public global::OpenRouter.ProviderPreferencesSort? Sort { get; set; }
 
         /// <summary>
@@ -107,7 +111,11 @@ namespace OpenRouter
         /// <param name="requireParameters">
         /// Whether to filter providers to only those that support the parameters you've provided. If this setting is omitted or set to false, then providers will receive only the parameters they support, and ignore the rest.
         /// </param>
-        /// <param name="dataCollection"></param>
+        /// <param name="dataCollection">
+        /// Data collection setting. If no available model provider meets the requirement, your request will return an error.<br/>
+        /// - allow: (default) allow providers which store user data non-transiently and may train on it<br/>
+        /// - deny: use only providers which do not collect user data.
+        /// </param>
         /// <param name="zdr">
         /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.
         /// </param>
@@ -126,7 +134,9 @@ namespace OpenRouter
         /// <param name="quantizations">
         /// A list of quantization levels to filter the provider by.
         /// </param>
-        /// <param name="sort"></param>
+        /// <param name="sort">
+        /// The sorting strategy to use for this request, if "order" is not specified. When set, no load balancing is performed.
+        /// </param>
         /// <param name="maxPrice">
         /// The object specifying the maximum price you want to pay for this request. USD price per million tokens, for prompt and completion.
         /// </param>
@@ -142,7 +152,7 @@ namespace OpenRouter
         public ProviderPreferences(
             bool? allowFallbacks,
             bool? requireParameters,
-            global::OpenRouter.ProviderPreferencesDataCollection? dataCollection,
+            global::OpenRouter.OneOf<global::OpenRouter.ProviderPreferencesDataCollection?, object>? dataCollection,
             bool? zdr,
             bool? enforceDistillableText,
             global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOrderItems>? order,

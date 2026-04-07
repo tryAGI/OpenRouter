@@ -34,14 +34,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double StartIndex { get; set; }
+        public required int StartIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double EndIndex { get; set; }
+        public required int EndIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,8 +63,8 @@ namespace OpenRouter
         public URLCitation(
             string url,
             string title,
-            double startIndex,
-            double endIndex,
+            int startIndex,
+            int endIndex,
             global::OpenRouter.UrlCitationType type)
         {
             this.Type = type;

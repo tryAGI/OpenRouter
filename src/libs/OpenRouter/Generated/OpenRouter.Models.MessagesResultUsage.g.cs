@@ -26,21 +26,22 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
-        public int? CacheCreationInputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        public int? CacheReadInputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultUsageCacheCreation, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageCacheCreation, object> CacheCreation { get; set; }
+        public required global::OpenRouter.AnthropicCacheCreation CacheCreation { get; set; }
 
         /// <summary>
         /// 
@@ -52,9 +53,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultUsageServerToolUse, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageServerToolUse, object> ServerToolUse { get; set; }
+        public required global::OpenRouter.AnthropicServerToolUsage ServerToolUse { get; set; }
 
         /// <summary>
         /// 
@@ -66,14 +66,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultUsageSpeed?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageSpeed?, object>? Speed { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicSpeedJsonConverter))]
+        public global::OpenRouter.AnthropicSpeed? Speed { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iterations")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesResultUsageIterationsItems>? Iterations { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? Iterations { get; set; }
 
         /// <summary>
         /// 
@@ -105,10 +105,10 @@ namespace OpenRouter
         /// </summary>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
-        /// <param name="cacheCreation"></param>
-        /// <param name="serverToolUse"></param>
         /// <param name="cacheCreationInputTokens"></param>
         /// <param name="cacheReadInputTokens"></param>
+        /// <param name="cacheCreation"></param>
+        /// <param name="serverToolUse"></param>
         /// <param name="inferenceGeo"></param>
         /// <param name="serviceTier"></param>
         /// <param name="speed"></param>
@@ -122,14 +122,14 @@ namespace OpenRouter
         public MessagesResultUsage(
             int inputTokens,
             int outputTokens,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageCacheCreation, object> cacheCreation,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageServerToolUse, object> serverToolUse,
-            int? cacheCreationInputTokens,
-            int? cacheReadInputTokens,
+            int cacheCreationInputTokens,
+            int cacheReadInputTokens,
+            global::OpenRouter.AnthropicCacheCreation cacheCreation,
+            global::OpenRouter.AnthropicServerToolUsage serverToolUse,
             string? inferenceGeo,
             string? serviceTier,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageSpeed?, object>? speed,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesResultUsageIterationsItems>? iterations,
+            global::OpenRouter.AnthropicSpeed? speed,
+            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? iterations,
             double? cost,
             bool? isByok,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageCostDetails, object>? costDetails)
@@ -138,9 +138,9 @@ namespace OpenRouter
             this.OutputTokens = outputTokens;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
-            this.CacheCreation = cacheCreation;
+            this.CacheCreation = cacheCreation ?? throw new global::System.ArgumentNullException(nameof(cacheCreation));
             this.InferenceGeo = inferenceGeo;
-            this.ServerToolUse = serverToolUse;
+            this.ServerToolUse = serverToolUse ?? throw new global::System.ArgumentNullException(nameof(serverToolUse));
             this.ServiceTier = serviceTier;
             this.Speed = speed;
             this.Iterations = iterations;

@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemTypeJsonConverter))]
-        public global::OpenRouter.FunctionCallOutputItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputTypeJsonConverter))]
+        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputType Type { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::OpenRouter.FunctionCallOutputItemStatus? Status { get; set; }
+        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,9 +62,9 @@ namespace OpenRouter
         public FunctionCallOutputItem(
             string callId,
             global::OpenRouter.FunctionCallOutputItemOutput output,
-            global::OpenRouter.FunctionCallOutputItemType type,
+            global::OpenRouter.OpenAiResponseFunctionToolCallOutputType type,
             string? id,
-            global::OpenRouter.FunctionCallOutputItemStatus? status)
+            global::OpenRouter.OpenAiResponseFunctionToolCallOutputStatus? status)
         {
             this.Type = type;
             this.Id = id;

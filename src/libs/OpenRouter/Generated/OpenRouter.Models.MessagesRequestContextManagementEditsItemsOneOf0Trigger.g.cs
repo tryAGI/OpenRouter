@@ -30,18 +30,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicToolUsesKeep? AnthropicToolUsesKeep { get; init; }
+        public global::OpenRouter.AnthropicToolUsesTrigger? AnthropicToolUsesTrigger { get; init; }
 #else
-        public global::OpenRouter.AnthropicToolUsesKeep? AnthropicToolUsesKeep { get; }
+        public global::OpenRouter.AnthropicToolUsesTrigger? AnthropicToolUsesTrigger { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicToolUsesKeep))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicToolUsesTrigger))]
 #endif
-        public bool IsAnthropicToolUsesKeep => AnthropicToolUsesKeep != null;
+        public bool IsAnthropicToolUsesTrigger => AnthropicToolUsesTrigger != null;
         /// <summary>
         /// 
         /// </summary>
@@ -63,19 +63,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicToolUsesKeep value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.AnthropicToolUsesKeep?)value);
+        public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicToolUsesTrigger value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.AnthropicToolUsesTrigger?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicToolUsesKeep?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.AnthropicToolUsesKeep;
+        public static implicit operator global::OpenRouter.AnthropicToolUsesTrigger?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.AnthropicToolUsesTrigger;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicToolUsesKeep? value)
+        public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.AnthropicToolUsesTrigger? value)
         {
-            AnthropicToolUsesKeep = value;
+            AnthropicToolUsesTrigger = value;
         }
 
         /// <summary>
@@ -83,18 +83,18 @@ namespace OpenRouter
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0Trigger(
             global::OpenRouter.AnthropicInputTokensTrigger? anthropicInputTokensTrigger,
-            global::OpenRouter.AnthropicToolUsesKeep? anthropicToolUsesKeep
+            global::OpenRouter.AnthropicToolUsesTrigger? anthropicToolUsesTrigger
             )
         {
             AnthropicInputTokensTrigger = anthropicInputTokensTrigger;
-            AnthropicToolUsesKeep = anthropicToolUsesKeep;
+            AnthropicToolUsesTrigger = anthropicToolUsesTrigger;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnthropicToolUsesKeep as object ??
+            AnthropicToolUsesTrigger as object ??
             AnthropicInputTokensTrigger as object 
             ;
 
@@ -103,7 +103,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             AnthropicInputTokensTrigger?.ToString() ??
-            AnthropicToolUsesKeep?.ToString() 
+            AnthropicToolUsesTrigger?.ToString() 
             ;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicInputTokensTrigger && !IsAnthropicToolUsesKeep || !IsAnthropicInputTokensTrigger && IsAnthropicToolUsesKeep;
+            return IsAnthropicInputTokensTrigger && !IsAnthropicToolUsesTrigger || !IsAnthropicInputTokensTrigger && IsAnthropicToolUsesTrigger;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicInputTokensTrigger?, TResult>? anthropicInputTokensTrigger = null,
-            global::System.Func<global::OpenRouter.AnthropicToolUsesKeep?, TResult>? anthropicToolUsesKeep = null,
+            global::System.Func<global::OpenRouter.AnthropicToolUsesTrigger?, TResult>? anthropicToolUsesTrigger = null,
             bool validate = true)
         {
             if (validate)
@@ -131,9 +131,9 @@ namespace OpenRouter
             {
                 return anthropicInputTokensTrigger(AnthropicInputTokensTrigger!);
             }
-            else if (IsAnthropicToolUsesKeep && anthropicToolUsesKeep != null)
+            else if (IsAnthropicToolUsesTrigger && anthropicToolUsesTrigger != null)
             {
-                return anthropicToolUsesKeep(AnthropicToolUsesKeep!);
+                return anthropicToolUsesTrigger(AnthropicToolUsesTrigger!);
             }
 
             return default(TResult);
@@ -144,7 +144,7 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicInputTokensTrigger?>? anthropicInputTokensTrigger = null,
-            global::System.Action<global::OpenRouter.AnthropicToolUsesKeep?>? anthropicToolUsesKeep = null,
+            global::System.Action<global::OpenRouter.AnthropicToolUsesTrigger?>? anthropicToolUsesTrigger = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +156,9 @@ namespace OpenRouter
             {
                 anthropicInputTokensTrigger?.Invoke(AnthropicInputTokensTrigger!);
             }
-            else if (IsAnthropicToolUsesKeep)
+            else if (IsAnthropicToolUsesTrigger)
             {
-                anthropicToolUsesKeep?.Invoke(AnthropicToolUsesKeep!);
+                anthropicToolUsesTrigger?.Invoke(AnthropicToolUsesTrigger!);
             }
         }
 
@@ -171,8 +171,8 @@ namespace OpenRouter
             {
                 AnthropicInputTokensTrigger,
                 typeof(global::OpenRouter.AnthropicInputTokensTrigger),
-                AnthropicToolUsesKeep,
-                typeof(global::OpenRouter.AnthropicToolUsesKeep),
+                AnthropicToolUsesTrigger,
+                typeof(global::OpenRouter.AnthropicToolUsesTrigger),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicInputTokensTrigger?>.Default.Equals(AnthropicInputTokensTrigger, other.AnthropicInputTokensTrigger) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolUsesKeep?>.Default.Equals(AnthropicToolUsesKeep, other.AnthropicToolUsesKeep) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolUsesTrigger?>.Default.Equals(AnthropicToolUsesTrigger, other.AnthropicToolUsesTrigger) 
                 ;
         }
 

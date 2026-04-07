@@ -34,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Index { get; set; }
+        public required int Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace OpenRouter
         public FileCitation(
             string fileId,
             string filename,
-            double index,
+            int index,
             global::OpenRouter.FileCitationType type)
         {
             this.Type = type;

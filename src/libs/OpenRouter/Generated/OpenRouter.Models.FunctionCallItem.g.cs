@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FunctionCallItemTypeJsonConverter))]
-        public global::OpenRouter.FunctionCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallTypeJsonConverter))]
+        public global::OpenRouter.OpenAiResponseFunctionToolCallType Type { get; set; }
 
         /// <summary>
         /// 
@@ -40,14 +40,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::OpenRouter.FunctionCallItemStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
+        public global::OpenRouter.ToolCallStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,8 +61,8 @@ namespace OpenRouter
         /// <param name="callId"></param>
         /// <param name="name"></param>
         /// <param name="arguments"></param>
-        /// <param name="id"></param>
         /// <param name="type"></param>
+        /// <param name="id"></param>
         /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -71,15 +71,15 @@ namespace OpenRouter
             string callId,
             string name,
             string arguments,
-            string id,
-            global::OpenRouter.FunctionCallItemType type,
-            global::OpenRouter.FunctionCallItemStatus? status)
+            global::OpenRouter.OpenAiResponseFunctionToolCallType type,
+            string? id,
+            global::OpenRouter.ToolCallStatus? status)
         {
             this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Id = id;
             this.Status = status;
         }
 
