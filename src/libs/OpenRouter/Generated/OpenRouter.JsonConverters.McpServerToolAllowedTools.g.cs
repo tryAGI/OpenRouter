@@ -31,18 +31,15 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("read_only")) __score1++;
             if (__jsonProps.Contains("tool_names")) __score1++;
             var __score2 = 0;
-            var __score3 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
-            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
             global::System.Collections.Generic.IList<string>? mcpServerToolAllowedToolsVariant1 = default;
             global::OpenRouter.McpServerToolAllowedTools1? mcpServerToolAllowedTools1 = default;
             object? mcpServerToolAllowedToolsVariant3 = default;
-            object? mcpServerToolAllowedToolsVariant4 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -90,24 +87,9 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 3)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        mcpServerToolAllowedToolsVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (mcpServerToolAllowedToolsVariant1 == null && mcpServerToolAllowedTools1 == null && mcpServerToolAllowedToolsVariant3 == null && mcpServerToolAllowedToolsVariant4 == null)
+            if (mcpServerToolAllowedToolsVariant1 == null && mcpServerToolAllowedTools1 == null && mcpServerToolAllowedToolsVariant3 == null)
             {
                 try
                 {
@@ -147,19 +129,6 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
-
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    mcpServerToolAllowedToolsVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
 
             var __value = new global::OpenRouter.McpServerToolAllowedTools(
@@ -167,9 +136,7 @@ namespace OpenRouter.JsonConverters
 
                 mcpServerToolAllowedTools1,
 
-                mcpServerToolAllowedToolsVariant3,
-
-                mcpServerToolAllowedToolsVariant4
+                mcpServerToolAllowedToolsVariant3
                 );
 
             return __value;
@@ -201,12 +168,6 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolAllowedToolsVariant3!, typeInfo);
-            }
-            else if (value.IsMcpServerToolAllowedToolsVariant4)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolAllowedToolsVariant4!, typeInfo);
             }
         }
     }
