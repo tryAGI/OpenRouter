@@ -76,23 +76,6 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolRequireApprovalVariant4))]
 #endif
         public bool IsMcpServerToolRequireApprovalVariant4 => McpServerToolRequireApprovalVariant4 != null;
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? McpServerToolRequireApprovalVariant5 { get; init; }
-#else
-        public object? McpServerToolRequireApprovalVariant5 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolRequireApprovalVariant5))]
-#endif
-        public bool IsMcpServerToolRequireApprovalVariant5 => McpServerToolRequireApprovalVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -154,22 +137,19 @@ namespace OpenRouter
             global::OpenRouter.McpServerToolRequireApproval0? mcpServerToolRequireApproval0,
             global::OpenRouter.McpServerToolRequireApproval1? mcpServerToolRequireApproval1,
             global::OpenRouter.McpServerToolRequireApproval2? mcpServerToolRequireApproval2,
-            object? mcpServerToolRequireApprovalVariant4,
-            object? mcpServerToolRequireApprovalVariant5
+            object? mcpServerToolRequireApprovalVariant4
             )
         {
             McpServerToolRequireApproval0 = mcpServerToolRequireApproval0;
             McpServerToolRequireApproval1 = mcpServerToolRequireApproval1;
             McpServerToolRequireApproval2 = mcpServerToolRequireApproval2;
             McpServerToolRequireApprovalVariant4 = mcpServerToolRequireApprovalVariant4;
-            McpServerToolRequireApprovalVariant5 = mcpServerToolRequireApprovalVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            McpServerToolRequireApprovalVariant5 as object ??
             McpServerToolRequireApprovalVariant4 as object ??
             McpServerToolRequireApproval2 as object ??
             McpServerToolRequireApproval1 as object ??
@@ -183,8 +163,7 @@ namespace OpenRouter
             McpServerToolRequireApproval0?.ToString() ??
             McpServerToolRequireApproval1?.ToValueString() ??
             McpServerToolRequireApproval2?.ToValueString() ??
-            McpServerToolRequireApprovalVariant4?.ToString() ??
-            McpServerToolRequireApprovalVariant5?.ToString() 
+            McpServerToolRequireApprovalVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -192,7 +171,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && IsMcpServerToolRequireApprovalVariant5;
+            return IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 || !IsMcpServerToolRequireApproval0 && IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && IsMcpServerToolRequireApprovalVariant4;
         }
 
         /// <summary>
@@ -203,7 +182,6 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.McpServerToolRequireApproval1?, TResult>? mcpServerToolRequireApproval1 = null,
             global::System.Func<global::OpenRouter.McpServerToolRequireApproval2?, TResult>? mcpServerToolRequireApproval2 = null,
             global::System.Func<object?, TResult>? mcpServerToolRequireApprovalVariant4 = null,
-            global::System.Func<object?, TResult>? mcpServerToolRequireApprovalVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +205,6 @@ namespace OpenRouter
             {
                 return mcpServerToolRequireApprovalVariant4(McpServerToolRequireApprovalVariant4!);
             }
-            else if (IsMcpServerToolRequireApprovalVariant5 && mcpServerToolRequireApprovalVariant5 != null)
-            {
-                return mcpServerToolRequireApprovalVariant5(McpServerToolRequireApprovalVariant5!);
-            }
 
             return default(TResult);
         }
@@ -243,7 +217,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.McpServerToolRequireApproval1?>? mcpServerToolRequireApproval1 = null,
             global::System.Action<global::OpenRouter.McpServerToolRequireApproval2?>? mcpServerToolRequireApproval2 = null,
             global::System.Action<object?>? mcpServerToolRequireApprovalVariant4 = null,
-            global::System.Action<object?>? mcpServerToolRequireApprovalVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -267,10 +240,6 @@ namespace OpenRouter
             {
                 mcpServerToolRequireApprovalVariant4?.Invoke(McpServerToolRequireApprovalVariant4!);
             }
-            else if (IsMcpServerToolRequireApprovalVariant5)
-            {
-                mcpServerToolRequireApprovalVariant5?.Invoke(McpServerToolRequireApprovalVariant5!);
-            }
         }
 
         /// <summary>
@@ -287,8 +256,6 @@ namespace OpenRouter
                 McpServerToolRequireApproval2,
                 typeof(global::OpenRouter.McpServerToolRequireApproval2),
                 McpServerToolRequireApprovalVariant4,
-                typeof(object),
-                McpServerToolRequireApprovalVariant5,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -309,8 +276,7 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpServerToolRequireApproval0?>.Default.Equals(McpServerToolRequireApproval0, other.McpServerToolRequireApproval0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpServerToolRequireApproval1?>.Default.Equals(McpServerToolRequireApproval1, other.McpServerToolRequireApproval1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpServerToolRequireApproval2?>.Default.Equals(McpServerToolRequireApproval2, other.McpServerToolRequireApproval2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolRequireApprovalVariant4, other.McpServerToolRequireApprovalVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolRequireApprovalVariant5, other.McpServerToolRequireApprovalVariant5) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolRequireApprovalVariant4, other.McpServerToolRequireApprovalVariant4) 
                 ;
         }
 

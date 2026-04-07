@@ -257,6 +257,12 @@ namespace OpenRouter
         public string? RequestId { get; set; }
 
         /// <summary>
+        /// Session identifier grouping multiple generations in the same session
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        public string? SessionId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -376,6 +382,9 @@ namespace OpenRouter
         /// <param name="requestId">
         /// Unique identifier grouping all generations from a single API request
         /// </param>
+        /// <param name="sessionId">
+        /// Session identifier grouping multiple generations in the same session
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -416,7 +425,8 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ProviderResponse>? providerResponses,
             string? userAgent,
             string? httpReferer,
-            string? requestId)
+            string? requestId,
+            string? sessionId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.UpstreamId = upstreamId;
@@ -455,6 +465,7 @@ namespace OpenRouter
             this.UserAgent = userAgent;
             this.HttpReferer = httpReferer;
             this.RequestId = requestId;
+            this.SessionId = sessionId;
         }
 
         /// <summary>

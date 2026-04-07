@@ -742,32 +742,6 @@
         }
       }
     },
-    "/credits/coinbase": {
-      "post": {
-        "operationId": "create-coinbase-charge",
-        "summary": "Deprecated Coinbase Commerce charge endpoint",
-        "description": "Deprecated. The Coinbase APIs used by this endpoint have been deprecated, so Coinbase Commerce charges have been removed. Use the web credits purchase flow instead.",
-        "tags": [
-          "subpackage_credits"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "410": {
-            "description": "Gone - Coinbase Commerce charge creation has been removed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GoneResponse"
-                }
-              }
-            }
-          }
-        },
-        "parameters": []
-      }
-    },
     "/generation": {
       "get": {
         "operationId": "get-generation",
@@ -5316,9 +5290,6 @@
           },
           {
             "description": "Any type"
-          },
-          {
-            "description": "Any type"
           }
         ],
         "title": "McpServerToolAllowedTools"
@@ -5397,9 +5368,6 @@
           },
           {
             "$ref": "#/components/schemas/McpServerToolRequireApproval2"
-          },
-          {
-            "description": "Any type"
           },
           {
             "description": "Any type"
@@ -16861,51 +16829,6 @@
         "description": "Total credits purchased and used",
         "title": "Credits_getCredits_Response_200"
       },
-      "GoneResponseErrorData": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "integer"
-          },
-          "message": {
-            "type": "string"
-          },
-          "metadata": {
-            "type": [
-              "object",
-              "null"
-            ],
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          }
-        },
-        "required": [
-          "code",
-          "message"
-        ],
-        "description": "Error data for GoneResponse",
-        "title": "GoneResponseErrorData"
-      },
-      "GoneResponse": {
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/GoneResponseErrorData"
-          },
-          "user_id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "required": [
-          "error"
-        ],
-        "description": "Gone - Endpoint has been permanently removed or deprecated",
-        "title": "GoneResponse"
-      },
       "GenerationGetResponsesContentApplicationJsonSchemaDataApiType": {
         "type": "string",
         "enum": [
@@ -17274,6 +17197,13 @@
               "null"
             ],
             "description": "Unique identifier grouping all generations from a single API request"
+          },
+          "session_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Session identifier grouping multiple generations in the same session"
           }
         },
         "required": [
