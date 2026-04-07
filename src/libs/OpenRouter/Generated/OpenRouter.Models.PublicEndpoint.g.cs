@@ -34,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ContextLength { get; set; }
+        public required int ContextLength { get; set; }
 
         /// <summary>
         /// 
@@ -69,13 +69,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        public double? MaxCompletionTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_tokens")]
-        public double? MaxPromptTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int MaxPromptTokens { get; set; }
 
         /// <summary>
         /// 
@@ -95,19 +97,22 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uptime_last_30m")]
-        public double? UptimeLast30m { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double UptimeLast30m { get; set; }
 
         /// <summary>
         /// Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uptime_last_5m")]
-        public double? UptimeLast5m { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double UptimeLast5m { get; set; }
 
         /// <summary>
         /// Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uptime_last_1d")]
-        public double? UptimeLast1d { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double UptimeLast1d { get; set; }
 
         /// <summary>
         /// 
@@ -149,15 +154,9 @@ namespace OpenRouter
         /// <param name="providerName"></param>
         /// <param name="tag"></param>
         /// <param name="quantization"></param>
-        /// <param name="supportedParameters"></param>
-        /// <param name="supportsImplicitCaching"></param>
-        /// <param name="latencyLast30m">
-        /// Latency percentiles in milliseconds over the last 30 minutes. Latency measures time to first token. Only visible when authenticated with an API key or cookie; returns null for unauthenticated requests.
-        /// </param>
-        /// <param name="throughputLast30m"></param>
         /// <param name="maxCompletionTokens"></param>
         /// <param name="maxPromptTokens"></param>
-        /// <param name="status"></param>
+        /// <param name="supportedParameters"></param>
         /// <param name="uptimeLast30m"></param>
         /// <param name="uptimeLast5m">
         /// Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
@@ -165,6 +164,12 @@ namespace OpenRouter
         /// <param name="uptimeLast1d">
         /// Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
         /// </param>
+        /// <param name="supportsImplicitCaching"></param>
+        /// <param name="latencyLast30m">
+        /// Latency percentiles in milliseconds over the last 30 minutes. Latency measures time to first token. Only visible when authenticated with an API key or cookie; returns null for unauthenticated requests.
+        /// </param>
+        /// <param name="throughputLast30m"></param>
+        /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -172,21 +177,21 @@ namespace OpenRouter
             string name,
             string modelId,
             string modelName,
-            double contextLength,
+            int contextLength,
             global::OpenRouter.PublicEndpointPricing pricing,
             global::OpenRouter.ProviderName providerName,
             string tag,
             global::OpenRouter.PublicEndpointQuantization quantization,
+            int maxCompletionTokens,
+            int maxPromptTokens,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
+            double uptimeLast30m,
+            double uptimeLast5m,
+            double uptimeLast1d,
             bool supportsImplicitCaching,
             global::OpenRouter.PercentileStats latencyLast30m,
             global::OpenRouter.PublicEndpointThroughputLast30M throughputLast30m,
-            double? maxCompletionTokens,
-            double? maxPromptTokens,
-            global::OpenRouter.EndpointStatus? status,
-            double? uptimeLast30m,
-            double? uptimeLast5m,
-            double? uptimeLast1d)
+            global::OpenRouter.EndpointStatus? status)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));

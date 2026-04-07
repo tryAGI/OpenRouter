@@ -499,9 +499,7 @@ namespace OpenRouter
         /// <param name="topN">
         /// Number of most relevant documents to return
         /// </param>
-        /// <param name="provider">
-        /// Provider routing preferences for the request.
-        /// </param>
+        /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.RerankCreateRerankResponse200> CreateRerankAsync(
@@ -509,7 +507,7 @@ namespace OpenRouter
             string query,
             global::System.Collections.Generic.IList<string> documents,
             int? topN = default,
-            global::OpenRouter.ProviderPreferences? provider = default,
+            global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProvider? provider = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::OpenRouter.CreateRerankRequest

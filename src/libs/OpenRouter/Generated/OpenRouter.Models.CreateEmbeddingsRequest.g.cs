@@ -43,10 +43,10 @@ namespace OpenRouter
         public string? User { get; set; }
 
         /// <summary>
-        /// Provider routing preferences for the request.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        public global::OpenRouter.ProviderPreferences? Provider { get; set; }
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider? Provider { get; set; }
 
         /// <summary>
         /// The type of input (e.g. search_query, search_document)
@@ -78,9 +78,7 @@ namespace OpenRouter
         /// <param name="user">
         /// A unique identifier for the end-user
         /// </param>
-        /// <param name="provider">
-        /// Provider routing preferences for the request.
-        /// </param>
+        /// <param name="provider"></param>
         /// <param name="inputType">
         /// The type of input (e.g. search_query, search_document)
         /// </param>
@@ -93,7 +91,7 @@ namespace OpenRouter
             global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat? encodingFormat,
             int? dimensions,
             string? user,
-            global::OpenRouter.ProviderPreferences? provider,
+            global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider? provider,
             string? inputType)
         {
             this.Input = input;

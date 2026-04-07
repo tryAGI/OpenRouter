@@ -72,8 +72,8 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.AnthropicCitationCharLocationParam? anthropicCitationCharLocationParam = default;
             global::OpenRouter.AnthropicCitationPageLocationParam? anthropicCitationPageLocationParam = default;
             global::OpenRouter.AnthropicCitationContentBlockLocationParam? anthropicCitationContentBlockLocationParam = default;
-            global::OpenRouter.AnthropicCitationWebSearchResultLocationParam? anthropicCitationWebSearchResultLocationParam = default;
-            global::OpenRouter.AnthropicCitationSearchResultLocationParam? anthropicCitationSearchResultLocationParam = default;
+            global::OpenRouter.AnthropicCitationWebSearchResultLocation? anthropicCitationWebSearchResultLocation = default;
+            global::OpenRouter.AnthropicCitationSearchResultLocation? anthropicCitationSearchResultLocation = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -125,9 +125,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationWebSearchResultLocationParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocationParam).Name}");
-                        anthropicCitationWebSearchResultLocationParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationWebSearchResultLocation> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocation).Name}");
+                        anthropicCitationWebSearchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -140,9 +140,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationSearchResultLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationSearchResultLocationParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationSearchResultLocationParam).Name}");
-                        anthropicCitationSearchResultLocationParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationSearchResultLocation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationSearchResultLocation> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationSearchResultLocation).Name}");
+                        anthropicCitationSearchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -153,7 +153,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (anthropicCitationCharLocationParam == null && anthropicCitationPageLocationParam == null && anthropicCitationContentBlockLocationParam == null && anthropicCitationWebSearchResultLocationParam == null && anthropicCitationSearchResultLocationParam == null)
+            if (anthropicCitationCharLocationParam == null && anthropicCitationPageLocationParam == null && anthropicCitationContentBlockLocationParam == null && anthropicCitationWebSearchResultLocation == null && anthropicCitationSearchResultLocation == null)
             {
                 try
                 {
@@ -196,9 +196,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationWebSearchResultLocationParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocationParam).Name}");
-                    anthropicCitationWebSearchResultLocationParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationWebSearchResultLocation> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocation).Name}");
+                    anthropicCitationWebSearchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -209,9 +209,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationSearchResultLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationSearchResultLocationParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationSearchResultLocationParam).Name}");
-                    anthropicCitationSearchResultLocationParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationSearchResultLocation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationSearchResultLocation> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationSearchResultLocation).Name}");
+                    anthropicCitationSearchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -228,9 +228,9 @@ namespace OpenRouter.JsonConverters
 
                 anthropicCitationContentBlockLocationParam,
 
-                anthropicCitationWebSearchResultLocationParam,
+                anthropicCitationWebSearchResultLocation,
 
-                anthropicCitationSearchResultLocationParam
+                anthropicCitationSearchResultLocation
                 );
 
             return __value;
@@ -263,17 +263,17 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationContentBlockLocationParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicCitationContentBlockLocationParam!, typeInfo);
             }
-            else if (value.IsAnthropicCitationWebSearchResultLocationParam)
+            else if (value.IsAnthropicCitationWebSearchResultLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationWebSearchResultLocationParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicCitationWebSearchResultLocationParam!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationWebSearchResultLocation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocation).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicCitationWebSearchResultLocation!, typeInfo);
             }
-            else if (value.IsAnthropicCitationSearchResultLocationParam)
+            else if (value.IsAnthropicCitationSearchResultLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationSearchResultLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationSearchResultLocationParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationSearchResultLocationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicCitationSearchResultLocationParam!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCitationSearchResultLocation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCitationSearchResultLocation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCitationSearchResultLocation).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicCitationSearchResultLocation!, typeInfo);
             }
         }
     }

@@ -71,9 +71,9 @@ namespace OpenRouter.JsonConverters
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
 
             global::OpenRouter.BaseInputsOneOf1Items0? baseInputsOneOf1Items0 = default;
-            global::OpenRouter.BaseInputsOneOf1Items1? baseInputsOneOf1Items1 = default;
-            global::OpenRouter.BaseInputsOneOf1Items2? baseInputsOneOf1Items2 = default;
-            global::OpenRouter.BaseInputsOneOf1Items3? baseInputsOneOf1Items3 = default;
+            global::OpenRouter.OpenAIResponseInputMessageItem? openAIResponseInputMessageItem = default;
+            global::OpenRouter.OpenAIResponseFunctionToolCallOutput? openAIResponseFunctionToolCallOutput = default;
+            global::OpenRouter.OpenAIResponseFunctionToolCall? openAIResponseFunctionToolCall = default;
             global::OpenRouter.OutputItemImageGenerationCall? outputItemImageGenerationCall = default;
             global::OpenRouter.OutputMessage? outputMessage = default;
             if (__bestIndex >= 0)
@@ -97,9 +97,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items1).Name}");
-                        baseInputsOneOf1Items1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseInputMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseInputMessageItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseInputMessageItem).Name}");
+                        openAIResponseInputMessageItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -112,9 +112,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items2).Name}");
-                        baseInputsOneOf1Items2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseFunctionToolCallOutput> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput).Name}");
+                        openAIResponseFunctionToolCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -127,9 +127,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items3).Name}");
-                        baseInputsOneOf1Items3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseFunctionToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseFunctionToolCall> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseFunctionToolCall).Name}");
+                        openAIResponseFunctionToolCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -170,7 +170,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && baseInputsOneOf1Items1 == null && baseInputsOneOf1Items2 == null && baseInputsOneOf1Items3 == null && outputItemImageGenerationCall == null && outputMessage == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null)
             {
                 try
                 {
@@ -187,9 +187,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items1).Name}");
-                    baseInputsOneOf1Items1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseInputMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseInputMessageItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseInputMessageItem).Name}");
+                    openAIResponseInputMessageItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -200,9 +200,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items2).Name}");
-                    baseInputsOneOf1Items2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseFunctionToolCallOutput> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput).Name}");
+                    openAIResponseFunctionToolCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -213,9 +213,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items3).Name}");
-                    baseInputsOneOf1Items3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseFunctionToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseFunctionToolCall> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseFunctionToolCall).Name}");
+                    openAIResponseFunctionToolCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -254,11 +254,11 @@ namespace OpenRouter.JsonConverters
             var __value = new global::OpenRouter.BaseInputsOneOf1Items(
                 baseInputsOneOf1Items0,
 
-                baseInputsOneOf1Items1,
+                openAIResponseInputMessageItem,
 
-                baseInputsOneOf1Items2,
+                openAIResponseFunctionToolCallOutput,
 
-                baseInputsOneOf1Items3,
+                openAIResponseFunctionToolCall,
 
                 outputItemImageGenerationCall,
 
@@ -283,23 +283,23 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items0).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items0!, typeInfo);
             }
-            else if (value.IsBaseInputsOneOf1Items1)
+            else if (value.IsOpenAIResponseInputMessageItem)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items1!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseInputMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseInputMessageItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseInputMessageItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponseInputMessageItem!, typeInfo);
             }
-            else if (value.IsBaseInputsOneOf1Items2)
+            else if (value.IsOpenAIResponseFunctionToolCallOutput)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items2!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseFunctionToolCallOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponseFunctionToolCallOutput!, typeInfo);
             }
-            else if (value.IsBaseInputsOneOf1Items3)
+            else if (value.IsOpenAIResponseFunctionToolCall)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BaseInputsOneOf1Items3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BaseInputsOneOf1Items3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BaseInputsOneOf1Items3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items3!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseFunctionToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseFunctionToolCall?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseFunctionToolCall).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponseFunctionToolCall!, typeInfo);
             }
             else if (value.IsOutputItemImageGenerationCall)
             {

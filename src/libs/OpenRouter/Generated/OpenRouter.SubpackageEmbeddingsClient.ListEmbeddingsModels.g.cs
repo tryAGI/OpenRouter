@@ -79,7 +79,7 @@ namespace OpenRouter
             ProcessListEmbeddingsModelsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request - Invalid request parameters
+            // Bad Request - Invalid request parameters or malformed input
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -117,7 +117,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Internal Server Error
+            // Internal Server Error - Unexpected server error
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;

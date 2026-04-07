@@ -31,7 +31,9 @@ namespace OpenRouter
         /// <param name="limitUsd">
         /// New spending limit in USD
         /// </param>
-        /// <param name="resetInterval"></param>
+        /// <param name="resetInterval">
+        /// Interval at which the limit resets (daily, weekly, monthly)
+        /// </param>
         /// <param name="allowedProviders">
         /// New list of allowed provider IDs
         /// </param>
@@ -51,7 +53,7 @@ namespace OpenRouter
             string? name = default,
             string? description = default,
             double? limitUsd = default,
-            global::OpenRouter.UpdateGuardrailRequestResetInterval? resetInterval = default,
+            global::OpenRouter.GuardrailInterval? resetInterval = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,

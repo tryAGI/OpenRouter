@@ -39,7 +39,7 @@ namespace OpenRouter.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::OpenRouter.AnthropicBase64ImageSource? anthropicBase64ImageSource = default;
-            global::OpenRouter.WebSearchSource? webSearchSource = default;
+            global::OpenRouter.AnthropicUrlImageSource? anthropicUrlImageSource = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -61,9 +61,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchSource> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchSource).Name}");
-                        webSearchSource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicUrlImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicUrlImageSource> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicUrlImageSource).Name}");
+                        anthropicUrlImageSource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +74,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (anthropicBase64ImageSource == null && webSearchSource == null)
+            if (anthropicBase64ImageSource == null && anthropicUrlImageSource == null)
             {
                 try
                 {
@@ -91,9 +91,9 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchSource> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchSource).Name}");
-                    webSearchSource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicUrlImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicUrlImageSource> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicUrlImageSource).Name}");
+                    anthropicUrlImageSource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,7 +106,7 @@ namespace OpenRouter.JsonConverters
             var __value = new global::OpenRouter.AnthropicImageBlockParamSource(
                 anthropicBase64ImageSource,
 
-                webSearchSource
+                anthropicUrlImageSource
                 );
 
             return __value;
@@ -127,11 +127,11 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicBase64ImageSource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicBase64ImageSource!, typeInfo);
             }
-            else if (value.IsWebSearchSource)
+            else if (value.IsAnthropicUrlImageSource)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebSearchSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebSearchSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebSearchSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchSource!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicUrlImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicUrlImageSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicUrlImageSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicUrlImageSource!, typeInfo);
             }
         }
     }

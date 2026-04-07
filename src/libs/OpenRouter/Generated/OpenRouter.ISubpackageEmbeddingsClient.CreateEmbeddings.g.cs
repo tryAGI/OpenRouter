@@ -34,9 +34,7 @@ namespace OpenRouter
         /// <param name="user">
         /// A unique identifier for the end-user
         /// </param>
-        /// <param name="provider">
-        /// Provider routing preferences for the request.
-        /// </param>
+        /// <param name="provider"></param>
         /// <param name="inputType">
         /// The type of input (e.g. search_query, search_document)
         /// </param>
@@ -48,7 +46,7 @@ namespace OpenRouter
             global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat? encodingFormat = default,
             int? dimensions = default,
             string? user = default,
-            global::OpenRouter.ProviderPreferences? provider = default,
+            global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider? provider = default,
             string? inputType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

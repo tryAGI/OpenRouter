@@ -30,52 +30,52 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.BaseInputsOneOf1Items1? BaseInputsOneOf1Items1 { get; init; }
+        public global::OpenRouter.OpenAIResponseInputMessageItem? OpenAIResponseInputMessageItem { get; init; }
 #else
-        public global::OpenRouter.BaseInputsOneOf1Items1? BaseInputsOneOf1Items1 { get; }
+        public global::OpenRouter.OpenAIResponseInputMessageItem? OpenAIResponseInputMessageItem { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1Items1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseInputMessageItem))]
 #endif
-        public bool IsBaseInputsOneOf1Items1 => BaseInputsOneOf1Items1 != null;
+        public bool IsOpenAIResponseInputMessageItem => OpenAIResponseInputMessageItem != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.BaseInputsOneOf1Items2? BaseInputsOneOf1Items2 { get; init; }
+        public global::OpenRouter.OpenAIResponseFunctionToolCallOutput? OpenAIResponseFunctionToolCallOutput { get; init; }
 #else
-        public global::OpenRouter.BaseInputsOneOf1Items2? BaseInputsOneOf1Items2 { get; }
+        public global::OpenRouter.OpenAIResponseFunctionToolCallOutput? OpenAIResponseFunctionToolCallOutput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1Items2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseFunctionToolCallOutput))]
 #endif
-        public bool IsBaseInputsOneOf1Items2 => BaseInputsOneOf1Items2 != null;
+        public bool IsOpenAIResponseFunctionToolCallOutput => OpenAIResponseFunctionToolCallOutput != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.BaseInputsOneOf1Items3? BaseInputsOneOf1Items3 { get; init; }
+        public global::OpenRouter.OpenAIResponseFunctionToolCall? OpenAIResponseFunctionToolCall { get; init; }
 #else
-        public global::OpenRouter.BaseInputsOneOf1Items3? BaseInputsOneOf1Items3 { get; }
+        public global::OpenRouter.OpenAIResponseFunctionToolCall? OpenAIResponseFunctionToolCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1Items3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseFunctionToolCall))]
 #endif
-        public bool IsBaseInputsOneOf1Items3 => BaseInputsOneOf1Items3 != null;
+        public bool IsOpenAIResponseFunctionToolCall => OpenAIResponseFunctionToolCall != null;
 
         /// <summary>
         /// 
@@ -131,55 +131,55 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items1 value) => new BaseInputsOneOf1Items((global::OpenRouter.BaseInputsOneOf1Items1?)value);
+        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseInputMessageItem value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseInputMessageItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.BaseInputsOneOf1Items1?(BaseInputsOneOf1Items @this) => @this.BaseInputsOneOf1Items1;
+        public static implicit operator global::OpenRouter.OpenAIResponseInputMessageItem?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseInputMessageItem;
 
         /// <summary>
         /// 
         /// </summary>
-        public BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items1? value)
+        public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseInputMessageItem? value)
         {
-            BaseInputsOneOf1Items1 = value;
+            OpenAIResponseInputMessageItem = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items2 value) => new BaseInputsOneOf1Items((global::OpenRouter.BaseInputsOneOf1Items2?)value);
+        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCallOutput value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseFunctionToolCallOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.BaseInputsOneOf1Items2?(BaseInputsOneOf1Items @this) => @this.BaseInputsOneOf1Items2;
+        public static implicit operator global::OpenRouter.OpenAIResponseFunctionToolCallOutput?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseFunctionToolCallOutput;
 
         /// <summary>
         /// 
         /// </summary>
-        public BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items2? value)
+        public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCallOutput? value)
         {
-            BaseInputsOneOf1Items2 = value;
+            OpenAIResponseFunctionToolCallOutput = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items3 value) => new BaseInputsOneOf1Items((global::OpenRouter.BaseInputsOneOf1Items3?)value);
+        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCall value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseFunctionToolCall?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.BaseInputsOneOf1Items3?(BaseInputsOneOf1Items @this) => @this.BaseInputsOneOf1Items3;
+        public static implicit operator global::OpenRouter.OpenAIResponseFunctionToolCall?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseFunctionToolCall;
 
         /// <summary>
         /// 
         /// </summary>
-        public BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items3? value)
+        public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCall? value)
         {
-            BaseInputsOneOf1Items3 = value;
+            OpenAIResponseFunctionToolCall = value;
         }
 
         /// <summary>
@@ -223,17 +223,17 @@ namespace OpenRouter
         /// </summary>
         public BaseInputsOneOf1Items(
             global::OpenRouter.BaseInputsOneOf1Items0? baseInputsOneOf1Items0,
-            global::OpenRouter.BaseInputsOneOf1Items1? baseInputsOneOf1Items1,
-            global::OpenRouter.BaseInputsOneOf1Items2? baseInputsOneOf1Items2,
-            global::OpenRouter.BaseInputsOneOf1Items3? baseInputsOneOf1Items3,
+            global::OpenRouter.OpenAIResponseInputMessageItem? openAIResponseInputMessageItem,
+            global::OpenRouter.OpenAIResponseFunctionToolCallOutput? openAIResponseFunctionToolCallOutput,
+            global::OpenRouter.OpenAIResponseFunctionToolCall? openAIResponseFunctionToolCall,
             global::OpenRouter.OutputItemImageGenerationCall? outputItemImageGenerationCall,
             global::OpenRouter.OutputMessage? outputMessage
             )
         {
             BaseInputsOneOf1Items0 = baseInputsOneOf1Items0;
-            BaseInputsOneOf1Items1 = baseInputsOneOf1Items1;
-            BaseInputsOneOf1Items2 = baseInputsOneOf1Items2;
-            BaseInputsOneOf1Items3 = baseInputsOneOf1Items3;
+            OpenAIResponseInputMessageItem = openAIResponseInputMessageItem;
+            OpenAIResponseFunctionToolCallOutput = openAIResponseFunctionToolCallOutput;
+            OpenAIResponseFunctionToolCall = openAIResponseFunctionToolCall;
             OutputItemImageGenerationCall = outputItemImageGenerationCall;
             OutputMessage = outputMessage;
         }
@@ -244,9 +244,9 @@ namespace OpenRouter
         public object? Object =>
             OutputMessage as object ??
             OutputItemImageGenerationCall as object ??
-            BaseInputsOneOf1Items3 as object ??
-            BaseInputsOneOf1Items2 as object ??
-            BaseInputsOneOf1Items1 as object ??
+            OpenAIResponseFunctionToolCall as object ??
+            OpenAIResponseFunctionToolCallOutput as object ??
+            OpenAIResponseInputMessageItem as object ??
             BaseInputsOneOf1Items0 as object 
             ;
 
@@ -255,9 +255,9 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             BaseInputsOneOf1Items0?.ToString() ??
-            BaseInputsOneOf1Items1?.ToString() ??
-            BaseInputsOneOf1Items2?.ToString() ??
-            BaseInputsOneOf1Items3?.ToString() ??
+            OpenAIResponseInputMessageItem?.ToString() ??
+            OpenAIResponseFunctionToolCallOutput?.ToString() ??
+            OpenAIResponseFunctionToolCall?.ToString() ??
             OutputItemImageGenerationCall?.ToString() ??
             OutputMessage?.ToString() 
             ;
@@ -267,7 +267,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsBaseInputsOneOf1Items0 && !IsBaseInputsOneOf1Items1 && !IsBaseInputsOneOf1Items2 && !IsBaseInputsOneOf1Items3 && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && IsBaseInputsOneOf1Items1 && !IsBaseInputsOneOf1Items2 && !IsBaseInputsOneOf1Items3 && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsBaseInputsOneOf1Items1 && IsBaseInputsOneOf1Items2 && !IsBaseInputsOneOf1Items3 && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsBaseInputsOneOf1Items1 && !IsBaseInputsOneOf1Items2 && IsBaseInputsOneOf1Items3 && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsBaseInputsOneOf1Items1 && !IsBaseInputsOneOf1Items2 && !IsBaseInputsOneOf1Items3 && IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsBaseInputsOneOf1Items1 && !IsBaseInputsOneOf1Items2 && !IsBaseInputsOneOf1Items3 && !IsOutputItemImageGenerationCall && IsOutputMessage;
+            return IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && IsOutputMessage;
         }
 
         /// <summary>
@@ -275,9 +275,9 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.BaseInputsOneOf1Items0?, TResult>? baseInputsOneOf1Items0 = null,
-            global::System.Func<global::OpenRouter.BaseInputsOneOf1Items1?, TResult>? baseInputsOneOf1Items1 = null,
-            global::System.Func<global::OpenRouter.BaseInputsOneOf1Items2?, TResult>? baseInputsOneOf1Items2 = null,
-            global::System.Func<global::OpenRouter.BaseInputsOneOf1Items3?, TResult>? baseInputsOneOf1Items3 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseInputMessageItem?, TResult>? openAIResponseInputMessageItem = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseFunctionToolCallOutput?, TResult>? openAIResponseFunctionToolCallOutput = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseFunctionToolCall?, TResult>? openAIResponseFunctionToolCall = null,
             global::System.Func<global::OpenRouter.OutputItemImageGenerationCall?, TResult>? outputItemImageGenerationCall = null,
             global::System.Func<global::OpenRouter.OutputMessage?, TResult>? outputMessage = null,
             bool validate = true)
@@ -291,17 +291,17 @@ namespace OpenRouter
             {
                 return baseInputsOneOf1Items0(BaseInputsOneOf1Items0!);
             }
-            else if (IsBaseInputsOneOf1Items1 && baseInputsOneOf1Items1 != null)
+            else if (IsOpenAIResponseInputMessageItem && openAIResponseInputMessageItem != null)
             {
-                return baseInputsOneOf1Items1(BaseInputsOneOf1Items1!);
+                return openAIResponseInputMessageItem(OpenAIResponseInputMessageItem!);
             }
-            else if (IsBaseInputsOneOf1Items2 && baseInputsOneOf1Items2 != null)
+            else if (IsOpenAIResponseFunctionToolCallOutput && openAIResponseFunctionToolCallOutput != null)
             {
-                return baseInputsOneOf1Items2(BaseInputsOneOf1Items2!);
+                return openAIResponseFunctionToolCallOutput(OpenAIResponseFunctionToolCallOutput!);
             }
-            else if (IsBaseInputsOneOf1Items3 && baseInputsOneOf1Items3 != null)
+            else if (IsOpenAIResponseFunctionToolCall && openAIResponseFunctionToolCall != null)
             {
-                return baseInputsOneOf1Items3(BaseInputsOneOf1Items3!);
+                return openAIResponseFunctionToolCall(OpenAIResponseFunctionToolCall!);
             }
             else if (IsOutputItemImageGenerationCall && outputItemImageGenerationCall != null)
             {
@@ -320,9 +320,9 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.BaseInputsOneOf1Items0?>? baseInputsOneOf1Items0 = null,
-            global::System.Action<global::OpenRouter.BaseInputsOneOf1Items1?>? baseInputsOneOf1Items1 = null,
-            global::System.Action<global::OpenRouter.BaseInputsOneOf1Items2?>? baseInputsOneOf1Items2 = null,
-            global::System.Action<global::OpenRouter.BaseInputsOneOf1Items3?>? baseInputsOneOf1Items3 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseInputMessageItem?>? openAIResponseInputMessageItem = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCallOutput?>? openAIResponseFunctionToolCallOutput = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCall?>? openAIResponseFunctionToolCall = null,
             global::System.Action<global::OpenRouter.OutputItemImageGenerationCall?>? outputItemImageGenerationCall = null,
             global::System.Action<global::OpenRouter.OutputMessage?>? outputMessage = null,
             bool validate = true)
@@ -336,17 +336,17 @@ namespace OpenRouter
             {
                 baseInputsOneOf1Items0?.Invoke(BaseInputsOneOf1Items0!);
             }
-            else if (IsBaseInputsOneOf1Items1)
+            else if (IsOpenAIResponseInputMessageItem)
             {
-                baseInputsOneOf1Items1?.Invoke(BaseInputsOneOf1Items1!);
+                openAIResponseInputMessageItem?.Invoke(OpenAIResponseInputMessageItem!);
             }
-            else if (IsBaseInputsOneOf1Items2)
+            else if (IsOpenAIResponseFunctionToolCallOutput)
             {
-                baseInputsOneOf1Items2?.Invoke(BaseInputsOneOf1Items2!);
+                openAIResponseFunctionToolCallOutput?.Invoke(OpenAIResponseFunctionToolCallOutput!);
             }
-            else if (IsBaseInputsOneOf1Items3)
+            else if (IsOpenAIResponseFunctionToolCall)
             {
-                baseInputsOneOf1Items3?.Invoke(BaseInputsOneOf1Items3!);
+                openAIResponseFunctionToolCall?.Invoke(OpenAIResponseFunctionToolCall!);
             }
             else if (IsOutputItemImageGenerationCall)
             {
@@ -367,12 +367,12 @@ namespace OpenRouter
             {
                 BaseInputsOneOf1Items0,
                 typeof(global::OpenRouter.BaseInputsOneOf1Items0),
-                BaseInputsOneOf1Items1,
-                typeof(global::OpenRouter.BaseInputsOneOf1Items1),
-                BaseInputsOneOf1Items2,
-                typeof(global::OpenRouter.BaseInputsOneOf1Items2),
-                BaseInputsOneOf1Items3,
-                typeof(global::OpenRouter.BaseInputsOneOf1Items3),
+                OpenAIResponseInputMessageItem,
+                typeof(global::OpenRouter.OpenAIResponseInputMessageItem),
+                OpenAIResponseFunctionToolCallOutput,
+                typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput),
+                OpenAIResponseFunctionToolCall,
+                typeof(global::OpenRouter.OpenAIResponseFunctionToolCall),
                 OutputItemImageGenerationCall,
                 typeof(global::OpenRouter.OutputItemImageGenerationCall),
                 OutputMessage,
@@ -394,9 +394,9 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1Items0?>.Default.Equals(BaseInputsOneOf1Items0, other.BaseInputsOneOf1Items0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1Items1?>.Default.Equals(BaseInputsOneOf1Items1, other.BaseInputsOneOf1Items1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1Items2?>.Default.Equals(BaseInputsOneOf1Items2, other.BaseInputsOneOf1Items2) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1Items3?>.Default.Equals(BaseInputsOneOf1Items3, other.BaseInputsOneOf1Items3) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseInputMessageItem?>.Default.Equals(OpenAIResponseInputMessageItem, other.OpenAIResponseInputMessageItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseFunctionToolCallOutput?>.Default.Equals(OpenAIResponseFunctionToolCallOutput, other.OpenAIResponseFunctionToolCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseFunctionToolCall?>.Default.Equals(OpenAIResponseFunctionToolCall, other.OpenAIResponseFunctionToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemImageGenerationCall?>.Default.Equals(OutputItemImageGenerationCall, other.OutputItemImageGenerationCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessage?>.Default.Equals(OutputMessage, other.OutputMessage) 
                 ;

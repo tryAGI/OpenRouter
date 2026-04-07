@@ -25,9 +25,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputServerToolItemStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OutputServerToolItemStatus Status { get; set; }
+        public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace OpenRouter
 #endif
         public OutputServerToolItem(
             string type,
-            global::OpenRouter.OutputServerToolItemStatus status,
+            global::OpenRouter.ToolCallStatus status,
             string? id)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));

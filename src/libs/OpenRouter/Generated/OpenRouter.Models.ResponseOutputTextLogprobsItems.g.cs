@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<double> Bytes { get; set; }
+        public required global::System.Collections.Generic.IList<long> Bytes { get; set; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace OpenRouter
 #endif
         public ResponseOutputTextLogprobsItems(
             string token,
-            global::System.Collections.Generic.IList<double> bytes,
+            global::System.Collections.Generic.IList<long> bytes,
             double logprob,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItemsTopLogprobsItems> topLogprobs)
         {

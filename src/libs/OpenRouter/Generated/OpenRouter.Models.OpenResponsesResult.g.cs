@@ -225,8 +225,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.TruncationEnumJsonConverter))]
-        public global::OpenRouter.TruncationEnum? Truncation { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.TruncationJsonConverter))]
+        public global::OpenRouter.Truncation? Truncation { get; set; }
 
         /// <summary>
         /// Text output configuration including format and verbosity
@@ -321,7 +321,7 @@ namespace OpenRouter
             global::OpenRouter.BaseReasoningConfig? reasoning,
             string? serviceTier,
             bool? store,
-            global::OpenRouter.TruncationEnum? truncation,
+            global::OpenRouter.Truncation? truncation,
             global::OpenRouter.TextConfig? text)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

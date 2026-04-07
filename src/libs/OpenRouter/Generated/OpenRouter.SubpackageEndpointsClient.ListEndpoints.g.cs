@@ -90,7 +90,7 @@ namespace OpenRouter
             ProcessListEndpointsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Not Found - Model does not exist
+            // Not Found - Resource does not exist
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;

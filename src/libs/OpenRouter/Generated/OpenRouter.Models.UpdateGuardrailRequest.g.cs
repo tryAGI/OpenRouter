@@ -27,10 +27,11 @@ namespace OpenRouter
         public double? LimitUsd { get; set; }
 
         /// <summary>
-        /// 
+        /// Interval at which the limit resets (daily, weekly, monthly)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reset_interval")]
-        public global::OpenRouter.UpdateGuardrailRequestResetInterval? ResetInterval { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GuardrailIntervalJsonConverter))]
+        public global::OpenRouter.GuardrailInterval? ResetInterval { get; set; }
 
         /// <summary>
         /// New list of allowed provider IDs
@@ -74,7 +75,9 @@ namespace OpenRouter
         /// <param name="limitUsd">
         /// New spending limit in USD
         /// </param>
-        /// <param name="resetInterval"></param>
+        /// <param name="resetInterval">
+        /// Interval at which the limit resets (daily, weekly, monthly)
+        /// </param>
         /// <param name="allowedProviders">
         /// New list of allowed provider IDs
         /// </param>
@@ -94,7 +97,7 @@ namespace OpenRouter
             string? name,
             string? description,
             double? limitUsd,
-            global::OpenRouter.UpdateGuardrailRequestResetInterval? resetInterval,
+            global::OpenRouter.GuardrailInterval? resetInterval,
             global::System.Collections.Generic.IList<string>? allowedProviders,
             global::System.Collections.Generic.IList<string>? ignoredProviders,
             global::System.Collections.Generic.IList<string>? allowedModels,

@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ReasoningTokens { get; set; }
+        public required int ReasoningTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenAiResponsesUsageOutputTokensDetails(
-            double reasoningTokens)
+            int reasoningTokens)
         {
             this.ReasoningTokens = reasoningTokens;
         }

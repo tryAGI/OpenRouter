@@ -19,13 +19,13 @@ namespace OpenRouter
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
-        public double? MaxResults { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
         /// Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_total_results")]
-        public double? MaxTotalResults { get; set; }
+        public int? MaxTotalResults { get; set; }
 
         /// <summary>
         /// How much context to retrieve per result. Defaults to medium (15000 chars). Only applies when using the Exa engine; ignored with native provider search.
@@ -87,8 +87,8 @@ namespace OpenRouter
 #endif
         public WebSearchConfig(
             global::OpenRouter.WebSearchEngineEnum? engine,
-            double? maxResults,
-            double? maxTotalResults,
+            int? maxResults,
+            int? maxTotalResults,
             global::OpenRouter.SearchQualityLevel? searchContextSize,
             global::OpenRouter.WebSearchUserLocationServerTool? userLocation,
             global::System.Collections.Generic.IList<string>? allowedDomains,

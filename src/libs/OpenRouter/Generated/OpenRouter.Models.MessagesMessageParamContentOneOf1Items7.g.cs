@@ -26,9 +26,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf7NameJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicServerToolNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Name Name { get; set; }
+        public required global::OpenRouter.AnthropicServerToolName Name { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
         public MessagesMessageParamContentOneOf1Items7(
             string id,
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Name name,
+            global::OpenRouter.AnthropicServerToolName name,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Type type,
             object? input,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl)

@@ -117,7 +117,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Forbidden - Only management keys can fetch credits
+            // Forbidden - Authentication successful but insufficient permissions
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;

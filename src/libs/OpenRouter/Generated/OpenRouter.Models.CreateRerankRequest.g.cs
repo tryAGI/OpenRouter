@@ -36,10 +36,10 @@ namespace OpenRouter
         public int? TopN { get; set; }
 
         /// <summary>
-        /// Provider routing preferences for the request.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        public global::OpenRouter.ProviderPreferences? Provider { get; set; }
+        public global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProvider? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,9 +62,7 @@ namespace OpenRouter
         /// <param name="topN">
         /// Number of most relevant documents to return
         /// </param>
-        /// <param name="provider">
-        /// Provider routing preferences for the request.
-        /// </param>
+        /// <param name="provider"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,7 +71,7 @@ namespace OpenRouter
             string query,
             global::System.Collections.Generic.IList<string> documents,
             int? topN,
-            global::OpenRouter.ProviderPreferences? provider)
+            global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProvider? provider)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));

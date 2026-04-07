@@ -100,7 +100,7 @@ namespace OpenRouter
             ProcessBulkAssignKeysToGuardrailResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request - Invalid input
+            // Bad Request - Invalid request parameters or malformed input
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -138,7 +138,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Unauthorized - Missing or invalid authentication
+            // Unauthorized - Authentication required or invalid credentials
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -176,7 +176,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Guardrail not found
+            // Not Found - Resource does not exist
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
@@ -214,7 +214,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Internal Server Error
+            // Internal Server Error - Unexpected server error
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;

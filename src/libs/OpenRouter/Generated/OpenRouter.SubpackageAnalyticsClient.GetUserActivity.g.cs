@@ -102,7 +102,7 @@ namespace OpenRouter
             ProcessGetUserActivityResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Bad Request - Invalid date format or date range
+            // Bad Request - Invalid request parameters or malformed input
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -178,7 +178,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Forbidden - Only management keys can fetch activity
+            // Forbidden - Authentication successful but insufficient permissions
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
@@ -216,7 +216,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Not Found - User is not a member of the organization
+            // Not Found - Resource does not exist
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;

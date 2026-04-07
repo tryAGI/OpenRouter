@@ -30,18 +30,18 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.WebSearchSource? WebSearchSource { get; init; }
+        public global::OpenRouter.AnthropicUrlImageSource? AnthropicUrlImageSource { get; init; }
 #else
-        public global::OpenRouter.WebSearchSource? WebSearchSource { get; }
+        public global::OpenRouter.AnthropicUrlImageSource? AnthropicUrlImageSource { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchSource))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicUrlImageSource))]
 #endif
-        public bool IsWebSearchSource => WebSearchSource != null;
+        public bool IsAnthropicUrlImageSource => AnthropicUrlImageSource != null;
         /// <summary>
         /// 
         /// </summary>
@@ -63,19 +63,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicImageBlockParamSource(global::OpenRouter.WebSearchSource value) => new AnthropicImageBlockParamSource((global::OpenRouter.WebSearchSource?)value);
+        public static implicit operator AnthropicImageBlockParamSource(global::OpenRouter.AnthropicUrlImageSource value) => new AnthropicImageBlockParamSource((global::OpenRouter.AnthropicUrlImageSource?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.WebSearchSource?(AnthropicImageBlockParamSource @this) => @this.WebSearchSource;
+        public static implicit operator global::OpenRouter.AnthropicUrlImageSource?(AnthropicImageBlockParamSource @this) => @this.AnthropicUrlImageSource;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicImageBlockParamSource(global::OpenRouter.WebSearchSource? value)
+        public AnthropicImageBlockParamSource(global::OpenRouter.AnthropicUrlImageSource? value)
         {
-            WebSearchSource = value;
+            AnthropicUrlImageSource = value;
         }
 
         /// <summary>
@@ -83,18 +83,18 @@ namespace OpenRouter
         /// </summary>
         public AnthropicImageBlockParamSource(
             global::OpenRouter.AnthropicBase64ImageSource? anthropicBase64ImageSource,
-            global::OpenRouter.WebSearchSource? webSearchSource
+            global::OpenRouter.AnthropicUrlImageSource? anthropicUrlImageSource
             )
         {
             AnthropicBase64ImageSource = anthropicBase64ImageSource;
-            WebSearchSource = webSearchSource;
+            AnthropicUrlImageSource = anthropicUrlImageSource;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            WebSearchSource as object ??
+            AnthropicUrlImageSource as object ??
             AnthropicBase64ImageSource as object 
             ;
 
@@ -103,7 +103,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             AnthropicBase64ImageSource?.ToString() ??
-            WebSearchSource?.ToString() 
+            AnthropicUrlImageSource?.ToString() 
             ;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicBase64ImageSource && !IsWebSearchSource || !IsAnthropicBase64ImageSource && IsWebSearchSource;
+            return IsAnthropicBase64ImageSource && !IsAnthropicUrlImageSource || !IsAnthropicBase64ImageSource && IsAnthropicUrlImageSource;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicBase64ImageSource?, TResult>? anthropicBase64ImageSource = null,
-            global::System.Func<global::OpenRouter.WebSearchSource?, TResult>? webSearchSource = null,
+            global::System.Func<global::OpenRouter.AnthropicUrlImageSource?, TResult>? anthropicUrlImageSource = null,
             bool validate = true)
         {
             if (validate)
@@ -131,9 +131,9 @@ namespace OpenRouter
             {
                 return anthropicBase64ImageSource(AnthropicBase64ImageSource!);
             }
-            else if (IsWebSearchSource && webSearchSource != null)
+            else if (IsAnthropicUrlImageSource && anthropicUrlImageSource != null)
             {
-                return webSearchSource(WebSearchSource!);
+                return anthropicUrlImageSource(AnthropicUrlImageSource!);
             }
 
             return default(TResult);
@@ -144,7 +144,7 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicBase64ImageSource?>? anthropicBase64ImageSource = null,
-            global::System.Action<global::OpenRouter.WebSearchSource?>? webSearchSource = null,
+            global::System.Action<global::OpenRouter.AnthropicUrlImageSource?>? anthropicUrlImageSource = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +156,9 @@ namespace OpenRouter
             {
                 anthropicBase64ImageSource?.Invoke(AnthropicBase64ImageSource!);
             }
-            else if (IsWebSearchSource)
+            else if (IsAnthropicUrlImageSource)
             {
-                webSearchSource?.Invoke(WebSearchSource!);
+                anthropicUrlImageSource?.Invoke(AnthropicUrlImageSource!);
             }
         }
 
@@ -171,8 +171,8 @@ namespace OpenRouter
             {
                 AnthropicBase64ImageSource,
                 typeof(global::OpenRouter.AnthropicBase64ImageSource),
-                WebSearchSource,
-                typeof(global::OpenRouter.WebSearchSource),
+                AnthropicUrlImageSource,
+                typeof(global::OpenRouter.AnthropicUrlImageSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBase64ImageSource?>.Default.Equals(AnthropicBase64ImageSource, other.AnthropicBase64ImageSource) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebSearchSource?>.Default.Equals(WebSearchSource, other.WebSearchSource) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicUrlImageSource?>.Default.Equals(AnthropicUrlImageSource, other.AnthropicUrlImageSource) 
                 ;
         }
 

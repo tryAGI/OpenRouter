@@ -12,15 +12,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningEffortEnumJsonConverter))]
-        public global::OpenRouter.ReasoningEffortEnum? Effort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningEffortJsonConverter))]
+        public global::OpenRouter.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningSummaryVerbosityEnumJsonConverter))]
-        public global::OpenRouter.ReasoningSummaryVerbosityEnum? Summary { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningSummaryVerbosityJsonConverter))]
+        public global::OpenRouter.ReasoningSummaryVerbosity? Summary { get; set; }
 
         /// <summary>
         /// 
@@ -51,8 +51,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ReasoningConfig(
-            global::OpenRouter.ReasoningEffortEnum? effort,
-            global::OpenRouter.ReasoningSummaryVerbosityEnum? summary,
+            global::OpenRouter.ReasoningEffort? effort,
+            global::OpenRouter.ReasoningSummaryVerbosity? summary,
             int? maxTokens,
             bool? enabled)
         {

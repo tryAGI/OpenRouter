@@ -651,6 +651,9 @@ namespace OpenRouter
         /// <param name="plugins">
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
+        /// <param name="route">
+        /// Any type
+        /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters.
         /// </param>
@@ -693,11 +696,12 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestServiceTier?, object>? serviceTier = default,
             global::OpenRouter.OpenAIResponsesTruncation? truncation = default,
             bool? stream = default,
-            global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestProvider, object>? provider = default,
+            global::OpenRouter.ProviderPreferences? provider = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItems>? plugins = default,
+            object? route = default,
             string? user = default,
             string? sessionId = default,
-            global::OpenRouter.ResponsesRequestTrace? trace = default,
+            global::OpenRouter.TraceConfig? trace = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::OpenRouter.ResponsesRequest
@@ -734,6 +738,7 @@ namespace OpenRouter
                 Stream = stream,
                 Provider = provider,
                 Plugins = plugins,
+                Route = route,
                 User = user,
                 SessionId = sessionId,
                 Trace = trace,

@@ -607,6 +607,9 @@ namespace OpenRouter
         /// <param name="plugins">
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
+        /// <param name="route">
+        /// Any type
+        /// </param>
         /// <param name="user">
         /// Unique user identifier
         /// </param>
@@ -700,11 +703,12 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ChatResult> SendChatCompletionRequestAsync(
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestProvider, object>? provider = default,
+            global::OpenRouter.ProviderPreferences? provider = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? plugins = default,
+            object? route = default,
             string? user = default,
             string? sessionId = default,
-            global::OpenRouter.ChatRequestTrace? trace = default,
+            global::OpenRouter.TraceConfig? trace = default,
             string? model = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? models = default,
             double? frequencyPenalty = default,
@@ -737,6 +741,7 @@ namespace OpenRouter
             {
                 Provider = provider,
                 Plugins = plugins,
+                Route = route,
                 User = user,
                 SessionId = sessionId,
                 Trace = trace,

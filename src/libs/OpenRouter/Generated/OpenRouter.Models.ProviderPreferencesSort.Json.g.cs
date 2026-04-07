@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class ProviderPreferencesSort
+    public readonly partial struct ProviderPreferencesSort
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -41,7 +41,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.ProviderPreferencesSort),
-                jsonSerializerContext) as global::OpenRouter.ProviderPreferencesSort;
+                jsonSerializerContext) as global::OpenRouter.ProviderPreferencesSort?;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.ProviderPreferencesSort),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.ProviderPreferencesSort;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.ProviderPreferencesSort?;
         }
 
         /// <summary>

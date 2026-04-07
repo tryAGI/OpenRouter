@@ -170,7 +170,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Conflict - App upsert conflict during auth code creation
+            // Conflict - Resource conflict or concurrent modification
             if ((int)__response.StatusCode == 409)
             {
                 string? __content_409 = null;

@@ -120,14 +120,19 @@ namespace OpenRouter
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesRequestProvider, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestProvider, object>? Provider { get; set; }
+        public global::OpenRouter.ProviderPreferences? Provider { get; set; }
 
         /// <summary>
         /// Plugins you want to enable for this request, including their settings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plugins")]
         public global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? Plugins { get; set; }
+
+        /// <summary>
+        /// Any type
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("route")]
+        public object? Route { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters.
@@ -145,7 +150,7 @@ namespace OpenRouter
         /// Metadata for observability and tracing. Known keys (trace_id, trace_name, span_name, generation_name, parent_span_id) have special handling. Additional keys are passed through as custom metadata to configured broadcast destinations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace")]
-        public global::OpenRouter.MessagesRequestTrace? Trace { get; set; }
+        public global::OpenRouter.TraceConfig? Trace { get; set; }
 
         /// <summary>
         /// 
@@ -154,10 +159,9 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? Models { get; set; }
 
         /// <summary>
-        /// Controls output generation speed. When set to `fast`, uses a higher-speed inference configuration at premium pricing. Defaults to `standard` when omitted.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestSpeedJsonConverter))]
         public global::OpenRouter.MessagesRequestSpeed? Speed { get; set; }
 
         /// <summary>
@@ -194,6 +198,9 @@ namespace OpenRouter
         /// <param name="plugins">
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
+        /// <param name="route">
+        /// Any type
+        /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters.
         /// </param>
@@ -204,9 +211,7 @@ namespace OpenRouter
         /// Metadata for observability and tracing. Known keys (trace_id, trace_name, span_name, generation_name, parent_span_id) have special handling. Additional keys are passed through as custom metadata to configured broadcast destinations.
         /// </param>
         /// <param name="models"></param>
-        /// <param name="speed">
-        /// Controls output generation speed. When set to `fast`, uses a higher-speed inference configuration at premium pricing. Defaults to `standard` when omitted.
-        /// </param>
+        /// <param name="speed"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -228,11 +233,12 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages,
             bool? stream,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestProvider, object>? provider,
+            global::OpenRouter.ProviderPreferences? provider,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins,
+            object? route,
             string? user,
             string? sessionId,
-            global::OpenRouter.MessagesRequestTrace? trace,
+            global::OpenRouter.TraceConfig? trace,
             global::System.Collections.Generic.IList<string>? models,
             global::OpenRouter.MessagesRequestSpeed? speed)
         {
@@ -255,6 +261,7 @@ namespace OpenRouter
             this.ContextManagement = contextManagement;
             this.Provider = provider;
             this.Plugins = plugins;
+            this.Route = route;
             this.User = user;
             this.SessionId = sessionId;
             this.Trace = trace;

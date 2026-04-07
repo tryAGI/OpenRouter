@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double CachedTokens { get; set; }
+        public required int CachedTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenAiResponsesUsageInputTokensDetails(
-            double cachedTokens)
+            int cachedTokens)
         {
             this.CachedTokens = cachedTokens;
         }

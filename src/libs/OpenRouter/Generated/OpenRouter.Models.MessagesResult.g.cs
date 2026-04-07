@@ -33,16 +33,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.BaseMessagesResultContainer, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultContainer, object> Container { get; set; }
+        public required global::OpenRouter.AnthropicContainer Container { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.BaseMessagesResultContentItems> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ORAnthropicContentBlock> Content { get; set; }
 
         /// <summary>
         /// 
@@ -55,9 +54,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.BaseMessagesResultStopReason?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicStopReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultStopReason?, object> StopReason { get; set; }
+        public required global::OpenRouter.ORAnthropicStopReason StopReason { get; set; }
 
         /// <summary>
         /// 
@@ -76,8 +75,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesResultProviderJsonConverter))]
-        public global::OpenRouter.MessagesResultProvider? Provider { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderNameJsonConverter))]
+        public global::OpenRouter.ProviderName? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -103,20 +102,20 @@ namespace OpenRouter
 #endif
         public MessagesResult(
             string id,
-            global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultContainer, object> container,
-            global::System.Collections.Generic.IList<global::OpenRouter.BaseMessagesResultContentItems> content,
+            global::OpenRouter.AnthropicContainer container,
+            global::System.Collections.Generic.IList<global::OpenRouter.ORAnthropicContentBlock> content,
             string model,
-            global::OpenRouter.OneOf<global::OpenRouter.BaseMessagesResultStopReason?, object> stopReason,
+            global::OpenRouter.ORAnthropicStopReason stopReason,
             global::OpenRouter.MessagesResultUsage usage,
             global::OpenRouter.BaseMessagesResultType type,
             global::OpenRouter.BaseMessagesResultRole role,
             string? stopSequence,
-            global::OpenRouter.MessagesResultProvider? provider)
+            global::OpenRouter.ProviderName? provider)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.Role = role;
-            this.Container = container;
+            this.Container = container ?? throw new global::System.ArgumentNullException(nameof(container));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.StopReason = stopReason;

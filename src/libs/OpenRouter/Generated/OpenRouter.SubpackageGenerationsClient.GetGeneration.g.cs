@@ -163,7 +163,7 @@ namespace OpenRouter
                         h => h.Value),
                 };
             }
-            // Not Found - Generation not found
+            // Not Found - Resource does not exist
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
