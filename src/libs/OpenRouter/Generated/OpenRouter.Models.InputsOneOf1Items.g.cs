@@ -214,21 +214,21 @@ namespace OpenRouter
         public bool IsOutputDatetimeItem => OutputDatetimeItem != null;
 
         /// <summary>
-        /// A generic OpenRouter server tool output item
+        /// An openrouter:web_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputServerToolItem? OutputServerToolItem { get; init; }
+        public global::OpenRouter.OutputWebSearchServerToolItem? OutputWebSearchServerToolItem { get; init; }
 #else
-        public global::OpenRouter.OutputServerToolItem? OutputServerToolItem { get; }
+        public global::OpenRouter.OutputWebSearchServerToolItem? OutputWebSearchServerToolItem { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputServerToolItem))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputWebSearchServerToolItem))]
 #endif
-        public bool IsOutputServerToolItem => OutputServerToolItem != null;
+        public bool IsOutputWebSearchServerToolItem => OutputWebSearchServerToolItem != null;
         /// <summary>
         /// 
         /// </summary>
@@ -448,19 +448,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputServerToolItem?)value);
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputWebSearchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputWebSearchServerToolItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputServerToolItem?(InputsOneOf1Items @this) => @this.OutputServerToolItem;
+        public static implicit operator global::OpenRouter.OutputWebSearchServerToolItem?(InputsOneOf1Items @this) => @this.OutputWebSearchServerToolItem;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputsOneOf1Items(global::OpenRouter.OutputServerToolItem? value)
+        public InputsOneOf1Items(global::OpenRouter.OutputWebSearchServerToolItem? value)
         {
-            OutputServerToolItem = value;
+            OutputWebSearchServerToolItem = value;
         }
 
         /// <summary>
@@ -479,7 +479,7 @@ namespace OpenRouter
             global::OpenRouter.OutputFileSearchCallItem? outputFileSearchCallItem,
             global::OpenRouter.OutputImageGenerationCallItem? outputImageGenerationCallItem,
             global::OpenRouter.OutputDatetimeItem? outputDatetimeItem,
-            global::OpenRouter.OutputServerToolItem? outputServerToolItem
+            global::OpenRouter.OutputWebSearchServerToolItem? outputWebSearchServerToolItem
             )
         {
             ReasoningItem = reasoningItem;
@@ -494,14 +494,14 @@ namespace OpenRouter
             OutputFileSearchCallItem = outputFileSearchCallItem;
             OutputImageGenerationCallItem = outputImageGenerationCallItem;
             OutputDatetimeItem = outputDatetimeItem;
-            OutputServerToolItem = outputServerToolItem;
+            OutputWebSearchServerToolItem = outputWebSearchServerToolItem;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            OutputServerToolItem as object ??
+            OutputWebSearchServerToolItem as object ??
             OutputDatetimeItem as object ??
             OutputImageGenerationCallItem as object ??
             OutputFileSearchCallItem as object ??
@@ -532,7 +532,7 @@ namespace OpenRouter
             OutputFileSearchCallItem?.ToString() ??
             OutputImageGenerationCallItem?.ToString() ??
             OutputDatetimeItem?.ToString() ??
-            OutputServerToolItem?.ToString() 
+            OutputWebSearchServerToolItem?.ToString() 
             ;
 
         /// <summary>
@@ -540,7 +540,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && IsOutputDatetimeItem && !IsOutputServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && IsOutputServerToolItem;
+            return IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && IsOutputWebSearchServerToolItem;
         }
 
         /// <summary>
@@ -559,7 +559,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OutputFileSearchCallItem?, TResult>? outputFileSearchCallItem = null,
             global::System.Func<global::OpenRouter.OutputImageGenerationCallItem?, TResult>? outputImageGenerationCallItem = null,
             global::System.Func<global::OpenRouter.OutputDatetimeItem?, TResult>? outputDatetimeItem = null,
-            global::System.Func<global::OpenRouter.OutputServerToolItem?, TResult>? outputServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputWebSearchServerToolItem?, TResult>? outputWebSearchServerToolItem = null,
             bool validate = true)
         {
             if (validate)
@@ -615,9 +615,9 @@ namespace OpenRouter
             {
                 return outputDatetimeItem(OutputDatetimeItem!);
             }
-            else if (IsOutputServerToolItem && outputServerToolItem != null)
+            else if (IsOutputWebSearchServerToolItem && outputWebSearchServerToolItem != null)
             {
-                return outputServerToolItem(OutputServerToolItem!);
+                return outputWebSearchServerToolItem(OutputWebSearchServerToolItem!);
             }
 
             return default(TResult);
@@ -639,7 +639,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputFileSearchCallItem?>? outputFileSearchCallItem = null,
             global::System.Action<global::OpenRouter.OutputImageGenerationCallItem?>? outputImageGenerationCallItem = null,
             global::System.Action<global::OpenRouter.OutputDatetimeItem?>? outputDatetimeItem = null,
-            global::System.Action<global::OpenRouter.OutputServerToolItem?>? outputServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputWebSearchServerToolItem?>? outputWebSearchServerToolItem = null,
             bool validate = true)
         {
             if (validate)
@@ -695,9 +695,9 @@ namespace OpenRouter
             {
                 outputDatetimeItem?.Invoke(OutputDatetimeItem!);
             }
-            else if (IsOutputServerToolItem)
+            else if (IsOutputWebSearchServerToolItem)
             {
-                outputServerToolItem?.Invoke(OutputServerToolItem!);
+                outputWebSearchServerToolItem?.Invoke(OutputWebSearchServerToolItem!);
             }
         }
 
@@ -732,8 +732,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputImageGenerationCallItem),
                 OutputDatetimeItem,
                 typeof(global::OpenRouter.OutputDatetimeItem),
-                OutputServerToolItem,
-                typeof(global::OpenRouter.OutputServerToolItem),
+                OutputWebSearchServerToolItem,
+                typeof(global::OpenRouter.OutputWebSearchServerToolItem),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -762,7 +762,7 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputFileSearchCallItem?>.Default.Equals(OutputFileSearchCallItem, other.OutputFileSearchCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputImageGenerationCallItem?>.Default.Equals(OutputImageGenerationCallItem, other.OutputImageGenerationCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputDatetimeItem?>.Default.Equals(OutputDatetimeItem, other.OutputDatetimeItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputServerToolItem?>.Default.Equals(OutputServerToolItem, other.OutputServerToolItem) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputWebSearchServerToolItem?>.Default.Equals(OutputWebSearchServerToolItem, other.OutputWebSearchServerToolItem) 
                 ;
         }
 

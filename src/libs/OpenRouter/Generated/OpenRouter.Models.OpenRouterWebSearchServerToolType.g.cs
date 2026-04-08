@@ -6,38 +6,38 @@ namespace OpenRouter
     /// <summary>
     /// 
     /// </summary>
-    public enum AnthropicPlainTextSourceResponseMediaType
+    public enum OpenRouterWebSearchServerToolType
     {
         /// <summary>
         /// 
         /// </summary>
-        TextPlain,
+        Openrouter_webSearch,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class AnthropicPlainTextSourceResponseMediaTypeExtensions
+    public static class OpenRouterWebSearchServerToolTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this AnthropicPlainTextSourceResponseMediaType value)
+        public static string ToValueString(this OpenRouterWebSearchServerToolType value)
         {
             return value switch
             {
-                AnthropicPlainTextSourceResponseMediaType.TextPlain => "text/plain",
+                OpenRouterWebSearchServerToolType.Openrouter_webSearch => "openrouter:web_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AnthropicPlainTextSourceResponseMediaType? ToEnum(string value)
+        public static OpenRouterWebSearchServerToolType? ToEnum(string value)
         {
             return value switch
             {
-                "text/plain" => AnthropicPlainTextSourceResponseMediaType.TextPlain,
+                "openrouter:web_search" => OpenRouterWebSearchServerToolType.Openrouter_webSearch,
                 _ => null,
             };
         }

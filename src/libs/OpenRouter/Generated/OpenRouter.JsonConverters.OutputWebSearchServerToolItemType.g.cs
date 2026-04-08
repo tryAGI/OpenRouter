@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ChatWebSearchServerToolTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ChatWebSearchServerToolType>
+    public sealed class OutputWebSearchServerToolItemTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.OutputWebSearchServerToolItemType>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.ChatWebSearchServerToolType Read(
+        public override global::OpenRouter.OutputWebSearchServerToolItemType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.ChatWebSearchServerToolTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.OutputWebSearchServerToolItemTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.ChatWebSearchServerToolType)numValue;
+                    return (global::OpenRouter.OutputWebSearchServerToolItemType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.ChatWebSearchServerToolType);
+                    return default(global::OpenRouter.OutputWebSearchServerToolItemType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.ChatWebSearchServerToolType value,
+            global::OpenRouter.OutputWebSearchServerToolItemType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.ChatWebSearchServerToolTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::OpenRouter.OutputWebSearchServerToolItemTypeExtensions.ToValueString(value));
         }
     }
 }

@@ -115,18 +115,18 @@ namespace OpenRouter
         /// OpenRouter built-in server tool: searches the web for current information
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.MessagesWebSearchServerTool? MessagesWebSearchServerTool { get; init; }
+        public global::OpenRouter.OpenRouterWebSearchServerTool? OpenRouterWebSearchServerTool { get; init; }
 #else
-        public global::OpenRouter.MessagesWebSearchServerTool? MessagesWebSearchServerTool { get; }
+        public global::OpenRouter.OpenRouterWebSearchServerTool? OpenRouterWebSearchServerTool { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesWebSearchServerTool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenRouterWebSearchServerTool))]
 #endif
-        public bool IsMessagesWebSearchServerTool => MessagesWebSearchServerTool != null;
+        public bool IsOpenRouterWebSearchServerTool => OpenRouterWebSearchServerTool != null;
         /// <summary>
         /// 
         /// </summary>
@@ -238,19 +238,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesWebSearchServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesWebSearchServerTool?)value);
+        public static implicit operator MessagesRequestToolsItems(global::OpenRouter.OpenRouterWebSearchServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.OpenRouterWebSearchServerTool?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.MessagesWebSearchServerTool?(MessagesRequestToolsItems @this) => @this.MessagesWebSearchServerTool;
+        public static implicit operator global::OpenRouter.OpenRouterWebSearchServerTool?(MessagesRequestToolsItems @this) => @this.OpenRouterWebSearchServerTool;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesRequestToolsItems(global::OpenRouter.MessagesWebSearchServerTool? value)
+        public MessagesRequestToolsItems(global::OpenRouter.OpenRouterWebSearchServerTool? value)
         {
-            MessagesWebSearchServerTool = value;
+            OpenRouterWebSearchServerTool = value;
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestToolsItems3? messagesRequestToolsItems3,
             global::OpenRouter.MessagesRequestToolsItems4? messagesRequestToolsItems4,
             global::OpenRouter.DatetimeServerTool? datetimeServerTool,
-            global::OpenRouter.MessagesWebSearchServerTool? messagesWebSearchServerTool
+            global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool
             )
         {
             MessagesRequestToolsItems0 = messagesRequestToolsItems0;
@@ -272,14 +272,14 @@ namespace OpenRouter
             MessagesRequestToolsItems3 = messagesRequestToolsItems3;
             MessagesRequestToolsItems4 = messagesRequestToolsItems4;
             DatetimeServerTool = datetimeServerTool;
-            MessagesWebSearchServerTool = messagesWebSearchServerTool;
+            OpenRouterWebSearchServerTool = openRouterWebSearchServerTool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessagesWebSearchServerTool as object ??
+            OpenRouterWebSearchServerTool as object ??
             DatetimeServerTool as object ??
             MessagesRequestToolsItems4 as object ??
             MessagesRequestToolsItems3 as object ??
@@ -298,7 +298,7 @@ namespace OpenRouter
             MessagesRequestToolsItems3?.ToString() ??
             MessagesRequestToolsItems4?.ToString() ??
             DatetimeServerTool?.ToString() ??
-            MessagesWebSearchServerTool?.ToString() 
+            OpenRouterWebSearchServerTool?.ToString() 
             ;
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsMessagesWebSearchServerTool || !IsMessagesRequestToolsItems0 && IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsMessagesWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsMessagesWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsMessagesWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsMessagesWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && IsDatetimeServerTool && !IsMessagesWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && IsMessagesWebSearchServerTool;
+            return IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && IsOpenRouterWebSearchServerTool;
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.MessagesRequestToolsItems3?, TResult>? messagesRequestToolsItems3 = null,
             global::System.Func<global::OpenRouter.MessagesRequestToolsItems4?, TResult>? messagesRequestToolsItems4 = null,
             global::System.Func<global::OpenRouter.DatetimeServerTool?, TResult>? datetimeServerTool = null,
-            global::System.Func<global::OpenRouter.MessagesWebSearchServerTool?, TResult>? messagesWebSearchServerTool = null,
+            global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool?, TResult>? openRouterWebSearchServerTool = null,
             bool validate = true)
         {
             if (validate)
@@ -351,9 +351,9 @@ namespace OpenRouter
             {
                 return datetimeServerTool(DatetimeServerTool!);
             }
-            else if (IsMessagesWebSearchServerTool && messagesWebSearchServerTool != null)
+            else if (IsOpenRouterWebSearchServerTool && openRouterWebSearchServerTool != null)
             {
-                return messagesWebSearchServerTool(MessagesWebSearchServerTool!);
+                return openRouterWebSearchServerTool(OpenRouterWebSearchServerTool!);
             }
 
             return default(TResult);
@@ -369,7 +369,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.MessagesRequestToolsItems3?>? messagesRequestToolsItems3 = null,
             global::System.Action<global::OpenRouter.MessagesRequestToolsItems4?>? messagesRequestToolsItems4 = null,
             global::System.Action<global::OpenRouter.DatetimeServerTool?>? datetimeServerTool = null,
-            global::System.Action<global::OpenRouter.MessagesWebSearchServerTool?>? messagesWebSearchServerTool = null,
+            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool?>? openRouterWebSearchServerTool = null,
             bool validate = true)
         {
             if (validate)
@@ -401,9 +401,9 @@ namespace OpenRouter
             {
                 datetimeServerTool?.Invoke(DatetimeServerTool!);
             }
-            else if (IsMessagesWebSearchServerTool)
+            else if (IsOpenRouterWebSearchServerTool)
             {
-                messagesWebSearchServerTool?.Invoke(MessagesWebSearchServerTool!);
+                openRouterWebSearchServerTool?.Invoke(OpenRouterWebSearchServerTool!);
             }
         }
 
@@ -426,8 +426,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.MessagesRequestToolsItems4),
                 DatetimeServerTool,
                 typeof(global::OpenRouter.DatetimeServerTool),
-                MessagesWebSearchServerTool,
-                typeof(global::OpenRouter.MessagesWebSearchServerTool),
+                OpenRouterWebSearchServerTool,
+                typeof(global::OpenRouter.OpenRouterWebSearchServerTool),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -450,7 +450,7 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestToolsItems3?>.Default.Equals(MessagesRequestToolsItems3, other.MessagesRequestToolsItems3) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestToolsItems4?>.Default.Equals(MessagesRequestToolsItems4, other.MessagesRequestToolsItems4) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesWebSearchServerTool?>.Default.Equals(MessagesWebSearchServerTool, other.MessagesWebSearchServerTool) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServerTool, other.OpenRouterWebSearchServerTool) 
                 ;
         }
 
