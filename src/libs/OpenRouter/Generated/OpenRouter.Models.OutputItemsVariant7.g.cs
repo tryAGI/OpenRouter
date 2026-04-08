@@ -4,10 +4,17 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:datetime server tool output item
+    /// openrouter:datetime variant
     /// </summary>
-    public sealed partial class OutputDatetimeItem
+    public sealed partial class OutputItemsVariant7
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
+        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -21,13 +28,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
-        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
 
         /// <summary>
         /// ISO 8601 datetime string
@@ -50,7 +50,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputDatetimeItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant7" /> class.
         /// </summary>
         /// <param name="status"></param>
         /// <param name="datetime">
@@ -59,29 +59,29 @@ namespace OpenRouter
         /// <param name="timezone">
         /// IANA timezone name
         /// </param>
-        /// <param name="id"></param>
         /// <param name="type"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public OutputDatetimeItem(
+        public OutputItemsVariant7(
             global::OpenRouter.ToolCallStatus status,
             string datetime,
             string timezone,
-            string? id,
-            global::OpenRouter.OutputDatetimeItemType type)
+            global::OpenRouter.OutputDatetimeItemType type,
+            string? id)
         {
+            this.Type = type;
             this.Id = id;
             this.Status = status;
-            this.Type = type;
             this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputDatetimeItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant7" /> class.
         /// </summary>
-        public OutputDatetimeItem()
+        public OutputItemsVariant7()
         {
         }
     }

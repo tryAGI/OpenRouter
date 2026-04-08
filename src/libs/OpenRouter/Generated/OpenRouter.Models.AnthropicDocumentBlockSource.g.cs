@@ -13,97 +13,97 @@ namespace OpenRouter
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicBase64PDFSource2? AnthropicBase64PDFSource { get; init; }
+        public global::OpenRouter.AnthropicBase64PdfSource? AnthropicBase64PdfSource { get; init; }
 #else
-        public global::OpenRouter.AnthropicBase64PDFSource2? AnthropicBase64PDFSource { get; }
+        public global::OpenRouter.AnthropicBase64PdfSource? AnthropicBase64PdfSource { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicBase64PDFSource))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicBase64PdfSource))]
 #endif
-        public bool IsAnthropicBase64PDFSource => AnthropicBase64PDFSource != null;
+        public bool IsAnthropicBase64PdfSource => AnthropicBase64PdfSource != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicPlainTextSourceResponse? AnthropicPlainTextSourceResponse { get; init; }
+        public global::OpenRouter.AnthropicPlainTextSource? AnthropicPlainTextSource { get; init; }
 #else
-        public global::OpenRouter.AnthropicPlainTextSourceResponse? AnthropicPlainTextSourceResponse { get; }
+        public global::OpenRouter.AnthropicPlainTextSource? AnthropicPlainTextSource { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicPlainTextSourceResponse))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicPlainTextSource))]
 #endif
-        public bool IsAnthropicPlainTextSourceResponse => AnthropicPlainTextSourceResponse != null;
+        public bool IsAnthropicPlainTextSource => AnthropicPlainTextSource != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicDocumentBlockSource(global::OpenRouter.AnthropicBase64PDFSource2 value) => new AnthropicDocumentBlockSource((global::OpenRouter.AnthropicBase64PDFSource2?)value);
+        public static implicit operator AnthropicDocumentBlockSource(global::OpenRouter.AnthropicBase64PdfSource value) => new AnthropicDocumentBlockSource((global::OpenRouter.AnthropicBase64PdfSource?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicBase64PDFSource2?(AnthropicDocumentBlockSource @this) => @this.AnthropicBase64PDFSource;
+        public static implicit operator global::OpenRouter.AnthropicBase64PdfSource?(AnthropicDocumentBlockSource @this) => @this.AnthropicBase64PdfSource;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicDocumentBlockSource(global::OpenRouter.AnthropicBase64PDFSource2? value)
+        public AnthropicDocumentBlockSource(global::OpenRouter.AnthropicBase64PdfSource? value)
         {
-            AnthropicBase64PDFSource = value;
+            AnthropicBase64PdfSource = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicDocumentBlockSource(global::OpenRouter.AnthropicPlainTextSourceResponse value) => new AnthropicDocumentBlockSource((global::OpenRouter.AnthropicPlainTextSourceResponse?)value);
+        public static implicit operator AnthropicDocumentBlockSource(global::OpenRouter.AnthropicPlainTextSource value) => new AnthropicDocumentBlockSource((global::OpenRouter.AnthropicPlainTextSource?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicPlainTextSourceResponse?(AnthropicDocumentBlockSource @this) => @this.AnthropicPlainTextSourceResponse;
+        public static implicit operator global::OpenRouter.AnthropicPlainTextSource?(AnthropicDocumentBlockSource @this) => @this.AnthropicPlainTextSource;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicDocumentBlockSource(global::OpenRouter.AnthropicPlainTextSourceResponse? value)
+        public AnthropicDocumentBlockSource(global::OpenRouter.AnthropicPlainTextSource? value)
         {
-            AnthropicPlainTextSourceResponse = value;
+            AnthropicPlainTextSource = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AnthropicDocumentBlockSource(
-            global::OpenRouter.AnthropicBase64PDFSource2? anthropicBase64PDFSource,
-            global::OpenRouter.AnthropicPlainTextSourceResponse? anthropicPlainTextSourceResponse
+            global::OpenRouter.AnthropicBase64PdfSource? anthropicBase64PdfSource,
+            global::OpenRouter.AnthropicPlainTextSource? anthropicPlainTextSource
             )
         {
-            AnthropicBase64PDFSource = anthropicBase64PDFSource;
-            AnthropicPlainTextSourceResponse = anthropicPlainTextSourceResponse;
+            AnthropicBase64PdfSource = anthropicBase64PdfSource;
+            AnthropicPlainTextSource = anthropicPlainTextSource;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnthropicPlainTextSourceResponse as object ??
-            AnthropicBase64PDFSource as object 
+            AnthropicPlainTextSource as object ??
+            AnthropicBase64PdfSource as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AnthropicBase64PDFSource?.ToString() ??
-            AnthropicPlainTextSourceResponse?.ToString() 
+            AnthropicBase64PdfSource?.ToString() ??
+            AnthropicPlainTextSource?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicBase64PDFSource && !IsAnthropicPlainTextSourceResponse || !IsAnthropicBase64PDFSource && IsAnthropicPlainTextSourceResponse;
+            return IsAnthropicBase64PdfSource && !IsAnthropicPlainTextSource || !IsAnthropicBase64PdfSource && IsAnthropicPlainTextSource;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicBase64PDFSource2?, TResult>? anthropicBase64PDFSource = null,
-            global::System.Func<global::OpenRouter.AnthropicPlainTextSourceResponse?, TResult>? anthropicPlainTextSourceResponse = null,
+            global::System.Func<global::OpenRouter.AnthropicBase64PdfSource?, TResult>? anthropicBase64PdfSource = null,
+            global::System.Func<global::OpenRouter.AnthropicPlainTextSource?, TResult>? anthropicPlainTextSource = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PDFSource && anthropicBase64PDFSource != null)
+            if (IsAnthropicBase64PdfSource && anthropicBase64PdfSource != null)
             {
-                return anthropicBase64PDFSource(AnthropicBase64PDFSource!);
+                return anthropicBase64PdfSource(AnthropicBase64PdfSource!);
             }
-            else if (IsAnthropicPlainTextSourceResponse && anthropicPlainTextSourceResponse != null)
+            else if (IsAnthropicPlainTextSource && anthropicPlainTextSource != null)
             {
-                return anthropicPlainTextSourceResponse(AnthropicPlainTextSourceResponse!);
+                return anthropicPlainTextSource(AnthropicPlainTextSource!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicBase64PDFSource2?>? anthropicBase64PDFSource = null,
-            global::System.Action<global::OpenRouter.AnthropicPlainTextSourceResponse?>? anthropicPlainTextSourceResponse = null,
+            global::System.Action<global::OpenRouter.AnthropicBase64PdfSource?>? anthropicBase64PdfSource = null,
+            global::System.Action<global::OpenRouter.AnthropicPlainTextSource?>? anthropicPlainTextSource = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PDFSource)
+            if (IsAnthropicBase64PdfSource)
             {
-                anthropicBase64PDFSource?.Invoke(AnthropicBase64PDFSource!);
+                anthropicBase64PdfSource?.Invoke(AnthropicBase64PdfSource!);
             }
-            else if (IsAnthropicPlainTextSourceResponse)
+            else if (IsAnthropicPlainTextSource)
             {
-                anthropicPlainTextSourceResponse?.Invoke(AnthropicPlainTextSourceResponse!);
+                anthropicPlainTextSource?.Invoke(AnthropicPlainTextSource!);
             }
         }
 
@@ -169,10 +169,10 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AnthropicBase64PDFSource,
-                typeof(global::OpenRouter.AnthropicBase64PDFSource2),
-                AnthropicPlainTextSourceResponse,
-                typeof(global::OpenRouter.AnthropicPlainTextSourceResponse),
+                AnthropicBase64PdfSource,
+                typeof(global::OpenRouter.AnthropicBase64PdfSource),
+                AnthropicPlainTextSource,
+                typeof(global::OpenRouter.AnthropicPlainTextSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -189,8 +189,8 @@ namespace OpenRouter
         public bool Equals(AnthropicDocumentBlockSource other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBase64PDFSource2?>.Default.Equals(AnthropicBase64PDFSource, other.AnthropicBase64PDFSource) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicPlainTextSourceResponse?>.Default.Equals(AnthropicPlainTextSourceResponse, other.AnthropicPlainTextSourceResponse) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBase64PdfSource?>.Default.Equals(AnthropicBase64PdfSource, other.AnthropicBase64PdfSource) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicPlainTextSource?>.Default.Equals(AnthropicPlainTextSource, other.AnthropicPlainTextSource) 
                 ;
         }
 

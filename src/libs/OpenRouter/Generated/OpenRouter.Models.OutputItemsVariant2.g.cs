@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An output item containing reasoning
+    /// reasoning variant
     /// </summary>
-    public sealed partial class OutputReasoningItem
+    public sealed partial class OutputItemsVariant2
     {
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputReasoningItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant2" /> class.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="summary"></param>
@@ -83,7 +83,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public OutputReasoningItem(
+        public OutputItemsVariant2(
             string id,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> summary,
             global::OpenRouter.OutputItemReasoningType type,
@@ -104,9 +104,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputReasoningItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant2" /> class.
         /// </summary>
-        public OutputReasoningItem()
+        public OutputItemsVariant2()
         {
         }
     }

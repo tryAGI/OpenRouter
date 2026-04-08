@@ -978,7 +978,7 @@
       "get": {
         "operationId": "list-models-user",
         "summary": "List models filtered by user provider preferences, privacy settings, and guardrails",
-        "description": "List models filtered by user provider preferences, [privacy settings](https://openrouter.ai/docs/guides/privacy/logging), and [guardrails](https://openrouter.ai/docs/guides/features/guardrails). If requesting through `eu.openrouter.ai/api/v1/...` the results will be filtered to models that satisfy [EU in-region routing](https://openrouter.ai/docs/guides/privacy/logging#enterprise-eu-in-region-routing).",
+        "description": "List models filtered by user provider preferences, [privacy settings](https://openrouter.ai/docs/guides/privacy/provider-logging), and [guardrails](https://openrouter.ai/docs/guides/features/guardrails). If requesting through `eu.openrouter.ai/api/v1/...` the results will be filtered to models that satisfy [EU in-region routing](https://openrouter.ai/docs/guides/privacy/provider-logging#enterprise-eu-in-region-routing).",
         "tags": [
           "subpackage_models"
         ],
@@ -4528,14 +4528,14 @@
       "OutputDatetimeItem": {
         "type": "object",
         "properties": {
-          "type": {
-            "$ref": "#/components/schemas/OutputDatetimeItemType"
-          },
           "id": {
             "type": "string"
           },
           "status": {
             "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputDatetimeItemType"
           },
           "datetime": {
             "type": "string",
@@ -4547,34 +4547,40 @@
           }
         },
         "required": [
-          "type",
           "status",
+          "type",
           "datetime",
           "timezone"
         ],
         "description": "An openrouter:datetime server tool output item",
         "title": "OutputDatetimeItem"
       },
-      "OutputServerToolItem": {
+      "OutputWebSearchServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:web_search"
+        ],
+        "title": "OutputWebSearchServerToolItemType"
+      },
+      "OutputWebSearchServerToolItem": {
         "type": "object",
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Server tool type (e.g. openrouter:datetime, openrouter:web_search)"
-          },
           "id": {
             "type": "string"
           },
           "status": {
             "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputWebSearchServerToolItemType"
           }
         },
         "required": [
-          "type",
-          "status"
+          "status",
+          "type"
         ],
-        "description": "A generic OpenRouter server tool output item",
-        "title": "OutputServerToolItem"
+        "description": "An openrouter:web_search server tool output item",
+        "title": "OutputWebSearchServerToolItem"
       },
       "InputsOneOf1Items": {
         "oneOf": [
@@ -4615,7 +4621,7 @@
             "$ref": "#/components/schemas/OutputDatetimeItem"
           },
           {
-            "$ref": "#/components/schemas/OutputServerToolItem"
+            "$ref": "#/components/schemas/OutputWebSearchServerToolItem"
           }
         ],
         "title": "InputsOneOf1Items"
@@ -7939,117 +7945,252 @@
         "description": "Text output configuration including format and verbosity",
         "title": "TextConfig"
       },
-      "OutputMessageItem": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "role": {
-            "$ref": "#/components/schemas/OutputMessageRole"
-          },
-          "type": {
-            "$ref": "#/components/schemas/OutputMessageType"
-          },
-          "status": {
-            "$ref": "#/components/schemas/OutputMessageStatus"
-          },
-          "content": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OutputMessageContentItems"
-            }
-          },
-          "phase": {
-            "$ref": "#/components/schemas/OutputMessagePhase",
-            "description": "The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages."
-          }
-        },
-        "required": [
-          "id",
-          "role",
-          "type",
-          "content"
-        ],
-        "description": "An output message item",
-        "title": "OutputMessageItem"
-      },
-      "OutputReasoningItem": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/OutputItemReasoningType"
-          },
-          "id": {
-            "type": "string"
-          },
-          "content": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "$ref": "#/components/schemas/ReasoningTextContent"
-            }
-          },
-          "summary": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReasoningSummaryText"
-            }
-          },
-          "encrypted_content": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "$ref": "#/components/schemas/OutputItemReasoningStatus"
-          },
-          "signature": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "A signature for the reasoning content, used for verification"
-          },
-          "format": {
-            "$ref": "#/components/schemas/ReasoningFormat"
-          }
-        },
-        "required": [
-          "type",
-          "id",
-          "summary"
-        ],
-        "description": "An output item containing reasoning",
-        "title": "OutputReasoningItem"
-      },
       "OutputItems": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/OutputMessageItem"
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputMessageType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "role": {
+                "$ref": "#/components/schemas/OutputMessageRole"
+              },
+              "status": {
+                "$ref": "#/components/schemas/OutputMessageStatus"
+              },
+              "content": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OutputMessageContentItems"
+                }
+              },
+              "phase": {
+                "$ref": "#/components/schemas/OutputMessagePhase",
+                "description": "The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages."
+              }
+            },
+            "required": [
+              "type",
+              "id",
+              "role",
+              "content"
+            ],
+            "description": "message variant"
           },
           {
-            "$ref": "#/components/schemas/OutputReasoningItem"
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputItemReasoningType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "content": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "$ref": "#/components/schemas/ReasoningTextContent"
+                }
+              },
+              "summary": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ReasoningSummaryText"
+                }
+              },
+              "encrypted_content": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "$ref": "#/components/schemas/OutputItemReasoningStatus"
+              },
+              "signature": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "A signature for the reasoning content, used for verification"
+              },
+              "format": {
+                "$ref": "#/components/schemas/ReasoningFormat"
+              }
+            },
+            "required": [
+              "type",
+              "id",
+              "summary"
+            ],
+            "description": "reasoning variant"
           },
           {
-            "$ref": "#/components/schemas/OutputFunctionCallItem"
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputItemFunctionCallType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "arguments": {
+                "type": "string"
+              },
+              "call_id": {
+                "type": "string"
+              },
+              "status": {
+                "$ref": "#/components/schemas/OutputItemFunctionCallStatus"
+              }
+            },
+            "required": [
+              "type",
+              "name",
+              "arguments",
+              "call_id"
+            ],
+            "description": "function_call variant"
           },
           {
-            "$ref": "#/components/schemas/OutputWebSearchCallItem"
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputItemWebSearchCallType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "action": {
+                "$ref": "#/components/schemas/OutputItemWebSearchCallAction"
+              },
+              "status": {
+                "$ref": "#/components/schemas/WebSearchStatus"
+              }
+            },
+            "required": [
+              "type",
+              "id",
+              "action",
+              "status"
+            ],
+            "description": "web_search_call variant"
           },
           {
-            "$ref": "#/components/schemas/OutputFileSearchCallItem"
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputItemFileSearchCallType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "queries": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "$ref": "#/components/schemas/WebSearchStatus"
+              }
+            },
+            "required": [
+              "type",
+              "id",
+              "queries",
+              "status"
+            ],
+            "description": "file_search_call variant"
           },
           {
-            "$ref": "#/components/schemas/OutputImageGenerationCallItem"
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputItemImageGenerationCallType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "result": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "$ref": "#/components/schemas/ImageGenerationStatus"
+              }
+            },
+            "required": [
+              "type",
+              "id",
+              "status"
+            ],
+            "description": "image_generation_call variant"
           },
           {
-            "$ref": "#/components/schemas/OutputServerToolItem"
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputDatetimeItemType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "$ref": "#/components/schemas/ToolCallStatus"
+              },
+              "datetime": {
+                "type": "string",
+                "description": "ISO 8601 datetime string"
+              },
+              "timezone": {
+                "type": "string",
+                "description": "IANA timezone name"
+              }
+            },
+            "required": [
+              "type",
+              "status",
+              "datetime",
+              "timezone"
+            ],
+            "description": "openrouter:datetime variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputWebSearchServerToolItemType"
+              },
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "$ref": "#/components/schemas/ToolCallStatus"
+              }
+            },
+            "required": [
+              "type",
+              "status"
+            ],
+            "description": "openrouter:web_search variant"
           }
         ],
+        "discriminator": {
+          "propertyName": "type"
+        },
         "description": "An output item from the response",
         "title": "OutputItems"
       },
@@ -9568,12 +9709,12 @@
         ],
         "title": "MessagesRequestToolsItems4"
       },
-      "MessagesWebSearchServerToolType": {
+      "OpenRouterWebSearchServerToolType": {
         "type": "string",
         "enum": [
           "openrouter:web_search"
         ],
-        "title": "MessagesWebSearchServerToolType"
+        "title": "OpenRouterWebSearchServerToolType"
       },
       "SearchQualityLevel": {
         "type": "string",
@@ -9651,11 +9792,11 @@
         },
         "title": "WebSearchConfig"
       },
-      "MessagesWebSearchServerTool": {
+      "OpenRouterWebSearchServerTool": {
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/MessagesWebSearchServerToolType"
+            "$ref": "#/components/schemas/OpenRouterWebSearchServerToolType"
           },
           "parameters": {
             "$ref": "#/components/schemas/WebSearchConfig"
@@ -9665,7 +9806,7 @@
           "type"
         ],
         "description": "OpenRouter built-in server tool: searches the web for current information",
-        "title": "MessagesWebSearchServerTool"
+        "title": "OpenRouterWebSearchServerTool"
       },
       "MessagesRequestToolsItems": {
         "oneOf": [
@@ -9688,7 +9829,7 @@
             "$ref": "#/components/schemas/DatetimeServerTool"
           },
           {
-            "$ref": "#/components/schemas/MessagesWebSearchServerTool"
+            "$ref": "#/components/schemas/OpenRouterWebSearchServerTool"
           }
         ],
         "title": "MessagesRequestToolsItems"
@@ -11858,67 +11999,13 @@
         ],
         "title": "AnthropicCitationsConfig"
       },
-      "AnthropicBase64PDFSource": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "string"
-          },
-          "media_type": {
-            "$ref": "#/components/schemas/AnthropicBase64PdfSourceMediaType"
-          },
-          "type": {
-            "$ref": "#/components/schemas/AnthropicBase64PdfSourceType"
-          }
-        },
-        "required": [
-          "data",
-          "media_type",
-          "type"
-        ],
-        "title": "AnthropicBase64PDFSource"
-      },
-      "AnthropicPlainTextSourceResponseMediaType": {
-        "type": "string",
-        "enum": [
-          "text/plain"
-        ],
-        "title": "AnthropicPlainTextSourceResponseMediaType"
-      },
-      "AnthropicPlainTextSourceResponseType": {
-        "type": "string",
-        "enum": [
-          "text"
-        ],
-        "title": "AnthropicPlainTextSourceResponseType"
-      },
-      "AnthropicPlainTextSourceResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "string"
-          },
-          "media_type": {
-            "$ref": "#/components/schemas/AnthropicPlainTextSourceResponseMediaType"
-          },
-          "type": {
-            "$ref": "#/components/schemas/AnthropicPlainTextSourceResponseType"
-          }
-        },
-        "required": [
-          "data",
-          "media_type",
-          "type"
-        ],
-        "title": "AnthropicPlainTextSourceResponse"
-      },
       "AnthropicDocumentBlockSource": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/AnthropicBase64PDFSource"
+            "$ref": "#/components/schemas/AnthropicBase64PdfSource"
           },
           {
-            "$ref": "#/components/schemas/AnthropicPlainTextSourceResponse"
+            "$ref": "#/components/schemas/AnthropicPlainTextSource"
           }
         ],
         "title": "AnthropicDocumentBlockSource"
@@ -14436,29 +14523,6 @@
         ],
         "title": "ChatFunctionTool0"
       },
-      "ChatWebSearchServerToolType": {
-        "type": "string",
-        "enum": [
-          "openrouter:web_search"
-        ],
-        "title": "ChatWebSearchServerToolType"
-      },
-      "ChatWebSearchServerTool": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/ChatWebSearchServerToolType"
-          },
-          "parameters": {
-            "$ref": "#/components/schemas/WebSearchConfig"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "description": "OpenRouter built-in server tool: searches the web for current information",
-        "title": "ChatWebSearchServerTool"
-      },
       "ChatWebSearchShorthandType": {
         "type": "string",
         "enum": [
@@ -14525,7 +14589,7 @@
             "$ref": "#/components/schemas/DatetimeServerTool"
           },
           {
-            "$ref": "#/components/schemas/ChatWebSearchServerTool"
+            "$ref": "#/components/schemas/OpenRouterWebSearchServerTool"
           },
           {
             "$ref": "#/components/schemas/ChatWebSearchShorthand"

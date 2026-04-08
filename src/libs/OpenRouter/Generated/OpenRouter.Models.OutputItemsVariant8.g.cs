@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A generic OpenRouter server tool output item
+    /// openrouter:web_search variant
     /// </summary>
-    public sealed partial class OutputServerToolItem
+    public sealed partial class OutputItemsVariant8
     {
         /// <summary>
-        /// Server tool type (e.g. openrouter:datetime, openrouter:web_search)
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -36,30 +36,28 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputServerToolItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant8" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Server tool type (e.g. openrouter:datetime, openrouter:web_search)
-        /// </param>
         /// <param name="status"></param>
+        /// <param name="type"></param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public OutputServerToolItem(
-            string type,
+        public OutputItemsVariant8(
             global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.OutputWebSearchServerToolItemType type,
             string? id)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
             this.Id = id;
             this.Status = status;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputServerToolItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant8" /> class.
         /// </summary>
-        public OutputServerToolItem()
+        public OutputItemsVariant8()
         {
         }
     }

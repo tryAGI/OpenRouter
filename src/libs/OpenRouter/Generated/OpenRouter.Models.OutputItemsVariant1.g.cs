@@ -4,10 +4,17 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An output message item
+    /// message variant
     /// </summary>
-    public sealed partial class OutputMessageItem
+    public sealed partial class OutputItemsVariant1
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageTypeJsonConverter))]
+        public global::OpenRouter.OutputMessageType Type { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -21,13 +28,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageRoleJsonConverter))]
         public global::OpenRouter.OutputMessageRole Role { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageTypeJsonConverter))]
-        public global::OpenRouter.OutputMessageType Type { get; set; }
 
         /// <summary>
         /// 
@@ -57,12 +57,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputMessageItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant1" /> class.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="content"></param>
-        /// <param name="role"></param>
         /// <param name="type"></param>
+        /// <param name="role"></param>
         /// <param name="status"></param>
         /// <param name="phase">
         /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
@@ -70,26 +70,26 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public OutputMessageItem(
+        public OutputItemsVariant1(
             string id,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageContentItems> content,
-            global::OpenRouter.OutputMessageRole role,
             global::OpenRouter.OutputMessageType type,
+            global::OpenRouter.OutputMessageRole role,
             global::OpenRouter.OutputMessageStatus? status,
             global::OpenRouter.OutputMessagePhase? phase)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Role = role;
-            this.Type = type;
             this.Status = status;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Phase = phase;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputMessageItem" /> class.
+        /// Initializes a new instance of the <see cref="OutputItemsVariant1" /> class.
         /// </summary>
-        public OutputMessageItem()
+        public OutputItemsVariant1()
         {
         }
     }
