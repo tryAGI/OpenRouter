@@ -27,6 +27,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        MaxCompletionTokens,
+        /// <summary>
+        /// 
+        /// </summary>
         MaxTokens,
         /// <summary>
         /// 
@@ -122,6 +126,7 @@ namespace OpenRouter
                 Parameter.IncludeReasoning => "include_reasoning",
                 Parameter.LogitBias => "logit_bias",
                 Parameter.Logprobs => "logprobs",
+                Parameter.MaxCompletionTokens => "max_completion_tokens",
                 Parameter.MaxTokens => "max_tokens",
                 Parameter.MinP => "min_p",
                 Parameter.ParallelToolCalls => "parallel_tool_calls",
@@ -156,6 +161,7 @@ namespace OpenRouter
                 "include_reasoning" => Parameter.IncludeReasoning,
                 "logit_bias" => Parameter.LogitBias,
                 "logprobs" => Parameter.Logprobs,
+                "max_completion_tokens" => Parameter.MaxCompletionTokens,
                 "max_tokens" => Parameter.MaxTokens,
                 "min_p" => Parameter.MinP,
                 "parallel_tool_calls" => Parameter.ParallelToolCalls,
