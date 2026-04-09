@@ -9,29 +9,10 @@ namespace OpenRouter
     public sealed partial class UpdateGuardrailRequest
     {
         /// <summary>
-        /// New name for the guardrail
+        /// Array of model identifiers (slug or canonical_slug accepted)
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
-        /// New description for the guardrail
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
-
-        /// <summary>
-        /// New spending limit in USD
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("limit_usd")]
-        public double? LimitUsd { get; set; }
-
-        /// <summary>
-        /// Interval at which the limit resets (daily, weekly, monthly)
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reset_interval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GuardrailIntervalJsonConverter))]
-        public global::OpenRouter.GuardrailInterval? ResetInterval { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_models")]
+        public global::System.Collections.Generic.IList<string>? AllowedModels { get; set; }
 
         /// <summary>
         /// New list of allowed provider IDs
@@ -40,22 +21,41 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? AllowedProviders { get; set; }
 
         /// <summary>
-        /// List of provider IDs to exclude from routing
+        /// New description for the guardrail
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ignored_providers")]
-        public global::System.Collections.Generic.IList<string>? IgnoredProviders { get; set; }
-
-        /// <summary>
-        /// Array of model identifiers (slug or canonical_slug accepted)
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_models")]
-        public global::System.Collections.Generic.IList<string>? AllowedModels { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Whether to enforce zero data retention
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr")]
         public bool? EnforceZdr { get; set; }
+
+        /// <summary>
+        /// List of provider IDs to exclude from routing
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ignored_providers")]
+        public global::System.Collections.Generic.IList<string>? IgnoredProviders { get; set; }
+
+        /// <summary>
+        /// New spending limit in USD
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("limit_usd")]
+        public double? LimitUsd { get; set; }
+
+        /// <summary>
+        /// New name for the guardrail
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// Interval at which the limit resets (daily, weekly, monthly)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reset_interval")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GuardrailIntervalJsonConverter))]
+        public global::OpenRouter.GuardrailInterval? ResetInterval { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,51 +66,51 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateGuardrailRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// New name for the guardrail
-        /// </param>
-        /// <param name="description">
-        /// New description for the guardrail
-        /// </param>
-        /// <param name="limitUsd">
-        /// New spending limit in USD
-        /// </param>
-        /// <param name="resetInterval">
-        /// Interval at which the limit resets (daily, weekly, monthly)
+        /// <param name="allowedModels">
+        /// Array of model identifiers (slug or canonical_slug accepted)
         /// </param>
         /// <param name="allowedProviders">
         /// New list of allowed provider IDs
         /// </param>
-        /// <param name="ignoredProviders">
-        /// List of provider IDs to exclude from routing
-        /// </param>
-        /// <param name="allowedModels">
-        /// Array of model identifiers (slug or canonical_slug accepted)
+        /// <param name="description">
+        /// New description for the guardrail
         /// </param>
         /// <param name="enforceZdr">
         /// Whether to enforce zero data retention
+        /// </param>
+        /// <param name="ignoredProviders">
+        /// List of provider IDs to exclude from routing
+        /// </param>
+        /// <param name="limitUsd">
+        /// New spending limit in USD
+        /// </param>
+        /// <param name="name">
+        /// New name for the guardrail
+        /// </param>
+        /// <param name="resetInterval">
+        /// Interval at which the limit resets (daily, weekly, monthly)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateGuardrailRequest(
-            string? name,
-            string? description,
-            double? limitUsd,
-            global::OpenRouter.GuardrailInterval? resetInterval,
-            global::System.Collections.Generic.IList<string>? allowedProviders,
-            global::System.Collections.Generic.IList<string>? ignoredProviders,
             global::System.Collections.Generic.IList<string>? allowedModels,
-            bool? enforceZdr)
+            global::System.Collections.Generic.IList<string>? allowedProviders,
+            string? description,
+            bool? enforceZdr,
+            global::System.Collections.Generic.IList<string>? ignoredProviders,
+            double? limitUsd,
+            string? name,
+            global::OpenRouter.GuardrailInterval? resetInterval)
         {
-            this.Name = name;
-            this.Description = description;
-            this.LimitUsd = limitUsd;
-            this.ResetInterval = resetInterval;
-            this.AllowedProviders = allowedProviders;
-            this.IgnoredProviders = ignoredProviders;
             this.AllowedModels = allowedModels;
+            this.AllowedProviders = allowedProviders;
+            this.Description = description;
             this.EnforceZdr = enforceZdr;
+            this.IgnoredProviders = ignoredProviders;
+            this.LimitUsd = limitUsd;
+            this.Name = name;
+            this.ResetInterval = resetInterval;
         }
 
         /// <summary>

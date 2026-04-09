@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Token { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<long> Bytes { get; set; }
@@ -28,6 +21,13 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("logprob")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Logprob { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Token { get; set; }
 
         /// <summary>
         /// 
@@ -45,22 +45,22 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputTextLogprobsItems" /> class.
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="bytes"></param>
         /// <param name="logprob"></param>
+        /// <param name="token"></param>
         /// <param name="topLogprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseOutputTextLogprobsItems(
-            string token,
             global::System.Collections.Generic.IList<long> bytes,
             double logprob,
+            string token,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItemsTopLogprobsItems> topLogprobs)
         {
-            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Bytes = bytes ?? throw new global::System.ArgumentNullException(nameof(bytes));
             this.Logprob = logprob;
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.TopLogprobs = topLogprobs ?? throw new global::System.ArgumentNullException(nameof(topLogprobs));
         }
 

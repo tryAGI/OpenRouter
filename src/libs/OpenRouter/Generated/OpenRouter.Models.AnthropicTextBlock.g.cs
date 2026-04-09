@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockTypeJsonConverter))]
-        public global::OpenRouter.AnthropicTextBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextCitation>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +24,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextCitation>? Citations { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockTypeJsonConverter))]
+        public global::OpenRouter.AnthropicTextBlockType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,19 +38,19 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AnthropicTextBlock" /> class.
         /// </summary>
         /// <param name="text"></param>
-        /// <param name="type"></param>
         /// <param name="citations"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicTextBlock(
             string text,
-            global::OpenRouter.AnthropicTextBlockType type,
-            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextCitation>? citations)
+            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextCitation>? citations,
+            global::OpenRouter.AnthropicTextBlockType type)
         {
-            this.Type = type;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Citations = citations;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type;
         }
 
         /// <summary>

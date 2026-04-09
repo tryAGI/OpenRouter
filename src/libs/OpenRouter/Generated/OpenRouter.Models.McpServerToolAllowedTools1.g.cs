@@ -11,14 +11,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_names")]
-        public global::System.Collections.Generic.IList<string>? ToolNames { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
+        public bool? ReadOnly { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
-        public bool? ReadOnly { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_names")]
+        public global::System.Collections.Generic.IList<string>? ToolNames { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,17 +29,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="McpServerToolAllowedTools1" /> class.
         /// </summary>
-        /// <param name="toolNames"></param>
         /// <param name="readOnly"></param>
+        /// <param name="toolNames"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public McpServerToolAllowedTools1(
-            global::System.Collections.Generic.IList<string>? toolNames,
-            bool? readOnly)
+            bool? readOnly,
+            global::System.Collections.Generic.IList<string>? toolNames)
         {
-            this.ToolNames = toolNames;
             this.ReadOnly = readOnly;
+            this.ToolNames = toolNames;
         }
 
         /// <summary>

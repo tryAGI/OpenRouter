@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFileSearchCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemFileSearchCallType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -36,6 +29,13 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.WebSearchStatus Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFileSearchCallTypeJsonConverter))]
+        public global::OpenRouter.OutputItemFileSearchCallType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,10 +59,10 @@ namespace OpenRouter
             global::OpenRouter.WebSearchStatus status,
             global::OpenRouter.OutputItemFileSearchCallType type)
         {
-            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Queries = queries ?? throw new global::System.ArgumentNullException(nameof(queries));
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

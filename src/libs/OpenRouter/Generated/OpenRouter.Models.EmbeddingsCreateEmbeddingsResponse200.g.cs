@@ -9,19 +9,6 @@ namespace OpenRouter
     public sealed partial class EmbeddingsCreateEmbeddingsResponse200
     {
         /// <summary>
-        /// Unique identifier for the embeddings response
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaObjectJsonConverter))]
-        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaObject Object { get; set; }
-
-        /// <summary>
         /// List of embedding objects
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -29,11 +16,24 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems> Data { get; set; }
 
         /// <summary>
+        /// Unique identifier for the embeddings response
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
         /// The model used for embeddings
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaObjectJsonConverter))]
+        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaObject Object { get; set; }
 
         /// <summary>
         /// Token usage statistics
@@ -73,10 +73,10 @@ namespace OpenRouter
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaObject @object,
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsage? usage)
         {
-            this.Id = id;
-            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Id = id;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Object = @object;
             this.Usage = usage;
         }
 

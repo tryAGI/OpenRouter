@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf3TypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponsesToolChoiceOneOf3Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf3TypeJsonConverter))]
+        public global::OpenRouter.OpenAiResponsesToolChoiceOneOf3Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             string name,
             global::OpenRouter.OpenAiResponsesToolChoiceOneOf3Type type)
         {
-            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
         }
 
         /// <summary>

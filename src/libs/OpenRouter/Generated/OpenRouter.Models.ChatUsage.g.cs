@@ -16,20 +16,6 @@ namespace OpenRouter
         public required int CompletionTokens { get; set; }
 
         /// <summary>
-        /// Number of tokens in the prompt
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PromptTokens { get; set; }
-
-        /// <summary>
-        /// Total number of tokens
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; }
-
-        /// <summary>
         /// Detailed completion token usage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_details")]
@@ -37,11 +23,25 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>? CompletionTokensDetails { get; set; }
 
         /// <summary>
+        /// Number of tokens in the prompt
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int PromptTokens { get; set; }
+
+        /// <summary>
         /// Detailed prompt token usage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>))]
         public global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? PromptTokensDetails { get; set; }
+
+        /// <summary>
+        /// Total number of tokens
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,10 +78,10 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? promptTokensDetails)
         {
             this.CompletionTokens = completionTokens;
-            this.PromptTokens = promptTokens;
-            this.TotalTokens = totalTokens;
             this.CompletionTokensDetails = completionTokensDetails;
+            this.PromptTokens = promptTokens;
             this.PromptTokensDetails = promptTokensDetails;
+            this.TotalTokens = totalTokens;
         }
 
         /// <summary>

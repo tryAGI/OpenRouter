@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems
     {
         /// <summary>
-        /// User ID of the organization member
+        /// Email address of the member
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required string Email { get; set; }
 
         /// <summary>
         /// First name of the member
@@ -22,17 +22,17 @@ namespace OpenRouter
         public string? FirstName { get; set; }
 
         /// <summary>
+        /// User ID of the organization member
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
         /// Last name of the member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_name")]
         public string? LastName { get; set; }
-
-        /// <summary>
-        /// Email address of the member
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Email { get; set; }
 
         /// <summary>
         /// Role of the member in the organization
@@ -51,11 +51,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems" /> class.
         /// </summary>
-        /// <param name="id">
-        /// User ID of the organization member
-        /// </param>
         /// <param name="email">
         /// Email address of the member
+        /// </param>
+        /// <param name="id">
+        /// User ID of the organization member
         /// </param>
         /// <param name="role">
         /// Role of the member in the organization
@@ -70,16 +70,16 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems(
-            string id,
             string email,
+            string id,
             global::OpenRouter.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRole role,
             string? firstName,
             string? lastName)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.FirstName = firstName;
-            this.LastName = lastName;
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.FirstName = firstName;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.LastName = lastName;
             this.Role = role;
         }
 

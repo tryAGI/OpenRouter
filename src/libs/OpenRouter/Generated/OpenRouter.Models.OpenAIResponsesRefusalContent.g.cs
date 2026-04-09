@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponsesRefusalContentTypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponsesRefusalContentType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Refusal { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Refusal { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponsesRefusalContentTypeJsonConverter))]
+        public global::OpenRouter.OpenAiResponsesRefusalContentType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             string refusal,
             global::OpenRouter.OpenAiResponsesRefusalContentType type)
         {
-            this.Type = type;
             this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
+            this.Type = type;
         }
 
         /// <summary>

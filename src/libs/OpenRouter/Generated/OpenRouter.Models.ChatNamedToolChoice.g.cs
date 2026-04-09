@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatNamedToolChoiceTypeJsonConverter))]
-        public global::OpenRouter.ChatNamedToolChoiceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ChatNamedToolChoiceFunction Function { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ChatNamedToolChoiceFunction Function { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatNamedToolChoiceTypeJsonConverter))]
+        public global::OpenRouter.ChatNamedToolChoiceType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             global::OpenRouter.ChatNamedToolChoiceFunction function,
             global::OpenRouter.ChatNamedToolChoiceType type)
         {
-            this.Type = type;
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
+            this.Type = type;
         }
 
         /// <summary>

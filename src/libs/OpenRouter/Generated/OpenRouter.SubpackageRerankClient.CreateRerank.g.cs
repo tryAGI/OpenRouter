@@ -487,36 +487,36 @@ namespace OpenRouter
         /// Submit a rerank request<br/>
         /// Submits a rerank request to the rerank router
         /// </summary>
+        /// <param name="documents">
+        /// The list of documents to rerank
+        /// </param>
         /// <param name="model">
         /// The rerank model to use
         /// </param>
+        /// <param name="provider"></param>
         /// <param name="query">
         /// The search query to rerank documents against
-        /// </param>
-        /// <param name="documents">
-        /// The list of documents to rerank
         /// </param>
         /// <param name="topN">
         /// Number of most relevant documents to return
         /// </param>
-        /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.RerankCreateRerankResponse200> CreateRerankAsync(
+            global::System.Collections.Generic.IList<string> documents,
             string model,
             string query,
-            global::System.Collections.Generic.IList<string> documents,
-            int? topN = default,
             global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProvider? provider = default,
+            int? topN = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::OpenRouter.CreateRerankRequest
             {
-                Model = model,
-                Query = query,
                 Documents = documents,
-                TopN = topN,
+                Model = model,
                 Provider = provider,
+                Query = query,
+                TopN = topN,
             };
 
             return await CreateRerankAsync(

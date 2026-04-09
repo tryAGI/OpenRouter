@@ -9,11 +9,54 @@ namespace OpenRouter
     public sealed partial class UpdateGuardrailResponseData
     {
         /// <summary>
+        /// Array of model canonical_slugs (immutable identifiers)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_models")]
+        public global::System.Collections.Generic.IList<string>? AllowedModels { get; set; }
+
+        /// <summary>
+        /// List of allowed provider IDs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_providers")]
+        public global::System.Collections.Generic.IList<string>? AllowedProviders { get; set; }
+
+        /// <summary>
+        /// ISO 8601 timestamp of when the guardrail was created
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CreatedAt { get; set; }
+
+        /// <summary>
+        /// Description of the guardrail
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Whether to enforce zero data retention
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr")]
+        public bool? EnforceZdr { get; set; }
+
+        /// <summary>
         /// Unique identifier for the guardrail
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
+
+        /// <summary>
+        /// List of provider IDs to exclude from routing
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ignored_providers")]
+        public global::System.Collections.Generic.IList<string>? IgnoredProviders { get; set; }
+
+        /// <summary>
+        /// Spending limit in USD
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("limit_usd")]
+        public double? LimitUsd { get; set; }
 
         /// <summary>
         /// Name of the guardrail
@@ -23,54 +66,11 @@ namespace OpenRouter
         public required string Name { get; set; }
 
         /// <summary>
-        /// Description of the guardrail
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
-
-        /// <summary>
-        /// Spending limit in USD
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("limit_usd")]
-        public double? LimitUsd { get; set; }
-
-        /// <summary>
         /// Interval at which the limit resets (daily, weekly, monthly)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reset_interval")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GuardrailIntervalJsonConverter))]
         public global::OpenRouter.GuardrailInterval? ResetInterval { get; set; }
-
-        /// <summary>
-        /// List of allowed provider IDs
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_providers")]
-        public global::System.Collections.Generic.IList<string>? AllowedProviders { get; set; }
-
-        /// <summary>
-        /// List of provider IDs to exclude from routing
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ignored_providers")]
-        public global::System.Collections.Generic.IList<string>? IgnoredProviders { get; set; }
-
-        /// <summary>
-        /// Array of model canonical_slugs (immutable identifiers)
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_models")]
-        public global::System.Collections.Generic.IList<string>? AllowedModels { get; set; }
-
-        /// <summary>
-        /// Whether to enforce zero data retention
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr")]
-        public bool? EnforceZdr { get; set; }
-
-        /// <summary>
-        /// ISO 8601 timestamp of when the guardrail was created
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedAt { get; set; }
 
         /// <summary>
         /// ISO 8601 timestamp of when the guardrail was last updated
@@ -87,35 +87,35 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateGuardrailResponseData" /> class.
         /// </summary>
+        /// <param name="createdAt">
+        /// ISO 8601 timestamp of when the guardrail was created
+        /// </param>
         /// <param name="id">
         /// Unique identifier for the guardrail
         /// </param>
         /// <param name="name">
         /// Name of the guardrail
         /// </param>
-        /// <param name="createdAt">
-        /// ISO 8601 timestamp of when the guardrail was created
+        /// <param name="allowedModels">
+        /// Array of model canonical_slugs (immutable identifiers)
+        /// </param>
+        /// <param name="allowedProviders">
+        /// List of allowed provider IDs
         /// </param>
         /// <param name="description">
         /// Description of the guardrail
+        /// </param>
+        /// <param name="enforceZdr">
+        /// Whether to enforce zero data retention
+        /// </param>
+        /// <param name="ignoredProviders">
+        /// List of provider IDs to exclude from routing
         /// </param>
         /// <param name="limitUsd">
         /// Spending limit in USD
         /// </param>
         /// <param name="resetInterval">
         /// Interval at which the limit resets (daily, weekly, monthly)
-        /// </param>
-        /// <param name="allowedProviders">
-        /// List of allowed provider IDs
-        /// </param>
-        /// <param name="ignoredProviders">
-        /// List of provider IDs to exclude from routing
-        /// </param>
-        /// <param name="allowedModels">
-        /// Array of model canonical_slugs (immutable identifiers)
-        /// </param>
-        /// <param name="enforceZdr">
-        /// Whether to enforce zero data retention
         /// </param>
         /// <param name="updatedAt">
         /// ISO 8601 timestamp of when the guardrail was last updated
@@ -124,28 +124,28 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateGuardrailResponseData(
+            string createdAt,
             global::System.Guid id,
             string name,
-            string createdAt,
+            global::System.Collections.Generic.IList<string>? allowedModels,
+            global::System.Collections.Generic.IList<string>? allowedProviders,
             string? description,
+            bool? enforceZdr,
+            global::System.Collections.Generic.IList<string>? ignoredProviders,
             double? limitUsd,
             global::OpenRouter.GuardrailInterval? resetInterval,
-            global::System.Collections.Generic.IList<string>? allowedProviders,
-            global::System.Collections.Generic.IList<string>? ignoredProviders,
-            global::System.Collections.Generic.IList<string>? allowedModels,
-            bool? enforceZdr,
             string? updatedAt)
         {
-            this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description;
-            this.LimitUsd = limitUsd;
-            this.ResetInterval = resetInterval;
-            this.AllowedProviders = allowedProviders;
-            this.IgnoredProviders = ignoredProviders;
             this.AllowedModels = allowedModels;
-            this.EnforceZdr = enforceZdr;
+            this.AllowedProviders = allowedProviders;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Description = description;
+            this.EnforceZdr = enforceZdr;
+            this.Id = id;
+            this.IgnoredProviders = ignoredProviders;
+            this.LimitUsd = limitUsd;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ResetInterval = resetInterval;
             this.UpdatedAt = updatedAt;
         }
 

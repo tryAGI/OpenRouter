@@ -9,18 +9,18 @@ namespace OpenRouter
     public sealed partial class ChatFormatJsonSchemaConfig
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFormatJsonSchemaConfigTypeJsonConverter))]
-        public global::OpenRouter.ChatFormatJsonSchemaConfigType Type { get; set; }
-
-        /// <summary>
         /// JSON Schema configuration object
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("json_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ChatJsonSchemaConfig JsonSchema { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFormatJsonSchemaConfigTypeJsonConverter))]
+        public global::OpenRouter.ChatFormatJsonSchemaConfigType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,8 +42,8 @@ namespace OpenRouter
             global::OpenRouter.ChatJsonSchemaConfig jsonSchema,
             global::OpenRouter.ChatFormatJsonSchemaConfigType type)
         {
-            this.Type = type;
             this.JsonSchema = jsonSchema ?? throw new global::System.ArgumentNullException(nameof(jsonSchema));
+            this.Type = type;
         }
 
         /// <summary>

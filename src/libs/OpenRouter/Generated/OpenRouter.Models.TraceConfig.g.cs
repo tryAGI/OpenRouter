@@ -11,24 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        public string? TraceId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("trace_name")]
-        public string? TraceName { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("span_name")]
-        public string? SpanName { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generation_name")]
         public string? GenerationName { get; set; }
 
@@ -39,6 +21,24 @@ namespace OpenRouter
         public string? ParentSpanId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("span_name")]
+        public string? SpanName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
+        public string? TraceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_name")]
+        public string? TraceName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,26 +47,26 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="TraceConfig" /> class.
         /// </summary>
-        /// <param name="traceId"></param>
-        /// <param name="traceName"></param>
-        /// <param name="spanName"></param>
         /// <param name="generationName"></param>
         /// <param name="parentSpanId"></param>
+        /// <param name="spanName"></param>
+        /// <param name="traceId"></param>
+        /// <param name="traceName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TraceConfig(
-            string? traceId,
-            string? traceName,
-            string? spanName,
             string? generationName,
-            string? parentSpanId)
+            string? parentSpanId,
+            string? spanName,
+            string? traceId,
+            string? traceName)
         {
-            this.TraceId = traceId;
-            this.TraceName = traceName;
-            this.SpanName = spanName;
             this.GenerationName = generationName;
             this.ParentSpanId = parentSpanId;
+            this.SpanName = spanName;
+            this.TraceId = traceId;
+            this.TraceName = traceName;
         }
 
         /// <summary>

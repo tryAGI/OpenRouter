@@ -9,12 +9,6 @@ namespace OpenRouter
     public sealed partial class MessagesRequestToolsItemsOneOf0InputSchema
     {
         /// <summary>
-        /// Default Value: object
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
@@ -27,6 +21,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? Required { get; set; }
 
         /// <summary>
+        /// Default Value: object
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,22 +35,22 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesRequestToolsItemsOneOf0InputSchema" /> class.
         /// </summary>
+        /// <param name="properties"></param>
+        /// <param name="required"></param>
         /// <param name="type">
         /// Default Value: object
         /// </param>
-        /// <param name="properties"></param>
-        /// <param name="required"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestToolsItemsOneOf0InputSchema(
-            string? type,
             object? properties,
-            global::System.Collections.Generic.IList<string>? required)
+            global::System.Collections.Generic.IList<string>? required,
+            string? type)
         {
-            this.Type = type;
             this.Properties = properties;
             this.Required = required;
+            this.Type = type;
         }
 
         /// <summary>

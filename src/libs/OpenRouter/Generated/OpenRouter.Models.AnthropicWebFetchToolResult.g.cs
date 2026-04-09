@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultTypeJsonConverter))]
-        public global::OpenRouter.AnthropicWebFetchToolResultType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCallerJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,6 +30,13 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolUseId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultTypeJsonConverter))]
+        public global::OpenRouter.AnthropicWebFetchToolResultType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,10 +60,10 @@ namespace OpenRouter
             string toolUseId,
             global::OpenRouter.AnthropicWebFetchToolResultType type)
         {
-            this.Type = type;
             this.Caller = caller;
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.Type = type;
         }
 
         /// <summary>

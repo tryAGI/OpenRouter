@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Token { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +24,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Token { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,20 +37,20 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatTokenLogprobTopLogprobsItems" /> class.
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="logprob"></param>
+        /// <param name="token"></param>
         /// <param name="bytes"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatTokenLogprobTopLogprobsItems(
-            string token,
             double logprob,
+            string token,
             global::System.Collections.Generic.IList<long>? bytes)
         {
-            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.Logprob = logprob;
             this.Bytes = bytes;
+            this.Logprob = logprob;
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
         }
 
         /// <summary>

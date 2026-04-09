@@ -9,16 +9,16 @@ namespace OpenRouter
     public sealed partial class UpdateKeysRequest
     {
         /// <summary>
-        /// New name for the API key
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// Whether to disable the API key
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
         public bool? Disabled { get; set; }
+
+        /// <summary>
+        /// Whether to include BYOK usage in the limit
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_byok_in_limit")]
+        public bool? IncludeByokInLimit { get; set; }
 
         /// <summary>
         /// New spending limit for the API key in USD
@@ -34,10 +34,10 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? LimitReset { get; set; }
 
         /// <summary>
-        /// Whether to include BYOK usage in the limit
+        /// New name for the API key
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("include_byok_in_limit")]
-        public bool? IncludeByokInLimit { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,11 +48,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateKeysRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// New name for the API key
-        /// </param>
         /// <param name="disabled">
         /// Whether to disable the API key
+        /// </param>
+        /// <param name="includeByokInLimit">
+        /// Whether to include BYOK usage in the limit
         /// </param>
         /// <param name="limit">
         /// New spending limit for the API key in USD
@@ -60,24 +60,24 @@ namespace OpenRouter
         /// <param name="limitReset">
         /// New limit reset type for the API key (daily, weekly, monthly, or null for no reset). Resets happen automatically at midnight UTC, and weeks are Monday through Sunday.
         /// </param>
-        /// <param name="includeByokInLimit">
-        /// Whether to include BYOK usage in the limit
+        /// <param name="name">
+        /// New name for the API key
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateKeysRequest(
-            string? name,
             bool? disabled,
+            bool? includeByokInLimit,
             double? limit,
             global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset,
-            bool? includeByokInLimit)
+            string? name)
         {
-            this.Name = name;
             this.Disabled = disabled;
+            this.IncludeByokInLimit = includeByokInLimit;
             this.Limit = limit;
             this.LimitReset = limitReset;
-            this.IncludeByokInLimit = includeByokInLimit;
+            this.Name = name;
         }
 
         /// <summary>

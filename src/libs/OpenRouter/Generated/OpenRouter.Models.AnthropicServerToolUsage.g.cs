@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("web_search_requests")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("web_fetch_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WebSearchRequests { get; set; }
+        public required int WebFetchRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("web_fetch_requests")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("web_search_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WebFetchRequests { get; set; }
+        public required int WebSearchRequests { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,17 +31,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="AnthropicServerToolUsage" /> class.
         /// </summary>
-        /// <param name="webSearchRequests"></param>
         /// <param name="webFetchRequests"></param>
+        /// <param name="webSearchRequests"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicServerToolUsage(
-            int webSearchRequests,
-            int webFetchRequests)
+            int webFetchRequests,
+            int webSearchRequests)
         {
-            this.WebSearchRequests = webSearchRequests;
             this.WebFetchRequests = webFetchRequests;
+            this.WebSearchRequests = webSearchRequests;
         }
 
         /// <summary>

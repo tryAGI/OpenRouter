@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemImageGenerationCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemImageGenerationCallType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -37,6 +30,13 @@ namespace OpenRouter
         public required global::OpenRouter.ImageGenerationStatus Status { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemImageGenerationCallTypeJsonConverter))]
+        public global::OpenRouter.OutputItemImageGenerationCallType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,21 +47,21 @@ namespace OpenRouter
         /// </summary>
         /// <param name="id"></param>
         /// <param name="status"></param>
-        /// <param name="type"></param>
         /// <param name="result"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemImageGenerationCall(
             string id,
             global::OpenRouter.ImageGenerationStatus status,
-            global::OpenRouter.OutputItemImageGenerationCallType type,
-            string? result)
+            string? result,
+            global::OpenRouter.OutputItemImageGenerationCallType type)
         {
-            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Result = result;
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

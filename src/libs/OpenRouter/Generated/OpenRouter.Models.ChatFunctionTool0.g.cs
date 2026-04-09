@@ -9,11 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatFunctionTool0
     {
         /// <summary>
-        /// 
+        /// Cache control for the content part
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFunctionToolOneOf0TypeJsonConverter))]
-        public global::OpenRouter.ChatFunctionToolOneOf0Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
 
         /// <summary>
         /// Function definition for tool calling
@@ -23,10 +22,11 @@ namespace OpenRouter
         public required global::OpenRouter.ChatFunctionToolOneOf0Function Function { get; set; }
 
         /// <summary>
-        /// Cache control for the content part
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFunctionToolOneOf0TypeJsonConverter))]
+        public global::OpenRouter.ChatFunctionToolOneOf0Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,21 +40,21 @@ namespace OpenRouter
         /// <param name="function">
         /// Function definition for tool calling
         /// </param>
-        /// <param name="type"></param>
         /// <param name="cacheControl">
         /// Cache control for the content part
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatFunctionTool0(
             global::OpenRouter.ChatFunctionToolOneOf0Function function,
-            global::OpenRouter.ChatFunctionToolOneOf0Type type,
-            global::OpenRouter.ChatContentCacheControl? cacheControl)
+            global::OpenRouter.ChatContentCacheControl? cacheControl,
+            global::OpenRouter.ChatFunctionToolOneOf0Type type)
         {
-            this.Type = type;
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.CacheControl = cacheControl;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
+            this.Type = type;
         }
 
         /// <summary>

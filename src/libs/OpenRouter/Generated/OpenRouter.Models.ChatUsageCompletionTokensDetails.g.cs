@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatUsageCompletionTokensDetails
     {
         /// <summary>
-        /// Tokens used for reasoning
+        /// Accepted prediction tokens
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
-        public int? ReasoningTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("accepted_prediction_tokens")]
+        public int? AcceptedPredictionTokens { get; set; }
 
         /// <summary>
         /// Tokens used for audio output
@@ -21,10 +21,10 @@ namespace OpenRouter
         public int? AudioTokens { get; set; }
 
         /// <summary>
-        /// Accepted prediction tokens
+        /// Tokens used for reasoning
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("accepted_prediction_tokens")]
-        public int? AcceptedPredictionTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
+        public int? ReasoningTokens { get; set; }
 
         /// <summary>
         /// Rejected prediction tokens
@@ -41,14 +41,14 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatUsageCompletionTokensDetails" /> class.
         /// </summary>
-        /// <param name="reasoningTokens">
-        /// Tokens used for reasoning
+        /// <param name="acceptedPredictionTokens">
+        /// Accepted prediction tokens
         /// </param>
         /// <param name="audioTokens">
         /// Tokens used for audio output
         /// </param>
-        /// <param name="acceptedPredictionTokens">
-        /// Accepted prediction tokens
+        /// <param name="reasoningTokens">
+        /// Tokens used for reasoning
         /// </param>
         /// <param name="rejectedPredictionTokens">
         /// Rejected prediction tokens
@@ -57,14 +57,14 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatUsageCompletionTokensDetails(
-            int? reasoningTokens,
-            int? audioTokens,
             int? acceptedPredictionTokens,
+            int? audioTokens,
+            int? reasoningTokens,
             int? rejectedPredictionTokens)
         {
-            this.ReasoningTokens = reasoningTokens;
-            this.AudioTokens = audioTokens;
             this.AcceptedPredictionTokens = acceptedPredictionTokens;
+            this.AudioTokens = audioTokens;
+            this.ReasoningTokens = reasoningTokens;
             this.RejectedPredictionTokens = rejectedPredictionTokens;
         }
 

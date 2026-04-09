@@ -11,15 +11,15 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter))]
-        public global::OpenRouter.DatetimeServerToolType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        public global::OpenRouter.DatetimeServerToolParameters? Parameters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public global::OpenRouter.DatetimeServerToolParameters? Parameters { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter))]
+        public global::OpenRouter.DatetimeServerToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,17 +30,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="DatetimeServerTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="parameters"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DatetimeServerTool(
-            global::OpenRouter.DatetimeServerToolType type,
-            global::OpenRouter.DatetimeServerToolParameters? parameters)
+            global::OpenRouter.DatetimeServerToolParameters? parameters,
+            global::OpenRouter.DatetimeServerToolType type)
         {
-            this.Type = type;
             this.Parameters = parameters;
+            this.Type = type;
         }
 
         /// <summary>

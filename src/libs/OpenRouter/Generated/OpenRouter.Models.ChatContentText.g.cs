@@ -9,11 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatContentText
     {
         /// <summary>
-        /// 
+        /// Cache control for the content part
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentTextTypeJsonConverter))]
-        public global::OpenRouter.ChatContentTextType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -23,10 +22,11 @@ namespace OpenRouter
         public required string Text { get; set; }
 
         /// <summary>
-        /// Cache control for the content part
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentTextTypeJsonConverter))]
+        public global::OpenRouter.ChatContentTextType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,21 +38,21 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatContentText" /> class.
         /// </summary>
         /// <param name="text"></param>
-        /// <param name="type"></param>
         /// <param name="cacheControl">
         /// Cache control for the content part
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatContentText(
             string text,
-            global::OpenRouter.ChatContentTextType type,
-            global::OpenRouter.ChatContentCacheControl? cacheControl)
+            global::OpenRouter.ChatContentCacheControl? cacheControl,
+            global::OpenRouter.ChatContentTextType type)
         {
-            this.Type = type;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.CacheControl = cacheControl;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type;
         }
 
         /// <summary>

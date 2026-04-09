@@ -11,27 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseMessagesResultTypeJsonConverter))]
-        public global::OpenRouter.BaseMessagesResultType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseMessagesResultRoleJsonConverter))]
-        public global::OpenRouter.BaseMessagesResultRole Role { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.AnthropicContainer Container { get; set; }
@@ -46,9 +25,23 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseMessagesResultRoleJsonConverter))]
+        public global::OpenRouter.BaseMessagesResultRole Role { get; set; }
 
         /// <summary>
         /// 
@@ -63,6 +56,13 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_sequence")]
         public string? StopSequence { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseMessagesResultTypeJsonConverter))]
+        public global::OpenRouter.BaseMessagesResultType Type { get; set; }
 
         /// <summary>
         /// 
@@ -87,39 +87,39 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesResult" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="container"></param>
         /// <param name="content"></param>
+        /// <param name="id"></param>
         /// <param name="model"></param>
         /// <param name="stopReason"></param>
         /// <param name="usage"></param>
-        /// <param name="type"></param>
         /// <param name="role"></param>
         /// <param name="stopSequence"></param>
+        /// <param name="type"></param>
         /// <param name="provider"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesResult(
-            string id,
             global::OpenRouter.AnthropicContainer container,
             global::System.Collections.Generic.IList<global::OpenRouter.ORAnthropicContentBlock> content,
+            string id,
             string model,
             global::OpenRouter.ORAnthropicStopReason stopReason,
             global::OpenRouter.MessagesResultUsage usage,
-            global::OpenRouter.BaseMessagesResultType type,
             global::OpenRouter.BaseMessagesResultRole role,
             string? stopSequence,
+            global::OpenRouter.BaseMessagesResultType type,
             global::OpenRouter.ProviderName? provider)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type;
-            this.Role = role;
             this.Container = container ?? throw new global::System.ArgumentNullException(nameof(container));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Role = role;
             this.StopReason = stopReason;
             this.StopSequence = stopSequence;
+            this.Type = type;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Provider = provider;
         }

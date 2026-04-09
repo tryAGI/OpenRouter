@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputImageTypeJsonConverter))]
-        public global::OpenRouter.InputImageType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputImageDetailJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -30,6 +23,13 @@ namespace OpenRouter
         public string? ImageUrl { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputImageTypeJsonConverter))]
+        public global::OpenRouter.InputImageType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,19 +39,19 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="FunctionCallOutputItemOutputOneOf1Items1" /> class.
         /// </summary>
         /// <param name="detail"></param>
-        /// <param name="type"></param>
         /// <param name="imageUrl"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FunctionCallOutputItemOutputOneOf1Items1(
             global::OpenRouter.InputImageDetail detail,
-            global::OpenRouter.InputImageType type,
-            string? imageUrl)
+            string? imageUrl,
+            global::OpenRouter.InputImageType type)
         {
-            this.Type = type;
             this.Detail = detail;
             this.ImageUrl = imageUrl;
+            this.Type = type;
         }
 
         /// <summary>

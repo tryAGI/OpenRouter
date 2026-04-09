@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesErrorResponseTypeJsonConverter))]
-        public global::OpenRouter.MessagesErrorResponseType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.MessagesErrorDetail Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.MessagesErrorDetail Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesErrorResponseTypeJsonConverter))]
+        public global::OpenRouter.MessagesErrorResponseType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             global::OpenRouter.MessagesErrorDetail error,
             global::OpenRouter.MessagesErrorResponseType type)
         {
-            this.Type = type;
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Type = type;
         }
 
         /// <summary>

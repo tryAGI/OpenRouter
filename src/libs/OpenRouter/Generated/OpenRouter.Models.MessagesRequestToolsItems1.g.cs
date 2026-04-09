@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf1TypeJsonConverter))]
-        public global::OpenRouter.MessagesRequestToolsItemsOneOf1Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +24,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf1TypeJsonConverter))]
+        public global::OpenRouter.MessagesRequestToolsItemsOneOf1Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,20 +37,20 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesRequestToolsItems1" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="name"></param>
         /// <param name="cacheControl"></param>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestToolsItems1(
-            global::OpenRouter.MessagesRequestToolsItemsOneOf1Type type,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.MessagesRequestToolsItemsOneOf1Name name,
-            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
+            global::OpenRouter.MessagesRequestToolsItemsOneOf1Type type)
         {
-            this.Type = type;
-            this.Name = name;
             this.CacheControl = cacheControl;
+            this.Name = name;
+            this.Type = type;
         }
 
         /// <summary>

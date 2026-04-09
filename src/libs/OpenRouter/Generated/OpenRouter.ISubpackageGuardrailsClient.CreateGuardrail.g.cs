@@ -19,41 +19,41 @@ namespace OpenRouter
         /// Create a guardrail<br/>
         /// Create a new guardrail for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="name">
-        /// Name for the new guardrail
-        /// </param>
-        /// <param name="description">
-        /// Description of the guardrail
-        /// </param>
-        /// <param name="limitUsd">
-        /// Spending limit in USD
-        /// </param>
-        /// <param name="resetInterval">
-        /// Interval at which the limit resets (daily, weekly, monthly)
+        /// <param name="allowedModels">
+        /// Array of model identifiers (slug or canonical_slug accepted)
         /// </param>
         /// <param name="allowedProviders">
         /// List of allowed provider IDs
         /// </param>
-        /// <param name="ignoredProviders">
-        /// List of provider IDs to exclude from routing
-        /// </param>
-        /// <param name="allowedModels">
-        /// Array of model identifiers (slug or canonical_slug accepted)
+        /// <param name="description">
+        /// Description of the guardrail
         /// </param>
         /// <param name="enforceZdr">
         /// Whether to enforce zero data retention
+        /// </param>
+        /// <param name="ignoredProviders">
+        /// List of provider IDs to exclude from routing
+        /// </param>
+        /// <param name="limitUsd">
+        /// Spending limit in USD
+        /// </param>
+        /// <param name="name">
+        /// Name for the new guardrail
+        /// </param>
+        /// <param name="resetInterval">
+        /// Interval at which the limit resets (daily, weekly, monthly)
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.CreateGuardrailResponse> CreateGuardrailAsync(
             string name,
+            global::System.Collections.Generic.IList<string>? allowedModels = default,
+            global::System.Collections.Generic.IList<string>? allowedProviders = default,
             string? description = default,
+            bool? enforceZdr = default,
+            global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             double? limitUsd = default,
             global::OpenRouter.GuardrailInterval? resetInterval = default,
-            global::System.Collections.Generic.IList<string>? allowedProviders = default,
-            global::System.Collections.Generic.IList<string>? ignoredProviders = default,
-            global::System.Collections.Generic.IList<string>? allowedModels = default,
-            bool? enforceZdr = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

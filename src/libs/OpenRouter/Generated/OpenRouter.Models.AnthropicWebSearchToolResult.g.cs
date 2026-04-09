@@ -11,17 +11,18 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultTypeJsonConverter))]
-        public global::OpenRouter.AnthropicWebSearchToolResultType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCallerJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.AnthropicCaller Caller { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.AnthropicWebSearchToolResultContent Content { get; set; }
 
         /// <summary>
         /// 
@@ -33,10 +34,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultContentJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicWebSearchToolResultContent Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultTypeJsonConverter))]
+        public global::OpenRouter.AnthropicWebSearchToolResultType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,22 +48,22 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AnthropicWebSearchToolResult" /> class.
         /// </summary>
         /// <param name="caller"></param>
-        /// <param name="toolUseId"></param>
         /// <param name="content"></param>
+        /// <param name="toolUseId"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicWebSearchToolResult(
             global::OpenRouter.AnthropicCaller caller,
-            string toolUseId,
             global::OpenRouter.AnthropicWebSearchToolResultContent content,
+            string toolUseId,
             global::OpenRouter.AnthropicWebSearchToolResultType type)
         {
-            this.Type = type;
             this.Caller = caller;
-            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Content = content;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.Type = type;
         }
 
         /// <summary>

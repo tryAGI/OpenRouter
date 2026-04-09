@@ -9,11 +9,23 @@ namespace OpenRouter
     public sealed partial class WebSearchConfig
     {
         /// <summary>
+        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
+        public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
+
+        /// <summary>
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchEngineEnumJsonConverter))]
         public global::OpenRouter.WebSearchEngineEnum? Engine { get; set; }
+
+        /// <summary>
+        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("excluded_domains")]
+        public global::System.Collections.Generic.IList<string>? ExcludedDomains { get; set; }
 
         /// <summary>
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
@@ -41,18 +53,6 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchUserLocationServerTool? UserLocation { get; set; }
 
         /// <summary>
-        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
-        public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
-
-        /// <summary>
-        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("excluded_domains")]
-        public global::System.Collections.Generic.IList<string>? ExcludedDomains { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -61,8 +61,14 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchConfig" /> class.
         /// </summary>
+        /// <param name="allowedDomains">
+        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
+        /// </param>
         /// <param name="engine">
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
+        /// </param>
+        /// <param name="excludedDomains">
+        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
         /// </param>
         /// <param name="maxResults">
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
@@ -76,31 +82,25 @@ namespace OpenRouter
         /// <param name="userLocation">
         /// Approximate user location for location-biased results.
         /// </param>
-        /// <param name="allowedDomains">
-        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
-        /// </param>
-        /// <param name="excludedDomains">
-        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchConfig(
+            global::System.Collections.Generic.IList<string>? allowedDomains,
             global::OpenRouter.WebSearchEngineEnum? engine,
+            global::System.Collections.Generic.IList<string>? excludedDomains,
             int? maxResults,
             int? maxTotalResults,
             global::OpenRouter.SearchQualityLevel? searchContextSize,
-            global::OpenRouter.WebSearchUserLocationServerTool? userLocation,
-            global::System.Collections.Generic.IList<string>? allowedDomains,
-            global::System.Collections.Generic.IList<string>? excludedDomains)
+            global::OpenRouter.WebSearchUserLocationServerTool? userLocation)
         {
+            this.AllowedDomains = allowedDomains;
             this.Engine = engine;
+            this.ExcludedDomains = excludedDomains;
             this.MaxResults = maxResults;
             this.MaxTotalResults = maxTotalResults;
             this.SearchContextSize = searchContextSize;
             this.UserLocation = userLocation;
-            this.AllowedDomains = allowedDomains;
-            this.ExcludedDomains = excludedDomains;
         }
 
         /// <summary>

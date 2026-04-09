@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolTypeJsonConverter))]
-        public global::OpenRouter.ComputerUseServerToolType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_height")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DisplayHeight { get; set; }
@@ -36,6 +29,13 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolEnvironmentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ComputerUseServerToolEnvironment Environment { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolTypeJsonConverter))]
+        public global::OpenRouter.ComputerUseServerToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,10 +59,10 @@ namespace OpenRouter
             global::OpenRouter.ComputerUseServerToolEnvironment environment,
             global::OpenRouter.ComputerUseServerToolType type)
         {
-            this.Type = type;
             this.DisplayHeight = displayHeight;
             this.DisplayWidth = displayWidth;
             this.Environment = environment;
+            this.Type = type;
         }
 
         /// <summary>

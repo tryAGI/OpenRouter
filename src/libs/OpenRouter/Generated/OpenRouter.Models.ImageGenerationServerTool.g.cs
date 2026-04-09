@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolTypeJsonConverter))]
-        public global::OpenRouter.ImageGenerationServerToolType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolBackgroundJsonConverter))]
         public global::OpenRouter.ImageGenerationServerToolBackground? Background { get; set; }
@@ -83,6 +76,13 @@ namespace OpenRouter
         public global::OpenRouter.ImageGenerationServerToolSize? Size { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolTypeJsonConverter))]
+        public global::OpenRouter.ImageGenerationServerToolType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,7 +91,6 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageGenerationServerTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="background"></param>
         /// <param name="inputFidelity"></param>
         /// <param name="inputImageMask"></param>
@@ -102,11 +101,11 @@ namespace OpenRouter
         /// <param name="partialImages"></param>
         /// <param name="quality"></param>
         /// <param name="size"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageGenerationServerTool(
-            global::OpenRouter.ImageGenerationServerToolType type,
             global::OpenRouter.ImageGenerationServerToolBackground? background,
             global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationServerToolInputFidelity?, object>? inputFidelity,
             global::OpenRouter.ImageGenerationServerToolInputImageMask? inputImageMask,
@@ -116,9 +115,9 @@ namespace OpenRouter
             global::OpenRouter.ImageGenerationServerToolOutputFormat? outputFormat,
             int? partialImages,
             global::OpenRouter.ImageGenerationServerToolQuality? quality,
-            global::OpenRouter.ImageGenerationServerToolSize? size)
+            global::OpenRouter.ImageGenerationServerToolSize? size,
+            global::OpenRouter.ImageGenerationServerToolType type)
         {
-            this.Type = type;
             this.Background = background;
             this.InputFidelity = inputFidelity;
             this.InputImageMask = inputImageMask;
@@ -129,6 +128,7 @@ namespace OpenRouter
             this.PartialImages = partialImages;
             this.Quality = quality;
             this.Size = size;
+            this.Type = type;
         }
 
         /// <summary>

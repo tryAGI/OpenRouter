@@ -9,18 +9,18 @@ namespace OpenRouter
     public sealed partial class ChatFormatGrammarConfig
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFormatGrammarConfigTypeJsonConverter))]
-        public global::OpenRouter.ChatFormatGrammarConfigType Type { get; set; }
-
-        /// <summary>
         /// Custom grammar for text generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grammar")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Grammar { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFormatGrammarConfigTypeJsonConverter))]
+        public global::OpenRouter.ChatFormatGrammarConfigType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,8 +42,8 @@ namespace OpenRouter
             string grammar,
             global::OpenRouter.ChatFormatGrammarConfigType type)
         {
-            this.Type = type;
             this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
+            this.Type = type;
         }
 
         /// <summary>

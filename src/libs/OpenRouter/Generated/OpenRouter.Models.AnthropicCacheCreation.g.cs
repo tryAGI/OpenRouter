@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_5m_input_tokens")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_1h_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Ephemeral5mInputTokens { get; set; }
+        public required int Ephemeral1hInputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_1h_input_tokens")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_5m_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Ephemeral1hInputTokens { get; set; }
+        public required int Ephemeral5mInputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,17 +31,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="AnthropicCacheCreation" /> class.
         /// </summary>
-        /// <param name="ephemeral5mInputTokens"></param>
         /// <param name="ephemeral1hInputTokens"></param>
+        /// <param name="ephemeral5mInputTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicCacheCreation(
-            int ephemeral5mInputTokens,
-            int ephemeral1hInputTokens)
+            int ephemeral1hInputTokens,
+            int ephemeral5mInputTokens)
         {
-            this.Ephemeral5mInputTokens = ephemeral5mInputTokens;
             this.Ephemeral1hInputTokens = ephemeral1hInputTokens;
+            this.Ephemeral5mInputTokens = ephemeral5mInputTokens;
         }
 
         /// <summary>

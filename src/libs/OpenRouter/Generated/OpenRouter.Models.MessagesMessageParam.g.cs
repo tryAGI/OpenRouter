@@ -11,18 +11,18 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamRoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.MessagesMessageParamRole Role { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.MessagesMessageParamContent Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.MessagesMessageParamRole Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,17 +33,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesMessageParam" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
+        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesMessageParam(
-            global::OpenRouter.MessagesMessageParamRole role,
-            global::OpenRouter.MessagesMessageParamContent content)
+            global::OpenRouter.MessagesMessageParamContent content,
+            global::OpenRouter.MessagesMessageParamRole role)
         {
-            this.Role = role;
             this.Content = content;
+            this.Role = role;
         }
 
         /// <summary>

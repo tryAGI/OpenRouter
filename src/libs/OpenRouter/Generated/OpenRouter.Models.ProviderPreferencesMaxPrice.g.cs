@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class ProviderPreferencesMaxPrice
     {
         /// <summary>
-        /// Price per million prompt tokens
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        public string? Prompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::OpenRouter.ProviderPreferencesMaxPriceAudio? Audio { get; set; }
 
         /// <summary>
         /// 
@@ -27,10 +27,10 @@ namespace OpenRouter
         public global::OpenRouter.ProviderPreferencesMaxPriceImage? Image { get; set; }
 
         /// <summary>
-        /// 
+        /// Price per million prompt tokens
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        public global::OpenRouter.ProviderPreferencesMaxPriceAudio? Audio { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
 
         /// <summary>
         /// 
@@ -47,27 +47,27 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ProviderPreferencesMaxPrice" /> class.
         /// </summary>
+        /// <param name="audio"></param>
+        /// <param name="completion"></param>
+        /// <param name="image"></param>
         /// <param name="prompt">
         /// Price per million prompt tokens
         /// </param>
-        /// <param name="completion"></param>
-        /// <param name="image"></param>
-        /// <param name="audio"></param>
         /// <param name="request"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProviderPreferencesMaxPrice(
-            string? prompt,
+            global::OpenRouter.ProviderPreferencesMaxPriceAudio? audio,
             global::OpenRouter.ProviderPreferencesMaxPriceCompletion? completion,
             global::OpenRouter.ProviderPreferencesMaxPriceImage? image,
-            global::OpenRouter.ProviderPreferencesMaxPriceAudio? audio,
+            string? prompt,
             global::OpenRouter.ProviderPreferencesMaxPriceRequest? request)
         {
-            this.Prompt = prompt;
+            this.Audio = audio;
             this.Completion = completion;
             this.Image = image;
-            this.Audio = audio;
+            this.Prompt = prompt;
             this.Request = request;
         }
 

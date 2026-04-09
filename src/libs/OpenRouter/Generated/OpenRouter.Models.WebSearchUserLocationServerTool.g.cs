@@ -11,21 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationServerToolTypeJsonConverter))]
-        public global::OpenRouter.WebSearchUserLocationServerToolType? Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("city")]
         public string? City { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("region")]
-        public string? Region { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +23,21 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("region")]
+        public string? Region { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
         public string? Timezone { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationServerToolTypeJsonConverter))]
+        public global::OpenRouter.WebSearchUserLocationServerToolType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,26 +48,26 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchUserLocationServerTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="city"></param>
-        /// <param name="region"></param>
         /// <param name="country"></param>
+        /// <param name="region"></param>
         /// <param name="timezone"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchUserLocationServerTool(
-            global::OpenRouter.WebSearchUserLocationServerToolType? type,
             string? city,
-            string? region,
             string? country,
-            string? timezone)
+            string? region,
+            string? timezone,
+            global::OpenRouter.WebSearchUserLocationServerToolType? type)
         {
-            this.Type = type;
             this.City = city;
-            this.Region = region;
             this.Country = country;
+            this.Region = region;
             this.Timezone = timezone;
+            this.Type = type;
         }
 
         /// <summary>

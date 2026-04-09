@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FunctionToolTypeJsonConverter))]
-        public global::OpenRouter.FunctionToolType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +24,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        public object? Parameters { get; set; }
 
         /// <summary>
         /// 
@@ -37,8 +36,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public object? Parameters { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FunctionToolTypeJsonConverter))]
+        public global::OpenRouter.FunctionToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,25 +50,25 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ResponsesRequestToolsItems0" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="type"></param>
         /// <param name="description"></param>
-        /// <param name="strict"></param>
         /// <param name="parameters"></param>
+        /// <param name="strict"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponsesRequestToolsItems0(
             string name,
-            global::OpenRouter.FunctionToolType type,
             string? description,
+            object? parameters,
             bool? strict,
-            object? parameters)
+            global::OpenRouter.FunctionToolType type)
         {
-            this.Type = type;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
-            this.Strict = strict;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;
+            this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

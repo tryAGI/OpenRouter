@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class ListEndpointsResponseArchitecture
     {
         /// <summary>
-        /// 
+        /// Supported input modalities
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_modalities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ListEndpointsResponseArchitectureTokenizer Tokenizer { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.InputModality> InputModalities { get; set; }
 
         /// <summary>
         /// Instruction format type
@@ -30,18 +30,18 @@ namespace OpenRouter
         public string? Modality { get; set; }
 
         /// <summary>
-        /// Supported input modalities
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_modalities")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.InputModality> InputModalities { get; set; }
-
-        /// <summary>
         /// Supported output modalities
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_modalities")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> OutputModalities { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ListEndpointsResponseArchitectureTokenizer Tokenizer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,16 +52,16 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ListEndpointsResponseArchitecture" /> class.
         /// </summary>
-        /// <param name="tokenizer"></param>
-        /// <param name="instructType">
-        /// Instruction format type
-        /// </param>
         /// <param name="inputModalities">
         /// Supported input modalities
+        /// </param>
+        /// <param name="instructType">
+        /// Instruction format type
         /// </param>
         /// <param name="outputModalities">
         /// Supported output modalities
         /// </param>
+        /// <param name="tokenizer"></param>
         /// <param name="modality">
         /// Primary modality of the model
         /// </param>
@@ -69,17 +69,17 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListEndpointsResponseArchitecture(
-            global::OpenRouter.ListEndpointsResponseArchitectureTokenizer tokenizer,
-            global::OpenRouter.InstructType2 instructType,
             global::System.Collections.Generic.IList<global::OpenRouter.InputModality> inputModalities,
+            global::OpenRouter.InstructType2 instructType,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> outputModalities,
+            global::OpenRouter.ListEndpointsResponseArchitectureTokenizer tokenizer,
             string? modality)
         {
-            this.Tokenizer = tokenizer ?? throw new global::System.ArgumentNullException(nameof(tokenizer));
+            this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
             this.InstructType = instructType;
             this.Modality = modality;
-            this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
             this.OutputModalities = outputModalities ?? throw new global::System.ArgumentNullException(nameof(outputModalities));
+            this.Tokenizer = tokenizer ?? throw new global::System.ArgumentNullException(nameof(tokenizer));
         }
 
         /// <summary>

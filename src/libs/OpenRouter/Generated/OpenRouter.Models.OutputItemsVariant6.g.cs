@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// image_generation_call variant
+    /// openrouter:web_search variant
     /// </summary>
     public sealed partial class OutputItemsVariant6
     {
@@ -12,29 +12,22 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemImageGenerationCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemImageGenerationCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string? Result { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ImageGenerationStatus Status { get; set; }
+        public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,22 +38,19 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant6" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="status"></param>
         /// <param name="type"></param>
-        /// <param name="result"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant6(
-            string id,
-            global::OpenRouter.ImageGenerationStatus status,
-            global::OpenRouter.OutputItemImageGenerationCallType type,
-            string? result)
+            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.OutputWebSearchServerToolItemType type,
+            string? id)
         {
             this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Result = result;
+            this.Id = id;
             this.Status = status;
         }
 

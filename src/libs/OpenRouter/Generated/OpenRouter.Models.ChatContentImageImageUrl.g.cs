@@ -9,18 +9,18 @@ namespace OpenRouter
     public sealed partial class ChatContentImageImageUrl
     {
         /// <summary>
-        /// URL of the image (data: URLs supported)
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
-
-        /// <summary>
         /// Image detail level for vision models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentImageImageUrlDetailJsonConverter))]
         public global::OpenRouter.ChatContentImageImageUrlDetail? Detail { get; set; }
+
+        /// <summary>
+        /// URL of the image (data: URLs supported)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,8 +44,8 @@ namespace OpenRouter
             string url,
             global::OpenRouter.ChatContentImageImageUrlDetail? detail)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Detail = detail;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

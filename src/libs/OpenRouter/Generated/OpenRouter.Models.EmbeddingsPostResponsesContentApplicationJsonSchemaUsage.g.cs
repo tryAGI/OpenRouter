@@ -9,6 +9,12 @@ namespace OpenRouter
     public sealed partial class EmbeddingsPostResponsesContentApplicationJsonSchemaUsage
     {
         /// <summary>
+        /// Cost of the request in credits
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public double? Cost { get; set; }
+
+        /// <summary>
         /// Number of tokens in the input
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
@@ -21,12 +27,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalTokens { get; set; }
-
-        /// <summary>
-        /// Cost of the request in credits
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
-        public double? Cost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,9 +54,9 @@ namespace OpenRouter
             int totalTokens,
             double? cost)
         {
+            this.Cost = cost;
             this.PromptTokens = promptTokens;
             this.TotalTokens = totalTokens;
-            this.Cost = cost;
         }
 
         /// <summary>

@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentAudioTypeJsonConverter))]
-        public global::OpenRouter.ChatContentAudioType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ChatContentAudioInputAudio InputAudio { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ChatContentAudioInputAudio InputAudio { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentAudioTypeJsonConverter))]
+        public global::OpenRouter.ChatContentAudioType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentAudioInputAudio inputAudio,
             global::OpenRouter.ChatContentAudioType type)
         {
-            this.Type = type;
             this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
+            this.Type = type;
         }
 
         /// <summary>

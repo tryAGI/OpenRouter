@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputFileTypeJsonConverter))]
-        public global::OpenRouter.InputFileType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_data")]
+        public string? FileData { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +23,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_data")]
-        public string? FileData { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_url")]
+        public string? FileUrl { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +35,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_url")]
-        public string? FileUrl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputFileTypeJsonConverter))]
+        public global::OpenRouter.InputFileType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,26 +48,26 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="InputFile" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="fileId"></param>
         /// <param name="fileData"></param>
-        /// <param name="filename"></param>
+        /// <param name="fileId"></param>
         /// <param name="fileUrl"></param>
+        /// <param name="filename"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputFile(
-            global::OpenRouter.InputFileType type,
-            string? fileId,
             string? fileData,
+            string? fileId,
+            string? fileUrl,
             string? filename,
-            string? fileUrl)
+            global::OpenRouter.InputFileType type)
         {
-            this.Type = type;
-            this.FileId = fileId;
             this.FileData = fileData;
-            this.Filename = filename;
+            this.FileId = fileId;
             this.FileUrl = fileUrl;
+            this.Filename = filename;
+            this.Type = type;
         }
 
         /// <summary>

@@ -11,20 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CustomToolTypeJsonConverter))]
-        public global::OpenRouter.CustomToolType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -36,6 +22,20 @@ namespace OpenRouter
         public global::OpenRouter.CustomToolFormat? Format { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CustomToolTypeJsonConverter))]
+        public global::OpenRouter.CustomToolType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,22 +45,22 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="CustomTool" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="format"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomTool(
             string name,
-            global::OpenRouter.CustomToolType type,
             string? description,
-            global::OpenRouter.CustomToolFormat? format)
+            global::OpenRouter.CustomToolFormat? format,
+            global::OpenRouter.CustomToolType type)
         {
-            this.Type = type;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Format = format;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
         }
 
         /// <summary>

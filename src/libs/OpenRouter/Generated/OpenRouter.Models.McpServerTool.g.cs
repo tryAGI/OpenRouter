@@ -11,20 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpServerToolTypeJsonConverter))]
-        public global::OpenRouter.McpServerToolType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ServerLabel { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_tools")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpServerToolAllowedToolsJsonConverter))]
         public global::OpenRouter.McpServerToolAllowedTools? AllowedTools { get; set; }
@@ -64,8 +50,22 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ServerLabel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_url")]
         public string? ServerUrl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpServerToolTypeJsonConverter))]
+        public global::OpenRouter.McpServerToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +77,6 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="McpServerTool" /> class.
         /// </summary>
         /// <param name="serverLabel"></param>
-        /// <param name="type"></param>
         /// <param name="allowedTools"></param>
         /// <param name="authorization"></param>
         /// <param name="connectorId"></param>
@@ -85,29 +84,30 @@ namespace OpenRouter
         /// <param name="requireApproval"></param>
         /// <param name="serverDescription"></param>
         /// <param name="serverUrl"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public McpServerTool(
             string serverLabel,
-            global::OpenRouter.McpServerToolType type,
             global::OpenRouter.McpServerToolAllowedTools? allowedTools,
             string? authorization,
             global::OpenRouter.McpServerToolConnectorId? connectorId,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::OpenRouter.McpServerToolRequireApproval? requireApproval,
             string? serverDescription,
-            string? serverUrl)
+            string? serverUrl,
+            global::OpenRouter.McpServerToolType type)
         {
-            this.Type = type;
-            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.AllowedTools = allowedTools;
             this.Authorization = authorization;
             this.ConnectorId = connectorId;
             this.Headers = headers;
             this.RequireApproval = requireApproval;
             this.ServerDescription = serverDescription;
+            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.ServerUrl = serverUrl;
+            this.Type = type;
         }
 
         /// <summary>

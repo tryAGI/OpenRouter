@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemWebSearchCallActionOneOf2TypeJsonConverter))]
-        public global::OpenRouter.OutputItemWebSearchCallActionOneOf2Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Pattern { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Pattern { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemWebSearchCallActionOneOf2TypeJsonConverter))]
+        public global::OpenRouter.OutputItemWebSearchCallActionOneOf2Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -49,8 +49,8 @@ namespace OpenRouter
             string url,
             global::OpenRouter.OutputItemWebSearchCallActionOneOf2Type type)
         {
-            this.Type = type;
             this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
+            this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 

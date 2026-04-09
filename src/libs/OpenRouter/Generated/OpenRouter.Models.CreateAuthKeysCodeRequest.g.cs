@@ -29,12 +29,6 @@ namespace OpenRouter
         public global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? CodeChallengeMethod { get; set; }
 
         /// <summary>
-        /// Credit limit for the API key to be created
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public double? Limit { get; set; }
-
-        /// <summary>
         /// Optional expiration time for the API key to be created
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
@@ -45,6 +39,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_label")]
         public string? KeyLabel { get; set; }
+
+        /// <summary>
+        /// Credit limit for the API key to be created
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
+        public double? Limit { get; set; }
 
         /// <summary>
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
@@ -71,14 +71,14 @@ namespace OpenRouter
         /// <param name="codeChallengeMethod">
         /// The method used to generate the code challenge
         /// </param>
-        /// <param name="limit">
-        /// Credit limit for the API key to be created
-        /// </param>
         /// <param name="expiresAt">
         /// Optional expiration time for the API key to be created
         /// </param>
         /// <param name="keyLabel">
         /// Optional custom label for the API key. Defaults to the app name if not provided.
+        /// </param>
+        /// <param name="limit">
+        /// Credit limit for the API key to be created
         /// </param>
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
@@ -90,17 +90,17 @@ namespace OpenRouter
             string callbackUrl,
             string? codeChallenge,
             global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod,
-            double? limit,
             global::System.DateTime? expiresAt,
             string? keyLabel,
+            double? limit,
             global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType)
         {
             this.CallbackUrl = callbackUrl ?? throw new global::System.ArgumentNullException(nameof(callbackUrl));
             this.CodeChallenge = codeChallenge;
             this.CodeChallengeMethod = codeChallengeMethod;
-            this.Limit = limit;
             this.ExpiresAt = expiresAt;
             this.KeyLabel = keyLabel;
+            this.Limit = limit;
             this.UsageLimitType = usageLimitType;
         }
 

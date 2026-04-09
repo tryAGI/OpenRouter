@@ -28,14 +28,14 @@ namespace OpenRouter
         /// <param name="codeChallengeMethod">
         /// The method used to generate the code challenge
         /// </param>
-        /// <param name="limit">
-        /// Credit limit for the API key to be created
-        /// </param>
         /// <param name="expiresAt">
         /// Optional expiration time for the API key to be created
         /// </param>
         /// <param name="keyLabel">
         /// Optional custom label for the API key. Defaults to the app name if not provided.
+        /// </param>
+        /// <param name="limit">
+        /// Credit limit for the API key to be created
         /// </param>
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
@@ -46,9 +46,9 @@ namespace OpenRouter
             string callbackUrl,
             string? codeChallenge = default,
             global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod = default,
-            double? limit = default,
             global::System.DateTime? expiresAt = default,
             string? keyLabel = default,
+            double? limit = default,
             global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

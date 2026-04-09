@@ -11,17 +11,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultErrorTypeJsonConverter))]
-        public global::OpenRouter.AnthropicWebFetchToolResultErrorType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultErrorErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.AnthropicWebFetchToolResultErrorErrorCode ErrorCode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultErrorTypeJsonConverter))]
+        public global::OpenRouter.AnthropicWebFetchToolResultErrorType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,8 +41,8 @@ namespace OpenRouter
             global::OpenRouter.AnthropicWebFetchToolResultErrorErrorCode errorCode,
             global::OpenRouter.AnthropicWebFetchToolResultErrorType type)
         {
-            this.Type = type;
             this.ErrorCode = errorCode;
+            this.Type = type;
         }
 
         /// <summary>

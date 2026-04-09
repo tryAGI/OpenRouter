@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCitationPageLocationTypeJsonConverter))]
-        public global::OpenRouter.AnthropicCitationPageLocationType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CitedText { get; set; }
@@ -38,13 +31,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("start_page_number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StartPageNumber { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_page_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EndPageNumber { get; set; }
@@ -54,6 +40,20 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         public string? FileId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_page_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int StartPageNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCitationPageLocationTypeJsonConverter))]
+        public global::OpenRouter.AnthropicCitationPageLocationType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,30 +66,30 @@ namespace OpenRouter
         /// </summary>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
-        /// <param name="startPageNumber"></param>
         /// <param name="endPageNumber"></param>
-        /// <param name="type"></param>
+        /// <param name="startPageNumber"></param>
         /// <param name="documentTitle"></param>
         /// <param name="fileId"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicCitationPageLocation(
             string citedText,
             int documentIndex,
-            int startPageNumber,
             int endPageNumber,
-            global::OpenRouter.AnthropicCitationPageLocationType type,
+            int startPageNumber,
             string? documentTitle,
-            string? fileId)
+            string? fileId,
+            global::OpenRouter.AnthropicCitationPageLocationType type)
         {
-            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle;
-            this.StartPageNumber = startPageNumber;
             this.EndPageNumber = endPageNumber;
             this.FileId = fileId;
+            this.StartPageNumber = startPageNumber;
+            this.Type = type;
         }
 
         /// <summary>
