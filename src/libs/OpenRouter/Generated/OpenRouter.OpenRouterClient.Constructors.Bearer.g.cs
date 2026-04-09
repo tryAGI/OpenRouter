@@ -6,6 +6,7 @@ namespace OpenRouter
     public sealed partial class OpenRouterClient
     {
         /// <inheritdoc cref="OpenRouterClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::OpenRouter.EndPointAuthorization}?, bool)"/>
+
         public OpenRouterClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
