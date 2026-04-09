@@ -114,5 +114,10 @@ namespace OpenRouter
         /// </summary>
         public SubpackageRerankClient SubpackageRerank { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageVideoGenerationClient SubpackageVideoGeneration { get; }
+
     }
 }

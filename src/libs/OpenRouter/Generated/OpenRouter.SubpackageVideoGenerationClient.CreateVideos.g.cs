@@ -1,0 +1,499 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    public partial class SubpackageVideoGenerationClient
+    {
+
+
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_CreateVideosSecurityRequirement0 =
+            new global::OpenRouter.EndPointSecurityRequirement
+            {
+                Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
+                {                    new global::OpenRouter.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_CreateVideosSecurityRequirements =
+            new global::OpenRouter.EndPointSecurityRequirement[]
+            {                s_CreateVideosSecurityRequirement0,
+            };
+        partial void PrepareCreateVideosArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::OpenRouter.VideoGenerationRequest request);
+        partial void PrepareCreateVideosRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::OpenRouter.VideoGenerationRequest request);
+        partial void ProcessCreateVideosResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCreateVideosResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Submit a video generation request<br/>
+        /// Submits a video generation request and returns a polling URL to check status
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::OpenRouter.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.VideoGenerationResponse> CreateVideosAsync(
+
+            global::OpenRouter.VideoGenerationRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareCreateVideosArguments(
+                httpClient: HttpClient,
+                request: request);
+
+
+            var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateVideosSecurityRequirements,
+                operationName: "CreateVideosAsync");
+
+            var __pathBuilder = new global::OpenRouter.PathBuilder(
+                path: "/videos",
+                baseUri: HttpClient.BaseAddress);
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Post,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareCreateVideosRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                request: request);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessCreateVideosResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // Bad Request - Invalid request parameters or malformed input
+            if ((int)__response.StatusCode == 400)
+            {
+                string? __content_400 = null;
+                global::System.Exception? __exception_400 = null;
+                global::OpenRouter.BadRequestResponse? __value_400 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_400 = __ex;
+                }
+
+                throw new global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>(
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_400,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_400,
+                    ResponseObject = __value_400,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Unauthorized - Authentication required or invalid credentials
+            if ((int)__response.StatusCode == 401)
+            {
+                string? __content_401 = null;
+                global::System.Exception? __exception_401 = null;
+                global::OpenRouter.UnauthorizedResponse? __value_401 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_401 = __ex;
+                }
+
+                throw new global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>(
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_401,
+                    ResponseObject = __value_401,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Payment Required - Insufficient credits or quota to complete request
+            if ((int)__response.StatusCode == 402)
+            {
+                string? __content_402 = null;
+                global::System.Exception? __exception_402 = null;
+                global::OpenRouter.PaymentRequiredResponse? __value_402 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_402 = __ex;
+                }
+
+                throw new global::OpenRouter.ApiException<global::OpenRouter.PaymentRequiredResponse>(
+                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_402,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_402,
+                    ResponseObject = __value_402,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Not Found - Resource does not exist
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
+                global::OpenRouter.NotFoundResponse? __value_404 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_404 = __ex;
+                }
+
+                throw new global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>(
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Too Many Requests - Rate limit exceeded
+            if ((int)__response.StatusCode == 429)
+            {
+                string? __content_429 = null;
+                global::System.Exception? __exception_429 = null;
+                global::OpenRouter.TooManyRequestsResponse? __value_429 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_429 = __ex;
+                }
+
+                throw new global::OpenRouter.ApiException<global::OpenRouter.TooManyRequestsResponse>(
+                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_429,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_429,
+                    ResponseObject = __value_429,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Internal Server Error - Unexpected server error
+            if ((int)__response.StatusCode == 500)
+            {
+                string? __content_500 = null;
+                global::System.Exception? __exception_500 = null;
+                global::OpenRouter.InternalServerResponse? __value_500 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_500 = global::OpenRouter.InternalServerResponse.FromJson(__content_500, JsonSerializerContext);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_500 = __ex;
+                }
+
+                throw new global::OpenRouter.ApiException<global::OpenRouter.InternalServerResponse>(
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_500,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_500,
+                    ResponseObject = __value_500,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessCreateVideosResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::OpenRouter.VideoGenerationResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::OpenRouter.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::OpenRouter.VideoGenerationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::OpenRouter.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+        /// <summary>
+        /// Submit a video generation request<br/>
+        /// Submits a video generation request and returns a polling URL to check status
+        /// </summary>
+        /// <param name="aspectRatio">
+        /// Aspect ratio of the generated video
+        /// </param>
+        /// <param name="duration">
+        /// Duration of the generated video in seconds
+        /// </param>
+        /// <param name="generateAudio">
+        /// Whether to generate audio alongside the video. Defaults to true for models that support audio output, false otherwise.
+        /// </param>
+        /// <param name="inputReferences">
+        /// Reference images to guide video generation
+        /// </param>
+        /// <param name="model"></param>
+        /// <param name="prompt"></param>
+        /// <param name="provider">
+        /// Provider-specific passthrough configuration
+        /// </param>
+        /// <param name="resolution">
+        /// Resolution of the generated video
+        /// </param>
+        /// <param name="seed">
+        /// If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.
+        /// </param>
+        /// <param name="size">
+        /// Exact pixel dimensions of the generated video in "WIDTHxHEIGHT" format (e.g. "1280x720"). Interchangeable with resolution + aspect_ratio.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.VideoGenerationResponse> CreateVideosAsync(
+            string model,
+            string prompt,
+            global::OpenRouter.VideoGenerationRequestAspectRatio? aspectRatio = default,
+            int? duration = default,
+            bool? generateAudio = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? inputReferences = default,
+            global::OpenRouter.VideoGenerationRequestProvider? provider = default,
+            global::OpenRouter.VideoGenerationRequestResolution? resolution = default,
+            int? seed = default,
+            string? size = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::OpenRouter.VideoGenerationRequest
+            {
+                AspectRatio = aspectRatio,
+                Duration = duration,
+                GenerateAudio = generateAudio,
+                InputReferences = inputReferences,
+                Model = model,
+                Prompt = prompt,
+                Provider = provider,
+                Resolution = resolution,
+                Seed = seed,
+                Size = size,
+            };
+
+            return await CreateVideosAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+    }
+}

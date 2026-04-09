@@ -2990,6 +2990,295 @@
           }
         }
       }
+    },
+    "/videos": {
+      "post": {
+        "operationId": "create-videos",
+        "summary": "Submit a video generation request",
+        "description": "Submits a video generation request and returns a polling URL to check status",
+        "tags": [
+          "subpackage_videoGeneration"
+        ],
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "Video generation request accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideoGenerationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required - Insufficient credits or quota to complete request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentRequiredResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VideoGenerationRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/videos/{jobId}": {
+      "get": {
+        "operationId": "get-videos",
+        "summary": "Poll video generation status",
+        "description": "Returns job status and content URLs when completed",
+        "tags": [
+          "subpackage_videoGeneration"
+        ],
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video generation status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideoGenerationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/videos/{jobId}/content": {
+      "get": {
+        "operationId": "list-videos-content",
+        "summary": "Download generated video content",
+        "description": "Streams the generated video content from the upstream provider",
+        "tags": [
+          "subpackage_videoGeneration"
+        ],
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "index",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video content stream",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway - Provider/upstream API failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadGatewayResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/videos/models": {
+      "get": {
+        "operationId": "list-videos-models",
+        "summary": "List all video generation models",
+        "description": "Returns a list of all available video generation models and their properties",
+        "tags": [
+          "subpackage_videoGeneration"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns a list of video generation models",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideoModelsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "servers": [
@@ -19306,6 +19595,1000 @@
         ],
         "description": "Rerank response containing ranked results",
         "title": "Rerank_createRerank_Response_200"
+      },
+      "VideoGenerationRequestAspectRatio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4",
+          "21:9",
+          "9:21"
+        ],
+        "description": "Aspect ratio of the generated video",
+        "title": "VideoGenerationRequestAspectRatio"
+      },
+      "ContentPartImageImageUrl": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "title": "ContentPartImageImageUrl"
+      },
+      "ContentPartImageType": {
+        "type": "string",
+        "enum": [
+          "image_url"
+        ],
+        "title": "ContentPartImageType"
+      },
+      "ContentPartImage": {
+        "type": "object",
+        "properties": {
+          "image_url": {
+            "$ref": "#/components/schemas/ContentPartImageImageUrl"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ContentPartImageType"
+          }
+        },
+        "required": [
+          "image_url",
+          "type"
+        ],
+        "title": "ContentPartImage"
+      },
+      "VideoGenerationRequestProviderOptions": {
+        "type": "object",
+        "properties": {
+          "01ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ai21": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "aion-labs": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "akashml": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "alibaba": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "amazon-bedrock": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "amazon-nova": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ambient": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "anthropic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "anyscale": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "arcee-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "atlas-cloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "atoma": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "avian": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "azure": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "baseten": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "black-forest-labs": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "byteplus": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "centml": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cerebras": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "chutes": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cirrascale": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "clarifai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cloudflare": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cohere": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crofai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crusoe": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "deepinfra": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "deepseek": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "enfer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "fake-provider": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "featherless": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "fireworks": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "friendli": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "gmicloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "google-ai-studio": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "google-vertex": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "gopomelo": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "groq": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "huggingface": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "hyperbolic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "hyperbolic-quantized": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inception": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inceptron": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inference-net": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "infermatic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inflection": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inocloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "io-net": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ionstream": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "klusterai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lambda": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lepton": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "liquid": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lynn": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lynn-private": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mancer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mancer-old": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mara": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "minimax": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mistral": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modal": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modelrun": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modular": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "moonshotai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "morph": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ncompass": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nebius": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nextbit": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nineteen": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "novita": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nvidia": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "octoai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "open-inference": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "openai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "parasail": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "perplexity": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "phala": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "recursal": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "reflection": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "reka": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "relace": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "replicate": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sambanova": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sambanova-cloaked": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "seed": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sf-compute": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "siliconflow": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sourceful": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "stealth": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "stepfun": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "streamlake": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "switchpoint": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "targon": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "together": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "together-lite": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ubicloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "upstage": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "venice": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "wandb": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "xai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "xiaomi": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "z-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          }
+        },
+        "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.",
+        "title": "VideoGenerationRequestProviderOptions"
+      },
+      "VideoGenerationRequestProvider": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/VideoGenerationRequestProviderOptions",
+            "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body."
+          }
+        },
+        "description": "Provider-specific passthrough configuration",
+        "title": "VideoGenerationRequestProvider"
+      },
+      "VideoGenerationRequestResolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "1K",
+          "2K",
+          "4K"
+        ],
+        "description": "Resolution of the generated video",
+        "title": "VideoGenerationRequestResolution"
+      },
+      "VideoGenerationRequest": {
+        "type": "object",
+        "properties": {
+          "aspect_ratio": {
+            "$ref": "#/components/schemas/VideoGenerationRequestAspectRatio",
+            "description": "Aspect ratio of the generated video"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "Duration of the generated video in seconds"
+          },
+          "generate_audio": {
+            "type": "boolean",
+            "description": "Whether to generate audio alongside the video. Defaults to true for models that support audio output, false otherwise."
+          },
+          "input_references": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentPartImage"
+            },
+            "description": "Reference images to guide video generation"
+          },
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/VideoGenerationRequestProvider",
+            "description": "Provider-specific passthrough configuration"
+          },
+          "resolution": {
+            "$ref": "#/components/schemas/VideoGenerationRequestResolution",
+            "description": "Resolution of the generated video"
+          },
+          "seed": {
+            "type": "integer",
+            "description": "If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers."
+          },
+          "size": {
+            "type": "string",
+            "description": "Exact pixel dimensions of the generated video in \"WIDTHxHEIGHT\" format (e.g. \"1280x720\"). Interchangeable with resolution + aspect_ratio."
+          }
+        },
+        "required": [
+          "model",
+          "prompt"
+        ],
+        "title": "VideoGenerationRequest"
+      },
+      "VideoGenerationResponseStatus": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "in_progress",
+          "completed",
+          "failed",
+          "cancelled",
+          "expired"
+        ],
+        "title": "VideoGenerationResponseStatus"
+      },
+      "VideoGenerationUsage": {
+        "type": "object",
+        "properties": {
+          "cost": {
+            "type": "number",
+            "format": "double",
+            "description": "The cost of the video generation in USD."
+          },
+          "is_byok": {
+            "type": "boolean",
+            "description": "Whether the request was made using a Bring Your Own Key configuration."
+          }
+        },
+        "description": "Usage and cost information for the video generation. Available once the job has completed.",
+        "title": "VideoGenerationUsage"
+      },
+      "VideoGenerationResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "generation_id": {
+            "type": "string",
+            "description": "The generation ID associated with this video generation job. Available once the job has been processed."
+          },
+          "id": {
+            "type": "string"
+          },
+          "polling_url": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/VideoGenerationResponseStatus"
+          },
+          "unsigned_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "usage": {
+            "$ref": "#/components/schemas/VideoGenerationUsage"
+          }
+        },
+        "required": [
+          "id",
+          "polling_url",
+          "status"
+        ],
+        "title": "VideoGenerationResponse"
+      },
+      "VideoModelSupportedAspectRatiosItems": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4",
+          "21:9",
+          "9:21"
+        ],
+        "title": "VideoModelSupportedAspectRatiosItems"
+      },
+      "VideoModelSupportedResolutionsItems": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "1K",
+          "2K",
+          "4K"
+        ],
+        "title": "VideoModelSupportedResolutionsItems"
+      },
+      "VideoModelSupportedSizesItems": {
+        "type": "string",
+        "enum": [
+          "480x480",
+          "480x640",
+          "480x854",
+          "480x1120",
+          "640x480",
+          "720x720",
+          "720x960",
+          "720x1280",
+          "720x1680",
+          "854x480",
+          "960x720",
+          "1080x1080",
+          "1080x1440",
+          "1080x1920",
+          "1080x2520",
+          "1120x480",
+          "1280x720",
+          "1440x1080",
+          "1680x720",
+          "1920x1080",
+          "2160x2160",
+          "2160x2880",
+          "2160x3840",
+          "2160x5040",
+          "2520x1080",
+          "2880x2160",
+          "3840x2160",
+          "5040x2160"
+        ],
+        "title": "VideoModelSupportedSizesItems"
+      },
+      "VideoModel": {
+        "type": "object",
+        "properties": {
+          "allowed_passthrough_parameters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of parameters that are allowed to be passed through to the provider"
+          },
+          "canonical_slug": {
+            "type": "string",
+            "description": "Canonical slug for the model"
+          },
+          "created": {
+            "type": "integer",
+            "description": "Unix timestamp of when the model was created"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the model"
+          },
+          "hugging_face_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Hugging Face model identifier, if applicable"
+          },
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the model"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the model"
+          },
+          "pricing_skus": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Pricing SKUs with provider prefix stripped, values as strings"
+          },
+          "supported_aspect_ratios": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/VideoModelSupportedAspectRatiosItems"
+            },
+            "description": "Supported output aspect ratios"
+          },
+          "supported_durations": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "Supported video durations in seconds"
+          },
+          "supported_resolutions": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/VideoModelSupportedResolutionsItems"
+            },
+            "description": "Supported output resolutions"
+          },
+          "supported_sizes": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/VideoModelSupportedSizesItems"
+            },
+            "description": "Supported output sizes (width x height)"
+          }
+        },
+        "required": [
+          "allowed_passthrough_parameters",
+          "canonical_slug",
+          "created",
+          "id",
+          "name",
+          "supported_aspect_ratios",
+          "supported_durations",
+          "supported_resolutions",
+          "supported_sizes"
+        ],
+        "title": "VideoModel"
+      },
+      "VideoModelsListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VideoModel"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "VideoModelsListResponse"
       }
     },
     "securitySchemes": {
