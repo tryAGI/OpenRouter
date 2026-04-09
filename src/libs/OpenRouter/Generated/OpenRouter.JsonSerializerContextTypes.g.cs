@@ -3844,39 +3844,131 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type954 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestAspectRatio? Type954 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type955 { get; set; }
+        public global::OpenRouter.ContentPartImageImageUrl? Type955 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateAuthKeysCodeRequest? Type956 { get; set; }
+        public global::OpenRouter.ContentPartImageType? Type956 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateEmbeddingsRequest? Type957 { get; set; }
+        public global::OpenRouter.ContentPartImage? Type957 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateKeysRequest? Type958 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestProviderOptions? Type958 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type959 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestProvider? Type959 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UpdateKeysRequest? Type960 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestResolution? Type960 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type961 { get; set; }
+        public global::OpenRouter.VideoGenerationRequest? Type961 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateRerankRequest? Type962 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? Type962 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoGenerationResponseStatus? Type963 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoGenerationUsage? Type964 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoGenerationResponse? Type965 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoModelSupportedAspectRatiosItems? Type966 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoModelSupportedResolutionsItems? Type967 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoModelSupportedSizesItems? Type968 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoModel? Type969 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? Type970 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<int>? Type971 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedResolutionsItems>? Type972 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>? Type973 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.VideoModelsListResponse? Type974 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModel>? Type975 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type976 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type977 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateAuthKeysCodeRequest? Type978 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateEmbeddingsRequest? Type979 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateKeysRequest? Type980 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type981 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.UpdateKeysRequest? Type982 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type983 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateRerankRequest? Type984 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[]? Type985 { get; set; }
 
         /// <summary>
         /// 
@@ -4202,5 +4294,29 @@ namespace OpenRouter
         /// 
         /// </summary>
         public global::System.Collections.Generic.List<global::OpenRouter.RerankPostResponsesContentApplicationJsonSchemaResultsItems>? ListType80 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::OpenRouter.ContentPartImage>? ListType81 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? ListType82 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<int>? ListType83 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedResolutionsItems>? ListType84 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedSizesItems>? ListType85 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModel>? ListType86 { get; set; }
     }
 }

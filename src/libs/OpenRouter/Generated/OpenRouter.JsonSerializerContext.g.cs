@@ -1297,6 +1297,34 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquartersNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestAspectRatioJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestAspectRatioNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationResponseStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationResponseStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedAspectRatiosItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedAspectRatiosItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedResolutionsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedResolutionsItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ResponsesRequestImageConfigJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter),
@@ -2506,6 +2534,28 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RerankPostResponsesContentApplicationJsonSchemaUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RerankCreateRerankResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.RerankPostResponsesContentApplicationJsonSchemaResultsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestAspectRatio), TypeInfoPropertyName = "VideoGenerationRequestAspectRatio2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImageImageUrl))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImageType), TypeInfoPropertyName = "ContentPartImageType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestProviderOptions))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestProvider))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestResolution), TypeInfoPropertyName = "VideoGenerationRequestResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationResponseStatus), TypeInfoPropertyName = "VideoGenerationResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoModelSupportedAspectRatiosItems), TypeInfoPropertyName = "VideoModelSupportedAspectRatiosItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoModelSupportedResolutionsItems), TypeInfoPropertyName = "VideoModelSupportedResolutionsItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoModelSupportedSizesItems), TypeInfoPropertyName = "VideoModelSupportedSizesItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoModel))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatiosItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedResolutionsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoModelsListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.VideoModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExchangeAuthCodeForApiKeyRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>), TypeInfoPropertyName = "OneOfAuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateAuthKeysCodeRequest))]
@@ -2515,6 +2565,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateKeysRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>), TypeInfoPropertyName = "OneOfKeysHashPatchRequestBodyContentApplicationJsonSchemaLimitResetObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateRerankRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ReasoningTextContent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ReasoningSummaryText>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.EasyInputMessageContentOneOf0Items>))]
@@ -2596,6 +2647,12 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RerankPostResponsesContentApplicationJsonSchemaResultsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ContentPartImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedAspectRatiosItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedResolutionsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedSizesItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModel>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
