@@ -5,6 +5,25 @@ namespace OpenRouter
 {
     public partial class SubpackageGuardrailsClient
     {
+
+
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetGuardrailSecurityRequirement0 =
+            new global::OpenRouter.EndPointSecurityRequirement
+            {
+                Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
+                {                    new global::OpenRouter.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetGuardrailSecurityRequirements =
+            new global::OpenRouter.EndPointSecurityRequirement[]
+            {                s_GetGuardrailSecurityRequirement0,
+            };
         partial void PrepareGetGuardrailArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id);
@@ -38,9 +57,15 @@ namespace OpenRouter
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetGuardrailSecurityRequirements,
+                operationName: "GetGuardrailAsync");
+
             var __pathBuilder = new global::OpenRouter.PathBuilder(
                 path: $"/guardrails/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -50,7 +75,7 @@ namespace OpenRouter
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

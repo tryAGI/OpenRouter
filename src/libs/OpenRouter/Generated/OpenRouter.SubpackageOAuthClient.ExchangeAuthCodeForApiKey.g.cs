@@ -5,6 +5,25 @@ namespace OpenRouter
 {
     public partial class SubpackageOAuthClient
     {
+
+
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_ExchangeAuthCodeForApiKeySecurityRequirement0 =
+            new global::OpenRouter.EndPointSecurityRequirement
+            {
+                Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
+                {                    new global::OpenRouter.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_ExchangeAuthCodeForApiKeySecurityRequirements =
+            new global::OpenRouter.EndPointSecurityRequirement[]
+            {                s_ExchangeAuthCodeForApiKeySecurityRequirement0,
+            };
         partial void PrepareExchangeAuthCodeForApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::OpenRouter.ExchangeAuthCodeForApiKeyRequest request);
@@ -41,9 +60,15 @@ namespace OpenRouter
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ExchangeAuthCodeForApiKeySecurityRequirements,
+                operationName: "ExchangeAuthCodeForApiKeyAsync");
+
             var __pathBuilder = new global::OpenRouter.PathBuilder(
                 path: "/auth/keys",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace OpenRouter
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
