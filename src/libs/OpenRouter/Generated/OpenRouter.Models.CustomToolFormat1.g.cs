@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf1TypeJsonConverter))]
-        public global::OpenRouter.CustomToolFormatOneOf1Type Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("definition")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Definition { get; set; }
@@ -29,6 +22,13 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf1SyntaxJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.CustomToolFormatOneOf1Syntax Syntax { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf1TypeJsonConverter))]
+        public global::OpenRouter.CustomToolFormatOneOf1Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,9 +50,9 @@ namespace OpenRouter
             global::OpenRouter.CustomToolFormatOneOf1Syntax syntax,
             global::OpenRouter.CustomToolFormatOneOf1Type type)
         {
-            this.Type = type;
             this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
             this.Syntax = syntax;
+            this.Type = type;
         }
 
         /// <summary>

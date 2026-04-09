@@ -11,14 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
-        public int? InputTokens { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
-        public int? OutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
+        public global::OpenRouter.AnthropicIterationCacheCreation? CacheCreation { get; set; }
 
         /// <summary>
         /// 
@@ -35,8 +29,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
-        public global::OpenRouter.AnthropicIterationCacheCreation? CacheCreation { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
+        public int? InputTokens { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
+        public int? OutputTokens { get; set; }
 
         /// <summary>
         /// 
@@ -55,27 +55,27 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AnthropicUnknownUsageIteration" /> class.
         /// </summary>
         /// <param name="type"></param>
-        /// <param name="inputTokens"></param>
-        /// <param name="outputTokens"></param>
+        /// <param name="cacheCreation"></param>
         /// <param name="cacheCreationInputTokens"></param>
         /// <param name="cacheReadInputTokens"></param>
-        /// <param name="cacheCreation"></param>
+        /// <param name="inputTokens"></param>
+        /// <param name="outputTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicUnknownUsageIteration(
             string type,
-            int? inputTokens,
-            int? outputTokens,
+            global::OpenRouter.AnthropicIterationCacheCreation? cacheCreation,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
-            global::OpenRouter.AnthropicIterationCacheCreation? cacheCreation)
+            int? inputTokens,
+            int? outputTokens)
         {
-            this.InputTokens = inputTokens;
-            this.OutputTokens = outputTokens;
+            this.CacheCreation = cacheCreation;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
-            this.CacheCreation = cacheCreation;
+            this.InputTokens = inputTokens;
+            this.OutputTokens = outputTokens;
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 

@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamTypeJsonConverter))]
-        public global::OpenRouter.AnthropicImageBlockParamType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -26,8 +25,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamTypeJsonConverter))]
+        public global::OpenRouter.AnthropicImageBlockParamType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,19 +39,19 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AnthropicImageBlockParam" /> class.
         /// </summary>
         /// <param name="source"></param>
-        /// <param name="type"></param>
         /// <param name="cacheControl"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicImageBlockParam(
             global::OpenRouter.AnthropicImageBlockParamSource source,
-            global::OpenRouter.AnthropicImageBlockParamType type,
-            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
+            global::OpenRouter.AnthropicImageBlockParamType type)
         {
-            this.Type = type;
-            this.Source = source;
             this.CacheControl = cacheControl;
+            this.Source = source;
+            this.Type = type;
         }
 
         /// <summary>

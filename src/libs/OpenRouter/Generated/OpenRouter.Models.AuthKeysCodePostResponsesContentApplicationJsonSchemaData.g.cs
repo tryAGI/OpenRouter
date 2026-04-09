@@ -9,13 +9,6 @@ namespace OpenRouter
     public sealed partial class AuthKeysCodePostResponsesContentApplicationJsonSchemaData
     {
         /// <summary>
-        /// The authorization code ID to use in the exchange request
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
         /// The application ID associated with this auth code
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_id")]
@@ -30,6 +23,13 @@ namespace OpenRouter
         public required string CreatedAt { get; set; }
 
         /// <summary>
+        /// The authorization code ID to use in the exchange request
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,26 +38,26 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthKeysCodePostResponsesContentApplicationJsonSchemaData" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The authorization code ID to use in the exchange request
-        /// </param>
         /// <param name="appId">
         /// The application ID associated with this auth code
         /// </param>
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the auth code was created
         /// </param>
+        /// <param name="id">
+        /// The authorization code ID to use in the exchange request
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuthKeysCodePostResponsesContentApplicationJsonSchemaData(
-            string id,
             int appId,
-            string createdAt)
+            string createdAt,
+            string id)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.AppId = appId;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>

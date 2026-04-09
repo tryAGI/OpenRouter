@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// reasoning variant
+    /// function_call variant
     /// </summary>
     public sealed partial class OutputItemsVariant2
     {
@@ -12,54 +12,42 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningTypeJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFunctionCallTypeJsonConverter))]
+        public global::OpenRouter.OutputItemFunctionCallType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Arguments { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CallId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> Summary { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
-        public string? EncryptedContent { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningStatus? Status { get; set; }
-
-        /// <summary>
-        /// A signature for the reasoning content, used for verification
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        public string? Signature { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter))]
-        public global::OpenRouter.ReasoningFormat? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFunctionCallStatusJsonConverter))]
+        public global::OpenRouter.OutputItemFunctionCallStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,37 +58,29 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant2" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="summary"></param>
+        /// <param name="arguments"></param>
+        /// <param name="callId"></param>
+        /// <param name="name"></param>
         /// <param name="type"></param>
-        /// <param name="content"></param>
-        /// <param name="encryptedContent"></param>
+        /// <param name="id"></param>
         /// <param name="status"></param>
-        /// <param name="signature">
-        /// A signature for the reasoning content, used for verification
-        /// </param>
-        /// <param name="format"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant2(
-            string id,
-            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> summary,
-            global::OpenRouter.OutputItemReasoningType type,
-            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? content,
-            string? encryptedContent,
-            global::OpenRouter.OutputItemReasoningStatus? status,
-            string? signature,
-            global::OpenRouter.ReasoningFormat? format)
+            string arguments,
+            string callId,
+            string name,
+            global::OpenRouter.OutputItemFunctionCallType type,
+            string? id,
+            global::OpenRouter.OutputItemFunctionCallStatus? status)
         {
             this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content;
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.EncryptedContent = encryptedContent;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Status = status;
-            this.Signature = signature;
-            this.Format = format;
         }
 
         /// <summary>

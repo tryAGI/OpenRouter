@@ -11,9 +11,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningTypeJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
+        public string? EncryptedContent { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +30,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter))]
+        public global::OpenRouter.OutputItemReasoningStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -38,15 +44,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
-        public string? EncryptedContent { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningTypeJsonConverter))]
+        public global::OpenRouter.OutputItemReasoningType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,27 +59,27 @@ namespace OpenRouter
         /// </summary>
         /// <param name="id"></param>
         /// <param name="summary"></param>
-        /// <param name="type"></param>
         /// <param name="content"></param>
         /// <param name="encryptedContent"></param>
         /// <param name="status"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemReasoning(
             string id,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> summary,
-            global::OpenRouter.OutputItemReasoningType type,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? content,
             string? encryptedContent,
-            global::OpenRouter.OutputItemReasoningStatus? status)
+            global::OpenRouter.OutputItemReasoningStatus? status,
+            global::OpenRouter.OutputItemReasoningType type)
         {
-            this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Content = content;
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.EncryptedContent = encryptedContent;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Type = type;
         }
 
         /// <summary>

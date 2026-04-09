@@ -24,17 +24,17 @@ namespace OpenRouter
         public required int Index { get; set; }
 
         /// <summary>
+        /// Log probabilities for the completion
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::OpenRouter.ChatTokenLogprobs? Logprobs { get; set; }
+
+        /// <summary>
         /// Assistant message for requests and responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ChatAssistantMessage Message { get; set; }
-
-        /// <summary>
-        /// Log probabilities for the completion
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::OpenRouter.ChatTokenLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,8 +66,8 @@ namespace OpenRouter
         {
             this.FinishReason = finishReason;
             this.Index = index;
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Logprobs = logprobs;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

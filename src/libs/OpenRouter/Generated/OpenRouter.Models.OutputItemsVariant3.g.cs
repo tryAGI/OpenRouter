@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// function_call variant
+    /// image_generation_call variant
     /// </summary>
     public sealed partial class OutputItemsVariant3
     {
@@ -12,42 +12,29 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFunctionCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemFunctionCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemImageGenerationCallTypeJsonConverter))]
+        public global::OpenRouter.OutputItemImageGenerationCallType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Arguments { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
+        public string? Result { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFunctionCallStatusJsonConverter))]
-        public global::OpenRouter.OutputItemFunctionCallStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ImageGenerationStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,28 +45,22 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant3" /> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="arguments"></param>
-        /// <param name="callId"></param>
-        /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="status"></param>
+        /// <param name="type"></param>
+        /// <param name="result"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant3(
-            string name,
-            string arguments,
-            string callId,
-            global::OpenRouter.OutputItemFunctionCallType type,
-            string? id,
-            global::OpenRouter.OutputItemFunctionCallStatus? status)
+            string id,
+            global::OpenRouter.ImageGenerationStatus status,
+            global::OpenRouter.OutputItemImageGenerationCallType type,
+            string? result)
         {
             this.Type = type;
-            this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Result = result;
             this.Status = status;
         }
 

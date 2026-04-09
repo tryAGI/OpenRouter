@@ -9,18 +9,18 @@ namespace OpenRouter
     public sealed partial class PerRequestLimits
     {
         /// <summary>
-        /// Maximum prompt tokens per request
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double PromptTokens { get; set; }
-
-        /// <summary>
         /// Maximum completion tokens per request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double CompletionTokens { get; set; }
+
+        /// <summary>
+        /// Maximum prompt tokens per request
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double PromptTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,21 +31,21 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="PerRequestLimits" /> class.
         /// </summary>
-        /// <param name="promptTokens">
-        /// Maximum prompt tokens per request
-        /// </param>
         /// <param name="completionTokens">
         /// Maximum completion tokens per request
+        /// </param>
+        /// <param name="promptTokens">
+        /// Maximum prompt tokens per request
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PerRequestLimits(
-            double promptTokens,
-            double completionTokens)
+            double completionTokens,
+            double promptTokens)
         {
-            this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
+            this.PromptTokens = promptTokens;
         }
 
         /// <summary>

@@ -50,16 +50,16 @@ namespace OpenRouter
         public double? Cost { get; set; }
 
         /// <summary>
-        /// Whether a request was made using a Bring Your Own Key configuration
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
-        public bool? IsByok { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
         public global::OpenRouter.UsageCostDetails? CostDetails { get; set; }
+
+        /// <summary>
+        /// Whether a request was made using a Bring Your Own Key configuration
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
+        public bool? IsByok { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,10 +78,10 @@ namespace OpenRouter
         /// <param name="cost">
         /// Cost of the completion
         /// </param>
+        /// <param name="costDetails"></param>
         /// <param name="isByok">
         /// Whether a request was made using a Bring Your Own Key configuration
         /// </param>
-        /// <param name="costDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -92,8 +92,8 @@ namespace OpenRouter
             global::OpenRouter.OpenAiResponsesUsageOutputTokensDetails outputTokensDetails,
             int totalTokens,
             double? cost,
-            bool? isByok,
-            global::OpenRouter.UsageCostDetails? costDetails)
+            global::OpenRouter.UsageCostDetails? costDetails,
+            bool? isByok)
         {
             this.InputTokens = inputTokens;
             this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));
@@ -101,8 +101,8 @@ namespace OpenRouter
             this.OutputTokensDetails = outputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(outputTokensDetails));
             this.TotalTokens = totalTokens;
             this.Cost = cost;
-            this.IsByok = isByok;
             this.CostDetails = costDetails;
+            this.IsByok = isByok;
         }
 
         /// <summary>

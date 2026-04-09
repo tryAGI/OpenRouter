@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchResultTypeJsonConverter))]
-        public global::OpenRouter.AnthropicWebSearchResultType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EncryptedContent { get; set; }
@@ -38,6 +31,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchResultTypeJsonConverter))]
+        public global::OpenRouter.AnthropicWebSearchResultType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -54,8 +54,8 @@ namespace OpenRouter
         /// <param name="encryptedContent"></param>
         /// <param name="title"></param>
         /// <param name="url"></param>
-        /// <param name="type"></param>
         /// <param name="pageAge"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,13 +63,13 @@ namespace OpenRouter
             string encryptedContent,
             string title,
             string url,
-            global::OpenRouter.AnthropicWebSearchResultType type,
-            string? pageAge)
+            string? pageAge,
+            global::OpenRouter.AnthropicWebSearchResultType type)
         {
-            this.Type = type;
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
             this.PageAge = pageAge;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 

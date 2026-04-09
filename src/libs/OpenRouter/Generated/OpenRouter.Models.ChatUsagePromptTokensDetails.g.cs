@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatUsagePromptTokensDetails
     {
         /// <summary>
-        /// Cached prompt tokens
+        /// Audio input tokens
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
-        public int? CachedTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio_tokens")]
+        public int? AudioTokens { get; set; }
 
         /// <summary>
         /// Tokens written to cache. Only returned for models with explicit caching and cache write pricing.
@@ -21,10 +21,10 @@ namespace OpenRouter
         public int? CacheWriteTokens { get; set; }
 
         /// <summary>
-        /// Audio input tokens
+        /// Cached prompt tokens
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio_tokens")]
-        public int? AudioTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
+        public int? CachedTokens { get; set; }
 
         /// <summary>
         /// Video input tokens
@@ -41,14 +41,14 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatUsagePromptTokensDetails" /> class.
         /// </summary>
-        /// <param name="cachedTokens">
-        /// Cached prompt tokens
+        /// <param name="audioTokens">
+        /// Audio input tokens
         /// </param>
         /// <param name="cacheWriteTokens">
         /// Tokens written to cache. Only returned for models with explicit caching and cache write pricing.
         /// </param>
-        /// <param name="audioTokens">
-        /// Audio input tokens
+        /// <param name="cachedTokens">
+        /// Cached prompt tokens
         /// </param>
         /// <param name="videoTokens">
         /// Video input tokens
@@ -57,14 +57,14 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatUsagePromptTokensDetails(
-            int? cachedTokens,
-            int? cacheWriteTokens,
             int? audioTokens,
+            int? cacheWriteTokens,
+            int? cachedTokens,
             int? videoTokens)
         {
-            this.CachedTokens = cachedTokens;
-            this.CacheWriteTokens = cacheWriteTokens;
             this.AudioTokens = audioTokens;
+            this.CacheWriteTokens = cacheWriteTokens;
+            this.CachedTokens = cachedTokens;
             this.VideoTokens = videoTokens;
         }
 

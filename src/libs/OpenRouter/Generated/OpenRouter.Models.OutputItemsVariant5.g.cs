@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// file_search_call variant
+    /// openrouter:datetime variant
     /// </summary>
     public sealed partial class OutputItemsVariant5
     {
@@ -12,30 +12,36 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFileSearchCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemFileSearchCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
+        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
+
+        /// <summary>
+        /// ISO 8601 datetime string
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("datetime")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Datetime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Queries { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.WebSearchStatus Status { get; set; }
+        public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        /// IANA timezone name
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Timezone { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,23 +52,30 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant5" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="queries"></param>
+        /// <param name="datetime">
+        /// ISO 8601 datetime string
+        /// </param>
         /// <param name="status"></param>
+        /// <param name="timezone">
+        /// IANA timezone name
+        /// </param>
         /// <param name="type"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant5(
-            string id,
-            global::System.Collections.Generic.IList<string> queries,
-            global::OpenRouter.WebSearchStatus status,
-            global::OpenRouter.OutputItemFileSearchCallType type)
+            string datetime,
+            global::OpenRouter.ToolCallStatus status,
+            string timezone,
+            global::OpenRouter.OutputDatetimeItemType type,
+            string? id)
         {
             this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Queries = queries ?? throw new global::System.ArgumentNullException(nameof(queries));
+            this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
+            this.Id = id;
             this.Status = status;
+            this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
         }
 
         /// <summary>

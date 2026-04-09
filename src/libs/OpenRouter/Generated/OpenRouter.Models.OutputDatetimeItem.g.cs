@@ -9,6 +9,13 @@ namespace OpenRouter
     public sealed partial class OutputDatetimeItem
     {
         /// <summary>
+        /// ISO 8601 datetime string
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("datetime")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Datetime { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,25 +30,18 @@ namespace OpenRouter
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
-        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
-
-        /// <summary>
-        /// ISO 8601 datetime string
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("datetime")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Datetime { get; set; }
-
-        /// <summary>
         /// IANA timezone name
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Timezone { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
+        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,10 +52,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputDatetimeItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
         /// <param name="datetime">
         /// ISO 8601 datetime string
         /// </param>
+        /// <param name="status"></param>
         /// <param name="timezone">
         /// IANA timezone name
         /// </param>
@@ -65,17 +65,17 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputDatetimeItem(
-            global::OpenRouter.ToolCallStatus status,
             string datetime,
+            global::OpenRouter.ToolCallStatus status,
             string timezone,
             string? id,
             global::OpenRouter.OutputDatetimeItemType type)
         {
+            this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Id = id;
             this.Status = status;
-            this.Type = type;
-            this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
+            this.Type = type;
         }
 
         /// <summary>

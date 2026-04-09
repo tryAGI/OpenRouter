@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicContainerUploadTypeJsonConverter))]
-        public global::OpenRouter.AnthropicContainerUploadType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string FileId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FileId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicContainerUploadTypeJsonConverter))]
+        public global::OpenRouter.AnthropicContainerUploadType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             string fileId,
             global::OpenRouter.AnthropicContainerUploadType type)
         {
-            this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+            this.Type = type;
         }
 
         /// <summary>

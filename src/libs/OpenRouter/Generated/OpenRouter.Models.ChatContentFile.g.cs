@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentFileTypeJsonConverter))]
-        public global::OpenRouter.ChatContentFileType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ChatContentFileFile File { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ChatContentFileFile File { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentFileTypeJsonConverter))]
+        public global::OpenRouter.ChatContentFileType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentFileFile file,
             global::OpenRouter.ChatContentFileType type)
         {
-            this.Type = type;
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Type = type;
         }
 
         /// <summary>

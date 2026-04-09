@@ -11,17 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter))]
-        public global::OpenRouter.AnthropicDocumentBlockParamType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicDocumentBlockParamSource Source { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -39,14 +30,23 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.AnthropicDocumentBlockParamSource Source { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter))]
+        public global::OpenRouter.AnthropicDocumentBlockParamType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,28 +58,28 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AnthropicDocumentBlockParam" /> class.
         /// </summary>
         /// <param name="source"></param>
-        /// <param name="type"></param>
+        /// <param name="cacheControl"></param>
         /// <param name="citations"></param>
         /// <param name="context"></param>
         /// <param name="title"></param>
-        /// <param name="cacheControl"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicDocumentBlockParam(
             global::OpenRouter.AnthropicDocumentBlockParamSource source,
-            global::OpenRouter.AnthropicDocumentBlockParamType type,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.OneOf<global::OpenRouter.AnthropicDocumentBlockParamCitations, object>? citations,
             string? context,
             string? title,
-            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
+            global::OpenRouter.AnthropicDocumentBlockParamType type)
         {
-            this.Type = type;
-            this.Source = source;
+            this.CacheControl = cacheControl;
             this.Citations = citations;
             this.Context = context;
+            this.Source = source;
             this.Title = title;
-            this.CacheControl = cacheControl;
+            this.Type = type;
         }
 
         /// <summary>

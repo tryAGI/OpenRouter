@@ -9,11 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatTokenLogprob
     {
         /// <summary>
-        /// The token
+        /// UTF-8 bytes of the token
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Token { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
 
         /// <summary>
         /// Log probability of the token
@@ -23,10 +22,11 @@ namespace OpenRouter
         public required double Logprob { get; set; }
 
         /// <summary>
-        /// UTF-8 bytes of the token
+        /// The token
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Token { get; set; }
 
         /// <summary>
         /// Top alternative tokens with probabilities
@@ -44,11 +44,11 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatTokenLogprob" /> class.
         /// </summary>
-        /// <param name="token">
-        /// The token
-        /// </param>
         /// <param name="logprob">
         /// Log probability of the token
+        /// </param>
+        /// <param name="token">
+        /// The token
         /// </param>
         /// <param name="topLogprobs">
         /// Top alternative tokens with probabilities
@@ -60,14 +60,14 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatTokenLogprob(
-            string token,
             double logprob,
+            string token,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatTokenLogprobTopLogprobsItems> topLogprobs,
             global::System.Collections.Generic.IList<long>? bytes)
         {
-            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.Logprob = logprob;
             this.Bytes = bytes;
+            this.Logprob = logprob;
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.TopLogprobs = topLogprobs ?? throw new global::System.ArgumentNullException(nameof(topLogprobs));
         }
 

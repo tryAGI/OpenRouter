@@ -9,17 +9,17 @@ namespace OpenRouter
     public sealed partial class ChatJsonSchemaConfig
     {
         /// <summary>
+        /// Schema description for the model
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Schema name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
-
-        /// <summary>
-        /// Schema description for the model
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
 
         /// <summary>
         /// JSON Schema object
@@ -63,8 +63,8 @@ namespace OpenRouter
             object? schema,
             bool? strict)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Schema = schema;
             this.Strict = strict;
         }

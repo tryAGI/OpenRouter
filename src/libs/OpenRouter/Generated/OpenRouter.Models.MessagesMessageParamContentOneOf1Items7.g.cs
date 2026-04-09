@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf7TypeJsonConverter))]
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -21,6 +20,12 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        public object? Input { get; set; }
 
         /// <summary>
         /// 
@@ -33,14 +38,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        public object? Input { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf7TypeJsonConverter))]
+        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,24 +53,24 @@ namespace OpenRouter
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        /// <param name="type"></param>
-        /// <param name="input"></param>
         /// <param name="cacheControl"></param>
+        /// <param name="input"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesMessageParamContentOneOf1Items7(
             string id,
             global::OpenRouter.AnthropicServerToolName name,
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Type type,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             object? input,
-            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
+            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Type type)
         {
-            this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name;
-            this.Input = input;
             this.CacheControl = cacheControl;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Input = input;
+            this.Name = name;
+            this.Type = type;
         }
 
         /// <summary>

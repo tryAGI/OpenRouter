@@ -9,6 +9,13 @@ namespace OpenRouter
     public sealed partial class ChatToolCall
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ChatToolCallFunction Function { get; set; }
+
+        /// <summary>
         /// Tool call identifier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,13 +30,6 @@ namespace OpenRouter
         public global::OpenRouter.ChatToolCallType Type { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ChatToolCallFunction Function { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,22 +38,22 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolCall" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="id">
         /// Tool call identifier
         /// </param>
-        /// <param name="function"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatToolCall(
-            string id,
             global::OpenRouter.ChatToolCallFunction function,
+            string id,
             global::OpenRouter.ChatToolCallType type)
         {
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

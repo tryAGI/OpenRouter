@@ -11,15 +11,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.InputMessageItemContentItems>? Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputMessageItemTypeJsonConverter))]
-        public global::OpenRouter.InputMessageItemType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
@@ -32,8 +31,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.InputMessageItemContentItems>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputMessageItemTypeJsonConverter))]
+        public global::OpenRouter.InputMessageItemType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,22 +45,22 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="InputMessageItem" /> class.
         /// </summary>
         /// <param name="role"></param>
+        /// <param name="content"></param>
         /// <param name="id"></param>
         /// <param name="type"></param>
-        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputMessageItem(
             global::OpenRouter.InputMessageItemRole role,
+            global::System.Collections.Generic.IList<global::OpenRouter.InputMessageItemContentItems>? content,
             string? id,
-            global::OpenRouter.InputMessageItemType? type,
-            global::System.Collections.Generic.IList<global::OpenRouter.InputMessageItemContentItems>? content)
+            global::OpenRouter.InputMessageItemType? type)
         {
-            this.Id = id;
-            this.Type = type;
-            this.Role = role;
             this.Content = content;
+            this.Id = id;
+            this.Role = role;
+            this.Type = type;
         }
 
         /// <summary>

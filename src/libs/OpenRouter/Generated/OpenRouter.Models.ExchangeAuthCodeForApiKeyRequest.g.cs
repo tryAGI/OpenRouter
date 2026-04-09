@@ -16,17 +16,17 @@ namespace OpenRouter
         public required string Code { get; set; }
 
         /// <summary>
-        /// The code verifier if code_challenge was used in the authorization request
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code_verifier")]
-        public string? CodeVerifier { get; set; }
-
-        /// <summary>
         /// The method used to generate the code challenge
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_challenge_method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>))]
         public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? CodeChallengeMethod { get; set; }
+
+        /// <summary>
+        /// The code verifier if code_challenge was used in the authorization request
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code_verifier")]
+        public string? CodeVerifier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,23 +40,23 @@ namespace OpenRouter
         /// <param name="code">
         /// The authorization code received from the OAuth redirect
         /// </param>
-        /// <param name="codeVerifier">
-        /// The code verifier if code_challenge was used in the authorization request
-        /// </param>
         /// <param name="codeChallengeMethod">
         /// The method used to generate the code challenge
+        /// </param>
+        /// <param name="codeVerifier">
+        /// The code verifier if code_challenge was used in the authorization request
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExchangeAuthCodeForApiKeyRequest(
             string code,
-            string? codeVerifier,
-            global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod)
+            global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod,
+            string? codeVerifier)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
-            this.CodeVerifier = codeVerifier;
             this.CodeChallengeMethod = codeChallengeMethod;
+            this.CodeVerifier = codeVerifier;
         }
 
         /// <summary>

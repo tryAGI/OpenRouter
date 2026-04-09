@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecution20250825CallerTypeJsonConverter))]
-        public global::OpenRouter.AnthropicCodeExecution20250825CallerType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ToolId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ToolId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecution20250825CallerTypeJsonConverter))]
+        public global::OpenRouter.AnthropicCodeExecution20250825CallerType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             string toolId,
             global::OpenRouter.AnthropicCodeExecution20250825CallerType type)
         {
-            this.Type = type;
             this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));
+            this.Type = type;
         }
 
         /// <summary>

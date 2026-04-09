@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TypeJsonConverter))]
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
 
@@ -34,6 +27,13 @@ namespace OpenRouter
         public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger? Trigger { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TypeJsonConverter))]
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,23 +42,23 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesRequestContextManagementEditsItems2" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="instructions"></param>
         /// <param name="pauseAfterCompaction"></param>
         /// <param name="trigger"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestContextManagementEditsItems2(
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type type,
             string? instructions,
             bool? pauseAfterCompaction,
-            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger? trigger)
+            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger? trigger,
+            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type type)
         {
-            this.Type = type;
             this.Instructions = instructions;
             this.PauseAfterCompaction = pauseAfterCompaction;
             this.Trigger = trigger;
+            this.Type = type;
         }
 
         /// <summary>

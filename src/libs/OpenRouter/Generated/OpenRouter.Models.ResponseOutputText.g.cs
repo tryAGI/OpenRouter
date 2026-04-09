@@ -11,9 +11,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ResponseOutputTextTypeJsonConverter))]
-        public global::OpenRouter.ResponseOutputTextType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.OpenAIResponsesAnnotation>? Annotations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItems>? Logprobs { get; set; }
 
         /// <summary>
         /// 
@@ -25,14 +30,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OpenAIResponsesAnnotation>? Annotations { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItems>? Logprobs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ResponseOutputTextTypeJsonConverter))]
+        public global::OpenRouter.ResponseOutputTextType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,22 +44,22 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ResponseOutputText" /> class.
         /// </summary>
         /// <param name="text"></param>
-        /// <param name="type"></param>
         /// <param name="annotations"></param>
         /// <param name="logprobs"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseOutputText(
             string text,
-            global::OpenRouter.ResponseOutputTextType type,
             global::System.Collections.Generic.IList<global::OpenRouter.OpenAIResponsesAnnotation>? annotations,
-            global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItems>? logprobs)
+            global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItems>? logprobs,
+            global::OpenRouter.ResponseOutputTextType type)
         {
-            this.Type = type;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations;
             this.Logprobs = logprobs;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type;
         }
 
         /// <summary>

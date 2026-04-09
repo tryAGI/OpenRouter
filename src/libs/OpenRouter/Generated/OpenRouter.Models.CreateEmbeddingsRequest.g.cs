@@ -9,19 +9,10 @@ namespace OpenRouter
     public sealed partial class CreateEmbeddingsRequest
     {
         /// <summary>
-        /// Text, token, or multimodal input(s) to embed
+        /// The number of dimensions for the output embeddings
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput Input { get; set; }
-
-        /// <summary>
-        /// The model to use for embeddings
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("dimensions")]
+        public int? Dimensions { get; set; }
 
         /// <summary>
         /// The format of the output embeddings
@@ -31,16 +22,25 @@ namespace OpenRouter
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat? EncodingFormat { get; set; }
 
         /// <summary>
-        /// The number of dimensions for the output embeddings
+        /// Text, token, or multimodal input(s) to embed
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("dimensions")]
-        public int? Dimensions { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput Input { get; set; }
 
         /// <summary>
-        /// A unique identifier for the end-user
+        /// The type of input (e.g. search_query, search_document)
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public string? User { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_type")]
+        public string? InputType { get; set; }
+
+        /// <summary>
+        /// The model to use for embeddings
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
@@ -49,10 +49,10 @@ namespace OpenRouter
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider? Provider { get; set; }
 
         /// <summary>
-        /// The type of input (e.g. search_query, search_document)
+        /// A unique identifier for the end-user
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_type")]
-        public string? InputType { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,18 +69,18 @@ namespace OpenRouter
         /// <param name="model">
         /// The model to use for embeddings
         /// </param>
-        /// <param name="encodingFormat">
-        /// The format of the output embeddings
-        /// </param>
         /// <param name="dimensions">
         /// The number of dimensions for the output embeddings
         /// </param>
-        /// <param name="user">
-        /// A unique identifier for the end-user
+        /// <param name="encodingFormat">
+        /// The format of the output embeddings
         /// </param>
-        /// <param name="provider"></param>
         /// <param name="inputType">
         /// The type of input (e.g. search_query, search_document)
+        /// </param>
+        /// <param name="provider"></param>
+        /// <param name="user">
+        /// A unique identifier for the end-user
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,19 +88,19 @@ namespace OpenRouter
         public CreateEmbeddingsRequest(
             global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput input,
             string model,
-            global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat? encodingFormat,
             int? dimensions,
-            string? user,
+            global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat? encodingFormat,
+            string? inputType,
             global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider? provider,
-            string? inputType)
+            string? user)
         {
-            this.Input = input;
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.EncodingFormat = encodingFormat;
             this.Dimensions = dimensions;
-            this.User = user;
-            this.Provider = provider;
+            this.EncodingFormat = encodingFormat;
+            this.Input = input;
             this.InputType = inputType;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Provider = provider;
+            this.User = user;
         }
 
         /// <summary>

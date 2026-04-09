@@ -11,21 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0TypeJsonConverter))]
-        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Type? Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0RoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role Role { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,6 +24,21 @@ namespace OpenRouter
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase? Phase { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0RoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role Role { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0TypeJsonConverter))]
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Type? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,23 +47,23 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseInputsOneOf1Items0" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
-        /// <param name="type"></param>
+        /// <param name="role"></param>
         /// <param name="phase"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BaseInputsOneOf1Items0(
-            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role role,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Content content,
-            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Type? type,
-            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase? phase)
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role role,
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase? phase,
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Type? type)
         {
-            this.Type = type;
-            this.Role = role;
             this.Content = content;
             this.Phase = phase;
+            this.Role = role;
+            this.Type = type;
         }
 
         /// <summary>

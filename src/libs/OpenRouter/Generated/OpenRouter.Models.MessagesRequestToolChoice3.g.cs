@@ -11,9 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf3TypeJsonConverter))]
-        public global::OpenRouter.MessagesRequestToolChoiceOneOf3Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_parallel_tool_use")]
+        public bool? DisableParallelToolUse { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +24,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("disable_parallel_tool_use")]
-        public bool? DisableParallelToolUse { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf3TypeJsonConverter))]
+        public global::OpenRouter.MessagesRequestToolChoiceOneOf3Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,19 +38,19 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesRequestToolChoice3" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="type"></param>
         /// <param name="disableParallelToolUse"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestToolChoice3(
             string name,
-            global::OpenRouter.MessagesRequestToolChoiceOneOf3Type type,
-            bool? disableParallelToolUse)
+            bool? disableParallelToolUse,
+            global::OpenRouter.MessagesRequestToolChoiceOneOf3Type type)
         {
-            this.Type = type;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DisableParallelToolUse = disableParallelToolUse;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
         }
 
         /// <summary>

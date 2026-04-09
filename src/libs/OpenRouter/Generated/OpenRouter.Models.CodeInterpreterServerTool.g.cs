@@ -11,17 +11,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolTypeJsonConverter))]
-        public global::OpenRouter.CodeInterpreterServerToolType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.CodeInterpreterServerToolContainer Container { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolTypeJsonConverter))]
+        public global::OpenRouter.CodeInterpreterServerToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,8 +41,8 @@ namespace OpenRouter
             global::OpenRouter.CodeInterpreterServerToolContainer container,
             global::OpenRouter.CodeInterpreterServerToolType type)
         {
-            this.Type = type;
             this.Container = container;
+            this.Type = type;
         }
 
         /// <summary>

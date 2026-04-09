@@ -11,15 +11,15 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchServerToolOpenRouterTypeJsonConverter))]
-        public global::OpenRouter.WebSearchServerToolOpenRouterType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        public global::OpenRouter.WebSearchServerToolOpenRouterParameters? Parameters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public global::OpenRouter.WebSearchServerToolOpenRouterParameters? Parameters { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchServerToolOpenRouterTypeJsonConverter))]
+        public global::OpenRouter.WebSearchServerToolOpenRouterType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,17 +30,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchServerToolOpenRouter" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="parameters"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchServerToolOpenRouter(
-            global::OpenRouter.WebSearchServerToolOpenRouterType type,
-            global::OpenRouter.WebSearchServerToolOpenRouterParameters? parameters)
+            global::OpenRouter.WebSearchServerToolOpenRouterParameters? parameters,
+            global::OpenRouter.WebSearchServerToolOpenRouterType type)
         {
-            this.Type = type;
             this.Parameters = parameters;
+            this.Type = type;
         }
 
         /// <summary>

@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCitationContentBlockLocationParamTypeJsonConverter))]
-        public global::OpenRouter.AnthropicCitationContentBlockLocationParamType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CitedText { get; set; }
@@ -38,6 +31,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_block_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int EndBlockIndex { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartBlockIndex { get; set; }
@@ -45,9 +45,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_block_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndBlockIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCitationContentBlockLocationParamTypeJsonConverter))]
+        public global::OpenRouter.AnthropicCitationContentBlockLocationParamType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,27 +60,27 @@ namespace OpenRouter
         /// </summary>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
-        /// <param name="startBlockIndex"></param>
         /// <param name="endBlockIndex"></param>
-        /// <param name="type"></param>
+        /// <param name="startBlockIndex"></param>
         /// <param name="documentTitle"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicCitationContentBlockLocationParam(
             string citedText,
             int documentIndex,
-            int startBlockIndex,
             int endBlockIndex,
-            global::OpenRouter.AnthropicCitationContentBlockLocationParamType type,
-            string? documentTitle)
+            int startBlockIndex,
+            string? documentTitle,
+            global::OpenRouter.AnthropicCitationContentBlockLocationParamType type)
         {
-            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle;
-            this.StartBlockIndex = startBlockIndex;
             this.EndBlockIndex = endBlockIndex;
+            this.StartBlockIndex = startBlockIndex;
+            this.Type = type;
         }
 
         /// <summary>

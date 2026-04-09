@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class RerankPostResponsesContentApplicationJsonSchemaUsage
     {
         /// <summary>
-        /// Total number of tokens used
+        /// Cost of the request in credits
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
-        public int? TotalTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public double? Cost { get; set; }
 
         /// <summary>
         /// Number of search units consumed (Cohere billing)
@@ -21,10 +21,10 @@ namespace OpenRouter
         public int? SearchUnits { get; set; }
 
         /// <summary>
-        /// Cost of the request in credits
+        /// Total number of tokens used
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
-        public double? Cost { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
+        public int? TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,26 +35,26 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankPostResponsesContentApplicationJsonSchemaUsage" /> class.
         /// </summary>
-        /// <param name="totalTokens">
-        /// Total number of tokens used
+        /// <param name="cost">
+        /// Cost of the request in credits
         /// </param>
         /// <param name="searchUnits">
         /// Number of search units consumed (Cohere billing)
         /// </param>
-        /// <param name="cost">
-        /// Cost of the request in credits
+        /// <param name="totalTokens">
+        /// Total number of tokens used
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankPostResponsesContentApplicationJsonSchemaUsage(
-            int? totalTokens,
+            double? cost,
             int? searchUnits,
-            double? cost)
+            int? totalTokens)
         {
-            this.TotalTokens = totalTokens;
-            this.SearchUnits = searchUnits;
             this.Cost = cost;
+            this.SearchUnits = searchUnits;
+            this.TotalTokens = totalTokens;
         }
 
         /// <summary>

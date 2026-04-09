@@ -11,16 +11,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf0TypeJsonConverter))]
-        public global::OpenRouter.MessagesRequestThinkingOneOf0Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("budget_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int BudgetTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("budget_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int BudgetTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf0TypeJsonConverter))]
+        public global::OpenRouter.MessagesRequestThinkingOneOf0Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace OpenRouter
             int budgetTokens,
             global::OpenRouter.MessagesRequestThinkingOneOf0Type type)
         {
-            this.Type = type;
             this.BudgetTokens = budgetTokens;
+            this.Type = type;
         }
 
         /// <summary>

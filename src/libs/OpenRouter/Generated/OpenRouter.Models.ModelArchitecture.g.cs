@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class ModelArchitecture
     {
         /// <summary>
-        /// Tokenizer type used by the model
+        /// Supported input modalities
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ModelGroupJsonConverter))]
-        public global::OpenRouter.ModelGroup? Tokenizer { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_modalities")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::OpenRouter.InputModality> InputModalities { get; set; }
 
         /// <summary>
         /// Instruction format type
@@ -29,18 +29,18 @@ namespace OpenRouter
         public string? Modality { get; set; }
 
         /// <summary>
-        /// Supported input modalities
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_modalities")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.InputModality> InputModalities { get; set; }
-
-        /// <summary>
         /// Supported output modalities
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_modalities")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> OutputModalities { get; set; }
+
+        /// <summary>
+        /// Tokenizer type used by the model
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ModelGroupJsonConverter))]
+        public global::OpenRouter.ModelGroup? Tokenizer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,14 +57,14 @@ namespace OpenRouter
         /// <param name="outputModalities">
         /// Supported output modalities
         /// </param>
-        /// <param name="tokenizer">
-        /// Tokenizer type used by the model
-        /// </param>
         /// <param name="instructType">
         /// Instruction format type
         /// </param>
         /// <param name="modality">
         /// Primary modality of the model
+        /// </param>
+        /// <param name="tokenizer">
+        /// Tokenizer type used by the model
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,15 +72,15 @@ namespace OpenRouter
         public ModelArchitecture(
             global::System.Collections.Generic.IList<global::OpenRouter.InputModality> inputModalities,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> outputModalities,
-            global::OpenRouter.ModelGroup? tokenizer,
             global::OpenRouter.OneOf<global::OpenRouter.ModelArchitectureInstructType?, object>? instructType,
-            string? modality)
+            string? modality,
+            global::OpenRouter.ModelGroup? tokenizer)
         {
-            this.Tokenizer = tokenizer;
+            this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
             this.InstructType = instructType;
             this.Modality = modality;
-            this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
             this.OutputModalities = outputModalities ?? throw new global::System.ArgumentNullException(nameof(outputModalities));
+            this.Tokenizer = tokenizer;
         }
 
         /// <summary>

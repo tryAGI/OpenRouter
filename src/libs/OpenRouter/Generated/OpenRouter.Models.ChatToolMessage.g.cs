@@ -9,19 +9,19 @@ namespace OpenRouter
     public sealed partial class ChatToolMessage
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatToolMessageRoleJsonConverter))]
-        public global::OpenRouter.ChatToolMessageRole Role { get; set; }
-
-        /// <summary>
         /// Tool response content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatToolMessageContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ChatToolMessageContent Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatToolMessageRoleJsonConverter))]
+        public global::OpenRouter.ChatToolMessageRole Role { get; set; }
 
         /// <summary>
         /// ID of the assistant message tool call this message responds to
@@ -54,8 +54,8 @@ namespace OpenRouter
             string toolCallId,
             global::OpenRouter.ChatToolMessageRole role)
         {
-            this.Role = role;
             this.Content = content;
+            this.Role = role;
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
         }
 

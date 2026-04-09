@@ -15,17 +15,17 @@ namespace OpenRouter
         public int? ContextLength { get; set; }
 
         /// <summary>
-        /// Maximum completion tokens from the top provider
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        public int? MaxCompletionTokens { get; set; }
-
-        /// <summary>
         /// Whether the top provider moderates content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_moderated")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsModerated { get; set; }
+
+        /// <summary>
+        /// Maximum completion tokens from the top provider
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace OpenRouter
             int? maxCompletionTokens)
         {
             this.ContextLength = contextLength;
-            this.MaxCompletionTokens = maxCompletionTokens;
             this.IsModerated = isModerated;
+            this.MaxCompletionTokens = maxCompletionTokens;
         }
 
         /// <summary>

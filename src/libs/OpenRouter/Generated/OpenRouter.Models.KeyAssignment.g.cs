@@ -9,6 +9,26 @@ namespace OpenRouter
     public sealed partial class KeyAssignment
     {
         /// <summary>
+        /// User ID of who made the assignment
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("assigned_by")]
+        public string? AssignedBy { get; set; }
+
+        /// <summary>
+        /// ISO 8601 timestamp of when the assignment was created
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CreatedAt { get; set; }
+
+        /// <summary>
+        /// ID of the guardrail
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("guardrail_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid GuardrailId { get; set; }
+
+        /// <summary>
         /// Unique identifier for the assignment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,20 +43,6 @@ namespace OpenRouter
         public required string KeyHash { get; set; }
 
         /// <summary>
-        /// ID of the guardrail
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("guardrail_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid GuardrailId { get; set; }
-
-        /// <summary>
-        /// Name of the API key
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("key_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string KeyName { get; set; }
-
-        /// <summary>
         /// Label of the API key
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_label")]
@@ -44,17 +50,11 @@ namespace OpenRouter
         public required string KeyLabel { get; set; }
 
         /// <summary>
-        /// User ID of who made the assignment
+        /// Name of the API key
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("assigned_by")]
-        public string? AssignedBy { get; set; }
-
-        /// <summary>
-        /// ISO 8601 timestamp of when the assignment was created
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("key_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedAt { get; set; }
+        public required string KeyName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,23 +65,23 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="KeyAssignment" /> class.
         /// </summary>
+        /// <param name="createdAt">
+        /// ISO 8601 timestamp of when the assignment was created
+        /// </param>
+        /// <param name="guardrailId">
+        /// ID of the guardrail
+        /// </param>
         /// <param name="id">
         /// Unique identifier for the assignment
         /// </param>
         /// <param name="keyHash">
         /// Hash of the assigned API key
         /// </param>
-        /// <param name="guardrailId">
-        /// ID of the guardrail
-        /// </param>
-        /// <param name="keyName">
-        /// Name of the API key
-        /// </param>
         /// <param name="keyLabel">
         /// Label of the API key
         /// </param>
-        /// <param name="createdAt">
-        /// ISO 8601 timestamp of when the assignment was created
+        /// <param name="keyName">
+        /// Name of the API key
         /// </param>
         /// <param name="assignedBy">
         /// User ID of who made the assignment
@@ -90,21 +90,21 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public KeyAssignment(
+            string createdAt,
+            global::System.Guid guardrailId,
             global::System.Guid id,
             string keyHash,
-            global::System.Guid guardrailId,
-            string keyName,
             string keyLabel,
-            string createdAt,
+            string keyName,
             string? assignedBy)
         {
-            this.Id = id;
-            this.KeyHash = keyHash ?? throw new global::System.ArgumentNullException(nameof(keyHash));
-            this.GuardrailId = guardrailId;
-            this.KeyName = keyName ?? throw new global::System.ArgumentNullException(nameof(keyName));
-            this.KeyLabel = keyLabel ?? throw new global::System.ArgumentNullException(nameof(keyLabel));
             this.AssignedBy = assignedBy;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.GuardrailId = guardrailId;
+            this.Id = id;
+            this.KeyHash = keyHash ?? throw new global::System.ArgumentNullException(nameof(keyHash));
+            this.KeyLabel = keyLabel ?? throw new global::System.ArgumentNullException(nameof(keyLabel));
+            this.KeyName = keyName ?? throw new global::System.ArgumentNullException(nameof(keyName));
         }
 
         /// <summary>

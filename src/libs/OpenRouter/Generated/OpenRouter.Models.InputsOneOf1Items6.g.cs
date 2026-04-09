@@ -11,9 +11,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningTypeJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
+        public string? EncryptedContent { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +30,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter))]
+        public global::OpenRouter.OutputItemReasoningStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -37,21 +43,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
-        public string? EncryptedContent { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningStatus? Status { get; set; }
-
-        /// <summary>
-        /// A signature for the reasoning content, used for verification
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        public string? Signature { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningTypeJsonConverter))]
+        public global::OpenRouter.OutputItemReasoningType Type { get; set; }
 
         /// <summary>
         /// 
@@ -59,6 +53,12 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter))]
         public global::OpenRouter.ReasoningFormat? Format { get; set; }
+
+        /// <summary>
+        /// A signature for the reasoning content, used for verification
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        public string? Signature { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,36 +70,36 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="InputsOneOf1Items6" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="type"></param>
         /// <param name="content"></param>
-        /// <param name="summary"></param>
         /// <param name="encryptedContent"></param>
         /// <param name="status"></param>
+        /// <param name="summary"></param>
+        /// <param name="type"></param>
+        /// <param name="format"></param>
         /// <param name="signature">
         /// A signature for the reasoning content, used for verification
         /// </param>
-        /// <param name="format"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputsOneOf1Items6(
             string id,
-            global::OpenRouter.OutputItemReasoningType type,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? content,
-            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText>? summary,
             string? encryptedContent,
             global::OpenRouter.OutputItemReasoningStatus? status,
-            string? signature,
-            global::OpenRouter.ReasoningFormat? format)
+            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText>? summary,
+            global::OpenRouter.OutputItemReasoningType type,
+            global::OpenRouter.ReasoningFormat? format,
+            string? signature)
         {
-            this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Content = content;
-            this.Summary = summary;
             this.EncryptedContent = encryptedContent;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
-            this.Signature = signature;
+            this.Summary = summary;
+            this.Type = type;
             this.Format = format;
+            this.Signature = signature;
         }
 
         /// <summary>

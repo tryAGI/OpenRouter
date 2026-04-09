@@ -9,11 +9,22 @@ namespace OpenRouter
     public sealed partial class CreateKeysRequest
     {
         /// <summary>
-        /// Name for the new API key
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("creator_user_id")]
+        public string? CreatorUserId { get; set; }
+
+        /// <summary>
+        /// Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
+        /// Whether to include BYOK usage in the limit
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_byok_in_limit")]
+        public bool? IncludeByokInLimit { get; set; }
 
         /// <summary>
         /// Optional spending limit for the API key in USD
@@ -29,22 +40,11 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? LimitReset { get; set; }
 
         /// <summary>
-        /// Whether to include BYOK usage in the limit
+        /// Name for the new API key
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("include_byok_in_limit")]
-        public bool? IncludeByokInLimit { get; set; }
-
-        /// <summary>
-        /// Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public global::System.DateTime? ExpiresAt { get; set; }
-
-        /// <summary>
-        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("creator_user_id")]
-        public string? CreatorUserId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,38 +58,38 @@ namespace OpenRouter
         /// <param name="name">
         /// Name for the new API key
         /// </param>
+        /// <param name="creatorUserId">
+        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
+        /// </param>
+        /// <param name="expiresAt">
+        /// Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected
+        /// </param>
+        /// <param name="includeByokInLimit">
+        /// Whether to include BYOK usage in the limit
+        /// </param>
         /// <param name="limit">
         /// Optional spending limit for the API key in USD
         /// </param>
         /// <param name="limitReset">
         /// Type of limit reset for the API key (daily, weekly, monthly, or null for no reset). Resets happen automatically at midnight UTC, and weeks are Monday through Sunday.
         /// </param>
-        /// <param name="includeByokInLimit">
-        /// Whether to include BYOK usage in the limit
-        /// </param>
-        /// <param name="expiresAt">
-        /// Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected
-        /// </param>
-        /// <param name="creatorUserId">
-        /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateKeysRequest(
             string name,
-            double? limit,
-            global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset,
-            bool? includeByokInLimit,
+            string? creatorUserId,
             global::System.DateTime? expiresAt,
-            string? creatorUserId)
+            bool? includeByokInLimit,
+            double? limit,
+            global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatorUserId = creatorUserId;
+            this.ExpiresAt = expiresAt;
+            this.IncludeByokInLimit = includeByokInLimit;
             this.Limit = limit;
             this.LimitReset = limitReset;
-            this.IncludeByokInLimit = includeByokInLimit;
-            this.ExpiresAt = expiresAt;
-            this.CreatorUserId = creatorUserId;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

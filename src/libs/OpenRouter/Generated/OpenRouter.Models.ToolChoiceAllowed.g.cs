@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedTypeJsonConverter))]
-        public global::OpenRouter.ToolChoiceAllowedType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedModeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,6 +22,13 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<object> Tools { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedTypeJsonConverter))]
+        public global::OpenRouter.ToolChoiceAllowedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,9 +50,9 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<object> tools,
             global::OpenRouter.ToolChoiceAllowedType type)
         {
-            this.Type = type;
             this.Mode = mode;
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
+            this.Type = type;
         }
 
         /// <summary>

@@ -9,13 +9,6 @@ namespace OpenRouter
     public sealed partial class ChatDeveloperMessage
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatDeveloperMessageRoleJsonConverter))]
-        public global::OpenRouter.ChatDeveloperMessageRole Role { get; set; }
-
-        /// <summary>
         /// Developer message content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
@@ -30,6 +23,13 @@ namespace OpenRouter
         public string? Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatDeveloperMessageRoleJsonConverter))]
+        public global::OpenRouter.ChatDeveloperMessageRole Role { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,21 +41,21 @@ namespace OpenRouter
         /// <param name="content">
         /// Developer message content
         /// </param>
-        /// <param name="role"></param>
         /// <param name="name">
         /// Optional name for the developer message
         /// </param>
+        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatDeveloperMessage(
             global::OpenRouter.ChatDeveloperMessageContent content,
-            global::OpenRouter.ChatDeveloperMessageRole role,
-            string? name)
+            string? name,
+            global::OpenRouter.ChatDeveloperMessageRole role)
         {
-            this.Role = role;
             this.Content = content;
             this.Name = name;
+            this.Role = role;
         }
 
         /// <summary>

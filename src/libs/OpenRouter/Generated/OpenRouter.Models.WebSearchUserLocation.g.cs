@@ -11,13 +11,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeJsonConverter))]
-        public global::OpenRouter.WebSearchUserLocationType? Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("city")]
         public string? City { get; set; }
 
@@ -40,6 +33,13 @@ namespace OpenRouter
         public string? Timezone { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeJsonConverter))]
+        public global::OpenRouter.WebSearchUserLocationType? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,26 +48,26 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchUserLocation" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="city"></param>
         /// <param name="country"></param>
         /// <param name="region"></param>
         /// <param name="timezone"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchUserLocation(
-            global::OpenRouter.WebSearchUserLocationType? type,
             string? city,
             string? country,
             string? region,
-            string? timezone)
+            string? timezone,
+            global::OpenRouter.WebSearchUserLocationType? type)
         {
-            this.Type = type;
             this.City = city;
             this.Country = country;
             this.Region = region;
             this.Timezone = timezone;
+            this.Type = type;
         }
 
         /// <summary>

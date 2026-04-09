@@ -11,16 +11,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4TypeJsonConverter))]
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4Type Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ToolUseId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -38,8 +30,16 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ToolUseId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4TypeJsonConverter))]
+        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,25 +51,25 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesMessageParamContentOneOf1Items4" /> class.
         /// </summary>
         /// <param name="toolUseId"></param>
-        /// <param name="type"></param>
+        /// <param name="cacheControl"></param>
         /// <param name="content"></param>
         /// <param name="isError"></param>
-        /// <param name="cacheControl"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesMessageParamContentOneOf1Items4(
             string toolUseId,
-            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4Type type,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4Content? content,
             bool? isError,
-            global::OpenRouter.AnthropicCacheControlDirective? cacheControl)
+            global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4Type type)
         {
-            this.Type = type;
-            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.CacheControl = cacheControl;
             this.Content = content;
             this.IsError = isError;
-            this.CacheControl = cacheControl;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.Type = type;
         }
 
         /// <summary>

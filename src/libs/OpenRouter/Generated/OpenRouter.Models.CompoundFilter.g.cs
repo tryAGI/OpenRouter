@@ -11,17 +11,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CompoundFilterTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.CompoundFilterType Type { get; set; }
+        public required global::System.Collections.Generic.IList<object> Filters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CompoundFilterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Filters { get; set; }
+        public required global::OpenRouter.CompoundFilterType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,17 +32,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="CompoundFilter" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="filters"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompoundFilter(
-            global::OpenRouter.CompoundFilterType type,
-            global::System.Collections.Generic.IList<object> filters)
+            global::System.Collections.Generic.IList<object> filters,
+            global::OpenRouter.CompoundFilterType type)
         {
-            this.Type = type;
             this.Filters = filters ?? throw new global::System.ArgumentNullException(nameof(filters));
+            this.Type = type;
         }
 
         /// <summary>

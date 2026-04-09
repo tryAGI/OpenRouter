@@ -9,13 +9,6 @@ namespace OpenRouter
     public sealed partial class ChatResult
     {
         /// <summary>
-        /// Unique completion identifier
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
         /// List of completion choices
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
@@ -29,6 +22,13 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset Created { get; set; }
+
+        /// <summary>
+        /// Unique completion identifier
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// Model used for completion
@@ -45,16 +45,16 @@ namespace OpenRouter
         public global::OpenRouter.ChatResultObject Object { get; set; }
 
         /// <summary>
-        /// System fingerprint
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]
-        public string? SystemFingerprint { get; set; }
-
-        /// <summary>
         /// The service tier used by the upstream provider for this request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         public string? ServiceTier { get; set; }
+
+        /// <summary>
+        /// System fingerprint
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]
+        public string? SystemFingerprint { get; set; }
 
         /// <summary>
         /// Token usage statistics
@@ -71,24 +71,24 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatResult" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Unique completion identifier
-        /// </param>
         /// <param name="choices">
         /// List of completion choices
         /// </param>
         /// <param name="created">
         /// Unix timestamp of creation
         /// </param>
+        /// <param name="id">
+        /// Unique completion identifier
+        /// </param>
         /// <param name="model">
         /// Model used for completion
         /// </param>
         /// <param name="object"></param>
-        /// <param name="systemFingerprint">
-        /// System fingerprint
-        /// </param>
         /// <param name="serviceTier">
         /// The service tier used by the upstream provider for this request
+        /// </param>
+        /// <param name="systemFingerprint">
+        /// System fingerprint
         /// </param>
         /// <param name="usage">
         /// Token usage statistics
@@ -97,22 +97,22 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatResult(
-            string id,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatChoice> choices,
             global::System.DateTimeOffset created,
+            string id,
             string model,
             global::OpenRouter.ChatResultObject @object,
-            string? systemFingerprint,
             string? serviceTier,
+            string? systemFingerprint,
             global::OpenRouter.ChatUsage? usage)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
             this.Created = created;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
-            this.SystemFingerprint = systemFingerprint;
             this.ServiceTier = serviceTier;
+            this.SystemFingerprint = systemFingerprint;
             this.Usage = usage;
         }
 
