@@ -9,11 +9,13 @@ namespace OpenRouter
         /// Submits a video generation request and returns a polling URL to check status
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.VideoGenerationResponse> CreateVideosAsync(
 
             global::OpenRouter.VideoGenerationRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Submit a video generation request<br/>
@@ -45,6 +47,7 @@ namespace OpenRouter
         /// <param name="size">
         /// Exact pixel dimensions of the generated video in "WIDTHxHEIGHT" format (e.g. "1280x720"). Interchangeable with resolution + aspect_ratio.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.VideoGenerationResponse> CreateVideosAsync(
@@ -58,6 +61,7 @@ namespace OpenRouter
             global::OpenRouter.VideoGenerationRequestResolution? resolution = default,
             int? seed = default,
             string? size = default,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,11 +9,13 @@ namespace OpenRouter
         /// Create an authorization code for the PKCE flow to generate a user-controlled API key
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.OAuthCreateAuthKeysCodeResponse200> CreateAuthKeysCodeAsync(
 
             global::OpenRouter.CreateAuthKeysCodeRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create authorization code<br/>
@@ -40,6 +42,7 @@ namespace OpenRouter
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.OAuthCreateAuthKeysCodeResponse200> CreateAuthKeysCodeAsync(
@@ -50,6 +53,7 @@ namespace OpenRouter
             string? keyLabel = default,
             double? limit = default,
             global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType = default,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
