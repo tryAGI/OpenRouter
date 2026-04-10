@@ -44,6 +44,13 @@ namespace OpenRouter
         public global::OpenRouter.BaseMessagesResultRole Role { get; set; }
 
         /// <summary>
+        /// Structured information about a refusal
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.AnthropicRefusalStopDetails StopDetails { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
@@ -91,6 +98,9 @@ namespace OpenRouter
         /// <param name="content"></param>
         /// <param name="id"></param>
         /// <param name="model"></param>
+        /// <param name="stopDetails">
+        /// Structured information about a refusal
+        /// </param>
         /// <param name="stopReason"></param>
         /// <param name="usage"></param>
         /// <param name="role"></param>
@@ -105,6 +115,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ORAnthropicContentBlock> content,
             string id,
             string model,
+            global::OpenRouter.AnthropicRefusalStopDetails stopDetails,
             global::OpenRouter.ORAnthropicStopReason stopReason,
             global::OpenRouter.MessagesResultUsage usage,
             global::OpenRouter.BaseMessagesResultRole role,
@@ -117,6 +128,7 @@ namespace OpenRouter
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Role = role;
+            this.StopDetails = stopDetails ?? throw new global::System.ArgumentNullException(nameof(stopDetails));
             this.StopReason = stopReason;
             this.StopSequence = stopSequence;
             this.Type = type;
