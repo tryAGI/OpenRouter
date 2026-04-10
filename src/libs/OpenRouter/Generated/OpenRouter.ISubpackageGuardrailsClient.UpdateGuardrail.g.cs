@@ -10,12 +10,14 @@ namespace OpenRouter
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.UpdateGuardrailResponse> UpdateGuardrailAsync(
             global::System.Guid id,
 
             global::OpenRouter.UpdateGuardrailRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a guardrail<br/>
@@ -46,6 +48,7 @@ namespace OpenRouter
         /// <param name="resetInterval">
         /// Interval at which the limit resets (daily, weekly, monthly)
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.UpdateGuardrailResponse> UpdateGuardrailAsync(
@@ -58,6 +61,7 @@ namespace OpenRouter
             double? limitUsd = default,
             string? name = default,
             global::OpenRouter.GuardrailInterval? resetInterval = default,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

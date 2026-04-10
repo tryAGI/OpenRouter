@@ -9,11 +9,13 @@ namespace OpenRouter
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
 
             global::OpenRouter.MessagesRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a message<br/>
@@ -58,6 +60,7 @@ namespace OpenRouter
         /// <param name="user">
         /// A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
@@ -86,6 +89,7 @@ namespace OpenRouter
             double? topP = default,
             global::OpenRouter.TraceConfig? trace = default,
             string? user = default,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

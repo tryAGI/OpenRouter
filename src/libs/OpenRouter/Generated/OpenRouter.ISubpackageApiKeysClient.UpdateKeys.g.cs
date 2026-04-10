@@ -10,12 +10,14 @@ namespace OpenRouter
         /// </summary>
         /// <param name="hash"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysUpdateKeysResponse200> UpdateKeysAsync(
             string hash,
 
             global::OpenRouter.UpdateKeysRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an API key<br/>
@@ -37,6 +39,7 @@ namespace OpenRouter
         /// <param name="name">
         /// New name for the API key
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysUpdateKeysResponse200> UpdateKeysAsync(
@@ -46,6 +49,7 @@ namespace OpenRouter
             double? limit = default,
             global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
             string? name = default,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

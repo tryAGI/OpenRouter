@@ -25,6 +25,7 @@ namespace OpenRouter
             Authorizations.Add(new global::OpenRouter.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "Bearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

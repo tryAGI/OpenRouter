@@ -9,11 +9,13 @@ namespace OpenRouter
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ChatResult> SendChatCompletionRequestAsync(
 
             global::OpenRouter.ChatRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a chat completion<br/>
@@ -117,6 +119,7 @@ namespace OpenRouter
         /// <param name="user">
         /// Unique user identifier
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ChatResult> SendChatCompletionRequestAsync(
@@ -153,6 +156,7 @@ namespace OpenRouter
             double? topP = default,
             global::OpenRouter.TraceConfig? trace = default,
             string? user = default,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
