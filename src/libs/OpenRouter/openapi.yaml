@@ -18853,6 +18853,52 @@
         ],
         "title": "BaseMessagesResultRole"
       },
+      "AnthropicRefusalStopDetailsCategory": {
+        "type": "string",
+        "enum": [
+          "cyber",
+          "bio"
+        ],
+        "title": "AnthropicRefusalStopDetailsCategory"
+      },
+      "AnthropicRefusalStopDetailsType": {
+        "type": "string",
+        "enum": [
+          "refusal"
+        ],
+        "title": "AnthropicRefusalStopDetailsType"
+      },
+      "AnthropicRefusalStopDetails": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/AnthropicRefusalStopDetailsCategory"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "explanation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/AnthropicRefusalStopDetailsType"
+          }
+        },
+        "required": [
+          "category",
+          "explanation",
+          "type"
+        ],
+        "description": "Structured information about a refusal",
+        "title": "AnthropicRefusalStopDetails"
+      },
       "ORAnthropicStopReason": {
         "type": "string",
         "enum": [
@@ -19210,6 +19256,9 @@
           "role": {
             "$ref": "#/components/schemas/BaseMessagesResultRole"
           },
+          "stop_details": {
+            "$ref": "#/components/schemas/AnthropicRefusalStopDetails"
+          },
           "stop_reason": {
             "$ref": "#/components/schemas/ORAnthropicStopReason"
           },
@@ -19235,6 +19284,7 @@
           "id",
           "model",
           "role",
+          "stop_details",
           "stop_reason",
           "stop_sequence",
           "type",
