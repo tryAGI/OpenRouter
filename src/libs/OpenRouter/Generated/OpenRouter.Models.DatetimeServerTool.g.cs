@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class DatetimeServerTool
     {
         /// <summary>
-        /// 
+        /// Configuration for the openrouter:datetime server tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public global::OpenRouter.DatetimeServerToolParameters? Parameters { get; set; }
+        public global::OpenRouter.DatetimeServerToolConfig? Parameters { get; set; }
 
         /// <summary>
         /// 
@@ -30,13 +30,15 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="DatetimeServerTool" /> class.
         /// </summary>
-        /// <param name="parameters"></param>
+        /// <param name="parameters">
+        /// Configuration for the openrouter:datetime server tool
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DatetimeServerTool(
-            global::OpenRouter.DatetimeServerToolParameters? parameters,
+            global::OpenRouter.DatetimeServerToolConfig? parameters,
             global::OpenRouter.DatetimeServerToolType type)
         {
             this.Parameters = parameters;
