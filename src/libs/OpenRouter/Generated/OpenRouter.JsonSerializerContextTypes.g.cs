@@ -4020,119 +4020,139 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ContentPartImage? Type998 { get; set; }
+        public global::OpenRouter.FrameImageFrameType? Type998 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequestProviderOptions? Type999 { get; set; }
+        public global::OpenRouter.FrameImage? Type999 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequestProvider? Type1000 { get; set; }
+        public global::OpenRouter.ContentPartImage? Type1000 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequestResolution? Type1001 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestProviderOptions? Type1001 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequest? Type1002 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestProvider? Type1002 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? Type1003 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestResolution? Type1003 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationResponseStatus? Type1004 { get; set; }
+        public global::OpenRouter.VideoGenerationRequest? Type1004 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationUsage? Type1005 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? Type1005 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationResponse? Type1006 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? Type1006 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelSupportedAspectRatiosItems? Type1007 { get; set; }
+        public global::OpenRouter.VideoGenerationResponseStatus? Type1007 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelSupportedResolutionsItems? Type1008 { get; set; }
+        public global::OpenRouter.VideoGenerationUsage? Type1008 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelSupportedSizesItems? Type1009 { get; set; }
+        public global::OpenRouter.VideoGenerationResponse? Type1009 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModel? Type1010 { get; set; }
+        public global::OpenRouter.VideoModelSupportedAspectRatiosItems? Type1010 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? Type1011 { get; set; }
+        public global::OpenRouter.VideoModelSupportedFrameImagesItems? Type1011 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type1012 { get; set; }
+        public global::OpenRouter.VideoModelSupportedResolutionsItems? Type1012 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedResolutionsItems>? Type1013 { get; set; }
+        public global::OpenRouter.VideoModelSupportedSizesItems? Type1013 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>? Type1014 { get; set; }
+        public global::OpenRouter.VideoModel? Type1014 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelsListResponse? Type1015 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? Type1015 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModel>? Type1016 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type1016 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type1017 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedFrameImagesItems>? Type1017 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type1018 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedResolutionsItems>? Type1018 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateAuthKeysCodeRequest? Type1019 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>? Type1019 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateEmbeddingsRequest? Type1020 { get; set; }
+        public global::OpenRouter.VideoModelsListResponse? Type1020 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateKeysRequest? Type1021 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModel>? Type1021 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1022 { get; set; }
+        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type1022 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UpdateKeysRequest? Type1023 { get; set; }
+        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type1023 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1024 { get; set; }
+        public global::OpenRouter.CreateAuthKeysCodeRequest? Type1024 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateRerankRequest? Type1025 { get; set; }
+        public global::OpenRouter.CreateEmbeddingsRequest? Type1025 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type1026 { get; set; }
+        public global::OpenRouter.CreateKeysRequest? Type1026 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1027 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.UpdateKeysRequest? Type1028 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1029 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateRerankRequest? Type1030 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[]? Type1031 { get; set; }
 
         /// <summary>
         /// 
@@ -4469,26 +4489,34 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::OpenRouter.ContentPartImage>? ListType83 { get; set; }
+        public global::System.Collections.Generic.List<global::OpenRouter.FrameImage>? ListType83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? ListType84 { get; set; }
+        public global::System.Collections.Generic.List<global::OpenRouter.ContentPartImage>? ListType84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<int>? ListType85 { get; set; }
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? ListType85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedResolutionsItems>? ListType86 { get; set; }
+        public global::System.Collections.Generic.List<int>? ListType86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedSizesItems>? ListType87 { get; set; }
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedFrameImagesItems>? ListType87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::OpenRouter.VideoModel>? ListType88 { get; set; }
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedResolutionsItems>? ListType88 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedSizesItems>? ListType89 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::OpenRouter.VideoModel>? ListType90 { get; set; }
     }
 }

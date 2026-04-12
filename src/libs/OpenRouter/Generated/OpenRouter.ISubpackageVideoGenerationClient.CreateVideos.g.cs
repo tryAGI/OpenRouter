@@ -27,8 +27,11 @@ namespace OpenRouter
         /// <param name="duration">
         /// Duration of the generated video in seconds
         /// </param>
+        /// <param name="frameImages">
+        /// Images to use as the first and/or last frame of the generated video. Each image must specify a frame_type of first_frame or last_frame.
+        /// </param>
         /// <param name="generateAudio">
-        /// Whether to generate audio alongside the video. Defaults to true for models that support audio output, false otherwise.
+        /// Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set.
         /// </param>
         /// <param name="inputReferences">
         /// Reference images to guide video generation
@@ -55,6 +58,7 @@ namespace OpenRouter
             string prompt,
             global::OpenRouter.VideoGenerationRequestAspectRatio? aspectRatio = default,
             int? duration = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? frameImages = default,
             bool? generateAudio = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? inputReferences = default,
             global::OpenRouter.VideoGenerationRequestProvider? provider = default,

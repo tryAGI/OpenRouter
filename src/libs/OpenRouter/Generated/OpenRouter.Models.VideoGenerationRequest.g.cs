@@ -22,7 +22,13 @@ namespace OpenRouter
         public int? Duration { get; set; }
 
         /// <summary>
-        /// Whether to generate audio alongside the video. Defaults to true for models that support audio output, false otherwise.
+        /// Images to use as the first and/or last frame of the generated video. Each image must specify a frame_type of first_frame or last_frame.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_images")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? FrameImages { get; set; }
+
+        /// <summary>
+        /// Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_audio")]
         public bool? GenerateAudio { get; set; }
@@ -89,8 +95,11 @@ namespace OpenRouter
         /// <param name="duration">
         /// Duration of the generated video in seconds
         /// </param>
+        /// <param name="frameImages">
+        /// Images to use as the first and/or last frame of the generated video. Each image must specify a frame_type of first_frame or last_frame.
+        /// </param>
         /// <param name="generateAudio">
-        /// Whether to generate audio alongside the video. Defaults to true for models that support audio output, false otherwise.
+        /// Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set.
         /// </param>
         /// <param name="inputReferences">
         /// Reference images to guide video generation
@@ -115,6 +124,7 @@ namespace OpenRouter
             string prompt,
             global::OpenRouter.VideoGenerationRequestAspectRatio? aspectRatio,
             int? duration,
+            global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? frameImages,
             bool? generateAudio,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? inputReferences,
             global::OpenRouter.VideoGenerationRequestProvider? provider,
@@ -124,6 +134,7 @@ namespace OpenRouter
         {
             this.AspectRatio = aspectRatio;
             this.Duration = duration;
+            this.FrameImages = frameImages;
             this.GenerateAudio = generateAudio;
             this.InputReferences = inputReferences;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
