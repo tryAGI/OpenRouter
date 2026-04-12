@@ -37,6 +37,12 @@ namespace OpenRouter
         public string? Description { get; set; }
 
         /// <summary>
+        /// Whether the model supports generating audio alongside video
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("generate_audio")]
+        public bool? GenerateAudio { get; set; }
+
+        /// <summary>
         /// Hugging Face model identifier, if applicable
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hugging_face_id")]
@@ -63,6 +69,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.Dictionary<string, string>? PricingSkus { get; set; }
 
         /// <summary>
+        /// Whether the model supports deterministic generation via seed parameter
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public bool? Seed { get; set; }
+
+        /// <summary>
         /// Supported output aspect ratios
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_aspect_ratios")]
@@ -73,6 +85,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_durations")]
         public global::System.Collections.Generic.IList<int>? SupportedDurations { get; set; }
+
+        /// <summary>
+        /// Supported frame image types (e.g. first_frame, last_frame)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supported_frame_images")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedFrameImagesItems>? SupportedFrameImages { get; set; }
 
         /// <summary>
         /// Supported output resolutions
@@ -113,17 +131,26 @@ namespace OpenRouter
         /// <param name="description">
         /// Description of the model
         /// </param>
+        /// <param name="generateAudio">
+        /// Whether the model supports generating audio alongside video
+        /// </param>
         /// <param name="huggingFaceId">
         /// Hugging Face model identifier, if applicable
         /// </param>
         /// <param name="pricingSkus">
         /// Pricing SKUs with provider prefix stripped, values as strings
         /// </param>
+        /// <param name="seed">
+        /// Whether the model supports deterministic generation via seed parameter
+        /// </param>
         /// <param name="supportedAspectRatios">
         /// Supported output aspect ratios
         /// </param>
         /// <param name="supportedDurations">
         /// Supported video durations in seconds
+        /// </param>
+        /// <param name="supportedFrameImages">
+        /// Supported frame image types (e.g. first_frame, last_frame)
         /// </param>
         /// <param name="supportedResolutions">
         /// Supported output resolutions
@@ -141,10 +168,13 @@ namespace OpenRouter
             string id,
             string name,
             string? description,
+            bool? generateAudio,
             string? huggingFaceId,
             global::System.Collections.Generic.Dictionary<string, string>? pricingSkus,
+            bool? seed,
             global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? supportedAspectRatios,
             global::System.Collections.Generic.IList<int>? supportedDurations,
+            global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedFrameImagesItems>? supportedFrameImages,
             global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedResolutionsItems>? supportedResolutions,
             global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>? supportedSizes)
         {
@@ -152,12 +182,15 @@ namespace OpenRouter
             this.CanonicalSlug = canonicalSlug ?? throw new global::System.ArgumentNullException(nameof(canonicalSlug));
             this.Created = created;
             this.Description = description;
+            this.GenerateAudio = generateAudio;
             this.HuggingFaceId = huggingFaceId;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PricingSkus = pricingSkus;
+            this.Seed = seed;
             this.SupportedAspectRatios = supportedAspectRatios;
             this.SupportedDurations = supportedDurations;
+            this.SupportedFrameImages = supportedFrameImages;
             this.SupportedResolutions = supportedResolutions;
             this.SupportedSizes = supportedSizes;
         }
