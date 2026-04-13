@@ -127,6 +127,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        DekaLLM,
+        /// <summary>
+        /// 
+        /// </summary>
         Enfer,
         /// <summary>
         /// 
@@ -327,6 +331,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Recraft,
+        /// <summary>
+        /// 
+        /// </summary>
         Recursal,
         /// <summary>
         /// 
@@ -467,6 +475,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Crusoe => "Crusoe",
                 ProviderResponseProviderName.DeepInfra => "DeepInfra",
                 ProviderResponseProviderName.DeepSeek => "DeepSeek",
+                ProviderResponseProviderName.DekaLLM => "DekaLLM",
                 ProviderResponseProviderName.Enfer => "Enfer",
                 ProviderResponseProviderName.FakeProvider => "FakeProvider",
                 ProviderResponseProviderName.Featherless => "Featherless",
@@ -517,6 +526,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Parasail => "Parasail",
                 ProviderResponseProviderName.Perplexity => "Perplexity",
                 ProviderResponseProviderName.Phala => "Phala",
+                ProviderResponseProviderName.Recraft => "Recraft",
                 ProviderResponseProviderName.Recursal => "Recursal",
                 ProviderResponseProviderName.Reflection => "Reflection",
                 ProviderResponseProviderName.Reka => "Reka",
@@ -581,6 +591,7 @@ namespace OpenRouter
                 "Crusoe" => ProviderResponseProviderName.Crusoe,
                 "DeepInfra" => ProviderResponseProviderName.DeepInfra,
                 "DeepSeek" => ProviderResponseProviderName.DeepSeek,
+                "DekaLLM" => ProviderResponseProviderName.DekaLLM,
                 "Enfer" => ProviderResponseProviderName.Enfer,
                 "FakeProvider" => ProviderResponseProviderName.FakeProvider,
                 "Featherless" => ProviderResponseProviderName.Featherless,
@@ -631,6 +642,7 @@ namespace OpenRouter
                 "Parasail" => ProviderResponseProviderName.Parasail,
                 "Perplexity" => ProviderResponseProviderName.Perplexity,
                 "Phala" => ProviderResponseProviderName.Phala,
+                "Recraft" => ProviderResponseProviderName.Recraft,
                 "Recursal" => ProviderResponseProviderName.Recursal,
                 "Reflection" => ProviderResponseProviderName.Reflection,
                 "Reka" => ProviderResponseProviderName.Reka,
