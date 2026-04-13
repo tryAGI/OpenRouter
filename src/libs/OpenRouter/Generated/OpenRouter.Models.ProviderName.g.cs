@@ -107,6 +107,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        DekaLLM,
+        /// <summary>
+        /// 
+        /// </summary>
         FakeProvider,
         /// <summary>
         /// 
@@ -247,6 +251,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Recraft,
+        /// <summary>
+        /// 
+        /// </summary>
         Reka,
         /// <summary>
         /// 
@@ -350,6 +358,7 @@ namespace OpenRouter
                 ProviderName.Crusoe => "Crusoe",
                 ProviderName.DeepInfra => "DeepInfra",
                 ProviderName.DeepSeek => "DeepSeek",
+                ProviderName.DekaLLM => "DekaLLM",
                 ProviderName.FakeProvider => "FakeProvider",
                 ProviderName.Featherless => "Featherless",
                 ProviderName.Fireworks => "Fireworks",
@@ -385,6 +394,7 @@ namespace OpenRouter
                 ProviderName.Parasail => "Parasail",
                 ProviderName.Perplexity => "Perplexity",
                 ProviderName.Phala => "Phala",
+                ProviderName.Recraft => "Recraft",
                 ProviderName.Reka => "Reka",
                 ProviderName.Relace => "Relace",
                 ProviderName.SambaNova => "SambaNova",
@@ -436,6 +446,7 @@ namespace OpenRouter
                 "Crusoe" => ProviderName.Crusoe,
                 "DeepInfra" => ProviderName.DeepInfra,
                 "DeepSeek" => ProviderName.DeepSeek,
+                "DekaLLM" => ProviderName.DekaLLM,
                 "FakeProvider" => ProviderName.FakeProvider,
                 "Featherless" => ProviderName.Featherless,
                 "Fireworks" => ProviderName.Fireworks,
@@ -471,6 +482,7 @@ namespace OpenRouter
                 "Parasail" => ProviderName.Parasail,
                 "Perplexity" => ProviderName.Perplexity,
                 "Phala" => ProviderName.Phala,
+                "Recraft" => ProviderName.Recraft,
                 "Reka" => ProviderName.Reka,
                 "Relace" => ProviderName.Relace,
                 "SambaNova" => ProviderName.SambaNova,

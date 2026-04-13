@@ -185,6 +185,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dekallm")]
+        public object? Dekallm { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enfer")]
         public object? Enfer { get; set; }
 
@@ -485,6 +491,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("recraft")]
+        public object? Recraft { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recursal")]
         public object? Recursal { get; set; }
 
@@ -670,6 +682,7 @@ namespace OpenRouter
         /// <param name="crusoe"></param>
         /// <param name="deepinfra"></param>
         /// <param name="deepseek"></param>
+        /// <param name="dekallm"></param>
         /// <param name="enfer"></param>
         /// <param name="fakeProvider"></param>
         /// <param name="featherless"></param>
@@ -720,6 +733,7 @@ namespace OpenRouter
         /// <param name="parasail"></param>
         /// <param name="perplexity"></param>
         /// <param name="phala"></param>
+        /// <param name="recraft"></param>
         /// <param name="recursal"></param>
         /// <param name="reflection"></param>
         /// <param name="reka"></param>
@@ -778,6 +792,7 @@ namespace OpenRouter
             object? crusoe,
             object? deepinfra,
             object? deepseek,
+            object? dekallm,
             object? enfer,
             object? fakeProvider,
             object? featherless,
@@ -828,6 +843,7 @@ namespace OpenRouter
             object? parasail,
             object? perplexity,
             object? phala,
+            object? recraft,
             object? recursal,
             object? reflection,
             object? reka,
@@ -883,6 +899,7 @@ namespace OpenRouter
             this.Crusoe = crusoe;
             this.Deepinfra = deepinfra;
             this.Deepseek = deepseek;
+            this.Dekallm = dekallm;
             this.Enfer = enfer;
             this.FakeProvider = fakeProvider;
             this.Featherless = featherless;
@@ -933,6 +950,7 @@ namespace OpenRouter
             this.Parasail = parasail;
             this.Perplexity = perplexity;
             this.Phala = phala;
+            this.Recraft = recraft;
             this.Recursal = recursal;
             this.Reflection = reflection;
             this.Reka = reka;

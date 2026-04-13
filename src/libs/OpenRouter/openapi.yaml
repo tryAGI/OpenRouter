@@ -5297,6 +5297,7 @@
           "Crusoe",
           "DeepInfra",
           "DeepSeek",
+          "DekaLLM",
           "Featherless",
           "Fireworks",
           "Friendli",
@@ -5331,6 +5332,7 @@
           "Parasail",
           "Perplexity",
           "Phala",
+          "Recraft",
           "Reka",
           "Relace",
           "SambaNova",
@@ -13293,6 +13295,7 @@
           "Crusoe",
           "DeepInfra",
           "DeepSeek",
+          "DekaLLM",
           "Featherless",
           "Fireworks",
           "Friendli",
@@ -13327,6 +13330,7 @@
           "Parasail",
           "Perplexity",
           "Phala",
+          "Recraft",
           "Reka",
           "Relace",
           "SambaNova",
@@ -20543,6 +20547,12 @@
               "description": "Any type"
             }
           },
+          "dekallm": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "enfer": {
             "type": "object",
             "additionalProperties": {
@@ -20838,6 +20848,12 @@
             }
           },
           "phala": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "recraft": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"
