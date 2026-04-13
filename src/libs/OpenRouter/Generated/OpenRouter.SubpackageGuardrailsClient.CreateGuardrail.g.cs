@@ -517,6 +517,9 @@ namespace OpenRouter
         /// <param name="enforceZdr">
         /// Whether to enforce zero data retention
         /// </param>
+        /// <param name="ignoredModels">
+        /// Array of model identifiers to exclude from routing (slug or canonical_slug accepted)
+        /// </param>
         /// <param name="ignoredProviders">
         /// List of provider IDs to exclude from routing
         /// </param>
@@ -538,6 +541,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
             string? description = default,
             bool? enforceZdr = default,
+            global::System.Collections.Generic.IList<string>? ignoredModels = default,
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             double? limitUsd = default,
             global::OpenRouter.GuardrailInterval? resetInterval = default,
@@ -550,6 +554,7 @@ namespace OpenRouter
                 AllowedProviders = allowedProviders,
                 Description = description,
                 EnforceZdr = enforceZdr,
+                IgnoredModels = ignoredModels,
                 IgnoredProviders = ignoredProviders,
                 LimitUsd = limitUsd,
                 Name = name,
