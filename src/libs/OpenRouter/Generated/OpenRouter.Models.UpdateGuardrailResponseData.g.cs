@@ -47,6 +47,12 @@ namespace OpenRouter
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
+        /// Array of model canonical_slugs to exclude from routing
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ignored_models")]
+        public global::System.Collections.Generic.IList<string>? IgnoredModels { get; set; }
+
+        /// <summary>
         /// List of provider IDs to exclude from routing
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ignored_providers")]
@@ -108,6 +114,9 @@ namespace OpenRouter
         /// <param name="enforceZdr">
         /// Whether to enforce zero data retention
         /// </param>
+        /// <param name="ignoredModels">
+        /// Array of model canonical_slugs to exclude from routing
+        /// </param>
         /// <param name="ignoredProviders">
         /// List of provider IDs to exclude from routing
         /// </param>
@@ -131,6 +140,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? allowedProviders,
             string? description,
             bool? enforceZdr,
+            global::System.Collections.Generic.IList<string>? ignoredModels,
             global::System.Collections.Generic.IList<string>? ignoredProviders,
             double? limitUsd,
             global::OpenRouter.GuardrailInterval? resetInterval,
@@ -142,6 +152,7 @@ namespace OpenRouter
             this.Description = description;
             this.EnforceZdr = enforceZdr;
             this.Id = id;
+            this.IgnoredModels = ignoredModels;
             this.IgnoredProviders = ignoredProviders;
             this.LimitUsd = limitUsd;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
