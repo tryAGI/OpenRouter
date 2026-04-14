@@ -66,6 +66,9 @@ namespace OpenRouter.JsonConverters
             var __score7 = 0;
             if (__jsonProps.Contains("parameters")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
+            var __score8 = 0;
+            if (__jsonProps.Contains("parameters")) __score8++;
+            if (__jsonProps.Contains("type")) __score8++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -76,6 +79,7 @@ namespace OpenRouter.JsonConverters
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
+            if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
 
             global::OpenRouter.MessagesRequestToolsItems0? messagesRequestToolsItems0 = default;
             global::OpenRouter.MessagesRequestToolsItems1? messagesRequestToolsItems1 = default;
@@ -83,6 +87,7 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.MessagesRequestToolsItems3? messagesRequestToolsItems3 = default;
             global::OpenRouter.MessagesRequestToolsItems4? messagesRequestToolsItems4 = default;
             global::OpenRouter.DatetimeServerTool? datetimeServerTool = default;
+            global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter = default;
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool = default;
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool = default;
             if (__bestIndex >= 0)
@@ -181,6 +186,21 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerToolOpenRouter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter).Name}");
+                        imageGenerationServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 7)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSearchModelsServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSearchModelsServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSearchModelsServerTool).Name}");
                         chatSearchModelsServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -192,7 +212,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 7)
+                else if (__bestIndex == 8)
                 {
                     try
                     {
@@ -209,7 +229,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && chatSearchModelsServerTool == null && openRouterWebSearchServerTool == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && openRouterWebSearchServerTool == null)
             {
                 try
                 {
@@ -291,6 +311,19 @@ namespace OpenRouter.JsonConverters
 
                 try
                 {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerToolOpenRouter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter).Name}");
+                    imageGenerationServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSearchModelsServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSearchModelsServerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSearchModelsServerTool).Name}");
                     chatSearchModelsServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -328,6 +361,8 @@ namespace OpenRouter.JsonConverters
                 messagesRequestToolsItems4,
 
                 datetimeServerTool,
+
+                imageGenerationServerToolOpenRouter,
 
                 chatSearchModelsServerTool,
 
@@ -381,6 +416,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeServerTool!, typeInfo);
+            }
+            else if (value.IsImageGenerationServerToolOpenRouter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerToolOpenRouter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenerationServerToolOpenRouter!, typeInfo);
             }
             else if (value.IsChatSearchModelsServerTool)
             {

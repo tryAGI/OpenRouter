@@ -21,10 +21,11 @@ namespace OpenRouter
         public double? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/features/multimodal/image-generation for more details.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_config")]
-        public object? ImageConfig { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageConfigJsonConverter))]
+        public global::OpenRouter.ImageConfig? ImageConfig { get; set; }
 
         /// <summary>
         /// 
@@ -239,9 +240,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="background"></param>
         /// <param name="frequencyPenalty"></param>
-        /// <param name="imageConfig">
-        /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/features/multimodal/image-generation for more details.
-        /// </param>
+        /// <param name="imageConfig"></param>
         /// <param name="include"></param>
         /// <param name="input">
         /// Input for a response request - can be a string or array of items
@@ -305,7 +304,7 @@ namespace OpenRouter
         public ResponsesRequest(
             bool? background,
             double? frequencyPenalty,
-            object? imageConfig,
+            global::OpenRouter.ImageConfig? imageConfig,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include,
             global::OpenRouter.Inputs? input,
             string? instructions,

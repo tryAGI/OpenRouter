@@ -23,9 +23,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="background"></param>
         /// <param name="frequencyPenalty"></param>
-        /// <param name="imageConfig">
-        /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/features/multimodal/image-generation for more details.
-        /// </param>
+        /// <param name="imageConfig"></param>
         /// <param name="include"></param>
         /// <param name="input">
         /// Input for a response request - can be a string or array of items
@@ -89,7 +87,7 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.OpenResponsesResult> CreateResponsesAsync(
             bool? background = default,
             double? frequencyPenalty = default,
-            object? imageConfig = default,
+            global::OpenRouter.ImageConfig? imageConfig = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include = default,
             global::OpenRouter.Inputs? input = default,
             string? instructions = default,

@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public readonly partial struct ChatRequestImageConfig
+    public sealed partial class ImageGenerationServerToolOpenRouter
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::OpenRouter.ChatRequestImageConfig? FromJson(
+        public static global::OpenRouter.ImageGenerationServerToolOpenRouter? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::OpenRouter.ChatRequestImageConfig),
-                jsonSerializerContext) as global::OpenRouter.ChatRequestImageConfig?;
+                typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter),
+                jsonSerializerContext) as global::OpenRouter.ImageGenerationServerToolOpenRouter;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::OpenRouter.ChatRequestImageConfig? FromJson(
+        public static global::OpenRouter.ImageGenerationServerToolOpenRouter? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ChatRequestImageConfig>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ImageGenerationServerToolOpenRouter>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.ChatRequestImageConfig?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.ImageGenerationServerToolOpenRouter?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::OpenRouter.ChatRequestImageConfig),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.ChatRequestImageConfig?;
+                typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter),
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.ImageGenerationServerToolOpenRouter;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.ChatRequestImageConfig?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.ImageGenerationServerToolOpenRouter?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.ChatRequestImageConfig?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.ImageGenerationServerToolOpenRouter?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

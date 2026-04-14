@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/guides/overview/multimodal/image-generation for more details.
+    /// Any type
     /// </summary>
-    public sealed partial class ChatRequestImageConfig2
+    public sealed partial class ImageConfigVariant3Item
     {
 
         /// <summary>
