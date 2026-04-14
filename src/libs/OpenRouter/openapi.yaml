@@ -2158,7 +2158,10 @@
                     "description": "Whether to include BYOK usage in the limit"
                   },
                   "limit": {
-                    "type": "number",
+                    "type": [
+                      "number",
+                      "null"
+                    ],
                     "format": "double",
                     "description": "Optional spending limit for the API key in USD"
                   },
@@ -2425,7 +2428,10 @@
                     "description": "Whether to include BYOK usage in the limit"
                   },
                   "limit": {
-                    "type": "number",
+                    "type": [
+                      "number",
+                      "null"
+                    ],
                     "format": "double",
                     "description": "New spending limit for the API key in USD"
                   },
@@ -5438,22 +5444,34 @@
         "type": "object",
         "properties": {
           "p50": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Maximum p50 latency (seconds)"
           },
           "p75": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Maximum p75 latency (seconds)"
           },
           "p90": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Maximum p90 latency (seconds)"
           },
           "p99": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Maximum p99 latency (seconds)"
           }
@@ -5481,22 +5499,34 @@
         "type": "object",
         "properties": {
           "p50": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Minimum p50 throughput (tokens/sec)"
           },
           "p75": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Minimum p75 throughput (tokens/sec)"
           },
           "p90": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Minimum p90 throughput (tokens/sec)"
           },
           "p99": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Minimum p99 throughput (tokens/sec)"
           }
@@ -5747,7 +5777,10 @@
             ]
           },
           "max_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "description": "Configuration for reasoning mode in the response",
@@ -7317,7 +7350,10 @@
             ]
           },
           "frequency_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "image_config": {
@@ -7346,10 +7382,16 @@
             ]
           },
           "max_output_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "max_tool_calls": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -7384,7 +7426,10 @@
             "description": "Plugins you want to enable for this request, including their settings."
           },
           "presence_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "previous_response_id": {
@@ -7442,7 +7487,10 @@
             "default": false
           },
           "temperature": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "text": {
@@ -7461,10 +7509,16 @@
             "type": "integer"
           },
           "top_logprobs": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "top_p": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "trace": {
@@ -9107,7 +9161,10 @@
         "type": "object",
         "properties": {
           "upstream_inference_cost": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "upstream_inference_input_cost": {
@@ -9144,7 +9201,10 @@
             "type": "integer"
           },
           "cost": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Cost of the completion"
           },
@@ -9176,7 +9236,10 @@
             ]
           },
           "completed_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "created_at": {
             "type": "integer"
@@ -9185,7 +9248,10 @@
             "$ref": "#/components/schemas/ResponsesErrorField"
           },
           "frequency_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "id": {
@@ -9198,10 +9264,16 @@
             "$ref": "#/components/schemas/BaseInputs"
           },
           "max_output_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "max_tool_calls": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/RequestMetadata"
@@ -9225,7 +9297,10 @@
             "type": "boolean"
           },
           "presence_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "previous_response_id": {
@@ -9265,7 +9340,10 @@
             "type": "boolean"
           },
           "temperature": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "text": {
@@ -9284,7 +9362,10 @@
             "type": "integer"
           },
           "top_p": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "truncation": {
@@ -11532,7 +11613,10 @@
             "$ref": "#/components/schemas/ChatDebugOptions"
           },
           "frequency_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Frequency penalty (-2.0 to 2.0)"
           },
@@ -11562,11 +11646,17 @@
             "description": "Return log probabilities"
           },
           "max_completion_tokens": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Maximum tokens in completion"
           },
           "max_tokens": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Maximum tokens (deprecated, use max_completion_tokens). Note: some providers enforce a minimum of 16."
           },
           "messages": {
@@ -11611,7 +11701,10 @@
             "description": "Plugins you want to enable for this request, including their settings."
           },
           "presence_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Presence penalty (-2.0 to 2.0)"
           },
@@ -11630,7 +11723,10 @@
             "description": "Any type"
           },
           "seed": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Random seed for deterministic outputs"
           },
           "service_tier": {
@@ -11661,7 +11757,10 @@
             "$ref": "#/components/schemas/ChatStreamOptions"
           },
           "temperature": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Sampling temperature (0-2)"
           },
@@ -11676,11 +11775,17 @@
             "description": "Available tools for function calling"
           },
           "top_logprobs": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Number of top log probabilities to return (0-20)"
           },
           "top_p": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Nucleus sampling parameter (0-1)"
           },
@@ -11841,19 +11946,31 @@
         "type": "object",
         "properties": {
           "accepted_prediction_tokens": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Accepted prediction tokens"
           },
           "audio_tokens": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Tokens used for audio output"
           },
           "reasoning_tokens": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Tokens used for reasoning"
           },
           "rejected_prediction_tokens": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Rejected prediction tokens"
           }
         },
@@ -12490,19 +12607,31 @@
         "type": "object",
         "properties": {
           "frequency_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "presence_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "repetition_penalty": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "temperature": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "top_k": {
@@ -12512,7 +12641,10 @@
             ]
           },
           "top_p": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           }
         },
@@ -12708,7 +12840,10 @@
         "type": "object",
         "properties": {
           "context_length": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Context length from the top provider"
           },
           "is_moderated": {
@@ -12716,7 +12851,10 @@
             "description": "Whether the top provider moderates content"
           },
           "max_completion_tokens": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Maximum completion tokens from the top provider"
           }
         },
@@ -12737,7 +12875,10 @@
             "description": "Canonical slug for the model"
           },
           "context_length": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Maximum context length in tokens"
           },
           "created": {
@@ -13048,10 +13189,16 @@
             "$ref": "#/components/schemas/PercentileStats"
           },
           "max_completion_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "max_prompt_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "model_id": {
             "type": "string",
@@ -13091,16 +13238,25 @@
             "$ref": "#/components/schemas/PublicEndpointThroughputLast30M"
           },
           "uptime_last_1d": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data."
           },
           "uptime_last_30m": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "uptime_last_5m": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Uptime percentage over the last 5 minutes, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data."
           }
@@ -13451,11 +13607,17 @@
             "description": "Type of API used for the generation"
           },
           "app_id": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "ID of the app that made the request"
           },
           "cache_discount": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Discount applied due to caching"
           },
@@ -13485,7 +13647,10 @@
             "description": "Reason the generation finished"
           },
           "generation_time": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Time taken for generation in milliseconds"
           },
@@ -13505,7 +13670,10 @@
             "description": "Whether this used bring-your-own-key"
           },
           "latency": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Total latency in milliseconds"
           },
@@ -13514,7 +13682,10 @@
             "description": "Model used for the generation"
           },
           "moderation_latency": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Moderation latency in milliseconds"
           },
@@ -13526,39 +13697,66 @@
             "description": "Native finish reason as reported by provider"
           },
           "native_tokens_cached": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Native cached tokens as reported by provider"
           },
           "native_tokens_completion": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Native completion tokens as reported by provider"
           },
           "native_tokens_completion_images": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Native completion image tokens as reported by provider"
           },
           "native_tokens_prompt": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Native prompt tokens as reported by provider"
           },
           "native_tokens_reasoning": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Native reasoning tokens as reported by provider"
           },
           "num_input_audio_prompt": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Number of audio inputs in the prompt"
           },
           "num_media_completion": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Number of media items in the completion"
           },
           "num_media_prompt": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Number of media items in the prompt"
           },
           "num_search_results": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Number of search results included"
           },
           "origin": {
@@ -13611,11 +13809,17 @@
             "description": "Whether the response was streamed"
           },
           "tokens_completion": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Number of tokens in the completion"
           },
           "tokens_prompt": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Number of tokens in the prompt"
           },
           "total_cost": {
@@ -13631,7 +13835,10 @@
             "description": "Upstream provider's identifier for this generation"
           },
           "upstream_inference_cost": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Cost charged by the upstream provider"
           },
@@ -13780,7 +13987,10 @@
             "description": "List of provider IDs to exclude from routing"
           },
           "limit_usd": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -13885,7 +14095,10 @@
             "description": "List of provider IDs to exclude from routing"
           },
           "limit_usd": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -13969,7 +14182,10 @@
             "description": "List of provider IDs to exclude from routing"
           },
           "limit_usd": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -14074,7 +14290,10 @@
             "description": "List of provider IDs to exclude from routing"
           },
           "limit_usd": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -14186,7 +14405,10 @@
             "description": "List of provider IDs to exclude from routing"
           },
           "limit_usd": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "New spending limit in USD"
           },
@@ -14267,7 +14489,10 @@
             "description": "List of provider IDs to exclude from routing"
           },
           "limit_usd": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit in USD"
           },
@@ -14637,12 +14862,18 @@
             "description": "Human-readable label for the API key"
           },
           "limit": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -14773,12 +15004,18 @@
             "description": "Human-readable label for the API key"
           },
           "limit": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -14929,12 +15166,18 @@
             "description": "Human-readable label for the API key"
           },
           "limit": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -15078,12 +15321,18 @@
             "description": "Human-readable label for the API key"
           },
           "limit": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -15248,12 +15497,18 @@
             "description": "Human-readable label for the API key"
           },
           "limit": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Spending limit for the API key in USD"
           },
           "limit_remaining": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "Remaining spending limit in USD"
           },
@@ -17282,7 +17537,10 @@
             "$ref": "#/components/schemas/AnthropicCacheControlDirective"
           },
           "max_uses": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "name": {
             "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf3Name"
@@ -17354,7 +17612,10 @@
             "$ref": "#/components/schemas/AnthropicCacheControlDirective"
           },
           "max_uses": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "name": {
             "$ref": "#/components/schemas/MessagesRequestToolsItemsOneOf4Name"
@@ -18609,13 +18870,22 @@
             "$ref": "#/components/schemas/AnthropicTextEditorCodeExecutionViewResultFileType"
           },
           "num_lines": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "start_line": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "total_lines": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "type": {
             "$ref": "#/components/schemas/AnthropicTextEditorCodeExecutionViewResultType"
@@ -18674,16 +18944,28 @@
             }
           },
           "new_lines": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "new_start": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "old_lines": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "old_start": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "type": {
             "$ref": "#/components/schemas/AnthropicTextEditorCodeExecutionStrReplaceResultType"
@@ -19203,10 +19485,16 @@
             "$ref": "#/components/schemas/AnthropicCacheCreation"
           },
           "cache_creation_input_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "cache_read_input_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "inference_geo": {
             "type": [
@@ -19256,7 +19544,10 @@
             "format": "double"
           },
           "upstream_inference_cost": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "upstream_inference_prompt_cost": {
@@ -19277,10 +19568,16 @@
             "$ref": "#/components/schemas/AnthropicCacheCreation"
           },
           "cache_creation_input_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "cache_read_input_tokens": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "inference_geo": {
             "type": [
@@ -19304,7 +19601,10 @@
             ]
           },
           "cost": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double"
           },
           "cost_details": {
@@ -21154,7 +21454,10 @@
         "type": "object",
         "properties": {
           "cost": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "format": "double",
             "description": "The cost of the video generation in USD."
           },

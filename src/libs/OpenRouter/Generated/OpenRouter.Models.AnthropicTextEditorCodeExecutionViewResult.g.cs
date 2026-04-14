@@ -27,22 +27,19 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumLines { get; set; }
+        public int? NumLines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StartLine { get; set; }
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalLines { get; set; }
+        public int? TotalLines { get; set; }
 
         /// <summary>
         /// 
@@ -72,9 +69,9 @@ namespace OpenRouter
         public AnthropicTextEditorCodeExecutionViewResult(
             string content,
             global::OpenRouter.AnthropicTextEditorCodeExecutionViewResultFileType fileType,
-            int numLines,
-            int startLine,
-            int totalLines,
+            int? numLines,
+            int? startLine,
+            int? totalLines,
             global::OpenRouter.AnthropicTextEditorCodeExecutionViewResultType type)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
