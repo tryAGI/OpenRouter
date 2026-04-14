@@ -19,15 +19,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CacheCreationInputTokens { get; set; }
+        public int? CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CacheReadInputTokens { get; set; }
+        public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// 
@@ -87,12 +85,12 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BaseMessagesResultUsage" /> class.
         /// </summary>
         /// <param name="cacheCreation"></param>
-        /// <param name="cacheCreationInputTokens"></param>
-        /// <param name="cacheReadInputTokens"></param>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
         /// <param name="serverToolUse"></param>
         /// <param name="serviceTier"></param>
+        /// <param name="cacheCreationInputTokens"></param>
+        /// <param name="cacheReadInputTokens"></param>
         /// <param name="inferenceGeo"></param>
         /// <param name="iterations"></param>
         /// <param name="speed"></param>
@@ -101,12 +99,12 @@ namespace OpenRouter
 #endif
         public BaseMessagesResultUsage(
             global::OpenRouter.AnthropicCacheCreation cacheCreation,
-            int cacheCreationInputTokens,
-            int cacheReadInputTokens,
             int inputTokens,
             int outputTokens,
             global::OpenRouter.AnthropicServerToolUsage serverToolUse,
             global::OpenRouter.AnthropicServiceTier serviceTier,
+            int? cacheCreationInputTokens,
+            int? cacheReadInputTokens,
             string? inferenceGeo,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? iterations,
             global::OpenRouter.AnthropicSpeed? speed)

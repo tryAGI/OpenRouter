@@ -18,29 +18,25 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NewLines { get; set; }
+        public int? NewLines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_start")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NewStart { get; set; }
+        public int? NewStart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OldLines { get; set; }
+        public int? OldLines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_start")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OldStart { get; set; }
+        public int? OldStart { get; set; }
 
         /// <summary>
         /// 
@@ -58,21 +54,21 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="AnthropicTextEditorCodeExecutionStrReplaceResult" /> class.
         /// </summary>
+        /// <param name="lines"></param>
         /// <param name="newLines"></param>
         /// <param name="newStart"></param>
         /// <param name="oldLines"></param>
         /// <param name="oldStart"></param>
-        /// <param name="lines"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicTextEditorCodeExecutionStrReplaceResult(
-            int newLines,
-            int newStart,
-            int oldLines,
-            int oldStart,
             global::System.Collections.Generic.IList<string>? lines,
+            int? newLines,
+            int? newStart,
+            int? oldLines,
+            int? oldStart,
             global::OpenRouter.AnthropicTextEditorCodeExecutionStrReplaceResultType type)
         {
             this.Lines = lines;

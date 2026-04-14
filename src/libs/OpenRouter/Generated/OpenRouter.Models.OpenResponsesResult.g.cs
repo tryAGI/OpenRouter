@@ -18,8 +18,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CompletedAt { get; set; }
+        public int? CompletedAt { get; set; }
 
         /// <summary>
         /// 
@@ -39,8 +38,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double FrequencyPenalty { get; set; }
+        public double? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// 
@@ -121,8 +119,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double PresencePenalty { get; set; }
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
         /// 
@@ -178,8 +175,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Temperature { get; set; }
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// Text output configuration including format and verbosity
@@ -212,8 +208,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TopP { get; set; }
+        public double? TopP { get; set; }
 
         /// <summary>
         /// 
@@ -243,12 +238,10 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenResponsesResult" /> class.
         /// </summary>
-        /// <param name="completedAt"></param>
         /// <param name="createdAt"></param>
         /// <param name="error">
         /// Error information returned from the API
         /// </param>
-        /// <param name="frequencyPenalty"></param>
         /// <param name="id"></param>
         /// <param name="incompleteDetails"></param>
         /// <param name="instructions"></param>
@@ -258,17 +251,17 @@ namespace OpenRouter
         /// <param name="model"></param>
         /// <param name="output"></param>
         /// <param name="parallelToolCalls"></param>
-        /// <param name="presencePenalty"></param>
         /// <param name="status"></param>
-        /// <param name="temperature"></param>
         /// <param name="toolChoice"></param>
         /// <param name="tools"></param>
-        /// <param name="topP"></param>
         /// <param name="background"></param>
+        /// <param name="completedAt"></param>
+        /// <param name="frequencyPenalty"></param>
         /// <param name="maxOutputTokens"></param>
         /// <param name="maxToolCalls"></param>
         /// <param name="object"></param>
         /// <param name="outputText"></param>
+        /// <param name="presencePenalty"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="prompt"></param>
         /// <param name="promptCacheKey"></param>
@@ -276,10 +269,12 @@ namespace OpenRouter
         /// <param name="safetyIdentifier"></param>
         /// <param name="serviceTier"></param>
         /// <param name="store"></param>
+        /// <param name="temperature"></param>
         /// <param name="text">
         /// Text output configuration including format and verbosity
         /// </param>
         /// <param name="topLogprobs"></param>
+        /// <param name="topP"></param>
         /// <param name="truncation"></param>
         /// <param name="usage">
         /// Token usage information for the response
@@ -289,10 +284,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenResponsesResult(
-            int completedAt,
             int createdAt,
             global::OpenRouter.ResponsesErrorField error,
-            double frequencyPenalty,
             string id,
             global::OpenRouter.IncompleteDetails incompleteDetails,
             global::OpenRouter.BaseInputs instructions,
@@ -300,17 +293,17 @@ namespace OpenRouter
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItems> output,
             bool parallelToolCalls,
-            double presencePenalty,
             global::OpenRouter.OpenAIResponsesResponseStatus status,
-            double temperature,
             global::OpenRouter.OpenAIResponsesToolChoice toolChoice,
             global::System.Collections.Generic.IList<global::OpenRouter.BaseResponsesResultToolsItems> tools,
-            double topP,
             bool? background,
+            int? completedAt,
+            double? frequencyPenalty,
             int? maxOutputTokens,
             int? maxToolCalls,
             global::OpenRouter.BaseResponsesResultObject @object,
             string? outputText,
+            double? presencePenalty,
             string? previousResponseId,
             global::OpenRouter.StoredPromptTemplate? prompt,
             string? promptCacheKey,
@@ -318,8 +311,10 @@ namespace OpenRouter
             string? safetyIdentifier,
             string? serviceTier,
             bool? store,
+            double? temperature,
             global::OpenRouter.TextConfig? text,
             int? topLogprobs,
+            double? topP,
             global::OpenRouter.Truncation? truncation,
             global::OpenRouter.Usage? usage,
             string? user)

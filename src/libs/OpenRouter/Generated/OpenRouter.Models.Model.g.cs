@@ -26,8 +26,7 @@ namespace OpenRouter
         /// Maximum context length in tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContextLength { get; set; }
+        public int? ContextLength { get; set; }
 
         /// <summary>
         /// Unix timestamp of when the model was created
@@ -132,9 +131,6 @@ namespace OpenRouter
         /// <param name="canonicalSlug">
         /// Canonical slug for the model
         /// </param>
-        /// <param name="contextLength">
-        /// Maximum context length in tokens
-        /// </param>
         /// <param name="created">
         /// Unix timestamp of when the model was created
         /// </param>
@@ -162,6 +158,9 @@ namespace OpenRouter
         /// <param name="topProvider">
         /// Information about the top provider for this model
         /// </param>
+        /// <param name="contextLength">
+        /// Maximum context length in tokens
+        /// </param>
         /// <param name="description">
         /// Description of the model
         /// </param>
@@ -180,7 +179,6 @@ namespace OpenRouter
         public Model(
             global::OpenRouter.ModelArchitecture architecture,
             string canonicalSlug,
-            int contextLength,
             global::System.DateTimeOffset created,
             global::OpenRouter.DefaultParameters defaultParameters,
             string id,
@@ -190,6 +188,7 @@ namespace OpenRouter
             global::OpenRouter.PublicPricing pricing,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             global::OpenRouter.TopProviderInfo topProvider,
+            int? contextLength,
             string? description,
             string? expirationDate,
             string? huggingFaceId,

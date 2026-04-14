@@ -87,15 +87,13 @@ namespace OpenRouter
         /// Spending limit for the API key in USD
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Limit { get; set; }
+        public double? Limit { get; set; }
 
         /// <summary>
         /// Remaining spending limit in USD
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_remaining")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double LimitRemaining { get; set; }
+        public double? LimitRemaining { get; set; }
 
         /// <summary>
         /// Type of limit reset for the API key
@@ -180,12 +178,6 @@ namespace OpenRouter
         /// <param name="label">
         /// Human-readable label for the API key
         /// </param>
-        /// <param name="limit">
-        /// Spending limit for the API key in USD
-        /// </param>
-        /// <param name="limitRemaining">
-        /// Remaining spending limit in USD
-        /// </param>
         /// <param name="name">
         /// Name of the API key
         /// </param>
@@ -207,6 +199,12 @@ namespace OpenRouter
         /// <param name="expiresAt">
         /// ISO 8601 UTC timestamp when the API key expires, or null if no expiration
         /// </param>
+        /// <param name="limit">
+        /// Spending limit for the API key in USD
+        /// </param>
+        /// <param name="limitRemaining">
+        /// Remaining spending limit in USD
+        /// </param>
         /// <param name="limitReset">
         /// Type of limit reset for the API key
         /// </param>
@@ -226,8 +224,6 @@ namespace OpenRouter
             string hash,
             bool includeByokInLimit,
             string label,
-            double limit,
-            double limitRemaining,
             string name,
             double usage,
             double usageDaily,
@@ -235,6 +231,8 @@ namespace OpenRouter
             double usageWeekly,
             string? creatorUserId,
             global::System.DateTime? expiresAt,
+            double? limit,
+            double? limitRemaining,
             string? limitReset,
             string? updatedAt)
         {
