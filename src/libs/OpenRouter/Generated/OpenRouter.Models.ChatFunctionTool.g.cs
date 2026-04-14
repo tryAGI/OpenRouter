@@ -44,6 +44,23 @@ namespace OpenRouter
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
 
         /// <summary>
+        /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatSearchModelsServerTool? ChatSearchModelsServerTool { get; init; }
+#else
+        public global::OpenRouter.ChatSearchModelsServerTool? ChatSearchModelsServerTool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatSearchModelsServerTool))]
+#endif
+        public bool IsChatSearchModelsServerTool => ChatSearchModelsServerTool != null;
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -115,6 +132,24 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatFunctionTool(global::OpenRouter.ChatSearchModelsServerTool value) => new ChatFunctionTool((global::OpenRouter.ChatSearchModelsServerTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatSearchModelsServerTool?(ChatFunctionTool @this) => @this.ChatSearchModelsServerTool;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatFunctionTool(global::OpenRouter.ChatSearchModelsServerTool? value)
+        {
+            ChatSearchModelsServerTool = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatFunctionTool(global::OpenRouter.OpenRouterWebSearchServerTool value) => new ChatFunctionTool((global::OpenRouter.OpenRouterWebSearchServerTool?)value);
 
         /// <summary>
@@ -154,12 +189,14 @@ namespace OpenRouter
         public ChatFunctionTool(
             global::OpenRouter.ChatFunctionTool0? chatFunctionTool0,
             global::OpenRouter.DatetimeServerTool? datetimeServerTool,
+            global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool,
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool,
             global::OpenRouter.ChatWebSearchShorthand? chatWebSearchShorthand
             )
         {
             ChatFunctionTool0 = chatFunctionTool0;
             DatetimeServerTool = datetimeServerTool;
+            ChatSearchModelsServerTool = chatSearchModelsServerTool;
             OpenRouterWebSearchServerTool = openRouterWebSearchServerTool;
             ChatWebSearchShorthand = chatWebSearchShorthand;
         }
@@ -170,6 +207,7 @@ namespace OpenRouter
         public object? Object =>
             ChatWebSearchShorthand as object ??
             OpenRouterWebSearchServerTool as object ??
+            ChatSearchModelsServerTool as object ??
             DatetimeServerTool as object ??
             ChatFunctionTool0 as object 
             ;
@@ -180,6 +218,7 @@ namespace OpenRouter
         public override string? ToString() =>
             ChatFunctionTool0?.ToString() ??
             DatetimeServerTool?.ToString() ??
+            ChatSearchModelsServerTool?.ToString() ??
             OpenRouterWebSearchServerTool?.ToString() ??
             ChatWebSearchShorthand?.ToString() 
             ;
@@ -189,7 +228,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatFunctionTool0 && !IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
+            return IsChatFunctionTool0 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
         }
 
         /// <summary>
@@ -198,6 +237,7 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ChatFunctionTool0?, TResult>? chatFunctionTool0 = null,
             global::System.Func<global::OpenRouter.DatetimeServerTool?, TResult>? datetimeServerTool = null,
+            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool?, TResult>? chatSearchModelsServerTool = null,
             global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool?, TResult>? openRouterWebSearchServerTool = null,
             global::System.Func<global::OpenRouter.ChatWebSearchShorthand?, TResult>? chatWebSearchShorthand = null,
             bool validate = true)
@@ -214,6 +254,10 @@ namespace OpenRouter
             else if (IsDatetimeServerTool && datetimeServerTool != null)
             {
                 return datetimeServerTool(DatetimeServerTool!);
+            }
+            else if (IsChatSearchModelsServerTool && chatSearchModelsServerTool != null)
+            {
+                return chatSearchModelsServerTool(ChatSearchModelsServerTool!);
             }
             else if (IsOpenRouterWebSearchServerTool && openRouterWebSearchServerTool != null)
             {
@@ -233,6 +277,7 @@ namespace OpenRouter
         public void Match(
             global::System.Action<global::OpenRouter.ChatFunctionTool0?>? chatFunctionTool0 = null,
             global::System.Action<global::OpenRouter.DatetimeServerTool?>? datetimeServerTool = null,
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool?>? chatSearchModelsServerTool = null,
             global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool?>? openRouterWebSearchServerTool = null,
             global::System.Action<global::OpenRouter.ChatWebSearchShorthand?>? chatWebSearchShorthand = null,
             bool validate = true)
@@ -249,6 +294,10 @@ namespace OpenRouter
             else if (IsDatetimeServerTool)
             {
                 datetimeServerTool?.Invoke(DatetimeServerTool!);
+            }
+            else if (IsChatSearchModelsServerTool)
+            {
+                chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
             }
             else if (IsOpenRouterWebSearchServerTool)
             {
@@ -271,6 +320,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ChatFunctionTool0),
                 DatetimeServerTool,
                 typeof(global::OpenRouter.DatetimeServerTool),
+                ChatSearchModelsServerTool,
+                typeof(global::OpenRouter.ChatSearchModelsServerTool),
                 OpenRouterWebSearchServerTool,
                 typeof(global::OpenRouter.OpenRouterWebSearchServerTool),
                 ChatWebSearchShorthand,
@@ -293,6 +344,7 @@ namespace OpenRouter
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFunctionTool0?>.Default.Equals(ChatFunctionTool0, other.ChatFunctionTool0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(ChatSearchModelsServerTool, other.ChatSearchModelsServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServerTool, other.OpenRouterWebSearchServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatWebSearchShorthand?>.Default.Equals(ChatWebSearchShorthand, other.ChatWebSearchShorthand) 
                 ;
