@@ -28,9 +28,7 @@ namespace OpenRouter
         /// <param name="frequencyPenalty">
         /// Frequency penalty (-2.0 to 2.0)
         /// </param>
-        /// <param name="imageConfig">
-        /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/guides/overview/multimodal/image-generation for more details.
-        /// </param>
+        /// <param name="imageConfig"></param>
         /// <param name="logitBias">
         /// Token logit bias adjustments
         /// </param>
@@ -127,7 +125,7 @@ namespace OpenRouter
             global::OpenRouter.ChatRequestCacheControl? cacheControl = default,
             global::OpenRouter.ChatDebugOptions? debug = default,
             double? frequencyPenalty = default,
-            object? imageConfig = default,
+            global::OpenRouter.ImageConfig? imageConfig = default,
             global::System.Collections.Generic.Dictionary<string, double>? logitBias = default,
             bool? logprobs = default,
             int? maxCompletionTokens = default,

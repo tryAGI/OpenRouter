@@ -3294,7 +3294,7 @@
   ],
   "components": {
     "schemas": {
-      "ResponsesRequestImageConfig": {
+      "ImageConfig": {
         "oneOf": [
           {
             "type": "string"
@@ -3302,9 +3302,15 @@
           {
             "type": "number",
             "format": "double"
+          },
+          {
+            "type": "array",
+            "items": {
+              "description": "Any type"
+            }
           }
         ],
-        "title": "ResponsesRequestImageConfig"
+        "title": "ImageConfig"
       },
       "ResponseIncludesEnum": {
         "type": "string",
@@ -7183,6 +7189,40 @@
         "description": "OpenRouter built-in server tool: returns the current date and time",
         "title": "DatetimeServerTool"
       },
+      "ImageGenerationServerToolConfig": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "Which image generation model to use (e.g. \"openai/gpt-image-1\"). Defaults to \"openai/gpt-image-1\"."
+          }
+        },
+        "description": "Configuration for the openrouter:image_generation server tool. Accepts all image_config params (aspect_ratio, quality, size, background, output_format, output_compression, moderation, etc.) plus a model field.",
+        "title": "ImageGenerationServerToolConfig"
+      },
+      "ImageGenerationServerToolOpenRouterType": {
+        "type": "string",
+        "enum": [
+          "openrouter:image_generation"
+        ],
+        "title": "ImageGenerationServerToolOpenRouterType"
+      },
+      "ImageGenerationServerTool_OpenRouter": {
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "$ref": "#/components/schemas/ImageGenerationServerToolConfig"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ImageGenerationServerToolOpenRouterType"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "description": "OpenRouter built-in server tool: generates images from text prompts using an image generation model",
+        "title": "ImageGenerationServerTool_OpenRouter"
+      },
       "SearchModelsServerToolConfig": {
         "type": "object",
         "properties": {
@@ -7302,6 +7342,9 @@
             "$ref": "#/components/schemas/DatetimeServerTool"
           },
           {
+            "$ref": "#/components/schemas/ImageGenerationServerTool_OpenRouter"
+          },
+          {
             "$ref": "#/components/schemas/ChatSearchModelsServerTool"
           },
           {
@@ -7357,11 +7400,7 @@
             "format": "double"
           },
           "image_config": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ResponsesRequestImageConfig"
-            },
-            "description": "Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/features/multimodal/image-generation for more details."
+            "$ref": "#/components/schemas/ImageConfig"
           },
           "include": {
             "type": [
@@ -10197,24 +10236,6 @@
         "description": "Debug options for inspecting request transformations (streaming only)",
         "title": "ChatDebugOptions"
       },
-      "ChatRequestImageConfig": {
-        "oneOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "type": "array",
-            "items": {
-              "description": "Any type"
-            }
-          }
-        ],
-        "title": "ChatRequestImageConfig"
-      },
       "ChatContentCacheControl": {
         "type": "object",
         "properties": {
@@ -11591,6 +11612,9 @@
             "$ref": "#/components/schemas/DatetimeServerTool"
           },
           {
+            "$ref": "#/components/schemas/ImageGenerationServerTool_OpenRouter"
+          },
+          {
             "$ref": "#/components/schemas/ChatSearchModelsServerTool"
           },
           {
@@ -11621,11 +11645,7 @@
             "description": "Frequency penalty (-2.0 to 2.0)"
           },
           "image_config": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ChatRequestImageConfig"
-            },
-            "description": "Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/guides/overview/multimodal/image-generation for more details."
+            "$ref": "#/components/schemas/ImageConfig"
           },
           "logit_bias": {
             "type": [
@@ -17652,6 +17672,9 @@
           },
           {
             "$ref": "#/components/schemas/DatetimeServerTool"
+          },
+          {
+            "$ref": "#/components/schemas/ImageGenerationServerTool_OpenRouter"
           },
           {
             "$ref": "#/components/schemas/ChatSearchModelsServerTool"

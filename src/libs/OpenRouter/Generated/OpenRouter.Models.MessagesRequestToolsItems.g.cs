@@ -112,6 +112,23 @@ namespace OpenRouter
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
 
         /// <summary>
+        /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerToolOpenRouter { get; init; }
+#else
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerToolOpenRouter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerToolOpenRouter))]
+#endif
+        public bool IsImageGenerationServerToolOpenRouter => ImageGenerationServerToolOpenRouter != null;
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -255,6 +272,24 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator MessagesRequestToolsItems(global::OpenRouter.ImageGenerationServerToolOpenRouter value) => new MessagesRequestToolsItems((global::OpenRouter.ImageGenerationServerToolOpenRouter?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ImageGenerationServerToolOpenRouter?(MessagesRequestToolsItems @this) => @this.ImageGenerationServerToolOpenRouter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessagesRequestToolsItems(global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
+        {
+            ImageGenerationServerToolOpenRouter = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.ChatSearchModelsServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.ChatSearchModelsServerTool?)value);
 
         /// <summary>
@@ -298,6 +333,7 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestToolsItems3? messagesRequestToolsItems3,
             global::OpenRouter.MessagesRequestToolsItems4? messagesRequestToolsItems4,
             global::OpenRouter.DatetimeServerTool? datetimeServerTool,
+            global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter,
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool,
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool
             )
@@ -308,6 +344,7 @@ namespace OpenRouter
             MessagesRequestToolsItems3 = messagesRequestToolsItems3;
             MessagesRequestToolsItems4 = messagesRequestToolsItems4;
             DatetimeServerTool = datetimeServerTool;
+            ImageGenerationServerToolOpenRouter = imageGenerationServerToolOpenRouter;
             ChatSearchModelsServerTool = chatSearchModelsServerTool;
             OpenRouterWebSearchServerTool = openRouterWebSearchServerTool;
         }
@@ -318,6 +355,7 @@ namespace OpenRouter
         public object? Object =>
             OpenRouterWebSearchServerTool as object ??
             ChatSearchModelsServerTool as object ??
+            ImageGenerationServerToolOpenRouter as object ??
             DatetimeServerTool as object ??
             MessagesRequestToolsItems4 as object ??
             MessagesRequestToolsItems3 as object ??
@@ -336,6 +374,7 @@ namespace OpenRouter
             MessagesRequestToolsItems3?.ToString() ??
             MessagesRequestToolsItems4?.ToString() ??
             DatetimeServerTool?.ToString() ??
+            ImageGenerationServerToolOpenRouter?.ToString() ??
             ChatSearchModelsServerTool?.ToString() ??
             OpenRouterWebSearchServerTool?.ToString() 
             ;
@@ -345,7 +384,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && IsOpenRouterWebSearchServerTool;
+            return IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool || !IsMessagesRequestToolsItems0 && !IsMessagesRequestToolsItems1 && !IsMessagesRequestToolsItems2 && !IsMessagesRequestToolsItems3 && !IsMessagesRequestToolsItems4 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsOpenRouterWebSearchServerTool;
         }
 
         /// <summary>
@@ -358,6 +397,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.MessagesRequestToolsItems3?, TResult>? messagesRequestToolsItems3 = null,
             global::System.Func<global::OpenRouter.MessagesRequestToolsItems4?, TResult>? messagesRequestToolsItems4 = null,
             global::System.Func<global::OpenRouter.DatetimeServerTool?, TResult>? datetimeServerTool = null,
+            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter?, TResult>? imageGenerationServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.ChatSearchModelsServerTool?, TResult>? chatSearchModelsServerTool = null,
             global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool?, TResult>? openRouterWebSearchServerTool = null,
             bool validate = true)
@@ -391,6 +431,10 @@ namespace OpenRouter
             {
                 return datetimeServerTool(DatetimeServerTool!);
             }
+            else if (IsImageGenerationServerToolOpenRouter && imageGenerationServerToolOpenRouter != null)
+            {
+                return imageGenerationServerToolOpenRouter(ImageGenerationServerToolOpenRouter!);
+            }
             else if (IsChatSearchModelsServerTool && chatSearchModelsServerTool != null)
             {
                 return chatSearchModelsServerTool(ChatSearchModelsServerTool!);
@@ -413,6 +457,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.MessagesRequestToolsItems3?>? messagesRequestToolsItems3 = null,
             global::System.Action<global::OpenRouter.MessagesRequestToolsItems4?>? messagesRequestToolsItems4 = null,
             global::System.Action<global::OpenRouter.DatetimeServerTool?>? datetimeServerTool = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter?>? imageGenerationServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.ChatSearchModelsServerTool?>? chatSearchModelsServerTool = null,
             global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool?>? openRouterWebSearchServerTool = null,
             bool validate = true)
@@ -446,6 +491,10 @@ namespace OpenRouter
             {
                 datetimeServerTool?.Invoke(DatetimeServerTool!);
             }
+            else if (IsImageGenerationServerToolOpenRouter)
+            {
+                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+            }
             else if (IsChatSearchModelsServerTool)
             {
                 chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
@@ -475,6 +524,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.MessagesRequestToolsItems4),
                 DatetimeServerTool,
                 typeof(global::OpenRouter.DatetimeServerTool),
+                ImageGenerationServerToolOpenRouter,
+                typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter),
                 ChatSearchModelsServerTool,
                 typeof(global::OpenRouter.ChatSearchModelsServerTool),
                 OpenRouterWebSearchServerTool,
@@ -501,6 +552,7 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestToolsItems3?>.Default.Equals(MessagesRequestToolsItems3, other.MessagesRequestToolsItems3) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestToolsItems4?>.Default.Equals(MessagesRequestToolsItems4, other.MessagesRequestToolsItems4) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ImageGenerationServerToolOpenRouter?>.Default.Equals(ImageGenerationServerToolOpenRouter, other.ImageGenerationServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(ChatSearchModelsServerTool, other.ChatSearchModelsServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServerTool, other.OpenRouterWebSearchServerTool) 
                 ;

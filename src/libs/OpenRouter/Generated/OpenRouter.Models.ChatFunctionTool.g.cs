@@ -44,6 +44,23 @@ namespace OpenRouter
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
 
         /// <summary>
+        /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerToolOpenRouter { get; init; }
+#else
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerToolOpenRouter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerToolOpenRouter))]
+#endif
+        public bool IsImageGenerationServerToolOpenRouter => ImageGenerationServerToolOpenRouter != null;
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -132,6 +149,24 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatFunctionTool(global::OpenRouter.ImageGenerationServerToolOpenRouter value) => new ChatFunctionTool((global::OpenRouter.ImageGenerationServerToolOpenRouter?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ImageGenerationServerToolOpenRouter?(ChatFunctionTool @this) => @this.ImageGenerationServerToolOpenRouter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatFunctionTool(global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
+        {
+            ImageGenerationServerToolOpenRouter = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatFunctionTool(global::OpenRouter.ChatSearchModelsServerTool value) => new ChatFunctionTool((global::OpenRouter.ChatSearchModelsServerTool?)value);
 
         /// <summary>
@@ -189,6 +224,7 @@ namespace OpenRouter
         public ChatFunctionTool(
             global::OpenRouter.ChatFunctionTool0? chatFunctionTool0,
             global::OpenRouter.DatetimeServerTool? datetimeServerTool,
+            global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter,
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool,
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool,
             global::OpenRouter.ChatWebSearchShorthand? chatWebSearchShorthand
@@ -196,6 +232,7 @@ namespace OpenRouter
         {
             ChatFunctionTool0 = chatFunctionTool0;
             DatetimeServerTool = datetimeServerTool;
+            ImageGenerationServerToolOpenRouter = imageGenerationServerToolOpenRouter;
             ChatSearchModelsServerTool = chatSearchModelsServerTool;
             OpenRouterWebSearchServerTool = openRouterWebSearchServerTool;
             ChatWebSearchShorthand = chatWebSearchShorthand;
@@ -208,6 +245,7 @@ namespace OpenRouter
             ChatWebSearchShorthand as object ??
             OpenRouterWebSearchServerTool as object ??
             ChatSearchModelsServerTool as object ??
+            ImageGenerationServerToolOpenRouter as object ??
             DatetimeServerTool as object ??
             ChatFunctionTool0 as object 
             ;
@@ -218,6 +256,7 @@ namespace OpenRouter
         public override string? ToString() =>
             ChatFunctionTool0?.ToString() ??
             DatetimeServerTool?.ToString() ??
+            ImageGenerationServerToolOpenRouter?.ToString() ??
             ChatSearchModelsServerTool?.ToString() ??
             OpenRouterWebSearchServerTool?.ToString() ??
             ChatWebSearchShorthand?.ToString() 
@@ -228,7 +267,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatFunctionTool0 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
+            return IsChatFunctionTool0 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
         }
 
         /// <summary>
@@ -237,6 +276,7 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ChatFunctionTool0?, TResult>? chatFunctionTool0 = null,
             global::System.Func<global::OpenRouter.DatetimeServerTool?, TResult>? datetimeServerTool = null,
+            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter?, TResult>? imageGenerationServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.ChatSearchModelsServerTool?, TResult>? chatSearchModelsServerTool = null,
             global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool?, TResult>? openRouterWebSearchServerTool = null,
             global::System.Func<global::OpenRouter.ChatWebSearchShorthand?, TResult>? chatWebSearchShorthand = null,
@@ -254,6 +294,10 @@ namespace OpenRouter
             else if (IsDatetimeServerTool && datetimeServerTool != null)
             {
                 return datetimeServerTool(DatetimeServerTool!);
+            }
+            else if (IsImageGenerationServerToolOpenRouter && imageGenerationServerToolOpenRouter != null)
+            {
+                return imageGenerationServerToolOpenRouter(ImageGenerationServerToolOpenRouter!);
             }
             else if (IsChatSearchModelsServerTool && chatSearchModelsServerTool != null)
             {
@@ -277,6 +321,7 @@ namespace OpenRouter
         public void Match(
             global::System.Action<global::OpenRouter.ChatFunctionTool0?>? chatFunctionTool0 = null,
             global::System.Action<global::OpenRouter.DatetimeServerTool?>? datetimeServerTool = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter?>? imageGenerationServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.ChatSearchModelsServerTool?>? chatSearchModelsServerTool = null,
             global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool?>? openRouterWebSearchServerTool = null,
             global::System.Action<global::OpenRouter.ChatWebSearchShorthand?>? chatWebSearchShorthand = null,
@@ -294,6 +339,10 @@ namespace OpenRouter
             else if (IsDatetimeServerTool)
             {
                 datetimeServerTool?.Invoke(DatetimeServerTool!);
+            }
+            else if (IsImageGenerationServerToolOpenRouter)
+            {
+                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
             }
             else if (IsChatSearchModelsServerTool)
             {
@@ -320,6 +369,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ChatFunctionTool0),
                 DatetimeServerTool,
                 typeof(global::OpenRouter.DatetimeServerTool),
+                ImageGenerationServerToolOpenRouter,
+                typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter),
                 ChatSearchModelsServerTool,
                 typeof(global::OpenRouter.ChatSearchModelsServerTool),
                 OpenRouterWebSearchServerTool,
@@ -344,6 +395,7 @@ namespace OpenRouter
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFunctionTool0?>.Default.Equals(ChatFunctionTool0, other.ChatFunctionTool0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ImageGenerationServerToolOpenRouter?>.Default.Equals(ImageGenerationServerToolOpenRouter, other.ImageGenerationServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(ChatSearchModelsServerTool, other.ChatSearchModelsServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServerTool, other.OpenRouterWebSearchServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatWebSearchShorthand?>.Default.Equals(ChatWebSearchShorthand, other.ChatWebSearchShorthand) 
