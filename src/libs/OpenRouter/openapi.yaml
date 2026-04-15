@@ -5290,6 +5290,7 @@
           "AionLabs",
           "Alibaba",
           "Ambient",
+          "Baidu",
           "Amazon Bedrock",
           "Amazon Nova",
           "Anthropic",
@@ -13492,6 +13493,7 @@
           "AionLabs",
           "Alibaba",
           "Ambient",
+          "Baidu",
           "Amazon Bedrock",
           "Amazon Nova",
           "Anthropic",
@@ -20824,6 +20826,12 @@
             }
           },
           "azure": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "baidu": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"
