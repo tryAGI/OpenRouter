@@ -11,6 +11,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicThinkingDisplayJsonConverter))]
+        public global::OpenRouter.AnthropicThinkingDisplay? Display { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf2TypeJsonConverter))]
         public global::OpenRouter.MessagesRequestThinkingOneOf2Type Type { get; set; }
@@ -24,13 +31,16 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesRequestThinking2" /> class.
         /// </summary>
+        /// <param name="display"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestThinking2(
+            global::OpenRouter.AnthropicThinkingDisplay? display,
             global::OpenRouter.MessagesRequestThinkingOneOf2Type type)
         {
+            this.Display = display;
             this.Type = type;
         }
 

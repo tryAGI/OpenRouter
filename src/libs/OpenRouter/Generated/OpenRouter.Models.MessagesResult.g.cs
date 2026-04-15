@@ -81,6 +81,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultContextManagement, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.MessagesResultContextManagement, object>? ContextManagement { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderNameJsonConverter))]
         public global::OpenRouter.ProviderName? Provider { get; set; }
@@ -106,6 +113,7 @@ namespace OpenRouter
         /// <param name="role"></param>
         /// <param name="stopSequence"></param>
         /// <param name="type"></param>
+        /// <param name="contextManagement"></param>
         /// <param name="provider"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -121,6 +129,7 @@ namespace OpenRouter
             global::OpenRouter.BaseMessagesResultRole role,
             string? stopSequence,
             global::OpenRouter.BaseMessagesResultType type,
+            global::OpenRouter.OneOf<global::OpenRouter.MessagesResultContextManagement, object>? contextManagement,
             global::OpenRouter.ProviderName? provider)
         {
             this.Container = container ?? throw new global::System.ArgumentNullException(nameof(container));
@@ -133,6 +142,7 @@ namespace OpenRouter
             this.StopSequence = stopSequence;
             this.Type = type;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.ContextManagement = contextManagement;
             this.Provider = provider;
         }
 

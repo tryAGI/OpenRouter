@@ -17169,6 +17169,14 @@
         ],
         "title": "MessagesRequestSystem"
       },
+      "AnthropicThinkingDisplay": {
+        "type": "string",
+        "enum": [
+          "summarized",
+          "omitted"
+        ],
+        "title": "AnthropicThinkingDisplay"
+      },
       "MessagesRequestThinkingOneOf0Type": {
         "type": "string",
         "enum": [
@@ -17181,6 +17189,9 @@
         "properties": {
           "budget_tokens": {
             "type": "integer"
+          },
+          "display": {
+            "$ref": "#/components/schemas/AnthropicThinkingDisplay"
           },
           "type": {
             "$ref": "#/components/schemas/MessagesRequestThinkingOneOf0Type"
@@ -17221,6 +17232,9 @@
       "MessagesRequestThinking2": {
         "type": "object",
         "properties": {
+          "display": {
+            "$ref": "#/components/schemas/AnthropicThinkingDisplay"
+          },
           "type": {
             "$ref": "#/components/schemas/MessagesRequestThinkingOneOf2Type"
           }
@@ -19561,6 +19575,33 @@
         ],
         "title": "BaseMessagesResultUsage"
       },
+      "MessagesResultContextManagementAppliedEditsItems": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesResultContextManagementAppliedEditsItems"
+      },
+      "MessagesResultContextManagement": {
+        "type": "object",
+        "properties": {
+          "applied_edits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MessagesResultContextManagementAppliedEditsItems"
+            }
+          }
+        },
+        "required": [
+          "applied_edits"
+        ],
+        "title": "MessagesResultContextManagement"
+      },
       "MessagesResultUsageCostDetails": {
         "type": "object",
         "properties": {
@@ -19705,6 +19746,16 @@
           },
           "usage": {
             "$ref": "#/components/schemas/MessagesResultUsage"
+          },
+          "context_management": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MessagesResultContextManagement"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "provider": {
             "$ref": "#/components/schemas/ProviderName"

@@ -18,6 +18,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicThinkingDisplayJsonConverter))]
+        public global::OpenRouter.AnthropicThinkingDisplay? Display { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf0TypeJsonConverter))]
         public global::OpenRouter.MessagesRequestThinkingOneOf0Type Type { get; set; }
@@ -32,15 +39,18 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesRequestThinking0" /> class.
         /// </summary>
         /// <param name="budgetTokens"></param>
+        /// <param name="display"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestThinking0(
             int budgetTokens,
+            global::OpenRouter.AnthropicThinkingDisplay? display,
             global::OpenRouter.MessagesRequestThinkingOneOf0Type type)
         {
             this.BudgetTokens = budgetTokens;
+            this.Display = display;
             this.Type = type;
         }
 
