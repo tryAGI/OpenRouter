@@ -59,6 +59,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Baidu,
+        /// <summary>
+        /// 
+        /// </summary>
         BaseTen,
         /// <summary>
         /// 
@@ -346,6 +350,7 @@ namespace OpenRouter
                 ProviderName.AtlasCloud => "AtlasCloud",
                 ProviderName.Avian => "Avian",
                 ProviderName.Azure => "Azure",
+                ProviderName.Baidu => "Baidu",
                 ProviderName.BaseTen => "BaseTen",
                 ProviderName.BlackForestLabs => "Black Forest Labs",
                 ProviderName.BytePlus => "BytePlus",
@@ -434,6 +439,7 @@ namespace OpenRouter
                 "AtlasCloud" => ProviderName.AtlasCloud,
                 "Avian" => ProviderName.Avian,
                 "Azure" => ProviderName.Azure,
+                "Baidu" => ProviderName.Baidu,
                 "BaseTen" => ProviderName.BaseTen,
                 "Black Forest Labs" => ProviderName.BlackForestLabs,
                 "BytePlus" => ProviderName.BytePlus,

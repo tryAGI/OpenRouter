@@ -71,6 +71,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Baidu,
+        /// <summary>
+        /// 
+        /// </summary>
         BaseTen,
         /// <summary>
         /// 
@@ -461,6 +465,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Atoma => "Atoma",
                 ProviderResponseProviderName.Avian => "Avian",
                 ProviderResponseProviderName.Azure => "Azure",
+                ProviderResponseProviderName.Baidu => "Baidu",
                 ProviderResponseProviderName.BaseTen => "BaseTen",
                 ProviderResponseProviderName.BlackForestLabs => "Black Forest Labs",
                 ProviderResponseProviderName.BytePlus => "BytePlus",
@@ -577,6 +582,7 @@ namespace OpenRouter
                 "Atoma" => ProviderResponseProviderName.Atoma,
                 "Avian" => ProviderResponseProviderName.Avian,
                 "Azure" => ProviderResponseProviderName.Azure,
+                "Baidu" => ProviderResponseProviderName.Baidu,
                 "BaseTen" => ProviderResponseProviderName.BaseTen,
                 "Black Forest Labs" => ProviderResponseProviderName.BlackForestLabs,
                 "BytePlus" => ProviderResponseProviderName.BytePlus,

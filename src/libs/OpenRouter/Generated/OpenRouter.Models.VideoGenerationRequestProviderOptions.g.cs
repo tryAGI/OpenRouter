@@ -101,6 +101,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("baidu")]
+        public object? Baidu { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("baseten")]
         public object? Baseten { get; set; }
 
@@ -668,6 +674,7 @@ namespace OpenRouter
         /// <param name="atoma"></param>
         /// <param name="avian"></param>
         /// <param name="azure"></param>
+        /// <param name="baidu"></param>
         /// <param name="baseten"></param>
         /// <param name="blackForestLabs"></param>
         /// <param name="byteplus"></param>
@@ -778,6 +785,7 @@ namespace OpenRouter
             object? atoma,
             object? avian,
             object? azure,
+            object? baidu,
             object? baseten,
             object? blackForestLabs,
             object? byteplus,
@@ -885,6 +893,7 @@ namespace OpenRouter
             this.Atoma = atoma;
             this.Avian = avian;
             this.Azure = azure;
+            this.Baidu = baidu;
             this.Baseten = baseten;
             this.BlackForestLabs = blackForestLabs;
             this.Byteplus = byteplus;
