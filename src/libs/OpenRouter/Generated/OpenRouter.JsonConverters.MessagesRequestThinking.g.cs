@@ -28,10 +28,12 @@ namespace OpenRouter.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("budget_tokens")) __score0++;
+            if (__jsonProps.Contains("display")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
+            if (__jsonProps.Contains("display")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;
