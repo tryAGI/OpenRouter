@@ -114,6 +114,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("id")) __score13++;
             if (__jsonProps.Contains("imageB64")) __score13++;
             if (__jsonProps.Contains("imageUrl")) __score13++;
+            if (__jsonProps.Contains("result")) __score13++;
             if (__jsonProps.Contains("revisedPrompt")) __score13++;
             if (__jsonProps.Contains("status")) __score13++;
             if (__jsonProps.Contains("type")) __score13++;
