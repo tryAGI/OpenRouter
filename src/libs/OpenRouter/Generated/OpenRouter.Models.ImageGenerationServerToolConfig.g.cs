@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ImageGenerationServerToolConfig
     {
         /// <summary>
-        /// Which image generation model to use (e.g. "openai/gpt-image-1"). Defaults to "openai/gpt-image-1".
+        /// Which image generation model to use (e.g. "openai/gpt-5-image"). Defaults to "openai/gpt-5-image".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
@@ -24,7 +24,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ImageGenerationServerToolConfig" /> class.
         /// </summary>
         /// <param name="model">
-        /// Which image generation model to use (e.g. "openai/gpt-image-1"). Defaults to "openai/gpt-image-1".
+        /// Which image generation model to use (e.g. "openai/gpt-5-image"). Defaults to "openai/gpt-5-image".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
