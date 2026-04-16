@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:mcp variant
+    /// openrouter:image_generation variant
     /// </summary>
     public sealed partial class OutputItemsVariant14
     {
@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMcpServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputMcpServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputImageGenerationServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputImageGenerationServerToolItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("serverLabel")]
-        public string? ServerLabel { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("imageB64")]
+        public string? ImageB64 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
+        public string? ImageUrl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("revisedPrompt")]
+        public string? RevisedPrompt { get; set; }
 
         /// <summary>
         /// 
@@ -34,12 +46,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("toolName")]
-        public string? ToolName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,23 +59,26 @@ namespace OpenRouter
         /// <param name="status"></param>
         /// <param name="type"></param>
         /// <param name="id"></param>
-        /// <param name="serverLabel"></param>
-        /// <param name="toolName"></param>
+        /// <param name="imageB64"></param>
+        /// <param name="imageUrl"></param>
+        /// <param name="revisedPrompt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant14(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputMcpServerToolItemType type,
+            global::OpenRouter.OutputImageGenerationServerToolItemType type,
             string? id,
-            string? serverLabel,
-            string? toolName)
+            string? imageB64,
+            string? imageUrl,
+            string? revisedPrompt)
         {
             this.Type = type;
             this.Id = id;
-            this.ServerLabel = serverLabel;
+            this.ImageB64 = imageB64;
+            this.ImageUrl = imageUrl;
+            this.RevisedPrompt = revisedPrompt;
             this.Status = status;
-            this.ToolName = toolName;
         }
 
         /// <summary>

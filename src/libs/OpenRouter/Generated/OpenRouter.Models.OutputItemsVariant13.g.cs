@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:image_generation variant
+    /// openrouter:file_search variant
     /// </summary>
     public sealed partial class OutputItemsVariant13
     {
@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputImageGenerationServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputImageGenerationServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFileSearchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputFileSearchServerToolItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -24,20 +24,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageB64")]
-        public string? ImageB64 { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
-        public string? ImageUrl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("revisedPrompt")]
-        public string? RevisedPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
+        public global::System.Collections.Generic.IList<string>? Queries { get; set; }
 
         /// <summary>
         /// 
@@ -59,25 +47,19 @@ namespace OpenRouter
         /// <param name="status"></param>
         /// <param name="type"></param>
         /// <param name="id"></param>
-        /// <param name="imageB64"></param>
-        /// <param name="imageUrl"></param>
-        /// <param name="revisedPrompt"></param>
+        /// <param name="queries"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant13(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputImageGenerationServerToolItemType type,
+            global::OpenRouter.OutputFileSearchServerToolItemType type,
             string? id,
-            string? imageB64,
-            string? imageUrl,
-            string? revisedPrompt)
+            global::System.Collections.Generic.IList<string>? queries)
         {
             this.Type = type;
             this.Id = id;
-            this.ImageB64 = imageB64;
-            this.ImageUrl = imageUrl;
-            this.RevisedPrompt = revisedPrompt;
+            this.Queries = queries;
             this.Status = status;
         }
 
