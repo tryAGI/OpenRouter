@@ -246,6 +246,12 @@ namespace OpenRouter
         public string? UserAgent { get; set; }
 
         /// <summary>
+        /// The resolved web search engine used for this generation (e.g. exa, firecrawl, parallel)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("web_search_engine")]
+        public string? WebSearchEngine { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -368,6 +374,9 @@ namespace OpenRouter
         /// <param name="userAgent">
         /// User-Agent header from the request
         /// </param>
+        /// <param name="webSearchEngine">
+        /// The resolved web search engine used for this generation (e.g. exa, firecrawl, parallel)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -409,7 +418,8 @@ namespace OpenRouter
             int? tokensPrompt,
             string? upstreamId,
             double? upstreamInferenceCost,
-            string? userAgent)
+            string? userAgent,
+            string? webSearchEngine)
         {
             this.ApiType = apiType;
             this.AppId = appId;
@@ -449,6 +459,7 @@ namespace OpenRouter
             this.UpstreamInferenceCost = upstreamInferenceCost;
             this.Usage = usage;
             this.UserAgent = userAgent;
+            this.WebSearchEngine = webSearchEngine;
         }
 
         /// <summary>

@@ -5909,6 +5909,17 @@
         ],
         "title": "TextConfigVerbosity"
       },
+      "TextExtendedConfigVerbosity": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "title": "TextExtendedConfigVerbosity"
+      },
       "TextExtendedConfig": {
         "type": "object",
         "properties": {
@@ -5918,7 +5929,7 @@
           "verbosity": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/TextConfigVerbosity"
+                "$ref": "#/components/schemas/TextExtendedConfigVerbosity"
               },
               {
                 "type": "null"
@@ -9420,7 +9431,7 @@
             "format": "double"
           },
           "text": {
-            "$ref": "#/components/schemas/TextConfig"
+            "$ref": "#/components/schemas/TextExtendedConfig"
           },
           "tool_choice": {
             "$ref": "#/components/schemas/OpenAIResponsesToolChoice"
@@ -13908,6 +13919,13 @@
               "null"
             ],
             "description": "User-Agent header from the request"
+          },
+          "web_search_engine": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The resolved web search engine used for this generation (e.g. exa, firecrawl, parallel)"
           }
         },
         "required": [
@@ -13946,7 +13964,8 @@
           "upstream_id",
           "upstream_inference_cost",
           "usage",
-          "user_agent"
+          "user_agent",
+          "web_search_engine"
         ],
         "description": "Generation data",
         "title": "GenerationGetResponsesContentApplicationJsonSchemaData"
@@ -17087,9 +17106,10 @@
           "low",
           "medium",
           "high",
+          "xhigh",
           "max"
         ],
-        "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`.",
+        "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.",
         "title": "MessagesOutputConfigEffort"
       },
       "MessagesOutputConfigFormatType": {
@@ -17131,7 +17151,7 @@
                 "type": "null"
               }
             ],
-            "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`."
+            "description": "How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`."
           },
           "format": {
             "oneOf": [

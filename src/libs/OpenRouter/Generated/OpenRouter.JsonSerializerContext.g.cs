@@ -333,6 +333,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.TextConfigVerbosityNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.TextExtendedConfigVerbosityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.TextExtendedConfigVerbosityNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice0JsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice0NullableJsonConverter),
@@ -1637,7 +1641,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderPreferencesDataCollection?, object>),
 
-            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.TextConfigVerbosity?, object>),
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.TextExtendedConfigVerbosity?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>),
 
@@ -1886,8 +1890,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FormatJsonSchemaConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Formats), TypeInfoPropertyName = "Formats2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TextConfigVerbosity), TypeInfoPropertyName = "TextConfigVerbosity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TextExtendedConfigVerbosity), TypeInfoPropertyName = "TextExtendedConfigVerbosity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TextExtendedConfig))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.TextConfigVerbosity?, object>), TypeInfoPropertyName = "OneOfTextConfigVerbosityObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.TextExtendedConfigVerbosity?, object>), TypeInfoPropertyName = "OneOfTextExtendedConfigVerbosityObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponsesToolChoice0), TypeInfoPropertyName = "OpenAiResponsesToolChoice02")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponsesToolChoice1), TypeInfoPropertyName = "OpenAiResponsesToolChoice12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponsesToolChoice2), TypeInfoPropertyName = "OpenAiResponsesToolChoice22")]
@@ -2042,6 +2047,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ServiceTier2), TypeInfoPropertyName = "ServiceTier22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponsesResponseStatus), TypeInfoPropertyName = "OpenAIResponsesResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TextConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.TextConfigVerbosity?, object>), TypeInfoPropertyName = "OneOfTextConfigVerbosityObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseResponsesResultToolsItems0))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseResponsesResultToolsItems), TypeInfoPropertyName = "BaseResponsesResultToolsItems2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Truncation), TypeInfoPropertyName = "Truncation2")]

@@ -181,7 +181,7 @@ namespace OpenRouter
         /// Text output configuration including format and verbosity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public global::OpenRouter.TextConfig? Text { get; set; }
+        public global::OpenRouter.TextExtendedConfig? Text { get; set; }
 
         /// <summary>
         /// 
@@ -312,7 +312,7 @@ namespace OpenRouter
             string? serviceTier,
             bool? store,
             double? temperature,
-            global::OpenRouter.TextConfig? text,
+            global::OpenRouter.TextExtendedConfig? text,
             int? topLogprobs,
             double? topP,
             global::OpenRouter.Truncation? truncation,
