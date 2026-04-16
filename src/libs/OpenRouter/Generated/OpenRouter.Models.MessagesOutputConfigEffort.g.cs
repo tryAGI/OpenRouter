@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`.
+    /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
     /// </summary>
     public enum MessagesOutputConfigEffort
     {
@@ -24,6 +24,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Medium,
+        /// <summary>
+        /// 
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace OpenRouter
                 MessagesOutputConfigEffort.Low => "low",
                 MessagesOutputConfigEffort.Max => "max",
                 MessagesOutputConfigEffort.Medium => "medium",
+                MessagesOutputConfigEffort.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace OpenRouter
                 "low" => MessagesOutputConfigEffort.Low,
                 "max" => MessagesOutputConfigEffort.Max,
                 "medium" => MessagesOutputConfigEffort.Medium,
+                "xhigh" => MessagesOutputConfigEffort.Xhigh,
                 _ => null,
             };
         }
