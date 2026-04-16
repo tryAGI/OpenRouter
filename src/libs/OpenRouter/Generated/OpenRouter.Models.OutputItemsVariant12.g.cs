@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:file_search variant
+    /// openrouter:experimental__search_models variant
     /// </summary>
     public sealed partial class OutputItemsVariant12
     {
@@ -12,8 +12,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFileSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputFileSearchServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputSearchModelsServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputSearchModelsServerToolItemType Type { get; set; }
+
+        /// <summary>
+        /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        public string? Arguments { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +30,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
-        public global::System.Collections.Generic.IList<string>? Queries { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("query")]
+        public string? Query { get; set; }
 
         /// <summary>
         /// 
@@ -46,20 +52,25 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type"></param>
+        /// <param name="arguments">
+        /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
+        /// </param>
         /// <param name="id"></param>
-        /// <param name="queries"></param>
+        /// <param name="query"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant12(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputFileSearchServerToolItemType type,
+            global::OpenRouter.OutputSearchModelsServerToolItemType type,
+            string? arguments,
             string? id,
-            global::System.Collections.Generic.IList<string>? queries)
+            string? query)
         {
             this.Type = type;
+            this.Arguments = arguments;
             this.Id = id;
-            this.Queries = queries;
+            this.Query = query;
             this.Status = status;
         }
 

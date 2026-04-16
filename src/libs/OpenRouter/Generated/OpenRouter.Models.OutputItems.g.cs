@@ -197,12 +197,29 @@ namespace OpenRouter
         public bool IsOpenrouterDatetime => OpenrouterDatetime != null;
 
         /// <summary>
+        /// openrouter:experimental__search_models variant
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputItemsVariant12? OpenrouterExperimentalSearchModels { get; init; }
+#else
+        public global::OpenRouter.OutputItemsVariant12? OpenrouterExperimentalSearchModels { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterExperimentalSearchModels))]
+#endif
+        public bool IsOpenrouterExperimentalSearchModels => OpenrouterExperimentalSearchModels != null;
+
+        /// <summary>
         /// openrouter:file_search variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant12? OpenrouterFileSearch { get; init; }
+        public global::OpenRouter.OutputItemsVariant13? OpenrouterFileSearch { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant12? OpenrouterFileSearch { get; }
+        public global::OpenRouter.OutputItemsVariant13? OpenrouterFileSearch { get; }
 #endif
 
         /// <summary>
@@ -217,9 +234,9 @@ namespace OpenRouter
         /// openrouter:image_generation variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant13? OpenrouterImageGeneration { get; init; }
+        public global::OpenRouter.OutputItemsVariant14? OpenrouterImageGeneration { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant13? OpenrouterImageGeneration { get; }
+        public global::OpenRouter.OutputItemsVariant14? OpenrouterImageGeneration { get; }
 #endif
 
         /// <summary>
@@ -234,9 +251,9 @@ namespace OpenRouter
         /// openrouter:mcp variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant14? OpenrouterMcp { get; init; }
+        public global::OpenRouter.OutputItemsVariant15? OpenrouterMcp { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant14? OpenrouterMcp { get; }
+        public global::OpenRouter.OutputItemsVariant15? OpenrouterMcp { get; }
 #endif
 
         /// <summary>
@@ -251,9 +268,9 @@ namespace OpenRouter
         /// openrouter:memory variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant15? OpenrouterMemory { get; init; }
+        public global::OpenRouter.OutputItemsVariant16? OpenrouterMemory { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant15? OpenrouterMemory { get; }
+        public global::OpenRouter.OutputItemsVariant16? OpenrouterMemory { get; }
 #endif
 
         /// <summary>
@@ -268,9 +285,9 @@ namespace OpenRouter
         /// openrouter:text_editor variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant16? OpenrouterTextEditor { get; init; }
+        public global::OpenRouter.OutputItemsVariant17? OpenrouterTextEditor { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant16? OpenrouterTextEditor { get; }
+        public global::OpenRouter.OutputItemsVariant17? OpenrouterTextEditor { get; }
 #endif
 
         /// <summary>
@@ -285,9 +302,9 @@ namespace OpenRouter
         /// openrouter:tool_search variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant17? OpenrouterToolSearch { get; init; }
+        public global::OpenRouter.OutputItemsVariant18? OpenrouterToolSearch { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant17? OpenrouterToolSearch { get; }
+        public global::OpenRouter.OutputItemsVariant18? OpenrouterToolSearch { get; }
 #endif
 
         /// <summary>
@@ -302,9 +319,9 @@ namespace OpenRouter
         /// openrouter:web_fetch variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant18? OpenrouterWebFetch { get; init; }
+        public global::OpenRouter.OutputItemsVariant19? OpenrouterWebFetch { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant18? OpenrouterWebFetch { get; }
+        public global::OpenRouter.OutputItemsVariant19? OpenrouterWebFetch { get; }
 #endif
 
         /// <summary>
@@ -319,9 +336,9 @@ namespace OpenRouter
         /// openrouter:web_search variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant19? OpenrouterWebSearch { get; init; }
+        public global::OpenRouter.OutputItemsVariant20? OpenrouterWebSearch { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant19? OpenrouterWebSearch { get; }
+        public global::OpenRouter.OutputItemsVariant20? OpenrouterWebSearch { get; }
 #endif
 
         /// <summary>
@@ -336,9 +353,9 @@ namespace OpenRouter
         /// reasoning variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant20? Reasoning { get; init; }
+        public global::OpenRouter.OutputItemsVariant21? Reasoning { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant20? Reasoning { get; }
+        public global::OpenRouter.OutputItemsVariant21? Reasoning { get; }
 #endif
 
         /// <summary>
@@ -353,9 +370,9 @@ namespace OpenRouter
         /// web_search_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OutputItemsVariant21? WebSearchCall { get; init; }
+        public global::OpenRouter.OutputItemsVariant22? WebSearchCall { get; init; }
 #else
-        public global::OpenRouter.OutputItemsVariant21? WebSearchCall { get; }
+        public global::OpenRouter.OutputItemsVariant22? WebSearchCall { get; }
 #endif
 
         /// <summary>
@@ -571,14 +588,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant12?(OutputItems @this) => @this.OpenrouterFileSearch;
+        public static implicit operator global::OpenRouter.OutputItemsVariant12?(OutputItems @this) => @this.OpenrouterExperimentalSearchModels;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant12? value)
         {
-            OpenrouterFileSearch = value;
+            OpenrouterExperimentalSearchModels = value;
         }
 
         /// <summary>
@@ -589,14 +606,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant13?(OutputItems @this) => @this.OpenrouterImageGeneration;
+        public static implicit operator global::OpenRouter.OutputItemsVariant13?(OutputItems @this) => @this.OpenrouterFileSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant13? value)
         {
-            OpenrouterImageGeneration = value;
+            OpenrouterFileSearch = value;
         }
 
         /// <summary>
@@ -607,14 +624,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant14?(OutputItems @this) => @this.OpenrouterMcp;
+        public static implicit operator global::OpenRouter.OutputItemsVariant14?(OutputItems @this) => @this.OpenrouterImageGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant14? value)
         {
-            OpenrouterMcp = value;
+            OpenrouterImageGeneration = value;
         }
 
         /// <summary>
@@ -625,14 +642,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant15?(OutputItems @this) => @this.OpenrouterMemory;
+        public static implicit operator global::OpenRouter.OutputItemsVariant15?(OutputItems @this) => @this.OpenrouterMcp;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant15? value)
         {
-            OpenrouterMemory = value;
+            OpenrouterMcp = value;
         }
 
         /// <summary>
@@ -643,14 +660,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant16?(OutputItems @this) => @this.OpenrouterTextEditor;
+        public static implicit operator global::OpenRouter.OutputItemsVariant16?(OutputItems @this) => @this.OpenrouterMemory;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant16? value)
         {
-            OpenrouterTextEditor = value;
+            OpenrouterMemory = value;
         }
 
         /// <summary>
@@ -661,14 +678,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant17?(OutputItems @this) => @this.OpenrouterToolSearch;
+        public static implicit operator global::OpenRouter.OutputItemsVariant17?(OutputItems @this) => @this.OpenrouterTextEditor;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant17? value)
         {
-            OpenrouterToolSearch = value;
+            OpenrouterTextEditor = value;
         }
 
         /// <summary>
@@ -679,14 +696,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant18?(OutputItems @this) => @this.OpenrouterWebFetch;
+        public static implicit operator global::OpenRouter.OutputItemsVariant18?(OutputItems @this) => @this.OpenrouterToolSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant18? value)
         {
-            OpenrouterWebFetch = value;
+            OpenrouterToolSearch = value;
         }
 
         /// <summary>
@@ -697,14 +714,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant19?(OutputItems @this) => @this.OpenrouterWebSearch;
+        public static implicit operator global::OpenRouter.OutputItemsVariant19?(OutputItems @this) => @this.OpenrouterWebFetch;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant19? value)
         {
-            OpenrouterWebSearch = value;
+            OpenrouterWebFetch = value;
         }
 
         /// <summary>
@@ -715,14 +732,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant20?(OutputItems @this) => @this.Reasoning;
+        public static implicit operator global::OpenRouter.OutputItemsVariant20?(OutputItems @this) => @this.OpenrouterWebSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant20? value)
         {
-            Reasoning = value;
+            OpenrouterWebSearch = value;
         }
 
         /// <summary>
@@ -733,12 +750,30 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.OutputItemsVariant21?(OutputItems @this) => @this.WebSearchCall;
+        public static implicit operator global::OpenRouter.OutputItemsVariant21?(OutputItems @this) => @this.Reasoning;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputItems(global::OpenRouter.OutputItemsVariant21? value)
+        {
+            Reasoning = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant22 value) => new OutputItems((global::OpenRouter.OutputItemsVariant22?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputItemsVariant22?(OutputItems @this) => @this.WebSearchCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OutputItems(global::OpenRouter.OutputItemsVariant22? value)
         {
             WebSearchCall = value;
         }
@@ -758,16 +793,17 @@ namespace OpenRouter
             global::OpenRouter.OutputItemsVariant9? openrouterBrowserUse,
             global::OpenRouter.OutputItemsVariant10? openrouterCodeInterpreter,
             global::OpenRouter.OutputItemsVariant11? openrouterDatetime,
-            global::OpenRouter.OutputItemsVariant12? openrouterFileSearch,
-            global::OpenRouter.OutputItemsVariant13? openrouterImageGeneration,
-            global::OpenRouter.OutputItemsVariant14? openrouterMcp,
-            global::OpenRouter.OutputItemsVariant15? openrouterMemory,
-            global::OpenRouter.OutputItemsVariant16? openrouterTextEditor,
-            global::OpenRouter.OutputItemsVariant17? openrouterToolSearch,
-            global::OpenRouter.OutputItemsVariant18? openrouterWebFetch,
-            global::OpenRouter.OutputItemsVariant19? openrouterWebSearch,
-            global::OpenRouter.OutputItemsVariant20? reasoning,
-            global::OpenRouter.OutputItemsVariant21? webSearchCall
+            global::OpenRouter.OutputItemsVariant12? openrouterExperimentalSearchModels,
+            global::OpenRouter.OutputItemsVariant13? openrouterFileSearch,
+            global::OpenRouter.OutputItemsVariant14? openrouterImageGeneration,
+            global::OpenRouter.OutputItemsVariant15? openrouterMcp,
+            global::OpenRouter.OutputItemsVariant16? openrouterMemory,
+            global::OpenRouter.OutputItemsVariant17? openrouterTextEditor,
+            global::OpenRouter.OutputItemsVariant18? openrouterToolSearch,
+            global::OpenRouter.OutputItemsVariant19? openrouterWebFetch,
+            global::OpenRouter.OutputItemsVariant20? openrouterWebSearch,
+            global::OpenRouter.OutputItemsVariant21? reasoning,
+            global::OpenRouter.OutputItemsVariant22? webSearchCall
             )
         {
             CodeInterpreterCall = codeInterpreterCall;
@@ -781,6 +817,7 @@ namespace OpenRouter
             OpenrouterBrowserUse = openrouterBrowserUse;
             OpenrouterCodeInterpreter = openrouterCodeInterpreter;
             OpenrouterDatetime = openrouterDatetime;
+            OpenrouterExperimentalSearchModels = openrouterExperimentalSearchModels;
             OpenrouterFileSearch = openrouterFileSearch;
             OpenrouterImageGeneration = openrouterImageGeneration;
             OpenrouterMcp = openrouterMcp;
@@ -807,6 +844,7 @@ namespace OpenRouter
             OpenrouterMcp as object ??
             OpenrouterImageGeneration as object ??
             OpenrouterFileSearch as object ??
+            OpenrouterExperimentalSearchModels as object ??
             OpenrouterDatetime as object ??
             OpenrouterCodeInterpreter as object ??
             OpenrouterBrowserUse as object ??
@@ -835,6 +873,7 @@ namespace OpenRouter
             OpenrouterBrowserUse?.ToString() ??
             OpenrouterCodeInterpreter?.ToString() ??
             OpenrouterDatetime?.ToString() ??
+            OpenrouterExperimentalSearchModels?.ToString() ??
             OpenrouterFileSearch?.ToString() ??
             OpenrouterImageGeneration?.ToString() ??
             OpenrouterMcp?.ToString() ??
@@ -852,7 +891,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && IsWebSearchCall;
+            return IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && IsOpenrouterWebSearch && !IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && IsReasoning && !IsWebSearchCall || !IsCodeInterpreterCall && !IsComputerCall && !IsFileSearchCall && !IsFunctionCall && !IsImageGenerationCall && !IsMessage && !IsOpenrouterApplyPatch && !IsOpenrouterBash && !IsOpenrouterBrowserUse && !IsOpenrouterCodeInterpreter && !IsOpenrouterDatetime && !IsOpenrouterExperimentalSearchModels && !IsOpenrouterFileSearch && !IsOpenrouterImageGeneration && !IsOpenrouterMcp && !IsOpenrouterMemory && !IsOpenrouterTextEditor && !IsOpenrouterToolSearch && !IsOpenrouterWebFetch && !IsOpenrouterWebSearch && !IsReasoning && IsWebSearchCall;
         }
 
         /// <summary>
@@ -870,16 +909,17 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OutputItemsVariant9?, TResult>? openrouterBrowserUse = null,
             global::System.Func<global::OpenRouter.OutputItemsVariant10?, TResult>? openrouterCodeInterpreter = null,
             global::System.Func<global::OpenRouter.OutputItemsVariant11?, TResult>? openrouterDatetime = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant12?, TResult>? openrouterFileSearch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant13?, TResult>? openrouterImageGeneration = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant14?, TResult>? openrouterMcp = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant15?, TResult>? openrouterMemory = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant16?, TResult>? openrouterTextEditor = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant17?, TResult>? openrouterToolSearch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant18?, TResult>? openrouterWebFetch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant19?, TResult>? openrouterWebSearch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant20?, TResult>? reasoning = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant21?, TResult>? webSearchCall = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant12?, TResult>? openrouterExperimentalSearchModels = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant13?, TResult>? openrouterFileSearch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant14?, TResult>? openrouterImageGeneration = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant15?, TResult>? openrouterMcp = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant16?, TResult>? openrouterMemory = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant17?, TResult>? openrouterTextEditor = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant18?, TResult>? openrouterToolSearch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant19?, TResult>? openrouterWebFetch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant20?, TResult>? openrouterWebSearch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant21?, TResult>? reasoning = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant22?, TResult>? webSearchCall = null,
             bool validate = true)
         {
             if (validate)
@@ -930,6 +970,10 @@ namespace OpenRouter
             else if (IsOpenrouterDatetime && openrouterDatetime != null)
             {
                 return openrouterDatetime(OpenrouterDatetime!);
+            }
+            else if (IsOpenrouterExperimentalSearchModels && openrouterExperimentalSearchModels != null)
+            {
+                return openrouterExperimentalSearchModels(OpenrouterExperimentalSearchModels!);
             }
             else if (IsOpenrouterFileSearch && openrouterFileSearch != null)
             {
@@ -990,16 +1034,17 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputItemsVariant9?>? openrouterBrowserUse = null,
             global::System.Action<global::OpenRouter.OutputItemsVariant10?>? openrouterCodeInterpreter = null,
             global::System.Action<global::OpenRouter.OutputItemsVariant11?>? openrouterDatetime = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant12?>? openrouterFileSearch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant13?>? openrouterImageGeneration = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant14?>? openrouterMcp = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant15?>? openrouterMemory = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant16?>? openrouterTextEditor = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant17?>? openrouterToolSearch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant18?>? openrouterWebFetch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant19?>? openrouterWebSearch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant20?>? reasoning = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant21?>? webSearchCall = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant12?>? openrouterExperimentalSearchModels = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant13?>? openrouterFileSearch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant14?>? openrouterImageGeneration = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant15?>? openrouterMcp = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant16?>? openrouterMemory = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant17?>? openrouterTextEditor = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant18?>? openrouterToolSearch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant19?>? openrouterWebFetch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant20?>? openrouterWebSearch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant21?>? reasoning = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant22?>? webSearchCall = null,
             bool validate = true)
         {
             if (validate)
@@ -1050,6 +1095,10 @@ namespace OpenRouter
             else if (IsOpenrouterDatetime)
             {
                 openrouterDatetime?.Invoke(OpenrouterDatetime!);
+            }
+            else if (IsOpenrouterExperimentalSearchModels)
+            {
+                openrouterExperimentalSearchModels?.Invoke(OpenrouterExperimentalSearchModels!);
             }
             else if (IsOpenrouterFileSearch)
             {
@@ -1122,26 +1171,28 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputItemsVariant10),
                 OpenrouterDatetime,
                 typeof(global::OpenRouter.OutputItemsVariant11),
-                OpenrouterFileSearch,
+                OpenrouterExperimentalSearchModels,
                 typeof(global::OpenRouter.OutputItemsVariant12),
-                OpenrouterImageGeneration,
+                OpenrouterFileSearch,
                 typeof(global::OpenRouter.OutputItemsVariant13),
-                OpenrouterMcp,
+                OpenrouterImageGeneration,
                 typeof(global::OpenRouter.OutputItemsVariant14),
-                OpenrouterMemory,
+                OpenrouterMcp,
                 typeof(global::OpenRouter.OutputItemsVariant15),
-                OpenrouterTextEditor,
+                OpenrouterMemory,
                 typeof(global::OpenRouter.OutputItemsVariant16),
-                OpenrouterToolSearch,
+                OpenrouterTextEditor,
                 typeof(global::OpenRouter.OutputItemsVariant17),
-                OpenrouterWebFetch,
+                OpenrouterToolSearch,
                 typeof(global::OpenRouter.OutputItemsVariant18),
-                OpenrouterWebSearch,
+                OpenrouterWebFetch,
                 typeof(global::OpenRouter.OutputItemsVariant19),
-                Reasoning,
+                OpenrouterWebSearch,
                 typeof(global::OpenRouter.OutputItemsVariant20),
-                WebSearchCall,
+                Reasoning,
                 typeof(global::OpenRouter.OutputItemsVariant21),
+                WebSearchCall,
+                typeof(global::OpenRouter.OutputItemsVariant22),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1169,16 +1220,17 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant9?>.Default.Equals(OpenrouterBrowserUse, other.OpenrouterBrowserUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant10?>.Default.Equals(OpenrouterCodeInterpreter, other.OpenrouterCodeInterpreter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant11?>.Default.Equals(OpenrouterDatetime, other.OpenrouterDatetime) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant12?>.Default.Equals(OpenrouterFileSearch, other.OpenrouterFileSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant13?>.Default.Equals(OpenrouterImageGeneration, other.OpenrouterImageGeneration) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant14?>.Default.Equals(OpenrouterMcp, other.OpenrouterMcp) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant15?>.Default.Equals(OpenrouterMemory, other.OpenrouterMemory) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant16?>.Default.Equals(OpenrouterTextEditor, other.OpenrouterTextEditor) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant17?>.Default.Equals(OpenrouterToolSearch, other.OpenrouterToolSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant18?>.Default.Equals(OpenrouterWebFetch, other.OpenrouterWebFetch) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant19?>.Default.Equals(OpenrouterWebSearch, other.OpenrouterWebSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant20?>.Default.Equals(Reasoning, other.Reasoning) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant21?>.Default.Equals(WebSearchCall, other.WebSearchCall) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant12?>.Default.Equals(OpenrouterExperimentalSearchModels, other.OpenrouterExperimentalSearchModels) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant13?>.Default.Equals(OpenrouterFileSearch, other.OpenrouterFileSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant14?>.Default.Equals(OpenrouterImageGeneration, other.OpenrouterImageGeneration) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant15?>.Default.Equals(OpenrouterMcp, other.OpenrouterMcp) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant16?>.Default.Equals(OpenrouterMemory, other.OpenrouterMemory) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant17?>.Default.Equals(OpenrouterTextEditor, other.OpenrouterTextEditor) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant18?>.Default.Equals(OpenrouterToolSearch, other.OpenrouterToolSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant19?>.Default.Equals(OpenrouterWebFetch, other.OpenrouterWebFetch) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant20?>.Default.Equals(OpenrouterWebSearch, other.OpenrouterWebSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant21?>.Default.Equals(Reasoning, other.Reasoning) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemsVariant22?>.Default.Equals(WebSearchCall, other.WebSearchCall) 
                 ;
         }
 

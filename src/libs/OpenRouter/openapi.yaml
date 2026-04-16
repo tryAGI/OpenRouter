@@ -8496,6 +8496,13 @@
         ],
         "title": "OutputCodeInterpreterServerToolItemType"
       },
+      "OutputSearchModelsServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:experimental__search_models"
+        ],
+        "title": "OutputSearchModelsServerToolItemType"
+      },
       "OutputFileSearchServerToolItemType": {
         "type": "string",
         "enum": [
@@ -8907,6 +8914,32 @@
               "timezone"
             ],
             "description": "openrouter:datetime variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputSearchModelsServerToolItemType"
+              },
+              "arguments": {
+                "type": "string",
+                "description": "The JSON arguments submitted to the search tool (e.g. {\"query\":\"Claude\"})"
+              },
+              "id": {
+                "type": "string"
+              },
+              "query": {
+                "type": "string"
+              },
+              "status": {
+                "$ref": "#/components/schemas/ToolCallStatus"
+              }
+            },
+            "required": [
+              "type",
+              "status"
+            ],
+            "description": "openrouter:experimental__search_models variant"
           },
           {
             "type": "object",

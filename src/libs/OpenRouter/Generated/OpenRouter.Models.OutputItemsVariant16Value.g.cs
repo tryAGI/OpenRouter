@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     /// Any type
     /// </summary>
-    public sealed partial class OutputItemsVariant15Value
+    public sealed partial class OutputItemsVariant16Value
     {
 
         /// <summary>

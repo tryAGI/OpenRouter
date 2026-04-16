@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:web_search variant
+    /// openrouter:web_fetch variant
     /// </summary>
     public sealed partial class OutputItemsVariant19
     {
@@ -12,8 +12,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebFetchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputWebFetchServerToolItemType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public string? Content { get; set; }
 
         /// <summary>
         /// 
@@ -30,6 +36,18 @@ namespace OpenRouter
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -40,18 +58,27 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type"></param>
+        /// <param name="content"></param>
         /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant19(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputWebSearchServerToolItemType type,
-            string? id)
+            global::OpenRouter.OutputWebFetchServerToolItemType type,
+            string? content,
+            string? id,
+            string? title,
+            string? url)
         {
             this.Type = type;
+            this.Content = content;
             this.Id = id;
             this.Status = status;
+            this.Title = title;
+            this.Url = url;
         }
 
         /// <summary>
