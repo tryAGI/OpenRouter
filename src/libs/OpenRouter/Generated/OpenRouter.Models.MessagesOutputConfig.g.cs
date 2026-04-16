@@ -23,6 +23,13 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigFormat, object>? Format { get; set; }
 
         /// <summary>
+        /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("task_budget")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesOutputConfigTaskBudget, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigTaskBudget, object>? TaskBudget { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +44,20 @@ namespace OpenRouter
         /// <param name="format">
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).
         /// </param>
+        /// <param name="taskBudget">
+        /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesOutputConfig(
             global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigEffort?, object>? effort,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigFormat, object>? format)
+            global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigFormat, object>? format,
+            global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigTaskBudget, object>? taskBudget)
         {
             this.Effort = effort;
             this.Format = format;
+            this.TaskBudget = taskBudget;
         }
 
         /// <summary>
