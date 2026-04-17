@@ -23,6 +23,14 @@ namespace OpenRouter.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -35,35 +43,65 @@ namespace OpenRouter.JsonConverters
             var __score1 = 0;
             if (__jsonProps.Contains("engine")) __score1++;
             if (__jsonProps.Contains("filters")) __score1++;
+            if (__jsonProps.Contains("filters.allowed_domains")) __score1++;
+            if (__jsonProps.Contains("filters.excluded_domains")) __score1++;
             if (__jsonProps.Contains("max_results")) __score1++;
             if (__jsonProps.Contains("search_context_size")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("user_location")) __score1++;
+            if (__jsonProps.Contains("user_location.city")) __score1++;
+            if (__jsonProps.Contains("user_location.country")) __score1++;
+            if (__jsonProps.Contains("user_location.region")) __score1++;
+            if (__jsonProps.Contains("user_location.timezone")) __score1++;
+            if (__jsonProps.Contains("user_location.type")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("engine")) __score2++;
             if (__jsonProps.Contains("filters")) __score2++;
+            if (__jsonProps.Contains("filters.allowed_domains")) __score2++;
+            if (__jsonProps.Contains("filters.excluded_domains")) __score2++;
             if (__jsonProps.Contains("max_results")) __score2++;
             if (__jsonProps.Contains("search_context_size")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             if (__jsonProps.Contains("user_location")) __score2++;
+            if (__jsonProps.Contains("user_location.city")) __score2++;
+            if (__jsonProps.Contains("user_location.country")) __score2++;
+            if (__jsonProps.Contains("user_location.region")) __score2++;
+            if (__jsonProps.Contains("user_location.timezone")) __score2++;
+            if (__jsonProps.Contains("user_location.type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("engine")) __score3++;
             if (__jsonProps.Contains("filters")) __score3++;
+            if (__jsonProps.Contains("filters.allowed_domains")) __score3++;
+            if (__jsonProps.Contains("filters.excluded_domains")) __score3++;
             if (__jsonProps.Contains("max_results")) __score3++;
             if (__jsonProps.Contains("search_context_size")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
             if (__jsonProps.Contains("user_location")) __score3++;
+            if (__jsonProps.Contains("user_location.city")) __score3++;
+            if (__jsonProps.Contains("user_location.country")) __score3++;
+            if (__jsonProps.Contains("user_location.region")) __score3++;
+            if (__jsonProps.Contains("user_location.timezone")) __score3++;
+            if (__jsonProps.Contains("user_location.type")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("engine")) __score4++;
             if (__jsonProps.Contains("filters")) __score4++;
+            if (__jsonProps.Contains("filters.allowed_domains")) __score4++;
+            if (__jsonProps.Contains("filters.excluded_domains")) __score4++;
             if (__jsonProps.Contains("max_results")) __score4++;
             if (__jsonProps.Contains("search_context_size")) __score4++;
             if (__jsonProps.Contains("type")) __score4++;
             if (__jsonProps.Contains("user_location")) __score4++;
+            if (__jsonProps.Contains("user_location.city")) __score4++;
+            if (__jsonProps.Contains("user_location.country")) __score4++;
+            if (__jsonProps.Contains("user_location.region")) __score4++;
+            if (__jsonProps.Contains("user_location.timezone")) __score4++;
+            if (__jsonProps.Contains("user_location.type")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("filters")) __score5++;
             if (__jsonProps.Contains("max_num_results")) __score5++;
             if (__jsonProps.Contains("ranking_options")) __score5++;
+            if (__jsonProps.Contains("ranking_options.ranker")) __score5++;
+            if (__jsonProps.Contains("ranking_options.score_threshold")) __score5++;
             if (__jsonProps.Contains("type")) __score5++;
             if (__jsonProps.Contains("vector_store_ids")) __score5++;
             var __score6 = 0;
@@ -88,6 +126,8 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("background")) __score9++;
             if (__jsonProps.Contains("input_fidelity")) __score9++;
             if (__jsonProps.Contains("input_image_mask")) __score9++;
+            if (__jsonProps.Contains("input_image_mask.file_id")) __score9++;
+            if (__jsonProps.Contains("input_image_mask.image_url")) __score9++;
             if (__jsonProps.Contains("model")) __score9++;
             if (__jsonProps.Contains("moderation")) __score9++;
             if (__jsonProps.Contains("output_compression")) __score9++;
