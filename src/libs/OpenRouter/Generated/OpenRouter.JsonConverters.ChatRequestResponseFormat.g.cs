@@ -23,6 +23,14 @@ namespace OpenRouter.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -32,6 +40,10 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("json_schema")) __score2++;
+            if (__jsonProps.Contains("json_schema.description")) __score2++;
+            if (__jsonProps.Contains("json_schema.name")) __score2++;
+            if (__jsonProps.Contains("json_schema.schema")) __score2++;
+            if (__jsonProps.Contains("json_schema.strict")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("grammar")) __score3++;
