@@ -31,6 +31,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Tts,
+        /// <summary>
+        /// 
+        /// </summary>
         Video,
     }
 
@@ -51,6 +55,7 @@ namespace OpenRouter
                 OutputModality.Image => "image",
                 OutputModality.Rerank => "rerank",
                 OutputModality.Text => "text",
+                OutputModality.Tts => "tts",
                 OutputModality.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -67,6 +72,7 @@ namespace OpenRouter
                 "image" => OutputModality.Image,
                 "rerank" => OutputModality.Rerank,
                 "text" => OutputModality.Text,
+                "tts" => OutputModality.Tts,
                 "video" => OutputModality.Video,
                 _ => null,
             };

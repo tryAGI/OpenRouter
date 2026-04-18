@@ -143,6 +143,13 @@ namespace OpenRouter
         public required double UsageWeekly { get; set; }
 
         /// <summary>
+        /// The workspace ID this API key belongs to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -193,6 +200,9 @@ namespace OpenRouter
         /// <param name="usageWeekly">
         /// OpenRouter credit usage (in USD) for the current UTC week (Monday-Sunday)
         /// </param>
+        /// <param name="workspaceId">
+        /// The workspace ID this API key belongs to.
+        /// </param>
         /// <param name="creatorUserId">
         /// The user ID of the key creator. For organization-owned keys, this is the member who created the key. For individual users, this is the user's own ID.
         /// </param>
@@ -229,6 +239,7 @@ namespace OpenRouter
             double usageDaily,
             double usageMonthly,
             double usageWeekly,
+            string workspaceId,
             string? creatorUserId,
             global::System.DateTime? expiresAt,
             double? limit,
@@ -256,6 +267,7 @@ namespace OpenRouter
             this.UsageDaily = usageDaily;
             this.UsageMonthly = usageMonthly;
             this.UsageWeekly = usageWeekly;
+            this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
         }
 
         /// <summary>

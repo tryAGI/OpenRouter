@@ -12624,7 +12624,8 @@
           "embeddings",
           "audio",
           "video",
-          "rerank"
+          "rerank",
+          "tts"
         ],
         "title": "OutputModality"
       },
@@ -13530,6 +13531,7 @@
           "completions",
           "embeddings",
           "rerank",
+          "tts",
           "video"
         ],
         "description": "Type of API used for the generation",
@@ -15164,6 +15166,10 @@
             "type": "number",
             "format": "double",
             "description": "OpenRouter credit usage (in USD) for the current UTC week (Monday-Sunday)"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this API key belongs to."
           }
         },
         "required": [
@@ -15185,7 +15191,8 @@
           "usage",
           "usage_daily",
           "usage_monthly",
-          "usage_weekly"
+          "usage_weekly",
+          "workspace_id"
         ],
         "title": "KeysGetResponsesContentApplicationJsonSchemaDataItems"
       },
@@ -15326,6 +15333,10 @@
             "type": "number",
             "format": "double",
             "description": "OpenRouter credit usage (in USD) for the current UTC week (Monday-Sunday)"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this API key belongs to."
           }
         },
         "required": [
@@ -15347,7 +15358,8 @@
           "usage",
           "usage_daily",
           "usage_monthly",
-          "usage_weekly"
+          "usage_weekly",
+          "workspace_id"
         ],
         "description": "The created API key information",
         "title": "KeysPostResponsesContentApplicationJsonSchemaData"
@@ -15481,6 +15493,10 @@
             "type": "number",
             "format": "double",
             "description": "OpenRouter credit usage (in USD) for the current UTC week (Monday-Sunday)"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this API key belongs to."
           }
         },
         "required": [
@@ -15502,7 +15518,8 @@
           "usage",
           "usage_daily",
           "usage_monthly",
-          "usage_weekly"
+          "usage_weekly",
+          "workspace_id"
         ],
         "description": "The API key information",
         "title": "KeysHashGetResponsesContentApplicationJsonSchemaData"
@@ -15657,6 +15674,10 @@
             "type": "number",
             "format": "double",
             "description": "OpenRouter credit usage (in USD) for the current UTC week (Monday-Sunday)"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this API key belongs to."
           }
         },
         "required": [
@@ -15678,7 +15699,8 @@
           "usage",
           "usage_daily",
           "usage_monthly",
-          "usage_weekly"
+          "usage_weekly",
+          "workspace_id"
         ],
         "description": "The updated API key information",
         "title": "KeysHashPatchResponsesContentApplicationJsonSchemaData"
