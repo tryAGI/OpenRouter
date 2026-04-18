@@ -22,6 +22,12 @@ namespace OpenRouter
         public required int PromptTokens { get; set; }
 
         /// <summary>
+        /// Per-modality token breakdown. Only present when the input contains 2+ modalities (e.g. text + image) and the upstream provider returns modality-level usage data. Only non-zero modality counts are included.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
+        public global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails? PromptTokensDetails { get; set; }
+
+        /// <summary>
         /// Total number of tokens used
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
@@ -46,16 +52,21 @@ namespace OpenRouter
         /// <param name="cost">
         /// Cost of the request in credits
         /// </param>
+        /// <param name="promptTokensDetails">
+        /// Per-modality token breakdown. Only present when the input contains 2+ modalities (e.g. text + image) and the upstream provider returns modality-level usage data. Only non-zero modality counts are included.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbeddingsPostResponsesContentApplicationJsonSchemaUsage(
             int promptTokens,
             int totalTokens,
-            double? cost)
+            double? cost,
+            global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails? promptTokensDetails)
         {
             this.Cost = cost;
             this.PromptTokens = promptTokens;
+            this.PromptTokensDetails = promptTokensDetails;
             this.TotalTokens = totalTokens;
         }
 
