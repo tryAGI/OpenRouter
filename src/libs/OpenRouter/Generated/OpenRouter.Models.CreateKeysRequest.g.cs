@@ -47,6 +47,12 @@ namespace OpenRouter
         public required string Name { get; set; }
 
         /// <summary>
+        /// The workspace to create the API key in. Defaults to the default workspace if not provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public global::System.Guid? WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -73,6 +79,9 @@ namespace OpenRouter
         /// <param name="limitReset">
         /// Type of limit reset for the API key (daily, weekly, monthly, or null for no reset). Resets happen automatically at midnight UTC, and weeks are Monday through Sunday.
         /// </param>
+        /// <param name="workspaceId">
+        /// The workspace to create the API key in. Defaults to the default workspace if not provided.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,7 +91,8 @@ namespace OpenRouter
             global::System.DateTime? expiresAt,
             bool? includeByokInLimit,
             double? limit,
-            global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset)
+            global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset,
+            global::System.Guid? workspaceId)
         {
             this.CreatorUserId = creatorUserId;
             this.ExpiresAt = expiresAt;
@@ -90,6 +100,7 @@ namespace OpenRouter
             this.Limit = limit;
             this.LimitReset = limitReset;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>
