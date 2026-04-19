@@ -177,6 +177,15 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageTtsClient SubpackageTts => new SubpackageTtsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageVideoGenerationClient SubpackageVideoGeneration => new SubpackageVideoGenerationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

@@ -371,6 +371,44 @@ namespace OpenRouter
                                         h => h.Value),
                                 };
                             }
+                            // Forbidden - Authentication successful but insufficient permissions
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+                                throw new global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_403,
+                                    ResponseObject = __value_403,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
                             // Too Many Requests - Rate limit exceeded
                             if ((int)__response.StatusCode == 429)
                             {
@@ -561,6 +599,9 @@ namespace OpenRouter
         /// <param name="name">
         /// Name for the new API key
         /// </param>
+        /// <param name="workspaceId">
+        /// The workspace to create the API key in. Defaults to the default workspace if not provided.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -571,6 +612,7 @@ namespace OpenRouter
             bool? includeByokInLimit = default,
             double? limit = default,
             global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -582,6 +624,7 @@ namespace OpenRouter
                 Limit = limit,
                 LimitReset = limitReset,
                 Name = name,
+                WorkspaceId = workspaceId,
             };
 
             return await CreateKeysAsync(

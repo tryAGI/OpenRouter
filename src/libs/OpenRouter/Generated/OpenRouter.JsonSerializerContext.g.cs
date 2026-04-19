@@ -1401,6 +1401,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquartersNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.TtsPostRequestBodyContentApplicationJsonSchemaResponseFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.TtsPostRequestBodyContentApplicationJsonSchemaResponseFormatNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestAspectRatioJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestAspectRatioNullableJsonConverter),
@@ -2711,6 +2715,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RerankPostResponsesContentApplicationJsonSchemaUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RerankCreateRerankResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.RerankPostResponsesContentApplicationJsonSchemaResultsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TtsPostRequestBodyContentApplicationJsonSchemaProviderOptions))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TtsPostRequestBodyContentApplicationJsonSchemaProvider))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TtsPostRequestBodyContentApplicationJsonSchemaResponseFormat), TypeInfoPropertyName = "TtsPostRequestBodyContentApplicationJsonSchemaResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestAspectRatio), TypeInfoPropertyName = "VideoGenerationRequestAspectRatio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImageImageUrl))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImageType), TypeInfoPropertyName = "ContentPartImageType2")]
@@ -2747,6 +2754,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateKeysRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>), TypeInfoPropertyName = "OneOfKeysHashPatchRequestBodyContentApplicationJsonSchemaLimitResetObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateRerankRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateTtsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ReasoningTextContent>))]

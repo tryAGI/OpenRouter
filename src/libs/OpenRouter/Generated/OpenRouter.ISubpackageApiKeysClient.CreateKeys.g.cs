@@ -39,6 +39,9 @@ namespace OpenRouter
         /// <param name="name">
         /// Name for the new API key
         /// </param>
+        /// <param name="workspaceId">
+        /// The workspace to create the API key in. Defaults to the default workspace if not provided.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -49,6 +52,7 @@ namespace OpenRouter
             bool? includeByokInLimit = default,
             double? limit = default,
             global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
