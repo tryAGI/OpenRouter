@@ -1039,6 +1039,16 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Filter guardrails by workspace ID. By default, guardrails in the default workspace are returned.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
@@ -1109,6 +1119,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
                 }
               }
             }
@@ -14287,12 +14307,17 @@
               "null"
             ],
             "description": "ISO 8601 timestamp of when the guardrail was last updated"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this guardrail belongs to."
           }
         },
         "required": [
           "created_at",
           "id",
-          "name"
+          "name",
+          "workspace_id"
         ],
         "title": "Guardrail"
       },
@@ -14388,6 +14413,11 @@
           },
           "reset_interval": {
             "$ref": "#/components/schemas/GuardrailInterval"
+          },
+          "workspace_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The workspace to create the guardrail in. Defaults to the default workspace if not provided."
           }
         },
         "required": [
@@ -14482,12 +14512,17 @@
               "null"
             ],
             "description": "ISO 8601 timestamp of when the guardrail was last updated"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this guardrail belongs to."
           }
         },
         "required": [
           "created_at",
           "id",
-          "name"
+          "name",
+          "workspace_id"
         ],
         "title": "CreateGuardrailResponseData"
       },
@@ -14590,12 +14625,17 @@
               "null"
             ],
             "description": "ISO 8601 timestamp of when the guardrail was last updated"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this guardrail belongs to."
           }
         },
         "required": [
           "created_at",
           "id",
-          "name"
+          "name",
+          "workspace_id"
         ],
         "title": "GetGuardrailResponseData"
       },
@@ -14789,12 +14829,17 @@
               "null"
             ],
             "description": "ISO 8601 timestamp of when the guardrail was last updated"
+          },
+          "workspace_id": {
+            "type": "string",
+            "description": "The workspace ID this guardrail belongs to."
           }
         },
         "required": [
           "created_at",
           "id",
-          "name"
+          "name",
+          "workspace_id"
         ],
         "title": "UpdateGuardrailResponseData"
       },

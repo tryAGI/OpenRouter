@@ -65,6 +65,12 @@ namespace OpenRouter
         public global::OpenRouter.GuardrailInterval? ResetInterval { get; set; }
 
         /// <summary>
+        /// The workspace to create the guardrail in. Defaults to the default workspace if not provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public global::System.Guid? WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -100,6 +106,9 @@ namespace OpenRouter
         /// <param name="resetInterval">
         /// Interval at which the limit resets (daily, weekly, monthly)
         /// </param>
+        /// <param name="workspaceId">
+        /// The workspace to create the guardrail in. Defaults to the default workspace if not provided.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -112,7 +121,8 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? ignoredModels,
             global::System.Collections.Generic.IList<string>? ignoredProviders,
             double? limitUsd,
-            global::OpenRouter.GuardrailInterval? resetInterval)
+            global::OpenRouter.GuardrailInterval? resetInterval,
+            global::System.Guid? workspaceId)
         {
             this.AllowedModels = allowedModels;
             this.AllowedProviders = allowedProviders;
@@ -123,6 +133,7 @@ namespace OpenRouter
             this.LimitUsd = limitUsd;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ResetInterval = resetInterval;
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>

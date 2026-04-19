@@ -28,12 +28,14 @@ namespace OpenRouter
         partial void PrepareListGuardrailsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
-            ref int? limit);
+            ref int? limit,
+            ref global::System.Guid? workspaceId);
         partial void PrepareListGuardrailsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? offset,
-            int? limit);
+            int? limit,
+            global::System.Guid? workspaceId);
         partial void ProcessListGuardrailsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,12 +51,14 @@ namespace OpenRouter
         /// </summary>
         /// <param name="offset"></param>
         /// <param name="limit"></param>
+        /// <param name="workspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ListGuardrailsResponse> ListGuardrailsAsync(
             int? offset = default,
             int? limit = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -63,7 +67,8 @@ namespace OpenRouter
             PrepareListGuardrailsArguments(
                 httpClient: HttpClient,
                 offset: ref offset,
-                limit: ref limit);
+                limit: ref limit,
+                workspaceId: ref workspaceId);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -92,7 +97,8 @@ namespace OpenRouter
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("limit", limit?.ToString()) 
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString()) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -135,7 +141,8 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     offset: offset,
-                    limit: limit);
+                    limit: limit,
+                    workspaceId: workspaceId);
 
                 return __httpRequest;
             }
