@@ -48,6 +48,9 @@ namespace OpenRouter
         /// <param name="resetInterval">
         /// Interval at which the limit resets (daily, weekly, monthly)
         /// </param>
+        /// <param name="workspaceId">
+        /// The workspace to create the guardrail in. Defaults to the default workspace if not provided.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -61,6 +64,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             double? limitUsd = default,
             global::OpenRouter.GuardrailInterval? resetInterval = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

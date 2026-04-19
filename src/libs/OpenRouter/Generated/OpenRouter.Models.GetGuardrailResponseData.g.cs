@@ -85,6 +85,13 @@ namespace OpenRouter
         public string? UpdatedAt { get; set; }
 
         /// <summary>
+        /// The workspace ID this guardrail belongs to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +108,9 @@ namespace OpenRouter
         /// </param>
         /// <param name="name">
         /// Name of the guardrail
+        /// </param>
+        /// <param name="workspaceId">
+        /// The workspace ID this guardrail belongs to.
         /// </param>
         /// <param name="allowedModels">
         /// Array of model canonical_slugs (immutable identifiers)
@@ -136,6 +146,7 @@ namespace OpenRouter
             string createdAt,
             global::System.Guid id,
             string name,
+            string workspaceId,
             global::System.Collections.Generic.IList<string>? allowedModels,
             global::System.Collections.Generic.IList<string>? allowedProviders,
             string? description,
@@ -158,6 +169,7 @@ namespace OpenRouter
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ResetInterval = resetInterval;
             this.UpdatedAt = updatedAt;
+            this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
         }
 
         /// <summary>
