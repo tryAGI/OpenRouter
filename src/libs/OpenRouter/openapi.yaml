@@ -445,6 +445,151 @@
         }
       }
     },
+    "/audio/speech": {
+      "post": {
+        "operationId": "create-audio-speech",
+        "summary": "Create speech",
+        "description": "Synthesizes audio from the input text",
+        "tags": [
+          "subpackage_tts"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Audio bytes stream",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required - Insufficient credits or quota to complete request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentRequiredResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway - Provider/upstream API failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadGatewayResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable - Service temporarily unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "Text to synthesize"
+                  },
+                  "model": {
+                    "type": "string",
+                    "description": "TTS model identifier"
+                  },
+                  "provider": {
+                    "$ref": "#/components/schemas/AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider",
+                    "description": "Provider-specific passthrough configuration"
+                  },
+                  "response_format": {
+                    "$ref": "#/components/schemas/AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat",
+                    "description": "Audio output format"
+                  },
+                  "speed": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Playback speed multiplier. Only used by models that support it (e.g. OpenAI TTS). Ignored by other providers."
+                  },
+                  "voice": {
+                    "type": "string",
+                    "description": "Voice identifier (provider-specific)."
+                  }
+                },
+                "required": [
+                  "input",
+                  "model",
+                  "voice"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "/chat/completions": {
       "post": {
         "operationId": "send-chat-completion-request",
@@ -3127,151 +3272,6 @@
                   "documents",
                   "model",
                   "query"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
-    "/tts": {
-      "post": {
-        "operationId": "create-tts",
-        "summary": "Create speech",
-        "description": "Synthesizes audio from the input text",
-        "tags": [
-          "subpackage_tts"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Audio bytes stream",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request - Invalid request parameters or malformed input",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - Authentication required or invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UnauthorizedResponse"
-                }
-              }
-            }
-          },
-          "402": {
-            "description": "Payment Required - Insufficient credits or quota to complete request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentRequiredResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found - Resource does not exist",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotFoundResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests - Rate limit exceeded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TooManyRequestsResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - Unexpected server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerResponse"
-                }
-              }
-            }
-          },
-          "502": {
-            "description": "Bad Gateway - Provider/upstream API failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadGatewayResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Service Unavailable - Service temporarily unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUnavailableResponse"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "input": {
-                    "type": "string",
-                    "description": "Text to synthesize"
-                  },
-                  "model": {
-                    "type": "string",
-                    "description": "TTS model identifier"
-                  },
-                  "provider": {
-                    "$ref": "#/components/schemas/TtsPostRequestBodyContentApplicationJsonSchemaProvider",
-                    "description": "Provider-specific passthrough configuration"
-                  },
-                  "response_format": {
-                    "$ref": "#/components/schemas/TtsPostRequestBodyContentApplicationJsonSchemaResponseFormat",
-                    "description": "Audio output format"
-                  },
-                  "speed": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "Playback speed multiplier. Only used by models that support it (e.g. OpenAI TTS). Ignored by other providers."
-                  },
-                  "voice": {
-                    "type": "string",
-                    "description": "Voice identifier"
-                  }
-                },
-                "required": [
-                  "input",
-                  "model",
-                  "voice"
                 ]
               }
             }
@@ -11078,6 +11078,676 @@
           "data"
         ],
         "title": "ActivityResponse"
+      },
+      "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProviderOptions": {
+        "type": "object",
+        "properties": {
+          "01ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ai21": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "aion-labs": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "akashml": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "alibaba": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "amazon-bedrock": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "amazon-nova": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ambient": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "anthropic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "anyscale": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "arcee-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "atlas-cloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "atoma": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "avian": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "azure": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "baidu": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "baseten": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "black-forest-labs": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "byteplus": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "centml": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cerebras": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "chutes": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cirrascale": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "clarifai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cloudflare": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cohere": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crofai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crusoe": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "deepinfra": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "deepseek": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "dekallm": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "enfer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "fake-provider": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "featherless": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "fireworks": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "friendli": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "gmicloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "google-ai-studio": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "google-vertex": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "gopomelo": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "groq": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "huggingface": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "hyperbolic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "hyperbolic-quantized": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inception": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inceptron": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inference-net": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "infermatic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inflection": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inocloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "io-net": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ionstream": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "klusterai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lambda": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lepton": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "liquid": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lynn": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lynn-private": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mancer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mancer-old": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mara": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "minimax": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mistral": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modal": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modelrun": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modular": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "moonshotai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "morph": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ncompass": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nebius": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nextbit": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nineteen": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "novita": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nvidia": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "octoai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "open-inference": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "openai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "parasail": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "perplexity": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "phala": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "recraft": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "recursal": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "reflection": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "reka": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "relace": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "replicate": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sambanova": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sambanova-cloaked": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "seed": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sf-compute": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "siliconflow": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sourceful": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "stealth": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "stepfun": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "streamlake": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "switchpoint": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "targon": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "together": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "together-lite": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ubicloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "upstage": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "venice": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "wandb": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "xai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "xiaomi": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "z-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          }
+        },
+        "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.",
+        "title": "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProviderOptions"
+      },
+      "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/AudioSpeechPostRequestBodyContentApplicationJsonSchemaProviderOptions",
+            "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body."
+          }
+        },
+        "description": "Provider-specific passthrough configuration",
+        "title": "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider"
+      },
+      "AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat": {
+        "type": "string",
+        "enum": [
+          "mp3",
+          "pcm"
+        ],
+        "default": "pcm",
+        "description": "Audio output format",
+        "title": "AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat"
       },
       "AnthropicCacheControlTtl": {
         "type": "string",
@@ -21812,676 +22482,6 @@
         ],
         "description": "Rerank response containing ranked results",
         "title": "Rerank_createRerank_Response_200"
-      },
-      "TtsPostRequestBodyContentApplicationJsonSchemaProviderOptions": {
-        "type": "object",
-        "properties": {
-          "01ai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "ai21": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "aion-labs": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "akashml": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "alibaba": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "amazon-bedrock": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "amazon-nova": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "ambient": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "anthropic": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "anyscale": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "arcee-ai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "atlas-cloud": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "atoma": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "avian": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "azure": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "baidu": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "baseten": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "black-forest-labs": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "byteplus": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "centml": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "cerebras": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "chutes": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "cirrascale": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "clarifai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "cloudflare": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "cohere": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "crofai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "crusoe": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "deepinfra": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "deepseek": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "dekallm": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "enfer": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "fake-provider": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "featherless": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "fireworks": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "friendli": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "gmicloud": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "google-ai-studio": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "google-vertex": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "gopomelo": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "groq": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "huggingface": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "hyperbolic": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "hyperbolic-quantized": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "inception": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "inceptron": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "inference-net": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "infermatic": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "inflection": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "inocloud": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "io-net": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "ionstream": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "klusterai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "lambda": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "lepton": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "liquid": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "lynn": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "lynn-private": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "mancer": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "mancer-old": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "mara": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "meta": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "minimax": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "mistral": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "modal": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "modelrun": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "modular": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "moonshotai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "morph": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "ncompass": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "nebius": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "nextbit": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "nineteen": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "novita": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "nvidia": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "octoai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "open-inference": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "openai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "parasail": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "perplexity": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "phala": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "recraft": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "recursal": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "reflection": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "reka": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "relace": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "replicate": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "sambanova": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "sambanova-cloaked": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "seed": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "sf-compute": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "siliconflow": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "sourceful": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "stealth": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "stepfun": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "streamlake": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "switchpoint": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "targon": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "together": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "together-lite": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "ubicloud": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "upstage": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "venice": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "wandb": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "xai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "xiaomi": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "z-ai": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          }
-        },
-        "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.",
-        "title": "TtsPostRequestBodyContentApplicationJsonSchemaProviderOptions"
-      },
-      "TtsPostRequestBodyContentApplicationJsonSchemaProvider": {
-        "type": "object",
-        "properties": {
-          "options": {
-            "$ref": "#/components/schemas/TtsPostRequestBodyContentApplicationJsonSchemaProviderOptions",
-            "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body."
-          }
-        },
-        "description": "Provider-specific passthrough configuration",
-        "title": "TtsPostRequestBodyContentApplicationJsonSchemaProvider"
-      },
-      "TtsPostRequestBodyContentApplicationJsonSchemaResponseFormat": {
-        "type": "string",
-        "enum": [
-          "mp3",
-          "pcm"
-        ],
-        "default": "pcm",
-        "description": "Audio output format",
-        "title": "TtsPostRequestBodyContentApplicationJsonSchemaResponseFormat"
       },
       "VideoGenerationRequestAspectRatio": {
         "type": "string",
