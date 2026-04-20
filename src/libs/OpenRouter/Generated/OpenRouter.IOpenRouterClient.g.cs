@@ -129,5 +129,10 @@ namespace OpenRouter
         /// </summary>
         public SubpackageVideoGenerationClient SubpackageVideoGeneration { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageWorkspacesClient SubpackageWorkspaces { get; }
+
     }
 }

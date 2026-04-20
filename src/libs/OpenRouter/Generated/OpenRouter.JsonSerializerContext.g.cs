@@ -1441,6 +1441,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ImageConfigJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter),
@@ -2745,6 +2749,25 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoModelsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.VideoModel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Workspace))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListWorkspacesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.Workspace>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateWorkspaceRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateWorkspaceResponseData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateWorkspaceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GetWorkspaceResponseData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GetWorkspaceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DeleteWorkspaceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceResponseData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkAddWorkspaceMembersRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceMemberRole), TypeInfoPropertyName = "WorkspaceMemberRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceMember))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkAddWorkspaceMembersResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.WorkspaceMember>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkRemoveWorkspaceMembersRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkRemoveWorkspaceMembersResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExchangeAuthCodeForApiKeyRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>), TypeInfoPropertyName = "OneOfAuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateAuthKeysCodeRequest))]
@@ -2848,6 +2871,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedResolutionsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedSizesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.Workspace>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WorkspaceMember>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }

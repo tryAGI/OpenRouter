@@ -1,0 +1,133 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class UpdateWorkspaceRequest
+    {
+        /// <summary>
+        /// Default image model for this workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_image_model")]
+        public string? DefaultImageModel { get; set; }
+
+        /// <summary>
+        /// Default provider sort preference (price, throughput, latency, exacto)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_provider_sort")]
+        public string? DefaultProviderSort { get; set; }
+
+        /// <summary>
+        /// Default text model for this workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_text_model")]
+        public string? DefaultTextModel { get; set; }
+
+        /// <summary>
+        /// New description for the workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Whether data discount logging is enabled
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_data_discount_logging_enabled")]
+        public bool? IsDataDiscountLoggingEnabled { get; set; }
+
+        /// <summary>
+        /// Whether broadcast is enabled
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_observability_broadcast_enabled")]
+        public bool? IsObservabilityBroadcastEnabled { get; set; }
+
+        /// <summary>
+        /// Whether private logging is enabled
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_observability_io_logging_enabled")]
+        public bool? IsObservabilityIoLoggingEnabled { get; set; }
+
+        /// <summary>
+        /// New name for the workspace
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// New URL-friendly slug
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
+        public string? Slug { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateWorkspaceRequest" /> class.
+        /// </summary>
+        /// <param name="defaultImageModel">
+        /// Default image model for this workspace
+        /// </param>
+        /// <param name="defaultProviderSort">
+        /// Default provider sort preference (price, throughput, latency, exacto)
+        /// </param>
+        /// <param name="defaultTextModel">
+        /// Default text model for this workspace
+        /// </param>
+        /// <param name="description">
+        /// New description for the workspace
+        /// </param>
+        /// <param name="isDataDiscountLoggingEnabled">
+        /// Whether data discount logging is enabled
+        /// </param>
+        /// <param name="isObservabilityBroadcastEnabled">
+        /// Whether broadcast is enabled
+        /// </param>
+        /// <param name="isObservabilityIoLoggingEnabled">
+        /// Whether private logging is enabled
+        /// </param>
+        /// <param name="name">
+        /// New name for the workspace
+        /// </param>
+        /// <param name="slug">
+        /// New URL-friendly slug
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public UpdateWorkspaceRequest(
+            string? defaultImageModel,
+            string? defaultProviderSort,
+            string? defaultTextModel,
+            string? description,
+            bool? isDataDiscountLoggingEnabled,
+            bool? isObservabilityBroadcastEnabled,
+            bool? isObservabilityIoLoggingEnabled,
+            string? name,
+            string? slug)
+        {
+            this.DefaultImageModel = defaultImageModel;
+            this.DefaultProviderSort = defaultProviderSort;
+            this.DefaultTextModel = defaultTextModel;
+            this.Description = description;
+            this.IsDataDiscountLoggingEnabled = isDataDiscountLoggingEnabled;
+            this.IsObservabilityBroadcastEnabled = isObservabilityBroadcastEnabled;
+            this.IsObservabilityIoLoggingEnabled = isObservabilityIoLoggingEnabled;
+            this.Name = name;
+            this.Slug = slug;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateWorkspaceRequest" /> class.
+        /// </summary>
+        public UpdateWorkspaceRequest()
+        {
+        }
+    }
+}

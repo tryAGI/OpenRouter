@@ -3475,6 +3475,556 @@
           }
         }
       }
+    },
+    "/workspaces": {
+      "get": {
+        "operationId": "list-workspaces",
+        "summary": "List workspaces",
+        "description": "List all workspaces for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_workspaces"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of workspaces",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListWorkspacesResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-workspace",
+        "summary": "Create a workspace",
+        "description": "Create a new workspace for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_workspaces"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Workspace created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateWorkspaceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWorkspaceRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{id}": {
+      "get": {
+        "operationId": "get-workspace",
+        "summary": "Get a workspace",
+        "description": "Get a single workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_workspaces"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The workspace ID (UUID) or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Workspace details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWorkspaceResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-workspace",
+        "summary": "Delete a workspace",
+        "description": "Delete an existing workspace. The default workspace cannot be deleted. Workspaces with active API keys cannot be deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_workspaces"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The workspace ID (UUID) or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Workspace deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteWorkspaceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-workspace",
+        "summary": "Update a workspace",
+        "description": "Update an existing workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_workspaces"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The workspace ID (UUID) or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Workspace updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateWorkspaceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWorkspaceRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{id}/members/add": {
+      "post": {
+        "operationId": "bulk-add-workspace-members",
+        "summary": "Bulk add members to a workspace",
+        "description": "Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_workspaces"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The workspace ID (UUID) or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Members added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkAddWorkspaceMembersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkAddWorkspaceMembersRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{id}/members/remove": {
+      "post": {
+        "operationId": "bulk-remove-workspace-members",
+        "summary": "Bulk remove members from a workspace",
+        "description": "Remove multiple members from a workspace. Members with active API keys in the workspace cannot be removed. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_workspaces"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The workspace ID (UUID) or slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Members removed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkRemoveWorkspaceMembersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkRemoveWorkspaceMembersRequest"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "servers": [
@@ -22831,6 +23381,669 @@
           "data"
         ],
         "title": "VideoModelsListResponse"
+      },
+      "Workspace": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the workspace was created"
+          },
+          "created_by": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User ID of the workspace creator"
+          },
+          "default_image_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default image model for this workspace"
+          },
+          "default_provider_sort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default provider sort preference (price, throughput, latency, exacto)"
+          },
+          "default_text_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default text model for this workspace"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description of the workspace"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the workspace"
+          },
+          "is_data_discount_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether data discount logging is enabled for this workspace"
+          },
+          "is_observability_broadcast_enabled": {
+            "type": "boolean",
+            "description": "Whether broadcast is enabled for this workspace"
+          },
+          "is_observability_io_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether private logging is enabled for this workspace"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the workspace"
+          },
+          "slug": {
+            "type": "string",
+            "description": "URL-friendly slug for the workspace"
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ISO 8601 timestamp of when the workspace was last updated"
+          }
+        },
+        "required": [
+          "created_at",
+          "created_by",
+          "default_image_model",
+          "default_provider_sort",
+          "default_text_model",
+          "description",
+          "id",
+          "is_data_discount_logging_enabled",
+          "is_observability_broadcast_enabled",
+          "is_observability_io_logging_enabled",
+          "name",
+          "slug",
+          "updated_at"
+        ],
+        "title": "Workspace"
+      },
+      "ListWorkspacesResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Workspace"
+            },
+            "description": "List of workspaces"
+          },
+          "total_count": {
+            "type": "integer",
+            "description": "Total number of workspaces"
+          }
+        },
+        "required": [
+          "data",
+          "total_count"
+        ],
+        "title": "ListWorkspacesResponse"
+      },
+      "CreateWorkspaceRequest": {
+        "type": "object",
+        "properties": {
+          "default_image_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default image model for this workspace"
+          },
+          "default_provider_sort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default provider sort preference (price, throughput, latency, exacto)"
+          },
+          "default_text_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default text model for this workspace"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description of the workspace"
+          },
+          "is_data_discount_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether data discount logging is enabled"
+          },
+          "is_observability_broadcast_enabled": {
+            "type": "boolean",
+            "description": "Whether broadcast is enabled"
+          },
+          "is_observability_io_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether private logging is enabled"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name for the new workspace"
+          },
+          "slug": {
+            "type": "string",
+            "description": "URL-friendly slug (lowercase alphanumeric and hyphens only)"
+          }
+        },
+        "required": [
+          "name",
+          "slug"
+        ],
+        "title": "CreateWorkspaceRequest"
+      },
+      "CreateWorkspaceResponseData": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the workspace was created"
+          },
+          "created_by": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User ID of the workspace creator"
+          },
+          "default_image_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default image model for this workspace"
+          },
+          "default_provider_sort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default provider sort preference (price, throughput, latency, exacto)"
+          },
+          "default_text_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default text model for this workspace"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description of the workspace"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the workspace"
+          },
+          "is_data_discount_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether data discount logging is enabled for this workspace"
+          },
+          "is_observability_broadcast_enabled": {
+            "type": "boolean",
+            "description": "Whether broadcast is enabled for this workspace"
+          },
+          "is_observability_io_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether private logging is enabled for this workspace"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the workspace"
+          },
+          "slug": {
+            "type": "string",
+            "description": "URL-friendly slug for the workspace"
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ISO 8601 timestamp of when the workspace was last updated"
+          }
+        },
+        "required": [
+          "created_at",
+          "created_by",
+          "default_image_model",
+          "default_provider_sort",
+          "default_text_model",
+          "description",
+          "id",
+          "is_data_discount_logging_enabled",
+          "is_observability_broadcast_enabled",
+          "is_observability_io_logging_enabled",
+          "name",
+          "slug",
+          "updated_at"
+        ],
+        "title": "CreateWorkspaceResponseData"
+      },
+      "CreateWorkspaceResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateWorkspaceResponseData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "CreateWorkspaceResponse"
+      },
+      "GetWorkspaceResponseData": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the workspace was created"
+          },
+          "created_by": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User ID of the workspace creator"
+          },
+          "default_image_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default image model for this workspace"
+          },
+          "default_provider_sort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default provider sort preference (price, throughput, latency, exacto)"
+          },
+          "default_text_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default text model for this workspace"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description of the workspace"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the workspace"
+          },
+          "is_data_discount_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether data discount logging is enabled for this workspace"
+          },
+          "is_observability_broadcast_enabled": {
+            "type": "boolean",
+            "description": "Whether broadcast is enabled for this workspace"
+          },
+          "is_observability_io_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether private logging is enabled for this workspace"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the workspace"
+          },
+          "slug": {
+            "type": "string",
+            "description": "URL-friendly slug for the workspace"
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ISO 8601 timestamp of when the workspace was last updated"
+          }
+        },
+        "required": [
+          "created_at",
+          "created_by",
+          "default_image_model",
+          "default_provider_sort",
+          "default_text_model",
+          "description",
+          "id",
+          "is_data_discount_logging_enabled",
+          "is_observability_broadcast_enabled",
+          "is_observability_io_logging_enabled",
+          "name",
+          "slug",
+          "updated_at"
+        ],
+        "title": "GetWorkspaceResponseData"
+      },
+      "GetWorkspaceResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetWorkspaceResponseData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "GetWorkspaceResponse"
+      },
+      "DeleteWorkspaceResponse": {
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean",
+            "enum": [
+              true
+            ],
+            "description": "Confirmation that the workspace was deleted"
+          }
+        },
+        "required": [
+          "deleted"
+        ],
+        "title": "DeleteWorkspaceResponse"
+      },
+      "UpdateWorkspaceRequest": {
+        "type": "object",
+        "properties": {
+          "default_image_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default image model for this workspace"
+          },
+          "default_provider_sort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default provider sort preference (price, throughput, latency, exacto)"
+          },
+          "default_text_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default text model for this workspace"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "New description for the workspace"
+          },
+          "is_data_discount_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether data discount logging is enabled"
+          },
+          "is_observability_broadcast_enabled": {
+            "type": "boolean",
+            "description": "Whether broadcast is enabled"
+          },
+          "is_observability_io_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether private logging is enabled"
+          },
+          "name": {
+            "type": "string",
+            "description": "New name for the workspace"
+          },
+          "slug": {
+            "type": "string",
+            "description": "New URL-friendly slug"
+          }
+        },
+        "title": "UpdateWorkspaceRequest"
+      },
+      "UpdateWorkspaceResponseData": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the workspace was created"
+          },
+          "created_by": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User ID of the workspace creator"
+          },
+          "default_image_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default image model for this workspace"
+          },
+          "default_provider_sort": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default provider sort preference (price, throughput, latency, exacto)"
+          },
+          "default_text_model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Default text model for this workspace"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description of the workspace"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the workspace"
+          },
+          "is_data_discount_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether data discount logging is enabled for this workspace"
+          },
+          "is_observability_broadcast_enabled": {
+            "type": "boolean",
+            "description": "Whether broadcast is enabled for this workspace"
+          },
+          "is_observability_io_logging_enabled": {
+            "type": "boolean",
+            "description": "Whether private logging is enabled for this workspace"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the workspace"
+          },
+          "slug": {
+            "type": "string",
+            "description": "URL-friendly slug for the workspace"
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ISO 8601 timestamp of when the workspace was last updated"
+          }
+        },
+        "required": [
+          "created_at",
+          "created_by",
+          "default_image_model",
+          "default_provider_sort",
+          "default_text_model",
+          "description",
+          "id",
+          "is_data_discount_logging_enabled",
+          "is_observability_broadcast_enabled",
+          "is_observability_io_logging_enabled",
+          "name",
+          "slug",
+          "updated_at"
+        ],
+        "title": "UpdateWorkspaceResponseData"
+      },
+      "UpdateWorkspaceResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UpdateWorkspaceResponseData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "UpdateWorkspaceResponse"
+      },
+      "BulkAddWorkspaceMembersRequest": {
+        "type": "object",
+        "properties": {
+          "user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of user IDs to add to the workspace. Members are assigned the same role they hold in the organization."
+          }
+        },
+        "required": [
+          "user_ids"
+        ],
+        "title": "BulkAddWorkspaceMembersRequest"
+      },
+      "WorkspaceMemberRole": {
+        "type": "string",
+        "enum": [
+          "admin",
+          "member"
+        ],
+        "description": "Role of the member in the workspace",
+        "title": "WorkspaceMemberRole"
+      },
+      "WorkspaceMember": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the membership was created"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the workspace membership"
+          },
+          "role": {
+            "$ref": "#/components/schemas/WorkspaceMemberRole",
+            "description": "Role of the member in the workspace"
+          },
+          "user_id": {
+            "type": "string",
+            "description": "Clerk user ID of the member"
+          },
+          "workspace_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the workspace"
+          }
+        },
+        "required": [
+          "created_at",
+          "id",
+          "role",
+          "user_id",
+          "workspace_id"
+        ],
+        "title": "WorkspaceMember"
+      },
+      "BulkAddWorkspaceMembersResponse": {
+        "type": "object",
+        "properties": {
+          "added_count": {
+            "type": "integer",
+            "description": "Number of workspace memberships created or updated"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkspaceMember"
+            },
+            "description": "List of added workspace memberships"
+          }
+        },
+        "required": [
+          "added_count",
+          "data"
+        ],
+        "title": "BulkAddWorkspaceMembersResponse"
+      },
+      "BulkRemoveWorkspaceMembersRequest": {
+        "type": "object",
+        "properties": {
+          "user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of user IDs to remove from the workspace"
+          }
+        },
+        "required": [
+          "user_ids"
+        ],
+        "title": "BulkRemoveWorkspaceMembersRequest"
+      },
+      "BulkRemoveWorkspaceMembersResponse": {
+        "type": "object",
+        "properties": {
+          "removed_count": {
+            "type": "integer",
+            "description": "Number of members removed"
+          }
+        },
+        "required": [
+          "removed_count"
+        ],
+        "title": "BulkRemoveWorkspaceMembersResponse"
       }
     },
     "securitySchemes": {
