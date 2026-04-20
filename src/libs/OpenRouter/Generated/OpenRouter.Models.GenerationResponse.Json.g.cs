@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class GenerationGetResponsesContentApplicationJsonSchemaData
+    public sealed partial class GenerationResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData? FromJson(
+        public static global::OpenRouter.GenerationResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData),
-                jsonSerializerContext) as global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData;
+                typeof(global::OpenRouter.GenerationResponse),
+                jsonSerializerContext) as global::OpenRouter.GenerationResponse;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData? FromJson(
+        public static global::OpenRouter.GenerationResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.GenerationResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.GenerationResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData;
+                typeof(global::OpenRouter.GenerationResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.GenerationResponse;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.GenerationResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.GenerationResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

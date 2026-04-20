@@ -6,14 +6,14 @@ namespace OpenRouter
     /// <summary>
     /// Generation response
     /// </summary>
-    public sealed partial class GenerationsGetGenerationResponse200
+    public sealed partial class GenerationResponse
     {
         /// <summary>
         /// Generation data
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData Data { get; set; }
+        public required global::OpenRouter.GenerationResponseData Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -22,7 +22,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenerationsGetGenerationResponse200" /> class.
+        /// Initializes a new instance of the <see cref="GenerationResponse" /> class.
         /// </summary>
         /// <param name="data">
         /// Generation data
@@ -30,16 +30,16 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public GenerationsGetGenerationResponse200(
-            global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaData data)
+        public GenerationResponse(
+            global::OpenRouter.GenerationResponseData data)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenerationsGetGenerationResponse200" /> class.
+        /// Initializes a new instance of the <see cref="GenerationResponse" /> class.
         /// </summary>
-        public GenerationsGetGenerationResponse200()
+        public GenerationResponse()
         {
         }
     }
