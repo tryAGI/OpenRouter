@@ -7,7 +7,7 @@ namespace OpenRouter
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetGenerationSecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_ListGenerationContentSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,49 +21,49 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetGenerationSecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_ListGenerationContentSecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_GetGenerationSecurityRequirement0,
+            {                s_ListGenerationContentSecurityRequirement0,
             };
-        partial void PrepareGetGenerationArguments(
+        partial void PrepareListGenerationContentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
-        partial void PrepareGetGenerationRequest(
+        partial void PrepareListGenerationContentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id);
-        partial void ProcessGetGenerationResponse(
+        partial void ProcessListGenerationContentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetGenerationResponseContent(
+        partial void ProcessListGenerationContentResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get request &amp; usage metadata for a generation
+        /// Get stored prompt and completion content for a generation
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.GenerationResponse> GetGenerationAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.GenerationContentResponse> ListGenerationContentAsync(
             string id,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetGenerationArguments(
+            PrepareListGenerationContentArguments(
                 httpClient: HttpClient,
                 id: ref id);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetGenerationSecurityRequirements,
-                operationName: "GetGenerationAsync");
+                securityRequirements: s_ListGenerationContentSecurityRequirements,
+                operationName: "ListGenerationContentAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -82,7 +82,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/generation",
+                                path: "/generation/content",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddRequiredParameter("id", id) 
@@ -124,7 +124,7 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetGenerationRequest(
+                PrepareListGenerationContentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     id: id);
@@ -144,9 +144,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetGeneration",
-                                methodName: "GetGenerationAsync",
-                                pathTemplate: "\"/generation\"",
+                                operationId: "ListGenerationContent",
+                                methodName: "ListGenerationContentAsync",
+                                pathTemplate: "\"/generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -171,9 +171,9 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetGeneration",
-                                methodName: "GetGenerationAsync",
-                                pathTemplate: "\"/generation\"",
+                                operationId: "ListGenerationContent",
+                                methodName: "ListGenerationContentAsync",
+                                pathTemplate: "\"/generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -206,9 +206,9 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetGeneration",
-                                methodName: "GetGenerationAsync",
-                                pathTemplate: "\"/generation\"",
+                                operationId: "ListGenerationContent",
+                                methodName: "ListGenerationContentAsync",
+                                pathTemplate: "\"/generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -245,7 +245,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetGenerationResponse(
+                ProcessListGenerationContentResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -253,9 +253,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetGeneration",
-                                methodName: "GetGenerationAsync",
-                                pathTemplate: "\"/generation\"",
+                                operationId: "ListGenerationContent",
+                                methodName: "ListGenerationContentAsync",
+                                pathTemplate: "\"/generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -273,9 +273,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetGeneration",
-                                methodName: "GetGenerationAsync",
-                                pathTemplate: "\"/generation\"",
+                                operationId: "ListGenerationContent",
+                                methodName: "ListGenerationContentAsync",
+                                pathTemplate: "\"/generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -326,38 +326,38 @@ namespace OpenRouter
                                         h => h.Value),
                                 };
                             }
-                            // Payment Required - Insufficient credits or quota to complete request
-                            if ((int)__response.StatusCode == 402)
+                            // Forbidden - Authentication successful but insufficient permissions
+                            if ((int)__response.StatusCode == 403)
                             {
-                                string? __content_402 = null;
-                                global::System.Exception? __exception_402 = null;
-                                global::OpenRouter.PaymentRequiredResponse? __value_402 = null;
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = global::OpenRouter.PaymentRequiredResponse.FromJson(__content_402, JsonSerializerContext);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_402 = __ex;
+                                    __exception_403 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.PaymentRequiredResponse>(
-                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_402,
+                                throw new global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_402,
-                                    ResponseObject = __value_402,
+                                    ResponseBody = __content_403,
+                                    ResponseObject = __value_403,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -529,7 +529,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetGenerationResponseContent(
+                                ProcessListGenerationContentResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -539,7 +539,7 @@ namespace OpenRouter
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::OpenRouter.GenerationResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::OpenRouter.GenerationContentResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -569,7 +569,7 @@ namespace OpenRouter
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::OpenRouter.GenerationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::OpenRouter.GenerationContentResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)

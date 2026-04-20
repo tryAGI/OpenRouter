@@ -945,7 +945,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Generations_getGeneration_Response_200"
+                  "$ref": "#/components/schemas/GenerationResponse"
                 }
               }
             }
@@ -966,6 +966,98 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PaymentRequiredResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway - Provider/upstream API failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadGatewayResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generation/content": {
+      "get": {
+        "operationId": "list-generation-content",
+        "summary": "Get stored prompt and completion content for a generation",
+        "tags": [
+          "subpackage_generations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "The generation ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the stored prompt and completion content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationContentResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
                 }
               }
             }
@@ -14265,7 +14357,7 @@
         ],
         "title": "Endpoints_listEndpoints_Response_200"
       },
-      "GenerationGetResponsesContentApplicationJsonSchemaDataApiType": {
+      "GenerationResponseDataApiType": {
         "type": "string",
         "enum": [
           "completions",
@@ -14275,7 +14367,7 @@
           "video"
         ],
         "description": "Type of API used for the generation",
-        "title": "GenerationGetResponsesContentApplicationJsonSchemaDataApiType"
+        "title": "GenerationResponseDataApiType"
       },
       "ProviderResponseProviderName": {
         "type": "string",
@@ -14434,13 +14526,13 @@
         "description": "Details of a provider response for a generation attempt",
         "title": "ProviderResponse"
       },
-      "GenerationGetResponsesContentApplicationJsonSchemaData": {
+      "GenerationResponseData": {
         "type": "object",
         "properties": {
           "api_type": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/GenerationGetResponsesContentApplicationJsonSchemaDataApiType"
+                "$ref": "#/components/schemas/GenerationResponseDataApiType"
               },
               {
                 "type": "null"
@@ -14744,13 +14836,13 @@
           "web_search_engine"
         ],
         "description": "Generation data",
-        "title": "GenerationGetResponsesContentApplicationJsonSchemaData"
+        "title": "GenerationResponseData"
       },
-      "Generations_getGeneration_Response_200": {
+      "GenerationResponse": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/GenerationGetResponsesContentApplicationJsonSchemaData",
+            "$ref": "#/components/schemas/GenerationResponseData",
             "description": "Generation data"
           }
         },
@@ -14758,7 +14850,103 @@
           "data"
         ],
         "description": "Generation response",
-        "title": "Generations_getGeneration_Response_200"
+        "title": "GenerationResponse"
+      },
+      "GenerationContentDataInput0": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "prompt"
+        ],
+        "title": "GenerationContentDataInput0"
+      },
+      "GenerationContentDataInput1": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "description": "Any type"
+            }
+          }
+        },
+        "required": [
+          "messages"
+        ],
+        "title": "GenerationContentDataInput1"
+      },
+      "GenerationContentDataInput": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GenerationContentDataInput0"
+          },
+          {
+            "$ref": "#/components/schemas/GenerationContentDataInput1"
+          }
+        ],
+        "description": "The input to the generation — either a prompt string or an array of messages",
+        "title": "GenerationContentDataInput"
+      },
+      "GenerationContentDataOutput": {
+        "type": "object",
+        "properties": {
+          "completion": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The completion output"
+          },
+          "reasoning": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Reasoning/thinking output, if any"
+          }
+        },
+        "required": [
+          "completion",
+          "reasoning"
+        ],
+        "description": "The output from the generation",
+        "title": "GenerationContentDataOutput"
+      },
+      "GenerationContentData": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/GenerationContentDataInput",
+            "description": "The input to the generation — either a prompt string or an array of messages"
+          },
+          "output": {
+            "$ref": "#/components/schemas/GenerationContentDataOutput",
+            "description": "The output from the generation"
+          }
+        },
+        "required": [
+          "input",
+          "output"
+        ],
+        "description": "Stored prompt and completion content",
+        "title": "GenerationContentData"
+      },
+      "GenerationContentResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GenerationContentData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "description": "Stored prompt and completion content for a generation",
+        "title": "GenerationContentResponse"
       },
       "GuardrailInterval": {
         "type": "string",

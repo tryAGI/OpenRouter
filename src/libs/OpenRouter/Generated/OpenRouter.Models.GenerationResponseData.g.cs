@@ -6,15 +6,15 @@ namespace OpenRouter
     /// <summary>
     /// Generation data
     /// </summary>
-    public sealed partial class GenerationGetResponsesContentApplicationJsonSchemaData
+    public sealed partial class GenerationResponseData
     {
         /// <summary>
         /// Type of API used for the generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.GenerationResponseDataApiType?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object> ApiType { get; set; }
+        public required global::OpenRouter.OneOf<global::OpenRouter.GenerationResponseDataApiType?, object> ApiType { get; set; }
 
         /// <summary>
         /// ID of the app that made the request
@@ -258,7 +258,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenerationGetResponsesContentApplicationJsonSchemaData" /> class.
+        /// Initializes a new instance of the <see cref="GenerationResponseData" /> class.
         /// </summary>
         /// <param name="apiType">
         /// Type of API used for the generation
@@ -380,8 +380,8 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public GenerationGetResponsesContentApplicationJsonSchemaData(
-            global::OpenRouter.OneOf<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object> apiType,
+        public GenerationResponseData(
+            global::OpenRouter.OneOf<global::OpenRouter.GenerationResponseDataApiType?, object> apiType,
             string createdAt,
             string id,
             bool isByok,
@@ -463,9 +463,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenerationGetResponsesContentApplicationJsonSchemaData" /> class.
+        /// Initializes a new instance of the <see cref="GenerationResponseData" /> class.
         /// </summary>
-        public GenerationGetResponsesContentApplicationJsonSchemaData()
+        public GenerationResponseData()
         {
         }
     }

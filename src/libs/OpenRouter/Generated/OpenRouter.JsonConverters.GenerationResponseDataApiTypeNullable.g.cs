@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GenerationGetResponsesContentApplicationJsonSchemaDataApiTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType>
+    public sealed class GenerationResponseDataApiTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.GenerationResponseDataApiType?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType Read(
+        public override global::OpenRouter.GenerationResponseDataApiType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.GenerationResponseDataApiTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType)numValue;
+                    return (global::OpenRouter.GenerationResponseDataApiType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType);
+                    return default(global::OpenRouter.GenerationResponseDataApiType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiType value,
+            global::OpenRouter.GenerationResponseDataApiType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.GenerationGetResponsesContentApplicationJsonSchemaDataApiTypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::OpenRouter.GenerationResponseDataApiTypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }
