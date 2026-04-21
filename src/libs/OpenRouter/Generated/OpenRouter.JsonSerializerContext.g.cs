@@ -281,6 +281,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ContextCompressionPluginIdNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ParetoRouterPluginIdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ParetoRouterPluginIdNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ProviderPreferencesDataCollectionJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ProviderPreferencesDataCollectionNullableJsonConverter),
@@ -697,9 +701,9 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitTypeNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormatJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.SpeechRequestResponseFormatJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormatNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.SpeechRequestResponseFormatNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlTtlJsonConverter),
 
@@ -1863,6 +1867,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContextCompressionEngine), TypeInfoPropertyName = "ContextCompressionEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContextCompressionPluginId), TypeInfoPropertyName = "ContextCompressionPluginId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContextCompressionPlugin))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ParetoRouterPluginId), TypeInfoPropertyName = "ParetoRouterPluginId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ParetoRouterPlugin))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesRequestPluginsItems), TypeInfoPropertyName = "ResponsesRequestPluginsItems2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StoredPromptTemplateVariables), TypeInfoPropertyName = "StoredPromptTemplateVariables2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.StoredPromptTemplate))]
@@ -2159,9 +2165,10 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ActivityItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ActivityResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ActivityItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AudioSpeechPostRequestBodyContentApplicationJsonSchemaProviderOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat), TypeInfoPropertyName = "AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestProviderOptions))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestProvider))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequestResponseFormat), TypeInfoPropertyName = "SpeechRequestResponseFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SpeechRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCacheControlTtl), TypeInfoPropertyName = "AnthropicCacheControlTtl2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCacheControlDirectiveType), TypeInfoPropertyName = "AnthropicCacheControlDirectiveType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatRequestCacheControl))]
@@ -2779,7 +2786,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ExchangeAuthCodeForApiKeyRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>), TypeInfoPropertyName = "OneOfAuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateAuthKeysCodeRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateAudioSpeechRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateEmbeddingsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateKeysRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>), TypeInfoPropertyName = "OneOfKeysPostRequestBodyContentApplicationJsonSchemaLimitResetObject2")]

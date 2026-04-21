@@ -60,6 +60,10 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("enabled")) __score5++;
             if (__jsonProps.Contains("engine")) __score5++;
             if (__jsonProps.Contains("id")) __score5++;
+            var __score6 = 0;
+            if (__jsonProps.Contains("enabled")) __score6++;
+            if (__jsonProps.Contains("id")) __score6++;
+            if (__jsonProps.Contains("min_coding_score")) __score6++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -68,6 +72,7 @@ namespace OpenRouter.JsonConverters
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
             if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
+            if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
 
             global::OpenRouter.AutoRouterPlugin? autoRouterPlugin = default;
             global::OpenRouter.ModerationPlugin? moderationPlugin = default;
@@ -75,6 +80,7 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.FileParserPlugin? fileParserPlugin = default;
             global::OpenRouter.ResponseHealingPlugin? responseHealingPlugin = default;
             global::OpenRouter.ContextCompressionPlugin? contextCompressionPlugin = default;
+            global::OpenRouter.ParetoRouterPlugin? paretoRouterPlugin = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -167,9 +173,24 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 6)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ParetoRouterPlugin), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ParetoRouterPlugin> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ParetoRouterPlugin).Name}");
+                        paretoRouterPlugin = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (autoRouterPlugin == null && moderationPlugin == null && webSearchPlugin == null && fileParserPlugin == null && responseHealingPlugin == null && contextCompressionPlugin == null)
+            if (autoRouterPlugin == null && moderationPlugin == null && webSearchPlugin == null && fileParserPlugin == null && responseHealingPlugin == null && contextCompressionPlugin == null && paretoRouterPlugin == null)
             {
                 try
                 {
@@ -248,6 +269,19 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ParetoRouterPlugin), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ParetoRouterPlugin> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ParetoRouterPlugin).Name}");
+                    paretoRouterPlugin = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::OpenRouter.ChatRequestPluginsItems(
@@ -261,7 +295,9 @@ namespace OpenRouter.JsonConverters
 
                 responseHealingPlugin,
 
-                contextCompressionPlugin
+                contextCompressionPlugin,
+
+                paretoRouterPlugin
                 );
 
             return __value;
@@ -311,6 +347,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ContextCompressionPlugin), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ContextCompressionPlugin?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ContextCompressionPlugin).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextCompressionPlugin!, typeInfo);
+            }
+            else if (value.IsParetoRouterPlugin)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ParetoRouterPlugin), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ParetoRouterPlugin?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ParetoRouterPlugin).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParetoRouterPlugin!, typeInfo);
             }
         }
     }

@@ -551,39 +551,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "input": {
-                    "type": "string",
-                    "description": "Text to synthesize"
-                  },
-                  "model": {
-                    "type": "string",
-                    "description": "TTS model identifier"
-                  },
-                  "provider": {
-                    "$ref": "#/components/schemas/AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider",
-                    "description": "Provider-specific passthrough configuration"
-                  },
-                  "response_format": {
-                    "$ref": "#/components/schemas/AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat",
-                    "description": "Audio output format"
-                  },
-                  "speed": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "Playback speed multiplier. Only used by models that support it (e.g. OpenAI TTS). Ignored by other providers."
-                  },
-                  "voice": {
-                    "type": "string",
-                    "description": "Voice identifier (provider-specific)."
-                  }
-                },
-                "required": [
-                  "input",
-                  "model",
-                  "voice"
-                ]
+                "$ref": "#/components/schemas/SpeechRequest"
               }
             }
           }
@@ -6044,6 +6012,34 @@
         ],
         "title": "ContextCompressionPlugin"
       },
+      "ParetoRouterPluginId": {
+        "type": "string",
+        "enum": [
+          "pareto-router"
+        ],
+        "title": "ParetoRouterPluginId"
+      },
+      "ParetoRouterPlugin": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Set to false to disable the pareto-router plugin for this request. Defaults to true."
+          },
+          "id": {
+            "$ref": "#/components/schemas/ParetoRouterPluginId"
+          },
+          "min_coding_score": {
+            "type": "number",
+            "format": "double",
+            "description": "Minimum desired coding score between 0 and 1, where 1 is best. Higher values select from stronger coding models (sourced from Artificial Analysis coding percentiles). Maps internally to one of three tiers (low, medium, high). Omit to use the router default tier."
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "ParetoRouterPlugin"
+      },
       "ResponsesRequestPluginsItems": {
         "oneOf": [
           {
@@ -6063,6 +6059,9 @@
           },
           {
             "$ref": "#/components/schemas/ContextCompressionPlugin"
+          },
+          {
+            "$ref": "#/components/schemas/ParetoRouterPlugin"
           }
         ],
         "title": "ResponsesRequestPluginsItems"
@@ -11079,7 +11078,7 @@
         ],
         "title": "ActivityResponse"
       },
-      "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProviderOptions": {
+      "SpeechRequestProviderOptions": {
         "type": "object",
         "properties": {
           "01ai": {
@@ -11726,20 +11725,20 @@
           }
         },
         "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.",
-        "title": "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProviderOptions"
+        "title": "SpeechRequestProviderOptions"
       },
-      "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider": {
+      "SpeechRequestProvider": {
         "type": "object",
         "properties": {
           "options": {
-            "$ref": "#/components/schemas/AudioSpeechPostRequestBodyContentApplicationJsonSchemaProviderOptions",
+            "$ref": "#/components/schemas/SpeechRequestProviderOptions",
             "description": "Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body."
           }
         },
         "description": "Provider-specific passthrough configuration",
-        "title": "AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider"
+        "title": "SpeechRequestProvider"
       },
-      "AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat": {
+      "SpeechRequestResponseFormat": {
         "type": "string",
         "enum": [
           "mp3",
@@ -11747,7 +11746,44 @@
         ],
         "default": "pcm",
         "description": "Audio output format",
-        "title": "AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat"
+        "title": "SpeechRequestResponseFormat"
+      },
+      "SpeechRequest": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Text to synthesize"
+          },
+          "model": {
+            "type": "string",
+            "description": "TTS model identifier"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/SpeechRequestProvider",
+            "description": "Provider-specific passthrough configuration"
+          },
+          "response_format": {
+            "$ref": "#/components/schemas/SpeechRequestResponseFormat",
+            "description": "Audio output format"
+          },
+          "speed": {
+            "type": "number",
+            "format": "double",
+            "description": "Playback speed multiplier. Only used by models that support it (e.g. OpenAI TTS). Ignored by other providers."
+          },
+          "voice": {
+            "type": "string",
+            "description": "Voice identifier (provider-specific)."
+          }
+        },
+        "required": [
+          "input",
+          "model",
+          "voice"
+        ],
+        "description": "Text-to-speech request input",
+        "title": "SpeechRequest"
       },
       "AnthropicCacheControlTtl": {
         "type": "string",
@@ -12636,6 +12672,9 @@
           },
           {
             "$ref": "#/components/schemas/ContextCompressionPlugin"
+          },
+          {
+            "$ref": "#/components/schemas/ParetoRouterPlugin"
           }
         ],
         "title": "ChatRequestPluginsItems"
@@ -18907,6 +18946,9 @@
           },
           {
             "$ref": "#/components/schemas/ContextCompressionPlugin"
+          },
+          {
+            "$ref": "#/components/schemas/ParetoRouterPlugin"
           }
         ],
         "title": "MessagesRequestPluginsItems"

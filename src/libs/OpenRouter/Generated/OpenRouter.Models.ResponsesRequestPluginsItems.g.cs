@@ -110,6 +110,23 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextCompressionPlugin))]
 #endif
         public bool IsContextCompressionPlugin => ContextCompressionPlugin != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ParetoRouterPlugin? ParetoRouterPlugin { get; init; }
+#else
+        public global::OpenRouter.ParetoRouterPlugin? ParetoRouterPlugin { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ParetoRouterPlugin))]
+#endif
+        public bool IsParetoRouterPlugin => ParetoRouterPlugin != null;
         /// <summary>
         /// 
         /// </summary>
@@ -221,13 +238,32 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ParetoRouterPlugin value) => new ResponsesRequestPluginsItems((global::OpenRouter.ParetoRouterPlugin?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ParetoRouterPlugin?(ResponsesRequestPluginsItems @this) => @this.ParetoRouterPlugin;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesRequestPluginsItems(global::OpenRouter.ParetoRouterPlugin? value)
+        {
+            ParetoRouterPlugin = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResponsesRequestPluginsItems(
             global::OpenRouter.AutoRouterPlugin? autoRouterPlugin,
             global::OpenRouter.ModerationPlugin? moderationPlugin,
             global::OpenRouter.WebSearchPlugin? webSearchPlugin,
             global::OpenRouter.FileParserPlugin? fileParserPlugin,
             global::OpenRouter.ResponseHealingPlugin? responseHealingPlugin,
-            global::OpenRouter.ContextCompressionPlugin? contextCompressionPlugin
+            global::OpenRouter.ContextCompressionPlugin? contextCompressionPlugin,
+            global::OpenRouter.ParetoRouterPlugin? paretoRouterPlugin
             )
         {
             AutoRouterPlugin = autoRouterPlugin;
@@ -236,12 +272,14 @@ namespace OpenRouter
             FileParserPlugin = fileParserPlugin;
             ResponseHealingPlugin = responseHealingPlugin;
             ContextCompressionPlugin = contextCompressionPlugin;
+            ParetoRouterPlugin = paretoRouterPlugin;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ParetoRouterPlugin as object ??
             ContextCompressionPlugin as object ??
             ResponseHealingPlugin as object ??
             FileParserPlugin as object ??
@@ -259,7 +297,8 @@ namespace OpenRouter
             WebSearchPlugin?.ToString() ??
             FileParserPlugin?.ToString() ??
             ResponseHealingPlugin?.ToString() ??
-            ContextCompressionPlugin?.ToString() 
+            ContextCompressionPlugin?.ToString() ??
+            ParetoRouterPlugin?.ToString() 
             ;
 
         /// <summary>
@@ -267,7 +306,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && IsResponseHealingPlugin && !IsContextCompressionPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && IsContextCompressionPlugin;
+            return IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin && !IsParetoRouterPlugin || !IsAutoRouterPlugin && IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin && !IsParetoRouterPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin && !IsParetoRouterPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin && !IsParetoRouterPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && IsResponseHealingPlugin && !IsContextCompressionPlugin && !IsParetoRouterPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && IsContextCompressionPlugin && !IsParetoRouterPlugin || !IsAutoRouterPlugin && !IsModerationPlugin && !IsWebSearchPlugin && !IsFileParserPlugin && !IsResponseHealingPlugin && !IsContextCompressionPlugin && IsParetoRouterPlugin;
         }
 
         /// <summary>
@@ -280,6 +319,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.FileParserPlugin?, TResult>? fileParserPlugin = null,
             global::System.Func<global::OpenRouter.ResponseHealingPlugin?, TResult>? responseHealingPlugin = null,
             global::System.Func<global::OpenRouter.ContextCompressionPlugin?, TResult>? contextCompressionPlugin = null,
+            global::System.Func<global::OpenRouter.ParetoRouterPlugin?, TResult>? paretoRouterPlugin = null,
             bool validate = true)
         {
             if (validate)
@@ -311,6 +351,10 @@ namespace OpenRouter
             {
                 return contextCompressionPlugin(ContextCompressionPlugin!);
             }
+            else if (IsParetoRouterPlugin && paretoRouterPlugin != null)
+            {
+                return paretoRouterPlugin(ParetoRouterPlugin!);
+            }
 
             return default(TResult);
         }
@@ -325,6 +369,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.FileParserPlugin?>? fileParserPlugin = null,
             global::System.Action<global::OpenRouter.ResponseHealingPlugin?>? responseHealingPlugin = null,
             global::System.Action<global::OpenRouter.ContextCompressionPlugin?>? contextCompressionPlugin = null,
+            global::System.Action<global::OpenRouter.ParetoRouterPlugin?>? paretoRouterPlugin = null,
             bool validate = true)
         {
             if (validate)
@@ -356,6 +401,10 @@ namespace OpenRouter
             {
                 contextCompressionPlugin?.Invoke(ContextCompressionPlugin!);
             }
+            else if (IsParetoRouterPlugin)
+            {
+                paretoRouterPlugin?.Invoke(ParetoRouterPlugin!);
+            }
         }
 
         /// <summary>
@@ -377,6 +426,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ResponseHealingPlugin),
                 ContextCompressionPlugin,
                 typeof(global::OpenRouter.ContextCompressionPlugin),
+                ParetoRouterPlugin,
+                typeof(global::OpenRouter.ParetoRouterPlugin),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -398,7 +449,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebSearchPlugin?>.Default.Equals(WebSearchPlugin, other.WebSearchPlugin) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FileParserPlugin?>.Default.Equals(FileParserPlugin, other.FileParserPlugin) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponseHealingPlugin?>.Default.Equals(ResponseHealingPlugin, other.ResponseHealingPlugin) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContextCompressionPlugin?>.Default.Equals(ContextCompressionPlugin, other.ContextCompressionPlugin) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContextCompressionPlugin?>.Default.Equals(ContextCompressionPlugin, other.ContextCompressionPlugin) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ParetoRouterPlugin?>.Default.Equals(ParetoRouterPlugin, other.ParetoRouterPlugin) 
                 ;
         }
 

@@ -14,7 +14,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateAudioSpeechAsync(
 
-            global::OpenRouter.CreateAudioSpeechRequest request,
+            global::OpenRouter.SpeechRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -47,8 +47,8 @@ namespace OpenRouter
             string input,
             string model,
             string voice,
-            global::OpenRouter.AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider? provider = default,
-            global::OpenRouter.AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat? responseFormat = default,
+            global::OpenRouter.SpeechRequestProvider? provider = default,
+            global::OpenRouter.SpeechRequestResponseFormat? responseFormat = default,
             double? speed = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
