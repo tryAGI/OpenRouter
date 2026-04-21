@@ -27,11 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareCreateAudioSpeechArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.CreateAudioSpeechRequest request);
+            global::OpenRouter.SpeechRequest request);
         partial void PrepareCreateAudioSpeechRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.CreateAudioSpeechRequest request);
+            global::OpenRouter.SpeechRequest request);
         partial void ProcessCreateAudioSpeechResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateAudioSpeechAsync(
 
-            global::OpenRouter.CreateAudioSpeechRequest request,
+            global::OpenRouter.SpeechRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -712,13 +712,13 @@ namespace OpenRouter
             string input,
             string model,
             string voice,
-            global::OpenRouter.AudioSpeechPostRequestBodyContentApplicationJsonSchemaProvider? provider = default,
-            global::OpenRouter.AudioSpeechPostRequestBodyContentApplicationJsonSchemaResponseFormat? responseFormat = default,
+            global::OpenRouter.SpeechRequestProvider? provider = default,
+            global::OpenRouter.SpeechRequestResponseFormat? responseFormat = default,
             double? speed = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.CreateAudioSpeechRequest
+            var __request = new global::OpenRouter.SpeechRequest
             {
                 Input = input,
                 Model = model,
