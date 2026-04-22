@@ -135,6 +135,12 @@ namespace OpenRouter
         public int? NativeTokensReasoning { get; set; }
 
         /// <summary>
+        /// Number of web fetches performed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_fetches")]
+        public int? NumFetches { get; set; }
+
+        /// <summary>
         /// Number of audio inputs in the prompt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_input_audio_prompt")]
@@ -329,6 +335,9 @@ namespace OpenRouter
         /// <param name="nativeTokensReasoning">
         /// Native reasoning tokens as reported by provider
         /// </param>
+        /// <param name="numFetches">
+        /// Number of web fetches performed
+        /// </param>
         /// <param name="numInputAudioPrompt">
         /// Number of audio inputs in the prompt
         /// </param>
@@ -404,6 +413,7 @@ namespace OpenRouter
             int? nativeTokensCompletionImages,
             int? nativeTokensPrompt,
             int? nativeTokensReasoning,
+            int? numFetches,
             int? numInputAudioPrompt,
             int? numMediaCompletion,
             int? numMediaPrompt,
@@ -441,6 +451,7 @@ namespace OpenRouter
             this.NativeTokensCompletionImages = nativeTokensCompletionImages;
             this.NativeTokensPrompt = nativeTokensPrompt;
             this.NativeTokensReasoning = nativeTokensReasoning;
+            this.NumFetches = numFetches;
             this.NumInputAudioPrompt = numInputAudioPrompt;
             this.NumMediaCompletion = numMediaCompletion;
             this.NumMediaPrompt = numMediaPrompt;
