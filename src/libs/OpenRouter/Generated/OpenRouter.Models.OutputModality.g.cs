@@ -27,11 +27,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Speech,
         /// <summary>
         /// 
         /// </summary>
-        Tts,
+        Text,
         /// <summary>
         /// 
         /// </summary>
@@ -54,8 +54,8 @@ namespace OpenRouter
                 OutputModality.Embeddings => "embeddings",
                 OutputModality.Image => "image",
                 OutputModality.Rerank => "rerank",
+                OutputModality.Speech => "speech",
                 OutputModality.Text => "text",
-                OutputModality.Tts => "tts",
                 OutputModality.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -71,8 +71,8 @@ namespace OpenRouter
                 "embeddings" => OutputModality.Embeddings,
                 "image" => OutputModality.Image,
                 "rerank" => OutputModality.Rerank,
+                "speech" => OutputModality.Speech,
                 "text" => OutputModality.Text,
-                "tts" => OutputModality.Tts,
                 "video" => OutputModality.Video,
                 _ => null,
             };

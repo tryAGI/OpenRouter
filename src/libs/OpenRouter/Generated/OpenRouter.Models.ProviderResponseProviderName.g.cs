@@ -295,6 +295,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        NexAgi,
+        /// <summary>
+        /// 
+        /// </summary>
         NextBit,
         /// <summary>
         /// 
@@ -521,6 +525,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Morph => "Morph",
                 ProviderResponseProviderName.NCompass => "NCompass",
                 ProviderResponseProviderName.Nebius => "Nebius",
+                ProviderResponseProviderName.NexAgi => "Nex AGI",
                 ProviderResponseProviderName.NextBit => "NextBit",
                 ProviderResponseProviderName.Nineteen => "Nineteen",
                 ProviderResponseProviderName.Novita => "Novita",
@@ -638,6 +643,7 @@ namespace OpenRouter
                 "Morph" => ProviderResponseProviderName.Morph,
                 "NCompass" => ProviderResponseProviderName.NCompass,
                 "Nebius" => ProviderResponseProviderName.Nebius,
+                "Nex AGI" => ProviderResponseProviderName.NexAgi,
                 "NextBit" => ProviderResponseProviderName.NextBit,
                 "Nineteen" => ProviderResponseProviderName.Nineteen,
                 "Novita" => ProviderResponseProviderName.Novita,
