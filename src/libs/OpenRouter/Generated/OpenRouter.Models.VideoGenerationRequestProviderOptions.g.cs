@@ -437,6 +437,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("nex-agi")]
+        public object? NexAgi { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nextbit")]
         public object? Nextbit { get; set; }
 
@@ -730,6 +736,7 @@ namespace OpenRouter
         /// <param name="morph"></param>
         /// <param name="ncompass"></param>
         /// <param name="nebius"></param>
+        /// <param name="nexAgi"></param>
         /// <param name="nextbit"></param>
         /// <param name="nineteen"></param>
         /// <param name="novita"></param>
@@ -841,6 +848,7 @@ namespace OpenRouter
             object? morph,
             object? ncompass,
             object? nebius,
+            object? nexAgi,
             object? nextbit,
             object? nineteen,
             object? novita,
@@ -949,6 +957,7 @@ namespace OpenRouter
             this.Morph = morph;
             this.Ncompass = ncompass;
             this.Nebius = nebius;
+            this.NexAgi = nexAgi;
             this.Nextbit = nextbit;
             this.Nineteen = nineteen;
             this.Novita = novita;

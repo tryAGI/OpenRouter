@@ -6168,6 +6168,7 @@
           "Morph",
           "NCompass",
           "Nebius",
+          "Nex AGI",
           "NextBit",
           "Novita",
           "Nvidia",
@@ -11577,6 +11578,12 @@
               "description": "Any type"
             }
           },
+          "nex-agi": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "nextbit": {
             "type": "object",
             "additionalProperties": {
@@ -14239,7 +14246,7 @@
           "audio",
           "video",
           "rerank",
-          "tts"
+          "speech"
         ],
         "title": "OutputModality"
       },
@@ -15234,6 +15241,7 @@
           "Morph",
           "NCompass",
           "Nebius",
+          "Nex AGI",
           "NextBit",
           "Novita",
           "Nvidia",
@@ -23112,6 +23120,12 @@
             }
           },
           "nebius": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nex-agi": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"
