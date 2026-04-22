@@ -46,7 +46,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchConfig? Parameters { get; set; }
 
         /// <summary>
-        /// How much context to retrieve per result. Defaults to medium (15000 chars). Only applies when using the Exa engine; ignored with native provider search.
+        /// How much context to retrieve per result. Defaults to medium (15000 chars). Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.SearchQualityLevelJsonConverter))]
@@ -93,7 +93,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="parameters"></param>
         /// <param name="searchContextSize">
-        /// How much context to retrieve per result. Defaults to medium (15000 chars). Only applies when using the Exa engine; ignored with native provider search.
+        /// How much context to retrieve per result. Defaults to medium (15000 chars). Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl.
         /// </param>
         /// <param name="userLocation">
         /// Approximate user location for location-biased results.
