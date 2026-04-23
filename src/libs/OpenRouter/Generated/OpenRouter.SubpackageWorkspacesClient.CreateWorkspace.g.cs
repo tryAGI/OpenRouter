@@ -555,6 +555,12 @@ namespace OpenRouter
         /// <param name="description">
         /// Description of the workspace
         /// </param>
+        /// <param name="ioLoggingApiKeyIds">
+        /// Optional array of API key IDs to filter I/O logging
+        /// </param>
+        /// <param name="ioLoggingSamplingRate">
+        /// Sampling rate for I/O logging (0.0001-1)
+        /// </param>
         /// <param name="isDataDiscountLoggingEnabled">
         /// Whether data discount logging is enabled
         /// </param>
@@ -580,6 +586,8 @@ namespace OpenRouter
             string? defaultProviderSort = default,
             string? defaultTextModel = default,
             string? description = default,
+            global::System.Collections.Generic.IList<int>? ioLoggingApiKeyIds = default,
+            double? ioLoggingSamplingRate = default,
             bool? isDataDiscountLoggingEnabled = default,
             bool? isObservabilityBroadcastEnabled = default,
             bool? isObservabilityIoLoggingEnabled = default,
@@ -592,6 +600,8 @@ namespace OpenRouter
                 DefaultProviderSort = defaultProviderSort,
                 DefaultTextModel = defaultTextModel,
                 Description = description,
+                IoLoggingApiKeyIds = ioLoggingApiKeyIds,
+                IoLoggingSamplingRate = ioLoggingSamplingRate,
                 IsDataDiscountLoggingEnabled = isDataDiscountLoggingEnabled,
                 IsObservabilityBroadcastEnabled = isObservabilityBroadcastEnabled,
                 IsObservabilityIoLoggingEnabled = isObservabilityIoLoggingEnabled,

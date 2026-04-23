@@ -15990,6 +15990,13 @@
             ],
             "description": "Unique identifier grouping all generations from a single API request"
           },
+          "response_cache_source_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "If this generation was served from response cache, contains the original generation ID. Null otherwise."
+          },
           "router": {
             "type": [
               "string",
@@ -23854,6 +23861,11 @@
             "$ref": "#/components/schemas/VideoGenerationRequestAspectRatio",
             "description": "Aspect ratio of the generated video"
           },
+          "callback_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to receive a webhook notification when the video generation job completes. Overrides the workspace-level default callback URL if set. Must be HTTPS."
+          },
           "duration": {
             "type": "integer",
             "description": "Duration of the generated video in seconds"
@@ -24229,6 +24241,21 @@
             "format": "uuid",
             "description": "Unique identifier for the workspace"
           },
+          "io_logging_api_key_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "Optional array of API key IDs to filter I/O logging. Null means all keys are logged."
+          },
+          "io_logging_sampling_rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged."
+          },
           "is_data_discount_logging_enabled": {
             "type": "boolean",
             "description": "Whether data discount logging is enabled for this workspace"
@@ -24265,6 +24292,8 @@
           "default_text_model",
           "description",
           "id",
+          "io_logging_api_key_ids",
+          "io_logging_sampling_rate",
           "is_data_discount_logging_enabled",
           "is_observability_broadcast_enabled",
           "is_observability_io_logging_enabled",
@@ -24325,6 +24354,21 @@
               "null"
             ],
             "description": "Description of the workspace"
+          },
+          "io_logging_api_key_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "Optional array of API key IDs to filter I/O logging"
+          },
+          "io_logging_sampling_rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Sampling rate for I/O logging (0.0001-1)"
           },
           "is_data_discount_logging_enabled": {
             "type": "boolean",
@@ -24400,6 +24444,21 @@
             "format": "uuid",
             "description": "Unique identifier for the workspace"
           },
+          "io_logging_api_key_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "Optional array of API key IDs to filter I/O logging. Null means all keys are logged."
+          },
+          "io_logging_sampling_rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged."
+          },
           "is_data_discount_logging_enabled": {
             "type": "boolean",
             "description": "Whether data discount logging is enabled for this workspace"
@@ -24436,6 +24495,8 @@
           "default_text_model",
           "description",
           "id",
+          "io_logging_api_key_ids",
+          "io_logging_sampling_rate",
           "is_data_discount_logging_enabled",
           "is_observability_broadcast_enabled",
           "is_observability_io_logging_enabled",
@@ -24504,6 +24565,21 @@
             "format": "uuid",
             "description": "Unique identifier for the workspace"
           },
+          "io_logging_api_key_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "Optional array of API key IDs to filter I/O logging. Null means all keys are logged."
+          },
+          "io_logging_sampling_rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged."
+          },
           "is_data_discount_logging_enabled": {
             "type": "boolean",
             "description": "Whether data discount logging is enabled for this workspace"
@@ -24540,6 +24616,8 @@
           "default_text_model",
           "description",
           "id",
+          "io_logging_api_key_ids",
+          "io_logging_sampling_rate",
           "is_data_discount_logging_enabled",
           "is_observability_broadcast_enabled",
           "is_observability_io_logging_enabled",
@@ -24607,6 +24685,21 @@
               "null"
             ],
             "description": "New description for the workspace"
+          },
+          "io_logging_api_key_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "Optional array of API key IDs to filter I/O logging"
+          },
+          "io_logging_sampling_rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Sampling rate for I/O logging (0.0001-1)"
           },
           "is_data_discount_logging_enabled": {
             "type": "boolean",
@@ -24678,6 +24771,21 @@
             "format": "uuid",
             "description": "Unique identifier for the workspace"
           },
+          "io_logging_api_key_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "Optional array of API key IDs to filter I/O logging. Null means all keys are logged."
+          },
+          "io_logging_sampling_rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged."
+          },
           "is_data_discount_logging_enabled": {
             "type": "boolean",
             "description": "Whether data discount logging is enabled for this workspace"
@@ -24714,6 +24822,8 @@
           "default_text_model",
           "description",
           "id",
+          "io_logging_api_key_ids",
+          "io_logging_sampling_rate",
           "is_data_discount_logging_enabled",
           "is_observability_broadcast_enabled",
           "is_observability_io_logging_enabled",

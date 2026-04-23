@@ -190,6 +190,12 @@ namespace OpenRouter
         public string? RequestId { get; set; }
 
         /// <summary>
+        /// If this generation was served from response cache, contains the original generation ID. Null otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_cache_source_id")]
+        public string? ResponseCacheSourceId { get; set; }
+
+        /// <summary>
         /// Router used for the request (e.g., openrouter/auto)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("router")]
@@ -359,6 +365,9 @@ namespace OpenRouter
         /// <param name="requestId">
         /// Unique identifier grouping all generations from a single API request
         /// </param>
+        /// <param name="responseCacheSourceId">
+        /// If this generation was served from response cache, contains the original generation ID. Null otherwise.
+        /// </param>
         /// <param name="router">
         /// Router used for the request (e.g., openrouter/auto)
         /// </param>
@@ -421,6 +430,7 @@ namespace OpenRouter
             string? providerName,
             global::System.Collections.Generic.IList<global::OpenRouter.ProviderResponse>? providerResponses,
             string? requestId,
+            string? responseCacheSourceId,
             string? router,
             string? sessionId,
             bool? streamed,
@@ -460,6 +470,7 @@ namespace OpenRouter
             this.ProviderName = providerName;
             this.ProviderResponses = providerResponses;
             this.RequestId = requestId;
+            this.ResponseCacheSourceId = responseCacheSourceId;
             this.Router = router;
             this.SessionId = sessionId;
             this.Streamed = streamed;
