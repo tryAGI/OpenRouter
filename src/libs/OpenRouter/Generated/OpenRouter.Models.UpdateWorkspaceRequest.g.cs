@@ -33,6 +33,18 @@ namespace OpenRouter
         public string? Description { get; set; }
 
         /// <summary>
+        /// Optional array of API key IDs to filter I/O logging
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("io_logging_api_key_ids")]
+        public global::System.Collections.Generic.IList<int>? IoLoggingApiKeyIds { get; set; }
+
+        /// <summary>
+        /// Sampling rate for I/O logging (0.0001-1)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("io_logging_sampling_rate")]
+        public double? IoLoggingSamplingRate { get; set; }
+
+        /// <summary>
         /// Whether data discount logging is enabled
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_data_discount_logging_enabled")]
@@ -83,6 +95,12 @@ namespace OpenRouter
         /// <param name="description">
         /// New description for the workspace
         /// </param>
+        /// <param name="ioLoggingApiKeyIds">
+        /// Optional array of API key IDs to filter I/O logging
+        /// </param>
+        /// <param name="ioLoggingSamplingRate">
+        /// Sampling rate for I/O logging (0.0001-1)
+        /// </param>
         /// <param name="isDataDiscountLoggingEnabled">
         /// Whether data discount logging is enabled
         /// </param>
@@ -106,6 +124,8 @@ namespace OpenRouter
             string? defaultProviderSort,
             string? defaultTextModel,
             string? description,
+            global::System.Collections.Generic.IList<int>? ioLoggingApiKeyIds,
+            double? ioLoggingSamplingRate,
             bool? isDataDiscountLoggingEnabled,
             bool? isObservabilityBroadcastEnabled,
             bool? isObservabilityIoLoggingEnabled,
@@ -116,6 +136,8 @@ namespace OpenRouter
             this.DefaultProviderSort = defaultProviderSort;
             this.DefaultTextModel = defaultTextModel;
             this.Description = description;
+            this.IoLoggingApiKeyIds = ioLoggingApiKeyIds;
+            this.IoLoggingSamplingRate = ioLoggingSamplingRate;
             this.IsDataDiscountLoggingEnabled = isDataDiscountLoggingEnabled;
             this.IsObservabilityBroadcastEnabled = isObservabilityBroadcastEnabled;
             this.IsObservabilityIoLoggingEnabled = isObservabilityIoLoggingEnabled;

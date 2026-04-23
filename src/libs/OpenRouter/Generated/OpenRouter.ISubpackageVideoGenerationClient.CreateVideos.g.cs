@@ -24,6 +24,9 @@ namespace OpenRouter
         /// <param name="aspectRatio">
         /// Aspect ratio of the generated video
         /// </param>
+        /// <param name="callbackUrl">
+        /// URL to receive a webhook notification when the video generation job completes. Overrides the workspace-level default callback URL if set. Must be HTTPS.
+        /// </param>
         /// <param name="duration">
         /// Duration of the generated video in seconds
         /// </param>
@@ -57,6 +60,7 @@ namespace OpenRouter
             string model,
             string prompt,
             global::OpenRouter.VideoGenerationRequestAspectRatio? aspectRatio = default,
+            string? callbackUrl = default,
             int? duration = default,
             global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? frameImages = default,
             bool? generateAudio = default,

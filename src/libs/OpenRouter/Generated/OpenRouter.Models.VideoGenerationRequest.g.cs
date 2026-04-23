@@ -16,6 +16,12 @@ namespace OpenRouter
         public global::OpenRouter.VideoGenerationRequestAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
+        /// URL to receive a webhook notification when the video generation job completes. Overrides the workspace-level default callback URL if set. Must be HTTPS.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
+        public string? CallbackUrl { get; set; }
+
+        /// <summary>
         /// Duration of the generated video in seconds
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
@@ -92,6 +98,9 @@ namespace OpenRouter
         /// <param name="aspectRatio">
         /// Aspect ratio of the generated video
         /// </param>
+        /// <param name="callbackUrl">
+        /// URL to receive a webhook notification when the video generation job completes. Overrides the workspace-level default callback URL if set. Must be HTTPS.
+        /// </param>
         /// <param name="duration">
         /// Duration of the generated video in seconds
         /// </param>
@@ -123,6 +132,7 @@ namespace OpenRouter
             string model,
             string prompt,
             global::OpenRouter.VideoGenerationRequestAspectRatio? aspectRatio,
+            string? callbackUrl,
             int? duration,
             global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? frameImages,
             bool? generateAudio,
@@ -133,6 +143,7 @@ namespace OpenRouter
             string? size)
         {
             this.AspectRatio = aspectRatio;
+            this.CallbackUrl = callbackUrl;
             this.Duration = duration;
             this.FrameImages = frameImages;
             this.GenerateAudio = generateAudio;

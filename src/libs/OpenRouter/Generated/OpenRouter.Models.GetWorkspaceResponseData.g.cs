@@ -53,6 +53,19 @@ namespace OpenRouter
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
+        /// Optional array of API key IDs to filter I/O logging. Null means all keys are logged.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("io_logging_api_key_ids")]
+        public global::System.Collections.Generic.IList<int>? IoLoggingApiKeyIds { get; set; }
+
+        /// <summary>
+        /// Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("io_logging_sampling_rate")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double IoLoggingSamplingRate { get; set; }
+
+        /// <summary>
         /// Whether data discount logging is enabled for this workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_data_discount_logging_enabled")]
@@ -108,6 +121,9 @@ namespace OpenRouter
         /// <param name="id">
         /// Unique identifier for the workspace
         /// </param>
+        /// <param name="ioLoggingSamplingRate">
+        /// Sampling rate for I/O logging (0.0001-1). 1 means 100% of requests are logged.
+        /// </param>
         /// <param name="isDataDiscountLoggingEnabled">
         /// Whether data discount logging is enabled for this workspace
         /// </param>
@@ -138,6 +154,9 @@ namespace OpenRouter
         /// <param name="description">
         /// Description of the workspace
         /// </param>
+        /// <param name="ioLoggingApiKeyIds">
+        /// Optional array of API key IDs to filter I/O logging. Null means all keys are logged.
+        /// </param>
         /// <param name="updatedAt">
         /// ISO 8601 timestamp of when the workspace was last updated
         /// </param>
@@ -147,6 +166,7 @@ namespace OpenRouter
         public GetWorkspaceResponseData(
             string createdAt,
             global::System.Guid id,
+            double ioLoggingSamplingRate,
             bool isDataDiscountLoggingEnabled,
             bool isObservabilityBroadcastEnabled,
             bool isObservabilityIoLoggingEnabled,
@@ -157,6 +177,7 @@ namespace OpenRouter
             string? defaultProviderSort,
             string? defaultTextModel,
             string? description,
+            global::System.Collections.Generic.IList<int>? ioLoggingApiKeyIds,
             string? updatedAt)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
@@ -166,6 +187,8 @@ namespace OpenRouter
             this.DefaultTextModel = defaultTextModel;
             this.Description = description;
             this.Id = id;
+            this.IoLoggingApiKeyIds = ioLoggingApiKeyIds;
+            this.IoLoggingSamplingRate = ioLoggingSamplingRate;
             this.IsDataDiscountLoggingEnabled = isDataDiscountLoggingEnabled;
             this.IsObservabilityBroadcastEnabled = isObservabilityBroadcastEnabled;
             this.IsObservabilityIoLoggingEnabled = isObservabilityIoLoggingEnabled;
