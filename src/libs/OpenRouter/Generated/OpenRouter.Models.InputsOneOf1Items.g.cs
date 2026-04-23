@@ -197,6 +197,40 @@ namespace OpenRouter
         public bool IsOutputImageGenerationCallItem => OutputImageGenerationCallItem != null;
 
         /// <summary>
+        /// A code interpreter execution call with outputs
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputCodeInterpreterCallItem? OutputCodeInterpreterCallItem { get; init; }
+#else
+        public global::OpenRouter.OutputCodeInterpreterCallItem? OutputCodeInterpreterCallItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputCodeInterpreterCallItem))]
+#endif
+        public bool IsOutputCodeInterpreterCallItem => OutputCodeInterpreterCallItem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputComputerCallItem? OutputComputerCallItem { get; init; }
+#else
+        public global::OpenRouter.OutputComputerCallItem? OutputComputerCallItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputComputerCallItem))]
+#endif
+        public bool IsOutputComputerCallItem => OutputComputerCallItem != null;
+
+        /// <summary>
         /// An openrouter:datetime server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -229,6 +263,210 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputWebSearchServerToolItem))]
 #endif
         public bool IsOutputWebSearchServerToolItem => OutputWebSearchServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:code_interpreter server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputCodeInterpreterServerToolItem? OutputCodeInterpreterServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputCodeInterpreterServerToolItem? OutputCodeInterpreterServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputCodeInterpreterServerToolItem))]
+#endif
+        public bool IsOutputCodeInterpreterServerToolItem => OutputCodeInterpreterServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:file_search server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputFileSearchServerToolItem? OutputFileSearchServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputFileSearchServerToolItem? OutputFileSearchServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFileSearchServerToolItem))]
+#endif
+        public bool IsOutputFileSearchServerToolItem => OutputFileSearchServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:image_generation server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputImageGenerationServerToolItem? OutputImageGenerationServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputImageGenerationServerToolItem? OutputImageGenerationServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputImageGenerationServerToolItem))]
+#endif
+        public bool IsOutputImageGenerationServerToolItem => OutputImageGenerationServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:browser_use server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputBrowserUseServerToolItem? OutputBrowserUseServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputBrowserUseServerToolItem? OutputBrowserUseServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputBrowserUseServerToolItem))]
+#endif
+        public bool IsOutputBrowserUseServerToolItem => OutputBrowserUseServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:bash server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputBashServerToolItem? OutputBashServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputBashServerToolItem? OutputBashServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputBashServerToolItem))]
+#endif
+        public bool IsOutputBashServerToolItem => OutputBashServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:text_editor server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputTextEditorServerToolItem? OutputTextEditorServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputTextEditorServerToolItem? OutputTextEditorServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputTextEditorServerToolItem))]
+#endif
+        public bool IsOutputTextEditorServerToolItem => OutputTextEditorServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:apply_patch server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputApplyPatchServerToolItem? OutputApplyPatchServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputApplyPatchServerToolItem? OutputApplyPatchServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputApplyPatchServerToolItem))]
+#endif
+        public bool IsOutputApplyPatchServerToolItem => OutputApplyPatchServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:web_fetch server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputWebFetchServerToolItem? OutputWebFetchServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputWebFetchServerToolItem? OutputWebFetchServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputWebFetchServerToolItem))]
+#endif
+        public bool IsOutputWebFetchServerToolItem => OutputWebFetchServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:tool_search server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputToolSearchServerToolItem? OutputToolSearchServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputToolSearchServerToolItem? OutputToolSearchServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputToolSearchServerToolItem))]
+#endif
+        public bool IsOutputToolSearchServerToolItem => OutputToolSearchServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:memory server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputMemoryServerToolItem? OutputMemoryServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputMemoryServerToolItem? OutputMemoryServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMemoryServerToolItem))]
+#endif
+        public bool IsOutputMemoryServerToolItem => OutputMemoryServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:mcp server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputMcpServerToolItem? OutputMcpServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputMcpServerToolItem? OutputMcpServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMcpServerToolItem))]
+#endif
+        public bool IsOutputMcpServerToolItem => OutputMcpServerToolItem != null;
+
+        /// <summary>
+        /// An openrouter:experimental__search_models server tool output item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OutputSearchModelsServerToolItem? OutputSearchModelsServerToolItem { get; init; }
+#else
+        public global::OpenRouter.OutputSearchModelsServerToolItem? OutputSearchModelsServerToolItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputSearchModelsServerToolItem))]
+#endif
+        public bool IsOutputSearchModelsServerToolItem => OutputSearchModelsServerToolItem != null;
         /// <summary>
         /// 
         /// </summary>
@@ -430,6 +668,42 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCodeInterpreterCallItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputCodeInterpreterCallItem?(InputsOneOf1Items @this) => @this.OutputCodeInterpreterCallItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterCallItem? value)
+        {
+            OutputCodeInterpreterCallItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputComputerCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputComputerCallItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputComputerCallItem?(InputsOneOf1Items @this) => @this.OutputComputerCallItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputComputerCallItem? value)
+        {
+            OutputComputerCallItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputDatetimeItem value) => new InputsOneOf1Items((global::OpenRouter.OutputDatetimeItem?)value);
 
         /// <summary>
@@ -466,6 +740,222 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCodeInterpreterServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputCodeInterpreterServerToolItem?(InputsOneOf1Items @this) => @this.OutputCodeInterpreterServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterServerToolItem? value)
+        {
+            OutputCodeInterpreterServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputFileSearchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputFileSearchServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputFileSearchServerToolItem?(InputsOneOf1Items @this) => @this.OutputFileSearchServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputFileSearchServerToolItem? value)
+        {
+            OutputFileSearchServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputImageGenerationServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputImageGenerationServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputImageGenerationServerToolItem?(InputsOneOf1Items @this) => @this.OutputImageGenerationServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputImageGenerationServerToolItem? value)
+        {
+            OutputImageGenerationServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputBrowserUseServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputBrowserUseServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputBrowserUseServerToolItem?(InputsOneOf1Items @this) => @this.OutputBrowserUseServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputBrowserUseServerToolItem? value)
+        {
+            OutputBrowserUseServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputBashServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputBashServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputBashServerToolItem?(InputsOneOf1Items @this) => @this.OutputBashServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputBashServerToolItem? value)
+        {
+            OutputBashServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputTextEditorServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputTextEditorServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputTextEditorServerToolItem?(InputsOneOf1Items @this) => @this.OutputTextEditorServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputTextEditorServerToolItem? value)
+        {
+            OutputTextEditorServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputApplyPatchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputApplyPatchServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputApplyPatchServerToolItem?(InputsOneOf1Items @this) => @this.OutputApplyPatchServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputApplyPatchServerToolItem? value)
+        {
+            OutputApplyPatchServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputWebFetchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputWebFetchServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputWebFetchServerToolItem?(InputsOneOf1Items @this) => @this.OutputWebFetchServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputWebFetchServerToolItem? value)
+        {
+            OutputWebFetchServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputToolSearchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputToolSearchServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputToolSearchServerToolItem?(InputsOneOf1Items @this) => @this.OutputToolSearchServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputToolSearchServerToolItem? value)
+        {
+            OutputToolSearchServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputMemoryServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputMemoryServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputMemoryServerToolItem?(InputsOneOf1Items @this) => @this.OutputMemoryServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputMemoryServerToolItem? value)
+        {
+            OutputMemoryServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputMcpServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputMcpServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputMcpServerToolItem?(InputsOneOf1Items @this) => @this.OutputMcpServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputMcpServerToolItem? value)
+        {
+            OutputMcpServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputSearchModelsServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputSearchModelsServerToolItem?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OutputSearchModelsServerToolItem?(InputsOneOf1Items @this) => @this.OutputSearchModelsServerToolItem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.OutputSearchModelsServerToolItem? value)
+        {
+            OutputSearchModelsServerToolItem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InputsOneOf1Items(
             global::OpenRouter.ReasoningItem? reasoningItem,
             global::OpenRouter.EasyInputMessage? easyInputMessage,
@@ -478,8 +968,22 @@ namespace OpenRouter
             global::OpenRouter.OutputWebSearchCallItem? outputWebSearchCallItem,
             global::OpenRouter.OutputFileSearchCallItem? outputFileSearchCallItem,
             global::OpenRouter.OutputImageGenerationCallItem? outputImageGenerationCallItem,
+            global::OpenRouter.OutputCodeInterpreterCallItem? outputCodeInterpreterCallItem,
+            global::OpenRouter.OutputComputerCallItem? outputComputerCallItem,
             global::OpenRouter.OutputDatetimeItem? outputDatetimeItem,
-            global::OpenRouter.OutputWebSearchServerToolItem? outputWebSearchServerToolItem
+            global::OpenRouter.OutputWebSearchServerToolItem? outputWebSearchServerToolItem,
+            global::OpenRouter.OutputCodeInterpreterServerToolItem? outputCodeInterpreterServerToolItem,
+            global::OpenRouter.OutputFileSearchServerToolItem? outputFileSearchServerToolItem,
+            global::OpenRouter.OutputImageGenerationServerToolItem? outputImageGenerationServerToolItem,
+            global::OpenRouter.OutputBrowserUseServerToolItem? outputBrowserUseServerToolItem,
+            global::OpenRouter.OutputBashServerToolItem? outputBashServerToolItem,
+            global::OpenRouter.OutputTextEditorServerToolItem? outputTextEditorServerToolItem,
+            global::OpenRouter.OutputApplyPatchServerToolItem? outputApplyPatchServerToolItem,
+            global::OpenRouter.OutputWebFetchServerToolItem? outputWebFetchServerToolItem,
+            global::OpenRouter.OutputToolSearchServerToolItem? outputToolSearchServerToolItem,
+            global::OpenRouter.OutputMemoryServerToolItem? outputMemoryServerToolItem,
+            global::OpenRouter.OutputMcpServerToolItem? outputMcpServerToolItem,
+            global::OpenRouter.OutputSearchModelsServerToolItem? outputSearchModelsServerToolItem
             )
         {
             ReasoningItem = reasoningItem;
@@ -493,16 +997,44 @@ namespace OpenRouter
             OutputWebSearchCallItem = outputWebSearchCallItem;
             OutputFileSearchCallItem = outputFileSearchCallItem;
             OutputImageGenerationCallItem = outputImageGenerationCallItem;
+            OutputCodeInterpreterCallItem = outputCodeInterpreterCallItem;
+            OutputComputerCallItem = outputComputerCallItem;
             OutputDatetimeItem = outputDatetimeItem;
             OutputWebSearchServerToolItem = outputWebSearchServerToolItem;
+            OutputCodeInterpreterServerToolItem = outputCodeInterpreterServerToolItem;
+            OutputFileSearchServerToolItem = outputFileSearchServerToolItem;
+            OutputImageGenerationServerToolItem = outputImageGenerationServerToolItem;
+            OutputBrowserUseServerToolItem = outputBrowserUseServerToolItem;
+            OutputBashServerToolItem = outputBashServerToolItem;
+            OutputTextEditorServerToolItem = outputTextEditorServerToolItem;
+            OutputApplyPatchServerToolItem = outputApplyPatchServerToolItem;
+            OutputWebFetchServerToolItem = outputWebFetchServerToolItem;
+            OutputToolSearchServerToolItem = outputToolSearchServerToolItem;
+            OutputMemoryServerToolItem = outputMemoryServerToolItem;
+            OutputMcpServerToolItem = outputMcpServerToolItem;
+            OutputSearchModelsServerToolItem = outputSearchModelsServerToolItem;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            OutputSearchModelsServerToolItem as object ??
+            OutputMcpServerToolItem as object ??
+            OutputMemoryServerToolItem as object ??
+            OutputToolSearchServerToolItem as object ??
+            OutputWebFetchServerToolItem as object ??
+            OutputApplyPatchServerToolItem as object ??
+            OutputTextEditorServerToolItem as object ??
+            OutputBashServerToolItem as object ??
+            OutputBrowserUseServerToolItem as object ??
+            OutputImageGenerationServerToolItem as object ??
+            OutputFileSearchServerToolItem as object ??
+            OutputCodeInterpreterServerToolItem as object ??
             OutputWebSearchServerToolItem as object ??
             OutputDatetimeItem as object ??
+            OutputComputerCallItem as object ??
+            OutputCodeInterpreterCallItem as object ??
             OutputImageGenerationCallItem as object ??
             OutputFileSearchCallItem as object ??
             OutputWebSearchCallItem as object ??
@@ -531,8 +1063,22 @@ namespace OpenRouter
             OutputWebSearchCallItem?.ToString() ??
             OutputFileSearchCallItem?.ToString() ??
             OutputImageGenerationCallItem?.ToString() ??
+            OutputCodeInterpreterCallItem?.ToString() ??
+            OutputComputerCallItem?.ToString() ??
             OutputDatetimeItem?.ToString() ??
-            OutputWebSearchServerToolItem?.ToString() 
+            OutputWebSearchServerToolItem?.ToString() ??
+            OutputCodeInterpreterServerToolItem?.ToString() ??
+            OutputFileSearchServerToolItem?.ToString() ??
+            OutputImageGenerationServerToolItem?.ToString() ??
+            OutputBrowserUseServerToolItem?.ToString() ??
+            OutputBashServerToolItem?.ToString() ??
+            OutputTextEditorServerToolItem?.ToString() ??
+            OutputApplyPatchServerToolItem?.ToString() ??
+            OutputWebFetchServerToolItem?.ToString() ??
+            OutputToolSearchServerToolItem?.ToString() ??
+            OutputMemoryServerToolItem?.ToString() ??
+            OutputMcpServerToolItem?.ToString() ??
+            OutputSearchModelsServerToolItem?.ToString() 
             ;
 
         /// <summary>
@@ -540,7 +1086,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputDatetimeItem && IsOutputWebSearchServerToolItem;
+            return IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && IsOutputSearchModelsServerToolItem;
         }
 
         /// <summary>
@@ -558,8 +1104,22 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OutputWebSearchCallItem?, TResult>? outputWebSearchCallItem = null,
             global::System.Func<global::OpenRouter.OutputFileSearchCallItem?, TResult>? outputFileSearchCallItem = null,
             global::System.Func<global::OpenRouter.OutputImageGenerationCallItem?, TResult>? outputImageGenerationCallItem = null,
+            global::System.Func<global::OpenRouter.OutputCodeInterpreterCallItem?, TResult>? outputCodeInterpreterCallItem = null,
+            global::System.Func<global::OpenRouter.OutputComputerCallItem?, TResult>? outputComputerCallItem = null,
             global::System.Func<global::OpenRouter.OutputDatetimeItem?, TResult>? outputDatetimeItem = null,
             global::System.Func<global::OpenRouter.OutputWebSearchServerToolItem?, TResult>? outputWebSearchServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputCodeInterpreterServerToolItem?, TResult>? outputCodeInterpreterServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputFileSearchServerToolItem?, TResult>? outputFileSearchServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputImageGenerationServerToolItem?, TResult>? outputImageGenerationServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputBrowserUseServerToolItem?, TResult>? outputBrowserUseServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputBashServerToolItem?, TResult>? outputBashServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputTextEditorServerToolItem?, TResult>? outputTextEditorServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputApplyPatchServerToolItem?, TResult>? outputApplyPatchServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputWebFetchServerToolItem?, TResult>? outputWebFetchServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputToolSearchServerToolItem?, TResult>? outputToolSearchServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputMemoryServerToolItem?, TResult>? outputMemoryServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputMcpServerToolItem?, TResult>? outputMcpServerToolItem = null,
+            global::System.Func<global::OpenRouter.OutputSearchModelsServerToolItem?, TResult>? outputSearchModelsServerToolItem = null,
             bool validate = true)
         {
             if (validate)
@@ -611,6 +1171,14 @@ namespace OpenRouter
             {
                 return outputImageGenerationCallItem(OutputImageGenerationCallItem!);
             }
+            else if (IsOutputCodeInterpreterCallItem && outputCodeInterpreterCallItem != null)
+            {
+                return outputCodeInterpreterCallItem(OutputCodeInterpreterCallItem!);
+            }
+            else if (IsOutputComputerCallItem && outputComputerCallItem != null)
+            {
+                return outputComputerCallItem(OutputComputerCallItem!);
+            }
             else if (IsOutputDatetimeItem && outputDatetimeItem != null)
             {
                 return outputDatetimeItem(OutputDatetimeItem!);
@@ -618,6 +1186,54 @@ namespace OpenRouter
             else if (IsOutputWebSearchServerToolItem && outputWebSearchServerToolItem != null)
             {
                 return outputWebSearchServerToolItem(OutputWebSearchServerToolItem!);
+            }
+            else if (IsOutputCodeInterpreterServerToolItem && outputCodeInterpreterServerToolItem != null)
+            {
+                return outputCodeInterpreterServerToolItem(OutputCodeInterpreterServerToolItem!);
+            }
+            else if (IsOutputFileSearchServerToolItem && outputFileSearchServerToolItem != null)
+            {
+                return outputFileSearchServerToolItem(OutputFileSearchServerToolItem!);
+            }
+            else if (IsOutputImageGenerationServerToolItem && outputImageGenerationServerToolItem != null)
+            {
+                return outputImageGenerationServerToolItem(OutputImageGenerationServerToolItem!);
+            }
+            else if (IsOutputBrowserUseServerToolItem && outputBrowserUseServerToolItem != null)
+            {
+                return outputBrowserUseServerToolItem(OutputBrowserUseServerToolItem!);
+            }
+            else if (IsOutputBashServerToolItem && outputBashServerToolItem != null)
+            {
+                return outputBashServerToolItem(OutputBashServerToolItem!);
+            }
+            else if (IsOutputTextEditorServerToolItem && outputTextEditorServerToolItem != null)
+            {
+                return outputTextEditorServerToolItem(OutputTextEditorServerToolItem!);
+            }
+            else if (IsOutputApplyPatchServerToolItem && outputApplyPatchServerToolItem != null)
+            {
+                return outputApplyPatchServerToolItem(OutputApplyPatchServerToolItem!);
+            }
+            else if (IsOutputWebFetchServerToolItem && outputWebFetchServerToolItem != null)
+            {
+                return outputWebFetchServerToolItem(OutputWebFetchServerToolItem!);
+            }
+            else if (IsOutputToolSearchServerToolItem && outputToolSearchServerToolItem != null)
+            {
+                return outputToolSearchServerToolItem(OutputToolSearchServerToolItem!);
+            }
+            else if (IsOutputMemoryServerToolItem && outputMemoryServerToolItem != null)
+            {
+                return outputMemoryServerToolItem(OutputMemoryServerToolItem!);
+            }
+            else if (IsOutputMcpServerToolItem && outputMcpServerToolItem != null)
+            {
+                return outputMcpServerToolItem(OutputMcpServerToolItem!);
+            }
+            else if (IsOutputSearchModelsServerToolItem && outputSearchModelsServerToolItem != null)
+            {
+                return outputSearchModelsServerToolItem(OutputSearchModelsServerToolItem!);
             }
 
             return default(TResult);
@@ -638,8 +1254,22 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputWebSearchCallItem?>? outputWebSearchCallItem = null,
             global::System.Action<global::OpenRouter.OutputFileSearchCallItem?>? outputFileSearchCallItem = null,
             global::System.Action<global::OpenRouter.OutputImageGenerationCallItem?>? outputImageGenerationCallItem = null,
+            global::System.Action<global::OpenRouter.OutputCodeInterpreterCallItem?>? outputCodeInterpreterCallItem = null,
+            global::System.Action<global::OpenRouter.OutputComputerCallItem?>? outputComputerCallItem = null,
             global::System.Action<global::OpenRouter.OutputDatetimeItem?>? outputDatetimeItem = null,
             global::System.Action<global::OpenRouter.OutputWebSearchServerToolItem?>? outputWebSearchServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputCodeInterpreterServerToolItem?>? outputCodeInterpreterServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputFileSearchServerToolItem?>? outputFileSearchServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputImageGenerationServerToolItem?>? outputImageGenerationServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputBrowserUseServerToolItem?>? outputBrowserUseServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputBashServerToolItem?>? outputBashServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputTextEditorServerToolItem?>? outputTextEditorServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputApplyPatchServerToolItem?>? outputApplyPatchServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputWebFetchServerToolItem?>? outputWebFetchServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputToolSearchServerToolItem?>? outputToolSearchServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputMemoryServerToolItem?>? outputMemoryServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputMcpServerToolItem?>? outputMcpServerToolItem = null,
+            global::System.Action<global::OpenRouter.OutputSearchModelsServerToolItem?>? outputSearchModelsServerToolItem = null,
             bool validate = true)
         {
             if (validate)
@@ -691,6 +1321,14 @@ namespace OpenRouter
             {
                 outputImageGenerationCallItem?.Invoke(OutputImageGenerationCallItem!);
             }
+            else if (IsOutputCodeInterpreterCallItem)
+            {
+                outputCodeInterpreterCallItem?.Invoke(OutputCodeInterpreterCallItem!);
+            }
+            else if (IsOutputComputerCallItem)
+            {
+                outputComputerCallItem?.Invoke(OutputComputerCallItem!);
+            }
             else if (IsOutputDatetimeItem)
             {
                 outputDatetimeItem?.Invoke(OutputDatetimeItem!);
@@ -698,6 +1336,54 @@ namespace OpenRouter
             else if (IsOutputWebSearchServerToolItem)
             {
                 outputWebSearchServerToolItem?.Invoke(OutputWebSearchServerToolItem!);
+            }
+            else if (IsOutputCodeInterpreterServerToolItem)
+            {
+                outputCodeInterpreterServerToolItem?.Invoke(OutputCodeInterpreterServerToolItem!);
+            }
+            else if (IsOutputFileSearchServerToolItem)
+            {
+                outputFileSearchServerToolItem?.Invoke(OutputFileSearchServerToolItem!);
+            }
+            else if (IsOutputImageGenerationServerToolItem)
+            {
+                outputImageGenerationServerToolItem?.Invoke(OutputImageGenerationServerToolItem!);
+            }
+            else if (IsOutputBrowserUseServerToolItem)
+            {
+                outputBrowserUseServerToolItem?.Invoke(OutputBrowserUseServerToolItem!);
+            }
+            else if (IsOutputBashServerToolItem)
+            {
+                outputBashServerToolItem?.Invoke(OutputBashServerToolItem!);
+            }
+            else if (IsOutputTextEditorServerToolItem)
+            {
+                outputTextEditorServerToolItem?.Invoke(OutputTextEditorServerToolItem!);
+            }
+            else if (IsOutputApplyPatchServerToolItem)
+            {
+                outputApplyPatchServerToolItem?.Invoke(OutputApplyPatchServerToolItem!);
+            }
+            else if (IsOutputWebFetchServerToolItem)
+            {
+                outputWebFetchServerToolItem?.Invoke(OutputWebFetchServerToolItem!);
+            }
+            else if (IsOutputToolSearchServerToolItem)
+            {
+                outputToolSearchServerToolItem?.Invoke(OutputToolSearchServerToolItem!);
+            }
+            else if (IsOutputMemoryServerToolItem)
+            {
+                outputMemoryServerToolItem?.Invoke(OutputMemoryServerToolItem!);
+            }
+            else if (IsOutputMcpServerToolItem)
+            {
+                outputMcpServerToolItem?.Invoke(OutputMcpServerToolItem!);
+            }
+            else if (IsOutputSearchModelsServerToolItem)
+            {
+                outputSearchModelsServerToolItem?.Invoke(OutputSearchModelsServerToolItem!);
             }
         }
 
@@ -730,10 +1416,38 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputFileSearchCallItem),
                 OutputImageGenerationCallItem,
                 typeof(global::OpenRouter.OutputImageGenerationCallItem),
+                OutputCodeInterpreterCallItem,
+                typeof(global::OpenRouter.OutputCodeInterpreterCallItem),
+                OutputComputerCallItem,
+                typeof(global::OpenRouter.OutputComputerCallItem),
                 OutputDatetimeItem,
                 typeof(global::OpenRouter.OutputDatetimeItem),
                 OutputWebSearchServerToolItem,
                 typeof(global::OpenRouter.OutputWebSearchServerToolItem),
+                OutputCodeInterpreterServerToolItem,
+                typeof(global::OpenRouter.OutputCodeInterpreterServerToolItem),
+                OutputFileSearchServerToolItem,
+                typeof(global::OpenRouter.OutputFileSearchServerToolItem),
+                OutputImageGenerationServerToolItem,
+                typeof(global::OpenRouter.OutputImageGenerationServerToolItem),
+                OutputBrowserUseServerToolItem,
+                typeof(global::OpenRouter.OutputBrowserUseServerToolItem),
+                OutputBashServerToolItem,
+                typeof(global::OpenRouter.OutputBashServerToolItem),
+                OutputTextEditorServerToolItem,
+                typeof(global::OpenRouter.OutputTextEditorServerToolItem),
+                OutputApplyPatchServerToolItem,
+                typeof(global::OpenRouter.OutputApplyPatchServerToolItem),
+                OutputWebFetchServerToolItem,
+                typeof(global::OpenRouter.OutputWebFetchServerToolItem),
+                OutputToolSearchServerToolItem,
+                typeof(global::OpenRouter.OutputToolSearchServerToolItem),
+                OutputMemoryServerToolItem,
+                typeof(global::OpenRouter.OutputMemoryServerToolItem),
+                OutputMcpServerToolItem,
+                typeof(global::OpenRouter.OutputMcpServerToolItem),
+                OutputSearchModelsServerToolItem,
+                typeof(global::OpenRouter.OutputSearchModelsServerToolItem),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -761,8 +1475,22 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputWebSearchCallItem?>.Default.Equals(OutputWebSearchCallItem, other.OutputWebSearchCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputFileSearchCallItem?>.Default.Equals(OutputFileSearchCallItem, other.OutputFileSearchCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputImageGenerationCallItem?>.Default.Equals(OutputImageGenerationCallItem, other.OutputImageGenerationCallItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputCodeInterpreterCallItem?>.Default.Equals(OutputCodeInterpreterCallItem, other.OutputCodeInterpreterCallItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputComputerCallItem?>.Default.Equals(OutputComputerCallItem, other.OutputComputerCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputDatetimeItem?>.Default.Equals(OutputDatetimeItem, other.OutputDatetimeItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputWebSearchServerToolItem?>.Default.Equals(OutputWebSearchServerToolItem, other.OutputWebSearchServerToolItem) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputWebSearchServerToolItem?>.Default.Equals(OutputWebSearchServerToolItem, other.OutputWebSearchServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputCodeInterpreterServerToolItem?>.Default.Equals(OutputCodeInterpreterServerToolItem, other.OutputCodeInterpreterServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputFileSearchServerToolItem?>.Default.Equals(OutputFileSearchServerToolItem, other.OutputFileSearchServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputImageGenerationServerToolItem?>.Default.Equals(OutputImageGenerationServerToolItem, other.OutputImageGenerationServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputBrowserUseServerToolItem?>.Default.Equals(OutputBrowserUseServerToolItem, other.OutputBrowserUseServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputBashServerToolItem?>.Default.Equals(OutputBashServerToolItem, other.OutputBashServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputTextEditorServerToolItem?>.Default.Equals(OutputTextEditorServerToolItem, other.OutputTextEditorServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputApplyPatchServerToolItem?>.Default.Equals(OutputApplyPatchServerToolItem, other.OutputApplyPatchServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputWebFetchServerToolItem?>.Default.Equals(OutputWebFetchServerToolItem, other.OutputWebFetchServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputToolSearchServerToolItem?>.Default.Equals(OutputToolSearchServerToolItem, other.OutputToolSearchServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMemoryServerToolItem?>.Default.Equals(OutputMemoryServerToolItem, other.OutputMemoryServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMcpServerToolItem?>.Default.Equals(OutputMcpServerToolItem, other.OutputMcpServerToolItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputSearchModelsServerToolItem?>.Default.Equals(OutputSearchModelsServerToolItem, other.OutputSearchModelsServerToolItem) 
                 ;
         }
 
