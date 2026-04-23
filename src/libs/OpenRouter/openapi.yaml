@@ -5642,6 +5642,188 @@
         ],
         "title": "OutputImageGenerationCallItem"
       },
+      "CodeInterpreterCallItemOutputsItemsOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "image"
+        ],
+        "title": "CodeInterpreterCallItemOutputsItemsOneOf0Type"
+      },
+      "CodeInterpreterCallItemOutputsItems0": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItemsOneOf0Type"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "url"
+        ],
+        "title": "CodeInterpreterCallItemOutputsItems0"
+      },
+      "CodeInterpreterCallItemOutputsItemsOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "logs"
+        ],
+        "title": "CodeInterpreterCallItemOutputsItemsOneOf1Type"
+      },
+      "CodeInterpreterCallItemOutputsItems1": {
+        "type": "object",
+        "properties": {
+          "logs": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItemsOneOf1Type"
+          }
+        },
+        "required": [
+          "logs",
+          "type"
+        ],
+        "title": "CodeInterpreterCallItemOutputsItems1"
+      },
+      "CodeInterpreterCallItemOutputsItems": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItems0"
+          },
+          {
+            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItems1"
+          }
+        ],
+        "title": "CodeInterpreterCallItemOutputsItems"
+      },
+      "CodeInterpreterCallItemType": {
+        "type": "string",
+        "enum": [
+          "code_interpreter_call"
+        ],
+        "title": "CodeInterpreterCallItemType"
+      },
+      "OutputCodeInterpreterCallItem": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "container_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "outputs": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItems"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CodeInterpreterCallItemType"
+          }
+        },
+        "required": [
+          "code",
+          "container_id",
+          "id",
+          "outputs",
+          "status",
+          "type"
+        ],
+        "description": "A code interpreter execution call with outputs",
+        "title": "OutputCodeInterpreterCallItem"
+      },
+      "OutputComputerCallItemPendingSafetyChecksItems": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "id",
+          "message"
+        ],
+        "title": "OutputComputerCallItemPendingSafetyChecksItems"
+      },
+      "OutputComputerCallItemStatus": {
+        "type": "string",
+        "enum": [
+          "completed",
+          "incomplete",
+          "in_progress"
+        ],
+        "title": "OutputComputerCallItemStatus"
+      },
+      "OutputComputerCallItemType": {
+        "type": "string",
+        "enum": [
+          "computer_call"
+        ],
+        "title": "OutputComputerCallItemType"
+      },
+      "OutputComputerCallItem": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "oneOf": [
+              {
+                "description": "Any type"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "call_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "pending_safety_checks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutputComputerCallItemPendingSafetyChecksItems"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/OutputComputerCallItemStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputComputerCallItemType"
+          }
+        },
+        "required": [
+          "call_id",
+          "pending_safety_checks",
+          "status",
+          "type"
+        ],
+        "title": "OutputComputerCallItem"
+      },
       "OutputDatetimeItemType": {
         "type": "string",
         "enum": [
@@ -5706,6 +5888,457 @@
         "description": "An openrouter:web_search server tool output item",
         "title": "OutputWebSearchServerToolItem"
       },
+      "OutputCodeInterpreterServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:code_interpreter"
+        ],
+        "title": "OutputCodeInterpreterServerToolItemType"
+      },
+      "OutputCodeInterpreterServerToolItem": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "exitCode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "stderr": {
+            "type": "string"
+          },
+          "stdout": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputCodeInterpreterServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:code_interpreter server tool output item",
+        "title": "OutputCodeInterpreterServerToolItem"
+      },
+      "OutputFileSearchServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:file_search"
+        ],
+        "title": "OutputFileSearchServerToolItemType"
+      },
+      "OutputFileSearchServerToolItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputFileSearchServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:file_search server tool output item",
+        "title": "OutputFileSearchServerToolItem"
+      },
+      "OutputImageGenerationServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:image_generation"
+        ],
+        "title": "OutputImageGenerationServerToolItemType"
+      },
+      "OutputImageGenerationServerToolItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "imageB64": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "result": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format"
+          },
+          "revisedPrompt": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputImageGenerationServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:image_generation server tool output item",
+        "title": "OutputImageGenerationServerToolItem"
+      },
+      "OutputBrowserUseServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:browser_use"
+        ],
+        "title": "OutputBrowserUseServerToolItemType"
+      },
+      "OutputBrowserUseServerToolItem": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "screenshotB64": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputBrowserUseServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:browser_use server tool output item",
+        "title": "OutputBrowserUseServerToolItem"
+      },
+      "OutputBashServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:bash"
+        ],
+        "title": "OutputBashServerToolItemType"
+      },
+      "OutputBashServerToolItem": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "exitCode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "stderr": {
+            "type": "string"
+          },
+          "stdout": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputBashServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:bash server tool output item",
+        "title": "OutputBashServerToolItem"
+      },
+      "OutputTextEditorServerToolItemCommand": {
+        "type": "string",
+        "enum": [
+          "view",
+          "create",
+          "str_replace",
+          "insert"
+        ],
+        "title": "OutputTextEditorServerToolItemCommand"
+      },
+      "OutputTextEditorServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:text_editor"
+        ],
+        "title": "OutputTextEditorServerToolItemType"
+      },
+      "OutputTextEditorServerToolItem": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "$ref": "#/components/schemas/OutputTextEditorServerToolItemCommand"
+          },
+          "filePath": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputTextEditorServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:text_editor server tool output item",
+        "title": "OutputTextEditorServerToolItem"
+      },
+      "OutputApplyPatchServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:apply_patch"
+        ],
+        "title": "OutputApplyPatchServerToolItemType"
+      },
+      "OutputApplyPatchServerToolItem": {
+        "type": "object",
+        "properties": {
+          "filePath": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputApplyPatchServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:apply_patch server tool output item",
+        "title": "OutputApplyPatchServerToolItem"
+      },
+      "OutputWebFetchServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:web_fetch"
+        ],
+        "title": "OutputWebFetchServerToolItemType"
+      },
+      "OutputWebFetchServerToolItem": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputWebFetchServerToolItemType"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:web_fetch server tool output item",
+        "title": "OutputWebFetchServerToolItem"
+      },
+      "OutputToolSearchServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:tool_search"
+        ],
+        "title": "OutputToolSearchServerToolItemType"
+      },
+      "OutputToolSearchServerToolItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputToolSearchServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:tool_search server tool output item",
+        "title": "OutputToolSearchServerToolItem"
+      },
+      "OutputMemoryServerToolItemAction": {
+        "type": "string",
+        "enum": [
+          "read",
+          "write",
+          "delete"
+        ],
+        "title": "OutputMemoryServerToolItemAction"
+      },
+      "OutputMemoryServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:memory"
+        ],
+        "title": "OutputMemoryServerToolItemType"
+      },
+      "OutputMemoryServerToolItem": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/OutputMemoryServerToolItemAction"
+          },
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputMemoryServerToolItemType"
+          },
+          "value": {
+            "oneOf": [
+              {
+                "description": "Any type"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:memory server tool output item",
+        "title": "OutputMemoryServerToolItem"
+      },
+      "OutputMcpServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:mcp"
+        ],
+        "title": "OutputMcpServerToolItemType"
+      },
+      "OutputMcpServerToolItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "serverLabel": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "toolName": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputMcpServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:mcp server tool output item",
+        "title": "OutputMcpServerToolItem"
+      },
+      "OutputSearchModelsServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:experimental__search_models"
+        ],
+        "title": "OutputSearchModelsServerToolItemType"
+      },
+      "OutputSearchModelsServerToolItem": {
+        "type": "object",
+        "properties": {
+          "arguments": {
+            "type": "string",
+            "description": "The JSON arguments submitted to the search tool (e.g. {\"query\":\"Claude\"})"
+          },
+          "id": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputSearchModelsServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:experimental__search_models server tool output item",
+        "title": "OutputSearchModelsServerToolItem"
+      },
       "InputsOneOf1Items": {
         "oneOf": [
           {
@@ -5742,10 +6375,52 @@
             "$ref": "#/components/schemas/OutputImageGenerationCallItem"
           },
           {
+            "$ref": "#/components/schemas/OutputCodeInterpreterCallItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputComputerCallItem"
+          },
+          {
             "$ref": "#/components/schemas/OutputDatetimeItem"
           },
           {
             "$ref": "#/components/schemas/OutputWebSearchServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputCodeInterpreterServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputFileSearchServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputImageGenerationServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputBrowserUseServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputBashServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputTextEditorServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputApplyPatchServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputWebFetchServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputToolSearchServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputMemoryServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputMcpServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputSearchModelsServerToolItem"
           }
         ],
         "title": "InputsOneOf1Items"
@@ -9280,209 +9955,6 @@
           "total_tokens"
         ],
         "title": "OpenAIResponsesUsage"
-      },
-      "CodeInterpreterCallItemOutputsItemsOneOf0Type": {
-        "type": "string",
-        "enum": [
-          "image"
-        ],
-        "title": "CodeInterpreterCallItemOutputsItemsOneOf0Type"
-      },
-      "CodeInterpreterCallItemOutputsItems0": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItemsOneOf0Type"
-          },
-          "url": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "type",
-          "url"
-        ],
-        "title": "CodeInterpreterCallItemOutputsItems0"
-      },
-      "CodeInterpreterCallItemOutputsItemsOneOf1Type": {
-        "type": "string",
-        "enum": [
-          "logs"
-        ],
-        "title": "CodeInterpreterCallItemOutputsItemsOneOf1Type"
-      },
-      "CodeInterpreterCallItemOutputsItems1": {
-        "type": "object",
-        "properties": {
-          "logs": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItemsOneOf1Type"
-          }
-        },
-        "required": [
-          "logs",
-          "type"
-        ],
-        "title": "CodeInterpreterCallItemOutputsItems1"
-      },
-      "CodeInterpreterCallItemOutputsItems": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItems0"
-          },
-          {
-            "$ref": "#/components/schemas/CodeInterpreterCallItemOutputsItems1"
-          }
-        ],
-        "title": "CodeInterpreterCallItemOutputsItems"
-      },
-      "CodeInterpreterCallItemType": {
-        "type": "string",
-        "enum": [
-          "code_interpreter_call"
-        ],
-        "title": "CodeInterpreterCallItemType"
-      },
-      "OutputComputerCallItemPendingSafetyChecksItems": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "code",
-          "id",
-          "message"
-        ],
-        "title": "OutputComputerCallItemPendingSafetyChecksItems"
-      },
-      "OutputComputerCallItemStatus": {
-        "type": "string",
-        "enum": [
-          "completed",
-          "incomplete",
-          "in_progress"
-        ],
-        "title": "OutputComputerCallItemStatus"
-      },
-      "OutputComputerCallItemType": {
-        "type": "string",
-        "enum": [
-          "computer_call"
-        ],
-        "title": "OutputComputerCallItemType"
-      },
-      "OutputApplyPatchServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:apply_patch"
-        ],
-        "title": "OutputApplyPatchServerToolItemType"
-      },
-      "OutputBashServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:bash"
-        ],
-        "title": "OutputBashServerToolItemType"
-      },
-      "OutputBrowserUseServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:browser_use"
-        ],
-        "title": "OutputBrowserUseServerToolItemType"
-      },
-      "OutputCodeInterpreterServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:code_interpreter"
-        ],
-        "title": "OutputCodeInterpreterServerToolItemType"
-      },
-      "OutputSearchModelsServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:experimental__search_models"
-        ],
-        "title": "OutputSearchModelsServerToolItemType"
-      },
-      "OutputFileSearchServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:file_search"
-        ],
-        "title": "OutputFileSearchServerToolItemType"
-      },
-      "OutputImageGenerationServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:image_generation"
-        ],
-        "title": "OutputImageGenerationServerToolItemType"
-      },
-      "OutputMcpServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:mcp"
-        ],
-        "title": "OutputMcpServerToolItemType"
-      },
-      "OutputMemoryServerToolItemAction": {
-        "type": "string",
-        "enum": [
-          "read",
-          "write",
-          "delete"
-        ],
-        "title": "OutputMemoryServerToolItemAction"
-      },
-      "OutputMemoryServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:memory"
-        ],
-        "title": "OutputMemoryServerToolItemType"
-      },
-      "OutputTextEditorServerToolItemCommand": {
-        "type": "string",
-        "enum": [
-          "view",
-          "create",
-          "str_replace",
-          "insert"
-        ],
-        "title": "OutputTextEditorServerToolItemCommand"
-      },
-      "OutputTextEditorServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:text_editor"
-        ],
-        "title": "OutputTextEditorServerToolItemType"
-      },
-      "OutputToolSearchServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:tool_search"
-        ],
-        "title": "OutputToolSearchServerToolItemType"
-      },
-      "OutputWebFetchServerToolItemType": {
-        "type": "string",
-        "enum": [
-          "openrouter:web_fetch"
-        ],
-        "title": "OutputWebFetchServerToolItemType"
       },
       "OutputItems": {
         "oneOf": [
