@@ -259,6 +259,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Poolside,
+        /// <summary>
+        /// 
+        /// </summary>
         Recraft,
         /// <summary>
         /// 
@@ -404,6 +408,7 @@ namespace OpenRouter
                 ProviderName.Parasail => "Parasail",
                 ProviderName.Perplexity => "Perplexity",
                 ProviderName.Phala => "Phala",
+                ProviderName.Poolside => "Poolside",
                 ProviderName.Recraft => "Recraft",
                 ProviderName.Reka => "Reka",
                 ProviderName.Relace => "Relace",
@@ -494,6 +499,7 @@ namespace OpenRouter
                 "Parasail" => ProviderName.Parasail,
                 "Perplexity" => ProviderName.Perplexity,
                 "Phala" => ProviderName.Phala,
+                "Poolside" => ProviderName.Poolside,
                 "Recraft" => ProviderName.Recraft,
                 "Reka" => ProviderName.Reka,
                 "Relace" => ProviderName.Relace,

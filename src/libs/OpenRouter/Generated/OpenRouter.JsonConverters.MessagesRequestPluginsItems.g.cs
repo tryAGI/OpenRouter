@@ -47,7 +47,14 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("id")) __score2++;
             if (__jsonProps.Contains("include_domains")) __score2++;
             if (__jsonProps.Contains("max_results")) __score2++;
+            if (__jsonProps.Contains("max_uses")) __score2++;
             if (__jsonProps.Contains("search_prompt")) __score2++;
+            if (__jsonProps.Contains("user_location")) __score2++;
+            if (__jsonProps.Contains("user_location.city")) __score2++;
+            if (__jsonProps.Contains("user_location.country")) __score2++;
+            if (__jsonProps.Contains("user_location.region")) __score2++;
+            if (__jsonProps.Contains("user_location.timezone")) __score2++;
+            if (__jsonProps.Contains("user_location.type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("enabled")) __score3++;
             if (__jsonProps.Contains("id")) __score3++;

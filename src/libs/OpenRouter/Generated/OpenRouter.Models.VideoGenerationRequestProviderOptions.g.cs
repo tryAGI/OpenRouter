@@ -503,6 +503,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("poolside")]
+        public object? Poolside { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recraft")]
         public object? Recraft { get; set; }
 
@@ -747,6 +753,7 @@ namespace OpenRouter
         /// <param name="parasail"></param>
         /// <param name="perplexity"></param>
         /// <param name="phala"></param>
+        /// <param name="poolside"></param>
         /// <param name="recraft"></param>
         /// <param name="recursal"></param>
         /// <param name="reflection"></param>
@@ -859,6 +866,7 @@ namespace OpenRouter
             object? parasail,
             object? perplexity,
             object? phala,
+            object? poolside,
             object? recraft,
             object? recursal,
             object? reflection,
@@ -968,6 +976,7 @@ namespace OpenRouter
             this.Parasail = parasail;
             this.Perplexity = perplexity;
             this.Phala = phala;
+            this.Poolside = poolside;
             this.Recraft = recraft;
             this.Recursal = recursal;
             this.Reflection = reflection;

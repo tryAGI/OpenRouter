@@ -333,6 +333,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.WebSearchPluginIdNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.FileParserPluginIdJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.FileParserPluginIdNullableJsonConverter),
@@ -480,10 +484,6 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.LegacyWebSearchServerToolTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.LegacyWebSearchServerToolTypeNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WebSearchServerToolTypeJsonConverter),
 
@@ -1902,6 +1902,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModerationPlugin))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchEngine), TypeInfoPropertyName = "WebSearchEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchPluginId), TypeInfoPropertyName = "WebSearchPluginId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchUserLocationType), TypeInfoPropertyName = "WebSearchUserLocationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchPluginUserLocation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchPlugin))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FileParserPluginId), TypeInfoPropertyName = "FileParserPluginId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PdfParserEngine0), TypeInfoPropertyName = "PdfParserEngine02")]
@@ -1989,7 +1991,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Preview20250311WebSearchServerToolType), TypeInfoPropertyName = "Preview20250311WebSearchServerToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Preview20250311WebSearchServerTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.LegacyWebSearchServerToolType), TypeInfoPropertyName = "LegacyWebSearchServerToolType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchUserLocationType), TypeInfoPropertyName = "WebSearchUserLocationType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchUserLocation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.LegacyWebSearchServerTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WebSearchServerToolType), TypeInfoPropertyName = "WebSearchServerToolType2")]

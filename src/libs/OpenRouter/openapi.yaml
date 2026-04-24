@@ -6527,6 +6527,46 @@
         ],
         "title": "WebSearchPluginId"
       },
+      "WebSearchUserLocationType": {
+        "type": "string",
+        "enum": [
+          "approximate"
+        ],
+        "title": "WebSearchUserLocationType"
+      },
+      "WebSearchPluginUserLocation": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "country": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "timezone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/WebSearchUserLocationType"
+          }
+        },
+        "title": "WebSearchPluginUserLocation"
+      },
       "WebSearchPlugin": {
         "type": "object",
         "properties": {
@@ -6557,8 +6597,15 @@
           "max_results": {
             "type": "integer"
           },
+          "max_uses": {
+            "type": "integer",
+            "description": "Maximum number of times the model can invoke web search in a single turn. Passed through to native providers that support it (e.g. Anthropic)."
+          },
           "search_prompt": {
             "type": "string"
+          },
+          "user_location": {
+            "$ref": "#/components/schemas/WebSearchPluginUserLocation"
           }
         },
         "required": [
@@ -6850,6 +6897,7 @@
           "OpenAI",
           "OpenInference",
           "Parasail",
+          "Poolside",
           "Perplexity",
           "Phala",
           "Recraft",
@@ -7823,13 +7871,6 @@
           "web_search"
         ],
         "title": "LegacyWebSearchServerToolType"
-      },
-      "WebSearchUserLocationType": {
-        "type": "string",
-        "enum": [
-          "approximate"
-        ],
-        "title": "WebSearchUserLocationType"
       },
       "WebSearchUserLocation": {
         "type": "object",
@@ -12116,6 +12157,12 @@
               "description": "Any type"
             }
           },
+          "poolside": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "recraft": {
             "type": "object",
             "additionalProperties": {
@@ -13610,16 +13657,28 @@
         "type": "object",
         "properties": {
           "city": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "country": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "region": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "timezone": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "type": {
             "$ref": "#/components/schemas/WebSearchUserLocationServerToolType"
@@ -15720,6 +15779,7 @@
           "OpenAI",
           "OpenInference",
           "Parasail",
+          "Poolside",
           "Perplexity",
           "Phala",
           "Recraft",
@@ -23665,6 +23725,12 @@
             }
           },
           "phala": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "poolside": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"
