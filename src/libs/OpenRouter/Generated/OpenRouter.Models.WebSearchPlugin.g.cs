@@ -47,10 +47,22 @@ namespace OpenRouter
         public int? MaxResults { get; set; }
 
         /// <summary>
+        /// Maximum number of times the model can invoke web search in a single turn. Passed through to native providers that support it (e.g. Anthropic).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_uses")]
+        public int? MaxUses { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_prompt")]
         public string? SearchPrompt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
+        public global::OpenRouter.WebSearchPluginUserLocation? UserLocation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,7 +87,11 @@ namespace OpenRouter
         /// A list of domains to restrict web search results to. Supports wildcards (e.g. "*.substack.com") and path filtering (e.g. "openai.com/blog").
         /// </param>
         /// <param name="maxResults"></param>
+        /// <param name="maxUses">
+        /// Maximum number of times the model can invoke web search in a single turn. Passed through to native providers that support it (e.g. Anthropic).
+        /// </param>
         /// <param name="searchPrompt"></param>
+        /// <param name="userLocation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,7 +102,9 @@ namespace OpenRouter
             global::OpenRouter.WebSearchPluginId id,
             global::System.Collections.Generic.IList<string>? includeDomains,
             int? maxResults,
-            string? searchPrompt)
+            int? maxUses,
+            string? searchPrompt,
+            global::OpenRouter.WebSearchPluginUserLocation? userLocation)
         {
             this.Enabled = enabled;
             this.Engine = engine;
@@ -94,7 +112,9 @@ namespace OpenRouter
             this.Id = id;
             this.IncludeDomains = includeDomains;
             this.MaxResults = maxResults;
+            this.MaxUses = maxUses;
             this.SearchPrompt = searchPrompt;
+            this.UserLocation = userLocation;
         }
 
         /// <summary>
