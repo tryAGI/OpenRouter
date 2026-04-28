@@ -14201,6 +14201,32 @@
         "description": "Detailed completion token usage",
         "title": "ChatUsageCompletionTokensDetails"
       },
+      "CostDetails": {
+        "type": "object",
+        "properties": {
+          "upstream_inference_completions_cost": {
+            "type": "number",
+            "format": "double"
+          },
+          "upstream_inference_cost": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "upstream_inference_prompt_cost": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "upstream_inference_completions_cost",
+          "upstream_inference_prompt_cost"
+        ],
+        "description": "Breakdown of upstream inference costs",
+        "title": "CostDetails"
+      },
       "ChatUsagePromptTokensDetails": {
         "type": "object",
         "properties": {
@@ -14241,6 +14267,21 @@
               }
             ],
             "description": "Detailed completion token usage"
+          },
+          "cost": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Cost of the completion"
+          },
+          "cost_details": {
+            "$ref": "#/components/schemas/CostDetails"
+          },
+          "is_byok": {
+            "type": "boolean",
+            "description": "Whether a request was made using a Bring Your Own Key configuration"
           },
           "prompt_tokens": {
             "type": "integer",
@@ -14777,7 +14818,8 @@
           "audio",
           "video",
           "rerank",
-          "speech"
+          "speech",
+          "transcription"
         ],
         "title": "OutputModality"
       },
@@ -15684,6 +15726,7 @@
           "embeddings",
           "rerank",
           "tts",
+          "stt",
           "video"
         ],
         "description": "Type of API used for the generation",
@@ -22048,31 +22091,6 @@
         ],
         "title": "MessagesResultContextManagement"
       },
-      "MessagesResultUsageCostDetails": {
-        "type": "object",
-        "properties": {
-          "upstream_inference_completions_cost": {
-            "type": "number",
-            "format": "double"
-          },
-          "upstream_inference_cost": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
-          "upstream_inference_prompt_cost": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "required": [
-          "upstream_inference_completions_cost",
-          "upstream_inference_prompt_cost"
-        ],
-        "title": "MessagesResultUsageCostDetails"
-      },
       "MessagesResultUsage": {
         "type": "object",
         "properties": {
@@ -22120,14 +22138,7 @@
             "format": "double"
           },
           "cost_details": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/MessagesResultUsageCostDetails"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/CostDetails"
           },
           "is_byok": {
             "type": "boolean"

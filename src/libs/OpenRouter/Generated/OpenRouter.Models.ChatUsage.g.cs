@@ -23,6 +23,24 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>? CompletionTokensDetails { get; set; }
 
         /// <summary>
+        /// Cost of the completion
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public double? Cost { get; set; }
+
+        /// <summary>
+        /// Breakdown of upstream inference costs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
+        public global::OpenRouter.CostDetails? CostDetails { get; set; }
+
+        /// <summary>
+        /// Whether a request was made using a Bring Your Own Key configuration
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
+        public bool? IsByok { get; set; }
+
+        /// <summary>
         /// Number of tokens in the prompt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
@@ -64,6 +82,15 @@ namespace OpenRouter
         /// <param name="completionTokensDetails">
         /// Detailed completion token usage
         /// </param>
+        /// <param name="cost">
+        /// Cost of the completion
+        /// </param>
+        /// <param name="costDetails">
+        /// Breakdown of upstream inference costs
+        /// </param>
+        /// <param name="isByok">
+        /// Whether a request was made using a Bring Your Own Key configuration
+        /// </param>
         /// <param name="promptTokensDetails">
         /// Detailed prompt token usage
         /// </param>
@@ -75,10 +102,16 @@ namespace OpenRouter
             int promptTokens,
             int totalTokens,
             global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>? completionTokensDetails,
+            double? cost,
+            global::OpenRouter.CostDetails? costDetails,
+            bool? isByok,
             global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? promptTokensDetails)
         {
             this.CompletionTokens = completionTokens;
             this.CompletionTokensDetails = completionTokensDetails;
+            this.Cost = cost;
+            this.CostDetails = costDetails;
+            this.IsByok = isByok;
             this.PromptTokens = promptTokens;
             this.PromptTokensDetails = promptTokensDetails;
             this.TotalTokens = totalTokens;

@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Breakdown of upstream inference costs
     /// </summary>
-    public sealed partial class MessagesResultUsageCostDetails
+    public sealed partial class CostDetails
     {
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MessagesResultUsageCostDetails" /> class.
+        /// Initializes a new instance of the <see cref="CostDetails" /> class.
         /// </summary>
         /// <param name="upstreamInferenceCompletionsCost"></param>
         /// <param name="upstreamInferencePromptCost"></param>
@@ -43,7 +43,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public MessagesResultUsageCostDetails(
+        public CostDetails(
             double upstreamInferenceCompletionsCost,
             double upstreamInferencePromptCost,
             double? upstreamInferenceCost)
@@ -54,9 +54,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MessagesResultUsageCostDetails" /> class.
+        /// Initializes a new instance of the <see cref="CostDetails" /> class.
         /// </summary>
-        public MessagesResultUsageCostDetails()
+        public CostDetails()
         {
         }
     }
