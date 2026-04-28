@@ -67,11 +67,10 @@ namespace OpenRouter
         public double? Cost { get; set; }
 
         /// <summary>
-        /// 
+        /// Breakdown of upstream inference costs
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultUsageCostDetails, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageCostDetails, object>? CostDetails { get; set; }
+        public global::OpenRouter.CostDetails? CostDetails { get; set; }
 
         /// <summary>
         /// 
@@ -110,7 +109,9 @@ namespace OpenRouter
         /// <param name="inferenceGeo"></param>
         /// <param name="serviceTier"></param>
         /// <param name="cost"></param>
-        /// <param name="costDetails"></param>
+        /// <param name="costDetails">
+        /// Breakdown of upstream inference costs
+        /// </param>
         /// <param name="isByok"></param>
         /// <param name="iterations"></param>
         /// <param name="speed"></param>
@@ -127,7 +128,7 @@ namespace OpenRouter
             string? inferenceGeo,
             string? serviceTier,
             double? cost,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesResultUsageCostDetails, object>? costDetails,
+            global::OpenRouter.CostDetails? costDetails,
             bool? isByok,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? iterations,
             global::OpenRouter.AnthropicSpeed? speed)

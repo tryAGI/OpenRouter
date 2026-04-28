@@ -23,6 +23,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Stt,
+        /// <summary>
+        /// 
+        /// </summary>
         Tts,
         /// <summary>
         /// 
@@ -45,6 +49,7 @@ namespace OpenRouter
                 GenerationResponseDataApiType.Completions => "completions",
                 GenerationResponseDataApiType.Embeddings => "embeddings",
                 GenerationResponseDataApiType.Rerank => "rerank",
+                GenerationResponseDataApiType.Stt => "stt",
                 GenerationResponseDataApiType.Tts => "tts",
                 GenerationResponseDataApiType.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -60,6 +65,7 @@ namespace OpenRouter
                 "completions" => GenerationResponseDataApiType.Completions,
                 "embeddings" => GenerationResponseDataApiType.Embeddings,
                 "rerank" => GenerationResponseDataApiType.Rerank,
+                "stt" => GenerationResponseDataApiType.Stt,
                 "tts" => GenerationResponseDataApiType.Tts,
                 "video" => GenerationResponseDataApiType.Video,
                 _ => null,

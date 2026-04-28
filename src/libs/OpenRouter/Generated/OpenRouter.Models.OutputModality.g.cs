@@ -35,6 +35,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Transcription,
+        /// <summary>
+        /// 
+        /// </summary>
         Video,
     }
 
@@ -56,6 +60,7 @@ namespace OpenRouter
                 OutputModality.Rerank => "rerank",
                 OutputModality.Speech => "speech",
                 OutputModality.Text => "text",
+                OutputModality.Transcription => "transcription",
                 OutputModality.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -73,6 +78,7 @@ namespace OpenRouter
                 "rerank" => OutputModality.Rerank,
                 "speech" => OutputModality.Speech,
                 "text" => OutputModality.Text,
+                "transcription" => OutputModality.Transcription,
                 "video" => OutputModality.Video,
                 _ => null,
             };
