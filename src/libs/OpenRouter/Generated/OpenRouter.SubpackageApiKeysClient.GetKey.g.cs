@@ -125,7 +125,7 @@ namespace OpenRouter
                 PrepareGetKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    hash: hash);
+                    hash: hash!);
 
                 return __httpRequest;
             }

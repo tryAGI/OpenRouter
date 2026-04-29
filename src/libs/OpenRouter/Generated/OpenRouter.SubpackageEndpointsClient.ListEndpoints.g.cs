@@ -129,8 +129,8 @@ namespace OpenRouter
                 PrepareListEndpointsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    author: author,
-                    slug: slug);
+                    author: author!,
+                    slug: slug!);
 
                 return __httpRequest;
             }
