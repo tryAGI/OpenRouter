@@ -135,7 +135,7 @@ namespace OpenRouter
                 PrepareListVideosContentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId,
+                    jobId: jobId!,
                     index: index);
 
                 return __httpRequest;

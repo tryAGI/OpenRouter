@@ -139,7 +139,7 @@ namespace OpenRouter
                 PrepareUpdateKeysRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    hash: hash,
+                    hash: hash!,
                     request: request);
 
                 return __httpRequest;

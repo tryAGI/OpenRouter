@@ -139,7 +139,7 @@ namespace OpenRouter
                 PrepareListGuardrailMemberAssignmentsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     offset: offset,
                     limit: limit);
 
