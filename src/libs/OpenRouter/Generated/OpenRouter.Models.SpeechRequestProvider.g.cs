@@ -12,7 +12,7 @@ namespace OpenRouter
         /// Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
-        public global::OpenRouter.SpeechRequestProviderOptions? Options { get; set; }
+        public global::OpenRouter.ProviderOptions? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SpeechRequestProvider(
-            global::OpenRouter.SpeechRequestProviderOptions? options)
+            global::OpenRouter.ProviderOptions? options)
         {
             this.Options = options;
         }
