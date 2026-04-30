@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.
+    /// 
     /// </summary>
     public sealed partial class VideoGenerationRequestProviderOptions
     {
