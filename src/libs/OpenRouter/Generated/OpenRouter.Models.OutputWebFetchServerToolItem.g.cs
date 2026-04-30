@@ -15,6 +15,18 @@ namespace OpenRouter
         public string? Content { get; set; }
 
         /// <summary>
+        /// The error message if the fetch failed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
+        /// The HTTP status code returned by the upstream URL fetch.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("httpStatus")]
+        public int? HttpStatus { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -58,6 +70,12 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="content"></param>
+        /// <param name="error">
+        /// The error message if the fetch failed.
+        /// </param>
+        /// <param name="httpStatus">
+        /// The HTTP status code returned by the upstream URL fetch.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="title"></param>
         /// <param name="type"></param>
@@ -68,12 +86,16 @@ namespace OpenRouter
         public OutputWebFetchServerToolItem(
             global::OpenRouter.ToolCallStatus status,
             string? content,
+            string? error,
+            int? httpStatus,
             string? id,
             string? title,
             global::OpenRouter.OutputWebFetchServerToolItemType type,
             string? url)
         {
             this.Content = content;
+            this.Error = error;
+            this.HttpStatus = httpStatus;
             this.Id = id;
             this.Status = status;
             this.Title = title;
