@@ -6167,6 +6167,14 @@
           "content": {
             "type": "string"
           },
+          "error": {
+            "type": "string",
+            "description": "The error message if the fetch failed."
+          },
+          "httpStatus": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the upstream URL fetch."
+          },
           "id": {
             "type": "string"
           },
@@ -10542,6 +10550,14 @@
               },
               "content": {
                 "type": "string"
+              },
+              "error": {
+                "type": "string",
+                "description": "The error message if the fetch failed."
+              },
+              "httpStatus": {
+                "type": "integer",
+                "description": "The HTTP status code returned by the upstream URL fetch."
               },
               "id": {
                 "type": "string"

@@ -171,6 +171,8 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score21++;
             var __score22 = 0;
             if (__jsonProps.Contains("content")) __score22++;
+            if (__jsonProps.Contains("error")) __score22++;
+            if (__jsonProps.Contains("httpStatus")) __score22++;
             if (__jsonProps.Contains("id")) __score22++;
             if (__jsonProps.Contains("status")) __score22++;
             if (__jsonProps.Contains("title")) __score22++;
