@@ -93,7 +93,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public global::OpenRouter.MessagesRequestSpeed? Speed { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicSpeedJsonConverter))]
+        public global::OpenRouter.AnthropicSpeed? Speed { get; set; }
 
         /// <summary>
         /// 
@@ -229,7 +230,7 @@ namespace OpenRouter
             object? route,
             global::OpenRouter.MessagesRequestServiceTier? serviceTier,
             string? sessionId,
-            global::OpenRouter.MessagesRequestSpeed? speed,
+            global::OpenRouter.AnthropicSpeed? speed,
             global::System.Collections.Generic.IList<string>? stopSequences,
             bool? stream,
             global::OpenRouter.MessagesRequestSystem? system,

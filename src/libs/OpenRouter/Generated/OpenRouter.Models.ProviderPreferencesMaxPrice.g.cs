@@ -9,22 +9,22 @@ namespace OpenRouter
     public sealed partial class ProviderPreferencesMaxPrice
     {
         /// <summary>
-        /// 
+        /// Price per million prompt tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        public global::OpenRouter.ProviderPreferencesMaxPriceAudio? Audio { get; set; }
+        public string? Audio { get; set; }
 
         /// <summary>
-        /// 
+        /// Price per million prompt tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion")]
-        public global::OpenRouter.ProviderPreferencesMaxPriceCompletion? Completion { get; set; }
+        public string? Completion { get; set; }
 
         /// <summary>
-        /// 
+        /// Price per million prompt tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        public global::OpenRouter.ProviderPreferencesMaxPriceImage? Image { get; set; }
+        public string? Image { get; set; }
 
         /// <summary>
         /// Price per million prompt tokens
@@ -33,10 +33,10 @@ namespace OpenRouter
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        /// Price per million prompt tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request")]
-        public global::OpenRouter.ProviderPreferencesMaxPriceRequest? Request { get; set; }
+        public string? Request { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,22 +47,30 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ProviderPreferencesMaxPrice" /> class.
         /// </summary>
-        /// <param name="audio"></param>
-        /// <param name="completion"></param>
-        /// <param name="image"></param>
+        /// <param name="audio">
+        /// Price per million prompt tokens
+        /// </param>
+        /// <param name="completion">
+        /// Price per million prompt tokens
+        /// </param>
+        /// <param name="image">
+        /// Price per million prompt tokens
+        /// </param>
         /// <param name="prompt">
         /// Price per million prompt tokens
         /// </param>
-        /// <param name="request"></param>
+        /// <param name="request">
+        /// Price per million prompt tokens
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProviderPreferencesMaxPrice(
-            global::OpenRouter.ProviderPreferencesMaxPriceAudio? audio,
-            global::OpenRouter.ProviderPreferencesMaxPriceCompletion? completion,
-            global::OpenRouter.ProviderPreferencesMaxPriceImage? image,
+            string? audio,
+            string? completion,
+            string? image,
             string? prompt,
-            global::OpenRouter.ProviderPreferencesMaxPriceRequest? request)
+            string? request)
         {
             this.Audio = audio;
             this.Completion = completion;

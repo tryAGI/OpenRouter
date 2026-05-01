@@ -43,7 +43,7 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// 
+        /// Provider routing preferences for the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider? Provider { get; set; }
@@ -78,7 +78,9 @@ namespace OpenRouter
         /// <param name="inputType">
         /// The type of input (e.g. search_query, search_document)
         /// </param>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// Provider routing preferences for the request.
+        /// </param>
         /// <param name="user">
         /// A unique identifier for the end-user
         /// </param>

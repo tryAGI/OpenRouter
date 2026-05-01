@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct OutputItems : global::System.IEquatable<OutputItems>
     {
         /// <summary>
-        /// code_interpreter_call variant
+        /// A code interpreter execution call with outputs
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant1? CodeInterpreterCall { get; init; }
@@ -95,7 +95,7 @@ namespace OpenRouter
         public bool IsImageGenerationCall => ImageGenerationCall != null;
 
         /// <summary>
-        /// message variant
+        /// An output message item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant6? Message { get; init; }
@@ -112,7 +112,7 @@ namespace OpenRouter
         public bool IsMessage => Message != null;
 
         /// <summary>
-        /// openrouter:apply_patch variant
+        /// An openrouter:apply_patch server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant7? OpenrouterApplyPatch { get; init; }
@@ -129,7 +129,7 @@ namespace OpenRouter
         public bool IsOpenrouterApplyPatch => OpenrouterApplyPatch != null;
 
         /// <summary>
-        /// openrouter:bash variant
+        /// An openrouter:bash server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant8? OpenrouterBash { get; init; }
@@ -146,7 +146,7 @@ namespace OpenRouter
         public bool IsOpenrouterBash => OpenrouterBash != null;
 
         /// <summary>
-        /// openrouter:browser_use variant
+        /// An openrouter:browser_use server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant9? OpenrouterBrowserUse { get; init; }
@@ -163,7 +163,7 @@ namespace OpenRouter
         public bool IsOpenrouterBrowserUse => OpenrouterBrowserUse != null;
 
         /// <summary>
-        /// openrouter:code_interpreter variant
+        /// An openrouter:code_interpreter server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant10? OpenrouterCodeInterpreter { get; init; }
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsOpenrouterCodeInterpreter => OpenrouterCodeInterpreter != null;
 
         /// <summary>
-        /// openrouter:datetime variant
+        /// An openrouter:datetime server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant11? OpenrouterDatetime { get; init; }
@@ -197,7 +197,7 @@ namespace OpenRouter
         public bool IsOpenrouterDatetime => OpenrouterDatetime != null;
 
         /// <summary>
-        /// openrouter:experimental__search_models variant
+        /// An openrouter:experimental__search_models server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant12? OpenrouterExperimentalSearchModels { get; init; }
@@ -214,7 +214,7 @@ namespace OpenRouter
         public bool IsOpenrouterExperimentalSearchModels => OpenrouterExperimentalSearchModels != null;
 
         /// <summary>
-        /// openrouter:file_search variant
+        /// An openrouter:file_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant13? OpenrouterFileSearch { get; init; }
@@ -231,7 +231,7 @@ namespace OpenRouter
         public bool IsOpenrouterFileSearch => OpenrouterFileSearch != null;
 
         /// <summary>
-        /// openrouter:image_generation variant
+        /// An openrouter:image_generation server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant14? OpenrouterImageGeneration { get; init; }
@@ -248,7 +248,7 @@ namespace OpenRouter
         public bool IsOpenrouterImageGeneration => OpenrouterImageGeneration != null;
 
         /// <summary>
-        /// openrouter:mcp variant
+        /// An openrouter:mcp server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant15? OpenrouterMcp { get; init; }
@@ -265,7 +265,7 @@ namespace OpenRouter
         public bool IsOpenrouterMcp => OpenrouterMcp != null;
 
         /// <summary>
-        /// openrouter:memory variant
+        /// An openrouter:memory server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant16? OpenrouterMemory { get; init; }
@@ -282,7 +282,7 @@ namespace OpenRouter
         public bool IsOpenrouterMemory => OpenrouterMemory != null;
 
         /// <summary>
-        /// openrouter:text_editor variant
+        /// An openrouter:text_editor server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant17? OpenrouterTextEditor { get; init; }
@@ -299,7 +299,7 @@ namespace OpenRouter
         public bool IsOpenrouterTextEditor => OpenrouterTextEditor != null;
 
         /// <summary>
-        /// openrouter:tool_search variant
+        /// An openrouter:tool_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant18? OpenrouterToolSearch { get; init; }
@@ -316,7 +316,7 @@ namespace OpenRouter
         public bool IsOpenrouterToolSearch => OpenrouterToolSearch != null;
 
         /// <summary>
-        /// openrouter:web_fetch variant
+        /// An openrouter:web_fetch server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant19? OpenrouterWebFetch { get; init; }
@@ -333,7 +333,7 @@ namespace OpenRouter
         public bool IsOpenrouterWebFetch => OpenrouterWebFetch != null;
 
         /// <summary>
-        /// openrouter:web_search variant
+        /// An openrouter:web_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant20? OpenrouterWebSearch { get; init; }
@@ -350,7 +350,7 @@ namespace OpenRouter
         public bool IsOpenrouterWebSearch => OpenrouterWebSearch != null;
 
         /// <summary>
-        /// reasoning variant
+        /// An output item containing reasoning
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemsVariant21? Reasoning { get; init; }

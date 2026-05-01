@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:text_editor variant
+    /// An openrouter:text_editor server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant17
     {

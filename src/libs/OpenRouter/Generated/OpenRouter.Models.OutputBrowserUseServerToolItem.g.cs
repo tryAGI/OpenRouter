@@ -35,13 +35,6 @@ namespace OpenRouter
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputBrowserUseServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputBrowserUseServerToolItemType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,7 +47,6 @@ namespace OpenRouter
         /// <param name="action"></param>
         /// <param name="id"></param>
         /// <param name="screenshotB64"></param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,14 +54,12 @@ namespace OpenRouter
             global::OpenRouter.ToolCallStatus status,
             string? action,
             string? id,
-            string? screenshotB64,
-            global::OpenRouter.OutputBrowserUseServerToolItemType type)
+            string? screenshotB64)
         {
             this.Action = action;
             this.Id = id;
             this.ScreenshotB64 = screenshotB64;
             this.Status = status;
-            this.Type = type;
         }
 
         /// <summary>

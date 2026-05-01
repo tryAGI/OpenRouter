@@ -26,7 +26,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -46,8 +47,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallTypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponseFunctionToolCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FunctionCallItemTypeJsonConverter))]
+        public global::OpenRouter.FunctionCallItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,8 +61,8 @@ namespace OpenRouter
         /// </summary>
         /// <param name="arguments"></param>
         /// <param name="callId"></param>
-        /// <param name="name"></param>
         /// <param name="id"></param>
+        /// <param name="name"></param>
         /// <param name="status"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -70,14 +71,14 @@ namespace OpenRouter
         public FunctionCallItem(
             string arguments,
             string callId,
+            string id,
             string name,
-            string? id,
             global::OpenRouter.ToolCallStatus? status,
-            global::OpenRouter.OpenAiResponseFunctionToolCallType type)
+            global::OpenRouter.FunctionCallItemType type)
         {
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.Id = id;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Status = status;
             this.Type = type;

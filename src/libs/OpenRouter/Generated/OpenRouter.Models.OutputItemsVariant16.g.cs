@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:memory variant
+    /// An openrouter:memory server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant16
     {

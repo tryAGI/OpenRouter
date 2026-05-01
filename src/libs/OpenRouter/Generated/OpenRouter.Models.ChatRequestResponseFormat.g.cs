@@ -10,217 +10,217 @@ namespace OpenRouter
     public readonly partial struct ChatRequestResponseFormat : global::System.IEquatable<ChatRequestResponseFormat>
     {
         /// <summary>
-        /// Default text response format
+        /// Custom grammar response format
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatFormatTextConfig? ChatFormatTextConfig { get; init; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant1? Grammar { get; init; }
 #else
-        public global::OpenRouter.ChatFormatTextConfig? ChatFormatTextConfig { get; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant1? Grammar { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatFormatTextConfig))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Grammar))]
 #endif
-        public bool IsChatFormatTextConfig => ChatFormatTextConfig != null;
+        public bool IsGrammar => Grammar != null;
 
         /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.FormatJsonObjectConfig? FormatJsonObjectConfig { get; init; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant2? JsonObject { get; init; }
 #else
-        public global::OpenRouter.FormatJsonObjectConfig? FormatJsonObjectConfig { get; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant2? JsonObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FormatJsonObjectConfig))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
-        public bool IsFormatJsonObjectConfig => FormatJsonObjectConfig != null;
+        public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
         /// JSON Schema response format for structured outputs
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatFormatJsonSchemaConfig? ChatFormatJsonSchemaConfig { get; init; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant3? JsonSchema { get; init; }
 #else
-        public global::OpenRouter.ChatFormatJsonSchemaConfig? ChatFormatJsonSchemaConfig { get; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant3? JsonSchema { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatFormatJsonSchemaConfig))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
-        public bool IsChatFormatJsonSchemaConfig => ChatFormatJsonSchemaConfig != null;
-
-        /// <summary>
-        /// Custom grammar response format
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatFormatGrammarConfig? ChatFormatGrammarConfig { get; init; }
-#else
-        public global::OpenRouter.ChatFormatGrammarConfig? ChatFormatGrammarConfig { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatFormatGrammarConfig))]
-#endif
-        public bool IsChatFormatGrammarConfig => ChatFormatGrammarConfig != null;
+        public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
         /// Python code response format
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatFormatPythonConfig? ChatFormatPythonConfig { get; init; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant4? Python { get; init; }
 #else
-        public global::OpenRouter.ChatFormatPythonConfig? ChatFormatPythonConfig { get; }
+        public global::OpenRouter.ChatRequestResponseFormatVariant4? Python { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatFormatPythonConfig))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Python))]
 #endif
-        public bool IsChatFormatPythonConfig => ChatFormatPythonConfig != null;
+        public bool IsPython => Python != null;
+
         /// <summary>
-        /// 
+        /// Default text response format
         /// </summary>
-        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatFormatTextConfig value) => new ChatRequestResponseFormat((global::OpenRouter.ChatFormatTextConfig?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatRequestResponseFormatVariant5? Text { get; init; }
+#else
+        public global::OpenRouter.ChatRequestResponseFormatVariant5? Text { get; }
+#endif
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatFormatTextConfig?(ChatRequestResponseFormat @this) => @this.ChatFormatTextConfig;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant1 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestResponseFormat(global::OpenRouter.ChatFormatTextConfig? value)
+        public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant1?(ChatRequestResponseFormat @this) => @this.Grammar;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant1? value)
         {
-            ChatFormatTextConfig = value;
+            Grammar = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.FormatJsonObjectConfig value) => new ChatRequestResponseFormat((global::OpenRouter.FormatJsonObjectConfig?)value);
+        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant2 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.FormatJsonObjectConfig?(ChatRequestResponseFormat @this) => @this.FormatJsonObjectConfig;
+        public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant2?(ChatRequestResponseFormat @this) => @this.JsonObject;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestResponseFormat(global::OpenRouter.FormatJsonObjectConfig? value)
+        public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant2? value)
         {
-            FormatJsonObjectConfig = value;
+            JsonObject = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatFormatJsonSchemaConfig value) => new ChatRequestResponseFormat((global::OpenRouter.ChatFormatJsonSchemaConfig?)value);
+        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant3 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant3?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatFormatJsonSchemaConfig?(ChatRequestResponseFormat @this) => @this.ChatFormatJsonSchemaConfig;
+        public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant3?(ChatRequestResponseFormat @this) => @this.JsonSchema;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestResponseFormat(global::OpenRouter.ChatFormatJsonSchemaConfig? value)
+        public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant3? value)
         {
-            ChatFormatJsonSchemaConfig = value;
+            JsonSchema = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatFormatGrammarConfig value) => new ChatRequestResponseFormat((global::OpenRouter.ChatFormatGrammarConfig?)value);
+        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant4 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant4?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatFormatGrammarConfig?(ChatRequestResponseFormat @this) => @this.ChatFormatGrammarConfig;
+        public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant4?(ChatRequestResponseFormat @this) => @this.Python;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestResponseFormat(global::OpenRouter.ChatFormatGrammarConfig? value)
+        public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant4? value)
         {
-            ChatFormatGrammarConfig = value;
+            Python = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatFormatPythonConfig value) => new ChatRequestResponseFormat((global::OpenRouter.ChatFormatPythonConfig?)value);
+        public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant5 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant5?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatFormatPythonConfig?(ChatRequestResponseFormat @this) => @this.ChatFormatPythonConfig;
+        public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant5?(ChatRequestResponseFormat @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatRequestResponseFormat(global::OpenRouter.ChatFormatPythonConfig? value)
+        public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant5? value)
         {
-            ChatFormatPythonConfig = value;
+            Text = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestResponseFormat(
-            global::OpenRouter.ChatFormatTextConfig? chatFormatTextConfig,
-            global::OpenRouter.FormatJsonObjectConfig? formatJsonObjectConfig,
-            global::OpenRouter.ChatFormatJsonSchemaConfig? chatFormatJsonSchemaConfig,
-            global::OpenRouter.ChatFormatGrammarConfig? chatFormatGrammarConfig,
-            global::OpenRouter.ChatFormatPythonConfig? chatFormatPythonConfig
+            global::OpenRouter.ChatRequestResponseFormatVariant1? grammar,
+            global::OpenRouter.ChatRequestResponseFormatVariant2? jsonObject,
+            global::OpenRouter.ChatRequestResponseFormatVariant3? jsonSchema,
+            global::OpenRouter.ChatRequestResponseFormatVariant4? python,
+            global::OpenRouter.ChatRequestResponseFormatVariant5? text
             )
         {
-            ChatFormatTextConfig = chatFormatTextConfig;
-            FormatJsonObjectConfig = formatJsonObjectConfig;
-            ChatFormatJsonSchemaConfig = chatFormatJsonSchemaConfig;
-            ChatFormatGrammarConfig = chatFormatGrammarConfig;
-            ChatFormatPythonConfig = chatFormatPythonConfig;
+            Grammar = grammar;
+            JsonObject = jsonObject;
+            JsonSchema = jsonSchema;
+            Python = python;
+            Text = text;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ChatFormatPythonConfig as object ??
-            ChatFormatGrammarConfig as object ??
-            ChatFormatJsonSchemaConfig as object ??
-            FormatJsonObjectConfig as object ??
-            ChatFormatTextConfig as object 
+            Text as object ??
+            Python as object ??
+            JsonSchema as object ??
+            JsonObject as object ??
+            Grammar as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            ChatFormatTextConfig?.ToString() ??
-            FormatJsonObjectConfig?.ToString() ??
-            ChatFormatJsonSchemaConfig?.ToString() ??
-            ChatFormatGrammarConfig?.ToString() ??
-            ChatFormatPythonConfig?.ToString() 
+            Grammar?.ToString() ??
+            JsonObject?.ToString() ??
+            JsonSchema?.ToString() ??
+            Python?.ToString() ??
+            Text?.ToString() 
             ;
 
         /// <summary>
@@ -228,18 +228,18 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatFormatTextConfig && !IsFormatJsonObjectConfig && !IsChatFormatJsonSchemaConfig && !IsChatFormatGrammarConfig && !IsChatFormatPythonConfig || !IsChatFormatTextConfig && IsFormatJsonObjectConfig && !IsChatFormatJsonSchemaConfig && !IsChatFormatGrammarConfig && !IsChatFormatPythonConfig || !IsChatFormatTextConfig && !IsFormatJsonObjectConfig && IsChatFormatJsonSchemaConfig && !IsChatFormatGrammarConfig && !IsChatFormatPythonConfig || !IsChatFormatTextConfig && !IsFormatJsonObjectConfig && !IsChatFormatJsonSchemaConfig && IsChatFormatGrammarConfig && !IsChatFormatPythonConfig || !IsChatFormatTextConfig && !IsFormatJsonObjectConfig && !IsChatFormatJsonSchemaConfig && !IsChatFormatGrammarConfig && IsChatFormatPythonConfig;
+            return IsGrammar && !IsJsonObject && !IsJsonSchema && !IsPython && !IsText || !IsGrammar && IsJsonObject && !IsJsonSchema && !IsPython && !IsText || !IsGrammar && !IsJsonObject && IsJsonSchema && !IsPython && !IsText || !IsGrammar && !IsJsonObject && !IsJsonSchema && IsPython && !IsText || !IsGrammar && !IsJsonObject && !IsJsonSchema && !IsPython && IsText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatFormatTextConfig?, TResult>? chatFormatTextConfig = null,
-            global::System.Func<global::OpenRouter.FormatJsonObjectConfig?, TResult>? formatJsonObjectConfig = null,
-            global::System.Func<global::OpenRouter.ChatFormatJsonSchemaConfig?, TResult>? chatFormatJsonSchemaConfig = null,
-            global::System.Func<global::OpenRouter.ChatFormatGrammarConfig?, TResult>? chatFormatGrammarConfig = null,
-            global::System.Func<global::OpenRouter.ChatFormatPythonConfig?, TResult>? chatFormatPythonConfig = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant1?, TResult>? grammar = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant2?, TResult>? jsonObject = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant3?, TResult>? jsonSchema = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant4?, TResult>? python = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant5?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -247,25 +247,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatFormatTextConfig && chatFormatTextConfig != null)
+            if (IsGrammar && grammar != null)
             {
-                return chatFormatTextConfig(ChatFormatTextConfig!);
+                return grammar(Grammar!);
             }
-            else if (IsFormatJsonObjectConfig && formatJsonObjectConfig != null)
+            else if (IsJsonObject && jsonObject != null)
             {
-                return formatJsonObjectConfig(FormatJsonObjectConfig!);
+                return jsonObject(JsonObject!);
             }
-            else if (IsChatFormatJsonSchemaConfig && chatFormatJsonSchemaConfig != null)
+            else if (IsJsonSchema && jsonSchema != null)
             {
-                return chatFormatJsonSchemaConfig(ChatFormatJsonSchemaConfig!);
+                return jsonSchema(JsonSchema!);
             }
-            else if (IsChatFormatGrammarConfig && chatFormatGrammarConfig != null)
+            else if (IsPython && python != null)
             {
-                return chatFormatGrammarConfig(ChatFormatGrammarConfig!);
+                return python(Python!);
             }
-            else if (IsChatFormatPythonConfig && chatFormatPythonConfig != null)
+            else if (IsText && text != null)
             {
-                return chatFormatPythonConfig(ChatFormatPythonConfig!);
+                return text(Text!);
             }
 
             return default(TResult);
@@ -275,11 +275,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatFormatTextConfig?>? chatFormatTextConfig = null,
-            global::System.Action<global::OpenRouter.FormatJsonObjectConfig?>? formatJsonObjectConfig = null,
-            global::System.Action<global::OpenRouter.ChatFormatJsonSchemaConfig?>? chatFormatJsonSchemaConfig = null,
-            global::System.Action<global::OpenRouter.ChatFormatGrammarConfig?>? chatFormatGrammarConfig = null,
-            global::System.Action<global::OpenRouter.ChatFormatPythonConfig?>? chatFormatPythonConfig = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant1?>? grammar = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant2?>? jsonObject = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant3?>? jsonSchema = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant4?>? python = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant5?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -287,25 +287,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatFormatTextConfig)
+            if (IsGrammar)
             {
-                chatFormatTextConfig?.Invoke(ChatFormatTextConfig!);
+                grammar?.Invoke(Grammar!);
             }
-            else if (IsFormatJsonObjectConfig)
+            else if (IsJsonObject)
             {
-                formatJsonObjectConfig?.Invoke(FormatJsonObjectConfig!);
+                jsonObject?.Invoke(JsonObject!);
             }
-            else if (IsChatFormatJsonSchemaConfig)
+            else if (IsJsonSchema)
             {
-                chatFormatJsonSchemaConfig?.Invoke(ChatFormatJsonSchemaConfig!);
+                jsonSchema?.Invoke(JsonSchema!);
             }
-            else if (IsChatFormatGrammarConfig)
+            else if (IsPython)
             {
-                chatFormatGrammarConfig?.Invoke(ChatFormatGrammarConfig!);
+                python?.Invoke(Python!);
             }
-            else if (IsChatFormatPythonConfig)
+            else if (IsText)
             {
-                chatFormatPythonConfig?.Invoke(ChatFormatPythonConfig!);
+                text?.Invoke(Text!);
             }
         }
 
@@ -316,16 +316,16 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                ChatFormatTextConfig,
-                typeof(global::OpenRouter.ChatFormatTextConfig),
-                FormatJsonObjectConfig,
-                typeof(global::OpenRouter.FormatJsonObjectConfig),
-                ChatFormatJsonSchemaConfig,
-                typeof(global::OpenRouter.ChatFormatJsonSchemaConfig),
-                ChatFormatGrammarConfig,
-                typeof(global::OpenRouter.ChatFormatGrammarConfig),
-                ChatFormatPythonConfig,
-                typeof(global::OpenRouter.ChatFormatPythonConfig),
+                Grammar,
+                typeof(global::OpenRouter.ChatRequestResponseFormatVariant1),
+                JsonObject,
+                typeof(global::OpenRouter.ChatRequestResponseFormatVariant2),
+                JsonSchema,
+                typeof(global::OpenRouter.ChatRequestResponseFormatVariant3),
+                Python,
+                typeof(global::OpenRouter.ChatRequestResponseFormatVariant4),
+                Text,
+                typeof(global::OpenRouter.ChatRequestResponseFormatVariant5),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -342,11 +342,11 @@ namespace OpenRouter
         public bool Equals(ChatRequestResponseFormat other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFormatTextConfig?>.Default.Equals(ChatFormatTextConfig, other.ChatFormatTextConfig) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FormatJsonObjectConfig?>.Default.Equals(FormatJsonObjectConfig, other.FormatJsonObjectConfig) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFormatJsonSchemaConfig?>.Default.Equals(ChatFormatJsonSchemaConfig, other.ChatFormatJsonSchemaConfig) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFormatGrammarConfig?>.Default.Equals(ChatFormatGrammarConfig, other.ChatFormatGrammarConfig) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFormatPythonConfig?>.Default.Equals(ChatFormatPythonConfig, other.ChatFormatPythonConfig) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant1?>.Default.Equals(Grammar, other.Grammar) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant2?>.Default.Equals(JsonObject, other.JsonObject) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant3?>.Default.Equals(JsonSchema, other.JsonSchema) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant4?>.Default.Equals(Python, other.Python) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant5?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

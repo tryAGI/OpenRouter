@@ -10,139 +10,139 @@ namespace OpenRouter
     public readonly partial struct AnthropicCaller : global::System.IEquatable<AnthropicCaller>
     {
         /// <summary>
-        /// 
+        /// code_execution_20250825 variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicDirectCaller? AnthropicDirectCaller { get; init; }
+        public global::OpenRouter.AnthropicCallerVariant1? CodeExecution20250825 { get; init; }
 #else
-        public global::OpenRouter.AnthropicDirectCaller? AnthropicDirectCaller { get; }
+        public global::OpenRouter.AnthropicCallerVariant1? CodeExecution20250825 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicDirectCaller))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecution20250825))]
 #endif
-        public bool IsAnthropicDirectCaller => AnthropicDirectCaller != null;
+        public bool IsCodeExecution20250825 => CodeExecution20250825 != null;
 
         /// <summary>
-        /// 
+        /// code_execution_20260120 variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCodeExecution20250825Caller? AnthropicCodeExecution20250825Caller { get; init; }
+        public global::OpenRouter.AnthropicCallerVariant2? CodeExecution20260120 { get; init; }
 #else
-        public global::OpenRouter.AnthropicCodeExecution20250825Caller? AnthropicCodeExecution20250825Caller { get; }
+        public global::OpenRouter.AnthropicCallerVariant2? CodeExecution20260120 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCodeExecution20250825Caller))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecution20260120))]
 #endif
-        public bool IsAnthropicCodeExecution20250825Caller => AnthropicCodeExecution20250825Caller != null;
+        public bool IsCodeExecution20260120 => CodeExecution20260120 != null;
 
         /// <summary>
-        /// 
+        /// direct variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCodeExecution20260120Caller? AnthropicCodeExecution20260120Caller { get; init; }
+        public global::OpenRouter.AnthropicCallerVariant3? Direct { get; init; }
 #else
-        public global::OpenRouter.AnthropicCodeExecution20260120Caller? AnthropicCodeExecution20260120Caller { get; }
+        public global::OpenRouter.AnthropicCallerVariant3? Direct { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCodeExecution20260120Caller))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Direct))]
 #endif
-        public bool IsAnthropicCodeExecution20260120Caller => AnthropicCodeExecution20260120Caller != null;
+        public bool IsDirect => Direct != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicCaller(global::OpenRouter.AnthropicDirectCaller value) => new AnthropicCaller((global::OpenRouter.AnthropicDirectCaller?)value);
+        public static implicit operator AnthropicCaller(global::OpenRouter.AnthropicCallerVariant1 value) => new AnthropicCaller((global::OpenRouter.AnthropicCallerVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicDirectCaller?(AnthropicCaller @this) => @this.AnthropicDirectCaller;
+        public static implicit operator global::OpenRouter.AnthropicCallerVariant1?(AnthropicCaller @this) => @this.CodeExecution20250825;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicCaller(global::OpenRouter.AnthropicDirectCaller? value)
+        public AnthropicCaller(global::OpenRouter.AnthropicCallerVariant1? value)
         {
-            AnthropicDirectCaller = value;
+            CodeExecution20250825 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicCaller(global::OpenRouter.AnthropicCodeExecution20250825Caller value) => new AnthropicCaller((global::OpenRouter.AnthropicCodeExecution20250825Caller?)value);
+        public static implicit operator AnthropicCaller(global::OpenRouter.AnthropicCallerVariant2 value) => new AnthropicCaller((global::OpenRouter.AnthropicCallerVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCodeExecution20250825Caller?(AnthropicCaller @this) => @this.AnthropicCodeExecution20250825Caller;
+        public static implicit operator global::OpenRouter.AnthropicCallerVariant2?(AnthropicCaller @this) => @this.CodeExecution20260120;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicCaller(global::OpenRouter.AnthropicCodeExecution20250825Caller? value)
+        public AnthropicCaller(global::OpenRouter.AnthropicCallerVariant2? value)
         {
-            AnthropicCodeExecution20250825Caller = value;
+            CodeExecution20260120 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicCaller(global::OpenRouter.AnthropicCodeExecution20260120Caller value) => new AnthropicCaller((global::OpenRouter.AnthropicCodeExecution20260120Caller?)value);
+        public static implicit operator AnthropicCaller(global::OpenRouter.AnthropicCallerVariant3 value) => new AnthropicCaller((global::OpenRouter.AnthropicCallerVariant3?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCodeExecution20260120Caller?(AnthropicCaller @this) => @this.AnthropicCodeExecution20260120Caller;
+        public static implicit operator global::OpenRouter.AnthropicCallerVariant3?(AnthropicCaller @this) => @this.Direct;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicCaller(global::OpenRouter.AnthropicCodeExecution20260120Caller? value)
+        public AnthropicCaller(global::OpenRouter.AnthropicCallerVariant3? value)
         {
-            AnthropicCodeExecution20260120Caller = value;
+            Direct = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AnthropicCaller(
-            global::OpenRouter.AnthropicDirectCaller? anthropicDirectCaller,
-            global::OpenRouter.AnthropicCodeExecution20250825Caller? anthropicCodeExecution20250825Caller,
-            global::OpenRouter.AnthropicCodeExecution20260120Caller? anthropicCodeExecution20260120Caller
+            global::OpenRouter.AnthropicCallerVariant1? codeExecution20250825,
+            global::OpenRouter.AnthropicCallerVariant2? codeExecution20260120,
+            global::OpenRouter.AnthropicCallerVariant3? direct
             )
         {
-            AnthropicDirectCaller = anthropicDirectCaller;
-            AnthropicCodeExecution20250825Caller = anthropicCodeExecution20250825Caller;
-            AnthropicCodeExecution20260120Caller = anthropicCodeExecution20260120Caller;
+            CodeExecution20250825 = codeExecution20250825;
+            CodeExecution20260120 = codeExecution20260120;
+            Direct = direct;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnthropicCodeExecution20260120Caller as object ??
-            AnthropicCodeExecution20250825Caller as object ??
-            AnthropicDirectCaller as object 
+            Direct as object ??
+            CodeExecution20260120 as object ??
+            CodeExecution20250825 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AnthropicDirectCaller?.ToString() ??
-            AnthropicCodeExecution20250825Caller?.ToString() ??
-            AnthropicCodeExecution20260120Caller?.ToString() 
+            CodeExecution20250825?.ToString() ??
+            CodeExecution20260120?.ToString() ??
+            Direct?.ToString() 
             ;
 
         /// <summary>
@@ -150,16 +150,16 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicDirectCaller && !IsAnthropicCodeExecution20250825Caller && !IsAnthropicCodeExecution20260120Caller || !IsAnthropicDirectCaller && IsAnthropicCodeExecution20250825Caller && !IsAnthropicCodeExecution20260120Caller || !IsAnthropicDirectCaller && !IsAnthropicCodeExecution20250825Caller && IsAnthropicCodeExecution20260120Caller;
+            return IsCodeExecution20250825 && !IsCodeExecution20260120 && !IsDirect || !IsCodeExecution20250825 && IsCodeExecution20260120 && !IsDirect || !IsCodeExecution20250825 && !IsCodeExecution20260120 && IsDirect;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicDirectCaller?, TResult>? anthropicDirectCaller = null,
-            global::System.Func<global::OpenRouter.AnthropicCodeExecution20250825Caller?, TResult>? anthropicCodeExecution20250825Caller = null,
-            global::System.Func<global::OpenRouter.AnthropicCodeExecution20260120Caller?, TResult>? anthropicCodeExecution20260120Caller = null,
+            global::System.Func<global::OpenRouter.AnthropicCallerVariant1?, TResult>? codeExecution20250825 = null,
+            global::System.Func<global::OpenRouter.AnthropicCallerVariant2?, TResult>? codeExecution20260120 = null,
+            global::System.Func<global::OpenRouter.AnthropicCallerVariant3?, TResult>? direct = null,
             bool validate = true)
         {
             if (validate)
@@ -167,17 +167,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicDirectCaller && anthropicDirectCaller != null)
+            if (IsCodeExecution20250825 && codeExecution20250825 != null)
             {
-                return anthropicDirectCaller(AnthropicDirectCaller!);
+                return codeExecution20250825(CodeExecution20250825!);
             }
-            else if (IsAnthropicCodeExecution20250825Caller && anthropicCodeExecution20250825Caller != null)
+            else if (IsCodeExecution20260120 && codeExecution20260120 != null)
             {
-                return anthropicCodeExecution20250825Caller(AnthropicCodeExecution20250825Caller!);
+                return codeExecution20260120(CodeExecution20260120!);
             }
-            else if (IsAnthropicCodeExecution20260120Caller && anthropicCodeExecution20260120Caller != null)
+            else if (IsDirect && direct != null)
             {
-                return anthropicCodeExecution20260120Caller(AnthropicCodeExecution20260120Caller!);
+                return direct(Direct!);
             }
 
             return default(TResult);
@@ -187,9 +187,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicDirectCaller?>? anthropicDirectCaller = null,
-            global::System.Action<global::OpenRouter.AnthropicCodeExecution20250825Caller?>? anthropicCodeExecution20250825Caller = null,
-            global::System.Action<global::OpenRouter.AnthropicCodeExecution20260120Caller?>? anthropicCodeExecution20260120Caller = null,
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant1?>? codeExecution20250825 = null,
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant2?>? codeExecution20260120 = null,
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant3?>? direct = null,
             bool validate = true)
         {
             if (validate)
@@ -197,17 +197,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicDirectCaller)
+            if (IsCodeExecution20250825)
             {
-                anthropicDirectCaller?.Invoke(AnthropicDirectCaller!);
+                codeExecution20250825?.Invoke(CodeExecution20250825!);
             }
-            else if (IsAnthropicCodeExecution20250825Caller)
+            else if (IsCodeExecution20260120)
             {
-                anthropicCodeExecution20250825Caller?.Invoke(AnthropicCodeExecution20250825Caller!);
+                codeExecution20260120?.Invoke(CodeExecution20260120!);
             }
-            else if (IsAnthropicCodeExecution20260120Caller)
+            else if (IsDirect)
             {
-                anthropicCodeExecution20260120Caller?.Invoke(AnthropicCodeExecution20260120Caller!);
+                direct?.Invoke(Direct!);
             }
         }
 
@@ -218,12 +218,12 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AnthropicDirectCaller,
-                typeof(global::OpenRouter.AnthropicDirectCaller),
-                AnthropicCodeExecution20250825Caller,
-                typeof(global::OpenRouter.AnthropicCodeExecution20250825Caller),
-                AnthropicCodeExecution20260120Caller,
-                typeof(global::OpenRouter.AnthropicCodeExecution20260120Caller),
+                CodeExecution20250825,
+                typeof(global::OpenRouter.AnthropicCallerVariant1),
+                CodeExecution20260120,
+                typeof(global::OpenRouter.AnthropicCallerVariant2),
+                Direct,
+                typeof(global::OpenRouter.AnthropicCallerVariant3),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -240,9 +240,9 @@ namespace OpenRouter
         public bool Equals(AnthropicCaller other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDirectCaller?>.Default.Equals(AnthropicDirectCaller, other.AnthropicDirectCaller) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecution20250825Caller?>.Default.Equals(AnthropicCodeExecution20250825Caller, other.AnthropicCodeExecution20250825Caller) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecution20260120Caller?>.Default.Equals(AnthropicCodeExecution20260120Caller, other.AnthropicCodeExecution20260120Caller) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCallerVariant1?>.Default.Equals(CodeExecution20250825, other.CodeExecution20250825) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCallerVariant2?>.Default.Equals(CodeExecution20260120, other.CodeExecution20260120) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCallerVariant3?>.Default.Equals(Direct, other.Direct) 
                 ;
         }
 

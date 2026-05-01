@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicInputTokensTriggerTypeJsonConverter))]
-        public global::OpenRouter.AnthropicInputTokensTriggerType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TriggerTypeJsonConverter))]
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2TriggerType Type { get; set; }
 
         /// <summary>
         /// 
@@ -38,7 +38,7 @@ namespace OpenRouter
 #endif
         public MessagesRequestContextManagementEditsItemsOneOf2Trigger(
             int value,
-            global::OpenRouter.AnthropicInputTokensTriggerType type)
+            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2TriggerType type)
         {
             this.Type = type;
             this.Value = value;

@@ -58,25 +58,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        public string? ServiceTier { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
-        public double? Cost { get; set; }
-
-        /// <summary>
-        /// Breakdown of upstream inference costs
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
-        public global::OpenRouter.CostDetails? CostDetails { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
-        public bool? IsByok { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicServiceTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.AnthropicServiceTier ServiceTier { get; set; }
 
         /// <summary>
         /// 
@@ -104,15 +88,10 @@ namespace OpenRouter
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
         /// <param name="serverToolUse"></param>
+        /// <param name="serviceTier"></param>
         /// <param name="cacheCreationInputTokens"></param>
         /// <param name="cacheReadInputTokens"></param>
         /// <param name="inferenceGeo"></param>
-        /// <param name="serviceTier"></param>
-        /// <param name="cost"></param>
-        /// <param name="costDetails">
-        /// Breakdown of upstream inference costs
-        /// </param>
-        /// <param name="isByok"></param>
         /// <param name="iterations"></param>
         /// <param name="speed"></param>
 #if NET7_0_OR_GREATER
@@ -123,13 +102,10 @@ namespace OpenRouter
             int inputTokens,
             int outputTokens,
             global::OpenRouter.AnthropicServerToolUsage serverToolUse,
+            global::OpenRouter.AnthropicServiceTier serviceTier,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             string? inferenceGeo,
-            string? serviceTier,
-            double? cost,
-            global::OpenRouter.CostDetails? costDetails,
-            bool? isByok,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? iterations,
             global::OpenRouter.AnthropicSpeed? speed)
         {
@@ -141,9 +117,6 @@ namespace OpenRouter
             this.OutputTokens = outputTokens;
             this.ServerToolUse = serverToolUse ?? throw new global::System.ArgumentNullException(nameof(serverToolUse));
             this.ServiceTier = serviceTier;
-            this.Cost = cost;
-            this.CostDetails = costDetails;
-            this.IsByok = isByok;
             this.Iterations = iterations;
             this.Speed = speed;
         }

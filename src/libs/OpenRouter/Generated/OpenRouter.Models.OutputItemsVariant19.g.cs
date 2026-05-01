@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:web_fetch variant
+    /// An openrouter:web_fetch server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant19
     {

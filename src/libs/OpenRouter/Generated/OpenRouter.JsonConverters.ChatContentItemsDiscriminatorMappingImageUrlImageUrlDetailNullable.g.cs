@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace OpenRouter.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail?>
+    {
+        /// <inheritdoc />
+        public override global::OpenRouter.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::OpenRouter.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::OpenRouter.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::OpenRouter.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::OpenRouter.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::OpenRouter.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

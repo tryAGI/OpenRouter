@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ListEndpointsResponse
     {
         /// <summary>
-        /// 
+        /// Model architecture information
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("architecture")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -60,7 +60,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ListEndpointsResponse" /> class.
         /// </summary>
-        /// <param name="architecture"></param>
+        /// <param name="architecture">
+        /// Model architecture information
+        /// </param>
         /// <param name="created">
         /// Unix timestamp of when the model was created
         /// </param>

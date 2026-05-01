@@ -16,13 +16,6 @@ namespace OpenRouter
         public required string Text { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputTextTypeJsonConverter))]
-        public global::OpenRouter.InputTextType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -32,16 +25,13 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="InputText" /> class.
         /// </summary>
         /// <param name="text"></param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputText(
-            string text,
-            global::OpenRouter.InputTextType type)
+            string text)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
         }
 
         /// <summary>

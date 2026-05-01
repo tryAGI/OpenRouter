@@ -91,7 +91,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: $"/guardrails/{id}/assignments/members",
+                                path: $"//guardrails/{id}/assignments/members",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -159,7 +159,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BulkAssignMembersToGuardrail",
                                 methodName: "BulkAssignMembersToGuardrailAsync",
-                                pathTemplate: "$\"/guardrails/{id}/assignments/members\"",
+                                pathTemplate: "$\"//guardrails/{id}/assignments/members\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -186,7 +186,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BulkAssignMembersToGuardrail",
                                 methodName: "BulkAssignMembersToGuardrailAsync",
-                                pathTemplate: "$\"/guardrails/{id}/assignments/members\"",
+                                pathTemplate: "$\"//guardrails/{id}/assignments/members\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -221,7 +221,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BulkAssignMembersToGuardrail",
                                 methodName: "BulkAssignMembersToGuardrailAsync",
-                                pathTemplate: "$\"/guardrails/{id}/assignments/members\"",
+                                pathTemplate: "$\"//guardrails/{id}/assignments/members\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -268,7 +268,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BulkAssignMembersToGuardrail",
                                 methodName: "BulkAssignMembersToGuardrailAsync",
-                                pathTemplate: "$\"/guardrails/{id}/assignments/members\"",
+                                pathTemplate: "$\"//guardrails/{id}/assignments/members\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -288,7 +288,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BulkAssignMembersToGuardrail",
                                 methodName: "BulkAssignMembersToGuardrailAsync",
-                                pathTemplate: "$\"/guardrails/{id}/assignments/members\"",
+                                pathTemplate: "$\"//guardrails/{id}/assignments/members\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -10,100 +10,100 @@ namespace OpenRouter
     public readonly partial struct AnthropicBashCodeExecutionContent : global::System.IEquatable<AnthropicBashCodeExecutionContent>
     {
         /// <summary>
-        /// 
+        /// bash_code_execution_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicBashCodeExecutionToolResultError? AnthropicBashCodeExecutionToolResultError { get; init; }
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? BashCodeExecutionResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicBashCodeExecutionToolResultError? AnthropicBashCodeExecutionToolResultError { get; }
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? BashCodeExecutionResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicBashCodeExecutionToolResultError))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionResult))]
 #endif
-        public bool IsAnthropicBashCodeExecutionToolResultError => AnthropicBashCodeExecutionToolResultError != null;
+        public bool IsBashCodeExecutionResult => BashCodeExecutionResult != null;
 
         /// <summary>
-        /// 
+        /// bash_code_execution_tool_result_error variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicBashCodeExecutionResult? AnthropicBashCodeExecutionResult { get; init; }
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? BashCodeExecutionToolResultError { get; init; }
 #else
-        public global::OpenRouter.AnthropicBashCodeExecutionResult? AnthropicBashCodeExecutionResult { get; }
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? BashCodeExecutionToolResultError { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicBashCodeExecutionResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResultError))]
 #endif
-        public bool IsAnthropicBashCodeExecutionResult => AnthropicBashCodeExecutionResult != null;
+        public bool IsBashCodeExecutionToolResultError => BashCodeExecutionToolResultError != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionToolResultError value) => new AnthropicBashCodeExecutionContent((global::OpenRouter.AnthropicBashCodeExecutionToolResultError?)value);
+        public static implicit operator AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1 value) => new AnthropicBashCodeExecutionContent((global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionToolResultError?(AnthropicBashCodeExecutionContent @this) => @this.AnthropicBashCodeExecutionToolResultError;
+        public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?(AnthropicBashCodeExecutionContent @this) => @this.BashCodeExecutionResult;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionToolResultError? value)
+        public AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? value)
         {
-            AnthropicBashCodeExecutionToolResultError = value;
+            BashCodeExecutionResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionResult value) => new AnthropicBashCodeExecutionContent((global::OpenRouter.AnthropicBashCodeExecutionResult?)value);
+        public static implicit operator AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2 value) => new AnthropicBashCodeExecutionContent((global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionResult?(AnthropicBashCodeExecutionContent @this) => @this.AnthropicBashCodeExecutionResult;
+        public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?(AnthropicBashCodeExecutionContent @this) => @this.BashCodeExecutionToolResultError;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionResult? value)
+        public AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? value)
         {
-            AnthropicBashCodeExecutionResult = value;
+            BashCodeExecutionToolResultError = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AnthropicBashCodeExecutionContent(
-            global::OpenRouter.AnthropicBashCodeExecutionToolResultError? anthropicBashCodeExecutionToolResultError,
-            global::OpenRouter.AnthropicBashCodeExecutionResult? anthropicBashCodeExecutionResult
+            global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? bashCodeExecutionResult,
+            global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? bashCodeExecutionToolResultError
             )
         {
-            AnthropicBashCodeExecutionToolResultError = anthropicBashCodeExecutionToolResultError;
-            AnthropicBashCodeExecutionResult = anthropicBashCodeExecutionResult;
+            BashCodeExecutionResult = bashCodeExecutionResult;
+            BashCodeExecutionToolResultError = bashCodeExecutionToolResultError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnthropicBashCodeExecutionResult as object ??
-            AnthropicBashCodeExecutionToolResultError as object 
+            BashCodeExecutionToolResultError as object ??
+            BashCodeExecutionResult as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AnthropicBashCodeExecutionToolResultError?.ToString() ??
-            AnthropicBashCodeExecutionResult?.ToString() 
+            BashCodeExecutionResult?.ToString() ??
+            BashCodeExecutionToolResultError?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicBashCodeExecutionToolResultError && !IsAnthropicBashCodeExecutionResult || !IsAnthropicBashCodeExecutionToolResultError && IsAnthropicBashCodeExecutionResult;
+            return IsBashCodeExecutionResult && !IsBashCodeExecutionToolResultError || !IsBashCodeExecutionResult && IsBashCodeExecutionToolResultError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicBashCodeExecutionToolResultError?, TResult>? anthropicBashCodeExecutionToolResultError = null,
-            global::System.Func<global::OpenRouter.AnthropicBashCodeExecutionResult?, TResult>? anthropicBashCodeExecutionResult = null,
+            global::System.Func<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?, TResult>? bashCodeExecutionResult = null,
+            global::System.Func<global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?, TResult>? bashCodeExecutionToolResultError = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBashCodeExecutionToolResultError && anthropicBashCodeExecutionToolResultError != null)
+            if (IsBashCodeExecutionResult && bashCodeExecutionResult != null)
             {
-                return anthropicBashCodeExecutionToolResultError(AnthropicBashCodeExecutionToolResultError!);
+                return bashCodeExecutionResult(BashCodeExecutionResult!);
             }
-            else if (IsAnthropicBashCodeExecutionResult && anthropicBashCodeExecutionResult != null)
+            else if (IsBashCodeExecutionToolResultError && bashCodeExecutionToolResultError != null)
             {
-                return anthropicBashCodeExecutionResult(AnthropicBashCodeExecutionResult!);
+                return bashCodeExecutionToolResultError(BashCodeExecutionToolResultError!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionToolResultError?>? anthropicBashCodeExecutionToolResultError = null,
-            global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionResult?>? anthropicBashCodeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?>? bashCodeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?>? bashCodeExecutionToolResultError = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBashCodeExecutionToolResultError)
+            if (IsBashCodeExecutionResult)
             {
-                anthropicBashCodeExecutionToolResultError?.Invoke(AnthropicBashCodeExecutionToolResultError!);
+                bashCodeExecutionResult?.Invoke(BashCodeExecutionResult!);
             }
-            else if (IsAnthropicBashCodeExecutionResult)
+            else if (IsBashCodeExecutionToolResultError)
             {
-                anthropicBashCodeExecutionResult?.Invoke(AnthropicBashCodeExecutionResult!);
+                bashCodeExecutionToolResultError?.Invoke(BashCodeExecutionToolResultError!);
             }
         }
 
@@ -169,10 +169,10 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AnthropicBashCodeExecutionToolResultError,
-                typeof(global::OpenRouter.AnthropicBashCodeExecutionToolResultError),
-                AnthropicBashCodeExecutionResult,
-                typeof(global::OpenRouter.AnthropicBashCodeExecutionResult),
+                BashCodeExecutionResult,
+                typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1),
+                BashCodeExecutionToolResultError,
+                typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -189,8 +189,8 @@ namespace OpenRouter
         public bool Equals(AnthropicBashCodeExecutionContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionToolResultError?>.Default.Equals(AnthropicBashCodeExecutionToolResultError, other.AnthropicBashCodeExecutionToolResultError) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionResult?>.Default.Equals(AnthropicBashCodeExecutionResult, other.AnthropicBashCodeExecutionResult) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?>.Default.Equals(BashCodeExecutionResult, other.BashCodeExecutionResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?>.Default.Equals(BashCodeExecutionToolResultError, other.BashCodeExecutionToolResultError) 
                 ;
         }
 

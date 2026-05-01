@@ -37,13 +37,6 @@ namespace OpenRouter
         public required string Timezone { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
-        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,7 +53,6 @@ namespace OpenRouter
         /// IANA timezone name
         /// </param>
         /// <param name="id"></param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,14 +60,12 @@ namespace OpenRouter
             string datetime,
             global::OpenRouter.ToolCallStatus status,
             string timezone,
-            string? id,
-            global::OpenRouter.OutputDatetimeItemType type)
+            string? id)
         {
             this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Id = id;
             this.Status = status;
             this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
-            this.Type = type;
         }
 
         /// <summary>

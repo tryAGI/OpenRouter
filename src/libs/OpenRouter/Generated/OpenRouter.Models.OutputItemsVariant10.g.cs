@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:code_interpreter variant
+    /// An openrouter:code_interpreter server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant10
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:code_interpreter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputCodeInterpreterServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant10TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant10Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +69,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant10" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:code_interpreter
+        /// </param>
         /// <param name="code"></param>
         /// <param name="exitCode"></param>
         /// <param name="id"></param>
@@ -81,7 +83,7 @@ namespace OpenRouter
 #endif
         public OutputItemsVariant10(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputCodeInterpreterServerToolItemType type,
+            global::OpenRouter.OutputItemsVariant10Type type,
             string? code,
             int? exitCode,
             string? id,

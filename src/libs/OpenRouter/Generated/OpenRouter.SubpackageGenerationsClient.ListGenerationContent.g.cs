@@ -82,7 +82,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/generation/content",
+                                path: "//generation/content",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddRequiredParameter("id", id) 
@@ -146,7 +146,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGenerationContent",
                                 methodName: "ListGenerationContentAsync",
-                                pathTemplate: "\"/generation/content\"",
+                                pathTemplate: "\"//generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -173,7 +173,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGenerationContent",
                                 methodName: "ListGenerationContentAsync",
-                                pathTemplate: "\"/generation/content\"",
+                                pathTemplate: "\"//generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -208,7 +208,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGenerationContent",
                                 methodName: "ListGenerationContentAsync",
-                                pathTemplate: "\"/generation/content\"",
+                                pathTemplate: "\"//generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -255,7 +255,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGenerationContent",
                                 methodName: "ListGenerationContentAsync",
-                                pathTemplate: "\"/generation/content\"",
+                                pathTemplate: "\"//generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -275,7 +275,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGenerationContent",
                                 methodName: "ListGenerationContentAsync",
-                                pathTemplate: "\"/generation/content\"",
+                                pathTemplate: "\"//generation/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

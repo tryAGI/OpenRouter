@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:browser_use variant
+    /// An openrouter:browser_use server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant9
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:browser_use
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputBrowserUseServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputBrowserUseServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant9TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant9Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant9" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:browser_use
+        /// </param>
         /// <param name="action"></param>
         /// <param name="id"></param>
         /// <param name="screenshotB64"></param>
@@ -60,7 +62,7 @@ namespace OpenRouter
 #endif
         public OutputItemsVariant9(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputBrowserUseServerToolItemType type,
+            global::OpenRouter.OutputItemsVariant9Type type,
             string? action,
             string? id,
             string? screenshotB64)

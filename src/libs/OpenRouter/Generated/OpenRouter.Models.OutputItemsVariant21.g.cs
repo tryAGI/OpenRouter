@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// reasoning variant
+    /// An output item containing reasoning
     /// </summary>
     public sealed partial class OutputItemsVariant21
     {
@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningTypeJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputReasoningItemTypeJsonConverter))]
+        public global::OpenRouter.OutputReasoningItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -38,8 +38,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatusJsonConverter))]
+        public global::OpenRouter.OutputReasoningItemStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -86,10 +86,10 @@ namespace OpenRouter
         public OutputItemsVariant21(
             string id,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> summary,
-            global::OpenRouter.OutputItemReasoningType type,
+            global::OpenRouter.OutputReasoningItemType type,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? content,
             string? encryptedContent,
-            global::OpenRouter.OutputItemReasoningStatus? status,
+            global::OpenRouter.OutputReasoningItemStatus? status,
             global::OpenRouter.ReasoningFormat? format,
             string? signature)
         {

@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ChatRequest
     {
         /// <summary>
-        /// 
+        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.ChatRequestCacheControl? CacheControl { get; set; }
@@ -86,7 +86,7 @@ namespace OpenRouter
         /// Models to use for completion
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("models")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? Models { get; set; }
+        public global::System.Collections.Generic.IList<string>? Models { get; set; }
 
         /// <summary>
         /// Whether to enable parallel function calling during tool use. When true, the model may generate multiple tool calls in a single response.
@@ -225,7 +225,9 @@ namespace OpenRouter
         /// <param name="messages">
         /// List of messages for the conversation
         /// </param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
         /// </param>
@@ -334,7 +336,7 @@ namespace OpenRouter
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestModalitiesItems>? modalities,
             string? model,
-            global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? models,
+            global::System.Collections.Generic.IList<string>? models,
             bool? parallelToolCalls,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? plugins,
             double? presencePenalty,

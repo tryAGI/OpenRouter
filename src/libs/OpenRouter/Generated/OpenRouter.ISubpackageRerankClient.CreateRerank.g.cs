@@ -27,7 +27,9 @@ namespace OpenRouter
         /// <param name="model">
         /// The rerank model to use
         /// </param>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// Provider routing preferences for the request.
+        /// </param>
         /// <param name="query">
         /// The search query to rerank documents against
         /// </param>

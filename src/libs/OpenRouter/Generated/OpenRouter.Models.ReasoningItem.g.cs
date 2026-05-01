@@ -31,8 +31,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningStatusJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningItemStatusJsonConverter))]
+        public global::OpenRouter.ReasoningItemStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -45,8 +45,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemReasoningTypeJsonConverter))]
-        public global::OpenRouter.OutputItemReasoningType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningItemTypeJsonConverter))]
+        public global::OpenRouter.ReasoningItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -86,8 +86,8 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> summary,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? content,
             string? encryptedContent,
-            global::OpenRouter.OutputItemReasoningStatus? status,
-            global::OpenRouter.OutputItemReasoningType type,
+            global::OpenRouter.ReasoningItemStatus? status,
+            global::OpenRouter.ReasoningItemType type,
             global::OpenRouter.ReasoningFormat? format,
             string? signature)
         {

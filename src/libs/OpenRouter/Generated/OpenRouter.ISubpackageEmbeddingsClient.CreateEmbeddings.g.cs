@@ -36,7 +36,9 @@ namespace OpenRouter
         /// <param name="model">
         /// The model to use for embeddings
         /// </param>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// Provider routing preferences for the request.
+        /// </param>
         /// <param name="user">
         /// A unique identifier for the end-user
         /// </param>

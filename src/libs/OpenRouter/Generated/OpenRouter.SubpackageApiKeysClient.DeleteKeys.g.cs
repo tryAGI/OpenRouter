@@ -83,7 +83,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: $"/keys/{hash}",
+                                path: $"//keys/{hash}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -144,7 +144,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteKeys",
                                 methodName: "DeleteKeysAsync",
-                                pathTemplate: "$\"/keys/{hash}\"",
+                                pathTemplate: "$\"//keys/{hash}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -171,7 +171,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteKeys",
                                 methodName: "DeleteKeysAsync",
-                                pathTemplate: "$\"/keys/{hash}\"",
+                                pathTemplate: "$\"//keys/{hash}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -206,7 +206,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteKeys",
                                 methodName: "DeleteKeysAsync",
-                                pathTemplate: "$\"/keys/{hash}\"",
+                                pathTemplate: "$\"//keys/{hash}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -253,7 +253,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteKeys",
                                 methodName: "DeleteKeysAsync",
-                                pathTemplate: "$\"/keys/{hash}\"",
+                                pathTemplate: "$\"//keys/{hash}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -273,7 +273,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteKeys",
                                 methodName: "DeleteKeysAsync",
-                                pathTemplate: "$\"/keys/{hash}\"",
+                                pathTemplate: "$\"//keys/{hash}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

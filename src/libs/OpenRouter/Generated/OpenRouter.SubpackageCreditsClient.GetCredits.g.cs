@@ -78,7 +78,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/credits",
+                                path: "//credits",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -138,7 +138,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCredits",
                                 methodName: "GetCreditsAsync",
-                                pathTemplate: "\"/credits\"",
+                                pathTemplate: "\"//credits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -165,7 +165,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCredits",
                                 methodName: "GetCreditsAsync",
-                                pathTemplate: "\"/credits\"",
+                                pathTemplate: "\"//credits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +200,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCredits",
                                 methodName: "GetCreditsAsync",
-                                pathTemplate: "\"/credits\"",
+                                pathTemplate: "\"//credits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +247,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCredits",
                                 methodName: "GetCreditsAsync",
-                                pathTemplate: "\"/credits\"",
+                                pathTemplate: "\"//credits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +267,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCredits",
                                 methodName: "GetCreditsAsync",
-                                pathTemplate: "\"/credits\"",
+                                pathTemplate: "\"//credits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

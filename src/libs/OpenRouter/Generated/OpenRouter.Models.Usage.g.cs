@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OpenAiResponsesUsageInputTokensDetails InputTokensDetails { get; set; }
+        public required global::OpenRouter.UsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OpenAiResponsesUsageOutputTokensDetails OutputTokensDetails { get; set; }
+        public required global::OpenRouter.UsageOutputTokensDetails OutputTokensDetails { get; set; }
 
         /// <summary>
         /// 
@@ -87,9 +87,9 @@ namespace OpenRouter
 #endif
         public Usage(
             int inputTokens,
-            global::OpenRouter.OpenAiResponsesUsageInputTokensDetails inputTokensDetails,
+            global::OpenRouter.UsageInputTokensDetails inputTokensDetails,
             int outputTokens,
-            global::OpenRouter.OpenAiResponsesUsageOutputTokensDetails outputTokensDetails,
+            global::OpenRouter.UsageOutputTokensDetails outputTokensDetails,
             int totalTokens,
             double? cost,
             global::OpenRouter.UsageCostDetails? costDetails,

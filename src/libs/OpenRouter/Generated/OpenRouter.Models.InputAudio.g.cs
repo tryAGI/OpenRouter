@@ -13,14 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.InputAudioInputAudio InputAudio1 { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputAudioTypeJsonConverter))]
-        public global::OpenRouter.InputAudioType Type { get; set; }
+        public required global::OpenRouter.OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputAudioInputAudio InputAudio1 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,16 +25,13 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="InputAudio" /> class.
         /// </summary>
         /// <param name="inputAudio1"></param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputAudio(
-            global::OpenRouter.InputAudioInputAudio inputAudio1,
-            global::OpenRouter.InputAudioType type)
+            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputAudioInputAudio inputAudio1)
         {
             this.InputAudio1 = inputAudio1 ?? throw new global::System.ArgumentNullException(nameof(inputAudio1));
-            this.Type = type;
         }
 
         /// <summary>

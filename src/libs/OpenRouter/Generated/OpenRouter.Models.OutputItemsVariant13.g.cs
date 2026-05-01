@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:file_search variant
+    /// An openrouter:file_search server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant13
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:file_search
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFileSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputFileSearchServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant13TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant13Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant13" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:file_search
+        /// </param>
         /// <param name="id"></param>
         /// <param name="queries"></param>
 #if NET7_0_OR_GREATER
@@ -53,7 +55,7 @@ namespace OpenRouter
 #endif
         public OutputItemsVariant13(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputFileSearchServerToolItemType type,
+            global::OpenRouter.OutputItemsVariant13Type type,
             string? id,
             global::System.Collections.Generic.IList<string>? queries)
         {

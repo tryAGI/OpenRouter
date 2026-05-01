@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:image_generation variant
+    /// An openrouter:image_generation server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant14
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:image_generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputImageGenerationServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputImageGenerationServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant14TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant14Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant14" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:image_generation
+        /// </param>
         /// <param name="id"></param>
         /// <param name="imageB64"></param>
         /// <param name="imageUrl"></param>
@@ -76,7 +78,7 @@ namespace OpenRouter
 #endif
         public OutputItemsVariant14(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputImageGenerationServerToolItemType type,
+            global::OpenRouter.OutputItemsVariant14Type type,
             string? id,
             string? imageB64,
             string? imageUrl,

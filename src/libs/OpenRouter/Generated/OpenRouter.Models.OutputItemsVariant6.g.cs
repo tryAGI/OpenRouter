@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// message variant
+    /// An output message item
     /// </summary>
     public sealed partial class OutputItemsVariant6
     {
@@ -12,15 +12,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageTypeJsonConverter))]
-        public global::OpenRouter.OutputMessageType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemTypeJsonConverter))]
+        public global::OpenRouter.OutputMessageItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageContentItems> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageItemContentItems> Content { get; set; }
 
         /// <summary>
         /// 
@@ -33,22 +33,22 @@ namespace OpenRouter
         /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessagePhaseJsonConverter))]
-        public global::OpenRouter.OutputMessagePhase? Phase { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhaseJsonConverter))]
+        public global::OpenRouter.OutputMessageItemPhase? Phase { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageRoleJsonConverter))]
-        public global::OpenRouter.OutputMessageRole Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemRoleJsonConverter))]
+        public global::OpenRouter.OutputMessageItemRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageStatusJsonConverter))]
-        public global::OpenRouter.OutputMessageStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatusJsonConverter))]
+        public global::OpenRouter.OutputMessageItemStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,12 +71,12 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant6(
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageContentItems> content,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageItemContentItems> content,
             string id,
-            global::OpenRouter.OutputMessageType type,
-            global::OpenRouter.OutputMessagePhase? phase,
-            global::OpenRouter.OutputMessageRole role,
-            global::OpenRouter.OutputMessageStatus? status)
+            global::OpenRouter.OutputMessageItemType type,
+            global::OpenRouter.OutputMessageItemPhase? phase,
+            global::OpenRouter.OutputMessageItemRole role,
+            global::OpenRouter.OutputMessageItemStatus? status)
         {
             this.Type = type;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

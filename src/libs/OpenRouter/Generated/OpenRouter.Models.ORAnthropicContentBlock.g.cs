@@ -10,529 +10,529 @@ namespace OpenRouter
     public readonly partial struct ORAnthropicContentBlock : global::System.IEquatable<ORAnthropicContentBlock>
     {
         /// <summary>
-        /// 
+        /// bash_code_execution_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicTextBlock? AnthropicTextBlock { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant1? BashCodeExecutionToolResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicTextBlock? AnthropicTextBlock { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant1? BashCodeExecutionToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicTextBlock))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResult))]
 #endif
-        public bool IsAnthropicTextBlock => AnthropicTextBlock != null;
+        public bool IsBashCodeExecutionToolResult => BashCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        /// code_execution_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicToolUseBlock? AnthropicToolUseBlock { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant2? CodeExecutionToolResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicToolUseBlock? AnthropicToolUseBlock { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant2? CodeExecutionToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicToolUseBlock))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
 #endif
-        public bool IsAnthropicToolUseBlock => AnthropicToolUseBlock != null;
+        public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        /// compaction variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicThinkingBlock? AnthropicThinkingBlock { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant3? Compaction { get; init; }
 #else
-        public global::OpenRouter.AnthropicThinkingBlock? AnthropicThinkingBlock { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant3? Compaction { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicThinkingBlock))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
 #endif
-        public bool IsAnthropicThinkingBlock => AnthropicThinkingBlock != null;
+        public bool IsCompaction => Compaction != null;
 
         /// <summary>
-        /// 
+        /// container_upload variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicRedactedThinkingBlock? AnthropicRedactedThinkingBlock { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant4? ContainerUpload { get; init; }
 #else
-        public global::OpenRouter.AnthropicRedactedThinkingBlock? AnthropicRedactedThinkingBlock { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant4? ContainerUpload { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicRedactedThinkingBlock))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
 #endif
-        public bool IsAnthropicRedactedThinkingBlock => AnthropicRedactedThinkingBlock != null;
+        public bool IsContainerUpload => ContainerUpload != null;
 
         /// <summary>
-        /// 
+        /// redacted_thinking variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicServerToolUseBlock? AnthropicServerToolUseBlock { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant5? RedactedThinking { get; init; }
 #else
-        public global::OpenRouter.AnthropicServerToolUseBlock? AnthropicServerToolUseBlock { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant5? RedactedThinking { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicServerToolUseBlock))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
 #endif
-        public bool IsAnthropicServerToolUseBlock => AnthropicServerToolUseBlock != null;
+        public bool IsRedactedThinking => RedactedThinking != null;
 
         /// <summary>
-        /// 
+        /// server_tool_use variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicWebSearchToolResult? AnthropicWebSearchToolResult { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant6? ServerToolUse { get; init; }
 #else
-        public global::OpenRouter.AnthropicWebSearchToolResult? AnthropicWebSearchToolResult { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant6? ServerToolUse { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicWebSearchToolResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
 #endif
-        public bool IsAnthropicWebSearchToolResult => AnthropicWebSearchToolResult != null;
+        public bool IsServerToolUse => ServerToolUse != null;
 
         /// <summary>
-        /// 
+        /// text variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicWebFetchToolResult? AnthropicWebFetchToolResult { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant7? Text { get; init; }
 #else
-        public global::OpenRouter.AnthropicWebFetchToolResult? AnthropicWebFetchToolResult { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant7? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicWebFetchToolResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsAnthropicWebFetchToolResult => AnthropicWebFetchToolResult != null;
+        public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        /// text_editor_code_execution_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCodeExecutionToolResult? AnthropicCodeExecutionToolResult { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant8? TextEditorCodeExecutionToolResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicCodeExecutionToolResult? AnthropicCodeExecutionToolResult { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant8? TextEditorCodeExecutionToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCodeExecutionToolResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
 #endif
-        public bool IsAnthropicCodeExecutionToolResult => AnthropicCodeExecutionToolResult != null;
+        public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        /// thinking variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicBashCodeExecutionToolResult? AnthropicBashCodeExecutionToolResult { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant9? Thinking { get; init; }
 #else
-        public global::OpenRouter.AnthropicBashCodeExecutionToolResult? AnthropicBashCodeExecutionToolResult { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant9? Thinking { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicBashCodeExecutionToolResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
 #endif
-        public bool IsAnthropicBashCodeExecutionToolResult => AnthropicBashCodeExecutionToolResult != null;
+        public bool IsThinking => Thinking != null;
 
         /// <summary>
-        /// 
+        /// tool_search_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? AnthropicTextEditorCodeExecutionToolResult { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant10? ToolSearchToolResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? AnthropicTextEditorCodeExecutionToolResult { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant10? ToolSearchToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicTextEditorCodeExecutionToolResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResult))]
 #endif
-        public bool IsAnthropicTextEditorCodeExecutionToolResult => AnthropicTextEditorCodeExecutionToolResult != null;
+        public bool IsToolSearchToolResult => ToolSearchToolResult != null;
 
         /// <summary>
-        /// 
+        /// tool_use variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicToolSearchToolResult? AnthropicToolSearchToolResult { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant11? ToolUse { get; init; }
 #else
-        public global::OpenRouter.AnthropicToolSearchToolResult? AnthropicToolSearchToolResult { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant11? ToolUse { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicToolSearchToolResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
 #endif
-        public bool IsAnthropicToolSearchToolResult => AnthropicToolSearchToolResult != null;
+        public bool IsToolUse => ToolUse != null;
 
         /// <summary>
-        /// 
+        /// web_fetch_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicContainerUpload? AnthropicContainerUpload { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant12? WebFetchToolResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicContainerUpload? AnthropicContainerUpload { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant12? WebFetchToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicContainerUpload))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchToolResult))]
 #endif
-        public bool IsAnthropicContainerUpload => AnthropicContainerUpload != null;
+        public bool IsWebFetchToolResult => WebFetchToolResult != null;
 
         /// <summary>
-        /// 
+        /// web_search_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCompactionBlock? AnthropicCompactionBlock { get; init; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant13? WebSearchToolResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicCompactionBlock? AnthropicCompactionBlock { get; }
+        public global::OpenRouter.ORAnthropicContentBlockVariant13? WebSearchToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCompactionBlock))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
 #endif
-        public bool IsAnthropicCompactionBlock => AnthropicCompactionBlock != null;
+        public bool IsWebSearchToolResult => WebSearchToolResult != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicTextBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicTextBlock?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant1 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicTextBlock?(ORAnthropicContentBlock @this) => @this.AnthropicTextBlock;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant1?(ORAnthropicContentBlock @this) => @this.BashCodeExecutionToolResult;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicTextBlock? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant1? value)
         {
-            AnthropicTextBlock = value;
+            BashCodeExecutionToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicToolUseBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicToolUseBlock?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant2 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicToolUseBlock?(ORAnthropicContentBlock @this) => @this.AnthropicToolUseBlock;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant2?(ORAnthropicContentBlock @this) => @this.CodeExecutionToolResult;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicToolUseBlock? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant2? value)
         {
-            AnthropicToolUseBlock = value;
+            CodeExecutionToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicThinkingBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicThinkingBlock?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant3 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant3?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicThinkingBlock?(ORAnthropicContentBlock @this) => @this.AnthropicThinkingBlock;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant3?(ORAnthropicContentBlock @this) => @this.Compaction;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicThinkingBlock? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant3? value)
         {
-            AnthropicThinkingBlock = value;
+            Compaction = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicRedactedThinkingBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicRedactedThinkingBlock?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant4 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant4?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicRedactedThinkingBlock?(ORAnthropicContentBlock @this) => @this.AnthropicRedactedThinkingBlock;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant4?(ORAnthropicContentBlock @this) => @this.ContainerUpload;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicRedactedThinkingBlock? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant4? value)
         {
-            AnthropicRedactedThinkingBlock = value;
+            ContainerUpload = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicServerToolUseBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicServerToolUseBlock?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant5 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant5?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicServerToolUseBlock?(ORAnthropicContentBlock @this) => @this.AnthropicServerToolUseBlock;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant5?(ORAnthropicContentBlock @this) => @this.RedactedThinking;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicServerToolUseBlock? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant5? value)
         {
-            AnthropicServerToolUseBlock = value;
+            RedactedThinking = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicWebSearchToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicWebSearchToolResult?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant6 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant6?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicWebSearchToolResult?(ORAnthropicContentBlock @this) => @this.AnthropicWebSearchToolResult;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant6?(ORAnthropicContentBlock @this) => @this.ServerToolUse;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicWebSearchToolResult? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant6? value)
         {
-            AnthropicWebSearchToolResult = value;
+            ServerToolUse = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicWebFetchToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicWebFetchToolResult?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant7 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant7?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicWebFetchToolResult?(ORAnthropicContentBlock @this) => @this.AnthropicWebFetchToolResult;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant7?(ORAnthropicContentBlock @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicWebFetchToolResult? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant7? value)
         {
-            AnthropicWebFetchToolResult = value;
+            Text = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicCodeExecutionToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicCodeExecutionToolResult?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant8 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant8?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCodeExecutionToolResult?(ORAnthropicContentBlock @this) => @this.AnthropicCodeExecutionToolResult;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant8?(ORAnthropicContentBlock @this) => @this.TextEditorCodeExecutionToolResult;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicCodeExecutionToolResult? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant8? value)
         {
-            AnthropicCodeExecutionToolResult = value;
+            TextEditorCodeExecutionToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicBashCodeExecutionToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicBashCodeExecutionToolResult?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant9 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant9?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionToolResult?(ORAnthropicContentBlock @this) => @this.AnthropicBashCodeExecutionToolResult;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant9?(ORAnthropicContentBlock @this) => @this.Thinking;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicBashCodeExecutionToolResult? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant9? value)
         {
-            AnthropicBashCodeExecutionToolResult = value;
+            Thinking = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant10 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant10?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?(ORAnthropicContentBlock @this) => @this.AnthropicTextEditorCodeExecutionToolResult;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant10?(ORAnthropicContentBlock @this) => @this.ToolSearchToolResult;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant10? value)
         {
-            AnthropicTextEditorCodeExecutionToolResult = value;
+            ToolSearchToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicToolSearchToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicToolSearchToolResult?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant11 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant11?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicToolSearchToolResult?(ORAnthropicContentBlock @this) => @this.AnthropicToolSearchToolResult;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant11?(ORAnthropicContentBlock @this) => @this.ToolUse;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicToolSearchToolResult? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant11? value)
         {
-            AnthropicToolSearchToolResult = value;
+            ToolUse = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicContainerUpload value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicContainerUpload?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant12 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant12?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicContainerUpload?(ORAnthropicContentBlock @this) => @this.AnthropicContainerUpload;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant12?(ORAnthropicContentBlock @this) => @this.WebFetchToolResult;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicContainerUpload? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant12? value)
         {
-            AnthropicContainerUpload = value;
+            WebFetchToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicCompactionBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicCompactionBlock?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant13 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant13?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCompactionBlock?(ORAnthropicContentBlock @this) => @this.AnthropicCompactionBlock;
+        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant13?(ORAnthropicContentBlock @this) => @this.WebSearchToolResult;
 
         /// <summary>
         /// 
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.AnthropicCompactionBlock? value)
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant13? value)
         {
-            AnthropicCompactionBlock = value;
+            WebSearchToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ORAnthropicContentBlock(
-            global::OpenRouter.AnthropicTextBlock? anthropicTextBlock,
-            global::OpenRouter.AnthropicToolUseBlock? anthropicToolUseBlock,
-            global::OpenRouter.AnthropicThinkingBlock? anthropicThinkingBlock,
-            global::OpenRouter.AnthropicRedactedThinkingBlock? anthropicRedactedThinkingBlock,
-            global::OpenRouter.AnthropicServerToolUseBlock? anthropicServerToolUseBlock,
-            global::OpenRouter.AnthropicWebSearchToolResult? anthropicWebSearchToolResult,
-            global::OpenRouter.AnthropicWebFetchToolResult? anthropicWebFetchToolResult,
-            global::OpenRouter.AnthropicCodeExecutionToolResult? anthropicCodeExecutionToolResult,
-            global::OpenRouter.AnthropicBashCodeExecutionToolResult? anthropicBashCodeExecutionToolResult,
-            global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? anthropicTextEditorCodeExecutionToolResult,
-            global::OpenRouter.AnthropicToolSearchToolResult? anthropicToolSearchToolResult,
-            global::OpenRouter.AnthropicContainerUpload? anthropicContainerUpload,
-            global::OpenRouter.AnthropicCompactionBlock? anthropicCompactionBlock
+            global::OpenRouter.ORAnthropicContentBlockVariant1? bashCodeExecutionToolResult,
+            global::OpenRouter.ORAnthropicContentBlockVariant2? codeExecutionToolResult,
+            global::OpenRouter.ORAnthropicContentBlockVariant3? compaction,
+            global::OpenRouter.ORAnthropicContentBlockVariant4? containerUpload,
+            global::OpenRouter.ORAnthropicContentBlockVariant5? redactedThinking,
+            global::OpenRouter.ORAnthropicContentBlockVariant6? serverToolUse,
+            global::OpenRouter.ORAnthropicContentBlockVariant7? text,
+            global::OpenRouter.ORAnthropicContentBlockVariant8? textEditorCodeExecutionToolResult,
+            global::OpenRouter.ORAnthropicContentBlockVariant9? thinking,
+            global::OpenRouter.ORAnthropicContentBlockVariant10? toolSearchToolResult,
+            global::OpenRouter.ORAnthropicContentBlockVariant11? toolUse,
+            global::OpenRouter.ORAnthropicContentBlockVariant12? webFetchToolResult,
+            global::OpenRouter.ORAnthropicContentBlockVariant13? webSearchToolResult
             )
         {
-            AnthropicTextBlock = anthropicTextBlock;
-            AnthropicToolUseBlock = anthropicToolUseBlock;
-            AnthropicThinkingBlock = anthropicThinkingBlock;
-            AnthropicRedactedThinkingBlock = anthropicRedactedThinkingBlock;
-            AnthropicServerToolUseBlock = anthropicServerToolUseBlock;
-            AnthropicWebSearchToolResult = anthropicWebSearchToolResult;
-            AnthropicWebFetchToolResult = anthropicWebFetchToolResult;
-            AnthropicCodeExecutionToolResult = anthropicCodeExecutionToolResult;
-            AnthropicBashCodeExecutionToolResult = anthropicBashCodeExecutionToolResult;
-            AnthropicTextEditorCodeExecutionToolResult = anthropicTextEditorCodeExecutionToolResult;
-            AnthropicToolSearchToolResult = anthropicToolSearchToolResult;
-            AnthropicContainerUpload = anthropicContainerUpload;
-            AnthropicCompactionBlock = anthropicCompactionBlock;
+            BashCodeExecutionToolResult = bashCodeExecutionToolResult;
+            CodeExecutionToolResult = codeExecutionToolResult;
+            Compaction = compaction;
+            ContainerUpload = containerUpload;
+            RedactedThinking = redactedThinking;
+            ServerToolUse = serverToolUse;
+            Text = text;
+            TextEditorCodeExecutionToolResult = textEditorCodeExecutionToolResult;
+            Thinking = thinking;
+            ToolSearchToolResult = toolSearchToolResult;
+            ToolUse = toolUse;
+            WebFetchToolResult = webFetchToolResult;
+            WebSearchToolResult = webSearchToolResult;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnthropicCompactionBlock as object ??
-            AnthropicContainerUpload as object ??
-            AnthropicToolSearchToolResult as object ??
-            AnthropicTextEditorCodeExecutionToolResult as object ??
-            AnthropicBashCodeExecutionToolResult as object ??
-            AnthropicCodeExecutionToolResult as object ??
-            AnthropicWebFetchToolResult as object ??
-            AnthropicWebSearchToolResult as object ??
-            AnthropicServerToolUseBlock as object ??
-            AnthropicRedactedThinkingBlock as object ??
-            AnthropicThinkingBlock as object ??
-            AnthropicToolUseBlock as object ??
-            AnthropicTextBlock as object 
+            WebSearchToolResult as object ??
+            WebFetchToolResult as object ??
+            ToolUse as object ??
+            ToolSearchToolResult as object ??
+            Thinking as object ??
+            TextEditorCodeExecutionToolResult as object ??
+            Text as object ??
+            ServerToolUse as object ??
+            RedactedThinking as object ??
+            ContainerUpload as object ??
+            Compaction as object ??
+            CodeExecutionToolResult as object ??
+            BashCodeExecutionToolResult as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AnthropicTextBlock?.ToString() ??
-            AnthropicToolUseBlock?.ToString() ??
-            AnthropicThinkingBlock?.ToString() ??
-            AnthropicRedactedThinkingBlock?.ToString() ??
-            AnthropicServerToolUseBlock?.ToString() ??
-            AnthropicWebSearchToolResult?.ToString() ??
-            AnthropicWebFetchToolResult?.ToString() ??
-            AnthropicCodeExecutionToolResult?.ToString() ??
-            AnthropicBashCodeExecutionToolResult?.ToString() ??
-            AnthropicTextEditorCodeExecutionToolResult?.ToString() ??
-            AnthropicToolSearchToolResult?.ToString() ??
-            AnthropicContainerUpload?.ToString() ??
-            AnthropicCompactionBlock?.ToString() 
+            BashCodeExecutionToolResult?.ToString() ??
+            CodeExecutionToolResult?.ToString() ??
+            Compaction?.ToString() ??
+            ContainerUpload?.ToString() ??
+            RedactedThinking?.ToString() ??
+            ServerToolUse?.ToString() ??
+            Text?.ToString() ??
+            TextEditorCodeExecutionToolResult?.ToString() ??
+            Thinking?.ToString() ??
+            ToolSearchToolResult?.ToString() ??
+            ToolUse?.ToString() ??
+            WebFetchToolResult?.ToString() ??
+            WebSearchToolResult?.ToString() 
             ;
 
         /// <summary>
@@ -540,26 +540,26 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && IsAnthropicContainerUpload && !IsAnthropicCompactionBlock || !IsAnthropicTextBlock && !IsAnthropicToolUseBlock && !IsAnthropicThinkingBlock && !IsAnthropicRedactedThinkingBlock && !IsAnthropicServerToolUseBlock && !IsAnthropicWebSearchToolResult && !IsAnthropicWebFetchToolResult && !IsAnthropicCodeExecutionToolResult && !IsAnthropicBashCodeExecutionToolResult && !IsAnthropicTextEditorCodeExecutionToolResult && !IsAnthropicToolSearchToolResult && !IsAnthropicContainerUpload && IsAnthropicCompactionBlock;
+            return IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && IsWebFetchToolResult && !IsWebSearchToolResult || !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && IsWebSearchToolResult;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicTextBlock?, TResult>? anthropicTextBlock = null,
-            global::System.Func<global::OpenRouter.AnthropicToolUseBlock?, TResult>? anthropicToolUseBlock = null,
-            global::System.Func<global::OpenRouter.AnthropicThinkingBlock?, TResult>? anthropicThinkingBlock = null,
-            global::System.Func<global::OpenRouter.AnthropicRedactedThinkingBlock?, TResult>? anthropicRedactedThinkingBlock = null,
-            global::System.Func<global::OpenRouter.AnthropicServerToolUseBlock?, TResult>? anthropicServerToolUseBlock = null,
-            global::System.Func<global::OpenRouter.AnthropicWebSearchToolResult?, TResult>? anthropicWebSearchToolResult = null,
-            global::System.Func<global::OpenRouter.AnthropicWebFetchToolResult?, TResult>? anthropicWebFetchToolResult = null,
-            global::System.Func<global::OpenRouter.AnthropicCodeExecutionToolResult?, TResult>? anthropicCodeExecutionToolResult = null,
-            global::System.Func<global::OpenRouter.AnthropicBashCodeExecutionToolResult?, TResult>? anthropicBashCodeExecutionToolResult = null,
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?, TResult>? anthropicTextEditorCodeExecutionToolResult = null,
-            global::System.Func<global::OpenRouter.AnthropicToolSearchToolResult?, TResult>? anthropicToolSearchToolResult = null,
-            global::System.Func<global::OpenRouter.AnthropicContainerUpload?, TResult>? anthropicContainerUpload = null,
-            global::System.Func<global::OpenRouter.AnthropicCompactionBlock?, TResult>? anthropicCompactionBlock = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant1?, TResult>? bashCodeExecutionToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant2?, TResult>? codeExecutionToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant3?, TResult>? compaction = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant4?, TResult>? containerUpload = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant5?, TResult>? redactedThinking = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant6?, TResult>? serverToolUse = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant7?, TResult>? text = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant8?, TResult>? textEditorCodeExecutionToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant9?, TResult>? thinking = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant10?, TResult>? toolSearchToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant11?, TResult>? toolUse = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant12?, TResult>? webFetchToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant13?, TResult>? webSearchToolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -567,57 +567,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlock && anthropicTextBlock != null)
+            if (IsBashCodeExecutionToolResult && bashCodeExecutionToolResult != null)
             {
-                return anthropicTextBlock(AnthropicTextBlock!);
+                return bashCodeExecutionToolResult(BashCodeExecutionToolResult!);
             }
-            else if (IsAnthropicToolUseBlock && anthropicToolUseBlock != null)
+            else if (IsCodeExecutionToolResult && codeExecutionToolResult != null)
             {
-                return anthropicToolUseBlock(AnthropicToolUseBlock!);
+                return codeExecutionToolResult(CodeExecutionToolResult!);
             }
-            else if (IsAnthropicThinkingBlock && anthropicThinkingBlock != null)
+            else if (IsCompaction && compaction != null)
             {
-                return anthropicThinkingBlock(AnthropicThinkingBlock!);
+                return compaction(Compaction!);
             }
-            else if (IsAnthropicRedactedThinkingBlock && anthropicRedactedThinkingBlock != null)
+            else if (IsContainerUpload && containerUpload != null)
             {
-                return anthropicRedactedThinkingBlock(AnthropicRedactedThinkingBlock!);
+                return containerUpload(ContainerUpload!);
             }
-            else if (IsAnthropicServerToolUseBlock && anthropicServerToolUseBlock != null)
+            else if (IsRedactedThinking && redactedThinking != null)
             {
-                return anthropicServerToolUseBlock(AnthropicServerToolUseBlock!);
+                return redactedThinking(RedactedThinking!);
             }
-            else if (IsAnthropicWebSearchToolResult && anthropicWebSearchToolResult != null)
+            else if (IsServerToolUse && serverToolUse != null)
             {
-                return anthropicWebSearchToolResult(AnthropicWebSearchToolResult!);
+                return serverToolUse(ServerToolUse!);
             }
-            else if (IsAnthropicWebFetchToolResult && anthropicWebFetchToolResult != null)
+            else if (IsText && text != null)
             {
-                return anthropicWebFetchToolResult(AnthropicWebFetchToolResult!);
+                return text(Text!);
             }
-            else if (IsAnthropicCodeExecutionToolResult && anthropicCodeExecutionToolResult != null)
+            else if (IsTextEditorCodeExecutionToolResult && textEditorCodeExecutionToolResult != null)
             {
-                return anthropicCodeExecutionToolResult(AnthropicCodeExecutionToolResult!);
+                return textEditorCodeExecutionToolResult(TextEditorCodeExecutionToolResult!);
             }
-            else if (IsAnthropicBashCodeExecutionToolResult && anthropicBashCodeExecutionToolResult != null)
+            else if (IsThinking && thinking != null)
             {
-                return anthropicBashCodeExecutionToolResult(AnthropicBashCodeExecutionToolResult!);
+                return thinking(Thinking!);
             }
-            else if (IsAnthropicTextEditorCodeExecutionToolResult && anthropicTextEditorCodeExecutionToolResult != null)
+            else if (IsToolSearchToolResult && toolSearchToolResult != null)
             {
-                return anthropicTextEditorCodeExecutionToolResult(AnthropicTextEditorCodeExecutionToolResult!);
+                return toolSearchToolResult(ToolSearchToolResult!);
             }
-            else if (IsAnthropicToolSearchToolResult && anthropicToolSearchToolResult != null)
+            else if (IsToolUse && toolUse != null)
             {
-                return anthropicToolSearchToolResult(AnthropicToolSearchToolResult!);
+                return toolUse(ToolUse!);
             }
-            else if (IsAnthropicContainerUpload && anthropicContainerUpload != null)
+            else if (IsWebFetchToolResult && webFetchToolResult != null)
             {
-                return anthropicContainerUpload(AnthropicContainerUpload!);
+                return webFetchToolResult(WebFetchToolResult!);
             }
-            else if (IsAnthropicCompactionBlock && anthropicCompactionBlock != null)
+            else if (IsWebSearchToolResult && webSearchToolResult != null)
             {
-                return anthropicCompactionBlock(AnthropicCompactionBlock!);
+                return webSearchToolResult(WebSearchToolResult!);
             }
 
             return default(TResult);
@@ -627,19 +627,19 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicTextBlock?>? anthropicTextBlock = null,
-            global::System.Action<global::OpenRouter.AnthropicToolUseBlock?>? anthropicToolUseBlock = null,
-            global::System.Action<global::OpenRouter.AnthropicThinkingBlock?>? anthropicThinkingBlock = null,
-            global::System.Action<global::OpenRouter.AnthropicRedactedThinkingBlock?>? anthropicRedactedThinkingBlock = null,
-            global::System.Action<global::OpenRouter.AnthropicServerToolUseBlock?>? anthropicServerToolUseBlock = null,
-            global::System.Action<global::OpenRouter.AnthropicWebSearchToolResult?>? anthropicWebSearchToolResult = null,
-            global::System.Action<global::OpenRouter.AnthropicWebFetchToolResult?>? anthropicWebFetchToolResult = null,
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionToolResult?>? anthropicCodeExecutionToolResult = null,
-            global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionToolResult?>? anthropicBashCodeExecutionToolResult = null,
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?>? anthropicTextEditorCodeExecutionToolResult = null,
-            global::System.Action<global::OpenRouter.AnthropicToolSearchToolResult?>? anthropicToolSearchToolResult = null,
-            global::System.Action<global::OpenRouter.AnthropicContainerUpload?>? anthropicContainerUpload = null,
-            global::System.Action<global::OpenRouter.AnthropicCompactionBlock?>? anthropicCompactionBlock = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant1?>? bashCodeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant2?>? codeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant3?>? compaction = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant4?>? containerUpload = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant5?>? redactedThinking = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant6?>? serverToolUse = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant7?>? text = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant8?>? textEditorCodeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant9?>? thinking = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant10?>? toolSearchToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant11?>? toolUse = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant12?>? webFetchToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant13?>? webSearchToolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -647,57 +647,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlock)
+            if (IsBashCodeExecutionToolResult)
             {
-                anthropicTextBlock?.Invoke(AnthropicTextBlock!);
+                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
             }
-            else if (IsAnthropicToolUseBlock)
+            else if (IsCodeExecutionToolResult)
             {
-                anthropicToolUseBlock?.Invoke(AnthropicToolUseBlock!);
+                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
             }
-            else if (IsAnthropicThinkingBlock)
+            else if (IsCompaction)
             {
-                anthropicThinkingBlock?.Invoke(AnthropicThinkingBlock!);
+                compaction?.Invoke(Compaction!);
             }
-            else if (IsAnthropicRedactedThinkingBlock)
+            else if (IsContainerUpload)
             {
-                anthropicRedactedThinkingBlock?.Invoke(AnthropicRedactedThinkingBlock!);
+                containerUpload?.Invoke(ContainerUpload!);
             }
-            else if (IsAnthropicServerToolUseBlock)
+            else if (IsRedactedThinking)
             {
-                anthropicServerToolUseBlock?.Invoke(AnthropicServerToolUseBlock!);
+                redactedThinking?.Invoke(RedactedThinking!);
             }
-            else if (IsAnthropicWebSearchToolResult)
+            else if (IsServerToolUse)
             {
-                anthropicWebSearchToolResult?.Invoke(AnthropicWebSearchToolResult!);
+                serverToolUse?.Invoke(ServerToolUse!);
             }
-            else if (IsAnthropicWebFetchToolResult)
+            else if (IsText)
             {
-                anthropicWebFetchToolResult?.Invoke(AnthropicWebFetchToolResult!);
+                text?.Invoke(Text!);
             }
-            else if (IsAnthropicCodeExecutionToolResult)
+            else if (IsTextEditorCodeExecutionToolResult)
             {
-                anthropicCodeExecutionToolResult?.Invoke(AnthropicCodeExecutionToolResult!);
+                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
             }
-            else if (IsAnthropicBashCodeExecutionToolResult)
+            else if (IsThinking)
             {
-                anthropicBashCodeExecutionToolResult?.Invoke(AnthropicBashCodeExecutionToolResult!);
+                thinking?.Invoke(Thinking!);
             }
-            else if (IsAnthropicTextEditorCodeExecutionToolResult)
+            else if (IsToolSearchToolResult)
             {
-                anthropicTextEditorCodeExecutionToolResult?.Invoke(AnthropicTextEditorCodeExecutionToolResult!);
+                toolSearchToolResult?.Invoke(ToolSearchToolResult!);
             }
-            else if (IsAnthropicToolSearchToolResult)
+            else if (IsToolUse)
             {
-                anthropicToolSearchToolResult?.Invoke(AnthropicToolSearchToolResult!);
+                toolUse?.Invoke(ToolUse!);
             }
-            else if (IsAnthropicContainerUpload)
+            else if (IsWebFetchToolResult)
             {
-                anthropicContainerUpload?.Invoke(AnthropicContainerUpload!);
+                webFetchToolResult?.Invoke(WebFetchToolResult!);
             }
-            else if (IsAnthropicCompactionBlock)
+            else if (IsWebSearchToolResult)
             {
-                anthropicCompactionBlock?.Invoke(AnthropicCompactionBlock!);
+                webSearchToolResult?.Invoke(WebSearchToolResult!);
             }
         }
 
@@ -708,32 +708,32 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AnthropicTextBlock,
-                typeof(global::OpenRouter.AnthropicTextBlock),
-                AnthropicToolUseBlock,
-                typeof(global::OpenRouter.AnthropicToolUseBlock),
-                AnthropicThinkingBlock,
-                typeof(global::OpenRouter.AnthropicThinkingBlock),
-                AnthropicRedactedThinkingBlock,
-                typeof(global::OpenRouter.AnthropicRedactedThinkingBlock),
-                AnthropicServerToolUseBlock,
-                typeof(global::OpenRouter.AnthropicServerToolUseBlock),
-                AnthropicWebSearchToolResult,
-                typeof(global::OpenRouter.AnthropicWebSearchToolResult),
-                AnthropicWebFetchToolResult,
-                typeof(global::OpenRouter.AnthropicWebFetchToolResult),
-                AnthropicCodeExecutionToolResult,
-                typeof(global::OpenRouter.AnthropicCodeExecutionToolResult),
-                AnthropicBashCodeExecutionToolResult,
-                typeof(global::OpenRouter.AnthropicBashCodeExecutionToolResult),
-                AnthropicTextEditorCodeExecutionToolResult,
-                typeof(global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult),
-                AnthropicToolSearchToolResult,
-                typeof(global::OpenRouter.AnthropicToolSearchToolResult),
-                AnthropicContainerUpload,
-                typeof(global::OpenRouter.AnthropicContainerUpload),
-                AnthropicCompactionBlock,
-                typeof(global::OpenRouter.AnthropicCompactionBlock),
+                BashCodeExecutionToolResult,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant1),
+                CodeExecutionToolResult,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant2),
+                Compaction,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant3),
+                ContainerUpload,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant4),
+                RedactedThinking,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant5),
+                ServerToolUse,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant6),
+                Text,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant7),
+                TextEditorCodeExecutionToolResult,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant8),
+                Thinking,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant9),
+                ToolSearchToolResult,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant10),
+                ToolUse,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant11),
+                WebFetchToolResult,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant12),
+                WebSearchToolResult,
+                typeof(global::OpenRouter.ORAnthropicContentBlockVariant13),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -750,19 +750,19 @@ namespace OpenRouter
         public bool Equals(ORAnthropicContentBlock other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlock?>.Default.Equals(AnthropicTextBlock, other.AnthropicTextBlock) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolUseBlock?>.Default.Equals(AnthropicToolUseBlock, other.AnthropicToolUseBlock) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicThinkingBlock?>.Default.Equals(AnthropicThinkingBlock, other.AnthropicThinkingBlock) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicRedactedThinkingBlock?>.Default.Equals(AnthropicRedactedThinkingBlock, other.AnthropicRedactedThinkingBlock) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicServerToolUseBlock?>.Default.Equals(AnthropicServerToolUseBlock, other.AnthropicServerToolUseBlock) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebSearchToolResult?>.Default.Equals(AnthropicWebSearchToolResult, other.AnthropicWebSearchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebFetchToolResult?>.Default.Equals(AnthropicWebFetchToolResult, other.AnthropicWebFetchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecutionToolResult?>.Default.Equals(AnthropicCodeExecutionToolResult, other.AnthropicCodeExecutionToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionToolResult?>.Default.Equals(AnthropicBashCodeExecutionToolResult, other.AnthropicBashCodeExecutionToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?>.Default.Equals(AnthropicTextEditorCodeExecutionToolResult, other.AnthropicTextEditorCodeExecutionToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolSearchToolResult?>.Default.Equals(AnthropicToolSearchToolResult, other.AnthropicToolSearchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicContainerUpload?>.Default.Equals(AnthropicContainerUpload, other.AnthropicContainerUpload) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCompactionBlock?>.Default.Equals(AnthropicCompactionBlock, other.AnthropicCompactionBlock) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant1?>.Default.Equals(BashCodeExecutionToolResult, other.BashCodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant2?>.Default.Equals(CodeExecutionToolResult, other.CodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant3?>.Default.Equals(Compaction, other.Compaction) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant4?>.Default.Equals(ContainerUpload, other.ContainerUpload) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant5?>.Default.Equals(RedactedThinking, other.RedactedThinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant6?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant7?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant8?>.Default.Equals(TextEditorCodeExecutionToolResult, other.TextEditorCodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant9?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant10?>.Default.Equals(ToolSearchToolResult, other.ToolSearchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant11?>.Default.Equals(ToolUse, other.ToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant12?>.Default.Equals(WebFetchToolResult, other.WebFetchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant13?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) 
                 ;
         }
 

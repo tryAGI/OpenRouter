@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Provider routing preferences for the request.
     /// </summary>
     public sealed partial class RerankPostRequestBodyContentApplicationJsonSchemaProvider
     {
@@ -22,8 +22,8 @@ namespace OpenRouter
         /// - deny: use only providers which do not collect user data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_collection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderPreferencesDataCollection?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ProviderPreferencesDataCollection?, object>? DataCollection { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>? DataCollection { get; set; }
 
         /// <summary>
         /// Whether to restrict routing to only models that allow text distillation. When true, only models where the author has allowed distillation will be used.
@@ -35,25 +35,25 @@ namespace OpenRouter
         /// List of provider slugs to ignore. If provided, this list is merged with your account-wide ignored provider settings for this request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ignore")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesIgnoreItems>? Ignore { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems>? Ignore { get; set; }
 
         /// <summary>
         /// The object specifying the maximum price you want to pay for this request. USD price per million tokens, for prompt and completion.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_price")]
-        public global::OpenRouter.ProviderPreferencesMaxPrice? MaxPrice { get; set; }
+        public global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderMaxPrice? MaxPrice { get; set; }
 
         /// <summary>
         /// List of provider slugs to allow. If provided, this list is merged with your account-wide allowed provider settings for this request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("only")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOnlyItems>? Only { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems>? Only { get; set; }
 
         /// <summary>
         /// An ordered list of provider slugs. The router will attempt to use the first provider in the subset of this list that supports your requested model, and fall back to the next if it is unavailable. If no providers are available, the request will fail with an error message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("order")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOrderItems>? Order { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems>? Order { get; set; }
 
         /// <summary>
         /// Preferred maximum latency (in seconds). Can be a number (applies to p50) or an object with percentile-specific cutoffs. Endpoints above the threshold(s) may still be used, but are deprioritized in routing. When using fallback models, this may cause a fallback model to be used instead of the primary model if it meets the threshold.
@@ -85,8 +85,8 @@ namespace OpenRouter
         /// The sorting strategy to use for this request, if "order" is not specified. When set, no load balancing is performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderPreferencesSortJsonConverter))]
-        public global::OpenRouter.ProviderPreferencesSort? Sort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter))]
+        public global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderSort? Sort { get; set; }
 
         /// <summary>
         /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.
@@ -151,17 +151,17 @@ namespace OpenRouter
 #endif
         public RerankPostRequestBodyContentApplicationJsonSchemaProvider(
             bool? allowFallbacks,
-            global::OpenRouter.OneOf<global::OpenRouter.ProviderPreferencesDataCollection?, object>? dataCollection,
+            global::OpenRouter.OneOf<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>? dataCollection,
             bool? enforceDistillableText,
-            global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesIgnoreItems>? ignore,
-            global::OpenRouter.ProviderPreferencesMaxPrice? maxPrice,
-            global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOnlyItems>? only,
-            global::System.Collections.Generic.IList<global::OpenRouter.ProviderPreferencesOrderItems>? order,
+            global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems>? ignore,
+            global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderMaxPrice? maxPrice,
+            global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems>? only,
+            global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems>? order,
             global::OpenRouter.PreferredMaxLatency? preferredMaxLatency,
             global::OpenRouter.PreferredMinThroughput? preferredMinThroughput,
             global::System.Collections.Generic.IList<global::OpenRouter.Quantization>? quantizations,
             bool? requireParameters,
-            global::OpenRouter.ProviderPreferencesSort? sort,
+            global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderSort? sort,
             bool? zdr)
         {
             this.AllowFallbacks = allowFallbacks;

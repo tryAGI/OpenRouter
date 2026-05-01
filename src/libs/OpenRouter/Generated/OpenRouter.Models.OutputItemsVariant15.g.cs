@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:mcp variant
+    /// An openrouter:mcp server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant15
     {
