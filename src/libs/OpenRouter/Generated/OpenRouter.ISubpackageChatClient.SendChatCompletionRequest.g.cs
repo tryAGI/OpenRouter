@@ -21,7 +21,9 @@ namespace OpenRouter
         /// Create a chat completion<br/>
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
         /// </param>
@@ -133,7 +135,7 @@ namespace OpenRouter
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestModalitiesItems>? modalities = default,
             string? model = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.ChatModelNamesItems>? models = default,
+            global::System.Collections.Generic.IList<string>? models = default,
             bool? parallelToolCalls = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? plugins = default,
             double? presencePenalty = default,

@@ -74,8 +74,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quantization")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.QuantizationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.PublicEndpointQuantization Quantization { get; set; }
+        public required global::OpenRouter.Quantization Quantization { get; set; }
 
         /// <summary>
         /// 
@@ -106,7 +107,7 @@ namespace OpenRouter
         public required string Tag { get; set; }
 
         /// <summary>
-        /// 
+        /// Throughput percentiles in tokens per second over the last 30 minutes. Throughput measures output token generation speed. Only visible when authenticated with an API key or cookie; returns null for unauthenticated requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("throughput_last_30m")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -154,7 +155,9 @@ namespace OpenRouter
         /// <param name="supportedParameters"></param>
         /// <param name="supportsImplicitCaching"></param>
         /// <param name="tag"></param>
-        /// <param name="throughputLast30m"></param>
+        /// <param name="throughputLast30m">
+        /// Throughput percentiles in tokens per second over the last 30 minutes. Throughput measures output token generation speed. Only visible when authenticated with an API key or cookie; returns null for unauthenticated requests.
+        /// </param>
         /// <param name="maxCompletionTokens"></param>
         /// <param name="maxPromptTokens"></param>
         /// <param name="status"></param>
@@ -176,7 +179,7 @@ namespace OpenRouter
             string name,
             global::OpenRouter.PublicEndpointPricing pricing,
             global::OpenRouter.ProviderName providerName,
-            global::OpenRouter.PublicEndpointQuantization quantization,
+            global::OpenRouter.Quantization quantization,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             bool supportsImplicitCaching,
             string tag,
@@ -197,7 +200,7 @@ namespace OpenRouter
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Pricing = pricing ?? throw new global::System.ArgumentNullException(nameof(pricing));
             this.ProviderName = providerName;
-            this.Quantization = quantization ?? throw new global::System.ArgumentNullException(nameof(quantization));
+            this.Quantization = quantization;
             this.Status = status;
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
             this.SupportsImplicitCaching = supportsImplicitCaching;

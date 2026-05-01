@@ -37,8 +37,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FunctionToolTypeJsonConverter))]
-        public global::OpenRouter.FunctionToolType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ResponsesRequestToolsItemsOneOf0TypeJsonConverter))]
+        public global::OpenRouter.ResponsesRequestToolsItemsOneOf0Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +62,7 @@ namespace OpenRouter
             string? description,
             object? parameters,
             bool? strict,
-            global::OpenRouter.FunctionToolType type)
+            global::OpenRouter.ResponsesRequestToolsItemsOneOf0Type type)
         {
             this.Description = description;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

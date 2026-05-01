@@ -86,7 +86,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/rerank",
+                                path: "//rerank",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -153,7 +153,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateRerank",
                                 methodName: "CreateRerankAsync",
-                                pathTemplate: "\"/rerank\"",
+                                pathTemplate: "\"//rerank\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +180,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateRerank",
                                 methodName: "CreateRerankAsync",
-                                pathTemplate: "\"/rerank\"",
+                                pathTemplate: "\"//rerank\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +215,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateRerank",
                                 methodName: "CreateRerankAsync",
-                                pathTemplate: "\"/rerank\"",
+                                pathTemplate: "\"//rerank\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +262,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateRerank",
                                 methodName: "CreateRerankAsync",
-                                pathTemplate: "\"/rerank\"",
+                                pathTemplate: "\"//rerank\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +282,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CreateRerank",
                                 methodName: "CreateRerankAsync",
-                                pathTemplate: "\"/rerank\"",
+                                pathTemplate: "\"//rerank\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -701,7 +701,9 @@ namespace OpenRouter
         /// <param name="model">
         /// The rerank model to use
         /// </param>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// Provider routing preferences for the request.
+        /// </param>
         /// <param name="query">
         /// The search query to rerank documents against
         /// </param>

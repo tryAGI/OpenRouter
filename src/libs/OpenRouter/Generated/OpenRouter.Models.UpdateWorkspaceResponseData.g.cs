@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// The updated workspace
     /// </summary>
     public sealed partial class UpdateWorkspaceResponseData
     {

@@ -33,8 +33,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemImageGenerationCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemImageGenerationCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputImageGenerationCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputImageGenerationCallItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,7 +56,7 @@ namespace OpenRouter
             string id,
             global::OpenRouter.ImageGenerationStatus status,
             string? result,
-            global::OpenRouter.OutputItemImageGenerationCallType type)
+            global::OpenRouter.OutputImageGenerationCallItemType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Result = result;

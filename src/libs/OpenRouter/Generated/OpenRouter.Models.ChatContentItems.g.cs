@@ -10,256 +10,256 @@ namespace OpenRouter
     public readonly partial struct ChatContentItems : global::System.IEquatable<ChatContentItems>
     {
         /// <summary>
-        /// Text content part
+        /// File content part for document processing
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatContentText? ChatContentText { get; init; }
+        public global::OpenRouter.ChatContentItemsVariant1? File { get; init; }
 #else
-        public global::OpenRouter.ChatContentText? ChatContentText { get; }
+        public global::OpenRouter.ChatContentItemsVariant1? File { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
-        public bool IsChatContentText => ChatContentText != null;
+        public bool IsFile => File != null;
 
         /// <summary>
         /// Image content part for vision models
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatContentImage? ChatContentImage { get; init; }
+        public global::OpenRouter.ChatContentItemsVariant2? ImageUrl { get; init; }
 #else
-        public global::OpenRouter.ChatContentImage? ChatContentImage { get; }
+        public global::OpenRouter.ChatContentItemsVariant2? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentImage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsChatContentImage => ChatContentImage != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// Audio input content part. Supported audio formats vary by provider.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatContentAudio? ChatContentAudio { get; init; }
+        public global::OpenRouter.ChatContentItemsVariant3? InputAudio { get; init; }
 #else
-        public global::OpenRouter.ChatContentAudio? ChatContentAudio { get; }
+        public global::OpenRouter.ChatContentItemsVariant3? InputAudio { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentAudio))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
 #endif
-        public bool IsChatContentAudio => ChatContentAudio != null;
+        public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
         /// Video input content part (legacy format - deprecated)
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.LegacyChatContentVideo? LegacyChatContentVideo { get; init; }
+        public global::OpenRouter.ChatContentItemsVariant4? InputVideo { get; init; }
 #else
-        public global::OpenRouter.LegacyChatContentVideo? LegacyChatContentVideo { get; }
+        public global::OpenRouter.ChatContentItemsVariant4? InputVideo { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LegacyChatContentVideo))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputVideo))]
 #endif
-        public bool IsLegacyChatContentVideo => LegacyChatContentVideo != null;
+        public bool IsInputVideo => InputVideo != null;
+
+        /// <summary>
+        /// Text content part
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatContentItemsVariant5? Text { get; init; }
+#else
+        public global::OpenRouter.ChatContentItemsVariant5? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
 
         /// <summary>
         /// Video input content part
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatContentVideo? ChatContentVideo { get; init; }
+        public global::OpenRouter.ChatContentItemsVariant6? VideoUrl { get; init; }
 #else
-        public global::OpenRouter.ChatContentVideo? ChatContentVideo { get; }
+        public global::OpenRouter.ChatContentItemsVariant6? VideoUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentVideo))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoUrl))]
 #endif
-        public bool IsChatContentVideo => ChatContentVideo != null;
-
+        public bool IsVideoUrl => VideoUrl != null;
         /// <summary>
-        /// File content part for document processing
+        /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatContentFile? ChatContentFile { get; init; }
-#else
-        public global::OpenRouter.ChatContentFile? ChatContentFile { get; }
-#endif
+        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant1 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentFile))]
-#endif
-        public bool IsChatContentFile => ChatContentFile != null;
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentText value) => new ChatContentItems((global::OpenRouter.ChatContentText?)value);
+        public static implicit operator global::OpenRouter.ChatContentItemsVariant1?(ChatContentItems @this) => @this.File;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatContentText?(ChatContentItems @this) => @this.ChatContentText;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatContentItems(global::OpenRouter.ChatContentText? value)
+        public ChatContentItems(global::OpenRouter.ChatContentItemsVariant1? value)
         {
-            ChatContentText = value;
+            File = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentImage value) => new ChatContentItems((global::OpenRouter.ChatContentImage?)value);
+        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant2 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatContentImage?(ChatContentItems @this) => @this.ChatContentImage;
+        public static implicit operator global::OpenRouter.ChatContentItemsVariant2?(ChatContentItems @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContentItems(global::OpenRouter.ChatContentImage? value)
+        public ChatContentItems(global::OpenRouter.ChatContentItemsVariant2? value)
         {
-            ChatContentImage = value;
+            ImageUrl = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentAudio value) => new ChatContentItems((global::OpenRouter.ChatContentAudio?)value);
+        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant3 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant3?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatContentAudio?(ChatContentItems @this) => @this.ChatContentAudio;
+        public static implicit operator global::OpenRouter.ChatContentItemsVariant3?(ChatContentItems @this) => @this.InputAudio;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContentItems(global::OpenRouter.ChatContentAudio? value)
+        public ChatContentItems(global::OpenRouter.ChatContentItemsVariant3? value)
         {
-            ChatContentAudio = value;
+            InputAudio = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentItems(global::OpenRouter.LegacyChatContentVideo value) => new ChatContentItems((global::OpenRouter.LegacyChatContentVideo?)value);
+        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant4 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant4?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.LegacyChatContentVideo?(ChatContentItems @this) => @this.LegacyChatContentVideo;
+        public static implicit operator global::OpenRouter.ChatContentItemsVariant4?(ChatContentItems @this) => @this.InputVideo;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContentItems(global::OpenRouter.LegacyChatContentVideo? value)
+        public ChatContentItems(global::OpenRouter.ChatContentItemsVariant4? value)
         {
-            LegacyChatContentVideo = value;
+            InputVideo = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentVideo value) => new ChatContentItems((global::OpenRouter.ChatContentVideo?)value);
+        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant5 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant5?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatContentVideo?(ChatContentItems @this) => @this.ChatContentVideo;
+        public static implicit operator global::OpenRouter.ChatContentItemsVariant5?(ChatContentItems @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContentItems(global::OpenRouter.ChatContentVideo? value)
+        public ChatContentItems(global::OpenRouter.ChatContentItemsVariant5? value)
         {
-            ChatContentVideo = value;
+            Text = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentFile value) => new ChatContentItems((global::OpenRouter.ChatContentFile?)value);
+        public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant6 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant6?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatContentFile?(ChatContentItems @this) => @this.ChatContentFile;
+        public static implicit operator global::OpenRouter.ChatContentItemsVariant6?(ChatContentItems @this) => @this.VideoUrl;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatContentItems(global::OpenRouter.ChatContentFile? value)
+        public ChatContentItems(global::OpenRouter.ChatContentItemsVariant6? value)
         {
-            ChatContentFile = value;
+            VideoUrl = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatContentItems(
-            global::OpenRouter.ChatContentText? chatContentText,
-            global::OpenRouter.ChatContentImage? chatContentImage,
-            global::OpenRouter.ChatContentAudio? chatContentAudio,
-            global::OpenRouter.LegacyChatContentVideo? legacyChatContentVideo,
-            global::OpenRouter.ChatContentVideo? chatContentVideo,
-            global::OpenRouter.ChatContentFile? chatContentFile
+            global::OpenRouter.ChatContentItemsVariant1? file,
+            global::OpenRouter.ChatContentItemsVariant2? imageUrl,
+            global::OpenRouter.ChatContentItemsVariant3? inputAudio,
+            global::OpenRouter.ChatContentItemsVariant4? inputVideo,
+            global::OpenRouter.ChatContentItemsVariant5? text,
+            global::OpenRouter.ChatContentItemsVariant6? videoUrl
             )
         {
-            ChatContentText = chatContentText;
-            ChatContentImage = chatContentImage;
-            ChatContentAudio = chatContentAudio;
-            LegacyChatContentVideo = legacyChatContentVideo;
-            ChatContentVideo = chatContentVideo;
-            ChatContentFile = chatContentFile;
+            File = file;
+            ImageUrl = imageUrl;
+            InputAudio = inputAudio;
+            InputVideo = inputVideo;
+            Text = text;
+            VideoUrl = videoUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ChatContentFile as object ??
-            ChatContentVideo as object ??
-            LegacyChatContentVideo as object ??
-            ChatContentAudio as object ??
-            ChatContentImage as object ??
-            ChatContentText as object 
+            VideoUrl as object ??
+            Text as object ??
+            InputVideo as object ??
+            InputAudio as object ??
+            ImageUrl as object ??
+            File as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            ChatContentText?.ToString() ??
-            ChatContentImage?.ToString() ??
-            ChatContentAudio?.ToString() ??
-            LegacyChatContentVideo?.ToString() ??
-            ChatContentVideo?.ToString() ??
-            ChatContentFile?.ToString() 
+            File?.ToString() ??
+            ImageUrl?.ToString() ??
+            InputAudio?.ToString() ??
+            InputVideo?.ToString() ??
+            Text?.ToString() ??
+            VideoUrl?.ToString() 
             ;
 
         /// <summary>
@@ -267,19 +267,19 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatContentText && !IsChatContentImage && !IsChatContentAudio && !IsLegacyChatContentVideo && !IsChatContentVideo && !IsChatContentFile || !IsChatContentText && IsChatContentImage && !IsChatContentAudio && !IsLegacyChatContentVideo && !IsChatContentVideo && !IsChatContentFile || !IsChatContentText && !IsChatContentImage && IsChatContentAudio && !IsLegacyChatContentVideo && !IsChatContentVideo && !IsChatContentFile || !IsChatContentText && !IsChatContentImage && !IsChatContentAudio && IsLegacyChatContentVideo && !IsChatContentVideo && !IsChatContentFile || !IsChatContentText && !IsChatContentImage && !IsChatContentAudio && !IsLegacyChatContentVideo && IsChatContentVideo && !IsChatContentFile || !IsChatContentText && !IsChatContentImage && !IsChatContentAudio && !IsLegacyChatContentVideo && !IsChatContentVideo && IsChatContentFile;
+            return IsFile && !IsImageUrl && !IsInputAudio && !IsInputVideo && !IsText && !IsVideoUrl || !IsFile && IsImageUrl && !IsInputAudio && !IsInputVideo && !IsText && !IsVideoUrl || !IsFile && !IsImageUrl && IsInputAudio && !IsInputVideo && !IsText && !IsVideoUrl || !IsFile && !IsImageUrl && !IsInputAudio && IsInputVideo && !IsText && !IsVideoUrl || !IsFile && !IsImageUrl && !IsInputAudio && !IsInputVideo && IsText && !IsVideoUrl || !IsFile && !IsImageUrl && !IsInputAudio && !IsInputVideo && !IsText && IsVideoUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatContentText?, TResult>? chatContentText = null,
-            global::System.Func<global::OpenRouter.ChatContentImage?, TResult>? chatContentImage = null,
-            global::System.Func<global::OpenRouter.ChatContentAudio?, TResult>? chatContentAudio = null,
-            global::System.Func<global::OpenRouter.LegacyChatContentVideo?, TResult>? legacyChatContentVideo = null,
-            global::System.Func<global::OpenRouter.ChatContentVideo?, TResult>? chatContentVideo = null,
-            global::System.Func<global::OpenRouter.ChatContentFile?, TResult>? chatContentFile = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant1?, TResult>? file = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant2?, TResult>? imageUrl = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant3?, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant4?, TResult>? inputVideo = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant5?, TResult>? text = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant6?, TResult>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -287,29 +287,29 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatContentText && chatContentText != null)
+            if (IsFile && file != null)
             {
-                return chatContentText(ChatContentText!);
+                return file(File!);
             }
-            else if (IsChatContentImage && chatContentImage != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return chatContentImage(ChatContentImage!);
+                return imageUrl(ImageUrl!);
             }
-            else if (IsChatContentAudio && chatContentAudio != null)
+            else if (IsInputAudio && inputAudio != null)
             {
-                return chatContentAudio(ChatContentAudio!);
+                return inputAudio(InputAudio!);
             }
-            else if (IsLegacyChatContentVideo && legacyChatContentVideo != null)
+            else if (IsInputVideo && inputVideo != null)
             {
-                return legacyChatContentVideo(LegacyChatContentVideo!);
+                return inputVideo(InputVideo!);
             }
-            else if (IsChatContentVideo && chatContentVideo != null)
+            else if (IsText && text != null)
             {
-                return chatContentVideo(ChatContentVideo!);
+                return text(Text!);
             }
-            else if (IsChatContentFile && chatContentFile != null)
+            else if (IsVideoUrl && videoUrl != null)
             {
-                return chatContentFile(ChatContentFile!);
+                return videoUrl(VideoUrl!);
             }
 
             return default(TResult);
@@ -319,12 +319,12 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatContentText?>? chatContentText = null,
-            global::System.Action<global::OpenRouter.ChatContentImage?>? chatContentImage = null,
-            global::System.Action<global::OpenRouter.ChatContentAudio?>? chatContentAudio = null,
-            global::System.Action<global::OpenRouter.LegacyChatContentVideo?>? legacyChatContentVideo = null,
-            global::System.Action<global::OpenRouter.ChatContentVideo?>? chatContentVideo = null,
-            global::System.Action<global::OpenRouter.ChatContentFile?>? chatContentFile = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant1?>? file = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant2?>? imageUrl = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant3?>? inputAudio = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant4?>? inputVideo = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant5?>? text = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant6?>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -332,29 +332,29 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatContentText)
+            if (IsFile)
             {
-                chatContentText?.Invoke(ChatContentText!);
+                file?.Invoke(File!);
             }
-            else if (IsChatContentImage)
+            else if (IsImageUrl)
             {
-                chatContentImage?.Invoke(ChatContentImage!);
+                imageUrl?.Invoke(ImageUrl!);
             }
-            else if (IsChatContentAudio)
+            else if (IsInputAudio)
             {
-                chatContentAudio?.Invoke(ChatContentAudio!);
+                inputAudio?.Invoke(InputAudio!);
             }
-            else if (IsLegacyChatContentVideo)
+            else if (IsInputVideo)
             {
-                legacyChatContentVideo?.Invoke(LegacyChatContentVideo!);
+                inputVideo?.Invoke(InputVideo!);
             }
-            else if (IsChatContentVideo)
+            else if (IsText)
             {
-                chatContentVideo?.Invoke(ChatContentVideo!);
+                text?.Invoke(Text!);
             }
-            else if (IsChatContentFile)
+            else if (IsVideoUrl)
             {
-                chatContentFile?.Invoke(ChatContentFile!);
+                videoUrl?.Invoke(VideoUrl!);
             }
         }
 
@@ -365,18 +365,18 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                ChatContentText,
-                typeof(global::OpenRouter.ChatContentText),
-                ChatContentImage,
-                typeof(global::OpenRouter.ChatContentImage),
-                ChatContentAudio,
-                typeof(global::OpenRouter.ChatContentAudio),
-                LegacyChatContentVideo,
-                typeof(global::OpenRouter.LegacyChatContentVideo),
-                ChatContentVideo,
-                typeof(global::OpenRouter.ChatContentVideo),
-                ChatContentFile,
-                typeof(global::OpenRouter.ChatContentFile),
+                File,
+                typeof(global::OpenRouter.ChatContentItemsVariant1),
+                ImageUrl,
+                typeof(global::OpenRouter.ChatContentItemsVariant2),
+                InputAudio,
+                typeof(global::OpenRouter.ChatContentItemsVariant3),
+                InputVideo,
+                typeof(global::OpenRouter.ChatContentItemsVariant4),
+                Text,
+                typeof(global::OpenRouter.ChatContentItemsVariant5),
+                VideoUrl,
+                typeof(global::OpenRouter.ChatContentItemsVariant6),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -393,12 +393,12 @@ namespace OpenRouter
         public bool Equals(ChatContentItems other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentText?>.Default.Equals(ChatContentText, other.ChatContentText) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentImage?>.Default.Equals(ChatContentImage, other.ChatContentImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentAudio?>.Default.Equals(ChatContentAudio, other.ChatContentAudio) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.LegacyChatContentVideo?>.Default.Equals(LegacyChatContentVideo, other.LegacyChatContentVideo) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentVideo?>.Default.Equals(ChatContentVideo, other.ChatContentVideo) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentFile?>.Default.Equals(ChatContentFile, other.ChatContentFile) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentItemsVariant1?>.Default.Equals(File, other.File) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentItemsVariant2?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentItemsVariant3?>.Default.Equals(InputAudio, other.InputAudio) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentItemsVariant4?>.Default.Equals(InputVideo, other.InputVideo) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentItemsVariant5?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatContentItemsVariant6?>.Default.Equals(VideoUrl, other.VideoUrl) 
                 ;
         }
 

@@ -10,46 +10,29 @@ namespace OpenRouter
     public readonly partial struct BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items : global::System.IEquatable<BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>
     {
         /// <summary>
-        /// Text input content item
+        /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputText? InputText { get; init; }
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1? InputAudio { get; init; }
 #else
-        public global::OpenRouter.InputText? InputText { get; }
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1? InputAudio { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
 #endif
-        public bool IsInputText => InputText != null;
-
-        /// <summary>
-        /// Image input content item
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.InputImage? InputImage { get; init; }
-#else
-        public global::OpenRouter.InputImage? InputImage { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
-#endif
-        public bool IsInputImage => InputImage != null;
+        public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputFile? InputFile { get; init; }
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2? InputFile { get; init; }
 #else
-        public global::OpenRouter.InputFile? InputFile { get; }
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2? InputFile { get; }
 #endif
 
         /// <summary>
@@ -61,89 +44,52 @@ namespace OpenRouter
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// Audio input content item
+        /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputAudio? InputAudio { get; init; }
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3? InputImage { get; init; }
 #else
-        public global::OpenRouter.InputAudio? InputAudio { get; }
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3? InputImage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
 #endif
-        public bool IsInputAudio => InputAudio != null;
+        public bool IsInputImage => InputImage != null;
+
         /// <summary>
-        /// 
+        /// Text input content item
         /// </summary>
-        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputText value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.InputText?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4? InputText { get; init; }
+#else
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4? InputText { get; }
+#endif
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.InputText?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputText;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
+#endif
+        public bool IsInputText => InputText != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1 value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputText? value)
-        {
-            InputText = value;
-        }
+        public static implicit operator global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputAudio;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputImage value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.InputImage?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.InputImage?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputImage;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputImage? value)
-        {
-            InputImage = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputFile value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.InputFile?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.InputFile?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputFile;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputFile? value)
-        {
-            InputFile = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputAudio value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.InputAudio?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.InputAudio?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputAudio;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.InputAudio? value)
+        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1? value)
         {
             InputAudio = value;
         }
@@ -151,37 +97,91 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2 value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputFile;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2? value)
+        {
+            InputFile = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3 value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputImage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3? value)
+        {
+            InputImage = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4 value) => new BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4?(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items @this) => @this.InputText;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4? value)
+        {
+            InputText = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(
-            global::OpenRouter.InputText? inputText,
-            global::OpenRouter.InputImage? inputImage,
-            global::OpenRouter.InputFile? inputFile,
-            global::OpenRouter.InputAudio? inputAudio
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1? inputAudio,
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2? inputFile,
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3? inputImage,
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4? inputText
             )
         {
-            InputText = inputText;
-            InputImage = inputImage;
-            InputFile = inputFile;
             InputAudio = inputAudio;
+            InputFile = inputFile;
+            InputImage = inputImage;
+            InputText = inputText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            InputAudio as object ??
-            InputFile as object ??
+            InputText as object ??
             InputImage as object ??
-            InputText as object 
+            InputFile as object ??
+            InputAudio as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            InputText?.ToString() ??
-            InputImage?.ToString() ??
+            InputAudio?.ToString() ??
             InputFile?.ToString() ??
-            InputAudio?.ToString() 
+            InputImage?.ToString() ??
+            InputText?.ToString() 
             ;
 
         /// <summary>
@@ -189,17 +189,17 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsInputImage && !IsInputFile && !IsInputAudio || !IsInputText && IsInputImage && !IsInputFile && !IsInputAudio || !IsInputText && !IsInputImage && IsInputFile && !IsInputAudio || !IsInputText && !IsInputImage && !IsInputFile && IsInputAudio;
+            return IsInputAudio && !IsInputFile && !IsInputImage && !IsInputText || !IsInputAudio && IsInputFile && !IsInputImage && !IsInputText || !IsInputAudio && !IsInputFile && IsInputImage && !IsInputText || !IsInputAudio && !IsInputFile && !IsInputImage && IsInputText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.InputText?, TResult>? inputText = null,
-            global::System.Func<global::OpenRouter.InputImage?, TResult>? inputImage = null,
-            global::System.Func<global::OpenRouter.InputFile?, TResult>? inputFile = null,
-            global::System.Func<global::OpenRouter.InputAudio?, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1?, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2?, TResult>? inputFile = null,
+            global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3?, TResult>? inputImage = null,
+            global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4?, TResult>? inputText = null,
             bool validate = true)
         {
             if (validate)
@@ -207,21 +207,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (IsInputAudio && inputAudio != null)
             {
-                return inputText(InputText!);
-            }
-            else if (IsInputImage && inputImage != null)
-            {
-                return inputImage(InputImage!);
+                return inputAudio(InputAudio!);
             }
             else if (IsInputFile && inputFile != null)
             {
                 return inputFile(InputFile!);
             }
-            else if (IsInputAudio && inputAudio != null)
+            else if (IsInputImage && inputImage != null)
             {
-                return inputAudio(InputAudio!);
+                return inputImage(InputImage!);
+            }
+            else if (IsInputText && inputText != null)
+            {
+                return inputText(InputText!);
             }
 
             return default(TResult);
@@ -231,10 +231,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.InputText?>? inputText = null,
-            global::System.Action<global::OpenRouter.InputImage?>? inputImage = null,
-            global::System.Action<global::OpenRouter.InputFile?>? inputFile = null,
-            global::System.Action<global::OpenRouter.InputAudio?>? inputAudio = null,
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1?>? inputAudio = null,
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2?>? inputFile = null,
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3?>? inputImage = null,
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4?>? inputText = null,
             bool validate = true)
         {
             if (validate)
@@ -242,21 +242,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText)
+            if (IsInputAudio)
             {
-                inputText?.Invoke(InputText!);
-            }
-            else if (IsInputImage)
-            {
-                inputImage?.Invoke(InputImage!);
+                inputAudio?.Invoke(InputAudio!);
             }
             else if (IsInputFile)
             {
                 inputFile?.Invoke(InputFile!);
             }
-            else if (IsInputAudio)
+            else if (IsInputImage)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
             }
         }
 
@@ -267,14 +267,14 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                InputText,
-                typeof(global::OpenRouter.InputText),
-                InputImage,
-                typeof(global::OpenRouter.InputImage),
-                InputFile,
-                typeof(global::OpenRouter.InputFile),
                 InputAudio,
-                typeof(global::OpenRouter.InputAudio),
+                typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1),
+                InputFile,
+                typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2),
+                InputImage,
+                typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3),
+                InputText,
+                typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -291,10 +291,10 @@ namespace OpenRouter
         public bool Equals(BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputText?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputImage?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputFile?>.Default.Equals(InputFile, other.InputFile) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputAudio?>.Default.Equals(InputAudio, other.InputAudio) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1?>.Default.Equals(InputAudio, other.InputAudio) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2?>.Default.Equals(InputFile, other.InputFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3?>.Default.Equals(InputImage, other.InputImage) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4?>.Default.Equals(InputText, other.InputText) 
                 ;
         }
 

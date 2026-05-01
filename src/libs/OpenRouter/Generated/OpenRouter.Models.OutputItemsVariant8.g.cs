@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:bash variant
+    /// An openrouter:bash server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant8
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:bash
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputBashServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputBashServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant8TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant8Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant8" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:bash
+        /// </param>
         /// <param name="command"></param>
         /// <param name="exitCode"></param>
         /// <param name="id"></param>
@@ -74,7 +76,7 @@ namespace OpenRouter
 #endif
         public OutputItemsVariant8(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputBashServerToolItemType type,
+            global::OpenRouter.OutputItemsVariant8Type type,
             string? command,
             int? exitCode,
             string? id,

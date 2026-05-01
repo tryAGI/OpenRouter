@@ -18,8 +18,8 @@ namespace OpenRouter
         /// Assistant message content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatAssistantMessageContentJsonConverter))]
-        public global::OpenRouter.ChatAssistantMessageContent? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingAssistantContentJsonConverter))]
+        public global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent? Content { get; set; }
 
         /// <summary>
         /// Generated images from image generation models
@@ -50,13 +50,6 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         public string? Refusal { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatAssistantMessageRoleJsonConverter))]
-        public global::OpenRouter.ChatAssistantMessageRole Role { get; set; }
 
         /// <summary>
         /// Tool calls made by the assistant
@@ -94,7 +87,6 @@ namespace OpenRouter
         /// <param name="refusal">
         /// Refusal message if content was refused
         /// </param>
-        /// <param name="role"></param>
         /// <param name="toolCalls">
         /// Tool calls made by the assistant
         /// </param>
@@ -103,13 +95,12 @@ namespace OpenRouter
 #endif
         public ChatAssistantMessage(
             global::OpenRouter.ChatAudioOutput? audio,
-            global::OpenRouter.ChatAssistantMessageContent? content,
+            global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent? content,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatAssistantImagesItems>? images,
             string? name,
             string? reasoning,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningDetailUnion>? reasoningDetails,
             string? refusal,
-            global::OpenRouter.ChatAssistantMessageRole role,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatToolCall>? toolCalls)
         {
             this.Audio = audio;
@@ -119,7 +110,6 @@ namespace OpenRouter
             this.Reasoning = reasoning;
             this.ReasoningDetails = reasoningDetails;
             this.Refusal = refusal;
-            this.Role = role;
             this.ToolCalls = toolCalls;
         }
 

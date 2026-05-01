@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:apply_patch variant
+    /// An openrouter:apply_patch server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant7
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:apply_patch
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputApplyPatchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputApplyPatchServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant7TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant7Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant7" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:apply_patch
+        /// </param>
         /// <param name="filePath"></param>
         /// <param name="id"></param>
         /// <param name="patch"></param>
@@ -60,7 +62,7 @@ namespace OpenRouter
 #endif
         public OutputItemsVariant7(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputApplyPatchServerToolItemType type,
+            global::OpenRouter.OutputItemsVariant7Type type,
             string? filePath,
             string? id,
             string? patch)

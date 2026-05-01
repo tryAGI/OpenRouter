@@ -23,7 +23,7 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// 
+        /// Provider routing preferences for the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProvider? Provider { get; set; }
@@ -59,7 +59,9 @@ namespace OpenRouter
         /// <param name="query">
         /// The search query to rerank documents against
         /// </param>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// Provider routing preferences for the request.
+        /// </param>
         /// <param name="topN">
         /// Number of most relevant documents to return
         /// </param>

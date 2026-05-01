@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:tool_search variant
+    /// An openrouter:tool_search server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant18
     {

@@ -12,16 +12,16 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemWebSearchCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemWebSearchCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputWebSearchCallItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemWebSearchCallActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OutputItemWebSearchCallAction Action { get; set; }
+        public required global::OpenRouter.OutputWebSearchCallItemAction Action { get; set; }
 
         /// <summary>
         /// 
@@ -55,10 +55,10 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant22(
-            global::OpenRouter.OutputItemWebSearchCallAction action,
+            global::OpenRouter.OutputWebSearchCallItemAction action,
             string id,
             global::OpenRouter.WebSearchStatus status,
-            global::OpenRouter.OutputItemWebSearchCallType type)
+            global::OpenRouter.OutputWebSearchCallItemType type)
         {
             this.Type = type;
             this.Action = action;

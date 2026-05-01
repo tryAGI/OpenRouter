@@ -33,14 +33,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
+        public global::OpenRouter.ToolCallStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputTypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemTypeJsonConverter))]
+        public global::OpenRouter.FunctionCallOutputItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,8 +64,8 @@ namespace OpenRouter
             string callId,
             global::OpenRouter.FunctionCallOutputItemOutput output,
             string? id,
-            global::OpenRouter.OpenAiResponseFunctionToolCallOutputStatus? status,
-            global::OpenRouter.OpenAiResponseFunctionToolCallOutputType type)
+            global::OpenRouter.ToolCallStatus? status,
+            global::OpenRouter.FunctionCallOutputItemType type)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id;

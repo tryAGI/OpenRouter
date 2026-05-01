@@ -32,7 +32,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.CodeInterpreterCallItemOutputsItems>? Outputs { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -46,8 +46,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterCallItemTypeJsonConverter))]
-        public global::OpenRouter.CodeInterpreterCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputCodeInterpreterCallItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,8 +72,8 @@ namespace OpenRouter
             string id,
             global::OpenRouter.ToolCallStatus status,
             string? code,
-            global::System.Collections.Generic.IList<global::OpenRouter.CodeInterpreterCallItemOutputsItems>? outputs,
-            global::OpenRouter.CodeInterpreterCallItemType type)
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? outputs,
+            global::OpenRouter.OutputCodeInterpreterCallItemType type)
         {
             this.Code = code;
             this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));

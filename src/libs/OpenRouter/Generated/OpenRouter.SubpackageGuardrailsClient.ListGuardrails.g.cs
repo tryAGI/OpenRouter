@@ -93,7 +93,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/guardrails",
+                                path: "//guardrails",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
@@ -161,7 +161,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGuardrails",
                                 methodName: "ListGuardrailsAsync",
-                                pathTemplate: "\"/guardrails\"",
+                                pathTemplate: "\"//guardrails\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -188,7 +188,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGuardrails",
                                 methodName: "ListGuardrailsAsync",
-                                pathTemplate: "\"/guardrails\"",
+                                pathTemplate: "\"//guardrails\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -223,7 +223,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGuardrails",
                                 methodName: "ListGuardrailsAsync",
-                                pathTemplate: "\"/guardrails\"",
+                                pathTemplate: "\"//guardrails\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -270,7 +270,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGuardrails",
                                 methodName: "ListGuardrailsAsync",
-                                pathTemplate: "\"/guardrails\"",
+                                pathTemplate: "\"//guardrails\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -290,7 +290,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListGuardrails",
                                 methodName: "ListGuardrailsAsync",
-                                pathTemplate: "\"/guardrails\"",
+                                pathTemplate: "\"//guardrails\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

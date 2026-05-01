@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Approximate user location for location-biased search results. Passed through to native providers that support it (e.g. Anthropic).
     /// </summary>
     public sealed partial class WebSearchPluginUserLocation
     {
@@ -36,8 +36,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeJsonConverter))]
-        public global::OpenRouter.WebSearchUserLocationType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchPluginUserLocationTypeJsonConverter))]
+        public global::OpenRouter.WebSearchPluginUserLocationType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +61,7 @@ namespace OpenRouter
             string? country,
             string? region,
             string? timezone,
-            global::OpenRouter.WebSearchUserLocationType? type)
+            global::OpenRouter.WebSearchPluginUserLocationType type)
         {
             this.City = city;
             this.Country = country;

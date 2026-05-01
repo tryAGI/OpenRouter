@@ -47,13 +47,6 @@ namespace OpenRouter
         public string? Stdout { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputBashServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputBashServerToolItemType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,7 +61,6 @@ namespace OpenRouter
         /// <param name="id"></param>
         /// <param name="stderr"></param>
         /// <param name="stdout"></param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,8 +70,7 @@ namespace OpenRouter
             int? exitCode,
             string? id,
             string? stderr,
-            string? stdout,
-            global::OpenRouter.OutputBashServerToolItemType type)
+            string? stdout)
         {
             this.Command = command;
             this.ExitCode = exitCode;
@@ -87,7 +78,6 @@ namespace OpenRouter
             this.Status = status;
             this.Stderr = stderr;
             this.Stdout = stdout;
-            this.Type = type;
         }
 
         /// <summary>

@@ -19,8 +19,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlDirectiveTypeJsonConverter))]
-        public global::OpenRouter.AnthropicCacheControlDirectiveType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentCacheControlTypeJsonConverter))]
+        public global::OpenRouter.ChatContentCacheControlType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace OpenRouter
 #endif
         public ChatContentCacheControl(
             global::OpenRouter.AnthropicCacheControlTtl? ttl,
-            global::OpenRouter.AnthropicCacheControlDirectiveType type)
+            global::OpenRouter.ChatContentCacheControlType type)
         {
             this.Ttl = ttl;
             this.Type = type;

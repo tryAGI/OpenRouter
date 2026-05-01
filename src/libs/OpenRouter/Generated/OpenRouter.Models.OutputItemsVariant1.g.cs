@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// code_interpreter_call variant
+    /// A code interpreter execution call with outputs
     /// </summary>
     public sealed partial class OutputItemsVariant1
     {
@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterCallItemTypeJsonConverter))]
-        public global::OpenRouter.CodeInterpreterCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputCodeInterpreterCallItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.CodeInterpreterCallItemOutputsItems>? Outputs { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -71,9 +71,9 @@ namespace OpenRouter
             string containerId,
             string id,
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.CodeInterpreterCallItemType type,
+            global::OpenRouter.OutputCodeInterpreterCallItemType type,
             string? code,
-            global::System.Collections.Generic.IList<global::OpenRouter.CodeInterpreterCallItemOutputsItems>? outputs)
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? outputs)
         {
             this.Type = type;
             this.Code = code;

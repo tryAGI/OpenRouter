@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// The guardrail
     /// </summary>
     public sealed partial class GetGuardrailResponseData
     {

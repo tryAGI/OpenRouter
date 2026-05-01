@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class UpdateGuardrailResponse
     {
         /// <summary>
-        /// 
+        /// The updated guardrail
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateGuardrailResponse" /> class.
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="data">
+        /// The updated guardrail
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

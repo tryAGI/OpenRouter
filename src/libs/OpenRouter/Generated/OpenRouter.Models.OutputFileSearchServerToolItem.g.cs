@@ -29,13 +29,6 @@ namespace OpenRouter
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFileSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputFileSearchServerToolItemType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,20 +40,17 @@ namespace OpenRouter
         /// <param name="status"></param>
         /// <param name="id"></param>
         /// <param name="queries"></param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputFileSearchServerToolItem(
             global::OpenRouter.ToolCallStatus status,
             string? id,
-            global::System.Collections.Generic.IList<string>? queries,
-            global::OpenRouter.OutputFileSearchServerToolItemType type)
+            global::System.Collections.Generic.IList<string>? queries)
         {
             this.Id = id;
             this.Queries = queries;
             this.Status = status;
-            this.Type = type;
         }
 
         /// <summary>

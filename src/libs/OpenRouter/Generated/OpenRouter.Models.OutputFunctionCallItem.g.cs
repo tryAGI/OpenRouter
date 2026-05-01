@@ -39,15 +39,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFunctionCallStatusJsonConverter))]
-        public global::OpenRouter.OutputItemFunctionCallStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatusJsonConverter))]
+        public global::OpenRouter.OutputFunctionCallItemStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFunctionCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemFunctionCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputFunctionCallItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,8 +72,8 @@ namespace OpenRouter
             string callId,
             string name,
             string? id,
-            global::OpenRouter.OutputItemFunctionCallStatus? status,
-            global::OpenRouter.OutputItemFunctionCallType type)
+            global::OpenRouter.OutputFunctionCallItemStatus? status,
+            global::OpenRouter.OutputFunctionCallItemType type)
         {
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));

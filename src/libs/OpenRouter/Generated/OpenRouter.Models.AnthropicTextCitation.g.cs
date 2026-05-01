@@ -10,217 +10,217 @@ namespace OpenRouter
     public readonly partial struct AnthropicTextCitation : global::System.IEquatable<AnthropicTextCitation>
     {
         /// <summary>
-        /// 
+        /// char_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCitationCharLocation? AnthropicCitationCharLocation { get; init; }
+        public global::OpenRouter.AnthropicTextCitationVariant1? CharLocation { get; init; }
 #else
-        public global::OpenRouter.AnthropicCitationCharLocation? AnthropicCitationCharLocation { get; }
+        public global::OpenRouter.AnthropicTextCitationVariant1? CharLocation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCitationCharLocation))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CharLocation))]
 #endif
-        public bool IsAnthropicCitationCharLocation => AnthropicCitationCharLocation != null;
+        public bool IsCharLocation => CharLocation != null;
 
         /// <summary>
-        /// 
+        /// content_block_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCitationPageLocation? AnthropicCitationPageLocation { get; init; }
+        public global::OpenRouter.AnthropicTextCitationVariant2? ContentBlockLocation { get; init; }
 #else
-        public global::OpenRouter.AnthropicCitationPageLocation? AnthropicCitationPageLocation { get; }
+        public global::OpenRouter.AnthropicTextCitationVariant2? ContentBlockLocation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCitationPageLocation))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
 #endif
-        public bool IsAnthropicCitationPageLocation => AnthropicCitationPageLocation != null;
+        public bool IsContentBlockLocation => ContentBlockLocation != null;
 
         /// <summary>
-        /// 
+        /// page_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCitationContentBlockLocation? AnthropicCitationContentBlockLocation { get; init; }
+        public global::OpenRouter.AnthropicTextCitationVariant3? PageLocation { get; init; }
 #else
-        public global::OpenRouter.AnthropicCitationContentBlockLocation? AnthropicCitationContentBlockLocation { get; }
+        public global::OpenRouter.AnthropicTextCitationVariant3? PageLocation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCitationContentBlockLocation))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
 #endif
-        public bool IsAnthropicCitationContentBlockLocation => AnthropicCitationContentBlockLocation != null;
+        public bool IsPageLocation => PageLocation != null;
 
         /// <summary>
-        /// 
+        /// search_result_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCitationWebSearchResultLocation? AnthropicCitationWebSearchResultLocation { get; init; }
+        public global::OpenRouter.AnthropicTextCitationVariant4? SearchResultLocation { get; init; }
 #else
-        public global::OpenRouter.AnthropicCitationWebSearchResultLocation? AnthropicCitationWebSearchResultLocation { get; }
+        public global::OpenRouter.AnthropicTextCitationVariant4? SearchResultLocation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCitationWebSearchResultLocation))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResultLocation))]
 #endif
-        public bool IsAnthropicCitationWebSearchResultLocation => AnthropicCitationWebSearchResultLocation != null;
+        public bool IsSearchResultLocation => SearchResultLocation != null;
 
         /// <summary>
-        /// 
+        /// web_search_result_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCitationSearchResultLocation? AnthropicCitationSearchResultLocation { get; init; }
+        public global::OpenRouter.AnthropicTextCitationVariant5? WebSearchResultLocation { get; init; }
 #else
-        public global::OpenRouter.AnthropicCitationSearchResultLocation? AnthropicCitationSearchResultLocation { get; }
+        public global::OpenRouter.AnthropicTextCitationVariant5? WebSearchResultLocation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCitationSearchResultLocation))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchResultLocation))]
 #endif
-        public bool IsAnthropicCitationSearchResultLocation => AnthropicCitationSearchResultLocation != null;
+        public bool IsWebSearchResultLocation => WebSearchResultLocation != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicCitationCharLocation value) => new AnthropicTextCitation((global::OpenRouter.AnthropicCitationCharLocation?)value);
+        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant1 value) => new AnthropicTextCitation((global::OpenRouter.AnthropicTextCitationVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCitationCharLocation?(AnthropicTextCitation @this) => @this.AnthropicCitationCharLocation;
+        public static implicit operator global::OpenRouter.AnthropicTextCitationVariant1?(AnthropicTextCitation @this) => @this.CharLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicTextCitation(global::OpenRouter.AnthropicCitationCharLocation? value)
+        public AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant1? value)
         {
-            AnthropicCitationCharLocation = value;
+            CharLocation = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicCitationPageLocation value) => new AnthropicTextCitation((global::OpenRouter.AnthropicCitationPageLocation?)value);
+        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant2 value) => new AnthropicTextCitation((global::OpenRouter.AnthropicTextCitationVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCitationPageLocation?(AnthropicTextCitation @this) => @this.AnthropicCitationPageLocation;
+        public static implicit operator global::OpenRouter.AnthropicTextCitationVariant2?(AnthropicTextCitation @this) => @this.ContentBlockLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicTextCitation(global::OpenRouter.AnthropicCitationPageLocation? value)
+        public AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant2? value)
         {
-            AnthropicCitationPageLocation = value;
+            ContentBlockLocation = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicCitationContentBlockLocation value) => new AnthropicTextCitation((global::OpenRouter.AnthropicCitationContentBlockLocation?)value);
+        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant3 value) => new AnthropicTextCitation((global::OpenRouter.AnthropicTextCitationVariant3?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCitationContentBlockLocation?(AnthropicTextCitation @this) => @this.AnthropicCitationContentBlockLocation;
+        public static implicit operator global::OpenRouter.AnthropicTextCitationVariant3?(AnthropicTextCitation @this) => @this.PageLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicTextCitation(global::OpenRouter.AnthropicCitationContentBlockLocation? value)
+        public AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant3? value)
         {
-            AnthropicCitationContentBlockLocation = value;
+            PageLocation = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicCitationWebSearchResultLocation value) => new AnthropicTextCitation((global::OpenRouter.AnthropicCitationWebSearchResultLocation?)value);
+        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant4 value) => new AnthropicTextCitation((global::OpenRouter.AnthropicTextCitationVariant4?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCitationWebSearchResultLocation?(AnthropicTextCitation @this) => @this.AnthropicCitationWebSearchResultLocation;
+        public static implicit operator global::OpenRouter.AnthropicTextCitationVariant4?(AnthropicTextCitation @this) => @this.SearchResultLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicTextCitation(global::OpenRouter.AnthropicCitationWebSearchResultLocation? value)
+        public AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant4? value)
         {
-            AnthropicCitationWebSearchResultLocation = value;
+            SearchResultLocation = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicCitationSearchResultLocation value) => new AnthropicTextCitation((global::OpenRouter.AnthropicCitationSearchResultLocation?)value);
+        public static implicit operator AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant5 value) => new AnthropicTextCitation((global::OpenRouter.AnthropicTextCitationVariant5?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCitationSearchResultLocation?(AnthropicTextCitation @this) => @this.AnthropicCitationSearchResultLocation;
+        public static implicit operator global::OpenRouter.AnthropicTextCitationVariant5?(AnthropicTextCitation @this) => @this.WebSearchResultLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicTextCitation(global::OpenRouter.AnthropicCitationSearchResultLocation? value)
+        public AnthropicTextCitation(global::OpenRouter.AnthropicTextCitationVariant5? value)
         {
-            AnthropicCitationSearchResultLocation = value;
+            WebSearchResultLocation = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AnthropicTextCitation(
-            global::OpenRouter.AnthropicCitationCharLocation? anthropicCitationCharLocation,
-            global::OpenRouter.AnthropicCitationPageLocation? anthropicCitationPageLocation,
-            global::OpenRouter.AnthropicCitationContentBlockLocation? anthropicCitationContentBlockLocation,
-            global::OpenRouter.AnthropicCitationWebSearchResultLocation? anthropicCitationWebSearchResultLocation,
-            global::OpenRouter.AnthropicCitationSearchResultLocation? anthropicCitationSearchResultLocation
+            global::OpenRouter.AnthropicTextCitationVariant1? charLocation,
+            global::OpenRouter.AnthropicTextCitationVariant2? contentBlockLocation,
+            global::OpenRouter.AnthropicTextCitationVariant3? pageLocation,
+            global::OpenRouter.AnthropicTextCitationVariant4? searchResultLocation,
+            global::OpenRouter.AnthropicTextCitationVariant5? webSearchResultLocation
             )
         {
-            AnthropicCitationCharLocation = anthropicCitationCharLocation;
-            AnthropicCitationPageLocation = anthropicCitationPageLocation;
-            AnthropicCitationContentBlockLocation = anthropicCitationContentBlockLocation;
-            AnthropicCitationWebSearchResultLocation = anthropicCitationWebSearchResultLocation;
-            AnthropicCitationSearchResultLocation = anthropicCitationSearchResultLocation;
+            CharLocation = charLocation;
+            ContentBlockLocation = contentBlockLocation;
+            PageLocation = pageLocation;
+            SearchResultLocation = searchResultLocation;
+            WebSearchResultLocation = webSearchResultLocation;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnthropicCitationSearchResultLocation as object ??
-            AnthropicCitationWebSearchResultLocation as object ??
-            AnthropicCitationContentBlockLocation as object ??
-            AnthropicCitationPageLocation as object ??
-            AnthropicCitationCharLocation as object 
+            WebSearchResultLocation as object ??
+            SearchResultLocation as object ??
+            PageLocation as object ??
+            ContentBlockLocation as object ??
+            CharLocation as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AnthropicCitationCharLocation?.ToString() ??
-            AnthropicCitationPageLocation?.ToString() ??
-            AnthropicCitationContentBlockLocation?.ToString() ??
-            AnthropicCitationWebSearchResultLocation?.ToString() ??
-            AnthropicCitationSearchResultLocation?.ToString() 
+            CharLocation?.ToString() ??
+            ContentBlockLocation?.ToString() ??
+            PageLocation?.ToString() ??
+            SearchResultLocation?.ToString() ??
+            WebSearchResultLocation?.ToString() 
             ;
 
         /// <summary>
@@ -228,18 +228,18 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicCitationCharLocation && !IsAnthropicCitationPageLocation && !IsAnthropicCitationContentBlockLocation && !IsAnthropicCitationWebSearchResultLocation && !IsAnthropicCitationSearchResultLocation || !IsAnthropicCitationCharLocation && IsAnthropicCitationPageLocation && !IsAnthropicCitationContentBlockLocation && !IsAnthropicCitationWebSearchResultLocation && !IsAnthropicCitationSearchResultLocation || !IsAnthropicCitationCharLocation && !IsAnthropicCitationPageLocation && IsAnthropicCitationContentBlockLocation && !IsAnthropicCitationWebSearchResultLocation && !IsAnthropicCitationSearchResultLocation || !IsAnthropicCitationCharLocation && !IsAnthropicCitationPageLocation && !IsAnthropicCitationContentBlockLocation && IsAnthropicCitationWebSearchResultLocation && !IsAnthropicCitationSearchResultLocation || !IsAnthropicCitationCharLocation && !IsAnthropicCitationPageLocation && !IsAnthropicCitationContentBlockLocation && !IsAnthropicCitationWebSearchResultLocation && IsAnthropicCitationSearchResultLocation;
+            return IsCharLocation && !IsContentBlockLocation && !IsPageLocation && !IsSearchResultLocation && !IsWebSearchResultLocation || !IsCharLocation && IsContentBlockLocation && !IsPageLocation && !IsSearchResultLocation && !IsWebSearchResultLocation || !IsCharLocation && !IsContentBlockLocation && IsPageLocation && !IsSearchResultLocation && !IsWebSearchResultLocation || !IsCharLocation && !IsContentBlockLocation && !IsPageLocation && IsSearchResultLocation && !IsWebSearchResultLocation || !IsCharLocation && !IsContentBlockLocation && !IsPageLocation && !IsSearchResultLocation && IsWebSearchResultLocation;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicCitationCharLocation?, TResult>? anthropicCitationCharLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicCitationPageLocation?, TResult>? anthropicCitationPageLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicCitationContentBlockLocation?, TResult>? anthropicCitationContentBlockLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicCitationWebSearchResultLocation?, TResult>? anthropicCitationWebSearchResultLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicCitationSearchResultLocation?, TResult>? anthropicCitationSearchResultLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant1?, TResult>? charLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant2?, TResult>? contentBlockLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant3?, TResult>? pageLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant4?, TResult>? searchResultLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant5?, TResult>? webSearchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -247,25 +247,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicCitationCharLocation && anthropicCitationCharLocation != null)
+            if (IsCharLocation && charLocation != null)
             {
-                return anthropicCitationCharLocation(AnthropicCitationCharLocation!);
+                return charLocation(CharLocation!);
             }
-            else if (IsAnthropicCitationPageLocation && anthropicCitationPageLocation != null)
+            else if (IsContentBlockLocation && contentBlockLocation != null)
             {
-                return anthropicCitationPageLocation(AnthropicCitationPageLocation!);
+                return contentBlockLocation(ContentBlockLocation!);
             }
-            else if (IsAnthropicCitationContentBlockLocation && anthropicCitationContentBlockLocation != null)
+            else if (IsPageLocation && pageLocation != null)
             {
-                return anthropicCitationContentBlockLocation(AnthropicCitationContentBlockLocation!);
+                return pageLocation(PageLocation!);
             }
-            else if (IsAnthropicCitationWebSearchResultLocation && anthropicCitationWebSearchResultLocation != null)
+            else if (IsSearchResultLocation && searchResultLocation != null)
             {
-                return anthropicCitationWebSearchResultLocation(AnthropicCitationWebSearchResultLocation!);
+                return searchResultLocation(SearchResultLocation!);
             }
-            else if (IsAnthropicCitationSearchResultLocation && anthropicCitationSearchResultLocation != null)
+            else if (IsWebSearchResultLocation && webSearchResultLocation != null)
             {
-                return anthropicCitationSearchResultLocation(AnthropicCitationSearchResultLocation!);
+                return webSearchResultLocation(WebSearchResultLocation!);
             }
 
             return default(TResult);
@@ -275,11 +275,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicCitationCharLocation?>? anthropicCitationCharLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicCitationPageLocation?>? anthropicCitationPageLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicCitationContentBlockLocation?>? anthropicCitationContentBlockLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicCitationWebSearchResultLocation?>? anthropicCitationWebSearchResultLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicCitationSearchResultLocation?>? anthropicCitationSearchResultLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant1?>? charLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant2?>? contentBlockLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant3?>? pageLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant4?>? searchResultLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant5?>? webSearchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -287,25 +287,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicCitationCharLocation)
+            if (IsCharLocation)
             {
-                anthropicCitationCharLocation?.Invoke(AnthropicCitationCharLocation!);
+                charLocation?.Invoke(CharLocation!);
             }
-            else if (IsAnthropicCitationPageLocation)
+            else if (IsContentBlockLocation)
             {
-                anthropicCitationPageLocation?.Invoke(AnthropicCitationPageLocation!);
+                contentBlockLocation?.Invoke(ContentBlockLocation!);
             }
-            else if (IsAnthropicCitationContentBlockLocation)
+            else if (IsPageLocation)
             {
-                anthropicCitationContentBlockLocation?.Invoke(AnthropicCitationContentBlockLocation!);
+                pageLocation?.Invoke(PageLocation!);
             }
-            else if (IsAnthropicCitationWebSearchResultLocation)
+            else if (IsSearchResultLocation)
             {
-                anthropicCitationWebSearchResultLocation?.Invoke(AnthropicCitationWebSearchResultLocation!);
+                searchResultLocation?.Invoke(SearchResultLocation!);
             }
-            else if (IsAnthropicCitationSearchResultLocation)
+            else if (IsWebSearchResultLocation)
             {
-                anthropicCitationSearchResultLocation?.Invoke(AnthropicCitationSearchResultLocation!);
+                webSearchResultLocation?.Invoke(WebSearchResultLocation!);
             }
         }
 
@@ -316,16 +316,16 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AnthropicCitationCharLocation,
-                typeof(global::OpenRouter.AnthropicCitationCharLocation),
-                AnthropicCitationPageLocation,
-                typeof(global::OpenRouter.AnthropicCitationPageLocation),
-                AnthropicCitationContentBlockLocation,
-                typeof(global::OpenRouter.AnthropicCitationContentBlockLocation),
-                AnthropicCitationWebSearchResultLocation,
-                typeof(global::OpenRouter.AnthropicCitationWebSearchResultLocation),
-                AnthropicCitationSearchResultLocation,
-                typeof(global::OpenRouter.AnthropicCitationSearchResultLocation),
+                CharLocation,
+                typeof(global::OpenRouter.AnthropicTextCitationVariant1),
+                ContentBlockLocation,
+                typeof(global::OpenRouter.AnthropicTextCitationVariant2),
+                PageLocation,
+                typeof(global::OpenRouter.AnthropicTextCitationVariant3),
+                SearchResultLocation,
+                typeof(global::OpenRouter.AnthropicTextCitationVariant4),
+                WebSearchResultLocation,
+                typeof(global::OpenRouter.AnthropicTextCitationVariant5),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -342,11 +342,11 @@ namespace OpenRouter
         public bool Equals(AnthropicTextCitation other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCitationCharLocation?>.Default.Equals(AnthropicCitationCharLocation, other.AnthropicCitationCharLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCitationPageLocation?>.Default.Equals(AnthropicCitationPageLocation, other.AnthropicCitationPageLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCitationContentBlockLocation?>.Default.Equals(AnthropicCitationContentBlockLocation, other.AnthropicCitationContentBlockLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCitationWebSearchResultLocation?>.Default.Equals(AnthropicCitationWebSearchResultLocation, other.AnthropicCitationWebSearchResultLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCitationSearchResultLocation?>.Default.Equals(AnthropicCitationSearchResultLocation, other.AnthropicCitationSearchResultLocation) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextCitationVariant1?>.Default.Equals(CharLocation, other.CharLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextCitationVariant2?>.Default.Equals(ContentBlockLocation, other.ContentBlockLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextCitationVariant3?>.Default.Equals(PageLocation, other.PageLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextCitationVariant4?>.Default.Equals(SearchResultLocation, other.SearchResultLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextCitationVariant5?>.Default.Equals(WebSearchResultLocation, other.WebSearchResultLocation) 
                 ;
         }
 

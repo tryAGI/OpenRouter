@@ -77,7 +77,7 @@ namespace OpenRouter
             object? route = default,
             global::OpenRouter.MessagesRequestServiceTier? serviceTier = default,
             string? sessionId = default,
-            global::OpenRouter.MessagesRequestSpeed? speed = default,
+            global::OpenRouter.AnthropicSpeed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             bool? stream = default,
             global::OpenRouter.MessagesRequestSystem? system = default,

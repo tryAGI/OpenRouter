@@ -40,8 +40,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseMessagesResultRoleJsonConverter))]
-        public global::OpenRouter.BaseMessagesResultRole Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesResultRoleJsonConverter))]
+        public global::OpenRouter.MessagesResultRole Role { get; set; }
 
         /// <summary>
         /// Structured information about a refusal
@@ -68,8 +68,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseMessagesResultTypeJsonConverter))]
-        public global::OpenRouter.BaseMessagesResultType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesResultTypeJsonConverter))]
+        public global::OpenRouter.MessagesResultType Type { get; set; }
 
         /// <summary>
         /// 
@@ -126,9 +126,9 @@ namespace OpenRouter
             global::OpenRouter.AnthropicRefusalStopDetails stopDetails,
             global::OpenRouter.ORAnthropicStopReason stopReason,
             global::OpenRouter.MessagesResultUsage usage,
-            global::OpenRouter.BaseMessagesResultRole role,
+            global::OpenRouter.MessagesResultRole role,
             string? stopSequence,
-            global::OpenRouter.BaseMessagesResultType type,
+            global::OpenRouter.MessagesResultType type,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesResultContextManagement, object>? contextManagement,
             global::OpenRouter.ProviderName? provider)
         {

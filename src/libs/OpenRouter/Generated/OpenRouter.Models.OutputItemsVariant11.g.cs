@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// openrouter:datetime variant
+    /// An openrouter:datetime server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant11
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:datetime
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
-        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant11TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant11Type Type { get; set; }
 
         /// <summary>
         /// ISO 8601 datetime string
@@ -59,7 +59,9 @@ namespace OpenRouter
         /// <param name="timezone">
         /// IANA timezone name
         /// </param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:datetime
+        /// </param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -68,7 +70,7 @@ namespace OpenRouter
             string datetime,
             global::OpenRouter.ToolCallStatus status,
             string timezone,
-            global::OpenRouter.OutputDatetimeItemType type,
+            global::OpenRouter.OutputItemsVariant11Type type,
             string? id)
         {
             this.Type = type;

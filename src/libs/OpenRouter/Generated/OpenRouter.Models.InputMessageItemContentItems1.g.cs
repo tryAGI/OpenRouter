@@ -12,9 +12,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputImageDetailJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputMessageItemContentItemsOneOf1DetailJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.InputImageDetail Detail { get; set; }
+        public required global::OpenRouter.InputMessageItemContentItemsOneOf1Detail Detail { get; set; }
 
         /// <summary>
         /// 
@@ -26,8 +26,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputImageTypeJsonConverter))]
-        public global::OpenRouter.InputImageType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputMessageItemContentItemsOneOf1TypeJsonConverter))]
+        public global::OpenRouter.InputMessageItemContentItemsOneOf1Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,9 +45,9 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputMessageItemContentItems1(
-            global::OpenRouter.InputImageDetail detail,
+            global::OpenRouter.InputMessageItemContentItemsOneOf1Detail detail,
             string? imageUrl,
-            global::OpenRouter.InputImageType type)
+            global::OpenRouter.InputMessageItemContentItemsOneOf1Type type)
         {
             this.Detail = detail;
             this.ImageUrl = imageUrl;

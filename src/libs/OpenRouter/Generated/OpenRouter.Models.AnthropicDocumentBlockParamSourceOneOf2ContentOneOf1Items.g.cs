@@ -10,100 +10,100 @@ namespace OpenRouter
     public readonly partial struct AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items : global::System.IEquatable<AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>
     {
         /// <summary>
-        /// 
+        /// image variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicTextBlockParam? AnthropicTextBlockParam { get; init; }
+        public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1? Image { get; init; }
 #else
-        public global::OpenRouter.AnthropicTextBlockParam? AnthropicTextBlockParam { get; }
+        public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1? Image { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicTextBlockParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
-        public bool IsAnthropicTextBlockParam => AnthropicTextBlockParam != null;
+        public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        /// text variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; init; }
+        public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2? Text { get; init; }
 #else
-        public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; }
+        public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicImageBlockParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsAnthropicImageBlockParam => AnthropicImageBlockParam != null;
+        public bool IsText => Text != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicTextBlockParam value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items((global::OpenRouter.AnthropicTextBlockParam?)value);
+        public static implicit operator AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1 value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items((global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicTextBlockParam?(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items @this) => @this.AnthropicTextBlockParam;
+        public static implicit operator global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicTextBlockParam? value)
+        public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1? value)
         {
-            AnthropicTextBlockParam = value;
+            Image = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicImageBlockParam value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items((global::OpenRouter.AnthropicImageBlockParam?)value);
+        public static implicit operator AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2 value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items((global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicImageBlockParam?(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items @this) => @this.AnthropicImageBlockParam;
+        public static implicit operator global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicImageBlockParam? value)
+        public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2? value)
         {
-            AnthropicImageBlockParam = value;
+            Text = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(
-            global::OpenRouter.AnthropicTextBlockParam? anthropicTextBlockParam,
-            global::OpenRouter.AnthropicImageBlockParam? anthropicImageBlockParam
+            global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1? image,
+            global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2? text
             )
         {
-            AnthropicTextBlockParam = anthropicTextBlockParam;
-            AnthropicImageBlockParam = anthropicImageBlockParam;
+            Image = image;
+            Text = text;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnthropicImageBlockParam as object ??
-            AnthropicTextBlockParam as object 
+            Text as object ??
+            Image as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AnthropicTextBlockParam?.ToString() ??
-            AnthropicImageBlockParam?.ToString() 
+            Image?.ToString() ??
+            Text?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicTextBlockParam && !IsAnthropicImageBlockParam || !IsAnthropicTextBlockParam && IsAnthropicImageBlockParam;
+            return IsImage && !IsText || !IsImage && IsText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicTextBlockParam?, TResult>? anthropicTextBlockParam = null,
-            global::System.Func<global::OpenRouter.AnthropicImageBlockParam?, TResult>? anthropicImageBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?, TResult>? image = null,
+            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam && anthropicTextBlockParam != null)
+            if (IsImage && image != null)
             {
-                return anthropicTextBlockParam(AnthropicTextBlockParam!);
+                return image(Image!);
             }
-            else if (IsAnthropicImageBlockParam && anthropicImageBlockParam != null)
+            else if (IsText && text != null)
             {
-                return anthropicImageBlockParam(AnthropicImageBlockParam!);
+                return text(Text!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicTextBlockParam?>? anthropicTextBlockParam = null,
-            global::System.Action<global::OpenRouter.AnthropicImageBlockParam?>? anthropicImageBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?>? image = null,
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam)
+            if (IsImage)
             {
-                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
+                image?.Invoke(Image!);
             }
-            else if (IsAnthropicImageBlockParam)
+            else if (IsText)
             {
-                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
+                text?.Invoke(Text!);
             }
         }
 
@@ -169,10 +169,10 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AnthropicTextBlockParam,
-                typeof(global::OpenRouter.AnthropicTextBlockParam),
-                AnthropicImageBlockParam,
-                typeof(global::OpenRouter.AnthropicImageBlockParam),
+                Image,
+                typeof(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1),
+                Text,
+                typeof(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -189,8 +189,8 @@ namespace OpenRouter
         public bool Equals(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParam?>.Default.Equals(AnthropicTextBlockParam, other.AnthropicTextBlockParam) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicImageBlockParam?>.Default.Equals(AnthropicImageBlockParam, other.AnthropicImageBlockParam) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

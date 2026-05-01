@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemFileSearchCallTypeJsonConverter))]
-        public global::OpenRouter.OutputItemFileSearchCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFileSearchCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputFileSearchCallItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace OpenRouter
             string id,
             global::System.Collections.Generic.IList<string> queries,
             global::OpenRouter.WebSearchStatus status,
-            global::OpenRouter.OutputItemFileSearchCallType type)
+            global::OpenRouter.OutputFileSearchCallItemType type)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

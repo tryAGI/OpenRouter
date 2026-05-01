@@ -36,7 +36,6 @@ namespace OpenRouter.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("text")) __score0++;
-            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("detail")) __score1++;
             if (__jsonProps.Contains("image_url")) __score1++;
@@ -46,12 +45,10 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("file_id")) __score2++;
             if (__jsonProps.Contains("file_url")) __score2++;
             if (__jsonProps.Contains("filename")) __score2++;
-            if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("input_audio")) __score3++;
             if (__jsonProps.Contains("input_audio.data")) __score3++;
             if (__jsonProps.Contains("input_audio.format")) __score3++;
-            if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("type")) __score4++;
             if (__jsonProps.Contains("video_url")) __score4++;

@@ -10,46 +10,29 @@ namespace OpenRouter
     public readonly partial struct OpenAiResponseInputMessageItemContentItems : global::System.IEquatable<OpenAiResponseInputMessageItemContentItems>
     {
         /// <summary>
-        /// Text input content item
+        /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputText? InputText { get; init; }
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? InputAudio { get; init; }
 #else
-        public global::OpenRouter.InputText? InputText { get; }
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? InputAudio { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
 #endif
-        public bool IsInputText => InputText != null;
-
-        /// <summary>
-        /// Image input content item
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.InputImage? InputImage { get; init; }
-#else
-        public global::OpenRouter.InputImage? InputImage { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
-#endif
-        public bool IsInputImage => InputImage != null;
+        public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputFile? InputFile { get; init; }
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? InputFile { get; init; }
 #else
-        public global::OpenRouter.InputFile? InputFile { get; }
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? InputFile { get; }
 #endif
 
         /// <summary>
@@ -61,89 +44,52 @@ namespace OpenRouter
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// Audio input content item
+        /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputAudio? InputAudio { get; init; }
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? InputImage { get; init; }
 #else
-        public global::OpenRouter.InputAudio? InputAudio { get; }
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? InputImage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
 #endif
-        public bool IsInputAudio => InputAudio != null;
+        public bool IsInputImage => InputImage != null;
+
         /// <summary>
-        /// 
+        /// Text input content item
         /// </summary>
-        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputText value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.InputText?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? InputText { get; init; }
+#else
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? InputText { get; }
+#endif
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.InputText?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputText;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
+#endif
+        public bool IsInputText => InputText != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputText? value)
-        {
-            InputText = value;
-        }
+        public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputAudio;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputImage value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.InputImage?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.InputImage?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputImage;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputImage? value)
-        {
-            InputImage = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputFile value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.InputFile?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.InputFile?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputFile;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputFile? value)
-        {
-            InputFile = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputAudio value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.InputAudio?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.InputAudio?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputAudio;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.InputAudio? value)
+        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? value)
         {
             InputAudio = value;
         }
@@ -151,37 +97,91 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputFile;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? value)
+        {
+            InputFile = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputImage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? value)
+        {
+            InputImage = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputText;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? value)
+        {
+            InputText = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OpenAiResponseInputMessageItemContentItems(
-            global::OpenRouter.InputText? inputText,
-            global::OpenRouter.InputImage? inputImage,
-            global::OpenRouter.InputFile? inputFile,
-            global::OpenRouter.InputAudio? inputAudio
+            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? inputAudio,
+            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? inputFile,
+            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? inputImage,
+            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? inputText
             )
         {
-            InputText = inputText;
-            InputImage = inputImage;
-            InputFile = inputFile;
             InputAudio = inputAudio;
+            InputFile = inputFile;
+            InputImage = inputImage;
+            InputText = inputText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            InputAudio as object ??
-            InputFile as object ??
+            InputText as object ??
             InputImage as object ??
-            InputText as object 
+            InputFile as object ??
+            InputAudio as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            InputText?.ToString() ??
-            InputImage?.ToString() ??
+            InputAudio?.ToString() ??
             InputFile?.ToString() ??
-            InputAudio?.ToString() 
+            InputImage?.ToString() ??
+            InputText?.ToString() 
             ;
 
         /// <summary>
@@ -189,17 +189,17 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsInputImage && !IsInputFile && !IsInputAudio || !IsInputText && IsInputImage && !IsInputFile && !IsInputAudio || !IsInputText && !IsInputImage && IsInputFile && !IsInputAudio || !IsInputText && !IsInputImage && !IsInputFile && IsInputAudio;
+            return IsInputAudio && !IsInputFile && !IsInputImage && !IsInputText || !IsInputAudio && IsInputFile && !IsInputImage && !IsInputText || !IsInputAudio && !IsInputFile && IsInputImage && !IsInputText || !IsInputAudio && !IsInputFile && !IsInputImage && IsInputText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.InputText?, TResult>? inputText = null,
-            global::System.Func<global::OpenRouter.InputImage?, TResult>? inputImage = null,
-            global::System.Func<global::OpenRouter.InputFile?, TResult>? inputFile = null,
-            global::System.Func<global::OpenRouter.InputAudio?, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?, TResult>? inputFile = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?, TResult>? inputImage = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?, TResult>? inputText = null,
             bool validate = true)
         {
             if (validate)
@@ -207,21 +207,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (IsInputAudio && inputAudio != null)
             {
-                return inputText(InputText!);
-            }
-            else if (IsInputImage && inputImage != null)
-            {
-                return inputImage(InputImage!);
+                return inputAudio(InputAudio!);
             }
             else if (IsInputFile && inputFile != null)
             {
                 return inputFile(InputFile!);
             }
-            else if (IsInputAudio && inputAudio != null)
+            else if (IsInputImage && inputImage != null)
             {
-                return inputAudio(InputAudio!);
+                return inputImage(InputImage!);
+            }
+            else if (IsInputText && inputText != null)
+            {
+                return inputText(InputText!);
             }
 
             return default(TResult);
@@ -231,10 +231,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.InputText?>? inputText = null,
-            global::System.Action<global::OpenRouter.InputImage?>? inputImage = null,
-            global::System.Action<global::OpenRouter.InputFile?>? inputFile = null,
-            global::System.Action<global::OpenRouter.InputAudio?>? inputAudio = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?>? inputAudio = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?>? inputFile = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?>? inputImage = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?>? inputText = null,
             bool validate = true)
         {
             if (validate)
@@ -242,21 +242,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText)
+            if (IsInputAudio)
             {
-                inputText?.Invoke(InputText!);
-            }
-            else if (IsInputImage)
-            {
-                inputImage?.Invoke(InputImage!);
+                inputAudio?.Invoke(InputAudio!);
             }
             else if (IsInputFile)
             {
                 inputFile?.Invoke(InputFile!);
             }
-            else if (IsInputAudio)
+            else if (IsInputImage)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
             }
         }
 
@@ -267,14 +267,14 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                InputText,
-                typeof(global::OpenRouter.InputText),
-                InputImage,
-                typeof(global::OpenRouter.InputImage),
-                InputFile,
-                typeof(global::OpenRouter.InputFile),
                 InputAudio,
-                typeof(global::OpenRouter.InputAudio),
+                typeof(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1),
+                InputFile,
+                typeof(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2),
+                InputImage,
+                typeof(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3),
+                InputText,
+                typeof(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -291,10 +291,10 @@ namespace OpenRouter
         public bool Equals(OpenAiResponseInputMessageItemContentItems other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputText?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputImage?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputFile?>.Default.Equals(InputFile, other.InputFile) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputAudio?>.Default.Equals(InputAudio, other.InputAudio) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?>.Default.Equals(InputAudio, other.InputAudio) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?>.Default.Equals(InputFile, other.InputFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?>.Default.Equals(InputImage, other.InputImage) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?>.Default.Equals(InputText, other.InputText) 
                 ;
         }
 

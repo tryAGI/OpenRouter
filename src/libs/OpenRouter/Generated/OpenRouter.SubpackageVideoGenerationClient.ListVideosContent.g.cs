@@ -90,7 +90,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: $"/videos/{jobId}/content",
+                                path: $"//videos/{jobId}/content",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("index", index?.ToString()) 
@@ -155,7 +155,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListVideosContent",
                                 methodName: "ListVideosContentAsync",
-                                pathTemplate: "$\"/videos/{jobId}/content\"",
+                                pathTemplate: "$\"//videos/{jobId}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -182,7 +182,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListVideosContent",
                                 methodName: "ListVideosContentAsync",
-                                pathTemplate: "$\"/videos/{jobId}/content\"",
+                                pathTemplate: "$\"//videos/{jobId}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -217,7 +217,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListVideosContent",
                                 methodName: "ListVideosContentAsync",
-                                pathTemplate: "$\"/videos/{jobId}/content\"",
+                                pathTemplate: "$\"//videos/{jobId}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -264,7 +264,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListVideosContent",
                                 methodName: "ListVideosContentAsync",
-                                pathTemplate: "$\"/videos/{jobId}/content\"",
+                                pathTemplate: "$\"//videos/{jobId}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -284,7 +284,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListVideosContent",
                                 methodName: "ListVideosContentAsync",
-                                pathTemplate: "$\"/videos/{jobId}/content\"",
+                                pathTemplate: "$\"//videos/{jobId}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

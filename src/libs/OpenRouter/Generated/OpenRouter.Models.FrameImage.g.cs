@@ -13,14 +13,14 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ContentPartImageImageUrl ImageUrl { get; set; }
+        public required global::OpenRouter.FrameImageImageUrl ImageUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeJsonConverter))]
-        public global::OpenRouter.ContentPartImageType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FrameImageTypeJsonConverter))]
+        public global::OpenRouter.FrameImageType Type { get; set; }
 
         /// <summary>
         /// Whether this image represents the first or last frame of the video
@@ -48,9 +48,9 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FrameImage(
-            global::OpenRouter.ContentPartImageImageUrl imageUrl,
+            global::OpenRouter.FrameImageImageUrl imageUrl,
             global::OpenRouter.FrameImageFrameType frameType,
-            global::OpenRouter.ContentPartImageType type)
+            global::OpenRouter.FrameImageType type)
         {
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;

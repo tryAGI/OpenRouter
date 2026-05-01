@@ -92,8 +92,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseResponsesResultObjectJsonConverter))]
-        public global::OpenRouter.BaseResponsesResultObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenResponsesResultObjectJsonConverter))]
+        public global::OpenRouter.OpenResponsesResultObject Object { get; set; }
 
         /// <summary>
         /// 
@@ -155,7 +155,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        public string? ServiceTier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ServiceTier2?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.ServiceTier2?, object>? ServiceTier { get; set; }
 
         /// <summary>
         /// 
@@ -196,7 +197,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.BaseResponsesResultToolsItems> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.OpenResponsesResultToolsItems> Tools { get; set; }
 
         /// <summary>
         /// 
@@ -295,13 +296,13 @@ namespace OpenRouter
             bool parallelToolCalls,
             global::OpenRouter.OpenAIResponsesResponseStatus status,
             global::OpenRouter.OpenAIResponsesToolChoice toolChoice,
-            global::System.Collections.Generic.IList<global::OpenRouter.BaseResponsesResultToolsItems> tools,
+            global::System.Collections.Generic.IList<global::OpenRouter.OpenResponsesResultToolsItems> tools,
             bool? background,
             int? completedAt,
             double? frequencyPenalty,
             int? maxOutputTokens,
             int? maxToolCalls,
-            global::OpenRouter.BaseResponsesResultObject @object,
+            global::OpenRouter.OpenResponsesResultObject @object,
             string? outputText,
             double? presencePenalty,
             string? previousResponseId,
@@ -309,7 +310,7 @@ namespace OpenRouter
             string? promptCacheKey,
             global::OpenRouter.BaseReasoningConfig? reasoning,
             string? safetyIdentifier,
-            string? serviceTier,
+            global::OpenRouter.OneOf<global::OpenRouter.ServiceTier2?, object>? serviceTier,
             bool? store,
             double? temperature,
             global::OpenRouter.TextExtendedConfig? text,

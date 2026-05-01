@@ -35,13 +35,6 @@ namespace OpenRouter
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputApplyPatchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputApplyPatchServerToolItemType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,7 +47,6 @@ namespace OpenRouter
         /// <param name="filePath"></param>
         /// <param name="id"></param>
         /// <param name="patch"></param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,14 +54,12 @@ namespace OpenRouter
             global::OpenRouter.ToolCallStatus status,
             string? filePath,
             string? id,
-            string? patch,
-            global::OpenRouter.OutputApplyPatchServerToolItemType type)
+            string? patch)
         {
             this.FilePath = filePath;
             this.Id = id;
             this.Patch = patch;
             this.Status = status;
-            this.Type = type;
         }
 
         /// <summary>
