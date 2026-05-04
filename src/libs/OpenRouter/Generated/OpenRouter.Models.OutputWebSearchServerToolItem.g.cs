@@ -9,6 +9,12 @@ namespace OpenRouter
     public sealed partial class OutputWebSearchServerToolItem
     {
         /// <summary>
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        public global::OpenRouter.OutputWebSearchServerToolItemAction? Action { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -39,6 +45,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputWebSearchServerToolItem" /> class.
         /// </summary>
         /// <param name="status"></param>
+        /// <param name="action">
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -46,9 +55,11 @@ namespace OpenRouter
 #endif
         public OutputWebSearchServerToolItem(
             global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.OutputWebSearchServerToolItemAction? action,
             string? id,
             global::OpenRouter.OutputWebSearchServerToolItemType type)
         {
+            this.Action = action;
             this.Id = id;
             this.Status = status;
             this.Type = type;

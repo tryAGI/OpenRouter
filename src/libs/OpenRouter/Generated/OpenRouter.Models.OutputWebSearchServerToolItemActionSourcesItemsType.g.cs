@@ -1,0 +1,45 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum OutputWebSearchServerToolItemActionSourcesItemsType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Url,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class OutputWebSearchServerToolItemActionSourcesItemsTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this OutputWebSearchServerToolItemActionSourcesItemsType value)
+        {
+            return value switch
+            {
+                OutputWebSearchServerToolItemActionSourcesItemsType.Url => "url",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static OutputWebSearchServerToolItemActionSourcesItemsType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "url" => OutputWebSearchServerToolItemActionSourcesItemsType.Url,
+                _ => null,
+            };
+        }
+    }
+}

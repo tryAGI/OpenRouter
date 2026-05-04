@@ -229,6 +229,14 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorMappingComputerCallStatusNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionSourcesItemsTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionSourcesItemsTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeNullableJsonConverter),
@@ -2069,6 +2077,11 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputComputerCallItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputDatetimeItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputWebSearchServerToolItemActionSourcesItemsType), TypeInfoPropertyName = "OutputWebSearchServerToolItemActionSourcesItemsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputWebSearchServerToolItemActionSourcesItems))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputWebSearchServerToolItemActionType), TypeInfoPropertyName = "OutputWebSearchServerToolItemActionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputWebSearchServerToolItemAction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OutputWebSearchServerToolItemActionSourcesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputWebSearchServerToolItemType), TypeInfoPropertyName = "OutputWebSearchServerToolItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputWebSearchServerToolItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputCodeInterpreterServerToolItem))]
@@ -3144,6 +3157,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WebSearchSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputWebSearchServerToolItemActionSourcesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.InputsOneOf1Items>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ProviderPreferencesIgnoreItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ProviderPreferencesOnlyItems>))]

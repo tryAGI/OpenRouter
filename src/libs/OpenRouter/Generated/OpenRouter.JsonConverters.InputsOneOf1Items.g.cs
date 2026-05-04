@@ -23,6 +23,13 @@ namespace OpenRouter.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
 
                 }
             }
@@ -107,6 +114,10 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("status")) __score13++;
             if (__jsonProps.Contains("timezone")) __score13++;
             var __score14 = 0;
+            if (__jsonProps.Contains("action")) __score14++;
+            if (__jsonProps.Contains("action.query")) __score14++;
+            if (__jsonProps.Contains("action.sources")) __score14++;
+            if (__jsonProps.Contains("action.type")) __score14++;
             if (__jsonProps.Contains("id")) __score14++;
             if (__jsonProps.Contains("status")) __score14++;
             if (__jsonProps.Contains("type")) __score14++;
