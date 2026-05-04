@@ -5801,6 +5801,59 @@
         "description": "An openrouter:datetime server tool output item",
         "title": "OutputDatetimeItem"
       },
+      "OutputWebSearchServerToolItemActionSourcesItemsType": {
+        "type": "string",
+        "enum": [
+          "url"
+        ],
+        "title": "OutputWebSearchServerToolItemActionSourcesItemsType"
+      },
+      "OutputWebSearchServerToolItemActionSourcesItems": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/OutputWebSearchServerToolItemActionSourcesItemsType"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "url"
+        ],
+        "title": "OutputWebSearchServerToolItemActionSourcesItems"
+      },
+      "OutputWebSearchServerToolItemActionType": {
+        "type": "string",
+        "enum": [
+          "search"
+        ],
+        "title": "OutputWebSearchServerToolItemActionType"
+      },
+      "OutputWebSearchServerToolItemAction": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutputWebSearchServerToolItemActionSourcesItems"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputWebSearchServerToolItemActionType"
+          }
+        },
+        "required": [
+          "query",
+          "type"
+        ],
+        "description": "The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.",
+        "title": "OutputWebSearchServerToolItemAction"
+      },
       "OutputWebSearchServerToolItemType": {
         "type": "string",
         "enum": [
@@ -5811,6 +5864,10 @@
       "OutputWebSearchServerToolItem": {
         "type": "object",
         "properties": {
+          "action": {
+            "$ref": "#/components/schemas/OutputWebSearchServerToolItemAction",
+            "description": "The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider."
+          },
           "id": {
             "type": "string"
           },
@@ -10631,6 +10688,10 @@
             "properties": {
               "type": {
                 "$ref": "#/components/schemas/OutputWebSearchServerToolItemType"
+              },
+              "action": {
+                "$ref": "#/components/schemas/OutputWebSearchServerToolItemAction",
+                "description": "The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider."
               },
               "id": {
                 "type": "string"

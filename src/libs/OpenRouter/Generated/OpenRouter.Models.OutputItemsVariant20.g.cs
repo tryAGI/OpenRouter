@@ -16,6 +16,12 @@ namespace OpenRouter
         public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
 
         /// <summary>
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        public global::OpenRouter.OutputWebSearchServerToolItemAction? Action { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -40,6 +46,9 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type"></param>
+        /// <param name="action">
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// </param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,9 +56,11 @@ namespace OpenRouter
         public OutputItemsVariant20(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputWebSearchServerToolItemType type,
+            global::OpenRouter.OutputWebSearchServerToolItemAction? action,
             string? id)
         {
             this.Type = type;
+            this.Action = action;
             this.Id = id;
             this.Status = status;
         }
