@@ -43,7 +43,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Create transcription<br/>
-        /// Transcribes audio into text
+        /// Transcribes audio into text. Accepts base64-encoded audio input and returns the transcribed text.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -693,7 +693,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create transcription<br/>
-        /// Transcribes audio into text
+        /// Transcribes audio into text. Accepts base64-encoded audio input and returns the transcribed text.
         /// </summary>
         /// <param name="inputAudio">
         /// Base64-encoded audio to transcribe
