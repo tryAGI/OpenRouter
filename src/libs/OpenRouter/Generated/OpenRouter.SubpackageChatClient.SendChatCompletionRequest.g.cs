@@ -86,7 +86,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "//chat/completions",
+                                path: "/chat/completions",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -153,7 +153,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SendChatCompletionRequest",
                                 methodName: "SendChatCompletionRequestAsync",
-                                pathTemplate: "\"//chat/completions\"",
+                                pathTemplate: "\"/chat/completions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -180,7 +180,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SendChatCompletionRequest",
                                 methodName: "SendChatCompletionRequestAsync",
-                                pathTemplate: "\"//chat/completions\"",
+                                pathTemplate: "\"/chat/completions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +215,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SendChatCompletionRequest",
                                 methodName: "SendChatCompletionRequestAsync",
-                                pathTemplate: "\"//chat/completions\"",
+                                pathTemplate: "\"/chat/completions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,7 +262,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SendChatCompletionRequest",
                                 methodName: "SendChatCompletionRequestAsync",
-                                pathTemplate: "\"//chat/completions\"",
+                                pathTemplate: "\"/chat/completions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -282,7 +282,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "SendChatCompletionRequest",
                                 methodName: "SendChatCompletionRequestAsync",
-                                pathTemplate: "\"//chat/completions\"",
+                                pathTemplate: "\"/chat/completions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

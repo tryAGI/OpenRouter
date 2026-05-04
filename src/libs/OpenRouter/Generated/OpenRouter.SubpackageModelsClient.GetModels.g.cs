@@ -104,7 +104,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "//models",
+                                path: "/models",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("category", category?.ToValueString())
@@ -176,7 +176,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetModels",
                                 methodName: "GetModelsAsync",
-                                pathTemplate: "\"//models\"",
+                                pathTemplate: "\"/models\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -203,7 +203,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetModels",
                                 methodName: "GetModelsAsync",
-                                pathTemplate: "\"//models\"",
+                                pathTemplate: "\"/models\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -238,7 +238,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetModels",
                                 methodName: "GetModelsAsync",
-                                pathTemplate: "\"//models\"",
+                                pathTemplate: "\"/models\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -285,7 +285,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetModels",
                                 methodName: "GetModelsAsync",
-                                pathTemplate: "\"//models\"",
+                                pathTemplate: "\"/models\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -305,7 +305,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetModels",
                                 methodName: "GetModelsAsync",
-                                pathTemplate: "\"//models\"",
+                                pathTemplate: "\"/models\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -5,7 +5,7 @@
     "version": "1.0.0"
   },
   "paths": {
-    "//responses": {
+    "/responses": {
       "post": {
         "operationId": "create-responses",
         "summary": "Create a response",
@@ -147,7 +147,7 @@
         }
       }
     },
-    "//auth/keys": {
+    "/auth/keys": {
       "post": {
         "operationId": "exchange-auth-code-for-api-key",
         "summary": "Exchange authorization code for API key",
@@ -233,7 +233,7 @@
         }
       }
     },
-    "//auth/keys/code": {
+    "/auth/keys/code": {
       "post": {
         "operationId": "create-auth-keys-code",
         "summary": "Create authorization code",
@@ -344,7 +344,7 @@
         }
       }
     },
-    "//activity": {
+    "/activity": {
       "get": {
         "operationId": "get-user-activity",
         "summary": "Get user activity grouped by endpoint",
@@ -445,7 +445,7 @@
         }
       }
     },
-    "//audio/speech": {
+    "/audio/speech": {
       "post": {
         "operationId": "create-audio-speech",
         "summary": "Create speech",
@@ -558,7 +558,7 @@
         }
       }
     },
-    "//audio/transcriptions": {
+    "/audio/transcriptions": {
       "post": {
         "operationId": "create-audio-transcriptions",
         "summary": "Create transcription",
@@ -670,7 +670,7 @@
         }
       }
     },
-    "//chat/completions": {
+    "/chat/completions": {
       "post": {
         "operationId": "send-chat-completion-request",
         "summary": "Create a chat completion",
@@ -812,7 +812,7 @@
         }
       }
     },
-    "//credits": {
+    "/credits": {
       "get": {
         "operationId": "get-credits",
         "summary": "Get remaining credits",
@@ -865,7 +865,7 @@
         }
       }
     },
-    "//embeddings": {
+    "/embeddings": {
       "post": {
         "operationId": "create-embeddings",
         "summary": "Submit an embedding request",
@@ -1011,7 +1011,7 @@
         }
       }
     },
-    "//embeddings/models": {
+    "/embeddings/models": {
       "get": {
         "operationId": "list-embeddings-models",
         "summary": "List all embeddings models",
@@ -1054,7 +1054,7 @@
         }
       }
     },
-    "//endpoints/zdr": {
+    "/endpoints/zdr": {
       "get": {
         "operationId": "list-endpoints-zdr",
         "summary": "Preview the impact of ZDR on the available endpoints",
@@ -1086,7 +1086,7 @@
         }
       }
     },
-    "//models/{author}/{slug}/endpoints": {
+    "/models/{author}/{slug}/endpoints": {
       "get": {
         "operationId": "list-endpoints",
         "summary": "List all endpoints for a model",
@@ -1147,7 +1147,7 @@
         }
       }
     },
-    "//generation": {
+    "/generation": {
       "get": {
         "operationId": "get-generation",
         "summary": "Get request & usage metadata for a generation",
@@ -1239,7 +1239,7 @@
         }
       }
     },
-    "//generation/content": {
+    "/generation/content": {
       "get": {
         "operationId": "list-generation-content",
         "summary": "Get stored prompt and completion content for a generation",
@@ -1331,7 +1331,7 @@
         }
       }
     },
-    "//guardrails": {
+    "/guardrails": {
       "get": {
         "operationId": "list-guardrails",
         "summary": "List guardrails",
@@ -1473,7 +1473,7 @@
         }
       }
     },
-    "//guardrails/{id}": {
+    "/guardrails/{id}": {
       "get": {
         "operationId": "get-guardrail",
         "summary": "Get a guardrail",
@@ -1680,7 +1680,7 @@
         }
       }
     },
-    "//guardrails/{id}/assignments/keys": {
+    "/guardrails/{id}/assignments/keys": {
       "get": {
         "operationId": "list-guardrail-key-assignments",
         "summary": "List key assignments for a guardrail",
@@ -1843,7 +1843,7 @@
         }
       }
     },
-    "//guardrails/{id}/assignments/keys/remove": {
+    "/guardrails/{id}/assignments/keys/remove": {
       "post": {
         "operationId": "bulk-unassign-keys-from-guardrail",
         "summary": "Bulk unassign keys from a guardrail",
@@ -1926,7 +1926,7 @@
         }
       }
     },
-    "//guardrails/{id}/assignments/members": {
+    "/guardrails/{id}/assignments/members": {
       "get": {
         "operationId": "list-guardrail-member-assignments",
         "summary": "List member assignments for a guardrail",
@@ -2089,7 +2089,7 @@
         }
       }
     },
-    "//guardrails/{id}/assignments/members/remove": {
+    "/guardrails/{id}/assignments/members/remove": {
       "post": {
         "operationId": "bulk-unassign-members-from-guardrail",
         "summary": "Bulk unassign members from a guardrail",
@@ -2172,7 +2172,7 @@
         }
       }
     },
-    "//guardrails/assignments/keys": {
+    "/guardrails/assignments/keys": {
       "get": {
         "operationId": "list-key-assignments",
         "summary": "List all key assignments",
@@ -2234,7 +2234,7 @@
         }
       }
     },
-    "//guardrails/assignments/members": {
+    "/guardrails/assignments/members": {
       "get": {
         "operationId": "list-member-assignments",
         "summary": "List all member assignments",
@@ -2296,7 +2296,7 @@
         }
       }
     },
-    "//key": {
+    "/key": {
       "get": {
         "operationId": "get-current-key",
         "summary": "Get current API key",
@@ -2339,7 +2339,7 @@
         }
       }
     },
-    "//keys": {
+    "/keys": {
       "get": {
         "operationId": "list",
         "summary": "List API keys",
@@ -2553,7 +2553,7 @@
         }
       }
     },
-    "//keys/{hash}": {
+    "/keys/{hash}": {
       "get": {
         "operationId": "get-key",
         "summary": "Get a single API key",
@@ -2820,7 +2820,7 @@
         }
       }
     },
-    "//messages": {
+    "/messages": {
       "post": {
         "operationId": "create-messages",
         "summary": "Create a message",
@@ -2922,7 +2922,7 @@
         }
       }
     },
-    "//models": {
+    "/models": {
       "get": {
         "operationId": "get-models",
         "summary": "List all models and their properties",
@@ -3010,7 +3010,7 @@
         }
       }
     },
-    "//models/count": {
+    "/models/count": {
       "get": {
         "operationId": "list-models-count",
         "summary": "Get total count of available models",
@@ -3062,7 +3062,7 @@
         }
       }
     },
-    "//models/user": {
+    "/models/user": {
       "get": {
         "operationId": "list-models-user",
         "summary": "List models filtered by user provider preferences, privacy settings, and guardrails",
@@ -3115,7 +3115,7 @@
         }
       }
     },
-    "//organization/members": {
+    "/organization/members": {
       "get": {
         "operationId": "list-organization-members",
         "summary": "List organization members",
@@ -3187,7 +3187,7 @@
         }
       }
     },
-    "//providers": {
+    "/providers": {
       "get": {
         "operationId": "list-providers",
         "summary": "List all providers",
@@ -3219,7 +3219,7 @@
         }
       }
     },
-    "//rerank": {
+    "/rerank": {
       "post": {
         "operationId": "create-rerank",
         "summary": "Submit a rerank request",
@@ -3361,7 +3361,7 @@
         }
       }
     },
-    "//videos": {
+    "/videos": {
       "post": {
         "operationId": "create-videos",
         "summary": "Submit a video generation request",
@@ -3453,7 +3453,7 @@
         }
       }
     },
-    "//videos/{jobId}": {
+    "/videos/{jobId}": {
       "get": {
         "operationId": "get-videos",
         "summary": "Poll video generation status",
@@ -3515,7 +3515,7 @@
         }
       }
     },
-    "//videos/{jobId}/content": {
+    "/videos/{jobId}/content": {
       "get": {
         "operationId": "list-videos-content",
         "summary": "Download generated video content",
@@ -3607,7 +3607,7 @@
         }
       }
     },
-    "//videos/models": {
+    "/videos/models": {
       "get": {
         "operationId": "list-videos-models",
         "summary": "List all video generation models",
@@ -3650,7 +3650,7 @@
         }
       }
     },
-    "//workspaces": {
+    "/workspaces": {
       "get": {
         "operationId": "list-workspaces",
         "summary": "List workspaces",
@@ -3782,7 +3782,7 @@
         }
       }
     },
-    "//workspaces/{id}": {
+    "/workspaces/{id}": {
       "get": {
         "operationId": "get-workspace",
         "summary": "Get a workspace",
@@ -4016,7 +4016,7 @@
         }
       }
     },
-    "//workspaces/{id}/members/add": {
+    "/workspaces/{id}/members/add": {
       "post": {
         "operationId": "bulk-add-workspace-members",
         "summary": "Bulk add members to a workspace",
@@ -4108,7 +4108,7 @@
         }
       }
     },
-    "//workspaces/{id}/members/remove": {
+    "/workspaces/{id}/members/remove": {
       "post": {
         "operationId": "bulk-remove-workspace-members",
         "summary": "Bulk remove members from a workspace",
