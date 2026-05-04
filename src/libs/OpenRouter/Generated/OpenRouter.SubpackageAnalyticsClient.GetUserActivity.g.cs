@@ -93,7 +93,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "//activity",
+                                path: "/activity",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("date", date)
@@ -161,7 +161,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserActivity",
                                 methodName: "GetUserActivityAsync",
-                                pathTemplate: "\"//activity\"",
+                                pathTemplate: "\"/activity\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -188,7 +188,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserActivity",
                                 methodName: "GetUserActivityAsync",
-                                pathTemplate: "\"//activity\"",
+                                pathTemplate: "\"/activity\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -223,7 +223,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserActivity",
                                 methodName: "GetUserActivityAsync",
-                                pathTemplate: "\"//activity\"",
+                                pathTemplate: "\"/activity\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -270,7 +270,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserActivity",
                                 methodName: "GetUserActivityAsync",
-                                pathTemplate: "\"//activity\"",
+                                pathTemplate: "\"/activity\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -290,7 +290,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserActivity",
                                 methodName: "GetUserActivityAsync",
-                                pathTemplate: "\"//activity\"",
+                                pathTemplate: "\"/activity\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

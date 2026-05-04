@@ -88,7 +88,7 @@ namespace OpenRouter
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "//guardrails/assignments/keys",
+                                path: "/guardrails/assignments/keys",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
                                 .AddOptionalParameter("offset", offset?.ToString())
@@ -154,7 +154,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListKeyAssignments",
                                 methodName: "ListKeyAssignmentsAsync",
-                                pathTemplate: "\"//guardrails/assignments/keys\"",
+                                pathTemplate: "\"/guardrails/assignments/keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -181,7 +181,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListKeyAssignments",
                                 methodName: "ListKeyAssignmentsAsync",
-                                pathTemplate: "\"//guardrails/assignments/keys\"",
+                                pathTemplate: "\"/guardrails/assignments/keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -216,7 +216,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListKeyAssignments",
                                 methodName: "ListKeyAssignmentsAsync",
-                                pathTemplate: "\"//guardrails/assignments/keys\"",
+                                pathTemplate: "\"/guardrails/assignments/keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -263,7 +263,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListKeyAssignments",
                                 methodName: "ListKeyAssignmentsAsync",
-                                pathTemplate: "\"//guardrails/assignments/keys\"",
+                                pathTemplate: "\"/guardrails/assignments/keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +283,7 @@ namespace OpenRouter
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ListKeyAssignments",
                                 methodName: "ListKeyAssignmentsAsync",
-                                pathTemplate: "\"//guardrails/assignments/keys\"",
+                                pathTemplate: "\"/guardrails/assignments/keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
