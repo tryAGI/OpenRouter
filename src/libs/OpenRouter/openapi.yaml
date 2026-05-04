@@ -449,7 +449,7 @@
       "post": {
         "operationId": "create-audio-speech",
         "summary": "Create speech",
-        "description": "Synthesizes audio from the input text",
+        "description": "Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).",
         "tags": [
           "subpackage_tts"
         ],
@@ -562,7 +562,7 @@
       "post": {
         "operationId": "create-audio-transcriptions",
         "summary": "Create transcription",
-        "description": "Transcribes audio into text",
+        "description": "Transcribes audio into text. Accepts base64-encoded audio input and returns the transcribed text.",
         "tags": [
           "subpackage_stt"
         ],
@@ -15783,6 +15783,16 @@
             },
             "description": "List of supported parameters for this model"
           },
+          "supported_voices": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "List of supported voice identifiers for TTS models. Null for non-TTS models."
+          },
           "top_provider": {
             "$ref": "#/components/schemas/TopProviderInfo"
           }
@@ -15799,6 +15809,7 @@
           "per_request_limits",
           "pricing",
           "supported_parameters",
+          "supported_voices",
           "top_provider"
         ],
         "description": "Information about an AI model available on OpenRouter",

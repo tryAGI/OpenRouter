@@ -110,6 +110,12 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.Parameter> SupportedParameters { get; set; }
 
         /// <summary>
+        /// List of supported voice identifiers for TTS models. Null for non-TTS models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supported_voices")]
+        public global::System.Collections.Generic.IList<string>? SupportedVoices { get; set; }
+
+        /// <summary>
         /// Information about the top provider for this model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_provider")]
@@ -173,6 +179,9 @@ namespace OpenRouter
         /// <param name="knowledgeCutoff">
         /// The date up to which the model was trained on data. ISO 8601 date string (YYYY-MM-DD) or null if unknown.
         /// </param>
+        /// <param name="supportedVoices">
+        /// List of supported voice identifiers for TTS models. Null for non-TTS models.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -192,7 +201,8 @@ namespace OpenRouter
             string? description,
             string? expirationDate,
             string? huggingFaceId,
-            string? knowledgeCutoff)
+            string? knowledgeCutoff,
+            global::System.Collections.Generic.IList<string>? supportedVoices)
         {
             this.Architecture = architecture ?? throw new global::System.ArgumentNullException(nameof(architecture));
             this.CanonicalSlug = canonicalSlug ?? throw new global::System.ArgumentNullException(nameof(canonicalSlug));
@@ -209,6 +219,7 @@ namespace OpenRouter
             this.PerRequestLimits = perRequestLimits ?? throw new global::System.ArgumentNullException(nameof(perRequestLimits));
             this.Pricing = pricing ?? throw new global::System.ArgumentNullException(nameof(pricing));
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
+            this.SupportedVoices = supportedVoices;
             this.TopProvider = topProvider ?? throw new global::System.ArgumentNullException(nameof(topProvider));
         }
 

@@ -43,7 +43,7 @@ namespace OpenRouter
 
         /// <summary>
         /// Create speech<br/>
-        /// Synthesizes audio from the input text
+        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -684,7 +684,7 @@ namespace OpenRouter
         }
         /// <summary>
         /// Create speech<br/>
-        /// Synthesizes audio from the input text
+        /// Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).
         /// </summary>
         /// <param name="input">
         /// Text to synthesize
