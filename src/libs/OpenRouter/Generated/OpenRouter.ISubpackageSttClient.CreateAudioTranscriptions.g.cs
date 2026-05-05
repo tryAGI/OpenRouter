@@ -21,6 +21,19 @@ namespace OpenRouter
         /// Create transcription<br/>
         /// Transcribes audio into text. Accepts base64-encoded audio input and returns the transcribed text.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::OpenRouter.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.STTResponse>> CreateAudioTranscriptionsAsResponseAsync(
+
+            global::OpenRouter.STTRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create transcription<br/>
+        /// Transcribes audio into text. Accepts base64-encoded audio input and returns the transcribed text.
+        /// </summary>
         /// <param name="inputAudio">
         /// Base64-encoded audio to transcribe
         /// </param>

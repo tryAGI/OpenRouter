@@ -21,6 +21,19 @@ namespace OpenRouter
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::OpenRouter.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.MessagesResult>> CreateMessagesAsResponseAsync(
+
+            global::OpenRouter.MessagesRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a message<br/>
+        /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
+        /// </summary>
         /// <param name="cacheControl"></param>
         /// <param name="contextManagement"></param>
         /// <param name="maxTokens"></param>

@@ -21,6 +21,19 @@ namespace OpenRouter
         /// Create a response<br/>
         /// Creates a streaming or non-streaming response using OpenResponses API format
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::OpenRouter.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OpenResponsesResult>> CreateResponsesAsResponseAsync(
+
+            global::OpenRouter.ResponsesRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a response<br/>
+        /// Creates a streaming or non-streaming response using OpenResponses API format
+        /// </summary>
         /// <param name="background"></param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig"></param>

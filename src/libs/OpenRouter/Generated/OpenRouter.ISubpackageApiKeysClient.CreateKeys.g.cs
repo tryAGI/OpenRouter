@@ -21,6 +21,19 @@ namespace OpenRouter
         /// Create a new API key<br/>
         /// Create a new API key for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::OpenRouter.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ApiKeysCreateKeysResponse201>> CreateKeysAsResponseAsync(
+
+            global::OpenRouter.CreateKeysRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new API key<br/>
+        /// Create a new API key for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// </summary>
         /// <param name="creatorUserId">
         /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
         /// </param>
