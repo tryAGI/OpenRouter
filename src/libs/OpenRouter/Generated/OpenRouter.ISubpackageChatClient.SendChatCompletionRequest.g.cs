@@ -21,6 +21,19 @@ namespace OpenRouter
         /// Create a chat completion<br/>
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::OpenRouter.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ChatResult>> SendChatCompletionRequestAsResponseAsync(
+
+            global::OpenRouter.ChatRequest request,
+            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a chat completion<br/>
+        /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
+        /// </summary>
         /// <param name="cacheControl">
         /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
