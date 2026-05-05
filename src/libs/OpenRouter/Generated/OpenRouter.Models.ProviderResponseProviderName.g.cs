@@ -331,6 +331,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Perceptron,
+        /// <summary>
+        /// 
+        /// </summary>
         Perplexity,
         /// <summary>
         /// 
@@ -538,6 +542,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.OpenAI => "OpenAI",
                 ProviderResponseProviderName.OpenInference => "OpenInference",
                 ProviderResponseProviderName.Parasail => "Parasail",
+                ProviderResponseProviderName.Perceptron => "Perceptron",
                 ProviderResponseProviderName.Perplexity => "Perplexity",
                 ProviderResponseProviderName.Phala => "Phala",
                 ProviderResponseProviderName.Poolside => "Poolside",
@@ -657,6 +662,7 @@ namespace OpenRouter
                 "OpenAI" => ProviderResponseProviderName.OpenAI,
                 "OpenInference" => ProviderResponseProviderName.OpenInference,
                 "Parasail" => ProviderResponseProviderName.Parasail,
+                "Perceptron" => ProviderResponseProviderName.Perceptron,
                 "Perplexity" => ProviderResponseProviderName.Perplexity,
                 "Phala" => ProviderResponseProviderName.Phala,
                 "Poolside" => ProviderResponseProviderName.Poolside,

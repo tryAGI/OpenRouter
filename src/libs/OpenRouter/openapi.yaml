@@ -6824,6 +6824,7 @@
           "OpenInference",
           "Parasail",
           "Poolside",
+          "Perceptron",
           "Perplexity",
           "Phala",
           "Recraft",
@@ -8788,19 +8789,94 @@
         "description": "OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)",
         "title": "WebFetchServerTool"
       },
-      "WebSearchServerToolOpenRouterParameters": {
+      "SearchQualityLevel": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "description": "How much context to retrieve per result. Defaults to medium (15000 chars). Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl.",
+        "title": "SearchQualityLevel"
+      },
+      "WebSearchUserLocationServerToolType": {
+        "type": "string",
+        "enum": [
+          "approximate"
+        ],
+        "title": "WebSearchUserLocationServerToolType"
+      },
+      "WebSearchUserLocationServerTool": {
         "type": "object",
         "properties": {
+          "city": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "country": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "timezone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/WebSearchUserLocationServerToolType"
+          }
+        },
+        "description": "Approximate user location for location-biased results.",
+        "title": "WebSearchUserLocationServerTool"
+      },
+      "WebSearchServerToolConfig": {
+        "type": "object",
+        "properties": {
+          "allowed_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains."
+          },
+          "engine": {
+            "$ref": "#/components/schemas/WebSearchEngineEnum"
+          },
+          "excluded_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
+          },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
           },
           "max_total_results": {
             "type": "integer",
-            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results."
+            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops."
+          },
+          "search_context_size": {
+            "$ref": "#/components/schemas/SearchQualityLevel"
+          },
+          "user_location": {
+            "$ref": "#/components/schemas/WebSearchUserLocationServerTool"
           }
         },
-        "title": "WebSearchServerToolOpenRouterParameters"
+        "description": "Configuration for the openrouter:web_search server tool",
+        "title": "WebSearchServerToolConfig"
       },
       "WebSearchServerToolOpenRouterType": {
         "type": "string",
@@ -8813,7 +8889,7 @@
         "type": "object",
         "properties": {
           "parameters": {
-            "$ref": "#/components/schemas/WebSearchServerToolOpenRouterParameters"
+            "$ref": "#/components/schemas/WebSearchServerToolConfig"
           },
           "type": {
             "$ref": "#/components/schemas/WebSearchServerToolOpenRouterType"
@@ -12434,6 +12510,12 @@
               "description": "Any type"
             }
           },
+          "perceptron": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "perplexity": {
             "type": "object",
             "additionalProperties": {
@@ -14128,57 +14210,6 @@
         ],
         "title": "ChatFunctionTool0"
       },
-      "SearchQualityLevel": {
-        "type": "string",
-        "enum": [
-          "low",
-          "medium",
-          "high"
-        ],
-        "description": "How much context to retrieve per result. Defaults to medium (15000 chars). Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl.",
-        "title": "SearchQualityLevel"
-      },
-      "WebSearchUserLocationServerToolType": {
-        "type": "string",
-        "enum": [
-          "approximate"
-        ],
-        "title": "WebSearchUserLocationServerToolType"
-      },
-      "WebSearchUserLocationServerTool": {
-        "type": "object",
-        "properties": {
-          "city": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "country": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "region": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "timezone": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/WebSearchUserLocationServerToolType"
-          }
-        },
-        "description": "Approximate user location for location-biased results.",
-        "title": "WebSearchUserLocationServerTool"
-      },
       "WebSearchConfig": {
         "type": "object",
         "properties": {
@@ -14187,7 +14218,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity."
+            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains."
           },
           "engine": {
             "$ref": "#/components/schemas/WebSearchEngineEnum"
@@ -14197,7 +14228,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity."
+            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
           },
           "max_results": {
             "type": "integer",
@@ -14257,7 +14288,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity."
+            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains."
           },
           "engine": {
             "$ref": "#/components/schemas/WebSearchEngineEnum"
@@ -14267,7 +14298,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity."
+            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
           },
           "max_results": {
             "type": "integer",
@@ -16321,6 +16352,7 @@
           "OpenInference",
           "Parasail",
           "Poolside",
+          "Perceptron",
           "Perplexity",
           "Phala",
           "Recraft",
@@ -24372,6 +24404,12 @@
             }
           },
           "parasail": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "perceptron": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"

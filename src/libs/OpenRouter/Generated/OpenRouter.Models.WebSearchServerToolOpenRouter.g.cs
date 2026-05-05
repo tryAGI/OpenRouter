@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class WebSearchServerToolOpenRouter
     {
         /// <summary>
-        /// 
+        /// Configuration for the openrouter:web_search server tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public global::OpenRouter.WebSearchServerToolOpenRouterParameters? Parameters { get; set; }
+        public global::OpenRouter.WebSearchServerToolConfig? Parameters { get; set; }
 
         /// <summary>
         /// 
@@ -30,13 +30,15 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchServerToolOpenRouter" /> class.
         /// </summary>
-        /// <param name="parameters"></param>
+        /// <param name="parameters">
+        /// Configuration for the openrouter:web_search server tool
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchServerToolOpenRouter(
-            global::OpenRouter.WebSearchServerToolOpenRouterParameters? parameters,
+            global::OpenRouter.WebSearchServerToolConfig? parameters,
             global::OpenRouter.WebSearchServerToolOpenRouterType type)
         {
             this.Parameters = parameters;
