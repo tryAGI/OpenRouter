@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ChatWebSearchShorthand
     {
         /// <summary>
-        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
+        /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
@@ -22,7 +22,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchEngineEnum? Engine { get; set; }
 
         /// <summary>
-        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
+        /// Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excluded_domains")]
         public global::System.Collections.Generic.IList<string>? ExcludedDomains { get; set; }
@@ -77,13 +77,13 @@ namespace OpenRouter
         /// </summary>
         /// <param name="type"></param>
         /// <param name="allowedDomains">
-        /// Limit search results to these domains. Supported by Exa, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Firecrawl or Perplexity.
+        /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains.
         /// </param>
         /// <param name="engine">
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
         /// </param>
         /// <param name="excludedDomains">
-        /// Exclude search results from these domains. Supported by Exa, Parallel, Anthropic, and xAI. Not supported with Firecrawl, OpenAI (silently ignored), or Perplexity.
+        /// Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains.
         /// </param>
         /// <param name="maxResults">
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.

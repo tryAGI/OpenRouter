@@ -491,6 +491,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("perceptron")]
+        public object? Perceptron { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("perplexity")]
         public object? Perplexity { get; set; }
 
@@ -751,6 +757,7 @@ namespace OpenRouter
         /// <param name="openInference"></param>
         /// <param name="openai"></param>
         /// <param name="parasail"></param>
+        /// <param name="perceptron"></param>
         /// <param name="perplexity"></param>
         /// <param name="phala"></param>
         /// <param name="poolside"></param>
@@ -864,6 +871,7 @@ namespace OpenRouter
             object? openInference,
             object? openai,
             object? parasail,
+            object? perceptron,
             object? perplexity,
             object? phala,
             object? poolside,
@@ -974,6 +982,7 @@ namespace OpenRouter
             this.OpenInference = openInference;
             this.Openai = openai;
             this.Parasail = parasail;
+            this.Perceptron = perceptron;
             this.Perplexity = perplexity;
             this.Phala = phala;
             this.Poolside = poolside;

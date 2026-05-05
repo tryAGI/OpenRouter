@@ -169,8 +169,13 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score17++;
             var __score18 = 0;
             if (__jsonProps.Contains("parameters")) __score18++;
+            if (__jsonProps.Contains("parameters.allowed_domains")) __score18++;
+            if (__jsonProps.Contains("parameters.engine")) __score18++;
+            if (__jsonProps.Contains("parameters.excluded_domains")) __score18++;
             if (__jsonProps.Contains("parameters.max_results")) __score18++;
             if (__jsonProps.Contains("parameters.max_total_results")) __score18++;
+            if (__jsonProps.Contains("parameters.search_context_size")) __score18++;
+            if (__jsonProps.Contains("parameters.user_location")) __score18++;
             if (__jsonProps.Contains("type")) __score18++;
             var __bestScore = 0;
             var __bestIndex = -1;

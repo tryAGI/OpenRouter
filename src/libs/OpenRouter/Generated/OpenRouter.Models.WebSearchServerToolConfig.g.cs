@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Configuration for the openrouter:web_search server tool
     /// </summary>
-    public sealed partial class WebSearchConfig
+    public sealed partial class WebSearchServerToolConfig
     {
         /// <summary>
         /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains.
@@ -59,7 +59,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebSearchConfig" /> class.
+        /// Initializes a new instance of the <see cref="WebSearchServerToolConfig" /> class.
         /// </summary>
         /// <param name="allowedDomains">
         /// Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains.
@@ -85,7 +85,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WebSearchConfig(
+        public WebSearchServerToolConfig(
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::OpenRouter.WebSearchEngineEnum? engine,
             global::System.Collections.Generic.IList<string>? excludedDomains,
@@ -104,9 +104,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebSearchConfig" /> class.
+        /// Initializes a new instance of the <see cref="WebSearchServerToolConfig" /> class.
         /// </summary>
-        public WebSearchConfig()
+        public WebSearchServerToolConfig()
         {
         }
     }
