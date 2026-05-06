@@ -45,6 +45,12 @@ namespace OpenRouter
         public global::OpenRouter.ChatResultObject Object { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("openrouter_metadata")]
+        public global::OpenRouter.OpenRouterMetadata? OpenrouterMetadata { get; set; }
+
+        /// <summary>
         /// The service tier used by the upstream provider for this request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
@@ -84,6 +90,7 @@ namespace OpenRouter
         /// Model used for completion
         /// </param>
         /// <param name="object"></param>
+        /// <param name="openrouterMetadata"></param>
         /// <param name="serviceTier">
         /// The service tier used by the upstream provider for this request
         /// </param>
@@ -102,6 +109,7 @@ namespace OpenRouter
             string id,
             string model,
             global::OpenRouter.ChatResultObject @object,
+            global::OpenRouter.OpenRouterMetadata? openrouterMetadata,
             string? serviceTier,
             string? systemFingerprint,
             global::OpenRouter.ChatUsage? usage)
@@ -111,6 +119,7 @@ namespace OpenRouter
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
+            this.OpenrouterMetadata = openrouterMetadata;
             this.ServiceTier = serviceTier;
             this.SystemFingerprint = systemFingerprint;
             this.Usage = usage;

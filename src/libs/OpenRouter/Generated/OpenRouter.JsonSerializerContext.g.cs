@@ -13,6 +13,10 @@ namespace OpenRouter
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
+            typeof(global::OpenRouter.JsonConverters.MetadataLevelJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MetadataLevelNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ResponseIncludesEnumJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ResponseIncludesEnumNullableJsonConverter),
@@ -828,6 +832,14 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.TruncationJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.TruncationNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PipelineStageTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RoutingStrategyJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RoutingStrategyNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodJsonConverter),
 
@@ -1946,6 +1958,7 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MetadataLevel), TypeInfoPropertyName = "MetadataLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageConfig), TypeInfoPropertyName = "ImageConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
@@ -2427,6 +2440,17 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UsageOutputTokensDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UsageCostDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Usage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RouterAttempt))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.EndpointInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.EndpointsMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.EndpointInfo>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RouterParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PipelineStageType), TypeInfoPropertyName = "PipelineStageType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PipelineStage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RoutingStrategy), TypeInfoPropertyName = "RoutingStrategy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenRouterMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.RouterAttempt>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.PipelineStage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenResponsesResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OutputItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ServiceTier2?, object>), TypeInfoPropertyName = "OneOfServiceTier2Object2")]
@@ -3174,6 +3198,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputMessageContentItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BaseInputsOneOf1Items>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputMessageItemContentItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.EndpointInfo>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RouterAttempt>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.PipelineStage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OpenResponsesResultToolsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ActivityItem>))]
