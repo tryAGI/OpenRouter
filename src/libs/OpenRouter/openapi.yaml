@@ -13,7 +13,17 @@
         "tags": [
           "subpackage_betaResponses"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "X-OpenRouter-Experimental-Metadata",
+            "in": "header",
+            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/MetadataLevel"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -678,7 +688,17 @@
         "tags": [
           "subpackage_chat"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "X-OpenRouter-Experimental-Metadata",
+            "in": "header",
+            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/MetadataLevel"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful chat completion response",
@@ -2828,7 +2848,17 @@
         "tags": [
           "subpackage_anthropicMessages"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "X-OpenRouter-Experimental-Metadata",
+            "in": "header",
+            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/MetadataLevel"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -4208,6 +4238,15 @@
   ],
   "components": {
     "schemas": {
+      "MetadataLevel": {
+        "type": "string",
+        "enum": [
+          "disabled",
+          "enabled"
+        ],
+        "description": "Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.",
+        "title": "MetadataLevel"
+      },
       "ImageConfig": {
         "oneOf": [
           {
@@ -11093,6 +11132,225 @@
         "description": "Token usage information for the response",
         "title": "Usage"
       },
+      "RouterAttempt": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "model",
+          "provider",
+          "status"
+        ],
+        "title": "RouterAttempt"
+      },
+      "EndpointInfo": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "sort_rank": {
+            "type": "integer"
+          },
+          "sort_value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          }
+        },
+        "required": [
+          "model",
+          "provider",
+          "selected",
+          "sort_rank",
+          "sort_value"
+        ],
+        "title": "EndpointInfo"
+      },
+      "EndpointsMetadata": {
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EndpointInfo"
+            }
+          },
+          "sort": {
+            "type": "string"
+          },
+          "sort_value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "total": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "available",
+          "sort",
+          "total"
+        ],
+        "title": "EndpointsMetadata"
+      },
+      "RouterParams": {
+        "type": "object",
+        "properties": {
+          "quality_floor": {
+            "type": "number",
+            "format": "double"
+          },
+          "sort": {
+            "type": "string"
+          },
+          "throughput_floor": {
+            "type": "number",
+            "format": "double"
+          },
+          "version_group": {
+            "type": "string"
+          }
+        },
+        "title": "RouterParams"
+      },
+      "PipelineStageType": {
+        "type": "string",
+        "enum": [
+          "router",
+          "guardrail",
+          "web_search",
+          "file_parser",
+          "server_tools",
+          "response_healing",
+          "context_compression"
+        ],
+        "description": "Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.",
+        "title": "PipelineStageType"
+      },
+      "PipelineStage": {
+        "type": "object",
+        "properties": {
+          "cost_usd": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "guardrail_id": {
+            "type": "string"
+          },
+          "guardrail_scope": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PipelineStageType"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "PipelineStage"
+      },
+      "RoutingStrategy": {
+        "type": "string",
+        "enum": [
+          "direct",
+          "auto",
+          "free",
+          "latest",
+          "alias",
+          "fallback",
+          "pareto",
+          "bodybuilder"
+        ],
+        "title": "RoutingStrategy"
+      },
+      "OpenRouterMetadata": {
+        "type": "object",
+        "properties": {
+          "attempt": {
+            "type": "integer"
+          },
+          "attempts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RouterAttempt"
+            }
+          },
+          "endpoints": {
+            "$ref": "#/components/schemas/EndpointsMetadata"
+          },
+          "is_byok": {
+            "type": "boolean"
+          },
+          "params": {
+            "$ref": "#/components/schemas/RouterParams"
+          },
+          "pipeline": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PipelineStage"
+            }
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requested": {
+            "type": "string"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/RoutingStrategy"
+          },
+          "summary": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "attempt",
+          "endpoints",
+          "is_byok",
+          "region",
+          "requested",
+          "strategy",
+          "summary"
+        ],
+        "title": "OpenRouterMetadata"
+      },
       "OpenResponsesResult": {
         "type": "object",
         "properties": {
@@ -11250,6 +11508,9 @@
               "string",
               "null"
             ]
+          },
+          "openrouter_metadata": {
+            "$ref": "#/components/schemas/OpenRouterMetadata"
           }
         },
         "required": [
@@ -11307,6 +11568,15 @@
           "error": {
             "$ref": "#/components/schemas/BadRequestResponseErrorData"
           },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "user_id": {
             "type": [
               "string",
@@ -11351,6 +11621,15 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/UnauthorizedResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           },
           "user_id": {
             "type": [
@@ -11397,6 +11676,15 @@
           "error": {
             "$ref": "#/components/schemas/PaymentRequiredResponseErrorData"
           },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "user_id": {
             "type": [
               "string",
@@ -11441,6 +11729,15 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/NotFoundResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           },
           "user_id": {
             "type": [
@@ -11487,6 +11784,15 @@
           "error": {
             "$ref": "#/components/schemas/RequestTimeoutResponseErrorData"
           },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "user_id": {
             "type": [
               "string",
@@ -11531,6 +11837,15 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/PayloadTooLargeResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           },
           "user_id": {
             "type": [
@@ -11577,6 +11892,15 @@
           "error": {
             "$ref": "#/components/schemas/UnprocessableEntityResponseErrorData"
           },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "user_id": {
             "type": [
               "string",
@@ -11621,6 +11945,15 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/TooManyRequestsResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           },
           "user_id": {
             "type": [
@@ -11667,6 +12000,15 @@
           "error": {
             "$ref": "#/components/schemas/InternalServerResponseErrorData"
           },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "user_id": {
             "type": [
               "string",
@@ -11712,6 +12054,15 @@
           "error": {
             "$ref": "#/components/schemas/BadGatewayResponseErrorData"
           },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "user_id": {
             "type": [
               "string",
@@ -11756,6 +12107,15 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/ServiceUnavailableResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           },
           "user_id": {
             "type": [
@@ -11831,6 +12191,15 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/ForbiddenResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           },
           "user_id": {
             "type": [
@@ -11932,6 +12301,15 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/ConflictResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
           },
           "user_id": {
             "type": [
@@ -14903,6 +15281,9 @@
           },
           "object": {
             "$ref": "#/components/schemas/ChatResultObject"
+          },
+          "openrouter_metadata": {
+            "$ref": "#/components/schemas/OpenRouterMetadata"
           },
           "service_tier": {
             "type": [
@@ -22794,6 +23175,9 @@
                 "type": "null"
               }
             ]
+          },
+          "openrouter_metadata": {
+            "$ref": "#/components/schemas/OpenRouterMetadata"
           },
           "provider": {
             "$ref": "#/components/schemas/ProviderName"

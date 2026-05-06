@@ -231,6 +231,12 @@ namespace OpenRouter
         public string? User { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("openrouter_metadata")]
+        public global::OpenRouter.OpenRouterMetadata? OpenrouterMetadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -281,6 +287,7 @@ namespace OpenRouter
         /// Token usage information for the response
         /// </param>
         /// <param name="user"></param>
+        /// <param name="openrouterMetadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -318,7 +325,8 @@ namespace OpenRouter
             double? topP,
             global::OpenRouter.Truncation? truncation,
             global::OpenRouter.Usage? usage,
-            string? user)
+            string? user,
+            global::OpenRouter.OpenRouterMetadata? openrouterMetadata)
         {
             this.Background = background;
             this.CompletedAt = completedAt;
@@ -354,6 +362,7 @@ namespace OpenRouter
             this.Truncation = truncation;
             this.Usage = usage;
             this.User = user;
+            this.OpenrouterMetadata = openrouterMetadata;
         }
 
         /// <summary>
