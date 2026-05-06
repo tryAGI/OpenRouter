@@ -17,12 +17,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        public string? Sort { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("throughput_floor")]
         public double? ThroughputFloor { get; set; }
 
@@ -42,7 +36,6 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="RouterParams" /> class.
         /// </summary>
         /// <param name="qualityFloor"></param>
-        /// <param name="sort"></param>
         /// <param name="throughputFloor"></param>
         /// <param name="versionGroup"></param>
 #if NET7_0_OR_GREATER
@@ -50,12 +43,10 @@ namespace OpenRouter
 #endif
         public RouterParams(
             double? qualityFloor,
-            string? sort,
             double? throughputFloor,
             string? versionGroup)
         {
             this.QualityFloor = qualityFloor;
-            this.Sort = sort;
             this.ThroughputFloor = throughputFloor;
             this.VersionGroup = versionGroup;
         }

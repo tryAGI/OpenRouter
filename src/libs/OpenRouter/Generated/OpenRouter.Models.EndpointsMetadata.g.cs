@@ -18,19 +18,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Sort { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort_value")]
-        public double? SortValue { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Total { get; set; }
@@ -45,21 +32,15 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="EndpointsMetadata" /> class.
         /// </summary>
         /// <param name="available"></param>
-        /// <param name="sort"></param>
         /// <param name="total"></param>
-        /// <param name="sortValue"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EndpointsMetadata(
             global::System.Collections.Generic.IList<global::OpenRouter.EndpointInfo> available,
-            string sort,
-            int total,
-            double? sortValue)
+            int total)
         {
             this.Available = available ?? throw new global::System.ArgumentNullException(nameof(available));
-            this.Sort = sort ?? throw new global::System.ArgumentNullException(nameof(sort));
-            this.SortValue = sortValue;
             this.Total = total;
         }
 

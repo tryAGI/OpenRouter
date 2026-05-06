@@ -15,11 +15,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        FileParser,
+        Guardrail,
         /// <summary>
         /// 
         /// </summary>
-        Guardrail,
+        Plugin,
         /// <summary>
         /// 
         /// </summary>
@@ -27,15 +27,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        Router,
-        /// <summary>
-        /// 
-        /// </summary>
         ServerTools,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebSearch,
     }
 
     /// <summary>
@@ -51,12 +43,10 @@ namespace OpenRouter
             return value switch
             {
                 PipelineStageType.ContextCompression => "context_compression",
-                PipelineStageType.FileParser => "file_parser",
                 PipelineStageType.Guardrail => "guardrail",
+                PipelineStageType.Plugin => "plugin",
                 PipelineStageType.ResponseHealing => "response_healing",
-                PipelineStageType.Router => "router",
                 PipelineStageType.ServerTools => "server_tools",
-                PipelineStageType.WebSearch => "web_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,12 +58,10 @@ namespace OpenRouter
             return value switch
             {
                 "context_compression" => PipelineStageType.ContextCompression,
-                "file_parser" => PipelineStageType.FileParser,
                 "guardrail" => PipelineStageType.Guardrail,
+                "plugin" => PipelineStageType.Plugin,
                 "response_healing" => PipelineStageType.ResponseHealing,
-                "router" => PipelineStageType.Router,
                 "server_tools" => PipelineStageType.ServerTools,
-                "web_search" => PipelineStageType.WebSearch,
                 _ => null,
             };
         }

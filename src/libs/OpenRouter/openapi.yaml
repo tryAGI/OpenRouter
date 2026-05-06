@@ -11163,24 +11163,12 @@
           },
           "selected": {
             "type": "boolean"
-          },
-          "sort_rank": {
-            "type": "integer"
-          },
-          "sort_value": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
           }
         },
         "required": [
           "model",
           "provider",
-          "selected",
-          "sort_rank",
-          "sort_value"
+          "selected"
         ],
         "title": "EndpointInfo"
       },
@@ -11193,23 +11181,12 @@
               "$ref": "#/components/schemas/EndpointInfo"
             }
           },
-          "sort": {
-            "type": "string"
-          },
-          "sort_value": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
           "total": {
             "type": "integer"
           }
         },
         "required": [
           "available",
-          "sort",
           "total"
         ],
         "title": "EndpointsMetadata"
@@ -11220,9 +11197,6 @@
           "quality_floor": {
             "type": "number",
             "format": "double"
-          },
-          "sort": {
-            "type": "string"
           },
           "throughput_floor": {
             "type": "number",
@@ -11237,10 +11211,8 @@
       "PipelineStageType": {
         "type": "string",
         "enum": [
-          "router",
           "guardrail",
-          "web_search",
-          "file_parser",
+          "plugin",
           "server_tools",
           "response_healing",
           "context_compression"
@@ -21250,6 +21222,18 @@
         ],
         "title": "MessagesRequestToolsItems4"
       },
+      "MessagesRequestToolsItems10": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "MessagesRequestToolsItems10"
+      },
       "MessagesRequestToolsItems": {
         "oneOf": [
           {
@@ -21281,6 +21265,9 @@
           },
           {
             "$ref": "#/components/schemas/OpenRouterWebSearchServerTool"
+          },
+          {
+            "$ref": "#/components/schemas/MessagesRequestToolsItems10"
           }
         ],
         "title": "MessagesRequestToolsItems"
