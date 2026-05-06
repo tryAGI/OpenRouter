@@ -1085,6 +1085,18 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ProviderResponseProviderNameNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterActionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterActionNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.GuardrailIntervalJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.GuardrailIntervalNullableJsonConverter),
@@ -2714,8 +2726,15 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GenerationContentDataOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GenerationContentData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GenerationContentResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterBuiltinAction), TypeInfoPropertyName = "ContentFilterBuiltinAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterBuiltinSlug), TypeInfoPropertyName = "ContentFilterBuiltinSlug2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterBuiltinEntry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterAction), TypeInfoPropertyName = "ContentFilterAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterEntry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GuardrailInterval), TypeInfoPropertyName = "GuardrailInterval2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Guardrail))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListGuardrailsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.Guardrail>))]
@@ -3231,6 +3250,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.Model>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.PublicEndpoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ProviderResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ContentFilterBuiltinEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ContentFilterEntry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.Guardrail>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.KeyAssignment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.MemberAssignment>))]

@@ -599,6 +599,12 @@ namespace OpenRouter
         /// <param name="allowedProviders">
         /// List of allowed provider IDs
         /// </param>
+        /// <param name="contentFilterBuiltins">
+        /// Builtin content filters to apply. Use slug "regex-prompt-injection" with action "block", "flag", or "redact" to enable heuristic prompt injection detection.
+        /// </param>
+        /// <param name="contentFilters">
+        /// Custom regex content filters to apply to request messages
+        /// </param>
         /// <param name="description">
         /// Description of the guardrail
         /// </param>
@@ -630,6 +636,8 @@ namespace OpenRouter
             string name,
             global::System.Collections.Generic.IList<string>? allowedModels = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? contentFilterBuiltins = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters = default,
             string? description = default,
             bool? enforceZdr = default,
             global::System.Collections.Generic.IList<string>? ignoredModels = default,
@@ -644,6 +652,8 @@ namespace OpenRouter
             {
                 AllowedModels = allowedModels,
                 AllowedProviders = allowedProviders,
+                ContentFilterBuiltins = contentFilterBuiltins,
+                ContentFilters = contentFilters,
                 Description = description,
                 EnforceZdr = enforceZdr,
                 IgnoredModels = ignoredModels,

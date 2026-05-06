@@ -21,6 +21,18 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? AllowedProviders { get; set; }
 
         /// <summary>
+        /// Builtin content filters to apply. Set to null to remove. Use slug "regex-prompt-injection" with action "block", "flag", or "redact" to enable heuristic prompt injection detection.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_filter_builtins")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? ContentFilterBuiltins { get; set; }
+
+        /// <summary>
+        /// Custom regex content filters to apply. Set to null to remove.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_filters")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? ContentFilters { get; set; }
+
+        /// <summary>
         /// New description for the guardrail
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -78,6 +90,12 @@ namespace OpenRouter
         /// <param name="allowedProviders">
         /// New list of allowed provider IDs
         /// </param>
+        /// <param name="contentFilterBuiltins">
+        /// Builtin content filters to apply. Set to null to remove. Use slug "regex-prompt-injection" with action "block", "flag", or "redact" to enable heuristic prompt injection detection.
+        /// </param>
+        /// <param name="contentFilters">
+        /// Custom regex content filters to apply. Set to null to remove.
+        /// </param>
         /// <param name="description">
         /// New description for the guardrail
         /// </param>
@@ -105,6 +123,8 @@ namespace OpenRouter
         public UpdateGuardrailRequest(
             global::System.Collections.Generic.IList<string>? allowedModels,
             global::System.Collections.Generic.IList<string>? allowedProviders,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? contentFilterBuiltins,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters,
             string? description,
             bool? enforceZdr,
             global::System.Collections.Generic.IList<string>? ignoredModels,
@@ -115,6 +135,8 @@ namespace OpenRouter
         {
             this.AllowedModels = allowedModels;
             this.AllowedProviders = allowedProviders;
+            this.ContentFilterBuiltins = contentFilterBuiltins;
+            this.ContentFilters = contentFilters;
             this.Description = description;
             this.EnforceZdr = enforceZdr;
             this.IgnoredModels = ignoredModels;

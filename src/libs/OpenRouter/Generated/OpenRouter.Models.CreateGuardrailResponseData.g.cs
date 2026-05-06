@@ -21,6 +21,18 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? AllowedProviders { get; set; }
 
         /// <summary>
+        /// Builtin content filters applied to requests. Includes PII detectors and the regex-based prompt injection detector.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_filter_builtins")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? ContentFilterBuiltins { get; set; }
+
+        /// <summary>
+        /// Custom regex content filters applied to request messages
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_filters")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? ContentFilters { get; set; }
+
+        /// <summary>
         /// ISO 8601 timestamp of when the guardrail was created
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -118,6 +130,12 @@ namespace OpenRouter
         /// <param name="allowedProviders">
         /// List of allowed provider IDs
         /// </param>
+        /// <param name="contentFilterBuiltins">
+        /// Builtin content filters applied to requests. Includes PII detectors and the regex-based prompt injection detector.
+        /// </param>
+        /// <param name="contentFilters">
+        /// Custom regex content filters applied to request messages
+        /// </param>
         /// <param name="description">
         /// Description of the guardrail
         /// </param>
@@ -149,6 +167,8 @@ namespace OpenRouter
             string workspaceId,
             global::System.Collections.Generic.IList<string>? allowedModels,
             global::System.Collections.Generic.IList<string>? allowedProviders,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? contentFilterBuiltins,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters,
             string? description,
             bool? enforceZdr,
             global::System.Collections.Generic.IList<string>? ignoredModels,
@@ -159,6 +179,8 @@ namespace OpenRouter
         {
             this.AllowedModels = allowedModels;
             this.AllowedProviders = allowedProviders;
+            this.ContentFilterBuiltins = contentFilterBuiltins;
+            this.ContentFilters = contentFilters;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Description = description;
             this.EnforceZdr = enforceZdr;
