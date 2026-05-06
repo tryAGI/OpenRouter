@@ -2096,51 +2096,51 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ActivityItem? Type517 { get; set; }
+        public global::OpenRouter.ProviderOptions? Type517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ActivityResponse? Type518 { get; set; }
+        public global::OpenRouter.SpeechRequestProvider? Type518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ActivityItem>? Type519 { get; set; }
+        public global::OpenRouter.SpeechRequestResponseFormat? Type519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ProviderOptions? Type520 { get; set; }
+        public global::OpenRouter.SpeechRequest? Type520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.SpeechRequestProvider? Type521 { get; set; }
+        public global::OpenRouter.STTInputAudio? Type521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.SpeechRequestResponseFormat? Type522 { get; set; }
+        public global::OpenRouter.SttRequestProvider? Type522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.SpeechRequest? Type523 { get; set; }
+        public global::OpenRouter.STTRequest? Type523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.STTInputAudio? Type524 { get; set; }
+        public global::OpenRouter.STTUsage? Type524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.SttRequestProvider? Type525 { get; set; }
+        public global::OpenRouter.STTResponse? Type525 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.STTRequest? Type526 { get; set; }
+        public global::OpenRouter.ActivityItem? Type526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.STTUsage? Type527 { get; set; }
+        public global::OpenRouter.ActivityResponse? Type527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.STTResponse? Type528 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ActivityItem>? Type528 { get; set; }
         /// <summary>
         /// 
         /// </summary>
