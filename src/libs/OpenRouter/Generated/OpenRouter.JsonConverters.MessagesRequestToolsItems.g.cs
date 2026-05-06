@@ -118,6 +118,8 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("parameters.search_context_size")) __score9++;
             if (__jsonProps.Contains("parameters.user_location")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;
+            var __score10 = 0;
+            if (__jsonProps.Contains("type")) __score10++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -130,6 +132,7 @@ namespace OpenRouter.JsonConverters
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
             if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
+            if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
 
             global::OpenRouter.MessagesRequestToolsItems0? messagesRequestToolsItems0 = default;
             global::OpenRouter.MessagesRequestToolsItems1? messagesRequestToolsItems1 = default;
@@ -141,6 +144,7 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool = default;
             global::OpenRouter.WebFetchServerTool? webFetchServerTool = default;
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool = default;
+            global::OpenRouter.MessagesRequestToolsItems10? messagesRequestToolsItems10 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -293,9 +297,24 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 10)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems10> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems10).Name}");
+                        messagesRequestToolsItems10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
             {
                 try
                 {
@@ -426,6 +445,19 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems10> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems10).Name}");
+                    messagesRequestToolsItems10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::OpenRouter.MessagesRequestToolsItems(
@@ -447,7 +479,9 @@ namespace OpenRouter.JsonConverters
 
                 webFetchServerTool,
 
-                openRouterWebSearchServerTool
+                openRouterWebSearchServerTool,
+
+                messagesRequestToolsItems10
                 );
 
             return __value;
@@ -521,6 +555,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenRouterWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenRouterWebSearchServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenRouterWebSearchServerTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenRouterWebSearchServerTool!, typeInfo);
+            }
+            else if (value.IsMessagesRequestToolsItems10)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems10?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems10).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems10!, typeInfo);
             }
         }
     }

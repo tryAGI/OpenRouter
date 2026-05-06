@@ -30,19 +30,6 @@ namespace OpenRouter
         public required bool Selected { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort_rank")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SortRank { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort_value")]
-        public double? SortValue { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,23 +41,17 @@ namespace OpenRouter
         /// <param name="model"></param>
         /// <param name="provider"></param>
         /// <param name="selected"></param>
-        /// <param name="sortRank"></param>
-        /// <param name="sortValue"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EndpointInfo(
             string model,
             string provider,
-            bool selected,
-            int sortRank,
-            double? sortValue)
+            bool selected)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
             this.Selected = selected;
-            this.SortRank = sortRank;
-            this.SortValue = sortValue;
         }
 
         /// <summary>
