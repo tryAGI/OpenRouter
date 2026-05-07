@@ -4876,6 +4876,10 @@
           "name": {
             "type": "string"
           },
+          "namespace": {
+            "type": "string",
+            "description": "Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)"
+          },
           "status": {
             "$ref": "#/components/schemas/ToolCallStatus"
           },
@@ -5395,6 +5399,10 @@
           },
           "name": {
             "type": "string"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)"
           },
           "status": {
             "$ref": "#/components/schemas/OutputFunctionCallItemStatus"
@@ -9850,6 +9858,10 @@
           "name": {
             "type": "string"
           },
+          "namespace": {
+            "type": "string",
+            "description": "Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)"
+          },
           "status": {
             "$ref": "#/components/schemas/ToolCallStatus"
           },
@@ -10334,6 +10346,10 @@
               },
               "name": {
                 "type": "string"
+              },
+              "namespace": {
+                "type": "string",
+                "description": "Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)"
               },
               "status": {
                 "$ref": "#/components/schemas/OutputFunctionCallItemStatus"
