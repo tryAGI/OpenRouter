@@ -201,7 +201,7 @@ public static class OpenRouterToolExtensions
         return string.Join("\n", parts);
     }
 
-    private static string FormatGenerationResponse(GenerationsGetGenerationResponse200 response)
+    private static string FormatGenerationResponse(GenerationResponse response)
     {
         var data = response.Data;
         var parts = new List<string>
