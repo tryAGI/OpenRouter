@@ -58,6 +58,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("call_id")) __score3++;
             if (__jsonProps.Contains("id")) __score3++;
             if (__jsonProps.Contains("name")) __score3++;
+            if (__jsonProps.Contains("namespace")) __score3++;
             if (__jsonProps.Contains("status")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
@@ -78,6 +79,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("call_id")) __score7++;
             if (__jsonProps.Contains("id")) __score7++;
             if (__jsonProps.Contains("name")) __score7++;
+            if (__jsonProps.Contains("namespace")) __score7++;
             if (__jsonProps.Contains("status")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;

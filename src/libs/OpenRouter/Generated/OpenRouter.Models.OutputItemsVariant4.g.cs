@@ -43,6 +43,12 @@ namespace OpenRouter
         public required string Name { get; set; }
 
         /// <summary>
+        /// Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -63,6 +69,9 @@ namespace OpenRouter
         /// <param name="name"></param>
         /// <param name="type"></param>
         /// <param name="id"></param>
+        /// <param name="namespace">
+        /// Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)
+        /// </param>
         /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,6 +82,7 @@ namespace OpenRouter
             string name,
             global::OpenRouter.OutputFunctionCallItemType type,
             string? id,
+            string? @namespace,
             global::OpenRouter.OutputFunctionCallItemStatus? status)
         {
             this.Type = type;
@@ -80,6 +90,7 @@ namespace OpenRouter
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Namespace = @namespace;
             this.Status = status;
         }
 
