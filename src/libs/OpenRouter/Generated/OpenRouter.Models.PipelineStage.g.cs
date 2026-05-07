@@ -40,6 +40,12 @@ namespace OpenRouter
         public required string Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        public string? Summary { get; set; }
+
+        /// <summary>
         /// Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -64,6 +70,7 @@ namespace OpenRouter
         /// <param name="data"></param>
         /// <param name="guardrailId"></param>
         /// <param name="guardrailScope"></param>
+        /// <param name="summary"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,13 +80,15 @@ namespace OpenRouter
             double? costUsd,
             object? data,
             string? guardrailId,
-            string? guardrailScope)
+            string? guardrailScope,
+            string? summary)
         {
             this.CostUsd = costUsd;
             this.Data = data;
             this.GuardrailId = guardrailId;
             this.GuardrailScope = guardrailScope;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Summary = summary;
             this.Type = type;
         }
 
