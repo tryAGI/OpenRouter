@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicDocumentBlockParamSourceOneOf2ContentVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = AnthropicDocumentBlockParamSourceOneOf2ContentVariant1;
+            return IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>? AnthropicDocumentBlockParamSourceOneOf2Content1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicDocumentBlockParamSourceOneOf2Content1))]
 #endif
         public bool IsAnthropicDocumentBlockParamSourceOneOf2Content1 => AnthropicDocumentBlockParamSourceOneOf2Content1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicDocumentBlockParamSourceOneOf2Content1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>? value)
+        {
+            value = AnthropicDocumentBlockParamSourceOneOf2Content1;
+            return IsAnthropicDocumentBlockParamSourceOneOf2Content1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>?, TResult>? anthropicDocumentBlockParamSourceOneOf2Content1 = null,
+            global::System.Func<string, TResult>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>, TResult>? anthropicDocumentBlockParamSourceOneOf2Content1 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>?>? anthropicDocumentBlockParamSourceOneOf2Content1 = null,
+            global::System.Action<string>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>>? anthropicDocumentBlockParamSourceOneOf2Content1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1)
+            {
+                anthropicDocumentBlockParamSourceOneOf2ContentVariant1?.Invoke(AnthropicDocumentBlockParamSourceOneOf2ContentVariant1!);
+            }
+            else if (IsAnthropicDocumentBlockParamSourceOneOf2Content1)
+            {
+                anthropicDocumentBlockParamSourceOneOf2Content1?.Invoke(AnthropicDocumentBlockParamSourceOneOf2Content1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>>? anthropicDocumentBlockParamSourceOneOf2Content1 = null,
             bool validate = true)
         {
             if (validate)

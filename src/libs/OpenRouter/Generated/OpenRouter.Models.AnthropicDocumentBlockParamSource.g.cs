@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicBase64PdfSource(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicBase64PdfSource? value)
+        {
+            value = AnthropicBase64PdfSource;
+            return IsAnthropicBase64PdfSource;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicPlainTextSource? AnthropicPlainTextSource { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicPlainTextSource))]
 #endif
         public bool IsAnthropicPlainTextSource => AnthropicPlainTextSource != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicPlainTextSource(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicPlainTextSource? value)
+        {
+            value = AnthropicPlainTextSource;
+            return IsAnthropicPlainTextSource;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicDocumentBlockParamSource2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicDocumentBlockParamSource2? value)
+        {
+            value = AnthropicDocumentBlockParamSource2;
+            return IsAnthropicDocumentBlockParamSource2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicUrlPdfSource? AnthropicUrlPdfSource { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicUrlPdfSource))]
 #endif
         public bool IsAnthropicUrlPdfSource => AnthropicUrlPdfSource != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicUrlPdfSource(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicUrlPdfSource? value)
+        {
+            value = AnthropicUrlPdfSource;
+            return IsAnthropicUrlPdfSource;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,10 +248,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicBase64PdfSource?, TResult>? anthropicBase64PdfSource = null,
-            global::System.Func<global::OpenRouter.AnthropicPlainTextSource?, TResult>? anthropicPlainTextSource = null,
-            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParamSource2?, TResult>? anthropicDocumentBlockParamSource2 = null,
-            global::System.Func<global::OpenRouter.AnthropicUrlPdfSource?, TResult>? anthropicUrlPdfSource = null,
+            global::System.Func<global::OpenRouter.AnthropicBase64PdfSource, TResult>? anthropicBase64PdfSource = null,
+            global::System.Func<global::OpenRouter.AnthropicPlainTextSource, TResult>? anthropicPlainTextSource = null,
+            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParamSource2, TResult>? anthropicDocumentBlockParamSource2 = null,
+            global::System.Func<global::OpenRouter.AnthropicUrlPdfSource, TResult>? anthropicUrlPdfSource = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +283,46 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicBase64PdfSource?>? anthropicBase64PdfSource = null,
-            global::System.Action<global::OpenRouter.AnthropicPlainTextSource?>? anthropicPlainTextSource = null,
-            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParamSource2?>? anthropicDocumentBlockParamSource2 = null,
-            global::System.Action<global::OpenRouter.AnthropicUrlPdfSource?>? anthropicUrlPdfSource = null,
+            global::System.Action<global::OpenRouter.AnthropicBase64PdfSource>? anthropicBase64PdfSource = null,
+
+            global::System.Action<global::OpenRouter.AnthropicPlainTextSource>? anthropicPlainTextSource = null,
+
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParamSource2>? anthropicDocumentBlockParamSource2 = null,
+
+            global::System.Action<global::OpenRouter.AnthropicUrlPdfSource>? anthropicUrlPdfSource = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicBase64PdfSource)
+            {
+                anthropicBase64PdfSource?.Invoke(AnthropicBase64PdfSource!);
+            }
+            else if (IsAnthropicPlainTextSource)
+            {
+                anthropicPlainTextSource?.Invoke(AnthropicPlainTextSource!);
+            }
+            else if (IsAnthropicDocumentBlockParamSource2)
+            {
+                anthropicDocumentBlockParamSource2?.Invoke(AnthropicDocumentBlockParamSource2!);
+            }
+            else if (IsAnthropicUrlPdfSource)
+            {
+                anthropicUrlPdfSource?.Invoke(AnthropicUrlPdfSource!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicBase64PdfSource>? anthropicBase64PdfSource = null,
+            global::System.Action<global::OpenRouter.AnthropicPlainTextSource>? anthropicPlainTextSource = null,
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParamSource2>? anthropicDocumentBlockParamSource2 = null,
+            global::System.Action<global::OpenRouter.AnthropicUrlPdfSource>? anthropicUrlPdfSource = null,
             bool validate = true)
         {
             if (validate)

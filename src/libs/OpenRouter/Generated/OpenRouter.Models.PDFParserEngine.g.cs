@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPdfParserEngine0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.PdfParserEngine0? value)
+        {
+            value = PdfParserEngine0;
+            return IsPdfParserEngine0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.PdfParserEngine1? PdfParserEngine1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PdfParserEngine1))]
 #endif
         public bool IsPdfParserEngine1 => PdfParserEngine1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPdfParserEngine1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.PdfParserEngine1? value)
+        {
+            value = PdfParserEngine1;
+            return IsPdfParserEngine1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.PdfParserEngine0?>? pdfParserEngine0 = null,
+
+            global::System.Action<global::OpenRouter.PdfParserEngine1?>? pdfParserEngine1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPdfParserEngine0)
+            {
+                pdfParserEngine0?.Invoke(PdfParserEngine0!);
+            }
+            else if (IsPdfParserEngine1)
+            {
+                pdfParserEngine1?.Invoke(PdfParserEngine1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.PdfParserEngine0?>? pdfParserEngine0 = null,
             global::System.Action<global::OpenRouter.PdfParserEngine1?>? pdfParserEngine1 = null,
             bool validate = true)

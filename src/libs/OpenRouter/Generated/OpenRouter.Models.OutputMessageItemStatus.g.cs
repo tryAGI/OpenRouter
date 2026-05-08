@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputMessageItemStatus0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageItemStatus0? value)
+        {
+            value = OutputMessageItemStatus0;
+            return IsOutputMessageItemStatus0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageItemStatus1? OutputMessageItemStatus1 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputMessageItemStatus1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageItemStatus1? value)
+        {
+            value = OutputMessageItemStatus1;
+            return IsOutputMessageItemStatus1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageItemStatus2? OutputMessageItemStatus2 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageItemStatus2))]
 #endif
         public bool IsOutputMessageItemStatus2 => OutputMessageItemStatus2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputMessageItemStatus2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageItemStatus2? value)
+        {
+            value = OutputMessageItemStatus2;
+            return IsOutputMessageItemStatus2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -187,6 +226,36 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.OutputMessageItemStatus0?>? outputMessageItemStatus0 = null,
+
+            global::System.Action<global::OpenRouter.OutputMessageItemStatus1?>? outputMessageItemStatus1 = null,
+
+            global::System.Action<global::OpenRouter.OutputMessageItemStatus2?>? outputMessageItemStatus2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputMessageItemStatus0)
+            {
+                outputMessageItemStatus0?.Invoke(OutputMessageItemStatus0!);
+            }
+            else if (IsOutputMessageItemStatus1)
+            {
+                outputMessageItemStatus1?.Invoke(OutputMessageItemStatus1!);
+            }
+            else if (IsOutputMessageItemStatus2)
+            {
+                outputMessageItemStatus2?.Invoke(OutputMessageItemStatus2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.OutputMessageItemStatus0?>? outputMessageItemStatus0 = null,
             global::System.Action<global::OpenRouter.OutputMessageItemStatus1?>? outputMessageItemStatus1 = null,
             global::System.Action<global::OpenRouter.OutputMessageItemStatus2?>? outputMessageItemStatus2 = null,

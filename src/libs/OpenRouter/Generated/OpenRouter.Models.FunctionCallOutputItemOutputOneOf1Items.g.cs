@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant1? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
+
+        /// <summary>
         /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace OpenRouter
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant2? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
         public bool IsInputText => InputText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant3? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant1?, TResult>? inputFile = null,
-            global::System.Func<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant2?, TResult>? inputImage = null,
-            global::System.Func<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant3?, TResult>? inputText = null,
+            global::System.Func<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant1, TResult>? inputFile = null,
+            global::System.Func<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant2, TResult>? inputImage = null,
+            global::System.Func<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant3, TResult>? inputText = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant1?>? inputFile = null,
-            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant2?>? inputImage = null,
-            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant3?>? inputText = null,
+            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant1>? inputFile = null,
+
+            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant2>? inputImage = null,
+
+            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant3>? inputText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant1>? inputFile = null,
+            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant2>? inputImage = null,
+            global::System.Action<global::OpenRouter.FunctionCallOutputItemOutputOneOf1ItemsVariant3>? inputText = null,
             bool validate = true)
         {
             if (validate)

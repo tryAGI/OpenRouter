@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestContextManagementEditsItems0? value)
+        {
+            value = MessagesRequestContextManagementEditsItems0;
+            return IsMessagesRequestContextManagementEditsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestContextManagementEditsItems1? MessagesRequestContextManagementEditsItems1 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestContextManagementEditsItems1? value)
+        {
+            value = MessagesRequestContextManagementEditsItems1;
+            return IsMessagesRequestContextManagementEditsItems1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestContextManagementEditsItems2? MessagesRequestContextManagementEditsItems2 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItems2))]
 #endif
         public bool IsMessagesRequestContextManagementEditsItems2 => MessagesRequestContextManagementEditsItems2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestContextManagementEditsItems2? value)
+        {
+            value = MessagesRequestContextManagementEditsItems2;
+            return IsMessagesRequestContextManagementEditsItems2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItems0?, TResult>? messagesRequestContextManagementEditsItems0 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItems1?, TResult>? messagesRequestContextManagementEditsItems1 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItems2?, TResult>? messagesRequestContextManagementEditsItems2 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItems0, TResult>? messagesRequestContextManagementEditsItems0 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItems1, TResult>? messagesRequestContextManagementEditsItems1 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItems2, TResult>? messagesRequestContextManagementEditsItems2 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems0?>? messagesRequestContextManagementEditsItems0 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems1?>? messagesRequestContextManagementEditsItems1 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems2?>? messagesRequestContextManagementEditsItems2 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems0>? messagesRequestContextManagementEditsItems0 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems1>? messagesRequestContextManagementEditsItems1 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems2>? messagesRequestContextManagementEditsItems2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestContextManagementEditsItems0)
+            {
+                messagesRequestContextManagementEditsItems0?.Invoke(MessagesRequestContextManagementEditsItems0!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItems1)
+            {
+                messagesRequestContextManagementEditsItems1?.Invoke(MessagesRequestContextManagementEditsItems1!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItems2)
+            {
+                messagesRequestContextManagementEditsItems2?.Invoke(MessagesRequestContextManagementEditsItems2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems0>? messagesRequestContextManagementEditsItems0 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems1>? messagesRequestContextManagementEditsItems1 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems2>? messagesRequestContextManagementEditsItems2 = null,
             bool validate = true)
         {
             if (validate)

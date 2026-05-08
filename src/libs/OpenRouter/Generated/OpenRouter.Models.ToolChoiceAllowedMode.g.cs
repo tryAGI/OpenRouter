@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolChoiceAllowedMode0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ToolChoiceAllowedMode0? value)
+        {
+            value = ToolChoiceAllowedMode0;
+            return IsToolChoiceAllowedMode0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ToolChoiceAllowedMode1? ToolChoiceAllowedMode1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceAllowedMode1))]
 #endif
         public bool IsToolChoiceAllowedMode1 => ToolChoiceAllowedMode1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolChoiceAllowedMode1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ToolChoiceAllowedMode1? value)
+        {
+            value = ToolChoiceAllowedMode1;
+            return IsToolChoiceAllowedMode1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.ToolChoiceAllowedMode0?>? toolChoiceAllowedMode0 = null,
+
+            global::System.Action<global::OpenRouter.ToolChoiceAllowedMode1?>? toolChoiceAllowedMode1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolChoiceAllowedMode0)
+            {
+                toolChoiceAllowedMode0?.Invoke(ToolChoiceAllowedMode0!);
+            }
+            else if (IsToolChoiceAllowedMode1)
+            {
+                toolChoiceAllowedMode1?.Invoke(ToolChoiceAllowedMode1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.ToolChoiceAllowedMode0?>? toolChoiceAllowedMode0 = null,
             global::System.Action<global::OpenRouter.ToolChoiceAllowedMode1?>? toolChoiceAllowedMode1 = null,
             bool validate = true)

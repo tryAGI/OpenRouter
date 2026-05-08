@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicCompactionUsageIteration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCompactionUsageIteration? value)
+        {
+            value = AnthropicCompactionUsageIteration;
+            return IsAnthropicCompactionUsageIteration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicMessageUsageIteration? AnthropicMessageUsageIteration { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicMessageUsageIteration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicMessageUsageIteration? value)
+        {
+            value = AnthropicMessageUsageIteration;
+            return IsAnthropicMessageUsageIteration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicUnknownUsageIteration? AnthropicUnknownUsageIteration { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicUnknownUsageIteration))]
 #endif
         public bool IsAnthropicUnknownUsageIteration => AnthropicUnknownUsageIteration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicUnknownUsageIteration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicUnknownUsageIteration? value)
+        {
+            value = AnthropicUnknownUsageIteration;
+            return IsAnthropicUnknownUsageIteration;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicCompactionUsageIteration?, TResult>? anthropicCompactionUsageIteration = null,
-            global::System.Func<global::OpenRouter.AnthropicMessageUsageIteration?, TResult>? anthropicMessageUsageIteration = null,
-            global::System.Func<global::OpenRouter.AnthropicUnknownUsageIteration?, TResult>? anthropicUnknownUsageIteration = null,
+            global::System.Func<global::OpenRouter.AnthropicCompactionUsageIteration, TResult>? anthropicCompactionUsageIteration = null,
+            global::System.Func<global::OpenRouter.AnthropicMessageUsageIteration, TResult>? anthropicMessageUsageIteration = null,
+            global::System.Func<global::OpenRouter.AnthropicUnknownUsageIteration, TResult>? anthropicUnknownUsageIteration = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration?>? anthropicCompactionUsageIteration = null,
-            global::System.Action<global::OpenRouter.AnthropicMessageUsageIteration?>? anthropicMessageUsageIteration = null,
-            global::System.Action<global::OpenRouter.AnthropicUnknownUsageIteration?>? anthropicUnknownUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration>? anthropicCompactionUsageIteration = null,
+
+            global::System.Action<global::OpenRouter.AnthropicMessageUsageIteration>? anthropicMessageUsageIteration = null,
+
+            global::System.Action<global::OpenRouter.AnthropicUnknownUsageIteration>? anthropicUnknownUsageIteration = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicCompactionUsageIteration)
+            {
+                anthropicCompactionUsageIteration?.Invoke(AnthropicCompactionUsageIteration!);
+            }
+            else if (IsAnthropicMessageUsageIteration)
+            {
+                anthropicMessageUsageIteration?.Invoke(AnthropicMessageUsageIteration!);
+            }
+            else if (IsAnthropicUnknownUsageIteration)
+            {
+                anthropicUnknownUsageIteration?.Invoke(AnthropicUnknownUsageIteration!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration>? anthropicCompactionUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicMessageUsageIteration>? anthropicMessageUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicUnknownUsageIteration>? anthropicUnknownUsageIteration = null,
             bool validate = true)
         {
             if (validate)

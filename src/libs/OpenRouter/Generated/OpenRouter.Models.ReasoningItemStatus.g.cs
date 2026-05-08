@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickReasoningItemStatus0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ReasoningItemStatus0? value)
+        {
+            value = ReasoningItemStatus0;
+            return IsReasoningItemStatus0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ReasoningItemStatus1? ReasoningItemStatus1 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickReasoningItemStatus1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ReasoningItemStatus1? value)
+        {
+            value = ReasoningItemStatus1;
+            return IsReasoningItemStatus1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ReasoningItemStatus2? ReasoningItemStatus2 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningItemStatus2))]
 #endif
         public bool IsReasoningItemStatus2 => ReasoningItemStatus2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningItemStatus2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ReasoningItemStatus2? value)
+        {
+            value = ReasoningItemStatus2;
+            return IsReasoningItemStatus2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -187,6 +226,36 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.ReasoningItemStatus0?>? reasoningItemStatus0 = null,
+
+            global::System.Action<global::OpenRouter.ReasoningItemStatus1?>? reasoningItemStatus1 = null,
+
+            global::System.Action<global::OpenRouter.ReasoningItemStatus2?>? reasoningItemStatus2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReasoningItemStatus0)
+            {
+                reasoningItemStatus0?.Invoke(ReasoningItemStatus0!);
+            }
+            else if (IsReasoningItemStatus1)
+            {
+                reasoningItemStatus1?.Invoke(ReasoningItemStatus1!);
+            }
+            else if (IsReasoningItemStatus2)
+            {
+                reasoningItemStatus2?.Invoke(ReasoningItemStatus2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.ReasoningItemStatus0?>? reasoningItemStatus0 = null,
             global::System.Action<global::OpenRouter.ReasoningItemStatus1?>? reasoningItemStatus1 = null,
             global::System.Action<global::OpenRouter.ReasoningItemStatus2?>? reasoningItemStatus2 = null,

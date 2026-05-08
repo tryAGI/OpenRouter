@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsToolSearchToolResultError => ToolSearchToolResultError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolSearchToolResultError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicToolSearchContentVariant1? value)
+        {
+            value = ToolSearchToolResultError;
+            return IsToolSearchToolResultError;
+        }
+
+        /// <summary>
         /// tool_search_tool_search_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolSearchResult))]
 #endif
         public bool IsToolSearchToolSearchResult => ToolSearchToolSearchResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolSearchToolSearchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicToolSearchContentVariant2? value)
+        {
+            value = ToolSearchToolSearchResult;
+            return IsToolSearchToolSearchResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicToolSearchContentVariant1?, TResult>? toolSearchToolResultError = null,
-            global::System.Func<global::OpenRouter.AnthropicToolSearchContentVariant2?, TResult>? toolSearchToolSearchResult = null,
+            global::System.Func<global::OpenRouter.AnthropicToolSearchContentVariant1, TResult>? toolSearchToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicToolSearchContentVariant2, TResult>? toolSearchToolSearchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant1?>? toolSearchToolResultError = null,
-            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant2?>? toolSearchToolSearchResult = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant1>? toolSearchToolResultError = null,
+
+            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant2>? toolSearchToolSearchResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolSearchToolResultError)
+            {
+                toolSearchToolResultError?.Invoke(ToolSearchToolResultError!);
+            }
+            else if (IsToolSearchToolSearchResult)
+            {
+                toolSearchToolSearchResult?.Invoke(ToolSearchToolSearchResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant1>? toolSearchToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant2>? toolSearchToolSearchResult = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicBase64PdfSource(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicBase64PdfSource? value)
+        {
+            value = AnthropicBase64PdfSource;
+            return IsAnthropicBase64PdfSource;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicPlainTextSource? AnthropicPlainTextSource { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicPlainTextSource))]
 #endif
         public bool IsAnthropicPlainTextSource => AnthropicPlainTextSource != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicPlainTextSource(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicPlainTextSource? value)
+        {
+            value = AnthropicPlainTextSource;
+            return IsAnthropicPlainTextSource;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicBase64PdfSource?, TResult>? anthropicBase64PdfSource = null,
-            global::System.Func<global::OpenRouter.AnthropicPlainTextSource?, TResult>? anthropicPlainTextSource = null,
+            global::System.Func<global::OpenRouter.AnthropicBase64PdfSource, TResult>? anthropicBase64PdfSource = null,
+            global::System.Func<global::OpenRouter.AnthropicPlainTextSource, TResult>? anthropicPlainTextSource = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicBase64PdfSource?>? anthropicBase64PdfSource = null,
-            global::System.Action<global::OpenRouter.AnthropicPlainTextSource?>? anthropicPlainTextSource = null,
+            global::System.Action<global::OpenRouter.AnthropicBase64PdfSource>? anthropicBase64PdfSource = null,
+
+            global::System.Action<global::OpenRouter.AnthropicPlainTextSource>? anthropicPlainTextSource = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicBase64PdfSource)
+            {
+                anthropicBase64PdfSource?.Invoke(AnthropicBase64PdfSource!);
+            }
+            else if (IsAnthropicPlainTextSource)
+            {
+                anthropicPlainTextSource?.Invoke(AnthropicPlainTextSource!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicBase64PdfSource>? anthropicBase64PdfSource = null,
+            global::System.Action<global::OpenRouter.AnthropicPlainTextSource>? anthropicPlainTextSource = null,
             bool validate = true)
         {
             if (validate)

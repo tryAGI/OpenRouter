@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsWebFetchResult => WebFetchResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebFetchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicWebFetchContentVariant1? value)
+        {
+            value = WebFetchResult;
+            return IsWebFetchResult;
+        }
+
+        /// <summary>
         /// web_fetch_tool_result_error variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchToolResultError))]
 #endif
         public bool IsWebFetchToolResultError => WebFetchToolResultError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebFetchToolResultError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicWebFetchContentVariant2? value)
+        {
+            value = WebFetchToolResultError;
+            return IsWebFetchToolResultError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicWebFetchContentVariant1?, TResult>? webFetchResult = null,
-            global::System.Func<global::OpenRouter.AnthropicWebFetchContentVariant2?, TResult>? webFetchToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicWebFetchContentVariant1, TResult>? webFetchResult = null,
+            global::System.Func<global::OpenRouter.AnthropicWebFetchContentVariant2, TResult>? webFetchToolResultError = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant1?>? webFetchResult = null,
-            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant2?>? webFetchToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant1>? webFetchResult = null,
+
+            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant2>? webFetchToolResultError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWebFetchResult)
+            {
+                webFetchResult?.Invoke(WebFetchResult!);
+            }
+            else if (IsWebFetchToolResultError)
+            {
+                webFetchToolResultError?.Invoke(WebFetchToolResultError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant1>? webFetchResult = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant2>? webFetchToolResultError = null,
             bool validate = true)
         {
             if (validate)

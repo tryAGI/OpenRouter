@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponseFunctionToolCallOutputOutputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = OpenAiResponseFunctionToolCallOutputOutputVariant1;
+            return IsOpenAiResponseFunctionToolCallOutputOutputVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>? OpenAiResponseFunctionToolCallOutputOutput1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponseFunctionToolCallOutputOutput1))]
 #endif
         public bool IsOpenAiResponseFunctionToolCallOutputOutput1 => OpenAiResponseFunctionToolCallOutputOutput1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponseFunctionToolCallOutputOutput1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>? value)
+        {
+            value = OpenAiResponseFunctionToolCallOutputOutput1;
+            return IsOpenAiResponseFunctionToolCallOutputOutput1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>?, TResult>? openAiResponseFunctionToolCallOutputOutput1 = null,
+            global::System.Func<string, TResult>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>, TResult>? openAiResponseFunctionToolCallOutputOutput1 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>?>? openAiResponseFunctionToolCallOutputOutput1 = null,
+            global::System.Action<string>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>>? openAiResponseFunctionToolCallOutputOutput1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAiResponseFunctionToolCallOutputOutputVariant1)
+            {
+                openAiResponseFunctionToolCallOutputOutputVariant1?.Invoke(OpenAiResponseFunctionToolCallOutputOutputVariant1!);
+            }
+            else if (IsOpenAiResponseFunctionToolCallOutputOutput1)
+            {
+                openAiResponseFunctionToolCallOutputOutput1?.Invoke(OpenAiResponseFunctionToolCallOutputOutput1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>>? openAiResponseFunctionToolCallOutputOutput1 = null,
             bool validate = true)
         {
             if (validate)

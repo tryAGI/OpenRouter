@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = InputsVariant1;
+            return IsInputsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? Inputs1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Inputs1))]
 #endif
         public bool IsInputs1 => Inputs1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputs1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? value)
+        {
+            value = Inputs1;
+            return IsInputs1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? inputsVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>?, TResult>? inputs1 = null,
+            global::System.Func<string, TResult>? inputsVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>, TResult>? inputs1 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? inputsVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>?>? inputs1 = null,
+            global::System.Action<string>? inputsVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>>? inputs1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputsVariant1)
+            {
+                inputsVariant1?.Invoke(InputsVariant1!);
+            }
+            else if (IsInputs1)
+            {
+                inputs1?.Invoke(Inputs1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? inputsVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>>? inputs1 = null,
             bool validate = true)
         {
             if (validate)

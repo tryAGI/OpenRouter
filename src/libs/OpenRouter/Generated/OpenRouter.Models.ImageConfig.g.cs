@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickImageConfigVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ImageConfigVariant1;
+            return IsImageConfigVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? ImageConfigVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickImageConfigVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = ImageConfigVariant2;
+            return IsImageConfigVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? ImageConfigVariant3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageConfigVariant3))]
 #endif
         public bool IsImageConfigVariant3 => ImageConfigVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageConfigVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<object>? value)
+        {
+            value = ImageConfigVariant3;
+            return IsImageConfigVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -139,9 +178,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? imageConfigVariant1 = null,
+            global::System.Func<string, TResult>? imageConfigVariant1 = null,
             global::System.Func<double?, TResult>? imageConfigVariant2 = null,
-            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? imageConfigVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<object>, TResult>? imageConfigVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -169,9 +208,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? imageConfigVariant1 = null,
+            global::System.Action<string>? imageConfigVariant1 = null,
+
             global::System.Action<double?>? imageConfigVariant2 = null,
-            global::System.Action<global::System.Collections.Generic.IList<object>?>? imageConfigVariant3 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<object>>? imageConfigVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImageConfigVariant1)
+            {
+                imageConfigVariant1?.Invoke(ImageConfigVariant1!);
+            }
+            else if (IsImageConfigVariant2)
+            {
+                imageConfigVariant2?.Invoke(ImageConfigVariant2!);
+            }
+            else if (IsImageConfigVariant3)
+            {
+                imageConfigVariant3?.Invoke(ImageConfigVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? imageConfigVariant1 = null,
+            global::System.Action<double?>? imageConfigVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<object>>? imageConfigVariant3 = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1Items0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.BaseInputsOneOf1Items0? value)
+        {
+            value = BaseInputsOneOf1Items0;
+            return IsBaseInputsOneOf1Items0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseInputMessageItem? OpenAIResponseInputMessageItem { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseInputMessageItem))]
 #endif
         public bool IsOpenAIResponseInputMessageItem => OpenAIResponseInputMessageItem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAIResponseInputMessageItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAIResponseInputMessageItem? value)
+        {
+            value = OpenAIResponseInputMessageItem;
+            return IsOpenAIResponseInputMessageItem;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAIResponseFunctionToolCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAIResponseFunctionToolCallOutput? value)
+        {
+            value = OpenAIResponseFunctionToolCallOutput;
+            return IsOpenAIResponseFunctionToolCallOutput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseFunctionToolCall? OpenAIResponseFunctionToolCall { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseFunctionToolCall))]
 #endif
         public bool IsOpenAIResponseFunctionToolCall => OpenAIResponseFunctionToolCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAIResponseFunctionToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAIResponseFunctionToolCall? value)
+        {
+            value = OpenAIResponseFunctionToolCall;
+            return IsOpenAIResponseFunctionToolCall;
+        }
 
         /// <summary>
         /// 
@@ -97,6 +149,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemImageGenerationCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemImageGenerationCall? value)
+        {
+            value = OutputItemImageGenerationCall;
+            return IsOutputItemImageGenerationCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessage? OutputMessage { get; init; }
 #else
@@ -110,6 +175,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessage))]
 #endif
         public bool IsOutputMessage => OutputMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessage? value)
+        {
+            value = OutputMessage;
+            return IsOutputMessage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -274,12 +352,12 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.BaseInputsOneOf1Items0?, TResult>? baseInputsOneOf1Items0 = null,
-            global::System.Func<global::OpenRouter.OpenAIResponseInputMessageItem?, TResult>? openAIResponseInputMessageItem = null,
-            global::System.Func<global::OpenRouter.OpenAIResponseFunctionToolCallOutput?, TResult>? openAIResponseFunctionToolCallOutput = null,
-            global::System.Func<global::OpenRouter.OpenAIResponseFunctionToolCall?, TResult>? openAIResponseFunctionToolCall = null,
-            global::System.Func<global::OpenRouter.OutputItemImageGenerationCall?, TResult>? outputItemImageGenerationCall = null,
-            global::System.Func<global::OpenRouter.OutputMessage?, TResult>? outputMessage = null,
+            global::System.Func<global::OpenRouter.BaseInputsOneOf1Items0, TResult>? baseInputsOneOf1Items0 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseInputMessageItem, TResult>? openAIResponseInputMessageItem = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseFunctionToolCallOutput, TResult>? openAIResponseFunctionToolCallOutput = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseFunctionToolCall, TResult>? openAIResponseFunctionToolCall = null,
+            global::System.Func<global::OpenRouter.OutputItemImageGenerationCall, TResult>? outputItemImageGenerationCall = null,
+            global::System.Func<global::OpenRouter.OutputMessage, TResult>? outputMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -319,12 +397,60 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.BaseInputsOneOf1Items0?>? baseInputsOneOf1Items0 = null,
-            global::System.Action<global::OpenRouter.OpenAIResponseInputMessageItem?>? openAIResponseInputMessageItem = null,
-            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCallOutput?>? openAIResponseFunctionToolCallOutput = null,
-            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCall?>? openAIResponseFunctionToolCall = null,
-            global::System.Action<global::OpenRouter.OutputItemImageGenerationCall?>? outputItemImageGenerationCall = null,
-            global::System.Action<global::OpenRouter.OutputMessage?>? outputMessage = null,
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1Items0>? baseInputsOneOf1Items0 = null,
+
+            global::System.Action<global::OpenRouter.OpenAIResponseInputMessageItem>? openAIResponseInputMessageItem = null,
+
+            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCallOutput>? openAIResponseFunctionToolCallOutput = null,
+
+            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCall>? openAIResponseFunctionToolCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
+
+            global::System.Action<global::OpenRouter.OutputMessage>? outputMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseInputsOneOf1Items0)
+            {
+                baseInputsOneOf1Items0?.Invoke(BaseInputsOneOf1Items0!);
+            }
+            else if (IsOpenAIResponseInputMessageItem)
+            {
+                openAIResponseInputMessageItem?.Invoke(OpenAIResponseInputMessageItem!);
+            }
+            else if (IsOpenAIResponseFunctionToolCallOutput)
+            {
+                openAIResponseFunctionToolCallOutput?.Invoke(OpenAIResponseFunctionToolCallOutput!);
+            }
+            else if (IsOpenAIResponseFunctionToolCall)
+            {
+                openAIResponseFunctionToolCall?.Invoke(OpenAIResponseFunctionToolCall!);
+            }
+            else if (IsOutputItemImageGenerationCall)
+            {
+                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+            }
+            else if (IsOutputMessage)
+            {
+                outputMessage?.Invoke(OutputMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1Items0>? baseInputsOneOf1Items0 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseInputMessageItem>? openAIResponseInputMessageItem = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCallOutput>? openAIResponseFunctionToolCallOutput = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCall>? openAIResponseFunctionToolCall = null,
+            global::System.Action<global::OpenRouter.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
+            global::System.Action<global::OpenRouter.OutputMessage>? outputMessage = null,
             bool validate = true)
         {
             if (validate)

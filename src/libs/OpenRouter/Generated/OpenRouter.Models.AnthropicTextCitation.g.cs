@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsCharLocation => CharLocation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCharLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextCitationVariant1? value)
+        {
+            value = CharLocation;
+            return IsCharLocation;
+        }
+
+        /// <summary>
         /// content_block_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
 #endif
         public bool IsContentBlockLocation => ContentBlockLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextCitationVariant2? value)
+        {
+            value = ContentBlockLocation;
+            return IsContentBlockLocation;
+        }
 
         /// <summary>
         /// page_location variant
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsPageLocation => PageLocation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPageLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextCitationVariant3? value)
+        {
+            value = PageLocation;
+            return IsPageLocation;
+        }
+
+        /// <summary>
         /// search_result_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -78,6 +117,19 @@ namespace OpenRouter
         public bool IsSearchResultLocation => SearchResultLocation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchResultLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextCitationVariant4? value)
+        {
+            value = SearchResultLocation;
+            return IsSearchResultLocation;
+        }
+
+        /// <summary>
         /// web_search_result_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -93,6 +145,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchResultLocation))]
 #endif
         public bool IsWebSearchResultLocation => WebSearchResultLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchResultLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextCitationVariant5? value)
+        {
+            value = WebSearchResultLocation;
+            return IsWebSearchResultLocation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -235,11 +300,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant1?, TResult>? charLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant2?, TResult>? contentBlockLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant3?, TResult>? pageLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant4?, TResult>? searchResultLocation = null,
-            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant5?, TResult>? webSearchResultLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant1, TResult>? charLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant2, TResult>? contentBlockLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant3, TResult>? pageLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant4, TResult>? searchResultLocation = null,
+            global::System.Func<global::OpenRouter.AnthropicTextCitationVariant5, TResult>? webSearchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -275,11 +340,53 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant1?>? charLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant2?>? contentBlockLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant3?>? pageLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant4?>? searchResultLocation = null,
-            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant5?>? webSearchResultLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant1>? charLocation = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant2>? contentBlockLocation = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant3>? pageLocation = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant4>? searchResultLocation = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant5>? webSearchResultLocation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCharLocation)
+            {
+                charLocation?.Invoke(CharLocation!);
+            }
+            else if (IsContentBlockLocation)
+            {
+                contentBlockLocation?.Invoke(ContentBlockLocation!);
+            }
+            else if (IsPageLocation)
+            {
+                pageLocation?.Invoke(PageLocation!);
+            }
+            else if (IsSearchResultLocation)
+            {
+                searchResultLocation?.Invoke(SearchResultLocation!);
+            }
+            else if (IsWebSearchResultLocation)
+            {
+                webSearchResultLocation?.Invoke(WebSearchResultLocation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant1>? charLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant2>? contentBlockLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant3>? pageLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant4>? searchResultLocation = null,
+            global::System.Action<global::OpenRouter.AnthropicTextCitationVariant5>? webSearchResultLocation = null,
             bool validate = true)
         {
             if (validate)
