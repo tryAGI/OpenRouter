@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputCodeInterpreterCallItemOutputsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0? value)
+        {
+            value = OutputCodeInterpreterCallItemOutputsItems0;
+            return IsOutputCodeInterpreterCallItemOutputsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1? OutputCodeInterpreterCallItemOutputsItems1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputCodeInterpreterCallItemOutputsItems1))]
 #endif
         public bool IsOutputCodeInterpreterCallItemOutputsItems1 => OutputCodeInterpreterCallItemOutputsItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputCodeInterpreterCallItemOutputsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1? value)
+        {
+            value = OutputCodeInterpreterCallItemOutputsItems1;
+            return IsOutputCodeInterpreterCallItemOutputsItems1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0?, TResult>? outputCodeInterpreterCallItemOutputsItems0 = null,
-            global::System.Func<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1?, TResult>? outputCodeInterpreterCallItemOutputsItems1 = null,
+            global::System.Func<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0, TResult>? outputCodeInterpreterCallItemOutputsItems0 = null,
+            global::System.Func<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1, TResult>? outputCodeInterpreterCallItemOutputsItems1 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0?>? outputCodeInterpreterCallItemOutputsItems0 = null,
-            global::System.Action<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1?>? outputCodeInterpreterCallItemOutputsItems1 = null,
+            global::System.Action<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0>? outputCodeInterpreterCallItemOutputsItems0 = null,
+
+            global::System.Action<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1>? outputCodeInterpreterCallItemOutputsItems1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputCodeInterpreterCallItemOutputsItems0)
+            {
+                outputCodeInterpreterCallItemOutputsItems0?.Invoke(OutputCodeInterpreterCallItemOutputsItems0!);
+            }
+            else if (IsOutputCodeInterpreterCallItemOutputsItems1)
+            {
+                outputCodeInterpreterCallItemOutputsItems1?.Invoke(OutputCodeInterpreterCallItemOutputsItems1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0>? outputCodeInterpreterCallItemOutputsItems0 = null,
+            global::System.Action<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1>? outputCodeInterpreterCallItemOutputsItems1 = null,
             bool validate = true)
         {
             if (validate)

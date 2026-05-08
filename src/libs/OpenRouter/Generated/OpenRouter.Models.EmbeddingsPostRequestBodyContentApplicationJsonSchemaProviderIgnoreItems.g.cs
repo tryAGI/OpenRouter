@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProviderName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ProviderName? value)
+        {
+            value = ProviderName;
+            return IsProviderName;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2))]
 #endif
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2;
+            return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderName?, TResult>? providerName = null,
-            global::System.Func<string?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
+            global::System.Func<string, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
-            global::System.Action<string?>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
+
+            global::System.Action<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderName)
+            {
+                providerName?.Invoke(ProviderName!);
+            }
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2)
+            {
+                embeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
+            global::System.Action<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputFunctionCallItemStatus0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputFunctionCallItemStatus0? value)
+        {
+            value = OutputFunctionCallItemStatus0;
+            return IsOutputFunctionCallItemStatus0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItemStatus1? OutputFunctionCallItemStatus1 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputFunctionCallItemStatus1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputFunctionCallItemStatus1? value)
+        {
+            value = OutputFunctionCallItemStatus1;
+            return IsOutputFunctionCallItemStatus1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItemStatus2? OutputFunctionCallItemStatus2 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFunctionCallItemStatus2))]
 #endif
         public bool IsOutputFunctionCallItemStatus2 => OutputFunctionCallItemStatus2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputFunctionCallItemStatus2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputFunctionCallItemStatus2? value)
+        {
+            value = OutputFunctionCallItemStatus2;
+            return IsOutputFunctionCallItemStatus2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -187,6 +226,36 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus0?>? outputFunctionCallItemStatus0 = null,
+
+            global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus1?>? outputFunctionCallItemStatus1 = null,
+
+            global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus2?>? outputFunctionCallItemStatus2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputFunctionCallItemStatus0)
+            {
+                outputFunctionCallItemStatus0?.Invoke(OutputFunctionCallItemStatus0!);
+            }
+            else if (IsOutputFunctionCallItemStatus1)
+            {
+                outputFunctionCallItemStatus1?.Invoke(OutputFunctionCallItemStatus1!);
+            }
+            else if (IsOutputFunctionCallItemStatus2)
+            {
+                outputFunctionCallItemStatus2?.Invoke(OutputFunctionCallItemStatus2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus0?>? outputFunctionCallItemStatus0 = null,
             global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus1?>? outputFunctionCallItemStatus1 = null,
             global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus2?>? outputFunctionCallItemStatus2 = null,

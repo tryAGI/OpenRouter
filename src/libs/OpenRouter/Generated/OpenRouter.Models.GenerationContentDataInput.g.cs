@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGenerationContentDataInput0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.GenerationContentDataInput0? value)
+        {
+            value = GenerationContentDataInput0;
+            return IsGenerationContentDataInput0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.GenerationContentDataInput1? GenerationContentDataInput1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationContentDataInput1))]
 #endif
         public bool IsGenerationContentDataInput1 => GenerationContentDataInput1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGenerationContentDataInput1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.GenerationContentDataInput1? value)
+        {
+            value = GenerationContentDataInput1;
+            return IsGenerationContentDataInput1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.GenerationContentDataInput0?, TResult>? generationContentDataInput0 = null,
-            global::System.Func<global::OpenRouter.GenerationContentDataInput1?, TResult>? generationContentDataInput1 = null,
+            global::System.Func<global::OpenRouter.GenerationContentDataInput0, TResult>? generationContentDataInput0 = null,
+            global::System.Func<global::OpenRouter.GenerationContentDataInput1, TResult>? generationContentDataInput1 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.GenerationContentDataInput0?>? generationContentDataInput0 = null,
-            global::System.Action<global::OpenRouter.GenerationContentDataInput1?>? generationContentDataInput1 = null,
+            global::System.Action<global::OpenRouter.GenerationContentDataInput0>? generationContentDataInput0 = null,
+
+            global::System.Action<global::OpenRouter.GenerationContentDataInput1>? generationContentDataInput1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGenerationContentDataInput0)
+            {
+                generationContentDataInput0?.Invoke(GenerationContentDataInput0!);
+            }
+            else if (IsGenerationContentDataInput1)
+            {
+                generationContentDataInput1?.Invoke(GenerationContentDataInput1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.GenerationContentDataInput0>? generationContentDataInput0 = null,
+            global::System.Action<global::OpenRouter.GenerationContentDataInput1>? generationContentDataInput1 = null,
             bool validate = true)
         {
             if (validate)

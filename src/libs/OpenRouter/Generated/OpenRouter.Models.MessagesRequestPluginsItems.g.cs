@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsAutoRouter => AutoRouter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAutoRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestPluginsItemsVariant1? value)
+        {
+            value = AutoRouter;
+            return IsAutoRouter;
+        }
+
+        /// <summary>
         /// context-compression variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextCompression))]
 #endif
         public bool IsContextCompression => ContextCompression != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContextCompression(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestPluginsItemsVariant2? value)
+        {
+            value = ContextCompression;
+            return IsContextCompression;
+        }
 
         /// <summary>
         /// file-parser variant
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsFileParser => FileParser != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileParser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestPluginsItemsVariant3? value)
+        {
+            value = FileParser;
+            return IsFileParser;
+        }
+
+        /// <summary>
         /// moderation variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Moderation))]
 #endif
         public bool IsModeration => Moderation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModeration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestPluginsItemsVariant4? value)
+        {
+            value = Moderation;
+            return IsModeration;
+        }
 
         /// <summary>
         /// pareto-router variant
@@ -95,6 +147,19 @@ namespace OpenRouter
         public bool IsParetoRouter => ParetoRouter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickParetoRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestPluginsItemsVariant5? value)
+        {
+            value = ParetoRouter;
+            return IsParetoRouter;
+        }
+
+        /// <summary>
         /// response-healing variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -112,6 +177,19 @@ namespace OpenRouter
         public bool IsResponseHealing => ResponseHealing != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseHealing(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestPluginsItemsVariant6? value)
+        {
+            value = ResponseHealing;
+            return IsResponseHealing;
+        }
+
+        /// <summary>
         /// web variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -127,6 +205,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Web))]
 #endif
         public bool IsWeb => Web != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWeb(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestPluginsItemsVariant7? value)
+        {
+            value = Web;
+            return IsWeb;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -313,13 +404,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant1?, TResult>? autoRouter = null,
-            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant2?, TResult>? contextCompression = null,
-            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant3?, TResult>? fileParser = null,
-            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant4?, TResult>? moderation = null,
-            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant5?, TResult>? paretoRouter = null,
-            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant6?, TResult>? responseHealing = null,
-            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant7?, TResult>? web = null,
+            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant1, TResult>? autoRouter = null,
+            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant2, TResult>? contextCompression = null,
+            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant3, TResult>? fileParser = null,
+            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant4, TResult>? moderation = null,
+            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant5, TResult>? paretoRouter = null,
+            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant6, TResult>? responseHealing = null,
+            global::System.Func<global::OpenRouter.MessagesRequestPluginsItemsVariant7, TResult>? web = null,
             bool validate = true)
         {
             if (validate)
@@ -363,13 +454,67 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant1?>? autoRouter = null,
-            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant2?>? contextCompression = null,
-            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant3?>? fileParser = null,
-            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant4?>? moderation = null,
-            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant5?>? paretoRouter = null,
-            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant6?>? responseHealing = null,
-            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant7?>? web = null,
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant1>? autoRouter = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant2>? contextCompression = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant3>? fileParser = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant4>? moderation = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant5>? paretoRouter = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant6>? responseHealing = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant7>? web = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAutoRouter)
+            {
+                autoRouter?.Invoke(AutoRouter!);
+            }
+            else if (IsContextCompression)
+            {
+                contextCompression?.Invoke(ContextCompression!);
+            }
+            else if (IsFileParser)
+            {
+                fileParser?.Invoke(FileParser!);
+            }
+            else if (IsModeration)
+            {
+                moderation?.Invoke(Moderation!);
+            }
+            else if (IsParetoRouter)
+            {
+                paretoRouter?.Invoke(ParetoRouter!);
+            }
+            else if (IsResponseHealing)
+            {
+                responseHealing?.Invoke(ResponseHealing!);
+            }
+            else if (IsWeb)
+            {
+                web?.Invoke(Web!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant1>? autoRouter = null,
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant2>? contextCompression = null,
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant3>? fileParser = null,
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant4>? moderation = null,
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant5>? paretoRouter = null,
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant6>? responseHealing = null,
+            global::System.Action<global::OpenRouter.MessagesRequestPluginsItemsVariant7>? web = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1;
+            return IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2))]
 #endif
         public bool IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 => FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
+            return IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,7 +144,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = null,
+            global::System.Func<string, TResult>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = null,
             global::System.Func<double?, TResult>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = null,
             bool validate = true)
         {
@@ -143,7 +169,31 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = null,
+            global::System.Action<string>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = null,
+
+            global::System.Action<double?>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1)
+            {
+                fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1?.Invoke(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1!);
+            }
+            else if (IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2)
+            {
+                fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2?.Invoke(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = null,
             global::System.Action<double?>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = null,
             bool validate = true)
         {

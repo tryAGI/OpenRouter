@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatToolChoice0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatToolChoice0? value)
+        {
+            value = ChatToolChoice0;
+            return IsChatToolChoice0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ChatToolChoice1? ChatToolChoice1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoice1))]
 #endif
         public bool IsChatToolChoice1 => ChatToolChoice1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatToolChoice1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatToolChoice1? value)
+        {
+            value = ChatToolChoice1;
+            return IsChatToolChoice1;
+        }
 
         /// <summary>
         /// 
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsChatToolChoice2 => ChatToolChoice2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatToolChoice2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatToolChoice2? value)
+        {
+            value = ChatToolChoice2;
+            return IsChatToolChoice2;
+        }
+
+        /// <summary>
         /// Named tool choice for specific function
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatNamedToolChoice))]
 #endif
         public bool IsChatNamedToolChoice => ChatNamedToolChoice != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatNamedToolChoice(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatNamedToolChoice? value)
+        {
+            value = ChatNamedToolChoice;
+            return IsChatNamedToolChoice;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -199,7 +251,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.ChatToolChoice0?, TResult>? chatToolChoice0 = null,
             global::System.Func<global::OpenRouter.ChatToolChoice1?, TResult>? chatToolChoice1 = null,
             global::System.Func<global::OpenRouter.ChatToolChoice2?, TResult>? chatToolChoice2 = null,
-            global::System.Func<global::OpenRouter.ChatNamedToolChoice?, TResult>? chatNamedToolChoice = null,
+            global::System.Func<global::OpenRouter.ChatNamedToolChoice, TResult>? chatNamedToolChoice = null,
             bool validate = true)
         {
             if (validate)
@@ -232,9 +284,45 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ChatToolChoice0?>? chatToolChoice0 = null,
+
+            global::System.Action<global::OpenRouter.ChatToolChoice1?>? chatToolChoice1 = null,
+
+            global::System.Action<global::OpenRouter.ChatToolChoice2?>? chatToolChoice2 = null,
+
+            global::System.Action<global::OpenRouter.ChatNamedToolChoice>? chatNamedToolChoice = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatToolChoice0)
+            {
+                chatToolChoice0?.Invoke(ChatToolChoice0!);
+            }
+            else if (IsChatToolChoice1)
+            {
+                chatToolChoice1?.Invoke(ChatToolChoice1!);
+            }
+            else if (IsChatToolChoice2)
+            {
+                chatToolChoice2?.Invoke(ChatToolChoice2!);
+            }
+            else if (IsChatNamedToolChoice)
+            {
+                chatNamedToolChoice?.Invoke(ChatNamedToolChoice!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ChatToolChoice0?>? chatToolChoice0 = null,
             global::System.Action<global::OpenRouter.ChatToolChoice1?>? chatToolChoice1 = null,
             global::System.Action<global::OpenRouter.ChatToolChoice2?>? chatToolChoice2 = null,
-            global::System.Action<global::OpenRouter.ChatNamedToolChoice?>? chatNamedToolChoice = null,
+            global::System.Action<global::OpenRouter.ChatNamedToolChoice>? chatNamedToolChoice = null,
             bool validate = true)
         {
             if (validate)

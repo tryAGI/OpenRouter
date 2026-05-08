@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = MessagesMessageParamContentVariant1;
+            return IsMessagesMessageParamContentVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>? MessagesMessageParamContent1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContent1))]
 #endif
         public bool IsMessagesMessageParamContent1 => MessagesMessageParamContent1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContent1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>? value)
+        {
+            value = MessagesMessageParamContent1;
+            return IsMessagesMessageParamContent1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? messagesMessageParamContentVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>?, TResult>? messagesMessageParamContent1 = null,
+            global::System.Func<string, TResult>? messagesMessageParamContentVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>, TResult>? messagesMessageParamContent1 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? messagesMessageParamContentVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>?>? messagesMessageParamContent1 = null,
+            global::System.Action<string>? messagesMessageParamContentVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>>? messagesMessageParamContent1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesMessageParamContentVariant1)
+            {
+                messagesMessageParamContentVariant1?.Invoke(MessagesMessageParamContentVariant1!);
+            }
+            else if (IsMessagesMessageParamContent1)
+            {
+                messagesMessageParamContent1?.Invoke(MessagesMessageParamContent1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? messagesMessageParamContentVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>>? messagesMessageParamContent1 = null,
             bool validate = true)
         {
             if (validate)

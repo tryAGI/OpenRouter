@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponsesToolChoice0? value)
+        {
+            value = OpenAiResponsesToolChoice0;
+            return IsOpenAiResponsesToolChoice0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponsesToolChoice1? OpenAiResponsesToolChoice1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice1))]
 #endif
         public bool IsOpenAiResponsesToolChoice1 => OpenAiResponsesToolChoice1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponsesToolChoice1? value)
+        {
+            value = OpenAiResponsesToolChoice1;
+            return IsOpenAiResponsesToolChoice1;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponsesToolChoice2? value)
+        {
+            value = OpenAiResponsesToolChoice2;
+            return IsOpenAiResponsesToolChoice2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponsesToolChoice3? OpenAiResponsesToolChoice3 { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice3))]
 #endif
         public bool IsOpenAiResponsesToolChoice3 => OpenAiResponsesToolChoice3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponsesToolChoice3? value)
+        {
+            value = OpenAiResponsesToolChoice3;
+            return IsOpenAiResponsesToolChoice3;
+        }
 
         /// <summary>
         /// 
@@ -95,6 +147,19 @@ namespace OpenRouter
         public bool IsOpenAiResponsesToolChoice4 => OpenAiResponsesToolChoice4 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponsesToolChoice4? value)
+        {
+            value = OpenAiResponsesToolChoice4;
+            return IsOpenAiResponsesToolChoice4;
+        }
+
+        /// <summary>
         /// Constrains the model to a pre-defined set of allowed tools
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceAllowed))]
 #endif
         public bool IsToolChoiceAllowed => ToolChoiceAllowed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolChoiceAllowed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ToolChoiceAllowed? value)
+        {
+            value = ToolChoiceAllowed;
+            return IsToolChoiceAllowed;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -277,9 +355,9 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice0?, TResult>? openAiResponsesToolChoice0 = null,
             global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice1?, TResult>? openAiResponsesToolChoice1 = null,
             global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice2?, TResult>? openAiResponsesToolChoice2 = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice3?, TResult>? openAiResponsesToolChoice3 = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice4?, TResult>? openAiResponsesToolChoice4 = null,
-            global::System.Func<global::OpenRouter.ToolChoiceAllowed?, TResult>? toolChoiceAllowed = null,
+            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice3, TResult>? openAiResponsesToolChoice3 = null,
+            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice4, TResult>? openAiResponsesToolChoice4 = null,
+            global::System.Func<global::OpenRouter.ToolChoiceAllowed, TResult>? toolChoiceAllowed = null,
             bool validate = true)
         {
             if (validate)
@@ -320,11 +398,59 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice0?>? openAiResponsesToolChoice0 = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice1?>? openAiResponsesToolChoice1 = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice2?>? openAiResponsesToolChoice2 = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice3>? openAiResponsesToolChoice3 = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice4>? openAiResponsesToolChoice4 = null,
+
+            global::System.Action<global::OpenRouter.ToolChoiceAllowed>? toolChoiceAllowed = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAiResponsesToolChoice0)
+            {
+                openAiResponsesToolChoice0?.Invoke(OpenAiResponsesToolChoice0!);
+            }
+            else if (IsOpenAiResponsesToolChoice1)
+            {
+                openAiResponsesToolChoice1?.Invoke(OpenAiResponsesToolChoice1!);
+            }
+            else if (IsOpenAiResponsesToolChoice2)
+            {
+                openAiResponsesToolChoice2?.Invoke(OpenAiResponsesToolChoice2!);
+            }
+            else if (IsOpenAiResponsesToolChoice3)
+            {
+                openAiResponsesToolChoice3?.Invoke(OpenAiResponsesToolChoice3!);
+            }
+            else if (IsOpenAiResponsesToolChoice4)
+            {
+                openAiResponsesToolChoice4?.Invoke(OpenAiResponsesToolChoice4!);
+            }
+            else if (IsToolChoiceAllowed)
+            {
+                toolChoiceAllowed?.Invoke(ToolChoiceAllowed!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice0?>? openAiResponsesToolChoice0 = null,
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice1?>? openAiResponsesToolChoice1 = null,
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice2?>? openAiResponsesToolChoice2 = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice3?>? openAiResponsesToolChoice3 = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice4?>? openAiResponsesToolChoice4 = null,
-            global::System.Action<global::OpenRouter.ToolChoiceAllowed?>? toolChoiceAllowed = null,
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice3>? openAiResponsesToolChoice3 = null,
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice4>? openAiResponsesToolChoice4 = null,
+            global::System.Action<global::OpenRouter.ToolChoiceAllowed>? toolChoiceAllowed = null,
             bool validate = true)
         {
             if (validate)

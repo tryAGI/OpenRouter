@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsCodeInterpreterCall => CodeInterpreterCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreterCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant1? value)
+        {
+            value = CodeInterpreterCall;
+            return IsCodeInterpreterCall;
+        }
+
+        /// <summary>
         /// computer_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCall))]
 #endif
         public bool IsComputerCall => ComputerCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant2? value)
+        {
+            value = ComputerCall;
+            return IsComputerCall;
+        }
 
         /// <summary>
         /// file_search_call variant
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsFileSearchCall => FileSearchCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant3? value)
+        {
+            value = FileSearchCall;
+            return IsFileSearchCall;
+        }
+
+        /// <summary>
         /// function_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
 #endif
         public bool IsFunctionCall => FunctionCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant4? value)
+        {
+            value = FunctionCall;
+            return IsFunctionCall;
+        }
 
         /// <summary>
         /// image_generation_call variant
@@ -95,6 +147,19 @@ namespace OpenRouter
         public bool IsImageGenerationCall => ImageGenerationCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant5? value)
+        {
+            value = ImageGenerationCall;
+            return IsImageGenerationCall;
+        }
+
+        /// <summary>
         /// An output message item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
         public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant6? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
 
         /// <summary>
         /// An openrouter:apply_patch server tool output item
@@ -129,6 +207,19 @@ namespace OpenRouter
         public bool IsOpenrouterApplyPatch => OpenrouterApplyPatch != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterApplyPatch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant7? value)
+        {
+            value = OpenrouterApplyPatch;
+            return IsOpenrouterApplyPatch;
+        }
+
+        /// <summary>
         /// An openrouter:bash server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -144,6 +235,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterBash))]
 #endif
         public bool IsOpenrouterBash => OpenrouterBash != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterBash(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant8? value)
+        {
+            value = OpenrouterBash;
+            return IsOpenrouterBash;
+        }
 
         /// <summary>
         /// An openrouter:browser_use server tool output item
@@ -163,6 +267,19 @@ namespace OpenRouter
         public bool IsOpenrouterBrowserUse => OpenrouterBrowserUse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterBrowserUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant9? value)
+        {
+            value = OpenrouterBrowserUse;
+            return IsOpenrouterBrowserUse;
+        }
+
+        /// <summary>
         /// An openrouter:code_interpreter server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -178,6 +295,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterCodeInterpreter))]
 #endif
         public bool IsOpenrouterCodeInterpreter => OpenrouterCodeInterpreter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterCodeInterpreter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant10? value)
+        {
+            value = OpenrouterCodeInterpreter;
+            return IsOpenrouterCodeInterpreter;
+        }
 
         /// <summary>
         /// An openrouter:datetime server tool output item
@@ -197,6 +327,19 @@ namespace OpenRouter
         public bool IsOpenrouterDatetime => OpenrouterDatetime != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterDatetime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant11? value)
+        {
+            value = OpenrouterDatetime;
+            return IsOpenrouterDatetime;
+        }
+
+        /// <summary>
         /// An openrouter:experimental__search_models server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -212,6 +355,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterExperimentalSearchModels))]
 #endif
         public bool IsOpenrouterExperimentalSearchModels => OpenrouterExperimentalSearchModels != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterExperimentalSearchModels(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant12? value)
+        {
+            value = OpenrouterExperimentalSearchModels;
+            return IsOpenrouterExperimentalSearchModels;
+        }
 
         /// <summary>
         /// An openrouter:file_search server tool output item
@@ -231,6 +387,19 @@ namespace OpenRouter
         public bool IsOpenrouterFileSearch => OpenrouterFileSearch != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterFileSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant13? value)
+        {
+            value = OpenrouterFileSearch;
+            return IsOpenrouterFileSearch;
+        }
+
+        /// <summary>
         /// An openrouter:image_generation server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -246,6 +415,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterImageGeneration))]
 #endif
         public bool IsOpenrouterImageGeneration => OpenrouterImageGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterImageGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant14? value)
+        {
+            value = OpenrouterImageGeneration;
+            return IsOpenrouterImageGeneration;
+        }
 
         /// <summary>
         /// An openrouter:mcp server tool output item
@@ -265,6 +447,19 @@ namespace OpenRouter
         public bool IsOpenrouterMcp => OpenrouterMcp != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant15? value)
+        {
+            value = OpenrouterMcp;
+            return IsOpenrouterMcp;
+        }
+
+        /// <summary>
         /// An openrouter:memory server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -280,6 +475,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterMemory))]
 #endif
         public bool IsOpenrouterMemory => OpenrouterMemory != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterMemory(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant16? value)
+        {
+            value = OpenrouterMemory;
+            return IsOpenrouterMemory;
+        }
 
         /// <summary>
         /// An openrouter:text_editor server tool output item
@@ -299,6 +507,19 @@ namespace OpenRouter
         public bool IsOpenrouterTextEditor => OpenrouterTextEditor != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterTextEditor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant17? value)
+        {
+            value = OpenrouterTextEditor;
+            return IsOpenrouterTextEditor;
+        }
+
+        /// <summary>
         /// An openrouter:tool_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +535,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterToolSearch))]
 #endif
         public bool IsOpenrouterToolSearch => OpenrouterToolSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterToolSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant18? value)
+        {
+            value = OpenrouterToolSearch;
+            return IsOpenrouterToolSearch;
+        }
 
         /// <summary>
         /// An openrouter:web_fetch server tool output item
@@ -333,6 +567,19 @@ namespace OpenRouter
         public bool IsOpenrouterWebFetch => OpenrouterWebFetch != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterWebFetch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant19? value)
+        {
+            value = OpenrouterWebFetch;
+            return IsOpenrouterWebFetch;
+        }
+
+        /// <summary>
         /// An openrouter:web_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -348,6 +595,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterWebSearch))]
 #endif
         public bool IsOpenrouterWebSearch => OpenrouterWebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouterWebSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant20? value)
+        {
+            value = OpenrouterWebSearch;
+            return IsOpenrouterWebSearch;
+        }
 
         /// <summary>
         /// An output item containing reasoning
@@ -367,6 +627,19 @@ namespace OpenRouter
         public bool IsReasoning => Reasoning != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant21? value)
+        {
+            value = Reasoning;
+            return IsReasoning;
+        }
+
+        /// <summary>
         /// web_search_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -382,6 +655,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCall))]
 #endif
         public bool IsWebSearchCall => WebSearchCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputItemsVariant22? value)
+        {
+            value = WebSearchCall;
+            return IsWebSearchCall;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -898,28 +1184,28 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.OutputItemsVariant1?, TResult>? codeInterpreterCall = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant2?, TResult>? computerCall = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant3?, TResult>? fileSearchCall = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant4?, TResult>? functionCall = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant5?, TResult>? imageGenerationCall = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant6?, TResult>? message = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant7?, TResult>? openrouterApplyPatch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant8?, TResult>? openrouterBash = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant9?, TResult>? openrouterBrowserUse = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant10?, TResult>? openrouterCodeInterpreter = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant11?, TResult>? openrouterDatetime = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant12?, TResult>? openrouterExperimentalSearchModels = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant13?, TResult>? openrouterFileSearch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant14?, TResult>? openrouterImageGeneration = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant15?, TResult>? openrouterMcp = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant16?, TResult>? openrouterMemory = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant17?, TResult>? openrouterTextEditor = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant18?, TResult>? openrouterToolSearch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant19?, TResult>? openrouterWebFetch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant20?, TResult>? openrouterWebSearch = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant21?, TResult>? reasoning = null,
-            global::System.Func<global::OpenRouter.OutputItemsVariant22?, TResult>? webSearchCall = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant1, TResult>? codeInterpreterCall = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant2, TResult>? computerCall = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant3, TResult>? fileSearchCall = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant4, TResult>? functionCall = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant5, TResult>? imageGenerationCall = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant6, TResult>? message = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant7, TResult>? openrouterApplyPatch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant8, TResult>? openrouterBash = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant9, TResult>? openrouterBrowserUse = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant10, TResult>? openrouterCodeInterpreter = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant11, TResult>? openrouterDatetime = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant12, TResult>? openrouterExperimentalSearchModels = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant13, TResult>? openrouterFileSearch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant14, TResult>? openrouterImageGeneration = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant15, TResult>? openrouterMcp = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant16, TResult>? openrouterMemory = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant17, TResult>? openrouterTextEditor = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant18, TResult>? openrouterToolSearch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant19, TResult>? openrouterWebFetch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant20, TResult>? openrouterWebSearch = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant21, TResult>? reasoning = null,
+            global::System.Func<global::OpenRouter.OutputItemsVariant22, TResult>? webSearchCall = null,
             bool validate = true)
         {
             if (validate)
@@ -1023,28 +1309,172 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.OutputItemsVariant1?>? codeInterpreterCall = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant2?>? computerCall = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant3?>? fileSearchCall = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant4?>? functionCall = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant5?>? imageGenerationCall = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant6?>? message = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant7?>? openrouterApplyPatch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant8?>? openrouterBash = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant9?>? openrouterBrowserUse = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant10?>? openrouterCodeInterpreter = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant11?>? openrouterDatetime = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant12?>? openrouterExperimentalSearchModels = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant13?>? openrouterFileSearch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant14?>? openrouterImageGeneration = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant15?>? openrouterMcp = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant16?>? openrouterMemory = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant17?>? openrouterTextEditor = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant18?>? openrouterToolSearch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant19?>? openrouterWebFetch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant20?>? openrouterWebSearch = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant21?>? reasoning = null,
-            global::System.Action<global::OpenRouter.OutputItemsVariant22?>? webSearchCall = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant1>? codeInterpreterCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant2>? computerCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant3>? fileSearchCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant4>? functionCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant5>? imageGenerationCall = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant6>? message = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant7>? openrouterApplyPatch = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant8>? openrouterBash = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant9>? openrouterBrowserUse = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant10>? openrouterCodeInterpreter = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant11>? openrouterDatetime = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant12>? openrouterExperimentalSearchModels = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant13>? openrouterFileSearch = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant14>? openrouterImageGeneration = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant15>? openrouterMcp = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant16>? openrouterMemory = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant17>? openrouterTextEditor = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant18>? openrouterToolSearch = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant19>? openrouterWebFetch = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant20>? openrouterWebSearch = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant21>? reasoning = null,
+
+            global::System.Action<global::OpenRouter.OutputItemsVariant22>? webSearchCall = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCodeInterpreterCall)
+            {
+                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
+            }
+            else if (IsComputerCall)
+            {
+                computerCall?.Invoke(ComputerCall!);
+            }
+            else if (IsFileSearchCall)
+            {
+                fileSearchCall?.Invoke(FileSearchCall!);
+            }
+            else if (IsFunctionCall)
+            {
+                functionCall?.Invoke(FunctionCall!);
+            }
+            else if (IsImageGenerationCall)
+            {
+                imageGenerationCall?.Invoke(ImageGenerationCall!);
+            }
+            else if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsOpenrouterApplyPatch)
+            {
+                openrouterApplyPatch?.Invoke(OpenrouterApplyPatch!);
+            }
+            else if (IsOpenrouterBash)
+            {
+                openrouterBash?.Invoke(OpenrouterBash!);
+            }
+            else if (IsOpenrouterBrowserUse)
+            {
+                openrouterBrowserUse?.Invoke(OpenrouterBrowserUse!);
+            }
+            else if (IsOpenrouterCodeInterpreter)
+            {
+                openrouterCodeInterpreter?.Invoke(OpenrouterCodeInterpreter!);
+            }
+            else if (IsOpenrouterDatetime)
+            {
+                openrouterDatetime?.Invoke(OpenrouterDatetime!);
+            }
+            else if (IsOpenrouterExperimentalSearchModels)
+            {
+                openrouterExperimentalSearchModels?.Invoke(OpenrouterExperimentalSearchModels!);
+            }
+            else if (IsOpenrouterFileSearch)
+            {
+                openrouterFileSearch?.Invoke(OpenrouterFileSearch!);
+            }
+            else if (IsOpenrouterImageGeneration)
+            {
+                openrouterImageGeneration?.Invoke(OpenrouterImageGeneration!);
+            }
+            else if (IsOpenrouterMcp)
+            {
+                openrouterMcp?.Invoke(OpenrouterMcp!);
+            }
+            else if (IsOpenrouterMemory)
+            {
+                openrouterMemory?.Invoke(OpenrouterMemory!);
+            }
+            else if (IsOpenrouterTextEditor)
+            {
+                openrouterTextEditor?.Invoke(OpenrouterTextEditor!);
+            }
+            else if (IsOpenrouterToolSearch)
+            {
+                openrouterToolSearch?.Invoke(OpenrouterToolSearch!);
+            }
+            else if (IsOpenrouterWebFetch)
+            {
+                openrouterWebFetch?.Invoke(OpenrouterWebFetch!);
+            }
+            else if (IsOpenrouterWebSearch)
+            {
+                openrouterWebSearch?.Invoke(OpenrouterWebSearch!);
+            }
+            else if (IsReasoning)
+            {
+                reasoning?.Invoke(Reasoning!);
+            }
+            else if (IsWebSearchCall)
+            {
+                webSearchCall?.Invoke(WebSearchCall!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.OutputItemsVariant1>? codeInterpreterCall = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant2>? computerCall = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant3>? fileSearchCall = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant4>? functionCall = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant5>? imageGenerationCall = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant6>? message = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant7>? openrouterApplyPatch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant8>? openrouterBash = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant9>? openrouterBrowserUse = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant10>? openrouterCodeInterpreter = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant11>? openrouterDatetime = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant12>? openrouterExperimentalSearchModels = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant13>? openrouterFileSearch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant14>? openrouterImageGeneration = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant15>? openrouterMcp = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant16>? openrouterMemory = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant17>? openrouterTextEditor = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant18>? openrouterToolSearch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant19>? openrouterWebFetch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant20>? openrouterWebSearch = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant21>? reasoning = null,
+            global::System.Action<global::OpenRouter.OutputItemsVariant22>? webSearchCall = null,
             bool validate = true)
         {
             if (validate)

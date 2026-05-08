@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<double>? value)
+        {
+            value = EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1;
+            return IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2))]
 #endif
         public bool IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 => EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2;
+            return IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<double>?, TResult>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 = null,
-            global::System.Func<string?, TResult>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<double>, TResult>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 = null,
+            global::System.Func<string, TResult>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<double>?>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 = null,
-            global::System.Action<string?>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<double>>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 = null,
+
+            global::System.Action<string>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1)
+            {
+                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1?.Invoke(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1!);
+            }
+            else if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2)
+            {
+                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2?.Invoke(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<double>>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 = null,
+            global::System.Action<string>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 = null,
             bool validate = true)
         {
             if (validate)

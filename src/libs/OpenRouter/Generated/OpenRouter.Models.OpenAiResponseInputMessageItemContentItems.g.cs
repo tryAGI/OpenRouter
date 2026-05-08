@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? value)
+        {
+            value = InputAudio;
+            return IsInputAudio;
+        }
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
         public bool IsInputFile => InputFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
 
         /// <summary>
         /// Image input content item
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
         public bool IsInputText => InputText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,10 +248,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?, TResult>? inputAudio = null,
-            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?, TResult>? inputFile = null,
-            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?, TResult>? inputImage = null,
-            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?, TResult>? inputText = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2, TResult>? inputFile = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3, TResult>? inputImage = null,
+            global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4, TResult>? inputText = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +283,46 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?>? inputAudio = null,
-            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?>? inputFile = null,
-            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?>? inputImage = null,
-            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?>? inputText = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1>? inputAudio = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2>? inputFile = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3>? inputImage = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4>? inputText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1>? inputAudio = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2>? inputFile = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3>? inputImage = null,
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4>? inputText = null,
             bool validate = true)
         {
             if (validate)

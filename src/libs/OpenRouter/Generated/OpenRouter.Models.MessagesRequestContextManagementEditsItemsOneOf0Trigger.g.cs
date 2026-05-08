@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsInputTokens => InputTokens != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputTokens(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? value)
+        {
+            value = InputTokens;
+            return IsInputTokens;
+        }
+
+        /// <summary>
         /// tool_uses variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUses))]
 #endif
         public bool IsToolUses => ToolUses != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolUses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? value)
+        {
+            value = ToolUses;
+            return IsToolUses;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1?, TResult>? inputTokens = null,
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?, TResult>? toolUses = null,
+            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1, TResult>? inputTokens = null,
+            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2, TResult>? toolUses = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1?>? inputTokens = null,
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?>? toolUses = null,
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1>? inputTokens = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2>? toolUses = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputTokens)
+            {
+                inputTokens?.Invoke(InputTokens!);
+            }
+            else if (IsToolUses)
+            {
+                toolUses?.Invoke(ToolUses!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1>? inputTokens = null,
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2>? toolUses = null,
             bool validate = true)
         {
             if (validate)

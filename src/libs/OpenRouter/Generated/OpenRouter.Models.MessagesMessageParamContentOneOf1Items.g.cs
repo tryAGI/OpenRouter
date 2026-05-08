@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicTextBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextBlockParam? value)
+        {
+            value = AnthropicTextBlockParam;
+            return IsAnthropicTextBlockParam;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicImageBlockParam))]
 #endif
         public bool IsAnthropicImageBlockParam => AnthropicImageBlockParam != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicImageBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicImageBlockParam? value)
+        {
+            value = AnthropicImageBlockParam;
+            return IsAnthropicImageBlockParam;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicDocumentBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicDocumentBlockParam? value)
+        {
+            value = AnthropicDocumentBlockParam;
+            return IsAnthropicDocumentBlockParam;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items3? MessagesMessageParamContentOneOf1Items3 { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items3))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items3 => MessagesMessageParamContentOneOf1Items3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1Items3? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items3;
+            return IsMessagesMessageParamContentOneOf1Items3;
+        }
 
         /// <summary>
         /// 
@@ -97,6 +149,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1Items4? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items4;
+            return IsMessagesMessageParamContentOneOf1Items4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items5? MessagesMessageParamContentOneOf1Items5 { get; init; }
 #else
@@ -110,6 +175,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items5))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items5 => MessagesMessageParamContentOneOf1Items5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1Items5? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items5;
+            return IsMessagesMessageParamContentOneOf1Items5;
+        }
 
         /// <summary>
         /// 
@@ -131,6 +209,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1Items6? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items6;
+            return IsMessagesMessageParamContentOneOf1Items6;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items7? MessagesMessageParamContentOneOf1Items7 { get; init; }
 #else
@@ -144,6 +235,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items7))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items7 => MessagesMessageParamContentOneOf1Items7 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1Items7? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items7;
+            return IsMessagesMessageParamContentOneOf1Items7;
+        }
 
         /// <summary>
         /// 
@@ -165,6 +269,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1Items8? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items8;
+            return IsMessagesMessageParamContentOneOf1Items8;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicSearchResultBlockParam? AnthropicSearchResultBlockParam { get; init; }
 #else
@@ -182,6 +299,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicSearchResultBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicSearchResultBlockParam? value)
+        {
+            value = AnthropicSearchResultBlockParam;
+            return IsAnthropicSearchResultBlockParam;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items10? MessagesMessageParamContentOneOf1Items10 { get; init; }
 #else
@@ -195,6 +325,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items10))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items10 => MessagesMessageParamContentOneOf1Items10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1Items10? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items10;
+            return IsMessagesMessageParamContentOneOf1Items10;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -469,17 +612,17 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicTextBlockParam?, TResult>? anthropicTextBlockParam = null,
-            global::System.Func<global::OpenRouter.AnthropicImageBlockParam?, TResult>? anthropicImageBlockParam = null,
-            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParam?, TResult>? anthropicDocumentBlockParam = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items3?, TResult>? messagesMessageParamContentOneOf1Items3 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items4?, TResult>? messagesMessageParamContentOneOf1Items4 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items5?, TResult>? messagesMessageParamContentOneOf1Items5 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items6?, TResult>? messagesMessageParamContentOneOf1Items6 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items7?, TResult>? messagesMessageParamContentOneOf1Items7 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items8?, TResult>? messagesMessageParamContentOneOf1Items8 = null,
-            global::System.Func<global::OpenRouter.AnthropicSearchResultBlockParam?, TResult>? anthropicSearchResultBlockParam = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?, TResult>? messagesMessageParamContentOneOf1Items10 = null,
+            global::System.Func<global::OpenRouter.AnthropicTextBlockParam, TResult>? anthropicTextBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicImageBlockParam, TResult>? anthropicImageBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParam, TResult>? anthropicDocumentBlockParam = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items3, TResult>? messagesMessageParamContentOneOf1Items3 = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items4, TResult>? messagesMessageParamContentOneOf1Items4 = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items5, TResult>? messagesMessageParamContentOneOf1Items5 = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items6, TResult>? messagesMessageParamContentOneOf1Items6 = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items7, TResult>? messagesMessageParamContentOneOf1Items7 = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items8, TResult>? messagesMessageParamContentOneOf1Items8 = null,
+            global::System.Func<global::OpenRouter.AnthropicSearchResultBlockParam, TResult>? anthropicSearchResultBlockParam = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1Items10, TResult>? messagesMessageParamContentOneOf1Items10 = null,
             bool validate = true)
         {
             if (validate)
@@ -539,17 +682,95 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicTextBlockParam?>? anthropicTextBlockParam = null,
-            global::System.Action<global::OpenRouter.AnthropicImageBlockParam?>? anthropicImageBlockParam = null,
-            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParam?>? anthropicDocumentBlockParam = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items3?>? messagesMessageParamContentOneOf1Items3 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items4?>? messagesMessageParamContentOneOf1Items4 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items5?>? messagesMessageParamContentOneOf1Items5 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items6?>? messagesMessageParamContentOneOf1Items6 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items7?>? messagesMessageParamContentOneOf1Items7 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items8?>? messagesMessageParamContentOneOf1Items8 = null,
-            global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam?>? anthropicSearchResultBlockParam = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?>? messagesMessageParamContentOneOf1Items10 = null,
+            global::System.Action<global::OpenRouter.AnthropicTextBlockParam>? anthropicTextBlockParam = null,
+
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParam>? anthropicImageBlockParam = null,
+
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParam>? anthropicDocumentBlockParam = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items3>? messagesMessageParamContentOneOf1Items3 = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items4>? messagesMessageParamContentOneOf1Items4 = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items5>? messagesMessageParamContentOneOf1Items5 = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items6>? messagesMessageParamContentOneOf1Items6 = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items7>? messagesMessageParamContentOneOf1Items7 = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items8>? messagesMessageParamContentOneOf1Items8 = null,
+
+            global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam>? anthropicSearchResultBlockParam = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items10>? messagesMessageParamContentOneOf1Items10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicTextBlockParam)
+            {
+                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
+            }
+            else if (IsAnthropicImageBlockParam)
+            {
+                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
+            }
+            else if (IsAnthropicDocumentBlockParam)
+            {
+                anthropicDocumentBlockParam?.Invoke(AnthropicDocumentBlockParam!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items3)
+            {
+                messagesMessageParamContentOneOf1Items3?.Invoke(MessagesMessageParamContentOneOf1Items3!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items4)
+            {
+                messagesMessageParamContentOneOf1Items4?.Invoke(MessagesMessageParamContentOneOf1Items4!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items5)
+            {
+                messagesMessageParamContentOneOf1Items5?.Invoke(MessagesMessageParamContentOneOf1Items5!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items6)
+            {
+                messagesMessageParamContentOneOf1Items6?.Invoke(MessagesMessageParamContentOneOf1Items6!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items7)
+            {
+                messagesMessageParamContentOneOf1Items7?.Invoke(MessagesMessageParamContentOneOf1Items7!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items8)
+            {
+                messagesMessageParamContentOneOf1Items8?.Invoke(MessagesMessageParamContentOneOf1Items8!);
+            }
+            else if (IsAnthropicSearchResultBlockParam)
+            {
+                anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items10)
+            {
+                messagesMessageParamContentOneOf1Items10?.Invoke(MessagesMessageParamContentOneOf1Items10!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicTextBlockParam>? anthropicTextBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParam>? anthropicImageBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParam>? anthropicDocumentBlockParam = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items3>? messagesMessageParamContentOneOf1Items3 = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items4>? messagesMessageParamContentOneOf1Items4 = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items5>? messagesMessageParamContentOneOf1Items5 = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items6>? messagesMessageParamContentOneOf1Items6 = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items7>? messagesMessageParamContentOneOf1Items7 = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items8>? messagesMessageParamContentOneOf1Items8 = null,
+            global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam>? anthropicSearchResultBlockParam = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1Items10>? messagesMessageParamContentOneOf1Items10 = null,
             bool validate = true)
         {
             if (validate)

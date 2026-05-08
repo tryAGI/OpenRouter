@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionCreateResult => TextEditorCodeExecutionCreateResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionCreateResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? value)
+        {
+            value = TextEditorCodeExecutionCreateResult;
+            return IsTextEditorCodeExecutionCreateResult;
+        }
+
+        /// <summary>
         /// text_editor_code_execution_str_replace_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionStrReplaceResult))]
 #endif
         public bool IsTextEditorCodeExecutionStrReplaceResult => TextEditorCodeExecutionStrReplaceResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionStrReplaceResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? value)
+        {
+            value = TextEditorCodeExecutionStrReplaceResult;
+            return IsTextEditorCodeExecutionStrReplaceResult;
+        }
 
         /// <summary>
         /// text_editor_code_execution_tool_result_error variant
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionToolResultError => TextEditorCodeExecutionToolResultError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionToolResultError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? value)
+        {
+            value = TextEditorCodeExecutionToolResultError;
+            return IsTextEditorCodeExecutionToolResultError;
+        }
+
+        /// <summary>
         /// text_editor_code_execution_view_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionViewResult))]
 #endif
         public bool IsTextEditorCodeExecutionViewResult => TextEditorCodeExecutionViewResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionViewResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? value)
+        {
+            value = TextEditorCodeExecutionViewResult;
+            return IsTextEditorCodeExecutionViewResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,10 +248,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1?, TResult>? textEditorCodeExecutionCreateResult = null,
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2?, TResult>? textEditorCodeExecutionStrReplaceResult = null,
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?, TResult>? textEditorCodeExecutionToolResultError = null,
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?, TResult>? textEditorCodeExecutionViewResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1, TResult>? textEditorCodeExecutionCreateResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2, TResult>? textEditorCodeExecutionStrReplaceResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3, TResult>? textEditorCodeExecutionToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4, TResult>? textEditorCodeExecutionViewResult = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +283,46 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1?>? textEditorCodeExecutionCreateResult = null,
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2?>? textEditorCodeExecutionStrReplaceResult = null,
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?>? textEditorCodeExecutionToolResultError = null,
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?>? textEditorCodeExecutionViewResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1>? textEditorCodeExecutionCreateResult = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2>? textEditorCodeExecutionStrReplaceResult = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3>? textEditorCodeExecutionToolResultError = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4>? textEditorCodeExecutionViewResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextEditorCodeExecutionCreateResult)
+            {
+                textEditorCodeExecutionCreateResult?.Invoke(TextEditorCodeExecutionCreateResult!);
+            }
+            else if (IsTextEditorCodeExecutionStrReplaceResult)
+            {
+                textEditorCodeExecutionStrReplaceResult?.Invoke(TextEditorCodeExecutionStrReplaceResult!);
+            }
+            else if (IsTextEditorCodeExecutionToolResultError)
+            {
+                textEditorCodeExecutionToolResultError?.Invoke(TextEditorCodeExecutionToolResultError!);
+            }
+            else if (IsTextEditorCodeExecutionViewResult)
+            {
+                textEditorCodeExecutionViewResult?.Invoke(TextEditorCodeExecutionViewResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1>? textEditorCodeExecutionCreateResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2>? textEditorCodeExecutionStrReplaceResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3>? textEditorCodeExecutionToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4>? textEditorCodeExecutionViewResult = null,
             bool validate = true)
         {
             if (validate)

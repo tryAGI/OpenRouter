@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolChoice0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolChoice0? value)
+        {
+            value = MessagesRequestToolChoice0;
+            return IsMessagesRequestToolChoice0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolChoice1? MessagesRequestToolChoice1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolChoice1))]
 #endif
         public bool IsMessagesRequestToolChoice1 => MessagesRequestToolChoice1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolChoice1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolChoice1? value)
+        {
+            value = MessagesRequestToolChoice1;
+            return IsMessagesRequestToolChoice1;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolChoice2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolChoice2? value)
+        {
+            value = MessagesRequestToolChoice2;
+            return IsMessagesRequestToolChoice2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolChoice3? MessagesRequestToolChoice3 { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolChoice3))]
 #endif
         public bool IsMessagesRequestToolChoice3 => MessagesRequestToolChoice3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolChoice3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolChoice3? value)
+        {
+            value = MessagesRequestToolChoice3;
+            return IsMessagesRequestToolChoice3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,10 +248,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestToolChoice0?, TResult>? messagesRequestToolChoice0 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolChoice1?, TResult>? messagesRequestToolChoice1 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolChoice2?, TResult>? messagesRequestToolChoice2 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolChoice3?, TResult>? messagesRequestToolChoice3 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolChoice0, TResult>? messagesRequestToolChoice0 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolChoice1, TResult>? messagesRequestToolChoice1 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolChoice2, TResult>? messagesRequestToolChoice2 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolChoice3, TResult>? messagesRequestToolChoice3 = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +283,46 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestToolChoice0?>? messagesRequestToolChoice0 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolChoice1?>? messagesRequestToolChoice1 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolChoice2?>? messagesRequestToolChoice2 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolChoice3?>? messagesRequestToolChoice3 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice0>? messagesRequestToolChoice0 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice1>? messagesRequestToolChoice1 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice2>? messagesRequestToolChoice2 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice3>? messagesRequestToolChoice3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestToolChoice0)
+            {
+                messagesRequestToolChoice0?.Invoke(MessagesRequestToolChoice0!);
+            }
+            else if (IsMessagesRequestToolChoice1)
+            {
+                messagesRequestToolChoice1?.Invoke(MessagesRequestToolChoice1!);
+            }
+            else if (IsMessagesRequestToolChoice2)
+            {
+                messagesRequestToolChoice2?.Invoke(MessagesRequestToolChoice2!);
+            }
+            else if (IsMessagesRequestToolChoice3)
+            {
+                messagesRequestToolChoice3?.Invoke(MessagesRequestToolChoice3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice0>? messagesRequestToolChoice0 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice1>? messagesRequestToolChoice1 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice2>? messagesRequestToolChoice2 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolChoice3>? messagesRequestToolChoice3 = null,
             bool validate = true)
         {
             if (validate)

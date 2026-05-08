@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsResponsesRequestToolsItems0 => ResponsesRequestToolsItems0 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesRequestToolsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ResponsesRequestToolsItems0? value)
+        {
+            value = ResponsesRequestToolsItems0;
+            return IsResponsesRequestToolsItems0;
+        }
+
+        /// <summary>
         /// Web search preview tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreviewWebSearchServerTool))]
 #endif
         public bool IsPreviewWebSearchServerTool => PreviewWebSearchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreviewWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.PreviewWebSearchServerTool? value)
+        {
+            value = PreviewWebSearchServerTool;
+            return IsPreviewWebSearchServerTool;
+        }
 
         /// <summary>
         /// Web search preview tool configuration (2025-03-11 version)
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsPreview20250311WebSearchServerTool => Preview20250311WebSearchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreview20250311WebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.Preview20250311WebSearchServerTool? value)
+        {
+            value = Preview20250311WebSearchServerTool;
+            return IsPreview20250311WebSearchServerTool;
+        }
+
+        /// <summary>
         /// Web search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LegacyWebSearchServerTool))]
 #endif
         public bool IsLegacyWebSearchServerTool => LegacyWebSearchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLegacyWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.LegacyWebSearchServerTool? value)
+        {
+            value = LegacyWebSearchServerTool;
+            return IsLegacyWebSearchServerTool;
+        }
 
         /// <summary>
         /// Web search tool configuration (2025-08-26 version)
@@ -95,6 +147,19 @@ namespace OpenRouter
         public bool IsWebSearchServerTool => WebSearchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.WebSearchServerTool? value)
+        {
+            value = WebSearchServerTool;
+            return IsWebSearchServerTool;
+        }
+
+        /// <summary>
         /// File search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerTool))]
 #endif
         public bool IsFileSearchServerTool => FileSearchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.FileSearchServerTool? value)
+        {
+            value = FileSearchServerTool;
+            return IsFileSearchServerTool;
+        }
 
         /// <summary>
         /// Computer use preview tool configuration
@@ -129,6 +207,19 @@ namespace OpenRouter
         public bool IsComputerUseServerTool => ComputerUseServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerUseServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ComputerUseServerTool? value)
+        {
+            value = ComputerUseServerTool;
+            return IsComputerUseServerTool;
+        }
+
+        /// <summary>
         /// Code interpreter tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -144,6 +235,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerTool))]
 #endif
         public bool IsCodeInterpreterServerTool => CodeInterpreterServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreterServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.CodeInterpreterServerTool? value)
+        {
+            value = CodeInterpreterServerTool;
+            return IsCodeInterpreterServerTool;
+        }
 
         /// <summary>
         /// MCP (Model Context Protocol) tool configuration
@@ -163,6 +267,19 @@ namespace OpenRouter
         public bool IsMcpServerTool => McpServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.McpServerTool? value)
+        {
+            value = McpServerTool;
+            return IsMcpServerTool;
+        }
+
+        /// <summary>
         /// Image generation tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -178,6 +295,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerTool))]
 #endif
         public bool IsImageGenerationServerTool => ImageGenerationServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ImageGenerationServerTool? value)
+        {
+            value = ImageGenerationServerTool;
+            return IsImageGenerationServerTool;
+        }
 
         /// <summary>
         /// Local shell tool configuration
@@ -197,6 +327,19 @@ namespace OpenRouter
         public bool IsCodexLocalShellTool => CodexLocalShellTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodexLocalShellTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.CodexLocalShellTool? value)
+        {
+            value = CodexLocalShellTool;
+            return IsCodexLocalShellTool;
+        }
+
+        /// <summary>
         /// Shell tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -212,6 +355,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellServerTool))]
 #endif
         public bool IsShellServerTool => ShellServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShellServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ShellServerTool? value)
+        {
+            value = ShellServerTool;
+            return IsShellServerTool;
+        }
 
         /// <summary>
         /// Apply patch tool configuration
@@ -231,6 +387,19 @@ namespace OpenRouter
         public bool IsApplyPatchServerTool => ApplyPatchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApplyPatchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ApplyPatchServerTool? value)
+        {
+            value = ApplyPatchServerTool;
+            return IsApplyPatchServerTool;
+        }
+
+        /// <summary>
         /// Custom tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -246,6 +415,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomTool))]
 #endif
         public bool IsCustomTool => CustomTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.CustomTool? value)
+        {
+            value = CustomTool;
+            return IsCustomTool;
+        }
 
         /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
@@ -265,6 +447,19 @@ namespace OpenRouter
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetimeServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.DatetimeServerTool? value)
+        {
+            value = DatetimeServerTool;
+            return IsDatetimeServerTool;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -280,6 +475,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerToolOpenRouter))]
 #endif
         public bool IsImageGenerationServerToolOpenRouter => ImageGenerationServerToolOpenRouter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
+        {
+            value = ImageGenerationServerToolOpenRouter;
+            return IsImageGenerationServerToolOpenRouter;
+        }
 
         /// <summary>
         /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
@@ -299,6 +507,19 @@ namespace OpenRouter
         public bool IsChatSearchModelsServerTool => ChatSearchModelsServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatSearchModelsServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatSearchModelsServerTool? value)
+        {
+            value = ChatSearchModelsServerTool;
+            return IsChatSearchModelsServerTool;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -316,6 +537,19 @@ namespace OpenRouter
         public bool IsWebFetchServerTool => WebFetchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebFetchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.WebFetchServerTool? value)
+        {
+            value = WebFetchServerTool;
+            return IsWebFetchServerTool;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -331,6 +565,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchServerToolOpenRouter))]
 #endif
         public bool IsWebSearchServerToolOpenRouter => WebSearchServerToolOpenRouter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.WebSearchServerToolOpenRouter? value)
+        {
+            value = WebSearchServerToolOpenRouter;
+            return IsWebSearchServerToolOpenRouter;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -781,25 +1028,25 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ResponsesRequestToolsItems0?, TResult>? responsesRequestToolsItems0 = null,
-            global::System.Func<global::OpenRouter.PreviewWebSearchServerTool?, TResult>? previewWebSearchServerTool = null,
-            global::System.Func<global::OpenRouter.Preview20250311WebSearchServerTool?, TResult>? preview20250311WebSearchServerTool = null,
-            global::System.Func<global::OpenRouter.LegacyWebSearchServerTool?, TResult>? legacyWebSearchServerTool = null,
-            global::System.Func<global::OpenRouter.WebSearchServerTool?, TResult>? webSearchServerTool = null,
-            global::System.Func<global::OpenRouter.FileSearchServerTool?, TResult>? fileSearchServerTool = null,
-            global::System.Func<global::OpenRouter.ComputerUseServerTool?, TResult>? computerUseServerTool = null,
-            global::System.Func<global::OpenRouter.CodeInterpreterServerTool?, TResult>? codeInterpreterServerTool = null,
-            global::System.Func<global::OpenRouter.McpServerTool?, TResult>? mcpServerTool = null,
-            global::System.Func<global::OpenRouter.ImageGenerationServerTool?, TResult>? imageGenerationServerTool = null,
-            global::System.Func<global::OpenRouter.CodexLocalShellTool?, TResult>? codexLocalShellTool = null,
-            global::System.Func<global::OpenRouter.ShellServerTool?, TResult>? shellServerTool = null,
-            global::System.Func<global::OpenRouter.ApplyPatchServerTool?, TResult>? applyPatchServerTool = null,
-            global::System.Func<global::OpenRouter.CustomTool?, TResult>? customTool = null,
-            global::System.Func<global::OpenRouter.DatetimeServerTool?, TResult>? datetimeServerTool = null,
-            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter?, TResult>? imageGenerationServerToolOpenRouter = null,
-            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool?, TResult>? chatSearchModelsServerTool = null,
-            global::System.Func<global::OpenRouter.WebFetchServerTool?, TResult>? webFetchServerTool = null,
-            global::System.Func<global::OpenRouter.WebSearchServerToolOpenRouter?, TResult>? webSearchServerToolOpenRouter = null,
+            global::System.Func<global::OpenRouter.ResponsesRequestToolsItems0, TResult>? responsesRequestToolsItems0 = null,
+            global::System.Func<global::OpenRouter.PreviewWebSearchServerTool, TResult>? previewWebSearchServerTool = null,
+            global::System.Func<global::OpenRouter.Preview20250311WebSearchServerTool, TResult>? preview20250311WebSearchServerTool = null,
+            global::System.Func<global::OpenRouter.LegacyWebSearchServerTool, TResult>? legacyWebSearchServerTool = null,
+            global::System.Func<global::OpenRouter.WebSearchServerTool, TResult>? webSearchServerTool = null,
+            global::System.Func<global::OpenRouter.FileSearchServerTool, TResult>? fileSearchServerTool = null,
+            global::System.Func<global::OpenRouter.ComputerUseServerTool, TResult>? computerUseServerTool = null,
+            global::System.Func<global::OpenRouter.CodeInterpreterServerTool, TResult>? codeInterpreterServerTool = null,
+            global::System.Func<global::OpenRouter.McpServerTool, TResult>? mcpServerTool = null,
+            global::System.Func<global::OpenRouter.ImageGenerationServerTool, TResult>? imageGenerationServerTool = null,
+            global::System.Func<global::OpenRouter.CodexLocalShellTool, TResult>? codexLocalShellTool = null,
+            global::System.Func<global::OpenRouter.ShellServerTool, TResult>? shellServerTool = null,
+            global::System.Func<global::OpenRouter.ApplyPatchServerTool, TResult>? applyPatchServerTool = null,
+            global::System.Func<global::OpenRouter.CustomTool, TResult>? customTool = null,
+            global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServerTool = null,
+            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerToolOpenRouter = null,
+            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool, TResult>? chatSearchModelsServerTool = null,
+            global::System.Func<global::OpenRouter.WebFetchServerTool, TResult>? webFetchServerTool = null,
+            global::System.Func<global::OpenRouter.WebSearchServerToolOpenRouter, TResult>? webSearchServerToolOpenRouter = null,
             bool validate = true)
         {
             if (validate)
@@ -891,25 +1138,151 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ResponsesRequestToolsItems0?>? responsesRequestToolsItems0 = null,
-            global::System.Action<global::OpenRouter.PreviewWebSearchServerTool?>? previewWebSearchServerTool = null,
-            global::System.Action<global::OpenRouter.Preview20250311WebSearchServerTool?>? preview20250311WebSearchServerTool = null,
-            global::System.Action<global::OpenRouter.LegacyWebSearchServerTool?>? legacyWebSearchServerTool = null,
-            global::System.Action<global::OpenRouter.WebSearchServerTool?>? webSearchServerTool = null,
-            global::System.Action<global::OpenRouter.FileSearchServerTool?>? fileSearchServerTool = null,
-            global::System.Action<global::OpenRouter.ComputerUseServerTool?>? computerUseServerTool = null,
-            global::System.Action<global::OpenRouter.CodeInterpreterServerTool?>? codeInterpreterServerTool = null,
-            global::System.Action<global::OpenRouter.McpServerTool?>? mcpServerTool = null,
-            global::System.Action<global::OpenRouter.ImageGenerationServerTool?>? imageGenerationServerTool = null,
-            global::System.Action<global::OpenRouter.CodexLocalShellTool?>? codexLocalShellTool = null,
-            global::System.Action<global::OpenRouter.ShellServerTool?>? shellServerTool = null,
-            global::System.Action<global::OpenRouter.ApplyPatchServerTool?>? applyPatchServerTool = null,
-            global::System.Action<global::OpenRouter.CustomTool?>? customTool = null,
-            global::System.Action<global::OpenRouter.DatetimeServerTool?>? datetimeServerTool = null,
-            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter?>? imageGenerationServerToolOpenRouter = null,
-            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool?>? chatSearchModelsServerTool = null,
-            global::System.Action<global::OpenRouter.WebFetchServerTool?>? webFetchServerTool = null,
-            global::System.Action<global::OpenRouter.WebSearchServerToolOpenRouter?>? webSearchServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestToolsItems0>? responsesRequestToolsItems0 = null,
+
+            global::System.Action<global::OpenRouter.PreviewWebSearchServerTool>? previewWebSearchServerTool = null,
+
+            global::System.Action<global::OpenRouter.Preview20250311WebSearchServerTool>? preview20250311WebSearchServerTool = null,
+
+            global::System.Action<global::OpenRouter.LegacyWebSearchServerTool>? legacyWebSearchServerTool = null,
+
+            global::System.Action<global::OpenRouter.WebSearchServerTool>? webSearchServerTool = null,
+
+            global::System.Action<global::OpenRouter.FileSearchServerTool>? fileSearchServerTool = null,
+
+            global::System.Action<global::OpenRouter.ComputerUseServerTool>? computerUseServerTool = null,
+
+            global::System.Action<global::OpenRouter.CodeInterpreterServerTool>? codeInterpreterServerTool = null,
+
+            global::System.Action<global::OpenRouter.McpServerTool>? mcpServerTool = null,
+
+            global::System.Action<global::OpenRouter.ImageGenerationServerTool>? imageGenerationServerTool = null,
+
+            global::System.Action<global::OpenRouter.CodexLocalShellTool>? codexLocalShellTool = null,
+
+            global::System.Action<global::OpenRouter.ShellServerTool>? shellServerTool = null,
+
+            global::System.Action<global::OpenRouter.ApplyPatchServerTool>? applyPatchServerTool = null,
+
+            global::System.Action<global::OpenRouter.CustomTool>? customTool = null,
+
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
+
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
+
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
+
+            global::System.Action<global::OpenRouter.WebSearchServerToolOpenRouter>? webSearchServerToolOpenRouter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponsesRequestToolsItems0)
+            {
+                responsesRequestToolsItems0?.Invoke(ResponsesRequestToolsItems0!);
+            }
+            else if (IsPreviewWebSearchServerTool)
+            {
+                previewWebSearchServerTool?.Invoke(PreviewWebSearchServerTool!);
+            }
+            else if (IsPreview20250311WebSearchServerTool)
+            {
+                preview20250311WebSearchServerTool?.Invoke(Preview20250311WebSearchServerTool!);
+            }
+            else if (IsLegacyWebSearchServerTool)
+            {
+                legacyWebSearchServerTool?.Invoke(LegacyWebSearchServerTool!);
+            }
+            else if (IsWebSearchServerTool)
+            {
+                webSearchServerTool?.Invoke(WebSearchServerTool!);
+            }
+            else if (IsFileSearchServerTool)
+            {
+                fileSearchServerTool?.Invoke(FileSearchServerTool!);
+            }
+            else if (IsComputerUseServerTool)
+            {
+                computerUseServerTool?.Invoke(ComputerUseServerTool!);
+            }
+            else if (IsCodeInterpreterServerTool)
+            {
+                codeInterpreterServerTool?.Invoke(CodeInterpreterServerTool!);
+            }
+            else if (IsMcpServerTool)
+            {
+                mcpServerTool?.Invoke(McpServerTool!);
+            }
+            else if (IsImageGenerationServerTool)
+            {
+                imageGenerationServerTool?.Invoke(ImageGenerationServerTool!);
+            }
+            else if (IsCodexLocalShellTool)
+            {
+                codexLocalShellTool?.Invoke(CodexLocalShellTool!);
+            }
+            else if (IsShellServerTool)
+            {
+                shellServerTool?.Invoke(ShellServerTool!);
+            }
+            else if (IsApplyPatchServerTool)
+            {
+                applyPatchServerTool?.Invoke(ApplyPatchServerTool!);
+            }
+            else if (IsCustomTool)
+            {
+                customTool?.Invoke(CustomTool!);
+            }
+            else if (IsDatetimeServerTool)
+            {
+                datetimeServerTool?.Invoke(DatetimeServerTool!);
+            }
+            else if (IsImageGenerationServerToolOpenRouter)
+            {
+                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+            }
+            else if (IsChatSearchModelsServerTool)
+            {
+                chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
+            }
+            else if (IsWebFetchServerTool)
+            {
+                webFetchServerTool?.Invoke(WebFetchServerTool!);
+            }
+            else if (IsWebSearchServerToolOpenRouter)
+            {
+                webSearchServerToolOpenRouter?.Invoke(WebSearchServerToolOpenRouter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ResponsesRequestToolsItems0>? responsesRequestToolsItems0 = null,
+            global::System.Action<global::OpenRouter.PreviewWebSearchServerTool>? previewWebSearchServerTool = null,
+            global::System.Action<global::OpenRouter.Preview20250311WebSearchServerTool>? preview20250311WebSearchServerTool = null,
+            global::System.Action<global::OpenRouter.LegacyWebSearchServerTool>? legacyWebSearchServerTool = null,
+            global::System.Action<global::OpenRouter.WebSearchServerTool>? webSearchServerTool = null,
+            global::System.Action<global::OpenRouter.FileSearchServerTool>? fileSearchServerTool = null,
+            global::System.Action<global::OpenRouter.ComputerUseServerTool>? computerUseServerTool = null,
+            global::System.Action<global::OpenRouter.CodeInterpreterServerTool>? codeInterpreterServerTool = null,
+            global::System.Action<global::OpenRouter.McpServerTool>? mcpServerTool = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerTool>? imageGenerationServerTool = null,
+            global::System.Action<global::OpenRouter.CodexLocalShellTool>? codexLocalShellTool = null,
+            global::System.Action<global::OpenRouter.ShellServerTool>? shellServerTool = null,
+            global::System.Action<global::OpenRouter.ApplyPatchServerTool>? applyPatchServerTool = null,
+            global::System.Action<global::OpenRouter.CustomTool>? customTool = null,
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
+            global::System.Action<global::OpenRouter.WebSearchServerToolOpenRouter>? webSearchServerToolOpenRouter = null,
             bool validate = true)
         {
             if (validate)

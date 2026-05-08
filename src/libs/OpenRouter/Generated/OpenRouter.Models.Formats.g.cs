@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsFormatTextConfig => FormatTextConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFormatTextConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.FormatTextConfig? value)
+        {
+            value = FormatTextConfig;
+            return IsFormatTextConfig;
+        }
+
+        /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace OpenRouter
         public bool IsFormatJsonObjectConfig => FormatJsonObjectConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFormatJsonObjectConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.FormatJsonObjectConfig? value)
+        {
+            value = FormatJsonObjectConfig;
+            return IsFormatJsonObjectConfig;
+        }
+
+        /// <summary>
         /// JSON schema constrained response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FormatJsonSchemaConfig))]
 #endif
         public bool IsFormatJsonSchemaConfig => FormatJsonSchemaConfig != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFormatJsonSchemaConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.FormatJsonSchemaConfig? value)
+        {
+            value = FormatJsonSchemaConfig;
+            return IsFormatJsonSchemaConfig;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.FormatTextConfig?, TResult>? formatTextConfig = null,
-            global::System.Func<global::OpenRouter.FormatJsonObjectConfig?, TResult>? formatJsonObjectConfig = null,
-            global::System.Func<global::OpenRouter.FormatJsonSchemaConfig?, TResult>? formatJsonSchemaConfig = null,
+            global::System.Func<global::OpenRouter.FormatTextConfig, TResult>? formatTextConfig = null,
+            global::System.Func<global::OpenRouter.FormatJsonObjectConfig, TResult>? formatJsonObjectConfig = null,
+            global::System.Func<global::OpenRouter.FormatJsonSchemaConfig, TResult>? formatJsonSchemaConfig = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.FormatTextConfig?>? formatTextConfig = null,
-            global::System.Action<global::OpenRouter.FormatJsonObjectConfig?>? formatJsonObjectConfig = null,
-            global::System.Action<global::OpenRouter.FormatJsonSchemaConfig?>? formatJsonSchemaConfig = null,
+            global::System.Action<global::OpenRouter.FormatTextConfig>? formatTextConfig = null,
+
+            global::System.Action<global::OpenRouter.FormatJsonObjectConfig>? formatJsonObjectConfig = null,
+
+            global::System.Action<global::OpenRouter.FormatJsonSchemaConfig>? formatJsonSchemaConfig = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFormatTextConfig)
+            {
+                formatTextConfig?.Invoke(FormatTextConfig!);
+            }
+            else if (IsFormatJsonObjectConfig)
+            {
+                formatJsonObjectConfig?.Invoke(FormatJsonObjectConfig!);
+            }
+            else if (IsFormatJsonSchemaConfig)
+            {
+                formatJsonSchemaConfig?.Invoke(FormatJsonSchemaConfig!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.FormatTextConfig>? formatTextConfig = null,
+            global::System.Action<global::OpenRouter.FormatJsonObjectConfig>? formatJsonObjectConfig = null,
+            global::System.Action<global::OpenRouter.FormatJsonSchemaConfig>? formatJsonSchemaConfig = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestThinking0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestThinking0? value)
+        {
+            value = MessagesRequestThinking0;
+            return IsMessagesRequestThinking0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestThinking1? MessagesRequestThinking1 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestThinking1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestThinking1? value)
+        {
+            value = MessagesRequestThinking1;
+            return IsMessagesRequestThinking1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestThinking2? MessagesRequestThinking2 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestThinking2))]
 #endif
         public bool IsMessagesRequestThinking2 => MessagesRequestThinking2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestThinking2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestThinking2? value)
+        {
+            value = MessagesRequestThinking2;
+            return IsMessagesRequestThinking2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestThinking0?, TResult>? messagesRequestThinking0 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestThinking1?, TResult>? messagesRequestThinking1 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestThinking2?, TResult>? messagesRequestThinking2 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestThinking0, TResult>? messagesRequestThinking0 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestThinking1, TResult>? messagesRequestThinking1 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestThinking2, TResult>? messagesRequestThinking2 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestThinking0?>? messagesRequestThinking0 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestThinking1?>? messagesRequestThinking1 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestThinking2?>? messagesRequestThinking2 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestThinking0>? messagesRequestThinking0 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestThinking1>? messagesRequestThinking1 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestThinking2>? messagesRequestThinking2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestThinking0)
+            {
+                messagesRequestThinking0?.Invoke(MessagesRequestThinking0!);
+            }
+            else if (IsMessagesRequestThinking1)
+            {
+                messagesRequestThinking1?.Invoke(MessagesRequestThinking1!);
+            }
+            else if (IsMessagesRequestThinking2)
+            {
+                messagesRequestThinking2?.Invoke(MessagesRequestThinking2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.MessagesRequestThinking0>? messagesRequestThinking0 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestThinking1>? messagesRequestThinking1 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestThinking2>? messagesRequestThinking2 = null,
             bool validate = true)
         {
             if (validate)

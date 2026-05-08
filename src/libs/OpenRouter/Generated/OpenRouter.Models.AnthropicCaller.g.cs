@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsCodeExecution20250825 => CodeExecution20250825 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeExecution20250825(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCallerVariant1? value)
+        {
+            value = CodeExecution20250825;
+            return IsCodeExecution20250825;
+        }
+
+        /// <summary>
         /// code_execution_20260120 variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace OpenRouter
         public bool IsCodeExecution20260120 => CodeExecution20260120 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeExecution20260120(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCallerVariant2? value)
+        {
+            value = CodeExecution20260120;
+            return IsCodeExecution20260120;
+        }
+
+        /// <summary>
         /// direct variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Direct))]
 #endif
         public bool IsDirect => Direct != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDirect(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCallerVariant3? value)
+        {
+            value = Direct;
+            return IsDirect;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicCallerVariant1?, TResult>? codeExecution20250825 = null,
-            global::System.Func<global::OpenRouter.AnthropicCallerVariant2?, TResult>? codeExecution20260120 = null,
-            global::System.Func<global::OpenRouter.AnthropicCallerVariant3?, TResult>? direct = null,
+            global::System.Func<global::OpenRouter.AnthropicCallerVariant1, TResult>? codeExecution20250825 = null,
+            global::System.Func<global::OpenRouter.AnthropicCallerVariant2, TResult>? codeExecution20260120 = null,
+            global::System.Func<global::OpenRouter.AnthropicCallerVariant3, TResult>? direct = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicCallerVariant1?>? codeExecution20250825 = null,
-            global::System.Action<global::OpenRouter.AnthropicCallerVariant2?>? codeExecution20260120 = null,
-            global::System.Action<global::OpenRouter.AnthropicCallerVariant3?>? direct = null,
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant1>? codeExecution20250825 = null,
+
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant2>? codeExecution20260120 = null,
+
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant3>? direct = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCodeExecution20250825)
+            {
+                codeExecution20250825?.Invoke(CodeExecution20250825!);
+            }
+            else if (IsCodeExecution20260120)
+            {
+                codeExecution20260120?.Invoke(CodeExecution20260120!);
+            }
+            else if (IsDirect)
+            {
+                direct?.Invoke(Direct!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant1>? codeExecution20250825 = null,
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant2>? codeExecution20260120 = null,
+            global::System.Action<global::OpenRouter.AnthropicCallerVariant3>? direct = null,
             bool validate = true)
         {
             if (validate)

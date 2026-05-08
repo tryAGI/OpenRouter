@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponseInputMessageItemRole0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponseInputMessageItemRole0? value)
+        {
+            value = OpenAiResponseInputMessageItemRole0;
+            return IsOpenAiResponseInputMessageItemRole0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponseInputMessageItemRole1? OpenAiResponseInputMessageItemRole1 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponseInputMessageItemRole1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponseInputMessageItemRole1? value)
+        {
+            value = OpenAiResponseInputMessageItemRole1;
+            return IsOpenAiResponseInputMessageItemRole1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponseInputMessageItemRole2? OpenAiResponseInputMessageItemRole2 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponseInputMessageItemRole2))]
 #endif
         public bool IsOpenAiResponseInputMessageItemRole2 => OpenAiResponseInputMessageItemRole2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponseInputMessageItemRole2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponseInputMessageItemRole2? value)
+        {
+            value = OpenAiResponseInputMessageItemRole2;
+            return IsOpenAiResponseInputMessageItemRole2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -187,6 +226,36 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole0?>? openAiResponseInputMessageItemRole0 = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole1?>? openAiResponseInputMessageItemRole1 = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole2?>? openAiResponseInputMessageItemRole2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAiResponseInputMessageItemRole0)
+            {
+                openAiResponseInputMessageItemRole0?.Invoke(OpenAiResponseInputMessageItemRole0!);
+            }
+            else if (IsOpenAiResponseInputMessageItemRole1)
+            {
+                openAiResponseInputMessageItemRole1?.Invoke(OpenAiResponseInputMessageItemRole1!);
+            }
+            else if (IsOpenAiResponseInputMessageItemRole2)
+            {
+                openAiResponseInputMessageItemRole2?.Invoke(OpenAiResponseInputMessageItemRole2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole0?>? openAiResponseInputMessageItemRole0 = null,
             global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole1?>? openAiResponseInputMessageItemRole1 = null,
             global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole2?>? openAiResponseInputMessageItemRole2 = null,

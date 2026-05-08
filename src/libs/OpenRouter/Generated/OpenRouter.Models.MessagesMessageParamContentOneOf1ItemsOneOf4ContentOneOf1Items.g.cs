@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicTextBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextBlockParam? value)
+        {
+            value = AnthropicTextBlockParam;
+            return IsAnthropicTextBlockParam;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicImageBlockParam))]
 #endif
         public bool IsAnthropicImageBlockParam => AnthropicImageBlockParam != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicImageBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicImageBlockParam? value)
+        {
+            value = AnthropicImageBlockParam;
+            return IsAnthropicImageBlockParam;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2? value)
+        {
+            value = MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicSearchResultBlockParam? AnthropicSearchResultBlockParam { get; init; }
 #else
@@ -80,6 +119,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicSearchResultBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicSearchResultBlockParam? value)
+        {
+            value = AnthropicSearchResultBlockParam;
+            return IsAnthropicSearchResultBlockParam;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicDocumentBlockParam? AnthropicDocumentBlockParam { get; init; }
 #else
@@ -93,6 +145,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicDocumentBlockParam))]
 #endif
         public bool IsAnthropicDocumentBlockParam => AnthropicDocumentBlockParam != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicDocumentBlockParam(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicDocumentBlockParam? value)
+        {
+            value = AnthropicDocumentBlockParam;
+            return IsAnthropicDocumentBlockParam;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -235,11 +300,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicTextBlockParam?, TResult>? anthropicTextBlockParam = null,
-            global::System.Func<global::OpenRouter.AnthropicImageBlockParam?, TResult>? anthropicImageBlockParam = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = null,
-            global::System.Func<global::OpenRouter.AnthropicSearchResultBlockParam?, TResult>? anthropicSearchResultBlockParam = null,
-            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParam?, TResult>? anthropicDocumentBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicTextBlockParam, TResult>? anthropicTextBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicImageBlockParam, TResult>? anthropicImageBlockParam = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = null,
+            global::System.Func<global::OpenRouter.AnthropicSearchResultBlockParam, TResult>? anthropicSearchResultBlockParam = null,
+            global::System.Func<global::OpenRouter.AnthropicDocumentBlockParam, TResult>? anthropicDocumentBlockParam = null,
             bool validate = true)
         {
             if (validate)
@@ -275,11 +340,53 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicTextBlockParam?>? anthropicTextBlockParam = null,
-            global::System.Action<global::OpenRouter.AnthropicImageBlockParam?>? anthropicImageBlockParam = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = null,
-            global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam?>? anthropicSearchResultBlockParam = null,
-            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParam?>? anthropicDocumentBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicTextBlockParam>? anthropicTextBlockParam = null,
+
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParam>? anthropicImageBlockParam = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = null,
+
+            global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam>? anthropicSearchResultBlockParam = null,
+
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParam>? anthropicDocumentBlockParam = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicTextBlockParam)
+            {
+                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
+            }
+            else if (IsAnthropicImageBlockParam)
+            {
+                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2)
+            {
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!);
+            }
+            else if (IsAnthropicSearchResultBlockParam)
+            {
+                anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
+            }
+            else if (IsAnthropicDocumentBlockParam)
+            {
+                anthropicDocumentBlockParam?.Invoke(AnthropicDocumentBlockParam!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicTextBlockParam>? anthropicTextBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParam>? anthropicImageBlockParam = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = null,
+            global::System.Action<global::OpenRouter.AnthropicSearchResultBlockParam>? anthropicSearchResultBlockParam = null,
+            global::System.Action<global::OpenRouter.AnthropicDocumentBlockParam>? anthropicDocumentBlockParam = null,
             bool validate = true)
         {
             if (validate)

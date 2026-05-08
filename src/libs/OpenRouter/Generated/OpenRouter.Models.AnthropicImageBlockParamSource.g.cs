@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsBase64 => Base64 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicImageBlockParamSourceVariant1? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
         /// url variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicImageBlockParamSourceVariant2? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicImageBlockParamSourceVariant1?, TResult>? base64 = null,
-            global::System.Func<global::OpenRouter.AnthropicImageBlockParamSourceVariant2?, TResult>? url = null,
+            global::System.Func<global::OpenRouter.AnthropicImageBlockParamSourceVariant1, TResult>? base64 = null,
+            global::System.Func<global::OpenRouter.AnthropicImageBlockParamSourceVariant2, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant1?>? base64 = null,
-            global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant2?>? url = null,
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant1>? base64 = null,
+
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant2>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant1>? base64 = null,
+            global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant2>? url = null,
             bool validate = true)
         {
             if (validate)

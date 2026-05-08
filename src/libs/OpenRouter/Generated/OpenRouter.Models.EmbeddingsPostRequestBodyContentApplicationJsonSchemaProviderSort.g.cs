@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsProviderSort => ProviderSort != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderSort(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ProviderSort? value)
+        {
+            value = ProviderSort;
+            return IsProviderSort;
+        }
+
+        /// <summary>
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace OpenRouter
         public bool IsProviderSortConfig => ProviderSortConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderSortConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ProviderSortConfig? value)
+        {
+            value = ProviderSortConfig;
+            return IsProviderSortConfig;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3))]
 #endif
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
+            return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -140,8 +179,8 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderSort?, TResult>? providerSort = null,
-            global::System.Func<global::OpenRouter.ProviderSortConfig?, TResult>? providerSortConfig = null,
-            global::System.Func<object?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
+            global::System.Func<global::OpenRouter.ProviderSortConfig, TResult>? providerSortConfig = null,
+            global::System.Func<object, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +209,38 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
-            global::System.Action<global::OpenRouter.ProviderSortConfig?>? providerSortConfig = null,
-            global::System.Action<object?>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
+
+            global::System.Action<global::OpenRouter.ProviderSortConfig>? providerSortConfig = null,
+
+            global::System.Action<object>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderSort)
+            {
+                providerSort?.Invoke(ProviderSort!);
+            }
+            else if (IsProviderSortConfig)
+            {
+                providerSortConfig?.Invoke(ProviderSortConfig!);
+            }
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3)
+            {
+                embeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
+            global::System.Action<global::OpenRouter.ProviderSortConfig>? providerSortConfig = null,
+            global::System.Action<object>? embeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)

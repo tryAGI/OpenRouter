@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsCodeExecutionResult => CodeExecutionResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeExecutionResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCodeExecutionContentVariant1? value)
+        {
+            value = CodeExecutionResult;
+            return IsCodeExecutionResult;
+        }
+
+        /// <summary>
         /// code_execution_tool_result_error variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace OpenRouter
         public bool IsCodeExecutionToolResultError => CodeExecutionToolResultError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeExecutionToolResultError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCodeExecutionContentVariant2? value)
+        {
+            value = CodeExecutionToolResultError;
+            return IsCodeExecutionToolResultError;
+        }
+
+        /// <summary>
         /// encrypted_code_execution_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EncryptedCodeExecutionResult))]
 #endif
         public bool IsEncryptedCodeExecutionResult => EncryptedCodeExecutionResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEncryptedCodeExecutionResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCodeExecutionContentVariant3? value)
+        {
+            value = EncryptedCodeExecutionResult;
+            return IsEncryptedCodeExecutionResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant1?, TResult>? codeExecutionResult = null,
-            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant2?, TResult>? codeExecutionToolResultError = null,
-            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant3?, TResult>? encryptedCodeExecutionResult = null,
+            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant1, TResult>? codeExecutionResult = null,
+            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant2, TResult>? codeExecutionToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant3, TResult>? encryptedCodeExecutionResult = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant1?>? codeExecutionResult = null,
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant2?>? codeExecutionToolResultError = null,
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant3?>? encryptedCodeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant1>? codeExecutionResult = null,
+
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant2>? codeExecutionToolResultError = null,
+
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant3>? encryptedCodeExecutionResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCodeExecutionResult)
+            {
+                codeExecutionResult?.Invoke(CodeExecutionResult!);
+            }
+            else if (IsCodeExecutionToolResultError)
+            {
+                codeExecutionToolResultError?.Invoke(CodeExecutionToolResultError!);
+            }
+            else if (IsEncryptedCodeExecutionResult)
+            {
+                encryptedCodeExecutionResult?.Invoke(EncryptedCodeExecutionResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant1>? codeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant2>? codeExecutionToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant3>? encryptedCodeExecutionResult = null,
             bool validate = true)
         {
             if (validate)

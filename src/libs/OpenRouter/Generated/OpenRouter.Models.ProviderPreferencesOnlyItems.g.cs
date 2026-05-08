@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProviderName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ProviderName? value)
+        {
+            value = ProviderName;
+            return IsProviderName;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ProviderPreferencesOnlyItemsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProviderPreferencesOnlyItemsVariant2))]
 #endif
         public bool IsProviderPreferencesOnlyItemsVariant2 => ProviderPreferencesOnlyItemsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderPreferencesOnlyItemsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ProviderPreferencesOnlyItemsVariant2;
+            return IsProviderPreferencesOnlyItemsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderName?, TResult>? providerName = null,
-            global::System.Func<string?, TResult>? providerPreferencesOnlyItemsVariant2 = null,
+            global::System.Func<string, TResult>? providerPreferencesOnlyItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
-            global::System.Action<string?>? providerPreferencesOnlyItemsVariant2 = null,
+
+            global::System.Action<string>? providerPreferencesOnlyItemsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderName)
+            {
+                providerName?.Invoke(ProviderName!);
+            }
+            else if (IsProviderPreferencesOnlyItemsVariant2)
+            {
+                providerPreferencesOnlyItemsVariant2?.Invoke(ProviderPreferencesOnlyItemsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
+            global::System.Action<string>? providerPreferencesOnlyItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)

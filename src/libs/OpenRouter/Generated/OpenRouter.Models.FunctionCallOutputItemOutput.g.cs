@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunctionCallOutputItemOutputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = FunctionCallOutputItemOutputVariant1;
+            return IsFunctionCallOutputItemOutputVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>? FunctionCallOutputItemOutput1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputItemOutput1))]
 #endif
         public bool IsFunctionCallOutputItemOutput1 => FunctionCallOutputItemOutput1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCallOutputItemOutput1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>? value)
+        {
+            value = FunctionCallOutputItemOutput1;
+            return IsFunctionCallOutputItemOutput1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? functionCallOutputItemOutputVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>?, TResult>? functionCallOutputItemOutput1 = null,
+            global::System.Func<string, TResult>? functionCallOutputItemOutputVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>, TResult>? functionCallOutputItemOutput1 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? functionCallOutputItemOutputVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>?>? functionCallOutputItemOutput1 = null,
+            global::System.Action<string>? functionCallOutputItemOutputVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>>? functionCallOutputItemOutput1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunctionCallOutputItemOutputVariant1)
+            {
+                functionCallOutputItemOutputVariant1?.Invoke(FunctionCallOutputItemOutputVariant1!);
+            }
+            else if (IsFunctionCallOutputItemOutput1)
+            {
+                functionCallOutputItemOutput1?.Invoke(FunctionCallOutputItemOutput1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? functionCallOutputItemOutputVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>>? functionCallOutputItemOutput1 = null,
             bool validate = true)
         {
             if (validate)

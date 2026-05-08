@@ -29,6 +29,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolsItems0? value)
+        {
+            value = MessagesRequestToolsItems0;
+            return IsMessagesRequestToolsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems1? MessagesRequestToolsItems1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems1))]
 #endif
         public bool IsMessagesRequestToolsItems1 => MessagesRequestToolsItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolsItems1? value)
+        {
+            value = MessagesRequestToolsItems1;
+            return IsMessagesRequestToolsItems1;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolsItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolsItems2? value)
+        {
+            value = MessagesRequestToolsItems2;
+            return IsMessagesRequestToolsItems2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems3? MessagesRequestToolsItems3 { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems3))]
 #endif
         public bool IsMessagesRequestToolsItems3 => MessagesRequestToolsItems3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolsItems3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolsItems3? value)
+        {
+            value = MessagesRequestToolsItems3;
+            return IsMessagesRequestToolsItems3;
+        }
 
         /// <summary>
         /// 
@@ -95,6 +147,19 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems4 => MessagesRequestToolsItems4 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolsItems4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolsItems4? value)
+        {
+            value = MessagesRequestToolsItems4;
+            return IsMessagesRequestToolsItems4;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeServerTool))]
 #endif
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetimeServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.DatetimeServerTool? value)
+        {
+            value = DatetimeServerTool;
+            return IsDatetimeServerTool;
+        }
 
         /// <summary>
         /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
@@ -129,6 +207,19 @@ namespace OpenRouter
         public bool IsImageGenerationServerToolOpenRouter => ImageGenerationServerToolOpenRouter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
+        {
+            value = ImageGenerationServerToolOpenRouter;
+            return IsImageGenerationServerToolOpenRouter;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -146,6 +237,19 @@ namespace OpenRouter
         public bool IsChatSearchModelsServerTool => ChatSearchModelsServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatSearchModelsServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatSearchModelsServerTool? value)
+        {
+            value = ChatSearchModelsServerTool;
+            return IsChatSearchModelsServerTool;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -161,6 +265,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchServerTool))]
 #endif
         public bool IsWebFetchServerTool => WebFetchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebFetchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.WebFetchServerTool? value)
+        {
+            value = WebFetchServerTool;
+            return IsWebFetchServerTool;
+        }
 
         /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
@@ -182,6 +299,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenRouterWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenRouterWebSearchServerTool? value)
+        {
+            value = OpenRouterWebSearchServerTool;
+            return IsOpenRouterWebSearchServerTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems10? MessagesRequestToolsItems10 { get; init; }
 #else
@@ -195,6 +325,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems10))]
 #endif
         public bool IsMessagesRequestToolsItems10 => MessagesRequestToolsItems10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolsItems10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestToolsItems10? value)
+        {
+            value = MessagesRequestToolsItems10;
+            return IsMessagesRequestToolsItems10;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -469,17 +612,17 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestToolsItems0?, TResult>? messagesRequestToolsItems0 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolsItems1?, TResult>? messagesRequestToolsItems1 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolsItems2?, TResult>? messagesRequestToolsItems2 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolsItems3?, TResult>? messagesRequestToolsItems3 = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolsItems4?, TResult>? messagesRequestToolsItems4 = null,
-            global::System.Func<global::OpenRouter.DatetimeServerTool?, TResult>? datetimeServerTool = null,
-            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter?, TResult>? imageGenerationServerToolOpenRouter = null,
-            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool?, TResult>? chatSearchModelsServerTool = null,
-            global::System.Func<global::OpenRouter.WebFetchServerTool?, TResult>? webFetchServerTool = null,
-            global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool?, TResult>? openRouterWebSearchServerTool = null,
-            global::System.Func<global::OpenRouter.MessagesRequestToolsItems10?, TResult>? messagesRequestToolsItems10 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolsItems0, TResult>? messagesRequestToolsItems0 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolsItems1, TResult>? messagesRequestToolsItems1 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolsItems2, TResult>? messagesRequestToolsItems2 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolsItems3, TResult>? messagesRequestToolsItems3 = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolsItems4, TResult>? messagesRequestToolsItems4 = null,
+            global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServerTool = null,
+            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerToolOpenRouter = null,
+            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool, TResult>? chatSearchModelsServerTool = null,
+            global::System.Func<global::OpenRouter.WebFetchServerTool, TResult>? webFetchServerTool = null,
+            global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool, TResult>? openRouterWebSearchServerTool = null,
+            global::System.Func<global::OpenRouter.MessagesRequestToolsItems10, TResult>? messagesRequestToolsItems10 = null,
             bool validate = true)
         {
             if (validate)
@@ -539,17 +682,95 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestToolsItems0?>? messagesRequestToolsItems0 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolsItems1?>? messagesRequestToolsItems1 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolsItems2?>? messagesRequestToolsItems2 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolsItems3?>? messagesRequestToolsItems3 = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolsItems4?>? messagesRequestToolsItems4 = null,
-            global::System.Action<global::OpenRouter.DatetimeServerTool?>? datetimeServerTool = null,
-            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter?>? imageGenerationServerToolOpenRouter = null,
-            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool?>? chatSearchModelsServerTool = null,
-            global::System.Action<global::OpenRouter.WebFetchServerTool?>? webFetchServerTool = null,
-            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool?>? openRouterWebSearchServerTool = null,
-            global::System.Action<global::OpenRouter.MessagesRequestToolsItems10?>? messagesRequestToolsItems10 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems0>? messagesRequestToolsItems0 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems1>? messagesRequestToolsItems1 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems2>? messagesRequestToolsItems2 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems3>? messagesRequestToolsItems3 = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems4>? messagesRequestToolsItems4 = null,
+
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
+
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
+
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
+
+            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems10>? messagesRequestToolsItems10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestToolsItems0)
+            {
+                messagesRequestToolsItems0?.Invoke(MessagesRequestToolsItems0!);
+            }
+            else if (IsMessagesRequestToolsItems1)
+            {
+                messagesRequestToolsItems1?.Invoke(MessagesRequestToolsItems1!);
+            }
+            else if (IsMessagesRequestToolsItems2)
+            {
+                messagesRequestToolsItems2?.Invoke(MessagesRequestToolsItems2!);
+            }
+            else if (IsMessagesRequestToolsItems3)
+            {
+                messagesRequestToolsItems3?.Invoke(MessagesRequestToolsItems3!);
+            }
+            else if (IsMessagesRequestToolsItems4)
+            {
+                messagesRequestToolsItems4?.Invoke(MessagesRequestToolsItems4!);
+            }
+            else if (IsDatetimeServerTool)
+            {
+                datetimeServerTool?.Invoke(DatetimeServerTool!);
+            }
+            else if (IsImageGenerationServerToolOpenRouter)
+            {
+                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+            }
+            else if (IsChatSearchModelsServerTool)
+            {
+                chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
+            }
+            else if (IsWebFetchServerTool)
+            {
+                webFetchServerTool?.Invoke(WebFetchServerTool!);
+            }
+            else if (IsOpenRouterWebSearchServerTool)
+            {
+                openRouterWebSearchServerTool?.Invoke(OpenRouterWebSearchServerTool!);
+            }
+            else if (IsMessagesRequestToolsItems10)
+            {
+                messagesRequestToolsItems10?.Invoke(MessagesRequestToolsItems10!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems0>? messagesRequestToolsItems0 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems1>? messagesRequestToolsItems1 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems2>? messagesRequestToolsItems2 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems3>? messagesRequestToolsItems3 = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems4>? messagesRequestToolsItems4 = null,
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
+            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
+            global::System.Action<global::OpenRouter.MessagesRequestToolsItems10>? messagesRequestToolsItems10 = null,
             bool validate = true)
         {
             if (validate)

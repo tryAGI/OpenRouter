@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsChatFunctionTool0 => ChatFunctionTool0 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatFunctionTool0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatFunctionTool0? value)
+        {
+            value = ChatFunctionTool0;
+            return IsChatFunctionTool0;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeServerTool))]
 #endif
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetimeServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.DatetimeServerTool? value)
+        {
+            value = DatetimeServerTool;
+            return IsDatetimeServerTool;
+        }
 
         /// <summary>
         /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsImageGenerationServerToolOpenRouter => ImageGenerationServerToolOpenRouter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
+        {
+            value = ImageGenerationServerToolOpenRouter;
+            return IsImageGenerationServerToolOpenRouter;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatSearchModelsServerTool))]
 #endif
         public bool IsChatSearchModelsServerTool => ChatSearchModelsServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatSearchModelsServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatSearchModelsServerTool? value)
+        {
+            value = ChatSearchModelsServerTool;
+            return IsChatSearchModelsServerTool;
+        }
 
         /// <summary>
         /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)
@@ -95,6 +147,19 @@ namespace OpenRouter
         public bool IsWebFetchServerTool => WebFetchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebFetchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.WebFetchServerTool? value)
+        {
+            value = WebFetchServerTool;
+            return IsWebFetchServerTool;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -112,6 +177,19 @@ namespace OpenRouter
         public bool IsOpenRouterWebSearchServerTool => OpenRouterWebSearchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenRouterWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenRouterWebSearchServerTool? value)
+        {
+            value = OpenRouterWebSearchServerTool;
+            return IsOpenRouterWebSearchServerTool;
+        }
+
+        /// <summary>
         /// Web search tool using OpenAI Responses API syntax. Automatically converted to openrouter:web_search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -127,6 +205,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatWebSearchShorthand))]
 #endif
         public bool IsChatWebSearchShorthand => ChatWebSearchShorthand != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatWebSearchShorthand(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatWebSearchShorthand? value)
+        {
+            value = ChatWebSearchShorthand;
+            return IsChatWebSearchShorthand;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -313,13 +404,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatFunctionTool0?, TResult>? chatFunctionTool0 = null,
-            global::System.Func<global::OpenRouter.DatetimeServerTool?, TResult>? datetimeServerTool = null,
-            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter?, TResult>? imageGenerationServerToolOpenRouter = null,
-            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool?, TResult>? chatSearchModelsServerTool = null,
-            global::System.Func<global::OpenRouter.WebFetchServerTool?, TResult>? webFetchServerTool = null,
-            global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool?, TResult>? openRouterWebSearchServerTool = null,
-            global::System.Func<global::OpenRouter.ChatWebSearchShorthand?, TResult>? chatWebSearchShorthand = null,
+            global::System.Func<global::OpenRouter.ChatFunctionTool0, TResult>? chatFunctionTool0 = null,
+            global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServerTool = null,
+            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerToolOpenRouter = null,
+            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool, TResult>? chatSearchModelsServerTool = null,
+            global::System.Func<global::OpenRouter.WebFetchServerTool, TResult>? webFetchServerTool = null,
+            global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool, TResult>? openRouterWebSearchServerTool = null,
+            global::System.Func<global::OpenRouter.ChatWebSearchShorthand, TResult>? chatWebSearchShorthand = null,
             bool validate = true)
         {
             if (validate)
@@ -363,13 +454,67 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatFunctionTool0?>? chatFunctionTool0 = null,
-            global::System.Action<global::OpenRouter.DatetimeServerTool?>? datetimeServerTool = null,
-            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter?>? imageGenerationServerToolOpenRouter = null,
-            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool?>? chatSearchModelsServerTool = null,
-            global::System.Action<global::OpenRouter.WebFetchServerTool?>? webFetchServerTool = null,
-            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool?>? openRouterWebSearchServerTool = null,
-            global::System.Action<global::OpenRouter.ChatWebSearchShorthand?>? chatWebSearchShorthand = null,
+            global::System.Action<global::OpenRouter.ChatFunctionTool0>? chatFunctionTool0 = null,
+
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
+
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
+
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
+
+            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
+
+            global::System.Action<global::OpenRouter.ChatWebSearchShorthand>? chatWebSearchShorthand = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatFunctionTool0)
+            {
+                chatFunctionTool0?.Invoke(ChatFunctionTool0!);
+            }
+            else if (IsDatetimeServerTool)
+            {
+                datetimeServerTool?.Invoke(DatetimeServerTool!);
+            }
+            else if (IsImageGenerationServerToolOpenRouter)
+            {
+                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+            }
+            else if (IsChatSearchModelsServerTool)
+            {
+                chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
+            }
+            else if (IsWebFetchServerTool)
+            {
+                webFetchServerTool?.Invoke(WebFetchServerTool!);
+            }
+            else if (IsOpenRouterWebSearchServerTool)
+            {
+                openRouterWebSearchServerTool?.Invoke(OpenRouterWebSearchServerTool!);
+            }
+            else if (IsChatWebSearchShorthand)
+            {
+                chatWebSearchShorthand?.Invoke(ChatWebSearchShorthand!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ChatFunctionTool0>? chatFunctionTool0 = null,
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
+            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
+            global::System.Action<global::OpenRouter.ChatWebSearchShorthand>? chatWebSearchShorthand = null,
             bool validate = true)
         {
             if (validate)

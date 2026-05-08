@@ -27,6 +27,19 @@ namespace OpenRouter
         public bool IsGrammar => Grammar != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGrammar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatRequestResponseFormatVariant1? value)
+        {
+            value = Grammar;
+            return IsGrammar;
+        }
+
+        /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatRequestResponseFormatVariant2? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
 
         /// <summary>
         /// JSON Schema response format for structured outputs
@@ -61,6 +87,19 @@ namespace OpenRouter
         public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatRequestResponseFormatVariant3? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
+
+        /// <summary>
         /// Python code response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -78,6 +117,19 @@ namespace OpenRouter
         public bool IsPython => Python != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPython(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatRequestResponseFormatVariant4? value)
+        {
+            value = Python;
+            return IsPython;
+        }
+
+        /// <summary>
         /// Default text response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -93,6 +145,19 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatRequestResponseFormatVariant5? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -235,11 +300,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant1?, TResult>? grammar = null,
-            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant2?, TResult>? jsonObject = null,
-            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant3?, TResult>? jsonSchema = null,
-            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant4?, TResult>? python = null,
-            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant5?, TResult>? text = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant1, TResult>? grammar = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant2, TResult>? jsonObject = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant3, TResult>? jsonSchema = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant4, TResult>? python = null,
+            global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant5, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -275,11 +340,53 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant1?>? grammar = null,
-            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant2?>? jsonObject = null,
-            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant3?>? jsonSchema = null,
-            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant4?>? python = null,
-            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant5?>? text = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant1>? grammar = null,
+
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant2>? jsonObject = null,
+
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant3>? jsonSchema = null,
+
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant4>? python = null,
+
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant5>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGrammar)
+            {
+                grammar?.Invoke(Grammar!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+            else if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+            else if (IsPython)
+            {
+                python?.Invoke(Python!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant1>? grammar = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant2>? jsonObject = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant3>? jsonSchema = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant4>? python = null,
+            global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant5>? text = null,
             bool validate = true)
         {
             if (validate)
