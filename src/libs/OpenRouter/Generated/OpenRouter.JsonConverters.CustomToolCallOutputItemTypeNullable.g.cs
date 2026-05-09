@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class MessagesRequestServiceTierNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.MessagesRequestServiceTier?>
+    public sealed class CustomToolCallOutputItemTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.CustomToolCallOutputItemType?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.MessagesRequestServiceTier? Read(
+        public override global::OpenRouter.CustomToolCallOutputItemType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.MessagesRequestServiceTierExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.CustomToolCallOutputItemTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.MessagesRequestServiceTier)numValue;
+                    return (global::OpenRouter.CustomToolCallOutputItemType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.MessagesRequestServiceTier?);
+                    return default(global::OpenRouter.CustomToolCallOutputItemType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.MessagesRequestServiceTier? value,
+            global::OpenRouter.CustomToolCallOutputItemType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace OpenRouter.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenRouter.MessagesRequestServiceTierExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenRouter.CustomToolCallOutputItemTypeExtensions.ToValueString(value.Value));
             }
         }
     }

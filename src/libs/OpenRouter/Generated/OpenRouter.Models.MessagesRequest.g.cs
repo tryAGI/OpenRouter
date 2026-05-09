@@ -80,8 +80,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestServiceTierJsonConverter))]
-        public global::OpenRouter.MessagesRequestServiceTier? ServiceTier { get; set; }
+        public string? ServiceTier { get; set; }
 
         /// <summary>
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
@@ -228,7 +227,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins,
             global::OpenRouter.ProviderPreferences? provider,
             object? route,
-            global::OpenRouter.MessagesRequestServiceTier? serviceTier,
+            string? serviceTier,
             string? sessionId,
             global::OpenRouter.AnthropicSpeed? speed,
             global::System.Collections.Generic.IList<string>? stopSequences,

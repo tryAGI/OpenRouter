@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:datetime
+    /// Discriminator value: openrouter:code_interpreter
     /// </summary>
     public enum OutputItemsVariant11Type
     {
         /// <summary>
-        /// openrouter:datetime
+        /// openrouter:code_interpreter
         /// </summary>
-        Openrouter_datetime,
+        Openrouter_codeInterpreter,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                OutputItemsVariant11Type.Openrouter_datetime => "openrouter:datetime",
+                OutputItemsVariant11Type.Openrouter_codeInterpreter => "openrouter:code_interpreter",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "openrouter:datetime" => OutputItemsVariant11Type.Openrouter_datetime,
+                "openrouter:code_interpreter" => OutputItemsVariant11Type.Openrouter_codeInterpreter,
                 _ => null,
             };
         }

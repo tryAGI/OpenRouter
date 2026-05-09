@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class OutputItemsVariant7TypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.OutputItemsVariant7Type>
+    public sealed class OpenAiResponseCustomToolCallTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.OpenAiResponseCustomToolCallType>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.OutputItemsVariant7Type Read(
+        public override global::OpenRouter.OpenAiResponseCustomToolCallType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.OutputItemsVariant7TypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.OpenAiResponseCustomToolCallTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.OutputItemsVariant7Type)numValue;
+                    return (global::OpenRouter.OpenAiResponseCustomToolCallType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.OutputItemsVariant7Type);
+                    return default(global::OpenRouter.OpenAiResponseCustomToolCallType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.OutputItemsVariant7Type value,
+            global::OpenRouter.OpenAiResponseCustomToolCallType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.OutputItemsVariant7TypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::OpenRouter.OpenAiResponseCustomToolCallTypeExtensions.ToValueString(value));
         }
     }
 }
