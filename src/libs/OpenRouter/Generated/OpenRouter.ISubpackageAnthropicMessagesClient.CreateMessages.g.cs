@@ -100,7 +100,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins = default,
             global::OpenRouter.ProviderPreferences? provider = default,
             object? route = default,
-            global::OpenRouter.MessagesRequestServiceTier? serviceTier = default,
+            string? serviceTier = default,
             string? sessionId = default,
             global::OpenRouter.AnthropicSpeed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,

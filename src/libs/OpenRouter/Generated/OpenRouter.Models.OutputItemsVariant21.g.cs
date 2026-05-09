@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An output item containing reasoning
+    /// An openrouter:web_search server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant21
     {
@@ -12,54 +12,28 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputReasoningItemTypeJsonConverter))]
-        public global::OpenRouter.OutputReasoningItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
-        public string? EncryptedContent { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        public global::OpenRouter.OutputWebSearchServerToolItemAction? Action { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatusJsonConverter))]
-        public global::OpenRouter.OutputReasoningItemStatus? Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> Summary { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter))]
-        public global::OpenRouter.ReasoningFormat? Format { get; set; }
-
-        /// <summary>
-        /// A signature for the reasoning content, used for verification
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        public string? Signature { get; set; }
+        public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,37 +44,25 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant21" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="summary"></param>
-        /// <param name="type"></param>
-        /// <param name="content"></param>
-        /// <param name="encryptedContent"></param>
         /// <param name="status"></param>
-        /// <param name="format"></param>
-        /// <param name="signature">
-        /// A signature for the reasoning content, used for verification
+        /// <param name="type"></param>
+        /// <param name="action">
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
         /// </param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant21(
-            string id,
-            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> summary,
-            global::OpenRouter.OutputReasoningItemType type,
-            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? content,
-            string? encryptedContent,
-            global::OpenRouter.OutputReasoningItemStatus? status,
-            global::OpenRouter.ReasoningFormat? format,
-            string? signature)
+            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.OutputWebSearchServerToolItemType type,
+            global::OpenRouter.OutputWebSearchServerToolItemAction? action,
+            string? id)
         {
             this.Type = type;
-            this.Content = content;
-            this.EncryptedContent = encryptedContent;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Action = action;
+            this.Id = id;
             this.Status = status;
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Format = format;
-            this.Signature = signature;
         }
 
         /// <summary>

@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:image_generation server tool output item
+    /// An openrouter:file_search server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant14
     {
         /// <summary>
-        /// Discriminator value: openrouter:image_generation
+        /// Discriminator value: openrouter:file_search
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant14TypeJsonConverter))]
@@ -24,26 +24,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageB64")]
-        public string? ImageB64 { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
-        public string? ImageUrl { get; set; }
-
-        /// <summary>
-        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string? Result { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("revisedPrompt")]
-        public string? RevisedPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
+        public global::System.Collections.Generic.IList<string>? Queries { get; set; }
 
         /// <summary>
         /// 
@@ -64,15 +46,10 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:image_generation
+        /// Discriminator value: openrouter:file_search
         /// </param>
         /// <param name="id"></param>
-        /// <param name="imageB64"></param>
-        /// <param name="imageUrl"></param>
-        /// <param name="result">
-        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
-        /// </param>
-        /// <param name="revisedPrompt"></param>
+        /// <param name="queries"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,17 +57,11 @@ namespace OpenRouter
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant14Type type,
             string? id,
-            string? imageB64,
-            string? imageUrl,
-            string? result,
-            string? revisedPrompt)
+            global::System.Collections.Generic.IList<string>? queries)
         {
             this.Type = type;
             this.Id = id;
-            this.ImageB64 = imageB64;
-            this.ImageUrl = imageUrl;
-            this.Result = result;
-            this.RevisedPrompt = revisedPrompt;
+            this.Queries = queries;
             this.Status = status;
         }
 

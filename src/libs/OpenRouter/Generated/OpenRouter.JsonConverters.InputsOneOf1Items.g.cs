@@ -83,121 +83,139 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("status")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
-            if (__jsonProps.Contains("action")) __score8++;
+            if (__jsonProps.Contains("call_id")) __score8++;
             if (__jsonProps.Contains("id")) __score8++;
-            if (__jsonProps.Contains("status")) __score8++;
-            if (__jsonProps.Contains("type")) __score8++;
+            if (__jsonProps.Contains("input")) __score8++;
+            if (__jsonProps.Contains("name")) __score8++;
+            if (__jsonProps.Contains("namespace")) __score8++;
             var __score9 = 0;
+            if (__jsonProps.Contains("action")) __score9++;
             if (__jsonProps.Contains("id")) __score9++;
-            if (__jsonProps.Contains("queries")) __score9++;
             if (__jsonProps.Contains("status")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;
             var __score10 = 0;
             if (__jsonProps.Contains("id")) __score10++;
-            if (__jsonProps.Contains("result")) __score10++;
+            if (__jsonProps.Contains("queries")) __score10++;
             if (__jsonProps.Contains("status")) __score10++;
             if (__jsonProps.Contains("type")) __score10++;
             var __score11 = 0;
-            if (__jsonProps.Contains("code")) __score11++;
-            if (__jsonProps.Contains("container_id")) __score11++;
             if (__jsonProps.Contains("id")) __score11++;
-            if (__jsonProps.Contains("outputs")) __score11++;
+            if (__jsonProps.Contains("result")) __score11++;
             if (__jsonProps.Contains("status")) __score11++;
             if (__jsonProps.Contains("type")) __score11++;
             var __score12 = 0;
-            if (__jsonProps.Contains("action")) __score12++;
-            if (__jsonProps.Contains("call_id")) __score12++;
+            if (__jsonProps.Contains("code")) __score12++;
+            if (__jsonProps.Contains("container_id")) __score12++;
             if (__jsonProps.Contains("id")) __score12++;
-            if (__jsonProps.Contains("pending_safety_checks")) __score12++;
+            if (__jsonProps.Contains("outputs")) __score12++;
             if (__jsonProps.Contains("status")) __score12++;
+            if (__jsonProps.Contains("type")) __score12++;
             var __score13 = 0;
-            if (__jsonProps.Contains("datetime")) __score13++;
+            if (__jsonProps.Contains("action")) __score13++;
+            if (__jsonProps.Contains("call_id")) __score13++;
             if (__jsonProps.Contains("id")) __score13++;
+            if (__jsonProps.Contains("pending_safety_checks")) __score13++;
             if (__jsonProps.Contains("status")) __score13++;
-            if (__jsonProps.Contains("timezone")) __score13++;
             var __score14 = 0;
-            if (__jsonProps.Contains("action")) __score14++;
-            if (__jsonProps.Contains("action.query")) __score14++;
-            if (__jsonProps.Contains("action.sources")) __score14++;
-            if (__jsonProps.Contains("action.type")) __score14++;
+            if (__jsonProps.Contains("datetime")) __score14++;
             if (__jsonProps.Contains("id")) __score14++;
             if (__jsonProps.Contains("status")) __score14++;
-            if (__jsonProps.Contains("type")) __score14++;
+            if (__jsonProps.Contains("timezone")) __score14++;
             var __score15 = 0;
-            if (__jsonProps.Contains("code")) __score15++;
-            if (__jsonProps.Contains("exitCode")) __score15++;
+            if (__jsonProps.Contains("action")) __score15++;
+            if (__jsonProps.Contains("action.query")) __score15++;
+            if (__jsonProps.Contains("action.sources")) __score15++;
+            if (__jsonProps.Contains("action.type")) __score15++;
             if (__jsonProps.Contains("id")) __score15++;
-            if (__jsonProps.Contains("language")) __score15++;
             if (__jsonProps.Contains("status")) __score15++;
-            if (__jsonProps.Contains("stderr")) __score15++;
-            if (__jsonProps.Contains("stdout")) __score15++;
+            if (__jsonProps.Contains("type")) __score15++;
             var __score16 = 0;
+            if (__jsonProps.Contains("code")) __score16++;
+            if (__jsonProps.Contains("exitCode")) __score16++;
             if (__jsonProps.Contains("id")) __score16++;
-            if (__jsonProps.Contains("queries")) __score16++;
+            if (__jsonProps.Contains("language")) __score16++;
             if (__jsonProps.Contains("status")) __score16++;
+            if (__jsonProps.Contains("stderr")) __score16++;
+            if (__jsonProps.Contains("stdout")) __score16++;
             var __score17 = 0;
             if (__jsonProps.Contains("id")) __score17++;
-            if (__jsonProps.Contains("imageB64")) __score17++;
-            if (__jsonProps.Contains("imageUrl")) __score17++;
-            if (__jsonProps.Contains("result")) __score17++;
-            if (__jsonProps.Contains("revisedPrompt")) __score17++;
+            if (__jsonProps.Contains("queries")) __score17++;
             if (__jsonProps.Contains("status")) __score17++;
             var __score18 = 0;
-            if (__jsonProps.Contains("action")) __score18++;
             if (__jsonProps.Contains("id")) __score18++;
-            if (__jsonProps.Contains("screenshotB64")) __score18++;
+            if (__jsonProps.Contains("imageB64")) __score18++;
+            if (__jsonProps.Contains("imageUrl")) __score18++;
+            if (__jsonProps.Contains("result")) __score18++;
+            if (__jsonProps.Contains("revisedPrompt")) __score18++;
             if (__jsonProps.Contains("status")) __score18++;
             var __score19 = 0;
-            if (__jsonProps.Contains("command")) __score19++;
-            if (__jsonProps.Contains("exitCode")) __score19++;
+            if (__jsonProps.Contains("action")) __score19++;
             if (__jsonProps.Contains("id")) __score19++;
+            if (__jsonProps.Contains("screenshotB64")) __score19++;
             if (__jsonProps.Contains("status")) __score19++;
-            if (__jsonProps.Contains("stderr")) __score19++;
-            if (__jsonProps.Contains("stdout")) __score19++;
             var __score20 = 0;
             if (__jsonProps.Contains("command")) __score20++;
-            if (__jsonProps.Contains("filePath")) __score20++;
+            if (__jsonProps.Contains("exitCode")) __score20++;
             if (__jsonProps.Contains("id")) __score20++;
             if (__jsonProps.Contains("status")) __score20++;
-            if (__jsonProps.Contains("type")) __score20++;
+            if (__jsonProps.Contains("stderr")) __score20++;
+            if (__jsonProps.Contains("stdout")) __score20++;
             var __score21 = 0;
+            if (__jsonProps.Contains("command")) __score21++;
             if (__jsonProps.Contains("filePath")) __score21++;
             if (__jsonProps.Contains("id")) __score21++;
-            if (__jsonProps.Contains("patch")) __score21++;
             if (__jsonProps.Contains("status")) __score21++;
+            if (__jsonProps.Contains("type")) __score21++;
             var __score22 = 0;
-            if (__jsonProps.Contains("content")) __score22++;
-            if (__jsonProps.Contains("error")) __score22++;
-            if (__jsonProps.Contains("httpStatus")) __score22++;
+            if (__jsonProps.Contains("filePath")) __score22++;
             if (__jsonProps.Contains("id")) __score22++;
+            if (__jsonProps.Contains("patch")) __score22++;
             if (__jsonProps.Contains("status")) __score22++;
-            if (__jsonProps.Contains("title")) __score22++;
-            if (__jsonProps.Contains("type")) __score22++;
-            if (__jsonProps.Contains("url")) __score22++;
             var __score23 = 0;
+            if (__jsonProps.Contains("content")) __score23++;
+            if (__jsonProps.Contains("error")) __score23++;
+            if (__jsonProps.Contains("httpStatus")) __score23++;
             if (__jsonProps.Contains("id")) __score23++;
-            if (__jsonProps.Contains("query")) __score23++;
             if (__jsonProps.Contains("status")) __score23++;
+            if (__jsonProps.Contains("title")) __score23++;
             if (__jsonProps.Contains("type")) __score23++;
+            if (__jsonProps.Contains("url")) __score23++;
             var __score24 = 0;
-            if (__jsonProps.Contains("action")) __score24++;
             if (__jsonProps.Contains("id")) __score24++;
-            if (__jsonProps.Contains("key")) __score24++;
+            if (__jsonProps.Contains("query")) __score24++;
             if (__jsonProps.Contains("status")) __score24++;
             if (__jsonProps.Contains("type")) __score24++;
-            if (__jsonProps.Contains("value")) __score24++;
             var __score25 = 0;
+            if (__jsonProps.Contains("action")) __score25++;
             if (__jsonProps.Contains("id")) __score25++;
-            if (__jsonProps.Contains("serverLabel")) __score25++;
+            if (__jsonProps.Contains("key")) __score25++;
             if (__jsonProps.Contains("status")) __score25++;
-            if (__jsonProps.Contains("toolName")) __score25++;
             if (__jsonProps.Contains("type")) __score25++;
+            if (__jsonProps.Contains("value")) __score25++;
             var __score26 = 0;
-            if (__jsonProps.Contains("arguments")) __score26++;
             if (__jsonProps.Contains("id")) __score26++;
-            if (__jsonProps.Contains("query")) __score26++;
+            if (__jsonProps.Contains("serverLabel")) __score26++;
             if (__jsonProps.Contains("status")) __score26++;
+            if (__jsonProps.Contains("toolName")) __score26++;
             if (__jsonProps.Contains("type")) __score26++;
+            var __score27 = 0;
+            if (__jsonProps.Contains("arguments")) __score27++;
+            if (__jsonProps.Contains("id")) __score27++;
+            if (__jsonProps.Contains("query")) __score27++;
+            if (__jsonProps.Contains("status")) __score27++;
+            if (__jsonProps.Contains("type")) __score27++;
+            var __score28 = 0;
+            if (__jsonProps.Contains("call_id")) __score28++;
+            if (__jsonProps.Contains("id")) __score28++;
+            if (__jsonProps.Contains("input")) __score28++;
+            if (__jsonProps.Contains("name")) __score28++;
+            if (__jsonProps.Contains("namespace")) __score28++;
+            if (__jsonProps.Contains("type")) __score28++;
+            var __score29 = 0;
+            if (__jsonProps.Contains("call_id")) __score29++;
+            if (__jsonProps.Contains("id")) __score29++;
+            if (__jsonProps.Contains("output")) __score29++;
+            if (__jsonProps.Contains("type")) __score29++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -227,6 +245,9 @@ namespace OpenRouter.JsonConverters
             if (__score24 > __bestScore) { __bestScore = __score24; __bestIndex = 24; }
             if (__score25 > __bestScore) { __bestScore = __score25; __bestIndex = 25; }
             if (__score26 > __bestScore) { __bestScore = __score26; __bestIndex = 26; }
+            if (__score27 > __bestScore) { __bestScore = __score27; __bestIndex = 27; }
+            if (__score28 > __bestScore) { __bestScore = __score28; __bestIndex = 28; }
+            if (__score29 > __bestScore) { __bestScore = __score29; __bestIndex = 29; }
 
             global::OpenRouter.ReasoningItem? reasoningItem = default;
             global::OpenRouter.EasyInputMessage? easyInputMessage = default;
@@ -236,6 +257,7 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.InputsOneOf1Items5? inputsOneOf1Items5 = default;
             global::OpenRouter.InputsOneOf1Items6? inputsOneOf1Items6 = default;
             global::OpenRouter.OutputFunctionCallItem? outputFunctionCallItem = default;
+            global::OpenRouter.OutputCustomToolCallItem? outputCustomToolCallItem = default;
             global::OpenRouter.OutputWebSearchCallItem? outputWebSearchCallItem = default;
             global::OpenRouter.OutputFileSearchCallItem? outputFileSearchCallItem = default;
             global::OpenRouter.OutputImageGenerationCallItem? outputImageGenerationCallItem = default;
@@ -255,6 +277,8 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.OutputMemoryServerToolItem? outputMemoryServerToolItem = default;
             global::OpenRouter.OutputMcpServerToolItem? outputMcpServerToolItem = default;
             global::OpenRouter.OutputSearchModelsServerToolItem? outputSearchModelsServerToolItem = default;
+            global::OpenRouter.CustomToolCallItem? customToolCallItem = default;
+            global::OpenRouter.CustomToolCallOutputItem? customToolCallOutputItem = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -381,6 +405,21 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCustomToolCallItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCustomToolCallItem).Name}");
+                        outputCustomToolCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 9)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchCallItem> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchCallItem).Name}");
                         outputWebSearchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -392,7 +431,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 9)
+                else if (__bestIndex == 10)
                 {
                     try
                     {
@@ -407,7 +446,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 10)
+                else if (__bestIndex == 11)
                 {
                     try
                     {
@@ -422,7 +461,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 11)
+                else if (__bestIndex == 12)
                 {
                     try
                     {
@@ -437,7 +476,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 12)
+                else if (__bestIndex == 13)
                 {
                     try
                     {
@@ -452,7 +491,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 13)
+                else if (__bestIndex == 14)
                 {
                     try
                     {
@@ -467,7 +506,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 14)
+                else if (__bestIndex == 15)
                 {
                     try
                     {
@@ -482,7 +521,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 15)
+                else if (__bestIndex == 16)
                 {
                     try
                     {
@@ -497,7 +536,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 16)
+                else if (__bestIndex == 17)
                 {
                     try
                     {
@@ -512,7 +551,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 17)
+                else if (__bestIndex == 18)
                 {
                     try
                     {
@@ -527,7 +566,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 18)
+                else if (__bestIndex == 19)
                 {
                     try
                     {
@@ -542,7 +581,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 19)
+                else if (__bestIndex == 20)
                 {
                     try
                     {
@@ -557,7 +596,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 20)
+                else if (__bestIndex == 21)
                 {
                     try
                     {
@@ -572,7 +611,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 21)
+                else if (__bestIndex == 22)
                 {
                     try
                     {
@@ -587,7 +626,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 22)
+                else if (__bestIndex == 23)
                 {
                     try
                     {
@@ -602,7 +641,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 23)
+                else if (__bestIndex == 24)
                 {
                     try
                     {
@@ -617,7 +656,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 24)
+                else if (__bestIndex == 25)
                 {
                     try
                     {
@@ -632,7 +671,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 25)
+                else if (__bestIndex == 26)
                 {
                     try
                     {
@@ -647,7 +686,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 26)
+                else if (__bestIndex == 27)
                 {
                     try
                     {
@@ -662,9 +701,39 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 28)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolCallItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolCallItem).Name}");
+                        customToolCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 29)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolCallOutputItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolCallOutputItem).Name}");
+                        customToolCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && customToolCallItem == null && customToolCallOutputItem == null)
             {
                 try
                 {
@@ -762,6 +831,19 @@ namespace OpenRouter.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFunctionCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFunctionCallItem> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFunctionCallItem).Name}");
                     outputFunctionCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCustomToolCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCustomToolCallItem).Name}");
+                    outputCustomToolCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1016,6 +1098,32 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolCallItem).Name}");
+                    customToolCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolCallOutputItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolCallOutputItem).Name}");
+                    customToolCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::OpenRouter.InputsOneOf1Items(
@@ -1034,6 +1142,8 @@ namespace OpenRouter.JsonConverters
                 inputsOneOf1Items6,
 
                 outputFunctionCallItem,
+
+                outputCustomToolCallItem,
 
                 outputWebSearchCallItem,
 
@@ -1071,7 +1181,11 @@ namespace OpenRouter.JsonConverters
 
                 outputMcpServerToolItem,
 
-                outputSearchModelsServerToolItem
+                outputSearchModelsServerToolItem,
+
+                customToolCallItem,
+
+                customToolCallOutputItem
                 );
 
             return __value;
@@ -1133,6 +1247,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFunctionCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFunctionCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFunctionCallItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputFunctionCallItem!, typeInfo);
+            }
+            else if (value.IsOutputCustomToolCallItem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCustomToolCallItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCustomToolCallItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputCustomToolCallItem!, typeInfo);
             }
             else if (value.IsOutputWebSearchCallItem)
             {
@@ -1247,6 +1367,18 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputSearchModelsServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputSearchModelsServerToolItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputSearchModelsServerToolItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputSearchModelsServerToolItem!, typeInfo);
+            }
+            else if (value.IsCustomToolCallItem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolCallItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolCallItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCallItem!, typeInfo);
+            }
+            else if (value.IsCustomToolCallOutputItem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomToolCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomToolCallOutputItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomToolCallOutputItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCallOutputItem!, typeInfo);
             }
         }
     }

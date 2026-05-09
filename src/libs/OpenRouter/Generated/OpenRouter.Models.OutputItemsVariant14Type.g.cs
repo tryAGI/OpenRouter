@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:image_generation
+    /// Discriminator value: openrouter:file_search
     /// </summary>
     public enum OutputItemsVariant14Type
     {
         /// <summary>
-        /// openrouter:image_generation
+        /// openrouter:file_search
         /// </summary>
-        Openrouter_imageGeneration,
+        Openrouter_fileSearch,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                OutputItemsVariant14Type.Openrouter_imageGeneration => "openrouter:image_generation",
+                OutputItemsVariant14Type.Openrouter_fileSearch => "openrouter:file_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "openrouter:image_generation" => OutputItemsVariant14Type.Openrouter_imageGeneration,
+                "openrouter:file_search" => OutputItemsVariant14Type.Openrouter_fileSearch,
                 _ => null,
             };
         }

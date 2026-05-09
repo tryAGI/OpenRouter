@@ -4,40 +4,40 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:apply_patch
+    /// Discriminator value: input_text
     /// </summary>
-    public enum OutputItemsVariant7Type
+    public enum OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3Type
     {
         /// <summary>
-        /// openrouter:apply_patch
+        /// input_text
         /// </summary>
-        Openrouter_applyPatch,
+        InputText,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class OutputItemsVariant7TypeExtensions
+    public static class OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3TypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this OutputItemsVariant7Type value)
+        public static string ToValueString(this OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3Type value)
         {
             return value switch
             {
-                OutputItemsVariant7Type.Openrouter_applyPatch => "openrouter:apply_patch",
+                OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3Type.InputText => "input_text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OutputItemsVariant7Type? ToEnum(string value)
+        public static OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3Type? ToEnum(string value)
         {
             return value switch
             {
-                "openrouter:apply_patch" => OutputItemsVariant7Type.Openrouter_applyPatch,
+                "input_text" => OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3Type.InputText,
                 _ => null,
             };
         }

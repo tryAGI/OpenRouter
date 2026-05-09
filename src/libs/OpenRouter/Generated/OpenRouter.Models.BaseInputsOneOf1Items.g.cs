@@ -188,6 +188,66 @@ namespace OpenRouter
             value = OutputMessage;
             return IsOutputMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OpenAIResponseCustomToolCall? OpenAIResponseCustomToolCall { get; init; }
+#else
+        public global::OpenRouter.OpenAIResponseCustomToolCall? OpenAIResponseCustomToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseCustomToolCall))]
+#endif
+        public bool IsOpenAIResponseCustomToolCall => OpenAIResponseCustomToolCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAIResponseCustomToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAIResponseCustomToolCall? value)
+        {
+            value = OpenAIResponseCustomToolCall;
+            return IsOpenAIResponseCustomToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OpenAIResponseCustomToolCallOutput? OpenAIResponseCustomToolCallOutput { get; init; }
+#else
+        public global::OpenRouter.OpenAIResponseCustomToolCallOutput? OpenAIResponseCustomToolCallOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseCustomToolCallOutput))]
+#endif
+        public bool IsOpenAIResponseCustomToolCallOutput => OpenAIResponseCustomToolCallOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAIResponseCustomToolCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAIResponseCustomToolCallOutput? value)
+        {
+            value = OpenAIResponseCustomToolCallOutput;
+            return IsOpenAIResponseCustomToolCallOutput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -299,13 +359,51 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCall value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseCustomToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OpenAIResponseCustomToolCall?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseCustomToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCall? value)
+        {
+            OpenAIResponseCustomToolCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCallOutput value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseCustomToolCallOutput?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.OpenAIResponseCustomToolCallOutput?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseCustomToolCallOutput;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCallOutput? value)
+        {
+            OpenAIResponseCustomToolCallOutput = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BaseInputsOneOf1Items(
             global::OpenRouter.BaseInputsOneOf1Items0? baseInputsOneOf1Items0,
             global::OpenRouter.OpenAIResponseInputMessageItem? openAIResponseInputMessageItem,
             global::OpenRouter.OpenAIResponseFunctionToolCallOutput? openAIResponseFunctionToolCallOutput,
             global::OpenRouter.OpenAIResponseFunctionToolCall? openAIResponseFunctionToolCall,
             global::OpenRouter.OutputItemImageGenerationCall? outputItemImageGenerationCall,
-            global::OpenRouter.OutputMessage? outputMessage
+            global::OpenRouter.OutputMessage? outputMessage,
+            global::OpenRouter.OpenAIResponseCustomToolCall? openAIResponseCustomToolCall,
+            global::OpenRouter.OpenAIResponseCustomToolCallOutput? openAIResponseCustomToolCallOutput
             )
         {
             BaseInputsOneOf1Items0 = baseInputsOneOf1Items0;
@@ -314,12 +412,16 @@ namespace OpenRouter
             OpenAIResponseFunctionToolCall = openAIResponseFunctionToolCall;
             OutputItemImageGenerationCall = outputItemImageGenerationCall;
             OutputMessage = outputMessage;
+            OpenAIResponseCustomToolCall = openAIResponseCustomToolCall;
+            OpenAIResponseCustomToolCallOutput = openAIResponseCustomToolCallOutput;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            OpenAIResponseCustomToolCallOutput as object ??
+            OpenAIResponseCustomToolCall as object ??
             OutputMessage as object ??
             OutputItemImageGenerationCall as object ??
             OpenAIResponseFunctionToolCall as object ??
@@ -337,7 +439,9 @@ namespace OpenRouter
             OpenAIResponseFunctionToolCallOutput?.ToString() ??
             OpenAIResponseFunctionToolCall?.ToString() ??
             OutputItemImageGenerationCall?.ToString() ??
-            OutputMessage?.ToString() 
+            OutputMessage?.ToString() ??
+            OpenAIResponseCustomToolCall?.ToString() ??
+            OpenAIResponseCustomToolCallOutput?.ToString() 
             ;
 
         /// <summary>
@@ -345,7 +449,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && IsOutputItemImageGenerationCall && !IsOutputMessage || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && IsOutputMessage;
+            return IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage && !IsOpenAIResponseCustomToolCall && !IsOpenAIResponseCustomToolCallOutput || !IsBaseInputsOneOf1Items0 && IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage && !IsOpenAIResponseCustomToolCall && !IsOpenAIResponseCustomToolCallOutput || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage && !IsOpenAIResponseCustomToolCall && !IsOpenAIResponseCustomToolCallOutput || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage && !IsOpenAIResponseCustomToolCall && !IsOpenAIResponseCustomToolCallOutput || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && IsOutputItemImageGenerationCall && !IsOutputMessage && !IsOpenAIResponseCustomToolCall && !IsOpenAIResponseCustomToolCallOutput || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && IsOutputMessage && !IsOpenAIResponseCustomToolCall && !IsOpenAIResponseCustomToolCallOutput || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage && IsOpenAIResponseCustomToolCall && !IsOpenAIResponseCustomToolCallOutput || !IsBaseInputsOneOf1Items0 && !IsOpenAIResponseInputMessageItem && !IsOpenAIResponseFunctionToolCallOutput && !IsOpenAIResponseFunctionToolCall && !IsOutputItemImageGenerationCall && !IsOutputMessage && !IsOpenAIResponseCustomToolCall && IsOpenAIResponseCustomToolCallOutput;
         }
 
         /// <summary>
@@ -358,6 +462,8 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.OpenAIResponseFunctionToolCall, TResult>? openAIResponseFunctionToolCall = null,
             global::System.Func<global::OpenRouter.OutputItemImageGenerationCall, TResult>? outputItemImageGenerationCall = null,
             global::System.Func<global::OpenRouter.OutputMessage, TResult>? outputMessage = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseCustomToolCall, TResult>? openAIResponseCustomToolCall = null,
+            global::System.Func<global::OpenRouter.OpenAIResponseCustomToolCallOutput, TResult>? openAIResponseCustomToolCallOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -389,6 +495,14 @@ namespace OpenRouter
             {
                 return outputMessage(OutputMessage!);
             }
+            else if (IsOpenAIResponseCustomToolCall && openAIResponseCustomToolCall != null)
+            {
+                return openAIResponseCustomToolCall(OpenAIResponseCustomToolCall!);
+            }
+            else if (IsOpenAIResponseCustomToolCallOutput && openAIResponseCustomToolCallOutput != null)
+            {
+                return openAIResponseCustomToolCallOutput(OpenAIResponseCustomToolCallOutput!);
+            }
 
             return default(TResult);
         }
@@ -408,6 +522,10 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
 
             global::System.Action<global::OpenRouter.OutputMessage>? outputMessage = null,
+
+            global::System.Action<global::OpenRouter.OpenAIResponseCustomToolCall>? openAIResponseCustomToolCall = null,
+
+            global::System.Action<global::OpenRouter.OpenAIResponseCustomToolCallOutput>? openAIResponseCustomToolCallOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -438,6 +556,14 @@ namespace OpenRouter
             else if (IsOutputMessage)
             {
                 outputMessage?.Invoke(OutputMessage!);
+            }
+            else if (IsOpenAIResponseCustomToolCall)
+            {
+                openAIResponseCustomToolCall?.Invoke(OpenAIResponseCustomToolCall!);
+            }
+            else if (IsOpenAIResponseCustomToolCallOutput)
+            {
+                openAIResponseCustomToolCallOutput?.Invoke(OpenAIResponseCustomToolCallOutput!);
             }
         }
 
@@ -451,6 +577,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OpenAIResponseFunctionToolCall>? openAIResponseFunctionToolCall = null,
             global::System.Action<global::OpenRouter.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
             global::System.Action<global::OpenRouter.OutputMessage>? outputMessage = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseCustomToolCall>? openAIResponseCustomToolCall = null,
+            global::System.Action<global::OpenRouter.OpenAIResponseCustomToolCallOutput>? openAIResponseCustomToolCallOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -481,6 +609,14 @@ namespace OpenRouter
             else if (IsOutputMessage)
             {
                 outputMessage?.Invoke(OutputMessage!);
+            }
+            else if (IsOpenAIResponseCustomToolCall)
+            {
+                openAIResponseCustomToolCall?.Invoke(OpenAIResponseCustomToolCall!);
+            }
+            else if (IsOpenAIResponseCustomToolCallOutput)
+            {
+                openAIResponseCustomToolCallOutput?.Invoke(OpenAIResponseCustomToolCallOutput!);
             }
         }
 
@@ -503,6 +639,10 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputItemImageGenerationCall),
                 OutputMessage,
                 typeof(global::OpenRouter.OutputMessage),
+                OpenAIResponseCustomToolCall,
+                typeof(global::OpenRouter.OpenAIResponseCustomToolCall),
+                OpenAIResponseCustomToolCallOutput,
+                typeof(global::OpenRouter.OpenAIResponseCustomToolCallOutput),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -524,7 +664,9 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseFunctionToolCallOutput?>.Default.Equals(OpenAIResponseFunctionToolCallOutput, other.OpenAIResponseFunctionToolCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseFunctionToolCall?>.Default.Equals(OpenAIResponseFunctionToolCall, other.OpenAIResponseFunctionToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputItemImageGenerationCall?>.Default.Equals(OutputItemImageGenerationCall, other.OutputItemImageGenerationCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessage?>.Default.Equals(OutputMessage, other.OutputMessage) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessage?>.Default.Equals(OutputMessage, other.OutputMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseCustomToolCall?>.Default.Equals(OpenAIResponseCustomToolCall, other.OpenAIResponseCustomToolCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseCustomToolCallOutput?>.Default.Equals(OpenAIResponseCustomToolCallOutput, other.OpenAIResponseCustomToolCallOutput) 
                 ;
         }
 
