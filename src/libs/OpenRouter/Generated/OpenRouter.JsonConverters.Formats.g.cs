@@ -99,6 +99,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FormatTextConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FormatTextConfig).Name}");
                     formatTextConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -109,9 +110,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (formatTextConfig == null && formatJsonObjectConfig == null && formatJsonSchemaConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FormatJsonObjectConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FormatJsonObjectConfig).Name}");
                     formatJsonObjectConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -122,9 +127,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (formatTextConfig == null && formatJsonObjectConfig == null && formatJsonSchemaConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FormatJsonSchemaConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FormatJsonSchemaConfig).Name}");
                     formatJsonSchemaConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

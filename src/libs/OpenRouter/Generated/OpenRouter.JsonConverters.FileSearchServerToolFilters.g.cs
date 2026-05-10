@@ -97,6 +97,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FileSearchServerToolFilters0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FileSearchServerToolFilters0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FileSearchServerToolFilters0).Name}");
                     fileSearchServerToolFilters0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -107,9 +108,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileSearchServerToolFilters0 == null && compoundFilter == null && fileSearchServerToolFiltersVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CompoundFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CompoundFilter).Name}");
                     compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -120,9 +125,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileSearchServerToolFilters0 == null && compoundFilter == null && fileSearchServerToolFiltersVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     fileSearchServerToolFiltersVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

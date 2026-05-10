@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicCodeExecutionContent : global::System.IEquatable<AnthropicCodeExecutionContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicCodeExecutionContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// code_execution_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicCodeExecutionContent(
+            global::OpenRouter.AnthropicCodeExecutionContentDiscriminatorType? type,
             global::OpenRouter.AnthropicCodeExecutionContentVariant1? codeExecutionResult,
             global::OpenRouter.AnthropicCodeExecutionContentVariant2? codeExecutionToolResultError,
             global::OpenRouter.AnthropicCodeExecutionContentVariant3? encryptedCodeExecutionResult
             )
         {
+            Type = type;
+
             CodeExecutionResult = codeExecutionResult;
             CodeExecutionToolResultError = codeExecutionToolResultError;
             EncryptedCodeExecutionResult = encryptedCodeExecutionResult;

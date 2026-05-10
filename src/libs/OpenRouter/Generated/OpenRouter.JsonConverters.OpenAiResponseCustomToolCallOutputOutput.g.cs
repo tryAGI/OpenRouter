@@ -108,7 +108,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponseCustomToolCallOutputOutputVariant1 == null && openAiResponseCustomToolCallOutputOutput1 == null)
+            {
                 try
                 {
 

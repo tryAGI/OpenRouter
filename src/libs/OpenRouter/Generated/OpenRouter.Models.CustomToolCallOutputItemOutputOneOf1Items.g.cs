@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct CustomToolCallOutputItemOutputOneOf1Items : global::System.IEquatable<CustomToolCallOutputItemOutputOneOf1Items>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         public CustomToolCallOutputItemOutputOneOf1Items(
+            global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsDiscriminatorType? type,
             global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1? inputFile,
             global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2? inputImage,
             global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3? inputText
             )
         {
+            Type = type;
+
             InputFile = inputFile;
             InputImage = inputImage;
             InputText = inputText;

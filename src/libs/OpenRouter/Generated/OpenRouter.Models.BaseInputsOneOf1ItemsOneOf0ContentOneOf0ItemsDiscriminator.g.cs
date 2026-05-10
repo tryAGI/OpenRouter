@@ -12,7 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorTypeJsonConverter))]
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminator(
-            string? type)
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorType? type)
         {
             this.Type = type;
         }

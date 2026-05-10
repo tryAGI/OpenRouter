@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicWebFetchContent : global::System.IEquatable<AnthropicWebFetchContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicWebFetchContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// web_fetch_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicWebFetchContent(
+            global::OpenRouter.AnthropicWebFetchContentDiscriminatorType? type,
             global::OpenRouter.AnthropicWebFetchContentVariant1? webFetchResult,
             global::OpenRouter.AnthropicWebFetchContentVariant2? webFetchToolResultError
             )
         {
+            Type = type;
+
             WebFetchResult = webFetchResult;
             WebFetchToolResultError = webFetchToolResultError;
         }

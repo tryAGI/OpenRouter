@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponseInputMessageItemRole0 == null && openAiResponseInputMessageItemRole1 == null && openAiResponseInputMessageItemRole2 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponseInputMessageItemRole0 == null && openAiResponseInputMessageItemRole1 == null && openAiResponseInputMessageItemRole2 == null)
+            {
                 try
                 {
 

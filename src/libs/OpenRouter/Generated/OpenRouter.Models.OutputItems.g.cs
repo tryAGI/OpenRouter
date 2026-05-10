@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct OutputItems : global::System.IEquatable<OutputItems>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A code interpreter execution call with outputs
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1116,6 +1121,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public OutputItems(
+            global::OpenRouter.OutputItemsDiscriminatorType? type,
             global::OpenRouter.OutputItemsVariant1? codeInterpreterCall,
             global::OpenRouter.OutputItemsVariant2? computerCall,
             global::OpenRouter.OutputItemsVariant3? customToolCall,
@@ -1141,6 +1147,8 @@ namespace OpenRouter
             global::OpenRouter.OutputItemsVariant23? webSearchCall
             )
         {
+            Type = type;
+
             CodeInterpreterCall = codeInterpreterCall;
             ComputerCall = computerCall;
             CustomToolCall = customToolCall;

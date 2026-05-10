@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ChatMessages : global::System.IEquatable<ChatMessages>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatMessagesDiscriminatorRole? Role { get; }
+
+        /// <summary>
         /// Assistant message for requests and responses
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -252,6 +257,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public ChatMessages(
+            global::OpenRouter.ChatMessagesDiscriminatorRole? role,
             global::OpenRouter.ChatMessagesVariant1? assistant,
             global::OpenRouter.ChatMessagesVariant2? developer,
             global::OpenRouter.ChatMessagesVariant3? system,
@@ -259,6 +265,8 @@ namespace OpenRouter
             global::OpenRouter.ChatMessagesVariant5? user
             )
         {
+            Role = role;
+
             Assistant = assistant;
             Developer = developer;
             System = system;

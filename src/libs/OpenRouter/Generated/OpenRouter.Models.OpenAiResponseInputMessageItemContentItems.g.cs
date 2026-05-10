@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct OpenAiResponseInputMessageItemContentItems : global::System.IEquatable<OpenAiResponseInputMessageItemContentItems>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -204,12 +209,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         public OpenAiResponseInputMessageItemContentItems(
+            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsDiscriminatorType? type,
             global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? inputAudio,
             global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? inputFile,
             global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? inputImage,
             global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? inputText
             )
         {
+            Type = type;
+
             InputAudio = inputAudio;
             InputFile = inputFile;
             InputImage = inputImage;

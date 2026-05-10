@@ -78,6 +78,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0).Name}");
                     outputCodeInterpreterCallItemOutputsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -88,9 +89,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputCodeInterpreterCallItemOutputsItems0 == null && outputCodeInterpreterCallItemOutputsItems1 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1).Name}");
                     outputCodeInterpreterCallItemOutputsItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

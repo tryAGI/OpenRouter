@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct MessagesRequestPluginsItems : global::System.IEquatable<MessagesRequestPluginsItems>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId? Id { get; }
+
+        /// <summary>
         /// auto-router variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -348,6 +353,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public MessagesRequestPluginsItems(
+            global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId? id,
             global::OpenRouter.MessagesRequestPluginsItemsVariant1? autoRouter,
             global::OpenRouter.MessagesRequestPluginsItemsVariant2? contextCompression,
             global::OpenRouter.MessagesRequestPluginsItemsVariant3? fileParser,
@@ -357,6 +363,8 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestPluginsItemsVariant7? web
             )
         {
+            Id = id;
+
             AutoRouter = autoRouter;
             ContextCompression = contextCompression;
             FileParser = fileParser;

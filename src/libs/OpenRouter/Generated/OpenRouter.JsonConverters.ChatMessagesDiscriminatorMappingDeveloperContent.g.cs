@@ -108,7 +108,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatMessagesDiscriminatorMappingDeveloperContentVariant1 == null && chatMessagesDiscriminatorMappingDeveloperContent1 == null)
+            {
                 try
                 {
 

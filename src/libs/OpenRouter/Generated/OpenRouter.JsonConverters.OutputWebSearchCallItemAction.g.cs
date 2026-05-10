@@ -101,6 +101,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchCallItemAction0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchCallItemAction0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchCallItemAction0).Name}");
                     outputWebSearchCallItemAction0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -111,9 +112,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputWebSearchCallItemAction0 == null && outputWebSearchCallItemAction1 == null && outputWebSearchCallItemAction2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchCallItemAction1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchCallItemAction1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchCallItemAction1).Name}");
                     outputWebSearchCallItemAction1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -124,9 +129,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputWebSearchCallItemAction0 == null && outputWebSearchCallItemAction1 == null && outputWebSearchCallItemAction2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchCallItemAction2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchCallItemAction2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchCallItemAction2).Name}");
                     outputWebSearchCallItemAction2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

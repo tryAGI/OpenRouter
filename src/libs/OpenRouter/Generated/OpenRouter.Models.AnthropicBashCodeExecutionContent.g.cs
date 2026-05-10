@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicBashCodeExecutionContent : global::System.IEquatable<AnthropicBashCodeExecutionContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// bash_code_execution_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicBashCodeExecutionContent(
+            global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminatorType? type,
             global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? bashCodeExecutionResult,
             global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? bashCodeExecutionToolResultError
             )
         {
+            Type = type;
+
             BashCodeExecutionResult = bashCodeExecutionResult;
             BashCodeExecutionToolResultError = bashCodeExecutionToolResultError;
         }
