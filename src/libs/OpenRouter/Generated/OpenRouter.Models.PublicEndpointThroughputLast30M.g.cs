@@ -78,5 +78,6 @@ namespace OpenRouter
         public PublicEndpointThroughputLast30M()
         {
         }
+
     }
 }

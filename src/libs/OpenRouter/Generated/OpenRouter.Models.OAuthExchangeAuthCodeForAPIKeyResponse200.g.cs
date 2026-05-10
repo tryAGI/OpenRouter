@@ -53,5 +53,6 @@ namespace OpenRouter
         public OAuthExchangeAuthCodeForAPIKeyResponse200()
         {
         }
+
     }
 }

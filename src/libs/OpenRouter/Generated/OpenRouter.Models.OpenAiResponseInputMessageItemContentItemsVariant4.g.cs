@@ -52,5 +52,6 @@ namespace OpenRouter
         public OpenAiResponseInputMessageItemContentItemsVariant4()
         {
         }
+
     }
 }

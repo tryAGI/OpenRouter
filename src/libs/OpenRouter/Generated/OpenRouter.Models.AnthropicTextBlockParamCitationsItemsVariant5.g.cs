@@ -81,5 +81,6 @@ namespace OpenRouter
         public AnthropicTextBlockParamCitationsItemsVariant5()
         {
         }
+
     }
 }

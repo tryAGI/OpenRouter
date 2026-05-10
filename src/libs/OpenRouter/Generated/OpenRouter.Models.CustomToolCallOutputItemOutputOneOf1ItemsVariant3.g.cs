@@ -52,5 +52,6 @@ namespace OpenRouter
         public CustomToolCallOutputItemOutputOneOf1ItemsVariant3()
         {
         }
+
     }
 }

@@ -68,5 +68,6 @@ namespace OpenRouter
         public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2()
         {
         }
+
     }
 }

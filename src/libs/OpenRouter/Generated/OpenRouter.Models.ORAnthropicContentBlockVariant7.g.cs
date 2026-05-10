@@ -61,5 +61,6 @@ namespace OpenRouter
         public ORAnthropicContentBlockVariant7()
         {
         }
+
     }
 }

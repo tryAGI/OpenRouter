@@ -79,5 +79,6 @@ namespace OpenRouter
         public MessagesMessageParamContentOneOf1Items7()
         {
         }
+
     }
 }

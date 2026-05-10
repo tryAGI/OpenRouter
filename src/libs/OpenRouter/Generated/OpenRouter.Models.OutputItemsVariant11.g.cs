@@ -107,5 +107,6 @@ namespace OpenRouter
         public OutputItemsVariant11()
         {
         }
+
     }
 }

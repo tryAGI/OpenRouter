@@ -50,5 +50,6 @@ namespace OpenRouter
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1()
         {
         }
+
     }
 }

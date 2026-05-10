@@ -40,5 +40,6 @@ namespace OpenRouter
         public InputsOneOf1Items5()
         {
         }
+
     }
 }

@@ -49,5 +49,6 @@ namespace OpenRouter
         public StoredPromptTemplate()
         {
         }
+
     }
 }

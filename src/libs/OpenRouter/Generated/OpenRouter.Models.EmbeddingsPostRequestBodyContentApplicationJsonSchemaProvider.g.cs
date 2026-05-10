@@ -185,5 +185,6 @@ namespace OpenRouter
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider()
         {
         }
+
     }
 }
