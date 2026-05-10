@@ -40,5 +40,6 @@ namespace OpenRouter
         public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminator()
         {
         }
+
     }
 }

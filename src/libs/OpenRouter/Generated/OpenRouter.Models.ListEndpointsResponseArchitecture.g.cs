@@ -91,5 +91,6 @@ namespace OpenRouter
         public ListEndpointsResponseArchitecture()
         {
         }
+
     }
 }

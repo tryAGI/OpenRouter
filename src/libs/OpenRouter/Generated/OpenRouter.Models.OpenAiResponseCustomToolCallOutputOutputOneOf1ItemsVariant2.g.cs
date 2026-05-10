@@ -62,5 +62,6 @@ namespace OpenRouter
         public OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant2()
         {
         }
+
     }
 }

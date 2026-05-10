@@ -77,5 +77,6 @@ namespace OpenRouter
         public ResponsesRequestToolsItems0()
         {
         }
+
     }
 }

@@ -80,5 +80,6 @@ namespace OpenRouter
         public ReasoningDetailUnionVariant2()
         {
         }
+
     }
 }

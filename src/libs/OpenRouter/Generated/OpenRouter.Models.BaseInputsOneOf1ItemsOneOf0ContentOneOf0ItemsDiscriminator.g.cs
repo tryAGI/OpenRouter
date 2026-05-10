@@ -40,5 +40,6 @@ namespace OpenRouter
         public BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminator()
         {
         }
+
     }
 }

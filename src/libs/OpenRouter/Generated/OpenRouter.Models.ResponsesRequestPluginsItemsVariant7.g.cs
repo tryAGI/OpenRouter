@@ -125,5 +125,6 @@ namespace OpenRouter
         public ResponsesRequestPluginsItemsVariant7()
         {
         }
+
     }
 }

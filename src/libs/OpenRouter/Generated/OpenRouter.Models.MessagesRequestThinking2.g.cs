@@ -50,5 +50,6 @@ namespace OpenRouter
         public MessagesRequestThinking2()
         {
         }
+
     }
 }

@@ -66,5 +66,6 @@ namespace OpenRouter
         public RerankPostResponsesContentApplicationJsonSchemaResultsItems()
         {
         }
+
     }
 }

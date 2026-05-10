@@ -69,5 +69,6 @@ namespace OpenRouter
         public InputsOneOf1Items6()
         {
         }
+
     }
 }

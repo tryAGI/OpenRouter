@@ -131,5 +131,6 @@ namespace OpenRouter
         public ChatMessagesVariant1()
         {
         }
+
     }
 }

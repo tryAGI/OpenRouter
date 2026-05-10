@@ -1020,5 +1020,6 @@ namespace OpenRouter
         public VideoGenerationRequestProviderOptions()
         {
         }
+
     }
 }

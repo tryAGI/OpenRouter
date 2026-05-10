@@ -72,5 +72,6 @@ namespace OpenRouter
         public BaseInputsOneOf1Items0()
         {
         }
+
     }
 }

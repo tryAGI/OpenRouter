@@ -75,5 +75,6 @@ namespace OpenRouter
         public ChatJsonSchemaConfig()
         {
         }
+
     }
 }

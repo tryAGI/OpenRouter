@@ -85,5 +85,6 @@ namespace OpenRouter
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderMaxPrice()
         {
         }
+
     }
 }
