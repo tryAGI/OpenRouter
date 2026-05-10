@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FileSearchServerToolFilters0 PickFileSearchServerToolFilters0() => IsFileSearchServerToolFilters0
+            ? FileSearchServerToolFilters0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFilters0' but the value was {ToString()}.");
+
+        /// <summary>
         /// A compound filter that combines multiple comparison or compound filters
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CompoundFilter PickCompoundFilter() => IsCompoundFilter
+            ? CompoundFilter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = FileSearchServerToolFiltersVariant3;
             return IsFileSearchServerToolFiltersVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickFileSearchServerToolFiltersVariant3() => IsFileSearchServerToolFiltersVariant3
+            ? FileSearchServerToolFiltersVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static FileSearchServerToolFilters FromFileSearchServerToolFilters0(global::OpenRouter.FileSearchServerToolFilters0? value) => new FileSearchServerToolFilters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FileSearchServerToolFilters(global::OpenRouter.CompoundFilter value) => new FileSearchServerToolFilters((global::OpenRouter.CompoundFilter?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             CompoundFilter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FileSearchServerToolFilters FromCompoundFilter(global::OpenRouter.CompoundFilter? value) => new FileSearchServerToolFilters(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestToolsItems0 PickMessagesRequestToolsItems0() => IsMessagesRequestToolsItems0
+            ? MessagesRequestToolsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems1? MessagesRequestToolsItems1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = MessagesRequestToolsItems1;
             return IsMessagesRequestToolsItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestToolsItems1 PickMessagesRequestToolsItems1() => IsMessagesRequestToolsItems1
+            ? MessagesRequestToolsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestToolsItems2 PickMessagesRequestToolsItems2() => IsMessagesRequestToolsItems2
+            ? MessagesRequestToolsItems2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems3? MessagesRequestToolsItems3 { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = MessagesRequestToolsItems3;
             return IsMessagesRequestToolsItems3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestToolsItems3 PickMessagesRequestToolsItems3() => IsMessagesRequestToolsItems3
+            ? MessagesRequestToolsItems3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems3' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -160,6 +188,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestToolsItems4 PickMessagesRequestToolsItems4() => IsMessagesRequestToolsItems4
+            ? MessagesRequestToolsItems4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems4' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -188,6 +223,13 @@ namespace OpenRouter
             value = DatetimeServerTool;
             return IsDatetimeServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
+            ? DatetimeServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
@@ -220,6 +262,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerToolOpenRouter() => IsImageGenerationServerToolOpenRouter
+            ? ImageGenerationServerToolOpenRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerToolOpenRouter' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -250,6 +299,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatSearchModelsServerTool PickChatSearchModelsServerTool() => IsChatSearchModelsServerTool
+            ? ChatSearchModelsServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSearchModelsServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -278,6 +334,13 @@ namespace OpenRouter
             value = WebFetchServerTool;
             return IsWebFetchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.WebFetchServerTool PickWebFetchServerTool() => IsWebFetchServerTool
+            ? WebFetchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
@@ -312,6 +375,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServerTool() => IsOpenRouterWebSearchServerTool
+            ? OpenRouterWebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenRouterWebSearchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems10? MessagesRequestToolsItems10 { get; init; }
 #else
@@ -338,6 +408,13 @@ namespace OpenRouter
             value = MessagesRequestToolsItems10;
             return IsMessagesRequestToolsItems10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestToolsItems10 PickMessagesRequestToolsItems10() => IsMessagesRequestToolsItems10
+            ? MessagesRequestToolsItems10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems10' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -355,6 +432,11 @@ namespace OpenRouter
         {
             MessagesRequestToolsItems0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems0(global::OpenRouter.MessagesRequestToolsItems0? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -377,6 +459,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems1(global::OpenRouter.MessagesRequestToolsItems1? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems2 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems2?)value);
 
         /// <summary>
@@ -391,6 +478,11 @@ namespace OpenRouter
         {
             MessagesRequestToolsItems2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems2(global::OpenRouter.MessagesRequestToolsItems2? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -413,6 +505,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems3(global::OpenRouter.MessagesRequestToolsItems3? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems4 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems4?)value);
 
         /// <summary>
@@ -427,6 +524,11 @@ namespace OpenRouter
         {
             MessagesRequestToolsItems4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems4(global::OpenRouter.MessagesRequestToolsItems4? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -449,6 +551,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromDatetimeServerTool(global::OpenRouter.DatetimeServerTool? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.ImageGenerationServerToolOpenRouter value) => new MessagesRequestToolsItems((global::OpenRouter.ImageGenerationServerToolOpenRouter?)value);
 
         /// <summary>
@@ -463,6 +570,11 @@ namespace OpenRouter
         {
             ImageGenerationServerToolOpenRouter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromImageGenerationServerToolOpenRouter(global::OpenRouter.ImageGenerationServerToolOpenRouter? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -485,6 +597,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromChatSearchModelsServerTool(global::OpenRouter.ChatSearchModelsServerTool? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.WebFetchServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.WebFetchServerTool?)value);
 
         /// <summary>
@@ -499,6 +616,11 @@ namespace OpenRouter
         {
             WebFetchServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromWebFetchServerTool(global::OpenRouter.WebFetchServerTool? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -521,6 +643,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromOpenRouterWebSearchServerTool(global::OpenRouter.OpenRouterWebSearchServerTool? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems10 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems10?)value);
 
         /// <summary>
@@ -535,6 +662,11 @@ namespace OpenRouter
         {
             MessagesRequestToolsItems10 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems10(global::OpenRouter.MessagesRequestToolsItems10? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.AnthropicCompactionUsageIteration PickAnthropicCompactionUsageIteration() => IsAnthropicCompactionUsageIteration
+            ? AnthropicCompactionUsageIteration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicCompactionUsageIteration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicMessageUsageIteration? AnthropicMessageUsageIteration { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.AnthropicMessageUsageIteration PickAnthropicMessageUsageIteration() => IsAnthropicMessageUsageIteration
+            ? AnthropicMessageUsageIteration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicMessageUsageIteration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicUnknownUsageIteration? AnthropicUnknownUsageIteration { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = AnthropicUnknownUsageIteration;
             return IsAnthropicUnknownUsageIteration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicUnknownUsageIteration PickAnthropicUnknownUsageIteration() => IsAnthropicUnknownUsageIteration
+            ? AnthropicUnknownUsageIteration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicUnknownUsageIteration' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             AnthropicCompactionUsageIteration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicUsageIteration FromAnthropicCompactionUsageIteration(global::OpenRouter.AnthropicCompactionUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicUsageIteration FromAnthropicMessageUsageIteration(global::OpenRouter.AnthropicMessageUsageIteration? value) => new AnthropicUsageIteration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicUsageIteration(global::OpenRouter.AnthropicUnknownUsageIteration value) => new AnthropicUsageIteration((global::OpenRouter.AnthropicUnknownUsageIteration?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             AnthropicUnknownUsageIteration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicUsageIteration FromAnthropicUnknownUsageIteration(global::OpenRouter.AnthropicUnknownUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
         /// 

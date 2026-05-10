@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
+            ? ProviderName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2;
             return IsRerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickRerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2() => IsRerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2
+            ? RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems FromProviderName(global::OpenRouter.ProviderName? value) => new RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems(string value) => new RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems((string?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems FromRerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2(string? value) => new RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems(value);
 
         /// <summary>
         /// 

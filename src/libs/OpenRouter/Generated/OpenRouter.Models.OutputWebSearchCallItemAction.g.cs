@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputWebSearchCallItemAction0 PickOutputWebSearchCallItemAction0() => IsOutputWebSearchCallItemAction0
+            ? OutputWebSearchCallItemAction0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputWebSearchCallItemAction1? OutputWebSearchCallItemAction1 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputWebSearchCallItemAction1 PickOutputWebSearchCallItemAction1() => IsOutputWebSearchCallItemAction1
+            ? OutputWebSearchCallItemAction1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputWebSearchCallItemAction2? OutputWebSearchCallItemAction2 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = OutputWebSearchCallItemAction2;
             return IsOutputWebSearchCallItemAction2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputWebSearchCallItemAction2 PickOutputWebSearchCallItemAction2() => IsOutputWebSearchCallItemAction2
+            ? OutputWebSearchCallItemAction2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             OutputWebSearchCallItemAction0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputWebSearchCallItemAction FromOutputWebSearchCallItemAction0(global::OpenRouter.OutputWebSearchCallItemAction0? value) => new OutputWebSearchCallItemAction(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputWebSearchCallItemAction FromOutputWebSearchCallItemAction1(global::OpenRouter.OutputWebSearchCallItemAction1? value) => new OutputWebSearchCallItemAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputWebSearchCallItemAction(global::OpenRouter.OutputWebSearchCallItemAction2 value) => new OutputWebSearchCallItemAction((global::OpenRouter.OutputWebSearchCallItemAction2?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             OutputWebSearchCallItemAction2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputWebSearchCallItemAction FromOutputWebSearchCallItemAction2(global::OpenRouter.OutputWebSearchCallItemAction2? value) => new OutputWebSearchCallItemAction(value);
 
         /// <summary>
         /// 

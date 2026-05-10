@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickChatSystemMessageContentVariant1() => IsChatSystemMessageContentVariant1
+            ? ChatSystemMessageContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSystemMessageContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText>? ChatSystemMessageContent1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = ChatSystemMessageContent1;
             return IsChatSystemMessageContent1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText> PickChatSystemMessageContent1() => IsChatSystemMessageContent1
+            ? ChatSystemMessageContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSystemMessageContent1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             ChatSystemMessageContentVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatSystemMessageContent FromChatSystemMessageContentVariant1(string? value) => new ChatSystemMessageContent(value);
 
         /// <summary>
         /// 

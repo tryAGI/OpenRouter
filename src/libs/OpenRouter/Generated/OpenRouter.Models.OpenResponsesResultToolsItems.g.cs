@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenResponsesResultToolsItems0 PickOpenResponsesResultToolsItems0() => IsOpenResponsesResultToolsItems0
+            ? OpenResponsesResultToolsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenResponsesResultToolsItems0' but the value was {ToString()}.");
+
+        /// <summary>
         /// Web search preview tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = PreviewWebSearchServerTool;
             return IsPreviewWebSearchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.PreviewWebSearchServerTool PickPreviewWebSearchServerTool() => IsPreviewWebSearchServerTool
+            ? PreviewWebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreviewWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Web search preview tool configuration (2025-03-11 version)
@@ -100,6 +114,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.Preview20250311WebSearchServerTool PickPreview20250311WebSearchServerTool() => IsPreview20250311WebSearchServerTool
+            ? Preview20250311WebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Preview20250311WebSearchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Web search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = LegacyWebSearchServerTool;
             return IsLegacyWebSearchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.LegacyWebSearchServerTool PickLegacyWebSearchServerTool() => IsLegacyWebSearchServerTool
+            ? LegacyWebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LegacyWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Web search tool configuration (2025-08-26 version)
@@ -160,6 +188,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.WebSearchServerTool PickWebSearchServerTool() => IsWebSearchServerTool
+            ? WebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// File search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -188,6 +223,13 @@ namespace OpenRouter
             value = FileSearchServerTool;
             return IsFileSearchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FileSearchServerTool PickFileSearchServerTool() => IsFileSearchServerTool
+            ? FileSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Computer use preview tool configuration
@@ -220,6 +262,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ComputerUseServerTool PickComputerUseServerTool() => IsComputerUseServerTool
+            ? ComputerUseServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Code interpreter tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -248,6 +297,13 @@ namespace OpenRouter
             value = CodeInterpreterServerTool;
             return IsCodeInterpreterServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CodeInterpreterServerTool PickCodeInterpreterServerTool() => IsCodeInterpreterServerTool
+            ? CodeInterpreterServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// MCP (Model Context Protocol) tool configuration
@@ -280,6 +336,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.McpServerTool PickMcpServerTool() => IsMcpServerTool
+            ? McpServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image generation tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -308,6 +371,13 @@ namespace OpenRouter
             value = ImageGenerationServerTool;
             return IsImageGenerationServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ImageGenerationServerTool PickImageGenerationServerTool() => IsImageGenerationServerTool
+            ? ImageGenerationServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Local shell tool configuration
@@ -340,6 +410,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CodexLocalShellTool PickCodexLocalShellTool() => IsCodexLocalShellTool
+            ? CodexLocalShellTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodexLocalShellTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Shell tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -368,6 +445,13 @@ namespace OpenRouter
             value = ShellServerTool;
             return IsShellServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ShellServerTool PickShellServerTool() => IsShellServerTool
+            ? ShellServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Apply patch tool configuration
@@ -400,6 +484,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ApplyPatchServerTool PickApplyPatchServerTool() => IsApplyPatchServerTool
+            ? ApplyPatchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Custom tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -428,6 +519,13 @@ namespace OpenRouter
             value = CustomTool;
             return IsCustomTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CustomTool PickCustomTool() => IsCustomTool
+            ? CustomTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -445,6 +543,11 @@ namespace OpenRouter
         {
             OpenResponsesResultToolsItems0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenResponsesResultToolsItems FromOpenResponsesResultToolsItems0(global::OpenRouter.OpenResponsesResultToolsItems0? value) => new OpenResponsesResultToolsItems(value);
 
         /// <summary>
         /// 
@@ -467,6 +570,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenResponsesResultToolsItems FromPreviewWebSearchServerTool(global::OpenRouter.PreviewWebSearchServerTool? value) => new OpenResponsesResultToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenResponsesResultToolsItems(global::OpenRouter.Preview20250311WebSearchServerTool value) => new OpenResponsesResultToolsItems((global::OpenRouter.Preview20250311WebSearchServerTool?)value);
 
         /// <summary>
@@ -481,6 +589,11 @@ namespace OpenRouter
         {
             Preview20250311WebSearchServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenResponsesResultToolsItems FromPreview20250311WebSearchServerTool(global::OpenRouter.Preview20250311WebSearchServerTool? value) => new OpenResponsesResultToolsItems(value);
 
         /// <summary>
         /// 
@@ -503,6 +616,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenResponsesResultToolsItems FromLegacyWebSearchServerTool(global::OpenRouter.LegacyWebSearchServerTool? value) => new OpenResponsesResultToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenResponsesResultToolsItems(global::OpenRouter.WebSearchServerTool value) => new OpenResponsesResultToolsItems((global::OpenRouter.WebSearchServerTool?)value);
 
         /// <summary>
@@ -517,6 +635,11 @@ namespace OpenRouter
         {
             WebSearchServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenResponsesResultToolsItems FromWebSearchServerTool(global::OpenRouter.WebSearchServerTool? value) => new OpenResponsesResultToolsItems(value);
 
         /// <summary>
         /// 
@@ -539,6 +662,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenResponsesResultToolsItems FromFileSearchServerTool(global::OpenRouter.FileSearchServerTool? value) => new OpenResponsesResultToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenResponsesResultToolsItems(global::OpenRouter.ComputerUseServerTool value) => new OpenResponsesResultToolsItems((global::OpenRouter.ComputerUseServerTool?)value);
 
         /// <summary>
@@ -553,6 +681,11 @@ namespace OpenRouter
         {
             ComputerUseServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenResponsesResultToolsItems FromComputerUseServerTool(global::OpenRouter.ComputerUseServerTool? value) => new OpenResponsesResultToolsItems(value);
 
         /// <summary>
         /// 
@@ -575,6 +708,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenResponsesResultToolsItems FromCodeInterpreterServerTool(global::OpenRouter.CodeInterpreterServerTool? value) => new OpenResponsesResultToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenResponsesResultToolsItems(global::OpenRouter.McpServerTool value) => new OpenResponsesResultToolsItems((global::OpenRouter.McpServerTool?)value);
 
         /// <summary>
@@ -589,6 +727,11 @@ namespace OpenRouter
         {
             McpServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenResponsesResultToolsItems FromMcpServerTool(global::OpenRouter.McpServerTool? value) => new OpenResponsesResultToolsItems(value);
 
         /// <summary>
         /// 
@@ -611,6 +754,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenResponsesResultToolsItems FromImageGenerationServerTool(global::OpenRouter.ImageGenerationServerTool? value) => new OpenResponsesResultToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenResponsesResultToolsItems(global::OpenRouter.CodexLocalShellTool value) => new OpenResponsesResultToolsItems((global::OpenRouter.CodexLocalShellTool?)value);
 
         /// <summary>
@@ -625,6 +773,11 @@ namespace OpenRouter
         {
             CodexLocalShellTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenResponsesResultToolsItems FromCodexLocalShellTool(global::OpenRouter.CodexLocalShellTool? value) => new OpenResponsesResultToolsItems(value);
 
         /// <summary>
         /// 
@@ -647,6 +800,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenResponsesResultToolsItems FromShellServerTool(global::OpenRouter.ShellServerTool? value) => new OpenResponsesResultToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenResponsesResultToolsItems(global::OpenRouter.ApplyPatchServerTool value) => new OpenResponsesResultToolsItems((global::OpenRouter.ApplyPatchServerTool?)value);
 
         /// <summary>
@@ -665,6 +823,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenResponsesResultToolsItems FromApplyPatchServerTool(global::OpenRouter.ApplyPatchServerTool? value) => new OpenResponsesResultToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenResponsesResultToolsItems(global::OpenRouter.CustomTool value) => new OpenResponsesResultToolsItems((global::OpenRouter.CustomTool?)value);
 
         /// <summary>
@@ -679,6 +842,11 @@ namespace OpenRouter
         {
             CustomTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenResponsesResultToolsItems FromCustomTool(global::OpenRouter.CustomTool? value) => new OpenResponsesResultToolsItems(value);
 
         /// <summary>
         /// 

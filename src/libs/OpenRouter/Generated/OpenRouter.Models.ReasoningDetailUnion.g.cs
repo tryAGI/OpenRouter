@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionVariant1 PickReasoningEncrypted() => IsReasoningEncrypted
+            ? ReasoningEncrypted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningEncrypted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Reasoning detail summary schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionVariant2 PickReasoningSummary() => IsReasoningSummary
+            ? ReasoningSummary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningSummary' but the value was {ToString()}.");
+
+        /// <summary>
         /// Reasoning detail text schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace OpenRouter
             value = ReasoningText;
             return IsReasoningText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionVariant3 PickReasoningText() => IsReasoningText
+            ? ReasoningText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace OpenRouter
         {
             ReasoningEncrypted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReasoningDetailUnion FromReasoningEncrypted(global::OpenRouter.ReasoningDetailUnionVariant1? value) => new ReasoningDetailUnion(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ReasoningDetailUnion FromReasoningSummary(global::OpenRouter.ReasoningDetailUnionVariant2? value) => new ReasoningDetailUnion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReasoningDetailUnion(global::OpenRouter.ReasoningDetailUnionVariant3 value) => new ReasoningDetailUnion((global::OpenRouter.ReasoningDetailUnionVariant3?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace OpenRouter
         {
             ReasoningText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReasoningDetailUnion FromReasoningText(global::OpenRouter.ReasoningDetailUnionVariant3? value) => new ReasoningDetailUnion(value);
 
         /// <summary>
         /// 

@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1 PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2 PickInputImage() => IsInputImage
+            ? InputImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace OpenRouter
             value = InputText;
             return IsInputText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3 PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace OpenRouter
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponseFunctionToolCallOutputOutputOneOf1Items FromInputFile(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1? value) => new OpenAiResponseFunctionToolCallOutputOutputOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAiResponseFunctionToolCallOutputOutputOneOf1Items FromInputImage(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2? value) => new OpenAiResponseFunctionToolCallOutputOutputOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAiResponseFunctionToolCallOutputOutputOneOf1Items(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3 value) => new OpenAiResponseFunctionToolCallOutputOutputOneOf1Items((global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace OpenRouter
         {
             InputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponseFunctionToolCallOutputOutputOneOf1Items FromInputText(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3? value) => new OpenAiResponseFunctionToolCallOutputOutputOneOf1Items(value);
 
         /// <summary>
         /// 

@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1 PickCharLocation() => IsCharLocation
+            ? CharLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CharLocation' but the value was {ToString()}.");
+
+        /// <summary>
         /// content_block_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = ContentBlockLocation;
             return IsContentBlockLocation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2 PickContentBlockLocation() => IsContentBlockLocation
+            ? ContentBlockLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockLocation' but the value was {ToString()}.");
 
         /// <summary>
         /// page_location variant
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3 PickPageLocation() => IsPageLocation
+            ? PageLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PageLocation' but the value was {ToString()}.");
+
+        /// <summary>
         /// search_result_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -135,6 +156,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4 PickSearchResultLocation() => IsSearchResultLocation
+            ? SearchResultLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResultLocation' but the value was {ToString()}.");
+
+        /// <summary>
         /// web_search_result_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -163,6 +191,13 @@ namespace OpenRouter
             value = WebSearchResultLocation;
             return IsWebSearchResultLocation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5 PickWebSearchResultLocation() => IsWebSearchResultLocation
+            ? WebSearchResultLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchResultLocation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -180,6 +215,11 @@ namespace OpenRouter
         {
             CharLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicTextBlockParamCitationsItems FromCharLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
         /// 
@@ -202,6 +242,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicTextBlockParamCitationsItems FromContentBlockLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2? value) => new AnthropicTextBlockParamCitationsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3 value) => new AnthropicTextBlockParamCitationsItems((global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3?)value);
 
         /// <summary>
@@ -216,6 +261,11 @@ namespace OpenRouter
         {
             PageLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicTextBlockParamCitationsItems FromPageLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
         /// 
@@ -238,6 +288,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicTextBlockParamCitationsItems FromSearchResultLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4? value) => new AnthropicTextBlockParamCitationsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5 value) => new AnthropicTextBlockParamCitationsItems((global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5?)value);
 
         /// <summary>
@@ -252,6 +307,11 @@ namespace OpenRouter
         {
             WebSearchResultLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicTextBlockParamCitationsItems FromWebSearchResultLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
         /// 

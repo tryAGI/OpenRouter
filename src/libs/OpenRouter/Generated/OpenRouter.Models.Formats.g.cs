@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FormatTextConfig PickFormatTextConfig() => IsFormatTextConfig
+            ? FormatTextConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FormatTextConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FormatJsonObjectConfig PickFormatJsonObjectConfig() => IsFormatJsonObjectConfig
+            ? FormatJsonObjectConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonObjectConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON schema constrained response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = FormatJsonSchemaConfig;
             return IsFormatJsonSchemaConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FormatJsonSchemaConfig PickFormatJsonSchemaConfig() => IsFormatJsonSchemaConfig
+            ? FormatJsonSchemaConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonSchemaConfig' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             FormatTextConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Formats FromFormatTextConfig(global::OpenRouter.FormatTextConfig? value) => new Formats(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static Formats FromFormatJsonObjectConfig(global::OpenRouter.FormatJsonObjectConfig? value) => new Formats(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Formats(global::OpenRouter.FormatJsonSchemaConfig value) => new Formats((global::OpenRouter.FormatJsonSchemaConfig?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             FormatJsonSchemaConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Formats FromFormatJsonSchemaConfig(global::OpenRouter.FormatJsonSchemaConfig? value) => new Formats(value);
 
         /// <summary>
         /// 

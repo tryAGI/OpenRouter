@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicWebFetchContentVariant1 PickWebFetchResult() => IsWebFetchResult
+            ? WebFetchResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// web_fetch_tool_result_error variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = WebFetchToolResultError;
             return IsWebFetchToolResultError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicWebFetchContentVariant2 PickWebFetchToolResultError() => IsWebFetchToolResultError
+            ? WebFetchToolResultError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResultError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicWebFetchContent FromWebFetchResult(global::OpenRouter.AnthropicWebFetchContentVariant1? value) => new AnthropicWebFetchContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchContentVariant2 value) => new AnthropicWebFetchContent((global::OpenRouter.AnthropicWebFetchContentVariant2?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace OpenRouter
         {
             WebFetchToolResultError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicWebFetchContent FromWebFetchToolResultError(global::OpenRouter.AnthropicWebFetchContentVariant2? value) => new AnthropicWebFetchContent(value);
 
         /// <summary>
         /// 

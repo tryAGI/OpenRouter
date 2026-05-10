@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems((global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
 
         /// <summary>
         /// 

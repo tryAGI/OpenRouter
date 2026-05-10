@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
+            ? ProviderName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ProviderPreferencesOrderItemsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = ProviderPreferencesOrderItemsVariant2;
             return IsProviderPreferencesOrderItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickProviderPreferencesOrderItemsVariant2() => IsProviderPreferencesOrderItemsVariant2
+            ? ProviderPreferencesOrderItemsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderPreferencesOrderItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ProviderPreferencesOrderItems FromProviderName(global::OpenRouter.ProviderName? value) => new ProviderPreferencesOrderItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProviderPreferencesOrderItems(string value) => new ProviderPreferencesOrderItems((string?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             ProviderPreferencesOrderItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProviderPreferencesOrderItems FromProviderPreferencesOrderItemsVariant2(string? value) => new ProviderPreferencesOrderItems(value);
 
         /// <summary>
         /// 

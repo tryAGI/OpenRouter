@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1
+            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2;
             return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2
+            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
             return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3
+            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs FromMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(bool? value) => new MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(value);
 
         /// <summary>
         /// 

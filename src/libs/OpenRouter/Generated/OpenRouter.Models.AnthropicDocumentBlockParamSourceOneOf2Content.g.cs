@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickAnthropicDocumentBlockParamSourceOneOf2ContentVariant1() => IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1
+            ? AnthropicDocumentBlockParamSourceOneOf2ContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSourceOneOf2ContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>? AnthropicDocumentBlockParamSourceOneOf2Content1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = AnthropicDocumentBlockParamSourceOneOf2Content1;
             return IsAnthropicDocumentBlockParamSourceOneOf2Content1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items> PickAnthropicDocumentBlockParamSourceOneOf2Content1() => IsAnthropicDocumentBlockParamSourceOneOf2Content1
+            ? AnthropicDocumentBlockParamSourceOneOf2Content1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSourceOneOf2Content1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicDocumentBlockParamSourceOneOf2Content FromAnthropicDocumentBlockParamSourceOneOf2ContentVariant1(string? value) => new AnthropicDocumentBlockParamSourceOneOf2Content(value);
 
         /// <summary>
         /// 

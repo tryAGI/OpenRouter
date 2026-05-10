@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
+            ? ProviderName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems FromProviderName(global::OpenRouter.ProviderName? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(string value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems((string?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2(string? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(value);
 
         /// <summary>
         /// 

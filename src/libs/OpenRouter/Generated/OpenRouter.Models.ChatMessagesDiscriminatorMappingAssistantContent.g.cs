@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickChatMessagesDiscriminatorMappingAssistantContentVariant1() => IsChatMessagesDiscriminatorMappingAssistantContentVariant1
+            ? ChatMessagesDiscriminatorMappingAssistantContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>? ChatMessagesDiscriminatorMappingAssistantContent1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = ChatMessagesDiscriminatorMappingAssistantContent1;
             return IsChatMessagesDiscriminatorMappingAssistantContent1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems> PickChatMessagesDiscriminatorMappingAssistantContent1() => IsChatMessagesDiscriminatorMappingAssistantContent1
+            ? ChatMessagesDiscriminatorMappingAssistantContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContent1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = ChatMessagesDiscriminatorMappingAssistantContentVariant3;
             return IsChatMessagesDiscriminatorMappingAssistantContentVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickChatMessagesDiscriminatorMappingAssistantContentVariant3() => IsChatMessagesDiscriminatorMappingAssistantContentVariant3
+            ? ChatMessagesDiscriminatorMappingAssistantContentVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContentVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             ChatMessagesDiscriminatorMappingAssistantContentVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessagesDiscriminatorMappingAssistantContent FromChatMessagesDiscriminatorMappingAssistantContentVariant1(string? value) => new ChatMessagesDiscriminatorMappingAssistantContent(value);
 
         /// <summary>
         /// 

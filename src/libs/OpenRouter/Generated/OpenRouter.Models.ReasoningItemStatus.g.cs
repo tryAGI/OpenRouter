@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ReasoningItemStatus0 PickReasoningItemStatus0() => IsReasoningItemStatus0
+            ? ReasoningItemStatus0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ReasoningItemStatus1? ReasoningItemStatus1 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ReasoningItemStatus1 PickReasoningItemStatus1() => IsReasoningItemStatus1
+            ? ReasoningItemStatus1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ReasoningItemStatus2? ReasoningItemStatus2 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = ReasoningItemStatus2;
             return IsReasoningItemStatus2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningItemStatus2 PickReasoningItemStatus2() => IsReasoningItemStatus2
+            ? ReasoningItemStatus2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             ReasoningItemStatus0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReasoningItemStatus FromReasoningItemStatus0(global::OpenRouter.ReasoningItemStatus0? value) => new ReasoningItemStatus(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ReasoningItemStatus FromReasoningItemStatus1(global::OpenRouter.ReasoningItemStatus1? value) => new ReasoningItemStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReasoningItemStatus(global::OpenRouter.ReasoningItemStatus2 value) => new ReasoningItemStatus((global::OpenRouter.ReasoningItemStatus2?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             ReasoningItemStatus2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReasoningItemStatus FromReasoningItemStatus2(global::OpenRouter.ReasoningItemStatus2? value) => new ReasoningItemStatus(value);
 
         /// <summary>
         /// 

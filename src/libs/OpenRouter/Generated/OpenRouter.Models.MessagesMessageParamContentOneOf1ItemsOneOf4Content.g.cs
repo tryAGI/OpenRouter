@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>? MessagesMessageParamContentOneOf1ItemsOneOf4Content1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = MessagesMessageParamContentOneOf1ItemsOneOf4Content1;
             return IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items> PickMessagesMessageParamContentOneOf1ItemsOneOf4Content1() => IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4Content1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4Content1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4Content FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1(string? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4Content(value);
 
         /// <summary>
         /// 

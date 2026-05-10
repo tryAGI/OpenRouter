@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.AnthropicBase64PdfSource PickAnthropicBase64PdfSource() => IsAnthropicBase64PdfSource
+            ? AnthropicBase64PdfSource!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBase64PdfSource' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicPlainTextSource? AnthropicPlainTextSource { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = AnthropicPlainTextSource;
             return IsAnthropicPlainTextSource;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicPlainTextSource PickAnthropicPlainTextSource() => IsAnthropicPlainTextSource
+            ? AnthropicPlainTextSource!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicPlainTextSource' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicDocumentBlockSource FromAnthropicBase64PdfSource(global::OpenRouter.AnthropicBase64PdfSource? value) => new AnthropicDocumentBlockSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicDocumentBlockSource(global::OpenRouter.AnthropicPlainTextSource value) => new AnthropicDocumentBlockSource((global::OpenRouter.AnthropicPlainTextSource?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             AnthropicPlainTextSource = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicDocumentBlockSource FromAnthropicPlainTextSource(global::OpenRouter.AnthropicPlainTextSource? value) => new AnthropicDocumentBlockSource(value);
 
         /// <summary>
         /// 

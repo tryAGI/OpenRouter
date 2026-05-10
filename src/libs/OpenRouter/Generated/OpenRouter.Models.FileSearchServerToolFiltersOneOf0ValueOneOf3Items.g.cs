@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1() => IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1
+            ? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
             return IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2() => IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2
+            ? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static FileSearchServerToolFiltersOneOf0ValueOneOf3Items FromFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1(string? value) => new FileSearchServerToolFiltersOneOf0ValueOneOf3Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FileSearchServerToolFiltersOneOf0ValueOneOf3Items(double value) => new FileSearchServerToolFiltersOneOf0ValueOneOf3Items((double?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FileSearchServerToolFiltersOneOf0ValueOneOf3Items FromFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2(double? value) => new FileSearchServerToolFiltersOneOf0ValueOneOf3Items(value);
 
         /// <summary>
         /// 

@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatMessagesVariant1 PickAssistant() => IsAssistant
+            ? Assistant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
+
+        /// <summary>
         /// Developer message
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = Developer;
             return IsDeveloper;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatMessagesVariant2 PickDeveloper() => IsDeveloper
+            ? Developer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
 
         /// <summary>
         /// System message for setting behavior
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatMessagesVariant3 PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
+
+        /// <summary>
         /// Tool response message
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -135,6 +156,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatMessagesVariant4 PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
         /// User message
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -163,6 +191,13 @@ namespace OpenRouter
             value = User;
             return IsUser;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatMessagesVariant5 PickUser() => IsUser
+            ? User!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -180,6 +215,11 @@ namespace OpenRouter
         {
             Assistant = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessages FromAssistant(global::OpenRouter.ChatMessagesVariant1? value) => new ChatMessages(value);
 
         /// <summary>
         /// 
@@ -202,6 +242,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessages FromDeveloper(global::OpenRouter.ChatMessagesVariant2? value) => new ChatMessages(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant3 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant3?)value);
 
         /// <summary>
@@ -216,6 +261,11 @@ namespace OpenRouter
         {
             System = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessages FromSystem(global::OpenRouter.ChatMessagesVariant3? value) => new ChatMessages(value);
 
         /// <summary>
         /// 
@@ -238,6 +288,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessages FromTool(global::OpenRouter.ChatMessagesVariant4? value) => new ChatMessages(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant5 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant5?)value);
 
         /// <summary>
@@ -252,6 +307,11 @@ namespace OpenRouter
         {
             User = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessages FromUser(global::OpenRouter.ChatMessagesVariant5? value) => new ChatMessages(value);
 
         /// <summary>
         /// 

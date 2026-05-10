@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items> PickBaseInputsOneOf1ItemsOneOf0Content0() => IsBaseInputsOneOf1ItemsOneOf0Content0
+            ? BaseInputsOneOf1ItemsOneOf0Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? BaseInputsOneOf1ItemsOneOf0ContentVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = BaseInputsOneOf1ItemsOneOf0ContentVariant2;
             return IsBaseInputsOneOf1ItemsOneOf0ContentVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBaseInputsOneOf1ItemsOneOf0ContentVariant2() => IsBaseInputsOneOf1ItemsOneOf0ContentVariant2
+            ? BaseInputsOneOf1ItemsOneOf0ContentVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0ContentVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             BaseInputsOneOf1ItemsOneOf0ContentVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Content FromBaseInputsOneOf1ItemsOneOf0ContentVariant2(string? value) => new BaseInputsOneOf1ItemsOneOf0Content(value);
 
         /// <summary>
         /// 

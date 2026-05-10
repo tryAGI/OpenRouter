@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputMessagePhase0 PickOutputMessagePhase0() => IsOutputMessagePhase0
+            ? OutputMessagePhase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessagePhase1? OutputMessagePhase1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = OutputMessagePhase1;
             return IsOutputMessagePhase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessagePhase1 PickOutputMessagePhase1() => IsOutputMessagePhase1
+            ? OutputMessagePhase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = OutputMessagePhaseVariant3;
             return IsOutputMessagePhaseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickOutputMessagePhaseVariant3() => IsOutputMessagePhaseVariant3
+            ? OutputMessagePhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessagePhase FromOutputMessagePhase0(global::OpenRouter.OutputMessagePhase0? value) => new OutputMessagePhase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessagePhase(global::OpenRouter.OutputMessagePhase1 value) => new OutputMessagePhase((global::OpenRouter.OutputMessagePhase1?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             OutputMessagePhase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessagePhase FromOutputMessagePhase1(global::OpenRouter.OutputMessagePhase1? value) => new OutputMessagePhase(value);
 
         /// <summary>
         /// 

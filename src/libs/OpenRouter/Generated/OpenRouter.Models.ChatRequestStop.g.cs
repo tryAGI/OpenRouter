@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickChatRequestStopVariant1() => IsChatRequestStopVariant1
+            ? ChatRequestStopVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? ChatRequestStopVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = ChatRequestStopVariant2;
             return IsChatRequestStopVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickChatRequestStopVariant2() => IsChatRequestStopVariant2
+            ? ChatRequestStopVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = ChatRequestStopVariant3;
             return IsChatRequestStopVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickChatRequestStopVariant3() => IsChatRequestStopVariant3
+            ? ChatRequestStopVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             ChatRequestStopVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestStop FromChatRequestStopVariant1(string? value) => new ChatRequestStop(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult> PickOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0() => IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0
+            ? OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicWebSearchToolResultError? AnthropicWebSearchToolResultError { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = AnthropicWebSearchToolResultError;
             return IsAnthropicWebSearchToolResultError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicWebSearchToolResultError PickAnthropicWebSearchToolResultError() => IsAnthropicWebSearchToolResultError
+            ? AnthropicWebSearchToolResultError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicWebSearchToolResultError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             AnthropicWebSearchToolResultError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent FromAnthropicWebSearchToolResultError(global::OpenRouter.AnthropicWebSearchToolResultError? value) => new OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent(value);
 
         /// <summary>
         /// 

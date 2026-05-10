@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickCodeInterpreterServerToolContainerVariant1() => IsCodeInterpreterServerToolContainerVariant1
+            ? CodeInterpreterServerToolContainerVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainerVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.CodeInterpreterServerToolContainer1? CodeInterpreterServerToolContainer1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = CodeInterpreterServerToolContainer1;
             return IsCodeInterpreterServerToolContainer1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CodeInterpreterServerToolContainer1 PickCodeInterpreterServerToolContainer1() => IsCodeInterpreterServerToolContainer1
+            ? CodeInterpreterServerToolContainer1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainer1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainerVariant1(string? value) => new CodeInterpreterServerToolContainer(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CodeInterpreterServerToolContainer(global::OpenRouter.CodeInterpreterServerToolContainer1 value) => new CodeInterpreterServerToolContainer((global::OpenRouter.CodeInterpreterServerToolContainer1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             CodeInterpreterServerToolContainer1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainer1(global::OpenRouter.CodeInterpreterServerToolContainer1? value) => new CodeInterpreterServerToolContainer(value);
 
         /// <summary>
         /// 

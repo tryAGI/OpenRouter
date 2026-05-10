@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant1 PickBashCodeExecutionResult() => IsBashCodeExecutionResult
+            ? BashCodeExecutionResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// bash_code_execution_tool_result_error variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = BashCodeExecutionToolResultError;
             return IsBashCodeExecutionToolResultError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant2 PickBashCodeExecutionToolResultError() => IsBashCodeExecutionToolResultError
+            ? BashCodeExecutionToolResultError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResultError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicBashCodeExecutionContent FromBashCodeExecutionResult(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? value) => new AnthropicBashCodeExecutionContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2 value) => new AnthropicBashCodeExecutionContent((global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace OpenRouter
         {
             BashCodeExecutionToolResultError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicBashCodeExecutionContent FromBashCodeExecutionToolResultError(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? value) => new AnthropicBashCodeExecutionContent(value);
 
         /// <summary>
         /// 

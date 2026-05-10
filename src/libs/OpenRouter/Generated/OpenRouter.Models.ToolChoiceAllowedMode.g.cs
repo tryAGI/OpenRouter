@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ToolChoiceAllowedMode0 PickToolChoiceAllowedMode0() => IsToolChoiceAllowedMode0
+            ? ToolChoiceAllowedMode0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceAllowedMode0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ToolChoiceAllowedMode1? ToolChoiceAllowedMode1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = ToolChoiceAllowedMode1;
             return IsToolChoiceAllowedMode1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ToolChoiceAllowedMode1 PickToolChoiceAllowedMode1() => IsToolChoiceAllowedMode1
+            ? ToolChoiceAllowedMode1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceAllowedMode1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceAllowedMode FromToolChoiceAllowedMode0(global::OpenRouter.ToolChoiceAllowedMode0? value) => new ToolChoiceAllowedMode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceAllowedMode(global::OpenRouter.ToolChoiceAllowedMode1 value) => new ToolChoiceAllowedMode((global::OpenRouter.ToolChoiceAllowedMode1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             ToolChoiceAllowedMode1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceAllowedMode FromToolChoiceAllowedMode1(global::OpenRouter.ToolChoiceAllowedMode1? value) => new ToolChoiceAllowedMode(value);
 
         /// <summary>
         /// 

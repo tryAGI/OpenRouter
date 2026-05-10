@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItems0 PickMessagesRequestContextManagementEditsItems0() => IsMessagesRequestContextManagementEditsItems0
+            ? MessagesRequestContextManagementEditsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestContextManagementEditsItems1? MessagesRequestContextManagementEditsItems1 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItems1 PickMessagesRequestContextManagementEditsItems1() => IsMessagesRequestContextManagementEditsItems1
+            ? MessagesRequestContextManagementEditsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestContextManagementEditsItems2? MessagesRequestContextManagementEditsItems2 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = MessagesRequestContextManagementEditsItems2;
             return IsMessagesRequestContextManagementEditsItems2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItems2 PickMessagesRequestContextManagementEditsItems2() => IsMessagesRequestContextManagementEditsItems2
+            ? MessagesRequestContextManagementEditsItems2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             MessagesRequestContextManagementEditsItems0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems0(global::OpenRouter.MessagesRequestContextManagementEditsItems0? value) => new MessagesRequestContextManagementEditsItems(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems1(global::OpenRouter.MessagesRequestContextManagementEditsItems1? value) => new MessagesRequestContextManagementEditsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItems(global::OpenRouter.MessagesRequestContextManagementEditsItems2 value) => new MessagesRequestContextManagementEditsItems((global::OpenRouter.MessagesRequestContextManagementEditsItems2?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             MessagesRequestContextManagementEditsItems2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems2(global::OpenRouter.MessagesRequestContextManagementEditsItems2? value) => new MessagesRequestContextManagementEditsItems(value);
 
         /// <summary>
         /// 

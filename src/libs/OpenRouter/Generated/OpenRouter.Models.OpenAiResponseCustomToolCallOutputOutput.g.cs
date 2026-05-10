@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickOpenAiResponseCustomToolCallOutputOutputVariant1() => IsOpenAiResponseCustomToolCallOutputOutputVariant1
+            ? OpenAiResponseCustomToolCallOutputOutputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseCustomToolCallOutputOutputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items>? OpenAiResponseCustomToolCallOutputOutput1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = OpenAiResponseCustomToolCallOutputOutput1;
             return IsOpenAiResponseCustomToolCallOutputOutput1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items> PickOpenAiResponseCustomToolCallOutputOutput1() => IsOpenAiResponseCustomToolCallOutputOutput1
+            ? OpenAiResponseCustomToolCallOutputOutput1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseCustomToolCallOutputOutput1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             OpenAiResponseCustomToolCallOutputOutputVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponseCustomToolCallOutputOutput FromOpenAiResponseCustomToolCallOutputOutputVariant1(string? value) => new OpenAiResponseCustomToolCallOutputOutput(value);
 
         /// <summary>
         /// 

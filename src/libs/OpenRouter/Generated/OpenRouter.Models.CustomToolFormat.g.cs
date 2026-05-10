@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.CustomToolFormat0 PickCustomToolFormat0() => IsCustomToolFormat0
+            ? CustomToolFormat0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.CustomToolFormat1? CustomToolFormat1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = CustomToolFormat1;
             return IsCustomToolFormat1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CustomToolFormat1 PickCustomToolFormat1() => IsCustomToolFormat1
+            ? CustomToolFormat1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static CustomToolFormat FromCustomToolFormat0(global::OpenRouter.CustomToolFormat0? value) => new CustomToolFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CustomToolFormat(global::OpenRouter.CustomToolFormat1 value) => new CustomToolFormat((global::OpenRouter.CustomToolFormat1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             CustomToolFormat1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomToolFormat FromCustomToolFormat1(global::OpenRouter.CustomToolFormat1? value) => new CustomToolFormat(value);
 
         /// <summary>
         /// 

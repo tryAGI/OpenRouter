@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ProviderSort PickProviderSort() => IsProviderSort
+            ? ProviderSort!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSort' but the value was {ToString()}.");
+
+        /// <summary>
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
+            ? ProviderSortConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = ProviderPreferencesSortVariant3;
             return IsProviderPreferencesSortVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickProviderPreferencesSortVariant3() => IsProviderPreferencesSortVariant3
+            ? ProviderPreferencesSortVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderPreferencesSortVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ProviderPreferencesSort FromProviderSort(global::OpenRouter.ProviderSort? value) => new ProviderPreferencesSort(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProviderPreferencesSort(global::OpenRouter.ProviderSortConfig value) => new ProviderPreferencesSort((global::OpenRouter.ProviderSortConfig?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             ProviderSortConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProviderPreferencesSort FromProviderSortConfig(global::OpenRouter.ProviderSortConfig? value) => new ProviderPreferencesSort(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.EasyInputMessageRole0 PickEasyInputMessageRole0() => IsEasyInputMessageRole0
+            ? EasyInputMessageRole0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessageRole1? EasyInputMessageRole1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EasyInputMessageRole1;
             return IsEasyInputMessageRole1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.EasyInputMessageRole1 PickEasyInputMessageRole1() => IsEasyInputMessageRole1
+            ? EasyInputMessageRole1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.EasyInputMessageRole2 PickEasyInputMessageRole2() => IsEasyInputMessageRole2
+            ? EasyInputMessageRole2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessageRole3? EasyInputMessageRole3 { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = EasyInputMessageRole3;
             return IsEasyInputMessageRole3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.EasyInputMessageRole3 PickEasyInputMessageRole3() => IsEasyInputMessageRole3
+            ? EasyInputMessageRole3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace OpenRouter
         {
             EasyInputMessageRole0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole0(global::OpenRouter.EasyInputMessageRole0? value) => new EasyInputMessageRole(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole1(global::OpenRouter.EasyInputMessageRole1? value) => new EasyInputMessageRole(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole2 value) => new EasyInputMessageRole((global::OpenRouter.EasyInputMessageRole2?)value);
 
         /// <summary>
@@ -185,6 +223,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole2(global::OpenRouter.EasyInputMessageRole2? value) => new EasyInputMessageRole(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole3 value) => new EasyInputMessageRole((global::OpenRouter.EasyInputMessageRole3?)value);
 
         /// <summary>
@@ -199,6 +242,11 @@ namespace OpenRouter
         {
             EasyInputMessageRole3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole3(global::OpenRouter.EasyInputMessageRole3? value) => new EasyInputMessageRole(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<string> PickMcpServerToolAllowedToolsVariant1() => IsMcpServerToolAllowedToolsVariant1
+            ? McpServerToolAllowedToolsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.McpServerToolAllowedTools1? McpServerToolAllowedTools1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = McpServerToolAllowedTools1;
             return IsMcpServerToolAllowedTools1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.McpServerToolAllowedTools1 PickMcpServerToolAllowedTools1() => IsMcpServerToolAllowedTools1
+            ? McpServerToolAllowedTools1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedTools1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = McpServerToolAllowedToolsVariant3;
             return IsMcpServerToolAllowedToolsVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickMcpServerToolAllowedToolsVariant3() => IsMcpServerToolAllowedToolsVariant3
+            ? McpServerToolAllowedToolsVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             McpServerToolAllowedTools1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static McpServerToolAllowedTools FromMcpServerToolAllowedTools1(global::OpenRouter.McpServerToolAllowedTools1? value) => new McpServerToolAllowedTools(value);
 
         /// <summary>
         /// 

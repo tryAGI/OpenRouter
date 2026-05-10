@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ChatToolChoice0 PickChatToolChoice0() => IsChatToolChoice0
+            ? ChatToolChoice0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ChatToolChoice1? ChatToolChoice1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = ChatToolChoice1;
             return IsChatToolChoice1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatToolChoice1 PickChatToolChoice1() => IsChatToolChoice1
+            ? ChatToolChoice1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -100,6 +114,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatToolChoice2 PickChatToolChoice2() => IsChatToolChoice2
+            ? ChatToolChoice2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Named tool choice for specific function
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = ChatNamedToolChoice;
             return IsChatNamedToolChoice;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatNamedToolChoice PickChatNamedToolChoice() => IsChatNamedToolChoice
+            ? ChatNamedToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatNamedToolChoice' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace OpenRouter
         {
             ChatToolChoice0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolChoice FromChatToolChoice0(global::OpenRouter.ChatToolChoice0? value) => new ChatToolChoice(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolChoice FromChatToolChoice1(global::OpenRouter.ChatToolChoice1? value) => new ChatToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoice2 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoice2?)value);
 
         /// <summary>
@@ -185,6 +223,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolChoice FromChatToolChoice2(global::OpenRouter.ChatToolChoice2? value) => new ChatToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolChoice(global::OpenRouter.ChatNamedToolChoice value) => new ChatToolChoice((global::OpenRouter.ChatNamedToolChoice?)value);
 
         /// <summary>
@@ -199,6 +242,11 @@ namespace OpenRouter
         {
             ChatNamedToolChoice = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolChoice FromChatNamedToolChoice(global::OpenRouter.ChatNamedToolChoice? value) => new ChatToolChoice(value);
 
         /// <summary>
         /// 

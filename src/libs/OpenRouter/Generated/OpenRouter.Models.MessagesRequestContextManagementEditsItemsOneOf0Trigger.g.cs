@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1 PickInputTokens() => IsInputTokens
+            ? InputTokens!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputTokens' but the value was {ToString()}.");
+
+        /// <summary>
         /// tool_uses variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = ToolUses;
             return IsToolUses;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2 PickToolUses() => IsToolUses
+            ? ToolUses!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUses' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromInputTokens(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2 value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace OpenRouter
         {
             ToolUses = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromToolUses(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
 
         /// <summary>
         /// 

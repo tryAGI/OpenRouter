@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.EasyInputMessagePhase0 PickEasyInputMessagePhase0() => IsEasyInputMessagePhase0
+            ? EasyInputMessagePhase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessagePhase1? EasyInputMessagePhase1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EasyInputMessagePhase1;
             return IsEasyInputMessagePhase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.EasyInputMessagePhase1 PickEasyInputMessagePhase1() => IsEasyInputMessagePhase1
+            ? EasyInputMessagePhase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = EasyInputMessagePhaseVariant3;
             return IsEasyInputMessagePhaseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickEasyInputMessagePhaseVariant3() => IsEasyInputMessagePhaseVariant3
+            ? EasyInputMessagePhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessagePhase FromEasyInputMessagePhase0(global::OpenRouter.EasyInputMessagePhase0? value) => new EasyInputMessagePhase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessagePhase(global::OpenRouter.EasyInputMessagePhase1 value) => new EasyInputMessagePhase((global::OpenRouter.EasyInputMessagePhase1?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             EasyInputMessagePhase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessagePhase FromEasyInputMessagePhase1(global::OpenRouter.EasyInputMessagePhase1? value) => new EasyInputMessagePhase(value);
 
         /// <summary>
         /// 
