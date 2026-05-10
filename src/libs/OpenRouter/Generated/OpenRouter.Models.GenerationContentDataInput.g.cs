@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.GenerationContentDataInput0 PickGenerationContentDataInput0() => IsGenerationContentDataInput0
+            ? GenerationContentDataInput0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationContentDataInput0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.GenerationContentDataInput1? GenerationContentDataInput1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = GenerationContentDataInput1;
             return IsGenerationContentDataInput1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.GenerationContentDataInput1 PickGenerationContentDataInput1() => IsGenerationContentDataInput1
+            ? GenerationContentDataInput1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationContentDataInput1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static GenerationContentDataInput FromGenerationContentDataInput0(global::OpenRouter.GenerationContentDataInput0? value) => new GenerationContentDataInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerationContentDataInput(global::OpenRouter.GenerationContentDataInput1 value) => new GenerationContentDataInput((global::OpenRouter.GenerationContentDataInput1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             GenerationContentDataInput1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerationContentDataInput FromGenerationContentDataInput1(global::OpenRouter.GenerationContentDataInput1? value) => new GenerationContentDataInput(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputMessageItemPhase0 PickOutputMessageItemPhase0() => IsOutputMessageItemPhase0
+            ? OutputMessageItemPhase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageItemPhase1? OutputMessageItemPhase1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = OutputMessageItemPhase1;
             return IsOutputMessageItemPhase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessageItemPhase1 PickOutputMessageItemPhase1() => IsOutputMessageItemPhase1
+            ? OutputMessageItemPhase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = OutputMessageItemPhaseVariant3;
             return IsOutputMessageItemPhaseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickOutputMessageItemPhaseVariant3() => IsOutputMessageItemPhaseVariant3
+            ? OutputMessageItemPhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageItemPhase FromOutputMessageItemPhase0(global::OpenRouter.OutputMessageItemPhase0? value) => new OutputMessageItemPhase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageItemPhase(global::OpenRouter.OutputMessageItemPhase1 value) => new OutputMessageItemPhase((global::OpenRouter.OutputMessageItemPhase1?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             OutputMessageItemPhase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageItemPhase FromOutputMessageItemPhase1(global::OpenRouter.OutputMessageItemPhase1? value) => new OutputMessageItemPhase(value);
 
         /// <summary>
         /// 

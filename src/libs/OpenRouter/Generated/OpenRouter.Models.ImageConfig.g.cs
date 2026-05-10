@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickImageConfigVariant1() => IsImageConfigVariant1
+            ? ImageConfigVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? ImageConfigVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public double PickImageConfigVariant2() => IsImageConfigVariant2
+            ? ImageConfigVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? ImageConfigVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = ImageConfigVariant3;
             return IsImageConfigVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<object> PickImageConfigVariant3() => IsImageConfigVariant3
+            ? ImageConfigVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ImageConfig FromImageConfigVariant1(string? value) => new ImageConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageConfig(double value) => new ImageConfig((double?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             ImageConfigVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageConfig FromImageConfigVariant2(double? value) => new ImageConfig(value);
 
         /// <summary>
         /// 

@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant1 PickAutoRouter() => IsAutoRouter
+            ? AutoRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutoRouter' but the value was {ToString()}.");
+
+        /// <summary>
         /// context-compression variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = ContextCompression;
             return IsContextCompression;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant2 PickContextCompression() => IsContextCompression
+            ? ContextCompression!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextCompression' but the value was {ToString()}.");
 
         /// <summary>
         /// file-parser variant
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant3 PickFileParser() => IsFileParser
+            ? FileParser!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileParser' but the value was {ToString()}.");
+
+        /// <summary>
         /// moderation variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace OpenRouter
             value = Moderation;
             return IsModeration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant4 PickModeration() => IsModeration
+            ? Moderation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Moderation' but the value was {ToString()}.");
 
         /// <summary>
         /// pareto-router variant
@@ -165,6 +193,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant5 PickParetoRouter() => IsParetoRouter
+            ? ParetoRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ParetoRouter' but the value was {ToString()}.");
+
+        /// <summary>
         /// response-healing variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -195,6 +230,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant6 PickResponseHealing() => IsResponseHealing
+            ? ResponseHealing!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseHealing' but the value was {ToString()}.");
+
+        /// <summary>
         /// web variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -223,6 +265,13 @@ namespace OpenRouter
             value = Web;
             return IsWeb;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant7 PickWeb() => IsWeb
+            ? Web!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Web' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -240,6 +289,11 @@ namespace OpenRouter
         {
             AutoRouter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromAutoRouter(global::OpenRouter.ResponsesRequestPluginsItemsVariant1? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -262,6 +316,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestPluginsItems FromContextCompression(global::OpenRouter.ResponsesRequestPluginsItemsVariant2? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant3 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant3?)value);
 
         /// <summary>
@@ -276,6 +335,11 @@ namespace OpenRouter
         {
             FileParser = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromFileParser(global::OpenRouter.ResponsesRequestPluginsItemsVariant3? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -298,6 +362,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestPluginsItems FromModeration(global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant5 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant5?)value);
 
         /// <summary>
@@ -312,6 +381,11 @@ namespace OpenRouter
         {
             ParetoRouter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromParetoRouter(global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -334,6 +408,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestPluginsItems FromResponseHealing(global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant7 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant7?)value);
 
         /// <summary>
@@ -348,6 +427,11 @@ namespace OpenRouter
         {
             Web = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromWeb(global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 

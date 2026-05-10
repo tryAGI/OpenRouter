@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicCallerVariant1 PickCodeExecution20250825() => IsCodeExecution20250825
+            ? CodeExecution20250825!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20250825' but the value was {ToString()}.");
+
+        /// <summary>
         /// code_execution_20260120 variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicCallerVariant2 PickCodeExecution20260120() => IsCodeExecution20260120
+            ? CodeExecution20260120!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20260120' but the value was {ToString()}.");
+
+        /// <summary>
         /// direct variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace OpenRouter
             value = Direct;
             return IsDirect;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicCallerVariant3 PickDirect() => IsDirect
+            ? Direct!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Direct' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -120,6 +141,11 @@ namespace OpenRouter
         {
             CodeExecution20250825 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicCaller FromCodeExecution20250825(global::OpenRouter.AnthropicCallerVariant1? value) => new AnthropicCaller(value);
 
         /// <summary>
         /// 
@@ -142,6 +168,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicCaller FromCodeExecution20260120(global::OpenRouter.AnthropicCallerVariant2? value) => new AnthropicCaller(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicCaller(global::OpenRouter.AnthropicCallerVariant3 value) => new AnthropicCaller((global::OpenRouter.AnthropicCallerVariant3?)value);
 
         /// <summary>
@@ -156,6 +187,11 @@ namespace OpenRouter
         {
             Direct = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicCaller FromDirect(global::OpenRouter.AnthropicCallerVariant3? value) => new AnthropicCaller(value);
 
         /// <summary>
         /// 

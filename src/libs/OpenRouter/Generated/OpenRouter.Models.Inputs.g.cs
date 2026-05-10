@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickInputsVariant1() => IsInputsVariant1
+            ? InputsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? Inputs1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = Inputs1;
             return IsInputs1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items> PickInputs1() => IsInputs1
+            ? Inputs1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Inputs1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             InputsVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Inputs FromInputsVariant1(string? value) => new Inputs(value);
 
         /// <summary>
         /// 

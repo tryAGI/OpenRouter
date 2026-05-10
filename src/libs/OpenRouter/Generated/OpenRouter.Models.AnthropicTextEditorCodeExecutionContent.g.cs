@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1 PickTextEditorCodeExecutionCreateResult() => IsTextEditorCodeExecutionCreateResult
+            ? TextEditorCodeExecutionCreateResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionCreateResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// text_editor_code_execution_str_replace_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = TextEditorCodeExecutionStrReplaceResult;
             return IsTextEditorCodeExecutionStrReplaceResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2 PickTextEditorCodeExecutionStrReplaceResult() => IsTextEditorCodeExecutionStrReplaceResult
+            ? TextEditorCodeExecutionStrReplaceResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionStrReplaceResult' but the value was {ToString()}.");
 
         /// <summary>
         /// text_editor_code_execution_tool_result_error variant
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 PickTextEditorCodeExecutionToolResultError() => IsTextEditorCodeExecutionToolResultError
+            ? TextEditorCodeExecutionToolResultError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResultError' but the value was {ToString()}.");
+
+        /// <summary>
         /// text_editor_code_execution_view_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace OpenRouter
             value = TextEditorCodeExecutionViewResult;
             return IsTextEditorCodeExecutionViewResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4 PickTextEditorCodeExecutionViewResult() => IsTextEditorCodeExecutionViewResult
+            ? TextEditorCodeExecutionViewResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionViewResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace OpenRouter
         {
             TextEditorCodeExecutionCreateResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionCreateResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionStrReplaceResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? value) => new AnthropicTextEditorCodeExecutionContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 value) => new AnthropicTextEditorCodeExecutionContent((global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionToolResultError(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? value) => new AnthropicTextEditorCodeExecutionContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4 value) => new AnthropicTextEditorCodeExecutionContent((global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace OpenRouter
         {
             TextEditorCodeExecutionViewResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionViewResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => IsBaseInputsOneOf1ItemsOneOf0Phase0
+            ? BaseInputsOneOf1ItemsOneOf0Phase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? BaseInputsOneOf1ItemsOneOf0Phase1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = BaseInputsOneOf1ItemsOneOf0Phase1;
             return IsBaseInputsOneOf1ItemsOneOf0Phase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => IsBaseInputsOneOf1ItemsOneOf0Phase1
+            ? BaseInputsOneOf1ItemsOneOf0Phase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = BaseInputsOneOf1ItemsOneOf0PhaseVariant3;
             return IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickBaseInputsOneOf1ItemsOneOf0PhaseVariant3() => IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3
+            ? BaseInputsOneOf1ItemsOneOf0PhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0PhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase0(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Phase(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 value) => new BaseInputsOneOf1ItemsOneOf0Phase((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             BaseInputsOneOf1ItemsOneOf0Phase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase1(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
 
         /// <summary>
         /// 

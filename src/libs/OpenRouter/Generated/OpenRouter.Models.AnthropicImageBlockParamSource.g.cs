@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicImageBlockParamSourceVariant1 PickBase64() => IsBase64
+            ? Base64!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+
+        /// <summary>
         /// url variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = Url;
             return IsUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicImageBlockParamSourceVariant2 PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicImageBlockParamSource FromBase64(global::OpenRouter.AnthropicImageBlockParamSourceVariant1? value) => new AnthropicImageBlockParamSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicImageBlockParamSource(global::OpenRouter.AnthropicImageBlockParamSourceVariant2 value) => new AnthropicImageBlockParamSource((global::OpenRouter.AnthropicImageBlockParamSourceVariant2?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace OpenRouter
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicImageBlockParamSource FromUrl(global::OpenRouter.AnthropicImageBlockParamSourceVariant2? value) => new AnthropicImageBlockParamSource(value);
 
         /// <summary>
         /// 

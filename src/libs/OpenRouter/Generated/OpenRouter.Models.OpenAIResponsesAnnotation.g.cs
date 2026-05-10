@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.FileCitation PickFileCitation() => IsFileCitation
+            ? FileCitation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.URLCitation? URLCitation { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.URLCitation PickURLCitation() => IsURLCitation
+            ? URLCitation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'URLCitation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FilePath? FilePath { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = FilePath;
             return IsFilePath;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FilePath PickFilePath() => IsFilePath
+            ? FilePath!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilePath' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             FileCitation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAIResponsesAnnotation FromFileCitation(global::OpenRouter.FileCitation? value) => new OpenAIResponsesAnnotation(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAIResponsesAnnotation FromURLCitation(global::OpenRouter.URLCitation? value) => new OpenAIResponsesAnnotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAIResponsesAnnotation(global::OpenRouter.FilePath value) => new OpenAIResponsesAnnotation((global::OpenRouter.FilePath?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             FilePath = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAIResponsesAnnotation FromFilePath(global::OpenRouter.FilePath? value) => new OpenAIResponsesAnnotation(value);
 
         /// <summary>
         /// 

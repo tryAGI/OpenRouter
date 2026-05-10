@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1 PickInputAudio() => IsInputAudio
+            ? InputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = InputFile;
             return IsInputFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2 PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
 
         /// <summary>
         /// Image input content item
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3 PickInputImage() => IsInputImage
+            ? InputImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace OpenRouter
             value = InputText;
             return IsInputText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4 PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -150,6 +178,11 @@ namespace OpenRouter
         {
             InputAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponseInputMessageItemContentItems FromInputAudio(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? value) => new OpenAiResponseInputMessageItemContentItems(value);
 
         /// <summary>
         /// 
@@ -172,6 +205,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAiResponseInputMessageItemContentItems FromInputFile(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? value) => new OpenAiResponseInputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?)value);
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAiResponseInputMessageItemContentItems FromInputImage(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? value) => new OpenAiResponseInputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?)value);
 
         /// <summary>
@@ -204,6 +247,11 @@ namespace OpenRouter
         {
             InputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponseInputMessageItemContentItems FromInputText(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? value) => new OpenAiResponseInputMessageItemContentItems(value);
 
         /// <summary>
         /// 

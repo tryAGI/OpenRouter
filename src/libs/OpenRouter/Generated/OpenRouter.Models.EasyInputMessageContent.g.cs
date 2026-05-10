@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items> PickEasyInputMessageContent0() => IsEasyInputMessageContent0
+            ? EasyInputMessageContent0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContent0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EasyInputMessageContentVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EasyInputMessageContentVariant2;
             return IsEasyInputMessageContentVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickEasyInputMessageContentVariant2() => IsEasyInputMessageContentVariant2
+            ? EasyInputMessageContentVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContentVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = EasyInputMessageContentVariant3;
             return IsEasyInputMessageContentVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickEasyInputMessageContentVariant3() => IsEasyInputMessageContentVariant3
+            ? EasyInputMessageContentVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContentVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             EasyInputMessageContentVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageContent FromEasyInputMessageContentVariant2(string? value) => new EasyInputMessageContent(value);
 
         /// <summary>
         /// 

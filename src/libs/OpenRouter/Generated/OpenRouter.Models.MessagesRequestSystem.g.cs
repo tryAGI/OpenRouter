@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickMessagesRequestSystemVariant1() => IsMessagesRequestSystemVariant1
+            ? MessagesRequestSystemVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>? MessagesRequestSystem1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = MessagesRequestSystem1;
             return IsMessagesRequestSystem1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam> PickMessagesRequestSystem1() => IsMessagesRequestSystem1
+            ? MessagesRequestSystem1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystem1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             MessagesRequestSystemVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestSystem FromMessagesRequestSystemVariant1(string? value) => new MessagesRequestSystem(value);
 
         /// <summary>
         /// 

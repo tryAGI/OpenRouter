@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestToolChoice0 PickMessagesRequestToolChoice0() => IsMessagesRequestToolChoice0
+            ? MessagesRequestToolChoice0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolChoice1? MessagesRequestToolChoice1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = MessagesRequestToolChoice1;
             return IsMessagesRequestToolChoice1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestToolChoice1 PickMessagesRequestToolChoice1() => IsMessagesRequestToolChoice1
+            ? MessagesRequestToolChoice1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestToolChoice2 PickMessagesRequestToolChoice2() => IsMessagesRequestToolChoice2
+            ? MessagesRequestToolChoice2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolChoice3? MessagesRequestToolChoice3 { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = MessagesRequestToolChoice3;
             return IsMessagesRequestToolChoice3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestToolChoice3 PickMessagesRequestToolChoice3() => IsMessagesRequestToolChoice3
+            ? MessagesRequestToolChoice3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace OpenRouter
         {
             MessagesRequestToolChoice0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice0(global::OpenRouter.MessagesRequestToolChoice0? value) => new MessagesRequestToolChoice(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice1(global::OpenRouter.MessagesRequestToolChoice1? value) => new MessagesRequestToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolChoice(global::OpenRouter.MessagesRequestToolChoice2 value) => new MessagesRequestToolChoice((global::OpenRouter.MessagesRequestToolChoice2?)value);
 
         /// <summary>
@@ -185,6 +223,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice2(global::OpenRouter.MessagesRequestToolChoice2? value) => new MessagesRequestToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolChoice(global::OpenRouter.MessagesRequestToolChoice3 value) => new MessagesRequestToolChoice((global::OpenRouter.MessagesRequestToolChoice3?)value);
 
         /// <summary>
@@ -199,6 +242,11 @@ namespace OpenRouter
         {
             MessagesRequestToolChoice3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice3(global::OpenRouter.MessagesRequestToolChoice3? value) => new MessagesRequestToolChoice(value);
 
         /// <summary>
         /// 

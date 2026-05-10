@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public double PickPreferredMinThroughputVariant1() => IsPreferredMinThroughputVariant1
+            ? PreferredMinThroughputVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMinThroughputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Percentile-based throughput cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.PercentileThroughputCutoffs PickPercentileThroughputCutoffs() => IsPercentileThroughputCutoffs
+            ? PercentileThroughputCutoffs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileThroughputCutoffs' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = PreferredMinThroughputVariant3;
             return IsPreferredMinThroughputVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickPreferredMinThroughputVariant3() => IsPreferredMinThroughputVariant3
+            ? PreferredMinThroughputVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMinThroughputVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static PreferredMinThroughput FromPreferredMinThroughputVariant1(double? value) => new PreferredMinThroughput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PreferredMinThroughput(global::OpenRouter.PercentileThroughputCutoffs value) => new PreferredMinThroughput((global::OpenRouter.PercentileThroughputCutoffs?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             PercentileThroughputCutoffs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PreferredMinThroughput FromPercentileThroughputCutoffs(global::OpenRouter.PercentileThroughputCutoffs? value) => new PreferredMinThroughput(value);
 
         /// <summary>
         /// 

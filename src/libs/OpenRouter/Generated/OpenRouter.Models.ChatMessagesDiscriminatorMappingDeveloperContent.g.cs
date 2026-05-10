@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickChatMessagesDiscriminatorMappingDeveloperContentVariant1() => IsChatMessagesDiscriminatorMappingDeveloperContentVariant1
+            ? ChatMessagesDiscriminatorMappingDeveloperContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingDeveloperContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText>? ChatMessagesDiscriminatorMappingDeveloperContent1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = ChatMessagesDiscriminatorMappingDeveloperContent1;
             return IsChatMessagesDiscriminatorMappingDeveloperContent1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText> PickChatMessagesDiscriminatorMappingDeveloperContent1() => IsChatMessagesDiscriminatorMappingDeveloperContent1
+            ? ChatMessagesDiscriminatorMappingDeveloperContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingDeveloperContent1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             ChatMessagesDiscriminatorMappingDeveloperContentVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessagesDiscriminatorMappingDeveloperContent FromChatMessagesDiscriminatorMappingDeveloperContentVariant1(string? value) => new ChatMessagesDiscriminatorMappingDeveloperContent(value);
 
         /// <summary>
         /// 

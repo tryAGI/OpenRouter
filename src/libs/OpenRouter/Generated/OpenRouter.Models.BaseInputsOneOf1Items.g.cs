@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1Items0 PickBaseInputsOneOf1Items0() => IsBaseInputsOneOf1Items0
+            ? BaseInputsOneOf1Items0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseInputMessageItem? OpenAIResponseInputMessageItem { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = OpenAIResponseInputMessageItem;
             return IsOpenAIResponseInputMessageItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAIResponseInputMessageItem PickOpenAIResponseInputMessageItem() => IsOpenAIResponseInputMessageItem
+            ? OpenAIResponseInputMessageItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseInputMessageItem' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OpenAIResponseFunctionToolCallOutput PickOpenAIResponseFunctionToolCallOutput() => IsOpenAIResponseFunctionToolCallOutput
+            ? OpenAIResponseFunctionToolCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseFunctionToolCallOutput' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseFunctionToolCall? OpenAIResponseFunctionToolCall { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = OpenAIResponseFunctionToolCall;
             return IsOpenAIResponseFunctionToolCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAIResponseFunctionToolCall PickOpenAIResponseFunctionToolCall() => IsOpenAIResponseFunctionToolCall
+            ? OpenAIResponseFunctionToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseFunctionToolCall' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => IsOutputItemImageGenerationCall
+            ? OutputItemImageGenerationCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemImageGenerationCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessage? OutputMessage { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace OpenRouter
             value = OutputMessage;
             return IsOutputMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessage PickOutputMessage() => IsOutputMessage
+            ? OutputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessage' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -222,6 +264,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OpenAIResponseCustomToolCall PickOpenAIResponseCustomToolCall() => IsOpenAIResponseCustomToolCall
+            ? OpenAIResponseCustomToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseCustomToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseCustomToolCallOutput? OpenAIResponseCustomToolCallOutput { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace OpenRouter
             value = OpenAIResponseCustomToolCallOutput;
             return IsOpenAIResponseCustomToolCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAIResponseCustomToolCallOutput PickOpenAIResponseCustomToolCallOutput() => IsOpenAIResponseCustomToolCallOutput
+            ? OpenAIResponseCustomToolCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseCustomToolCallOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -265,6 +321,11 @@ namespace OpenRouter
         {
             BaseInputsOneOf1Items0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1Items FromBaseInputsOneOf1Items0(global::OpenRouter.BaseInputsOneOf1Items0? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -287,6 +348,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1Items FromOpenAIResponseInputMessageItem(global::OpenRouter.OpenAIResponseInputMessageItem? value) => new BaseInputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCallOutput value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseFunctionToolCallOutput?)value);
 
         /// <summary>
@@ -301,6 +367,11 @@ namespace OpenRouter
         {
             OpenAIResponseFunctionToolCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1Items FromOpenAIResponseFunctionToolCallOutput(global::OpenRouter.OpenAIResponseFunctionToolCallOutput? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -323,6 +394,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1Items FromOpenAIResponseFunctionToolCall(global::OpenRouter.OpenAIResponseFunctionToolCall? value) => new BaseInputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OutputItemImageGenerationCall value) => new BaseInputsOneOf1Items((global::OpenRouter.OutputItemImageGenerationCall?)value);
 
         /// <summary>
@@ -337,6 +413,11 @@ namespace OpenRouter
         {
             OutputItemImageGenerationCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1Items FromOutputItemImageGenerationCall(global::OpenRouter.OutputItemImageGenerationCall? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -359,6 +440,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1Items FromOutputMessage(global::OpenRouter.OutputMessage? value) => new BaseInputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCall value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseCustomToolCall?)value);
 
         /// <summary>
@@ -377,6 +463,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1Items FromOpenAIResponseCustomToolCall(global::OpenRouter.OpenAIResponseCustomToolCall? value) => new BaseInputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCallOutput value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseCustomToolCallOutput?)value);
 
         /// <summary>
@@ -391,6 +482,11 @@ namespace OpenRouter
         {
             OpenAIResponseCustomToolCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1Items FromOpenAIResponseCustomToolCallOutput(global::OpenRouter.OpenAIResponseCustomToolCallOutput? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
         /// 

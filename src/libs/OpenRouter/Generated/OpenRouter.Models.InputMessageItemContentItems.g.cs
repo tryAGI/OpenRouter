@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputText PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = InputMessageItemContentItems1;
             return IsInputMessageItemContentItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputMessageItemContentItems1 PickInputMessageItemContentItems1() => IsInputMessageItemContentItems1
+            ? InputMessageItemContentItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemContentItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// File input content item
@@ -100,6 +114,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputFile PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
+
+        /// <summary>
         /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -130,6 +151,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputAudio PickInputAudio() => IsInputAudio
+            ? InputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
+
+        /// <summary>
         /// Video input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -158,6 +186,13 @@ namespace OpenRouter
             value = InputVideo;
             return IsInputVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputVideo PickInputVideo() => IsInputVideo
+            ? InputVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -175,6 +210,11 @@ namespace OpenRouter
         {
             InputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputText(global::OpenRouter.InputText? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 
@@ -197,6 +237,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemContentItems FromInputMessageItemContentItems1(global::OpenRouter.InputMessageItemContentItems1? value) => new InputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemContentItems(global::OpenRouter.InputFile value) => new InputMessageItemContentItems((global::OpenRouter.InputFile?)value);
 
         /// <summary>
@@ -211,6 +256,11 @@ namespace OpenRouter
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputFile(global::OpenRouter.InputFile? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 
@@ -233,6 +283,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemContentItems FromInputAudio(global::OpenRouter.InputAudio? value) => new InputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemContentItems(global::OpenRouter.InputVideo value) => new InputMessageItemContentItems((global::OpenRouter.InputVideo?)value);
 
         /// <summary>
@@ -247,6 +302,11 @@ namespace OpenRouter
         {
             InputVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputVideo(global::OpenRouter.InputVideo? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 

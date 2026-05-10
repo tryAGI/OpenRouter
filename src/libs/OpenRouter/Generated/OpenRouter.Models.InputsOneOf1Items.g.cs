@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ReasoningItem PickReasoningItem() => IsReasoningItem
+            ? ReasoningItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessage? EasyInputMessage { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EasyInputMessage;
             return IsEasyInputMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.EasyInputMessage PickEasyInputMessage() => IsEasyInputMessage
+            ? EasyInputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessage' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -100,6 +114,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputMessageItem PickInputMessageItem() => IsInputMessageItem
+            ? InputMessageItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// A function call initiated by the model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = FunctionCallItem;
             return IsFunctionCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FunctionCallItem PickFunctionCallItem() => IsFunctionCallItem
+            ? FunctionCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// The output from a function call execution
@@ -160,6 +188,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.FunctionCallOutputItem PickFunctionCallOutputItem() => IsFunctionCallOutputItem
+            ? FunctionCallOutputItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An output message item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -188,6 +223,13 @@ namespace OpenRouter
             value = InputsOneOf1Items5;
             return IsInputsOneOf1Items5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputsOneOf1Items5 PickInputsOneOf1Items5() => IsInputsOneOf1Items5
+            ? InputsOneOf1Items5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items5' but the value was {ToString()}.");
 
         /// <summary>
         /// An output item containing reasoning
@@ -222,6 +264,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.InputsOneOf1Items6 PickInputsOneOf1Items6() => IsInputsOneOf1Items6
+            ? InputsOneOf1Items6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items6' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItem? OutputFunctionCallItem { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace OpenRouter
             value = OutputFunctionCallItem;
             return IsOutputFunctionCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputFunctionCallItem PickOutputFunctionCallItem() => IsOutputFunctionCallItem
+            ? OutputFunctionCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// A call to a custom (freeform-grammar) tool created by the model — distinct from `function_call`. Used for tools like Codex CLI's `apply_patch` whose payload is opaque text rather than JSON arguments.
@@ -282,6 +338,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputCustomToolCallItem PickOutputCustomToolCallItem() => IsOutputCustomToolCallItem
+            ? OutputCustomToolCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCustomToolCallItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputWebSearchCallItem? OutputWebSearchCallItem { get; init; }
 #else
@@ -308,6 +371,13 @@ namespace OpenRouter
             value = OutputWebSearchCallItem;
             return IsOutputWebSearchCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputWebSearchCallItem PickOutputWebSearchCallItem() => IsOutputWebSearchCallItem
+            ? OutputWebSearchCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -342,6 +412,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputFileSearchCallItem PickOutputFileSearchCallItem() => IsOutputFileSearchCallItem
+            ? OutputFileSearchCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFileSearchCallItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputImageGenerationCallItem? OutputImageGenerationCallItem { get; init; }
 #else
@@ -368,6 +445,13 @@ namespace OpenRouter
             value = OutputImageGenerationCallItem;
             return IsOutputImageGenerationCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputImageGenerationCallItem PickOutputImageGenerationCallItem() => IsOutputImageGenerationCallItem
+            ? OutputImageGenerationCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputImageGenerationCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// A code interpreter execution call with outputs
@@ -402,6 +486,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputCodeInterpreterCallItem PickOutputCodeInterpreterCallItem() => IsOutputCodeInterpreterCallItem
+            ? OutputCodeInterpreterCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputComputerCallItem? OutputComputerCallItem { get; init; }
 #else
@@ -428,6 +519,13 @@ namespace OpenRouter
             value = OutputComputerCallItem;
             return IsOutputComputerCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputComputerCallItem PickOutputComputerCallItem() => IsOutputComputerCallItem
+            ? OutputComputerCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputComputerCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:datetime server tool output item
@@ -460,6 +558,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputDatetimeItem PickOutputDatetimeItem() => IsOutputDatetimeItem
+            ? OutputDatetimeItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputDatetimeItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:web_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -488,6 +593,13 @@ namespace OpenRouter
             value = OutputWebSearchServerToolItem;
             return IsOutputWebSearchServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputWebSearchServerToolItem PickOutputWebSearchServerToolItem() => IsOutputWebSearchServerToolItem
+            ? OutputWebSearchServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:code_interpreter server tool output item
@@ -520,6 +632,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputCodeInterpreterServerToolItem PickOutputCodeInterpreterServerToolItem() => IsOutputCodeInterpreterServerToolItem
+            ? OutputCodeInterpreterServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterServerToolItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:file_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -548,6 +667,13 @@ namespace OpenRouter
             value = OutputFileSearchServerToolItem;
             return IsOutputFileSearchServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputFileSearchServerToolItem PickOutputFileSearchServerToolItem() => IsOutputFileSearchServerToolItem
+            ? OutputFileSearchServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFileSearchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:image_generation server tool output item
@@ -580,6 +706,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputImageGenerationServerToolItem PickOutputImageGenerationServerToolItem() => IsOutputImageGenerationServerToolItem
+            ? OutputImageGenerationServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputImageGenerationServerToolItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:browser_use server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -608,6 +741,13 @@ namespace OpenRouter
             value = OutputBrowserUseServerToolItem;
             return IsOutputBrowserUseServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputBrowserUseServerToolItem PickOutputBrowserUseServerToolItem() => IsOutputBrowserUseServerToolItem
+            ? OutputBrowserUseServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputBrowserUseServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:bash server tool output item
@@ -640,6 +780,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputBashServerToolItem PickOutputBashServerToolItem() => IsOutputBashServerToolItem
+            ? OutputBashServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputBashServerToolItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:text_editor server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -668,6 +815,13 @@ namespace OpenRouter
             value = OutputTextEditorServerToolItem;
             return IsOutputTextEditorServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputTextEditorServerToolItem PickOutputTextEditorServerToolItem() => IsOutputTextEditorServerToolItem
+            ? OutputTextEditorServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputTextEditorServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:apply_patch server tool output item
@@ -700,6 +854,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputApplyPatchServerToolItem PickOutputApplyPatchServerToolItem() => IsOutputApplyPatchServerToolItem
+            ? OutputApplyPatchServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputApplyPatchServerToolItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:web_fetch server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -728,6 +889,13 @@ namespace OpenRouter
             value = OutputWebFetchServerToolItem;
             return IsOutputWebFetchServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputWebFetchServerToolItem PickOutputWebFetchServerToolItem() => IsOutputWebFetchServerToolItem
+            ? OutputWebFetchServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebFetchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:tool_search server tool output item
@@ -760,6 +928,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputToolSearchServerToolItem PickOutputToolSearchServerToolItem() => IsOutputToolSearchServerToolItem
+            ? OutputToolSearchServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputToolSearchServerToolItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:memory server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -788,6 +963,13 @@ namespace OpenRouter
             value = OutputMemoryServerToolItem;
             return IsOutputMemoryServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMemoryServerToolItem PickOutputMemoryServerToolItem() => IsOutputMemoryServerToolItem
+            ? OutputMemoryServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMemoryServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:mcp server tool output item
@@ -820,6 +1002,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMcpServerToolItem PickOutputMcpServerToolItem() => IsOutputMcpServerToolItem
+            ? OutputMcpServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMcpServerToolItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:experimental__search_models server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -848,6 +1037,13 @@ namespace OpenRouter
             value = OutputSearchModelsServerToolItem;
             return IsOutputSearchModelsServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputSearchModelsServerToolItem PickOutputSearchModelsServerToolItem() => IsOutputSearchModelsServerToolItem
+            ? OutputSearchModelsServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputSearchModelsServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
         /// A call to a custom (freeform-grammar) tool created by the model — distinct from `function_call`. Used for tools like Codex CLI's `apply_patch` whose payload is opaque text rather than JSON arguments.
@@ -880,6 +1076,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CustomToolCallItem PickCustomToolCallItem() => IsCustomToolCallItem
+            ? CustomToolCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// The output from a custom (freeform-grammar) tool call execution. Mirrors `function_call_output` but is matched to a `custom_tool_call` rather than a `function_call`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -908,6 +1111,13 @@ namespace OpenRouter
             value = CustomToolCallOutputItem;
             return IsCustomToolCallOutputItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CustomToolCallOutputItem PickCustomToolCallOutputItem() => IsCustomToolCallOutputItem
+            ? CustomToolCallOutputItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItem' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -925,6 +1135,11 @@ namespace OpenRouter
         {
             ReasoningItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromReasoningItem(global::OpenRouter.ReasoningItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -947,6 +1162,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromEasyInputMessage(global::OpenRouter.EasyInputMessage? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.InputMessageItem value) => new InputsOneOf1Items((global::OpenRouter.InputMessageItem?)value);
 
         /// <summary>
@@ -961,6 +1181,11 @@ namespace OpenRouter
         {
             InputMessageItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromInputMessageItem(global::OpenRouter.InputMessageItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -983,6 +1208,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromFunctionCallItem(global::OpenRouter.FunctionCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.FunctionCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.FunctionCallOutputItem?)value);
 
         /// <summary>
@@ -997,6 +1227,11 @@ namespace OpenRouter
         {
             FunctionCallOutputItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromFunctionCallOutputItem(global::OpenRouter.FunctionCallOutputItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1019,6 +1254,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromInputsOneOf1Items5(global::OpenRouter.InputsOneOf1Items5? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items6 value) => new InputsOneOf1Items((global::OpenRouter.InputsOneOf1Items6?)value);
 
         /// <summary>
@@ -1033,6 +1273,11 @@ namespace OpenRouter
         {
             InputsOneOf1Items6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromInputsOneOf1Items6(global::OpenRouter.InputsOneOf1Items6? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1055,6 +1300,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputFunctionCallItem(global::OpenRouter.OutputFunctionCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCustomToolCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCustomToolCallItem?)value);
 
         /// <summary>
@@ -1069,6 +1319,11 @@ namespace OpenRouter
         {
             OutputCustomToolCallItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputCustomToolCallItem(global::OpenRouter.OutputCustomToolCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1091,6 +1346,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputWebSearchCallItem(global::OpenRouter.OutputWebSearchCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputFileSearchCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputFileSearchCallItem?)value);
 
         /// <summary>
@@ -1105,6 +1365,11 @@ namespace OpenRouter
         {
             OutputFileSearchCallItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputFileSearchCallItem(global::OpenRouter.OutputFileSearchCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1127,6 +1392,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputImageGenerationCallItem(global::OpenRouter.OutputImageGenerationCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCodeInterpreterCallItem?)value);
 
         /// <summary>
@@ -1141,6 +1411,11 @@ namespace OpenRouter
         {
             OutputCodeInterpreterCallItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputCodeInterpreterCallItem(global::OpenRouter.OutputCodeInterpreterCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1163,6 +1438,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputComputerCallItem(global::OpenRouter.OutputComputerCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputDatetimeItem value) => new InputsOneOf1Items((global::OpenRouter.OutputDatetimeItem?)value);
 
         /// <summary>
@@ -1177,6 +1457,11 @@ namespace OpenRouter
         {
             OutputDatetimeItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputDatetimeItem(global::OpenRouter.OutputDatetimeItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1199,6 +1484,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputWebSearchServerToolItem(global::OpenRouter.OutputWebSearchServerToolItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCodeInterpreterServerToolItem?)value);
 
         /// <summary>
@@ -1213,6 +1503,11 @@ namespace OpenRouter
         {
             OutputCodeInterpreterServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputCodeInterpreterServerToolItem(global::OpenRouter.OutputCodeInterpreterServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1235,6 +1530,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputFileSearchServerToolItem(global::OpenRouter.OutputFileSearchServerToolItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputImageGenerationServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputImageGenerationServerToolItem?)value);
 
         /// <summary>
@@ -1249,6 +1549,11 @@ namespace OpenRouter
         {
             OutputImageGenerationServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputImageGenerationServerToolItem(global::OpenRouter.OutputImageGenerationServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1271,6 +1576,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputBrowserUseServerToolItem(global::OpenRouter.OutputBrowserUseServerToolItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputBashServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputBashServerToolItem?)value);
 
         /// <summary>
@@ -1285,6 +1595,11 @@ namespace OpenRouter
         {
             OutputBashServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputBashServerToolItem(global::OpenRouter.OutputBashServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1307,6 +1622,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputTextEditorServerToolItem(global::OpenRouter.OutputTextEditorServerToolItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputApplyPatchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputApplyPatchServerToolItem?)value);
 
         /// <summary>
@@ -1321,6 +1641,11 @@ namespace OpenRouter
         {
             OutputApplyPatchServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputApplyPatchServerToolItem(global::OpenRouter.OutputApplyPatchServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1343,6 +1668,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputWebFetchServerToolItem(global::OpenRouter.OutputWebFetchServerToolItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputToolSearchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputToolSearchServerToolItem?)value);
 
         /// <summary>
@@ -1357,6 +1687,11 @@ namespace OpenRouter
         {
             OutputToolSearchServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputToolSearchServerToolItem(global::OpenRouter.OutputToolSearchServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1379,6 +1714,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputMemoryServerToolItem(global::OpenRouter.OutputMemoryServerToolItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputMcpServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputMcpServerToolItem?)value);
 
         /// <summary>
@@ -1393,6 +1733,11 @@ namespace OpenRouter
         {
             OutputMcpServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputMcpServerToolItem(global::OpenRouter.OutputMcpServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -1415,6 +1760,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputSearchModelsServerToolItem(global::OpenRouter.OutputSearchModelsServerToolItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.CustomToolCallItem value) => new InputsOneOf1Items((global::OpenRouter.CustomToolCallItem?)value);
 
         /// <summary>
@@ -1433,6 +1783,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromCustomToolCallItem(global::OpenRouter.CustomToolCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.CustomToolCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.CustomToolCallOutputItem?)value);
 
         /// <summary>
@@ -1447,6 +1802,11 @@ namespace OpenRouter
         {
             CustomToolCallOutputItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromCustomToolCallOutputItem(global::OpenRouter.CustomToolCallOutputItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 

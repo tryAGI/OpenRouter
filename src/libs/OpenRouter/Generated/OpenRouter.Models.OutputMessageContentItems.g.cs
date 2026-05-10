@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ResponseOutputText PickResponseOutputText() => IsResponseOutputText
+            ? ResponseOutputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputText' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponsesRefusalContent? OpenAIResponsesRefusalContent { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = OpenAIResponsesRefusalContent;
             return IsOpenAIResponsesRefusalContent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAIResponsesRefusalContent PickOpenAIResponsesRefusalContent() => IsOpenAIResponsesRefusalContent
+            ? OpenAIResponsesRefusalContent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesRefusalContent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageContentItems FromResponseOutputText(global::OpenRouter.ResponseOutputText? value) => new OutputMessageContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageContentItems(global::OpenRouter.OpenAIResponsesRefusalContent value) => new OutputMessageContentItems((global::OpenRouter.OpenAIResponsesRefusalContent?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             OpenAIResponsesRefusalContent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageContentItems FromOpenAIResponsesRefusalContent(global::OpenRouter.OpenAIResponsesRefusalContent? value) => new OutputMessageContentItems(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0 PickOutputCodeInterpreterCallItemOutputsItems0() => IsOutputCodeInterpreterCallItemOutputsItems0
+            ? OutputCodeInterpreterCallItemOutputsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItemOutputsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1? OutputCodeInterpreterCallItemOutputsItems1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = OutputCodeInterpreterCallItemOutputsItems1;
             return IsOutputCodeInterpreterCallItemOutputsItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1 PickOutputCodeInterpreterCallItemOutputsItems1() => IsOutputCodeInterpreterCallItemOutputsItems1
+            ? OutputCodeInterpreterCallItemOutputsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItemOutputsItems1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputCodeInterpreterCallItemOutputsItems FromOutputCodeInterpreterCallItemOutputsItems0(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0? value) => new OutputCodeInterpreterCallItemOutputsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputCodeInterpreterCallItemOutputsItems(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1 value) => new OutputCodeInterpreterCallItemOutputsItems((global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             OutputCodeInterpreterCallItemOutputsItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputCodeInterpreterCallItemOutputsItems FromOutputCodeInterpreterCallItemOutputsItems1(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1? value) => new OutputCodeInterpreterCallItemOutputsItems(value);
 
         /// <summary>
         /// 

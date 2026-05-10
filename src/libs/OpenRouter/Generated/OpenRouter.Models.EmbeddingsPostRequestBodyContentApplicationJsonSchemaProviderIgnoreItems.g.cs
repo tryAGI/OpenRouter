@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
+            ? ProviderName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems FromProviderName(global::OpenRouter.ProviderName? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems(string value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems((string?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2(string? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems(value);
 
         /// <summary>
         /// 

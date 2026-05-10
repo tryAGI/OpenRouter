@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.PdfParserEngine0 PickPdfParserEngine0() => IsPdfParserEngine0
+            ? PdfParserEngine0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.PdfParserEngine1? PdfParserEngine1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = PdfParserEngine1;
             return IsPdfParserEngine1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.PdfParserEngine1 PickPdfParserEngine1() => IsPdfParserEngine1
+            ? PdfParserEngine1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static PDFParserEngine FromPdfParserEngine0(global::OpenRouter.PdfParserEngine0? value) => new PDFParserEngine(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PDFParserEngine(global::OpenRouter.PdfParserEngine1 value) => new PDFParserEngine((global::OpenRouter.PdfParserEngine1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace OpenRouter
         {
             PdfParserEngine1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PDFParserEngine FromPdfParserEngine1(global::OpenRouter.PdfParserEngine1? value) => new PDFParserEngine(value);
 
         /// <summary>
         /// 

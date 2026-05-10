@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<double> PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1() => IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1
+            ? EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2;
             return IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2() => IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2
+            ? EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding FromEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2(string? value) => new EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding(value);
 
         /// <summary>
         /// 

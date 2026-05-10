@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public double PickPreferredMaxLatencyVariant1() => IsPreferredMaxLatencyVariant1
+            ? PreferredMaxLatencyVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMaxLatencyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Percentile-based latency cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.PercentileLatencyCutoffs PickPercentileLatencyCutoffs() => IsPercentileLatencyCutoffs
+            ? PercentileLatencyCutoffs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileLatencyCutoffs' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = PreferredMaxLatencyVariant3;
             return IsPreferredMaxLatencyVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickPreferredMaxLatencyVariant3() => IsPreferredMaxLatencyVariant3
+            ? PreferredMaxLatencyVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMaxLatencyVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static PreferredMaxLatency FromPreferredMaxLatencyVariant1(double? value) => new PreferredMaxLatency(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PreferredMaxLatency(global::OpenRouter.PercentileLatencyCutoffs value) => new PreferredMaxLatency((global::OpenRouter.PercentileLatencyCutoffs?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             PercentileLatencyCutoffs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PreferredMaxLatency FromPercentileLatencyCutoffs(global::OpenRouter.PercentileLatencyCutoffs? value) => new PreferredMaxLatency(value);
 
         /// <summary>
         /// 

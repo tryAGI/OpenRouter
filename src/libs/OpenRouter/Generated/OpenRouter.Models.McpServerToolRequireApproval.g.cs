@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.McpServerToolRequireApproval0 PickMcpServerToolRequireApproval0() => IsMcpServerToolRequireApproval0
+            ? McpServerToolRequireApproval0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.McpServerToolRequireApproval1? McpServerToolRequireApproval1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = McpServerToolRequireApproval1;
             return IsMcpServerToolRequireApproval1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.McpServerToolRequireApproval1 PickMcpServerToolRequireApproval1() => IsMcpServerToolRequireApproval1
+            ? McpServerToolRequireApproval1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -100,6 +114,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.McpServerToolRequireApproval2 PickMcpServerToolRequireApproval2() => IsMcpServerToolRequireApproval2
+            ? McpServerToolRequireApproval2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = McpServerToolRequireApprovalVariant4;
             return IsMcpServerToolRequireApprovalVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickMcpServerToolRequireApprovalVariant4() => IsMcpServerToolRequireApprovalVariant4
+            ? McpServerToolRequireApprovalVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApprovalVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace OpenRouter
         {
             McpServerToolRequireApproval0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static McpServerToolRequireApproval FromMcpServerToolRequireApproval0(global::OpenRouter.McpServerToolRequireApproval0? value) => new McpServerToolRequireApproval(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static McpServerToolRequireApproval FromMcpServerToolRequireApproval1(global::OpenRouter.McpServerToolRequireApproval1? value) => new McpServerToolRequireApproval(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator McpServerToolRequireApproval(global::OpenRouter.McpServerToolRequireApproval2 value) => new McpServerToolRequireApproval((global::OpenRouter.McpServerToolRequireApproval2?)value);
 
         /// <summary>
@@ -181,6 +219,11 @@ namespace OpenRouter
         {
             McpServerToolRequireApproval2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static McpServerToolRequireApproval FromMcpServerToolRequireApproval2(global::OpenRouter.McpServerToolRequireApproval2? value) => new McpServerToolRequireApproval(value);
 
         /// <summary>
         /// 

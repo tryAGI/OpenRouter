@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant1 PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image content part for vision models
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = ImageUrl;
             return IsImageUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant2 PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
         /// Audio input content part. Supported audio formats vary by provider.
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant3 PickInputAudio() => IsInputAudio
+            ? InputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
+
+        /// <summary>
         /// Video input content part (legacy format - deprecated)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace OpenRouter
             value = InputVideo;
             return IsInputVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant4 PickInputVideo() => IsInputVideo
+            ? InputVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
 
         /// <summary>
         /// Text content part
@@ -165,6 +193,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant5 PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Video input content part
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace OpenRouter
             value = VideoUrl;
             return IsVideoUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant6 PickVideoUrl() => IsVideoUrl
+            ? VideoUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -210,6 +252,11 @@ namespace OpenRouter
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromFile(global::OpenRouter.ChatContentItemsVariant1? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 
@@ -232,6 +279,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromImageUrl(global::OpenRouter.ChatContentItemsVariant2? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant3 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant3?)value);
 
         /// <summary>
@@ -246,6 +298,11 @@ namespace OpenRouter
         {
             InputAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromInputAudio(global::OpenRouter.ChatContentItemsVariant3? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 
@@ -268,6 +325,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromInputVideo(global::OpenRouter.ChatContentItemsVariant4? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant5 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant5?)value);
 
         /// <summary>
@@ -286,6 +348,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromText(global::OpenRouter.ChatContentItemsVariant5? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant6 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant6?)value);
 
         /// <summary>
@@ -300,6 +367,11 @@ namespace OpenRouter
         {
             VideoUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromVideoUrl(global::OpenRouter.ChatContentItemsVariant6? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 

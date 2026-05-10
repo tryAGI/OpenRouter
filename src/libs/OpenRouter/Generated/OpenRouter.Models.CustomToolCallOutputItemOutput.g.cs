@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickCustomToolCallOutputItemOutputVariant1() => IsCustomToolCallOutputItemOutputVariant1
+            ? CustomToolCallOutputItemOutputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItemOutputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items>? CustomToolCallOutputItemOutput1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = CustomToolCallOutputItemOutput1;
             return IsCustomToolCallOutputItemOutput1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items> PickCustomToolCallOutputItemOutput1() => IsCustomToolCallOutputItemOutput1
+            ? CustomToolCallOutputItemOutput1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItemOutput1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             CustomToolCallOutputItemOutputVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomToolCallOutputItemOutput FromCustomToolCallOutputItemOutputVariant1(string? value) => new CustomToolCallOutputItemOutput(value);
 
         /// <summary>
         /// 

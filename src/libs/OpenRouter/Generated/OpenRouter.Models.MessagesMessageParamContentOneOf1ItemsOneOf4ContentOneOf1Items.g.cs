@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.AnthropicTextBlockParam PickAnthropicTextBlockParam() => IsAnthropicTextBlockParam
+            ? AnthropicTextBlockParam!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicTextBlockParam' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = AnthropicImageBlockParam;
             return IsAnthropicImageBlockParam;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicImageBlockParam PickAnthropicImageBlockParam() => IsAnthropicImageBlockParam
+            ? AnthropicImageBlockParam!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicImageBlockParam' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicSearchResultBlockParam? AnthropicSearchResultBlockParam { get; init; }
 #else
@@ -132,6 +153,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.AnthropicSearchResultBlockParam PickAnthropicSearchResultBlockParam() => IsAnthropicSearchResultBlockParam
+            ? AnthropicSearchResultBlockParam!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicSearchResultBlockParam' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicDocumentBlockParam? AnthropicDocumentBlockParam { get; init; }
 #else
@@ -158,6 +186,13 @@ namespace OpenRouter
             value = AnthropicDocumentBlockParam;
             return IsAnthropicDocumentBlockParam;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicDocumentBlockParam PickAnthropicDocumentBlockParam() => IsAnthropicDocumentBlockParam
+            ? AnthropicDocumentBlockParam!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParam' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -175,6 +210,11 @@ namespace OpenRouter
         {
             AnthropicTextBlockParam = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromAnthropicTextBlockParam(global::OpenRouter.AnthropicTextBlockParam? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -197,6 +237,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromAnthropicImageBlockParam(global::OpenRouter.AnthropicImageBlockParam? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?)value);
 
         /// <summary>
@@ -211,6 +256,11 @@ namespace OpenRouter
         {
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -233,6 +283,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromAnthropicSearchResultBlockParam(global::OpenRouter.AnthropicSearchResultBlockParam? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParam value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::OpenRouter.AnthropicDocumentBlockParam?)value);
 
         /// <summary>
@@ -247,6 +302,11 @@ namespace OpenRouter
         {
             AnthropicDocumentBlockParam = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromAnthropicDocumentBlockParam(global::OpenRouter.AnthropicDocumentBlockParam? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
 
         /// <summary>
         /// 

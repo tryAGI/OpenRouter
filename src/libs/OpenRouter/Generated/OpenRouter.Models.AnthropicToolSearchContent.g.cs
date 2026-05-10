@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicToolSearchContentVariant1 PickToolSearchToolResultError() => IsToolSearchToolResultError
+            ? ToolSearchToolResultError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResultError' but the value was {ToString()}.");
+
+        /// <summary>
         /// tool_search_tool_search_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = ToolSearchToolSearchResult;
             return IsToolSearchToolSearchResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicToolSearchContentVariant2 PickToolSearchToolSearchResult() => IsToolSearchToolSearchResult
+            ? ToolSearchToolSearchResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolSearchResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicToolSearchContent FromToolSearchToolResultError(global::OpenRouter.AnthropicToolSearchContentVariant1? value) => new AnthropicToolSearchContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchContentVariant2 value) => new AnthropicToolSearchContent((global::OpenRouter.AnthropicToolSearchContentVariant2?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace OpenRouter
         {
             ToolSearchToolSearchResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicToolSearchContent FromToolSearchToolSearchResult(global::OpenRouter.AnthropicToolSearchContentVariant2? value) => new AnthropicToolSearchContent(value);
 
         /// <summary>
         /// 

@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant1 PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
+            ? BashCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// code_execution_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = CodeExecutionToolResult;
             return IsCodeExecutionToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant2 PickCodeExecutionToolResult() => IsCodeExecutionToolResult
+            ? CodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// compaction variant
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant3 PickCompaction() => IsCompaction
+            ? Compaction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
+
+        /// <summary>
         /// container_upload variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace OpenRouter
             value = ContainerUpload;
             return IsContainerUpload;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant4 PickContainerUpload() => IsContainerUpload
+            ? ContainerUpload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerUpload' but the value was {ToString()}.");
 
         /// <summary>
         /// redacted_thinking variant
@@ -165,6 +193,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant5 PickRedactedThinking() => IsRedactedThinking
+            ? RedactedThinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
+
+        /// <summary>
         /// server_tool_use variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace OpenRouter
             value = ServerToolUse;
             return IsServerToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant6 PickServerToolUse() => IsServerToolUse
+            ? ServerToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// text variant
@@ -225,6 +267,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant7 PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// text_editor_code_execution_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -253,6 +302,13 @@ namespace OpenRouter
             value = TextEditorCodeExecutionToolResult;
             return IsTextEditorCodeExecutionToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant8 PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
+            ? TextEditorCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// thinking variant
@@ -285,6 +341,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant9 PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
+
+        /// <summary>
         /// tool_search_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -313,6 +376,13 @@ namespace OpenRouter
             value = ToolSearchToolResult;
             return IsToolSearchToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant10 PickToolSearchToolResult() => IsToolSearchToolResult
+            ? ToolSearchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// tool_use variant
@@ -345,6 +415,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant11 PickToolUse() => IsToolUse
+            ? ToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
+
+        /// <summary>
         /// web_fetch_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -375,6 +452,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant12 PickWebFetchToolResult() => IsWebFetchToolResult
+            ? WebFetchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// web_search_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -403,6 +487,13 @@ namespace OpenRouter
             value = WebSearchToolResult;
             return IsWebSearchToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockVariant13 PickWebSearchToolResult() => IsWebSearchToolResult
+            ? WebSearchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -420,6 +511,11 @@ namespace OpenRouter
         {
             BashCodeExecutionToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ORAnthropicContentBlock FromBashCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant1? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         /// 
@@ -442,6 +538,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ORAnthropicContentBlock FromCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant2? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant3 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant3?)value);
 
         /// <summary>
@@ -456,6 +557,11 @@ namespace OpenRouter
         {
             Compaction = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ORAnthropicContentBlock FromCompaction(global::OpenRouter.ORAnthropicContentBlockVariant3? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         /// 
@@ -478,6 +584,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ORAnthropicContentBlock FromContainerUpload(global::OpenRouter.ORAnthropicContentBlockVariant4? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant5 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant5?)value);
 
         /// <summary>
@@ -492,6 +603,11 @@ namespace OpenRouter
         {
             RedactedThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ORAnthropicContentBlock FromRedactedThinking(global::OpenRouter.ORAnthropicContentBlockVariant5? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         /// 
@@ -514,6 +630,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ORAnthropicContentBlock FromServerToolUse(global::OpenRouter.ORAnthropicContentBlockVariant6? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant7 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant7?)value);
 
         /// <summary>
@@ -528,6 +649,11 @@ namespace OpenRouter
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ORAnthropicContentBlock FromText(global::OpenRouter.ORAnthropicContentBlockVariant7? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         /// 
@@ -550,6 +676,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ORAnthropicContentBlock FromTextEditorCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant8? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant9 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant9?)value);
 
         /// <summary>
@@ -564,6 +695,11 @@ namespace OpenRouter
         {
             Thinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ORAnthropicContentBlock FromThinking(global::OpenRouter.ORAnthropicContentBlockVariant9? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         /// 
@@ -586,6 +722,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ORAnthropicContentBlock FromToolSearchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant10? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant11 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant11?)value);
 
         /// <summary>
@@ -600,6 +741,11 @@ namespace OpenRouter
         {
             ToolUse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ORAnthropicContentBlock FromToolUse(global::OpenRouter.ORAnthropicContentBlockVariant11? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         /// 
@@ -622,6 +768,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ORAnthropicContentBlock FromWebFetchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant12? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant13 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant13?)value);
 
         /// <summary>
@@ -636,6 +787,11 @@ namespace OpenRouter
         {
             WebSearchToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ORAnthropicContentBlock FromWebSearchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant13? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         /// 

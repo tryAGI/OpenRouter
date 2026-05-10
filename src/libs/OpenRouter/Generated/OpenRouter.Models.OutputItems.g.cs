@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant1 PickCodeInterpreterCall() => IsCodeInterpreterCall
+            ? CodeInterpreterCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// computer_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = ComputerCall;
             return IsComputerCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant2 PickComputerCall() => IsComputerCall
+            ? ComputerCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A call to a custom (freeform-grammar) tool created by the model — distinct from `function_call`. Used for tools like Codex CLI's `apply_patch` whose payload is opaque text rather than JSON arguments.
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant3 PickCustomToolCall() => IsCustomToolCall
+            ? CustomToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// file_search_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace OpenRouter
             value = FileSearchCall;
             return IsFileSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant4 PickFileSearchCall() => IsFileSearchCall
+            ? FileSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// function_call variant
@@ -165,6 +193,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant5 PickFunctionCall() => IsFunctionCall
+            ? FunctionCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// image_generation_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace OpenRouter
             value = ImageGenerationCall;
             return IsImageGenerationCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant6 PickImageGenerationCall() => IsImageGenerationCall
+            ? ImageGenerationCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCall' but the value was {ToString()}.");
 
         /// <summary>
         /// An output message item
@@ -225,6 +267,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant7 PickMessage() => IsMessage
+            ? Message!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:apply_patch server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -253,6 +302,13 @@ namespace OpenRouter
             value = OpenrouterApplyPatch;
             return IsOpenrouterApplyPatch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant8 PickOpenrouterApplyPatch() => IsOpenrouterApplyPatch
+            ? OpenrouterApplyPatch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterApplyPatch' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:bash server tool output item
@@ -285,6 +341,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant9 PickOpenrouterBash() => IsOpenrouterBash
+            ? OpenrouterBash!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterBash' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:browser_use server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -313,6 +376,13 @@ namespace OpenRouter
             value = OpenrouterBrowserUse;
             return IsOpenrouterBrowserUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant10 PickOpenrouterBrowserUse() => IsOpenrouterBrowserUse
+            ? OpenrouterBrowserUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterBrowserUse' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:code_interpreter server tool output item
@@ -345,6 +415,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant11 PickOpenrouterCodeInterpreter() => IsOpenrouterCodeInterpreter
+            ? OpenrouterCodeInterpreter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterCodeInterpreter' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:datetime server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -373,6 +450,13 @@ namespace OpenRouter
             value = OpenrouterDatetime;
             return IsOpenrouterDatetime;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant12 PickOpenrouterDatetime() => IsOpenrouterDatetime
+            ? OpenrouterDatetime!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterDatetime' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:experimental__search_models server tool output item
@@ -405,6 +489,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant13 PickOpenrouterExperimentalSearchModels() => IsOpenrouterExperimentalSearchModels
+            ? OpenrouterExperimentalSearchModels!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterExperimentalSearchModels' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:file_search server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -433,6 +524,13 @@ namespace OpenRouter
             value = OpenrouterFileSearch;
             return IsOpenrouterFileSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant14 PickOpenrouterFileSearch() => IsOpenrouterFileSearch
+            ? OpenrouterFileSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterFileSearch' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:image_generation server tool output item
@@ -465,6 +563,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant15 PickOpenrouterImageGeneration() => IsOpenrouterImageGeneration
+            ? OpenrouterImageGeneration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterImageGeneration' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:mcp server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -493,6 +598,13 @@ namespace OpenRouter
             value = OpenrouterMcp;
             return IsOpenrouterMcp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant16 PickOpenrouterMcp() => IsOpenrouterMcp
+            ? OpenrouterMcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterMcp' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:memory server tool output item
@@ -525,6 +637,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant17 PickOpenrouterMemory() => IsOpenrouterMemory
+            ? OpenrouterMemory!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterMemory' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:text_editor server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -553,6 +672,13 @@ namespace OpenRouter
             value = OpenrouterTextEditor;
             return IsOpenrouterTextEditor;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant18 PickOpenrouterTextEditor() => IsOpenrouterTextEditor
+            ? OpenrouterTextEditor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterTextEditor' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:tool_search server tool output item
@@ -585,6 +711,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant19 PickOpenrouterToolSearch() => IsOpenrouterToolSearch
+            ? OpenrouterToolSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterToolSearch' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:web_fetch server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -613,6 +746,13 @@ namespace OpenRouter
             value = OpenrouterWebFetch;
             return IsOpenrouterWebFetch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant20 PickOpenrouterWebFetch() => IsOpenrouterWebFetch
+            ? OpenrouterWebFetch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterWebFetch' but the value was {ToString()}.");
 
         /// <summary>
         /// An openrouter:web_search server tool output item
@@ -645,6 +785,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant21 PickOpenrouterWebSearch() => IsOpenrouterWebSearch
+            ? OpenrouterWebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterWebSearch' but the value was {ToString()}.");
+
+        /// <summary>
         /// An output item containing reasoning
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -675,6 +822,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant22 PickReasoning() => IsReasoning
+            ? Reasoning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
+
+        /// <summary>
         /// web_search_call variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -703,6 +857,13 @@ namespace OpenRouter
             value = WebSearchCall;
             return IsWebSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputItemsVariant23 PickWebSearchCall() => IsWebSearchCall
+            ? WebSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchCall' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -720,6 +881,11 @@ namespace OpenRouter
         {
             CodeInterpreterCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromCodeInterpreterCall(global::OpenRouter.OutputItemsVariant1? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -742,6 +908,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromComputerCall(global::OpenRouter.OutputItemsVariant2? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant3 value) => new OutputItems((global::OpenRouter.OutputItemsVariant3?)value);
 
         /// <summary>
@@ -756,6 +927,11 @@ namespace OpenRouter
         {
             CustomToolCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromCustomToolCall(global::OpenRouter.OutputItemsVariant3? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -778,6 +954,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromFileSearchCall(global::OpenRouter.OutputItemsVariant4? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant5 value) => new OutputItems((global::OpenRouter.OutputItemsVariant5?)value);
 
         /// <summary>
@@ -792,6 +973,11 @@ namespace OpenRouter
         {
             FunctionCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromFunctionCall(global::OpenRouter.OutputItemsVariant5? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -814,6 +1000,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromImageGenerationCall(global::OpenRouter.OutputItemsVariant6? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant7 value) => new OutputItems((global::OpenRouter.OutputItemsVariant7?)value);
 
         /// <summary>
@@ -828,6 +1019,11 @@ namespace OpenRouter
         {
             Message = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromMessage(global::OpenRouter.OutputItemsVariant7? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -850,6 +1046,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOpenrouterApplyPatch(global::OpenRouter.OutputItemsVariant8? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant9 value) => new OutputItems((global::OpenRouter.OutputItemsVariant9?)value);
 
         /// <summary>
@@ -864,6 +1065,11 @@ namespace OpenRouter
         {
             OpenrouterBash = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOpenrouterBash(global::OpenRouter.OutputItemsVariant9? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -886,6 +1092,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOpenrouterBrowserUse(global::OpenRouter.OutputItemsVariant10? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant11 value) => new OutputItems((global::OpenRouter.OutputItemsVariant11?)value);
 
         /// <summary>
@@ -900,6 +1111,11 @@ namespace OpenRouter
         {
             OpenrouterCodeInterpreter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOpenrouterCodeInterpreter(global::OpenRouter.OutputItemsVariant11? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -922,6 +1138,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOpenrouterDatetime(global::OpenRouter.OutputItemsVariant12? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant13 value) => new OutputItems((global::OpenRouter.OutputItemsVariant13?)value);
 
         /// <summary>
@@ -936,6 +1157,11 @@ namespace OpenRouter
         {
             OpenrouterExperimentalSearchModels = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOpenrouterExperimentalSearchModels(global::OpenRouter.OutputItemsVariant13? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -958,6 +1184,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOpenrouterFileSearch(global::OpenRouter.OutputItemsVariant14? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant15 value) => new OutputItems((global::OpenRouter.OutputItemsVariant15?)value);
 
         /// <summary>
@@ -972,6 +1203,11 @@ namespace OpenRouter
         {
             OpenrouterImageGeneration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOpenrouterImageGeneration(global::OpenRouter.OutputItemsVariant15? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -994,6 +1230,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOpenrouterMcp(global::OpenRouter.OutputItemsVariant16? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant17 value) => new OutputItems((global::OpenRouter.OutputItemsVariant17?)value);
 
         /// <summary>
@@ -1008,6 +1249,11 @@ namespace OpenRouter
         {
             OpenrouterMemory = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOpenrouterMemory(global::OpenRouter.OutputItemsVariant17? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -1030,6 +1276,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOpenrouterTextEditor(global::OpenRouter.OutputItemsVariant18? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant19 value) => new OutputItems((global::OpenRouter.OutputItemsVariant19?)value);
 
         /// <summary>
@@ -1044,6 +1295,11 @@ namespace OpenRouter
         {
             OpenrouterToolSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOpenrouterToolSearch(global::OpenRouter.OutputItemsVariant19? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -1066,6 +1322,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOpenrouterWebFetch(global::OpenRouter.OutputItemsVariant20? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant21 value) => new OutputItems((global::OpenRouter.OutputItemsVariant21?)value);
 
         /// <summary>
@@ -1080,6 +1341,11 @@ namespace OpenRouter
         {
             OpenrouterWebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOpenrouterWebSearch(global::OpenRouter.OutputItemsVariant21? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -1102,6 +1368,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromReasoning(global::OpenRouter.OutputItemsVariant22? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::OpenRouter.OutputItemsVariant23 value) => new OutputItems((global::OpenRouter.OutputItemsVariant23?)value);
 
         /// <summary>
@@ -1116,6 +1387,11 @@ namespace OpenRouter
         {
             WebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromWebSearchCall(global::OpenRouter.OutputItemsVariant23? value) => new OutputItems(value);
 
         /// <summary>
         /// 

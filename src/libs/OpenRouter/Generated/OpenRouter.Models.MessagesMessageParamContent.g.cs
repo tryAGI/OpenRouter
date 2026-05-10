@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public string PickMessagesMessageParamContentVariant1() => IsMessagesMessageParamContentVariant1
+            ? MessagesMessageParamContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items>? MessagesMessageParamContent1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = MessagesMessageParamContent1;
             return IsMessagesMessageParamContent1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items> PickMessagesMessageParamContent1() => IsMessagesMessageParamContent1
+            ? MessagesMessageParamContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContent1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             MessagesMessageParamContentVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContent FromMessagesMessageParamContentVariant1(string? value) => new MessagesMessageParamContent(value);
 
         /// <summary>
         /// 

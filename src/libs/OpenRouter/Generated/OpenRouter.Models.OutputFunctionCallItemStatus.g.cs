@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputFunctionCallItemStatus0 PickOutputFunctionCallItemStatus0() => IsOutputFunctionCallItemStatus0
+            ? OutputFunctionCallItemStatus0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItemStatus1? OutputFunctionCallItemStatus1 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OutputFunctionCallItemStatus1 PickOutputFunctionCallItemStatus1() => IsOutputFunctionCallItemStatus1
+            ? OutputFunctionCallItemStatus1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItemStatus2? OutputFunctionCallItemStatus2 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = OutputFunctionCallItemStatus2;
             return IsOutputFunctionCallItemStatus2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputFunctionCallItemStatus2 PickOutputFunctionCallItemStatus2() => IsOutputFunctionCallItemStatus2
+            ? OutputFunctionCallItemStatus2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             OutputFunctionCallItemStatus0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputFunctionCallItemStatus FromOutputFunctionCallItemStatus0(global::OpenRouter.OutputFunctionCallItemStatus0? value) => new OutputFunctionCallItemStatus(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputFunctionCallItemStatus FromOutputFunctionCallItemStatus1(global::OpenRouter.OutputFunctionCallItemStatus1? value) => new OutputFunctionCallItemStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputFunctionCallItemStatus(global::OpenRouter.OutputFunctionCallItemStatus2 value) => new OutputFunctionCallItemStatus((global::OpenRouter.OutputFunctionCallItemStatus2?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             OutputFunctionCallItemStatus2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputFunctionCallItemStatus FromOutputFunctionCallItemStatus2(global::OpenRouter.OutputFunctionCallItemStatus2? value) => new OutputFunctionCallItemStatus(value);
 
         /// <summary>
         /// 

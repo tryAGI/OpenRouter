@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.AnthropicBase64PdfSource PickAnthropicBase64PdfSource() => IsAnthropicBase64PdfSource
+            ? AnthropicBase64PdfSource!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBase64PdfSource' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicPlainTextSource? AnthropicPlainTextSource { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = AnthropicPlainTextSource;
             return IsAnthropicPlainTextSource;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicPlainTextSource PickAnthropicPlainTextSource() => IsAnthropicPlainTextSource
+            ? AnthropicPlainTextSource!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicPlainTextSource' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.AnthropicDocumentBlockParamSource2 PickAnthropicDocumentBlockParamSource2() => IsAnthropicDocumentBlockParamSource2
+            ? AnthropicDocumentBlockParamSource2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSource2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicUrlPdfSource? AnthropicUrlPdfSource { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = AnthropicUrlPdfSource;
             return IsAnthropicUrlPdfSource;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicUrlPdfSource PickAnthropicUrlPdfSource() => IsAnthropicUrlPdfSource
+            ? AnthropicUrlPdfSource!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicUrlPdfSource' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace OpenRouter
         {
             AnthropicBase64PdfSource = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicDocumentBlockParamSource FromAnthropicBase64PdfSource(global::OpenRouter.AnthropicBase64PdfSource? value) => new AnthropicDocumentBlockParamSource(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicDocumentBlockParamSource FromAnthropicPlainTextSource(global::OpenRouter.AnthropicPlainTextSource? value) => new AnthropicDocumentBlockParamSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicDocumentBlockParamSource(global::OpenRouter.AnthropicDocumentBlockParamSource2 value) => new AnthropicDocumentBlockParamSource((global::OpenRouter.AnthropicDocumentBlockParamSource2?)value);
 
         /// <summary>
@@ -185,6 +223,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicDocumentBlockParamSource FromAnthropicDocumentBlockParamSource2(global::OpenRouter.AnthropicDocumentBlockParamSource2? value) => new AnthropicDocumentBlockParamSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicDocumentBlockParamSource(global::OpenRouter.AnthropicUrlPdfSource value) => new AnthropicDocumentBlockParamSource((global::OpenRouter.AnthropicUrlPdfSource?)value);
 
         /// <summary>
@@ -199,6 +242,11 @@ namespace OpenRouter
         {
             AnthropicUrlPdfSource = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicDocumentBlockParamSource FromAnthropicUrlPdfSource(global::OpenRouter.AnthropicUrlPdfSource? value) => new AnthropicDocumentBlockParamSource(value);
 
         /// <summary>
         /// 

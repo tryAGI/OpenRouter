@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickStoredPromptTemplateVariablesVariant1() => IsStoredPromptTemplateVariablesVariant1
+            ? StoredPromptTemplateVariablesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StoredPromptTemplateVariablesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = InputText;
             return IsInputText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputText PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
         /// Image input content item
@@ -100,6 +114,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputImage PickInputImage() => IsInputImage
+            ? InputImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = InputFile;
             return IsInputFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputFile PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace OpenRouter
         {
             StoredPromptTemplateVariablesVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StoredPromptTemplateVariables FromStoredPromptTemplateVariablesVariant1(string? value) => new StoredPromptTemplateVariables(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static StoredPromptTemplateVariables FromInputText(global::OpenRouter.InputText? value) => new StoredPromptTemplateVariables(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StoredPromptTemplateVariables(global::OpenRouter.InputImage value) => new StoredPromptTemplateVariables((global::OpenRouter.InputImage?)value);
 
         /// <summary>
@@ -185,6 +223,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static StoredPromptTemplateVariables FromInputImage(global::OpenRouter.InputImage? value) => new StoredPromptTemplateVariables(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StoredPromptTemplateVariables(global::OpenRouter.InputFile value) => new StoredPromptTemplateVariables((global::OpenRouter.InputFile?)value);
 
         /// <summary>
@@ -199,6 +242,11 @@ namespace OpenRouter
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StoredPromptTemplateVariables FromInputFile(global::OpenRouter.InputFile? value) => new StoredPromptTemplateVariables(value);
 
         /// <summary>
         /// 

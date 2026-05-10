@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant1 PickAutoRouter() => IsAutoRouter
+            ? AutoRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutoRouter' but the value was {ToString()}.");
+
+        /// <summary>
         /// context-compression variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = ContextCompression;
             return IsContextCompression;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant2 PickContextCompression() => IsContextCompression
+            ? ContextCompression!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextCompression' but the value was {ToString()}.");
 
         /// <summary>
         /// file-parser variant
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant3 PickFileParser() => IsFileParser
+            ? FileParser!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileParser' but the value was {ToString()}.");
+
+        /// <summary>
         /// moderation variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace OpenRouter
             value = Moderation;
             return IsModeration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant4 PickModeration() => IsModeration
+            ? Moderation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Moderation' but the value was {ToString()}.");
 
         /// <summary>
         /// pareto-router variant
@@ -165,6 +193,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant5 PickParetoRouter() => IsParetoRouter
+            ? ParetoRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ParetoRouter' but the value was {ToString()}.");
+
+        /// <summary>
         /// response-healing variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -195,6 +230,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant6 PickResponseHealing() => IsResponseHealing
+            ? ResponseHealing!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseHealing' but the value was {ToString()}.");
+
+        /// <summary>
         /// web variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -223,6 +265,13 @@ namespace OpenRouter
             value = Web;
             return IsWeb;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant7 PickWeb() => IsWeb
+            ? Web!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Web' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -240,6 +289,11 @@ namespace OpenRouter
         {
             AutoRouter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromAutoRouter(global::OpenRouter.ChatRequestPluginsItemsVariant1? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -262,6 +316,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestPluginsItems FromContextCompression(global::OpenRouter.ChatRequestPluginsItemsVariant2? value) => new ChatRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant3 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItemsVariant3?)value);
 
         /// <summary>
@@ -276,6 +335,11 @@ namespace OpenRouter
         {
             FileParser = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromFileParser(global::OpenRouter.ChatRequestPluginsItemsVariant3? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -298,6 +362,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestPluginsItems FromModeration(global::OpenRouter.ChatRequestPluginsItemsVariant4? value) => new ChatRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant5 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItemsVariant5?)value);
 
         /// <summary>
@@ -312,6 +381,11 @@ namespace OpenRouter
         {
             ParetoRouter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromParetoRouter(global::OpenRouter.ChatRequestPluginsItemsVariant5? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -334,6 +408,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestPluginsItems FromResponseHealing(global::OpenRouter.ChatRequestPluginsItemsVariant6? value) => new ChatRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant7 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItemsVariant7?)value);
 
         /// <summary>
@@ -348,6 +427,11 @@ namespace OpenRouter
         {
             Web = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromWeb(global::OpenRouter.ChatRequestPluginsItemsVariant7? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 

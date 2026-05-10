@@ -40,6 +40,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ProviderSort PickProviderSort() => IsProviderSort
+            ? ProviderSort!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSort' but the value was {ToString()}.");
+
+        /// <summary>
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
+            ? ProviderSortConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort FromProviderSort(global::OpenRouter.ProviderSort? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort(global::OpenRouter.ProviderSortConfig value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort((global::OpenRouter.ProviderSortConfig?)value);
 
         /// <summary>
@@ -133,6 +159,11 @@ namespace OpenRouter
         {
             ProviderSortConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort FromProviderSortConfig(global::OpenRouter.ProviderSortConfig? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort(value);
 
         /// <summary>
         /// 

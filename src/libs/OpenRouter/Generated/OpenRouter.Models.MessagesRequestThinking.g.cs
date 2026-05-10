@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestThinking0 PickMessagesRequestThinking0() => IsMessagesRequestThinking0
+            ? MessagesRequestThinking0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestThinking1? MessagesRequestThinking1 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.MessagesRequestThinking1 PickMessagesRequestThinking1() => IsMessagesRequestThinking1
+            ? MessagesRequestThinking1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestThinking2? MessagesRequestThinking2 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = MessagesRequestThinking2;
             return IsMessagesRequestThinking2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestThinking2 PickMessagesRequestThinking2() => IsMessagesRequestThinking2
+            ? MessagesRequestThinking2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             MessagesRequestThinking0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestThinking FromMessagesRequestThinking0(global::OpenRouter.MessagesRequestThinking0? value) => new MessagesRequestThinking(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestThinking FromMessagesRequestThinking1(global::OpenRouter.MessagesRequestThinking1? value) => new MessagesRequestThinking(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestThinking(global::OpenRouter.MessagesRequestThinking2 value) => new MessagesRequestThinking((global::OpenRouter.MessagesRequestThinking2?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             MessagesRequestThinking2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestThinking FromMessagesRequestThinking2(global::OpenRouter.MessagesRequestThinking2? value) => new MessagesRequestThinking(value);
 
         /// <summary>
         /// 

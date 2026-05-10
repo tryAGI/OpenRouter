@@ -45,6 +45,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestResponseFormatVariant1 PickGrammar() => IsGrammar
+            ? Grammar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Grammar' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace OpenRouter
             value = JsonObject;
             return IsJsonObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestResponseFormatVariant2 PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
 
         /// <summary>
         /// JSON Schema response format for structured outputs
@@ -105,6 +119,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestResponseFormatVariant3 PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
+
+        /// <summary>
         /// Python code response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -135,6 +156,13 @@ namespace OpenRouter
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestResponseFormatVariant4 PickPython() => IsPython
+            ? Python!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Python' but the value was {ToString()}.");
+
+        /// <summary>
         /// Default text response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -163,6 +191,13 @@ namespace OpenRouter
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestResponseFormatVariant5 PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -180,6 +215,11 @@ namespace OpenRouter
         {
             Grammar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestResponseFormat FromGrammar(global::OpenRouter.ChatRequestResponseFormatVariant1? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
         /// 
@@ -202,6 +242,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestResponseFormat FromJsonObject(global::OpenRouter.ChatRequestResponseFormatVariant2? value) => new ChatRequestResponseFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant3 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant3?)value);
 
         /// <summary>
@@ -216,6 +261,11 @@ namespace OpenRouter
         {
             JsonSchema = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestResponseFormat FromJsonSchema(global::OpenRouter.ChatRequestResponseFormatVariant3? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
         /// 
@@ -238,6 +288,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestResponseFormat FromPython(global::OpenRouter.ChatRequestResponseFormatVariant4? value) => new ChatRequestResponseFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant5 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant5?)value);
 
         /// <summary>
@@ -252,6 +307,11 @@ namespace OpenRouter
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestResponseFormat FromText(global::OpenRouter.ChatRequestResponseFormatVariant5? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
         /// 

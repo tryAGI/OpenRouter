@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemRole0 PickOpenAiResponseInputMessageItemRole0() => IsOpenAiResponseInputMessageItemRole0
+            ? OpenAiResponseInputMessageItemRole0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponseInputMessageItemRole1? OpenAiResponseInputMessageItemRole1 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemRole1 PickOpenAiResponseInputMessageItemRole1() => IsOpenAiResponseInputMessageItemRole1
+            ? OpenAiResponseInputMessageItemRole1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponseInputMessageItemRole2? OpenAiResponseInputMessageItemRole2 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace OpenRouter
             value = OpenAiResponseInputMessageItemRole2;
             return IsOpenAiResponseInputMessageItemRole2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseInputMessageItemRole2 PickOpenAiResponseInputMessageItemRole2() => IsOpenAiResponseInputMessageItemRole2
+            ? OpenAiResponseInputMessageItemRole2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace OpenRouter
         {
             OpenAiResponseInputMessageItemRole0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponseInputMessageItemRole FromOpenAiResponseInputMessageItemRole0(global::OpenRouter.OpenAiResponseInputMessageItemRole0? value) => new OpenAiResponseInputMessageItemRole(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAiResponseInputMessageItemRole FromOpenAiResponseInputMessageItemRole1(global::OpenRouter.OpenAiResponseInputMessageItemRole1? value) => new OpenAiResponseInputMessageItemRole(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemRole(global::OpenRouter.OpenAiResponseInputMessageItemRole2 value) => new OpenAiResponseInputMessageItemRole((global::OpenRouter.OpenAiResponseInputMessageItemRole2?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace OpenRouter
         {
             OpenAiResponseInputMessageItemRole2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponseInputMessageItemRole FromOpenAiResponseInputMessageItemRole2(global::OpenRouter.OpenAiResponseInputMessageItemRole2? value) => new OpenAiResponseInputMessageItemRole(value);
 
         /// <summary>
         /// 

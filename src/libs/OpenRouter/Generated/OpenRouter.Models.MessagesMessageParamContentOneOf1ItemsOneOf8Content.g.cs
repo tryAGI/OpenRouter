@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam> PickMessagesMessageParamContentOneOf1ItemsOneOf8Content0() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0
+            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? MessagesMessageParamContentOneOf1ItemsOneOf8Content1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = MessagesMessageParamContentOneOf1ItemsOneOf8Content1;
             return IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1 PickMessagesMessageParamContentOneOf1ItemsOneOf8Content1() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1
+            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -85,6 +99,11 @@ namespace OpenRouter
         {
             MessagesMessageParamContentOneOf1ItemsOneOf8Content1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf8Content FromMessagesMessageParamContentOneOf1ItemsOneOf8Content1(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? value) => new MessagesMessageParamContentOneOf1ItemsOneOf8Content(value);
 
         /// <summary>
         /// 

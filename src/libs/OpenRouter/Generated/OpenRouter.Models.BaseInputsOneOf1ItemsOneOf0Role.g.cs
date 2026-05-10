@@ -42,6 +42,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0 PickBaseInputsOneOf1ItemsOneOf0Role0() => IsBaseInputsOneOf1ItemsOneOf0Role0
+            ? BaseInputsOneOf1ItemsOneOf0Role0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1? BaseInputsOneOf1ItemsOneOf0Role1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace OpenRouter
             value = BaseInputsOneOf1ItemsOneOf0Role1;
             return IsBaseInputsOneOf1ItemsOneOf0Role1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1 PickBaseInputsOneOf1ItemsOneOf0Role1() => IsBaseInputsOneOf1ItemsOneOf0Role1
+            ? BaseInputsOneOf1ItemsOneOf0Role1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2 PickBaseInputsOneOf1ItemsOneOf0Role2() => IsBaseInputsOneOf1ItemsOneOf0Role2
+            ? BaseInputsOneOf1ItemsOneOf0Role2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3? BaseInputsOneOf1ItemsOneOf0Role3 { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace OpenRouter
             value = BaseInputsOneOf1ItemsOneOf0Role3;
             return IsBaseInputsOneOf1ItemsOneOf0Role3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3 PickBaseInputsOneOf1ItemsOneOf0Role3() => IsBaseInputsOneOf1ItemsOneOf0Role3
+            ? BaseInputsOneOf1ItemsOneOf0Role3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace OpenRouter
         {
             BaseInputsOneOf1ItemsOneOf0Role0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role0(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role0? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role1(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role1? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Role(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2 value) => new BaseInputsOneOf1ItemsOneOf0Role((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2?)value);
 
         /// <summary>
@@ -185,6 +223,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role2(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role2? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Role(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3 value) => new BaseInputsOneOf1ItemsOneOf0Role((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3?)value);
 
         /// <summary>
@@ -199,6 +242,11 @@ namespace OpenRouter
         {
             BaseInputsOneOf1ItemsOneOf0Role3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role3(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role3? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
 
         /// <summary>
         /// 
