@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicToolSearchContent : global::System.IEquatable<AnthropicToolSearchContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicToolSearchContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// tool_search_tool_result_error variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicToolSearchContent(
+            global::OpenRouter.AnthropicToolSearchContentDiscriminatorType? type,
             global::OpenRouter.AnthropicToolSearchContentVariant1? toolSearchToolResultError,
             global::OpenRouter.AnthropicToolSearchContentVariant2? toolSearchToolSearchResult
             )
         {
+            Type = type;
+
             ToolSearchToolResultError = toolSearchToolResultError;
             ToolSearchToolSearchResult = toolSearchToolSearchResult;
         }

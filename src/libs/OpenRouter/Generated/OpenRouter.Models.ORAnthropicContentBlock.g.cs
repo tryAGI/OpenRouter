@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ORAnthropicContentBlock : global::System.IEquatable<ORAnthropicContentBlock>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// bash_code_execution_tool_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -636,6 +641,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public ORAnthropicContentBlock(
+            global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? type,
             global::OpenRouter.ORAnthropicContentBlockVariant1? bashCodeExecutionToolResult,
             global::OpenRouter.ORAnthropicContentBlockVariant2? codeExecutionToolResult,
             global::OpenRouter.ORAnthropicContentBlockVariant3? compaction,
@@ -651,6 +657,8 @@ namespace OpenRouter
             global::OpenRouter.ORAnthropicContentBlockVariant13? webSearchToolResult
             )
         {
+            Type = type;
+
             BashCodeExecutionToolResult = bashCodeExecutionToolResult;
             CodeExecutionToolResult = codeExecutionToolResult;
             Compaction = compaction;

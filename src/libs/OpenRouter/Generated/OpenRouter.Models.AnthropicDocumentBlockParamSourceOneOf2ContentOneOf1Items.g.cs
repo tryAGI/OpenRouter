@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items : global::System.IEquatable<AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// image variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(
+            global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminatorType? type,
             global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1? image,
             global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2? text
             )
         {
+            Type = type;
+
             Image = image;
             Text = text;
         }

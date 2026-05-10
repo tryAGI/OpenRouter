@@ -95,6 +95,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicThinkingTurns), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicThinkingTurns> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicThinkingTurns).Name}");
                     anthropicThinkingTurns = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -105,9 +106,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicThinkingTurns == null && messagesRequestContextManagementEditsItemsOneOf1Keep1 == null && messagesRequestContextManagementEditsItemsOneOf1Keep2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1).Name}");
                     messagesRequestContextManagementEditsItemsOneOf1Keep1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -118,9 +123,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicThinkingTurns == null && messagesRequestContextManagementEditsItemsOneOf1Keep1 == null && messagesRequestContextManagementEditsItemsOneOf1Keep2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2).Name}");
                     messagesRequestContextManagementEditsItemsOneOf1Keep2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicCaller : global::System.IEquatable<AnthropicCaller>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicCallerDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// code_execution_20250825 variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicCaller(
+            global::OpenRouter.AnthropicCallerDiscriminatorType? type,
             global::OpenRouter.AnthropicCallerVariant1? codeExecution20250825,
             global::OpenRouter.AnthropicCallerVariant2? codeExecution20260120,
             global::OpenRouter.AnthropicCallerVariant3? direct
             )
         {
+            Type = type;
+
             CodeExecution20250825 = codeExecution20250825;
             CodeExecution20260120 = codeExecution20260120;
             Direct = direct;

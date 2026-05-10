@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestStopVariant1 == null && chatRequestStopVariant2 == null && chatRequestStopVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestStopVariant1 == null && chatRequestStopVariant2 == null && chatRequestStopVariant3 == null)
+            {
                 try
                 {
 

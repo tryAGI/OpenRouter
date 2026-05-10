@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct MessagesRequestContextManagementEditsItemsOneOf0Trigger : global::System.IEquatable<MessagesRequestContextManagementEditsItemsOneOf0Trigger>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// input_tokens variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0Trigger(
+            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorType? type,
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? inputTokens,
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? toolUses
             )
         {
+            Type = type;
+
             InputTokens = inputTokens;
             ToolUses = toolUses;
         }

@@ -76,6 +76,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.GenerationContentDataInput0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.GenerationContentDataInput0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.GenerationContentDataInput0).Name}");
                     generationContentDataInput0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (generationContentDataInput0 == null && generationContentDataInput1 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.GenerationContentDataInput1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.GenerationContentDataInput1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.GenerationContentDataInput1).Name}");
                     generationContentDataInput1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

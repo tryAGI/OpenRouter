@@ -108,7 +108,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (providerName == null && rerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsVariant2 == null)
+            {
                 try
                 {
 

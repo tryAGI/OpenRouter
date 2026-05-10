@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ReasoningDetailUnion : global::System.IEquatable<ReasoningDetailUnion>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Reasoning detail encrypted schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         public ReasoningDetailUnion(
+            global::OpenRouter.ReasoningDetailUnionDiscriminatorType? type,
             global::OpenRouter.ReasoningDetailUnionVariant1? reasoningEncrypted,
             global::OpenRouter.ReasoningDetailUnionVariant2? reasoningSummary,
             global::OpenRouter.ReasoningDetailUnionVariant3? reasoningText
             )
         {
+            Type = type;
+
             ReasoningEncrypted = reasoningEncrypted;
             ReasoningSummary = reasoningSummary;
             ReasoningText = reasoningText;

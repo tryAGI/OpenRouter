@@ -76,6 +76,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>).Name}");
                     orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 == null && anthropicWebSearchToolResultError == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicWebSearchToolResultError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicWebSearchToolResultError> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicWebSearchToolResultError).Name}");
                     anthropicWebSearchToolResultError = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ChatRequestPluginsItems : global::System.IEquatable<ChatRequestPluginsItems>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsDiscriminatorId? Id { get; }
+
+        /// <summary>
         /// auto-router variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -348,6 +353,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public ChatRequestPluginsItems(
+            global::OpenRouter.ChatRequestPluginsItemsDiscriminatorId? id,
             global::OpenRouter.ChatRequestPluginsItemsVariant1? autoRouter,
             global::OpenRouter.ChatRequestPluginsItemsVariant2? contextCompression,
             global::OpenRouter.ChatRequestPluginsItemsVariant3? fileParser,
@@ -357,6 +363,8 @@ namespace OpenRouter
             global::OpenRouter.ChatRequestPluginsItemsVariant7? web
             )
         {
+            Id = id;
+
             AutoRouter = autoRouter;
             ContextCompression = contextCompression;
             FileParser = fileParser;

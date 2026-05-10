@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputMessageItemPhase0 == null && outputMessageItemPhase1 == null && outputMessageItemPhaseVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputMessageItemPhase0 == null && outputMessageItemPhase1 == null && outputMessageItemPhaseVariant3 == null)
+            {
                 try
                 {
 

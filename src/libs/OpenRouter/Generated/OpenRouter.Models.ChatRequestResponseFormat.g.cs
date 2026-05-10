@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ChatRequestResponseFormat : global::System.IEquatable<ChatRequestResponseFormat>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestResponseFormatDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Custom grammar response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -252,6 +257,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public ChatRequestResponseFormat(
+            global::OpenRouter.ChatRequestResponseFormatDiscriminatorType? type,
             global::OpenRouter.ChatRequestResponseFormatVariant1? grammar,
             global::OpenRouter.ChatRequestResponseFormatVariant2? jsonObject,
             global::OpenRouter.ChatRequestResponseFormatVariant3? jsonSchema,
@@ -259,6 +265,8 @@ namespace OpenRouter
             global::OpenRouter.ChatRequestResponseFormatVariant5? text
             )
         {
+            Type = type;
+
             Grammar = grammar;
             JsonObject = jsonObject;
             JsonSchema = jsonSchema;

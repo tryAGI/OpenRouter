@@ -108,7 +108,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (pdfParserEngine0 == null && pdfParserEngine1 == null)
+            {
                 try
                 {
 

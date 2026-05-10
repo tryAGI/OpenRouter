@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicTextBlockParamCitationsItems : global::System.IEquatable<AnthropicTextBlockParamCitationsItems>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// char_location variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -252,6 +257,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicTextBlockParamCitationsItems(
+            global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType? type,
             global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1? charLocation,
             global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2? contentBlockLocation,
             global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3? pageLocation,
@@ -259,6 +265,8 @@ namespace OpenRouter
             global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5? webSearchResultLocation
             )
         {
+            Type = type;
+
             CharLocation = charLocation;
             ContentBlockLocation = contentBlockLocation;
             PageLocation = pageLocation;

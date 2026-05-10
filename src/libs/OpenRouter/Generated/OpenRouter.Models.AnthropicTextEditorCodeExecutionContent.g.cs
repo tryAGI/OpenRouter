@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicTextEditorCodeExecutionContent : global::System.IEquatable<AnthropicTextEditorCodeExecutionContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// text_editor_code_execution_create_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -204,12 +209,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicTextEditorCodeExecutionContent(
+            global::OpenRouter.AnthropicTextEditorCodeExecutionContentDiscriminatorType? type,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? textEditorCodeExecutionCreateResult,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? textEditorCodeExecutionStrReplaceResult,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? textEditorCodeExecutionToolResultError,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? textEditorCodeExecutionViewResult
             )
         {
+            Type = type;
+
             TextEditorCodeExecutionCreateResult = textEditorCodeExecutionCreateResult;
             TextEditorCodeExecutionStrReplaceResult = textEditorCodeExecutionStrReplaceResult;
             TextEditorCodeExecutionToolResultError = textEditorCodeExecutionToolResultError;

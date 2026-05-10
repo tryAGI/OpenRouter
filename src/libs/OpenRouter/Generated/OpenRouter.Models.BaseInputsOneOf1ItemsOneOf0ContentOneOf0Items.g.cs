@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items : global::System.IEquatable<BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -204,12 +209,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items(
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorType? type,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1? inputAudio,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2? inputFile,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3? inputImage,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4? inputText
             )
         {
+            Type = type;
+
             InputAudio = inputAudio;
             InputFile = inputFile;
             InputImage = inputImage;

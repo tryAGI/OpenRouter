@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicImageBlockParamSource : global::System.IEquatable<AnthropicImageBlockParamSource>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicImageBlockParamSourceDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// base64 variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace OpenRouter
         /// 
         /// </summary>
         public AnthropicImageBlockParamSource(
+            global::OpenRouter.AnthropicImageBlockParamSourceDiscriminatorType? type,
             global::OpenRouter.AnthropicImageBlockParamSourceVariant1? base64,
             global::OpenRouter.AnthropicImageBlockParamSourceVariant2? url
             )
         {
+            Type = type;
+
             Base64 = base64;
             Url = url;
         }

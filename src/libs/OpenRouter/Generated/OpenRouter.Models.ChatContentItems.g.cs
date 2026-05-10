@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ChatContentItems : global::System.IEquatable<ChatContentItems>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// File content part for document processing
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -300,6 +305,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         public ChatContentItems(
+            global::OpenRouter.ChatContentItemsDiscriminatorType? type,
             global::OpenRouter.ChatContentItemsVariant1? file,
             global::OpenRouter.ChatContentItemsVariant2? imageUrl,
             global::OpenRouter.ChatContentItemsVariant3? inputAudio,
@@ -308,6 +314,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentItemsVariant6? videoUrl
             )
         {
+            Type = type;
+
             File = file;
             ImageUrl = imageUrl;
             InputAudio = inputAudio;

@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct OpenAiResponseFunctionToolCallOutputOutputOneOf1Items : global::System.IEquatable<OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         public OpenAiResponseFunctionToolCallOutputOutputOneOf1Items(
+            global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorType? type,
             global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1? inputFile,
             global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2? inputImage,
             global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3? inputText
             )
         {
+            Type = type;
+
             InputFile = inputFile;
             InputImage = inputImage;
             InputText = inputText;

@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (inputsOneOf1ItemsOneOf5Content0 == null && inputsOneOf1ItemsOneOf5ContentVariant2 == null && inputsOneOf1ItemsOneOf5ContentVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (inputsOneOf1ItemsOneOf5Content0 == null && inputsOneOf1ItemsOneOf5ContentVariant2 == null && inputsOneOf1ItemsOneOf5ContentVariant3 == null)
+            {
                 try
                 {
 
