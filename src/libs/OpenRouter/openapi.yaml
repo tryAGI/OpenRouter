@@ -8998,7 +8998,7 @@
           "firecrawl",
           "exa"
         ],
-        "description": "Which fetch engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in fetch. \"exa\" uses Exa Contents API (supports BYOK). \"openrouter\" uses direct HTTP fetch. \"firecrawl\" uses Firecrawl scrape (requires BYOK).",
+        "description": "Which fetch engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in fetch. \"exa\" uses Exa Contents API. \"openrouter\" uses direct HTTP fetch. \"firecrawl\" uses Firecrawl scrape (requires BYOK).",
         "title": "WebFetchEngineEnum"
       },
       "WebFetchServerToolConfig": {
@@ -26340,7 +26340,7 @@
           },
           "slug": {
             "type": "string",
-            "description": "URL-friendly slug (lowercase alphanumeric and hyphens only)"
+            "description": "URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)"
           }
         },
         "required": [
@@ -26673,7 +26673,7 @@
           },
           "slug": {
             "type": "string",
-            "description": "New URL-friendly slug"
+            "description": "New URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)"
           }
         },
         "title": "UpdateWorkspaceRequest"

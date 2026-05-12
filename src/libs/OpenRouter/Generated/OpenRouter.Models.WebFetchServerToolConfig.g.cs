@@ -21,7 +21,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
 
         /// <summary>
-        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API (supports BYOK). "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK).
+        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebFetchEngineEnumJsonConverter))]
@@ -55,7 +55,7 @@ namespace OpenRouter
         /// Never fetch from these domains.
         /// </param>
         /// <param name="engine">
-        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API (supports BYOK). "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK).
+        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK).
         /// </param>
         /// <param name="maxContentTokens">
         /// Maximum content length in approximate tokens. Content exceeding this limit is truncated.

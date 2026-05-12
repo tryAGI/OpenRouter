@@ -69,7 +69,7 @@ namespace OpenRouter
         public string? Name { get; set; }
 
         /// <summary>
-        /// New URL-friendly slug
+        /// New URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
         public string? Slug { get; set; }
@@ -114,7 +114,7 @@ namespace OpenRouter
         /// New name for the workspace
         /// </param>
         /// <param name="slug">
-        /// New URL-friendly slug
+        /// New URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
