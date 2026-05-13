@@ -19,11 +19,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        x1080x1620,
+        /// <summary>
+        /// 
+        /// </summary>
         x1080x1920,
         /// <summary>
         /// 
         /// </summary>
         x1080x2520,
+        /// <summary>
+        /// 
+        /// </summary>
+        x1080x720,
         /// <summary>
         /// 
         /// </summary>
@@ -36,6 +44,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         x1440x1080,
+        /// <summary>
+        /// 
+        /// </summary>
+        x1620x1080,
         /// <summary>
         /// 
         /// </summary>
@@ -55,6 +67,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        x2160x3240,
+        /// <summary>
+        /// 
+        /// </summary>
         x2160x3840,
         /// <summary>
         /// 
@@ -68,6 +84,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         x2880x2160,
+        /// <summary>
+        /// 
+        /// </summary>
+        x3240x2160,
         /// <summary>
         /// 
         /// </summary>
@@ -87,6 +107,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        x480x720,
+        /// <summary>
+        /// 
+        /// </summary>
         x480x854,
         /// <summary>
         /// 
@@ -99,11 +123,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        x720x1080,
+        /// <summary>
+        /// 
+        /// </summary>
         x720x1280,
         /// <summary>
         /// 
         /// </summary>
         x720x1680,
+        /// <summary>
+        /// 
+        /// </summary>
+        x720x480,
         /// <summary>
         /// 
         /// </summary>
@@ -136,28 +168,36 @@ namespace OpenRouter
             {
                 VideoModelSupportedSizesItems.x1080x1080 => "1080x1080",
                 VideoModelSupportedSizesItems.x1080x1440 => "1080x1440",
+                VideoModelSupportedSizesItems.x1080x1620 => "1080x1620",
                 VideoModelSupportedSizesItems.x1080x1920 => "1080x1920",
                 VideoModelSupportedSizesItems.x1080x2520 => "1080x2520",
+                VideoModelSupportedSizesItems.x1080x720 => "1080x720",
                 VideoModelSupportedSizesItems.x1120x480 => "1120x480",
                 VideoModelSupportedSizesItems.x1280x720 => "1280x720",
                 VideoModelSupportedSizesItems.x1440x1080 => "1440x1080",
+                VideoModelSupportedSizesItems.x1620x1080 => "1620x1080",
                 VideoModelSupportedSizesItems.x1680x720 => "1680x720",
                 VideoModelSupportedSizesItems.x1920x1080 => "1920x1080",
                 VideoModelSupportedSizesItems.x2160x2160 => "2160x2160",
                 VideoModelSupportedSizesItems.x2160x2880 => "2160x2880",
+                VideoModelSupportedSizesItems.x2160x3240 => "2160x3240",
                 VideoModelSupportedSizesItems.x2160x3840 => "2160x3840",
                 VideoModelSupportedSizesItems.x2160x5040 => "2160x5040",
                 VideoModelSupportedSizesItems.x2520x1080 => "2520x1080",
                 VideoModelSupportedSizesItems.x2880x2160 => "2880x2160",
+                VideoModelSupportedSizesItems.x3240x2160 => "3240x2160",
                 VideoModelSupportedSizesItems.x3840x2160 => "3840x2160",
                 VideoModelSupportedSizesItems.x480x1120 => "480x1120",
                 VideoModelSupportedSizesItems.x480x480 => "480x480",
                 VideoModelSupportedSizesItems.x480x640 => "480x640",
+                VideoModelSupportedSizesItems.x480x720 => "480x720",
                 VideoModelSupportedSizesItems.x480x854 => "480x854",
                 VideoModelSupportedSizesItems.x5040x2160 => "5040x2160",
                 VideoModelSupportedSizesItems.x640x480 => "640x480",
+                VideoModelSupportedSizesItems.x720x1080 => "720x1080",
                 VideoModelSupportedSizesItems.x720x1280 => "720x1280",
                 VideoModelSupportedSizesItems.x720x1680 => "720x1680",
+                VideoModelSupportedSizesItems.x720x480 => "720x480",
                 VideoModelSupportedSizesItems.x720x720 => "720x720",
                 VideoModelSupportedSizesItems.x720x960 => "720x960",
                 VideoModelSupportedSizesItems.x854x480 => "854x480",
@@ -174,28 +214,36 @@ namespace OpenRouter
             {
                 "1080x1080" => VideoModelSupportedSizesItems.x1080x1080,
                 "1080x1440" => VideoModelSupportedSizesItems.x1080x1440,
+                "1080x1620" => VideoModelSupportedSizesItems.x1080x1620,
                 "1080x1920" => VideoModelSupportedSizesItems.x1080x1920,
                 "1080x2520" => VideoModelSupportedSizesItems.x1080x2520,
+                "1080x720" => VideoModelSupportedSizesItems.x1080x720,
                 "1120x480" => VideoModelSupportedSizesItems.x1120x480,
                 "1280x720" => VideoModelSupportedSizesItems.x1280x720,
                 "1440x1080" => VideoModelSupportedSizesItems.x1440x1080,
+                "1620x1080" => VideoModelSupportedSizesItems.x1620x1080,
                 "1680x720" => VideoModelSupportedSizesItems.x1680x720,
                 "1920x1080" => VideoModelSupportedSizesItems.x1920x1080,
                 "2160x2160" => VideoModelSupportedSizesItems.x2160x2160,
                 "2160x2880" => VideoModelSupportedSizesItems.x2160x2880,
+                "2160x3240" => VideoModelSupportedSizesItems.x2160x3240,
                 "2160x3840" => VideoModelSupportedSizesItems.x2160x3840,
                 "2160x5040" => VideoModelSupportedSizesItems.x2160x5040,
                 "2520x1080" => VideoModelSupportedSizesItems.x2520x1080,
                 "2880x2160" => VideoModelSupportedSizesItems.x2880x2160,
+                "3240x2160" => VideoModelSupportedSizesItems.x3240x2160,
                 "3840x2160" => VideoModelSupportedSizesItems.x3840x2160,
                 "480x1120" => VideoModelSupportedSizesItems.x480x1120,
                 "480x480" => VideoModelSupportedSizesItems.x480x480,
                 "480x640" => VideoModelSupportedSizesItems.x480x640,
+                "480x720" => VideoModelSupportedSizesItems.x480x720,
                 "480x854" => VideoModelSupportedSizesItems.x480x854,
                 "5040x2160" => VideoModelSupportedSizesItems.x5040x2160,
                 "640x480" => VideoModelSupportedSizesItems.x640x480,
+                "720x1080" => VideoModelSupportedSizesItems.x720x1080,
                 "720x1280" => VideoModelSupportedSizesItems.x720x1280,
                 "720x1680" => VideoModelSupportedSizesItems.x720x1680,
+                "720x480" => VideoModelSupportedSizesItems.x720x480,
                 "720x720" => VideoModelSupportedSizesItems.x720x720,
                 "720x960" => VideoModelSupportedSizesItems.x720x960,
                 "854x480" => VideoModelSupportedSizesItems.x854x480,

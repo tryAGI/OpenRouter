@@ -23,6 +23,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        x2_3,
+        /// <summary>
+        /// 
+        /// </summary>
+        x3_2,
+        /// <summary>
+        /// 
+        /// </summary>
         x3_4,
         /// <summary>
         /// 
@@ -53,6 +61,8 @@ namespace OpenRouter
                 VideoGenerationRequestAspectRatio.x16_9 => "16:9",
                 VideoGenerationRequestAspectRatio.x1_1 => "1:1",
                 VideoGenerationRequestAspectRatio.x21_9 => "21:9",
+                VideoGenerationRequestAspectRatio.x2_3 => "2:3",
+                VideoGenerationRequestAspectRatio.x3_2 => "3:2",
                 VideoGenerationRequestAspectRatio.x3_4 => "3:4",
                 VideoGenerationRequestAspectRatio.x4_3 => "4:3",
                 VideoGenerationRequestAspectRatio.x9_16 => "9:16",
@@ -70,6 +80,8 @@ namespace OpenRouter
                 "16:9" => VideoGenerationRequestAspectRatio.x16_9,
                 "1:1" => VideoGenerationRequestAspectRatio.x1_1,
                 "21:9" => VideoGenerationRequestAspectRatio.x21_9,
+                "2:3" => VideoGenerationRequestAspectRatio.x2_3,
+                "3:2" => VideoGenerationRequestAspectRatio.x3_2,
                 "3:4" => VideoGenerationRequestAspectRatio.x3_4,
                 "4:3" => VideoGenerationRequestAspectRatio.x4_3,
                 "9:16" => VideoGenerationRequestAspectRatio.x9_16,
