@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.ChatRequestPluginsItemsVariant4Id Id { get; set; }
 
         /// <summary>
-        /// Slugs of models to run in parallel as the "expert panel" the judge analyzes. Each model receives the same user prompt with web_search + web_fetch enabled. Capped at 8 models to bound cost amplification. When omitted, defaults to the Quality preset from the /labs/fusion UI (~anthropic/claude-opus-latest, ~openai/gpt-latest).
+        /// Slugs of models to run in parallel as the "expert panel" the judge analyzes. Each model receives the same user prompt with web_search + web_fetch enabled. Capped at 8 models to bound cost amplification. When omitted, defaults to the Quality preset from the /labs/fusion UI (~anthropic/claude-opus-latest, ~openai/gpt-latest, ~google/gemini-pro-latest).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis_models")]
         public global::System.Collections.Generic.IList<string>? AnalysisModels { get; set; }
@@ -46,7 +46,7 @@ namespace OpenRouter
         /// Discriminator value: fusion
         /// </param>
         /// <param name="analysisModels">
-        /// Slugs of models to run in parallel as the "expert panel" the judge analyzes. Each model receives the same user prompt with web_search + web_fetch enabled. Capped at 8 models to bound cost amplification. When omitted, defaults to the Quality preset from the /labs/fusion UI (~anthropic/claude-opus-latest, ~openai/gpt-latest).
+        /// Slugs of models to run in parallel as the "expert panel" the judge analyzes. Each model receives the same user prompt with web_search + web_fetch enabled. Capped at 8 models to bound cost amplification. When omitted, defaults to the Quality preset from the /labs/fusion UI (~anthropic/claude-opus-latest, ~openai/gpt-latest, ~google/gemini-pro-latest).
         /// </param>
         /// <param name="enabled">
         /// Set to false to disable the fusion plugin for this request. Defaults to true.

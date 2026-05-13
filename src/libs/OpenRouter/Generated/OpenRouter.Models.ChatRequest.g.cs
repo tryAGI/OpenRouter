@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatRequest
     {
         /// <summary>
-        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.ChatRequestCacheControl? CacheControl { get; set; }
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// Debug options for inspecting request transformations (streaming only)
@@ -226,7 +226,7 @@ namespace OpenRouter
         /// List of messages for the conversation
         /// </param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -325,7 +325,7 @@ namespace OpenRouter
 #endif
         public ChatRequest(
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
-            global::OpenRouter.ChatRequestCacheControl? cacheControl,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.ChatDebugOptions? debug,
             double? frequencyPenalty,
             global::OpenRouter.ImageConfig? imageConfig,

@@ -15,6 +15,12 @@ namespace OpenRouter
         public bool? Background { get; set; }
 
         /// <summary>
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
@@ -239,6 +245,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ResponsesRequest" /> class.
         /// </summary>
         /// <param name="background"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig"></param>
         /// <param name="include"></param>
@@ -303,6 +312,7 @@ namespace OpenRouter
 #endif
         public ResponsesRequest(
             bool? background,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             double? frequencyPenalty,
             global::OpenRouter.ImageConfig? imageConfig,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include,
@@ -340,6 +350,7 @@ namespace OpenRouter
             string? user)
         {
             this.Background = background;
+            this.CacheControl = cacheControl;
             this.FrequencyPenalty = frequencyPenalty;
             this.ImageConfig = imageConfig;
             this.Include = include;

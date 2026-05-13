@@ -46,7 +46,7 @@ namespace OpenRouter
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -149,7 +149,7 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.ChatResult> SendChatCompletionRequestAsync(
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
             global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
-            global::OpenRouter.ChatRequestCacheControl? cacheControl = default,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.ChatDebugOptions? debug = default,
             double? frequencyPenalty = default,
             global::OpenRouter.ImageConfig? imageConfig = default,
