@@ -23,6 +23,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Fusion,
+        /// <summary>
+        /// 
+        /// </summary>
         Moderation,
         /// <summary>
         /// 
@@ -53,6 +57,7 @@ namespace OpenRouter
                 ChatRequestPluginsItemsDiscriminatorId.AutoRouter => "auto-router",
                 ChatRequestPluginsItemsDiscriminatorId.ContextCompression => "context-compression",
                 ChatRequestPluginsItemsDiscriminatorId.FileParser => "file-parser",
+                ChatRequestPluginsItemsDiscriminatorId.Fusion => "fusion",
                 ChatRequestPluginsItemsDiscriminatorId.Moderation => "moderation",
                 ChatRequestPluginsItemsDiscriminatorId.ParetoRouter => "pareto-router",
                 ChatRequestPluginsItemsDiscriminatorId.ResponseHealing => "response-healing",
@@ -70,6 +75,7 @@ namespace OpenRouter
                 "auto-router" => ChatRequestPluginsItemsDiscriminatorId.AutoRouter,
                 "context-compression" => ChatRequestPluginsItemsDiscriminatorId.ContextCompression,
                 "file-parser" => ChatRequestPluginsItemsDiscriminatorId.FileParser,
+                "fusion" => ChatRequestPluginsItemsDiscriminatorId.Fusion,
                 "moderation" => ChatRequestPluginsItemsDiscriminatorId.Moderation,
                 "pareto-router" => ChatRequestPluginsItemsDiscriminatorId.ParetoRouter,
                 "response-healing" => ChatRequestPluginsItemsDiscriminatorId.ResponseHealing,

@@ -126,12 +126,49 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileParser' but the value was {ToString()}.");
 
         /// <summary>
+        /// fusion variant
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatRequestPluginsItemsVariant4? Fusion { get; init; }
+#else
+        public global::OpenRouter.ChatRequestPluginsItemsVariant4? Fusion { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fusion))]
+#endif
+        public bool IsFusion => Fusion != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFusion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatRequestPluginsItemsVariant4? value)
+        {
+            value = Fusion;
+            return IsFusion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatRequestPluginsItemsVariant4 PickFusion() => IsFusion
+            ? Fusion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
+
+        /// <summary>
         /// moderation variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItemsVariant4? Moderation { get; init; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant5? Moderation { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItemsVariant4? Moderation { get; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant5? Moderation { get; }
 #endif
 
         /// <summary>
@@ -149,7 +186,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatRequestPluginsItemsVariant4? value)
+            out global::OpenRouter.ChatRequestPluginsItemsVariant5? value)
         {
             value = Moderation;
             return IsModeration;
@@ -158,7 +195,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant4 PickModeration() => IsModeration
+        public global::OpenRouter.ChatRequestPluginsItemsVariant5 PickModeration() => IsModeration
             ? Moderation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Moderation' but the value was {ToString()}.");
 
@@ -166,9 +203,9 @@ namespace OpenRouter
         /// pareto-router variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItemsVariant5? ParetoRouter { get; init; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant6? ParetoRouter { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItemsVariant5? ParetoRouter { get; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant6? ParetoRouter { get; }
 #endif
 
         /// <summary>
@@ -186,7 +223,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatRequestPluginsItemsVariant5? value)
+            out global::OpenRouter.ChatRequestPluginsItemsVariant6? value)
         {
             value = ParetoRouter;
             return IsParetoRouter;
@@ -195,7 +232,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant5 PickParetoRouter() => IsParetoRouter
+        public global::OpenRouter.ChatRequestPluginsItemsVariant6 PickParetoRouter() => IsParetoRouter
             ? ParetoRouter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ParetoRouter' but the value was {ToString()}.");
 
@@ -203,9 +240,9 @@ namespace OpenRouter
         /// response-healing variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItemsVariant6? ResponseHealing { get; init; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant7? ResponseHealing { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItemsVariant6? ResponseHealing { get; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant7? ResponseHealing { get; }
 #endif
 
         /// <summary>
@@ -223,7 +260,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatRequestPluginsItemsVariant6? value)
+            out global::OpenRouter.ChatRequestPluginsItemsVariant7? value)
         {
             value = ResponseHealing;
             return IsResponseHealing;
@@ -232,7 +269,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant6 PickResponseHealing() => IsResponseHealing
+        public global::OpenRouter.ChatRequestPluginsItemsVariant7 PickResponseHealing() => IsResponseHealing
             ? ResponseHealing!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseHealing' but the value was {ToString()}.");
 
@@ -240,9 +277,9 @@ namespace OpenRouter
         /// web variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatRequestPluginsItemsVariant7? Web { get; init; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant8? Web { get; init; }
 #else
-        public global::OpenRouter.ChatRequestPluginsItemsVariant7? Web { get; }
+        public global::OpenRouter.ChatRequestPluginsItemsVariant8? Web { get; }
 #endif
 
         /// <summary>
@@ -260,7 +297,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatRequestPluginsItemsVariant7? value)
+            out global::OpenRouter.ChatRequestPluginsItemsVariant8? value)
         {
             value = Web;
             return IsWeb;
@@ -269,7 +306,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant7 PickWeb() => IsWeb
+        public global::OpenRouter.ChatRequestPluginsItemsVariant8 PickWeb() => IsWeb
             ? Web!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Web' but the value was {ToString()}.");
         /// <summary>
@@ -349,20 +386,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant4?(ChatRequestPluginsItems @this) => @this.Moderation;
+        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant4?(ChatRequestPluginsItems @this) => @this.Fusion;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant4? value)
         {
-            Moderation = value;
+            Fusion = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ChatRequestPluginsItems FromModeration(global::OpenRouter.ChatRequestPluginsItemsVariant4? value) => new ChatRequestPluginsItems(value);
+        public static ChatRequestPluginsItems FromFusion(global::OpenRouter.ChatRequestPluginsItemsVariant4? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -372,20 +409,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant5?(ChatRequestPluginsItems @this) => @this.ParetoRouter;
+        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant5?(ChatRequestPluginsItems @this) => @this.Moderation;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant5? value)
         {
-            ParetoRouter = value;
+            Moderation = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ChatRequestPluginsItems FromParetoRouter(global::OpenRouter.ChatRequestPluginsItemsVariant5? value) => new ChatRequestPluginsItems(value);
+        public static ChatRequestPluginsItems FromModeration(global::OpenRouter.ChatRequestPluginsItemsVariant5? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -395,20 +432,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant6?(ChatRequestPluginsItems @this) => @this.ResponseHealing;
+        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant6?(ChatRequestPluginsItems @this) => @this.ParetoRouter;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant6? value)
         {
-            ResponseHealing = value;
+            ParetoRouter = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ChatRequestPluginsItems FromResponseHealing(global::OpenRouter.ChatRequestPluginsItemsVariant6? value) => new ChatRequestPluginsItems(value);
+        public static ChatRequestPluginsItems FromParetoRouter(global::OpenRouter.ChatRequestPluginsItemsVariant6? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -418,12 +455,35 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant7?(ChatRequestPluginsItems @this) => @this.Web;
+        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant7?(ChatRequestPluginsItems @this) => @this.ResponseHealing;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant7? value)
+        {
+            ResponseHealing = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromResponseHealing(global::OpenRouter.ChatRequestPluginsItemsVariant7? value) => new ChatRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant8 value) => new ChatRequestPluginsItems((global::OpenRouter.ChatRequestPluginsItemsVariant8?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatRequestPluginsItemsVariant8?(ChatRequestPluginsItems @this) => @this.Web;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatRequestPluginsItems(global::OpenRouter.ChatRequestPluginsItemsVariant8? value)
         {
             Web = value;
         }
@@ -431,7 +491,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static ChatRequestPluginsItems FromWeb(global::OpenRouter.ChatRequestPluginsItemsVariant7? value) => new ChatRequestPluginsItems(value);
+        public static ChatRequestPluginsItems FromWeb(global::OpenRouter.ChatRequestPluginsItemsVariant8? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -441,10 +501,11 @@ namespace OpenRouter
             global::OpenRouter.ChatRequestPluginsItemsVariant1? autoRouter,
             global::OpenRouter.ChatRequestPluginsItemsVariant2? contextCompression,
             global::OpenRouter.ChatRequestPluginsItemsVariant3? fileParser,
-            global::OpenRouter.ChatRequestPluginsItemsVariant4? moderation,
-            global::OpenRouter.ChatRequestPluginsItemsVariant5? paretoRouter,
-            global::OpenRouter.ChatRequestPluginsItemsVariant6? responseHealing,
-            global::OpenRouter.ChatRequestPluginsItemsVariant7? web
+            global::OpenRouter.ChatRequestPluginsItemsVariant4? fusion,
+            global::OpenRouter.ChatRequestPluginsItemsVariant5? moderation,
+            global::OpenRouter.ChatRequestPluginsItemsVariant6? paretoRouter,
+            global::OpenRouter.ChatRequestPluginsItemsVariant7? responseHealing,
+            global::OpenRouter.ChatRequestPluginsItemsVariant8? web
             )
         {
             Id = id;
@@ -452,6 +513,7 @@ namespace OpenRouter
             AutoRouter = autoRouter;
             ContextCompression = contextCompression;
             FileParser = fileParser;
+            Fusion = fusion;
             Moderation = moderation;
             ParetoRouter = paretoRouter;
             ResponseHealing = responseHealing;
@@ -466,6 +528,7 @@ namespace OpenRouter
             ResponseHealing as object ??
             ParetoRouter as object ??
             Moderation as object ??
+            Fusion as object ??
             FileParser as object ??
             ContextCompression as object ??
             AutoRouter as object 
@@ -478,6 +541,7 @@ namespace OpenRouter
             AutoRouter?.ToString() ??
             ContextCompression?.ToString() ??
             FileParser?.ToString() ??
+            Fusion?.ToString() ??
             Moderation?.ToString() ??
             ParetoRouter?.ToString() ??
             ResponseHealing?.ToString() ??
@@ -489,7 +553,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && IsWeb;
+            return IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && IsWeb;
         }
 
         /// <summary>
@@ -499,10 +563,11 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant1, TResult>? autoRouter = null,
             global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant2, TResult>? contextCompression = null,
             global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant3, TResult>? fileParser = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant4, TResult>? moderation = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant5, TResult>? paretoRouter = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant6, TResult>? responseHealing = null,
-            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant7, TResult>? web = null,
+            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant4, TResult>? fusion = null,
+            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant5, TResult>? moderation = null,
+            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant6, TResult>? paretoRouter = null,
+            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant7, TResult>? responseHealing = null,
+            global::System.Func<global::OpenRouter.ChatRequestPluginsItemsVariant8, TResult>? web = null,
             bool validate = true)
         {
             if (validate)
@@ -521,6 +586,10 @@ namespace OpenRouter
             else if (IsFileParser && fileParser != null)
             {
                 return fileParser(FileParser!);
+            }
+            else if (IsFusion && fusion != null)
+            {
+                return fusion(Fusion!);
             }
             else if (IsModeration && moderation != null)
             {
@@ -552,13 +621,15 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant3>? fileParser = null,
 
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant4>? moderation = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant4>? fusion = null,
 
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant5>? paretoRouter = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant5>? moderation = null,
 
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant6>? responseHealing = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant6>? paretoRouter = null,
 
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant7>? web = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant7>? responseHealing = null,
+
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant8>? web = null,
             bool validate = true)
         {
             if (validate)
@@ -577,6 +648,10 @@ namespace OpenRouter
             else if (IsFileParser)
             {
                 fileParser?.Invoke(FileParser!);
+            }
+            else if (IsFusion)
+            {
+                fusion?.Invoke(Fusion!);
             }
             else if (IsModeration)
             {
@@ -603,10 +678,11 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant1>? autoRouter = null,
             global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant2>? contextCompression = null,
             global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant3>? fileParser = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant4>? moderation = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant5>? paretoRouter = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant6>? responseHealing = null,
-            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant7>? web = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant4>? fusion = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant5>? moderation = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant6>? paretoRouter = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant7>? responseHealing = null,
+            global::System.Action<global::OpenRouter.ChatRequestPluginsItemsVariant8>? web = null,
             bool validate = true)
         {
             if (validate)
@@ -625,6 +701,10 @@ namespace OpenRouter
             else if (IsFileParser)
             {
                 fileParser?.Invoke(FileParser!);
+            }
+            else if (IsFusion)
+            {
+                fusion?.Invoke(Fusion!);
             }
             else if (IsModeration)
             {
@@ -657,14 +737,16 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ChatRequestPluginsItemsVariant2),
                 FileParser,
                 typeof(global::OpenRouter.ChatRequestPluginsItemsVariant3),
-                Moderation,
+                Fusion,
                 typeof(global::OpenRouter.ChatRequestPluginsItemsVariant4),
-                ParetoRouter,
+                Moderation,
                 typeof(global::OpenRouter.ChatRequestPluginsItemsVariant5),
-                ResponseHealing,
+                ParetoRouter,
                 typeof(global::OpenRouter.ChatRequestPluginsItemsVariant6),
-                Web,
+                ResponseHealing,
                 typeof(global::OpenRouter.ChatRequestPluginsItemsVariant7),
+                Web,
+                typeof(global::OpenRouter.ChatRequestPluginsItemsVariant8),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -684,10 +766,11 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant1?>.Default.Equals(AutoRouter, other.AutoRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant2?>.Default.Equals(ContextCompression, other.ContextCompression) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant3?>.Default.Equals(FileParser, other.FileParser) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant4?>.Default.Equals(Moderation, other.Moderation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant5?>.Default.Equals(ParetoRouter, other.ParetoRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant6?>.Default.Equals(ResponseHealing, other.ResponseHealing) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant7?>.Default.Equals(Web, other.Web) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant4?>.Default.Equals(Fusion, other.Fusion) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant5?>.Default.Equals(Moderation, other.Moderation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant6?>.Default.Equals(ParetoRouter, other.ParetoRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant7?>.Default.Equals(ResponseHealing, other.ResponseHealing) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestPluginsItemsVariant8?>.Default.Equals(Web, other.Web) 
                 ;
         }
 

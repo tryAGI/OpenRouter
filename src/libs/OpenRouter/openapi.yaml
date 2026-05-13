@@ -6363,6 +6363,687 @@
         "description": "An openrouter:experimental__search_models server tool output item",
         "title": "OutputSearchModelsServerToolItem"
       },
+      "LocalShellCallItemActionType": {
+        "type": "string",
+        "enum": [
+          "exec"
+        ],
+        "title": "LocalShellCallItemActionType"
+      },
+      "LocalShellCallItemAction": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "timeout_ms": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/LocalShellCallItemActionType"
+          },
+          "user": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "working_directory": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "command",
+          "env",
+          "type"
+        ],
+        "title": "LocalShellCallItemAction"
+      },
+      "LocalShellCallItemType": {
+        "type": "string",
+        "enum": [
+          "local_shell_call"
+        ],
+        "title": "LocalShellCallItemType"
+      },
+      "LocalShellCallItem": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/LocalShellCallItemAction"
+          },
+          "call_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LocalShellCallItemType"
+          }
+        },
+        "required": [
+          "action",
+          "call_id",
+          "id",
+          "status",
+          "type"
+        ],
+        "description": "A local shell command execution call",
+        "title": "LocalShellCallItem"
+      },
+      "LocalShellCallOutputItemType": {
+        "type": "string",
+        "enum": [
+          "local_shell_call_output"
+        ],
+        "title": "LocalShellCallOutputItemType"
+      },
+      "LocalShellCallOutputItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "output": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LocalShellCallOutputItemType"
+          }
+        },
+        "required": [
+          "id",
+          "output",
+          "type"
+        ],
+        "description": "Output from a local shell command execution",
+        "title": "LocalShellCallOutputItem"
+      },
+      "ShellCallItemAction": {
+        "type": "object",
+        "properties": {
+          "commands": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "max_output_length": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "timeout_ms": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "commands"
+        ],
+        "title": "ShellCallItemAction"
+      },
+      "ShellCallItemType": {
+        "type": "string",
+        "enum": [
+          "shell_call"
+        ],
+        "title": "ShellCallItemType"
+      },
+      "ShellCallItem": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/ShellCallItemAction"
+          },
+          "call_id": {
+            "type": "string"
+          },
+          "environment": {
+            "oneOf": [
+              {
+                "description": "Any type"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ShellCallItemType"
+          }
+        },
+        "required": [
+          "action",
+          "call_id",
+          "type"
+        ],
+        "description": "A shell command execution call (newer variant)",
+        "title": "ShellCallItem"
+      },
+      "ShellCallOutputItemOutputItems": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "ShellCallOutputItemOutputItems"
+      },
+      "ShellCallOutputItemType": {
+        "type": "string",
+        "enum": [
+          "shell_call_output"
+        ],
+        "title": "ShellCallOutputItemType"
+      },
+      "ShellCallOutputItem": {
+        "type": "object",
+        "properties": {
+          "call_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "max_output_length": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "output": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShellCallOutputItemOutputItems"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ShellCallOutputItemType"
+          }
+        },
+        "required": [
+          "call_id",
+          "output",
+          "type"
+        ],
+        "description": "Output from a shell command execution (newer variant)",
+        "title": "ShellCallOutputItem"
+      },
+      "ApplyPatchCallItemOperationOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "create_file"
+        ],
+        "title": "ApplyPatchCallItemOperationOneOf0Type"
+      },
+      "ApplyPatchCallItemOperation0": {
+        "type": "object",
+        "properties": {
+          "diff": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallItemOperationOneOf0Type"
+          }
+        },
+        "required": [
+          "diff",
+          "path",
+          "type"
+        ],
+        "title": "ApplyPatchCallItemOperation0"
+      },
+      "ApplyPatchCallItemOperationOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "delete_file"
+        ],
+        "title": "ApplyPatchCallItemOperationOneOf1Type"
+      },
+      "ApplyPatchCallItemOperation1": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallItemOperationOneOf1Type"
+          }
+        },
+        "required": [
+          "path",
+          "type"
+        ],
+        "title": "ApplyPatchCallItemOperation1"
+      },
+      "ApplyPatchCallItemOperationOneOf2Type": {
+        "type": "string",
+        "enum": [
+          "update_file"
+        ],
+        "title": "ApplyPatchCallItemOperationOneOf2Type"
+      },
+      "ApplyPatchCallItemOperation2": {
+        "type": "object",
+        "properties": {
+          "diff": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallItemOperationOneOf2Type"
+          }
+        },
+        "required": [
+          "diff",
+          "path",
+          "type"
+        ],
+        "title": "ApplyPatchCallItemOperation2"
+      },
+      "ApplyPatchCallItemOperation": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallItemOperation0"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallItemOperation1"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallItemOperation2"
+          }
+        ],
+        "title": "ApplyPatchCallItemOperation"
+      },
+      "ApplyPatchCallItemStatus0": {
+        "type": "string",
+        "enum": [
+          "in_progress"
+        ],
+        "title": "ApplyPatchCallItemStatus0"
+      },
+      "ApplyPatchCallItemStatus1": {
+        "type": "string",
+        "enum": [
+          "completed"
+        ],
+        "title": "ApplyPatchCallItemStatus1"
+      },
+      "ApplyPatchCallItemStatus": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallItemStatus0"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallItemStatus1"
+          }
+        ],
+        "title": "ApplyPatchCallItemStatus"
+      },
+      "ApplyPatchCallItemType": {
+        "type": "string",
+        "enum": [
+          "apply_patch_call"
+        ],
+        "title": "ApplyPatchCallItemType"
+      },
+      "ApplyPatchCallItem": {
+        "type": "object",
+        "properties": {
+          "call_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "operation": {
+            "$ref": "#/components/schemas/ApplyPatchCallItemOperation"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ApplyPatchCallItemStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallItemType"
+          }
+        },
+        "required": [
+          "call_id",
+          "operation",
+          "status",
+          "type"
+        ],
+        "description": "A file create/update/delete via diff patch",
+        "title": "ApplyPatchCallItem"
+      },
+      "ApplyPatchCallOutputItemStatus0": {
+        "type": "string",
+        "enum": [
+          "completed"
+        ],
+        "title": "ApplyPatchCallOutputItemStatus0"
+      },
+      "ApplyPatchCallOutputItemStatus1": {
+        "type": "string",
+        "enum": [
+          "failed"
+        ],
+        "title": "ApplyPatchCallOutputItemStatus1"
+      },
+      "ApplyPatchCallOutputItemStatus": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItemStatus0"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItemStatus1"
+          }
+        ],
+        "title": "ApplyPatchCallOutputItemStatus"
+      },
+      "ApplyPatchCallOutputItemType": {
+        "type": "string",
+        "enum": [
+          "apply_patch_call_output"
+        ],
+        "title": "ApplyPatchCallOutputItemType"
+      },
+      "ApplyPatchCallOutputItem": {
+        "type": "object",
+        "properties": {
+          "call_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "output": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItemStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItemType"
+          }
+        },
+        "required": [
+          "call_id",
+          "status",
+          "type"
+        ],
+        "description": "Output from an apply patch operation",
+        "title": "ApplyPatchCallOutputItem"
+      },
+      "McpListToolsItemToolsItems": {
+        "type": "object",
+        "properties": {
+          "annotations": {
+            "oneOf": [
+              {
+                "description": "Any type"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "input_schema": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input_schema",
+          "name"
+        ],
+        "title": "McpListToolsItemToolsItems"
+      },
+      "McpListToolsItemType": {
+        "type": "string",
+        "enum": [
+          "mcp_list_tools"
+        ],
+        "title": "McpListToolsItemType"
+      },
+      "McpListToolsItem": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "server_label": {
+            "type": "string"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/McpListToolsItemToolsItems"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/McpListToolsItemType"
+          }
+        },
+        "required": [
+          "id",
+          "server_label",
+          "tools",
+          "type"
+        ],
+        "description": "List of available MCP tools from a server",
+        "title": "McpListToolsItem"
+      },
+      "McpApprovalRequestItemType": {
+        "type": "string",
+        "enum": [
+          "mcp_approval_request"
+        ],
+        "title": "McpApprovalRequestItemType"
+      },
+      "McpApprovalRequestItem": {
+        "type": "object",
+        "properties": {
+          "arguments": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "server_label": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/McpApprovalRequestItemType"
+          }
+        },
+        "required": [
+          "arguments",
+          "id",
+          "name",
+          "server_label",
+          "type"
+        ],
+        "description": "Request for approval to execute an MCP tool",
+        "title": "McpApprovalRequestItem"
+      },
+      "McpApprovalResponseItemType": {
+        "type": "string",
+        "enum": [
+          "mcp_approval_response"
+        ],
+        "title": "McpApprovalResponseItemType"
+      },
+      "McpApprovalResponseItem": {
+        "type": "object",
+        "properties": {
+          "approval_request_id": {
+            "type": "string"
+          },
+          "approve": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/McpApprovalResponseItemType"
+          }
+        },
+        "required": [
+          "approval_request_id",
+          "approve",
+          "type"
+        ],
+        "description": "User response to an MCP tool approval request",
+        "title": "McpApprovalResponseItem"
+      },
+      "McpCallItemType": {
+        "type": "string",
+        "enum": [
+          "mcp_call"
+        ],
+        "title": "McpCallItemType"
+      },
+      "McpCallItem": {
+        "type": "object",
+        "properties": {
+          "arguments": {
+            "type": "string"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "output": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "server_label": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/McpCallItemType"
+          }
+        },
+        "required": [
+          "arguments",
+          "id",
+          "name",
+          "server_label",
+          "type"
+        ],
+        "description": "An MCP tool call with its output or error",
+        "title": "McpCallItem"
+      },
       "CustomToolCallItemType": {
         "type": "string",
         "enum": [
@@ -6536,6 +7217,60 @@
         "description": "The output from a custom (freeform-grammar) tool call execution. Mirrors `function_call_output` but is matched to a `custom_tool_call` rather than a `function_call`.",
         "title": "CustomToolCallOutputItem"
       },
+      "CompactionItemType": {
+        "type": "string",
+        "enum": [
+          "compaction"
+        ],
+        "title": "CompactionItemType"
+      },
+      "CompactionItem": {
+        "type": "object",
+        "properties": {
+          "encrypted_content": {
+            "type": "string"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/CompactionItemType"
+          }
+        },
+        "required": [
+          "encrypted_content",
+          "type"
+        ],
+        "description": "A context compaction marker with encrypted summary",
+        "title": "CompactionItem"
+      },
+      "ItemReferenceItemType": {
+        "type": "string",
+        "enum": [
+          "item_reference"
+        ],
+        "title": "ItemReferenceItemType"
+      },
+      "ItemReferenceItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ItemReferenceItemType"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "description": "A reference to a previous response item by ID",
+        "title": "ItemReferenceItem"
+      },
       "InputsOneOf1Items": {
         "oneOf": [
           {
@@ -6623,10 +7358,46 @@
             "$ref": "#/components/schemas/OutputSearchModelsServerToolItem"
           },
           {
+            "$ref": "#/components/schemas/LocalShellCallItem"
+          },
+          {
+            "$ref": "#/components/schemas/LocalShellCallOutputItem"
+          },
+          {
+            "$ref": "#/components/schemas/ShellCallItem"
+          },
+          {
+            "$ref": "#/components/schemas/ShellCallOutputItem"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallItem"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItem"
+          },
+          {
+            "$ref": "#/components/schemas/McpListToolsItem"
+          },
+          {
+            "$ref": "#/components/schemas/McpApprovalRequestItem"
+          },
+          {
+            "$ref": "#/components/schemas/McpApprovalResponseItem"
+          },
+          {
+            "$ref": "#/components/schemas/McpCallItem"
+          },
+          {
             "$ref": "#/components/schemas/CustomToolCallItem"
           },
           {
             "$ref": "#/components/schemas/CustomToolCallOutputItem"
+          },
+          {
+            "$ref": "#/components/schemas/CompactionItem"
+          },
+          {
+            "$ref": "#/components/schemas/ItemReferenceItem"
           }
         ],
         "title": "InputsOneOf1Items"
@@ -6848,6 +7619,37 @@
               "id"
             ],
             "description": "file-parser variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "fusion"
+                ],
+                "description": "Discriminator value: fusion"
+              },
+              "analysis_models": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Slugs of models to run in parallel as the \"expert panel\" the judge analyzes. Each model receives the same user prompt with web_search + web_fetch enabled. Capped at 8 models to bound cost amplification. When omitted, defaults to the Quality preset from the /labs/fusion UI (~anthropic/claude-opus-latest, ~openai/gpt-latest)."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Set to false to disable the fusion plugin for this request. Defaults to true."
+              },
+              "model": {
+                "type": "string",
+                "description": "Slug of the model that performs both the judge step (with web_search + web_fetch) and the final synthesis. When omitted, defaults to the first model in the Quality preset."
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "description": "fusion variant"
           },
           {
             "type": "object",
@@ -9063,7 +9865,7 @@
           "medium",
           "high"
         ],
-        "description": "How much context to retrieve per result. Defaults to medium (15000 chars). Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl.",
+        "description": "How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size.",
         "title": "SearchQualityLevel"
       },
       "WebSearchUserLocationServerToolType": {
@@ -10560,6 +11362,132 @@
         ],
         "title": "OutputMessageItemType"
       },
+      "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisContradictionsItemsStancesItems": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string"
+          },
+          "stance": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "model",
+          "stance"
+        ],
+        "title": "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisContradictionsItemsStancesItems"
+      },
+      "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisContradictionsItems": {
+        "type": "object",
+        "properties": {
+          "stances": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisContradictionsItemsStancesItems"
+            }
+          },
+          "topic": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "stances",
+          "topic"
+        ],
+        "title": "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisContradictionsItems"
+      },
+      "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisPartialCoverageItems": {
+        "type": "object",
+        "properties": {
+          "models": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "point": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "models",
+          "point"
+        ],
+        "title": "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisPartialCoverageItems"
+      },
+      "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisUniqueInsightsItems": {
+        "type": "object",
+        "properties": {
+          "insight": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "insight",
+          "model"
+        ],
+        "title": "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisUniqueInsightsItems"
+      },
+      "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis": {
+        "type": "object",
+        "properties": {
+          "blind_spots": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "consensus": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "contradictions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisContradictionsItems"
+            }
+          },
+          "partial_coverage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisPartialCoverageItems"
+            }
+          },
+          "unique_insights": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionAnalysisUniqueInsightsItems"
+            }
+          }
+        },
+        "required": [
+          "blind_spots",
+          "consensus",
+          "contradictions",
+          "partial_coverage",
+          "unique_insights"
+        ],
+        "description": "Structured analysis produced by the fusion judge model.",
+        "title": "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis"
+      },
+      "OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "model"
+        ],
+        "title": "OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems"
+      },
       "OutputReasoningItemStatus0": {
         "type": "string",
         "enum": [
@@ -11063,6 +11991,44 @@
               "status"
             ],
             "description": "An openrouter:file_search server tool output item"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "openrouter:fusion"
+                ],
+                "description": "Discriminator value: openrouter:fusion"
+              },
+              "analysis": {
+                "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis",
+                "description": "Structured analysis produced by the fusion judge model."
+              },
+              "error": {
+                "type": "string",
+                "description": "Error message when the fusion run did not produce an analysis result."
+              },
+              "id": {
+                "type": "string"
+              },
+              "responses": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems"
+                },
+                "description": "Slugs of the analysis models that produced a response in this fusion run."
+              },
+              "status": {
+                "$ref": "#/components/schemas/ToolCallStatus"
+              }
+            },
+            "required": [
+              "type",
+              "status"
+            ],
+            "description": "An openrouter:fusion server tool output item"
           },
           {
             "type": "object",
@@ -11716,7 +12682,8 @@
           "alias",
           "fallback",
           "pareto",
-          "bodybuilder"
+          "bodybuilder",
+          "fusion"
         ],
         "title": "RoutingStrategy"
       },
@@ -14552,6 +15519,37 @@
               "id"
             ],
             "description": "file-parser variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "fusion"
+                ],
+                "description": "Discriminator value: fusion"
+              },
+              "analysis_models": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Slugs of models to run in parallel as the \"expert panel\" the judge analyzes. Each model receives the same user prompt with web_search + web_fetch enabled. Capped at 8 models to bound cost amplification. When omitted, defaults to the Quality preset from the /labs/fusion UI (~anthropic/claude-opus-latest, ~openai/gpt-latest)."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Set to false to disable the fusion plugin for this request. Defaults to true."
+              },
+              "model": {
+                "type": "string",
+                "description": "Slug of the model that performs both the judge step (with web_search + web_fetch) and the final synthesis. When omitted, defaults to the first model in the Quality preset."
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "description": "fusion variant"
           },
           {
             "type": "object",
@@ -21401,6 +22399,37 @@
               "id"
             ],
             "description": "file-parser variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "fusion"
+                ],
+                "description": "Discriminator value: fusion"
+              },
+              "analysis_models": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Slugs of models to run in parallel as the \"expert panel\" the judge analyzes. Each model receives the same user prompt with web_search + web_fetch enabled. Capped at 8 models to bound cost amplification. When omitted, defaults to the Quality preset from the /labs/fusion UI (~anthropic/claude-opus-latest, ~openai/gpt-latest)."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Set to false to disable the fusion plugin for this request. Defaults to true."
+              },
+              "model": {
+                "type": "string",
+                "description": "Slug of the model that performs both the judge step (with web_search + web_fetch) and the final synthesis. When omitted, defaults to the first model in the Quality preset."
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "description": "fusion variant"
           },
           {
             "type": "object",
