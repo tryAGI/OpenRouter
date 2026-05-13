@@ -99,6 +99,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Crucible,
+        /// <summary>
+        /// 
+        /// </summary>
         Crusoe,
         /// <summary>
         /// 
@@ -372,6 +376,7 @@ namespace OpenRouter
                 ProviderName.Clarifai => "Clarifai",
                 ProviderName.Cloudflare => "Cloudflare",
                 ProviderName.Cohere => "Cohere",
+                ProviderName.Crucible => "Crucible",
                 ProviderName.Crusoe => "Crusoe",
                 ProviderName.DeepInfra => "DeepInfra",
                 ProviderName.DeepSeek => "DeepSeek",
@@ -464,6 +469,7 @@ namespace OpenRouter
                 "Clarifai" => ProviderName.Clarifai,
                 "Cloudflare" => ProviderName.Cloudflare,
                 "Cohere" => ProviderName.Cohere,
+                "Crucible" => ProviderName.Crucible,
                 "Crusoe" => ProviderName.Crusoe,
                 "DeepInfra" => ProviderName.DeepInfra,
                 "DeepSeek" => ProviderName.DeepSeek,

@@ -7855,6 +7855,7 @@
           "Clarifai",
           "Cloudflare",
           "Cohere",
+          "Crucible",
           "Crusoe",
           "DeepInfra",
           "DeepSeek",
@@ -13923,6 +13924,12 @@
               "description": "Any type"
             }
           },
+          "crucible": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "crusoe": {
             "type": "object",
             "additionalProperties": {
@@ -18160,6 +18167,7 @@
           "Clarifai",
           "Cloudflare",
           "Cohere",
+          "Crucible",
           "Crusoe",
           "DeepInfra",
           "DeepSeek",
@@ -26351,6 +26359,12 @@
             }
           },
           "crofai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crucible": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"
