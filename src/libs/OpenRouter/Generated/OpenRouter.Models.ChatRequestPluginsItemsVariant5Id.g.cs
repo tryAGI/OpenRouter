@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: pareto-router
+    /// Discriminator value: moderation
     /// </summary>
     public enum ChatRequestPluginsItemsVariant5Id
     {
         /// <summary>
-        /// pareto-router
+        /// moderation
         /// </summary>
-        ParetoRouter,
+        Moderation,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ChatRequestPluginsItemsVariant5Id.ParetoRouter => "pareto-router",
+                ChatRequestPluginsItemsVariant5Id.Moderation => "moderation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "pareto-router" => ChatRequestPluginsItemsVariant5Id.ParetoRouter,
+                "moderation" => ChatRequestPluginsItemsVariant5Id.Moderation,
                 _ => null,
             };
         }

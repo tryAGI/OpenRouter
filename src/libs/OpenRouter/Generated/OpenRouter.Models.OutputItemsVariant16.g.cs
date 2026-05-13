@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:mcp server tool output item
+    /// An openrouter:image_generation server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant16
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:image_generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMcpServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputMcpServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant16TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant16Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("serverLabel")]
-        public string? ServerLabel { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("imageB64")]
+        public string? ImageB64 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
+        public string? ImageUrl { get; set; }
+
+        /// <summary>
+        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
+        public string? Result { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("revisedPrompt")]
+        public string? RevisedPrompt { get; set; }
 
         /// <summary>
         /// 
@@ -34,12 +52,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("toolName")]
-        public string? ToolName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,25 +63,35 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant16" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:image_generation
+        /// </param>
         /// <param name="id"></param>
-        /// <param name="serverLabel"></param>
-        /// <param name="toolName"></param>
+        /// <param name="imageB64"></param>
+        /// <param name="imageUrl"></param>
+        /// <param name="result">
+        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
+        /// </param>
+        /// <param name="revisedPrompt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant16(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputMcpServerToolItemType type,
+            global::OpenRouter.OutputItemsVariant16Type type,
             string? id,
-            string? serverLabel,
-            string? toolName)
+            string? imageB64,
+            string? imageUrl,
+            string? result,
+            string? revisedPrompt)
         {
             this.Type = type;
             this.Id = id;
-            this.ServerLabel = serverLabel;
+            this.ImageB64 = imageB64;
+            this.ImageUrl = imageUrl;
+            this.Result = result;
+            this.RevisedPrompt = revisedPrompt;
             this.Status = status;
-            this.ToolName = toolName;
         }
 
         /// <summary>

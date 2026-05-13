@@ -67,6 +67,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Openrouter_fusion,
+        /// <summary>
+        /// 
+        /// </summary>
         Openrouter_imageGeneration,
         /// <summary>
         /// 
@@ -128,6 +132,7 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.Openrouter_datetime => "openrouter:datetime",
                 OutputItemsDiscriminatorType.Openrouter_experimentalSearchModels => "openrouter:experimental__search_models",
                 OutputItemsDiscriminatorType.Openrouter_fileSearch => "openrouter:file_search",
+                OutputItemsDiscriminatorType.Openrouter_fusion => "openrouter:fusion",
                 OutputItemsDiscriminatorType.Openrouter_imageGeneration => "openrouter:image_generation",
                 OutputItemsDiscriminatorType.Openrouter_mcp => "openrouter:mcp",
                 OutputItemsDiscriminatorType.Openrouter_memory => "openrouter:memory",
@@ -161,6 +166,7 @@ namespace OpenRouter
                 "openrouter:datetime" => OutputItemsDiscriminatorType.Openrouter_datetime,
                 "openrouter:experimental__search_models" => OutputItemsDiscriminatorType.Openrouter_experimentalSearchModels,
                 "openrouter:file_search" => OutputItemsDiscriminatorType.Openrouter_fileSearch,
+                "openrouter:fusion" => OutputItemsDiscriminatorType.Openrouter_fusion,
                 "openrouter:image_generation" => OutputItemsDiscriminatorType.Openrouter_imageGeneration,
                 "openrouter:mcp" => OutputItemsDiscriminatorType.Openrouter_mcp,
                 "openrouter:memory" => OutputItemsDiscriminatorType.Openrouter_memory,

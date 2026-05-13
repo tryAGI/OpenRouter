@@ -126,12 +126,49 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileParser' but the value was {ToString()}.");
 
         /// <summary>
+        /// fusion variant
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant4? Fusion { get; init; }
+#else
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant4? Fusion { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fusion))]
+#endif
+        public bool IsFusion => Fusion != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFusion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value)
+        {
+            value = Fusion;
+            return IsFusion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant4 PickFusion() => IsFusion
+            ? Fusion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
+
+        /// <summary>
         /// moderation variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant4? Moderation { get; init; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant5? Moderation { get; init; }
 #else
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant4? Moderation { get; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant5? Moderation { get; }
 #endif
 
         /// <summary>
@@ -149,7 +186,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value)
+            out global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value)
         {
             value = Moderation;
             return IsModeration;
@@ -158,7 +195,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant4 PickModeration() => IsModeration
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant5 PickModeration() => IsModeration
             ? Moderation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Moderation' but the value was {ToString()}.");
 
@@ -166,9 +203,9 @@ namespace OpenRouter
         /// pareto-router variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant5? ParetoRouter { get; init; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant6? ParetoRouter { get; init; }
 #else
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant5? ParetoRouter { get; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant6? ParetoRouter { get; }
 #endif
 
         /// <summary>
@@ -186,7 +223,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value)
+            out global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value)
         {
             value = ParetoRouter;
             return IsParetoRouter;
@@ -195,7 +232,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant5 PickParetoRouter() => IsParetoRouter
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant6 PickParetoRouter() => IsParetoRouter
             ? ParetoRouter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ParetoRouter' but the value was {ToString()}.");
 
@@ -203,9 +240,9 @@ namespace OpenRouter
         /// response-healing variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant6? ResponseHealing { get; init; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant7? ResponseHealing { get; init; }
 #else
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant6? ResponseHealing { get; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant7? ResponseHealing { get; }
 #endif
 
         /// <summary>
@@ -223,7 +260,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value)
+            out global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value)
         {
             value = ResponseHealing;
             return IsResponseHealing;
@@ -232,7 +269,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant6 PickResponseHealing() => IsResponseHealing
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant7 PickResponseHealing() => IsResponseHealing
             ? ResponseHealing!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseHealing' but the value was {ToString()}.");
 
@@ -240,9 +277,9 @@ namespace OpenRouter
         /// web variant
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant7? Web { get; init; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant8? Web { get; init; }
 #else
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant7? Web { get; }
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant8? Web { get; }
 #endif
 
         /// <summary>
@@ -260,7 +297,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value)
+            out global::OpenRouter.ResponsesRequestPluginsItemsVariant8? value)
         {
             value = Web;
             return IsWeb;
@@ -269,7 +306,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ResponsesRequestPluginsItemsVariant7 PickWeb() => IsWeb
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant8 PickWeb() => IsWeb
             ? Web!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Web' but the value was {ToString()}.");
         /// <summary>
@@ -349,20 +386,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant4?(ResponsesRequestPluginsItems @this) => @this.Moderation;
+        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant4?(ResponsesRequestPluginsItems @this) => @this.Fusion;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value)
         {
-            Moderation = value;
+            Fusion = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ResponsesRequestPluginsItems FromModeration(global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value) => new ResponsesRequestPluginsItems(value);
+        public static ResponsesRequestPluginsItems FromFusion(global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -372,20 +409,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant5?(ResponsesRequestPluginsItems @this) => @this.ParetoRouter;
+        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant5?(ResponsesRequestPluginsItems @this) => @this.Moderation;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value)
         {
-            ParetoRouter = value;
+            Moderation = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ResponsesRequestPluginsItems FromParetoRouter(global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value) => new ResponsesRequestPluginsItems(value);
+        public static ResponsesRequestPluginsItems FromModeration(global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -395,20 +432,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant6?(ResponsesRequestPluginsItems @this) => @this.ResponseHealing;
+        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant6?(ResponsesRequestPluginsItems @this) => @this.ParetoRouter;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value)
         {
-            ResponseHealing = value;
+            ParetoRouter = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ResponsesRequestPluginsItems FromResponseHealing(global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value) => new ResponsesRequestPluginsItems(value);
+        public static ResponsesRequestPluginsItems FromParetoRouter(global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -418,12 +455,35 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant7?(ResponsesRequestPluginsItems @this) => @this.Web;
+        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant7?(ResponsesRequestPluginsItems @this) => @this.ResponseHealing;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value)
+        {
+            ResponseHealing = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromResponseHealing(global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant8 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant8?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant8?(ResponsesRequestPluginsItems @this) => @this.Web;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant8? value)
         {
             Web = value;
         }
@@ -431,7 +491,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static ResponsesRequestPluginsItems FromWeb(global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value) => new ResponsesRequestPluginsItems(value);
+        public static ResponsesRequestPluginsItems FromWeb(global::OpenRouter.ResponsesRequestPluginsItemsVariant8? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -441,10 +501,11 @@ namespace OpenRouter
             global::OpenRouter.ResponsesRequestPluginsItemsVariant1? autoRouter,
             global::OpenRouter.ResponsesRequestPluginsItemsVariant2? contextCompression,
             global::OpenRouter.ResponsesRequestPluginsItemsVariant3? fileParser,
-            global::OpenRouter.ResponsesRequestPluginsItemsVariant4? moderation,
-            global::OpenRouter.ResponsesRequestPluginsItemsVariant5? paretoRouter,
-            global::OpenRouter.ResponsesRequestPluginsItemsVariant6? responseHealing,
-            global::OpenRouter.ResponsesRequestPluginsItemsVariant7? web
+            global::OpenRouter.ResponsesRequestPluginsItemsVariant4? fusion,
+            global::OpenRouter.ResponsesRequestPluginsItemsVariant5? moderation,
+            global::OpenRouter.ResponsesRequestPluginsItemsVariant6? paretoRouter,
+            global::OpenRouter.ResponsesRequestPluginsItemsVariant7? responseHealing,
+            global::OpenRouter.ResponsesRequestPluginsItemsVariant8? web
             )
         {
             Id = id;
@@ -452,6 +513,7 @@ namespace OpenRouter
             AutoRouter = autoRouter;
             ContextCompression = contextCompression;
             FileParser = fileParser;
+            Fusion = fusion;
             Moderation = moderation;
             ParetoRouter = paretoRouter;
             ResponseHealing = responseHealing;
@@ -466,6 +528,7 @@ namespace OpenRouter
             ResponseHealing as object ??
             ParetoRouter as object ??
             Moderation as object ??
+            Fusion as object ??
             FileParser as object ??
             ContextCompression as object ??
             AutoRouter as object 
@@ -478,6 +541,7 @@ namespace OpenRouter
             AutoRouter?.ToString() ??
             ContextCompression?.ToString() ??
             FileParser?.ToString() ??
+            Fusion?.ToString() ??
             Moderation?.ToString() ??
             ParetoRouter?.ToString() ??
             ResponseHealing?.ToString() ??
@@ -489,7 +553,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsModeration && !IsParetoRouter && !IsResponseHealing && IsWeb;
+            return IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && IsWeb;
         }
 
         /// <summary>
@@ -499,10 +563,11 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant1, TResult>? autoRouter = null,
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant2, TResult>? contextCompression = null,
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant3, TResult>? fileParser = null,
-            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant4, TResult>? moderation = null,
-            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant5, TResult>? paretoRouter = null,
-            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant6, TResult>? responseHealing = null,
-            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant7, TResult>? web = null,
+            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant4, TResult>? fusion = null,
+            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant5, TResult>? moderation = null,
+            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant6, TResult>? paretoRouter = null,
+            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant7, TResult>? responseHealing = null,
+            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant8, TResult>? web = null,
             bool validate = true)
         {
             if (validate)
@@ -521,6 +586,10 @@ namespace OpenRouter
             else if (IsFileParser && fileParser != null)
             {
                 return fileParser(FileParser!);
+            }
+            else if (IsFusion && fusion != null)
+            {
+                return fusion(Fusion!);
             }
             else if (IsModeration && moderation != null)
             {
@@ -552,13 +621,15 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant3>? fileParser = null,
 
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant4>? moderation = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant4>? fusion = null,
 
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant5>? paretoRouter = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant5>? moderation = null,
 
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant6>? responseHealing = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant6>? paretoRouter = null,
 
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant7>? web = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant7>? responseHealing = null,
+
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant8>? web = null,
             bool validate = true)
         {
             if (validate)
@@ -577,6 +648,10 @@ namespace OpenRouter
             else if (IsFileParser)
             {
                 fileParser?.Invoke(FileParser!);
+            }
+            else if (IsFusion)
+            {
+                fusion?.Invoke(Fusion!);
             }
             else if (IsModeration)
             {
@@ -603,10 +678,11 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant1>? autoRouter = null,
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant2>? contextCompression = null,
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant3>? fileParser = null,
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant4>? moderation = null,
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant5>? paretoRouter = null,
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant6>? responseHealing = null,
-            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant7>? web = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant4>? fusion = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant5>? moderation = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant6>? paretoRouter = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant7>? responseHealing = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant8>? web = null,
             bool validate = true)
         {
             if (validate)
@@ -625,6 +701,10 @@ namespace OpenRouter
             else if (IsFileParser)
             {
                 fileParser?.Invoke(FileParser!);
+            }
+            else if (IsFusion)
+            {
+                fusion?.Invoke(Fusion!);
             }
             else if (IsModeration)
             {
@@ -657,14 +737,16 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant2),
                 FileParser,
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant3),
-                Moderation,
+                Fusion,
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant4),
-                ParetoRouter,
+                Moderation,
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant5),
-                ResponseHealing,
+                ParetoRouter,
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant6),
-                Web,
+                ResponseHealing,
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant7),
+                Web,
+                typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant8),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -684,10 +766,11 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant1?>.Default.Equals(AutoRouter, other.AutoRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant2?>.Default.Equals(ContextCompression, other.ContextCompression) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant3?>.Default.Equals(FileParser, other.FileParser) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant4?>.Default.Equals(Moderation, other.Moderation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant5?>.Default.Equals(ParetoRouter, other.ParetoRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant6?>.Default.Equals(ResponseHealing, other.ResponseHealing) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant7?>.Default.Equals(Web, other.Web) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant4?>.Default.Equals(Fusion, other.Fusion) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant5?>.Default.Equals(Moderation, other.Moderation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant6?>.Default.Equals(ParetoRouter, other.ParetoRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant7?>.Default.Equals(ResponseHealing, other.ResponseHealing) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant8?>.Default.Equals(Web, other.Web) 
                 ;
         }
 
