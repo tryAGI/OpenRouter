@@ -89,37 +89,50 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("user_location.timezone")) __score4++;
             if (__jsonProps.Contains("user_location.type")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("parameters")) __score5++;
-            if (__jsonProps.Contains("parameters.timezone")) __score5++;
+            if (__jsonProps.Contains("allowed_callers")) __score5++;
+            if (__jsonProps.Contains("cache_control")) __score5++;
+            if (__jsonProps.Contains("cache_control.ttl")) __score5++;
+            if (__jsonProps.Contains("cache_control.type")) __score5++;
+            if (__jsonProps.Contains("caching")) __score5++;
+            if (__jsonProps.Contains("caching.ttl")) __score5++;
+            if (__jsonProps.Contains("caching.type")) __score5++;
+            if (__jsonProps.Contains("defer_loading")) __score5++;
+            if (__jsonProps.Contains("max_uses")) __score5++;
+            if (__jsonProps.Contains("model")) __score5++;
+            if (__jsonProps.Contains("name")) __score5++;
             if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("parameters")) __score6++;
-            if (__jsonProps.Contains("parameters.model")) __score6++;
+            if (__jsonProps.Contains("parameters.timezone")) __score6++;
             if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("parameters")) __score7++;
-            if (__jsonProps.Contains("parameters.max_results")) __score7++;
+            if (__jsonProps.Contains("parameters.model")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
             if (__jsonProps.Contains("parameters")) __score8++;
-            if (__jsonProps.Contains("parameters.allowed_domains")) __score8++;
-            if (__jsonProps.Contains("parameters.blocked_domains")) __score8++;
-            if (__jsonProps.Contains("parameters.engine")) __score8++;
-            if (__jsonProps.Contains("parameters.max_content_tokens")) __score8++;
-            if (__jsonProps.Contains("parameters.max_uses")) __score8++;
+            if (__jsonProps.Contains("parameters.max_results")) __score8++;
             if (__jsonProps.Contains("type")) __score8++;
             var __score9 = 0;
             if (__jsonProps.Contains("parameters")) __score9++;
             if (__jsonProps.Contains("parameters.allowed_domains")) __score9++;
+            if (__jsonProps.Contains("parameters.blocked_domains")) __score9++;
             if (__jsonProps.Contains("parameters.engine")) __score9++;
-            if (__jsonProps.Contains("parameters.excluded_domains")) __score9++;
-            if (__jsonProps.Contains("parameters.max_results")) __score9++;
-            if (__jsonProps.Contains("parameters.max_total_results")) __score9++;
-            if (__jsonProps.Contains("parameters.search_context_size")) __score9++;
-            if (__jsonProps.Contains("parameters.user_location")) __score9++;
+            if (__jsonProps.Contains("parameters.max_content_tokens")) __score9++;
+            if (__jsonProps.Contains("parameters.max_uses")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;
             var __score10 = 0;
+            if (__jsonProps.Contains("parameters")) __score10++;
+            if (__jsonProps.Contains("parameters.allowed_domains")) __score10++;
+            if (__jsonProps.Contains("parameters.engine")) __score10++;
+            if (__jsonProps.Contains("parameters.excluded_domains")) __score10++;
+            if (__jsonProps.Contains("parameters.max_results")) __score10++;
+            if (__jsonProps.Contains("parameters.max_total_results")) __score10++;
+            if (__jsonProps.Contains("parameters.search_context_size")) __score10++;
+            if (__jsonProps.Contains("parameters.user_location")) __score10++;
             if (__jsonProps.Contains("type")) __score10++;
+            var __score11 = 0;
+            if (__jsonProps.Contains("type")) __score11++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -133,18 +146,20 @@ namespace OpenRouter.JsonConverters
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
             if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
             if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
+            if (__score11 > __bestScore) { __bestScore = __score11; __bestIndex = 11; }
 
             global::OpenRouter.MessagesRequestToolsItems0? messagesRequestToolsItems0 = default;
             global::OpenRouter.MessagesRequestToolsItems1? messagesRequestToolsItems1 = default;
             global::OpenRouter.MessagesRequestToolsItems2? messagesRequestToolsItems2 = default;
             global::OpenRouter.MessagesRequestToolsItems3? messagesRequestToolsItems3 = default;
             global::OpenRouter.MessagesRequestToolsItems4? messagesRequestToolsItems4 = default;
+            global::OpenRouter.MessagesRequestToolsItems5? messagesRequestToolsItems5 = default;
             global::OpenRouter.DatetimeServerTool? datetimeServerTool = default;
             global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter = default;
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool = default;
             global::OpenRouter.WebFetchServerTool? webFetchServerTool = default;
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool = default;
-            global::OpenRouter.MessagesRequestToolsItems10? messagesRequestToolsItems10 = default;
+            global::OpenRouter.MessagesRequestToolsItems11? messagesRequestToolsItems11 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -226,6 +241,21 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems5> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems5).Name}");
+                        messagesRequestToolsItems5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 6)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
                         datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -237,7 +267,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 6)
+                else if (__bestIndex == 7)
                 {
                     try
                     {
@@ -252,7 +282,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 7)
+                else if (__bestIndex == 8)
                 {
                     try
                     {
@@ -267,7 +297,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 8)
+                else if (__bestIndex == 9)
                 {
                     try
                     {
@@ -282,7 +312,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 9)
+                else if (__bestIndex == 10)
                 {
                     try
                     {
@@ -297,13 +327,13 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 10)
+                else if (__bestIndex == 11)
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems10> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems10).Name}");
-                        messagesRequestToolsItems10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems11> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems11).Name}");
+                        messagesRequestToolsItems11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -314,7 +344,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -331,7 +361,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -348,7 +378,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -365,7 +395,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -382,7 +412,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -399,7 +429,24 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems5> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems5).Name}");
+                    messagesRequestToolsItems5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -416,7 +463,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -433,7 +480,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -450,7 +497,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -467,7 +514,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
@@ -484,14 +531,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems10 == null)
+            if (messagesRequestToolsItems0 == null && messagesRequestToolsItems1 == null && messagesRequestToolsItems2 == null && messagesRequestToolsItems3 == null && messagesRequestToolsItems4 == null && messagesRequestToolsItems5 == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && messagesRequestToolsItems11 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems10> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems10).Name}");
-                    messagesRequestToolsItems10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems11> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems11).Name}");
+                    messagesRequestToolsItems11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -512,6 +559,8 @@ namespace OpenRouter.JsonConverters
 
                 messagesRequestToolsItems4,
 
+                messagesRequestToolsItems5,
+
                 datetimeServerTool,
 
                 imageGenerationServerToolOpenRouter,
@@ -522,7 +571,7 @@ namespace OpenRouter.JsonConverters
 
                 openRouterWebSearchServerTool,
 
-                messagesRequestToolsItems10
+                messagesRequestToolsItems11
                 );
 
             return __value;
@@ -567,6 +616,12 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems4).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems4!, typeInfo);
             }
+            else if (value.IsMessagesRequestToolsItems5)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems5?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems5).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems5!, typeInfo);
+            }
             else if (value.IsDatetimeServerTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool?> ??
@@ -597,11 +652,11 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenRouterWebSearchServerTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenRouterWebSearchServerTool!, typeInfo);
             }
-            else if (value.IsMessagesRequestToolsItems10)
+            else if (value.IsMessagesRequestToolsItems11)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems10?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems10).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems10!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestToolsItems11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestToolsItems11?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestToolsItems11).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems11!, typeInfo);
             }
         }
     }

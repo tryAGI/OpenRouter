@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: redacted_thinking
+    /// Discriminator value: container_upload
     /// </summary>
     public enum ORAnthropicContentBlockVariant5Type
     {
         /// <summary>
-        /// redacted_thinking
+        /// container_upload
         /// </summary>
-        RedactedThinking,
+        ContainerUpload,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ORAnthropicContentBlockVariant5Type.RedactedThinking => "redacted_thinking",
+                ORAnthropicContentBlockVariant5Type.ContainerUpload => "container_upload",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "redacted_thinking" => ORAnthropicContentBlockVariant5Type.RedactedThinking,
+                "container_upload" => ORAnthropicContentBlockVariant5Type.ContainerUpload,
                 _ => null,
             };
         }

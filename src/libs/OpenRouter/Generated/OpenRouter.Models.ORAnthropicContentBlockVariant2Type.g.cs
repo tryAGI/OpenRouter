@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: code_execution_tool_result
+    /// Discriminator value: bash_code_execution_tool_result
     /// </summary>
     public enum ORAnthropicContentBlockVariant2Type
     {
         /// <summary>
-        /// code_execution_tool_result
+        /// bash_code_execution_tool_result
         /// </summary>
-        CodeExecutionToolResult,
+        BashCodeExecutionToolResult,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ORAnthropicContentBlockVariant2Type.CodeExecutionToolResult => "code_execution_tool_result",
+                ORAnthropicContentBlockVariant2Type.BashCodeExecutionToolResult => "bash_code_execution_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "code_execution_tool_result" => ORAnthropicContentBlockVariant2Type.CodeExecutionToolResult,
+                "bash_code_execution_tool_result" => ORAnthropicContentBlockVariant2Type.BashCodeExecutionToolResult,
                 _ => null,
             };
         }

@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// tool_use variant
+    /// tool_search_tool_result variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant11
     {
         /// <summary>
-        /// Discriminator value: tool_use
+        /// Discriminator value: tool_search_tool_result
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant11TypeJsonConverter))]
@@ -18,30 +18,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCallerJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicCaller Caller { get; set; }
+        public required global::OpenRouter.AnthropicToolSearchContent Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        public object? Input { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required string ToolUseId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,28 +39,22 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ORAnthropicContentBlockVariant11" /> class.
         /// </summary>
-        /// <param name="caller"></param>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
+        /// <param name="content"></param>
+        /// <param name="toolUseId"></param>
         /// <param name="type">
-        /// Discriminator value: tool_use
+        /// Discriminator value: tool_search_tool_result
         /// </param>
-        /// <param name="input"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant11(
-            global::OpenRouter.AnthropicCaller caller,
-            string id,
-            string name,
-            global::OpenRouter.ORAnthropicContentBlockVariant11Type type,
-            object? input)
+            global::OpenRouter.AnthropicToolSearchContent content,
+            string toolUseId,
+            global::OpenRouter.ORAnthropicContentBlockVariant11Type type)
         {
             this.Type = type;
-            this.Caller = caller;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Input = input;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Content = content;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
         }
 
         /// <summary>

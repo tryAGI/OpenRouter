@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: container_upload
+    /// Discriminator value: compaction
     /// </summary>
     public enum ORAnthropicContentBlockVariant4Type
     {
         /// <summary>
-        /// container_upload
+        /// compaction
         /// </summary>
-        ContainerUpload,
+        Compaction,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ORAnthropicContentBlockVariant4Type.ContainerUpload => "container_upload",
+                ORAnthropicContentBlockVariant4Type.Compaction => "compaction",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "container_upload" => ORAnthropicContentBlockVariant4Type.ContainerUpload,
+                "compaction" => ORAnthropicContentBlockVariant4Type.Compaction,
                 _ => null,
             };
         }

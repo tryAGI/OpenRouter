@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: thinking
+    /// Discriminator value: text_editor_code_execution_tool_result
     /// </summary>
     public enum ORAnthropicContentBlockVariant9Type
     {
         /// <summary>
-        /// thinking
+        /// text_editor_code_execution_tool_result
         /// </summary>
-        Thinking,
+        TextEditorCodeExecutionToolResult,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ORAnthropicContentBlockVariant9Type.Thinking => "thinking",
+                ORAnthropicContentBlockVariant9Type.TextEditorCodeExecutionToolResult => "text_editor_code_execution_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "thinking" => ORAnthropicContentBlockVariant9Type.Thinking,
+                "text_editor_code_execution_tool_result" => ORAnthropicContentBlockVariant9Type.TextEditorCodeExecutionToolResult,
                 _ => null,
             };
         }

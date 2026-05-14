@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: compaction
+    /// Discriminator value: code_execution_tool_result
     /// </summary>
     public enum ORAnthropicContentBlockVariant3Type
     {
         /// <summary>
-        /// compaction
+        /// code_execution_tool_result
         /// </summary>
-        Compaction,
+        CodeExecutionToolResult,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ORAnthropicContentBlockVariant3Type.Compaction => "compaction",
+                ORAnthropicContentBlockVariant3Type.CodeExecutionToolResult => "code_execution_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "compaction" => ORAnthropicContentBlockVariant3Type.Compaction,
+                "code_execution_tool_result" => ORAnthropicContentBlockVariant3Type.CodeExecutionToolResult,
                 _ => null,
             };
         }

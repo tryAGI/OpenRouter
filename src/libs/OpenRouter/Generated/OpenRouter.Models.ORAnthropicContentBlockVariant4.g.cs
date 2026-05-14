@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// container_upload variant
+    /// compaction variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant4
     {
         /// <summary>
-        /// Discriminator value: container_upload
+        /// Discriminator value: compaction
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant4TypeJsonConverter))]
@@ -18,9 +18,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FileId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public string? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,19 +30,19 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ORAnthropicContentBlockVariant4" /> class.
         /// </summary>
-        /// <param name="fileId"></param>
         /// <param name="type">
-        /// Discriminator value: container_upload
+        /// Discriminator value: compaction
         /// </param>
+        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant4(
-            string fileId,
-            global::OpenRouter.ORAnthropicContentBlockVariant4Type type)
+            global::OpenRouter.ORAnthropicContentBlockVariant4Type type,
+            string? content)
         {
             this.Type = type;
-            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+            this.Content = content;
         }
 
         /// <summary>
