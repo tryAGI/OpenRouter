@@ -65,6 +65,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found - Resource does not exist",
             "content": {
@@ -741,7 +751,7 @@
             }
           },
           "403": {
-            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2901,11 +2911,11 @@
             }
           },
           "403": {
-            "description": "Permission denied error",
+            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MessagesErrorResponse"
+                  "$ref": "#/components/schemas/ForbiddenResponse"
                 }
               }
             }
@@ -13167,6 +13177,60 @@
         "description": "Payment Required - Insufficient credits or quota to complete request",
         "title": "PaymentRequiredResponse"
       },
+      "ForbiddenResponseErrorData": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "description": "Error data for ForbiddenResponse",
+        "title": "ForbiddenResponseErrorData"
+      },
+      "ForbiddenResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ForbiddenResponseErrorData"
+          },
+          "openrouter_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "user_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "description": "Forbidden - Authentication successful but insufficient permissions",
+        "title": "ForbiddenResponse"
+      },
       "NotFoundResponseErrorData": {
         "type": "object",
         "properties": {
@@ -13628,60 +13692,6 @@
           "user_id"
         ],
         "title": "OAuth_exchangeAuthCodeForAPIKey_Response_200"
-      },
-      "ForbiddenResponseErrorData": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "integer"
-          },
-          "message": {
-            "type": "string"
-          },
-          "metadata": {
-            "type": [
-              "object",
-              "null"
-            ],
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          }
-        },
-        "required": [
-          "code",
-          "message"
-        ],
-        "description": "Error data for ForbiddenResponse",
-        "title": "ForbiddenResponseErrorData"
-      },
-      "ForbiddenResponse": {
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/ForbiddenResponseErrorData"
-          },
-          "openrouter_metadata": {
-            "type": [
-              "object",
-              "null"
-            ],
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
-          "user_id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "required": [
-          "error"
-        ],
-        "description": "Forbidden - Authentication successful but insufficient permissions",
-        "title": "ForbiddenResponse"
       },
       "AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod": {
         "type": "string",
