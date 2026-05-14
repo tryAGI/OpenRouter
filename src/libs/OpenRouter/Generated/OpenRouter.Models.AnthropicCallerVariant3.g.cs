@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class AnthropicCallerVariant3
     {
         /// <summary>
-        /// 
+        /// Discriminator value: direct
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicDirectCallerTypeJsonConverter))]
-        public global::OpenRouter.AnthropicDirectCallerType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant3TypeJsonConverter))]
+        public global::OpenRouter.AnthropicCallerVariant3Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,12 +24,14 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="AnthropicCallerVariant3" /> class.
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: direct
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicCallerVariant3(
-            global::OpenRouter.AnthropicDirectCallerType type)
+            global::OpenRouter.AnthropicCallerVariant3Type type)
         {
             this.Type = type;
         }

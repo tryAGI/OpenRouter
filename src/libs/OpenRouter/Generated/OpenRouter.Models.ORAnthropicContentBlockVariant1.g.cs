@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// bash_code_execution_tool_result variant
+    /// advisor_tool_result variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant1
     {
         /// <summary>
-        /// Discriminator value: bash_code_execution_tool_result
+        /// Discriminator value: advisor_tool_result
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant1TypeJsonConverter))]
@@ -19,9 +19,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicBashCodeExecutionContent Content { get; set; }
+        public required object Content { get; set; }
 
         /// <summary>
         /// 
@@ -42,18 +41,18 @@ namespace OpenRouter
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type">
-        /// Discriminator value: bash_code_execution_tool_result
+        /// Discriminator value: advisor_tool_result
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant1(
-            global::OpenRouter.AnthropicBashCodeExecutionContent content,
+            object content,
             string toolUseId,
             global::OpenRouter.ORAnthropicContentBlockVariant1Type type)
         {
             this.Type = type;
-            this.Content = content;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
         }
 

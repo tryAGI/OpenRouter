@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class AnthropicCallerVariant1
     {
         /// <summary>
-        /// 
+        /// Discriminator value: code_execution_20250825
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecution20250825CallerTypeJsonConverter))]
-        public global::OpenRouter.AnthropicCodeExecution20250825CallerType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant1TypeJsonConverter))]
+        public global::OpenRouter.AnthropicCallerVariant1Type Type { get; set; }
 
         /// <summary>
         /// 
@@ -32,13 +32,15 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AnthropicCallerVariant1" /> class.
         /// </summary>
         /// <param name="toolId"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: code_execution_20250825
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicCallerVariant1(
             string toolId,
-            global::OpenRouter.AnthropicCodeExecution20250825CallerType type)
+            global::OpenRouter.AnthropicCallerVariant1Type type)
         {
             this.Type = type;
             this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));

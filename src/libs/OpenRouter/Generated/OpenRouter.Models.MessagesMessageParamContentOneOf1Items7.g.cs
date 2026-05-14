@@ -31,9 +31,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicServerToolNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicServerToolName Name { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +62,7 @@ namespace OpenRouter
 #endif
         public MessagesMessageParamContentOneOf1Items7(
             string id,
-            global::OpenRouter.AnthropicServerToolName name,
+            string name,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             object? input,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Type type)
@@ -71,7 +70,7 @@ namespace OpenRouter
             this.CacheControl = cacheControl;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input;
-            this.Name = name;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
         }
 

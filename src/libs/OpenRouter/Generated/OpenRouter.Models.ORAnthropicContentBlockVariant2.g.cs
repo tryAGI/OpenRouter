@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// code_execution_tool_result variant
+    /// bash_code_execution_tool_result variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant2
     {
         /// <summary>
-        /// Discriminator value: code_execution_tool_result
+        /// Discriminator value: bash_code_execution_tool_result
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant2TypeJsonConverter))]
@@ -19,9 +19,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicCodeExecutionContent Content { get; set; }
+        public required global::OpenRouter.AnthropicBashCodeExecutionContent Content { get; set; }
 
         /// <summary>
         /// 
@@ -42,13 +42,13 @@ namespace OpenRouter
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type">
-        /// Discriminator value: code_execution_tool_result
+        /// Discriminator value: bash_code_execution_tool_result
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant2(
-            global::OpenRouter.AnthropicCodeExecutionContent content,
+            global::OpenRouter.AnthropicBashCodeExecutionContent content,
             string toolUseId,
             global::OpenRouter.ORAnthropicContentBlockVariant2Type type)
         {

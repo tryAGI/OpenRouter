@@ -11,6 +11,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        AdvisorToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
         BashCodeExecutionToolResult,
         /// <summary>
         /// 
@@ -74,6 +78,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                ORAnthropicContentBlockDiscriminatorType.AdvisorToolResult => "advisor_tool_result",
                 ORAnthropicContentBlockDiscriminatorType.BashCodeExecutionToolResult => "bash_code_execution_tool_result",
                 ORAnthropicContentBlockDiscriminatorType.CodeExecutionToolResult => "code_execution_tool_result",
                 ORAnthropicContentBlockDiscriminatorType.Compaction => "compaction",
@@ -97,6 +102,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                "advisor_tool_result" => ORAnthropicContentBlockDiscriminatorType.AdvisorToolResult,
                 "bash_code_execution_tool_result" => ORAnthropicContentBlockDiscriminatorType.BashCodeExecutionToolResult,
                 "code_execution_tool_result" => ORAnthropicContentBlockDiscriminatorType.CodeExecutionToolResult,
                 "compaction" => ORAnthropicContentBlockDiscriminatorType.Compaction,

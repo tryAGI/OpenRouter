@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: web_search_tool_result
+    /// Discriminator value: web_fetch_tool_result
     /// </summary>
     public enum ORAnthropicContentBlockVariant13Type
     {
         /// <summary>
-        /// web_search_tool_result
+        /// web_fetch_tool_result
         /// </summary>
-        WebSearchToolResult,
+        WebFetchToolResult,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ORAnthropicContentBlockVariant13Type.WebSearchToolResult => "web_search_tool_result",
+                ORAnthropicContentBlockVariant13Type.WebFetchToolResult => "web_fetch_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "web_search_tool_result" => ORAnthropicContentBlockVariant13Type.WebSearchToolResult,
+                "web_fetch_tool_result" => ORAnthropicContentBlockVariant13Type.WebFetchToolResult,
                 _ => null,
             };
         }
