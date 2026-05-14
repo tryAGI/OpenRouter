@@ -2456,83 +2456,83 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.NotFoundResponseErrorData? Type607 { get; set; }
+        public global::OpenRouter.ForbiddenResponseErrorData? Type607 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.NotFoundResponse? Type608 { get; set; }
+        public global::OpenRouter.ForbiddenResponse? Type608 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.RequestTimeoutResponseErrorData? Type609 { get; set; }
+        public global::OpenRouter.NotFoundResponseErrorData? Type609 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.RequestTimeoutResponse? Type610 { get; set; }
+        public global::OpenRouter.NotFoundResponse? Type610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PayloadTooLargeResponseErrorData? Type611 { get; set; }
+        public global::OpenRouter.RequestTimeoutResponseErrorData? Type611 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.PayloadTooLargeResponse? Type612 { get; set; }
+        public global::OpenRouter.RequestTimeoutResponse? Type612 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UnprocessableEntityResponseErrorData? Type613 { get; set; }
+        public global::OpenRouter.PayloadTooLargeResponseErrorData? Type613 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UnprocessableEntityResponse? Type614 { get; set; }
+        public global::OpenRouter.PayloadTooLargeResponse? Type614 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.TooManyRequestsResponseErrorData? Type615 { get; set; }
+        public global::OpenRouter.UnprocessableEntityResponseErrorData? Type615 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.TooManyRequestsResponse? Type616 { get; set; }
+        public global::OpenRouter.UnprocessableEntityResponse? Type616 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.InternalServerResponseErrorData? Type617 { get; set; }
+        public global::OpenRouter.TooManyRequestsResponseErrorData? Type617 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.InternalServerResponse? Type618 { get; set; }
+        public global::OpenRouter.TooManyRequestsResponse? Type618 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.BadGatewayResponseErrorData? Type619 { get; set; }
+        public global::OpenRouter.InternalServerResponseErrorData? Type619 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.BadGatewayResponse? Type620 { get; set; }
+        public global::OpenRouter.InternalServerResponse? Type620 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ServiceUnavailableResponseErrorData? Type621 { get; set; }
+        public global::OpenRouter.BadGatewayResponseErrorData? Type621 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ServiceUnavailableResponse? Type622 { get; set; }
+        public global::OpenRouter.BadGatewayResponse? Type622 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? Type623 { get; set; }
+        public global::OpenRouter.ServiceUnavailableResponseErrorData? Type623 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200? Type624 { get; set; }
+        public global::OpenRouter.ServiceUnavailableResponse? Type624 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ForbiddenResponseErrorData? Type625 { get; set; }
+        public global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? Type625 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ForbiddenResponse? Type626 { get; set; }
+        public global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200? Type626 { get; set; }
         /// <summary>
         /// 
         /// </summary>

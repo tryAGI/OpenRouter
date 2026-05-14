@@ -432,24 +432,24 @@ namespace OpenRouter
                                         h => h.Value),
                                 };
                             }
-                            // Permission denied error
+                            // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::OpenRouter.MessagesErrorResponse? __value_403 = null;
+                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -457,7 +457,7 @@ namespace OpenRouter
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
+                                throw new global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>(
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     statusCode: __response.StatusCode)

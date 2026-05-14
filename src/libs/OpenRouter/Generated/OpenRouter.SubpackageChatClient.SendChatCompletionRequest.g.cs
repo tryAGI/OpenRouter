@@ -470,7 +470,7 @@ namespace OpenRouter
                                         h => h.Value),
                                 };
                             }
-                            // Forbidden - Authentication successful but insufficient permissions
+                            // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
