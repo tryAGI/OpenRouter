@@ -4496,7 +4496,8 @@
         "enum": [
           "auto",
           "high",
-          "low"
+          "low",
+          "original"
         ],
         "title": "EasyInputMessageContentOneOf0ItemsOneOf1Detail"
       },
@@ -4763,7 +4764,8 @@
         "enum": [
           "auto",
           "high",
-          "low"
+          "low",
+          "original"
         ],
         "title": "InputMessageItemContentItemsOneOf1Detail"
       },
@@ -4943,7 +4945,8 @@
         "enum": [
           "auto",
           "high",
-          "low"
+          "low",
+          "original"
         ],
         "title": "OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail"
       },

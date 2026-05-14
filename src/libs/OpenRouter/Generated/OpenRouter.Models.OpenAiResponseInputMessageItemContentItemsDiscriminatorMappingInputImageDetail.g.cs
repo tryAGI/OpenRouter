@@ -20,6 +20,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Original,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace OpenRouter
                 OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.Auto => "auto",
                 OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.High => "high",
                 OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.Low => "low",
+                OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.Original => "original",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace OpenRouter
                 "auto" => OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.Auto,
                 "high" => OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.High,
                 "low" => OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.Low,
+                "original" => OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetail.Original,
                 _ => null,
             };
         }
