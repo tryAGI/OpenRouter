@@ -5090,6 +5090,193 @@
         "description": "The output from a function call execution",
         "title": "FunctionCallOutputItem"
       },
+      "ApplyPatchCallOperationOneOf0Type": {
+        "type": "string",
+        "enum": [
+          "create_file"
+        ],
+        "title": "ApplyPatchCallOperationOneOf0Type"
+      },
+      "ApplyPatchCallOperation0": {
+        "type": "object",
+        "properties": {
+          "diff": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallOperationOneOf0Type"
+          }
+        },
+        "required": [
+          "diff",
+          "path",
+          "type"
+        ],
+        "title": "ApplyPatchCallOperation0"
+      },
+      "ApplyPatchCallOperationOneOf1Type": {
+        "type": "string",
+        "enum": [
+          "update_file"
+        ],
+        "title": "ApplyPatchCallOperationOneOf1Type"
+      },
+      "ApplyPatchCallOperation1": {
+        "type": "object",
+        "properties": {
+          "diff": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallOperationOneOf1Type"
+          }
+        },
+        "required": [
+          "diff",
+          "path",
+          "type"
+        ],
+        "title": "ApplyPatchCallOperation1"
+      },
+      "ApplyPatchCallOperationOneOf2Type": {
+        "type": "string",
+        "enum": [
+          "delete_file"
+        ],
+        "title": "ApplyPatchCallOperationOneOf2Type"
+      },
+      "ApplyPatchCallOperation2": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallOperationOneOf2Type"
+          }
+        },
+        "required": [
+          "path",
+          "type"
+        ],
+        "title": "ApplyPatchCallOperation2"
+      },
+      "ApplyPatchCallOperation": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallOperation0"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallOperation1"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallOperation2"
+          }
+        ],
+        "description": "The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.",
+        "title": "ApplyPatchCallOperation"
+      },
+      "ApplyPatchCallStatus": {
+        "type": "string",
+        "enum": [
+          "in_progress",
+          "completed"
+        ],
+        "description": "Lifecycle state of an `apply_patch_call` output item.",
+        "title": "ApplyPatchCallStatus"
+      },
+      "ApplyPatchCallItemType": {
+        "type": "string",
+        "enum": [
+          "apply_patch_call"
+        ],
+        "title": "ApplyPatchCallItemType"
+      },
+      "ApplyPatchCallItem": {
+        "type": "object",
+        "properties": {
+          "call_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "operation": {
+            "$ref": "#/components/schemas/ApplyPatchCallOperation"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ApplyPatchCallStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallItemType"
+          }
+        },
+        "required": [
+          "call_id",
+          "operation",
+          "status",
+          "type"
+        ],
+        "description": "A tool call emitted by the model requesting a V4A patch operation. The client applies the patch and echoes an `apply_patch_call_output` on the next turn.",
+        "title": "ApplyPatchCallItem"
+      },
+      "ApplyPatchCallOutputItemStatus": {
+        "type": "string",
+        "enum": [
+          "completed",
+          "failed"
+        ],
+        "title": "ApplyPatchCallOutputItemStatus"
+      },
+      "ApplyPatchCallOutputItemType": {
+        "type": "string",
+        "enum": [
+          "apply_patch_call_output"
+        ],
+        "title": "ApplyPatchCallOutputItemType"
+      },
+      "ApplyPatchCallOutputItem": {
+        "type": "object",
+        "properties": {
+          "call_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "output": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItemStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItemType"
+          }
+        },
+        "required": [
+          "call_id",
+          "status",
+          "type"
+        ],
+        "description": "The client's echo of an `apply_patch_call` after applying the patch. `output` is an optional human-readable log; `status` is `completed` when the patch was applied successfully, `failed` otherwise.",
+        "title": "ApplyPatchCallOutputItem"
+      },
       "FileCitationType": {
         "type": "string",
         "enum": [
@@ -5310,7 +5497,7 @@
         ],
         "title": "OpenAIResponsesRefusalContent"
       },
-      "InputsOneOf1ItemsOneOf5ContentOneOf0Items": {
+      "InputsOneOf1ItemsOneOf7ContentOneOf0Items": {
         "oneOf": [
           {
             "$ref": "#/components/schemas/ResponseOutputText"
@@ -5319,19 +5506,19 @@
             "$ref": "#/components/schemas/OpenAIResponsesRefusalContent"
           }
         ],
-        "title": "InputsOneOf1ItemsOneOf5ContentOneOf0Items"
+        "title": "InputsOneOf1ItemsOneOf7ContentOneOf0Items"
       },
-      "InputsOneOf1ItemsOneOf5Content0": {
+      "InputsOneOf1ItemsOneOf7Content0": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/InputsOneOf1ItemsOneOf5ContentOneOf0Items"
+          "$ref": "#/components/schemas/InputsOneOf1ItemsOneOf7ContentOneOf0Items"
         },
-        "title": "InputsOneOf1ItemsOneOf5Content0"
+        "title": "InputsOneOf1ItemsOneOf7Content0"
       },
-      "InputsOneOf1ItemsOneOf5Content": {
+      "InputsOneOf1ItemsOneOf7Content": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/InputsOneOf1ItemsOneOf5Content0"
+            "$ref": "#/components/schemas/InputsOneOf1ItemsOneOf7Content0"
           },
           {
             "type": "string"
@@ -5340,19 +5527,19 @@
             "description": "Any type"
           }
         ],
-        "title": "InputsOneOf1ItemsOneOf5Content"
+        "title": "InputsOneOf1ItemsOneOf7Content"
       },
-      "InputsOneOf1Items5": {
+      "InputsOneOf1Items7": {
         "type": "object",
         "properties": {
           "content": {
-            "$ref": "#/components/schemas/InputsOneOf1ItemsOneOf5Content"
+            "$ref": "#/components/schemas/InputsOneOf1ItemsOneOf7Content"
           }
         },
         "description": "An output message item",
-        "title": "InputsOneOf1Items5"
+        "title": "InputsOneOf1Items7"
       },
-      "InputsOneOf1Items6": {
+      "InputsOneOf1Items8": {
         "type": "object",
         "properties": {
           "content": {
@@ -5385,7 +5572,7 @@
           }
         },
         "description": "An output item containing reasoning",
-        "title": "InputsOneOf1Items6"
+        "title": "InputsOneOf1Items8"
       },
       "OutputFunctionCallItemStatus0": {
         "type": "string",
@@ -6195,14 +6382,14 @@
       "OutputApplyPatchServerToolItem": {
         "type": "object",
         "properties": {
-          "filePath": {
+          "call_id": {
             "type": "string"
           },
           "id": {
             "type": "string"
           },
-          "patch": {
-            "type": "string"
+          "operation": {
+            "$ref": "#/components/schemas/ApplyPatchCallOperation"
           },
           "status": {
             "$ref": "#/components/schemas/ToolCallStatus"
@@ -6211,7 +6398,7 @@
         "required": [
           "status"
         ],
-        "description": "An openrouter:apply_patch server tool output item",
+        "description": "An openrouter:apply_patch server tool output item. The turn halts when validation succeeds so the client can apply the patch and echo an `apply_patch_call_output` on the next turn.",
         "title": "OutputApplyPatchServerToolItem"
       },
       "OutputWebFetchServerToolItemType": {
@@ -6669,225 +6856,6 @@
         "description": "Output from a shell command execution (newer variant)",
         "title": "ShellCallOutputItem"
       },
-      "ApplyPatchCallItemOperationOneOf0Type": {
-        "type": "string",
-        "enum": [
-          "create_file"
-        ],
-        "title": "ApplyPatchCallItemOperationOneOf0Type"
-      },
-      "ApplyPatchCallItemOperation0": {
-        "type": "object",
-        "properties": {
-          "diff": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ApplyPatchCallItemOperationOneOf0Type"
-          }
-        },
-        "required": [
-          "diff",
-          "path",
-          "type"
-        ],
-        "title": "ApplyPatchCallItemOperation0"
-      },
-      "ApplyPatchCallItemOperationOneOf1Type": {
-        "type": "string",
-        "enum": [
-          "delete_file"
-        ],
-        "title": "ApplyPatchCallItemOperationOneOf1Type"
-      },
-      "ApplyPatchCallItemOperation1": {
-        "type": "object",
-        "properties": {
-          "path": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ApplyPatchCallItemOperationOneOf1Type"
-          }
-        },
-        "required": [
-          "path",
-          "type"
-        ],
-        "title": "ApplyPatchCallItemOperation1"
-      },
-      "ApplyPatchCallItemOperationOneOf2Type": {
-        "type": "string",
-        "enum": [
-          "update_file"
-        ],
-        "title": "ApplyPatchCallItemOperationOneOf2Type"
-      },
-      "ApplyPatchCallItemOperation2": {
-        "type": "object",
-        "properties": {
-          "diff": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ApplyPatchCallItemOperationOneOf2Type"
-          }
-        },
-        "required": [
-          "diff",
-          "path",
-          "type"
-        ],
-        "title": "ApplyPatchCallItemOperation2"
-      },
-      "ApplyPatchCallItemOperation": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallItemOperation0"
-          },
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallItemOperation1"
-          },
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallItemOperation2"
-          }
-        ],
-        "title": "ApplyPatchCallItemOperation"
-      },
-      "ApplyPatchCallItemStatus0": {
-        "type": "string",
-        "enum": [
-          "in_progress"
-        ],
-        "title": "ApplyPatchCallItemStatus0"
-      },
-      "ApplyPatchCallItemStatus1": {
-        "type": "string",
-        "enum": [
-          "completed"
-        ],
-        "title": "ApplyPatchCallItemStatus1"
-      },
-      "ApplyPatchCallItemStatus": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallItemStatus0"
-          },
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallItemStatus1"
-          }
-        ],
-        "title": "ApplyPatchCallItemStatus"
-      },
-      "ApplyPatchCallItemType": {
-        "type": "string",
-        "enum": [
-          "apply_patch_call"
-        ],
-        "title": "ApplyPatchCallItemType"
-      },
-      "ApplyPatchCallItem": {
-        "type": "object",
-        "properties": {
-          "call_id": {
-            "type": "string"
-          },
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "operation": {
-            "$ref": "#/components/schemas/ApplyPatchCallItemOperation"
-          },
-          "status": {
-            "$ref": "#/components/schemas/ApplyPatchCallItemStatus"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ApplyPatchCallItemType"
-          }
-        },
-        "required": [
-          "call_id",
-          "operation",
-          "status",
-          "type"
-        ],
-        "description": "A file create/update/delete via diff patch",
-        "title": "ApplyPatchCallItem"
-      },
-      "ApplyPatchCallOutputItemStatus0": {
-        "type": "string",
-        "enum": [
-          "completed"
-        ],
-        "title": "ApplyPatchCallOutputItemStatus0"
-      },
-      "ApplyPatchCallOutputItemStatus1": {
-        "type": "string",
-        "enum": [
-          "failed"
-        ],
-        "title": "ApplyPatchCallOutputItemStatus1"
-      },
-      "ApplyPatchCallOutputItemStatus": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallOutputItemStatus0"
-          },
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallOutputItemStatus1"
-          }
-        ],
-        "title": "ApplyPatchCallOutputItemStatus"
-      },
-      "ApplyPatchCallOutputItemType": {
-        "type": "string",
-        "enum": [
-          "apply_patch_call_output"
-        ],
-        "title": "ApplyPatchCallOutputItemType"
-      },
-      "ApplyPatchCallOutputItem": {
-        "type": "object",
-        "properties": {
-          "call_id": {
-            "type": "string"
-          },
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "output": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "$ref": "#/components/schemas/ApplyPatchCallOutputItemStatus"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ApplyPatchCallOutputItemType"
-          }
-        },
-        "required": [
-          "call_id",
-          "status",
-          "type"
-        ],
-        "description": "Output from an apply patch operation",
-        "title": "ApplyPatchCallOutputItem"
-      },
       "McpListToolsItemToolsItems": {
         "type": "object",
         "properties": {
@@ -7333,10 +7301,16 @@
             "$ref": "#/components/schemas/FunctionCallOutputItem"
           },
           {
-            "$ref": "#/components/schemas/InputsOneOf1Items5"
+            "$ref": "#/components/schemas/ApplyPatchCallItem"
           },
           {
-            "$ref": "#/components/schemas/InputsOneOf1Items6"
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItem"
+          },
+          {
+            "$ref": "#/components/schemas/InputsOneOf1Items7"
+          },
+          {
+            "$ref": "#/components/schemas/InputsOneOf1Items8"
           },
           {
             "$ref": "#/components/schemas/OutputFunctionCallItem"
@@ -7412,12 +7386,6 @@
           },
           {
             "$ref": "#/components/schemas/ShellCallOutputItem"
-          },
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallItem"
-          },
-          {
-            "$ref": "#/components/schemas/ApplyPatchCallOutputItem"
           },
           {
             "$ref": "#/components/schemas/McpListToolsItem"
@@ -8651,6 +8619,44 @@
         "description": "Constrains the model to a pre-defined set of allowed tools",
         "title": "ToolChoiceAllowed"
       },
+      "OpenAiResponsesToolChoiceOneOf6Type": {
+        "type": "string",
+        "enum": [
+          "apply_patch"
+        ],
+        "title": "OpenAiResponsesToolChoiceOneOf6Type"
+      },
+      "OpenAiResponsesToolChoice6": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/OpenAiResponsesToolChoiceOneOf6Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "OpenAiResponsesToolChoice6"
+      },
+      "OpenAiResponsesToolChoiceOneOf7Type": {
+        "type": "string",
+        "enum": [
+          "shell"
+        ],
+        "title": "OpenAiResponsesToolChoiceOneOf7Type"
+      },
+      "OpenAiResponsesToolChoice7": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/OpenAiResponsesToolChoiceOneOf7Type"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "OpenAiResponsesToolChoice7"
+      },
       "OpenAIResponsesToolChoice": {
         "oneOf": [
           {
@@ -8670,6 +8676,12 @@
           },
           {
             "$ref": "#/components/schemas/ToolChoiceAllowed"
+          },
+          {
+            "$ref": "#/components/schemas/OpenAiResponsesToolChoice6"
+          },
+          {
+            "$ref": "#/components/schemas/OpenAiResponsesToolChoice7"
           }
         ],
         "title": "OpenAIResponsesToolChoice"
@@ -10064,6 +10076,35 @@
         "description": "OpenRouter built-in server tool: searches the web for current information",
         "title": "WebSearchServerTool_OpenRouter"
       },
+      "ApplyPatchServerToolConfig": {
+        "type": "object",
+        "properties": {},
+        "description": "Configuration for the openrouter:apply_patch server tool",
+        "title": "ApplyPatchServerToolConfig"
+      },
+      "ApplyPatchServerToolOpenRouterType": {
+        "type": "string",
+        "enum": [
+          "openrouter:apply_patch"
+        ],
+        "title": "ApplyPatchServerToolOpenRouterType"
+      },
+      "ApplyPatchServerTool_OpenRouter": {
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "$ref": "#/components/schemas/ApplyPatchServerToolConfig"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ApplyPatchServerToolOpenRouterType"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "description": "OpenRouter built-in server tool: validates V4A diff patches for file operations (create, update, delete). Restricted to the Responses API.",
+        "title": "ApplyPatchServerTool_OpenRouter"
+      },
       "ResponsesRequestToolsItems": {
         "oneOf": [
           {
@@ -10125,6 +10166,9 @@
           },
           {
             "$ref": "#/components/schemas/WebSearchServerTool_OpenRouter"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchServerTool_OpenRouter"
           }
         ],
         "title": "ResponsesRequestToolsItems"
@@ -11341,6 +11385,12 @@
           },
           {
             "$ref": "#/components/schemas/OpenAIResponseCustomToolCallOutput"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallItem"
+          },
+          {
+            "$ref": "#/components/schemas/ApplyPatchCallOutputItem"
           }
         ],
         "title": "BaseInputsOneOf1Items"
@@ -11636,6 +11686,38 @@
             "type": "object",
             "properties": {
               "type": {
+                "type": "string",
+                "enum": [
+                  "apply_patch_call"
+                ],
+                "description": "Discriminator value: apply_patch_call"
+              },
+              "call_id": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "operation": {
+                "$ref": "#/components/schemas/ApplyPatchCallOperation"
+              },
+              "status": {
+                "$ref": "#/components/schemas/ApplyPatchCallStatus"
+              }
+            },
+            "required": [
+              "type",
+              "call_id",
+              "id",
+              "operation",
+              "status"
+            ],
+            "description": "A native `apply_patch_call` output item matching OpenAI's Responses API shape. Emitted when the client requested the `apply_patch` shorthand."
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
                 "$ref": "#/components/schemas/OutputCodeInterpreterCallItemType"
               },
               "code": {
@@ -11883,14 +11965,14 @@
                 ],
                 "description": "Discriminator value: openrouter:apply_patch"
               },
-              "filePath": {
+              "call_id": {
                 "type": "string"
               },
               "id": {
                 "type": "string"
               },
-              "patch": {
-                "type": "string"
+              "operation": {
+                "$ref": "#/components/schemas/ApplyPatchCallOperation"
               },
               "status": {
                 "$ref": "#/components/schemas/ToolCallStatus"
@@ -11900,7 +11982,7 @@
               "type",
               "status"
             ],
-            "description": "An openrouter:apply_patch server tool output item"
+            "description": "An openrouter:apply_patch server tool output item. The turn halts when validation succeeds so the client can apply the patch and echo an `apply_patch_call_output` on the next turn."
           },
           {
             "type": "object",

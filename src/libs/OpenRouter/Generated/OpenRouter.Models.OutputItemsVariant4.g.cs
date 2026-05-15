@@ -4,38 +4,49 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// file_search_call variant
+    /// A call to a custom (freeform-grammar) tool created by the model — distinct from `function_call`. Used for tools like Codex CLI's `apply_patch` whose payload is opaque text rather than JSON arguments.
     /// </summary>
     public sealed partial class OutputItemsVariant4
     {
         /// <summary>
-        /// 
+        /// Discriminator value: custom_tool_call
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFileSearchCallItemTypeJsonConverter))]
-        public global::OpenRouter.OutputFileSearchCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant4TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant4Type Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CallId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Queries { get; set; }
+        public required string Input { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.WebSearchStatus Status { get; set; }
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,23 +57,33 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant4" /> class.
         /// </summary>
+        /// <param name="callId"></param>
+        /// <param name="input"></param>
+        /// <param name="name"></param>
+        /// <param name="type">
+        /// Discriminator value: custom_tool_call
+        /// </param>
         /// <param name="id"></param>
-        /// <param name="queries"></param>
-        /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="namespace">
+        /// Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant4(
-            string id,
-            global::System.Collections.Generic.IList<string> queries,
-            global::OpenRouter.WebSearchStatus status,
-            global::OpenRouter.OutputFileSearchCallItemType type)
+            string callId,
+            string input,
+            string name,
+            global::OpenRouter.OutputItemsVariant4Type type,
+            string? id,
+            string? @namespace)
         {
             this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Queries = queries ?? throw new global::System.ArgumentNullException(nameof(queries));
-            this.Status = status;
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Id = id;
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Namespace = @namespace;
         }
 
         /// <summary>

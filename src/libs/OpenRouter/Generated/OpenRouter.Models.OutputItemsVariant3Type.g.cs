@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: custom_tool_call
+    /// Discriminator value: computer_call
     /// </summary>
     public enum OutputItemsVariant3Type
     {
         /// <summary>
-        /// custom_tool_call
+        /// computer_call
         /// </summary>
-        CustomToolCall,
+        ComputerCall,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                OutputItemsVariant3Type.CustomToolCall => "custom_tool_call",
+                OutputItemsVariant3Type.ComputerCall => "computer_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "custom_tool_call" => OutputItemsVariant3Type.CustomToolCall,
+                "computer_call" => OutputItemsVariant3Type.ComputerCall,
                 _ => null,
             };
         }

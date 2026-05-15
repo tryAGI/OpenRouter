@@ -75,6 +75,18 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("id")) __score7++;
             if (__jsonProps.Contains("output")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
+            var __score8 = 0;
+            if (__jsonProps.Contains("call_id")) __score8++;
+            if (__jsonProps.Contains("id")) __score8++;
+            if (__jsonProps.Contains("operation")) __score8++;
+            if (__jsonProps.Contains("status")) __score8++;
+            if (__jsonProps.Contains("type")) __score8++;
+            var __score9 = 0;
+            if (__jsonProps.Contains("call_id")) __score9++;
+            if (__jsonProps.Contains("id")) __score9++;
+            if (__jsonProps.Contains("output")) __score9++;
+            if (__jsonProps.Contains("status")) __score9++;
+            if (__jsonProps.Contains("type")) __score9++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -85,6 +97,8 @@ namespace OpenRouter.JsonConverters
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
+            if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
+            if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
 
             global::OpenRouter.BaseInputsOneOf1Items0? baseInputsOneOf1Items0 = default;
             global::OpenRouter.OpenAIResponseInputMessageItem? openAIResponseInputMessageItem = default;
@@ -94,6 +108,8 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.OutputMessage? outputMessage = default;
             global::OpenRouter.OpenAIResponseCustomToolCall? openAIResponseCustomToolCall = default;
             global::OpenRouter.OpenAIResponseCustomToolCallOutput? openAIResponseCustomToolCallOutput = default;
+            global::OpenRouter.ApplyPatchCallItem? applyPatchCallItem = default;
+            global::OpenRouter.ApplyPatchCallOutputItem? applyPatchCallOutputItem = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -216,9 +232,39 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 8)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallItem).Name}");
+                        applyPatchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 9)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOutputItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOutputItem).Name}");
+                        applyPatchCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -235,7 +281,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -252,7 +298,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -269,7 +315,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -286,7 +332,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -303,7 +349,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -320,7 +366,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -337,7 +383,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null)
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
             {
                 try
                 {
@@ -345,6 +391,40 @@ namespace OpenRouter.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseCustomToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseCustomToolCallOutput> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseCustomToolCallOutput).Name}");
                     openAIResponseCustomToolCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallItem).Name}");
+                    applyPatchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (baseInputsOneOf1Items0 == null && openAIResponseInputMessageItem == null && openAIResponseFunctionToolCallOutput == null && openAIResponseFunctionToolCall == null && outputItemImageGenerationCall == null && outputMessage == null && openAIResponseCustomToolCall == null && openAIResponseCustomToolCallOutput == null && applyPatchCallItem == null && applyPatchCallOutputItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOutputItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOutputItem).Name}");
+                    applyPatchCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -369,7 +449,11 @@ namespace OpenRouter.JsonConverters
 
                 openAIResponseCustomToolCall,
 
-                openAIResponseCustomToolCallOutput
+                openAIResponseCustomToolCallOutput,
+
+                applyPatchCallItem,
+
+                applyPatchCallOutputItem
                 );
 
             return __value;
@@ -431,6 +515,18 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAIResponseCustomToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAIResponseCustomToolCallOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAIResponseCustomToolCallOutput).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponseCustomToolCallOutput!, typeInfo);
+            }
+            else if (value.IsApplyPatchCallItem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchCallItem!, typeInfo);
+            }
+            else if (value.IsApplyPatchCallOutputItem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOutputItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOutputItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchCallOutputItem!, typeInfo);
             }
         }
     }
