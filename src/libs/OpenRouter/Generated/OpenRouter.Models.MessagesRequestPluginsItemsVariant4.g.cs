@@ -28,6 +28,12 @@ namespace OpenRouter
         public bool? Enabled { get; set; }
 
         /// <summary>
+        /// Maximum number of tool-calling steps each panelist (analysis model) and the judge model may take during their agentic web-research loop. Models with web_search/web_fetch enabled iterate until they produce a text response or hit this ceiling. Defaults to 8. Capped at 16.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tool_calls")]
+        public int? MaxToolCalls { get; set; }
+
+        /// <summary>
         /// Slug of the model that performs both the judge step (with web_search + web_fetch) and the final synthesis. When omitted, defaults to the first model in the Quality preset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -51,6 +57,9 @@ namespace OpenRouter
         /// <param name="enabled">
         /// Set to false to disable the fusion plugin for this request. Defaults to true.
         /// </param>
+        /// <param name="maxToolCalls">
+        /// Maximum number of tool-calling steps each panelist (analysis model) and the judge model may take during their agentic web-research loop. Models with web_search/web_fetch enabled iterate until they produce a text response or hit this ceiling. Defaults to 8. Capped at 16.
+        /// </param>
         /// <param name="model">
         /// Slug of the model that performs both the judge step (with web_search + web_fetch) and the final synthesis. When omitted, defaults to the first model in the Quality preset.
         /// </param>
@@ -61,11 +70,13 @@ namespace OpenRouter
             global::OpenRouter.MessagesRequestPluginsItemsVariant4Id id,
             global::System.Collections.Generic.IList<string>? analysisModels,
             bool? enabled,
+            int? maxToolCalls,
             string? model)
         {
             this.Id = id;
             this.AnalysisModels = analysisModels;
             this.Enabled = enabled;
+            this.MaxToolCalls = maxToolCalls;
             this.Model = model;
         }
 
