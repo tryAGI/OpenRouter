@@ -4,23 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:datetime server tool output item
+    /// An openrouter:code_interpreter server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant12
     {
         /// <summary>
-        /// Discriminator value: openrouter:datetime
+        /// Discriminator value: openrouter:code_interpreter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant12TypeJsonConverter))]
         public global::OpenRouter.OutputItemsVariant12Type Type { get; set; }
 
         /// <summary>
-        /// ISO 8601 datetime string
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("datetime")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Datetime { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        public string? Code { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("exitCode")]
+        public int? ExitCode { get; set; }
 
         /// <summary>
         /// 
@@ -31,17 +36,28 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
+        public string? Language { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// IANA timezone name
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Timezone { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
+        public string? Stderr { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stdout")]
+        public string? Stdout { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,32 +68,37 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant12" /> class.
         /// </summary>
-        /// <param name="datetime">
-        /// ISO 8601 datetime string
-        /// </param>
         /// <param name="status"></param>
-        /// <param name="timezone">
-        /// IANA timezone name
-        /// </param>
         /// <param name="type">
-        /// Discriminator value: openrouter:datetime
+        /// Discriminator value: openrouter:code_interpreter
         /// </param>
+        /// <param name="code"></param>
+        /// <param name="exitCode"></param>
         /// <param name="id"></param>
+        /// <param name="language"></param>
+        /// <param name="stderr"></param>
+        /// <param name="stdout"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant12(
-            string datetime,
             global::OpenRouter.ToolCallStatus status,
-            string timezone,
             global::OpenRouter.OutputItemsVariant12Type type,
-            string? id)
+            string? code,
+            int? exitCode,
+            string? id,
+            string? language,
+            string? stderr,
+            string? stdout)
         {
             this.Type = type;
-            this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
+            this.Code = code;
+            this.ExitCode = exitCode;
             this.Id = id;
+            this.Language = language;
             this.Status = status;
-            this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
+            this.Stderr = stderr;
+            this.Stdout = stdout;
         }
 
         /// <summary>

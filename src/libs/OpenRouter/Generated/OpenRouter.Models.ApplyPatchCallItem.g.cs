@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A file create/update/delete via diff patch
+    /// A tool call emitted by the model requesting a V4A patch operation. The client applies the patch and echoes an `apply_patch_call_output` on the next turn.
     /// </summary>
     public sealed partial class ApplyPatchCallItem
     {
@@ -22,20 +22,20 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallItemOperationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ApplyPatchCallItemOperation Operation { get; set; }
+        public required global::OpenRouter.ApplyPatchCallOperation Operation { get; set; }
 
         /// <summary>
-        /// 
+        /// Lifecycle state of an `apply_patch_call` output item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallItemStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ApplyPatchCallItemStatus Status { get; set; }
+        public required global::OpenRouter.ApplyPatchCallStatus Status { get; set; }
 
         /// <summary>
         /// 
@@ -54,8 +54,12 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ApplyPatchCallItem" /> class.
         /// </summary>
         /// <param name="callId"></param>
-        /// <param name="operation"></param>
-        /// <param name="status"></param>
+        /// <param name="operation">
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+        /// </param>
+        /// <param name="status">
+        /// Lifecycle state of an `apply_patch_call` output item.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -63,8 +67,8 @@ namespace OpenRouter
 #endif
         public ApplyPatchCallItem(
             string callId,
-            global::OpenRouter.ApplyPatchCallItemOperation operation,
-            global::OpenRouter.ApplyPatchCallItemStatus status,
+            global::OpenRouter.ApplyPatchCallOperation operation,
+            global::OpenRouter.ApplyPatchCallStatus status,
             string? id,
             global::OpenRouter.ApplyPatchCallItemType type)
         {

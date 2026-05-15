@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:web_search server tool output item
+    /// An openrouter:web_fetch server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant22
     {
@@ -12,14 +12,26 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebFetchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputWebFetchServerToolItemType Type { get; set; }
 
         /// <summary>
-        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public global::OpenRouter.OutputWebSearchServerToolItemAction? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public string? Content { get; set; }
+
+        /// <summary>
+        /// The error message if the fetch failed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
+        /// The HTTP status code returned by the upstream URL fetch.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("httpStatus")]
+        public int? HttpStatus { get; set; }
 
         /// <summary>
         /// 
@@ -36,6 +48,18 @@ namespace OpenRouter
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,23 +70,37 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type"></param>
-        /// <param name="action">
-        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// <param name="content"></param>
+        /// <param name="error">
+        /// The error message if the fetch failed.
+        /// </param>
+        /// <param name="httpStatus">
+        /// The HTTP status code returned by the upstream URL fetch.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant22(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputWebSearchServerToolItemType type,
-            global::OpenRouter.OutputWebSearchServerToolItemAction? action,
-            string? id)
+            global::OpenRouter.OutputWebFetchServerToolItemType type,
+            string? content,
+            string? error,
+            int? httpStatus,
+            string? id,
+            string? title,
+            string? url)
         {
             this.Type = type;
-            this.Action = action;
+            this.Content = content;
+            this.Error = error;
+            this.HttpStatus = httpStatus;
             this.Id = id;
             this.Status = status;
+            this.Title = title;
+            this.Url = url;
         }
 
         /// <summary>

@@ -195,78 +195,152 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// An output message item
+        /// A tool call emitted by the model requesting a V4A patch operation. The client applies the patch and echoes an `apply_patch_call_output` on the next turn.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputsOneOf1Items5? InputsOneOf1Items5 { get; init; }
+        public global::OpenRouter.ApplyPatchCallItem? ApplyPatchCallItem { get; init; }
 #else
-        public global::OpenRouter.InputsOneOf1Items5? InputsOneOf1Items5 { get; }
+        public global::OpenRouter.ApplyPatchCallItem? ApplyPatchCallItem { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1Items5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallItem))]
 #endif
-        public bool IsInputsOneOf1Items5 => InputsOneOf1Items5 != null;
+        public bool IsApplyPatchCallItem => ApplyPatchCallItem != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickInputsOneOf1Items5(
+        public bool TryPickApplyPatchCallItem(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.InputsOneOf1Items5? value)
+            out global::OpenRouter.ApplyPatchCallItem? value)
         {
-            value = InputsOneOf1Items5;
-            return IsInputsOneOf1Items5;
+            value = ApplyPatchCallItem;
+            return IsApplyPatchCallItem;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.InputsOneOf1Items5 PickInputsOneOf1Items5() => IsInputsOneOf1Items5
-            ? InputsOneOf1Items5!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items5' but the value was {ToString()}.");
+        public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => IsApplyPatchCallItem
+            ? ApplyPatchCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The client's echo of an `apply_patch_call` after applying the patch. `output` is an optional human-readable log; `status` is `completed` when the patch was applied successfully, `failed` otherwise.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ApplyPatchCallOutputItem? ApplyPatchCallOutputItem { get; init; }
+#else
+        public global::OpenRouter.ApplyPatchCallOutputItem? ApplyPatchCallOutputItem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutputItem))]
+#endif
+        public bool IsApplyPatchCallOutputItem => ApplyPatchCallOutputItem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApplyPatchCallOutputItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ApplyPatchCallOutputItem? value)
+        {
+            value = ApplyPatchCallOutputItem;
+            return IsApplyPatchCallOutputItem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => IsApplyPatchCallOutputItem
+            ? ApplyPatchCallOutputItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutputItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// An output message item
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.InputsOneOf1Items7? InputsOneOf1Items7 { get; init; }
+#else
+        public global::OpenRouter.InputsOneOf1Items7? InputsOneOf1Items7 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1Items7))]
+#endif
+        public bool IsInputsOneOf1Items7 => InputsOneOf1Items7 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputsOneOf1Items7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputsOneOf1Items7? value)
+        {
+            value = InputsOneOf1Items7;
+            return IsInputsOneOf1Items7;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputsOneOf1Items7 PickInputsOneOf1Items7() => IsInputsOneOf1Items7
+            ? InputsOneOf1Items7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items7' but the value was {ToString()}.");
 
         /// <summary>
         /// An output item containing reasoning
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputsOneOf1Items6? InputsOneOf1Items6 { get; init; }
+        public global::OpenRouter.InputsOneOf1Items8? InputsOneOf1Items8 { get; init; }
 #else
-        public global::OpenRouter.InputsOneOf1Items6? InputsOneOf1Items6 { get; }
+        public global::OpenRouter.InputsOneOf1Items8? InputsOneOf1Items8 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1Items6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1Items8))]
 #endif
-        public bool IsInputsOneOf1Items6 => InputsOneOf1Items6 != null;
+        public bool IsInputsOneOf1Items8 => InputsOneOf1Items8 != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickInputsOneOf1Items6(
+        public bool TryPickInputsOneOf1Items8(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.InputsOneOf1Items6? value)
+            out global::OpenRouter.InputsOneOf1Items8? value)
         {
-            value = InputsOneOf1Items6;
-            return IsInputsOneOf1Items6;
+            value = InputsOneOf1Items8;
+            return IsInputsOneOf1Items8;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.InputsOneOf1Items6 PickInputsOneOf1Items6() => IsInputsOneOf1Items6
-            ? InputsOneOf1Items6!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items6' but the value was {ToString()}.");
+        public global::OpenRouter.InputsOneOf1Items8 PickInputsOneOf1Items8() => IsInputsOneOf1Items8
+            ? InputsOneOf1Items8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items8' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -824,7 +898,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputTextEditorServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// An openrouter:apply_patch server tool output item
+        /// An openrouter:apply_patch server tool output item. The turn halts when validation succeeds so the client can apply the patch and echo an `apply_patch_call_output` on the next turn.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputApplyPatchServerToolItem? OutputApplyPatchServerToolItem { get; init; }
@@ -1192,80 +1266,6 @@ namespace OpenRouter
         public global::OpenRouter.ShellCallOutputItem PickShellCallOutputItem() => IsShellCallOutputItem
             ? ShellCallOutputItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutputItem' but the value was {ToString()}.");
-
-        /// <summary>
-        /// A file create/update/delete via diff patch
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ApplyPatchCallItem? ApplyPatchCallItem { get; init; }
-#else
-        public global::OpenRouter.ApplyPatchCallItem? ApplyPatchCallItem { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallItem))]
-#endif
-        public bool IsApplyPatchCallItem => ApplyPatchCallItem != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickApplyPatchCallItem(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ApplyPatchCallItem? value)
-        {
-            value = ApplyPatchCallItem;
-            return IsApplyPatchCallItem;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => IsApplyPatchCallItem
-            ? ApplyPatchCallItem!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallItem' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Output from an apply patch operation
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ApplyPatchCallOutputItem? ApplyPatchCallOutputItem { get; init; }
-#else
-        public global::OpenRouter.ApplyPatchCallOutputItem? ApplyPatchCallOutputItem { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutputItem))]
-#endif
-        public bool IsApplyPatchCallOutputItem => ApplyPatchCallOutputItem != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickApplyPatchCallOutputItem(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ApplyPatchCallOutputItem? value)
-        {
-            value = ApplyPatchCallOutputItem;
-            return IsApplyPatchCallOutputItem;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => IsApplyPatchCallOutputItem
-            ? ApplyPatchCallOutputItem!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutputItem' but the value was {ToString()}.");
 
         /// <summary>
         /// List of available MCP tools from a server
@@ -1680,48 +1680,94 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items5 value) => new InputsOneOf1Items((global::OpenRouter.InputsOneOf1Items5?)value);
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem value) => new InputsOneOf1Items((global::OpenRouter.ApplyPatchCallItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.InputsOneOf1Items5?(InputsOneOf1Items @this) => @this.InputsOneOf1Items5;
+        public static implicit operator global::OpenRouter.ApplyPatchCallItem?(InputsOneOf1Items @this) => @this.ApplyPatchCallItem;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items5? value)
+        public InputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem? value)
         {
-            InputsOneOf1Items5 = value;
+            ApplyPatchCallItem = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static InputsOneOf1Items FromInputsOneOf1Items5(global::OpenRouter.InputsOneOf1Items5? value) => new InputsOneOf1Items(value);
+        public static InputsOneOf1Items FromApplyPatchCallItem(global::OpenRouter.ApplyPatchCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items6 value) => new InputsOneOf1Items((global::OpenRouter.InputsOneOf1Items6?)value);
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.ApplyPatchCallOutputItem?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenRouter.InputsOneOf1Items6?(InputsOneOf1Items @this) => @this.InputsOneOf1Items6;
+        public static implicit operator global::OpenRouter.ApplyPatchCallOutputItem?(InputsOneOf1Items @this) => @this.ApplyPatchCallOutputItem;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items6? value)
+        public InputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem? value)
         {
-            InputsOneOf1Items6 = value;
+            ApplyPatchCallOutputItem = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static InputsOneOf1Items FromInputsOneOf1Items6(global::OpenRouter.InputsOneOf1Items6? value) => new InputsOneOf1Items(value);
+        public static InputsOneOf1Items FromApplyPatchCallOutputItem(global::OpenRouter.ApplyPatchCallOutputItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items7 value) => new InputsOneOf1Items((global::OpenRouter.InputsOneOf1Items7?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.InputsOneOf1Items7?(InputsOneOf1Items @this) => @this.InputsOneOf1Items7;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items7? value)
+        {
+            InputsOneOf1Items7 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromInputsOneOf1Items7(global::OpenRouter.InputsOneOf1Items7? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items8 value) => new InputsOneOf1Items((global::OpenRouter.InputsOneOf1Items8?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.InputsOneOf1Items8?(InputsOneOf1Items @this) => @this.InputsOneOf1Items8;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items8? value)
+        {
+            InputsOneOf1Items8 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromInputsOneOf1Items8(global::OpenRouter.InputsOneOf1Items8? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -2301,52 +2347,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem value) => new InputsOneOf1Items((global::OpenRouter.ApplyPatchCallItem?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.ApplyPatchCallItem?(InputsOneOf1Items @this) => @this.ApplyPatchCallItem;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public InputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem? value)
-        {
-            ApplyPatchCallItem = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static InputsOneOf1Items FromApplyPatchCallItem(global::OpenRouter.ApplyPatchCallItem? value) => new InputsOneOf1Items(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator InputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.ApplyPatchCallOutputItem?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::OpenRouter.ApplyPatchCallOutputItem?(InputsOneOf1Items @this) => @this.ApplyPatchCallOutputItem;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public InputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem? value)
-        {
-            ApplyPatchCallOutputItem = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static InputsOneOf1Items FromApplyPatchCallOutputItem(global::OpenRouter.ApplyPatchCallOutputItem? value) => new InputsOneOf1Items(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.McpListToolsItem value) => new InputsOneOf1Items((global::OpenRouter.McpListToolsItem?)value);
 
         /// <summary>
@@ -2537,8 +2537,10 @@ namespace OpenRouter
             global::OpenRouter.InputMessageItem? inputMessageItem,
             global::OpenRouter.FunctionCallItem? functionCallItem,
             global::OpenRouter.FunctionCallOutputItem? functionCallOutputItem,
-            global::OpenRouter.InputsOneOf1Items5? inputsOneOf1Items5,
-            global::OpenRouter.InputsOneOf1Items6? inputsOneOf1Items6,
+            global::OpenRouter.ApplyPatchCallItem? applyPatchCallItem,
+            global::OpenRouter.ApplyPatchCallOutputItem? applyPatchCallOutputItem,
+            global::OpenRouter.InputsOneOf1Items7? inputsOneOf1Items7,
+            global::OpenRouter.InputsOneOf1Items8? inputsOneOf1Items8,
             global::OpenRouter.OutputFunctionCallItem? outputFunctionCallItem,
             global::OpenRouter.OutputCustomToolCallItem? outputCustomToolCallItem,
             global::OpenRouter.OutputWebSearchCallItem? outputWebSearchCallItem,
@@ -2564,8 +2566,6 @@ namespace OpenRouter
             global::OpenRouter.LocalShellCallOutputItem? localShellCallOutputItem,
             global::OpenRouter.ShellCallItem? shellCallItem,
             global::OpenRouter.ShellCallOutputItem? shellCallOutputItem,
-            global::OpenRouter.ApplyPatchCallItem? applyPatchCallItem,
-            global::OpenRouter.ApplyPatchCallOutputItem? applyPatchCallOutputItem,
             global::OpenRouter.McpListToolsItem? mcpListToolsItem,
             global::OpenRouter.McpApprovalRequestItem? mcpApprovalRequestItem,
             global::OpenRouter.McpApprovalResponseItem? mcpApprovalResponseItem,
@@ -2581,8 +2581,10 @@ namespace OpenRouter
             InputMessageItem = inputMessageItem;
             FunctionCallItem = functionCallItem;
             FunctionCallOutputItem = functionCallOutputItem;
-            InputsOneOf1Items5 = inputsOneOf1Items5;
-            InputsOneOf1Items6 = inputsOneOf1Items6;
+            ApplyPatchCallItem = applyPatchCallItem;
+            ApplyPatchCallOutputItem = applyPatchCallOutputItem;
+            InputsOneOf1Items7 = inputsOneOf1Items7;
+            InputsOneOf1Items8 = inputsOneOf1Items8;
             OutputFunctionCallItem = outputFunctionCallItem;
             OutputCustomToolCallItem = outputCustomToolCallItem;
             OutputWebSearchCallItem = outputWebSearchCallItem;
@@ -2608,8 +2610,6 @@ namespace OpenRouter
             LocalShellCallOutputItem = localShellCallOutputItem;
             ShellCallItem = shellCallItem;
             ShellCallOutputItem = shellCallOutputItem;
-            ApplyPatchCallItem = applyPatchCallItem;
-            ApplyPatchCallOutputItem = applyPatchCallOutputItem;
             McpListToolsItem = mcpListToolsItem;
             McpApprovalRequestItem = mcpApprovalRequestItem;
             McpApprovalResponseItem = mcpApprovalResponseItem;
@@ -2632,8 +2632,6 @@ namespace OpenRouter
             McpApprovalResponseItem as object ??
             McpApprovalRequestItem as object ??
             McpListToolsItem as object ??
-            ApplyPatchCallOutputItem as object ??
-            ApplyPatchCallItem as object ??
             ShellCallOutputItem as object ??
             ShellCallItem as object ??
             LocalShellCallOutputItem as object ??
@@ -2659,8 +2657,10 @@ namespace OpenRouter
             OutputWebSearchCallItem as object ??
             OutputCustomToolCallItem as object ??
             OutputFunctionCallItem as object ??
-            InputsOneOf1Items6 as object ??
-            InputsOneOf1Items5 as object ??
+            InputsOneOf1Items8 as object ??
+            InputsOneOf1Items7 as object ??
+            ApplyPatchCallOutputItem as object ??
+            ApplyPatchCallItem as object ??
             FunctionCallOutputItem as object ??
             FunctionCallItem as object ??
             InputMessageItem as object ??
@@ -2677,8 +2677,10 @@ namespace OpenRouter
             InputMessageItem?.ToString() ??
             FunctionCallItem?.ToString() ??
             FunctionCallOutputItem?.ToString() ??
-            InputsOneOf1Items5?.ToString() ??
-            InputsOneOf1Items6?.ToString() ??
+            ApplyPatchCallItem?.ToString() ??
+            ApplyPatchCallOutputItem?.ToString() ??
+            InputsOneOf1Items7?.ToString() ??
+            InputsOneOf1Items8?.ToString() ??
             OutputFunctionCallItem?.ToString() ??
             OutputCustomToolCallItem?.ToString() ??
             OutputWebSearchCallItem?.ToString() ??
@@ -2704,8 +2706,6 @@ namespace OpenRouter
             LocalShellCallOutputItem?.ToString() ??
             ShellCallItem?.ToString() ??
             ShellCallOutputItem?.ToString() ??
-            ApplyPatchCallItem?.ToString() ??
-            ApplyPatchCallOutputItem?.ToString() ??
             McpListToolsItem?.ToString() ??
             McpApprovalRequestItem?.ToString() ??
             McpApprovalResponseItem?.ToString() ??
@@ -2721,7 +2721,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsInputsOneOf1Items5 && !IsInputsOneOf1Items6 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && IsItemReferenceItem;
+            return IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && IsCustomToolCallOutputItem && !IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && IsCompactionItem && !IsItemReferenceItem || !IsReasoningItem && !IsEasyInputMessage && !IsInputMessageItem && !IsFunctionCallItem && !IsFunctionCallOutputItem && !IsApplyPatchCallItem && !IsApplyPatchCallOutputItem && !IsInputsOneOf1Items7 && !IsInputsOneOf1Items8 && !IsOutputFunctionCallItem && !IsOutputCustomToolCallItem && !IsOutputWebSearchCallItem && !IsOutputFileSearchCallItem && !IsOutputImageGenerationCallItem && !IsOutputCodeInterpreterCallItem && !IsOutputComputerCallItem && !IsOutputDatetimeItem && !IsOutputWebSearchServerToolItem && !IsOutputCodeInterpreterServerToolItem && !IsOutputFileSearchServerToolItem && !IsOutputImageGenerationServerToolItem && !IsOutputBrowserUseServerToolItem && !IsOutputBashServerToolItem && !IsOutputTextEditorServerToolItem && !IsOutputApplyPatchServerToolItem && !IsOutputWebFetchServerToolItem && !IsOutputToolSearchServerToolItem && !IsOutputMemoryServerToolItem && !IsOutputMcpServerToolItem && !IsOutputSearchModelsServerToolItem && !IsLocalShellCallItem && !IsLocalShellCallOutputItem && !IsShellCallItem && !IsShellCallOutputItem && !IsMcpListToolsItem && !IsMcpApprovalRequestItem && !IsMcpApprovalResponseItem && !IsMcpCallItem && !IsCustomToolCallItem && !IsCustomToolCallOutputItem && !IsCompactionItem && IsItemReferenceItem;
         }
 
         /// <summary>
@@ -2733,8 +2733,10 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.InputMessageItem, TResult>? inputMessageItem = null,
             global::System.Func<global::OpenRouter.FunctionCallItem, TResult>? functionCallItem = null,
             global::System.Func<global::OpenRouter.FunctionCallOutputItem, TResult>? functionCallOutputItem = null,
-            global::System.Func<global::OpenRouter.InputsOneOf1Items5, TResult>? inputsOneOf1Items5 = null,
-            global::System.Func<global::OpenRouter.InputsOneOf1Items6, TResult>? inputsOneOf1Items6 = null,
+            global::System.Func<global::OpenRouter.ApplyPatchCallItem, TResult>? applyPatchCallItem = null,
+            global::System.Func<global::OpenRouter.ApplyPatchCallOutputItem, TResult>? applyPatchCallOutputItem = null,
+            global::System.Func<global::OpenRouter.InputsOneOf1Items7, TResult>? inputsOneOf1Items7 = null,
+            global::System.Func<global::OpenRouter.InputsOneOf1Items8, TResult>? inputsOneOf1Items8 = null,
             global::System.Func<global::OpenRouter.OutputFunctionCallItem, TResult>? outputFunctionCallItem = null,
             global::System.Func<global::OpenRouter.OutputCustomToolCallItem, TResult>? outputCustomToolCallItem = null,
             global::System.Func<global::OpenRouter.OutputWebSearchCallItem, TResult>? outputWebSearchCallItem = null,
@@ -2760,8 +2762,6 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.LocalShellCallOutputItem, TResult>? localShellCallOutputItem = null,
             global::System.Func<global::OpenRouter.ShellCallItem, TResult>? shellCallItem = null,
             global::System.Func<global::OpenRouter.ShellCallOutputItem, TResult>? shellCallOutputItem = null,
-            global::System.Func<global::OpenRouter.ApplyPatchCallItem, TResult>? applyPatchCallItem = null,
-            global::System.Func<global::OpenRouter.ApplyPatchCallOutputItem, TResult>? applyPatchCallOutputItem = null,
             global::System.Func<global::OpenRouter.McpListToolsItem, TResult>? mcpListToolsItem = null,
             global::System.Func<global::OpenRouter.McpApprovalRequestItem, TResult>? mcpApprovalRequestItem = null,
             global::System.Func<global::OpenRouter.McpApprovalResponseItem, TResult>? mcpApprovalResponseItem = null,
@@ -2797,13 +2797,21 @@ namespace OpenRouter
             {
                 return functionCallOutputItem(FunctionCallOutputItem!);
             }
-            else if (IsInputsOneOf1Items5 && inputsOneOf1Items5 != null)
+            else if (IsApplyPatchCallItem && applyPatchCallItem != null)
             {
-                return inputsOneOf1Items5(InputsOneOf1Items5!);
+                return applyPatchCallItem(ApplyPatchCallItem!);
             }
-            else if (IsInputsOneOf1Items6 && inputsOneOf1Items6 != null)
+            else if (IsApplyPatchCallOutputItem && applyPatchCallOutputItem != null)
             {
-                return inputsOneOf1Items6(InputsOneOf1Items6!);
+                return applyPatchCallOutputItem(ApplyPatchCallOutputItem!);
+            }
+            else if (IsInputsOneOf1Items7 && inputsOneOf1Items7 != null)
+            {
+                return inputsOneOf1Items7(InputsOneOf1Items7!);
+            }
+            else if (IsInputsOneOf1Items8 && inputsOneOf1Items8 != null)
+            {
+                return inputsOneOf1Items8(InputsOneOf1Items8!);
             }
             else if (IsOutputFunctionCallItem && outputFunctionCallItem != null)
             {
@@ -2905,14 +2913,6 @@ namespace OpenRouter
             {
                 return shellCallOutputItem(ShellCallOutputItem!);
             }
-            else if (IsApplyPatchCallItem && applyPatchCallItem != null)
-            {
-                return applyPatchCallItem(ApplyPatchCallItem!);
-            }
-            else if (IsApplyPatchCallOutputItem && applyPatchCallOutputItem != null)
-            {
-                return applyPatchCallOutputItem(ApplyPatchCallOutputItem!);
-            }
             else if (IsMcpListToolsItem && mcpListToolsItem != null)
             {
                 return mcpListToolsItem(McpListToolsItem!);
@@ -2963,9 +2963,13 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.FunctionCallOutputItem>? functionCallOutputItem = null,
 
-            global::System.Action<global::OpenRouter.InputsOneOf1Items5>? inputsOneOf1Items5 = null,
+            global::System.Action<global::OpenRouter.ApplyPatchCallItem>? applyPatchCallItem = null,
 
-            global::System.Action<global::OpenRouter.InputsOneOf1Items6>? inputsOneOf1Items6 = null,
+            global::System.Action<global::OpenRouter.ApplyPatchCallOutputItem>? applyPatchCallOutputItem = null,
+
+            global::System.Action<global::OpenRouter.InputsOneOf1Items7>? inputsOneOf1Items7 = null,
+
+            global::System.Action<global::OpenRouter.InputsOneOf1Items8>? inputsOneOf1Items8 = null,
 
             global::System.Action<global::OpenRouter.OutputFunctionCallItem>? outputFunctionCallItem = null,
 
@@ -3017,10 +3021,6 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.ShellCallOutputItem>? shellCallOutputItem = null,
 
-            global::System.Action<global::OpenRouter.ApplyPatchCallItem>? applyPatchCallItem = null,
-
-            global::System.Action<global::OpenRouter.ApplyPatchCallOutputItem>? applyPatchCallOutputItem = null,
-
             global::System.Action<global::OpenRouter.McpListToolsItem>? mcpListToolsItem = null,
 
             global::System.Action<global::OpenRouter.McpApprovalRequestItem>? mcpApprovalRequestItem = null,
@@ -3063,13 +3063,21 @@ namespace OpenRouter
             {
                 functionCallOutputItem?.Invoke(FunctionCallOutputItem!);
             }
-            else if (IsInputsOneOf1Items5)
+            else if (IsApplyPatchCallItem)
             {
-                inputsOneOf1Items5?.Invoke(InputsOneOf1Items5!);
+                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
             }
-            else if (IsInputsOneOf1Items6)
+            else if (IsApplyPatchCallOutputItem)
             {
-                inputsOneOf1Items6?.Invoke(InputsOneOf1Items6!);
+                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
+            }
+            else if (IsInputsOneOf1Items7)
+            {
+                inputsOneOf1Items7?.Invoke(InputsOneOf1Items7!);
+            }
+            else if (IsInputsOneOf1Items8)
+            {
+                inputsOneOf1Items8?.Invoke(InputsOneOf1Items8!);
             }
             else if (IsOutputFunctionCallItem)
             {
@@ -3170,14 +3178,6 @@ namespace OpenRouter
             else if (IsShellCallOutputItem)
             {
                 shellCallOutputItem?.Invoke(ShellCallOutputItem!);
-            }
-            else if (IsApplyPatchCallItem)
-            {
-                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
-            }
-            else if (IsApplyPatchCallOutputItem)
-            {
-                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
             }
             else if (IsMcpListToolsItem)
             {
@@ -3222,8 +3222,10 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.InputMessageItem>? inputMessageItem = null,
             global::System.Action<global::OpenRouter.FunctionCallItem>? functionCallItem = null,
             global::System.Action<global::OpenRouter.FunctionCallOutputItem>? functionCallOutputItem = null,
-            global::System.Action<global::OpenRouter.InputsOneOf1Items5>? inputsOneOf1Items5 = null,
-            global::System.Action<global::OpenRouter.InputsOneOf1Items6>? inputsOneOf1Items6 = null,
+            global::System.Action<global::OpenRouter.ApplyPatchCallItem>? applyPatchCallItem = null,
+            global::System.Action<global::OpenRouter.ApplyPatchCallOutputItem>? applyPatchCallOutputItem = null,
+            global::System.Action<global::OpenRouter.InputsOneOf1Items7>? inputsOneOf1Items7 = null,
+            global::System.Action<global::OpenRouter.InputsOneOf1Items8>? inputsOneOf1Items8 = null,
             global::System.Action<global::OpenRouter.OutputFunctionCallItem>? outputFunctionCallItem = null,
             global::System.Action<global::OpenRouter.OutputCustomToolCallItem>? outputCustomToolCallItem = null,
             global::System.Action<global::OpenRouter.OutputWebSearchCallItem>? outputWebSearchCallItem = null,
@@ -3249,8 +3251,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.LocalShellCallOutputItem>? localShellCallOutputItem = null,
             global::System.Action<global::OpenRouter.ShellCallItem>? shellCallItem = null,
             global::System.Action<global::OpenRouter.ShellCallOutputItem>? shellCallOutputItem = null,
-            global::System.Action<global::OpenRouter.ApplyPatchCallItem>? applyPatchCallItem = null,
-            global::System.Action<global::OpenRouter.ApplyPatchCallOutputItem>? applyPatchCallOutputItem = null,
             global::System.Action<global::OpenRouter.McpListToolsItem>? mcpListToolsItem = null,
             global::System.Action<global::OpenRouter.McpApprovalRequestItem>? mcpApprovalRequestItem = null,
             global::System.Action<global::OpenRouter.McpApprovalResponseItem>? mcpApprovalResponseItem = null,
@@ -3286,13 +3286,21 @@ namespace OpenRouter
             {
                 functionCallOutputItem?.Invoke(FunctionCallOutputItem!);
             }
-            else if (IsInputsOneOf1Items5)
+            else if (IsApplyPatchCallItem)
             {
-                inputsOneOf1Items5?.Invoke(InputsOneOf1Items5!);
+                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
             }
-            else if (IsInputsOneOf1Items6)
+            else if (IsApplyPatchCallOutputItem)
             {
-                inputsOneOf1Items6?.Invoke(InputsOneOf1Items6!);
+                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
+            }
+            else if (IsInputsOneOf1Items7)
+            {
+                inputsOneOf1Items7?.Invoke(InputsOneOf1Items7!);
+            }
+            else if (IsInputsOneOf1Items8)
+            {
+                inputsOneOf1Items8?.Invoke(InputsOneOf1Items8!);
             }
             else if (IsOutputFunctionCallItem)
             {
@@ -3393,14 +3401,6 @@ namespace OpenRouter
             else if (IsShellCallOutputItem)
             {
                 shellCallOutputItem?.Invoke(ShellCallOutputItem!);
-            }
-            else if (IsApplyPatchCallItem)
-            {
-                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
-            }
-            else if (IsApplyPatchCallOutputItem)
-            {
-                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
             }
             else if (IsMcpListToolsItem)
             {
@@ -3453,10 +3453,14 @@ namespace OpenRouter
                 typeof(global::OpenRouter.FunctionCallItem),
                 FunctionCallOutputItem,
                 typeof(global::OpenRouter.FunctionCallOutputItem),
-                InputsOneOf1Items5,
-                typeof(global::OpenRouter.InputsOneOf1Items5),
-                InputsOneOf1Items6,
-                typeof(global::OpenRouter.InputsOneOf1Items6),
+                ApplyPatchCallItem,
+                typeof(global::OpenRouter.ApplyPatchCallItem),
+                ApplyPatchCallOutputItem,
+                typeof(global::OpenRouter.ApplyPatchCallOutputItem),
+                InputsOneOf1Items7,
+                typeof(global::OpenRouter.InputsOneOf1Items7),
+                InputsOneOf1Items8,
+                typeof(global::OpenRouter.InputsOneOf1Items8),
                 OutputFunctionCallItem,
                 typeof(global::OpenRouter.OutputFunctionCallItem),
                 OutputCustomToolCallItem,
@@ -3507,10 +3511,6 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ShellCallItem),
                 ShellCallOutputItem,
                 typeof(global::OpenRouter.ShellCallOutputItem),
-                ApplyPatchCallItem,
-                typeof(global::OpenRouter.ApplyPatchCallItem),
-                ApplyPatchCallOutputItem,
-                typeof(global::OpenRouter.ApplyPatchCallOutputItem),
                 McpListToolsItem,
                 typeof(global::OpenRouter.McpListToolsItem),
                 McpApprovalRequestItem,
@@ -3548,8 +3548,10 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputMessageItem?>.Default.Equals(InputMessageItem, other.InputMessageItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FunctionCallItem?>.Default.Equals(FunctionCallItem, other.FunctionCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FunctionCallOutputItem?>.Default.Equals(FunctionCallOutputItem, other.FunctionCallOutputItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputsOneOf1Items5?>.Default.Equals(InputsOneOf1Items5, other.InputsOneOf1Items5) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputsOneOf1Items6?>.Default.Equals(InputsOneOf1Items6, other.InputsOneOf1Items6) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallItem?>.Default.Equals(ApplyPatchCallItem, other.ApplyPatchCallItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallOutputItem?>.Default.Equals(ApplyPatchCallOutputItem, other.ApplyPatchCallOutputItem) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputsOneOf1Items7?>.Default.Equals(InputsOneOf1Items7, other.InputsOneOf1Items7) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputsOneOf1Items8?>.Default.Equals(InputsOneOf1Items8, other.InputsOneOf1Items8) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputFunctionCallItem?>.Default.Equals(OutputFunctionCallItem, other.OutputFunctionCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputCustomToolCallItem?>.Default.Equals(OutputCustomToolCallItem, other.OutputCustomToolCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputWebSearchCallItem?>.Default.Equals(OutputWebSearchCallItem, other.OutputWebSearchCallItem) &&
@@ -3575,8 +3577,6 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.LocalShellCallOutputItem?>.Default.Equals(LocalShellCallOutputItem, other.LocalShellCallOutputItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellCallItem?>.Default.Equals(ShellCallItem, other.ShellCallItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellCallOutputItem?>.Default.Equals(ShellCallOutputItem, other.ShellCallOutputItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallItem?>.Default.Equals(ApplyPatchCallItem, other.ApplyPatchCallItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallOutputItem?>.Default.Equals(ApplyPatchCallOutputItem, other.ApplyPatchCallOutputItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpListToolsItem?>.Default.Equals(McpListToolsItem, other.McpListToolsItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpApprovalRequestItem?>.Default.Equals(McpApprovalRequestItem, other.McpApprovalRequestItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpApprovalResponseItem?>.Default.Equals(McpApprovalResponseItem, other.McpApprovalResponseItem) &&

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Output from an apply patch operation
+    /// The client's echo of an `apply_patch_call` after applying the patch. `output` is an optional human-readable log; `status` is `completed` when the patch was applied successfully, `failed` otherwise.
     /// </summary>
     public sealed partial class ApplyPatchCallOutputItem
     {

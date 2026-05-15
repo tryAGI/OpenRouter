@@ -68,185 +68,185 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("status")) __score4++;
             if (__jsonProps.Contains("type")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("content")) __score5++;
+            if (__jsonProps.Contains("call_id")) __score5++;
+            if (__jsonProps.Contains("id")) __score5++;
+            if (__jsonProps.Contains("operation")) __score5++;
+            if (__jsonProps.Contains("status")) __score5++;
+            if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
-            if (__jsonProps.Contains("content")) __score6++;
-            if (__jsonProps.Contains("format")) __score6++;
-            if (__jsonProps.Contains("signature")) __score6++;
-            if (__jsonProps.Contains("summary")) __score6++;
+            if (__jsonProps.Contains("call_id")) __score6++;
+            if (__jsonProps.Contains("id")) __score6++;
+            if (__jsonProps.Contains("output")) __score6++;
+            if (__jsonProps.Contains("status")) __score6++;
+            if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;
-            if (__jsonProps.Contains("arguments")) __score7++;
-            if (__jsonProps.Contains("call_id")) __score7++;
-            if (__jsonProps.Contains("id")) __score7++;
-            if (__jsonProps.Contains("name")) __score7++;
-            if (__jsonProps.Contains("namespace")) __score7++;
-            if (__jsonProps.Contains("status")) __score7++;
-            if (__jsonProps.Contains("type")) __score7++;
+            if (__jsonProps.Contains("content")) __score7++;
             var __score8 = 0;
-            if (__jsonProps.Contains("call_id")) __score8++;
-            if (__jsonProps.Contains("id")) __score8++;
-            if (__jsonProps.Contains("input")) __score8++;
-            if (__jsonProps.Contains("name")) __score8++;
-            if (__jsonProps.Contains("namespace")) __score8++;
+            if (__jsonProps.Contains("content")) __score8++;
+            if (__jsonProps.Contains("format")) __score8++;
+            if (__jsonProps.Contains("signature")) __score8++;
+            if (__jsonProps.Contains("summary")) __score8++;
             var __score9 = 0;
-            if (__jsonProps.Contains("action")) __score9++;
+            if (__jsonProps.Contains("arguments")) __score9++;
+            if (__jsonProps.Contains("call_id")) __score9++;
             if (__jsonProps.Contains("id")) __score9++;
+            if (__jsonProps.Contains("name")) __score9++;
+            if (__jsonProps.Contains("namespace")) __score9++;
             if (__jsonProps.Contains("status")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;
             var __score10 = 0;
+            if (__jsonProps.Contains("call_id")) __score10++;
             if (__jsonProps.Contains("id")) __score10++;
-            if (__jsonProps.Contains("queries")) __score10++;
-            if (__jsonProps.Contains("status")) __score10++;
-            if (__jsonProps.Contains("type")) __score10++;
+            if (__jsonProps.Contains("input")) __score10++;
+            if (__jsonProps.Contains("name")) __score10++;
+            if (__jsonProps.Contains("namespace")) __score10++;
             var __score11 = 0;
+            if (__jsonProps.Contains("action")) __score11++;
             if (__jsonProps.Contains("id")) __score11++;
-            if (__jsonProps.Contains("result")) __score11++;
             if (__jsonProps.Contains("status")) __score11++;
             if (__jsonProps.Contains("type")) __score11++;
             var __score12 = 0;
-            if (__jsonProps.Contains("code")) __score12++;
-            if (__jsonProps.Contains("container_id")) __score12++;
             if (__jsonProps.Contains("id")) __score12++;
-            if (__jsonProps.Contains("outputs")) __score12++;
+            if (__jsonProps.Contains("queries")) __score12++;
             if (__jsonProps.Contains("status")) __score12++;
             if (__jsonProps.Contains("type")) __score12++;
             var __score13 = 0;
-            if (__jsonProps.Contains("action")) __score13++;
-            if (__jsonProps.Contains("call_id")) __score13++;
             if (__jsonProps.Contains("id")) __score13++;
-            if (__jsonProps.Contains("pending_safety_checks")) __score13++;
+            if (__jsonProps.Contains("result")) __score13++;
             if (__jsonProps.Contains("status")) __score13++;
+            if (__jsonProps.Contains("type")) __score13++;
             var __score14 = 0;
-            if (__jsonProps.Contains("datetime")) __score14++;
+            if (__jsonProps.Contains("code")) __score14++;
+            if (__jsonProps.Contains("container_id")) __score14++;
             if (__jsonProps.Contains("id")) __score14++;
+            if (__jsonProps.Contains("outputs")) __score14++;
             if (__jsonProps.Contains("status")) __score14++;
-            if (__jsonProps.Contains("timezone")) __score14++;
+            if (__jsonProps.Contains("type")) __score14++;
             var __score15 = 0;
             if (__jsonProps.Contains("action")) __score15++;
-            if (__jsonProps.Contains("action.query")) __score15++;
-            if (__jsonProps.Contains("action.sources")) __score15++;
-            if (__jsonProps.Contains("action.type")) __score15++;
+            if (__jsonProps.Contains("call_id")) __score15++;
             if (__jsonProps.Contains("id")) __score15++;
+            if (__jsonProps.Contains("pending_safety_checks")) __score15++;
             if (__jsonProps.Contains("status")) __score15++;
-            if (__jsonProps.Contains("type")) __score15++;
             var __score16 = 0;
-            if (__jsonProps.Contains("code")) __score16++;
-            if (__jsonProps.Contains("exitCode")) __score16++;
+            if (__jsonProps.Contains("datetime")) __score16++;
             if (__jsonProps.Contains("id")) __score16++;
-            if (__jsonProps.Contains("language")) __score16++;
             if (__jsonProps.Contains("status")) __score16++;
-            if (__jsonProps.Contains("stderr")) __score16++;
-            if (__jsonProps.Contains("stdout")) __score16++;
+            if (__jsonProps.Contains("timezone")) __score16++;
             var __score17 = 0;
+            if (__jsonProps.Contains("action")) __score17++;
+            if (__jsonProps.Contains("action.query")) __score17++;
+            if (__jsonProps.Contains("action.sources")) __score17++;
+            if (__jsonProps.Contains("action.type")) __score17++;
             if (__jsonProps.Contains("id")) __score17++;
-            if (__jsonProps.Contains("queries")) __score17++;
             if (__jsonProps.Contains("status")) __score17++;
+            if (__jsonProps.Contains("type")) __score17++;
             var __score18 = 0;
+            if (__jsonProps.Contains("code")) __score18++;
+            if (__jsonProps.Contains("exitCode")) __score18++;
             if (__jsonProps.Contains("id")) __score18++;
-            if (__jsonProps.Contains("imageB64")) __score18++;
-            if (__jsonProps.Contains("imageUrl")) __score18++;
-            if (__jsonProps.Contains("result")) __score18++;
-            if (__jsonProps.Contains("revisedPrompt")) __score18++;
+            if (__jsonProps.Contains("language")) __score18++;
             if (__jsonProps.Contains("status")) __score18++;
+            if (__jsonProps.Contains("stderr")) __score18++;
+            if (__jsonProps.Contains("stdout")) __score18++;
             var __score19 = 0;
-            if (__jsonProps.Contains("action")) __score19++;
             if (__jsonProps.Contains("id")) __score19++;
-            if (__jsonProps.Contains("screenshotB64")) __score19++;
+            if (__jsonProps.Contains("queries")) __score19++;
             if (__jsonProps.Contains("status")) __score19++;
             var __score20 = 0;
-            if (__jsonProps.Contains("command")) __score20++;
-            if (__jsonProps.Contains("exitCode")) __score20++;
             if (__jsonProps.Contains("id")) __score20++;
+            if (__jsonProps.Contains("imageB64")) __score20++;
+            if (__jsonProps.Contains("imageUrl")) __score20++;
+            if (__jsonProps.Contains("result")) __score20++;
+            if (__jsonProps.Contains("revisedPrompt")) __score20++;
             if (__jsonProps.Contains("status")) __score20++;
-            if (__jsonProps.Contains("stderr")) __score20++;
-            if (__jsonProps.Contains("stdout")) __score20++;
             var __score21 = 0;
-            if (__jsonProps.Contains("command")) __score21++;
-            if (__jsonProps.Contains("filePath")) __score21++;
+            if (__jsonProps.Contains("action")) __score21++;
             if (__jsonProps.Contains("id")) __score21++;
+            if (__jsonProps.Contains("screenshotB64")) __score21++;
             if (__jsonProps.Contains("status")) __score21++;
-            if (__jsonProps.Contains("type")) __score21++;
             var __score22 = 0;
-            if (__jsonProps.Contains("filePath")) __score22++;
+            if (__jsonProps.Contains("command")) __score22++;
+            if (__jsonProps.Contains("exitCode")) __score22++;
             if (__jsonProps.Contains("id")) __score22++;
-            if (__jsonProps.Contains("patch")) __score22++;
             if (__jsonProps.Contains("status")) __score22++;
+            if (__jsonProps.Contains("stderr")) __score22++;
+            if (__jsonProps.Contains("stdout")) __score22++;
             var __score23 = 0;
-            if (__jsonProps.Contains("content")) __score23++;
-            if (__jsonProps.Contains("error")) __score23++;
-            if (__jsonProps.Contains("httpStatus")) __score23++;
+            if (__jsonProps.Contains("command")) __score23++;
+            if (__jsonProps.Contains("filePath")) __score23++;
             if (__jsonProps.Contains("id")) __score23++;
             if (__jsonProps.Contains("status")) __score23++;
-            if (__jsonProps.Contains("title")) __score23++;
             if (__jsonProps.Contains("type")) __score23++;
-            if (__jsonProps.Contains("url")) __score23++;
             var __score24 = 0;
+            if (__jsonProps.Contains("call_id")) __score24++;
             if (__jsonProps.Contains("id")) __score24++;
-            if (__jsonProps.Contains("query")) __score24++;
+            if (__jsonProps.Contains("operation")) __score24++;
             if (__jsonProps.Contains("status")) __score24++;
-            if (__jsonProps.Contains("type")) __score24++;
             var __score25 = 0;
-            if (__jsonProps.Contains("action")) __score25++;
+            if (__jsonProps.Contains("content")) __score25++;
+            if (__jsonProps.Contains("error")) __score25++;
+            if (__jsonProps.Contains("httpStatus")) __score25++;
             if (__jsonProps.Contains("id")) __score25++;
-            if (__jsonProps.Contains("key")) __score25++;
             if (__jsonProps.Contains("status")) __score25++;
+            if (__jsonProps.Contains("title")) __score25++;
             if (__jsonProps.Contains("type")) __score25++;
-            if (__jsonProps.Contains("value")) __score25++;
+            if (__jsonProps.Contains("url")) __score25++;
             var __score26 = 0;
             if (__jsonProps.Contains("id")) __score26++;
-            if (__jsonProps.Contains("serverLabel")) __score26++;
+            if (__jsonProps.Contains("query")) __score26++;
             if (__jsonProps.Contains("status")) __score26++;
-            if (__jsonProps.Contains("toolName")) __score26++;
             if (__jsonProps.Contains("type")) __score26++;
             var __score27 = 0;
-            if (__jsonProps.Contains("arguments")) __score27++;
+            if (__jsonProps.Contains("action")) __score27++;
             if (__jsonProps.Contains("id")) __score27++;
-            if (__jsonProps.Contains("query")) __score27++;
+            if (__jsonProps.Contains("key")) __score27++;
             if (__jsonProps.Contains("status")) __score27++;
             if (__jsonProps.Contains("type")) __score27++;
+            if (__jsonProps.Contains("value")) __score27++;
             var __score28 = 0;
-            if (__jsonProps.Contains("action")) __score28++;
-            if (__jsonProps.Contains("action.command")) __score28++;
-            if (__jsonProps.Contains("action.env")) __score28++;
-            if (__jsonProps.Contains("action.timeout_ms")) __score28++;
-            if (__jsonProps.Contains("action.type")) __score28++;
-            if (__jsonProps.Contains("action.user")) __score28++;
-            if (__jsonProps.Contains("action.working_directory")) __score28++;
-            if (__jsonProps.Contains("call_id")) __score28++;
             if (__jsonProps.Contains("id")) __score28++;
+            if (__jsonProps.Contains("serverLabel")) __score28++;
             if (__jsonProps.Contains("status")) __score28++;
+            if (__jsonProps.Contains("toolName")) __score28++;
             if (__jsonProps.Contains("type")) __score28++;
             var __score29 = 0;
+            if (__jsonProps.Contains("arguments")) __score29++;
             if (__jsonProps.Contains("id")) __score29++;
-            if (__jsonProps.Contains("output")) __score29++;
+            if (__jsonProps.Contains("query")) __score29++;
             if (__jsonProps.Contains("status")) __score29++;
             if (__jsonProps.Contains("type")) __score29++;
             var __score30 = 0;
             if (__jsonProps.Contains("action")) __score30++;
-            if (__jsonProps.Contains("action.commands")) __score30++;
-            if (__jsonProps.Contains("action.max_output_length")) __score30++;
+            if (__jsonProps.Contains("action.command")) __score30++;
+            if (__jsonProps.Contains("action.env")) __score30++;
             if (__jsonProps.Contains("action.timeout_ms")) __score30++;
+            if (__jsonProps.Contains("action.type")) __score30++;
+            if (__jsonProps.Contains("action.user")) __score30++;
+            if (__jsonProps.Contains("action.working_directory")) __score30++;
             if (__jsonProps.Contains("call_id")) __score30++;
-            if (__jsonProps.Contains("environment")) __score30++;
             if (__jsonProps.Contains("id")) __score30++;
             if (__jsonProps.Contains("status")) __score30++;
             if (__jsonProps.Contains("type")) __score30++;
             var __score31 = 0;
-            if (__jsonProps.Contains("call_id")) __score31++;
             if (__jsonProps.Contains("id")) __score31++;
-            if (__jsonProps.Contains("max_output_length")) __score31++;
             if (__jsonProps.Contains("output")) __score31++;
             if (__jsonProps.Contains("status")) __score31++;
             if (__jsonProps.Contains("type")) __score31++;
             var __score32 = 0;
+            if (__jsonProps.Contains("action")) __score32++;
+            if (__jsonProps.Contains("action.commands")) __score32++;
+            if (__jsonProps.Contains("action.max_output_length")) __score32++;
+            if (__jsonProps.Contains("action.timeout_ms")) __score32++;
             if (__jsonProps.Contains("call_id")) __score32++;
+            if (__jsonProps.Contains("environment")) __score32++;
             if (__jsonProps.Contains("id")) __score32++;
-            if (__jsonProps.Contains("operation")) __score32++;
             if (__jsonProps.Contains("status")) __score32++;
             if (__jsonProps.Contains("type")) __score32++;
             var __score33 = 0;
             if (__jsonProps.Contains("call_id")) __score33++;
             if (__jsonProps.Contains("id")) __score33++;
+            if (__jsonProps.Contains("max_output_length")) __score33++;
             if (__jsonProps.Contains("output")) __score33++;
             if (__jsonProps.Contains("status")) __score33++;
             if (__jsonProps.Contains("type")) __score33++;
@@ -345,8 +345,10 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.InputMessageItem? inputMessageItem = default;
             global::OpenRouter.FunctionCallItem? functionCallItem = default;
             global::OpenRouter.FunctionCallOutputItem? functionCallOutputItem = default;
-            global::OpenRouter.InputsOneOf1Items5? inputsOneOf1Items5 = default;
-            global::OpenRouter.InputsOneOf1Items6? inputsOneOf1Items6 = default;
+            global::OpenRouter.ApplyPatchCallItem? applyPatchCallItem = default;
+            global::OpenRouter.ApplyPatchCallOutputItem? applyPatchCallOutputItem = default;
+            global::OpenRouter.InputsOneOf1Items7? inputsOneOf1Items7 = default;
+            global::OpenRouter.InputsOneOf1Items8? inputsOneOf1Items8 = default;
             global::OpenRouter.OutputFunctionCallItem? outputFunctionCallItem = default;
             global::OpenRouter.OutputCustomToolCallItem? outputCustomToolCallItem = default;
             global::OpenRouter.OutputWebSearchCallItem? outputWebSearchCallItem = default;
@@ -372,8 +374,6 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.LocalShellCallOutputItem? localShellCallOutputItem = default;
             global::OpenRouter.ShellCallItem? shellCallItem = default;
             global::OpenRouter.ShellCallOutputItem? shellCallOutputItem = default;
-            global::OpenRouter.ApplyPatchCallItem? applyPatchCallItem = default;
-            global::OpenRouter.ApplyPatchCallOutputItem? applyPatchCallOutputItem = default;
             global::OpenRouter.McpListToolsItem? mcpListToolsItem = default;
             global::OpenRouter.McpApprovalRequestItem? mcpApprovalRequestItem = default;
             global::OpenRouter.McpApprovalResponseItem? mcpApprovalResponseItem = default;
@@ -463,9 +463,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items5> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items5).Name}");
-                        inputsOneOf1Items5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallItem).Name}");
+                        applyPatchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -478,9 +478,9 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items6> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items6).Name}");
-                        inputsOneOf1Items6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOutputItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOutputItem).Name}");
+                        applyPatchCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -490,6 +490,36 @@ namespace OpenRouter.JsonConverters
                     }
                 }
                 else if (__bestIndex == 7)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items7> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items7).Name}");
+                        inputsOneOf1Items7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 8)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items8> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items8).Name}");
+                        inputsOneOf1Items8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 9)
                 {
                     try
                     {
@@ -504,7 +534,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 8)
+                else if (__bestIndex == 10)
                 {
                     try
                     {
@@ -519,7 +549,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 9)
+                else if (__bestIndex == 11)
                 {
                     try
                     {
@@ -534,7 +564,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 10)
+                else if (__bestIndex == 12)
                 {
                     try
                     {
@@ -549,7 +579,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 11)
+                else if (__bestIndex == 13)
                 {
                     try
                     {
@@ -564,7 +594,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 12)
+                else if (__bestIndex == 14)
                 {
                     try
                     {
@@ -579,7 +609,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 13)
+                else if (__bestIndex == 15)
                 {
                     try
                     {
@@ -594,7 +624,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 14)
+                else if (__bestIndex == 16)
                 {
                     try
                     {
@@ -609,7 +639,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 15)
+                else if (__bestIndex == 17)
                 {
                     try
                     {
@@ -624,7 +654,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 16)
+                else if (__bestIndex == 18)
                 {
                     try
                     {
@@ -639,7 +669,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 17)
+                else if (__bestIndex == 19)
                 {
                     try
                     {
@@ -654,7 +684,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 18)
+                else if (__bestIndex == 20)
                 {
                     try
                     {
@@ -669,7 +699,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 19)
+                else if (__bestIndex == 21)
                 {
                     try
                     {
@@ -684,7 +714,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 20)
+                else if (__bestIndex == 22)
                 {
                     try
                     {
@@ -699,7 +729,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 21)
+                else if (__bestIndex == 23)
                 {
                     try
                     {
@@ -714,7 +744,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 22)
+                else if (__bestIndex == 24)
                 {
                     try
                     {
@@ -729,7 +759,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 23)
+                else if (__bestIndex == 25)
                 {
                     try
                     {
@@ -744,7 +774,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 24)
+                else if (__bestIndex == 26)
                 {
                     try
                     {
@@ -759,7 +789,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 25)
+                else if (__bestIndex == 27)
                 {
                     try
                     {
@@ -774,7 +804,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 26)
+                else if (__bestIndex == 28)
                 {
                     try
                     {
@@ -789,7 +819,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 27)
+                else if (__bestIndex == 29)
                 {
                     try
                     {
@@ -804,7 +834,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 28)
+                else if (__bestIndex == 30)
                 {
                     try
                     {
@@ -819,7 +849,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 29)
+                else if (__bestIndex == 31)
                 {
                     try
                     {
@@ -834,7 +864,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 30)
+                else if (__bestIndex == 32)
                 {
                     try
                     {
@@ -849,43 +879,13 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 31)
+                else if (__bestIndex == 33)
                 {
                     try
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellCallOutputItem> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellCallOutputItem).Name}");
                         shellCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 32)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallItem> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallItem).Name}");
-                        applyPatchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 33)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOutputItem> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOutputItem).Name}");
-                        applyPatchCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -1016,7 +1016,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1033,7 +1033,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1050,7 +1050,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1067,7 +1067,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1084,7 +1084,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1101,466 +1101,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items5> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items5).Name}");
-                    inputsOneOf1Items5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items6> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items6).Name}");
-                    inputsOneOf1Items6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFunctionCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFunctionCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFunctionCallItem).Name}");
-                    outputFunctionCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCustomToolCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCustomToolCallItem).Name}");
-                    outputCustomToolCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchCallItem).Name}");
-                    outputWebSearchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFileSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFileSearchCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFileSearchCallItem).Name}");
-                    outputFileSearchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputImageGenerationCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputImageGenerationCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputImageGenerationCallItem).Name}");
-                    outputImageGenerationCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterCallItem).Name}");
-                    outputCodeInterpreterCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputComputerCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputComputerCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputComputerCallItem).Name}");
-                    outputComputerCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputDatetimeItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputDatetimeItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputDatetimeItem).Name}");
-                    outputDatetimeItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchServerToolItem).Name}");
-                    outputWebSearchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterServerToolItem).Name}");
-                    outputCodeInterpreterServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFileSearchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFileSearchServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFileSearchServerToolItem).Name}");
-                    outputFileSearchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputImageGenerationServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputImageGenerationServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputImageGenerationServerToolItem).Name}");
-                    outputImageGenerationServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputBrowserUseServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputBrowserUseServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputBrowserUseServerToolItem).Name}");
-                    outputBrowserUseServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputBashServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputBashServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputBashServerToolItem).Name}");
-                    outputBashServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputTextEditorServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputTextEditorServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputTextEditorServerToolItem).Name}");
-                    outputTextEditorServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputApplyPatchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputApplyPatchServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputApplyPatchServerToolItem).Name}");
-                    outputApplyPatchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebFetchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebFetchServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebFetchServerToolItem).Name}");
-                    outputWebFetchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputToolSearchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputToolSearchServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputToolSearchServerToolItem).Name}");
-                    outputToolSearchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMemoryServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMemoryServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMemoryServerToolItem).Name}");
-                    outputMemoryServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMcpServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMcpServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMcpServerToolItem).Name}");
-                    outputMcpServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputSearchModelsServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputSearchModelsServerToolItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputSearchModelsServerToolItem).Name}");
-                    outputSearchModelsServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LocalShellCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LocalShellCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LocalShellCallItem).Name}");
-                    localShellCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LocalShellCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LocalShellCallOutputItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LocalShellCallOutputItem).Name}");
-                    localShellCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellCallItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellCallItem).Name}");
-                    shellCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellCallOutputItem> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellCallOutputItem).Name}");
-                    shellCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1577,7 +1118,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1594,7 +1135,466 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items7> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items7).Name}");
+                    inputsOneOf1Items7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items8> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items8).Name}");
+                    inputsOneOf1Items8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFunctionCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFunctionCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFunctionCallItem).Name}");
+                    outputFunctionCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCustomToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCustomToolCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCustomToolCallItem).Name}");
+                    outputCustomToolCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchCallItem).Name}");
+                    outputWebSearchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFileSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFileSearchCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFileSearchCallItem).Name}");
+                    outputFileSearchCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputImageGenerationCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputImageGenerationCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputImageGenerationCallItem).Name}");
+                    outputImageGenerationCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterCallItem).Name}");
+                    outputCodeInterpreterCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputComputerCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputComputerCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputComputerCallItem).Name}");
+                    outputComputerCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputDatetimeItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputDatetimeItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputDatetimeItem).Name}");
+                    outputDatetimeItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebSearchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebSearchServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebSearchServerToolItem).Name}");
+                    outputWebSearchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterServerToolItem).Name}");
+                    outputCodeInterpreterServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputFileSearchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputFileSearchServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputFileSearchServerToolItem).Name}");
+                    outputFileSearchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputImageGenerationServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputImageGenerationServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputImageGenerationServerToolItem).Name}");
+                    outputImageGenerationServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputBrowserUseServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputBrowserUseServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputBrowserUseServerToolItem).Name}");
+                    outputBrowserUseServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputBashServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputBashServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputBashServerToolItem).Name}");
+                    outputBashServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputTextEditorServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputTextEditorServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputTextEditorServerToolItem).Name}");
+                    outputTextEditorServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputApplyPatchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputApplyPatchServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputApplyPatchServerToolItem).Name}");
+                    outputApplyPatchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputWebFetchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputWebFetchServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputWebFetchServerToolItem).Name}");
+                    outputWebFetchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputToolSearchServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputToolSearchServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputToolSearchServerToolItem).Name}");
+                    outputToolSearchServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMemoryServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMemoryServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMemoryServerToolItem).Name}");
+                    outputMemoryServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMcpServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMcpServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMcpServerToolItem).Name}");
+                    outputMcpServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputSearchModelsServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputSearchModelsServerToolItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputSearchModelsServerToolItem).Name}");
+                    outputSearchModelsServerToolItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LocalShellCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LocalShellCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LocalShellCallItem).Name}");
+                    localShellCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.LocalShellCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.LocalShellCallOutputItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.LocalShellCallOutputItem).Name}");
+                    localShellCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellCallItem).Name}");
+                    shellCallItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellCallOutputItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellCallOutputItem).Name}");
+                    shellCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1611,7 +1611,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1628,7 +1628,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1645,7 +1645,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1662,7 +1662,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1679,7 +1679,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1696,7 +1696,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1713,7 +1713,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && inputsOneOf1Items5 == null && inputsOneOf1Items6 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
+            if (reasoningItem == null && easyInputMessage == null && inputMessageItem == null && functionCallItem == null && functionCallOutputItem == null && applyPatchCallItem == null && applyPatchCallOutputItem == null && inputsOneOf1Items7 == null && inputsOneOf1Items8 == null && outputFunctionCallItem == null && outputCustomToolCallItem == null && outputWebSearchCallItem == null && outputFileSearchCallItem == null && outputImageGenerationCallItem == null && outputCodeInterpreterCallItem == null && outputComputerCallItem == null && outputDatetimeItem == null && outputWebSearchServerToolItem == null && outputCodeInterpreterServerToolItem == null && outputFileSearchServerToolItem == null && outputImageGenerationServerToolItem == null && outputBrowserUseServerToolItem == null && outputBashServerToolItem == null && outputTextEditorServerToolItem == null && outputApplyPatchServerToolItem == null && outputWebFetchServerToolItem == null && outputToolSearchServerToolItem == null && outputMemoryServerToolItem == null && outputMcpServerToolItem == null && outputSearchModelsServerToolItem == null && localShellCallItem == null && localShellCallOutputItem == null && shellCallItem == null && shellCallOutputItem == null && mcpListToolsItem == null && mcpApprovalRequestItem == null && mcpApprovalResponseItem == null && mcpCallItem == null && customToolCallItem == null && customToolCallOutputItem == null && compactionItem == null && itemReferenceItem == null)
             {
                 try
                 {
@@ -1741,9 +1741,13 @@ namespace OpenRouter.JsonConverters
 
                 functionCallOutputItem,
 
-                inputsOneOf1Items5,
+                applyPatchCallItem,
 
-                inputsOneOf1Items6,
+                applyPatchCallOutputItem,
+
+                inputsOneOf1Items7,
+
+                inputsOneOf1Items8,
 
                 outputFunctionCallItem,
 
@@ -1794,10 +1798,6 @@ namespace OpenRouter.JsonConverters
                 shellCallItem,
 
                 shellCallOutputItem,
-
-                applyPatchCallItem,
-
-                applyPatchCallOutputItem,
 
                 mcpListToolsItem,
 
@@ -1858,17 +1858,29 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FunctionCallOutputItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallOutputItem!, typeInfo);
             }
-            else if (value.IsInputsOneOf1Items5)
+            else if (value.IsApplyPatchCallItem)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items5?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items5!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchCallItem!, typeInfo);
             }
-            else if (value.IsInputsOneOf1Items6)
+            else if (value.IsApplyPatchCallOutputItem)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items6?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items6!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOutputItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOutputItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchCallOutputItem!, typeInfo);
+            }
+            else if (value.IsInputsOneOf1Items7)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items7?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items7).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items7!, typeInfo);
+            }
+            else if (value.IsInputsOneOf1Items8)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.InputsOneOf1Items8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.InputsOneOf1Items8?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.InputsOneOf1Items8).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items8!, typeInfo);
             }
             else if (value.IsOutputFunctionCallItem)
             {
@@ -2019,18 +2031,6 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellCallOutputItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellCallOutputItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShellCallOutputItem!, typeInfo);
-            }
-            else if (value.IsApplyPatchCallItem)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallItem?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchCallItem!, typeInfo);
-            }
-            else if (value.IsApplyPatchCallOutputItem)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOutputItem?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOutputItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchCallOutputItem!, typeInfo);
             }
             else if (value.IsMcpListToolsItem)
             {

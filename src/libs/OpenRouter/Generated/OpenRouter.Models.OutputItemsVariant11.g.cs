@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:code_interpreter server tool output item
+    /// An openrouter:browser_use server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant11
     {
         /// <summary>
-        /// Discriminator value: openrouter:code_interpreter
+        /// Discriminator value: openrouter:browser_use
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant11TypeJsonConverter))]
@@ -18,14 +18,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string? Code { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("exitCode")]
-        public int? ExitCode { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        public string? Action { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +30,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        public string? Language { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("screenshotB64")]
+        public string? ScreenshotB64 { get; set; }
 
         /// <summary>
         /// 
@@ -46,18 +40,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
-        public string? Stderr { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stdout")]
-        public string? Stdout { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,35 +52,26 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:code_interpreter
+        /// Discriminator value: openrouter:browser_use
         /// </param>
-        /// <param name="code"></param>
-        /// <param name="exitCode"></param>
+        /// <param name="action"></param>
         /// <param name="id"></param>
-        /// <param name="language"></param>
-        /// <param name="stderr"></param>
-        /// <param name="stdout"></param>
+        /// <param name="screenshotB64"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant11(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant11Type type,
-            string? code,
-            int? exitCode,
+            string? action,
             string? id,
-            string? language,
-            string? stderr,
-            string? stdout)
+            string? screenshotB64)
         {
             this.Type = type;
-            this.Code = code;
-            this.ExitCode = exitCode;
+            this.Action = action;
             this.Id = id;
-            this.Language = language;
+            this.ScreenshotB64 = screenshotB64;
             this.Status = status;
-            this.Stderr = stderr;
-            this.Stdout = stdout;
         }
 
         /// <summary>

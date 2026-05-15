@@ -11,6 +11,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        ApplyPatchCall,
+        /// <summary>
+        /// 
+        /// </summary>
         CodeInterpreterCall,
         /// <summary>
         /// 
@@ -118,6 +122,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                OutputItemsDiscriminatorType.ApplyPatchCall => "apply_patch_call",
                 OutputItemsDiscriminatorType.CodeInterpreterCall => "code_interpreter_call",
                 OutputItemsDiscriminatorType.ComputerCall => "computer_call",
                 OutputItemsDiscriminatorType.CustomToolCall => "custom_tool_call",
@@ -152,6 +157,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                "apply_patch_call" => OutputItemsDiscriminatorType.ApplyPatchCall,
                 "code_interpreter_call" => OutputItemsDiscriminatorType.CodeInterpreterCall,
                 "computer_call" => OutputItemsDiscriminatorType.ComputerCall,
                 "custom_tool_call" => OutputItemsDiscriminatorType.CustomToolCall,
