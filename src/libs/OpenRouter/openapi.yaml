@@ -10041,7 +10041,7 @@
           },
           "max_total_results": {
             "type": "integer",
-            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops."
+            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops. Defaults to 50 when not specified."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchQualityLevel"
@@ -16196,7 +16196,7 @@
           },
           "max_total_results": {
             "type": "integer",
-            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops."
+            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops. Defaults to 50 when not specified."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchQualityLevel"
@@ -16266,7 +16266,7 @@
           },
           "max_total_results": {
             "type": "integer",
-            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops."
+            "description": "Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops. Defaults to 50 when not specified."
           },
           "parameters": {
             "$ref": "#/components/schemas/WebSearchConfig"
