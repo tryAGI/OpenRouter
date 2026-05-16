@@ -71,9 +71,9 @@ namespace OpenRouter
         /// The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ByokKeyProviderJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ByokKeyProvider Provider { get; set; }
+        public required global::OpenRouter.BYOKProviderSlug Provider { get; set; }
 
         /// <summary>
         /// Position within the provider — credentials are tried in ascending sort order.
@@ -143,7 +143,7 @@ namespace OpenRouter
             global::System.Guid id,
             bool isFallback,
             string label,
-            global::OpenRouter.ByokKeyProvider provider,
+            global::OpenRouter.BYOKProviderSlug provider,
             int sortOrder,
             global::System.Guid workspaceId,
             global::System.Collections.Generic.IList<string>? allowedApiKeyHashes,

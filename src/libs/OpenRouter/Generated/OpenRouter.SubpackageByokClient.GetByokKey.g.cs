@@ -27,13 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareGetByokKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid id,
-            ref global::System.Guid? workspaceId);
+            ref global::System.Guid id);
         partial void PrepareGetByokKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid id,
-            global::System.Guid? workspaceId);
+            global::System.Guid id);
         partial void ProcessGetByokKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,22 +43,19 @@ namespace OpenRouter
 
         /// <summary>
         /// Get a BYOK provider credential<br/>
-        /// Get a single bring-your-own-key (BYOK) provider credential by its `id`. Defaults to the authenticated entity's default workspace; use the `workspace_id` query parameter to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Get a single bring-your-own-key (BYOK) provider credential by its `id`. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="workspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.GetBYOKKeyResponse> GetByokKeyAsync(
             global::System.Guid id,
-            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetByokKeyAsResponseAsync(
                 id: id,
-                workspaceId: workspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -69,16 +64,14 @@ namespace OpenRouter
         }
         /// <summary>
         /// Get a BYOK provider credential<br/>
-        /// Get a single bring-your-own-key (BYOK) provider credential by its `id`. Defaults to the authenticated entity's default workspace; use the `workspace_id` query parameter to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Get a single bring-your-own-key (BYOK) provider credential by its `id`. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="workspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GetBYOKKeyResponse>> GetByokKeyAsResponseAsync(
             global::System.Guid id,
-            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,8 +79,7 @@ namespace OpenRouter
                 client: HttpClient);
             PrepareGetByokKeyArguments(
                 httpClient: HttpClient,
-                id: ref id,
-                workspaceId: ref workspaceId);
+                id: ref id);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -115,9 +107,6 @@ namespace OpenRouter
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: $"/byok/{id}",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -158,8 +147,7 @@ namespace OpenRouter
                 PrepareGetByokKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
-                    workspaceId: workspaceId);
+                    id: id!);
 
                 return __httpRequest;
             }
