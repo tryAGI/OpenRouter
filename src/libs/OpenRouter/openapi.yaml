@@ -690,6 +690,161 @@
         }
       }
     },
+    "/byok": {
+      "get": {
+        "operationId": "list-byok-keys",
+        "summary": "List BYOK provider credentials",
+        "description": "List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_byok"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Optional workspace ID to filter by. Defaults to the authenticated entity's default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "provider",
+            "in": "query",
+            "description": "Optional provider slug to filter by (e.g. `openai`, `anthropic`, `amazon-bedrock`).",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ByokGetParametersProvider"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of BYOK credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListBYOKKeysResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/byok/{id}": {
+      "get": {
+        "operationId": "get-byok-key",
+        "summary": "Get a BYOK provider credential",
+        "description": "Get a single bring-your-own-key (BYOK) provider credential by its `id`. Defaults to the authenticated entity's default workspace; use the `workspace_id` query parameter to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_byok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The BYOK credential ID (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Optional workspace ID. Defaults to the authenticated entity's default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BYOK credential details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBYOKKeyResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/chat/completions": {
       "post": {
         "operationId": "send-chat-completion-request",
@@ -3128,6 +3283,152 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ModelsListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/observability/destinations": {
+      "get": {
+        "operationId": "list-observability-destinations",
+        "summary": "List observability destinations",
+        "description": "List the observability destinations configured for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace. Only destinations with stable release status are surfaced — destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_observability"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Optional workspace ID to filter by. Defaults to the authenticated entity's default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of observability destinations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListObservabilityDestinationsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/observability/destinations/{id}": {
+      "get": {
+        "operationId": "get-observability-destination",
+        "summary": "Get an observability destination",
+        "description": "Fetch a single observability destination by its UUID. Defaults to the authenticated entity's default workspace — use `workspace_id` to override. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_observability"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The destination ID (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Optional workspace ID. Defaults to the authenticated entity's default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The observability destination",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetObservabilityDestinationResponse"
                 }
               }
             }
@@ -14838,6 +15139,481 @@
         ],
         "title": "ActivityResponse"
       },
+      "ByokGetParametersProvider": {
+        "type": "string",
+        "enum": [
+          "ai21",
+          "aion-labs",
+          "akashml",
+          "alibaba",
+          "amazon-bedrock",
+          "amazon-nova",
+          "ambient",
+          "anthropic",
+          "arcee-ai",
+          "atlas-cloud",
+          "avian",
+          "azure",
+          "baidu",
+          "baseten",
+          "black-forest-labs",
+          "byteplus",
+          "cerebras",
+          "chutes",
+          "cirrascale",
+          "clarifai",
+          "cloudflare",
+          "cohere",
+          "crusoe",
+          "deepinfra",
+          "deepseek",
+          "dekallm",
+          "featherless",
+          "fireworks",
+          "friendli",
+          "gmicloud",
+          "google-ai-studio",
+          "google-vertex",
+          "groq",
+          "hyperbolic",
+          "inception",
+          "inceptron",
+          "inference-net",
+          "infermatic",
+          "inflection",
+          "io-net",
+          "ionstream",
+          "liquid",
+          "mancer",
+          "mara",
+          "minimax",
+          "mistral",
+          "modelrun",
+          "modular",
+          "moonshotai",
+          "morph",
+          "ncompass",
+          "nebius",
+          "nex-agi",
+          "nextbit",
+          "novita",
+          "nvidia",
+          "open-inference",
+          "openai",
+          "parasail",
+          "perceptron",
+          "perplexity",
+          "phala",
+          "poolside",
+          "recraft",
+          "reka",
+          "relace",
+          "sambanova",
+          "seed",
+          "siliconflow",
+          "sourceful",
+          "stepfun",
+          "streamlake",
+          "switchpoint",
+          "together",
+          "upstage",
+          "venice",
+          "wandb",
+          "xai",
+          "xiaomi",
+          "z-ai"
+        ],
+        "description": "Optional provider slug to filter by (e.g. `openai`, `anthropic`, `amazon-bedrock`).",
+        "title": "ByokGetParametersProvider"
+      },
+      "ByokKeyProvider": {
+        "type": "string",
+        "enum": [
+          "ai21",
+          "aion-labs",
+          "akashml",
+          "alibaba",
+          "amazon-bedrock",
+          "amazon-nova",
+          "ambient",
+          "anthropic",
+          "arcee-ai",
+          "atlas-cloud",
+          "avian",
+          "azure",
+          "baidu",
+          "baseten",
+          "black-forest-labs",
+          "byteplus",
+          "cerebras",
+          "chutes",
+          "cirrascale",
+          "clarifai",
+          "cloudflare",
+          "cohere",
+          "crusoe",
+          "deepinfra",
+          "deepseek",
+          "dekallm",
+          "featherless",
+          "fireworks",
+          "friendli",
+          "gmicloud",
+          "google-ai-studio",
+          "google-vertex",
+          "groq",
+          "hyperbolic",
+          "inception",
+          "inceptron",
+          "inference-net",
+          "infermatic",
+          "inflection",
+          "io-net",
+          "ionstream",
+          "liquid",
+          "mancer",
+          "mara",
+          "minimax",
+          "mistral",
+          "modelrun",
+          "modular",
+          "moonshotai",
+          "morph",
+          "ncompass",
+          "nebius",
+          "nex-agi",
+          "nextbit",
+          "novita",
+          "nvidia",
+          "open-inference",
+          "openai",
+          "parasail",
+          "perceptron",
+          "perplexity",
+          "phala",
+          "poolside",
+          "recraft",
+          "reka",
+          "relace",
+          "sambanova",
+          "seed",
+          "siliconflow",
+          "sourceful",
+          "stepfun",
+          "streamlake",
+          "switchpoint",
+          "together",
+          "upstage",
+          "venice",
+          "wandb",
+          "xai",
+          "xiaomi",
+          "z-ai"
+        ],
+        "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).",
+        "title": "ByokKeyProvider"
+      },
+      "BYOKKey": {
+        "type": "object",
+        "properties": {
+          "allowed_api_key_hashes": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` means no restriction."
+          },
+          "allowed_models": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional allowlist of model slugs this credential may be used for. `null` means no restriction."
+          },
+          "allowed_user_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional allowlist of user IDs that may use this credential. `null` means no restriction."
+          },
+          "created_at": {
+            "type": "string",
+            "description": "ISO timestamp of when the credential was created."
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Whether this credential is currently disabled."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Stable public identifier for this BYOK credential."
+          },
+          "is_fallback": {
+            "type": "boolean",
+            "description": "Whether this credential is treated as a fallback — used only after non-fallback keys for the same provider have been tried."
+          },
+          "label": {
+            "type": "string",
+            "description": "Short masked snippet of the key (e.g. the first/last few characters) used to identify it in the UI."
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional human-readable name for the credential."
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ByokKeyProvider",
+            "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`)."
+          },
+          "sort_order": {
+            "type": "integer",
+            "description": "Position within the provider — credentials are tried in ascending sort order."
+          },
+          "workspace_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the workspace this credential belongs to."
+          }
+        },
+        "required": [
+          "allowed_api_key_hashes",
+          "allowed_models",
+          "allowed_user_ids",
+          "created_at",
+          "disabled",
+          "id",
+          "is_fallback",
+          "label",
+          "provider",
+          "sort_order",
+          "workspace_id"
+        ],
+        "title": "BYOKKey"
+      },
+      "ListBYOKKeysResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BYOKKey"
+            },
+            "description": "List of BYOK credentials."
+          },
+          "total_count": {
+            "type": "integer",
+            "description": "Total number of BYOK credentials matching the filters."
+          }
+        },
+        "required": [
+          "data",
+          "total_count"
+        ],
+        "title": "ListBYOKKeysResponse"
+      },
+      "GetByokKeyResponseDataProvider": {
+        "type": "string",
+        "enum": [
+          "ai21",
+          "aion-labs",
+          "akashml",
+          "alibaba",
+          "amazon-bedrock",
+          "amazon-nova",
+          "ambient",
+          "anthropic",
+          "arcee-ai",
+          "atlas-cloud",
+          "avian",
+          "azure",
+          "baidu",
+          "baseten",
+          "black-forest-labs",
+          "byteplus",
+          "cerebras",
+          "chutes",
+          "cirrascale",
+          "clarifai",
+          "cloudflare",
+          "cohere",
+          "crusoe",
+          "deepinfra",
+          "deepseek",
+          "dekallm",
+          "featherless",
+          "fireworks",
+          "friendli",
+          "gmicloud",
+          "google-ai-studio",
+          "google-vertex",
+          "groq",
+          "hyperbolic",
+          "inception",
+          "inceptron",
+          "inference-net",
+          "infermatic",
+          "inflection",
+          "io-net",
+          "ionstream",
+          "liquid",
+          "mancer",
+          "mara",
+          "minimax",
+          "mistral",
+          "modelrun",
+          "modular",
+          "moonshotai",
+          "morph",
+          "ncompass",
+          "nebius",
+          "nex-agi",
+          "nextbit",
+          "novita",
+          "nvidia",
+          "open-inference",
+          "openai",
+          "parasail",
+          "perceptron",
+          "perplexity",
+          "phala",
+          "poolside",
+          "recraft",
+          "reka",
+          "relace",
+          "sambanova",
+          "seed",
+          "siliconflow",
+          "sourceful",
+          "stepfun",
+          "streamlake",
+          "switchpoint",
+          "together",
+          "upstage",
+          "venice",
+          "wandb",
+          "xai",
+          "xiaomi",
+          "z-ai"
+        ],
+        "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).",
+        "title": "GetByokKeyResponseDataProvider"
+      },
+      "GetByokKeyResponseData": {
+        "type": "object",
+        "properties": {
+          "allowed_api_key_hashes": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) that may use this credential. `null` means no restriction."
+          },
+          "allowed_models": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional allowlist of model slugs this credential may be used for. `null` means no restriction."
+          },
+          "allowed_user_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional allowlist of user IDs that may use this credential. `null` means no restriction."
+          },
+          "created_at": {
+            "type": "string",
+            "description": "ISO timestamp of when the credential was created."
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Whether this credential is currently disabled."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Stable public identifier for this BYOK credential."
+          },
+          "is_fallback": {
+            "type": "boolean",
+            "description": "Whether this credential is treated as a fallback — used only after non-fallback keys for the same provider have been tried."
+          },
+          "label": {
+            "type": "string",
+            "description": "Short masked snippet of the key (e.g. the first/last few characters) used to identify it in the UI."
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional human-readable name for the credential."
+          },
+          "provider": {
+            "$ref": "#/components/schemas/GetByokKeyResponseDataProvider",
+            "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`)."
+          },
+          "sort_order": {
+            "type": "integer",
+            "description": "Position within the provider — credentials are tried in ascending sort order."
+          },
+          "workspace_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the workspace this credential belongs to."
+          }
+        },
+        "required": [
+          "allowed_api_key_hashes",
+          "allowed_models",
+          "allowed_user_ids",
+          "created_at",
+          "disabled",
+          "id",
+          "is_fallback",
+          "label",
+          "provider",
+          "sort_order",
+          "workspace_id"
+        ],
+        "description": "The BYOK credential.",
+        "title": "GetByokKeyResponseData"
+      },
+      "GetBYOKKeyResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetByokKeyResponseData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "GetBYOKKeyResponse"
+      },
       "ChatDebugOptions": {
         "type": "object",
         "properties": {
@@ -25609,6 +26385,3416 @@
         ],
         "description": "Model count data",
         "title": "ModelsCountResponse"
+      },
+      "ObservabilityDestinationDiscriminatorMappingArizeConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "baseUrl": {
+            "type": "string",
+            "default": "https://otlp.arize.com"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "modelId": {
+            "type": "string"
+          },
+          "spaceKey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "apiKey",
+          "modelId",
+          "spaceKey"
+        ],
+        "title": "ObservabilityDestinationDiscriminatorMappingArizeConfig"
+      },
+      "ObservabilityFilterRulesConfigGroupsItemsLogic": {
+        "type": "string",
+        "enum": [
+          "and",
+          "or"
+        ],
+        "default": "and",
+        "title": "ObservabilityFilterRulesConfigGroupsItemsLogic"
+      },
+      "ObservabilityFilterRulesConfigGroupsItemsRulesItemsField": {
+        "type": "string",
+        "enum": [
+          "model",
+          "provider",
+          "session_id",
+          "user_id",
+          "api_key_name",
+          "finish_reason",
+          "input",
+          "output",
+          "total_cost",
+          "total_tokens",
+          "prompt_tokens",
+          "completion_tokens"
+        ],
+        "title": "ObservabilityFilterRulesConfigGroupsItemsRulesItemsField"
+      },
+      "ObservabilityFilterRulesConfigGroupsItemsRulesItemsOperator": {
+        "type": "string",
+        "enum": [
+          "equals",
+          "not_equals",
+          "contains",
+          "not_contains",
+          "regex",
+          "starts_with",
+          "ends_with",
+          "gt",
+          "lt",
+          "gte",
+          "lte",
+          "exists",
+          "not_exists"
+        ],
+        "title": "ObservabilityFilterRulesConfigGroupsItemsRulesItemsOperator"
+      },
+      "ObservabilityFilterRulesConfigGroupsItemsRulesItemsValue": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number",
+            "format": "double"
+          }
+        ],
+        "title": "ObservabilityFilterRulesConfigGroupsItemsRulesItemsValue"
+      },
+      "ObservabilityFilterRulesConfigGroupsItemsRulesItems": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "$ref": "#/components/schemas/ObservabilityFilterRulesConfigGroupsItemsRulesItemsField"
+          },
+          "operator": {
+            "$ref": "#/components/schemas/ObservabilityFilterRulesConfigGroupsItemsRulesItemsOperator"
+          },
+          "value": {
+            "$ref": "#/components/schemas/ObservabilityFilterRulesConfigGroupsItemsRulesItemsValue"
+          }
+        },
+        "required": [
+          "field",
+          "operator"
+        ],
+        "title": "ObservabilityFilterRulesConfigGroupsItemsRulesItems"
+      },
+      "ObservabilityFilterRulesConfigGroupsItems": {
+        "type": "object",
+        "properties": {
+          "logic": {
+            "$ref": "#/components/schemas/ObservabilityFilterRulesConfigGroupsItemsLogic"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObservabilityFilterRulesConfigGroupsItemsRulesItems"
+            }
+          }
+        },
+        "required": [
+          "rules"
+        ],
+        "title": "ObservabilityFilterRulesConfigGroupsItems"
+      },
+      "ObservabilityFilterRulesConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObservabilityFilterRulesConfigGroupsItems"
+            }
+          }
+        },
+        "required": [
+          "groups"
+        ],
+        "description": "Optional structured filter rules controlling which events are forwarded.",
+        "title": "ObservabilityFilterRulesConfig"
+      },
+      "ObservabilityDestinationDiscriminatorMappingBraintrustConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "baseUrl": {
+            "type": "string",
+            "default": "https://api.braintrust.dev"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "projectId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "apiKey",
+          "projectId"
+        ],
+        "title": "ObservabilityDestinationDiscriminatorMappingBraintrustConfig"
+      },
+      "ObservabilityDestinationDiscriminatorMappingClickhouseConfig": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "host": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "table": {
+            "type": "string",
+            "default": "OPENROUTER_TRACES"
+          },
+          "username": {
+            "type": "string",
+            "description": "If you have not set a specific username in ClickHouse, simply type in 'default' below."
+          }
+        },
+        "required": [
+          "database",
+          "host",
+          "password",
+          "username"
+        ],
+        "title": "ObservabilityDestinationDiscriminatorMappingClickhouseConfig"
+      },
+      "ObservabilityDestinationDiscriminatorMappingDatadogConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string",
+            "description": "Datadog API key must have LLM Observability permissions. Create at: "
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "mlApp": {
+            "type": "string",
+            "description": "Name to identify your application in Datadog LLM Observability"
+          },
+          "url": {
+            "type": "string",
+            "default": "https://api.us5.datadoghq.com",
+            "description": "Datadog API URL for your region (e.g., https://api.datadoghq.com, https://api.us3.datadoghq.com, https://api.datadoghq.eu)"
+          }
+        },
+        "required": [
+          "apiKey",
+          "mlApp"
+        ],
+        "title": "ObservabilityDestinationDiscriminatorMappingDatadogConfig"
+      },
+      "ObservabilityGrafanaDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "baseUrl": {
+            "type": "string",
+            "default": "https://otlp-gateway-prod-us-west-0.grafana.net"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "instanceId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "apiKey",
+          "instanceId"
+        ],
+        "title": "ObservabilityGrafanaDestinationConfig"
+      },
+      "ObservabilityGrafanaDestinationType": {
+        "type": "string",
+        "enum": [
+          "grafana"
+        ],
+        "title": "ObservabilityGrafanaDestinationType"
+      },
+      "ObservabilityLangfuseDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "baseUrl": {
+            "type": "string",
+            "default": "https://us.cloud.langfuse.com"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "publicKey": {
+            "type": "string"
+          },
+          "secretKey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "publicKey",
+          "secretKey"
+        ],
+        "title": "ObservabilityLangfuseDestinationConfig"
+      },
+      "ObservabilityLangfuseDestinationType": {
+        "type": "string",
+        "enum": [
+          "langfuse"
+        ],
+        "title": "ObservabilityLangfuseDestinationType"
+      },
+      "ObservabilityLangsmithDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string",
+            "default": "https://api.smith.langchain.com"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "project": {
+            "type": "string",
+            "default": "main",
+            "description": "The name for this project, such as pr-openrouter-demo. Defaults to \"main\" if not set."
+          },
+          "workspaceId": {
+            "type": "string",
+            "description": "Required for org-scoped API keys. Find this in your LangSmith workspace settings."
+          }
+        },
+        "required": [
+          "apiKey"
+        ],
+        "title": "ObservabilityLangsmithDestinationConfig"
+      },
+      "ObservabilityLangsmithDestinationType": {
+        "type": "string",
+        "enum": [
+          "langsmith"
+        ],
+        "title": "ObservabilityLangsmithDestinationType"
+      },
+      "ObservabilityNewrelicDestinationConfigRegion": {
+        "type": "string",
+        "enum": [
+          "us",
+          "eu"
+        ],
+        "default": "us",
+        "title": "ObservabilityNewrelicDestinationConfigRegion"
+      },
+      "ObservabilityNewrelicDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "licenseKey": {
+            "type": "string"
+          },
+          "region": {
+            "$ref": "#/components/schemas/ObservabilityNewrelicDestinationConfigRegion"
+          }
+        },
+        "required": [
+          "licenseKey"
+        ],
+        "title": "ObservabilityNewrelicDestinationConfig"
+      },
+      "ObservabilityNewrelicDestinationType": {
+        "type": "string",
+        "enum": [
+          "newrelic"
+        ],
+        "title": "ObservabilityNewrelicDestinationType"
+      },
+      "ObservabilityOpikDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "projectName": {
+            "type": "string"
+          },
+          "workspace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "apiKey",
+          "projectName",
+          "workspace"
+        ],
+        "title": "ObservabilityOpikDestinationConfig"
+      },
+      "ObservabilityOpikDestinationType": {
+        "type": "string",
+        "enum": [
+          "opik"
+        ],
+        "title": "ObservabilityOpikDestinationType"
+      },
+      "ObservabilityOtelCollectorDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "endpoint": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers as a JSON object. For Axiom, use {\"Authorization\": \"Bearer xaat-xxx\", \"X-Axiom-Dataset\": \"your-dataset\"}"
+          }
+        },
+        "required": [
+          "endpoint"
+        ],
+        "title": "ObservabilityOtelCollectorDestinationConfig"
+      },
+      "ObservabilityOtelCollectorDestinationType": {
+        "type": "string",
+        "enum": [
+          "otel-collector"
+        ],
+        "title": "ObservabilityOtelCollectorDestinationType"
+      },
+      "ObservabilityPosthogDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string",
+            "default": "https://us.i.posthog.com"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          }
+        },
+        "required": [
+          "apiKey"
+        ],
+        "title": "ObservabilityPosthogDestinationConfig"
+      },
+      "ObservabilityPosthogDestinationType": {
+        "type": "string",
+        "enum": [
+          "posthog"
+        ],
+        "title": "ObservabilityPosthogDestinationType"
+      },
+      "ObservabilityRampDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string",
+            "description": "Generate this in your Ramp integration settings."
+          },
+          "baseUrl": {
+            "type": "string",
+            "default": "https://api.ramp.com/developer/v1/ai-usage/openrouter"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to Ramp."
+          }
+        },
+        "required": [
+          "apiKey"
+        ],
+        "title": "ObservabilityRampDestinationConfig"
+      },
+      "ObservabilityRampDestinationType": {
+        "type": "string",
+        "enum": [
+          "ramp"
+        ],
+        "title": "ObservabilityRampDestinationType"
+      },
+      "ObservabilityS3DestinationConfig": {
+        "type": "object",
+        "properties": {
+          "accessKeyId": {
+            "type": "string"
+          },
+          "bucketName": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "Only for S3-compatible services like Cloudflare R2 (https://account-id.r2.cloudflarestorage.com) or MinIO. Leave blank for standard AWS S3."
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "pathTemplate": {
+            "type": "string",
+            "default": "{prefix}/{date}",
+            "description": "Template for S3 object path. The filename ({traceId}-{timestamp}.json) is automatically appended. Available variables: {prefix}, {date}, {year}, {month}, {day}, {apiKeyName}"
+          },
+          "prefix": {
+            "type": "string",
+            "default": "openrouter-traces"
+          },
+          "region": {
+            "type": "string"
+          },
+          "secretAccessKey": {
+            "type": "string"
+          },
+          "sessionToken": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "accessKeyId",
+          "bucketName",
+          "secretAccessKey"
+        ],
+        "title": "ObservabilityS3DestinationConfig"
+      },
+      "ObservabilityS3DestinationType": {
+        "type": "string",
+        "enum": [
+          "s3"
+        ],
+        "title": "ObservabilityS3DestinationType"
+      },
+      "ObservabilitySentryDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "dsn": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "otlpEndpoint": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dsn",
+          "otlpEndpoint"
+        ],
+        "title": "ObservabilitySentryDestinationConfig"
+      },
+      "ObservabilitySentryDestinationType": {
+        "type": "string",
+        "enum": [
+          "sentry"
+        ],
+        "title": "ObservabilitySentryDestinationType"
+      },
+      "ObservabilitySnowflakeDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string"
+          },
+          "database": {
+            "type": "string",
+            "default": "SNOWFLAKE_LEARNING_DB"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "schema": {
+            "type": "string",
+            "default": "PUBLIC"
+          },
+          "table": {
+            "type": "string",
+            "default": "OPENROUTER_TRACES"
+          },
+          "token": {
+            "type": "string"
+          },
+          "warehouse": {
+            "type": "string",
+            "default": "COMPUTE_WH"
+          }
+        },
+        "required": [
+          "account",
+          "token"
+        ],
+        "title": "ObservabilitySnowflakeDestinationConfig"
+      },
+      "ObservabilitySnowflakeDestinationType": {
+        "type": "string",
+        "enum": [
+          "snowflake"
+        ],
+        "title": "ObservabilitySnowflakeDestinationType"
+      },
+      "ObservabilityWeaveDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "baseUrl": {
+            "type": "string",
+            "default": "https://trace.wandb.ai"
+          },
+          "entity": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom HTTP headers to include in requests to this destination."
+          },
+          "project": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "apiKey",
+          "entity",
+          "project"
+        ],
+        "title": "ObservabilityWeaveDestinationConfig"
+      },
+      "ObservabilityWeaveDestinationType": {
+        "type": "string",
+        "enum": [
+          "weave"
+        ],
+        "title": "ObservabilityWeaveDestinationType"
+      },
+      "ObservabilityWebhookDestinationConfigMethod": {
+        "type": "string",
+        "enum": [
+          "POST",
+          "PUT"
+        ],
+        "default": "POST",
+        "title": "ObservabilityWebhookDestinationConfigMethod"
+      },
+      "ObservabilityWebhookDestinationConfig": {
+        "type": "object",
+        "properties": {
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "method": {
+            "$ref": "#/components/schemas/ObservabilityWebhookDestinationConfigMethod"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "title": "ObservabilityWebhookDestinationConfig"
+      },
+      "ObservabilityWebhookDestinationType": {
+        "type": "string",
+        "enum": [
+          "webhook"
+        ],
+        "title": "ObservabilityWebhookDestinationType"
+      },
+      "ObservabilityDestination": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "arize"
+                ],
+                "description": "Discriminator value: arize"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingArizeConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "arize variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "braintrust"
+                ],
+                "description": "Discriminator value: braintrust"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingBraintrustConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "braintrust variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "clickhouse"
+                ],
+                "description": "Discriminator value: clickhouse"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingClickhouseConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "clickhouse variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "datadog"
+                ],
+                "description": "Discriminator value: datadog"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingDatadogConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "datadog variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityGrafanaDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityGrafanaDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "grafana variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityLangfuseDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityLangfuseDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "langfuse variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityLangsmithDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityLangsmithDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "langsmith variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityNewrelicDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityNewrelicDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "newrelic variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityOpikDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityOpikDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "opik variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityOtelCollectorDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityOtelCollectorDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "otel-collector variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityPosthogDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityPosthogDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "posthog variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityRampDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityRampDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "ramp variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityS3DestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityS3DestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "s3 variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilitySentryDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilitySentryDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "sentry variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilitySnowflakeDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilitySnowflakeDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "snowflake variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityWeaveDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityWeaveDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "weave variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityWebhookDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityWebhookDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "webhook variant"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type"
+        },
+        "title": "ObservabilityDestination"
+      },
+      "ListObservabilityDestinationsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObservabilityDestination"
+            },
+            "description": "List of observability destinations."
+          },
+          "total_count": {
+            "type": "integer",
+            "description": "Total number of destinations matching the filters."
+          }
+        },
+        "required": [
+          "data",
+          "total_count"
+        ],
+        "title": "ListObservabilityDestinationsResponse"
+      },
+      "GetObservabilityDestinationResponseData": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "arize"
+                ],
+                "description": "Discriminator value: arize"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingArizeConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "arize variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "braintrust"
+                ],
+                "description": "Discriminator value: braintrust"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingBraintrustConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "braintrust variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "clickhouse"
+                ],
+                "description": "Discriminator value: clickhouse"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingClickhouseConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "clickhouse variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "datadog"
+                ],
+                "description": "Discriminator value: datadog"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityDestinationDiscriminatorMappingDatadogConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "datadog variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityGrafanaDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityGrafanaDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "grafana variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityLangfuseDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityLangfuseDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "langfuse variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityLangsmithDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityLangsmithDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "langsmith variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityNewrelicDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityNewrelicDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "newrelic variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityOpikDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityOpikDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "opik variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityOtelCollectorDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityOtelCollectorDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "otel-collector variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityPosthogDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityPosthogDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "posthog variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityRampDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityRampDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "ramp variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityS3DestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityS3DestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "s3 variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilitySentryDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilitySentryDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "sentry variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilitySnowflakeDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilitySnowflakeDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "snowflake variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityWeaveDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityWeaveDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "weave variant"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ObservabilityWebhookDestinationType"
+              },
+              "api_key_hashes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys."
+              },
+              "config": {
+                "$ref": "#/components/schemas/ObservabilityWebhookDestinationConfig"
+              },
+              "created_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was created."
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether this destination is currently enabled."
+              },
+              "filter_rules": {
+                "$ref": "#/components/schemas/ObservabilityFilterRulesConfig"
+              },
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Stable public identifier for this destination."
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Human-readable name for the destination."
+              },
+              "privacy_mode": {
+                "type": "boolean",
+                "description": "When true, request/response bodies are not forwarded to this destination — only metadata."
+              },
+              "sampling_rate": {
+                "type": "number",
+                "format": "double",
+                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+              },
+              "updated_at": {
+                "type": "string",
+                "description": "ISO timestamp of when the destination was last updated."
+              },
+              "workspace_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "ID of the workspace this destination belongs to."
+              }
+            },
+            "required": [
+              "type",
+              "api_key_hashes",
+              "config",
+              "created_at",
+              "enabled",
+              "filter_rules",
+              "id",
+              "name",
+              "privacy_mode",
+              "sampling_rate",
+              "updated_at",
+              "workspace_id"
+            ],
+            "description": "webhook variant"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type"
+        },
+        "description": "The observability destination.",
+        "title": "GetObservabilityDestinationResponseData"
+      },
+      "GetObservabilityDestinationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetObservabilityDestinationResponseData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "GetObservabilityDestinationResponse"
       },
       "OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRole": {
         "type": "string",
