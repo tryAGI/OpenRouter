@@ -1045,13 +1045,9 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailJsonConverter),
 
@@ -3950,13 +3946,9 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailJsonConverter),
 
@@ -5466,12 +5458,11 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ActivityResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ActivityItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ByokGetParametersProvider), TypeInfoPropertyName = "ByokGetParametersProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ByokKeyProvider), TypeInfoPropertyName = "ByokKeyProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BYOKProviderSlug), TypeInfoPropertyName = "BYOKProviderSlug2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BYOKKey))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListBYOKKeysResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BYOKKey>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GetByokKeyResponseDataProvider), TypeInfoPropertyName = "GetByokKeyResponseDataProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GetByokKeyResponseData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GetBYOKKeyResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatDebugOptions))]
@@ -5812,6 +5803,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicPlainTextSourceMediaType), TypeInfoPropertyName = "AnthropicPlainTextSourceMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicPlainTextSourceType), TypeInfoPropertyName = "AnthropicPlainTextSourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicPlainTextSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items), TypeInfoPropertyName = "AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -6855,13 +6847,9 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailJsonConverter),
 
@@ -8217,7 +8205,6 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items), TypeInfoPropertyName = "AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminator))]
@@ -8717,6 +8704,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ResponsesRequestPluginsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ResponsesRequestToolsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OpenAiResponseInputMessageItemContentItems>))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -9760,13 +9748,9 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ByokKeyProviderNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailJsonConverter),
 
@@ -11122,7 +11106,6 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OpenAiResponseInputMessageItemContentItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputMessageContentItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items>))]
@@ -11774,10 +11757,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.SpeechRequestResponseFormatNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ByokGetParametersProviderJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.ByokKeyProviderJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.ByokKeyProviderNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.GetByokKeyResponseDataProviderNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BYOKProviderSlugNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.LegacyChatContentVideoTypeJsonConverter());

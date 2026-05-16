@@ -775,7 +775,7 @@
       "get": {
         "operationId": "get-byok-key",
         "summary": "Get a BYOK provider credential",
-        "description": "Get a single bring-your-own-key (BYOK) provider credential by its `id`. Defaults to the authenticated entity's default workspace; use the `workspace_id` query parameter to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Get a single bring-your-own-key (BYOK) provider credential by its `id`. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
           "subpackage_byok"
         ],
@@ -785,16 +785,6 @@
             "in": "path",
             "description": "The BYOK credential ID (UUID).",
             "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "workspace_id",
-            "in": "query",
-            "description": "Optional workspace ID. Defaults to the authenticated entity's default workspace.",
-            "required": false,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -3396,7 +3386,7 @@
       "get": {
         "operationId": "get-observability-destination",
         "summary": "Get an observability destination",
-        "description": "Fetch a single observability destination by its UUID. Defaults to the authenticated entity's default workspace — use `workspace_id` to override. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Fetch a single observability destination by its UUID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
           "subpackage_observability"
         ],
@@ -3406,16 +3396,6 @@
             "in": "path",
             "description": "The destination ID (UUID).",
             "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "workspace_id",
-            "in": "query",
-            "description": "Optional workspace ID. Defaults to the authenticated entity's default workspace.",
-            "required": false,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -15226,7 +15206,7 @@
         "description": "Optional provider slug to filter by (e.g. `openai`, `anthropic`, `amazon-bedrock`).",
         "title": "ByokGetParametersProvider"
       },
-      "ByokKeyProvider": {
+      "BYOKProviderSlug": {
         "type": "string",
         "enum": [
           "ai21",
@@ -15311,7 +15291,7 @@
           "z-ai"
         ],
         "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).",
-        "title": "ByokKeyProvider"
+        "title": "BYOKProviderSlug"
       },
       "BYOKKey": {
         "type": "object",
@@ -15375,8 +15355,7 @@
             "description": "Optional human-readable name for the credential."
           },
           "provider": {
-            "$ref": "#/components/schemas/ByokKeyProvider",
-            "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`)."
+            "$ref": "#/components/schemas/BYOKProviderSlug"
           },
           "sort_order": {
             "type": "integer",
@@ -15423,93 +15402,6 @@
           "total_count"
         ],
         "title": "ListBYOKKeysResponse"
-      },
-      "GetByokKeyResponseDataProvider": {
-        "type": "string",
-        "enum": [
-          "ai21",
-          "aion-labs",
-          "akashml",
-          "alibaba",
-          "amazon-bedrock",
-          "amazon-nova",
-          "ambient",
-          "anthropic",
-          "arcee-ai",
-          "atlas-cloud",
-          "avian",
-          "azure",
-          "baidu",
-          "baseten",
-          "black-forest-labs",
-          "byteplus",
-          "cerebras",
-          "chutes",
-          "cirrascale",
-          "clarifai",
-          "cloudflare",
-          "cohere",
-          "crusoe",
-          "deepinfra",
-          "deepseek",
-          "dekallm",
-          "featherless",
-          "fireworks",
-          "friendli",
-          "gmicloud",
-          "google-ai-studio",
-          "google-vertex",
-          "groq",
-          "hyperbolic",
-          "inception",
-          "inceptron",
-          "inference-net",
-          "infermatic",
-          "inflection",
-          "io-net",
-          "ionstream",
-          "liquid",
-          "mancer",
-          "mara",
-          "minimax",
-          "mistral",
-          "modelrun",
-          "modular",
-          "moonshotai",
-          "morph",
-          "ncompass",
-          "nebius",
-          "nex-agi",
-          "nextbit",
-          "novita",
-          "nvidia",
-          "open-inference",
-          "openai",
-          "parasail",
-          "perceptron",
-          "perplexity",
-          "phala",
-          "poolside",
-          "recraft",
-          "reka",
-          "relace",
-          "sambanova",
-          "seed",
-          "siliconflow",
-          "sourceful",
-          "stepfun",
-          "streamlake",
-          "switchpoint",
-          "together",
-          "upstage",
-          "venice",
-          "wandb",
-          "xai",
-          "xiaomi",
-          "z-ai"
-        ],
-        "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).",
-        "title": "GetByokKeyResponseDataProvider"
       },
       "GetByokKeyResponseData": {
         "type": "object",
@@ -15573,8 +15465,7 @@
             "description": "Optional human-readable name for the credential."
           },
           "provider": {
-            "$ref": "#/components/schemas/GetByokKeyResponseDataProvider",
-            "description": "The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`)."
+            "$ref": "#/components/schemas/BYOKProviderSlug"
           },
           "sort_order": {
             "type": "integer",

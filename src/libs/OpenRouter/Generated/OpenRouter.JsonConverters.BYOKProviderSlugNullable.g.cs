@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ByokKeyProviderNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ByokKeyProvider?>
+    public sealed class BYOKProviderSlugNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.BYOKProviderSlug?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.ByokKeyProvider? Read(
+        public override global::OpenRouter.BYOKProviderSlug? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.ByokKeyProviderExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.BYOKProviderSlugExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.ByokKeyProvider)numValue;
+                    return (global::OpenRouter.BYOKProviderSlug)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.ByokKeyProvider?);
+                    return default(global::OpenRouter.BYOKProviderSlug?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.ByokKeyProvider? value,
+            global::OpenRouter.BYOKProviderSlug? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace OpenRouter.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenRouter.ByokKeyProviderExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenRouter.BYOKProviderSlugExtensions.ToValueString(value.Value));
             }
         }
     }
