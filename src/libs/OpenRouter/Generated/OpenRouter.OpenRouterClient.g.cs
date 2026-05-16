@@ -78,6 +78,15 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageByokClient SubpackageByok => new SubpackageByokClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageChatClient SubpackageChat => new SubpackageChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -142,6 +151,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         public SubpackageOAuthClient SubpackageOAuth => new SubpackageOAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageObservabilityClient SubpackageObservability => new SubpackageObservabilityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
