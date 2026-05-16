@@ -28,6 +28,12 @@ namespace OpenRouter
         public string? Error { get; set; }
 
         /// <summary>
+        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("failed_models")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? FailedModels { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -66,6 +72,9 @@ namespace OpenRouter
         /// <param name="error">
         /// Error message when the fusion run did not produce an analysis result.
         /// </param>
+        /// <param name="failedModels">
+        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="responses">
         /// Slugs of the analysis models that produced a response in this fusion run.
@@ -78,12 +87,14 @@ namespace OpenRouter
             global::OpenRouter.OutputItemsVariant16Type type,
             global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis? analysis,
             string? error,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? failedModels,
             string? id,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? responses)
         {
             this.Type = type;
             this.Analysis = analysis;
             this.Error = error;
+            this.FailedModels = failedModels;
             this.Id = id;
             this.Responses = responses;
             this.Status = status;

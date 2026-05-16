@@ -11626,6 +11626,24 @@
         "description": "Structured analysis produced by the fusion judge model.",
         "title": "OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis"
       },
+      "OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message describing why the model failed."
+          },
+          "model": {
+            "type": "string",
+            "description": "Slug of the analysis model that failed."
+          }
+        },
+        "required": [
+          "error",
+          "model"
+        ],
+        "title": "OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems"
+      },
       "OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems": {
         "type": "object",
         "properties": {
@@ -12191,6 +12209,13 @@
               "error": {
                 "type": "string",
                 "description": "Error message when the fusion run did not produce an analysis result."
+              },
+              "failed_models": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems"
+                },
+                "description": "Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel."
               },
               "id": {
                 "type": "string"
