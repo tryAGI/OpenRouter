@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class GetObservabilityDestinationResponseDataVariant10
     {
         /// <summary>
-        /// 
+        /// Discriminator value: otel-collector
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ObservabilityOtelCollectorDestinationTypeJsonConverter))]
-        public global::OpenRouter.ObservabilityOtelCollectorDestinationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant10TypeJsonConverter))]
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant10Type Type { get; set; }
 
         /// <summary>
         /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys.
@@ -26,7 +26,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ObservabilityOtelCollectorDestinationConfig Config { get; set; }
+        public required global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingOtelCollectorConfig Config { get; set; }
 
         /// <summary>
         /// ISO timestamp of when the destination was created.
@@ -124,7 +124,9 @@ namespace OpenRouter
         /// <param name="workspaceId">
         /// ID of the workspace this destination belongs to.
         /// </param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: otel-collector
+        /// </param>
         /// <param name="apiKeyHashes">
         /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys.
         /// </param>
@@ -135,7 +137,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetObservabilityDestinationResponseDataVariant10(
-            global::OpenRouter.ObservabilityOtelCollectorDestinationConfig config,
+            global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingOtelCollectorConfig config,
             string createdAt,
             bool enabled,
             global::OpenRouter.ObservabilityFilterRulesConfig filterRules,
@@ -144,7 +146,7 @@ namespace OpenRouter
             double samplingRate,
             string updatedAt,
             global::System.Guid workspaceId,
-            global::OpenRouter.ObservabilityOtelCollectorDestinationType type,
+            global::OpenRouter.GetObservabilityDestinationResponseDataVariant10Type type,
             global::System.Collections.Generic.IList<string>? apiKeyHashes,
             string? name)
         {
