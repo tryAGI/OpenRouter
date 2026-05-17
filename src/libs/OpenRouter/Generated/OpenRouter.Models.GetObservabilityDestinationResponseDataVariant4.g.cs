@@ -26,7 +26,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ObservabilityDestinationDiscriminatorMappingDatadogConfig Config { get; set; }
+        public required global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingDatadogConfig Config { get; set; }
 
         /// <summary>
         /// ISO timestamp of when the destination was created.
@@ -137,7 +137,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetObservabilityDestinationResponseDataVariant4(
-            global::OpenRouter.ObservabilityDestinationDiscriminatorMappingDatadogConfig config,
+            global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingDatadogConfig config,
             string createdAt,
             bool enabled,
             global::OpenRouter.ObservabilityFilterRulesConfig filterRules,

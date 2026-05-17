@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class GetObservabilityDestinationResponseDataVariant13
     {
         /// <summary>
-        /// 
+        /// Discriminator value: s3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ObservabilityS3DestinationTypeJsonConverter))]
-        public global::OpenRouter.ObservabilityS3DestinationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant13TypeJsonConverter))]
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant13Type Type { get; set; }
 
         /// <summary>
         /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys.
@@ -26,7 +26,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ObservabilityS3DestinationConfig Config { get; set; }
+        public required global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingS3Config Config { get; set; }
 
         /// <summary>
         /// ISO timestamp of when the destination was created.
@@ -124,7 +124,9 @@ namespace OpenRouter
         /// <param name="workspaceId">
         /// ID of the workspace this destination belongs to.
         /// </param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: s3
+        /// </param>
         /// <param name="apiKeyHashes">
         /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys.
         /// </param>
@@ -135,7 +137,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetObservabilityDestinationResponseDataVariant13(
-            global::OpenRouter.ObservabilityS3DestinationConfig config,
+            global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingS3Config config,
             string createdAt,
             bool enabled,
             global::OpenRouter.ObservabilityFilterRulesConfig filterRules,
@@ -144,7 +146,7 @@ namespace OpenRouter
             double samplingRate,
             string updatedAt,
             global::System.Guid workspaceId,
-            global::OpenRouter.ObservabilityS3DestinationType type,
+            global::OpenRouter.GetObservabilityDestinationResponseDataVariant13Type type,
             global::System.Collections.Generic.IList<string>? apiKeyHashes,
             string? name)
         {

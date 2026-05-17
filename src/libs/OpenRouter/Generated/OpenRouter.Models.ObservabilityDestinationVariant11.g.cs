@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class ObservabilityDestinationVariant11
     {
         /// <summary>
-        /// 
+        /// Discriminator value: posthog
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ObservabilityPosthogDestinationTypeJsonConverter))]
-        public global::OpenRouter.ObservabilityPosthogDestinationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant11TypeJsonConverter))]
+        public global::OpenRouter.ObservabilityDestinationVariant11Type Type { get; set; }
 
         /// <summary>
         /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys.
@@ -26,7 +26,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ObservabilityPosthogDestinationConfig Config { get; set; }
+        public required global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingPosthogConfig Config { get; set; }
 
         /// <summary>
         /// ISO timestamp of when the destination was created.
@@ -124,7 +124,9 @@ namespace OpenRouter
         /// <param name="workspaceId">
         /// ID of the workspace this destination belongs to.
         /// </param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: posthog
+        /// </param>
         /// <param name="apiKeyHashes">
         /// Optional allowlist of OpenRouter API key hashes (`api_keys.hash`) whose traffic is forwarded to this destination. `null` means all keys.
         /// </param>
@@ -135,7 +137,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ObservabilityDestinationVariant11(
-            global::OpenRouter.ObservabilityPosthogDestinationConfig config,
+            global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingPosthogConfig config,
             string createdAt,
             bool enabled,
             global::OpenRouter.ObservabilityFilterRulesConfig filterRules,
@@ -144,7 +146,7 @@ namespace OpenRouter
             double samplingRate,
             string updatedAt,
             global::System.Guid workspaceId,
-            global::OpenRouter.ObservabilityPosthogDestinationType type,
+            global::OpenRouter.ObservabilityDestinationVariant11Type type,
             global::System.Collections.Generic.IList<string>? apiKeyHashes,
             string? name)
         {
