@@ -72,6 +72,9 @@ namespace OpenRouter
         /// </param>
         /// <param name="speed"></param>
         /// <param name="stopSequences"></param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="stream"></param>
         /// <param name="system"></param>
         /// <param name="temperature"></param>
@@ -106,6 +109,7 @@ namespace OpenRouter
             string? sessionId = default,
             global::OpenRouter.AnthropicSpeed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? stream = default,
             global::OpenRouter.MessagesRequestSystem? system = default,
             double? temperature = default,

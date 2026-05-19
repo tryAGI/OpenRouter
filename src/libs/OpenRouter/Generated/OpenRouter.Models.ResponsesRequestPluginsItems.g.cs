@@ -309,6 +309,43 @@ namespace OpenRouter
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant8 PickWeb() => IsWeb
             ? Web!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Web' but the value was {ToString()}.");
+
+        /// <summary>
+        /// web-fetch variant
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant9? WebFetch { get; init; }
+#else
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant9? WebFetch { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetch))]
+#endif
+        public bool IsWebFetch => WebFetch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebFetch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ResponsesRequestPluginsItemsVariant9? value)
+        {
+            value = WebFetch;
+            return IsWebFetch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponsesRequestPluginsItemsVariant9 PickWebFetch() => IsWebFetch
+            ? WebFetch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -496,6 +533,29 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant9 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant9?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant9?(ResponsesRequestPluginsItems @this) => @this.WebFetch;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant9? value)
+        {
+            WebFetch = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromWebFetch(global::OpenRouter.ResponsesRequestPluginsItemsVariant9? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResponsesRequestPluginsItems(
             global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorId? id,
             global::OpenRouter.ResponsesRequestPluginsItemsVariant1? autoRouter,
@@ -505,7 +565,8 @@ namespace OpenRouter
             global::OpenRouter.ResponsesRequestPluginsItemsVariant5? moderation,
             global::OpenRouter.ResponsesRequestPluginsItemsVariant6? paretoRouter,
             global::OpenRouter.ResponsesRequestPluginsItemsVariant7? responseHealing,
-            global::OpenRouter.ResponsesRequestPluginsItemsVariant8? web
+            global::OpenRouter.ResponsesRequestPluginsItemsVariant8? web,
+            global::OpenRouter.ResponsesRequestPluginsItemsVariant9? webFetch
             )
         {
             Id = id;
@@ -518,12 +579,14 @@ namespace OpenRouter
             ParetoRouter = paretoRouter;
             ResponseHealing = responseHealing;
             Web = web;
+            WebFetch = webFetch;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            WebFetch as object ??
             Web as object ??
             ResponseHealing as object ??
             ParetoRouter as object ??
@@ -545,7 +608,8 @@ namespace OpenRouter
             Moderation?.ToString() ??
             ParetoRouter?.ToString() ??
             ResponseHealing?.ToString() ??
-            Web?.ToString() 
+            Web?.ToString() ??
+            WebFetch?.ToString() 
             ;
 
         /// <summary>
@@ -553,7 +617,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && IsParetoRouter && !IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && IsResponseHealing && !IsWeb || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && IsWeb;
+            return IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb && !IsWebFetch || !IsAutoRouter && IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb && !IsWebFetch || !IsAutoRouter && !IsContextCompression && IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb && !IsWebFetch || !IsAutoRouter && !IsContextCompression && !IsFileParser && IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb && !IsWebFetch || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb && !IsWebFetch || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && IsParetoRouter && !IsResponseHealing && !IsWeb && !IsWebFetch || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && IsResponseHealing && !IsWeb && !IsWebFetch || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && IsWeb && !IsWebFetch || !IsAutoRouter && !IsContextCompression && !IsFileParser && !IsFusion && !IsModeration && !IsParetoRouter && !IsResponseHealing && !IsWeb && IsWebFetch;
         }
 
         /// <summary>
@@ -568,6 +632,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant6, TResult>? paretoRouter = null,
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant7, TResult>? responseHealing = null,
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant8, TResult>? web = null,
+            global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant9, TResult>? webFetch = null,
             bool validate = true)
         {
             if (validate)
@@ -607,6 +672,10 @@ namespace OpenRouter
             {
                 return web(Web!);
             }
+            else if (IsWebFetch && webFetch != null)
+            {
+                return webFetch(WebFetch!);
+            }
 
             return default(TResult);
         }
@@ -630,6 +699,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant7>? responseHealing = null,
 
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant8>? web = null,
+
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant9>? webFetch = null,
             bool validate = true)
         {
             if (validate)
@@ -668,6 +739,10 @@ namespace OpenRouter
             else if (IsWeb)
             {
                 web?.Invoke(Web!);
+            }
+            else if (IsWebFetch)
+            {
+                webFetch?.Invoke(WebFetch!);
             }
         }
 
@@ -683,6 +758,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant6>? paretoRouter = null,
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant7>? responseHealing = null,
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant8>? web = null,
+            global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant9>? webFetch = null,
             bool validate = true)
         {
             if (validate)
@@ -721,6 +797,10 @@ namespace OpenRouter
             else if (IsWeb)
             {
                 web?.Invoke(Web!);
+            }
+            else if (IsWebFetch)
+            {
+                webFetch?.Invoke(WebFetch!);
             }
         }
 
@@ -747,6 +827,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant7),
                 Web,
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant8),
+                WebFetch,
+                typeof(global::OpenRouter.ResponsesRequestPluginsItemsVariant9),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -770,7 +852,8 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant5?>.Default.Equals(Moderation, other.Moderation) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant6?>.Default.Equals(ParetoRouter, other.ParetoRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant7?>.Default.Equals(ResponseHealing, other.ResponseHealing) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant8?>.Default.Equals(Web, other.Web) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant8?>.Default.Equals(Web, other.Web) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant9?>.Default.Equals(WebFetch, other.WebFetch) 
                 ;
         }
 
