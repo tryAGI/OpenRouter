@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK).
+    /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK). "parallel" uses the Parallel extract API.
     /// </summary>
     public enum WebFetchEngineEnum
     {
@@ -28,6 +28,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Openrouter,
+        /// <summary>
+        /// 
+        /// </summary>
+        Parallel,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace OpenRouter
                 WebFetchEngineEnum.Firecrawl => "firecrawl",
                 WebFetchEngineEnum.Native => "native",
                 WebFetchEngineEnum.Openrouter => "openrouter",
+                WebFetchEngineEnum.Parallel => "parallel",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace OpenRouter
                 "firecrawl" => WebFetchEngineEnum.Firecrawl,
                 "native" => WebFetchEngineEnum.Native,
                 "openrouter" => WebFetchEngineEnum.Openrouter,
+                "parallel" => WebFetchEngineEnum.Parallel,
                 _ => null,
             };
         }
