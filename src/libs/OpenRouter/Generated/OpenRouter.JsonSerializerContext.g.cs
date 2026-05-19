@@ -2289,6 +2289,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsNullableJsonConverter),
@@ -5441,6 +5445,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsJsonConverter),
 
@@ -8595,6 +8603,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsNullableJsonConverter),
@@ -11748,6 +11760,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsNullableJsonConverter),
@@ -12131,6 +12147,10 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OrganizationListOrganizationMembersResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PresetDesignatedVersion))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PresetWithDesignatedVersionStatus), TypeInfoPropertyName = "PresetWithDesignatedVersionStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PresetWithDesignatedVersion))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreatePresetFromInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems), TypeInfoPropertyName = "ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters), TypeInfoPropertyName = "ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItems))]
@@ -13519,6 +13539,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquartersJsonConverter());

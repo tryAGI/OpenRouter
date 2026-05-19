@@ -177,6 +177,15 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackagePresetsClient SubpackagePresets => new SubpackagePresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageProvidersClient SubpackageProviders => new SubpackageProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
