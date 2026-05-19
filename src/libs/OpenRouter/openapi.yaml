@@ -3964,6 +3964,108 @@
         }
       }
     },
+    "/presets/{slug}/chat/completions": {
+      "post": {
+        "operationId": "create-presets-chat-completions",
+        "summary": "Create a preset from a chat-completions request body",
+        "description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.",
+        "tags": [
+          "subpackage_presets"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "URL-safe slug identifying the preset. Created if it does not exist.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Preset created or updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePresetFromInferenceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict - Resource conflict or concurrent modification",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          }
+        }
+      }
+    },
     "/providers": {
       "get": {
         "operationId": "list-providers",
@@ -33881,6 +33983,147 @@
           "total_count"
         ],
         "title": "Organization_listOrganizationMembers_Response_200"
+      },
+      "PresetDesignatedVersion": {
+        "type": "object",
+        "properties": {
+          "config": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "creator_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "preset_id": {
+            "type": "string"
+          },
+          "system_prompt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "config",
+          "created_at",
+          "creator_id",
+          "id",
+          "preset_id",
+          "system_prompt",
+          "updated_at",
+          "version"
+        ],
+        "description": "A specific version of a preset, containing config and optional system prompt.",
+        "title": "PresetDesignatedVersion"
+      },
+      "PresetWithDesignatedVersionStatus": {
+        "type": "string",
+        "enum": [
+          "active",
+          "disabled",
+          "archived"
+        ],
+        "title": "PresetWithDesignatedVersionStatus"
+      },
+      "PresetWithDesignatedVersion": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "creator_user_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "designated_version": {
+            "$ref": "#/components/schemas/PresetDesignatedVersion"
+          },
+          "designated_version_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PresetWithDesignatedVersionStatus"
+          },
+          "status_updated_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "workspace_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "created_at",
+          "creator_user_id",
+          "description",
+          "designated_version",
+          "designated_version_id",
+          "id",
+          "name",
+          "slug",
+          "status",
+          "status_updated_at",
+          "updated_at",
+          "workspace_id"
+        ],
+        "description": "A preset with its currently designated version.",
+        "title": "PresetWithDesignatedVersion"
+      },
+      "CreatePresetFromInferenceResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PresetWithDesignatedVersion"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "description": "Response containing the created preset with its designated version.",
+        "title": "CreatePresetFromInferenceResponse"
       },
       "ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems": {
         "type": "string",
