@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ApplyPatchCallOperationOneOf0TypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ApplyPatchCallOperationOneOf0Type?>
+    public sealed class ApplyPatchEngineEnumJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ApplyPatchEngineEnum>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.ApplyPatchCallOperationOneOf0Type? Read(
+        public override global::OpenRouter.ApplyPatchEngineEnum Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.ApplyPatchCallOperationOneOf0TypeExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.ApplyPatchEngineEnumExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.ApplyPatchCallOperationOneOf0Type)numValue;
+                    return (global::OpenRouter.ApplyPatchEngineEnum)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.ApplyPatchCallOperationOneOf0Type?);
+                    return default(global::OpenRouter.ApplyPatchEngineEnum);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.ApplyPatchCallOperationOneOf0Type? value,
+            global::OpenRouter.ApplyPatchEngineEnum value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::OpenRouter.ApplyPatchCallOperationOneOf0TypeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::OpenRouter.ApplyPatchEngineEnumExtensions.ToValueString(value));
         }
     }
 }

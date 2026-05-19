@@ -4,40 +4,40 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// Discriminator value: update_file
     /// </summary>
-    public enum ApplyPatchCallOperationOneOf0Type
+    public enum ApplyPatchCallOperationVariant3Type
     {
         /// <summary>
-        /// 
+        /// update_file
         /// </summary>
-        CreateFile,
+        UpdateFile,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ApplyPatchCallOperationOneOf0TypeExtensions
+    public static class ApplyPatchCallOperationVariant3TypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ApplyPatchCallOperationOneOf0Type value)
+        public static string ToValueString(this ApplyPatchCallOperationVariant3Type value)
         {
             return value switch
             {
-                ApplyPatchCallOperationOneOf0Type.CreateFile => "create_file",
+                ApplyPatchCallOperationVariant3Type.UpdateFile => "update_file",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ApplyPatchCallOperationOneOf0Type? ToEnum(string value)
+        public static ApplyPatchCallOperationVariant3Type? ToEnum(string value)
         {
             return value switch
             {
-                "create_file" => ApplyPatchCallOperationOneOf0Type.CreateFile,
+                "update_file" => ApplyPatchCallOperationVariant3Type.UpdateFile,
                 _ => null,
             };
         }
