@@ -77,6 +77,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatRequestPluginsItemsVariant8)}");
                 web = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.ChatRequestPluginsItemsVariant9? webFetch = default;
+            if (discriminator?.Id == global::OpenRouter.ChatRequestPluginsItemsDiscriminatorId.WebFetch)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant9> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatRequestPluginsItemsVariant9)}");
+                webFetch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.ChatRequestPluginsItems(
                 discriminator?.Id,
@@ -94,7 +101,9 @@ namespace OpenRouter.JsonConverters
 
                 responseHealing,
 
-                web
+                web,
+
+                webFetch
                 );
 
             return __value;
@@ -156,6 +165,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant8?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant8).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Web!, typeInfo);
+            }
+            else if (value.IsWebFetch)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant9?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant9).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetch!, typeInfo);
             }
         }
     }

@@ -989,6 +989,9 @@ namespace OpenRouter
         /// <param name="stop">
         /// Stop sequences (up to 4)
         /// </param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="stream">
         /// Enable streaming response<br/>
         /// Default Value: false
@@ -1046,6 +1049,7 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.ChatRequestServiceTier?, object>? serviceTier = default,
             string? sessionId = default,
             global::OpenRouter.ChatRequestStop? stop = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? stream = default,
             global::OpenRouter.ChatStreamOptions? streamOptions = default,
             double? temperature = default,
@@ -1084,6 +1088,7 @@ namespace OpenRouter
                 ServiceTier = serviceTier,
                 SessionId = sessionId,
                 Stop = stop,
+                StopServerToolsWhen = stopServerToolsWhen,
                 Stream = stream,
                 StreamOptions = streamOptions,
                 Temperature = temperature,

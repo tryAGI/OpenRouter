@@ -40,6 +40,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Web,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebFetch,
     }
 
     /// <summary>
@@ -62,6 +66,7 @@ namespace OpenRouter
                 MessagesRequestPluginsItemsDiscriminatorId.ParetoRouter => "pareto-router",
                 MessagesRequestPluginsItemsDiscriminatorId.ResponseHealing => "response-healing",
                 MessagesRequestPluginsItemsDiscriminatorId.Web => "web",
+                MessagesRequestPluginsItemsDiscriminatorId.WebFetch => "web-fetch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -80,6 +85,7 @@ namespace OpenRouter
                 "pareto-router" => MessagesRequestPluginsItemsDiscriminatorId.ParetoRouter,
                 "response-healing" => MessagesRequestPluginsItemsDiscriminatorId.ResponseHealing,
                 "web" => MessagesRequestPluginsItemsDiscriminatorId.Web,
+                "web-fetch" => MessagesRequestPluginsItemsDiscriminatorId.WebFetch,
                 _ => null,
             };
         }

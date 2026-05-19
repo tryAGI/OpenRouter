@@ -77,6 +77,13 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant8)}");
                 web = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::OpenRouter.MessagesRequestPluginsItemsVariant9? webFetch = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.WebFetch)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant9> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant9)}");
+                webFetch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::OpenRouter.MessagesRequestPluginsItems(
                 discriminator?.Id,
@@ -94,7 +101,9 @@ namespace OpenRouter.JsonConverters
 
                 responseHealing,
 
-                web
+                web,
+
+                webFetch
                 );
 
             return __value;
@@ -156,6 +165,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant8?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant8).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Web!, typeInfo);
+            }
+            else if (value.IsWebFetch)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant9?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetch!, typeInfo);
             }
         }
     }

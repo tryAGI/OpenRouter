@@ -102,6 +102,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? StopSequences { get; set; }
 
         /// <summary>
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_server_tools_when")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? StopServerToolsWhen { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
@@ -200,6 +206,9 @@ namespace OpenRouter
         /// </param>
         /// <param name="speed"></param>
         /// <param name="stopSequences"></param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="stream"></param>
         /// <param name="system"></param>
         /// <param name="temperature"></param>
@@ -233,6 +242,7 @@ namespace OpenRouter
             string? sessionId,
             global::OpenRouter.AnthropicSpeed? speed,
             global::System.Collections.Generic.IList<string>? stopSequences,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen,
             bool? stream,
             global::OpenRouter.MessagesRequestSystem? system,
             double? temperature,
@@ -259,6 +269,7 @@ namespace OpenRouter
             this.SessionId = sessionId;
             this.Speed = speed;
             this.StopSequences = stopSequences;
+            this.StopServerToolsWhen = stopServerToolsWhen;
             this.Stream = stream;
             this.System = system;
             this.Temperature = temperature;

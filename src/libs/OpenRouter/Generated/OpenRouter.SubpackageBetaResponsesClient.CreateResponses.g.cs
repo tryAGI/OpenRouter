@@ -962,6 +962,9 @@ namespace OpenRouter
         /// <param name="sessionId">
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="store"></param>
         /// <param name="stream">
         /// Default Value: false
@@ -1012,6 +1015,7 @@ namespace OpenRouter
             string? safetyIdentifier = default,
             global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestServiceTier?, object>? serviceTier = default,
             string? sessionId = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? store = default,
             bool? stream = default,
             double? temperature = default,
@@ -1054,6 +1058,7 @@ namespace OpenRouter
                 SafetyIdentifier = safetyIdentifier,
                 ServiceTier = serviceTier,
                 SessionId = sessionId,
+                StopServerToolsWhen = stopServerToolsWhen,
                 Store = store,
                 Stream = stream,
                 Temperature = temperature,
