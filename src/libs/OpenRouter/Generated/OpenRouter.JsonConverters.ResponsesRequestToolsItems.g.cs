@@ -188,6 +188,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score19++;
             var __score20 = 0;
             if (__jsonProps.Contains("parameters")) __score20++;
+            if (__jsonProps.Contains("parameters.engine")) __score20++;
             if (__jsonProps.Contains("type")) __score20++;
             var __bestScore = 0;
             var __bestIndex = -1;
