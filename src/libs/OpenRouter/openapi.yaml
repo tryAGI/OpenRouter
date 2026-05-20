@@ -9726,8 +9726,8 @@
           "auto",
           "native",
           "exa",
-          "firecrawl",
-          "parallel"
+          "parallel",
+          "firecrawl"
         ],
         "description": "Which search engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in search. \"exa\" forces the Exa search API. \"firecrawl\" uses Firecrawl (requires BYOK). \"parallel\" uses the Parallel search API.",
         "title": "WebSearchEngineEnum"
@@ -10932,9 +10932,9 @@
           "auto",
           "native",
           "openrouter",
-          "firecrawl",
           "exa",
-          "parallel"
+          "parallel",
+          "firecrawl"
         ],
         "description": "Which fetch engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in fetch. \"exa\" uses Exa Contents API. \"openrouter\" uses direct HTTP fetch. \"firecrawl\" uses Firecrawl scrape (requires BYOK). \"parallel\" uses the Parallel extract API.",
         "title": "WebFetchEngineEnum"
