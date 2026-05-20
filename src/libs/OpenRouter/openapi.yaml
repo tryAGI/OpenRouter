@@ -17907,6 +17907,20 @@
         "description": "Named tool choice for specific function",
         "title": "ChatNamedToolChoice"
       },
+      "ChatServerToolChoice": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "OpenRouter server-tool type to force (e.g. `openrouter:web_search`, `web_search`, `web_search_preview`)."
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "description": "OpenRouter extension: force a specific server tool by naming it directly in `tool_choice.type` instead of wrapping it in `{ type: \"function\", function: { name } }`.",
+        "title": "ChatServerToolChoice"
+      },
       "ChatToolChoice": {
         "oneOf": [
           {
@@ -17920,6 +17934,9 @@
           },
           {
             "$ref": "#/components/schemas/ChatNamedToolChoice"
+          },
+          {
+            "$ref": "#/components/schemas/ChatServerToolChoice"
           }
         ],
         "description": "Tool choice configuration",
@@ -26372,7 +26389,6 @@
           }
         },
         "required": [
-          "citations",
           "source",
           "title",
           "type"
