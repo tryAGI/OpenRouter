@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:code_interpreter
+    /// Discriminator value: openrouter:bash
     /// </summary>
     public enum OutputItemsVariant10Type
     {
         /// <summary>
-        /// openrouter:code_interpreter
+        /// openrouter:bash
         /// </summary>
-        Openrouter_codeInterpreter,
+        Openrouter_bash,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                OutputItemsVariant10Type.Openrouter_codeInterpreter => "openrouter:code_interpreter",
+                OutputItemsVariant10Type.Openrouter_bash => "openrouter:bash",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "openrouter:code_interpreter" => OutputItemsVariant10Type.Openrouter_codeInterpreter,
+                "openrouter:bash" => OutputItemsVariant10Type.Openrouter_bash,
                 _ => null,
             };
         }

@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatMessagesDiscriminatorMappingAssistantContentVariant1 == null && chatMessagesDiscriminatorMappingAssistantContent1 == null && chatMessagesDiscriminatorMappingAssistantContentVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatMessagesDiscriminatorMappingAssistantContentVariant1 == null && chatMessagesDiscriminatorMappingAssistantContent1 == null && chatMessagesDiscriminatorMappingAssistantContentVariant3 == null)
+            {
                 try
                 {
 

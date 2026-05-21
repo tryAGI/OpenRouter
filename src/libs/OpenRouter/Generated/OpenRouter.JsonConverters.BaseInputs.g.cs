@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseInputsVariant1 == null && baseInputs1 == null && baseInputsVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseInputsVariant1 == null && baseInputs1 == null && baseInputsVariant3 == null)
+            {
                 try
                 {
 

@@ -23,6 +23,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        x2_3,
+        /// <summary>
+        /// 
+        /// </summary>
+        x3_2,
+        /// <summary>
+        /// 
+        /// </summary>
         x3_4,
         /// <summary>
         /// 
@@ -53,6 +61,8 @@ namespace OpenRouter
                 VideoModelSupportedAspectRatiosItems.x16_9 => "16:9",
                 VideoModelSupportedAspectRatiosItems.x1_1 => "1:1",
                 VideoModelSupportedAspectRatiosItems.x21_9 => "21:9",
+                VideoModelSupportedAspectRatiosItems.x2_3 => "2:3",
+                VideoModelSupportedAspectRatiosItems.x3_2 => "3:2",
                 VideoModelSupportedAspectRatiosItems.x3_4 => "3:4",
                 VideoModelSupportedAspectRatiosItems.x4_3 => "4:3",
                 VideoModelSupportedAspectRatiosItems.x9_16 => "9:16",
@@ -70,6 +80,8 @@ namespace OpenRouter
                 "16:9" => VideoModelSupportedAspectRatiosItems.x16_9,
                 "1:1" => VideoModelSupportedAspectRatiosItems.x1_1,
                 "21:9" => VideoModelSupportedAspectRatiosItems.x21_9,
+                "2:3" => VideoModelSupportedAspectRatiosItems.x2_3,
+                "3:2" => VideoModelSupportedAspectRatiosItems.x3_2,
                 "3:4" => VideoModelSupportedAspectRatiosItems.x3_4,
                 "4:3" => VideoModelSupportedAspectRatiosItems.x4_3,
                 "9:16" => VideoModelSupportedAspectRatiosItems.x9_16,

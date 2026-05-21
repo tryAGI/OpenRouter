@@ -27,6 +27,26 @@ namespace OpenRouter
         public bool IsPreferredMinThroughputVariant1 => PreferredMinThroughputVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreferredMinThroughputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = PreferredMinThroughputVariant1;
+            return IsPreferredMinThroughputVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickPreferredMinThroughputVariant1() => IsPreferredMinThroughputVariant1
+            ? PreferredMinThroughputVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMinThroughputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Percentile-based throughput cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace OpenRouter
         public bool IsPercentileThroughputCutoffs => PercentileThroughputCutoffs != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPercentileThroughputCutoffs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.PercentileThroughputCutoffs? value)
+        {
+            value = PercentileThroughputCutoffs;
+            return IsPercentileThroughputCutoffs;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.PercentileThroughputCutoffs PickPercentileThroughputCutoffs() => IsPercentileThroughputCutoffs
+            ? PercentileThroughputCutoffs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileThroughputCutoffs' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMinThroughputVariant3))]
 #endif
         public bool IsPreferredMinThroughputVariant3 => PreferredMinThroughputVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreferredMinThroughputVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = PreferredMinThroughputVariant3;
+            return IsPreferredMinThroughputVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickPreferredMinThroughputVariant3() => IsPreferredMinThroughputVariant3
+            ? PreferredMinThroughputVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMinThroughputVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -80,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static PreferredMinThroughput FromPreferredMinThroughputVariant1(double? value) => new PreferredMinThroughput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PreferredMinThroughput(global::OpenRouter.PercentileThroughputCutoffs value) => new PreferredMinThroughput((global::OpenRouter.PercentileThroughputCutoffs?)value);
 
         /// <summary>
@@ -94,6 +159,11 @@ namespace OpenRouter
         {
             PercentileThroughputCutoffs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PreferredMinThroughput FromPercentileThroughputCutoffs(global::OpenRouter.PercentileThroughputCutoffs? value) => new PreferredMinThroughput(value);
 
         /// <summary>
         /// 
@@ -140,8 +210,8 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<double?, TResult>? preferredMinThroughputVariant1 = null,
-            global::System.Func<global::OpenRouter.PercentileThroughputCutoffs?, TResult>? percentileThroughputCutoffs = null,
-            global::System.Func<object?, TResult>? preferredMinThroughputVariant3 = null,
+            global::System.Func<global::OpenRouter.PercentileThroughputCutoffs, TResult>? percentileThroughputCutoffs = null,
+            global::System.Func<object, TResult>? preferredMinThroughputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +240,38 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<double?>? preferredMinThroughputVariant1 = null,
-            global::System.Action<global::OpenRouter.PercentileThroughputCutoffs?>? percentileThroughputCutoffs = null,
-            global::System.Action<object?>? preferredMinThroughputVariant3 = null,
+
+            global::System.Action<global::OpenRouter.PercentileThroughputCutoffs>? percentileThroughputCutoffs = null,
+
+            global::System.Action<object>? preferredMinThroughputVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPreferredMinThroughputVariant1)
+            {
+                preferredMinThroughputVariant1?.Invoke(PreferredMinThroughputVariant1!);
+            }
+            else if (IsPercentileThroughputCutoffs)
+            {
+                percentileThroughputCutoffs?.Invoke(PercentileThroughputCutoffs!);
+            }
+            else if (IsPreferredMinThroughputVariant3)
+            {
+                preferredMinThroughputVariant3?.Invoke(PreferredMinThroughputVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<double?>? preferredMinThroughputVariant1 = null,
+            global::System.Action<global::OpenRouter.PercentileThroughputCutoffs>? percentileThroughputCutoffs = null,
+            global::System.Action<object>? preferredMinThroughputVariant3 = null,
             bool validate = true)
         {
             if (validate)

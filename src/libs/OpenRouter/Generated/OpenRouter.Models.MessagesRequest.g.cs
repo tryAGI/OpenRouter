@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class MessagesRequest
     {
         /// <summary>
-        /// 
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
@@ -80,8 +80,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestServiceTierJsonConverter))]
-        public global::OpenRouter.MessagesRequestServiceTier? ServiceTier { get; set; }
+        public string? ServiceTier { get; set; }
 
         /// <summary>
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
@@ -101,6 +100,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_sequences")]
         public global::System.Collections.Generic.IList<string>? StopSequences { get; set; }
+
+        /// <summary>
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_server_tools_when")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? StopServerToolsWhen { get; set; }
 
         /// <summary>
         /// 
@@ -175,7 +180,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesRequest" /> class.
         /// </summary>
         /// <param name="model"></param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="contextManagement"></param>
         /// <param name="maxTokens"></param>
         /// <param name="messages"></param>
@@ -199,6 +206,9 @@ namespace OpenRouter
         /// </param>
         /// <param name="speed"></param>
         /// <param name="stopSequences"></param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="stream"></param>
         /// <param name="system"></param>
         /// <param name="temperature"></param>
@@ -228,10 +238,11 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins,
             global::OpenRouter.ProviderPreferences? provider,
             object? route,
-            global::OpenRouter.MessagesRequestServiceTier? serviceTier,
+            string? serviceTier,
             string? sessionId,
             global::OpenRouter.AnthropicSpeed? speed,
             global::System.Collections.Generic.IList<string>? stopSequences,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen,
             bool? stream,
             global::OpenRouter.MessagesRequestSystem? system,
             double? temperature,
@@ -258,6 +269,7 @@ namespace OpenRouter
             this.SessionId = sessionId;
             this.Speed = speed;
             this.StopSequences = stopSequences;
+            this.StopServerToolsWhen = stopServerToolsWhen;
             this.Stream = stream;
             this.System = system;
             this.Temperature = temperature;
@@ -276,5 +288,6 @@ namespace OpenRouter
         public MessagesRequest()
         {
         }
+
     }
 }

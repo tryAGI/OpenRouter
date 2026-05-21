@@ -70,7 +70,7 @@ namespace OpenRouter
         public required string Name { get; set; }
 
         /// <summary>
-        /// URL-friendly slug (lowercase alphanumeric and hyphens only)
+        /// URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -89,7 +89,7 @@ namespace OpenRouter
         /// Name for the new workspace
         /// </param>
         /// <param name="slug">
-        /// URL-friendly slug (lowercase alphanumeric and hyphens only)
+        /// URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)
         /// </param>
         /// <param name="defaultImageModel">
         /// Default image model for this workspace
@@ -153,5 +153,6 @@ namespace OpenRouter
         public CreateWorkspaceRequest()
         {
         }
+
     }
 }

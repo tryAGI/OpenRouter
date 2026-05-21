@@ -27,6 +27,26 @@ namespace OpenRouter
         public bool IsProviderSort => ProviderSort != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderSort(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ProviderSort? value)
+        {
+            value = ProviderSort;
+            return IsProviderSort;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ProviderSort PickProviderSort() => IsProviderSort
+            ? ProviderSort!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSort' but the value was {ToString()}.");
+
+        /// <summary>
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace OpenRouter
         public bool IsProviderSortConfig => ProviderSortConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderSortConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ProviderSortConfig? value)
+        {
+            value = ProviderSortConfig;
+            return IsProviderSortConfig;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
+            ? ProviderSortConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProviderPreferencesSortVariant3))]
 #endif
         public bool IsProviderPreferencesSortVariant3 => ProviderPreferencesSortVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderPreferencesSortVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ProviderPreferencesSortVariant3;
+            return IsProviderPreferencesSortVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickProviderPreferencesSortVariant3() => IsProviderPreferencesSortVariant3
+            ? ProviderPreferencesSortVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderPreferencesSortVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -80,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ProviderPreferencesSort FromProviderSort(global::OpenRouter.ProviderSort? value) => new ProviderPreferencesSort(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProviderPreferencesSort(global::OpenRouter.ProviderSortConfig value) => new ProviderPreferencesSort((global::OpenRouter.ProviderSortConfig?)value);
 
         /// <summary>
@@ -94,6 +159,11 @@ namespace OpenRouter
         {
             ProviderSortConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProviderPreferencesSort FromProviderSortConfig(global::OpenRouter.ProviderSortConfig? value) => new ProviderPreferencesSort(value);
 
         /// <summary>
         /// 
@@ -140,8 +210,8 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderSort?, TResult>? providerSort = null,
-            global::System.Func<global::OpenRouter.ProviderSortConfig?, TResult>? providerSortConfig = null,
-            global::System.Func<object?, TResult>? providerPreferencesSortVariant3 = null,
+            global::System.Func<global::OpenRouter.ProviderSortConfig, TResult>? providerSortConfig = null,
+            global::System.Func<object, TResult>? providerPreferencesSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +240,38 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
-            global::System.Action<global::OpenRouter.ProviderSortConfig?>? providerSortConfig = null,
-            global::System.Action<object?>? providerPreferencesSortVariant3 = null,
+
+            global::System.Action<global::OpenRouter.ProviderSortConfig>? providerSortConfig = null,
+
+            global::System.Action<object>? providerPreferencesSortVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderSort)
+            {
+                providerSort?.Invoke(ProviderSort!);
+            }
+            else if (IsProviderSortConfig)
+            {
+                providerSortConfig?.Invoke(ProviderSortConfig!);
+            }
+            else if (IsProviderPreferencesSortVariant3)
+            {
+                providerPreferencesSortVariant3?.Invoke(ProviderPreferencesSortVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
+            global::System.Action<global::OpenRouter.ProviderSortConfig>? providerSortConfig = null,
+            global::System.Action<object>? providerPreferencesSortVariant3 = null,
             bool validate = true)
         {
             if (validate)

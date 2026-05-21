@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:browser_use server tool output item
+    /// An openrouter:apply_patch server tool output item. The turn halts when validation succeeds so the client can apply the patch and echo an `apply_patch_call_output` on the next turn.
     /// </summary>
     public sealed partial class OutputItemsVariant9
     {
         /// <summary>
-        /// Discriminator value: openrouter:browser_use
+        /// Discriminator value: openrouter:apply_patch
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant9TypeJsonConverter))]
@@ -18,8 +18,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        public string? CallId { get; set; }
 
         /// <summary>
         /// 
@@ -28,10 +28,11 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("screenshotB64")]
-        public string? ScreenshotB64 { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationJsonConverter))]
+        public global::OpenRouter.ApplyPatchCallOperation? Operation { get; set; }
 
         /// <summary>
         /// 
@@ -52,25 +53,27 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:browser_use
+        /// Discriminator value: openrouter:apply_patch
         /// </param>
-        /// <param name="action"></param>
+        /// <param name="callId"></param>
         /// <param name="id"></param>
-        /// <param name="screenshotB64"></param>
+        /// <param name="operation">
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant9(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant9Type type,
-            string? action,
+            string? callId,
             string? id,
-            string? screenshotB64)
+            global::OpenRouter.ApplyPatchCallOperation? operation)
         {
             this.Type = type;
-            this.Action = action;
+            this.CallId = callId;
             this.Id = id;
-            this.ScreenshotB64 = screenshotB64;
+            this.Operation = operation;
             this.Status = status;
         }
 
@@ -80,5 +83,6 @@ namespace OpenRouter
         public OutputItemsVariant9()
         {
         }
+
     }
 }

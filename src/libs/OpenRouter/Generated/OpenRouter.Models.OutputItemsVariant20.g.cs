@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:web_search server tool output item
+    /// An openrouter:text_editor server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant20
     {
@@ -12,14 +12,21 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputTextEditorServerToolItemType Type { get; set; }
 
         /// <summary>
-        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public global::OpenRouter.OutputWebSearchServerToolItemAction? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("command")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemCommandJsonConverter))]
+        public global::OpenRouter.OutputTextEditorServerToolItemCommand? Command { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filePath")]
+        public string? FilePath { get; set; }
 
         /// <summary>
         /// 
@@ -46,21 +53,22 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type"></param>
-        /// <param name="action">
-        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
-        /// </param>
+        /// <param name="command"></param>
+        /// <param name="filePath"></param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant20(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputWebSearchServerToolItemType type,
-            global::OpenRouter.OutputWebSearchServerToolItemAction? action,
+            global::OpenRouter.OutputTextEditorServerToolItemType type,
+            global::OpenRouter.OutputTextEditorServerToolItemCommand? command,
+            string? filePath,
             string? id)
         {
             this.Type = type;
-            this.Action = action;
+            this.Command = command;
+            this.FilePath = filePath;
             this.Id = id;
             this.Status = status;
         }
@@ -71,5 +79,6 @@ namespace OpenRouter
         public OutputItemsVariant20()
         {
         }
+
     }
 }

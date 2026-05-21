@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Phase0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Phase0;
+            return IsBaseInputsOneOf1ItemsOneOf0Phase0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => IsBaseInputsOneOf1ItemsOneOf0Phase0
+            ? BaseInputsOneOf1ItemsOneOf0Phase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? BaseInputsOneOf1ItemsOneOf0Phase1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0Phase1))]
 #endif
         public bool IsBaseInputsOneOf1ItemsOneOf0Phase1 => BaseInputsOneOf1ItemsOneOf0Phase1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Phase1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Phase1;
+            return IsBaseInputsOneOf1ItemsOneOf0Phase1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => IsBaseInputsOneOf1ItemsOneOf0Phase1
+            ? BaseInputsOneOf1ItemsOneOf0Phase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0PhaseVariant3))]
 #endif
         public bool IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3 => BaseInputsOneOf1ItemsOneOf0PhaseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0PhaseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0PhaseVariant3;
+            return IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickBaseInputsOneOf1ItemsOneOf0PhaseVariant3() => IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3
+            ? BaseInputsOneOf1ItemsOneOf0PhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0PhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -80,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase0(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Phase(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 value) => new BaseInputsOneOf1ItemsOneOf0Phase((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?)value);
 
         /// <summary>
@@ -94,6 +159,11 @@ namespace OpenRouter
         {
             BaseInputsOneOf1ItemsOneOf0Phase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase1(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
 
         /// <summary>
         /// 
@@ -141,7 +211,7 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?, TResult>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
             global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?, TResult>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
-            global::System.Func<object?, TResult>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
+            global::System.Func<object, TResult>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +240,38 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
+
             global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
-            global::System.Action<object?>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
+
+            global::System.Action<object>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseInputsOneOf1ItemsOneOf0Phase0)
+            {
+                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase0!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1)
+            {
+                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase1!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3)
+            {
+                baseInputsOneOf1ItemsOneOf0PhaseVariant3?.Invoke(BaseInputsOneOf1ItemsOneOf0PhaseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
+            global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
+            global::System.Action<object>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)

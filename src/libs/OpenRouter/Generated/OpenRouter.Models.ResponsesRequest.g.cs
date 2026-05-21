@@ -15,6 +15,12 @@ namespace OpenRouter
         public bool? Background { get; set; }
 
         /// <summary>
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
@@ -156,6 +162,12 @@ namespace OpenRouter
         public string? SessionId { get; set; }
 
         /// <summary>
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_server_tools_when")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? StopServerToolsWhen { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
@@ -239,6 +251,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ResponsesRequest" /> class.
         /// </summary>
         /// <param name="background"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig"></param>
         /// <param name="include"></param>
@@ -278,6 +293,9 @@ namespace OpenRouter
         /// <param name="sessionId">
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="store"></param>
         /// <param name="stream">
         /// Default Value: false
@@ -303,6 +321,7 @@ namespace OpenRouter
 #endif
         public ResponsesRequest(
             bool? background,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             double? frequencyPenalty,
             global::OpenRouter.ImageConfig? imageConfig,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include,
@@ -326,6 +345,7 @@ namespace OpenRouter
             string? safetyIdentifier,
             global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestServiceTier?, object>? serviceTier,
             string? sessionId,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen,
             bool? store,
             bool? stream,
             double? temperature,
@@ -340,6 +360,7 @@ namespace OpenRouter
             string? user)
         {
             this.Background = background;
+            this.CacheControl = cacheControl;
             this.FrequencyPenalty = frequencyPenalty;
             this.ImageConfig = imageConfig;
             this.Include = include;
@@ -363,6 +384,7 @@ namespace OpenRouter
             this.SafetyIdentifier = safetyIdentifier;
             this.ServiceTier = serviceTier;
             this.SessionId = sessionId;
+            this.StopServerToolsWhen = stopServerToolsWhen;
             this.Store = store;
             this.Stream = stream;
             this.Temperature = temperature;
@@ -383,5 +405,6 @@ namespace OpenRouter
         public ResponsesRequest()
         {
         }
+
     }
 }

@@ -4,38 +4,50 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// file_search_call variant
+    /// computer_call variant
     /// </summary>
     public sealed partial class OutputItemsVariant3
     {
         /// <summary>
-        /// 
+        /// Discriminator value: computer_call
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFileSearchCallItemTypeJsonConverter))]
-        public global::OpenRouter.OutputFileSearchCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant3TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant3Type Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        public object? Action { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CallId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("pending_safety_checks")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Queries { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems> PendingSafetyChecks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorMappingComputerCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.WebSearchStatus Status { get; set; }
+        public required global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,22 +58,30 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant3" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="queries"></param>
+        /// <param name="callId"></param>
+        /// <param name="pendingSafetyChecks"></param>
         /// <param name="status"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: computer_call
+        /// </param>
+        /// <param name="action"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant3(
-            string id,
-            global::System.Collections.Generic.IList<string> queries,
-            global::OpenRouter.WebSearchStatus status,
-            global::OpenRouter.OutputFileSearchCallItemType type)
+            string callId,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems> pendingSafetyChecks,
+            global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallStatus status,
+            global::OpenRouter.OutputItemsVariant3Type type,
+            object? action,
+            string? id)
         {
             this.Type = type;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Queries = queries ?? throw new global::System.ArgumentNullException(nameof(queries));
+            this.Action = action;
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Id = id;
+            this.PendingSafetyChecks = pendingSafetyChecks ?? throw new global::System.ArgumentNullException(nameof(pendingSafetyChecks));
             this.Status = status;
         }
 
@@ -71,5 +91,6 @@ namespace OpenRouter
         public OutputItemsVariant3()
         {
         }
+
     }
 }

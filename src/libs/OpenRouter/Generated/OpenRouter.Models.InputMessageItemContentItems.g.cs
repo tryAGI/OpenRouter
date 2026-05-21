@@ -27,6 +27,26 @@ namespace OpenRouter
         public bool IsInputText => InputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputText? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputText PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageItemContentItems1))]
 #endif
         public bool IsInputMessageItemContentItems1 => InputMessageItemContentItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessageItemContentItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputMessageItemContentItems1? value)
+        {
+            value = InputMessageItemContentItems1;
+            return IsInputMessageItemContentItems1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputMessageItemContentItems1 PickInputMessageItemContentItems1() => IsInputMessageItemContentItems1
+            ? InputMessageItemContentItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemContentItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// File input content item
@@ -61,6 +101,26 @@ namespace OpenRouter
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputFile? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputFile PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
+
+        /// <summary>
         /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -78,6 +138,26 @@ namespace OpenRouter
         public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputAudio? value)
+        {
+            value = InputAudio;
+            return IsInputAudio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputAudio PickInputAudio() => IsInputAudio
+            ? InputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
+
+        /// <summary>
         /// Video input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -93,6 +173,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputVideo))]
 #endif
         public bool IsInputVideo => InputVideo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputVideo? value)
+        {
+            value = InputVideo;
+            return IsInputVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputVideo PickInputVideo() => IsInputVideo
+            ? InputVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -110,6 +210,11 @@ namespace OpenRouter
         {
             InputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputText(global::OpenRouter.InputText? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 
@@ -132,6 +237,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemContentItems FromInputMessageItemContentItems1(global::OpenRouter.InputMessageItemContentItems1? value) => new InputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemContentItems(global::OpenRouter.InputFile value) => new InputMessageItemContentItems((global::OpenRouter.InputFile?)value);
 
         /// <summary>
@@ -146,6 +256,11 @@ namespace OpenRouter
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputFile(global::OpenRouter.InputFile? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 
@@ -168,6 +283,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemContentItems FromInputAudio(global::OpenRouter.InputAudio? value) => new InputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemContentItems(global::OpenRouter.InputVideo value) => new InputMessageItemContentItems((global::OpenRouter.InputVideo?)value);
 
         /// <summary>
@@ -182,6 +302,11 @@ namespace OpenRouter
         {
             InputVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputVideo(global::OpenRouter.InputVideo? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 
@@ -235,11 +360,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.InputText?, TResult>? inputText = null,
-            global::System.Func<global::OpenRouter.InputMessageItemContentItems1?, TResult>? inputMessageItemContentItems1 = null,
-            global::System.Func<global::OpenRouter.InputFile?, TResult>? inputFile = null,
-            global::System.Func<global::OpenRouter.InputAudio?, TResult>? inputAudio = null,
-            global::System.Func<global::OpenRouter.InputVideo?, TResult>? inputVideo = null,
+            global::System.Func<global::OpenRouter.InputText, TResult>? inputText = null,
+            global::System.Func<global::OpenRouter.InputMessageItemContentItems1, TResult>? inputMessageItemContentItems1 = null,
+            global::System.Func<global::OpenRouter.InputFile, TResult>? inputFile = null,
+            global::System.Func<global::OpenRouter.InputAudio, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.InputVideo, TResult>? inputVideo = null,
             bool validate = true)
         {
             if (validate)
@@ -275,11 +400,53 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.InputText?>? inputText = null,
-            global::System.Action<global::OpenRouter.InputMessageItemContentItems1?>? inputMessageItemContentItems1 = null,
-            global::System.Action<global::OpenRouter.InputFile?>? inputFile = null,
-            global::System.Action<global::OpenRouter.InputAudio?>? inputAudio = null,
-            global::System.Action<global::OpenRouter.InputVideo?>? inputVideo = null,
+            global::System.Action<global::OpenRouter.InputText>? inputText = null,
+
+            global::System.Action<global::OpenRouter.InputMessageItemContentItems1>? inputMessageItemContentItems1 = null,
+
+            global::System.Action<global::OpenRouter.InputFile>? inputFile = null,
+
+            global::System.Action<global::OpenRouter.InputAudio>? inputAudio = null,
+
+            global::System.Action<global::OpenRouter.InputVideo>? inputVideo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsInputMessageItemContentItems1)
+            {
+                inputMessageItemContentItems1?.Invoke(InputMessageItemContentItems1!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+            else if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
+            else if (IsInputVideo)
+            {
+                inputVideo?.Invoke(InputVideo!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.InputText>? inputText = null,
+            global::System.Action<global::OpenRouter.InputMessageItemContentItems1>? inputMessageItemContentItems1 = null,
+            global::System.Action<global::OpenRouter.InputFile>? inputFile = null,
+            global::System.Action<global::OpenRouter.InputAudio>? inputAudio = null,
+            global::System.Action<global::OpenRouter.InputVideo>? inputVideo = null,
             bool validate = true)
         {
             if (validate)

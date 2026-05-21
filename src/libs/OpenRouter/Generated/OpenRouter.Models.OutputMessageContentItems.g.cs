@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponseOutputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ResponseOutputText? value)
+        {
+            value = ResponseOutputText;
+            return IsResponseOutputText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ResponseOutputText PickResponseOutputText() => IsResponseOutputText
+            ? ResponseOutputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputText' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponsesRefusalContent? OpenAIResponsesRefusalContent { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesRefusalContent))]
 #endif
         public bool IsOpenAIResponsesRefusalContent => OpenAIResponsesRefusalContent != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAIResponsesRefusalContent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAIResponsesRefusalContent? value)
+        {
+            value = OpenAIResponsesRefusalContent;
+            return IsOpenAIResponsesRefusalContent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAIResponsesRefusalContent PickOpenAIResponsesRefusalContent() => IsOpenAIResponsesRefusalContent
+            ? OpenAIResponsesRefusalContent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesRefusalContent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageContentItems FromResponseOutputText(global::OpenRouter.ResponseOutputText? value) => new OutputMessageContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageContentItems(global::OpenRouter.OpenAIResponsesRefusalContent value) => new OutputMessageContentItems((global::OpenRouter.OpenAIResponsesRefusalContent?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace OpenRouter
         {
             OpenAIResponsesRefusalContent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageContentItems FromOpenAIResponsesRefusalContent(global::OpenRouter.OpenAIResponsesRefusalContent? value) => new OutputMessageContentItems(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ResponseOutputText?, TResult>? responseOutputText = null,
-            global::System.Func<global::OpenRouter.OpenAIResponsesRefusalContent?, TResult>? openAIResponsesRefusalContent = null,
+            global::System.Func<global::OpenRouter.ResponseOutputText, TResult>? responseOutputText = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesRefusalContent, TResult>? openAIResponsesRefusalContent = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ResponseOutputText?>? responseOutputText = null,
-            global::System.Action<global::OpenRouter.OpenAIResponsesRefusalContent?>? openAIResponsesRefusalContent = null,
+            global::System.Action<global::OpenRouter.ResponseOutputText>? responseOutputText = null,
+
+            global::System.Action<global::OpenRouter.OpenAIResponsesRefusalContent>? openAIResponsesRefusalContent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponseOutputText)
+            {
+                responseOutputText?.Invoke(ResponseOutputText!);
+            }
+            else if (IsOpenAIResponsesRefusalContent)
+            {
+                openAIResponsesRefusalContent?.Invoke(OpenAIResponsesRefusalContent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ResponseOutputText>? responseOutputText = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesRefusalContent>? openAIResponsesRefusalContent = null,
             bool validate = true)
         {
             if (validate)

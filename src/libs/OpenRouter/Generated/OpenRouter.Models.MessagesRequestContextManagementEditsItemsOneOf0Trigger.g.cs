@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct MessagesRequestContextManagementEditsItemsOneOf0Trigger : global::System.IEquatable<MessagesRequestContextManagementEditsItemsOneOf0Trigger>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// input_tokens variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace OpenRouter
         public bool IsInputTokens => InputTokens != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputTokens(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? value)
+        {
+            value = InputTokens;
+            return IsInputTokens;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1 PickInputTokens() => IsInputTokens
+            ? InputTokens!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputTokens' but the value was {ToString()}.");
+
+        /// <summary>
         /// tool_uses variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUses))]
 #endif
         public bool IsToolUses => ToolUses != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolUses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? value)
+        {
+            value = ToolUses;
+            return IsToolUses;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2 PickToolUses() => IsToolUses
+            ? ToolUses!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUses' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace OpenRouter
         {
             InputTokens = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromInputTokens(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromToolUses(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0Trigger(
+            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorType? type,
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? inputTokens,
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? toolUses
             )
         {
+            Type = type;
+
             InputTokens = inputTokens;
             ToolUses = toolUses;
         }
@@ -118,8 +176,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1?, TResult>? inputTokens = null,
-            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?, TResult>? toolUses = null,
+            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1, TResult>? inputTokens = null,
+            global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2, TResult>? toolUses = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1?>? inputTokens = null,
-            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?>? toolUses = null,
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1>? inputTokens = null,
+
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2>? toolUses = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputTokens)
+            {
+                inputTokens?.Invoke(InputTokens!);
+            }
+            else if (IsToolUses)
+            {
+                toolUses?.Invoke(ToolUses!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1>? inputTokens = null,
+            global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2>? toolUses = null,
             bool validate = true)
         {
             if (validate)

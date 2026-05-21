@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1;
+            return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1
+            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2))]
 #endif
         public bool IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2;
+            return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2
+            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3))]
 #endif
         public bool IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
+            return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3
+            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace OpenRouter
         {
             MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs FromMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(bool? value) => new MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(value);
 
         /// <summary>
         /// 
@@ -122,8 +187,8 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
-            global::System.Func<object?, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
+            global::System.Func<object, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +217,38 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<bool?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
-            global::System.Action<object?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
+
+            global::System.Action<object>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1)
+            {
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
+            {
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
+            {
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<bool?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
+            global::System.Action<object>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)

@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:code_interpreter server tool output item
+    /// An openrouter:bash server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant10
     {
         /// <summary>
-        /// Discriminator value: openrouter:code_interpreter
+        /// Discriminator value: openrouter:bash
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant10TypeJsonConverter))]
@@ -18,8 +18,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string? Code { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("command")]
+        public string? Command { get; set; }
 
         /// <summary>
         /// 
@@ -32,12 +32,6 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        public string? Language { get; set; }
 
         /// <summary>
         /// 
@@ -70,12 +64,11 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:code_interpreter
+        /// Discriminator value: openrouter:bash
         /// </param>
-        /// <param name="code"></param>
+        /// <param name="command"></param>
         /// <param name="exitCode"></param>
         /// <param name="id"></param>
-        /// <param name="language"></param>
         /// <param name="stderr"></param>
         /// <param name="stdout"></param>
 #if NET7_0_OR_GREATER
@@ -84,18 +77,16 @@ namespace OpenRouter
         public OutputItemsVariant10(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant10Type type,
-            string? code,
+            string? command,
             int? exitCode,
             string? id,
-            string? language,
             string? stderr,
             string? stdout)
         {
             this.Type = type;
-            this.Code = code;
+            this.Command = command;
             this.ExitCode = exitCode;
             this.Id = id;
-            this.Language = language;
             this.Status = status;
             this.Stderr = stderr;
             this.Stdout = stdout;
@@ -107,5 +98,6 @@ namespace OpenRouter
         public OutputItemsVariant10()
         {
         }
+
     }
 }

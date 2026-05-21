@@ -60,5 +60,6 @@ namespace OpenRouter
         public EasyInputMessageContentOneOf0Items1()
         {
         }
+
     }
 }

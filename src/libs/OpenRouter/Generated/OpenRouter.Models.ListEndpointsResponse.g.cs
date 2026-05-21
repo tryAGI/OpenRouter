@@ -103,5 +103,6 @@ namespace OpenRouter
         public ListEndpointsResponse()
         {
         }
+
     }
 }

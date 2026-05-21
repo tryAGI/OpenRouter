@@ -173,6 +173,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("crucible")]
+        public object? Crucible { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("crusoe")]
         public object? Crusoe { get; set; }
 
@@ -704,6 +710,7 @@ namespace OpenRouter
         /// <param name="cloudflare"></param>
         /// <param name="cohere"></param>
         /// <param name="crofai"></param>
+        /// <param name="crucible"></param>
         /// <param name="crusoe"></param>
         /// <param name="deepinfra"></param>
         /// <param name="deepseek"></param>
@@ -818,6 +825,7 @@ namespace OpenRouter
             object? cloudflare,
             object? cohere,
             object? crofai,
+            object? crucible,
             object? crusoe,
             object? deepinfra,
             object? deepseek,
@@ -929,6 +937,7 @@ namespace OpenRouter
             this.Cloudflare = cloudflare;
             this.Cohere = cohere;
             this.Crofai = crofai;
+            this.Crucible = crucible;
             this.Crusoe = crusoe;
             this.Deepinfra = deepinfra;
             this.Deepseek = deepseek;
@@ -1020,5 +1029,6 @@ namespace OpenRouter
         public VideoGenerationRequestProviderOptions()
         {
         }
+
     }
 }

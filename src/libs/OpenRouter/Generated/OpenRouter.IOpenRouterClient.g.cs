@@ -67,6 +67,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageByokClient SubpackageByok { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageChatClient SubpackageChat { get; }
 
         /// <summary>
@@ -107,7 +112,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageObservabilityClient SubpackageObservability { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageOrganizationClient SubpackageOrganization { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackagePresetsClient SubpackagePresets { get; }
 
         /// <summary>
         /// 

@@ -4,16 +4,23 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:file_search server tool output item
+    /// An openrouter:datetime server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant13
     {
         /// <summary>
-        /// Discriminator value: openrouter:file_search
+        /// Discriminator value: openrouter:datetime
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant13TypeJsonConverter))]
         public global::OpenRouter.OutputItemsVariant13Type Type { get; set; }
+
+        /// <summary>
+        /// ISO 8601 datetime string
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("datetime")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Datetime { get; set; }
 
         /// <summary>
         /// 
@@ -24,16 +31,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
-        public global::System.Collections.Generic.IList<string>? Queries { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        /// IANA timezone name
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Timezone { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,25 +52,32 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant13" /> class.
         /// </summary>
+        /// <param name="datetime">
+        /// ISO 8601 datetime string
+        /// </param>
         /// <param name="status"></param>
+        /// <param name="timezone">
+        /// IANA timezone name
+        /// </param>
         /// <param name="type">
-        /// Discriminator value: openrouter:file_search
+        /// Discriminator value: openrouter:datetime
         /// </param>
         /// <param name="id"></param>
-        /// <param name="queries"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant13(
+            string datetime,
             global::OpenRouter.ToolCallStatus status,
+            string timezone,
             global::OpenRouter.OutputItemsVariant13Type type,
-            string? id,
-            global::System.Collections.Generic.IList<string>? queries)
+            string? id)
         {
             this.Type = type;
+            this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Id = id;
-            this.Queries = queries;
             this.Status = status;
+            this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
         }
 
         /// <summary>
@@ -71,5 +86,6 @@ namespace OpenRouter
         public OutputItemsVariant13()
         {
         }
+
     }
 }

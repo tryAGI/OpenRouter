@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf8Content0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>? value)
+        {
+            value = MessagesMessageParamContentOneOf1ItemsOneOf8Content0;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam> PickMessagesMessageParamContentOneOf1ItemsOneOf8Content0() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0
+            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? MessagesMessageParamContentOneOf1ItemsOneOf8Content1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf8Content1))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1 => MessagesMessageParamContentOneOf1ItemsOneOf8Content1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf8Content1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? value)
+        {
+            value = MessagesMessageParamContentOneOf1ItemsOneOf8Content1;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1 PickMessagesMessageParamContentOneOf1ItemsOneOf8Content1() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1
+            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace OpenRouter
         {
             MessagesMessageParamContentOneOf1ItemsOneOf8Content1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf8Content FromMessagesMessageParamContentOneOf1ItemsOneOf8Content1(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? value) => new MessagesMessageParamContentOneOf1ItemsOneOf8Content(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
-            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
+            global::System.Func<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content1 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>?>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
-            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?>? messagesMessageParamContentOneOf1ItemsOneOf8Content1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
+
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1>? messagesMessageParamContentOneOf1ItemsOneOf8Content1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0)
+            {
+                messagesMessageParamContentOneOf1ItemsOneOf8Content0?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf8Content0!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1)
+            {
+                messagesMessageParamContentOneOf1ItemsOneOf8Content1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf8Content1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
+            global::System.Action<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1>? messagesMessageParamContentOneOf1ItemsOneOf8Content1 = null,
             bool validate = true)
         {
             if (validate)

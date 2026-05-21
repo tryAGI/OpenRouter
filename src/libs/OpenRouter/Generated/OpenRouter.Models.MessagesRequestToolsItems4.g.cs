@@ -12,7 +12,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestToolsItemsOneOf4AllowedCallersItems>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicAllowedCallersItems>? AllowedCallers { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
 
         /// <summary>
-        /// 
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
@@ -70,7 +70,9 @@ namespace OpenRouter
         /// <param name="allowedCallers"></param>
         /// <param name="allowedDomains"></param>
         /// <param name="blockedDomains"></param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="maxUses"></param>
         /// <param name="name"></param>
         /// <param name="type"></param>
@@ -79,7 +81,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestToolsItems4(
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestToolsItemsOneOf4AllowedCallersItems>? allowedCallers,
+            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicAllowedCallersItems>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
@@ -104,5 +106,6 @@ namespace OpenRouter
         public MessagesRequestToolsItems4()
         {
         }
+
     }
 }

@@ -21,7 +21,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
 
         /// <summary>
-        /// 
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
@@ -63,7 +63,9 @@ namespace OpenRouter
         /// </summary>
         /// <param name="allowedDomains"></param>
         /// <param name="blockedDomains"></param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="maxUses"></param>
         /// <param name="name"></param>
         /// <param name="type"></param>
@@ -95,5 +97,6 @@ namespace OpenRouter
         public MessagesRequestToolsItems3()
         {
         }
+
     }
 }

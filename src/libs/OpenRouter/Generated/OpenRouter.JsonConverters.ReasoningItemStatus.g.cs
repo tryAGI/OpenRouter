@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (reasoningItemStatus0 == null && reasoningItemStatus1 == null && reasoningItemStatus2 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (reasoningItemStatus0 == null && reasoningItemStatus1 == null && reasoningItemStatus2 == null)
+            {
                 try
                 {
 

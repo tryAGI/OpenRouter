@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class MessagesMessageParamContentOneOf1Items7
     {
         /// <summary>
-        /// 
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
@@ -31,9 +31,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicServerToolNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicServerToolName Name { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +52,9 @@ namespace OpenRouter
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="input"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -61,7 +62,7 @@ namespace OpenRouter
 #endif
         public MessagesMessageParamContentOneOf1Items7(
             string id,
-            global::OpenRouter.AnthropicServerToolName name,
+            string name,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             object? input,
             global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf7Type type)
@@ -69,7 +70,7 @@ namespace OpenRouter
             this.CacheControl = cacheControl;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input;
-            this.Name = name;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
         }
 
@@ -79,5 +80,6 @@ namespace OpenRouter
         public MessagesMessageParamContentOneOf1Items7()
         {
         }
+
     }
 }

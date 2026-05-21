@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Content0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Content0;
+            return IsBaseInputsOneOf1ItemsOneOf0Content0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items> PickBaseInputsOneOf1ItemsOneOf0Content0() => IsBaseInputsOneOf1ItemsOneOf0Content0
+            ? BaseInputsOneOf1ItemsOneOf0Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? BaseInputsOneOf1ItemsOneOf0ContentVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0ContentVariant2))]
 #endif
         public bool IsBaseInputsOneOf1ItemsOneOf0ContentVariant2 => BaseInputsOneOf1ItemsOneOf0ContentVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0ContentVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0ContentVariant2;
+            return IsBaseInputsOneOf1ItemsOneOf0ContentVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBaseInputsOneOf1ItemsOneOf0ContentVariant2() => IsBaseInputsOneOf1ItemsOneOf0ContentVariant2
+            ? BaseInputsOneOf1ItemsOneOf0ContentVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0ContentVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace OpenRouter
         {
             BaseInputsOneOf1ItemsOneOf0ContentVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Content FromBaseInputsOneOf1ItemsOneOf0ContentVariant2(string? value) => new BaseInputsOneOf1ItemsOneOf0Content(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>?, TResult>? baseInputsOneOf1ItemsOneOf0Content0 = null,
-            global::System.Func<string?, TResult>? baseInputsOneOf1ItemsOneOf0ContentVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>, TResult>? baseInputsOneOf1ItemsOneOf0Content0 = null,
+            global::System.Func<string, TResult>? baseInputsOneOf1ItemsOneOf0ContentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>?>? baseInputsOneOf1ItemsOneOf0Content0 = null,
-            global::System.Action<string?>? baseInputsOneOf1ItemsOneOf0ContentVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>>? baseInputsOneOf1ItemsOneOf0Content0 = null,
+
+            global::System.Action<string>? baseInputsOneOf1ItemsOneOf0ContentVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseInputsOneOf1ItemsOneOf0Content0)
+            {
+                baseInputsOneOf1ItemsOneOf0Content0?.Invoke(BaseInputsOneOf1ItemsOneOf0Content0!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0ContentVariant2)
+            {
+                baseInputsOneOf1ItemsOneOf0ContentVariant2?.Invoke(BaseInputsOneOf1ItemsOneOf0ContentVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>>? baseInputsOneOf1ItemsOneOf0Content0 = null,
+            global::System.Action<string>? baseInputsOneOf1ItemsOneOf0ContentVariant2 = null,
             bool validate = true)
         {
             if (validate)

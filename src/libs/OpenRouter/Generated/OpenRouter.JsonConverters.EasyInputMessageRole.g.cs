@@ -168,7 +168,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessageRole0 == null && easyInputMessageRole1 == null && easyInputMessageRole2 == null && easyInputMessageRole3 == null)
+            {
                 try
                 {
 
@@ -182,7 +185,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessageRole0 == null && easyInputMessageRole1 == null && easyInputMessageRole2 == null && easyInputMessageRole3 == null)
+            {
                 try
                 {
 
@@ -196,7 +202,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessageRole0 == null && easyInputMessageRole1 == null && easyInputMessageRole2 == null && easyInputMessageRole3 == null)
+            {
                 try
                 {
 

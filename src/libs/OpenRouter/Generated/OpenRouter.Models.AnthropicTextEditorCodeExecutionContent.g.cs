@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct AnthropicTextEditorCodeExecutionContent : global::System.IEquatable<AnthropicTextEditorCodeExecutionContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// text_editor_code_execution_create_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -25,6 +30,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionCreateResult))]
 #endif
         public bool IsTextEditorCodeExecutionCreateResult => TextEditorCodeExecutionCreateResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionCreateResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? value)
+        {
+            value = TextEditorCodeExecutionCreateResult;
+            return IsTextEditorCodeExecutionCreateResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1 PickTextEditorCodeExecutionCreateResult() => IsTextEditorCodeExecutionCreateResult
+            ? TextEditorCodeExecutionCreateResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionCreateResult' but the value was {ToString()}.");
 
         /// <summary>
         /// text_editor_code_execution_str_replace_result variant
@@ -44,6 +69,26 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionStrReplaceResult => TextEditorCodeExecutionStrReplaceResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionStrReplaceResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? value)
+        {
+            value = TextEditorCodeExecutionStrReplaceResult;
+            return IsTextEditorCodeExecutionStrReplaceResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2 PickTextEditorCodeExecutionStrReplaceResult() => IsTextEditorCodeExecutionStrReplaceResult
+            ? TextEditorCodeExecutionStrReplaceResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionStrReplaceResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// text_editor_code_execution_tool_result_error variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -61,6 +106,26 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionToolResultError => TextEditorCodeExecutionToolResultError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionToolResultError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? value)
+        {
+            value = TextEditorCodeExecutionToolResultError;
+            return IsTextEditorCodeExecutionToolResultError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 PickTextEditorCodeExecutionToolResultError() => IsTextEditorCodeExecutionToolResultError
+            ? TextEditorCodeExecutionToolResultError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResultError' but the value was {ToString()}.");
+
+        /// <summary>
         /// text_editor_code_execution_view_result variant
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +141,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionViewResult))]
 #endif
         public bool IsTextEditorCodeExecutionViewResult => TextEditorCodeExecutionViewResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionViewResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? value)
+        {
+            value = TextEditorCodeExecutionViewResult;
+            return IsTextEditorCodeExecutionViewResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4 PickTextEditorCodeExecutionViewResult() => IsTextEditorCodeExecutionViewResult
+            ? TextEditorCodeExecutionViewResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionViewResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -93,6 +178,11 @@ namespace OpenRouter
         {
             TextEditorCodeExecutionCreateResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionCreateResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
         /// 
@@ -115,6 +205,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionStrReplaceResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? value) => new AnthropicTextEditorCodeExecutionContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 value) => new AnthropicTextEditorCodeExecutionContent((global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?)value);
 
         /// <summary>
@@ -129,6 +224,11 @@ namespace OpenRouter
         {
             TextEditorCodeExecutionToolResultError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionToolResultError(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
         /// 
@@ -151,13 +251,21 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionViewResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? value) => new AnthropicTextEditorCodeExecutionContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AnthropicTextEditorCodeExecutionContent(
+            global::OpenRouter.AnthropicTextEditorCodeExecutionContentDiscriminatorType? type,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? textEditorCodeExecutionCreateResult,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? textEditorCodeExecutionStrReplaceResult,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? textEditorCodeExecutionToolResultError,
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? textEditorCodeExecutionViewResult
             )
         {
+            Type = type;
+
             TextEditorCodeExecutionCreateResult = textEditorCodeExecutionCreateResult;
             TextEditorCodeExecutionStrReplaceResult = textEditorCodeExecutionStrReplaceResult;
             TextEditorCodeExecutionToolResultError = textEditorCodeExecutionToolResultError;
@@ -196,10 +304,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1?, TResult>? textEditorCodeExecutionCreateResult = null,
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2?, TResult>? textEditorCodeExecutionStrReplaceResult = null,
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?, TResult>? textEditorCodeExecutionToolResultError = null,
-            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?, TResult>? textEditorCodeExecutionViewResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1, TResult>? textEditorCodeExecutionCreateResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2, TResult>? textEditorCodeExecutionStrReplaceResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3, TResult>? textEditorCodeExecutionToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4, TResult>? textEditorCodeExecutionViewResult = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +339,46 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1?>? textEditorCodeExecutionCreateResult = null,
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2?>? textEditorCodeExecutionStrReplaceResult = null,
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?>? textEditorCodeExecutionToolResultError = null,
-            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?>? textEditorCodeExecutionViewResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1>? textEditorCodeExecutionCreateResult = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2>? textEditorCodeExecutionStrReplaceResult = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3>? textEditorCodeExecutionToolResultError = null,
+
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4>? textEditorCodeExecutionViewResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextEditorCodeExecutionCreateResult)
+            {
+                textEditorCodeExecutionCreateResult?.Invoke(TextEditorCodeExecutionCreateResult!);
+            }
+            else if (IsTextEditorCodeExecutionStrReplaceResult)
+            {
+                textEditorCodeExecutionStrReplaceResult?.Invoke(TextEditorCodeExecutionStrReplaceResult!);
+            }
+            else if (IsTextEditorCodeExecutionToolResultError)
+            {
+                textEditorCodeExecutionToolResultError?.Invoke(TextEditorCodeExecutionToolResultError!);
+            }
+            else if (IsTextEditorCodeExecutionViewResult)
+            {
+                textEditorCodeExecutionViewResult?.Invoke(TextEditorCodeExecutionViewResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1>? textEditorCodeExecutionCreateResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2>? textEditorCodeExecutionStrReplaceResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3>? textEditorCodeExecutionToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4>? textEditorCodeExecutionViewResult = null,
             bool validate = true)
         {
             if (validate)

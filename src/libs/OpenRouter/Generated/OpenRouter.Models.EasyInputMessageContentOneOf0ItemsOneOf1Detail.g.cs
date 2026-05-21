@@ -20,6 +20,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Original,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace OpenRouter
                 EasyInputMessageContentOneOf0ItemsOneOf1Detail.Auto => "auto",
                 EasyInputMessageContentOneOf0ItemsOneOf1Detail.High => "high",
                 EasyInputMessageContentOneOf0ItemsOneOf1Detail.Low => "low",
+                EasyInputMessageContentOneOf0ItemsOneOf1Detail.Original => "original",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace OpenRouter
                 "auto" => EasyInputMessageContentOneOf0ItemsOneOf1Detail.Auto,
                 "high" => EasyInputMessageContentOneOf0ItemsOneOf1Detail.High,
                 "low" => EasyInputMessageContentOneOf0ItemsOneOf1Detail.Low,
+                "original" => EasyInputMessageContentOneOf0ItemsOneOf1Detail.Original,
                 _ => null,
             };
         }

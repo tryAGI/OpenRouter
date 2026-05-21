@@ -9,10 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatRequest
     {
         /// <summary>
-        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::OpenRouter.ChatRequestCacheControl? CacheControl { get; set; }
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
         /// Debug options for inspecting request transformations (streaming only)
@@ -158,6 +158,12 @@ namespace OpenRouter
         public global::OpenRouter.ChatRequestStop? Stop { get; set; }
 
         /// <summary>
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_server_tools_when")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? StopServerToolsWhen { get; set; }
+
+        /// <summary>
         /// Enable streaming response<br/>
         /// Default Value: false
         /// </summary>
@@ -226,7 +232,7 @@ namespace OpenRouter
         /// List of messages for the conversation
         /// </param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -292,6 +298,9 @@ namespace OpenRouter
         /// <param name="stop">
         /// Stop sequences (up to 4)
         /// </param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="stream">
         /// Enable streaming response<br/>
         /// Default Value: false
@@ -325,7 +334,7 @@ namespace OpenRouter
 #endif
         public ChatRequest(
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
-            global::OpenRouter.ChatRequestCacheControl? cacheControl,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.ChatDebugOptions? debug,
             double? frequencyPenalty,
             global::OpenRouter.ImageConfig? imageConfig,
@@ -348,6 +357,7 @@ namespace OpenRouter
             global::OpenRouter.OneOf<global::OpenRouter.ChatRequestServiceTier?, object>? serviceTier,
             string? sessionId,
             global::OpenRouter.ChatRequestStop? stop,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen,
             bool? stream,
             global::OpenRouter.ChatStreamOptions? streamOptions,
             double? temperature,
@@ -382,6 +392,7 @@ namespace OpenRouter
             this.ServiceTier = serviceTier;
             this.SessionId = sessionId;
             this.Stop = stop;
+            this.StopServerToolsWhen = stopServerToolsWhen;
             this.Stream = stream;
             this.StreamOptions = streamOptions;
             this.Temperature = temperature;
@@ -399,5 +410,6 @@ namespace OpenRouter
         public ChatRequest()
         {
         }
+
     }
 }

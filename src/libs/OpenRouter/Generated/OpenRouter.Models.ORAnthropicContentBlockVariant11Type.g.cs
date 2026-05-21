@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: tool_use
+    /// Discriminator value: tool_search_tool_result
     /// </summary>
     public enum ORAnthropicContentBlockVariant11Type
     {
         /// <summary>
-        /// tool_use
+        /// tool_search_tool_result
         /// </summary>
-        ToolUse,
+        ToolSearchToolResult,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ORAnthropicContentBlockVariant11Type.ToolUse => "tool_use",
+                ORAnthropicContentBlockVariant11Type.ToolSearchToolResult => "tool_search_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "tool_use" => ORAnthropicContentBlockVariant11Type.ToolUse,
+                "tool_search_tool_result" => ORAnthropicContentBlockVariant11Type.ToolSearchToolResult,
                 _ => null,
             };
         }

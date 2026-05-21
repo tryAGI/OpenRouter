@@ -12,8 +12,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicCitationsConfig Citations { get; set; }
+        public global::OpenRouter.AnthropicCitationsConfig? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -45,20 +44,20 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="AnthropicDocumentBlock" /> class.
         /// </summary>
-        /// <param name="citations"></param>
         /// <param name="source"></param>
+        /// <param name="citations"></param>
         /// <param name="title"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicDocumentBlock(
-            global::OpenRouter.AnthropicCitationsConfig citations,
             global::OpenRouter.AnthropicDocumentBlockSource source,
+            global::OpenRouter.AnthropicCitationsConfig? citations,
             string? title,
             global::OpenRouter.AnthropicDocumentBlockType type)
         {
-            this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
+            this.Citations = citations;
             this.Source = source;
             this.Title = title;
             this.Type = type;
@@ -70,5 +69,6 @@ namespace OpenRouter
         public AnthropicDocumentBlock()
         {
         }
+
     }
 }

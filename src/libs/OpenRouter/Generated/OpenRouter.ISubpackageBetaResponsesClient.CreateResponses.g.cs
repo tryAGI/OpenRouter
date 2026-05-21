@@ -46,6 +46,9 @@ namespace OpenRouter
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="background"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig"></param>
         /// <param name="include"></param>
@@ -85,6 +88,9 @@ namespace OpenRouter
         /// <param name="sessionId">
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="store"></param>
         /// <param name="stream">
         /// Default Value: false
@@ -111,6 +117,7 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.OpenResponsesResult> CreateResponsesAsync(
             global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
             bool? background = default,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             double? frequencyPenalty = default,
             global::OpenRouter.ImageConfig? imageConfig = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include = default,
@@ -134,6 +141,7 @@ namespace OpenRouter
             string? safetyIdentifier = default,
             global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestServiceTier?, object>? serviceTier = default,
             string? sessionId = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? store = default,
             bool? stream = default,
             double? temperature = default,

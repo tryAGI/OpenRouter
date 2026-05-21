@@ -4,54 +4,51 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:bash server tool output item
+    /// An output message item
     /// </summary>
     public sealed partial class OutputItemsVariant8
     {
         /// <summary>
-        /// Discriminator value: openrouter:bash
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant8TypeJsonConverter))]
-        public global::OpenRouter.OutputItemsVariant8Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemTypeJsonConverter))]
+        public global::OpenRouter.OutputMessageItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("command")]
-        public string? Command { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("exitCode")]
-        public int? ExitCode { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageItemContentItems> Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhaseJsonConverter))]
+        public global::OpenRouter.OutputMessageItemPhase? Phase { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemRoleJsonConverter))]
+        public global::OpenRouter.OutputMessageItemRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolCallStatus Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
-        public string? Stderr { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stdout")]
-        public string? Stdout { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatusJsonConverter))]
+        public global::OpenRouter.OutputMessageItemStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,34 +59,31 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant8" /> class.
         /// </summary>
-        /// <param name="status"></param>
-        /// <param name="type">
-        /// Discriminator value: openrouter:bash
-        /// </param>
-        /// <param name="command"></param>
-        /// <param name="exitCode"></param>
+        /// <param name="content"></param>
         /// <param name="id"></param>
-        /// <param name="stderr"></param>
-        /// <param name="stdout"></param>
+        /// <param name="type"></param>
+        /// <param name="phase">
+        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
+        /// </param>
+        /// <param name="role"></param>
+        /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant8(
-            global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputItemsVariant8Type type,
-            string? command,
-            int? exitCode,
-            string? id,
-            string? stderr,
-            string? stdout)
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageItemContentItems> content,
+            string id,
+            global::OpenRouter.OutputMessageItemType type,
+            global::OpenRouter.OutputMessageItemPhase? phase,
+            global::OpenRouter.OutputMessageItemRole role,
+            global::OpenRouter.OutputMessageItemStatus? status)
         {
             this.Type = type;
-            this.Command = command;
-            this.ExitCode = exitCode;
-            this.Id = id;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Phase = phase;
+            this.Role = role;
             this.Status = status;
-            this.Stderr = stderr;
-            this.Stdout = stdout;
         }
 
         /// <summary>
@@ -98,5 +92,6 @@ namespace OpenRouter
         public OutputItemsVariant8()
         {
         }
+
     }
 }

@@ -198,7 +198,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 == null)
+            {
                 try
                 {
 
@@ -212,7 +215,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 == null)
+            {
                 try
                 {
 
@@ -226,7 +232,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 == null)
+            {
                 try
                 {
 
@@ -240,7 +249,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 == null)
+            {
                 try
                 {
 

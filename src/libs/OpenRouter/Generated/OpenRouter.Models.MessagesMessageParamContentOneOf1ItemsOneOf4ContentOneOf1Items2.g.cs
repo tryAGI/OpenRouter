@@ -50,5 +50,6 @@ namespace OpenRouter
         public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2()
         {
         }
+
     }
 }

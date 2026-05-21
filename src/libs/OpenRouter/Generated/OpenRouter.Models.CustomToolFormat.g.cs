@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCustomToolFormat0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.CustomToolFormat0? value)
+        {
+            value = CustomToolFormat0;
+            return IsCustomToolFormat0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CustomToolFormat0 PickCustomToolFormat0() => IsCustomToolFormat0
+            ? CustomToolFormat0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.CustomToolFormat1? CustomToolFormat1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolFormat1))]
 #endif
         public bool IsCustomToolFormat1 => CustomToolFormat1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomToolFormat1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.CustomToolFormat1? value)
+        {
+            value = CustomToolFormat1;
+            return IsCustomToolFormat1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CustomToolFormat1 PickCustomToolFormat1() => IsCustomToolFormat1
+            ? CustomToolFormat1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static CustomToolFormat FromCustomToolFormat0(global::OpenRouter.CustomToolFormat0? value) => new CustomToolFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CustomToolFormat(global::OpenRouter.CustomToolFormat1 value) => new CustomToolFormat((global::OpenRouter.CustomToolFormat1?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace OpenRouter
         {
             CustomToolFormat1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomToolFormat FromCustomToolFormat1(global::OpenRouter.CustomToolFormat1? value) => new CustomToolFormat(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.CustomToolFormat0?, TResult>? customToolFormat0 = null,
-            global::System.Func<global::OpenRouter.CustomToolFormat1?, TResult>? customToolFormat1 = null,
+            global::System.Func<global::OpenRouter.CustomToolFormat0, TResult>? customToolFormat0 = null,
+            global::System.Func<global::OpenRouter.CustomToolFormat1, TResult>? customToolFormat1 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.CustomToolFormat0?>? customToolFormat0 = null,
-            global::System.Action<global::OpenRouter.CustomToolFormat1?>? customToolFormat1 = null,
+            global::System.Action<global::OpenRouter.CustomToolFormat0>? customToolFormat0 = null,
+
+            global::System.Action<global::OpenRouter.CustomToolFormat1>? customToolFormat1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCustomToolFormat0)
+            {
+                customToolFormat0?.Invoke(CustomToolFormat0!);
+            }
+            else if (IsCustomToolFormat1)
+            {
+                customToolFormat1?.Invoke(CustomToolFormat1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.CustomToolFormat0>? customToolFormat0 = null,
+            global::System.Action<global::OpenRouter.CustomToolFormat1>? customToolFormat1 = null,
             bool validate = true)
         {
             if (validate)

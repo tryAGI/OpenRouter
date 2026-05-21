@@ -64,5 +64,6 @@ namespace OpenRouter
         public ChatRequestPluginsItemsVariant3()
         {
         }
+
     }
 }

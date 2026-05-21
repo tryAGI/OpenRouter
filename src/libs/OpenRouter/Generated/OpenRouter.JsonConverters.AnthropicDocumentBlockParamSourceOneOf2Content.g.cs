@@ -108,7 +108,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicDocumentBlockParamSourceOneOf2ContentVariant1 == null && anthropicDocumentBlockParamSourceOneOf2Content1 == null)
+            {
                 try
                 {
 

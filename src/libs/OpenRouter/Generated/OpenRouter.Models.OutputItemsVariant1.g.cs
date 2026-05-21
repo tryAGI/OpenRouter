@@ -4,29 +4,23 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A code interpreter execution call with outputs
+    /// A native `apply_patch_call` output item matching OpenAI's Responses API shape. Emitted when the client requested the `apply_patch` shorthand.
     /// </summary>
     public sealed partial class OutputItemsVariant1
     {
         /// <summary>
-        /// 
+        /// Discriminator value: apply_patch_call
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemTypeJsonConverter))]
-        public global::OpenRouter.OutputCodeInterpreterCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant1TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant1Type Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string? Code { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ContainerId { get; set; }
+        public required string CallId { get; set; }
 
         /// <summary>
         /// 
@@ -36,18 +30,20 @@ namespace OpenRouter
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? Outputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ApplyPatchCallOperation Operation { get; set; }
 
         /// <summary>
-        /// 
+        /// Lifecycle state of an `apply_patch_call` output item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolCallStatus Status { get; set; }
+        public required global::OpenRouter.ApplyPatchCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,28 +54,31 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant1" /> class.
         /// </summary>
-        /// <param name="containerId"></param>
+        /// <param name="callId"></param>
         /// <param name="id"></param>
-        /// <param name="status"></param>
-        /// <param name="type"></param>
-        /// <param name="code"></param>
-        /// <param name="outputs"></param>
+        /// <param name="operation">
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+        /// </param>
+        /// <param name="status">
+        /// Lifecycle state of an `apply_patch_call` output item.
+        /// </param>
+        /// <param name="type">
+        /// Discriminator value: apply_patch_call
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant1(
-            string containerId,
+            string callId,
             string id,
-            global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputCodeInterpreterCallItemType type,
-            string? code,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? outputs)
+            global::OpenRouter.ApplyPatchCallOperation operation,
+            global::OpenRouter.ApplyPatchCallStatus status,
+            global::OpenRouter.OutputItemsVariant1Type type)
         {
             this.Type = type;
-            this.Code = code;
-            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Outputs = outputs;
+            this.Operation = operation;
             this.Status = status;
         }
 
@@ -89,5 +88,6 @@ namespace OpenRouter
         public OutputItemsVariant1()
         {
         }
+
     }
 }

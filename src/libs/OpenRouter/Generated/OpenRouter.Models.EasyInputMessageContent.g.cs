@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEasyInputMessageContent0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>? value)
+        {
+            value = EasyInputMessageContent0;
+            return IsEasyInputMessageContent0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items> PickEasyInputMessageContent0() => IsEasyInputMessageContent0
+            ? EasyInputMessageContent0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContent0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EasyInputMessageContentVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageContentVariant2))]
 #endif
         public bool IsEasyInputMessageContentVariant2 => EasyInputMessageContentVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessageContentVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = EasyInputMessageContentVariant2;
+            return IsEasyInputMessageContentVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickEasyInputMessageContentVariant2() => IsEasyInputMessageContentVariant2
+            ? EasyInputMessageContentVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContentVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageContentVariant3))]
 #endif
         public bool IsEasyInputMessageContentVariant3 => EasyInputMessageContentVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessageContentVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = EasyInputMessageContentVariant3;
+            return IsEasyInputMessageContentVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickEasyInputMessageContentVariant3() => IsEasyInputMessageContentVariant3
+            ? EasyInputMessageContentVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContentVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace OpenRouter
         {
             EasyInputMessageContentVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageContent FromEasyInputMessageContentVariant2(string? value) => new EasyInputMessageContent(value);
 
         /// <summary>
         /// 
@@ -121,9 +186,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>?, TResult>? easyInputMessageContent0 = null,
-            global::System.Func<string?, TResult>? easyInputMessageContentVariant2 = null,
-            global::System.Func<object?, TResult>? easyInputMessageContentVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>, TResult>? easyInputMessageContent0 = null,
+            global::System.Func<string, TResult>? easyInputMessageContentVariant2 = null,
+            global::System.Func<object, TResult>? easyInputMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -151,9 +216,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>?>? easyInputMessageContent0 = null,
-            global::System.Action<string?>? easyInputMessageContentVariant2 = null,
-            global::System.Action<object?>? easyInputMessageContentVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>>? easyInputMessageContent0 = null,
+
+            global::System.Action<string>? easyInputMessageContentVariant2 = null,
+
+            global::System.Action<object>? easyInputMessageContentVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEasyInputMessageContent0)
+            {
+                easyInputMessageContent0?.Invoke(EasyInputMessageContent0!);
+            }
+            else if (IsEasyInputMessageContentVariant2)
+            {
+                easyInputMessageContentVariant2?.Invoke(EasyInputMessageContentVariant2!);
+            }
+            else if (IsEasyInputMessageContentVariant3)
+            {
+                easyInputMessageContentVariant3?.Invoke(EasyInputMessageContentVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>>? easyInputMessageContent0 = null,
+            global::System.Action<string>? easyInputMessageContentVariant2 = null,
+            global::System.Action<object>? easyInputMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)

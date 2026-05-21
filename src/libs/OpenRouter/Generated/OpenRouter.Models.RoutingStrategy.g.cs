@@ -35,6 +35,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Fusion,
+        /// <summary>
+        /// 
+        /// </summary>
         Latest,
         /// <summary>
         /// 
@@ -60,6 +64,7 @@ namespace OpenRouter
                 RoutingStrategy.Direct => "direct",
                 RoutingStrategy.Fallback => "fallback",
                 RoutingStrategy.Free => "free",
+                RoutingStrategy.Fusion => "fusion",
                 RoutingStrategy.Latest => "latest",
                 RoutingStrategy.Pareto => "pareto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -78,6 +83,7 @@ namespace OpenRouter
                 "direct" => RoutingStrategy.Direct,
                 "fallback" => RoutingStrategy.Fallback,
                 "free" => RoutingStrategy.Free,
+                "fusion" => RoutingStrategy.Fusion,
                 "latest" => RoutingStrategy.Latest,
                 "pareto" => RoutingStrategy.Pareto,
                 _ => null,

@@ -74,5 +74,6 @@ namespace OpenRouter
         public ChatUsageCompletionTokensDetails()
         {
         }
+
     }
 }

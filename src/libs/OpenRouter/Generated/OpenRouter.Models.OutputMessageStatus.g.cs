@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputMessageStatus0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageStatus0? value)
+        {
+            value = OutputMessageStatus0;
+            return IsOutputMessageStatus0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessageStatus0 PickOutputMessageStatus0() => IsOutputMessageStatus0
+            ? OutputMessageStatus0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageStatus1? OutputMessageStatus1 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputMessageStatus1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageStatus1? value)
+        {
+            value = OutputMessageStatus1;
+            return IsOutputMessageStatus1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessageStatus1 PickOutputMessageStatus1() => IsOutputMessageStatus1
+            ? OutputMessageStatus1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageStatus2? OutputMessageStatus2 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageStatus2))]
 #endif
         public bool IsOutputMessageStatus2 => OutputMessageStatus2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputMessageStatus2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageStatus2? value)
+        {
+            value = OutputMessageStatus2;
+            return IsOutputMessageStatus2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessageStatus2 PickOutputMessageStatus2() => IsOutputMessageStatus2
+            ? OutputMessageStatus2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace OpenRouter
         {
             OutputMessageStatus0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageStatus FromOutputMessageStatus0(global::OpenRouter.OutputMessageStatus0? value) => new OutputMessageStatus(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageStatus FromOutputMessageStatus1(global::OpenRouter.OutputMessageStatus1? value) => new OutputMessageStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageStatus(global::OpenRouter.OutputMessageStatus2 value) => new OutputMessageStatus((global::OpenRouter.OutputMessageStatus2?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace OpenRouter
         {
             OutputMessageStatus2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageStatus FromOutputMessageStatus2(global::OpenRouter.OutputMessageStatus2? value) => new OutputMessageStatus(value);
 
         /// <summary>
         /// 
@@ -187,6 +262,36 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.OutputMessageStatus0?>? outputMessageStatus0 = null,
+
+            global::System.Action<global::OpenRouter.OutputMessageStatus1?>? outputMessageStatus1 = null,
+
+            global::System.Action<global::OpenRouter.OutputMessageStatus2?>? outputMessageStatus2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputMessageStatus0)
+            {
+                outputMessageStatus0?.Invoke(OutputMessageStatus0!);
+            }
+            else if (IsOutputMessageStatus1)
+            {
+                outputMessageStatus1?.Invoke(OutputMessageStatus1!);
+            }
+            else if (IsOutputMessageStatus2)
+            {
+                outputMessageStatus2?.Invoke(OutputMessageStatus2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.OutputMessageStatus0?>? outputMessageStatus0 = null,
             global::System.Action<global::OpenRouter.OutputMessageStatus1?>? outputMessageStatus1 = null,
             global::System.Action<global::OpenRouter.OutputMessageStatus2?>? outputMessageStatus2 = null,

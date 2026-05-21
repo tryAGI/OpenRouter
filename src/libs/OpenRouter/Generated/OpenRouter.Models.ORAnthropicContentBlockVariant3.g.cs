@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// compaction variant
+    /// code_execution_tool_result variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant3
     {
         /// <summary>
-        /// Discriminator value: compaction
+        /// Discriminator value: code_execution_tool_result
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant3TypeJsonConverter))]
@@ -19,7 +19,16 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.AnthropicCodeExecutionContent Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ToolUseId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,19 +39,22 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ORAnthropicContentBlockVariant3" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Discriminator value: compaction
-        /// </param>
         /// <param name="content"></param>
+        /// <param name="toolUseId"></param>
+        /// <param name="type">
+        /// Discriminator value: code_execution_tool_result
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant3(
-            global::OpenRouter.ORAnthropicContentBlockVariant3Type type,
-            string? content)
+            global::OpenRouter.AnthropicCodeExecutionContent content,
+            string toolUseId,
+            global::OpenRouter.ORAnthropicContentBlockVariant3Type type)
         {
             this.Type = type;
             this.Content = content;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
         }
 
         /// <summary>
@@ -51,5 +63,6 @@ namespace OpenRouter
         public ORAnthropicContentBlockVariant3()
         {
         }
+
     }
 }

@@ -138,7 +138,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (imageConfigVariant1 == null && imageConfigVariant2 == null && imageConfigVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (imageConfigVariant1 == null && imageConfigVariant2 == null && imageConfigVariant3 == null)
+            {
                 try
                 {
 

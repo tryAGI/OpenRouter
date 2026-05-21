@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:tool_search server tool output item
+    /// An openrouter:mcp server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant18
     {
@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputToolSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputToolSearchServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMcpServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputMcpServerToolItemType Type { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("query")]
-        public string? Query { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("serverLabel")]
+        public string? ServerLabel { get; set; }
 
         /// <summary>
         /// 
@@ -34,6 +34,12 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("toolName")]
+        public string? ToolName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,20 +53,23 @@ namespace OpenRouter
         /// <param name="status"></param>
         /// <param name="type"></param>
         /// <param name="id"></param>
-        /// <param name="query"></param>
+        /// <param name="serverLabel"></param>
+        /// <param name="toolName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant18(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputToolSearchServerToolItemType type,
+            global::OpenRouter.OutputMcpServerToolItemType type,
             string? id,
-            string? query)
+            string? serverLabel,
+            string? toolName)
         {
             this.Type = type;
             this.Id = id;
-            this.Query = query;
+            this.ServerLabel = serverLabel;
             this.Status = status;
+            this.ToolName = toolName;
         }
 
         /// <summary>
@@ -69,5 +78,6 @@ namespace OpenRouter
         public OutputItemsVariant18()
         {
         }
+
     }
 }

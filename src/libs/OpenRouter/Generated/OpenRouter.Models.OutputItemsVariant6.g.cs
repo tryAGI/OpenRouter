@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An output message item
+    /// function_call variant
     /// </summary>
     public sealed partial class OutputItemsVariant6
     {
@@ -12,43 +12,48 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemTypeJsonConverter))]
-        public global::OpenRouter.OutputMessageItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputFunctionCallItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageItemContentItems> Content { get; set; }
+        public required string Arguments { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CallId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhaseJsonConverter))]
-        public global::OpenRouter.OutputMessageItemPhase? Phase { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemRoleJsonConverter))]
-        public global::OpenRouter.OutputMessageItemRole Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatusJsonConverter))]
-        public global::OpenRouter.OutputMessageItemStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatusJsonConverter))]
+        public global::OpenRouter.OutputFunctionCallItemStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,30 +64,33 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant6" /> class.
         /// </summary>
-        /// <param name="content"></param>
-        /// <param name="id"></param>
+        /// <param name="arguments"></param>
+        /// <param name="callId"></param>
+        /// <param name="name"></param>
         /// <param name="type"></param>
-        /// <param name="phase">
-        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
+        /// <param name="id"></param>
+        /// <param name="namespace">
+        /// Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)
         /// </param>
-        /// <param name="role"></param>
         /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant6(
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageItemContentItems> content,
-            string id,
-            global::OpenRouter.OutputMessageItemType type,
-            global::OpenRouter.OutputMessageItemPhase? phase,
-            global::OpenRouter.OutputMessageItemRole role,
-            global::OpenRouter.OutputMessageItemStatus? status)
+            string arguments,
+            string callId,
+            string name,
+            global::OpenRouter.OutputFunctionCallItemType type,
+            string? id,
+            string? @namespace,
+            global::OpenRouter.OutputFunctionCallItemStatus? status)
         {
             this.Type = type;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Phase = phase;
-            this.Role = role;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Namespace = @namespace;
             this.Status = status;
         }
 
@@ -92,5 +100,6 @@ namespace OpenRouter
         public OutputItemsVariant6()
         {
         }
+
     }
 }

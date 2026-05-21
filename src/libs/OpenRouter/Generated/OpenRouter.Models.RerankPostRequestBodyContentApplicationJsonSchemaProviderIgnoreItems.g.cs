@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProviderName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ProviderName? value)
+        {
+            value = ProviderName;
+            return IsProviderName;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
+            ? ProviderName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2))]
 #endif
         public bool IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 => RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2;
+            return IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2() => IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2
+            ? RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems FromProviderName(global::OpenRouter.ProviderName? value) => new RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems(string value) => new RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems((string?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace OpenRouter
         {
             RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems FromRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2(string? value) => new RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems(value);
 
         /// <summary>
         /// 
@@ -119,7 +169,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderName?, TResult>? providerName = null,
-            global::System.Func<string?, TResult>? rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
+            global::System.Func<string, TResult>? rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +194,31 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
-            global::System.Action<string?>? rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
+
+            global::System.Action<string>? rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderName)
+            {
+                providerName?.Invoke(ProviderName!);
+            }
+            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2)
+            {
+                rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
+            global::System.Action<string>? rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)

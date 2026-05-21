@@ -45,7 +45,9 @@ namespace OpenRouter
         /// <param name="xOpenRouterExperimentalMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="contextManagement"></param>
         /// <param name="maxTokens"></param>
         /// <param name="messages"></param>
@@ -70,6 +72,9 @@ namespace OpenRouter
         /// </param>
         /// <param name="speed"></param>
         /// <param name="stopSequences"></param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="stream"></param>
         /// <param name="system"></param>
         /// <param name="temperature"></param>
@@ -100,10 +105,11 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins = default,
             global::OpenRouter.ProviderPreferences? provider = default,
             object? route = default,
-            global::OpenRouter.MessagesRequestServiceTier? serviceTier = default,
+            string? serviceTier = default,
             string? sessionId = default,
             global::OpenRouter.AnthropicSpeed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? stream = default,
             global::OpenRouter.MessagesRequestSystem? system = default,
             double? temperature = default,

@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputFunctionCallItemStatus0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputFunctionCallItemStatus0? value)
+        {
+            value = OutputFunctionCallItemStatus0;
+            return IsOutputFunctionCallItemStatus0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputFunctionCallItemStatus0 PickOutputFunctionCallItemStatus0() => IsOutputFunctionCallItemStatus0
+            ? OutputFunctionCallItemStatus0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItemStatus1? OutputFunctionCallItemStatus1 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputFunctionCallItemStatus1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputFunctionCallItemStatus1? value)
+        {
+            value = OutputFunctionCallItemStatus1;
+            return IsOutputFunctionCallItemStatus1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputFunctionCallItemStatus1 PickOutputFunctionCallItemStatus1() => IsOutputFunctionCallItemStatus1
+            ? OutputFunctionCallItemStatus1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItemStatus2? OutputFunctionCallItemStatus2 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFunctionCallItemStatus2))]
 #endif
         public bool IsOutputFunctionCallItemStatus2 => OutputFunctionCallItemStatus2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputFunctionCallItemStatus2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputFunctionCallItemStatus2? value)
+        {
+            value = OutputFunctionCallItemStatus2;
+            return IsOutputFunctionCallItemStatus2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputFunctionCallItemStatus2 PickOutputFunctionCallItemStatus2() => IsOutputFunctionCallItemStatus2
+            ? OutputFunctionCallItemStatus2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace OpenRouter
         {
             OutputFunctionCallItemStatus0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputFunctionCallItemStatus FromOutputFunctionCallItemStatus0(global::OpenRouter.OutputFunctionCallItemStatus0? value) => new OutputFunctionCallItemStatus(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputFunctionCallItemStatus FromOutputFunctionCallItemStatus1(global::OpenRouter.OutputFunctionCallItemStatus1? value) => new OutputFunctionCallItemStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputFunctionCallItemStatus(global::OpenRouter.OutputFunctionCallItemStatus2 value) => new OutputFunctionCallItemStatus((global::OpenRouter.OutputFunctionCallItemStatus2?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace OpenRouter
         {
             OutputFunctionCallItemStatus2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputFunctionCallItemStatus FromOutputFunctionCallItemStatus2(global::OpenRouter.OutputFunctionCallItemStatus2? value) => new OutputFunctionCallItemStatus(value);
 
         /// <summary>
         /// 
@@ -187,6 +262,36 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus0?>? outputFunctionCallItemStatus0 = null,
+
+            global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus1?>? outputFunctionCallItemStatus1 = null,
+
+            global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus2?>? outputFunctionCallItemStatus2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputFunctionCallItemStatus0)
+            {
+                outputFunctionCallItemStatus0?.Invoke(OutputFunctionCallItemStatus0!);
+            }
+            else if (IsOutputFunctionCallItemStatus1)
+            {
+                outputFunctionCallItemStatus1?.Invoke(OutputFunctionCallItemStatus1!);
+            }
+            else if (IsOutputFunctionCallItemStatus2)
+            {
+                outputFunctionCallItemStatus2?.Invoke(OutputFunctionCallItemStatus2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus0?>? outputFunctionCallItemStatus0 = null,
             global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus1?>? outputFunctionCallItemStatus1 = null,
             global::System.Action<global::OpenRouter.OutputFunctionCallItemStatus2?>? outputFunctionCallItemStatus2 = null,

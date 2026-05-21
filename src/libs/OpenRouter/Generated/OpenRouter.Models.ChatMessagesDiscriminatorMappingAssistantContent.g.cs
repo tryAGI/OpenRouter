@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatMessagesDiscriminatorMappingAssistantContentVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ChatMessagesDiscriminatorMappingAssistantContentVariant1;
+            return IsChatMessagesDiscriminatorMappingAssistantContentVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickChatMessagesDiscriminatorMappingAssistantContentVariant1() => IsChatMessagesDiscriminatorMappingAssistantContentVariant1
+            ? ChatMessagesDiscriminatorMappingAssistantContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>? ChatMessagesDiscriminatorMappingAssistantContent1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatMessagesDiscriminatorMappingAssistantContent1))]
 #endif
         public bool IsChatMessagesDiscriminatorMappingAssistantContent1 => ChatMessagesDiscriminatorMappingAssistantContent1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatMessagesDiscriminatorMappingAssistantContent1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>? value)
+        {
+            value = ChatMessagesDiscriminatorMappingAssistantContent1;
+            return IsChatMessagesDiscriminatorMappingAssistantContent1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems> PickChatMessagesDiscriminatorMappingAssistantContent1() => IsChatMessagesDiscriminatorMappingAssistantContent1
+            ? ChatMessagesDiscriminatorMappingAssistantContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContent1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatMessagesDiscriminatorMappingAssistantContentVariant3))]
 #endif
         public bool IsChatMessagesDiscriminatorMappingAssistantContentVariant3 => ChatMessagesDiscriminatorMappingAssistantContentVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatMessagesDiscriminatorMappingAssistantContentVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ChatMessagesDiscriminatorMappingAssistantContentVariant3;
+            return IsChatMessagesDiscriminatorMappingAssistantContentVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickChatMessagesDiscriminatorMappingAssistantContentVariant3() => IsChatMessagesDiscriminatorMappingAssistantContentVariant3
+            ? ChatMessagesDiscriminatorMappingAssistantContentVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContentVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace OpenRouter
         {
             ChatMessagesDiscriminatorMappingAssistantContentVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessagesDiscriminatorMappingAssistantContent FromChatMessagesDiscriminatorMappingAssistantContentVariant1(string? value) => new ChatMessagesDiscriminatorMappingAssistantContent(value);
 
         /// <summary>
         /// 
@@ -121,9 +186,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? chatMessagesDiscriminatorMappingAssistantContentVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>?, TResult>? chatMessagesDiscriminatorMappingAssistantContent1 = null,
-            global::System.Func<object?, TResult>? chatMessagesDiscriminatorMappingAssistantContentVariant3 = null,
+            global::System.Func<string, TResult>? chatMessagesDiscriminatorMappingAssistantContentVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>, TResult>? chatMessagesDiscriminatorMappingAssistantContent1 = null,
+            global::System.Func<object, TResult>? chatMessagesDiscriminatorMappingAssistantContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -151,9 +216,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? chatMessagesDiscriminatorMappingAssistantContentVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>?>? chatMessagesDiscriminatorMappingAssistantContent1 = null,
-            global::System.Action<object?>? chatMessagesDiscriminatorMappingAssistantContentVariant3 = null,
+            global::System.Action<string>? chatMessagesDiscriminatorMappingAssistantContentVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>>? chatMessagesDiscriminatorMappingAssistantContent1 = null,
+
+            global::System.Action<object>? chatMessagesDiscriminatorMappingAssistantContentVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatMessagesDiscriminatorMappingAssistantContentVariant1)
+            {
+                chatMessagesDiscriminatorMappingAssistantContentVariant1?.Invoke(ChatMessagesDiscriminatorMappingAssistantContentVariant1!);
+            }
+            else if (IsChatMessagesDiscriminatorMappingAssistantContent1)
+            {
+                chatMessagesDiscriminatorMappingAssistantContent1?.Invoke(ChatMessagesDiscriminatorMappingAssistantContent1!);
+            }
+            else if (IsChatMessagesDiscriminatorMappingAssistantContentVariant3)
+            {
+                chatMessagesDiscriminatorMappingAssistantContentVariant3?.Invoke(ChatMessagesDiscriminatorMappingAssistantContentVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? chatMessagesDiscriminatorMappingAssistantContentVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>>? chatMessagesDiscriminatorMappingAssistantContent1 = null,
+            global::System.Action<object>? chatMessagesDiscriminatorMappingAssistantContentVariant3 = null,
             bool validate = true)
         {
             if (validate)

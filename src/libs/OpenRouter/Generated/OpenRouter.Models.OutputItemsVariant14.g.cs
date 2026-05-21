@@ -4,16 +4,22 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:image_generation server tool output item
+    /// An openrouter:experimental__search_models server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant14
     {
         /// <summary>
-        /// Discriminator value: openrouter:image_generation
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant14TypeJsonConverter))]
-        public global::OpenRouter.OutputItemsVariant14Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputSearchModelsServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputSearchModelsServerToolItemType Type { get; set; }
+
+        /// <summary>
+        /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        public string? Arguments { get; set; }
 
         /// <summary>
         /// 
@@ -24,26 +30,8 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageB64")]
-        public string? ImageB64 { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
-        public string? ImageUrl { get; set; }
-
-        /// <summary>
-        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string? Result { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("revisedPrompt")]
-        public string? RevisedPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("query")]
+        public string? Query { get; set; }
 
         /// <summary>
         /// 
@@ -63,34 +51,26 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant14" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type">
-        /// Discriminator value: openrouter:image_generation
+        /// <param name="type"></param>
+        /// <param name="arguments">
+        /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
         /// </param>
         /// <param name="id"></param>
-        /// <param name="imageB64"></param>
-        /// <param name="imageUrl"></param>
-        /// <param name="result">
-        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
-        /// </param>
-        /// <param name="revisedPrompt"></param>
+        /// <param name="query"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant14(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputItemsVariant14Type type,
+            global::OpenRouter.OutputSearchModelsServerToolItemType type,
+            string? arguments,
             string? id,
-            string? imageB64,
-            string? imageUrl,
-            string? result,
-            string? revisedPrompt)
+            string? query)
         {
             this.Type = type;
+            this.Arguments = arguments;
             this.Id = id;
-            this.ImageB64 = imageB64;
-            this.ImageUrl = imageUrl;
-            this.Result = result;
-            this.RevisedPrompt = revisedPrompt;
+            this.Query = query;
             this.Status = status;
         }
 
@@ -100,5 +80,6 @@ namespace OpenRouter
         public OutputItemsVariant14()
         {
         }
+
     }
 }

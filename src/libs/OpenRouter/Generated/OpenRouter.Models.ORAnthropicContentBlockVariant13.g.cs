@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// web_search_tool_result variant
+    /// web_fetch_tool_result variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant13
     {
         /// <summary>
-        /// Discriminator value: web_search_tool_result
+        /// Discriminator value: web_fetch_tool_result
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant13TypeJsonConverter))]
@@ -27,9 +27,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent Content { get; set; }
+        public required global::OpenRouter.AnthropicWebFetchContent Content { get; set; }
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace OpenRouter
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type">
-        /// Discriminator value: web_search_tool_result
+        /// Discriminator value: web_fetch_tool_result
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant13(
             global::OpenRouter.AnthropicCaller caller,
-            global::OpenRouter.OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent content,
+            global::OpenRouter.AnthropicWebFetchContent content,
             string toolUseId,
             global::OpenRouter.ORAnthropicContentBlockVariant13Type type)
         {
@@ -74,5 +74,6 @@ namespace OpenRouter
         public ORAnthropicContentBlockVariant13()
         {
         }
+
     }
 }

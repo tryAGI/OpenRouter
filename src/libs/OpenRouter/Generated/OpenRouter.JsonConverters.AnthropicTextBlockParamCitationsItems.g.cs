@@ -15,214 +15,50 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
-            var __rawJson = __jsonDocument.RootElement.GetRawText();
-            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
-            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-            {
-                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
-                {
-                    __jsonProps.Add(__jsonProp.Name);
 
-                }
-            }
-
-            var __score0 = 0;
-            if (__jsonProps.Contains("cited_text")) __score0++;
-            if (__jsonProps.Contains("document_index")) __score0++;
-            if (__jsonProps.Contains("document_title")) __score0++;
-            if (__jsonProps.Contains("end_char_index")) __score0++;
-            if (__jsonProps.Contains("start_char_index")) __score0++;
-            if (__jsonProps.Contains("type")) __score0++;
-            var __score1 = 0;
-            if (__jsonProps.Contains("cited_text")) __score1++;
-            if (__jsonProps.Contains("document_index")) __score1++;
-            if (__jsonProps.Contains("document_title")) __score1++;
-            if (__jsonProps.Contains("end_block_index")) __score1++;
-            if (__jsonProps.Contains("start_block_index")) __score1++;
-            if (__jsonProps.Contains("type")) __score1++;
-            var __score2 = 0;
-            if (__jsonProps.Contains("cited_text")) __score2++;
-            if (__jsonProps.Contains("document_index")) __score2++;
-            if (__jsonProps.Contains("document_title")) __score2++;
-            if (__jsonProps.Contains("end_page_number")) __score2++;
-            if (__jsonProps.Contains("start_page_number")) __score2++;
-            if (__jsonProps.Contains("type")) __score2++;
-            var __score3 = 0;
-            if (__jsonProps.Contains("cited_text")) __score3++;
-            if (__jsonProps.Contains("end_block_index")) __score3++;
-            if (__jsonProps.Contains("search_result_index")) __score3++;
-            if (__jsonProps.Contains("source")) __score3++;
-            if (__jsonProps.Contains("start_block_index")) __score3++;
-            if (__jsonProps.Contains("title")) __score3++;
-            if (__jsonProps.Contains("type")) __score3++;
-            var __score4 = 0;
-            if (__jsonProps.Contains("cited_text")) __score4++;
-            if (__jsonProps.Contains("encrypted_index")) __score4++;
-            if (__jsonProps.Contains("title")) __score4++;
-            if (__jsonProps.Contains("type")) __score4++;
-            if (__jsonProps.Contains("url")) __score4++;
-            var __bestScore = 0;
-            var __bestIndex = -1;
-            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
-            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
-            if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1? charLocation = default;
-            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2? contentBlockLocation = default;
-            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3? pageLocation = default;
-            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4? searchResultLocation = default;
-            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5? webSearchResultLocation = default;
-            if (__bestIndex >= 0)
+            if (discriminator?.Type == global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType.CharLocation)
             {
-                if (__bestIndex == 0)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1).Name}");
-                        charLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2).Name}");
-                        contentBlockLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3).Name}");
-                        pageLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 3)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4).Name}");
-                        searchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 4)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5).Name}");
-                        webSearchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1)}");
+                charLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
-            if (charLocation == null && contentBlockLocation == null && pageLocation == null && searchResultLocation == null && webSearchResultLocation == null)
+            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2? contentBlockLocation = default;
+            if (discriminator?.Type == global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType.ContentBlockLocation)
             {
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1).Name}");
-                    charLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2).Name}");
-                    contentBlockLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3).Name}");
-                    pageLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4).Name}");
-                    searchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5).Name}");
-                    webSearchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2)}");
+                contentBlockLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3? pageLocation = default;
+            if (discriminator?.Type == global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType.PageLocation)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3)}");
+                pageLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4? searchResultLocation = default;
+            if (discriminator?.Type == global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType.SearchResultLocation)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4)}");
+                searchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5? webSearchResultLocation = default;
+            if (discriminator?.Type == global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType.WebSearchResultLocation)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5)}");
+                webSearchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::OpenRouter.AnthropicTextBlockParamCitationsItems(
+                discriminator?.Type,
                 charLocation,
 
                 contentBlockLocation,

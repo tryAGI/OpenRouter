@@ -48,5 +48,6 @@ namespace OpenRouter
         public McpServerToolAllowedTools1()
         {
         }
+
     }
 }

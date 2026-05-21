@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ReasoningDetailUnion : global::System.IEquatable<ReasoningDetailUnion>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Reasoning detail encrypted schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -25,6 +30,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningEncrypted))]
 #endif
         public bool IsReasoningEncrypted => ReasoningEncrypted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningEncrypted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ReasoningDetailUnionVariant1? value)
+        {
+            value = ReasoningEncrypted;
+            return IsReasoningEncrypted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionVariant1 PickReasoningEncrypted() => IsReasoningEncrypted
+            ? ReasoningEncrypted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningEncrypted' but the value was {ToString()}.");
 
         /// <summary>
         /// Reasoning detail summary schema
@@ -44,6 +69,26 @@ namespace OpenRouter
         public bool IsReasoningSummary => ReasoningSummary != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningSummary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ReasoningDetailUnionVariant2? value)
+        {
+            value = ReasoningSummary;
+            return IsReasoningSummary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionVariant2 PickReasoningSummary() => IsReasoningSummary
+            ? ReasoningSummary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningSummary' but the value was {ToString()}.");
+
+        /// <summary>
         /// Reasoning detail text schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +104,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
 #endif
         public bool IsReasoningText => ReasoningText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ReasoningDetailUnionVariant3? value)
+        {
+            value = ReasoningText;
+            return IsReasoningText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ReasoningDetailUnionVariant3 PickReasoningText() => IsReasoningText
+            ? ReasoningText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +141,11 @@ namespace OpenRouter
         {
             ReasoningEncrypted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReasoningDetailUnion FromReasoningEncrypted(global::OpenRouter.ReasoningDetailUnionVariant1? value) => new ReasoningDetailUnion(value);
 
         /// <summary>
         /// 
@@ -98,6 +168,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ReasoningDetailUnion FromReasoningSummary(global::OpenRouter.ReasoningDetailUnionVariant2? value) => new ReasoningDetailUnion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReasoningDetailUnion(global::OpenRouter.ReasoningDetailUnionVariant3 value) => new ReasoningDetailUnion((global::OpenRouter.ReasoningDetailUnionVariant3?)value);
 
         /// <summary>
@@ -116,12 +191,20 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ReasoningDetailUnion FromReasoningText(global::OpenRouter.ReasoningDetailUnionVariant3? value) => new ReasoningDetailUnion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ReasoningDetailUnion(
+            global::OpenRouter.ReasoningDetailUnionDiscriminatorType? type,
             global::OpenRouter.ReasoningDetailUnionVariant1? reasoningEncrypted,
             global::OpenRouter.ReasoningDetailUnionVariant2? reasoningSummary,
             global::OpenRouter.ReasoningDetailUnionVariant3? reasoningText
             )
         {
+            Type = type;
+
             ReasoningEncrypted = reasoningEncrypted;
             ReasoningSummary = reasoningSummary;
             ReasoningText = reasoningText;
@@ -157,9 +240,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ReasoningDetailUnionVariant1?, TResult>? reasoningEncrypted = null,
-            global::System.Func<global::OpenRouter.ReasoningDetailUnionVariant2?, TResult>? reasoningSummary = null,
-            global::System.Func<global::OpenRouter.ReasoningDetailUnionVariant3?, TResult>? reasoningText = null,
+            global::System.Func<global::OpenRouter.ReasoningDetailUnionVariant1, TResult>? reasoningEncrypted = null,
+            global::System.Func<global::OpenRouter.ReasoningDetailUnionVariant2, TResult>? reasoningSummary = null,
+            global::System.Func<global::OpenRouter.ReasoningDetailUnionVariant3, TResult>? reasoningText = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +270,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant1?>? reasoningEncrypted = null,
-            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant2?>? reasoningSummary = null,
-            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant3?>? reasoningText = null,
+            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant1>? reasoningEncrypted = null,
+
+            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant2>? reasoningSummary = null,
+
+            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant3>? reasoningText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReasoningEncrypted)
+            {
+                reasoningEncrypted?.Invoke(ReasoningEncrypted!);
+            }
+            else if (IsReasoningSummary)
+            {
+                reasoningSummary?.Invoke(ReasoningSummary!);
+            }
+            else if (IsReasoningText)
+            {
+                reasoningText?.Invoke(ReasoningText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant1>? reasoningEncrypted = null,
+            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant2>? reasoningSummary = null,
+            global::System.Action<global::OpenRouter.ReasoningDetailUnionVariant3>? reasoningText = null,
             bool validate = true)
         {
             if (validate)

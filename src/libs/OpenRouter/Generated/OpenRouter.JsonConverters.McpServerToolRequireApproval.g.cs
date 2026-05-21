@@ -121,6 +121,7 @@ namespace OpenRouter.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerToolRequireApproval0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerToolRequireApproval0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerToolRequireApproval0).Name}");
                     mcpServerToolRequireApproval0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -131,9 +132,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (mcpServerToolRequireApproval0 == null && mcpServerToolRequireApproval1 == null && mcpServerToolRequireApproval2 == null && mcpServerToolRequireApprovalVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerToolRequireApproval1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerToolRequireApproval1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerToolRequireApproval1).Name}");
                     mcpServerToolRequireApproval1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -144,9 +149,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (mcpServerToolRequireApproval0 == null && mcpServerToolRequireApproval1 == null && mcpServerToolRequireApproval2 == null && mcpServerToolRequireApprovalVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerToolRequireApproval2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerToolRequireApproval2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerToolRequireApproval2).Name}");
                     mcpServerToolRequireApproval2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -157,9 +166,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (mcpServerToolRequireApproval0 == null && mcpServerToolRequireApproval1 == null && mcpServerToolRequireApproval2 == null && mcpServerToolRequireApprovalVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     mcpServerToolRequireApprovalVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

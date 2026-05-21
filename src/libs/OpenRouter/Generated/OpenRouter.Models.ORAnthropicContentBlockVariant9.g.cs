@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// thinking variant
+    /// text_editor_code_execution_tool_result variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant9
     {
         /// <summary>
-        /// Discriminator value: thinking
+        /// Discriminator value: text_editor_code_execution_tool_result
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant9TypeJsonConverter))]
@@ -18,16 +18,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Signature { get; set; }
+        public required global::OpenRouter.AnthropicTextEditorCodeExecutionContent Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Thinking { get; set; }
+        public required string ToolUseId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,22 +39,22 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ORAnthropicContentBlockVariant9" /> class.
         /// </summary>
-        /// <param name="signature"></param>
-        /// <param name="thinking"></param>
+        /// <param name="content"></param>
+        /// <param name="toolUseId"></param>
         /// <param name="type">
-        /// Discriminator value: thinking
+        /// Discriminator value: text_editor_code_execution_tool_result
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant9(
-            string signature,
-            string thinking,
+            global::OpenRouter.AnthropicTextEditorCodeExecutionContent content,
+            string toolUseId,
             global::OpenRouter.ORAnthropicContentBlockVariant9Type type)
         {
             this.Type = type;
-            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
-            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
+            this.Content = content;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
         }
 
         /// <summary>
@@ -62,5 +63,6 @@ namespace OpenRouter
         public ORAnthropicContentBlockVariant9()
         {
         }
+
     }
 }

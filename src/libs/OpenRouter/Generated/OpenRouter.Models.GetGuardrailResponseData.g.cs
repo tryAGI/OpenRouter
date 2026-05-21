@@ -46,10 +46,34 @@ namespace OpenRouter
         public string? Description { get; set; }
 
         /// <summary>
-        /// Whether to enforce zero data retention
+        /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr")]
         public bool? EnforceZdr { get; set; }
+
+        /// <summary>
+        /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr_anthropic")]
+        public bool? EnforceZdrAnthropic { get; set; }
+
+        /// <summary>
+        /// Whether to enforce zero data retention for Google models. Falls back to enforce_zdr when not provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr_google")]
+        public bool? EnforceZdrGoogle { get; set; }
+
+        /// <summary>
+        /// Whether to enforce zero data retention for OpenAI models. Falls back to enforce_zdr when not provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr_openai")]
+        public bool? EnforceZdrOpenai { get; set; }
+
+        /// <summary>
+        /// Whether to enforce zero data retention for models that are not from Anthropic, OpenAI, or Google. Falls back to enforce_zdr when not provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr_other")]
+        public bool? EnforceZdrOther { get; set; }
 
         /// <summary>
         /// Unique identifier for the guardrail
@@ -140,7 +164,19 @@ namespace OpenRouter
         /// Description of the guardrail
         /// </param>
         /// <param name="enforceZdr">
-        /// Whether to enforce zero data retention
+        /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.
+        /// </param>
+        /// <param name="enforceZdrAnthropic">
+        /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.
+        /// </param>
+        /// <param name="enforceZdrGoogle">
+        /// Whether to enforce zero data retention for Google models. Falls back to enforce_zdr when not provided.
+        /// </param>
+        /// <param name="enforceZdrOpenai">
+        /// Whether to enforce zero data retention for OpenAI models. Falls back to enforce_zdr when not provided.
+        /// </param>
+        /// <param name="enforceZdrOther">
+        /// Whether to enforce zero data retention for models that are not from Anthropic, OpenAI, or Google. Falls back to enforce_zdr when not provided.
         /// </param>
         /// <param name="ignoredModels">
         /// Array of model canonical_slugs to exclude from routing
@@ -171,6 +207,10 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters,
             string? description,
             bool? enforceZdr,
+            bool? enforceZdrAnthropic,
+            bool? enforceZdrGoogle,
+            bool? enforceZdrOpenai,
+            bool? enforceZdrOther,
             global::System.Collections.Generic.IList<string>? ignoredModels,
             global::System.Collections.Generic.IList<string>? ignoredProviders,
             double? limitUsd,
@@ -184,6 +224,10 @@ namespace OpenRouter
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Description = description;
             this.EnforceZdr = enforceZdr;
+            this.EnforceZdrAnthropic = enforceZdrAnthropic;
+            this.EnforceZdrGoogle = enforceZdrGoogle;
+            this.EnforceZdrOpenai = enforceZdrOpenai;
+            this.EnforceZdrOther = enforceZdrOther;
             this.Id = id;
             this.IgnoredModels = ignoredModels;
             this.IgnoredProviders = ignoredProviders;
@@ -200,5 +244,6 @@ namespace OpenRouter
         public GetGuardrailResponseData()
         {
         }
+
     }
 }

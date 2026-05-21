@@ -432,24 +432,24 @@ namespace OpenRouter
                                         h => h.Value),
                                 };
                             }
-                            // Permission denied error
+                            // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::OpenRouter.MessagesErrorResponse? __value_403 = null;
+                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::OpenRouter.MessagesErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -457,7 +457,7 @@ namespace OpenRouter
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.MessagesErrorResponse>(
+                                throw new global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>(
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     statusCode: __response.StatusCode)
@@ -729,7 +729,9 @@ namespace OpenRouter
         /// <param name="xOpenRouterExperimentalMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="contextManagement"></param>
         /// <param name="maxTokens"></param>
         /// <param name="messages"></param>
@@ -754,6 +756,9 @@ namespace OpenRouter
         /// </param>
         /// <param name="speed"></param>
         /// <param name="stopSequences"></param>
+        /// <param name="stopServerToolsWhen">
+        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
+        /// </param>
         /// <param name="stream"></param>
         /// <param name="system"></param>
         /// <param name="temperature"></param>
@@ -784,10 +789,11 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins = default,
             global::OpenRouter.ProviderPreferences? provider = default,
             object? route = default,
-            global::OpenRouter.MessagesRequestServiceTier? serviceTier = default,
+            string? serviceTier = default,
             string? sessionId = default,
             global::OpenRouter.AnthropicSpeed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? stream = default,
             global::OpenRouter.MessagesRequestSystem? system = default,
             double? temperature = default,
@@ -818,6 +824,7 @@ namespace OpenRouter
                 SessionId = sessionId,
                 Speed = speed,
                 StopSequences = stopSequences,
+                StopServerToolsWhen = stopServerToolsWhen,
                 Stream = stream,
                 System = system,
                 Temperature = temperature,

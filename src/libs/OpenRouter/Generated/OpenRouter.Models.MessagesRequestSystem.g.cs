@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestSystemVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = MessagesRequestSystemVariant1;
+            return IsMessagesRequestSystemVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickMessagesRequestSystemVariant1() => IsMessagesRequestSystemVariant1
+            ? MessagesRequestSystemVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>? MessagesRequestSystem1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestSystem1))]
 #endif
         public bool IsMessagesRequestSystem1 => MessagesRequestSystem1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestSystem1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>? value)
+        {
+            value = MessagesRequestSystem1;
+            return IsMessagesRequestSystem1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam> PickMessagesRequestSystem1() => IsMessagesRequestSystem1
+            ? MessagesRequestSystem1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystem1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace OpenRouter
         {
             MessagesRequestSystemVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestSystem FromMessagesRequestSystemVariant1(string? value) => new MessagesRequestSystem(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? messagesRequestSystemVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>?, TResult>? messagesRequestSystem1 = null,
+            global::System.Func<string, TResult>? messagesRequestSystemVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>, TResult>? messagesRequestSystem1 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? messagesRequestSystemVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>?>? messagesRequestSystem1 = null,
+            global::System.Action<string>? messagesRequestSystemVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>>? messagesRequestSystem1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestSystemVariant1)
+            {
+                messagesRequestSystemVariant1?.Invoke(MessagesRequestSystemVariant1!);
+            }
+            else if (IsMessagesRequestSystem1)
+            {
+                messagesRequestSystem1?.Invoke(MessagesRequestSystem1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? messagesRequestSystemVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>>? messagesRequestSystem1 = null,
             bool validate = true)
         {
             if (validate)

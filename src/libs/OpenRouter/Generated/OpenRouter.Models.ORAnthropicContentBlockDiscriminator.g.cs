@@ -12,7 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockDiscriminatorTypeJsonConverter))]
+        public global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockDiscriminator(
-            string? type)
+            global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? type)
         {
             this.Type = type;
         }
@@ -39,5 +40,6 @@ namespace OpenRouter
         public ORAnthropicContentBlockDiscriminator()
         {
         }
+
     }
 }

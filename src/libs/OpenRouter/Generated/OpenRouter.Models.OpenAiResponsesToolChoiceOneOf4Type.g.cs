@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponsesToolChoiceOneOf4Type0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0? value)
+        {
+            value = OpenAiResponsesToolChoiceOneOf4Type0;
+            return IsOpenAiResponsesToolChoiceOneOf4Type0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0 PickOpenAiResponsesToolChoiceOneOf4Type0() => IsOpenAiResponsesToolChoiceOneOf4Type0
+            ? OpenAiResponsesToolChoiceOneOf4Type0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoiceOneOf4Type0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1? OpenAiResponsesToolChoiceOneOf4Type1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoiceOneOf4Type1))]
 #endif
         public bool IsOpenAiResponsesToolChoiceOneOf4Type1 => OpenAiResponsesToolChoiceOneOf4Type1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponsesToolChoiceOneOf4Type1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1? value)
+        {
+            value = OpenAiResponsesToolChoiceOneOf4Type1;
+            return IsOpenAiResponsesToolChoiceOneOf4Type1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1 PickOpenAiResponsesToolChoiceOneOf4Type1() => IsOpenAiResponsesToolChoiceOneOf4Type1
+            ? OpenAiResponsesToolChoiceOneOf4Type1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoiceOneOf4Type1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAiResponsesToolChoiceOneOf4Type FromOpenAiResponsesToolChoiceOneOf4Type0(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0? value) => new OpenAiResponsesToolChoiceOneOf4Type(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAiResponsesToolChoiceOneOf4Type(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1 value) => new OpenAiResponsesToolChoiceOneOf4Type((global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace OpenRouter
         {
             OpenAiResponsesToolChoiceOneOf4Type1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponsesToolChoiceOneOf4Type FromOpenAiResponsesToolChoiceOneOf4Type1(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1? value) => new OpenAiResponsesToolChoiceOneOf4Type(value);
 
         /// <summary>
         /// 
@@ -143,6 +193,30 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?>? openAiResponsesToolChoiceOneOf4Type0 = null,
+
+            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1?>? openAiResponsesToolChoiceOneOf4Type1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAiResponsesToolChoiceOneOf4Type0)
+            {
+                openAiResponsesToolChoiceOneOf4Type0?.Invoke(OpenAiResponsesToolChoiceOneOf4Type0!);
+            }
+            else if (IsOpenAiResponsesToolChoiceOneOf4Type1)
+            {
+                openAiResponsesToolChoiceOneOf4Type1?.Invoke(OpenAiResponsesToolChoiceOneOf4Type1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?>? openAiResponsesToolChoiceOneOf4Type0 = null,
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1?>? openAiResponsesToolChoiceOneOf4Type1 = null,
             bool validate = true)

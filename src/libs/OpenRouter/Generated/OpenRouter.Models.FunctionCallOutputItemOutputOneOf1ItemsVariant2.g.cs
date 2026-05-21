@@ -62,5 +62,6 @@ namespace OpenRouter
         public FunctionCallOutputItemOutputOneOf1ItemsVariant2()
         {
         }
+
     }
 }

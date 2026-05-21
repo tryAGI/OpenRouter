@@ -4,29 +4,43 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// text variant
+    /// server_tool_use variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant7
     {
         /// <summary>
-        /// Discriminator value: text
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant7TypeJsonConverter))]
-        public global::OpenRouter.ORAnthropicContentBlockVariant7Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OrAnthropicServerToolUseBlockTypeJsonConverter))]
+        public global::OpenRouter.OrAnthropicServerToolUseBlockType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextCitation>? Citations { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerJsonConverter))]
+        public global::OpenRouter.ORAnthropicNullableCaller? Caller { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        public object? Input { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,22 +51,26 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ORAnthropicContentBlockVariant7" /> class.
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="type">
-        /// Discriminator value: text
-        /// </param>
-        /// <param name="citations"></param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="caller"></param>
+        /// <param name="input"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant7(
-            string text,
-            global::OpenRouter.ORAnthropicContentBlockVariant7Type type,
-            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextCitation>? citations)
+            string id,
+            string name,
+            global::OpenRouter.OrAnthropicServerToolUseBlockType type,
+            global::OpenRouter.ORAnthropicNullableCaller? caller,
+            object? input)
         {
             this.Type = type;
-            this.Citations = citations;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Caller = caller;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Input = input;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>
@@ -61,5 +79,6 @@ namespace OpenRouter
         public ORAnthropicContentBlockVariant7()
         {
         }
+
     }
 }

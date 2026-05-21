@@ -10,6 +10,11 @@ namespace OpenRouter
     public readonly partial struct ChatContentItems : global::System.IEquatable<ChatContentItems>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// File content part for document processing
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -25,6 +30,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatContentItemsVariant1? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant1 PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
         /// Image content part for vision models
@@ -44,6 +69,26 @@ namespace OpenRouter
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatContentItemsVariant2? value)
+        {
+            value = ImageUrl;
+            return IsImageUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant2 PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
+
+        /// <summary>
         /// Audio input content part. Supported audio formats vary by provider.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +104,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
 #endif
         public bool IsInputAudio => InputAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatContentItemsVariant3? value)
+        {
+            value = InputAudio;
+            return IsInputAudio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant3 PickInputAudio() => IsInputAudio
+            ? InputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
 
         /// <summary>
         /// Video input content part (legacy format - deprecated)
@@ -78,6 +143,26 @@ namespace OpenRouter
         public bool IsInputVideo => InputVideo != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatContentItemsVariant4? value)
+        {
+            value = InputVideo;
+            return IsInputVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant4 PickInputVideo() => IsInputVideo
+            ? InputVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
+
+        /// <summary>
         /// Text content part
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -95,6 +180,26 @@ namespace OpenRouter
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatContentItemsVariant5? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant5 PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Video input content part
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +215,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoUrl))]
 #endif
         public bool IsVideoUrl => VideoUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideoUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatContentItemsVariant6? value)
+        {
+            value = VideoUrl;
+            return IsVideoUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ChatContentItemsVariant6 PickVideoUrl() => IsVideoUrl
+            ? VideoUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -127,6 +252,11 @@ namespace OpenRouter
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromFile(global::OpenRouter.ChatContentItemsVariant1? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 
@@ -149,6 +279,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromImageUrl(global::OpenRouter.ChatContentItemsVariant2? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant3 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant3?)value);
 
         /// <summary>
@@ -163,6 +298,11 @@ namespace OpenRouter
         {
             InputAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromInputAudio(global::OpenRouter.ChatContentItemsVariant3? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 
@@ -185,6 +325,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromInputVideo(global::OpenRouter.ChatContentItemsVariant4? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::OpenRouter.ChatContentItemsVariant5 value) => new ChatContentItems((global::OpenRouter.ChatContentItemsVariant5?)value);
 
         /// <summary>
@@ -199,6 +344,11 @@ namespace OpenRouter
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromText(global::OpenRouter.ChatContentItemsVariant5? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 
@@ -221,7 +371,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromVideoUrl(global::OpenRouter.ChatContentItemsVariant6? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatContentItems(
+            global::OpenRouter.ChatContentItemsDiscriminatorType? type,
             global::OpenRouter.ChatContentItemsVariant1? file,
             global::OpenRouter.ChatContentItemsVariant2? imageUrl,
             global::OpenRouter.ChatContentItemsVariant3? inputAudio,
@@ -230,6 +386,8 @@ namespace OpenRouter
             global::OpenRouter.ChatContentItemsVariant6? videoUrl
             )
         {
+            Type = type;
+
             File = file;
             ImageUrl = imageUrl;
             InputAudio = inputAudio;
@@ -274,12 +432,12 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatContentItemsVariant1?, TResult>? file = null,
-            global::System.Func<global::OpenRouter.ChatContentItemsVariant2?, TResult>? imageUrl = null,
-            global::System.Func<global::OpenRouter.ChatContentItemsVariant3?, TResult>? inputAudio = null,
-            global::System.Func<global::OpenRouter.ChatContentItemsVariant4?, TResult>? inputVideo = null,
-            global::System.Func<global::OpenRouter.ChatContentItemsVariant5?, TResult>? text = null,
-            global::System.Func<global::OpenRouter.ChatContentItemsVariant6?, TResult>? videoUrl = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant1, TResult>? file = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant2, TResult>? imageUrl = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant3, TResult>? inputAudio = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant4, TResult>? inputVideo = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant5, TResult>? text = null,
+            global::System.Func<global::OpenRouter.ChatContentItemsVariant6, TResult>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -319,12 +477,60 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatContentItemsVariant1?>? file = null,
-            global::System.Action<global::OpenRouter.ChatContentItemsVariant2?>? imageUrl = null,
-            global::System.Action<global::OpenRouter.ChatContentItemsVariant3?>? inputAudio = null,
-            global::System.Action<global::OpenRouter.ChatContentItemsVariant4?>? inputVideo = null,
-            global::System.Action<global::OpenRouter.ChatContentItemsVariant5?>? text = null,
-            global::System.Action<global::OpenRouter.ChatContentItemsVariant6?>? videoUrl = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant1>? file = null,
+
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant2>? imageUrl = null,
+
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant3>? inputAudio = null,
+
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant4>? inputVideo = null,
+
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant5>? text = null,
+
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant6>? videoUrl = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
+            else if (IsInputVideo)
+            {
+                inputVideo?.Invoke(InputVideo!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsVideoUrl)
+            {
+                videoUrl?.Invoke(VideoUrl!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant1>? file = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant2>? imageUrl = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant3>? inputAudio = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant4>? inputVideo = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant5>? text = null,
+            global::System.Action<global::OpenRouter.ChatContentItemsVariant6>? videoUrl = null,
             bool validate = true)
         {
             if (validate)

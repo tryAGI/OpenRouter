@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCodeInterpreterServerToolContainerVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = CodeInterpreterServerToolContainerVariant1;
+            return IsCodeInterpreterServerToolContainerVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickCodeInterpreterServerToolContainerVariant1() => IsCodeInterpreterServerToolContainerVariant1
+            ? CodeInterpreterServerToolContainerVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainerVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.CodeInterpreterServerToolContainer1? CodeInterpreterServerToolContainer1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerToolContainer1))]
 #endif
         public bool IsCodeInterpreterServerToolContainer1 => CodeInterpreterServerToolContainer1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreterServerToolContainer1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.CodeInterpreterServerToolContainer1? value)
+        {
+            value = CodeInterpreterServerToolContainer1;
+            return IsCodeInterpreterServerToolContainer1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CodeInterpreterServerToolContainer1 PickCodeInterpreterServerToolContainer1() => IsCodeInterpreterServerToolContainer1
+            ? CodeInterpreterServerToolContainer1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainer1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainerVariant1(string? value) => new CodeInterpreterServerToolContainer(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CodeInterpreterServerToolContainer(global::OpenRouter.CodeInterpreterServerToolContainer1 value) => new CodeInterpreterServerToolContainer((global::OpenRouter.CodeInterpreterServerToolContainer1?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace OpenRouter
         {
             CodeInterpreterServerToolContainer1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainer1(global::OpenRouter.CodeInterpreterServerToolContainer1? value) => new CodeInterpreterServerToolContainer(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? codeInterpreterServerToolContainerVariant1 = null,
-            global::System.Func<global::OpenRouter.CodeInterpreterServerToolContainer1?, TResult>? codeInterpreterServerToolContainer1 = null,
+            global::System.Func<string, TResult>? codeInterpreterServerToolContainerVariant1 = null,
+            global::System.Func<global::OpenRouter.CodeInterpreterServerToolContainer1, TResult>? codeInterpreterServerToolContainer1 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? codeInterpreterServerToolContainerVariant1 = null,
-            global::System.Action<global::OpenRouter.CodeInterpreterServerToolContainer1?>? codeInterpreterServerToolContainer1 = null,
+            global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
+
+            global::System.Action<global::OpenRouter.CodeInterpreterServerToolContainer1>? codeInterpreterServerToolContainer1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCodeInterpreterServerToolContainerVariant1)
+            {
+                codeInterpreterServerToolContainerVariant1?.Invoke(CodeInterpreterServerToolContainerVariant1!);
+            }
+            else if (IsCodeInterpreterServerToolContainer1)
+            {
+                codeInterpreterServerToolContainer1?.Invoke(CodeInterpreterServerToolContainer1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
+            global::System.Action<global::OpenRouter.CodeInterpreterServerToolContainer1>? codeInterpreterServerToolContainer1 = null,
             bool validate = true)
         {
             if (validate)

@@ -4,50 +4,50 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// computer_call variant
+    /// A code interpreter execution call with outputs
     /// </summary>
     public sealed partial class OutputItemsVariant2
     {
         /// <summary>
-        /// Discriminator value: computer_call
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant2TypeJsonConverter))]
-        public global::OpenRouter.OutputItemsVariant2Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputCodeInterpreterCallItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public object? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        public string? Code { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
+        public required string ContainerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pending_safety_checks")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems> PendingSafetyChecks { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorMappingComputerCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallStatus Status { get; set; }
+        public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,30 +58,28 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant2" /> class.
         /// </summary>
-        /// <param name="callId"></param>
-        /// <param name="pendingSafetyChecks"></param>
-        /// <param name="status"></param>
-        /// <param name="type">
-        /// Discriminator value: computer_call
-        /// </param>
-        /// <param name="action"></param>
+        /// <param name="containerId"></param>
         /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <param name="type"></param>
+        /// <param name="code"></param>
+        /// <param name="outputs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant2(
-            string callId,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems> pendingSafetyChecks,
-            global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallStatus status,
-            global::OpenRouter.OutputItemsVariant2Type type,
-            object? action,
-            string? id)
+            string containerId,
+            string id,
+            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.OutputCodeInterpreterCallItemType type,
+            string? code,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? outputs)
         {
             this.Type = type;
-            this.Action = action;
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.Id = id;
-            this.PendingSafetyChecks = pendingSafetyChecks ?? throw new global::System.ArgumentNullException(nameof(pendingSafetyChecks));
+            this.Code = code;
+            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Outputs = outputs;
             this.Status = status;
         }
 
@@ -91,5 +89,6 @@ namespace OpenRouter
         public OutputItemsVariant2()
         {
         }
+
     }
 }

@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class AnthropicSearchResultBlockParam
     {
         /// <summary>
-        /// 
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
@@ -60,7 +60,9 @@ namespace OpenRouter
         /// <param name="content"></param>
         /// <param name="source"></param>
         /// <param name="title"></param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="citations"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -88,5 +90,6 @@ namespace OpenRouter
         public AnthropicSearchResultBlockParam()
         {
         }
+
     }
 }

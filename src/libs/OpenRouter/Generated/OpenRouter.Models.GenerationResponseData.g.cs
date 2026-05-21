@@ -202,6 +202,12 @@ namespace OpenRouter
         public string? Router { get; set; }
 
         /// <summary>
+        /// Service tier the upstream provider reported running this request on, or null if it did not report one.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        public string? ServiceTier { get; set; }
+
+        /// <summary>
         /// Session identifier grouping multiple generations in the same session
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
@@ -371,6 +377,9 @@ namespace OpenRouter
         /// <param name="router">
         /// Router used for the request (e.g., openrouter/auto)
         /// </param>
+        /// <param name="serviceTier">
+        /// Service tier the upstream provider reported running this request on, or null if it did not report one.
+        /// </param>
         /// <param name="sessionId">
         /// Session identifier grouping multiple generations in the same session
         /// </param>
@@ -432,6 +441,7 @@ namespace OpenRouter
             string? requestId,
             string? responseCacheSourceId,
             string? router,
+            string? serviceTier,
             string? sessionId,
             bool? streamed,
             int? tokensCompletion,
@@ -472,6 +482,7 @@ namespace OpenRouter
             this.RequestId = requestId;
             this.ResponseCacheSourceId = responseCacheSourceId;
             this.Router = router;
+            this.ServiceTier = serviceTier;
             this.SessionId = sessionId;
             this.Streamed = streamed;
             this.TokensCompletion = tokensCompletion;
@@ -490,5 +501,6 @@ namespace OpenRouter
         public GenerationResponseData()
         {
         }
+
     }
 }

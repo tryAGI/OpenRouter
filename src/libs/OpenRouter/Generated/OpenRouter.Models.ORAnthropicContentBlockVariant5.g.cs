@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// redacted_thinking variant
+    /// container_upload variant
     /// </summary>
     public sealed partial class ORAnthropicContentBlockVariant5
     {
         /// <summary>
-        /// Discriminator value: redacted_thinking
+        /// Discriminator value: container_upload
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant5TypeJsonConverter))]
@@ -18,9 +18,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Data { get; set; }
+        public required string FileId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,19 +31,19 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ORAnthropicContentBlockVariant5" /> class.
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="fileId"></param>
         /// <param name="type">
-        /// Discriminator value: redacted_thinking
+        /// Discriminator value: container_upload
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ORAnthropicContentBlockVariant5(
-            string data,
+            string fileId,
             global::OpenRouter.ORAnthropicContentBlockVariant5Type type)
         {
             this.Type = type;
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
         }
 
         /// <summary>
@@ -52,5 +52,6 @@ namespace OpenRouter
         public ORAnthropicContentBlockVariant5()
         {
         }
+
     }
 }

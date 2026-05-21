@@ -27,6 +27,26 @@ namespace OpenRouter
         public bool IsStoredPromptTemplateVariablesVariant1 => StoredPromptTemplateVariablesVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStoredPromptTemplateVariablesVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = StoredPromptTemplateVariablesVariant1;
+            return IsStoredPromptTemplateVariablesVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickStoredPromptTemplateVariablesVariant1() => IsStoredPromptTemplateVariablesVariant1
+            ? StoredPromptTemplateVariablesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StoredPromptTemplateVariablesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
         public bool IsInputText => InputText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputText? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputText PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
         /// Image input content item
@@ -61,6 +101,26 @@ namespace OpenRouter
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputImage? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputImage PickInputImage() => IsInputImage
+            ? InputImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +136,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
         public bool IsInputFile => InputFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.InputFile? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.InputFile PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -93,6 +173,11 @@ namespace OpenRouter
         {
             StoredPromptTemplateVariablesVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StoredPromptTemplateVariables FromStoredPromptTemplateVariablesVariant1(string? value) => new StoredPromptTemplateVariables(value);
 
         /// <summary>
         /// 
@@ -115,6 +200,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static StoredPromptTemplateVariables FromInputText(global::OpenRouter.InputText? value) => new StoredPromptTemplateVariables(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StoredPromptTemplateVariables(global::OpenRouter.InputImage value) => new StoredPromptTemplateVariables((global::OpenRouter.InputImage?)value);
 
         /// <summary>
@@ -133,6 +223,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static StoredPromptTemplateVariables FromInputImage(global::OpenRouter.InputImage? value) => new StoredPromptTemplateVariables(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StoredPromptTemplateVariables(global::OpenRouter.InputFile value) => new StoredPromptTemplateVariables((global::OpenRouter.InputFile?)value);
 
         /// <summary>
@@ -147,6 +242,11 @@ namespace OpenRouter
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StoredPromptTemplateVariables FromInputFile(global::OpenRouter.InputFile? value) => new StoredPromptTemplateVariables(value);
 
         /// <summary>
         /// 
@@ -196,10 +296,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? storedPromptTemplateVariablesVariant1 = null,
-            global::System.Func<global::OpenRouter.InputText?, TResult>? inputText = null,
-            global::System.Func<global::OpenRouter.InputImage?, TResult>? inputImage = null,
-            global::System.Func<global::OpenRouter.InputFile?, TResult>? inputFile = null,
+            global::System.Func<string, TResult>? storedPromptTemplateVariablesVariant1 = null,
+            global::System.Func<global::OpenRouter.InputText, TResult>? inputText = null,
+            global::System.Func<global::OpenRouter.InputImage, TResult>? inputImage = null,
+            global::System.Func<global::OpenRouter.InputFile, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +331,46 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? storedPromptTemplateVariablesVariant1 = null,
-            global::System.Action<global::OpenRouter.InputText?>? inputText = null,
-            global::System.Action<global::OpenRouter.InputImage?>? inputImage = null,
-            global::System.Action<global::OpenRouter.InputFile?>? inputFile = null,
+            global::System.Action<string>? storedPromptTemplateVariablesVariant1 = null,
+
+            global::System.Action<global::OpenRouter.InputText>? inputText = null,
+
+            global::System.Action<global::OpenRouter.InputImage>? inputImage = null,
+
+            global::System.Action<global::OpenRouter.InputFile>? inputFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStoredPromptTemplateVariablesVariant1)
+            {
+                storedPromptTemplateVariablesVariant1?.Invoke(StoredPromptTemplateVariablesVariant1!);
+            }
+            else if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? storedPromptTemplateVariablesVariant1 = null,
+            global::System.Action<global::OpenRouter.InputText>? inputText = null,
+            global::System.Action<global::OpenRouter.InputImage>? inputImage = null,
+            global::System.Action<global::OpenRouter.InputFile>? inputFile = null,
             bool validate = true)
         {
             if (validate)

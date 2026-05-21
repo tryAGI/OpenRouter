@@ -42,5 +42,6 @@ namespace OpenRouter
         public ApiKeysGetKeyResponse200()
         {
         }
+
     }
 }

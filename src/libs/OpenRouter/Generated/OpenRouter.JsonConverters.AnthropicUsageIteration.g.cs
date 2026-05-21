@@ -59,16 +59,28 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("cache_creation_input_tokens")) __score2++;
             if (__jsonProps.Contains("cache_read_input_tokens")) __score2++;
             if (__jsonProps.Contains("input_tokens")) __score2++;
+            if (__jsonProps.Contains("model")) __score2++;
             if (__jsonProps.Contains("output_tokens")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
+            var __score3 = 0;
+            if (__jsonProps.Contains("cache_creation")) __score3++;
+            if (__jsonProps.Contains("cache_creation.ephemeral_1h_input_tokens")) __score3++;
+            if (__jsonProps.Contains("cache_creation.ephemeral_5m_input_tokens")) __score3++;
+            if (__jsonProps.Contains("cache_creation_input_tokens")) __score3++;
+            if (__jsonProps.Contains("cache_read_input_tokens")) __score3++;
+            if (__jsonProps.Contains("input_tokens")) __score3++;
+            if (__jsonProps.Contains("output_tokens")) __score3++;
+            if (__jsonProps.Contains("type")) __score3++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
+            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
             global::OpenRouter.AnthropicCompactionUsageIteration? anthropicCompactionUsageIteration = default;
             global::OpenRouter.AnthropicMessageUsageIteration? anthropicMessageUsageIteration = default;
+            global::OpenRouter.AnthropicAdvisorMessageUsageIteration? anthropicAdvisorMessageUsageIteration = default;
             global::OpenRouter.AnthropicUnknownUsageIteration? anthropicUnknownUsageIteration = default;
             if (__bestIndex >= 0)
             {
@@ -106,6 +118,21 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicAdvisorMessageUsageIteration> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration).Name}");
+                        anthropicAdvisorMessageUsageIteration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 3)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicUnknownUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicUnknownUsageIteration> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicUnknownUsageIteration).Name}");
                         anthropicUnknownUsageIteration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -119,10 +146,11 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (anthropicCompactionUsageIteration == null && anthropicMessageUsageIteration == null && anthropicUnknownUsageIteration == null)
+            if (anthropicCompactionUsageIteration == null && anthropicMessageUsageIteration == null && anthropicAdvisorMessageUsageIteration == null && anthropicUnknownUsageIteration == null)
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCompactionUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCompactionUsageIteration> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCompactionUsageIteration).Name}");
                     anthropicCompactionUsageIteration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -133,9 +161,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicCompactionUsageIteration == null && anthropicMessageUsageIteration == null && anthropicAdvisorMessageUsageIteration == null && anthropicUnknownUsageIteration == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicMessageUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicMessageUsageIteration> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicMessageUsageIteration).Name}");
                     anthropicMessageUsageIteration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -146,9 +178,30 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicCompactionUsageIteration == null && anthropicMessageUsageIteration == null && anthropicAdvisorMessageUsageIteration == null && anthropicUnknownUsageIteration == null)
+            {
                 try
                 {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicAdvisorMessageUsageIteration> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration).Name}");
+                    anthropicAdvisorMessageUsageIteration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (anthropicCompactionUsageIteration == null && anthropicMessageUsageIteration == null && anthropicAdvisorMessageUsageIteration == null && anthropicUnknownUsageIteration == null)
+            {
+                try
+                {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicUnknownUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicUnknownUsageIteration> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicUnknownUsageIteration).Name}");
                     anthropicUnknownUsageIteration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -165,6 +218,8 @@ namespace OpenRouter.JsonConverters
                 anthropicCompactionUsageIteration,
 
                 anthropicMessageUsageIteration,
+
+                anthropicAdvisorMessageUsageIteration,
 
                 anthropicUnknownUsageIteration
                 );
@@ -192,6 +247,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicMessageUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicMessageUsageIteration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicMessageUsageIteration).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicMessageUsageIteration!, typeInfo);
+            }
+            else if (value.IsAnthropicAdvisorMessageUsageIteration)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicAdvisorMessageUsageIteration!, typeInfo);
             }
             else if (value.IsAnthropicUnknownUsageIteration)
             {

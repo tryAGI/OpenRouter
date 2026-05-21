@@ -110,6 +110,10 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("cache_control.type")) __score10++;
             if (__jsonProps.Contains("content")) __score10++;
             if (__jsonProps.Contains("type")) __score10++;
+            var __score11 = 0;
+            if (__jsonProps.Contains("content")) __score11++;
+            if (__jsonProps.Contains("tool_use_id")) __score11++;
+            if (__jsonProps.Contains("type")) __score11++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -123,6 +127,7 @@ namespace OpenRouter.JsonConverters
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
             if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
             if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
+            if (__score11 > __bestScore) { __bestScore = __score11; __bestIndex = 11; }
 
             global::OpenRouter.AnthropicTextBlockParam? anthropicTextBlockParam = default;
             global::OpenRouter.AnthropicImageBlockParam? anthropicImageBlockParam = default;
@@ -135,6 +140,7 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.MessagesMessageParamContentOneOf1Items8? messagesMessageParamContentOneOf1Items8 = default;
             global::OpenRouter.AnthropicSearchResultBlockParam? anthropicSearchResultBlockParam = default;
             global::OpenRouter.MessagesMessageParamContentOneOf1Items10? messagesMessageParamContentOneOf1Items10 = default;
+            global::OpenRouter.MessagesAdvisorToolResultBlock? messagesAdvisorToolResultBlock = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -302,12 +308,28 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 11)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesAdvisorToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesAdvisorToolResultBlock> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesAdvisorToolResultBlock).Name}");
+                        messagesAdvisorToolResultBlock = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null)
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParam).Name}");
                     anthropicTextBlockParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -318,9 +340,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicImageBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicImageBlockParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicImageBlockParam).Name}");
                     anthropicImageBlockParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -331,9 +357,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicDocumentBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicDocumentBlockParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicDocumentBlockParam).Name}");
                     anthropicDocumentBlockParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -344,9 +374,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items3).Name}");
                     messagesMessageParamContentOneOf1Items3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -357,9 +391,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items4).Name}");
                     messagesMessageParamContentOneOf1Items4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -370,9 +408,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items5> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items5).Name}");
                     messagesMessageParamContentOneOf1Items5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -383,9 +425,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items6> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items6).Name}");
                     messagesMessageParamContentOneOf1Items6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -396,9 +442,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items7> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items7).Name}");
                     messagesMessageParamContentOneOf1Items7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -409,9 +459,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items8> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items8).Name}");
                     messagesMessageParamContentOneOf1Items8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -422,9 +476,13 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicSearchResultBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicSearchResultBlockParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicSearchResultBlockParam).Name}");
                     anthropicSearchResultBlockParam = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -435,12 +493,33 @@ namespace OpenRouter.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items10> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items10).Name}");
                     messagesMessageParamContentOneOf1Items10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (anthropicTextBlockParam == null && anthropicImageBlockParam == null && anthropicDocumentBlockParam == null && messagesMessageParamContentOneOf1Items3 == null && messagesMessageParamContentOneOf1Items4 == null && messagesMessageParamContentOneOf1Items5 == null && messagesMessageParamContentOneOf1Items6 == null && messagesMessageParamContentOneOf1Items7 == null && messagesMessageParamContentOneOf1Items8 == null && anthropicSearchResultBlockParam == null && messagesMessageParamContentOneOf1Items10 == null && messagesAdvisorToolResultBlock == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesAdvisorToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesAdvisorToolResultBlock> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesAdvisorToolResultBlock).Name}");
+                    messagesAdvisorToolResultBlock = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -471,7 +550,9 @@ namespace OpenRouter.JsonConverters
 
                 anthropicSearchResultBlockParam,
 
-                messagesMessageParamContentOneOf1Items10
+                messagesMessageParamContentOneOf1Items10,
+
+                messagesAdvisorToolResultBlock
                 );
 
             return __value;
@@ -551,6 +632,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items10).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items10!, typeInfo);
+            }
+            else if (value.IsMessagesAdvisorToolResultBlock)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesAdvisorToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesAdvisorToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesAdvisorToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesAdvisorToolResultBlock!, typeInfo);
             }
         }
     }

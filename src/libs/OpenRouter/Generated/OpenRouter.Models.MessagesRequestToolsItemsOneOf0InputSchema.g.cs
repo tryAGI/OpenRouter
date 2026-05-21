@@ -59,5 +59,6 @@ namespace OpenRouter
         public MessagesRequestToolsItemsOneOf0InputSchema()
         {
         }
+
     }
 }

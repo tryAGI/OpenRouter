@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputMessageItemPhase0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageItemPhase0? value)
+        {
+            value = OutputMessageItemPhase0;
+            return IsOutputMessageItemPhase0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessageItemPhase0 PickOutputMessageItemPhase0() => IsOutputMessageItemPhase0
+            ? OutputMessageItemPhase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageItemPhase1? OutputMessageItemPhase1 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageItemPhase1))]
 #endif
         public bool IsOutputMessageItemPhase1 => OutputMessageItemPhase1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputMessageItemPhase1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputMessageItemPhase1? value)
+        {
+            value = OutputMessageItemPhase1;
+            return IsOutputMessageItemPhase1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputMessageItemPhase1 PickOutputMessageItemPhase1() => IsOutputMessageItemPhase1
+            ? OutputMessageItemPhase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageItemPhaseVariant3))]
 #endif
         public bool IsOutputMessageItemPhaseVariant3 => OutputMessageItemPhaseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputMessageItemPhaseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = OutputMessageItemPhaseVariant3;
+            return IsOutputMessageItemPhaseVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickOutputMessageItemPhaseVariant3() => IsOutputMessageItemPhaseVariant3
+            ? OutputMessageItemPhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -80,6 +140,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageItemPhase FromOutputMessageItemPhase0(global::OpenRouter.OutputMessageItemPhase0? value) => new OutputMessageItemPhase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageItemPhase(global::OpenRouter.OutputMessageItemPhase1 value) => new OutputMessageItemPhase((global::OpenRouter.OutputMessageItemPhase1?)value);
 
         /// <summary>
@@ -94,6 +159,11 @@ namespace OpenRouter
         {
             OutputMessageItemPhase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageItemPhase FromOutputMessageItemPhase1(global::OpenRouter.OutputMessageItemPhase1? value) => new OutputMessageItemPhase(value);
 
         /// <summary>
         /// 
@@ -141,7 +211,7 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OutputMessageItemPhase0?, TResult>? outputMessageItemPhase0 = null,
             global::System.Func<global::OpenRouter.OutputMessageItemPhase1?, TResult>? outputMessageItemPhase1 = null,
-            global::System.Func<object?, TResult>? outputMessageItemPhaseVariant3 = null,
+            global::System.Func<object, TResult>? outputMessageItemPhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +240,38 @@ namespace OpenRouter
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OutputMessageItemPhase0?>? outputMessageItemPhase0 = null,
+
             global::System.Action<global::OpenRouter.OutputMessageItemPhase1?>? outputMessageItemPhase1 = null,
-            global::System.Action<object?>? outputMessageItemPhaseVariant3 = null,
+
+            global::System.Action<object>? outputMessageItemPhaseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputMessageItemPhase0)
+            {
+                outputMessageItemPhase0?.Invoke(OutputMessageItemPhase0!);
+            }
+            else if (IsOutputMessageItemPhase1)
+            {
+                outputMessageItemPhase1?.Invoke(OutputMessageItemPhase1!);
+            }
+            else if (IsOutputMessageItemPhaseVariant3)
+            {
+                outputMessageItemPhaseVariant3?.Invoke(OutputMessageItemPhaseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.OutputMessageItemPhase0?>? outputMessageItemPhase0 = null,
+            global::System.Action<global::OpenRouter.OutputMessageItemPhase1?>? outputMessageItemPhase1 = null,
+            global::System.Action<object>? outputMessageItemPhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)

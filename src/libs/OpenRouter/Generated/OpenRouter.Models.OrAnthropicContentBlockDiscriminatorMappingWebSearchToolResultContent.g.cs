@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>? value)
+        {
+            value = OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0;
+            return IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult> PickOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0() => IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0
+            ? OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicWebSearchToolResultError? AnthropicWebSearchToolResultError { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicWebSearchToolResultError))]
 #endif
         public bool IsAnthropicWebSearchToolResultError => AnthropicWebSearchToolResultError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicWebSearchToolResultError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicWebSearchToolResultError? value)
+        {
+            value = AnthropicWebSearchToolResultError;
+            return IsAnthropicWebSearchToolResultError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AnthropicWebSearchToolResultError PickAnthropicWebSearchToolResultError() => IsAnthropicWebSearchToolResultError
+            ? AnthropicWebSearchToolResultError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicWebSearchToolResultError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace OpenRouter
         {
             AnthropicWebSearchToolResultError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent FromAnthropicWebSearchToolResultError(global::OpenRouter.AnthropicWebSearchToolResultError? value) => new OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>?, TResult>? orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 = null,
-            global::System.Func<global::OpenRouter.AnthropicWebSearchToolResultError?, TResult>? anthropicWebSearchToolResultError = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>, TResult>? orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 = null,
+            global::System.Func<global::OpenRouter.AnthropicWebSearchToolResultError, TResult>? anthropicWebSearchToolResultError = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>?>? orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 = null,
-            global::System.Action<global::OpenRouter.AnthropicWebSearchToolResultError?>? anthropicWebSearchToolResultError = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>>? orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 = null,
+
+            global::System.Action<global::OpenRouter.AnthropicWebSearchToolResultError>? anthropicWebSearchToolResultError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0)
+            {
+                orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0?.Invoke(OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!);
+            }
+            else if (IsAnthropicWebSearchToolResultError)
+            {
+                anthropicWebSearchToolResultError?.Invoke(AnthropicWebSearchToolResultError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>>? orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 = null,
+            global::System.Action<global::OpenRouter.AnthropicWebSearchToolResultError>? anthropicWebSearchToolResultError = null,
             bool validate = true)
         {
             if (validate)

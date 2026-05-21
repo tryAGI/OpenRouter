@@ -15,6 +15,12 @@ namespace OpenRouter
         public int? AudioTokens { get; set; }
 
         /// <summary>
+        /// Number of file/document tokens in the input
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_tokens")]
+        public int? FileTokens { get; set; }
+
+        /// <summary>
         /// Number of image tokens in the input
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_tokens")]
@@ -44,6 +50,9 @@ namespace OpenRouter
         /// <param name="audioTokens">
         /// Number of audio tokens in the input
         /// </param>
+        /// <param name="fileTokens">
+        /// Number of file/document tokens in the input
+        /// </param>
         /// <param name="imageTokens">
         /// Number of image tokens in the input
         /// </param>
@@ -58,11 +67,13 @@ namespace OpenRouter
 #endif
         public EmbeddingsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails(
             int? audioTokens,
+            int? fileTokens,
             int? imageTokens,
             int? textTokens,
             int? videoTokens)
         {
             this.AudioTokens = audioTokens;
+            this.FileTokens = fileTokens;
             this.ImageTokens = imageTokens;
             this.TextTokens = textTokens;
             this.VideoTokens = videoTokens;
@@ -74,5 +85,6 @@ namespace OpenRouter
         public EmbeddingsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails()
         {
         }
+
     }
 }

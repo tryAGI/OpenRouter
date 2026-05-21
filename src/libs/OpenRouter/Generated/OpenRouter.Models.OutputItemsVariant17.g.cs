@@ -4,35 +4,46 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:text_editor server tool output item
+    /// An openrouter:image_generation server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant17
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:image_generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputTextEditorServerToolItemType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("command")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemCommandJsonConverter))]
-        public global::OpenRouter.OutputTextEditorServerToolItemCommand? Command { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filePath")]
-        public string? FilePath { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant17TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant17Type Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("imageB64")]
+        public string? ImageB64 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
+        public string? ImageUrl { get; set; }
+
+        /// <summary>
+        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
+        public string? Result { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("revisedPrompt")]
+        public string? RevisedPrompt { get; set; }
 
         /// <summary>
         /// 
@@ -52,24 +63,34 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="OutputItemsVariant17" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type"></param>
-        /// <param name="command"></param>
-        /// <param name="filePath"></param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:image_generation
+        /// </param>
         /// <param name="id"></param>
+        /// <param name="imageB64"></param>
+        /// <param name="imageUrl"></param>
+        /// <param name="result">
+        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
+        /// </param>
+        /// <param name="revisedPrompt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant17(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputTextEditorServerToolItemType type,
-            global::OpenRouter.OutputTextEditorServerToolItemCommand? command,
-            string? filePath,
-            string? id)
+            global::OpenRouter.OutputItemsVariant17Type type,
+            string? id,
+            string? imageB64,
+            string? imageUrl,
+            string? result,
+            string? revisedPrompt)
         {
             this.Type = type;
-            this.Command = command;
-            this.FilePath = filePath;
             this.Id = id;
+            this.ImageB64 = imageB64;
+            this.ImageUrl = imageUrl;
+            this.Result = result;
+            this.RevisedPrompt = revisedPrompt;
             this.Status = status;
         }
 
@@ -79,5 +100,6 @@ namespace OpenRouter
         public OutputItemsVariant17()
         {
         }
+
     }
 }

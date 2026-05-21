@@ -29,6 +29,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputWebSearchCallItemAction0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputWebSearchCallItemAction0? value)
+        {
+            value = OutputWebSearchCallItemAction0;
+            return IsOutputWebSearchCallItemAction0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputWebSearchCallItemAction0 PickOutputWebSearchCallItemAction0() => IsOutputWebSearchCallItemAction0
+            ? OutputWebSearchCallItemAction0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputWebSearchCallItemAction1? OutputWebSearchCallItemAction1 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputWebSearchCallItemAction1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputWebSearchCallItemAction1? value)
+        {
+            value = OutputWebSearchCallItemAction1;
+            return IsOutputWebSearchCallItemAction1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputWebSearchCallItemAction1 PickOutputWebSearchCallItemAction1() => IsOutputWebSearchCallItemAction1
+            ? OutputWebSearchCallItemAction1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputWebSearchCallItemAction2? OutputWebSearchCallItemAction2 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputWebSearchCallItemAction2))]
 #endif
         public bool IsOutputWebSearchCallItemAction2 => OutputWebSearchCallItemAction2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputWebSearchCallItemAction2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OutputWebSearchCallItemAction2? value)
+        {
+            value = OutputWebSearchCallItemAction2;
+            return IsOutputWebSearchCallItemAction2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OutputWebSearchCallItemAction2 PickOutputWebSearchCallItemAction2() => IsOutputWebSearchCallItemAction2
+            ? OutputWebSearchCallItemAction2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace OpenRouter
         {
             OutputWebSearchCallItemAction0 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputWebSearchCallItemAction FromOutputWebSearchCallItemAction0(global::OpenRouter.OutputWebSearchCallItemAction0? value) => new OutputWebSearchCallItemAction(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static OutputWebSearchCallItemAction FromOutputWebSearchCallItemAction1(global::OpenRouter.OutputWebSearchCallItemAction1? value) => new OutputWebSearchCallItemAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputWebSearchCallItemAction(global::OpenRouter.OutputWebSearchCallItemAction2 value) => new OutputWebSearchCallItemAction((global::OpenRouter.OutputWebSearchCallItemAction2?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace OpenRouter
         {
             OutputWebSearchCallItemAction2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputWebSearchCallItemAction FromOutputWebSearchCallItemAction2(global::OpenRouter.OutputWebSearchCallItemAction2? value) => new OutputWebSearchCallItemAction(value);
 
         /// <summary>
         /// 
@@ -157,9 +232,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.OutputWebSearchCallItemAction0?, TResult>? outputWebSearchCallItemAction0 = null,
-            global::System.Func<global::OpenRouter.OutputWebSearchCallItemAction1?, TResult>? outputWebSearchCallItemAction1 = null,
-            global::System.Func<global::OpenRouter.OutputWebSearchCallItemAction2?, TResult>? outputWebSearchCallItemAction2 = null,
+            global::System.Func<global::OpenRouter.OutputWebSearchCallItemAction0, TResult>? outputWebSearchCallItemAction0 = null,
+            global::System.Func<global::OpenRouter.OutputWebSearchCallItemAction1, TResult>? outputWebSearchCallItemAction1 = null,
+            global::System.Func<global::OpenRouter.OutputWebSearchCallItemAction2, TResult>? outputWebSearchCallItemAction2 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +262,39 @@ namespace OpenRouter
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction0?>? outputWebSearchCallItemAction0 = null,
-            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction1?>? outputWebSearchCallItemAction1 = null,
-            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction2?>? outputWebSearchCallItemAction2 = null,
+            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction0>? outputWebSearchCallItemAction0 = null,
+
+            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction1>? outputWebSearchCallItemAction1 = null,
+
+            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction2>? outputWebSearchCallItemAction2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputWebSearchCallItemAction0)
+            {
+                outputWebSearchCallItemAction0?.Invoke(OutputWebSearchCallItemAction0!);
+            }
+            else if (IsOutputWebSearchCallItemAction1)
+            {
+                outputWebSearchCallItemAction1?.Invoke(OutputWebSearchCallItemAction1!);
+            }
+            else if (IsOutputWebSearchCallItemAction2)
+            {
+                outputWebSearchCallItemAction2?.Invoke(OutputWebSearchCallItemAction2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction0>? outputWebSearchCallItemAction0 = null,
+            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction1>? outputWebSearchCallItemAction1 = null,
+            global::System.Action<global::OpenRouter.OutputWebSearchCallItemAction2>? outputWebSearchCallItemAction2 = null,
             bool validate = true)
         {
             if (validate)

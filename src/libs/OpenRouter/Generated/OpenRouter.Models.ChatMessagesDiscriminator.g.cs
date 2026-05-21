@@ -12,7 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string? Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorRoleJsonConverter))]
+        public global::OpenRouter.ChatMessagesDiscriminatorRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatMessagesDiscriminator(
-            string? role)
+            global::OpenRouter.ChatMessagesDiscriminatorRole? role)
         {
             this.Role = role;
         }
@@ -39,5 +40,6 @@ namespace OpenRouter
         public ChatMessagesDiscriminator()
         {
         }
+
     }
 }
