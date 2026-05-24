@@ -8731,6 +8731,7 @@
           "DeepInfra",
           "DeepSeek",
           "DekaLLM",
+          "DigitalOcean",
           "Featherless",
           "Fireworks",
           "Friendli",
@@ -15163,6 +15164,12 @@
               "description": "Any type"
             }
           },
+          "digitalocean": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "enfer": {
             "type": "object",
             "additionalProperties": {
@@ -15914,6 +15921,7 @@
           "deepinfra",
           "deepseek",
           "dekallm",
+          "digitalocean",
           "featherless",
           "fireworks",
           "friendli",
@@ -16001,6 +16009,7 @@
           "deepinfra",
           "deepseek",
           "dekallm",
+          "digitalocean",
           "featherless",
           "fireworks",
           "friendli",
@@ -20213,6 +20222,7 @@
           "DeepInfra",
           "DeepSeek",
           "DekaLLM",
+          "DigitalOcean",
           "Featherless",
           "Fireworks",
           "Friendli",
@@ -35290,6 +35300,12 @@
             }
           },
           "dekallm": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "digitalocean": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"

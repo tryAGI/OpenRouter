@@ -119,6 +119,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        DigitalOcean,
+        /// <summary>
+        /// 
+        /// </summary>
         FakeProvider,
         /// <summary>
         /// 
@@ -381,6 +385,7 @@ namespace OpenRouter
                 ProviderName.DeepInfra => "DeepInfra",
                 ProviderName.DeepSeek => "DeepSeek",
                 ProviderName.DekaLLM => "DekaLLM",
+                ProviderName.DigitalOcean => "DigitalOcean",
                 ProviderName.FakeProvider => "FakeProvider",
                 ProviderName.Featherless => "Featherless",
                 ProviderName.Fireworks => "Fireworks",
@@ -474,6 +479,7 @@ namespace OpenRouter
                 "DeepInfra" => ProviderName.DeepInfra,
                 "DeepSeek" => ProviderName.DeepSeek,
                 "DekaLLM" => ProviderName.DekaLLM,
+                "DigitalOcean" => ProviderName.DigitalOcean,
                 "FakeProvider" => ProviderName.FakeProvider,
                 "Featherless" => ProviderName.Featherless,
                 "Fireworks" => ProviderName.Fireworks,

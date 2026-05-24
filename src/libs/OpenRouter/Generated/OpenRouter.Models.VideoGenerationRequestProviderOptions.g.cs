@@ -203,6 +203,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("digitalocean")]
+        public object? Digitalocean { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enfer")]
         public object? Enfer { get; set; }
 
@@ -715,6 +721,7 @@ namespace OpenRouter
         /// <param name="deepinfra"></param>
         /// <param name="deepseek"></param>
         /// <param name="dekallm"></param>
+        /// <param name="digitalocean"></param>
         /// <param name="enfer"></param>
         /// <param name="fakeProvider"></param>
         /// <param name="featherless"></param>
@@ -830,6 +837,7 @@ namespace OpenRouter
             object? deepinfra,
             object? deepseek,
             object? dekallm,
+            object? digitalocean,
             object? enfer,
             object? fakeProvider,
             object? featherless,
@@ -942,6 +950,7 @@ namespace OpenRouter
             this.Deepinfra = deepinfra;
             this.Deepseek = deepseek;
             this.Dekallm = dekallm;
+            this.Digitalocean = digitalocean;
             this.Enfer = enfer;
             this.FakeProvider = fakeProvider;
             this.Featherless = featherless;
