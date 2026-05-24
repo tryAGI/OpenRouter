@@ -115,6 +115,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Digitalocean,
+        /// <summary>
+        /// 
+        /// </summary>
         Featherless,
         /// <summary>
         /// 
@@ -368,6 +372,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Deepinfra => "deepinfra",
                 BYOKProviderSlug.Deepseek => "deepseek",
                 BYOKProviderSlug.Dekallm => "dekallm",
+                BYOKProviderSlug.Digitalocean => "digitalocean",
                 BYOKProviderSlug.Featherless => "featherless",
                 BYOKProviderSlug.Fireworks => "fireworks",
                 BYOKProviderSlug.Friendli => "friendli",
@@ -458,6 +463,7 @@ namespace OpenRouter
                 "deepinfra" => BYOKProviderSlug.Deepinfra,
                 "deepseek" => BYOKProviderSlug.Deepseek,
                 "dekallm" => BYOKProviderSlug.Dekallm,
+                "digitalocean" => BYOKProviderSlug.Digitalocean,
                 "featherless" => BYOKProviderSlug.Featherless,
                 "fireworks" => BYOKProviderSlug.Fireworks,
                 "friendli" => BYOKProviderSlug.Friendli,

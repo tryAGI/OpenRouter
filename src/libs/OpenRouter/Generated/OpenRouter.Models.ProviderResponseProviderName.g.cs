@@ -139,6 +139,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        DigitalOcean,
+        /// <summary>
+        /// 
+        /// </summary>
         Enfer,
         /// <summary>
         /// 
@@ -498,6 +502,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.DeepInfra => "DeepInfra",
                 ProviderResponseProviderName.DeepSeek => "DeepSeek",
                 ProviderResponseProviderName.DekaLLM => "DekaLLM",
+                ProviderResponseProviderName.DigitalOcean => "DigitalOcean",
                 ProviderResponseProviderName.Enfer => "Enfer",
                 ProviderResponseProviderName.FakeProvider => "FakeProvider",
                 ProviderResponseProviderName.Featherless => "Featherless",
@@ -619,6 +624,7 @@ namespace OpenRouter
                 "DeepInfra" => ProviderResponseProviderName.DeepInfra,
                 "DeepSeek" => ProviderResponseProviderName.DeepSeek,
                 "DekaLLM" => ProviderResponseProviderName.DekaLLM,
+                "DigitalOcean" => ProviderResponseProviderName.DigitalOcean,
                 "Enfer" => ProviderResponseProviderName.Enfer,
                 "FakeProvider" => ProviderResponseProviderName.FakeProvider,
                 "Featherless" => ProviderResponseProviderName.Featherless,
