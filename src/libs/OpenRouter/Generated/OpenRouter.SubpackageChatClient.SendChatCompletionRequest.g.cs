@@ -381,18 +381,17 @@ namespace OpenRouter
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthorized - Authentication required or invalid credentials
                             if ((int)__response.StatusCode == 401)
@@ -419,18 +418,17 @@ namespace OpenRouter
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Payment Required - Insufficient credits or quota to complete request
                             if ((int)__response.StatusCode == 402)
@@ -457,18 +455,17 @@ namespace OpenRouter
                                     __exception_402 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.PaymentRequiredResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.PaymentRequiredResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_402,
-                                    ResponseObject = __value_402,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_402,
+                                    responseObject: __value_402,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
                             if ((int)__response.StatusCode == 403)
@@ -495,18 +492,17 @@ namespace OpenRouter
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Not Found - Resource does not exist
                             if ((int)__response.StatusCode == 404)
@@ -533,18 +529,17 @@ namespace OpenRouter
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Request Timeout - Operation exceeded time limit
                             if ((int)__response.StatusCode == 408)
@@ -571,18 +566,17 @@ namespace OpenRouter
                                     __exception_408 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.RequestTimeoutResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.RequestTimeoutResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_408 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_408,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_408,
-                                    ResponseObject = __value_408,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_408,
+                                    responseObject: __value_408,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Payload Too Large - Request payload exceeds size limits
                             if ((int)__response.StatusCode == 413)
@@ -609,18 +603,17 @@ namespace OpenRouter
                                     __exception_413 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.PayloadTooLargeResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.PayloadTooLargeResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_413,
-                                    ResponseObject = __value_413,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_413,
+                                    responseObject: __value_413,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unprocessable Entity - Semantic validation failure
                             if ((int)__response.StatusCode == 422)
@@ -647,18 +640,17 @@ namespace OpenRouter
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.UnprocessableEntityResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.UnprocessableEntityResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Too Many Requests - Rate limit exceeded
                             if ((int)__response.StatusCode == 429)
@@ -685,18 +677,17 @@ namespace OpenRouter
                                     __exception_429 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.TooManyRequestsResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.TooManyRequestsResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_429,
-                                    ResponseObject = __value_429,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error - Unexpected server error
                             if ((int)__response.StatusCode == 500)
@@ -723,18 +714,17 @@ namespace OpenRouter
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.InternalServerResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.InternalServerResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Bad Gateway - Provider/upstream API failure
                             if ((int)__response.StatusCode == 502)
@@ -761,18 +751,17 @@ namespace OpenRouter
                                     __exception_502 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.BadGatewayResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.BadGatewayResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_502,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_502,
-                                    ResponseObject = __value_502,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_502,
+                                    responseObject: __value_502,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Service Unavailable - Service temporarily unavailable
                             if ((int)__response.StatusCode == 503)
@@ -799,18 +788,17 @@ namespace OpenRouter
                                     __exception_503 = __ex;
                                 }
 
-                                throw new global::OpenRouter.ApiException<global::OpenRouter.ServiceUnavailableResponse>(
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ServiceUnavailableResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_503,
-                                    ResponseObject = __value_503,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -844,17 +832,15 @@ namespace OpenRouter
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::OpenRouter.ApiException(
+                                    throw global::OpenRouter.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -891,17 +877,15 @@ namespace OpenRouter
                                     {
                                     }
 
-                                    throw new global::OpenRouter.ApiException(
+                                    throw global::OpenRouter.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
