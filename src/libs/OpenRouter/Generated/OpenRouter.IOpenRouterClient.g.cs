@@ -82,6 +82,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageDatasetsClient SubpackageDatasets { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageEmbeddingsClient SubpackageEmbeddings { get; }
 
         /// <summary>
