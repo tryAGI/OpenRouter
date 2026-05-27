@@ -640,7 +640,7 @@ namespace OpenRouter
             string name,
             global::System.Collections.Generic.IList<string>? allowedModels = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? contentFilterBuiltins = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntryInput>? contentFilterBuiltins = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters = default,
             string? description = default,
             bool? enforceZdr = default,

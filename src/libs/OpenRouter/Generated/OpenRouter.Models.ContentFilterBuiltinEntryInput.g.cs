@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A builtin content filter entry. Builtin filters include PII detectors and the regex-based prompt injection detector.
+    /// A builtin content filter entry for create/update requests. Labels are system-assigned and cannot be set by the caller.
     /// </summary>
-    public sealed partial class ContentFilterBuiltinEntry
+    public sealed partial class ContentFilterBuiltinEntryInput
     {
         /// <summary>
         /// Action taken when the builtin filter triggers
@@ -17,7 +17,7 @@ namespace OpenRouter
         public required global::OpenRouter.ContentFilterBuiltinAction Action { get; set; }
 
         /// <summary>
-        /// Read-only, system-assigned redaction placeholder derived from the slug (e.g. "[EMAIL]", "[PHONE]"). Not settable by the caller.
+        /// Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         public string? Label { get; set; }
@@ -37,7 +37,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContentFilterBuiltinEntry" /> class.
+        /// Initializes a new instance of the <see cref="ContentFilterBuiltinEntryInput" /> class.
         /// </summary>
         /// <param name="action">
         /// Action taken when the builtin filter triggers
@@ -46,12 +46,12 @@ namespace OpenRouter
         /// The builtin filter identifier
         /// </param>
         /// <param name="label">
-        /// Read-only, system-assigned redaction placeholder derived from the slug (e.g. "[EMAIL]", "[PHONE]"). Not settable by the caller.
+        /// Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ContentFilterBuiltinEntry(
+        public ContentFilterBuiltinEntryInput(
             global::OpenRouter.ContentFilterBuiltinAction action,
             global::OpenRouter.ContentFilterBuiltinSlug slug,
             string? label)
@@ -62,9 +62,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContentFilterBuiltinEntry" /> class.
+        /// Initializes a new instance of the <see cref="ContentFilterBuiltinEntryInput" /> class.
         /// </summary>
-        public ContentFilterBuiltinEntry()
+        public ContentFilterBuiltinEntryInput()
         {
         }
 

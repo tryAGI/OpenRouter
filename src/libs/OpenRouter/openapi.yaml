@@ -12770,6 +12770,10 @@
           "model": {
             "type": "string",
             "description": "Slug of the analysis model that failed."
+          },
+          "status_code": {
+            "type": "integer",
+            "description": "HTTP status code from the upstream response, when available (e.g. 402, 429)."
           }
         },
         "required": [
@@ -13350,6 +13354,10 @@
                   "$ref": "#/components/schemas/OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems"
                 },
                 "description": "Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel."
+              },
+              "failure_reason": {
+                "type": "string",
+                "description": "Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion."
               },
               "id": {
                 "type": "string"
@@ -20973,7 +20981,7 @@
           },
           "label": {
             "type": "string",
-            "description": "Optional label used in redaction placeholders (e.g. \"[PROMPT_INJECTION]\")"
+            "description": "Read-only, system-assigned redaction placeholder derived from the slug (e.g. \"[EMAIL]\", \"[PHONE]\"). Not settable by the caller."
           },
           "slug": {
             "$ref": "#/components/schemas/ContentFilterBuiltinSlug"
@@ -21200,6 +21208,27 @@
         ],
         "title": "ListGuardrailsResponse"
       },
+      "ContentFilterBuiltinEntryInput": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/ContentFilterBuiltinAction"
+          },
+          "label": {
+            "type": "string",
+            "description": "Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored."
+          },
+          "slug": {
+            "$ref": "#/components/schemas/ContentFilterBuiltinSlug"
+          }
+        },
+        "required": [
+          "action",
+          "slug"
+        ],
+        "description": "A builtin content filter entry for create/update requests. Labels are system-assigned and cannot be set by the caller.",
+        "title": "ContentFilterBuiltinEntryInput"
+      },
       "CreateGuardrailRequest": {
         "type": "object",
         "properties": {
@@ -21229,7 +21258,7 @@
               "null"
             ],
             "items": {
-              "$ref": "#/components/schemas/ContentFilterBuiltinEntry"
+              "$ref": "#/components/schemas/ContentFilterBuiltinEntryInput"
             },
             "description": "Builtin content filters to apply. The \"flag\" action is only supported for \"regex-prompt-injection\"; PII slugs (email, phone, ssn, credit-card, ip-address, person-name, address) accept \"block\" or \"redact\" only."
           },
@@ -21700,7 +21729,7 @@
               "null"
             ],
             "items": {
-              "$ref": "#/components/schemas/ContentFilterBuiltinEntry"
+              "$ref": "#/components/schemas/ContentFilterBuiltinEntryInput"
             },
             "description": "Builtin content filters to apply. Set to null to remove. The \"flag\" action is only supported for \"regex-prompt-injection\"; PII slugs (email, phone, ssn, credit-card, ip-address, person-name, address) accept \"block\" or \"redact\" only."
           },
