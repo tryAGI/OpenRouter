@@ -24,7 +24,7 @@ namespace OpenRouter
         /// Builtin content filters to apply. The "flag" action is only supported for "regex-prompt-injection"; PII slugs (email, phone, ssn, credit-card, ip-address, person-name, address) accept "block" or "redact" only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_filter_builtins")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? ContentFilterBuiltins { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntryInput>? ContentFilterBuiltins { get; set; }
 
         /// <summary>
         /// Custom regex content filters to apply to request messages
@@ -170,7 +170,7 @@ namespace OpenRouter
             string name,
             global::System.Collections.Generic.IList<string>? allowedModels,
             global::System.Collections.Generic.IList<string>? allowedProviders,
-            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? contentFilterBuiltins,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntryInput>? contentFilterBuiltins,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters,
             string? description,
             bool? enforceZdr,

@@ -23,6 +23,12 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
+        /// HTTP status code from the upstream response, when available (e.g. 402, 429).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status_code")]
+        public int? StatusCode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace OpenRouter
         /// <param name="model">
         /// Slug of the analysis model that failed.
         /// </param>
+        /// <param name="statusCode">
+        /// HTTP status code from the upstream response, when available (e.g. 402, 429).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems(
             string error,
-            string model)
+            string model,
+            int? statusCode)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.StatusCode = statusCode;
         }
 
         /// <summary>

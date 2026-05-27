@@ -34,6 +34,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? FailedModels { get; set; }
 
         /// <summary>
+        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
+        public string? FailureReason { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -75,6 +81,9 @@ namespace OpenRouter
         /// <param name="failedModels">
         /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
         /// </param>
+        /// <param name="failureReason">
+        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="responses">
         /// Slugs of the analysis models that produced a response in this fusion run.
@@ -88,6 +97,7 @@ namespace OpenRouter
             global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis? analysis,
             string? error,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? failedModels,
+            string? failureReason,
             string? id,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? responses)
         {
@@ -95,6 +105,7 @@ namespace OpenRouter
             this.Analysis = analysis;
             this.Error = error;
             this.FailedModels = failedModels;
+            this.FailureReason = failureReason;
             this.Id = id;
             this.Responses = responses;
             this.Status = status;
