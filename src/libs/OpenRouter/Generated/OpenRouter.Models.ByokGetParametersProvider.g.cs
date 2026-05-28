@@ -103,6 +103,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Darkbloom,
+        /// <summary>
+        /// 
+        /// </summary>
         Deepinfra,
         /// <summary>
         /// 
@@ -369,6 +373,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Cloudflare => "cloudflare",
                 ByokGetParametersProvider.Cohere => "cohere",
                 ByokGetParametersProvider.Crusoe => "crusoe",
+                ByokGetParametersProvider.Darkbloom => "darkbloom",
                 ByokGetParametersProvider.Deepinfra => "deepinfra",
                 ByokGetParametersProvider.Deepseek => "deepseek",
                 ByokGetParametersProvider.Dekallm => "dekallm",
@@ -460,6 +465,7 @@ namespace OpenRouter
                 "cloudflare" => ByokGetParametersProvider.Cloudflare,
                 "cohere" => ByokGetParametersProvider.Cohere,
                 "crusoe" => ByokGetParametersProvider.Crusoe,
+                "darkbloom" => ByokGetParametersProvider.Darkbloom,
                 "deepinfra" => ByokGetParametersProvider.Deepinfra,
                 "deepseek" => ByokGetParametersProvider.Deepseek,
                 "dekallm" => ByokGetParametersProvider.Dekallm,

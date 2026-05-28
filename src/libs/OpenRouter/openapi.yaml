@@ -4148,6 +4148,108 @@
         }
       }
     },
+    "/presets/{slug}/messages": {
+      "post": {
+        "operationId": "create-presets-messages",
+        "summary": "Create a preset from a messages request body",
+        "description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.",
+        "tags": [
+          "subpackage_presets"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "URL-safe slug identifying the preset. Created if it does not exist.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Preset created or updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePresetFromInferenceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict - Resource conflict or concurrent modification",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConflictResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessagesRequest"
+              }
+            }
+          }
+        }
+      }
+    },
     "/providers": {
       "get": {
         "operationId": "list-providers",
@@ -8814,6 +8916,7 @@
           "Cohere",
           "Crucible",
           "Crusoe",
+          "Darkbloom",
           "DeepInfra",
           "DeepSeek",
           "DekaLLM",
@@ -15240,6 +15343,12 @@
               "description": "Any type"
             }
           },
+          "darkbloom": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "deepinfra": {
             "type": "object",
             "additionalProperties": {
@@ -16012,6 +16121,7 @@
           "cloudflare",
           "cohere",
           "crusoe",
+          "darkbloom",
           "deepinfra",
           "deepseek",
           "dekallm",
@@ -16100,6 +16210,7 @@
           "cloudflare",
           "cohere",
           "crusoe",
+          "darkbloom",
           "deepinfra",
           "deepseek",
           "dekallm",
@@ -20396,6 +20507,7 @@
           "Cohere",
           "Crucible",
           "Crusoe",
+          "Darkbloom",
           "DeepInfra",
           "DeepSeek",
           "DekaLLM",
@@ -35484,6 +35596,12 @@
             }
           },
           "crusoe": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "darkbloom": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"
