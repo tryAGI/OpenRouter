@@ -50,6 +50,13 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.AnthropicOutputTokensDetails OutputTokensDetails { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.AnthropicServerToolUsage ServerToolUse { get; set; }
@@ -87,6 +94,7 @@ namespace OpenRouter
         /// <param name="cacheCreation"></param>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
+        /// <param name="outputTokensDetails"></param>
         /// <param name="serverToolUse"></param>
         /// <param name="serviceTier"></param>
         /// <param name="cacheCreationInputTokens"></param>
@@ -101,6 +109,7 @@ namespace OpenRouter
             global::OpenRouter.AnthropicCacheCreation cacheCreation,
             int inputTokens,
             int outputTokens,
+            global::OpenRouter.AnthropicOutputTokensDetails outputTokensDetails,
             global::OpenRouter.AnthropicServerToolUsage serverToolUse,
             global::OpenRouter.AnthropicServiceTier serviceTier,
             int? cacheCreationInputTokens,
@@ -115,6 +124,7 @@ namespace OpenRouter
             this.InferenceGeo = inferenceGeo;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
+            this.OutputTokensDetails = outputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(outputTokensDetails));
             this.ServerToolUse = serverToolUse ?? throw new global::System.ArgumentNullException(nameof(serverToolUse));
             this.ServiceTier = serviceTier;
             this.Iterations = iterations;

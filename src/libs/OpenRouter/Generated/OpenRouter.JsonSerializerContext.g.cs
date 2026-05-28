@@ -9314,6 +9314,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ORAnthropicStopReason), TypeInfoPropertyName = "ORAnthropicStopReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultType), TypeInfoPropertyName = "MessagesResultType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCacheCreation))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicOutputTokensDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServerToolUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServiceTier), TypeInfoPropertyName = "AnthropicServiceTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicIterationCacheCreation))]
@@ -9508,7 +9509,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant5Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant5Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant6Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant7))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -12178,6 +12178,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant7Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant7Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant8))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant8Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant8Type2")]
