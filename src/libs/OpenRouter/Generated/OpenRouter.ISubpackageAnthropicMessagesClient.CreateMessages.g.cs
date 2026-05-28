@@ -68,7 +68,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="sessionId">
-        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
+        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
         /// <param name="speed"></param>
         /// <param name="stopSequences"></param>
