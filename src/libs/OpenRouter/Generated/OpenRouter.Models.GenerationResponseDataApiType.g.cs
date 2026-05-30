@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Image,
+        /// <summary>
+        /// 
+        /// </summary>
         Rerank,
         /// <summary>
         /// 
@@ -48,6 +52,7 @@ namespace OpenRouter
             {
                 GenerationResponseDataApiType.Completions => "completions",
                 GenerationResponseDataApiType.Embeddings => "embeddings",
+                GenerationResponseDataApiType.Image => "image",
                 GenerationResponseDataApiType.Rerank => "rerank",
                 GenerationResponseDataApiType.Stt => "stt",
                 GenerationResponseDataApiType.Tts => "tts",
@@ -64,6 +69,7 @@ namespace OpenRouter
             {
                 "completions" => GenerationResponseDataApiType.Completions,
                 "embeddings" => GenerationResponseDataApiType.Embeddings,
+                "image" => GenerationResponseDataApiType.Image,
                 "rerank" => GenerationResponseDataApiType.Rerank,
                 "stt" => GenerationResponseDataApiType.Stt,
                 "tts" => GenerationResponseDataApiType.Tts,

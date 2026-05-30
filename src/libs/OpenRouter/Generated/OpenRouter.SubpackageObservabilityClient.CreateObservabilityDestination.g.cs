@@ -643,7 +643,7 @@ namespace OpenRouter
         /// Default Value: false
         /// </param>
         /// <param name="samplingRate">
-        /// Sampling rate between 0 and 1 (1 = 100%).
+        /// Sampling rate between 0.0001 and 1 (1 = 100%).
         /// </param>
         /// <param name="type">
         /// The destination type. Only stable destination types are accepted.

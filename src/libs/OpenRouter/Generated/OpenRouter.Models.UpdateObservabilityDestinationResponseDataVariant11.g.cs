@@ -70,7 +70,7 @@ namespace OpenRouter
         public required bool PrivacyMode { get; set; }
 
         /// <summary>
-        /// Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%).
+        /// Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sampling_rate")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -116,7 +116,7 @@ namespace OpenRouter
         /// When true, request/response bodies are not forwarded to this destination — only metadata.
         /// </param>
         /// <param name="samplingRate">
-        /// Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%).
+        /// Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%).
         /// </param>
         /// <param name="updatedAt">
         /// ISO timestamp of when the destination was last updated.

@@ -49,7 +49,7 @@ namespace OpenRouter
         public bool? PrivacyMode { get; set; }
 
         /// <summary>
-        /// Sampling rate between 0 and 1 (1 = 100%).
+        /// Sampling rate between 0.0001 and 1 (1 = 100%).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sampling_rate")]
         public double? SamplingRate { get; set; }
@@ -101,7 +101,7 @@ namespace OpenRouter
         /// Default Value: false
         /// </param>
         /// <param name="samplingRate">
-        /// Sampling rate between 0 and 1 (1 = 100%).
+        /// Sampling rate between 0.0001 and 1 (1 = 100%).
         /// </param>
         /// <param name="workspaceId">
         /// Optional workspace ID. Defaults to the authenticated entity's default workspace.

@@ -20549,7 +20549,8 @@
           "rerank",
           "tts",
           "stt",
-          "video"
+          "video",
+          "image"
         ],
         "description": "Type of API used for the generation",
         "title": "GenerationResponseDataApiType"
@@ -20895,6 +20896,13 @@
             "type": "string",
             "description": "Origin URL of the request"
           },
+          "preset_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID of the preset used for this generation, null if no preset was used"
+          },
           "provider_name": {
             "type": [
               "string",
@@ -21035,6 +21043,7 @@
           "num_media_prompt",
           "num_search_results",
           "origin",
+          "preset_id",
           "provider_name",
           "provider_responses",
           "router",
@@ -28572,7 +28581,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -28653,7 +28662,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -28734,7 +28743,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -28815,7 +28824,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -28896,7 +28905,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -28977,7 +28986,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29058,7 +29067,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29139,7 +29148,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29220,7 +29229,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29301,7 +29310,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29382,7 +29391,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29463,7 +29472,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29544,7 +29553,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29625,7 +29634,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29706,7 +29715,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29787,7 +29796,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29868,7 +29877,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -29987,7 +29996,7 @@
           "sampling_rate": {
             "type": "number",
             "format": "double",
-            "description": "Sampling rate between 0 and 1 (1 = 100%)."
+            "description": "Sampling rate between 0.0001 and 1 (1 = 100%)."
           },
           "type": {
             "$ref": "#/components/schemas/CreateObservabilityDestinationRequestType",
@@ -30061,7 +30070,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30142,7 +30151,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30223,7 +30232,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30304,7 +30313,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30385,7 +30394,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30466,7 +30475,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30547,7 +30556,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30628,7 +30637,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30709,7 +30718,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30790,7 +30799,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30871,7 +30880,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -30952,7 +30961,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31033,7 +31042,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31114,7 +31123,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31195,7 +31204,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31276,7 +31285,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31357,7 +31366,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31459,7 +31468,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31540,7 +31549,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31621,7 +31630,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31702,7 +31711,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31783,7 +31792,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31864,7 +31873,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -31945,7 +31954,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32026,7 +32035,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32107,7 +32116,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32188,7 +32197,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32269,7 +32278,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32350,7 +32359,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32431,7 +32440,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32512,7 +32521,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32593,7 +32602,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32674,7 +32683,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32755,7 +32764,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -32971,7 +32980,7 @@
           "sampling_rate": {
             "type": "number",
             "format": "double",
-            "description": "Sampling rate between 0 and 1 (1 = 100%)."
+            "description": "Sampling rate between 0.0001 and 1 (1 = 100%)."
           }
         },
         "title": "UpdateObservabilityDestinationRequest"
@@ -33031,7 +33040,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33112,7 +33121,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33193,7 +33202,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33274,7 +33283,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33355,7 +33364,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33436,7 +33445,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33517,7 +33526,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33598,7 +33607,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33679,7 +33688,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33760,7 +33769,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33841,7 +33850,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -33922,7 +33931,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -34003,7 +34012,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -34084,7 +34093,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -34165,7 +34174,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -34246,7 +34255,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
@@ -34327,7 +34336,7 @@
               "sampling_rate": {
                 "type": "number",
                 "format": "double",
-                "description": "Sampling rate for events sent to this destination, between 0 and 1 (1 = 100%)."
+                "description": "Sampling rate for events sent to this destination, between 0.0001 and 1 (1 = 100%)."
               },
               "updated_at": {
                 "type": "string",
