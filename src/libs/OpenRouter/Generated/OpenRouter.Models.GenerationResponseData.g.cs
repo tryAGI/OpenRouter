@@ -172,6 +172,12 @@ namespace OpenRouter
         public required string Origin { get; set; }
 
         /// <summary>
+        /// ID of the preset used for this generation, null if no preset was used
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preset_id")]
+        public string? PresetId { get; set; }
+
+        /// <summary>
         /// Name of the provider that served the request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_name")]
@@ -362,6 +368,9 @@ namespace OpenRouter
         /// <param name="numSearchResults">
         /// Number of search results included
         /// </param>
+        /// <param name="presetId">
+        /// ID of the preset used for this generation, null if no preset was used
+        /// </param>
         /// <param name="providerName">
         /// Name of the provider that served the request
         /// </param>
@@ -436,6 +445,7 @@ namespace OpenRouter
             int? numMediaCompletion,
             int? numMediaPrompt,
             int? numSearchResults,
+            string? presetId,
             string? providerName,
             global::System.Collections.Generic.IList<global::OpenRouter.ProviderResponse>? providerResponses,
             string? requestId,
@@ -477,6 +487,7 @@ namespace OpenRouter
             this.NumMediaPrompt = numMediaPrompt;
             this.NumSearchResults = numSearchResults;
             this.Origin = origin ?? throw new global::System.ArgumentNullException(nameof(origin));
+            this.PresetId = presetId;
             this.ProviderName = providerName;
             this.ProviderResponses = providerResponses;
             this.RequestId = requestId;
