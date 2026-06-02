@@ -159,10 +159,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        Hyperbolic,
-        /// <summary>
-        /// 
-        /// </summary>
         Inception,
         /// <summary>
         /// 
@@ -399,7 +395,6 @@ namespace OpenRouter
                 ProviderName.Google => "Google",
                 ProviderName.GoogleAiStudio => "Google AI Studio",
                 ProviderName.Groq => "Groq",
-                ProviderName.Hyperbolic => "Hyperbolic",
                 ProviderName.Inception => "Inception",
                 ProviderName.Inceptron => "Inceptron",
                 ProviderName.InferenceNet => "InferenceNet",
@@ -494,7 +489,6 @@ namespace OpenRouter
                 "Google" => ProviderName.Google,
                 "Google AI Studio" => ProviderName.GoogleAiStudio,
                 "Groq" => ProviderName.Groq,
-                "Hyperbolic" => ProviderName.Hyperbolic,
                 "Inception" => ProviderName.Inception,
                 "Inceptron" => ProviderName.Inceptron,
                 "InferenceNet" => ProviderName.InferenceNet,

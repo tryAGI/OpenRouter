@@ -151,10 +151,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        Hyperbolic,
-        /// <summary>
-        /// 
-        /// </summary>
         Inception,
         /// <summary>
         /// 
@@ -385,7 +381,6 @@ namespace OpenRouter
                 BYOKProviderSlug.GoogleAiStudio => "google-ai-studio",
                 BYOKProviderSlug.GoogleVertex => "google-vertex",
                 BYOKProviderSlug.Groq => "groq",
-                BYOKProviderSlug.Hyperbolic => "hyperbolic",
                 BYOKProviderSlug.Inception => "inception",
                 BYOKProviderSlug.Inceptron => "inceptron",
                 BYOKProviderSlug.InferenceNet => "inference-net",
@@ -477,7 +472,6 @@ namespace OpenRouter
                 "google-ai-studio" => BYOKProviderSlug.GoogleAiStudio,
                 "google-vertex" => BYOKProviderSlug.GoogleVertex,
                 "groq" => BYOKProviderSlug.Groq,
-                "hyperbolic" => BYOKProviderSlug.Hyperbolic,
                 "inception" => BYOKProviderSlug.Inception,
                 "inceptron" => BYOKProviderSlug.Inceptron,
                 "inference-net" => BYOKProviderSlug.InferenceNet,

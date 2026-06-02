@@ -151,10 +151,6 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        Hyperbolic,
-        /// <summary>
-        /// 
-        /// </summary>
         Inception,
         /// <summary>
         /// 
@@ -385,7 +381,6 @@ namespace OpenRouter
                 ByokGetParametersProvider.GoogleAiStudio => "google-ai-studio",
                 ByokGetParametersProvider.GoogleVertex => "google-vertex",
                 ByokGetParametersProvider.Groq => "groq",
-                ByokGetParametersProvider.Hyperbolic => "hyperbolic",
                 ByokGetParametersProvider.Inception => "inception",
                 ByokGetParametersProvider.Inceptron => "inceptron",
                 ByokGetParametersProvider.InferenceNet => "inference-net",
@@ -477,7 +472,6 @@ namespace OpenRouter
                 "google-ai-studio" => ByokGetParametersProvider.GoogleAiStudio,
                 "google-vertex" => ByokGetParametersProvider.GoogleVertex,
                 "groq" => ByokGetParametersProvider.Groq,
-                "hyperbolic" => ByokGetParametersProvider.Hyperbolic,
                 "inception" => ByokGetParametersProvider.Inception,
                 "inceptron" => ByokGetParametersProvider.Inceptron,
                 "inference-net" => ByokGetParametersProvider.InferenceNet,
