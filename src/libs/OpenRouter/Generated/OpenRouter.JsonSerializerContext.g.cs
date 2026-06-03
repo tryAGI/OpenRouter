@@ -1353,6 +1353,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugNullableJsonConverter),
@@ -4522,6 +4526,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugNullableJsonConverter),
@@ -6263,6 +6271,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GenerationContentData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GenerationContentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterBuiltinAction), TypeInfoPropertyName = "ContentFilterBuiltinAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PromptInjectionScanScope), TypeInfoPropertyName = "PromptInjectionScanScope2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterBuiltinSlug), TypeInfoPropertyName = "ContentFilterBuiltinSlug2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterBuiltinEntry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentFilterAction), TypeInfoPropertyName = "ContentFilterAction2")]
@@ -6339,7 +6348,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2TriggerType), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf2TriggerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf2Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems2))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -7691,6 +7699,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugNullableJsonConverter),
@@ -9009,6 +9021,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItems2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagement))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestContextManagementEditsItems>))]
@@ -9508,7 +9521,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant5Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant5Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant6Type2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -10860,6 +10872,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugNullableJsonConverter),
@@ -12178,6 +12194,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant6Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant7Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant7Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant8))]
@@ -13133,6 +13150,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.ProviderResponseProviderNameNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ContentFilterBuiltinActionJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ContentFilterBuiltinActionNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.PromptInjectionScanScopeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.PromptInjectionScanScopeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ContentFilterActionJsonConverter());
