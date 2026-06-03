@@ -23,6 +23,13 @@ namespace OpenRouter
         public string? Label { get; set; }
 
         /// <summary>
+        /// Which message roles to scan for prompt injection. Only applies to the regex-prompt-injection builtin. Defaults to all_messages.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scan_scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeJsonConverter))]
+        public global::OpenRouter.PromptInjectionScanScope? ScanScope { get; set; }
+
+        /// <summary>
         /// The builtin filter identifier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
@@ -48,16 +55,21 @@ namespace OpenRouter
         /// <param name="label">
         /// Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored.
         /// </param>
+        /// <param name="scanScope">
+        /// Which message roles to scan for prompt injection. Only applies to the regex-prompt-injection builtin. Defaults to all_messages.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContentFilterBuiltinEntryInput(
             global::OpenRouter.ContentFilterBuiltinAction action,
             global::OpenRouter.ContentFilterBuiltinSlug slug,
-            string? label)
+            string? label,
+            global::OpenRouter.PromptInjectionScanScope? scanScope)
         {
             this.Action = action;
             this.Label = label;
+            this.ScanScope = scanScope;
             this.Slug = slug;
         }
 
