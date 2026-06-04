@@ -675,7 +675,7 @@ namespace OpenRouter
         /// Whether to generate audio alongside the video. Defaults to the endpoint's generate_audio capability flag, false if not set.
         /// </param>
         /// <param name="inputReferences">
-        /// Reference images to guide video generation
+        /// Reference assets to guide video generation. Accepts image, audio, and video references. Audio and video references are only honored by providers that support them (currently BytePlus Seedance 2.0); other providers use image references and ignore the rest.
         /// </param>
         /// <param name="model"></param>
         /// <param name="prompt"></param>
@@ -702,7 +702,7 @@ namespace OpenRouter
             int? duration = default,
             global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? frameImages = default,
             bool? generateAudio = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? inputReferences = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.InputReference>? inputReferences = default,
             global::OpenRouter.VideoGenerationRequestProvider? provider = default,
             global::OpenRouter.VideoGenerationRequestResolution? resolution = default,
             int? seed = default,
