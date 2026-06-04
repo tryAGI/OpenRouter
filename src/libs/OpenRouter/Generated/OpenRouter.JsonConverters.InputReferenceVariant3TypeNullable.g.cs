@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ContentPartImageTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.ContentPartImageType?>
+    public sealed class InputReferenceVariant3TypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.InputReferenceVariant3Type?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.ContentPartImageType? Read(
+        public override global::OpenRouter.InputReferenceVariant3Type? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.ContentPartImageTypeExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.InputReferenceVariant3TypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.ContentPartImageType)numValue;
+                    return (global::OpenRouter.InputReferenceVariant3Type)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.ContentPartImageType?);
+                    return default(global::OpenRouter.InputReferenceVariant3Type?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.ContentPartImageType? value,
+            global::OpenRouter.InputReferenceVariant3Type? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace OpenRouter.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenRouter.ContentPartImageTypeExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenRouter.InputReferenceVariant3TypeExtensions.ToValueString(value.Value));
             }
         }
     }

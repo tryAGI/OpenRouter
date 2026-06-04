@@ -2333,9 +2333,21 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.FrameImageFrameTypeNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionJsonConverter),
 
@@ -2616,6 +2628,8 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigBy?, object>),
 
@@ -5506,9 +5520,21 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.FrameImageFrameTypeNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionJsonConverter),
 
@@ -5789,6 +5815,8 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigBy?, object>),
 
@@ -8679,9 +8707,21 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.FrameImageFrameTypeNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionJsonConverter),
 
@@ -8962,6 +9002,8 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigBy?, object>),
 
@@ -11852,9 +11894,21 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.FrameImageFrameTypeNullableJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeJsonConverter),
 
-            typeof(global::OpenRouter.JsonConverters.ContentPartImageTypeNullableJsonConverter),
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionJsonConverter),
 
@@ -12136,6 +12190,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.InputReferenceJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigBy?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigPartition?, object>),
@@ -12256,15 +12312,24 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FrameImageType), TypeInfoPropertyName = "FrameImageType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FrameImageFrameType), TypeInfoPropertyName = "FrameImageFrameType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.FrameImage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImageImageUrl))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImageType), TypeInfoPropertyName = "ContentPartImageType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ContentPartImage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceDiscriminatorMappingImageUrlImageUrl))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceDiscriminatorMappingVideoUrlVideoUrl))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReference), TypeInfoPropertyName = "InputReference2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceVariant1Type), TypeInfoPropertyName = "InputReferenceVariant1Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceVariant2Type), TypeInfoPropertyName = "InputReferenceVariant2Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceVariant3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceVariant3Type), TypeInfoPropertyName = "InputReferenceVariant3Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputReferenceDiscriminatorType), TypeInfoPropertyName = "InputReferenceDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestProviderOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestProvider))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequestResolution), TypeInfoPropertyName = "VideoGenerationRequestResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputReference>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationResponseStatus), TypeInfoPropertyName = "VideoGenerationResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.VideoGenerationResponse))]
@@ -12425,7 +12490,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RerankPostResponsesContentApplicationJsonSchemaResultsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FrameImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ContentPartImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.InputReference>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedAspectRatiosItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedFrameImagesItems>))]
@@ -13640,8 +13705,14 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.FrameImageTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.FrameImageFrameTypeJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.FrameImageFrameTypeNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.ContentPartImageTypeJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.ContentPartImageTypeNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceVariant1TypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceVariant1TypeNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceVariant2TypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceVariant2TypeNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceVariant3TypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceVariant3TypeNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.VideoGenerationResponseStatusJsonConverter());
@@ -13782,6 +13853,7 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.InputReferenceJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigBy?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigPartition?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderPreferencesDataCollection?, object>());

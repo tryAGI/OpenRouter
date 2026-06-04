@@ -6272,215 +6272,251 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ContentPartImageImageUrl? Type1561 { get; set; }
+        public global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl? Type1561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ContentPartImageType? Type1562 { get; set; }
+        public global::OpenRouter.InputReferenceDiscriminatorMappingImageUrlImageUrl? Type1562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ContentPartImage? Type1563 { get; set; }
+        public global::OpenRouter.InputReferenceDiscriminatorMappingVideoUrlVideoUrl? Type1563 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequestProviderOptions? Type1564 { get; set; }
+        public global::OpenRouter.InputReference? Type1564 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequestProvider? Type1565 { get; set; }
+        public global::OpenRouter.InputReferenceVariant1? Type1565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequestResolution? Type1566 { get; set; }
+        public global::OpenRouter.InputReferenceVariant1Type? Type1566 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationRequest? Type1567 { get; set; }
+        public global::OpenRouter.InputReferenceVariant2? Type1567 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? Type1568 { get; set; }
+        public global::OpenRouter.InputReferenceVariant2Type? Type1568 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ContentPartImage>? Type1569 { get; set; }
+        public global::OpenRouter.InputReferenceVariant3? Type1569 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationResponseStatus? Type1570 { get; set; }
+        public global::OpenRouter.InputReferenceVariant3Type? Type1570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationUsage? Type1571 { get; set; }
+        public global::OpenRouter.InputReferenceDiscriminator? Type1571 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoGenerationResponse? Type1572 { get; set; }
+        public global::OpenRouter.InputReferenceDiscriminatorType? Type1572 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelSupportedAspectRatiosItems? Type1573 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestProviderOptions? Type1573 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelSupportedFrameImagesItems? Type1574 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestProvider? Type1574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelSupportedResolutionsItems? Type1575 { get; set; }
+        public global::OpenRouter.VideoGenerationRequestResolution? Type1575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelSupportedSizesItems? Type1576 { get; set; }
+        public global::OpenRouter.VideoGenerationRequest? Type1576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModel? Type1577 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.FrameImage>? Type1577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? Type1578 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.InputReference>? Type1578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type1579 { get; set; }
+        public global::OpenRouter.VideoGenerationResponseStatus? Type1579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedFrameImagesItems>? Type1580 { get; set; }
+        public global::OpenRouter.VideoGenerationUsage? Type1580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedResolutionsItems>? Type1581 { get; set; }
+        public global::OpenRouter.VideoGenerationResponse? Type1581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>? Type1582 { get; set; }
+        public global::OpenRouter.VideoModelSupportedAspectRatiosItems? Type1582 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.VideoModelsListResponse? Type1583 { get; set; }
+        public global::OpenRouter.VideoModelSupportedFrameImagesItems? Type1583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModel>? Type1584 { get; set; }
+        public global::OpenRouter.VideoModelSupportedResolutionsItems? Type1584 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.Workspace? Type1585 { get; set; }
+        public global::OpenRouter.VideoModelSupportedSizesItems? Type1585 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ListWorkspacesResponse? Type1586 { get; set; }
+        public global::OpenRouter.VideoModel? Type1586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.Workspace>? Type1587 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedAspectRatiosItems>? Type1587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateWorkspaceRequest? Type1588 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type1588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateWorkspaceResponseData? Type1589 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedFrameImagesItems>? Type1589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateWorkspaceResponse? Type1590 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedResolutionsItems>? Type1590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GetWorkspaceResponseData? Type1591 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModelSupportedSizesItems>? Type1591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.GetWorkspaceResponse? Type1592 { get; set; }
+        public global::OpenRouter.VideoModelsListResponse? Type1592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.DeleteWorkspaceResponse? Type1593 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.VideoModel>? Type1593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UpdateWorkspaceRequest? Type1594 { get; set; }
+        public global::OpenRouter.Workspace? Type1594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UpdateWorkspaceResponseData? Type1595 { get; set; }
+        public global::OpenRouter.ListWorkspacesResponse? Type1595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UpdateWorkspaceResponse? Type1596 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.Workspace>? Type1596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.BulkAddWorkspaceMembersRequest? Type1597 { get; set; }
+        public global::OpenRouter.CreateWorkspaceRequest? Type1597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.WorkspaceMemberRole? Type1598 { get; set; }
+        public global::OpenRouter.CreateWorkspaceResponseData? Type1598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.WorkspaceMember? Type1599 { get; set; }
+        public global::OpenRouter.CreateWorkspaceResponse? Type1599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.BulkAddWorkspaceMembersResponse? Type1600 { get; set; }
+        public global::OpenRouter.GetWorkspaceResponseData? Type1600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.WorkspaceMember>? Type1601 { get; set; }
+        public global::OpenRouter.GetWorkspaceResponse? Type1601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.BulkRemoveWorkspaceMembersRequest? Type1602 { get; set; }
+        public global::OpenRouter.DeleteWorkspaceResponse? Type1602 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.BulkRemoveWorkspaceMembersResponse? Type1603 { get; set; }
+        public global::OpenRouter.UpdateWorkspaceRequest? Type1603 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type1604 { get; set; }
+        public global::OpenRouter.UpdateWorkspaceResponseData? Type1604 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type1605 { get; set; }
+        public global::OpenRouter.UpdateWorkspaceResponse? Type1605 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateAuthKeysCodeRequest? Type1606 { get; set; }
+        public global::OpenRouter.BulkAddWorkspaceMembersRequest? Type1606 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateEmbeddingsRequest? Type1607 { get; set; }
+        public global::OpenRouter.WorkspaceMemberRole? Type1607 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateKeysRequest? Type1608 { get; set; }
+        public global::OpenRouter.WorkspaceMember? Type1608 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1609 { get; set; }
+        public global::OpenRouter.BulkAddWorkspaceMembersResponse? Type1609 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.UpdateKeysRequest? Type1610 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.WorkspaceMember>? Type1610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1611 { get; set; }
+        public global::OpenRouter.BulkRemoveWorkspaceMembersRequest? Type1611 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenRouter.CreateRerankRequest? Type1612 { get; set; }
+        public global::OpenRouter.BulkRemoveWorkspaceMembersResponse? Type1612 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type1613 { get; set; }
+        public global::OpenRouter.ExchangeAuthCodeForApiKeyRequest? Type1613 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? Type1614 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateAuthKeysCodeRequest? Type1615 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateEmbeddingsRequest? Type1616 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateKeysRequest? Type1617 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1618 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.UpdateKeysRequest? Type1619 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? Type1620 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.CreateRerankRequest? Type1621 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[]? Type1622 { get; set; }
 
         /// <summary>
         /// 
@@ -6949,7 +6985,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::OpenRouter.ContentPartImage>? ListType116 { get; set; }
+        public global::System.Collections.Generic.List<global::OpenRouter.InputReference>? ListType116 { get; set; }
         /// <summary>
         /// 
         /// </summary>

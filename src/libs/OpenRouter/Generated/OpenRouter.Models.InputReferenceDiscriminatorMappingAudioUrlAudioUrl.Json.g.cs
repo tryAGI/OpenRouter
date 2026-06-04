@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class ContentPartImageImageUrl
+    public sealed partial class InputReferenceDiscriminatorMappingAudioUrlAudioUrl
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::OpenRouter.ContentPartImageImageUrl? FromJson(
+        public static global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::OpenRouter.ContentPartImageImageUrl),
-                jsonSerializerContext) as global::OpenRouter.ContentPartImageImageUrl;
+                typeof(global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl),
+                jsonSerializerContext) as global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::OpenRouter.ContentPartImageImageUrl? FromJson(
+        public static global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.ContentPartImageImageUrl>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace OpenRouter
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.ContentPartImageImageUrl?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::OpenRouter.ContentPartImageImageUrl),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.ContentPartImageImageUrl;
+                typeof(global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl),
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.ContentPartImageImageUrl?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.ContentPartImageImageUrl?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenRouter.InputReferenceDiscriminatorMappingAudioUrlAudioUrl?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
