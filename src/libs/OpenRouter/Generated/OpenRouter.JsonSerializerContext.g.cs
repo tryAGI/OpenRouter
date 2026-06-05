@@ -721,6 +721,14 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.CustomToolTypeNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeNullableJsonConverter),
@@ -3095,6 +3103,15 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CustomToolFormat), TypeInfoPropertyName = "CustomToolFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CustomToolType), TypeInfoPropertyName = "CustomToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CustomTool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorReasoningEffort), TypeInfoPropertyName = "AdvisorReasoningEffort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorReasoning))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorNestedTool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorProfile))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AdvisorNestedTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorServerToolConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AdvisorProfile>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorServerToolOpenRouterType), TypeInfoPropertyName = "AdvisorServerToolOpenRouterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AdvisorServerToolOpenRouter))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DatetimeServerToolConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DatetimeServerToolType), TypeInfoPropertyName = "DatetimeServerToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DatetimeServerTool))]
@@ -3180,15 +3197,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1Items2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1Type), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2Type), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3Type), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorType), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutput), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutput2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputType), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputType2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3908,6 +3916,14 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.CustomToolTypeNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeNullableJsonConverter),
@@ -5876,6 +5892,15 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2Type), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3Type), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorType), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutput), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputOutput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallOutputType), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallOutputType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponseFunctionToolCallOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAiResponseFunctionToolCallType), TypeInfoPropertyName = "OpenAiResponseFunctionToolCallType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OpenAIResponseFunctionToolCall))]
@@ -6367,15 +6392,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems0))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicThinkingTurnsType), TypeInfoPropertyName = "AnthropicThinkingTurnsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicThinkingTurns))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1KeepOneOf1Type), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1KeepOneOf1Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1Keep22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1Keep2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Type), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems1))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2TriggerType), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf2TriggerType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf2Type2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -7095,6 +7111,14 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.CustomToolTypeNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeNullableJsonConverter),
@@ -9063,6 +9087,15 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1KeepOneOf1Type), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1KeepOneOf1Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1Keep22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1Keep2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Type), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf1Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2TriggerType), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf2TriggerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Trigger))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf2Type), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItemsOneOf2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagementEditsItems), TypeInfoPropertyName = "MessagesRequestContextManagementEditsItems2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesRequestContextManagement))]
@@ -9554,15 +9587,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseData), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseData2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant1Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant1Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant2Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant2Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant3Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant3Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant4))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant4Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant4Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant5))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant5Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant5Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -10282,6 +10306,14 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.CustomToolTypeNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeNullableJsonConverter),
@@ -12250,6 +12282,15 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant2Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant2Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant3Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant3Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant4Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant4Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant5Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant5Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant6Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant6Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataVariant7Type), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataVariant7Type2")]
@@ -12400,6 +12441,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.Quantization>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.StopServerToolsWhenCondition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AdvisorNestedTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AdvisorProfile>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ResponseIncludesEnum>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.OutputModalityEnum>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ResponsesRequestPluginsItems>))]
@@ -12899,6 +12942,10 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.CustomToolFormatOneOf1TypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.CustomToolTypeJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.CustomToolTypeNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.AdvisorReasoningEffortJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.AdvisorReasoningEffortNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.DatetimeServerToolTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.FusionServerToolConfigReasoningEffortJsonConverter());
