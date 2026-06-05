@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:image_generation
+    /// Discriminator value: openrouter:fusion
     /// </summary>
     public enum OutputItemsVariant17Type
     {
         /// <summary>
-        /// openrouter:image_generation
+        /// openrouter:fusion
         /// </summary>
-        Openrouter_imageGeneration,
+        Openrouter_fusion,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                OutputItemsVariant17Type.Openrouter_imageGeneration => "openrouter:image_generation",
+                OutputItemsVariant17Type.Openrouter_fusion => "openrouter:fusion",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "openrouter:image_generation" => OutputItemsVariant17Type.Openrouter_imageGeneration,
+                "openrouter:fusion" => OutputItemsVariant17Type.Openrouter_fusion,
                 _ => null,
             };
         }

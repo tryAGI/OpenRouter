@@ -4,22 +4,23 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:experimental__search_models server tool output item
+    /// An openrouter:datetime server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant14
     {
         /// <summary>
-        /// 
+        /// Discriminator value: openrouter:datetime
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputSearchModelsServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputSearchModelsServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant14TypeJsonConverter))]
+        public global::OpenRouter.OutputItemsVariant14Type Type { get; set; }
 
         /// <summary>
-        /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
+        /// ISO 8601 datetime string
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        public string? Arguments { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("datetime")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Datetime { get; set; }
 
         /// <summary>
         /// 
@@ -30,16 +31,17 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("query")]
-        public string? Query { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        /// IANA timezone name
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Timezone { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,28 +52,32 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant14" /> class.
         /// </summary>
+        /// <param name="datetime">
+        /// ISO 8601 datetime string
+        /// </param>
         /// <param name="status"></param>
-        /// <param name="type"></param>
-        /// <param name="arguments">
-        /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
+        /// <param name="timezone">
+        /// IANA timezone name
+        /// </param>
+        /// <param name="type">
+        /// Discriminator value: openrouter:datetime
         /// </param>
         /// <param name="id"></param>
-        /// <param name="query"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant14(
+            string datetime,
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputSearchModelsServerToolItemType type,
-            string? arguments,
-            string? id,
-            string? query)
+            string timezone,
+            global::OpenRouter.OutputItemsVariant14Type type,
+            string? id)
         {
             this.Type = type;
-            this.Arguments = arguments;
+            this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Id = id;
-            this.Query = query;
             this.Status = status;
+            this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
         }
 
         /// <summary>

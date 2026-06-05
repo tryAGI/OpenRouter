@@ -4,40 +4,40 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:file_search
+    /// Discriminator value: openrouter:datetime
     /// </summary>
-    public enum OutputItemsVariant15Type
+    public enum OutputItemsVariant14Type
     {
         /// <summary>
-        /// openrouter:file_search
+        /// openrouter:datetime
         /// </summary>
-        Openrouter_fileSearch,
+        Openrouter_datetime,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class OutputItemsVariant15TypeExtensions
+    public static class OutputItemsVariant14TypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this OutputItemsVariant15Type value)
+        public static string ToValueString(this OutputItemsVariant14Type value)
         {
             return value switch
             {
-                OutputItemsVariant15Type.Openrouter_fileSearch => "openrouter:file_search",
+                OutputItemsVariant14Type.Openrouter_datetime => "openrouter:datetime",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OutputItemsVariant15Type? ToEnum(string value)
+        public static OutputItemsVariant14Type? ToEnum(string value)
         {
             return value switch
             {
-                "openrouter:file_search" => OutputItemsVariant15Type.Openrouter_fileSearch,
+                "openrouter:datetime" => OutputItemsVariant14Type.Openrouter_datetime,
                 _ => null,
             };
         }

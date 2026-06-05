@@ -4,40 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:fusion server tool output item
+    /// An openrouter:file_search server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant16
     {
         /// <summary>
-        /// Discriminator value: openrouter:fusion
+        /// Discriminator value: openrouter:file_search
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant16TypeJsonConverter))]
         public global::OpenRouter.OutputItemsVariant16Type Type { get; set; }
-
-        /// <summary>
-        /// Structured analysis produced by the fusion judge model.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("analysis")]
-        public global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis? Analysis { get; set; }
-
-        /// <summary>
-        /// Error message when the fusion run did not produce an analysis result.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
-
-        /// <summary>
-        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("failed_models")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? FailedModels { get; set; }
-
-        /// <summary>
-        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
-        public string? FailureReason { get; set; }
 
         /// <summary>
         /// 
@@ -46,10 +22,10 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// Slugs of the analysis models that produced a response in this fusion run.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("responses")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? Responses { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
+        public global::System.Collections.Generic.IList<string>? Queries { get; set; }
 
         /// <summary>
         /// 
@@ -70,44 +46,22 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:fusion
-        /// </param>
-        /// <param name="analysis">
-        /// Structured analysis produced by the fusion judge model.
-        /// </param>
-        /// <param name="error">
-        /// Error message when the fusion run did not produce an analysis result.
-        /// </param>
-        /// <param name="failedModels">
-        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
-        /// </param>
-        /// <param name="failureReason">
-        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
+        /// Discriminator value: openrouter:file_search
         /// </param>
         /// <param name="id"></param>
-        /// <param name="responses">
-        /// Slugs of the analysis models that produced a response in this fusion run.
-        /// </param>
+        /// <param name="queries"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant16(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant16Type type,
-            global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis? analysis,
-            string? error,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? failedModels,
-            string? failureReason,
             string? id,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? responses)
+            global::System.Collections.Generic.IList<string>? queries)
         {
             this.Type = type;
-            this.Analysis = analysis;
-            this.Error = error;
-            this.FailedModels = failedModels;
-            this.FailureReason = failureReason;
             this.Id = id;
-            this.Responses = responses;
+            this.Queries = queries;
             this.Status = status;
         }
 

@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class OutputItemsVariant15TypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.OutputItemsVariant15Type>
+    public sealed class OutputItemsVariant14TypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.OutputItemsVariant14Type?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.OutputItemsVariant15Type Read(
+        public override global::OpenRouter.OutputItemsVariant14Type? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.OutputItemsVariant15TypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.OutputItemsVariant14TypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.OutputItemsVariant15Type)numValue;
+                    return (global::OpenRouter.OutputItemsVariant14Type)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.OutputItemsVariant15Type);
+                    return default(global::OpenRouter.OutputItemsVariant14Type?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.OutputItemsVariant15Type value,
+            global::OpenRouter.OutputItemsVariant14Type? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.OutputItemsVariant15TypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::OpenRouter.OutputItemsVariant14TypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

@@ -43,6 +43,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Openrouter_advisor,
+        /// <summary>
+        /// 
+        /// </summary>
         Openrouter_applyPatch,
         /// <summary>
         /// 
@@ -130,6 +134,7 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.FunctionCall => "function_call",
                 OutputItemsDiscriminatorType.ImageGenerationCall => "image_generation_call",
                 OutputItemsDiscriminatorType.Message => "message",
+                OutputItemsDiscriminatorType.Openrouter_advisor => "openrouter:advisor",
                 OutputItemsDiscriminatorType.Openrouter_applyPatch => "openrouter:apply_patch",
                 OutputItemsDiscriminatorType.Openrouter_bash => "openrouter:bash",
                 OutputItemsDiscriminatorType.Openrouter_browserUse => "openrouter:browser_use",
@@ -165,6 +170,7 @@ namespace OpenRouter
                 "function_call" => OutputItemsDiscriminatorType.FunctionCall,
                 "image_generation_call" => OutputItemsDiscriminatorType.ImageGenerationCall,
                 "message" => OutputItemsDiscriminatorType.Message,
+                "openrouter:advisor" => OutputItemsDiscriminatorType.Openrouter_advisor,
                 "openrouter:apply_patch" => OutputItemsDiscriminatorType.Openrouter_applyPatch,
                 "openrouter:bash" => OutputItemsDiscriminatorType.Openrouter_bash,
                 "openrouter:browser_use" => OutputItemsDiscriminatorType.Openrouter_browserUse,
