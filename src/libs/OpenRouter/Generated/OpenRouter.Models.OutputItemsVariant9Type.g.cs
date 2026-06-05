@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:apply_patch
+    /// Discriminator value: openrouter:advisor
     /// </summary>
     public enum OutputItemsVariant9Type
     {
         /// <summary>
-        /// openrouter:apply_patch
+        /// openrouter:advisor
         /// </summary>
-        Openrouter_applyPatch,
+        Openrouter_advisor,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                OutputItemsVariant9Type.Openrouter_applyPatch => "openrouter:apply_patch",
+                OutputItemsVariant9Type.Openrouter_advisor => "openrouter:advisor",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "openrouter:apply_patch" => OutputItemsVariant9Type.Openrouter_applyPatch,
+                "openrouter:advisor" => OutputItemsVariant9Type.Openrouter_advisor,
                 _ => null,
             };
         }
