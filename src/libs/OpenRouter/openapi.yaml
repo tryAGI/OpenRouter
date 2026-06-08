@@ -15,9 +15,9 @@
         ],
         "parameters": [
           {
-            "name": "X-OpenRouter-Experimental-Metadata",
+            "name": "X-OpenRouter-Metadata",
             "in": "header",
-            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`.",
+            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`. The legacy header `X-OpenRouter-Experimental-Metadata` is also accepted for backward compatibility.",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/MetadataLevel"
@@ -66,7 +66,7 @@
             }
           },
           "403": {
-            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
+            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1058,9 +1058,9 @@
         ],
         "parameters": [
           {
-            "name": "X-OpenRouter-Experimental-Metadata",
+            "name": "X-OpenRouter-Metadata",
             "in": "header",
-            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`.",
+            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`. The legacy header `X-OpenRouter-Experimental-Metadata` is also accepted for backward compatibility.",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/MetadataLevel"
@@ -1109,7 +1109,7 @@
             }
           },
           "403": {
-            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
+            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
             "content": {
               "application/json": {
                 "schema": {
@@ -3310,9 +3310,9 @@
         ],
         "parameters": [
           {
-            "name": "X-OpenRouter-Experimental-Metadata",
+            "name": "X-OpenRouter-Metadata",
             "in": "header",
-            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`.",
+            "description": "Opt-in to surface routing metadata on the response under `openrouter_metadata`. Defaults to `disabled`. The legacy header `X-OpenRouter-Experimental-Metadata` is also accepted for backward compatibility.",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/MetadataLevel"
@@ -3351,7 +3351,7 @@
             }
           },
           "403": {
-            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
+            "description": "Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.",
             "content": {
               "application/json": {
                 "schema": {
