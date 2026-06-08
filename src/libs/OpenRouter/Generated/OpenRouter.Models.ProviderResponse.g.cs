@@ -49,7 +49,7 @@ namespace OpenRouter
         /// HTTP status code from the provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public double? Status { get; set; }
+        public int? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -91,7 +91,7 @@ namespace OpenRouter
             double? latency,
             string? modelPermaslug,
             global::OpenRouter.ProviderResponseProviderName? providerName,
-            double? status)
+            int? status)
         {
             this.EndpointId = endpointId;
             this.Id = id;
