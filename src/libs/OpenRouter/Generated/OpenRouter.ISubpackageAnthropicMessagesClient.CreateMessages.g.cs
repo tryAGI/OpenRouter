@@ -8,7 +8,7 @@ namespace OpenRouter
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -18,14 +18,14 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
 
             global::OpenRouter.MessagesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -35,14 +35,14 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.MessagesResult>> CreateMessagesAsResponseAsync(
 
             global::OpenRouter.MessagesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="cacheControl">
@@ -94,7 +94,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
             string model,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
             int? maxTokens = default,

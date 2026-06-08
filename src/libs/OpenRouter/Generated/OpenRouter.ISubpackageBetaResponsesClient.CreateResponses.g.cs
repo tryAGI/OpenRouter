@@ -8,7 +8,7 @@ namespace OpenRouter
         /// Create a response<br/>
         /// Creates a streaming or non-streaming response using OpenResponses API format
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -18,14 +18,14 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.OpenResponsesResult> CreateResponsesAsync(
 
             global::OpenRouter.ResponsesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a response<br/>
         /// Creates a streaming or non-streaming response using OpenResponses API format
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -35,14 +35,14 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OpenResponsesResult>> CreateResponsesAsResponseAsync(
 
             global::OpenRouter.ResponsesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a response<br/>
         /// Creates a streaming or non-streaming response using OpenResponses API format
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="background"></param>
@@ -115,7 +115,7 @@ namespace OpenRouter
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.OpenResponsesResult> CreateResponsesAsync(
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             bool? background = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             double? frequencyPenalty = default,

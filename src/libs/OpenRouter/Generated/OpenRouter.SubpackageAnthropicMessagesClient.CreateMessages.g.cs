@@ -27,12 +27,12 @@ namespace OpenRouter
             };
         partial void PrepareCreateMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata,
+            ref global::OpenRouter.MetadataLevel? xOpenRouterMetadata,
             global::OpenRouter.MessagesRequest request);
         partial void PrepareCreateMessagesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata,
             global::OpenRouter.MessagesRequest request);
         partial void ProcessCreateMessagesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,7 +47,7 @@ namespace OpenRouter
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -57,14 +57,14 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
 
             global::OpenRouter.MessagesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateMessagesAsResponseAsync(
 
                 request: request,
-                xOpenRouterExperimentalMetadata: xOpenRouterExperimentalMetadata,
+                xOpenRouterMetadata: xOpenRouterMetadata,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -75,7 +75,7 @@ namespace OpenRouter
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -85,7 +85,7 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.MessagesResult>> CreateMessagesAsResponseAsync(
 
             global::OpenRouter.MessagesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -95,7 +95,7 @@ namespace OpenRouter
                 client: HttpClient);
             PrepareCreateMessagesArguments(
                 httpClient: HttpClient,
-                xOpenRouterExperimentalMetadata: ref xOpenRouterExperimentalMetadata,
+                xOpenRouterMetadata: ref xOpenRouterMetadata,
                 request: request);
 
 
@@ -154,9 +154,9 @@ namespace OpenRouter
                 } 
             }
 
-            if (xOpenRouterExperimentalMetadata != default)
+            if (xOpenRouterMetadata != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("X-OpenRouter-Experimental-Metadata", xOpenRouterExperimentalMetadata?.ToValueString() ?? string.Empty);
+                __httpRequest.Headers.TryAddWithoutValidation("X-OpenRouter-Metadata", xOpenRouterMetadata?.ToValueString() ?? string.Empty);
             }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
@@ -176,7 +176,7 @@ namespace OpenRouter
                 PrepareCreateMessagesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xOpenRouterExperimentalMetadata: xOpenRouterExperimentalMetadata,
+                    xOpenRouterMetadata: xOpenRouterMetadata,
                     request: request);
 
                 return __httpRequest;
@@ -430,7 +430,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
+                            // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -715,7 +715,7 @@ namespace OpenRouter
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="cacheControl">
@@ -767,7 +767,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.MessagesResult> CreateMessagesAsync(
             string model,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
             int? maxTokens = default,
@@ -827,7 +827,7 @@ namespace OpenRouter
             };
 
             return await CreateMessagesAsync(
-                xOpenRouterExperimentalMetadata: xOpenRouterExperimentalMetadata,
+                xOpenRouterMetadata: xOpenRouterMetadata,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -8,7 +8,7 @@ namespace OpenRouter
         /// Create a chat completion<br/>
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -18,14 +18,14 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.ChatResult> SendChatCompletionRequestAsync(
 
             global::OpenRouter.ChatRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a chat completion<br/>
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -35,14 +35,14 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ChatResult>> SendChatCompletionRequestAsResponseAsync(
 
             global::OpenRouter.ChatRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a chat completion<br/>
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="cacheControl">
@@ -151,7 +151,7 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.ChatResult> SendChatCompletionRequestAsync(
             global::System.Collections.Generic.IList<global::OpenRouter.ChatMessages> messages,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.ChatDebugOptions? debug = default,
             double? frequencyPenalty = default,
