@@ -171,6 +171,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("parameters.model")) __score16++;
             if (__jsonProps.Contains("parameters.reasoning")) __score16++;
             if (__jsonProps.Contains("parameters.temperature")) __score16++;
+            if (__jsonProps.Contains("parameters.tools")) __score16++;
             if (__jsonProps.Contains("type")) __score16++;
             var __score17 = 0;
             if (__jsonProps.Contains("parameters")) __score17++;

@@ -45,6 +45,12 @@ namespace OpenRouter
         public double? Temperature { get; set; }
 
         /// <summary>
+        /// Server tools available to panelist and judge inner calls. Each entry uses the same `{ type, parameters? }` shorthand as the outer Chat Completions request. When omitted, defaults to `[{ type: "openrouter:web_search" }, { type: "openrouter:web_fetch" }]`. Pass an empty array to disable tools entirely (panelists answer from parametric knowledge only).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.FusionServerToolConfigToolsItems>? Tools { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,6 +77,9 @@ namespace OpenRouter
         /// <param name="temperature">
         /// Sampling temperature forwarded to panelist and judge inner calls. When omitted, the provider's default applies.
         /// </param>
+        /// <param name="tools">
+        /// Server tools available to panelist and judge inner calls. Each entry uses the same `{ type, parameters? }` shorthand as the outer Chat Completions request. When omitted, defaults to `[{ type: "openrouter:web_search" }, { type: "openrouter:web_fetch" }]`. Pass an empty array to disable tools entirely (panelists answer from parametric knowledge only).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,7 +89,8 @@ namespace OpenRouter
             int? maxToolCalls,
             string? model,
             global::OpenRouter.FusionServerToolConfigReasoning? reasoning,
-            double? temperature)
+            double? temperature,
+            global::System.Collections.Generic.IList<global::OpenRouter.FusionServerToolConfigToolsItems>? tools)
         {
             this.AnalysisModels = analysisModels;
             this.MaxCompletionTokens = maxCompletionTokens;
@@ -88,6 +98,7 @@ namespace OpenRouter
             this.Model = model;
             this.Reasoning = reasoning;
             this.Temperature = temperature;
+            this.Tools = tools;
         }
 
         /// <summary>
