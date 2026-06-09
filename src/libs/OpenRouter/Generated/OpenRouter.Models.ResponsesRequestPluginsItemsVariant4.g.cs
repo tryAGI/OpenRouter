@@ -40,6 +40,12 @@ namespace OpenRouter
         public string? Model { get; set; }
 
         /// <summary>
+        /// Server tools available to panelist and judge inner calls. Each entry uses the same `{ type, parameters? }` shorthand as the outer Chat Completions request. When omitted, defaults to `[{ type: "openrouter:web_search" }, { type: "openrouter:web_fetch" }]`. Pass an empty array to disable tools entirely (panelists answer from parametric knowledge only).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItems>? Tools { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,6 +69,9 @@ namespace OpenRouter
         /// <param name="model">
         /// Slug of the model that performs both the judge step (with web_search + web_fetch) and the final synthesis. When omitted, defaults to the first model in the Quality preset.
         /// </param>
+        /// <param name="tools">
+        /// Server tools available to panelist and judge inner calls. Each entry uses the same `{ type, parameters? }` shorthand as the outer Chat Completions request. When omitted, defaults to `[{ type: "openrouter:web_search" }, { type: "openrouter:web_fetch" }]`. Pass an empty array to disable tools entirely (panelists answer from parametric knowledge only).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,13 +80,15 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? analysisModels,
             bool? enabled,
             int? maxToolCalls,
-            string? model)
+            string? model,
+            global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItems>? tools)
         {
             this.Id = id;
             this.AnalysisModels = analysisModels;
             this.Enabled = enabled;
             this.MaxToolCalls = maxToolCalls;
             this.Model = model;
+            this.Tools = tools;
         }
 
         /// <summary>

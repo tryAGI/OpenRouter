@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class RerankPostResponsesContentApplicationJsonSchemaResultsItems
     {
         /// <summary>
-        /// The document object containing the original text
+        /// The document object echoing the original input (text and/or image)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,7 +39,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="RerankPostResponsesContentApplicationJsonSchemaResultsItems" /> class.
         /// </summary>
         /// <param name="document">
-        /// The document object containing the original text
+        /// The document object echoing the original input (text and/or image)
         /// </param>
         /// <param name="index">
         /// Index of the document in the original input list

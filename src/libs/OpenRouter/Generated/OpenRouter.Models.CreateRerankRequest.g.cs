@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class CreateRerankRequest
     {
         /// <summary>
-        /// The list of documents to rerank
+        /// The list of documents to rerank. Documents may be plain strings, or structured objects with `text` and/or `image` for multimodal models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Documents { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems> Documents { get; set; }
 
         /// <summary>
         /// The rerank model to use
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="CreateRerankRequest" /> class.
         /// </summary>
         /// <param name="documents">
-        /// The list of documents to rerank
+        /// The list of documents to rerank. Documents may be plain strings, or structured objects with `text` and/or `image` for multimodal models.
         /// </param>
         /// <param name="model">
         /// The rerank model to use
@@ -69,7 +69,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateRerankRequest(
-            global::System.Collections.Generic.IList<string> documents,
+            global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems> documents,
             string model,
             string query,
             global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProvider? provider,
