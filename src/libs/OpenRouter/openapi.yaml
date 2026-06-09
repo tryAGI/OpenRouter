@@ -5368,7 +5368,8 @@
   },
   "servers": [
     {
-      "url": "https://openrouter.ai/api/v1"
+      "url": "https://openrouter.ai/api/v1",
+      "description": "Production server"
     }
   ],
   "components": {
@@ -9073,6 +9074,7 @@
           "Together",
           "Upstage",
           "Venice",
+          "Wafer",
           "WandB",
           "Xiaomi",
           "xAI",
@@ -16140,6 +16142,12 @@
               "description": "Any type"
             }
           },
+          "wafer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "wandb": {
             "type": "object",
             "additionalProperties": {
@@ -16492,6 +16500,7 @@
           "together",
           "upstage",
           "venice",
+          "wafer",
           "wandb",
           "xai",
           "xiaomi",
@@ -16580,6 +16589,7 @@
           "together",
           "upstage",
           "venice",
+          "wafer",
           "wandb",
           "xai",
           "xiaomi",
@@ -20882,6 +20892,7 @@
           "Together",
           "Upstage",
           "Venice",
+          "Wafer",
           "WandB",
           "Xiaomi",
           "xAI",
@@ -36504,6 +36515,12 @@
             }
           },
           "venice": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "wafer": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"

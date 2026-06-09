@@ -319,6 +319,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         Wandb,
         /// <summary>
         /// 
@@ -423,6 +427,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Together => "together",
                 BYOKProviderSlug.Upstage => "upstage",
                 BYOKProviderSlug.Venice => "venice",
+                BYOKProviderSlug.Wafer => "wafer",
                 BYOKProviderSlug.Wandb => "wandb",
                 BYOKProviderSlug.Xai => "xai",
                 BYOKProviderSlug.Xiaomi => "xiaomi",
@@ -514,6 +519,7 @@ namespace OpenRouter
                 "together" => BYOKProviderSlug.Together,
                 "upstage" => BYOKProviderSlug.Upstage,
                 "venice" => BYOKProviderSlug.Venice,
+                "wafer" => BYOKProviderSlug.Wafer,
                 "wandb" => BYOKProviderSlug.Wandb,
                 "xai" => BYOKProviderSlug.Xai,
                 "xiaomi" => BYOKProviderSlug.Xiaomi,
