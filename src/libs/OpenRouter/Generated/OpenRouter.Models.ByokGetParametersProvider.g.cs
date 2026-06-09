@@ -319,6 +319,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         Wandb,
         /// <summary>
         /// 
@@ -423,6 +427,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Together => "together",
                 ByokGetParametersProvider.Upstage => "upstage",
                 ByokGetParametersProvider.Venice => "venice",
+                ByokGetParametersProvider.Wafer => "wafer",
                 ByokGetParametersProvider.Wandb => "wandb",
                 ByokGetParametersProvider.Xai => "xai",
                 ByokGetParametersProvider.Xiaomi => "xiaomi",
@@ -514,6 +519,7 @@ namespace OpenRouter
                 "together" => ByokGetParametersProvider.Together,
                 "upstage" => ByokGetParametersProvider.Upstage,
                 "venice" => ByokGetParametersProvider.Venice,
+                "wafer" => ByokGetParametersProvider.Wafer,
                 "wandb" => ByokGetParametersProvider.Wandb,
                 "xai" => ByokGetParametersProvider.Xai,
                 "xiaomi" => ByokGetParametersProvider.Xiaomi,

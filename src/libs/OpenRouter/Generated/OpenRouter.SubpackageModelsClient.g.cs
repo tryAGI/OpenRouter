@@ -10,7 +10,7 @@ namespace OpenRouter
     public sealed partial class SubpackageModelsClient : global::OpenRouter.ISubpackageModelsClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Production server
         /// </summary>
         public const string DefaultBaseUrl = "https://openrouter.ai/api/v1";
 

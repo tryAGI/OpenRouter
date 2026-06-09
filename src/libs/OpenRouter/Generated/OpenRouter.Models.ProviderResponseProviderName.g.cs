@@ -447,6 +447,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         WandB,
         /// <summary>
         /// 
@@ -583,6 +587,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Ubicloud => "Ubicloud",
                 ProviderResponseProviderName.Upstage => "Upstage",
                 ProviderResponseProviderName.Venice => "Venice",
+                ProviderResponseProviderName.Wafer => "Wafer",
                 ProviderResponseProviderName.WandB => "WandB",
                 ProviderResponseProviderName.Xiaomi => "Xiaomi",
                 ProviderResponseProviderName.ZAi => "Z.AI",
@@ -706,6 +711,7 @@ namespace OpenRouter
                 "Ubicloud" => ProviderResponseProviderName.Ubicloud,
                 "Upstage" => ProviderResponseProviderName.Upstage,
                 "Venice" => ProviderResponseProviderName.Venice,
+                "Wafer" => ProviderResponseProviderName.Wafer,
                 "WandB" => ProviderResponseProviderName.WandB,
                 "Xiaomi" => ProviderResponseProviderName.Xiaomi,
                 "Z.AI" => ProviderResponseProviderName.ZAi,

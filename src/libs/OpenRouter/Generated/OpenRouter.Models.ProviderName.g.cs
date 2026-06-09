@@ -331,6 +331,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         WandB,
         /// <summary>
         /// 
@@ -438,6 +442,7 @@ namespace OpenRouter
                 ProviderName.Together => "Together",
                 ProviderName.Upstage => "Upstage",
                 ProviderName.Venice => "Venice",
+                ProviderName.Wafer => "Wafer",
                 ProviderName.WandB => "WandB",
                 ProviderName.Xiaomi => "Xiaomi",
                 ProviderName.ZAi => "Z.AI",
@@ -532,6 +537,7 @@ namespace OpenRouter
                 "Together" => ProviderName.Together,
                 "Upstage" => ProviderName.Upstage,
                 "Venice" => ProviderName.Venice,
+                "Wafer" => ProviderName.Wafer,
                 "WandB" => ProviderName.WandB,
                 "Xiaomi" => ProviderName.Xiaomi,
                 "Z.AI" => ProviderName.ZAi,

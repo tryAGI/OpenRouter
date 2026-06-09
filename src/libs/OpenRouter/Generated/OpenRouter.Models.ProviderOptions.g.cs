@@ -665,6 +665,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wafer")]
+        public object? Wafer { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wandb")]
         public object? Wandb { get; set; }
 
@@ -804,6 +810,7 @@ namespace OpenRouter
         /// <param name="ubicloud"></param>
         /// <param name="upstage"></param>
         /// <param name="venice"></param>
+        /// <param name="wafer"></param>
         /// <param name="wandb"></param>
         /// <param name="xai"></param>
         /// <param name="xiaomi"></param>
@@ -921,6 +928,7 @@ namespace OpenRouter
             object? ubicloud,
             object? upstage,
             object? venice,
+            object? wafer,
             object? wandb,
             object? xai,
             object? xiaomi,
@@ -1035,6 +1043,7 @@ namespace OpenRouter
             this.Ubicloud = ubicloud;
             this.Upstage = upstage;
             this.Venice = venice;
+            this.Wafer = wafer;
             this.Wandb = wandb;
             this.Xai = xai;
             this.Xiaomi = xiaomi;
