@@ -13,8 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OutputWebSearchCallItemAction Action { get; set; }
+        public global::OpenRouter.OutputWebSearchCallItemAction? Action { get; set; }
 
         /// <summary>
         /// 
@@ -47,17 +46,17 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputWebSearchCallItem" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="id"></param>
         /// <param name="status"></param>
+        /// <param name="action"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputWebSearchCallItem(
-            global::OpenRouter.OutputWebSearchCallItemAction action,
             string id,
             global::OpenRouter.WebSearchStatus status,
+            global::OpenRouter.OutputWebSearchCallItemAction? action,
             global::OpenRouter.OutputWebSearchCallItemType type)
         {
             this.Action = action;

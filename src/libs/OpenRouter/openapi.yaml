@@ -690,6 +690,182 @@
         }
       }
     },
+    "/analytics/meta": {
+      "get": {
+        "operationId": "get-analytics-meta",
+        "summary": "Get available analytics metrics and dimensions",
+        "description": "Returns the available metrics, dimensions, filter operators, and granularities for the analytics query endpoint. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_betaAnalytics"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns analytics query metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/beta.Analytics_getAnalyticsMeta_Response_200"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/analytics/query": {
+      "post": {
+        "operationId": "query-analytics",
+        "summary": "Query analytics data",
+        "description": "Execute an analytics query with specified metrics, dimensions, filters, and time range. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "tags": [
+          "subpackage_betaAnalytics"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Analytics query results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/beta.Analytics_queryAnalytics_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout - Operation exceeded time limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestTimeoutResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dimensions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "filters": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems"
+                    }
+                  },
+                  "granularity": {
+                    "type": "string",
+                    "description": "Time granularity"
+                  },
+                  "group_limit": {
+                    "type": "integer",
+                    "description": "Maximum rows per distinct combination of dimensions (ClickHouse LIMIT n BY). When omitted on time-series queries (granularity + dimensions), auto-computed to avoid truncating time windows. Explicit values override the default and may truncate time buckets if set lower than the number of buckets in the range. Ignored when no dimensions are specified."
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "description": "Maximum total rows returned. Defaults to 1000. On time-series queries with dimensions and no explicit group_limit, the server may raise this to accommodate the expected number of unique time-bucket/dimension combinations."
+                  },
+                  "metrics": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "order_by": {
+                    "$ref": "#/components/schemas/AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderBy"
+                  },
+                  "time_range": {
+                    "$ref": "#/components/schemas/AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaTimeRange"
+                  }
+                },
+                "required": [
+                  "metrics"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "/byok": {
       "get": {
         "operationId": "list-byok-keys",
@@ -6937,7 +7113,6 @@
           }
         },
         "required": [
-          "action",
           "id",
           "status",
           "type"
@@ -11597,7 +11772,7 @@
           "medium",
           "high"
         ],
-        "description": "How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size.",
+        "description": "How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size. Overridden by `max_characters` when both are set.",
         "title": "SearchQualityLevel"
       },
       "WebSearchUserLocationServerToolType": {
@@ -11660,6 +11835,10 @@
               "type": "string"
             },
             "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
+          },
+          "max_characters": {
+            "type": "integer",
+            "description": "Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel)."
           },
           "max_results": {
             "type": "integer",
@@ -14600,7 +14779,6 @@
             },
             "required": [
               "type",
-              "action",
               "id",
               "status"
             ],
@@ -16951,6 +17129,347 @@
         ],
         "title": "ActivityResponse"
       },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataDimensionsItems": {
+        "type": "object",
+        "properties": {
+          "display_label": {
+            "type": "string",
+            "description": "Human-readable label"
+          },
+          "name": {
+            "type": "string",
+            "description": "Dimension identifier used in query requests"
+          }
+        },
+        "required": [
+          "display_label",
+          "name"
+        ],
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataDimensionsItems"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItemsName": {
+        "type": "string",
+        "enum": [
+          "minute",
+          "hour",
+          "day",
+          "week",
+          "month"
+        ],
+        "description": "Granularity identifier",
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItemsName"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItems": {
+        "type": "object",
+        "properties": {
+          "display_label": {
+            "type": "string",
+            "description": "Human-readable label"
+          },
+          "name": {
+            "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItemsName",
+            "description": "Granularity identifier"
+          }
+        },
+        "required": [
+          "display_label",
+          "name"
+        ],
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItems"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItemsDisplayFormat": {
+        "type": "string",
+        "enum": [
+          "number",
+          "currency",
+          "percent",
+          "latency",
+          "throughput"
+        ],
+        "description": "How this metric value should be formatted for display (e.g. percent → multiply by 100 and append %, currency → prefix with $)",
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItemsDisplayFormat"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItems": {
+        "type": "object",
+        "properties": {
+          "display_format": {
+            "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItemsDisplayFormat",
+            "description": "How this metric value should be formatted for display (e.g. percent → multiply by 100 and append %, currency → prefix with $)"
+          },
+          "display_label": {
+            "type": "string",
+            "description": "Human-readable label"
+          },
+          "is_rate": {
+            "type": "boolean",
+            "description": "Whether this metric is a rate/ratio (averaged, not summed)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Metric identifier used in query requests"
+          }
+        },
+        "required": [
+          "display_format",
+          "display_label",
+          "is_rate",
+          "name"
+        ],
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItems"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsName": {
+        "type": "string",
+        "enum": [
+          "eq",
+          "neq",
+          "in",
+          "not_in",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "description": "Operator identifier used in filter definitions",
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsName"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsValueType": {
+        "type": "string",
+        "enum": [
+          "scalar",
+          "array"
+        ],
+        "description": "Whether the operator expects a single value or an array",
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsValueType"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItems": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsName",
+            "description": "Operator identifier used in filter definitions"
+          },
+          "value_type": {
+            "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsValueType",
+            "description": "Whether the operator expects a single value or an array"
+          }
+        },
+        "required": [
+          "name",
+          "value_type"
+        ],
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItems"
+      },
+      "AnalyticsMetaGetResponsesContentApplicationJsonSchemaData": {
+        "type": "object",
+        "properties": {
+          "dimensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataDimensionsItems"
+            }
+          },
+          "granularities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItems"
+            }
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItems"
+            }
+          },
+          "operators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItems"
+            }
+          }
+        },
+        "required": [
+          "dimensions",
+          "granularities",
+          "metrics",
+          "operators"
+        ],
+        "title": "AnalyticsMetaGetResponsesContentApplicationJsonSchemaData"
+      },
+      "beta.Analytics_getAnalyticsMeta_Response_200": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AnalyticsMetaGetResponsesContentApplicationJsonSchemaData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "beta.Analytics_getAnalyticsMeta_Response_200"
+      },
+      "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number",
+            "format": "double"
+          }
+        ],
+        "title": "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items"
+      },
+      "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items"
+        },
+        "title": "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2"
+      },
+      "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "$ref": "#/components/schemas/AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2"
+          }
+        ],
+        "description": "Filter value (scalar or array depending on operator)",
+        "title": "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue"
+      },
+      "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "description": "Dimension to filter on"
+          },
+          "operator": {
+            "type": "string",
+            "description": "Filter operator"
+          },
+          "value": {
+            "$ref": "#/components/schemas/AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue",
+            "description": "Filter value (scalar or array depending on operator)"
+          }
+        },
+        "required": [
+          "field",
+          "operator",
+          "value"
+        ],
+        "title": "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems"
+      },
+      "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirection": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "title": "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirection"
+      },
+      "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderBy": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "$ref": "#/components/schemas/AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirection"
+          },
+          "field": {
+            "type": "string",
+            "description": "Field to order by"
+          }
+        },
+        "required": [
+          "direction",
+          "field"
+        ],
+        "title": "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderBy"
+      },
+      "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaTimeRange": {
+        "type": "object",
+        "properties": {
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "end",
+          "start"
+        ],
+        "title": "AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaTimeRange"
+      },
+      "AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataDataItems": {
+        "type": "object",
+        "properties": {},
+        "description": "A row of analytics data with metric/dimension values",
+        "title": "AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataDataItems"
+      },
+      "AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataMetadata": {
+        "type": "object",
+        "properties": {
+          "query_time_ms": {
+            "type": "number",
+            "format": "double"
+          },
+          "row_count": {
+            "type": "integer"
+          },
+          "truncated": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "query_time_ms",
+          "row_count",
+          "truncated"
+        ],
+        "title": "AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataMetadata"
+      },
+      "AnalyticsQueryPostResponsesContentApplicationJsonSchemaData": {
+        "type": "object",
+        "properties": {
+          "cachedAt": {
+            "type": "number",
+            "format": "double"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataDataItems"
+            }
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataMetadata"
+          }
+        },
+        "required": [
+          "data",
+          "metadata"
+        ],
+        "title": "AnalyticsQueryPostResponsesContentApplicationJsonSchemaData"
+      },
+      "beta.Analytics_queryAnalytics_Response_200": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AnalyticsQueryPostResponsesContentApplicationJsonSchemaData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "beta.Analytics_queryAnalytics_Response_200"
+      },
       "ByokGetParametersProvider": {
         "type": "string",
         "enum": [
@@ -19104,6 +19623,10 @@
             },
             "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
           },
+          "max_characters": {
+            "type": "integer",
+            "description": "Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel)."
+          },
           "max_results": {
             "type": "integer",
             "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
@@ -19173,6 +19696,10 @@
               "type": "string"
             },
             "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
+          },
+          "max_characters": {
+            "type": "integer",
+            "description": "Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel)."
           },
           "max_results": {
             "type": "integer",

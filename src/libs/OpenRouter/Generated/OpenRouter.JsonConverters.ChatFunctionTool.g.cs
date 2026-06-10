@@ -88,6 +88,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("parameters.allowed_domains")) __score7++;
             if (__jsonProps.Contains("parameters.engine")) __score7++;
             if (__jsonProps.Contains("parameters.excluded_domains")) __score7++;
+            if (__jsonProps.Contains("parameters.max_characters")) __score7++;
             if (__jsonProps.Contains("parameters.max_results")) __score7++;
             if (__jsonProps.Contains("parameters.max_total_results")) __score7++;
             if (__jsonProps.Contains("parameters.search_context_size")) __score7++;
@@ -97,12 +98,14 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("allowed_domains")) __score8++;
             if (__jsonProps.Contains("engine")) __score8++;
             if (__jsonProps.Contains("excluded_domains")) __score8++;
+            if (__jsonProps.Contains("max_characters")) __score8++;
             if (__jsonProps.Contains("max_results")) __score8++;
             if (__jsonProps.Contains("max_total_results")) __score8++;
             if (__jsonProps.Contains("parameters")) __score8++;
             if (__jsonProps.Contains("parameters.allowed_domains")) __score8++;
             if (__jsonProps.Contains("parameters.engine")) __score8++;
             if (__jsonProps.Contains("parameters.excluded_domains")) __score8++;
+            if (__jsonProps.Contains("parameters.max_characters")) __score8++;
             if (__jsonProps.Contains("parameters.max_results")) __score8++;
             if (__jsonProps.Contains("parameters.max_total_results")) __score8++;
             if (__jsonProps.Contains("parameters.search_context_size")) __score8++;
