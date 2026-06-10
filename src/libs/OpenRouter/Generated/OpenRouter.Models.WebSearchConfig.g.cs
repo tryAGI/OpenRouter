@@ -28,6 +28,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? ExcludedDomains { get; set; }
 
         /// <summary>
+        /// Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_characters")]
+        public int? MaxCharacters { get; set; }
+
+        /// <summary>
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
@@ -40,7 +46,7 @@ namespace OpenRouter
         public int? MaxTotalResults { get; set; }
 
         /// <summary>
-        /// How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size.
+        /// How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size. Overridden by `max_characters` when both are set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.SearchQualityLevelJsonConverter))]
@@ -70,6 +76,9 @@ namespace OpenRouter
         /// <param name="excludedDomains">
         /// Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains.
         /// </param>
+        /// <param name="maxCharacters">
+        /// Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel).
+        /// </param>
         /// <param name="maxResults">
         /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
         /// </param>
@@ -77,7 +86,7 @@ namespace OpenRouter
         /// Maximum total number of search results across all search calls in a single request. Once this limit is reached, the tool will stop returning new results. Useful for controlling cost and context size in agentic loops. Defaults to 50 when not specified.
         /// </param>
         /// <param name="searchContextSize">
-        /// How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size.
+        /// How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size. Overridden by `max_characters` when both are set.
         /// </param>
         /// <param name="userLocation">
         /// Approximate user location for location-biased results.
@@ -89,6 +98,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::OpenRouter.WebSearchEngineEnum? engine,
             global::System.Collections.Generic.IList<string>? excludedDomains,
+            int? maxCharacters,
             int? maxResults,
             int? maxTotalResults,
             global::OpenRouter.SearchQualityLevel? searchContextSize,
@@ -97,6 +107,7 @@ namespace OpenRouter
             this.AllowedDomains = allowedDomains;
             this.Engine = engine;
             this.ExcludedDomains = excludedDomains;
+            this.MaxCharacters = maxCharacters;
             this.MaxResults = maxResults;
             this.MaxTotalResults = maxTotalResults;
             this.SearchContextSize = searchContextSize;

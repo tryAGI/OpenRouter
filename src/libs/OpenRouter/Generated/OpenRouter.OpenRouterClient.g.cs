@@ -69,6 +69,15 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageBetaAnalyticsClient SubpackageBetaAnalytics => new SubpackageBetaAnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageBetaResponsesClient SubpackageBetaResponses => new SubpackageBetaResponsesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
