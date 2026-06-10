@@ -528,7 +528,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. The advisor may run as a sub-agent with its own tools.
+        /// OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. The advisor may run as a sub-agent with its own tools. Include multiple entries to offer several named advisors; at most one entry may omit `name` to act as the default advisor.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AdvisorServerToolOpenRouter? AdvisorServerToolOpenRouter { get; init; }

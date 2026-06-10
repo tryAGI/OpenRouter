@@ -46,13 +46,14 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("parameters")) __score1++;
-            if (__jsonProps.Contains("parameters.advisors")) __score1++;
             if (__jsonProps.Contains("parameters.forward_transcript")) __score1++;
             if (__jsonProps.Contains("parameters.instructions")) __score1++;
             if (__jsonProps.Contains("parameters.max_completion_tokens")) __score1++;
             if (__jsonProps.Contains("parameters.max_tool_calls")) __score1++;
             if (__jsonProps.Contains("parameters.model")) __score1++;
+            if (__jsonProps.Contains("parameters.name")) __score1++;
             if (__jsonProps.Contains("parameters.reasoning")) __score1++;
+            if (__jsonProps.Contains("parameters.stream")) __score1++;
             if (__jsonProps.Contains("parameters.temperature")) __score1++;
             if (__jsonProps.Contains("parameters.tools")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;

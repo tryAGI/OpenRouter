@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. The advisor may run as a sub-agent with its own tools.
+    /// OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. The advisor may run as a sub-agent with its own tools. Include multiple entries to offer several named advisors; at most one entry may omit `name` to act as the default advisor.
     /// </summary>
     public sealed partial class AdvisorServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:advisor server tool.
+        /// Configuration for one openrouter:advisor server tool entry.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.AdvisorServerToolConfig? Parameters { get; set; }
@@ -31,7 +31,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AdvisorServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:advisor server tool.
+        /// Configuration for one openrouter:advisor server tool entry.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

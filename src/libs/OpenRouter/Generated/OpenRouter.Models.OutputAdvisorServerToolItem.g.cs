@@ -6,15 +6,8 @@ namespace OpenRouter
     /// <summary>
     /// An openrouter:advisor server tool output item
     /// </summary>
-    public sealed partial class OutputItemsVariant9
+    public sealed partial class OutputAdvisorServerToolItem
     {
-        /// <summary>
-        /// Discriminator value: openrouter:advisor
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant9TypeJsonConverter))]
-        public global::OpenRouter.OutputItemsVariant9Type Type { get; set; }
-
         /// <summary>
         /// The advisor model's response (the advice text returned to the executor).
         /// </summary>
@@ -66,12 +59,9 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputItemsVariant9" /> class.
+        /// Initializes a new instance of the <see cref="OutputAdvisorServerToolItem" /> class.
         /// </summary>
         /// <param name="status"></param>
-        /// <param name="type">
-        /// Discriminator value: openrouter:advisor
-        /// </param>
         /// <param name="advice">
         /// The advisor model's response (the advice text returned to the executor).
         /// </param>
@@ -91,9 +81,8 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public OutputItemsVariant9(
+        public OutputAdvisorServerToolItem(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputItemsVariant9Type type,
             string? advice,
             string? error,
             string? id,
@@ -101,7 +90,6 @@ namespace OpenRouter
             string? model,
             string? prompt)
         {
-            this.Type = type;
             this.Advice = advice;
             this.Error = error;
             this.Id = id;
@@ -112,9 +100,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputItemsVariant9" /> class.
+        /// Initializes a new instance of the <see cref="OutputAdvisorServerToolItem" /> class.
         /// </summary>
-        public OutputItemsVariant9()
+        public OutputAdvisorServerToolItem()
         {
         }
 
