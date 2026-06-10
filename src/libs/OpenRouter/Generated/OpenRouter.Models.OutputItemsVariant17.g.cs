@@ -19,7 +19,7 @@ namespace OpenRouter
         /// Structured analysis produced by the fusion judge model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis")]
-        public global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis? Analysis { get; set; }
+        public global::OpenRouter.FusionAnalysisResult? Analysis { get; set; }
 
         /// <summary>
         /// Error message when the fusion run did not produce an analysis result.
@@ -46,7 +46,7 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// Slugs of the analysis models that produced a response in this fusion run.
+        /// Analysis models that produced a response in this fusion run, with each model's full panel content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("responses")]
         public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? Responses { get; set; }
@@ -86,7 +86,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="id"></param>
         /// <param name="responses">
-        /// Slugs of the analysis models that produced a response in this fusion run.
+        /// Analysis models that produced a response in this fusion run, with each model's full panel content.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -94,7 +94,7 @@ namespace OpenRouter
         public OutputItemsVariant17(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant17Type type,
-            global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionAnalysis? analysis,
+            global::OpenRouter.FusionAnalysisResult? analysis,
             string? error,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? failedModels,
             string? failureReason,

@@ -42,6 +42,14 @@ namespace OpenRouter
         public required string CreatedAt { get; set; }
 
         /// <summary>
+        /// The data region this generation was routed through. 'europe' for EU-routed requests, 'global' otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_region")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GenerationResponseDataDataRegionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.GenerationResponseDataDataRegion DataRegion { get; set; }
+
+        /// <summary>
         /// External user identifier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_user")]
@@ -290,6 +298,9 @@ namespace OpenRouter
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the generation was created
         /// </param>
+        /// <param name="dataRegion">
+        /// The data region this generation was routed through. 'europe' for EU-routed requests, 'global' otherwise.
+        /// </param>
         /// <param name="id">
         /// Unique identifier for the generation
         /// </param>
@@ -419,6 +430,7 @@ namespace OpenRouter
         public GenerationResponseData(
             global::OpenRouter.OneOf<global::OpenRouter.GenerationResponseDataApiType?, object> apiType,
             string createdAt,
+            global::OpenRouter.GenerationResponseDataDataRegion dataRegion,
             string id,
             bool isByok,
             string model,
@@ -466,6 +478,7 @@ namespace OpenRouter
             this.CacheDiscount = cacheDiscount;
             this.Cancelled = cancelled;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.DataRegion = dataRegion;
             this.ExternalUser = externalUser;
             this.FinishReason = finishReason;
             this.GenerationTime = generationTime;

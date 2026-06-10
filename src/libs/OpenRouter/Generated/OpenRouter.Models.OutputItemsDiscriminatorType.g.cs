@@ -111,6 +111,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        ShellCall,
+        /// <summary>
+        /// 
+        /// </summary>
+        ShellCallOutput,
+        /// <summary>
+        /// 
+        /// </summary>
         WebSearchCall,
     }
 
@@ -151,6 +159,8 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.Openrouter_webFetch => "openrouter:web_fetch",
                 OutputItemsDiscriminatorType.Openrouter_webSearch => "openrouter:web_search",
                 OutputItemsDiscriminatorType.Reasoning => "reasoning",
+                OutputItemsDiscriminatorType.ShellCall => "shell_call",
+                OutputItemsDiscriminatorType.ShellCallOutput => "shell_call_output",
                 OutputItemsDiscriminatorType.WebSearchCall => "web_search_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -187,6 +197,8 @@ namespace OpenRouter
                 "openrouter:web_fetch" => OutputItemsDiscriminatorType.Openrouter_webFetch,
                 "openrouter:web_search" => OutputItemsDiscriminatorType.Openrouter_webSearch,
                 "reasoning" => OutputItemsDiscriminatorType.Reasoning,
+                "shell_call" => OutputItemsDiscriminatorType.ShellCall,
+                "shell_call_output" => OutputItemsDiscriminatorType.ShellCallOutput,
                 "web_search_call" => OutputItemsDiscriminatorType.WebSearchCall,
                 _ => null,
             };

@@ -191,6 +191,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("decart")]
+        public object? Decart { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deepinfra")]
         public object? Deepinfra { get; set; }
 
@@ -731,6 +737,7 @@ namespace OpenRouter
         /// <param name="crucible"></param>
         /// <param name="crusoe"></param>
         /// <param name="darkbloom"></param>
+        /// <param name="decart"></param>
         /// <param name="deepinfra"></param>
         /// <param name="deepseek"></param>
         /// <param name="dekallm"></param>
@@ -849,6 +856,7 @@ namespace OpenRouter
             object? crucible,
             object? crusoe,
             object? darkbloom,
+            object? decart,
             object? deepinfra,
             object? deepseek,
             object? dekallm,
@@ -964,6 +972,7 @@ namespace OpenRouter
             this.Crucible = crucible;
             this.Crusoe = crusoe;
             this.Darkbloom = darkbloom;
+            this.Decart = decart;
             this.Deepinfra = deepinfra;
             this.Deepseek = deepseek;
             this.Dekallm = dekallm;

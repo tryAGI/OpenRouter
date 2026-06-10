@@ -111,6 +111,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Decart,
+        /// <summary>
+        /// 
+        /// </summary>
         DeepInfra,
         /// <summary>
         /// 
@@ -387,6 +391,7 @@ namespace OpenRouter
                 ProviderName.Crucible => "Crucible",
                 ProviderName.Crusoe => "Crusoe",
                 ProviderName.Darkbloom => "Darkbloom",
+                ProviderName.Decart => "Decart",
                 ProviderName.DeepInfra => "DeepInfra",
                 ProviderName.DeepSeek => "DeepSeek",
                 ProviderName.DekaLLM => "DekaLLM",
@@ -482,6 +487,7 @@ namespace OpenRouter
                 "Crucible" => ProviderName.Crucible,
                 "Crusoe" => ProviderName.Crusoe,
                 "Darkbloom" => ProviderName.Darkbloom,
+                "Decart" => ProviderName.Decart,
                 "DeepInfra" => ProviderName.DeepInfra,
                 "DeepSeek" => ProviderName.DeepSeek,
                 "DekaLLM" => ProviderName.DekaLLM,
