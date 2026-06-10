@@ -107,6 +107,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Decart,
+        /// <summary>
+        /// 
+        /// </summary>
         Deepinfra,
         /// <summary>
         /// 
@@ -374,6 +378,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Cohere => "cohere",
                 BYOKProviderSlug.Crusoe => "crusoe",
                 BYOKProviderSlug.Darkbloom => "darkbloom",
+                BYOKProviderSlug.Decart => "decart",
                 BYOKProviderSlug.Deepinfra => "deepinfra",
                 BYOKProviderSlug.Deepseek => "deepseek",
                 BYOKProviderSlug.Dekallm => "dekallm",
@@ -466,6 +471,7 @@ namespace OpenRouter
                 "cohere" => BYOKProviderSlug.Cohere,
                 "crusoe" => BYOKProviderSlug.Crusoe,
                 "darkbloom" => BYOKProviderSlug.Darkbloom,
+                "decart" => BYOKProviderSlug.Decart,
                 "deepinfra" => BYOKProviderSlug.Deepinfra,
                 "deepseek" => BYOKProviderSlug.Deepseek,
                 "dekallm" => BYOKProviderSlug.Dekallm,

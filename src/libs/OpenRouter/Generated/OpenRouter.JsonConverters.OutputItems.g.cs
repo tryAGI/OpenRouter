@@ -196,11 +196,25 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemsVariant25)}");
                 reasoning = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.OutputItemsVariant26? webSearchCall = default;
-            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.WebSearchCall)
+            global::OpenRouter.OutputItemsVariant26? shellCall = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.ShellCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemsVariant26), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemsVariant26> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemsVariant26)}");
+                shellCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.OutputItemsVariant27? shellCallOutput = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.ShellCallOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemsVariant27), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemsVariant27> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemsVariant27)}");
+                shellCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.OutputItemsVariant28? webSearchCall = default;
+            if (discriminator?.Type == global::OpenRouter.OutputItemsDiscriminatorType.WebSearchCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemsVariant28), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemsVariant28> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.OutputItemsVariant28)}");
                 webSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -255,6 +269,10 @@ namespace OpenRouter.JsonConverters
                 openrouterWebSearch,
 
                 reasoning,
+
+                shellCall,
+
+                shellCallOutput,
 
                 webSearchCall
                 );
@@ -421,10 +439,22 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemsVariant25).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reasoning!, typeInfo);
             }
-            else if (value.IsWebSearchCall)
+            else if (value.IsShellCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemsVariant26), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemsVariant26?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemsVariant26).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShellCall!, typeInfo);
+            }
+            else if (value.IsShellCallOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemsVariant27), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemsVariant27?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemsVariant27).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShellCallOutput!, typeInfo);
+            }
+            else if (value.IsWebSearchCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputItemsVariant28), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputItemsVariant28?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputItemsVariant28).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchCall!, typeInfo);
             }
         }

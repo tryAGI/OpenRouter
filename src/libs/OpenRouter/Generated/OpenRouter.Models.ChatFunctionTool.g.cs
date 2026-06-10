@@ -84,6 +84,43 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorServerToolOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
+        /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.BashServerTool? BashServerTool { get; init; }
+#else
+        public global::OpenRouter.BashServerTool? BashServerTool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashServerTool))]
+#endif
+        public bool IsBashServerTool => BashServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBashServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.BashServerTool? value)
+        {
+            value = BashServerTool;
+            return IsBashServerTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BashServerTool PickBashServerTool() => IsBashServerTool
+            ? BashServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -353,6 +390,29 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatFunctionTool(global::OpenRouter.BashServerTool value) => new ChatFunctionTool((global::OpenRouter.BashServerTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.BashServerTool?(ChatFunctionTool @this) => @this.BashServerTool;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatFunctionTool(global::OpenRouter.BashServerTool? value)
+        {
+            BashServerTool = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatFunctionTool FromBashServerTool(global::OpenRouter.BashServerTool? value) => new ChatFunctionTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatFunctionTool(global::OpenRouter.DatetimeServerTool value) => new ChatFunctionTool((global::OpenRouter.DatetimeServerTool?)value);
 
         /// <summary>
@@ -494,6 +554,7 @@ namespace OpenRouter
         public ChatFunctionTool(
             global::OpenRouter.ChatFunctionTool0? chatFunctionTool0,
             global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerToolOpenRouter,
+            global::OpenRouter.BashServerTool? bashServerTool,
             global::OpenRouter.DatetimeServerTool? datetimeServerTool,
             global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter,
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool,
@@ -504,6 +565,7 @@ namespace OpenRouter
         {
             ChatFunctionTool0 = chatFunctionTool0;
             AdvisorServerToolOpenRouter = advisorServerToolOpenRouter;
+            BashServerTool = bashServerTool;
             DatetimeServerTool = datetimeServerTool;
             ImageGenerationServerToolOpenRouter = imageGenerationServerToolOpenRouter;
             ChatSearchModelsServerTool = chatSearchModelsServerTool;
@@ -522,6 +584,7 @@ namespace OpenRouter
             ChatSearchModelsServerTool as object ??
             ImageGenerationServerToolOpenRouter as object ??
             DatetimeServerTool as object ??
+            BashServerTool as object ??
             AdvisorServerToolOpenRouter as object ??
             ChatFunctionTool0 as object 
             ;
@@ -532,6 +595,7 @@ namespace OpenRouter
         public override string? ToString() =>
             ChatFunctionTool0?.ToString() ??
             AdvisorServerToolOpenRouter?.ToString() ??
+            BashServerTool?.ToString() ??
             DatetimeServerTool?.ToString() ??
             ImageGenerationServerToolOpenRouter?.ToString() ??
             ChatSearchModelsServerTool?.ToString() ??
@@ -545,7 +609,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsAdvisorServerToolOpenRouter && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsDatetimeServerTool && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
+            return IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
         }
 
         /// <summary>
@@ -554,6 +618,7 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ChatFunctionTool0, TResult>? chatFunctionTool0 = null,
             global::System.Func<global::OpenRouter.AdvisorServerToolOpenRouter, TResult>? advisorServerToolOpenRouter = null,
+            global::System.Func<global::OpenRouter.BashServerTool, TResult>? bashServerTool = null,
             global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServerTool = null,
             global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.ChatSearchModelsServerTool, TResult>? chatSearchModelsServerTool = null,
@@ -574,6 +639,10 @@ namespace OpenRouter
             else if (IsAdvisorServerToolOpenRouter && advisorServerToolOpenRouter != null)
             {
                 return advisorServerToolOpenRouter(AdvisorServerToolOpenRouter!);
+            }
+            else if (IsBashServerTool && bashServerTool != null)
+            {
+                return bashServerTool(BashServerTool!);
             }
             else if (IsDatetimeServerTool && datetimeServerTool != null)
             {
@@ -611,6 +680,8 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerToolOpenRouter = null,
 
+            global::System.Action<global::OpenRouter.BashServerTool>? bashServerTool = null,
+
             global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
 
             global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
@@ -636,6 +707,10 @@ namespace OpenRouter
             else if (IsAdvisorServerToolOpenRouter)
             {
                 advisorServerToolOpenRouter?.Invoke(AdvisorServerToolOpenRouter!);
+            }
+            else if (IsBashServerTool)
+            {
+                bashServerTool?.Invoke(BashServerTool!);
             }
             else if (IsDatetimeServerTool)
             {
@@ -669,6 +744,7 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<global::OpenRouter.ChatFunctionTool0>? chatFunctionTool0 = null,
             global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.BashServerTool>? bashServerTool = null,
             global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
             global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
@@ -689,6 +765,10 @@ namespace OpenRouter
             else if (IsAdvisorServerToolOpenRouter)
             {
                 advisorServerToolOpenRouter?.Invoke(AdvisorServerToolOpenRouter!);
+            }
+            else if (IsBashServerTool)
+            {
+                bashServerTool?.Invoke(BashServerTool!);
             }
             else if (IsDatetimeServerTool)
             {
@@ -727,6 +807,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ChatFunctionTool0),
                 AdvisorServerToolOpenRouter,
                 typeof(global::OpenRouter.AdvisorServerToolOpenRouter),
+                BashServerTool,
+                typeof(global::OpenRouter.BashServerTool),
                 DatetimeServerTool,
                 typeof(global::OpenRouter.DatetimeServerTool),
                 ImageGenerationServerToolOpenRouter,
@@ -757,6 +839,7 @@ namespace OpenRouter
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFunctionTool0?>.Default.Equals(ChatFunctionTool0, other.ChatFunctionTool0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AdvisorServerToolOpenRouter?>.Default.Equals(AdvisorServerToolOpenRouter, other.AdvisorServerToolOpenRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BashServerTool?>.Default.Equals(BashServerTool, other.BashServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ImageGenerationServerToolOpenRouter?>.Default.Equals(ImageGenerationServerToolOpenRouter, other.ImageGenerationServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(ChatSearchModelsServerTool, other.ChatSearchModelsServerTool) &&
