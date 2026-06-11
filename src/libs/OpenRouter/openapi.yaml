@@ -838,7 +838,7 @@
                   },
                   "group_limit": {
                     "type": "integer",
-                    "description": "Maximum rows per distinct combination of dimensions (ClickHouse LIMIT n BY). When omitted on time-series queries (granularity + dimensions), auto-computed to avoid truncating time windows. Explicit values override the default and may truncate time buckets if set lower than the number of buckets in the range. Ignored when no dimensions are specified."
+                    "description": "Maximum rows per distinct combination of dimensions. When omitted on time-series queries (granularity + dimensions), auto-computed to avoid truncating time windows. Explicit values override the default and may truncate time buckets if set lower than the number of buckets in the range. Ignored when no dimensions are specified."
                   },
                   "limit": {
                     "type": "integer",
@@ -3711,6 +3711,68 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/MessagesRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/model/{author}/{slug}": {
+      "get": {
+        "operationId": "get-model",
+        "summary": "Get a model by its slug",
+        "description": "Returns full details for a single model identified by its author and slug (e.g. openai/gpt-4). Supports variant suffixes (e.g. openai/gpt-4:free) and resolves known slug aliases.",
+        "tags": [
+          "subpackage_models"
+        ],
+        "parameters": [
+          {
+            "name": "author",
+            "in": "path",
+            "description": "The author/organization of the model",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "The model slug, optionally including a variant suffix (e.g. gpt-4 or gpt-4:free)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the model details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
               }
             }
           }
@@ -21686,6 +21748,59 @@
         "description": "Model architecture information",
         "title": "ModelArchitecture"
       },
+      "DABenchmarkEntry": {
+        "type": "object",
+        "properties": {
+          "arena": {
+            "type": "string",
+            "description": "Arena type (e.g. models, builders, agents)"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category within the arena (e.g. website, gamedev, uicomponent)"
+          },
+          "elo": {
+            "type": "number",
+            "format": "double",
+            "description": "ELO rating from head-to-head arena battles"
+          },
+          "rank": {
+            "type": "integer",
+            "description": "Rank position within this arena+category among models available on OpenRouter (1 = highest ELO)"
+          },
+          "win_rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Win rate percentage in arena battles"
+          }
+        },
+        "required": [
+          "arena",
+          "category",
+          "elo",
+          "rank",
+          "win_rate"
+        ],
+        "description": "A single Design Arena benchmark entry for a specific arena+category",
+        "title": "DABenchmarkEntry"
+      },
+      "ModelBenchmarks": {
+        "type": "object",
+        "properties": {
+          "design_arena": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DABenchmarkEntry"
+            },
+            "description": "Design Arena ELO rankings across arena+category pairs. The parent benchmarks object is omitted when the model has not been evaluated."
+          }
+        },
+        "required": [
+          "design_arena"
+        ],
+        "description": "Third-party benchmark rankings for this model. Omitted when no benchmark data is available.",
+        "title": "ModelBenchmarks"
+      },
       "DefaultParameters": {
         "type": "object",
         "properties": {
@@ -21887,6 +22002,9 @@
         "properties": {
           "architecture": {
             "$ref": "#/components/schemas/ModelArchitecture"
+          },
+          "benchmarks": {
+            "$ref": "#/components/schemas/ModelBenchmarks"
           },
           "canonical_slug": {
             "type": "string",
@@ -29747,6 +29865,19 @@
           "type"
         ],
         "title": "MessagesErrorResponse"
+      },
+      "ModelResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Model"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "description": "Single model response",
+        "title": "ModelResponse"
       },
       "ModelsGetParametersCategory": {
         "type": "string",

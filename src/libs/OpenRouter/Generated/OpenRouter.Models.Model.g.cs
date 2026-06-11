@@ -16,6 +16,12 @@ namespace OpenRouter
         public required global::OpenRouter.ModelArchitecture Architecture { get; set; }
 
         /// <summary>
+        /// Third-party benchmark rankings for this model. Omitted when no benchmark data is available.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("benchmarks")]
+        public global::OpenRouter.ModelBenchmarks? Benchmarks { get; set; }
+
+        /// <summary>
         /// Canonical slug for the model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("canonical_slug")]
@@ -164,6 +170,9 @@ namespace OpenRouter
         /// <param name="topProvider">
         /// Information about the top provider for this model
         /// </param>
+        /// <param name="benchmarks">
+        /// Third-party benchmark rankings for this model. Omitted when no benchmark data is available.
+        /// </param>
         /// <param name="contextLength">
         /// Maximum context length in tokens
         /// </param>
@@ -197,6 +206,7 @@ namespace OpenRouter
             global::OpenRouter.PublicPricing pricing,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             global::OpenRouter.TopProviderInfo topProvider,
+            global::OpenRouter.ModelBenchmarks? benchmarks,
             int? contextLength,
             string? description,
             string? expirationDate,
@@ -205,6 +215,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? supportedVoices)
         {
             this.Architecture = architecture ?? throw new global::System.ArgumentNullException(nameof(architecture));
+            this.Benchmarks = benchmarks;
             this.CanonicalSlug = canonicalSlug ?? throw new global::System.ArgumentNullException(nameof(canonicalSlug));
             this.ContextLength = contextLength;
             this.Created = created;
