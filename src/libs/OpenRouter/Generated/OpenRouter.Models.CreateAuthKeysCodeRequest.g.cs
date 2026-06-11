@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class CreateAuthKeysCodeRequest
     {
         /// <summary>
-        /// The callback URL to redirect to after authorization. Note, only https URLs on ports 443 and 3000 are allowed.
+        /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -63,7 +63,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="CreateAuthKeysCodeRequest" /> class.
         /// </summary>
         /// <param name="callbackUrl">
-        /// The callback URL to redirect to after authorization. Note, only https URLs on ports 443 and 3000 are allowed.
+        /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.
         /// </param>
         /// <param name="codeChallenge">
         /// PKCE code challenge for enhanced security

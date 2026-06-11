@@ -323,7 +323,7 @@
                   "callback_url": {
                     "type": "string",
                     "format": "uri",
-                    "description": "The callback URL to redirect to after authorization. Note, only https URLs on ports 443 and 3000 are allowed."
+                    "description": "The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools."
                   },
                   "code_challenge": {
                     "type": "string",
