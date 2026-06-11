@@ -41,6 +41,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicMessageUsageIterationTypeJsonConverter))]
         public global::OpenRouter.AnthropicMessageUsageIterationType Type { get; set; }
@@ -59,6 +65,7 @@ namespace OpenRouter
         /// <param name="cacheReadInputTokens"></param>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
+        /// <param name="model"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,6 +76,7 @@ namespace OpenRouter
             int? cacheReadInputTokens,
             int? inputTokens,
             int? outputTokens,
+            string? model,
             global::OpenRouter.AnthropicMessageUsageIterationType type)
         {
             this.CacheCreation = cacheCreation;
@@ -76,6 +84,7 @@ namespace OpenRouter
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
+            this.Model = model;
             this.Type = type;
         }
 

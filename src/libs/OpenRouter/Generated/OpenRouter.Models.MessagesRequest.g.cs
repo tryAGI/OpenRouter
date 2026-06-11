@@ -22,6 +22,12 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? ContextManagement { get; set; }
 
         /// <summary>
+        /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallbacks")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? Fallbacks { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
@@ -184,6 +190,9 @@ namespace OpenRouter
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
         /// <param name="contextManagement"></param>
+        /// <param name="fallbacks">
+        /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.
+        /// </param>
         /// <param name="maxTokens"></param>
         /// <param name="messages"></param>
         /// <param name="metadata"></param>
@@ -230,6 +239,7 @@ namespace OpenRouter
             string model,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement,
+            global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks,
             int? maxTokens,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages,
             global::OpenRouter.MessagesRequestMetadata? metadata,
@@ -256,6 +266,7 @@ namespace OpenRouter
         {
             this.CacheControl = cacheControl;
             this.ContextManagement = contextManagement;
+            this.Fallbacks = fallbacks;
             this.MaxTokens = maxTokens;
             this.Messages = messages;
             this.Metadata = metadata;
