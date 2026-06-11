@@ -1439,6 +1439,135 @@
         }
       }
     },
+    "/datasets/app-rankings": {
+      "get": {
+        "operationId": "get-app-rankings",
+        "summary": "Top apps by token usage",
+        "description": "Returns the top public apps on OpenRouter ranked by token usage inside the requested\ndate window, matching the public apps marketplace on openrouter.ai/apps. Token totals\nare `prompt_tokens + completion_tokens`; hidden and private apps are excluded and\ntraffic from related app aliases is merged into the canonical visible app.\n\n`sort=popular` (default) ranks by total token volume inside the window.\n`sort=trending` ranks by absolute excess token growth: window volume minus the average\nvolume of the three equal-length periods immediately preceding the window. Apps with\nno excess growth are omitted, so `trending` may return fewer than `limit` rows.\n\nFilter with `category` (marketplace category group, e.g. `coding`) or `subcategory`\n(e.g. `cli-agent`). Ranks are re-numbered 1..N after filtering. Page with `offset` —\n`rank` stays absolute, so the first row of `offset=50` is `rank: 51`.\n\nAuthenticate with any valid OpenRouter API key (same key used for inference).\nRate-limited to 30 requests/minute per key and 500 requests/day per account.\n\nWhen republishing or quoting this dataset, OpenRouter must be cited as:\n\"Source: OpenRouter (openrouter.ai/apps), as of {as_of}.\"\n\nToken counts come from each upstream provider's own tokenizer, so a token attributed\nto one app is not directly comparable to a token attributed to another app whose\ntraffic flows through a different provider.",
+        "tags": [
+          "subpackage_datasets"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Marketplace category group to filter by (e.g. `coding`). Only apps tagged with a subcategory inside this group are returned. Mutually combinable with `subcategory` — when both are supplied the `subcategory` must belong to the `category` group.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/DatasetsAppRankingsGetParametersCategory"
+            }
+          },
+          {
+            "name": "subcategory",
+            "in": "query",
+            "description": "Marketplace subcategory to filter by (e.g. `cli-agent`). Takes precedence over `category` for the actual filter; when `category` is also supplied the pair must be consistent.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/DatasetsAppRankingsGetParametersSubcategory"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "`popular` ranks apps by total token volume inside the date window. `trending` ranks apps by absolute excess token growth: window volume minus the average volume of the three equal-length periods immediately preceding the window. Apps with no excess growth are omitted from `trending` results.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/DatasetsAppRankingsGetParametersSort"
+            }
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "description": "Start of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to 30 days before `end_date`. The dataset begins at 2025-01-01; earlier values are clamped forward to that floor and the resolved value is echoed in `meta.start_date`.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "description": "End of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to the most recent completed UTC day. Must be on or after 2025-01-01; earlier values are rejected with a 400.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of apps to return (1-100). Defaults to 50.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of ranked apps to skip before the first returned row (0-100). Defaults to 0. `rank` stays absolute, so the first row of `offset=50` is `rank: 51`.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Apps ranked per the requested `sort`, re-numbered 1..N. `popular` sorts by `total_tokens` descending; `trending` sorts by absolute excess token growth descending and may return fewer than `limit` rows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppRankingsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/datasets/rankings-daily": {
       "get": {
         "operationId": "get-rankings-daily",
@@ -3624,6 +3753,15 @@
             }
           },
           {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ModelsGetParametersSort"
+            }
+          },
+          {
             "name": "use_rss",
             "in": "query",
             "description": "Return results as RSS feed",
@@ -4222,6 +4360,151 @@
         }
       }
     },
+    "/presets": {
+      "get": {
+        "operationId": "list-presets",
+        "summary": "List presets",
+        "description": "Lists all presets for the authenticated user, ordered by most recently updated first.",
+        "tags": [
+          "subpackage_presets"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of presets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPresetsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/presets/{slug}": {
+      "get": {
+        "operationId": "get-preset",
+        "summary": "Get a preset",
+        "description": "Retrieves a preset by its slug with its currently designated version inline.",
+        "tags": [
+          "subpackage_presets"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "URL-safe slug identifying the preset.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Preset with its designated version.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPresetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/presets/{slug}/chat/completions": {
       "post": {
         "operationId": "create-presets-chat-completions",
@@ -4522,6 +4805,179 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResponsesRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/presets/{slug}/versions": {
+      "get": {
+        "operationId": "list-preset-versions",
+        "summary": "List versions of a preset",
+        "description": "Lists all versions of a preset, ordered by version number ascending (oldest first).",
+        "tags": [
+          "subpackage_presets"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "URL-safe slug identifying the preset.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of records to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of preset versions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPresetVersionsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/presets/{slug}/versions/{version}": {
+      "get": {
+        "operationId": "get-preset-version",
+        "summary": "Get a specific version of a preset",
+        "description": "Retrieves a specific version of a preset by its slug and version number.",
+        "tags": [
+          "subpackage_presets"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "URL-safe slug identifying the preset.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "Version number of the preset.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested preset version.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPresetVersionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
               }
             }
           }
@@ -20379,28 +20835,81 @@
         "description": "Total credits purchased and used",
         "title": "Credits_getCredits_Response_200"
       },
-      "RankingsDailyItem": {
+      "DatasetsAppRankingsGetParametersCategory": {
+        "type": "string",
+        "enum": [
+          "coding",
+          "creative",
+          "productivity",
+          "entertainment"
+        ],
+        "description": "Marketplace category group to filter by (e.g. `coding`). Only apps tagged with a subcategory inside this group are returned. Mutually combinable with `subcategory` — when both are supplied the `subcategory` must belong to the `category` group.",
+        "title": "DatasetsAppRankingsGetParametersCategory"
+      },
+      "DatasetsAppRankingsGetParametersSubcategory": {
+        "type": "string",
+        "enum": [
+          "cli-agent",
+          "ide-extension",
+          "cloud-agent",
+          "programming-app",
+          "native-app-builder",
+          "creative-writing",
+          "video-gen",
+          "image-gen",
+          "audio-gen",
+          "roleplay",
+          "game",
+          "writing-assistant",
+          "general-chat",
+          "personal-agent",
+          "legal"
+        ],
+        "description": "Marketplace subcategory to filter by (e.g. `cli-agent`). Takes precedence over `category` for the actual filter; when `category` is also supplied the pair must be consistent.",
+        "title": "DatasetsAppRankingsGetParametersSubcategory"
+      },
+      "DatasetsAppRankingsGetParametersSort": {
+        "type": "string",
+        "enum": [
+          "popular",
+          "trending"
+        ],
+        "default": "popular",
+        "description": "`popular` ranks apps by total token volume inside the date window. `trending` ranks apps by absolute excess token growth: window volume minus the average volume of the three equal-length periods immediately preceding the window. Apps with no excess growth are omitted from `trending` results.",
+        "title": "DatasetsAppRankingsGetParametersSort"
+      },
+      "AppRankingsItem": {
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "description": "UTC calendar date the row is aggregated over (YYYY-MM-DD)."
+          "app_id": {
+            "type": "integer",
+            "description": "Stable numeric identifier of the app on OpenRouter."
           },
-          "model_permaslug": {
+          "app_name": {
             "type": "string",
-            "description": "Model variant permaslug (e.g. `openai/gpt-4o-2024-05-13`, `openai/gpt-4o-2024-05-13:free`). Non-default variants include a `:variant` suffix and are ranked as their own entry. The reserved value `other` denotes the aggregated row covering every model outside the daily top 50 for that date — always sorted last within its date."
+            "description": "Public display name of the app."
+          },
+          "rank": {
+            "type": "integer",
+            "description": "1-based position of the app within this response, per the requested `sort`."
+          },
+          "total_requests": {
+            "type": "integer",
+            "description": "Number of requests attributed to the app inside the date window."
           },
           "total_tokens": {
             "type": "string",
-            "description": "Sum of `prompt_tokens + completion_tokens` for the day, returned as a decimal string so 64-bit values are not truncated."
+            "description": "Sum of `prompt_tokens + completion_tokens` attributed to the app inside the date window, returned as a decimal string so 64-bit values are not truncated."
           }
         },
         "required": [
-          "date",
-          "model_permaslug",
+          "app_id",
+          "app_name",
+          "rank",
+          "total_requests",
           "total_tokens"
         ],
-        "title": "RankingsDailyItem"
+        "title": "AppRankingsItem"
       },
       "RankingsDailyMetaVersion": {
         "type": "string",
@@ -20437,6 +20946,49 @@
           "version"
         ],
         "title": "RankingsDailyMeta"
+      },
+      "AppRankingsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppRankingsItem"
+            },
+            "description": "Apps ranked per the requested `sort`, re-numbered 1..N after category filtering. `popular` sorts by `total_tokens` descending; `trending` sorts by absolute excess token growth descending and may return fewer than `limit` rows when few apps are growing."
+          },
+          "meta": {
+            "$ref": "#/components/schemas/RankingsDailyMeta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "AppRankingsResponse"
+      },
+      "RankingsDailyItem": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "UTC calendar date the row is aggregated over (YYYY-MM-DD)."
+          },
+          "model_permaslug": {
+            "type": "string",
+            "description": "Model variant permaslug (e.g. `openai/gpt-4o-2024-05-13`, `openai/gpt-4o-2024-05-13:free`). Non-default variants include a `:variant` suffix and are ranked as their own entry. The reserved value `other` denotes the aggregated row covering every model outside the daily top 50 for that date — always sorted last within its date."
+          },
+          "total_tokens": {
+            "type": "string",
+            "description": "Sum of `prompt_tokens + completion_tokens` for the day, returned as a decimal string so 64-bit values are not truncated."
+          }
+        },
+        "required": [
+          "date",
+          "model_permaslug",
+          "total_tokens"
+        ],
+        "title": "RankingsDailyItem"
       },
       "RankingsDailyResponse": {
         "type": "object",
@@ -29215,6 +29767,21 @@
         "description": "Filter models by use case category",
         "title": "ModelsGetParametersCategory"
       },
+      "ModelsGetParametersSort": {
+        "type": "string",
+        "enum": [
+          "most-popular",
+          "newest",
+          "top-weekly",
+          "pricing-low-to-high",
+          "pricing-high-to-low",
+          "context-high-to-low",
+          "throughput-high-to-low",
+          "latency-low-to-high"
+        ],
+        "description": "Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.",
+        "title": "ModelsGetParametersSort"
+      },
       "ModelsCountResponseData": {
         "type": "object",
         "properties": {
@@ -35788,6 +36355,104 @@
         ],
         "title": "Organization_listOrganizationMembers_Response_200"
       },
+      "PresetStatus": {
+        "type": "string",
+        "enum": [
+          "active",
+          "disabled",
+          "archived"
+        ],
+        "description": "The status of a preset.",
+        "title": "PresetStatus"
+      },
+      "Preset": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "creator_user_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "designated_version_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PresetStatus"
+          },
+          "status_updated_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "workspace_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "created_at",
+          "creator_user_id",
+          "description",
+          "designated_version_id",
+          "id",
+          "name",
+          "slug",
+          "status",
+          "status_updated_at",
+          "updated_at",
+          "workspace_id"
+        ],
+        "description": "A preset without version details.",
+        "title": "Preset"
+      },
+      "ListPresetsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Preset"
+            }
+          },
+          "total_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "data",
+          "total_count"
+        ],
+        "description": "A paginated list of presets.",
+        "title": "ListPresetsResponse"
+      },
       "PresetDesignatedVersion": {
         "type": "object",
         "properties": {
@@ -35835,15 +36500,6 @@
         "description": "A specific version of a preset, containing config and optional system prompt.",
         "title": "PresetDesignatedVersion"
       },
-      "PresetWithDesignatedVersionStatus": {
-        "type": "string",
-        "enum": [
-          "active",
-          "disabled",
-          "archived"
-        ],
-        "title": "PresetWithDesignatedVersionStatus"
-      },
       "PresetWithDesignatedVersion": {
         "type": "object",
         "properties": {
@@ -35862,9 +36518,6 @@
               "null"
             ]
           },
-          "designated_version": {
-            "$ref": "#/components/schemas/PresetDesignatedVersion"
-          },
           "designated_version_id": {
             "type": [
               "string",
@@ -35881,7 +36534,7 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/PresetWithDesignatedVersionStatus"
+            "$ref": "#/components/schemas/PresetStatus"
           },
           "status_updated_at": {
             "type": [
@@ -35897,13 +36550,15 @@
               "string",
               "null"
             ]
+          },
+          "designated_version": {
+            "$ref": "#/components/schemas/PresetDesignatedVersion"
           }
         },
         "required": [
           "created_at",
           "creator_user_id",
           "description",
-          "designated_version",
           "designated_version_id",
           "id",
           "name",
@@ -35911,10 +36566,24 @@
           "status",
           "status_updated_at",
           "updated_at",
-          "workspace_id"
+          "workspace_id",
+          "designated_version"
         ],
         "description": "A preset with its currently designated version.",
         "title": "PresetWithDesignatedVersion"
+      },
+      "GetPresetResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PresetWithDesignatedVersion"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "description": "A preset with its currently designated version.",
+        "title": "GetPresetResponse"
       },
       "CreatePresetFromInferenceResponse": {
         "type": "object",
@@ -35928,6 +36597,39 @@
         ],
         "description": "Response containing the created preset with its designated version.",
         "title": "CreatePresetFromInferenceResponse"
+      },
+      "ListPresetVersionsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresetDesignatedVersion"
+            }
+          },
+          "total_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "data",
+          "total_count"
+        ],
+        "description": "A paginated list of preset versions.",
+        "title": "ListPresetVersionsResponse"
+      },
+      "GetPresetVersionResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PresetDesignatedVersion"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "description": "A single version of a preset.",
+        "title": "GetPresetVersionResponse"
       },
       "ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems": {
         "type": "string",

@@ -3,11 +3,11 @@
 
 namespace OpenRouter
 {
-    public partial class SubpackageModelsClient
+    public partial class SubpackagePresetsClient
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetModelsSecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetPresetVersionSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,69 +21,46 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetModelsSecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetPresetVersionSecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_GetModelsSecurityRequirement0,
+            {                s_GetPresetVersionSecurityRequirement0,
             };
-        partial void PrepareGetModelsArguments(
+        partial void PrepareGetPresetVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::OpenRouter.ModelsGetParametersCategory? category,
-            ref string? supportedParameters,
-            ref string? outputModalities,
-            ref global::OpenRouter.ModelsGetParametersSort? sort,
-            ref string? useRss,
-            ref string? useRssChatLinks);
-        partial void PrepareGetModelsRequest(
+            ref string slug,
+            ref string version);
+        partial void PrepareGetPresetVersionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.ModelsGetParametersCategory? category,
-            string? supportedParameters,
-            string? outputModalities,
-            global::OpenRouter.ModelsGetParametersSort? sort,
-            string? useRss,
-            string? useRssChatLinks);
-        partial void ProcessGetModelsResponse(
+            string slug,
+            string version);
+        partial void ProcessGetPresetVersionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetModelsResponseContent(
+        partial void ProcessGetPresetVersionResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List all models and their properties
+        /// Get a specific version of a preset<br/>
+        /// Retrieves a specific version of a preset by its slug and version number.
         /// </summary>
-        /// <param name="category">
-        /// Filter models by use case category
-        /// </param>
-        /// <param name="supportedParameters"></param>
-        /// <param name="outputModalities"></param>
-        /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.
-        /// </param>
-        /// <param name="useRss"></param>
-        /// <param name="useRssChatLinks"></param>
+        /// <param name="slug"></param>
+        /// <param name="version"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.ModelsListResponse> GetModelsAsync(
-            global::OpenRouter.ModelsGetParametersCategory? category = default,
-            string? supportedParameters = default,
-            string? outputModalities = default,
-            global::OpenRouter.ModelsGetParametersSort? sort = default,
-            string? useRss = default,
-            string? useRssChatLinks = default,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.GetPresetVersionResponse> GetPresetVersionAsync(
+            string slug,
+            string version,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetModelsAsResponseAsync(
-                category: category,
-                supportedParameters: supportedParameters,
-                outputModalities: outputModalities,
-                sort: sort,
-                useRss: useRss,
-                useRssChatLinks: useRssChatLinks,
+            var __response = await GetPresetVersionAsResponseAsync(
+                slug: slug,
+                version: version,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -91,47 +68,32 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// List all models and their properties
+        /// Get a specific version of a preset<br/>
+        /// Retrieves a specific version of a preset by its slug and version number.
         /// </summary>
-        /// <param name="category">
-        /// Filter models by use case category
-        /// </param>
-        /// <param name="supportedParameters"></param>
-        /// <param name="outputModalities"></param>
-        /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.
-        /// </param>
-        /// <param name="useRss"></param>
-        /// <param name="useRssChatLinks"></param>
+        /// <param name="slug"></param>
+        /// <param name="version"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ModelsListResponse>> GetModelsAsResponseAsync(
-            global::OpenRouter.ModelsGetParametersCategory? category = default,
-            string? supportedParameters = default,
-            string? outputModalities = default,
-            global::OpenRouter.ModelsGetParametersSort? sort = default,
-            string? useRss = default,
-            string? useRssChatLinks = default,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GetPresetVersionResponse>> GetPresetVersionAsResponseAsync(
+            string slug,
+            string version,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetModelsArguments(
+            PrepareGetPresetVersionArguments(
                 httpClient: HttpClient,
-                category: ref category,
-                supportedParameters: ref supportedParameters,
-                outputModalities: ref outputModalities,
-                sort: ref sort,
-                useRss: ref useRss,
-                useRssChatLinks: ref useRssChatLinks);
+                slug: ref slug,
+                version: ref version);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetModelsSecurityRequirements,
-                operationName: "GetModelsAsync");
+                securityRequirements: s_GetPresetVersionSecurityRequirements,
+                operationName: "GetPresetVersionAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -151,16 +113,8 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/models",
+                                path: $"/presets/{slug}/versions/{version}",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddOptionalParameter("category", category?.ToValueString())
-                                .AddOptionalParameter("supported_parameters", supportedParameters)
-                                .AddOptionalParameter("output_modalities", outputModalities)
-                                .AddOptionalParameter("sort", sort?.ToValueString())
-                                .AddOptionalParameter("use_rss", useRss)
-                                .AddOptionalParameter("use_rss_chat_links", useRssChatLinks)
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -198,15 +152,11 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetModelsRequest(
+                PrepareGetPresetVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    category: category,
-                    supportedParameters: supportedParameters,
-                    outputModalities: outputModalities,
-                    sort: sort,
-                    useRss: useRss,
-                    useRssChatLinks: useRssChatLinks);
+                    slug: slug!,
+                    version: version!);
 
                 return __httpRequest;
             }
@@ -223,9 +173,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetPresetVersion",
+                                methodName: "GetPresetVersionAsync",
+                                pathTemplate: "$\"/presets/{slug}/versions/{version}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -257,9 +207,9 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetPresetVersion",
+                                methodName: "GetPresetVersionAsync",
+                                pathTemplate: "$\"/presets/{slug}/versions/{version}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -298,9 +248,9 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetPresetVersion",
+                                methodName: "GetPresetVersionAsync",
+                                pathTemplate: "$\"/presets/{slug}/versions/{version}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -338,7 +288,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetModelsResponse(
+                ProcessGetPresetVersionResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -346,9 +296,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetPresetVersion",
+                                methodName: "GetPresetVersionAsync",
+                                pathTemplate: "$\"/presets/{slug}/versions/{version}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -368,9 +318,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetPresetVersion",
+                                methodName: "GetPresetVersionAsync",
+                                pathTemplate: "$\"/presets/{slug}/versions/{version}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -417,6 +367,80 @@ namespace OpenRouter
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Unauthorized - Authentication required or invalid credentials
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::OpenRouter.UnauthorizedResponse? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Not Found - Resource does not exist
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::OpenRouter.NotFoundResponse? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -472,7 +496,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetModelsResponseContent(
+                                ProcessGetPresetVersionResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -481,9 +505,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.ModelsListResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.GetPresetVersionResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ModelsListResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GetPresetVersionResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -513,9 +537,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.ModelsListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.GetPresetVersionResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ModelsListResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GetPresetVersionResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

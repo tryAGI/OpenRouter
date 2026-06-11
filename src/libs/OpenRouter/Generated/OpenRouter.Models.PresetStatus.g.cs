@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    /// The status of a preset.
     /// </summary>
-    public enum PresetWithDesignatedVersionStatus
+    public enum PresetStatus
     {
         /// <summary>
         /// 
@@ -25,31 +25,31 @@ namespace OpenRouter
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class PresetWithDesignatedVersionStatusExtensions
+    public static class PresetStatusExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this PresetWithDesignatedVersionStatus value)
+        public static string ToValueString(this PresetStatus value)
         {
             return value switch
             {
-                PresetWithDesignatedVersionStatus.Active => "active",
-                PresetWithDesignatedVersionStatus.Archived => "archived",
-                PresetWithDesignatedVersionStatus.Disabled => "disabled",
+                PresetStatus.Active => "active",
+                PresetStatus.Archived => "archived",
+                PresetStatus.Disabled => "disabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PresetWithDesignatedVersionStatus? ToEnum(string value)
+        public static PresetStatus? ToEnum(string value)
         {
             return value switch
             {
-                "active" => PresetWithDesignatedVersionStatus.Active,
-                "archived" => PresetWithDesignatedVersionStatus.Archived,
-                "disabled" => PresetWithDesignatedVersionStatus.Disabled,
+                "active" => PresetStatus.Active,
+                "archived" => PresetStatus.Archived,
+                "disabled" => PresetStatus.Disabled,
                 _ => null,
             };
         }

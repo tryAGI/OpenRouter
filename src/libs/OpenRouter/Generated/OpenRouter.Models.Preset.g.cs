@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A preset with its currently designated version.
+    /// A preset without version details.
     /// </summary>
-    public sealed partial class PresetWithDesignatedVersion
+    public sealed partial class Preset
     {
         /// <summary>
         /// 
@@ -82,20 +82,13 @@ namespace OpenRouter
         public string? WorkspaceId { get; set; }
 
         /// <summary>
-        /// A specific version of a preset, containing config and optional system prompt.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("designated_version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.PresetDesignatedVersion DesignatedVersion { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PresetWithDesignatedVersion" /> class.
+        /// Initializes a new instance of the <see cref="Preset" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
@@ -105,9 +98,6 @@ namespace OpenRouter
         /// The status of a preset.
         /// </param>
         /// <param name="updatedAt"></param>
-        /// <param name="designatedVersion">
-        /// A specific version of a preset, containing config and optional system prompt.
-        /// </param>
         /// <param name="creatorUserId"></param>
         /// <param name="description"></param>
         /// <param name="designatedVersionId"></param>
@@ -116,14 +106,13 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public PresetWithDesignatedVersion(
+        public Preset(
             string createdAt,
             string id,
             string name,
             string slug,
             global::OpenRouter.PresetStatus status,
             string updatedAt,
-            global::OpenRouter.PresetDesignatedVersion designatedVersion,
             string? creatorUserId,
             string? description,
             string? designatedVersionId,
@@ -141,13 +130,12 @@ namespace OpenRouter
             this.StatusUpdatedAt = statusUpdatedAt;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.WorkspaceId = workspaceId;
-            this.DesignatedVersion = designatedVersion ?? throw new global::System.ArgumentNullException(nameof(designatedVersion));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PresetWithDesignatedVersion" /> class.
+        /// Initializes a new instance of the <see cref="Preset" /> class.
         /// </summary>
-        public PresetWithDesignatedVersion()
+        public Preset()
         {
         }
 

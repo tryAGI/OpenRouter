@@ -3,11 +3,11 @@
 
 namespace OpenRouter
 {
-    public partial class SubpackageModelsClient
+    public partial class SubpackageDatasetsClient
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetModelsSecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetAppRankingsSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,69 +21,99 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetModelsSecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetAppRankingsSecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_GetModelsSecurityRequirement0,
+            {                s_GetAppRankingsSecurityRequirement0,
             };
-        partial void PrepareGetModelsArguments(
+        partial void PrepareGetAppRankingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::OpenRouter.ModelsGetParametersCategory? category,
-            ref string? supportedParameters,
-            ref string? outputModalities,
-            ref global::OpenRouter.ModelsGetParametersSort? sort,
-            ref string? useRss,
-            ref string? useRssChatLinks);
-        partial void PrepareGetModelsRequest(
+            ref global::OpenRouter.DatasetsAppRankingsGetParametersCategory? category,
+            ref global::OpenRouter.DatasetsAppRankingsGetParametersSubcategory? subcategory,
+            ref global::OpenRouter.DatasetsAppRankingsGetParametersSort? sort,
+            ref string? startDate,
+            ref string? endDate,
+            ref int? limit,
+            ref int? offset);
+        partial void PrepareGetAppRankingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.ModelsGetParametersCategory? category,
-            string? supportedParameters,
-            string? outputModalities,
-            global::OpenRouter.ModelsGetParametersSort? sort,
-            string? useRss,
-            string? useRssChatLinks);
-        partial void ProcessGetModelsResponse(
+            global::OpenRouter.DatasetsAppRankingsGetParametersCategory? category,
+            global::OpenRouter.DatasetsAppRankingsGetParametersSubcategory? subcategory,
+            global::OpenRouter.DatasetsAppRankingsGetParametersSort? sort,
+            string? startDate,
+            string? endDate,
+            int? limit,
+            int? offset);
+        partial void ProcessGetAppRankingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetModelsResponseContent(
+        partial void ProcessGetAppRankingsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List all models and their properties
+        /// Top apps by token usage<br/>
+        /// Returns the top public apps on OpenRouter ranked by token usage inside the requested<br/>
+        /// date window, matching the public apps marketplace on openrouter.ai/apps. Token totals<br/>
+        /// are `prompt_tokens + completion_tokens`; hidden and private apps are excluded and<br/>
+        /// traffic from related app aliases is merged into the canonical visible app.<br/>
+        /// `sort=popular` (default) ranks by total token volume inside the window.<br/>
+        /// `sort=trending` ranks by absolute excess token growth: window volume minus the average<br/>
+        /// volume of the three equal-length periods immediately preceding the window. Apps with<br/>
+        /// no excess growth are omitted, so `trending` may return fewer than `limit` rows.<br/>
+        /// Filter with `category` (marketplace category group, e.g. `coding`) or `subcategory`<br/>
+        /// (e.g. `cli-agent`). Ranks are re-numbered 1..N after filtering. Page with `offset` —<br/>
+        /// `rank` stays absolute, so the first row of `offset=50` is `rank: 51`.<br/>
+        /// Authenticate with any valid OpenRouter API key (same key used for inference).<br/>
+        /// Rate-limited to 30 requests/minute per key and 500 requests/day per account.<br/>
+        /// When republishing or quoting this dataset, OpenRouter must be cited as:<br/>
+        /// "Source: OpenRouter (openrouter.ai/apps), as of {as_of}."<br/>
+        /// Token counts come from each upstream provider's own tokenizer, so a token attributed<br/>
+        /// to one app is not directly comparable to a token attributed to another app whose<br/>
+        /// traffic flows through a different provider.
         /// </summary>
         /// <param name="category">
-        /// Filter models by use case category
+        /// Marketplace category group to filter by (e.g. `coding`). Only apps tagged with a subcategory inside this group are returned. Mutually combinable with `subcategory` — when both are supplied the `subcategory` must belong to the `category` group.
         /// </param>
-        /// <param name="supportedParameters"></param>
-        /// <param name="outputModalities"></param>
+        /// <param name="subcategory">
+        /// Marketplace subcategory to filter by (e.g. `cli-agent`). Takes precedence over `category` for the actual filter; when `category` is also supplied the pair must be consistent.
+        /// </param>
         /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.
+        /// `popular` ranks apps by total token volume inside the date window. `trending` ranks apps by absolute excess token growth: window volume minus the average volume of the three equal-length periods immediately preceding the window. Apps with no excess growth are omitted from `trending` results.<br/>
+        /// Default Value: popular
         /// </param>
-        /// <param name="useRss"></param>
-        /// <param name="useRssChatLinks"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.ModelsListResponse> GetModelsAsync(
-            global::OpenRouter.ModelsGetParametersCategory? category = default,
-            string? supportedParameters = default,
-            string? outputModalities = default,
-            global::OpenRouter.ModelsGetParametersSort? sort = default,
-            string? useRss = default,
-            string? useRssChatLinks = default,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AppRankingsResponse> GetAppRankingsAsync(
+            global::OpenRouter.DatasetsAppRankingsGetParametersCategory? category = default,
+            global::OpenRouter.DatasetsAppRankingsGetParametersSubcategory? subcategory = default,
+            global::OpenRouter.DatasetsAppRankingsGetParametersSort? sort = default,
+            string? startDate = default,
+            string? endDate = default,
+            int? limit = default,
+            int? offset = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetModelsAsResponseAsync(
+            var __response = await GetAppRankingsAsResponseAsync(
                 category: category,
-                supportedParameters: supportedParameters,
-                outputModalities: outputModalities,
+                subcategory: subcategory,
                 sort: sort,
-                useRss: useRss,
-                useRssChatLinks: useRssChatLinks,
+                startDate: startDate,
+                endDate: endDate,
+                limit: limit,
+                offset: offset,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -91,47 +121,75 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// List all models and their properties
+        /// Top apps by token usage<br/>
+        /// Returns the top public apps on OpenRouter ranked by token usage inside the requested<br/>
+        /// date window, matching the public apps marketplace on openrouter.ai/apps. Token totals<br/>
+        /// are `prompt_tokens + completion_tokens`; hidden and private apps are excluded and<br/>
+        /// traffic from related app aliases is merged into the canonical visible app.<br/>
+        /// `sort=popular` (default) ranks by total token volume inside the window.<br/>
+        /// `sort=trending` ranks by absolute excess token growth: window volume minus the average<br/>
+        /// volume of the three equal-length periods immediately preceding the window. Apps with<br/>
+        /// no excess growth are omitted, so `trending` may return fewer than `limit` rows.<br/>
+        /// Filter with `category` (marketplace category group, e.g. `coding`) or `subcategory`<br/>
+        /// (e.g. `cli-agent`). Ranks are re-numbered 1..N after filtering. Page with `offset` —<br/>
+        /// `rank` stays absolute, so the first row of `offset=50` is `rank: 51`.<br/>
+        /// Authenticate with any valid OpenRouter API key (same key used for inference).<br/>
+        /// Rate-limited to 30 requests/minute per key and 500 requests/day per account.<br/>
+        /// When republishing or quoting this dataset, OpenRouter must be cited as:<br/>
+        /// "Source: OpenRouter (openrouter.ai/apps), as of {as_of}."<br/>
+        /// Token counts come from each upstream provider's own tokenizer, so a token attributed<br/>
+        /// to one app is not directly comparable to a token attributed to another app whose<br/>
+        /// traffic flows through a different provider.
         /// </summary>
         /// <param name="category">
-        /// Filter models by use case category
+        /// Marketplace category group to filter by (e.g. `coding`). Only apps tagged with a subcategory inside this group are returned. Mutually combinable with `subcategory` — when both are supplied the `subcategory` must belong to the `category` group.
         /// </param>
-        /// <param name="supportedParameters"></param>
-        /// <param name="outputModalities"></param>
+        /// <param name="subcategory">
+        /// Marketplace subcategory to filter by (e.g. `cli-agent`). Takes precedence over `category` for the actual filter; when `category` is also supplied the pair must be consistent.
+        /// </param>
         /// <param name="sort">
-        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.
+        /// `popular` ranks apps by total token volume inside the date window. `trending` ranks apps by absolute excess token growth: window volume minus the average volume of the three equal-length periods immediately preceding the window. Apps with no excess growth are omitted from `trending` results.<br/>
+        /// Default Value: popular
         /// </param>
-        /// <param name="useRss"></param>
-        /// <param name="useRssChatLinks"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ModelsListResponse>> GetModelsAsResponseAsync(
-            global::OpenRouter.ModelsGetParametersCategory? category = default,
-            string? supportedParameters = default,
-            string? outputModalities = default,
-            global::OpenRouter.ModelsGetParametersSort? sort = default,
-            string? useRss = default,
-            string? useRssChatLinks = default,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.AppRankingsResponse>> GetAppRankingsAsResponseAsync(
+            global::OpenRouter.DatasetsAppRankingsGetParametersCategory? category = default,
+            global::OpenRouter.DatasetsAppRankingsGetParametersSubcategory? subcategory = default,
+            global::OpenRouter.DatasetsAppRankingsGetParametersSort? sort = default,
+            string? startDate = default,
+            string? endDate = default,
+            int? limit = default,
+            int? offset = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetModelsArguments(
+            PrepareGetAppRankingsArguments(
                 httpClient: HttpClient,
                 category: ref category,
-                supportedParameters: ref supportedParameters,
-                outputModalities: ref outputModalities,
+                subcategory: ref subcategory,
                 sort: ref sort,
-                useRss: ref useRss,
-                useRssChatLinks: ref useRssChatLinks);
+                startDate: ref startDate,
+                endDate: ref endDate,
+                limit: ref limit,
+                offset: ref offset);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetModelsSecurityRequirements,
-                operationName: "GetModelsAsync");
+                securityRequirements: s_GetAppRankingsSecurityRequirements,
+                operationName: "GetAppRankingsAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -151,15 +209,16 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/models",
+                                path: "/datasets/app-rankings",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("category", category?.ToValueString())
-                                .AddOptionalParameter("supported_parameters", supportedParameters)
-                                .AddOptionalParameter("output_modalities", outputModalities)
+                                .AddOptionalParameter("subcategory", subcategory?.ToValueString())
                                 .AddOptionalParameter("sort", sort?.ToValueString())
-                                .AddOptionalParameter("use_rss", useRss)
-                                .AddOptionalParameter("use_rss_chat_links", useRssChatLinks)
+                                .AddOptionalParameter("start_date", startDate)
+                                .AddOptionalParameter("end_date", endDate)
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("offset", offset?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -198,15 +257,16 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetModelsRequest(
+                PrepareGetAppRankingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     category: category,
-                    supportedParameters: supportedParameters,
-                    outputModalities: outputModalities,
+                    subcategory: subcategory,
                     sort: sort,
-                    useRss: useRss,
-                    useRssChatLinks: useRssChatLinks);
+                    startDate: startDate,
+                    endDate: endDate,
+                    limit: limit,
+                    offset: offset);
 
                 return __httpRequest;
             }
@@ -223,9 +283,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetAppRankings",
+                                methodName: "GetAppRankingsAsync",
+                                pathTemplate: "\"/datasets/app-rankings\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -257,9 +317,9 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetAppRankings",
+                                methodName: "GetAppRankingsAsync",
+                                pathTemplate: "\"/datasets/app-rankings\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -298,9 +358,9 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetAppRankings",
+                                methodName: "GetAppRankingsAsync",
+                                pathTemplate: "\"/datasets/app-rankings\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -338,7 +398,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetModelsResponse(
+                ProcessGetAppRankingsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -346,9 +406,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetAppRankings",
+                                methodName: "GetAppRankingsAsync",
+                                pathTemplate: "\"/datasets/app-rankings\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -368,9 +428,9 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/models\"",
+                                operationId: "GetAppRankings",
+                                methodName: "GetAppRankingsAsync",
+                                pathTemplate: "\"/datasets/app-rankings\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -417,6 +477,80 @@ namespace OpenRouter
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Unauthorized - Authentication required or invalid credentials
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::OpenRouter.UnauthorizedResponse? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Too Many Requests - Rate limit exceeded
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::OpenRouter.TooManyRequestsResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.TooManyRequestsResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -472,7 +606,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetModelsResponseContent(
+                                ProcessGetAppRankingsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -481,9 +615,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.ModelsListResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.AppRankingsResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ModelsListResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.AppRankingsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -513,9 +647,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.ModelsListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.AppRankingsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ModelsListResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.AppRankingsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
