@@ -3,11 +3,11 @@
 
 namespace OpenRouter
 {
-    public partial class SubpackagePresetsClient
+    public partial class SubpackageDatasetsClient
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_CreatePresetsMessagesSecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetBenchmarksDesignArenaSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,48 +21,56 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_CreatePresetsMessagesSecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetBenchmarksDesignArenaSecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_CreatePresetsMessagesSecurityRequirement0,
+            {                s_GetBenchmarksDesignArenaSecurityRequirement0,
             };
-        partial void PrepareCreatePresetsMessagesArguments(
+        partial void PrepareGetBenchmarksDesignArenaArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string slug,
-            global::OpenRouter.MessagesRequest request);
-        partial void PrepareCreatePresetsMessagesRequest(
+            ref global::OpenRouter.DatasetsBenchmarksDesignArenaGetParametersArena? arena,
+            ref string? category,
+            ref int? maxResults);
+        partial void PrepareGetBenchmarksDesignArenaRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string slug,
-            global::OpenRouter.MessagesRequest request);
-        partial void ProcessCreatePresetsMessagesResponse(
+            global::OpenRouter.DatasetsBenchmarksDesignArenaGetParametersArena? arena,
+            string? category,
+            int? maxResults);
+        partial void ProcessGetBenchmarksDesignArenaResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreatePresetsMessagesResponseContent(
+        partial void ProcessGetBenchmarksDesignArenaResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create a preset from a messages request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Design Arena Benchmark Rankings<br/>
+        /// Returns ELO ratings from head-to-head arena battles on Design Arena. Filterable by arena (models/builders/agents) and category. Includes OpenRouter pricing per model. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.
         /// </summary>
-        /// <param name="slug"></param>
-        /// <param name="request"></param>
+        /// <param name="arena">
+        /// Arena to query. Defaults to `models`.<br/>
+        /// Default Value: models
+        /// </param>
+        /// <param name="category"></param>
+        /// <param name="maxResults">
+        /// Default Value: 50
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.CreatePresetFromInferenceResponse> CreatePresetsMessagesAsync(
-            string slug,
-
-            global::OpenRouter.MessagesRequest request,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.BenchmarksDAResponse> GetBenchmarksDesignArenaAsync(
+            global::OpenRouter.DatasetsBenchmarksDesignArenaGetParametersArena? arena = default,
+            string? category = default,
+            int? maxResults = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreatePresetsMessagesAsResponseAsync(
-                slug: slug,
-
-                request: request,
+            var __response = await GetBenchmarksDesignArenaAsResponseAsync(
+                arena: arena,
+                category: category,
+                maxResults: maxResults,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -70,35 +78,40 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// Create a preset from a messages request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
+        /// Design Arena Benchmark Rankings<br/>
+        /// Returns ELO ratings from head-to-head arena battles on Design Arena. Filterable by arena (models/builders/agents) and category. Includes OpenRouter pricing per model. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.
         /// </summary>
-        /// <param name="slug"></param>
-        /// <param name="request"></param>
+        /// <param name="arena">
+        /// Arena to query. Defaults to `models`.<br/>
+        /// Default Value: models
+        /// </param>
+        /// <param name="category"></param>
+        /// <param name="maxResults">
+        /// Default Value: 50
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.CreatePresetFromInferenceResponse>> CreatePresetsMessagesAsResponseAsync(
-            string slug,
-
-            global::OpenRouter.MessagesRequest request,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.BenchmarksDAResponse>> GetBenchmarksDesignArenaAsResponseAsync(
+            global::OpenRouter.DatasetsBenchmarksDesignArenaGetParametersArena? arena = default,
+            string? category = default,
+            int? maxResults = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreatePresetsMessagesArguments(
+            PrepareGetBenchmarksDesignArenaArguments(
                 httpClient: HttpClient,
-                slug: ref slug,
-                request: request);
+                arena: ref arena,
+                category: ref category,
+                maxResults: ref maxResults);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreatePresetsMessagesSecurityRequirements,
-                operationName: "CreatePresetsMessagesAsync");
+                securityRequirements: s_GetBenchmarksDesignArenaSecurityRequirements,
+                operationName: "GetBenchmarksDesignArenaAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -112,21 +125,26 @@ namespace OpenRouter
             var __maxAttempts = global::OpenRouter.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: false);
+                supportsRetry: true);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: $"/presets/{slug}/messages",
+                                path: "/datasets/benchmarks/design-arena",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("arena", arena?.ToValueString())
+                                .AddOptionalParameter("category", category)
+                                .AddOptionalParameter("max_results", maxResults?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -149,12 +167,6 @@ namespace OpenRouter
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::OpenRouter.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -163,11 +175,12 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreatePresetsMessagesRequest(
+                PrepareGetBenchmarksDesignArenaRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    slug: slug!,
-                    request: request);
+                    arena: arena,
+                    category: category,
+                    maxResults: maxResults);
 
                 return __httpRequest;
             }
@@ -184,10 +197,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreatePresetsMessages",
-                                methodName: "CreatePresetsMessagesAsync",
-                                pathTemplate: "$\"/presets/{slug}/messages\"",
-                                httpMethod: "POST",
+                                operationId: "GetBenchmarksDesignArena",
+                                methodName: "GetBenchmarksDesignArenaAsync",
+                                pathTemplate: "\"/datasets/benchmarks/design-arena\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -218,10 +231,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreatePresetsMessages",
-                                methodName: "CreatePresetsMessagesAsync",
-                                pathTemplate: "$\"/presets/{slug}/messages\"",
-                                httpMethod: "POST",
+                                operationId: "GetBenchmarksDesignArena",
+                                methodName: "GetBenchmarksDesignArenaAsync",
+                                pathTemplate: "\"/datasets/benchmarks/design-arena\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -259,10 +272,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreatePresetsMessages",
-                                methodName: "CreatePresetsMessagesAsync",
-                                pathTemplate: "$\"/presets/{slug}/messages\"",
-                                httpMethod: "POST",
+                                operationId: "GetBenchmarksDesignArena",
+                                methodName: "GetBenchmarksDesignArenaAsync",
+                                pathTemplate: "\"/datasets/benchmarks/design-arena\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -299,7 +312,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreatePresetsMessagesResponse(
+                ProcessGetBenchmarksDesignArenaResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -307,10 +320,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreatePresetsMessages",
-                                methodName: "CreatePresetsMessagesAsync",
-                                pathTemplate: "$\"/presets/{slug}/messages\"",
-                                httpMethod: "POST",
+                                operationId: "GetBenchmarksDesignArena",
+                                methodName: "GetBenchmarksDesignArenaAsync",
+                                pathTemplate: "\"/datasets/benchmarks/design-arena\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -329,10 +342,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreatePresetsMessages",
-                                methodName: "CreatePresetsMessagesAsync",
-                                pathTemplate: "$\"/presets/{slug}/messages\"",
-                                httpMethod: "POST",
+                                operationId: "GetBenchmarksDesignArena",
+                                methodName: "GetBenchmarksDesignArenaAsync",
+                                pathTemplate: "\"/datasets/benchmarks/design-arena\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -420,112 +433,38 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden - Authentication successful but insufficient permissions
-                            if ((int)__response.StatusCode == 403)
+                            // Too Many Requests - Rate limit exceeded
+                            if ((int)__response.StatusCode == 429)
                             {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::OpenRouter.TooManyRequestsResponse? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_429 = global::OpenRouter.TooManyRequestsResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_403 = __ex;
+                                    __exception_429 = __ex;
                                 }
 
 
-                                throw global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>.Create(
+                                throw global::OpenRouter.ApiException<global::OpenRouter.TooManyRequestsResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
-                                    responseBody: __content_403,
-                                    responseObject: __value_403,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Not Found - Resource does not exist
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                global::OpenRouter.NotFoundResponse? __value_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-
-                                throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    responseBody: __content_404,
-                                    responseObject: __value_404,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Conflict - Resource conflict or concurrent modification
-                            if ((int)__response.StatusCode == 409)
-                            {
-                                string? __content_409 = null;
-                                global::System.Exception? __exception_409 = null;
-                                global::OpenRouter.ConflictResponse? __value_409 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::OpenRouter.ConflictResponse.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_409 = global::OpenRouter.ConflictResponse.FromJson(__content_409, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_409 = __ex;
-                                }
-
-
-                                throw global::OpenRouter.ApiException<global::OpenRouter.ConflictResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_409,
-                                    responseBody: __content_409,
-                                    responseObject: __value_409,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -581,7 +520,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreatePresetsMessagesResponseContent(
+                                ProcessGetBenchmarksDesignArenaResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -590,9 +529,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.CreatePresetFromInferenceResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.BenchmarksDAResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.CreatePresetFromInferenceResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.BenchmarksDAResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -622,9 +561,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.CreatePresetFromInferenceResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.BenchmarksDAResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.CreatePresetFromInferenceResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.BenchmarksDAResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -663,130 +602,6 @@ namespace OpenRouter
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Create a preset from a messages request body<br/>
-        /// Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.
-        /// </summary>
-        /// <param name="slug"></param>
-        /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
-        /// </param>
-        /// <param name="contextManagement"></param>
-        /// <param name="fallbacks">
-        /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.
-        /// </param>
-        /// <param name="maxTokens"></param>
-        /// <param name="messages"></param>
-        /// <param name="metadata"></param>
-        /// <param name="model"></param>
-        /// <param name="models"></param>
-        /// <param name="outputConfig">
-        /// Configuration for controlling output behavior. Supports the effort parameter and structured output format.
-        /// </param>
-        /// <param name="plugins">
-        /// Plugins you want to enable for this request, including their settings.
-        /// </param>
-        /// <param name="provider">
-        /// When multiple model providers are available, optionally indicate your routing preference.
-        /// </param>
-        /// <param name="route">
-        /// Any type
-        /// </param>
-        /// <param name="serviceTier"></param>
-        /// <param name="sessionId">
-        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
-        /// </param>
-        /// <param name="speed"></param>
-        /// <param name="stopSequences"></param>
-        /// <param name="stopServerToolsWhen">
-        /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
-        /// </param>
-        /// <param name="stream"></param>
-        /// <param name="system"></param>
-        /// <param name="temperature"></param>
-        /// <param name="thinking"></param>
-        /// <param name="toolChoice"></param>
-        /// <param name="tools"></param>
-        /// <param name="topK"></param>
-        /// <param name="topP"></param>
-        /// <param name="trace">
-        /// Metadata for observability and tracing. Known keys (trace_id, trace_name, span_name, generation_name, parent_span_id) have special handling. Additional keys are passed through as custom metadata to configured broadcast destinations.
-        /// </param>
-        /// <param name="user">
-        /// A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters.
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.CreatePresetFromInferenceResponse> CreatePresetsMessagesAsync(
-            string slug,
-            string model,
-            global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks = default,
-            int? maxTokens = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
-            global::OpenRouter.MessagesRequestMetadata? metadata = default,
-            global::System.Collections.Generic.IList<string>? models = default,
-            global::OpenRouter.MessagesOutputConfig? outputConfig = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestPluginsItems>? plugins = default,
-            global::OpenRouter.ProviderPreferences? provider = default,
-            object? route = default,
-            string? serviceTier = default,
-            string? sessionId = default,
-            global::OpenRouter.AnthropicSpeed? speed = default,
-            global::System.Collections.Generic.IList<string>? stopSequences = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
-            bool? stream = default,
-            global::OpenRouter.MessagesRequestSystem? system = default,
-            double? temperature = default,
-            global::OpenRouter.MessagesRequestThinking? thinking = default,
-            global::OpenRouter.MessagesRequestToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestToolsItems>? tools = default,
-            int? topK = default,
-            double? topP = default,
-            global::OpenRouter.TraceConfig? trace = default,
-            string? user = default,
-            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::OpenRouter.MessagesRequest
-            {
-                CacheControl = cacheControl,
-                ContextManagement = contextManagement,
-                Fallbacks = fallbacks,
-                MaxTokens = maxTokens,
-                Messages = messages,
-                Metadata = metadata,
-                Model = model,
-                Models = models,
-                OutputConfig = outputConfig,
-                Plugins = plugins,
-                Provider = provider,
-                Route = route,
-                ServiceTier = serviceTier,
-                SessionId = sessionId,
-                Speed = speed,
-                StopSequences = stopSequences,
-                StopServerToolsWhen = stopServerToolsWhen,
-                Stream = stream,
-                System = system,
-                Temperature = temperature,
-                Thinking = thinking,
-                ToolChoice = toolChoice,
-                Tools = tools,
-                TopK = topK,
-                TopP = topP,
-                Trace = trace,
-                User = user,
-            };
-
-            return await CreatePresetsMessagesAsync(
-                slug: slug,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -722,6 +722,9 @@ namespace OpenRouter
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
         /// <param name="contextManagement"></param>
+        /// <param name="fallbacks">
+        /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.
+        /// </param>
         /// <param name="maxTokens"></param>
         /// <param name="messages"></param>
         /// <param name="metadata"></param>
@@ -770,6 +773,7 @@ namespace OpenRouter
             global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks = default,
             int? maxTokens = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
             global::OpenRouter.MessagesRequestMetadata? metadata = default,
@@ -800,6 +804,7 @@ namespace OpenRouter
             {
                 CacheControl = cacheControl,
                 ContextManagement = contextManagement,
+                Fallbacks = fallbacks,
                 MaxTokens = maxTokens,
                 Messages = messages,
                 Metadata = metadata,
