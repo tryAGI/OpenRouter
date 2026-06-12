@@ -71,6 +71,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
+        /// Minimum probability threshold relative to the most likely token. Tokens with probability below min_p * (probability of top token) are filtered out. Not all providers support this parameter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("min_p")]
+        public double? MinP { get; set; }
+
+        /// <summary>
         /// Output modalities for the response. Supported values are "text", "image", and "audio".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
@@ -117,6 +123,19 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
         public global::OpenRouter.ChatRequestReasoning? Reasoning { get; set; }
+
+        /// <summary>
+        /// Shorthand for setting reasoning effort. Equivalent to setting reasoning.effort. Cannot be used simultaneously with reasoning.effort if they differ.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestReasoningEffort?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? ReasoningEffort { get; set; }
+
+        /// <summary>
+        /// Penalizes tokens based on how much they have already appeared in the text. A value of 1.0 means no penalty. Values above 1.0 penalize repeated tokens more strongly. Not all providers support this parameter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repetition_penalty")]
+        public double? RepetitionPenalty { get; set; }
 
         /// <summary>
         /// Response format configuration
@@ -196,6 +215,18 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatFunctionTool>? Tools { get; set; }
 
         /// <summary>
+        /// Consider only tokens with "sufficiently high" probabilities based on the probability of the most likely token. Not all providers support this parameter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_a")]
+        public double? TopA { get; set; }
+
+        /// <summary>
+        /// Limits the model to choose from the top K most likely tokens at each step. A value of 1 means the model will always pick the most likely next token. Not all providers support this parameter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
+        public int? TopK { get; set; }
+
+        /// <summary>
         /// Number of top log probabilities to return (0-20)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
@@ -256,6 +287,9 @@ namespace OpenRouter
         /// <param name="metadata">
         /// Key-value pairs for additional object information (max 16 pairs, 64 char keys, 512 char values)
         /// </param>
+        /// <param name="minP">
+        /// Minimum probability threshold relative to the most likely token. Tokens with probability below min_p * (probability of top token) are filtered out. Not all providers support this parameter.
+        /// </param>
         /// <param name="modalities">
         /// Output modalities for the response. Supported values are "text", "image", and "audio".
         /// </param>
@@ -279,6 +313,12 @@ namespace OpenRouter
         /// </param>
         /// <param name="reasoning">
         /// Configuration options for reasoning models
+        /// </param>
+        /// <param name="reasoningEffort">
+        /// Shorthand for setting reasoning effort. Equivalent to setting reasoning.effort. Cannot be used simultaneously with reasoning.effort if they differ.
+        /// </param>
+        /// <param name="repetitionPenalty">
+        /// Penalizes tokens based on how much they have already appeared in the text. A value of 1.0 means no penalty. Values above 1.0 penalize repeated tokens more strongly. Not all providers support this parameter.
         /// </param>
         /// <param name="responseFormat">
         /// Response format configuration
@@ -317,6 +357,12 @@ namespace OpenRouter
         /// <param name="tools">
         /// Available tools for function calling
         /// </param>
+        /// <param name="topA">
+        /// Consider only tokens with "sufficiently high" probabilities based on the probability of the most likely token. Not all providers support this parameter.
+        /// </param>
+        /// <param name="topK">
+        /// Limits the model to choose from the top K most likely tokens at each step. A value of 1 means the model will always pick the most likely next token. Not all providers support this parameter.
+        /// </param>
         /// <param name="topLogprobs">
         /// Number of top log probabilities to return (0-20)
         /// </param>
@@ -343,6 +389,7 @@ namespace OpenRouter
             int? maxCompletionTokens,
             int? maxTokens,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            double? minP,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestModalitiesItems>? modalities,
             string? model,
             global::System.Collections.Generic.IList<string>? models,
@@ -351,6 +398,8 @@ namespace OpenRouter
             double? presencePenalty,
             global::OpenRouter.ProviderPreferences? provider,
             global::OpenRouter.ChatRequestReasoning? reasoning,
+            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? reasoningEffort,
+            double? repetitionPenalty,
             global::OpenRouter.ChatRequestResponseFormat? responseFormat,
             object? route,
             int? seed,
@@ -363,6 +412,8 @@ namespace OpenRouter
             double? temperature,
             global::OpenRouter.ChatToolChoice? toolChoice,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatFunctionTool>? tools,
+            double? topA,
+            int? topK,
             int? topLogprobs,
             double? topP,
             global::OpenRouter.TraceConfig? trace,
@@ -378,6 +429,7 @@ namespace OpenRouter
             this.MaxTokens = maxTokens;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Metadata = metadata;
+            this.MinP = minP;
             this.Modalities = modalities;
             this.Model = model;
             this.Models = models;
@@ -386,6 +438,8 @@ namespace OpenRouter
             this.PresencePenalty = presencePenalty;
             this.Provider = provider;
             this.Reasoning = reasoning;
+            this.ReasoningEffort = reasoningEffort;
+            this.RepetitionPenalty = repetitionPenalty;
             this.ResponseFormat = responseFormat;
             this.Route = route;
             this.Seed = seed;
@@ -398,6 +452,8 @@ namespace OpenRouter
             this.Temperature = temperature;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
+            this.TopA = topA;
+            this.TopK = topK;
             this.TopLogprobs = topLogprobs;
             this.TopP = topP;
             this.Trace = trace;
