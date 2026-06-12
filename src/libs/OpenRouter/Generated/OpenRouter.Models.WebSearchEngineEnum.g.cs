@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
+    /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API. "perplexity" uses the Perplexity Search API (raw ranked results).
     /// </summary>
     public enum WebSearchEngineEnum
     {
@@ -28,6 +28,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Parallel,
+        /// <summary>
+        /// 
+        /// </summary>
+        Perplexity,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace OpenRouter
                 WebSearchEngineEnum.Firecrawl => "firecrawl",
                 WebSearchEngineEnum.Native => "native",
                 WebSearchEngineEnum.Parallel => "parallel",
+                WebSearchEngineEnum.Perplexity => "perplexity",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace OpenRouter
                 "firecrawl" => WebSearchEngineEnum.Firecrawl,
                 "native" => WebSearchEngineEnum.Native,
                 "parallel" => WebSearchEngineEnum.Parallel,
+                "perplexity" => WebSearchEngineEnum.Perplexity,
                 _ => null,
             };
         }
