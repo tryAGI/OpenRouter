@@ -232,6 +232,43 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSearchModelsServerTool' but the value was {ToString()}.");
 
         /// <summary>
+        /// OpenRouter built-in server tool: delegates self-contained tasks to a smaller, cheaper, faster worker model (any OpenRouter model) mid-generation and returns its outcome. The worker may run as a sub-agent with its own tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerToolOpenRouter { get; init; }
+#else
+        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerToolOpenRouter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SubagentServerToolOpenRouter))]
+#endif
+        public bool IsSubagentServerToolOpenRouter => SubagentServerToolOpenRouter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSubagentServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.SubagentServerToolOpenRouter? value)
+        {
+            value = SubagentServerToolOpenRouter;
+            return IsSubagentServerToolOpenRouter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.SubagentServerToolOpenRouter PickSubagentServerToolOpenRouter() => IsSubagentServerToolOpenRouter
+            ? SubagentServerToolOpenRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SubagentServerToolOpenRouter' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -482,6 +519,29 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChatFunctionTool(global::OpenRouter.SubagentServerToolOpenRouter value) => new ChatFunctionTool((global::OpenRouter.SubagentServerToolOpenRouter?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.SubagentServerToolOpenRouter?(ChatFunctionTool @this) => @this.SubagentServerToolOpenRouter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatFunctionTool(global::OpenRouter.SubagentServerToolOpenRouter? value)
+        {
+            SubagentServerToolOpenRouter = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatFunctionTool FromSubagentServerToolOpenRouter(global::OpenRouter.SubagentServerToolOpenRouter? value) => new ChatFunctionTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatFunctionTool(global::OpenRouter.WebFetchServerTool value) => new ChatFunctionTool((global::OpenRouter.WebFetchServerTool?)value);
 
         /// <summary>
@@ -558,6 +618,7 @@ namespace OpenRouter
             global::OpenRouter.DatetimeServerTool? datetimeServerTool,
             global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter,
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool,
+            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerToolOpenRouter,
             global::OpenRouter.WebFetchServerTool? webFetchServerTool,
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool,
             global::OpenRouter.ChatWebSearchShorthand? chatWebSearchShorthand
@@ -569,6 +630,7 @@ namespace OpenRouter
             DatetimeServerTool = datetimeServerTool;
             ImageGenerationServerToolOpenRouter = imageGenerationServerToolOpenRouter;
             ChatSearchModelsServerTool = chatSearchModelsServerTool;
+            SubagentServerToolOpenRouter = subagentServerToolOpenRouter;
             WebFetchServerTool = webFetchServerTool;
             OpenRouterWebSearchServerTool = openRouterWebSearchServerTool;
             ChatWebSearchShorthand = chatWebSearchShorthand;
@@ -581,6 +643,7 @@ namespace OpenRouter
             ChatWebSearchShorthand as object ??
             OpenRouterWebSearchServerTool as object ??
             WebFetchServerTool as object ??
+            SubagentServerToolOpenRouter as object ??
             ChatSearchModelsServerTool as object ??
             ImageGenerationServerToolOpenRouter as object ??
             DatetimeServerTool as object ??
@@ -599,6 +662,7 @@ namespace OpenRouter
             DatetimeServerTool?.ToString() ??
             ImageGenerationServerToolOpenRouter?.ToString() ??
             ChatSearchModelsServerTool?.ToString() ??
+            SubagentServerToolOpenRouter?.ToString() ??
             WebFetchServerTool?.ToString() ??
             OpenRouterWebSearchServerTool?.ToString() ??
             ChatWebSearchShorthand?.ToString() 
@@ -609,7 +673,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
+            return IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
         }
 
         /// <summary>
@@ -622,6 +686,7 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServerTool = null,
             global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.ChatSearchModelsServerTool, TResult>? chatSearchModelsServerTool = null,
+            global::System.Func<global::OpenRouter.SubagentServerToolOpenRouter, TResult>? subagentServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.WebFetchServerTool, TResult>? webFetchServerTool = null,
             global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool, TResult>? openRouterWebSearchServerTool = null,
             global::System.Func<global::OpenRouter.ChatWebSearchShorthand, TResult>? chatWebSearchShorthand = null,
@@ -656,6 +721,10 @@ namespace OpenRouter
             {
                 return chatSearchModelsServerTool(ChatSearchModelsServerTool!);
             }
+            else if (IsSubagentServerToolOpenRouter && subagentServerToolOpenRouter != null)
+            {
+                return subagentServerToolOpenRouter(SubagentServerToolOpenRouter!);
+            }
             else if (IsWebFetchServerTool && webFetchServerTool != null)
             {
                 return webFetchServerTool(WebFetchServerTool!);
@@ -688,6 +757,8 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
 
+            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerToolOpenRouter = null,
+
             global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
 
             global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
@@ -723,6 +794,10 @@ namespace OpenRouter
             else if (IsChatSearchModelsServerTool)
             {
                 chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
+            }
+            else if (IsSubagentServerToolOpenRouter)
+            {
+                subagentServerToolOpenRouter?.Invoke(SubagentServerToolOpenRouter!);
             }
             else if (IsWebFetchServerTool)
             {
@@ -748,6 +823,7 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
             global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
             global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
             global::System.Action<global::OpenRouter.ChatWebSearchShorthand>? chatWebSearchShorthand = null,
@@ -781,6 +857,10 @@ namespace OpenRouter
             else if (IsChatSearchModelsServerTool)
             {
                 chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
+            }
+            else if (IsSubagentServerToolOpenRouter)
+            {
+                subagentServerToolOpenRouter?.Invoke(SubagentServerToolOpenRouter!);
             }
             else if (IsWebFetchServerTool)
             {
@@ -815,6 +895,8 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter),
                 ChatSearchModelsServerTool,
                 typeof(global::OpenRouter.ChatSearchModelsServerTool),
+                SubagentServerToolOpenRouter,
+                typeof(global::OpenRouter.SubagentServerToolOpenRouter),
                 WebFetchServerTool,
                 typeof(global::OpenRouter.WebFetchServerTool),
                 OpenRouterWebSearchServerTool,
@@ -843,6 +925,7 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ImageGenerationServerToolOpenRouter?>.Default.Equals(ImageGenerationServerToolOpenRouter, other.ImageGenerationServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(ChatSearchModelsServerTool, other.ChatSearchModelsServerTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.SubagentServerToolOpenRouter?>.Default.Equals(SubagentServerToolOpenRouter, other.SubagentServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebFetchServerTool?>.Default.Equals(WebFetchServerTool, other.WebFetchServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServerTool, other.OpenRouterWebSearchServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatWebSearchShorthand?>.Default.Equals(ChatWebSearchShorthand, other.ChatWebSearchShorthand) 

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A native `shell_call` output item matching OpenAI's Responses API shape. Emitted for the sandbox-backed `shell` tool.
+    /// An output item containing reasoning
     /// </summary>
     public sealed partial class OutputItemsVariant26
     {
@@ -12,21 +12,20 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputShellCallItemTypeJsonConverter))]
-        public global::OpenRouter.OutputShellCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputReasoningItemTypeJsonConverter))]
+        public global::OpenRouter.OutputReasoningItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public global::OpenRouter.OutputShellCallItemAction? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
+        public string? EncryptedContent { get; set; }
 
         /// <summary>
         /// 
@@ -36,12 +35,31 @@ namespace OpenRouter
         public required string Id { get; set; }
 
         /// <summary>
-        /// Status of a shell call or its output.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ShellCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatusJsonConverter))]
+        public global::OpenRouter.OutputReasoningItemStatus? Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ShellCallStatus Status { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> Summary { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter))]
+        public global::OpenRouter.ReasoningFormat? Format { get; set; }
+
+        /// <summary>
+        /// A signature for the reasoning content, used for verification
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        public string? Signature { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,28 +70,37 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant26" /> class.
         /// </summary>
-        /// <param name="callId"></param>
         /// <param name="id"></param>
-        /// <param name="status">
-        /// Status of a shell call or its output.
-        /// </param>
+        /// <param name="summary"></param>
         /// <param name="type"></param>
-        /// <param name="action"></param>
+        /// <param name="content"></param>
+        /// <param name="encryptedContent"></param>
+        /// <param name="status"></param>
+        /// <param name="format"></param>
+        /// <param name="signature">
+        /// A signature for the reasoning content, used for verification
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant26(
-            string callId,
             string id,
-            global::OpenRouter.ShellCallStatus status,
-            global::OpenRouter.OutputShellCallItemType type,
-            global::OpenRouter.OutputShellCallItemAction? action)
+            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningSummaryText> summary,
+            global::OpenRouter.OutputReasoningItemType type,
+            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningTextContent>? content,
+            string? encryptedContent,
+            global::OpenRouter.OutputReasoningItemStatus? status,
+            global::OpenRouter.ReasoningFormat? format,
+            string? signature)
         {
             this.Type = type;
-            this.Action = action;
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Content = content;
+            this.EncryptedContent = encryptedContent;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Format = format;
+            this.Signature = signature;
         }
 
         /// <summary>

@@ -4,9 +4,9 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Any type
+    /// 
     /// </summary>
-    public sealed partial class AdvisorNestedToolFunction2
+    public sealed partial class SubagentNestedToolParameters
     {
 
         /// <summary>

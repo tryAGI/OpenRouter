@@ -63,7 +63,7 @@ namespace OpenRouter
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// Tools the advisor sub-agent may use while forming its advice. The advisor runs as an agentic sub-agent over these tools, then returns its text. Must not include the advisor tool itself.
+        /// Tools the advisor sub-agent may use while forming its advice. The advisor runs as an agentic sub-agent over these tools, then returns its text. Only OpenRouter server tools are supported — function tools are rejected — and the list must not include the advisor tool itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::OpenRouter.AdvisorNestedTool>? Tools { get; set; }
@@ -105,7 +105,7 @@ namespace OpenRouter
         /// Sampling temperature forwarded to the advisor call. When omitted, the provider's default applies.
         /// </param>
         /// <param name="tools">
-        /// Tools the advisor sub-agent may use while forming its advice. The advisor runs as an agentic sub-agent over these tools, then returns its text. Must not include the advisor tool itself.
+        /// Tools the advisor sub-agent may use while forming its advice. The advisor runs as an agentic sub-agent over these tools, then returns its text. Only OpenRouter server tools are supported — function tools are rejected — and the list must not include the advisor tool itself.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
