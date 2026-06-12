@@ -77,30 +77,23 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("parameters")) __score6++;
-            if (__jsonProps.Contains("parameters.allowed_domains")) __score6++;
-            if (__jsonProps.Contains("parameters.blocked_domains")) __score6++;
-            if (__jsonProps.Contains("parameters.engine")) __score6++;
-            if (__jsonProps.Contains("parameters.max_content_tokens")) __score6++;
-            if (__jsonProps.Contains("parameters.max_uses")) __score6++;
+            if (__jsonProps.Contains("parameters.instructions")) __score6++;
+            if (__jsonProps.Contains("parameters.max_completion_tokens")) __score6++;
+            if (__jsonProps.Contains("parameters.max_tool_calls")) __score6++;
+            if (__jsonProps.Contains("parameters.model")) __score6++;
+            if (__jsonProps.Contains("parameters.reasoning")) __score6++;
+            if (__jsonProps.Contains("parameters.temperature")) __score6++;
+            if (__jsonProps.Contains("parameters.tools")) __score6++;
             if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("parameters")) __score7++;
             if (__jsonProps.Contains("parameters.allowed_domains")) __score7++;
+            if (__jsonProps.Contains("parameters.blocked_domains")) __score7++;
             if (__jsonProps.Contains("parameters.engine")) __score7++;
-            if (__jsonProps.Contains("parameters.excluded_domains")) __score7++;
-            if (__jsonProps.Contains("parameters.max_characters")) __score7++;
-            if (__jsonProps.Contains("parameters.max_results")) __score7++;
-            if (__jsonProps.Contains("parameters.max_total_results")) __score7++;
-            if (__jsonProps.Contains("parameters.search_context_size")) __score7++;
-            if (__jsonProps.Contains("parameters.user_location")) __score7++;
+            if (__jsonProps.Contains("parameters.max_content_tokens")) __score7++;
+            if (__jsonProps.Contains("parameters.max_uses")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
-            if (__jsonProps.Contains("allowed_domains")) __score8++;
-            if (__jsonProps.Contains("engine")) __score8++;
-            if (__jsonProps.Contains("excluded_domains")) __score8++;
-            if (__jsonProps.Contains("max_characters")) __score8++;
-            if (__jsonProps.Contains("max_results")) __score8++;
-            if (__jsonProps.Contains("max_total_results")) __score8++;
             if (__jsonProps.Contains("parameters")) __score8++;
             if (__jsonProps.Contains("parameters.allowed_domains")) __score8++;
             if (__jsonProps.Contains("parameters.engine")) __score8++;
@@ -110,14 +103,31 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("parameters.max_total_results")) __score8++;
             if (__jsonProps.Contains("parameters.search_context_size")) __score8++;
             if (__jsonProps.Contains("parameters.user_location")) __score8++;
-            if (__jsonProps.Contains("search_context_size")) __score8++;
             if (__jsonProps.Contains("type")) __score8++;
-            if (__jsonProps.Contains("user_location")) __score8++;
-            if (__jsonProps.Contains("user_location.city")) __score8++;
-            if (__jsonProps.Contains("user_location.country")) __score8++;
-            if (__jsonProps.Contains("user_location.region")) __score8++;
-            if (__jsonProps.Contains("user_location.timezone")) __score8++;
-            if (__jsonProps.Contains("user_location.type")) __score8++;
+            var __score9 = 0;
+            if (__jsonProps.Contains("allowed_domains")) __score9++;
+            if (__jsonProps.Contains("engine")) __score9++;
+            if (__jsonProps.Contains("excluded_domains")) __score9++;
+            if (__jsonProps.Contains("max_characters")) __score9++;
+            if (__jsonProps.Contains("max_results")) __score9++;
+            if (__jsonProps.Contains("max_total_results")) __score9++;
+            if (__jsonProps.Contains("parameters")) __score9++;
+            if (__jsonProps.Contains("parameters.allowed_domains")) __score9++;
+            if (__jsonProps.Contains("parameters.engine")) __score9++;
+            if (__jsonProps.Contains("parameters.excluded_domains")) __score9++;
+            if (__jsonProps.Contains("parameters.max_characters")) __score9++;
+            if (__jsonProps.Contains("parameters.max_results")) __score9++;
+            if (__jsonProps.Contains("parameters.max_total_results")) __score9++;
+            if (__jsonProps.Contains("parameters.search_context_size")) __score9++;
+            if (__jsonProps.Contains("parameters.user_location")) __score9++;
+            if (__jsonProps.Contains("search_context_size")) __score9++;
+            if (__jsonProps.Contains("type")) __score9++;
+            if (__jsonProps.Contains("user_location")) __score9++;
+            if (__jsonProps.Contains("user_location.city")) __score9++;
+            if (__jsonProps.Contains("user_location.country")) __score9++;
+            if (__jsonProps.Contains("user_location.region")) __score9++;
+            if (__jsonProps.Contains("user_location.timezone")) __score9++;
+            if (__jsonProps.Contains("user_location.type")) __score9++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -129,6 +139,7 @@ namespace OpenRouter.JsonConverters
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
+            if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
 
             global::OpenRouter.ChatFunctionTool0? chatFunctionTool0 = default;
             global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerToolOpenRouter = default;
@@ -136,6 +147,7 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.DatetimeServerTool? datetimeServerTool = default;
             global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter = default;
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool = default;
+            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerToolOpenRouter = default;
             global::OpenRouter.WebFetchServerTool? webFetchServerTool = default;
             global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool = default;
             global::OpenRouter.ChatWebSearchShorthand? chatWebSearchShorthand = default;
@@ -235,6 +247,21 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
+                        subagentServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 7)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebFetchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebFetchServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebFetchServerTool).Name}");
                         webFetchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -246,7 +273,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 7)
+                else if (__bestIndex == 8)
                 {
                     try
                     {
@@ -261,7 +288,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 8)
+                else if (__bestIndex == 9)
                 {
                     try
                     {
@@ -278,7 +305,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -295,7 +322,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -312,7 +339,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -329,7 +356,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -346,7 +373,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -363,7 +390,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -380,7 +407,24 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
+                    subagentServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -397,7 +441,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -414,7 +458,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
             {
                 try
                 {
@@ -443,6 +487,8 @@ namespace OpenRouter.JsonConverters
                 imageGenerationServerToolOpenRouter,
 
                 chatSearchModelsServerTool,
+
+                subagentServerToolOpenRouter,
 
                 webFetchServerTool,
 
@@ -498,6 +544,12 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSearchModelsServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSearchModelsServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSearchModelsServerTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatSearchModelsServerTool!, typeInfo);
+            }
+            else if (value.IsSubagentServerToolOpenRouter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SubagentServerToolOpenRouter!, typeInfo);
             }
             else if (value.IsWebFetchServerTool)
             {

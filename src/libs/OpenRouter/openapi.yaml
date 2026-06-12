@@ -2098,6 +2098,463 @@
         }
       }
     },
+    "/files": {
+      "get": {
+        "operationId": "list-files",
+        "summary": "List files",
+        "description": "Lists files belonging to the workspace of the authenticating API key.",
+        "tags": [
+          "subpackage_files"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of files to return (1–1000).",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Opaque pagination cursor from a previous response.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Workspace to scope the request to. Defaults to the caller’s default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of files.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "upload-file",
+        "summary": "Upload a file",
+        "description": "Uploads a file to be referenced in future API calls. The file is stored under the workspace of the authenticating API key. Maximum file size: 100 MB.",
+        "tags": [
+          "subpackage_files"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Workspace to scope the request to. Defaults to the caller’s default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The uploaded file metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileMetadata"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large - Request payload exceeds size limits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayloadTooLargeResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/files/{file_id}": {
+      "get": {
+        "operationId": "get-file-metadata",
+        "summary": "Get file metadata",
+        "description": "Retrieves metadata for a single file owned by the requesting workspace.",
+        "tags": [
+          "subpackage_files"
+        ],
+        "parameters": [
+          {
+            "name": "file_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Workspace to scope the request to. Defaults to the caller’s default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The file metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileMetadata"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-file",
+        "summary": "Delete a file",
+        "description": "Deletes a file owned by the requesting workspace. Deletion is irreversible.",
+        "tags": [
+          "subpackage_files"
+        ],
+        "parameters": [
+          {
+            "name": "file_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Workspace to scope the request to. Defaults to the caller’s default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The file was deleted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileDeleteResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/files/{file_id}/content": {
+      "get": {
+        "operationId": "download-file-content",
+        "summary": "Download file content",
+        "description": "Downloads the raw bytes of a file. Only files created server-side are downloadable; uploaded files return 400.",
+        "tags": [
+          "subpackage_files"
+        ],
+        "parameters": [
+          {
+            "name": "file_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspace_id",
+            "in": "query",
+            "description": "Workspace to scope the request to. Defaults to the caller’s default workspace.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The raw file content.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/generation": {
       "get": {
         "operationId": "get-generation",
@@ -8590,6 +9047,53 @@
         "description": "An openrouter:advisor server tool output item",
         "title": "OutputAdvisorServerToolItem"
       },
+      "OutputSubagentServerToolItemType": {
+        "type": "string",
+        "enum": [
+          "openrouter:subagent"
+        ],
+        "title": "OutputSubagentServerToolItemType"
+      },
+      "OutputSubagentServerToolItem": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message when the subagent task did not produce an outcome."
+          },
+          "id": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string",
+            "description": "Slug of the worker model that executed the task."
+          },
+          "outcome": {
+            "type": "string",
+            "description": "The worker model's result (the outcome text returned to the delegating model)."
+          },
+          "status": {
+            "$ref": "#/components/schemas/ToolCallStatus"
+          },
+          "task_description": {
+            "type": "string",
+            "description": "The task description the delegating model sent to the worker."
+          },
+          "task_name": {
+            "type": "string",
+            "description": "The short task identifier the delegating model supplied."
+          },
+          "type": {
+            "$ref": "#/components/schemas/OutputSubagentServerToolItemType"
+          }
+        },
+        "required": [
+          "status",
+          "type"
+        ],
+        "description": "An openrouter:subagent server tool output item",
+        "title": "OutputSubagentServerToolItem"
+      },
       "LocalShellCallItemActionType": {
         "type": "string",
         "enum": [
@@ -9373,6 +9877,9 @@
           },
           {
             "$ref": "#/components/schemas/OutputAdvisorServerToolItem"
+          },
+          {
+            "$ref": "#/components/schemas/OutputSubagentServerToolItem"
           },
           {
             "$ref": "#/components/schemas/LocalShellCallItem"
@@ -11026,12 +11533,12 @@
       "WebSearchEngineEnum": {
         "type": "string",
         "enum": [
-          "auto",
           "native",
           "exa",
           "parallel",
           "firecrawl",
-          "perplexity"
+          "perplexity",
+          "auto"
         ],
         "description": "Which search engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in search. \"exa\" forces the Exa search API. \"firecrawl\" uses Firecrawl (requires BYOK). \"parallel\" uses the Parallel search API. \"perplexity\" uses the Perplexity Search API (raw ranked results).",
         "title": "WebSearchEngineEnum"
@@ -12073,12 +12580,6 @@
       "AdvisorNestedTool": {
         "type": "object",
         "properties": {
-          "function": {
-            "type": "object",
-            "additionalProperties": {
-              "description": "Any type"
-            }
-          },
           "parameters": {
             "type": "object",
             "additionalProperties": {
@@ -12092,7 +12593,7 @@
         "required": [
           "type"
         ],
-        "description": "A tool made available to the advisor sub-agent. Accepts function tools and OpenRouter server tools (e.g. openrouter:web_search). The advisor tool may not list itself.",
+        "description": "A tool made available to the advisor sub-agent. Only OpenRouter server tools (e.g. openrouter:web_search) are supported; function tools are rejected because the advisor has no way to execute them. The advisor tool may not list itself.",
         "title": "AdvisorNestedTool"
       },
       "AdvisorServerToolConfig": {
@@ -12139,7 +12640,7 @@
             "items": {
               "$ref": "#/components/schemas/AdvisorNestedTool"
             },
-            "description": "Tools the advisor sub-agent may use while forming its advice. The advisor runs as an agentic sub-agent over these tools, then returns its text. Must not include the advisor tool itself."
+            "description": "Tools the advisor sub-agent may use while forming its advice. The advisor runs as an agentic sub-agent over these tools, then returns its text. Only OpenRouter server tools are supported — function tools are rejected — and the list must not include the advisor tool itself."
           }
         },
         "description": "Configuration for one openrouter:advisor server tool entry.",
@@ -12167,6 +12668,114 @@
         ],
         "description": "OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. The advisor may run as a sub-agent with its own tools. Include multiple entries to offer several named advisors; at most one entry may omit `name` to act as the default advisor.",
         "title": "AdvisorServerTool_OpenRouter"
+      },
+      "SubagentReasoningEffort": {
+        "type": "string",
+        "enum": [
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal",
+          "none"
+        ],
+        "description": "Reasoning effort level for the subagent call.",
+        "title": "SubagentReasoningEffort"
+      },
+      "SubagentReasoning": {
+        "type": "object",
+        "properties": {
+          "effort": {
+            "$ref": "#/components/schemas/SubagentReasoningEffort",
+            "description": "Reasoning effort level for the subagent call."
+          },
+          "max_tokens": {
+            "type": "integer",
+            "description": "Maximum number of reasoning tokens the subagent may use. Accepted and validated but not yet forwarded to the subagent call."
+          }
+        },
+        "description": "Reasoning configuration forwarded to the subagent call. Use this to control reasoning effort and token budget for models that support extended thinking.",
+        "title": "SubagentReasoning"
+      },
+      "SubagentNestedTool": {
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "description": "A tool made available to the subagent. Only OpenRouter server tools (e.g. openrouter:web_search) are supported; function tools are rejected because the worker has no way to execute them. The subagent tool may not list itself.",
+        "title": "SubagentNestedTool"
+      },
+      "SubagentServerToolConfig": {
+        "type": "object",
+        "properties": {
+          "instructions": {
+            "type": "string",
+            "description": "System instructions for the subagent. When omitted, the subagent responds with no system prompt of its own."
+          },
+          "max_completion_tokens": {
+            "type": "integer",
+            "description": "Maximum number of output tokens (including reasoning) the subagent may produce. When omitted, the provider's default applies."
+          },
+          "max_tool_calls": {
+            "type": "integer",
+            "description": "Maximum number of tool-calling steps the subagent may take during its agentic loop. Capped at 25. Only relevant when the subagent is given tools. Accepted and validated but not yet enforced on the subagent call."
+          },
+          "model": {
+            "type": "string",
+            "description": "Slug of the model that executes delegated tasks (any OpenRouter model). Typically a smaller, cheaper, faster model than the one delegating. When omitted, the model from the outer API request is used. The subagent tool itself cannot be the subagent model."
+          },
+          "reasoning": {
+            "$ref": "#/components/schemas/SubagentReasoning"
+          },
+          "temperature": {
+            "type": "number",
+            "format": "double",
+            "description": "Sampling temperature forwarded to the subagent call. When omitted, the provider's default applies."
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubagentNestedTool"
+            },
+            "description": "Tools the subagent may use while executing a delegated task. The subagent runs as an agentic sub-agent over these tools, then returns its outcome. Only OpenRouter server tools are supported — function tools are rejected — and the list must not include the subagent tool itself."
+          }
+        },
+        "description": "Configuration for the openrouter:subagent server tool.",
+        "title": "SubagentServerToolConfig"
+      },
+      "SubagentServerToolOpenRouterType": {
+        "type": "string",
+        "enum": [
+          "openrouter:subagent"
+        ],
+        "title": "SubagentServerToolOpenRouterType"
+      },
+      "SubagentServerTool_OpenRouter": {
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "$ref": "#/components/schemas/SubagentServerToolConfig"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SubagentServerToolOpenRouterType"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "description": "OpenRouter built-in server tool: delegates self-contained tasks to a smaller, cheaper, faster worker model (any OpenRouter model) mid-generation and returns its outcome. The worker may run as a sub-agent with its own tools.",
+        "title": "SubagentServerTool_OpenRouter"
       },
       "DatetimeServerToolConfig": {
         "type": "object",
@@ -12850,6 +13459,9 @@
           },
           {
             "$ref": "#/components/schemas/AdvisorServerTool_OpenRouter"
+          },
+          {
+            "$ref": "#/components/schemas/SubagentServerTool_OpenRouter"
           },
           {
             "$ref": "#/components/schemas/DatetimeServerTool"
@@ -15225,6 +15837,45 @@
               "status"
             ],
             "description": "An openrouter:memory server tool output item"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OutputSubagentServerToolItemType"
+              },
+              "error": {
+                "type": "string",
+                "description": "Error message when the subagent task did not produce an outcome."
+              },
+              "id": {
+                "type": "string"
+              },
+              "model": {
+                "type": "string",
+                "description": "Slug of the worker model that executed the task."
+              },
+              "outcome": {
+                "type": "string",
+                "description": "The worker model's result (the outcome text returned to the delegating model)."
+              },
+              "status": {
+                "$ref": "#/components/schemas/ToolCallStatus"
+              },
+              "task_description": {
+                "type": "string",
+                "description": "The task description the delegating model sent to the worker."
+              },
+              "task_name": {
+                "type": "string",
+                "description": "The short task identifier the delegating model supplied."
+              }
+            },
+            "required": [
+              "type",
+              "status"
+            ],
+            "description": "An openrouter:subagent server tool output item"
           },
           {
             "type": "object",
@@ -20435,6 +21086,9 @@
             "$ref": "#/components/schemas/ChatSearchModelsServerTool"
           },
           {
+            "$ref": "#/components/schemas/SubagentServerTool_OpenRouter"
+          },
+          {
             "$ref": "#/components/schemas/WebFetchServerTool"
           },
           {
@@ -22426,6 +23080,9 @@
             "description": "Design Arena ELO rankings across arena+category pairs."
           }
         },
+        "required": [
+          "design_arena"
+        ],
         "description": "Third-party benchmark rankings for this model. Omitted when no benchmark data is available.",
         "title": "ModelBenchmarks"
       },
@@ -23134,6 +23791,116 @@
           "data"
         ],
         "title": "Endpoints_listEndpoints_Response_200"
+      },
+      "FileMetadataType": {
+        "type": "string",
+        "enum": [
+          "file"
+        ],
+        "title": "FileMetadataType"
+      },
+      "FileMetadata": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "downloadable": {
+            "type": "boolean"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "mime_type": {
+            "type": "string"
+          },
+          "size_bytes": {
+            "type": "integer"
+          },
+          "type": {
+            "$ref": "#/components/schemas/FileMetadataType"
+          }
+        },
+        "required": [
+          "created_at",
+          "downloadable",
+          "filename",
+          "id",
+          "mime_type",
+          "size_bytes",
+          "type"
+        ],
+        "description": "Metadata describing a stored file.",
+        "title": "FileMetadata"
+      },
+      "FileListResponse": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Opaque cursor for the next page; null when there are no more results."
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileMetadata"
+            }
+          },
+          "first_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "has_more": {
+            "type": "boolean"
+          },
+          "last_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "cursor",
+          "data",
+          "first_id",
+          "has_more",
+          "last_id"
+        ],
+        "description": "A page of files belonging to the requesting workspace.",
+        "title": "FileListResponse"
+      },
+      "FileDeleteResponseType": {
+        "type": "string",
+        "enum": [
+          "file_deleted"
+        ],
+        "title": "FileDeleteResponseType"
+      },
+      "FileDeleteResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/FileDeleteResponseType"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "description": "Confirmation that a file was deleted.",
+        "title": "FileDeleteResponse"
       },
       "GenerationResponseDataApiType": {
         "type": "string",
