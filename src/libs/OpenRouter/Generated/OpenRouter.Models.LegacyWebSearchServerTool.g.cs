@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class LegacyWebSearchServerTool
     {
         /// <summary>
-        /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
+        /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API. "perplexity" uses the Perplexity Search API (raw ranked results).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchEngineEnumJsonConverter))]
@@ -22,7 +22,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchDomainFilter? Filters { get; set; }
 
         /// <summary>
-        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
+        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
         public int? MaxResults { get; set; }
@@ -57,11 +57,11 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="LegacyWebSearchServerTool" /> class.
         /// </summary>
         /// <param name="engine">
-        /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
+        /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API. "perplexity" uses the Perplexity Search API (raw ranked results).
         /// </param>
         /// <param name="filters"></param>
         /// <param name="maxResults">
-        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search.
+        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search.
         /// </param>
         /// <param name="searchContextSize">
         /// Size of the search context for web search tools

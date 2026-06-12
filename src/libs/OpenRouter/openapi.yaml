@@ -1568,6 +1568,80 @@
         }
       }
     },
+    "/datasets/benchmarks/artificial-analysis": {
+      "get": {
+        "operationId": "get-benchmarks-artificial-analysis",
+        "summary": "Artificial Analysis Benchmark Indices",
+        "description": "Returns composite index scores (Intelligence, Coding, Agentic) from Artificial Analysis for LLM models. Includes OpenRouter pricing per model. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.",
+        "tags": [
+          "subpackage_datasets"
+        ],
+        "parameters": [
+          {
+            "name": "max_results",
+            "in": "query",
+            "description": "Max results to return (1–100, default 50).",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Artificial Analysis composite index scores with pricing and attribution metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BenchmarksAAResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/datasets/benchmarks/design-arena": {
       "get": {
         "operationId": "get-benchmarks-design-arena",
@@ -9529,7 +9603,8 @@
           "native",
           "exa",
           "firecrawl",
-          "parallel"
+          "parallel",
+          "perplexity"
         ],
         "description": "The search engine to use for web search.",
         "title": "WebSearchEngine"
@@ -10955,9 +11030,10 @@
           "native",
           "exa",
           "parallel",
-          "firecrawl"
+          "firecrawl",
+          "perplexity"
         ],
-        "description": "Which search engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in search. \"exa\" forces the Exa search API. \"firecrawl\" uses Firecrawl (requires BYOK). \"parallel\" uses the Parallel search API.",
+        "description": "Which search engine to use. \"auto\" (default) uses native if the provider supports it, otherwise Exa. \"native\" forces the provider's built-in search. \"exa\" forces the Exa search API. \"firecrawl\" uses Firecrawl (requires BYOK). \"parallel\" uses the Parallel search API. \"perplexity\" uses the Perplexity Search API (raw ranked results).",
         "title": "WebSearchEngineEnum"
       },
       "WebSearchDomainFilter": {
@@ -11055,7 +11131,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -11091,7 +11167,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -11168,7 +11244,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -11204,7 +11280,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -12382,7 +12458,7 @@
           "medium",
           "high"
         ],
-        "description": "How much context to retrieve per result. Applies to Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size. Overridden by `max_characters` when both are set.",
+        "description": "How much context to retrieve per result. Applies to Exa, Parallel, and Perplexity engines; ignored with native provider search and Firecrawl. For Exa, pins a fixed per-result character cap (low=5,000, medium=15,000, high=30,000); when omitted, Exa picks an adaptive size per query and document (typically ~2,000–4,000 characters per result). For Parallel, controls the total characters across all results; when omitted, Parallel uses its own default size. For Perplexity, maps directly to the Search API's native search_context_size parameter. Overridden by `max_characters` when both are set.",
         "title": "SearchQualityLevel"
       },
       "WebSearchUserLocationServerToolType": {
@@ -12434,7 +12510,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains."
+            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, and most native providers (Anthropic, OpenAI, xAI). Cannot be used with excluded_domains."
           },
           "engine": {
             "$ref": "#/components/schemas/WebSearchEngineEnum"
@@ -12444,15 +12520,15 @@
             "items": {
               "type": "string"
             },
-            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
+            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, Anthropic, and xAI. Not supported with OpenAI (silently ignored). Cannot be used with allowed_domains."
           },
           "max_characters": {
             "type": "integer",
-            "description": "Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel)."
+            "description": "Exact maximum number of characters of content per search result. Applies to the Exa, Parallel, and Perplexity engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). For Perplexity, maps to the native `max_tokens_per_page` parameter (converted from characters to tokens) and trims the response to the exact character cap. When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel, Perplexity)."
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
           },
           "max_total_results": {
             "type": "integer",
@@ -20221,7 +20297,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains."
+            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, and most native providers (Anthropic, OpenAI, xAI). Cannot be used with excluded_domains."
           },
           "engine": {
             "$ref": "#/components/schemas/WebSearchEngineEnum"
@@ -20231,15 +20307,15 @@
             "items": {
               "type": "string"
             },
-            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
+            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, Anthropic, and xAI. Not supported with OpenAI (silently ignored). Cannot be used with allowed_domains."
           },
           "max_characters": {
             "type": "integer",
-            "description": "Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel)."
+            "description": "Exact maximum number of characters of content per search result. Applies to the Exa, Parallel, and Perplexity engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). For Perplexity, maps to the native `max_tokens_per_page` parameter (converted from characters to tokens) and trims the response to the exact character cap. When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel, Perplexity)."
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
           },
           "max_total_results": {
             "type": "integer",
@@ -20295,7 +20371,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, and most native providers (Anthropic, OpenAI, xAI). Not supported with Perplexity. Cannot be used with excluded_domains."
+            "description": "Limit search results to these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, and most native providers (Anthropic, OpenAI, xAI). Cannot be used with excluded_domains."
           },
           "engine": {
             "$ref": "#/components/schemas/WebSearchEngineEnum"
@@ -20305,15 +20381,15 @@
             "items": {
               "type": "string"
             },
-            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Anthropic, and xAI. Not supported with OpenAI (silently ignored) or Perplexity. Cannot be used with allowed_domains."
+            "description": "Exclude search results from these domains. Supported by Exa, Firecrawl, Parallel, Perplexity, Anthropic, and xAI. Not supported with OpenAI (silently ignored). Cannot be used with allowed_domains."
           },
           "max_characters": {
             "type": "integer",
-            "description": "Exact maximum number of characters of content per search result. Applies to the Exa and Parallel engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence for both engines. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel)."
+            "description": "Exact maximum number of characters of content per search result. Applies to the Exa, Parallel, and Perplexity engines; ignored with native provider search and Firecrawl. For Exa, caps highlight content per result. For Parallel, caps excerpt content per result (default 1,500 when omitted). For Perplexity, maps to the native `max_tokens_per_page` parameter (converted from characters to tokens) and trims the response to the exact character cap. When both `max_characters` and `search_context_size` are set, `max_characters` takes precedence. When omitted, falls back to `search_context_size` mapping (Exa) or engine defaults (Parallel, Perplexity)."
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, and Parallel engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
           },
           "max_total_results": {
             "type": "integer",
@@ -21163,17 +21239,6 @@
         ],
         "title": "AppRankingsResponse"
       },
-      "DatasetsBenchmarksDesignArenaGetParametersArena": {
-        "type": "string",
-        "enum": [
-          "models",
-          "builders",
-          "agents"
-        ],
-        "default": "models",
-        "description": "Arena to query. Defaults to `models`.",
-        "title": "DatasetsBenchmarksDesignArenaGetParametersArena"
-      },
       "BenchmarkPricing": {
         "type": "object",
         "properties": {
@@ -21192,6 +21257,147 @@
         ],
         "description": "OpenRouter pricing per token for this model. Null if pricing is unavailable.",
         "title": "BenchmarkPricing"
+      },
+      "BenchmarksAAItem": {
+        "type": "object",
+        "properties": {
+          "aa_name": {
+            "type": "string",
+            "description": "Model name as listed on Artificial Analysis."
+          },
+          "agentic_index": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Artificial Analysis Agentic Index composite score. Higher is better."
+          },
+          "coding_index": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Artificial Analysis Coding Index composite score. Higher is better."
+          },
+          "intelligence_index": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Artificial Analysis Intelligence Index composite score. Higher is better."
+          },
+          "model_permaslug": {
+            "type": "string",
+            "description": "Stable OpenRouter model identifier."
+          },
+          "pricing": {
+            "$ref": "#/components/schemas/BenchmarkPricing"
+          }
+        },
+        "required": [
+          "aa_name",
+          "agentic_index",
+          "coding_index",
+          "intelligence_index",
+          "model_permaslug",
+          "pricing"
+        ],
+        "title": "BenchmarksAAItem"
+      },
+      "BenchmarksAaMetaSource": {
+        "type": "string",
+        "enum": [
+          "artificial-analysis"
+        ],
+        "description": "Data source identifier.",
+        "title": "BenchmarksAaMetaSource"
+      },
+      "BenchmarksAaMetaSourceUrl": {
+        "type": "string",
+        "enum": [
+          "https://artificialanalysis.ai"
+        ],
+        "description": "URL of the upstream data source.",
+        "title": "BenchmarksAaMetaSourceUrl"
+      },
+      "BenchmarksAaMetaVersion": {
+        "type": "string",
+        "enum": [
+          "v1"
+        ],
+        "description": "Dataset version.",
+        "title": "BenchmarksAaMetaVersion"
+      },
+      "BenchmarksAAMeta": {
+        "type": "object",
+        "properties": {
+          "as_of": {
+            "type": "string",
+            "description": "ISO-8601 timestamp of when this data was last updated."
+          },
+          "citation": {
+            "type": "string",
+            "description": "Required attribution when republishing this data."
+          },
+          "model_count": {
+            "type": "integer",
+            "description": "Number of unique models in the response."
+          },
+          "source": {
+            "$ref": "#/components/schemas/BenchmarksAaMetaSource",
+            "description": "Data source identifier."
+          },
+          "source_url": {
+            "$ref": "#/components/schemas/BenchmarksAaMetaSourceUrl",
+            "description": "URL of the upstream data source."
+          },
+          "version": {
+            "$ref": "#/components/schemas/BenchmarksAaMetaVersion",
+            "description": "Dataset version."
+          }
+        },
+        "required": [
+          "as_of",
+          "citation",
+          "model_count",
+          "source",
+          "source_url",
+          "version"
+        ],
+        "title": "BenchmarksAAMeta"
+      },
+      "BenchmarksAAResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BenchmarksAAItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/BenchmarksAAMeta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "BenchmarksAAResponse"
+      },
+      "DatasetsBenchmarksDesignArenaGetParametersArena": {
+        "type": "string",
+        "enum": [
+          "models",
+          "builders",
+          "agents"
+        ],
+        "default": "models",
+        "description": "Arena to query. Defaults to `models`.",
+        "title": "DatasetsBenchmarksDesignArenaGetParametersArena"
       },
       "BenchmarksDaItemTournamentStats": {
         "type": "object",

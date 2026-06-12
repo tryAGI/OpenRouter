@@ -24,6 +24,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Parallel,
+        /// <summary>
+        /// 
+        /// </summary>
+        Perplexity,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace OpenRouter
                 WebSearchEngine.Firecrawl => "firecrawl",
                 WebSearchEngine.Native => "native",
                 WebSearchEngine.Parallel => "parallel",
+                WebSearchEngine.Perplexity => "perplexity",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace OpenRouter
                 "firecrawl" => WebSearchEngine.Firecrawl,
                 "native" => WebSearchEngine.Native,
                 "parallel" => WebSearchEngine.Parallel,
+                "perplexity" => WebSearchEngine.Perplexity,
                 _ => null,
             };
         }
