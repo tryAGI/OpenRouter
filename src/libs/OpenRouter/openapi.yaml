@@ -293,6 +293,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
           "409": {
             "description": "Conflict - Resource conflict or concurrent modification",
             "content": {
@@ -353,6 +363,11 @@
                   "usage_limit_type": {
                     "$ref": "#/components/schemas/AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType",
                     "description": "Optional credit limit reset interval. When set, the credit limit resets on this interval."
+                  },
+                  "workspace_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "Optional workspace ID to associate the API key with"
                   }
                 },
                 "required": [
