@@ -54,6 +54,12 @@ namespace OpenRouter
         public global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? UsageLimitType { get; set; }
 
         /// <summary>
+        /// Optional workspace ID to associate the API key with
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public global::System.Guid? WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -83,6 +89,9 @@ namespace OpenRouter
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
         /// </param>
+        /// <param name="workspaceId">
+        /// Optional workspace ID to associate the API key with
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,7 +102,8 @@ namespace OpenRouter
             global::System.DateTime? expiresAt,
             string? keyLabel,
             double? limit,
-            global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType)
+            global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType,
+            global::System.Guid? workspaceId)
         {
             this.CallbackUrl = callbackUrl ?? throw new global::System.ArgumentNullException(nameof(callbackUrl));
             this.CodeChallenge = codeChallenge;
@@ -102,6 +112,7 @@ namespace OpenRouter
             this.KeyLabel = keyLabel;
             this.Limit = limit;
             this.UsageLimitType = usageLimitType;
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>
