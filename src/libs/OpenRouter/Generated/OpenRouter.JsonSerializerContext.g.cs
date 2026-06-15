@@ -409,6 +409,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.PdfParserEngine1NullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.WebSearchEngineJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WebSearchEngineNullableJsonConverter),
@@ -3117,6 +3121,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PdfParserEngine1), TypeInfoPropertyName = "PdfParserEngine12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PDFParserEngine), TypeInfoPropertyName = "PDFParserEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.PDFParserOptions))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset), TypeInfoPropertyName = "ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items), TypeInfoPropertyName = "ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf5), TypeInfoPropertyName = "ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf52")]
@@ -3380,7 +3385,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1Type), TypeInfoPropertyName = "BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2Type), TypeInfoPropertyName = "BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2Type2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3787,6 +3791,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.PdfParserEngine1JsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.PdfParserEngine1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WebSearchEngineJsonConverter),
 
@@ -6260,6 +6268,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2Type), TypeInfoPropertyName = "BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3Type), TypeInfoPropertyName = "BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4))]
@@ -6759,7 +6768,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputModality), TypeInfoPropertyName = "OutputModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelGroup), TypeInfoPropertyName = "ModelGroup2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelArchitecture))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputModality>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -7166,6 +7174,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.PdfParserEngine1JsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.PdfParserEngine1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WebSearchEngineJsonConverter),
 
@@ -9639,6 +9651,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputModality>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ModelArchitectureInstructType?, object>), TypeInfoPropertyName = "OneOfModelArchitectureInstructTypeObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OutputModality>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AABenchmarkEntry))]
@@ -10138,7 +10151,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2Type), TypeInfoPropertyName = "ObservabilityDestinationVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant3Type), TypeInfoPropertyName = "ObservabilityDestinationVariant3Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant4))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -10545,6 +10557,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.PdfParserEngine1JsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.PdfParserEngine1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WebSearchEngineJsonConverter),
 
@@ -13018,6 +13034,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant4Type), TypeInfoPropertyName = "ObservabilityDestinationVariant4Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant5Type), TypeInfoPropertyName = "ObservabilityDestinationVariant5Type2")]
@@ -13678,6 +13695,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.PdfParserEngine0NullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.PdfParserEngine1JsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.PdfParserEngine1NullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.WebSearchEngineJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.WebSearchEngineNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.WebSearchPluginIdJsonConverter());
