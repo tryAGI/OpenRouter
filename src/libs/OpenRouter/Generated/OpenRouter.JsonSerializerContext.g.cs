@@ -1661,6 +1661,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeNullableJsonConverter),
@@ -5043,6 +5047,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter),
 
@@ -8427,6 +8435,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeNullableJsonConverter),
@@ -9827,6 +9839,8 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamSource2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicUrlPdfSourceType), TypeInfoPropertyName = "AnthropicUrlPdfSourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicUrlPdfSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicFileDocumentSourceType), TypeInfoPropertyName = "AnthropicFileDocumentSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicFileDocumentSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamSource), TypeInfoPropertyName = "AnthropicDocumentBlockParamSource2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParamType), TypeInfoPropertyName = "AnthropicDocumentBlockParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicDocumentBlockParam))]
@@ -10149,8 +10163,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1Type), TypeInfoPropertyName = "ObservabilityDestinationVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2Type), TypeInfoPropertyName = "ObservabilityDestinationVariant2Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant3))]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -11810,6 +11822,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeNullableJsonConverter),
@@ -13034,6 +13050,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2Type), TypeInfoPropertyName = "ObservabilityDestinationVariant2Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant3Type), TypeInfoPropertyName = "ObservabilityDestinationVariant3Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant4Type), TypeInfoPropertyName = "ObservabilityDestinationVariant4Type2")]
@@ -14322,6 +14340,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceOneOf2TypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf3TypeJsonConverter());

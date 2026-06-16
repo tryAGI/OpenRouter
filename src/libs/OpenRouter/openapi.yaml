@@ -11965,7 +11965,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -12001,7 +12001,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -12078,7 +12078,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -12114,7 +12114,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped."
           },
           "search_context_size": {
             "$ref": "#/components/schemas/SearchContextSizeEnum"
@@ -13464,7 +13464,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped."
           },
           "max_total_results": {
             "type": "integer",
@@ -21146,7 +21146,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped."
           },
           "max_total_results": {
             "type": "integer",
@@ -21220,7 +21220,7 @@
           },
           "max_results": {
             "type": "integer",
-            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search."
+            "description": "Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped."
           },
           "max_total_results": {
             "type": "integer",
@@ -27711,6 +27711,29 @@
         ],
         "title": "AnthropicUrlPdfSource"
       },
+      "AnthropicFileDocumentSourceType": {
+        "type": "string",
+        "enum": [
+          "file"
+        ],
+        "title": "AnthropicFileDocumentSourceType"
+      },
+      "AnthropicFileDocumentSource": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AnthropicFileDocumentSourceType"
+          }
+        },
+        "required": [
+          "file_id",
+          "type"
+        ],
+        "title": "AnthropicFileDocumentSource"
+      },
       "AnthropicDocumentBlockParamSource": {
         "oneOf": [
           {
@@ -27724,6 +27747,9 @@
           },
           {
             "$ref": "#/components/schemas/AnthropicUrlPdfSource"
+          },
+          {
+            "$ref": "#/components/schemas/AnthropicFileDocumentSource"
           }
         ],
         "title": "AnthropicDocumentBlockParamSource"

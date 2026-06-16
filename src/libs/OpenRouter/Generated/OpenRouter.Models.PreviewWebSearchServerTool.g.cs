@@ -22,7 +22,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchDomainFilter? Filters { get; set; }
 
         /// <summary>
-        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search.
+        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
         public int? MaxResults { get; set; }
@@ -61,7 +61,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="filters"></param>
         /// <param name="maxResults">
-        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search.
+        /// Maximum number of search results to return per search call. Defaults to 5. Applies to Exa, Firecrawl, Parallel, and Perplexity engines; ignored with native provider search. Perplexity supports a maximum of 20; values above 20 are clamped.
         /// </param>
         /// <param name="searchContextSize">
         /// Size of the search context for web search tools
