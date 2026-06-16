@@ -43,6 +43,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Openrouter_advisor,
+        /// <summary>
+        /// 
+        /// </summary>
         Openrouter_applyPatch,
         /// <summary>
         /// 
@@ -87,6 +91,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Openrouter_subagent,
+        /// <summary>
+        /// 
+        /// </summary>
         Openrouter_textEditor,
         /// <summary>
         /// 
@@ -104,6 +112,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         Reasoning,
+        /// <summary>
+        /// 
+        /// </summary>
+        ShellCall,
+        /// <summary>
+        /// 
+        /// </summary>
+        ShellCallOutput,
         /// <summary>
         /// 
         /// </summary>
@@ -130,6 +146,7 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.FunctionCall => "function_call",
                 OutputItemsDiscriminatorType.ImageGenerationCall => "image_generation_call",
                 OutputItemsDiscriminatorType.Message => "message",
+                OutputItemsDiscriminatorType.Openrouter_advisor => "openrouter:advisor",
                 OutputItemsDiscriminatorType.Openrouter_applyPatch => "openrouter:apply_patch",
                 OutputItemsDiscriminatorType.Openrouter_bash => "openrouter:bash",
                 OutputItemsDiscriminatorType.Openrouter_browserUse => "openrouter:browser_use",
@@ -141,11 +158,14 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.Openrouter_imageGeneration => "openrouter:image_generation",
                 OutputItemsDiscriminatorType.Openrouter_mcp => "openrouter:mcp",
                 OutputItemsDiscriminatorType.Openrouter_memory => "openrouter:memory",
+                OutputItemsDiscriminatorType.Openrouter_subagent => "openrouter:subagent",
                 OutputItemsDiscriminatorType.Openrouter_textEditor => "openrouter:text_editor",
                 OutputItemsDiscriminatorType.Openrouter_toolSearch => "openrouter:tool_search",
                 OutputItemsDiscriminatorType.Openrouter_webFetch => "openrouter:web_fetch",
                 OutputItemsDiscriminatorType.Openrouter_webSearch => "openrouter:web_search",
                 OutputItemsDiscriminatorType.Reasoning => "reasoning",
+                OutputItemsDiscriminatorType.ShellCall => "shell_call",
+                OutputItemsDiscriminatorType.ShellCallOutput => "shell_call_output",
                 OutputItemsDiscriminatorType.WebSearchCall => "web_search_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -165,6 +185,7 @@ namespace OpenRouter
                 "function_call" => OutputItemsDiscriminatorType.FunctionCall,
                 "image_generation_call" => OutputItemsDiscriminatorType.ImageGenerationCall,
                 "message" => OutputItemsDiscriminatorType.Message,
+                "openrouter:advisor" => OutputItemsDiscriminatorType.Openrouter_advisor,
                 "openrouter:apply_patch" => OutputItemsDiscriminatorType.Openrouter_applyPatch,
                 "openrouter:bash" => OutputItemsDiscriminatorType.Openrouter_bash,
                 "openrouter:browser_use" => OutputItemsDiscriminatorType.Openrouter_browserUse,
@@ -176,11 +197,14 @@ namespace OpenRouter
                 "openrouter:image_generation" => OutputItemsDiscriminatorType.Openrouter_imageGeneration,
                 "openrouter:mcp" => OutputItemsDiscriminatorType.Openrouter_mcp,
                 "openrouter:memory" => OutputItemsDiscriminatorType.Openrouter_memory,
+                "openrouter:subagent" => OutputItemsDiscriminatorType.Openrouter_subagent,
                 "openrouter:text_editor" => OutputItemsDiscriminatorType.Openrouter_textEditor,
                 "openrouter:tool_search" => OutputItemsDiscriminatorType.Openrouter_toolSearch,
                 "openrouter:web_fetch" => OutputItemsDiscriminatorType.Openrouter_webFetch,
                 "openrouter:web_search" => OutputItemsDiscriminatorType.Openrouter_webSearch,
                 "reasoning" => OutputItemsDiscriminatorType.Reasoning,
+                "shell_call" => OutputItemsDiscriminatorType.ShellCall,
+                "shell_call_output" => OutputItemsDiscriminatorType.ShellCallOutput,
                 "web_search_call" => OutputItemsDiscriminatorType.WebSearchCall,
                 _ => null,
             };

@@ -42,6 +42,14 @@ namespace OpenRouter
         public required string CreatedAt { get; set; }
 
         /// <summary>
+        /// The data region this generation was routed through. 'europe' for EU-routed requests, 'global' otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_region")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GenerationResponseDataDataRegionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.GenerationResponseDataDataRegion DataRegion { get; set; }
+
+        /// <summary>
         /// External user identifier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_user")]
@@ -172,6 +180,12 @@ namespace OpenRouter
         public required string Origin { get; set; }
 
         /// <summary>
+        /// ID of the preset used for this generation, null if no preset was used
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preset_id")]
+        public string? PresetId { get; set; }
+
+        /// <summary>
         /// Name of the provider that served the request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_name")]
@@ -284,6 +298,9 @@ namespace OpenRouter
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the generation was created
         /// </param>
+        /// <param name="dataRegion">
+        /// The data region this generation was routed through. 'europe' for EU-routed requests, 'global' otherwise.
+        /// </param>
         /// <param name="id">
         /// Unique identifier for the generation
         /// </param>
@@ -362,6 +379,9 @@ namespace OpenRouter
         /// <param name="numSearchResults">
         /// Number of search results included
         /// </param>
+        /// <param name="presetId">
+        /// ID of the preset used for this generation, null if no preset was used
+        /// </param>
         /// <param name="providerName">
         /// Name of the provider that served the request
         /// </param>
@@ -410,6 +430,7 @@ namespace OpenRouter
         public GenerationResponseData(
             global::OpenRouter.OneOf<global::OpenRouter.GenerationResponseDataApiType?, object> apiType,
             string createdAt,
+            global::OpenRouter.GenerationResponseDataDataRegion dataRegion,
             string id,
             bool isByok,
             string model,
@@ -436,6 +457,7 @@ namespace OpenRouter
             int? numMediaCompletion,
             int? numMediaPrompt,
             int? numSearchResults,
+            string? presetId,
             string? providerName,
             global::System.Collections.Generic.IList<global::OpenRouter.ProviderResponse>? providerResponses,
             string? requestId,
@@ -456,6 +478,7 @@ namespace OpenRouter
             this.CacheDiscount = cacheDiscount;
             this.Cancelled = cancelled;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.DataRegion = dataRegion;
             this.ExternalUser = externalUser;
             this.FinishReason = finishReason;
             this.GenerationTime = generationTime;
@@ -477,6 +500,7 @@ namespace OpenRouter
             this.NumMediaPrompt = numMediaPrompt;
             this.NumSearchResults = numSearchResults;
             this.Origin = origin ?? throw new global::System.ArgumentNullException(nameof(origin));
+            this.PresetId = presetId;
             this.ProviderName = providerName;
             this.ProviderResponses = providerResponses;
             this.RequestId = requestId;

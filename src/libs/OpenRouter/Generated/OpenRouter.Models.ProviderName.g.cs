@@ -111,6 +111,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Decart,
+        /// <summary>
+        /// 
+        /// </summary>
         DeepInfra,
         /// <summary>
         /// 
@@ -156,10 +160,6 @@ namespace OpenRouter
         /// 
         /// </summary>
         Groq,
-        /// <summary>
-        /// 
-        /// </summary>
-        Hyperbolic,
         /// <summary>
         /// 
         /// </summary>
@@ -335,6 +335,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         WandB,
         /// <summary>
         /// 
@@ -387,6 +391,7 @@ namespace OpenRouter
                 ProviderName.Crucible => "Crucible",
                 ProviderName.Crusoe => "Crusoe",
                 ProviderName.Darkbloom => "Darkbloom",
+                ProviderName.Decart => "Decart",
                 ProviderName.DeepInfra => "DeepInfra",
                 ProviderName.DeepSeek => "DeepSeek",
                 ProviderName.DekaLLM => "DekaLLM",
@@ -399,7 +404,6 @@ namespace OpenRouter
                 ProviderName.Google => "Google",
                 ProviderName.GoogleAiStudio => "Google AI Studio",
                 ProviderName.Groq => "Groq",
-                ProviderName.Hyperbolic => "Hyperbolic",
                 ProviderName.Inception => "Inception",
                 ProviderName.Inceptron => "Inceptron",
                 ProviderName.InferenceNet => "InferenceNet",
@@ -443,6 +447,7 @@ namespace OpenRouter
                 ProviderName.Together => "Together",
                 ProviderName.Upstage => "Upstage",
                 ProviderName.Venice => "Venice",
+                ProviderName.Wafer => "Wafer",
                 ProviderName.WandB => "WandB",
                 ProviderName.Xiaomi => "Xiaomi",
                 ProviderName.ZAi => "Z.AI",
@@ -482,6 +487,7 @@ namespace OpenRouter
                 "Crucible" => ProviderName.Crucible,
                 "Crusoe" => ProviderName.Crusoe,
                 "Darkbloom" => ProviderName.Darkbloom,
+                "Decart" => ProviderName.Decart,
                 "DeepInfra" => ProviderName.DeepInfra,
                 "DeepSeek" => ProviderName.DeepSeek,
                 "DekaLLM" => ProviderName.DekaLLM,
@@ -494,7 +500,6 @@ namespace OpenRouter
                 "Google" => ProviderName.Google,
                 "Google AI Studio" => ProviderName.GoogleAiStudio,
                 "Groq" => ProviderName.Groq,
-                "Hyperbolic" => ProviderName.Hyperbolic,
                 "Inception" => ProviderName.Inception,
                 "Inceptron" => ProviderName.Inceptron,
                 "InferenceNet" => ProviderName.InferenceNet,
@@ -538,6 +543,7 @@ namespace OpenRouter
                 "Together" => ProviderName.Together,
                 "Upstage" => ProviderName.Upstage,
                 "Venice" => ProviderName.Venice,
+                "Wafer" => ProviderName.Wafer,
                 "WandB" => ProviderName.WandB,
                 "Xiaomi" => ProviderName.Xiaomi,
                 "Z.AI" => ProviderName.ZAi,

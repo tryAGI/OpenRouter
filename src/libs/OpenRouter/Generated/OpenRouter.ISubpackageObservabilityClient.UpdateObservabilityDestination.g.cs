@@ -58,7 +58,7 @@ namespace OpenRouter
         /// When true, request/response bodies are not forwarded — only metadata.
         /// </param>
         /// <param name="samplingRate">
-        /// Sampling rate between 0 and 1 (1 = 100%).
+        /// Sampling rate between 0.0001 and 1 (1 = 100%).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

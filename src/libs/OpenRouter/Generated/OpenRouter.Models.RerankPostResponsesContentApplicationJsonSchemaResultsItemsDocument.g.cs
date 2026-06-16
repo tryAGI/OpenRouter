@@ -4,16 +4,21 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// The document object containing the original text
+    /// The document object echoing the original input (text and/or image)
     /// </summary>
     public sealed partial class RerankPostResponsesContentApplicationJsonSchemaResultsItemsDocument
     {
         /// <summary>
+        /// The image (URL or data URI) from the original document
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public string? Image { get; set; }
+
+        /// <summary>
         /// The document text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public string? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,6 +29,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankPostResponsesContentApplicationJsonSchemaResultsItemsDocument" /> class.
         /// </summary>
+        /// <param name="image">
+        /// The image (URL or data URI) from the original document
+        /// </param>
         /// <param name="text">
         /// The document text
         /// </param>
@@ -31,9 +39,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankPostResponsesContentApplicationJsonSchemaResultsItemsDocument(
-            string text)
+            string? image,
+            string? text)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Image = image;
+            this.Text = text;
         }
 
         /// <summary>

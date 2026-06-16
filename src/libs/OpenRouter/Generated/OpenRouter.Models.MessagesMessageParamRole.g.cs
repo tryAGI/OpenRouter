@@ -15,6 +15,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
         User,
     }
 
@@ -31,6 +35,7 @@ namespace OpenRouter
             return value switch
             {
                 MessagesMessageParamRole.Assistant => "assistant",
+                MessagesMessageParamRole.System => "system",
                 MessagesMessageParamRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace OpenRouter
             return value switch
             {
                 "assistant" => MessagesMessageParamRole.Assistant,
+                "system" => MessagesMessageParamRole.System,
                 "user" => MessagesMessageParamRole.User,
                 _ => null,
             };

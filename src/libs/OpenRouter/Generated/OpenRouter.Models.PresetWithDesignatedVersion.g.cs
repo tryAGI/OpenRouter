@@ -28,13 +28,6 @@ namespace OpenRouter
         public string? Description { get; set; }
 
         /// <summary>
-        /// A specific version of a preset, containing config and optional system prompt.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("designated_version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.PresetDesignatedVersion DesignatedVersion { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("designated_version_id")]
@@ -62,12 +55,12 @@ namespace OpenRouter
         public required string Slug { get; set; }
 
         /// <summary>
-        /// 
+        /// The status of a preset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PresetWithDesignatedVersionStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PresetStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.PresetWithDesignatedVersionStatus Status { get; set; }
+        public required global::OpenRouter.PresetStatus Status { get; set; }
 
         /// <summary>
         /// 
@@ -89,6 +82,13 @@ namespace OpenRouter
         public string? WorkspaceId { get; set; }
 
         /// <summary>
+        /// A specific version of a preset, containing config and optional system prompt.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("designated_version")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.PresetDesignatedVersion DesignatedVersion { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -98,14 +98,16 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="PresetWithDesignatedVersion" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
-        /// <param name="designatedVersion">
-        /// A specific version of a preset, containing config and optional system prompt.
-        /// </param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="slug"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// The status of a preset.
+        /// </param>
         /// <param name="updatedAt"></param>
+        /// <param name="designatedVersion">
+        /// A specific version of a preset, containing config and optional system prompt.
+        /// </param>
         /// <param name="creatorUserId"></param>
         /// <param name="description"></param>
         /// <param name="designatedVersionId"></param>
@@ -116,12 +118,12 @@ namespace OpenRouter
 #endif
         public PresetWithDesignatedVersion(
             string createdAt,
-            global::OpenRouter.PresetDesignatedVersion designatedVersion,
             string id,
             string name,
             string slug,
-            global::OpenRouter.PresetWithDesignatedVersionStatus status,
+            global::OpenRouter.PresetStatus status,
             string updatedAt,
+            global::OpenRouter.PresetDesignatedVersion designatedVersion,
             string? creatorUserId,
             string? description,
             string? designatedVersionId,
@@ -131,7 +133,6 @@ namespace OpenRouter
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.CreatorUserId = creatorUserId;
             this.Description = description;
-            this.DesignatedVersion = designatedVersion ?? throw new global::System.ArgumentNullException(nameof(designatedVersion));
             this.DesignatedVersionId = designatedVersionId;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -140,6 +141,7 @@ namespace OpenRouter
             this.StatusUpdatedAt = statusUpdatedAt;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.WorkspaceId = workspaceId;
+            this.DesignatedVersion = designatedVersion ?? throw new global::System.ArgumentNullException(nameof(designatedVersion));
         }
 
         /// <summary>

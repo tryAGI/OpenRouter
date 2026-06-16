@@ -50,6 +50,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("cache_creation_input_tokens")) __score1++;
             if (__jsonProps.Contains("cache_read_input_tokens")) __score1++;
             if (__jsonProps.Contains("input_tokens")) __score1++;
+            if (__jsonProps.Contains("model")) __score1++;
             if (__jsonProps.Contains("output_tokens")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;

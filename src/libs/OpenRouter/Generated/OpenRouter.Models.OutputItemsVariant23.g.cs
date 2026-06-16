@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:web_search server tool output item
+    /// An openrouter:tool_search server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant23
     {
@@ -12,20 +12,20 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
-
-        /// <summary>
-        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public global::OpenRouter.OutputWebSearchServerToolItemAction? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputToolSearchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputToolSearchServerToolItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("query")]
+        public string? Query { get; set; }
 
         /// <summary>
         /// 
@@ -46,22 +46,20 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type"></param>
-        /// <param name="action">
-        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
-        /// </param>
         /// <param name="id"></param>
+        /// <param name="query"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant23(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputWebSearchServerToolItemType type,
-            global::OpenRouter.OutputWebSearchServerToolItemAction? action,
-            string? id)
+            global::OpenRouter.OutputToolSearchServerToolItemType type,
+            string? id,
+            string? query)
         {
             this.Type = type;
-            this.Action = action;
             this.Id = id;
+            this.Query = query;
             this.Status = status;
         }
 

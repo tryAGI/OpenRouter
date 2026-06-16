@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class CreateAuthKeysCodeRequest
     {
         /// <summary>
-        /// The callback URL to redirect to after authorization. Note, only https URLs on ports 443 and 3000 are allowed.
+        /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -54,6 +54,12 @@ namespace OpenRouter
         public global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? UsageLimitType { get; set; }
 
         /// <summary>
+        /// Optional workspace ID to associate the API key with
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public global::System.Guid? WorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,7 +69,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="CreateAuthKeysCodeRequest" /> class.
         /// </summary>
         /// <param name="callbackUrl">
-        /// The callback URL to redirect to after authorization. Note, only https URLs on ports 443 and 3000 are allowed.
+        /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.
         /// </param>
         /// <param name="codeChallenge">
         /// PKCE code challenge for enhanced security
@@ -83,6 +89,9 @@ namespace OpenRouter
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
         /// </param>
+        /// <param name="workspaceId">
+        /// Optional workspace ID to associate the API key with
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,7 +102,8 @@ namespace OpenRouter
             global::System.DateTime? expiresAt,
             string? keyLabel,
             double? limit,
-            global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType)
+            global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType,
+            global::System.Guid? workspaceId)
         {
             this.CallbackUrl = callbackUrl ?? throw new global::System.ArgumentNullException(nameof(callbackUrl));
             this.CodeChallenge = codeChallenge;
@@ -102,6 +112,7 @@ namespace OpenRouter
             this.KeyLabel = keyLabel;
             this.Limit = limit;
             this.UsageLimitType = usageLimitType;
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>

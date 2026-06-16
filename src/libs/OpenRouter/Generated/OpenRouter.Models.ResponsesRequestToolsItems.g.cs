@@ -528,6 +528,80 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
+        /// OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. The advisor may run as a sub-agent with its own tools. Include multiple entries to offer several named advisors; at most one entry may omit `name` to act as the default advisor.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AdvisorServerToolOpenRouter? AdvisorServerToolOpenRouter { get; init; }
+#else
+        public global::OpenRouter.AdvisorServerToolOpenRouter? AdvisorServerToolOpenRouter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorServerToolOpenRouter))]
+#endif
+        public bool IsAdvisorServerToolOpenRouter => AdvisorServerToolOpenRouter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdvisorServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AdvisorServerToolOpenRouter? value)
+        {
+            value = AdvisorServerToolOpenRouter;
+            return IsAdvisorServerToolOpenRouter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.AdvisorServerToolOpenRouter PickAdvisorServerToolOpenRouter() => IsAdvisorServerToolOpenRouter
+            ? AdvisorServerToolOpenRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorServerToolOpenRouter' but the value was {ToString()}.");
+
+        /// <summary>
+        /// OpenRouter built-in server tool: delegates self-contained tasks to a smaller, cheaper, faster worker model (any OpenRouter model) mid-generation and returns its outcome. The worker may run as a sub-agent with its own tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerToolOpenRouter { get; init; }
+#else
+        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerToolOpenRouter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SubagentServerToolOpenRouter))]
+#endif
+        public bool IsSubagentServerToolOpenRouter => SubagentServerToolOpenRouter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSubagentServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.SubagentServerToolOpenRouter? value)
+        {
+            value = SubagentServerToolOpenRouter;
+            return IsSubagentServerToolOpenRouter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.SubagentServerToolOpenRouter PickSubagentServerToolOpenRouter() => IsSubagentServerToolOpenRouter
+            ? SubagentServerToolOpenRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SubagentServerToolOpenRouter' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -785,6 +859,80 @@ namespace OpenRouter
         public global::OpenRouter.ApplyPatchServerToolOpenRouter PickApplyPatchServerToolOpenRouter() => IsApplyPatchServerToolOpenRouter
             ? ApplyPatchServerToolOpenRouter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchServerToolOpenRouter' but the value was {ToString()}.");
+
+        /// <summary>
+        /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.BashServerTool? BashServerTool { get; init; }
+#else
+        public global::OpenRouter.BashServerTool? BashServerTool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashServerTool))]
+#endif
+        public bool IsBashServerTool => BashServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBashServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.BashServerTool? value)
+        {
+            value = BashServerTool;
+            return IsBashServerTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.BashServerTool PickBashServerTool() => IsBashServerTool
+            ? BashServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashServerTool' but the value was {ToString()}.");
+
+        /// <summary>
+        /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container (a sandbox-backed clone of OpenAI's hosted shell tool)
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ShellServerToolOpenRouter? ShellServerToolOpenRouter { get; init; }
+#else
+        public global::OpenRouter.ShellServerToolOpenRouter? ShellServerToolOpenRouter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellServerToolOpenRouter))]
+#endif
+        public bool IsShellServerToolOpenRouter => ShellServerToolOpenRouter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShellServerToolOpenRouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ShellServerToolOpenRouter? value)
+        {
+            value = ShellServerToolOpenRouter;
+            return IsShellServerToolOpenRouter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenRouter.ShellServerToolOpenRouter PickShellServerToolOpenRouter() => IsShellServerToolOpenRouter
+            ? ShellServerToolOpenRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellServerToolOpenRouter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -1110,6 +1258,52 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ResponsesRequestToolsItems(global::OpenRouter.AdvisorServerToolOpenRouter value) => new ResponsesRequestToolsItems((global::OpenRouter.AdvisorServerToolOpenRouter?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.AdvisorServerToolOpenRouter?(ResponsesRequestToolsItems @this) => @this.AdvisorServerToolOpenRouter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesRequestToolsItems(global::OpenRouter.AdvisorServerToolOpenRouter? value)
+        {
+            AdvisorServerToolOpenRouter = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromAdvisorServerToolOpenRouter(global::OpenRouter.AdvisorServerToolOpenRouter? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponsesRequestToolsItems(global::OpenRouter.SubagentServerToolOpenRouter value) => new ResponsesRequestToolsItems((global::OpenRouter.SubagentServerToolOpenRouter?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.SubagentServerToolOpenRouter?(ResponsesRequestToolsItems @this) => @this.SubagentServerToolOpenRouter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesRequestToolsItems(global::OpenRouter.SubagentServerToolOpenRouter? value)
+        {
+            SubagentServerToolOpenRouter = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromSubagentServerToolOpenRouter(global::OpenRouter.SubagentServerToolOpenRouter? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::OpenRouter.DatetimeServerTool value) => new ResponsesRequestToolsItems((global::OpenRouter.DatetimeServerTool?)value);
 
         /// <summary>
@@ -1271,6 +1465,52 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ResponsesRequestToolsItems(global::OpenRouter.BashServerTool value) => new ResponsesRequestToolsItems((global::OpenRouter.BashServerTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.BashServerTool?(ResponsesRequestToolsItems @this) => @this.BashServerTool;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesRequestToolsItems(global::OpenRouter.BashServerTool? value)
+        {
+            BashServerTool = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromBashServerTool(global::OpenRouter.BashServerTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponsesRequestToolsItems(global::OpenRouter.ShellServerToolOpenRouter value) => new ResponsesRequestToolsItems((global::OpenRouter.ShellServerToolOpenRouter?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenRouter.ShellServerToolOpenRouter?(ResponsesRequestToolsItems @this) => @this.ShellServerToolOpenRouter;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesRequestToolsItems(global::OpenRouter.ShellServerToolOpenRouter? value)
+        {
+            ShellServerToolOpenRouter = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromShellServerToolOpenRouter(global::OpenRouter.ShellServerToolOpenRouter? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResponsesRequestToolsItems(
             global::OpenRouter.ResponsesRequestToolsItems0? responsesRequestToolsItems0,
             global::OpenRouter.PreviewWebSearchServerTool? previewWebSearchServerTool,
@@ -1286,13 +1526,17 @@ namespace OpenRouter
             global::OpenRouter.ShellServerTool? shellServerTool,
             global::OpenRouter.ApplyPatchServerTool? applyPatchServerTool,
             global::OpenRouter.CustomTool? customTool,
+            global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerToolOpenRouter,
+            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerToolOpenRouter,
             global::OpenRouter.DatetimeServerTool? datetimeServerTool,
             global::OpenRouter.FusionServerToolOpenRouter? fusionServerToolOpenRouter,
             global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter,
             global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool,
             global::OpenRouter.WebFetchServerTool? webFetchServerTool,
             global::OpenRouter.WebSearchServerToolOpenRouter? webSearchServerToolOpenRouter,
-            global::OpenRouter.ApplyPatchServerToolOpenRouter? applyPatchServerToolOpenRouter
+            global::OpenRouter.ApplyPatchServerToolOpenRouter? applyPatchServerToolOpenRouter,
+            global::OpenRouter.BashServerTool? bashServerTool,
+            global::OpenRouter.ShellServerToolOpenRouter? shellServerToolOpenRouter
             )
         {
             ResponsesRequestToolsItems0 = responsesRequestToolsItems0;
@@ -1309,6 +1553,8 @@ namespace OpenRouter
             ShellServerTool = shellServerTool;
             ApplyPatchServerTool = applyPatchServerTool;
             CustomTool = customTool;
+            AdvisorServerToolOpenRouter = advisorServerToolOpenRouter;
+            SubagentServerToolOpenRouter = subagentServerToolOpenRouter;
             DatetimeServerTool = datetimeServerTool;
             FusionServerToolOpenRouter = fusionServerToolOpenRouter;
             ImageGenerationServerToolOpenRouter = imageGenerationServerToolOpenRouter;
@@ -1316,12 +1562,16 @@ namespace OpenRouter
             WebFetchServerTool = webFetchServerTool;
             WebSearchServerToolOpenRouter = webSearchServerToolOpenRouter;
             ApplyPatchServerToolOpenRouter = applyPatchServerToolOpenRouter;
+            BashServerTool = bashServerTool;
+            ShellServerToolOpenRouter = shellServerToolOpenRouter;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ShellServerToolOpenRouter as object ??
+            BashServerTool as object ??
             ApplyPatchServerToolOpenRouter as object ??
             WebSearchServerToolOpenRouter as object ??
             WebFetchServerTool as object ??
@@ -1329,6 +1579,8 @@ namespace OpenRouter
             ImageGenerationServerToolOpenRouter as object ??
             FusionServerToolOpenRouter as object ??
             DatetimeServerTool as object ??
+            SubagentServerToolOpenRouter as object ??
+            AdvisorServerToolOpenRouter as object ??
             CustomTool as object ??
             ApplyPatchServerTool as object ??
             ShellServerTool as object ??
@@ -1363,13 +1615,17 @@ namespace OpenRouter
             ShellServerTool?.ToString() ??
             ApplyPatchServerTool?.ToString() ??
             CustomTool?.ToString() ??
+            AdvisorServerToolOpenRouter?.ToString() ??
+            SubagentServerToolOpenRouter?.ToString() ??
             DatetimeServerTool?.ToString() ??
             FusionServerToolOpenRouter?.ToString() ??
             ImageGenerationServerToolOpenRouter?.ToString() ??
             ChatSearchModelsServerTool?.ToString() ??
             WebFetchServerTool?.ToString() ??
             WebSearchServerToolOpenRouter?.ToString() ??
-            ApplyPatchServerToolOpenRouter?.ToString() 
+            ApplyPatchServerToolOpenRouter?.ToString() ??
+            BashServerTool?.ToString() ??
+            ShellServerToolOpenRouter?.ToString() 
             ;
 
         /// <summary>
@@ -1377,7 +1633,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && IsApplyPatchServerToolOpenRouter;
+            return IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && IsApplyPatchServerToolOpenRouter && !IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && IsBashServerTool && !IsShellServerToolOpenRouter || !IsResponsesRequestToolsItems0 && !IsPreviewWebSearchServerTool && !IsPreview20250311WebSearchServerTool && !IsLegacyWebSearchServerTool && !IsWebSearchServerTool && !IsFileSearchServerTool && !IsComputerUseServerTool && !IsCodeInterpreterServerTool && !IsMcpServerTool && !IsImageGenerationServerTool && !IsCodexLocalShellTool && !IsShellServerTool && !IsApplyPatchServerTool && !IsCustomTool && !IsAdvisorServerToolOpenRouter && !IsSubagentServerToolOpenRouter && !IsDatetimeServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsWebFetchServerTool && !IsWebSearchServerToolOpenRouter && !IsApplyPatchServerToolOpenRouter && !IsBashServerTool && IsShellServerToolOpenRouter;
         }
 
         /// <summary>
@@ -1398,6 +1654,8 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.ShellServerTool, TResult>? shellServerTool = null,
             global::System.Func<global::OpenRouter.ApplyPatchServerTool, TResult>? applyPatchServerTool = null,
             global::System.Func<global::OpenRouter.CustomTool, TResult>? customTool = null,
+            global::System.Func<global::OpenRouter.AdvisorServerToolOpenRouter, TResult>? advisorServerToolOpenRouter = null,
+            global::System.Func<global::OpenRouter.SubagentServerToolOpenRouter, TResult>? subagentServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServerTool = null,
             global::System.Func<global::OpenRouter.FusionServerToolOpenRouter, TResult>? fusionServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerToolOpenRouter = null,
@@ -1405,6 +1663,8 @@ namespace OpenRouter
             global::System.Func<global::OpenRouter.WebFetchServerTool, TResult>? webFetchServerTool = null,
             global::System.Func<global::OpenRouter.WebSearchServerToolOpenRouter, TResult>? webSearchServerToolOpenRouter = null,
             global::System.Func<global::OpenRouter.ApplyPatchServerToolOpenRouter, TResult>? applyPatchServerToolOpenRouter = null,
+            global::System.Func<global::OpenRouter.BashServerTool, TResult>? bashServerTool = null,
+            global::System.Func<global::OpenRouter.ShellServerToolOpenRouter, TResult>? shellServerToolOpenRouter = null,
             bool validate = true)
         {
             if (validate)
@@ -1468,6 +1728,14 @@ namespace OpenRouter
             {
                 return customTool(CustomTool!);
             }
+            else if (IsAdvisorServerToolOpenRouter && advisorServerToolOpenRouter != null)
+            {
+                return advisorServerToolOpenRouter(AdvisorServerToolOpenRouter!);
+            }
+            else if (IsSubagentServerToolOpenRouter && subagentServerToolOpenRouter != null)
+            {
+                return subagentServerToolOpenRouter(SubagentServerToolOpenRouter!);
+            }
             else if (IsDatetimeServerTool && datetimeServerTool != null)
             {
                 return datetimeServerTool(DatetimeServerTool!);
@@ -1495,6 +1763,14 @@ namespace OpenRouter
             else if (IsApplyPatchServerToolOpenRouter && applyPatchServerToolOpenRouter != null)
             {
                 return applyPatchServerToolOpenRouter(ApplyPatchServerToolOpenRouter!);
+            }
+            else if (IsBashServerTool && bashServerTool != null)
+            {
+                return bashServerTool(BashServerTool!);
+            }
+            else if (IsShellServerToolOpenRouter && shellServerToolOpenRouter != null)
+            {
+                return shellServerToolOpenRouter(ShellServerToolOpenRouter!);
             }
 
             return default(TResult);
@@ -1532,6 +1808,10 @@ namespace OpenRouter
 
             global::System.Action<global::OpenRouter.CustomTool>? customTool = null,
 
+            global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerToolOpenRouter = null,
+
+            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerToolOpenRouter = null,
+
             global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
 
             global::System.Action<global::OpenRouter.FusionServerToolOpenRouter>? fusionServerToolOpenRouter = null,
@@ -1545,6 +1825,10 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.WebSearchServerToolOpenRouter>? webSearchServerToolOpenRouter = null,
 
             global::System.Action<global::OpenRouter.ApplyPatchServerToolOpenRouter>? applyPatchServerToolOpenRouter = null,
+
+            global::System.Action<global::OpenRouter.BashServerTool>? bashServerTool = null,
+
+            global::System.Action<global::OpenRouter.ShellServerToolOpenRouter>? shellServerToolOpenRouter = null,
             bool validate = true)
         {
             if (validate)
@@ -1608,6 +1892,14 @@ namespace OpenRouter
             {
                 customTool?.Invoke(CustomTool!);
             }
+            else if (IsAdvisorServerToolOpenRouter)
+            {
+                advisorServerToolOpenRouter?.Invoke(AdvisorServerToolOpenRouter!);
+            }
+            else if (IsSubagentServerToolOpenRouter)
+            {
+                subagentServerToolOpenRouter?.Invoke(SubagentServerToolOpenRouter!);
+            }
             else if (IsDatetimeServerTool)
             {
                 datetimeServerTool?.Invoke(DatetimeServerTool!);
@@ -1635,6 +1927,14 @@ namespace OpenRouter
             else if (IsApplyPatchServerToolOpenRouter)
             {
                 applyPatchServerToolOpenRouter?.Invoke(ApplyPatchServerToolOpenRouter!);
+            }
+            else if (IsBashServerTool)
+            {
+                bashServerTool?.Invoke(BashServerTool!);
+            }
+            else if (IsShellServerToolOpenRouter)
+            {
+                shellServerToolOpenRouter?.Invoke(ShellServerToolOpenRouter!);
             }
         }
 
@@ -1656,6 +1956,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ShellServerTool>? shellServerTool = null,
             global::System.Action<global::OpenRouter.ApplyPatchServerTool>? applyPatchServerTool = null,
             global::System.Action<global::OpenRouter.CustomTool>? customTool = null,
+            global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
             global::System.Action<global::OpenRouter.FusionServerToolOpenRouter>? fusionServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
@@ -1663,6 +1965,8 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
             global::System.Action<global::OpenRouter.WebSearchServerToolOpenRouter>? webSearchServerToolOpenRouter = null,
             global::System.Action<global::OpenRouter.ApplyPatchServerToolOpenRouter>? applyPatchServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.BashServerTool>? bashServerTool = null,
+            global::System.Action<global::OpenRouter.ShellServerToolOpenRouter>? shellServerToolOpenRouter = null,
             bool validate = true)
         {
             if (validate)
@@ -1726,6 +2030,14 @@ namespace OpenRouter
             {
                 customTool?.Invoke(CustomTool!);
             }
+            else if (IsAdvisorServerToolOpenRouter)
+            {
+                advisorServerToolOpenRouter?.Invoke(AdvisorServerToolOpenRouter!);
+            }
+            else if (IsSubagentServerToolOpenRouter)
+            {
+                subagentServerToolOpenRouter?.Invoke(SubagentServerToolOpenRouter!);
+            }
             else if (IsDatetimeServerTool)
             {
                 datetimeServerTool?.Invoke(DatetimeServerTool!);
@@ -1753,6 +2065,14 @@ namespace OpenRouter
             else if (IsApplyPatchServerToolOpenRouter)
             {
                 applyPatchServerToolOpenRouter?.Invoke(ApplyPatchServerToolOpenRouter!);
+            }
+            else if (IsBashServerTool)
+            {
+                bashServerTool?.Invoke(BashServerTool!);
+            }
+            else if (IsShellServerToolOpenRouter)
+            {
+                shellServerToolOpenRouter?.Invoke(ShellServerToolOpenRouter!);
             }
         }
 
@@ -1791,6 +2111,10 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ApplyPatchServerTool),
                 CustomTool,
                 typeof(global::OpenRouter.CustomTool),
+                AdvisorServerToolOpenRouter,
+                typeof(global::OpenRouter.AdvisorServerToolOpenRouter),
+                SubagentServerToolOpenRouter,
+                typeof(global::OpenRouter.SubagentServerToolOpenRouter),
                 DatetimeServerTool,
                 typeof(global::OpenRouter.DatetimeServerTool),
                 FusionServerToolOpenRouter,
@@ -1805,6 +2129,10 @@ namespace OpenRouter
                 typeof(global::OpenRouter.WebSearchServerToolOpenRouter),
                 ApplyPatchServerToolOpenRouter,
                 typeof(global::OpenRouter.ApplyPatchServerToolOpenRouter),
+                BashServerTool,
+                typeof(global::OpenRouter.BashServerTool),
+                ShellServerToolOpenRouter,
+                typeof(global::OpenRouter.ShellServerToolOpenRouter),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1835,13 +2163,17 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellServerTool?>.Default.Equals(ShellServerTool, other.ShellServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchServerTool?>.Default.Equals(ApplyPatchServerTool, other.ApplyPatchServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomTool?>.Default.Equals(CustomTool, other.CustomTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AdvisorServerToolOpenRouter?>.Default.Equals(AdvisorServerToolOpenRouter, other.AdvisorServerToolOpenRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.SubagentServerToolOpenRouter?>.Default.Equals(SubagentServerToolOpenRouter, other.SubagentServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FusionServerToolOpenRouter?>.Default.Equals(FusionServerToolOpenRouter, other.FusionServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ImageGenerationServerToolOpenRouter?>.Default.Equals(ImageGenerationServerToolOpenRouter, other.ImageGenerationServerToolOpenRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(ChatSearchModelsServerTool, other.ChatSearchModelsServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebFetchServerTool?>.Default.Equals(WebFetchServerTool, other.WebFetchServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebSearchServerToolOpenRouter?>.Default.Equals(WebSearchServerToolOpenRouter, other.WebSearchServerToolOpenRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchServerToolOpenRouter?>.Default.Equals(ApplyPatchServerToolOpenRouter, other.ApplyPatchServerToolOpenRouter) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchServerToolOpenRouter?>.Default.Equals(ApplyPatchServerToolOpenRouter, other.ApplyPatchServerToolOpenRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BashServerTool?>.Default.Equals(BashServerTool, other.BashServerTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellServerToolOpenRouter?>.Default.Equals(ShellServerToolOpenRouter, other.ShellServerToolOpenRouter) 
                 ;
         }
 

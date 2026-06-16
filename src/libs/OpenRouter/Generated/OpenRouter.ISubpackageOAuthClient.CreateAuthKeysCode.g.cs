@@ -35,7 +35,7 @@ namespace OpenRouter
         /// Create an authorization code for the PKCE flow to generate a user-controlled API key
         /// </summary>
         /// <param name="callbackUrl">
-        /// The callback URL to redirect to after authorization. Note, only https URLs on ports 443 and 3000 are allowed.
+        /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.
         /// </param>
         /// <param name="codeChallenge">
         /// PKCE code challenge for enhanced security
@@ -55,6 +55,9 @@ namespace OpenRouter
         /// <param name="usageLimitType">
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
         /// </param>
+        /// <param name="workspaceId">
+        /// Optional workspace ID to associate the API key with
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -66,6 +69,7 @@ namespace OpenRouter
             string? keyLabel = default,
             double? limit = default,
             global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType = default,
+            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

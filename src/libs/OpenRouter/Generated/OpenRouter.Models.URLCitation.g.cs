@@ -11,6 +11,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public string? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EndIndex { get; set; }
@@ -56,6 +62,7 @@ namespace OpenRouter
         /// <param name="startIndex"></param>
         /// <param name="title"></param>
         /// <param name="url"></param>
+        /// <param name="content"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,8 +72,10 @@ namespace OpenRouter
             int startIndex,
             string title,
             string url,
+            string? content,
             global::OpenRouter.UrlCitationType type)
         {
+            this.Content = content;
             this.EndIndex = endIndex;
             this.StartIndex = startIndex;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));

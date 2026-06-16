@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// web_search_call variant
+    /// An openrouter:web_search server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant25
     {
@@ -12,31 +12,28 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemTypeJsonConverter))]
-        public global::OpenRouter.OutputWebSearchCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputWebSearchServerToolItemType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OutputWebSearchCallItemAction Action { get; set; }
+        public global::OpenRouter.OutputWebSearchServerToolItemAction? Action { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.WebSearchStatus Status { get; set; }
+        public required global::OpenRouter.ToolCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,22 +44,24 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant25" /> class.
         /// </summary>
-        /// <param name="action"></param>
-        /// <param name="id"></param>
         /// <param name="status"></param>
         /// <param name="type"></param>
+        /// <param name="action">
+        /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
+        /// </param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant25(
-            global::OpenRouter.OutputWebSearchCallItemAction action,
-            string id,
-            global::OpenRouter.WebSearchStatus status,
-            global::OpenRouter.OutputWebSearchCallItemType type)
+            global::OpenRouter.ToolCallStatus status,
+            global::OpenRouter.OutputWebSearchServerToolItemType type,
+            global::OpenRouter.OutputWebSearchServerToolItemAction? action,
+            string? id)
         {
             this.Type = type;
             this.Action = action;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Id = id;
             this.Status = status;
         }
 

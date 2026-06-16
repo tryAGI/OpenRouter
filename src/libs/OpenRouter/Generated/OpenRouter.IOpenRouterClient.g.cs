@@ -62,6 +62,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageBetaAnalyticsClient SubpackageBetaAnalytics { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageBetaResponsesClient SubpackageBetaResponses { get; }
 
         /// <summary>
@@ -93,6 +98,11 @@ namespace OpenRouter
         /// 
         /// </summary>
         public SubpackageEndpointsClient SubpackageEndpoints { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageFilesClient SubpackageFiles { get; }
 
         /// <summary>
         /// 

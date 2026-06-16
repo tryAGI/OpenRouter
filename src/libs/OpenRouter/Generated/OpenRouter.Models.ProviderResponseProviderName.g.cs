@@ -131,6 +131,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Decart,
+        /// <summary>
+        /// 
+        /// </summary>
         DeepInfra,
         /// <summary>
         /// 
@@ -447,6 +451,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         WandB,
         /// <summary>
         /// 
@@ -504,6 +512,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Crucible => "Crucible",
                 ProviderResponseProviderName.Crusoe => "Crusoe",
                 ProviderResponseProviderName.Darkbloom => "Darkbloom",
+                ProviderResponseProviderName.Decart => "Decart",
                 ProviderResponseProviderName.DeepInfra => "DeepInfra",
                 ProviderResponseProviderName.DeepSeek => "DeepSeek",
                 ProviderResponseProviderName.DekaLLM => "DekaLLM",
@@ -583,6 +592,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Ubicloud => "Ubicloud",
                 ProviderResponseProviderName.Upstage => "Upstage",
                 ProviderResponseProviderName.Venice => "Venice",
+                ProviderResponseProviderName.Wafer => "Wafer",
                 ProviderResponseProviderName.WandB => "WandB",
                 ProviderResponseProviderName.Xiaomi => "Xiaomi",
                 ProviderResponseProviderName.ZAi => "Z.AI",
@@ -627,6 +637,7 @@ namespace OpenRouter
                 "Crucible" => ProviderResponseProviderName.Crucible,
                 "Crusoe" => ProviderResponseProviderName.Crusoe,
                 "Darkbloom" => ProviderResponseProviderName.Darkbloom,
+                "Decart" => ProviderResponseProviderName.Decart,
                 "DeepInfra" => ProviderResponseProviderName.DeepInfra,
                 "DeepSeek" => ProviderResponseProviderName.DeepSeek,
                 "DekaLLM" => ProviderResponseProviderName.DekaLLM,
@@ -706,6 +717,7 @@ namespace OpenRouter
                 "Ubicloud" => ProviderResponseProviderName.Ubicloud,
                 "Upstage" => ProviderResponseProviderName.Upstage,
                 "Venice" => ProviderResponseProviderName.Venice,
+                "Wafer" => ProviderResponseProviderName.Wafer,
                 "WandB" => ProviderResponseProviderName.WandB,
                 "Xiaomi" => ProviderResponseProviderName.Xiaomi,
                 "Z.AI" => ProviderResponseProviderName.ZAi,

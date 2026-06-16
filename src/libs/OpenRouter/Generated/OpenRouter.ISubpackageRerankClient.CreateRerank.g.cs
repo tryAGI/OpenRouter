@@ -35,7 +35,7 @@ namespace OpenRouter
         /// Submits a rerank request to the rerank router
         /// </summary>
         /// <param name="documents">
-        /// The list of documents to rerank
+        /// The list of documents to rerank. Documents may be plain strings, or structured objects with `text` and/or `image` for multimodal models.
         /// </param>
         /// <param name="model">
         /// The rerank model to use
@@ -53,7 +53,7 @@ namespace OpenRouter
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.RerankCreateRerankResponse200> CreateRerankAsync(
-            global::System.Collections.Generic.IList<string> documents,
+            global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems> documents,
             string model,
             string query,
             global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProvider? provider = default,

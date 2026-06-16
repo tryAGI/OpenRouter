@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class SttRequestProvider
     {
         /// <summary>
-        /// Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.
+        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         public global::OpenRouter.ProviderOptions? Options { get; set; }
@@ -24,7 +24,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SttRequestProvider" /> class.
         /// </summary>
         /// <param name="options">
-        /// Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.
+        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

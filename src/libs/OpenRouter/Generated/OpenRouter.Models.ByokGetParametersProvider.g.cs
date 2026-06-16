@@ -107,6 +107,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Decart,
+        /// <summary>
+        /// 
+        /// </summary>
         Deepinfra,
         /// <summary>
         /// 
@@ -148,10 +152,6 @@ namespace OpenRouter
         /// 
         /// </summary>
         Groq,
-        /// <summary>
-        /// 
-        /// </summary>
-        Hyperbolic,
         /// <summary>
         /// 
         /// </summary>
@@ -323,6 +323,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         Wandb,
         /// <summary>
         /// 
@@ -374,6 +378,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Cohere => "cohere",
                 ByokGetParametersProvider.Crusoe => "crusoe",
                 ByokGetParametersProvider.Darkbloom => "darkbloom",
+                ByokGetParametersProvider.Decart => "decart",
                 ByokGetParametersProvider.Deepinfra => "deepinfra",
                 ByokGetParametersProvider.Deepseek => "deepseek",
                 ByokGetParametersProvider.Dekallm => "dekallm",
@@ -385,7 +390,6 @@ namespace OpenRouter
                 ByokGetParametersProvider.GoogleAiStudio => "google-ai-studio",
                 ByokGetParametersProvider.GoogleVertex => "google-vertex",
                 ByokGetParametersProvider.Groq => "groq",
-                ByokGetParametersProvider.Hyperbolic => "hyperbolic",
                 ByokGetParametersProvider.Inception => "inception",
                 ByokGetParametersProvider.Inceptron => "inceptron",
                 ByokGetParametersProvider.InferenceNet => "inference-net",
@@ -428,6 +432,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Together => "together",
                 ByokGetParametersProvider.Upstage => "upstage",
                 ByokGetParametersProvider.Venice => "venice",
+                ByokGetParametersProvider.Wafer => "wafer",
                 ByokGetParametersProvider.Wandb => "wandb",
                 ByokGetParametersProvider.Xai => "xai",
                 ByokGetParametersProvider.Xiaomi => "xiaomi",
@@ -466,6 +471,7 @@ namespace OpenRouter
                 "cohere" => ByokGetParametersProvider.Cohere,
                 "crusoe" => ByokGetParametersProvider.Crusoe,
                 "darkbloom" => ByokGetParametersProvider.Darkbloom,
+                "decart" => ByokGetParametersProvider.Decart,
                 "deepinfra" => ByokGetParametersProvider.Deepinfra,
                 "deepseek" => ByokGetParametersProvider.Deepseek,
                 "dekallm" => ByokGetParametersProvider.Dekallm,
@@ -477,7 +483,6 @@ namespace OpenRouter
                 "google-ai-studio" => ByokGetParametersProvider.GoogleAiStudio,
                 "google-vertex" => ByokGetParametersProvider.GoogleVertex,
                 "groq" => ByokGetParametersProvider.Groq,
-                "hyperbolic" => ByokGetParametersProvider.Hyperbolic,
                 "inception" => ByokGetParametersProvider.Inception,
                 "inceptron" => ByokGetParametersProvider.Inceptron,
                 "inference-net" => ByokGetParametersProvider.InferenceNet,
@@ -520,6 +525,7 @@ namespace OpenRouter
                 "together" => ByokGetParametersProvider.Together,
                 "upstage" => ByokGetParametersProvider.Upstage,
                 "venice" => ByokGetParametersProvider.Venice,
+                "wafer" => ByokGetParametersProvider.Wafer,
                 "wandb" => ByokGetParametersProvider.Wandb,
                 "xai" => ByokGetParametersProvider.Xai,
                 "xiaomi" => ByokGetParametersProvider.Xiaomi,

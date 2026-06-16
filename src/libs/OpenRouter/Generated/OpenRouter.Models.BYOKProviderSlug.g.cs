@@ -107,6 +107,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Decart,
+        /// <summary>
+        /// 
+        /// </summary>
         Deepinfra,
         /// <summary>
         /// 
@@ -148,10 +152,6 @@ namespace OpenRouter
         /// 
         /// </summary>
         Groq,
-        /// <summary>
-        /// 
-        /// </summary>
-        Hyperbolic,
         /// <summary>
         /// 
         /// </summary>
@@ -323,6 +323,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Wafer,
+        /// <summary>
+        /// 
+        /// </summary>
         Wandb,
         /// <summary>
         /// 
@@ -374,6 +378,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Cohere => "cohere",
                 BYOKProviderSlug.Crusoe => "crusoe",
                 BYOKProviderSlug.Darkbloom => "darkbloom",
+                BYOKProviderSlug.Decart => "decart",
                 BYOKProviderSlug.Deepinfra => "deepinfra",
                 BYOKProviderSlug.Deepseek => "deepseek",
                 BYOKProviderSlug.Dekallm => "dekallm",
@@ -385,7 +390,6 @@ namespace OpenRouter
                 BYOKProviderSlug.GoogleAiStudio => "google-ai-studio",
                 BYOKProviderSlug.GoogleVertex => "google-vertex",
                 BYOKProviderSlug.Groq => "groq",
-                BYOKProviderSlug.Hyperbolic => "hyperbolic",
                 BYOKProviderSlug.Inception => "inception",
                 BYOKProviderSlug.Inceptron => "inceptron",
                 BYOKProviderSlug.InferenceNet => "inference-net",
@@ -428,6 +432,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Together => "together",
                 BYOKProviderSlug.Upstage => "upstage",
                 BYOKProviderSlug.Venice => "venice",
+                BYOKProviderSlug.Wafer => "wafer",
                 BYOKProviderSlug.Wandb => "wandb",
                 BYOKProviderSlug.Xai => "xai",
                 BYOKProviderSlug.Xiaomi => "xiaomi",
@@ -466,6 +471,7 @@ namespace OpenRouter
                 "cohere" => BYOKProviderSlug.Cohere,
                 "crusoe" => BYOKProviderSlug.Crusoe,
                 "darkbloom" => BYOKProviderSlug.Darkbloom,
+                "decart" => BYOKProviderSlug.Decart,
                 "deepinfra" => BYOKProviderSlug.Deepinfra,
                 "deepseek" => BYOKProviderSlug.Deepseek,
                 "dekallm" => BYOKProviderSlug.Dekallm,
@@ -477,7 +483,6 @@ namespace OpenRouter
                 "google-ai-studio" => BYOKProviderSlug.GoogleAiStudio,
                 "google-vertex" => BYOKProviderSlug.GoogleVertex,
                 "groq" => BYOKProviderSlug.Groq,
-                "hyperbolic" => BYOKProviderSlug.Hyperbolic,
                 "inception" => BYOKProviderSlug.Inception,
                 "inceptron" => BYOKProviderSlug.Inceptron,
                 "inference-net" => BYOKProviderSlug.InferenceNet,
@@ -520,6 +525,7 @@ namespace OpenRouter
                 "together" => BYOKProviderSlug.Together,
                 "upstage" => BYOKProviderSlug.Upstage,
                 "venice" => BYOKProviderSlug.Venice,
+                "wafer" => BYOKProviderSlug.Wafer,
                 "wandb" => BYOKProviderSlug.Wandb,
                 "xai" => BYOKProviderSlug.Xai,
                 "xiaomi" => BYOKProviderSlug.Xiaomi,

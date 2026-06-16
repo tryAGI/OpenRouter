@@ -149,47 +149,84 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score13++;
             var __score14 = 0;
             if (__jsonProps.Contains("parameters")) __score14++;
-            if (__jsonProps.Contains("parameters.timezone")) __score14++;
+            if (__jsonProps.Contains("parameters.forward_transcript")) __score14++;
+            if (__jsonProps.Contains("parameters.instructions")) __score14++;
+            if (__jsonProps.Contains("parameters.max_completion_tokens")) __score14++;
+            if (__jsonProps.Contains("parameters.max_tool_calls")) __score14++;
+            if (__jsonProps.Contains("parameters.model")) __score14++;
+            if (__jsonProps.Contains("parameters.name")) __score14++;
+            if (__jsonProps.Contains("parameters.reasoning")) __score14++;
+            if (__jsonProps.Contains("parameters.stream")) __score14++;
+            if (__jsonProps.Contains("parameters.temperature")) __score14++;
+            if (__jsonProps.Contains("parameters.tools")) __score14++;
             if (__jsonProps.Contains("type")) __score14++;
             var __score15 = 0;
             if (__jsonProps.Contains("parameters")) __score15++;
-            if (__jsonProps.Contains("parameters.analysis_models")) __score15++;
+            if (__jsonProps.Contains("parameters.instructions")) __score15++;
             if (__jsonProps.Contains("parameters.max_completion_tokens")) __score15++;
             if (__jsonProps.Contains("parameters.max_tool_calls")) __score15++;
             if (__jsonProps.Contains("parameters.model")) __score15++;
             if (__jsonProps.Contains("parameters.reasoning")) __score15++;
             if (__jsonProps.Contains("parameters.temperature")) __score15++;
+            if (__jsonProps.Contains("parameters.tools")) __score15++;
             if (__jsonProps.Contains("type")) __score15++;
             var __score16 = 0;
             if (__jsonProps.Contains("parameters")) __score16++;
-            if (__jsonProps.Contains("parameters.model")) __score16++;
+            if (__jsonProps.Contains("parameters.timezone")) __score16++;
             if (__jsonProps.Contains("type")) __score16++;
             var __score17 = 0;
             if (__jsonProps.Contains("parameters")) __score17++;
-            if (__jsonProps.Contains("parameters.max_results")) __score17++;
+            if (__jsonProps.Contains("parameters.analysis_models")) __score17++;
+            if (__jsonProps.Contains("parameters.max_completion_tokens")) __score17++;
+            if (__jsonProps.Contains("parameters.max_tool_calls")) __score17++;
+            if (__jsonProps.Contains("parameters.model")) __score17++;
+            if (__jsonProps.Contains("parameters.reasoning")) __score17++;
+            if (__jsonProps.Contains("parameters.temperature")) __score17++;
+            if (__jsonProps.Contains("parameters.tools")) __score17++;
             if (__jsonProps.Contains("type")) __score17++;
             var __score18 = 0;
             if (__jsonProps.Contains("parameters")) __score18++;
-            if (__jsonProps.Contains("parameters.allowed_domains")) __score18++;
-            if (__jsonProps.Contains("parameters.blocked_domains")) __score18++;
-            if (__jsonProps.Contains("parameters.engine")) __score18++;
-            if (__jsonProps.Contains("parameters.max_content_tokens")) __score18++;
-            if (__jsonProps.Contains("parameters.max_uses")) __score18++;
+            if (__jsonProps.Contains("parameters.model")) __score18++;
             if (__jsonProps.Contains("type")) __score18++;
             var __score19 = 0;
             if (__jsonProps.Contains("parameters")) __score19++;
-            if (__jsonProps.Contains("parameters.allowed_domains")) __score19++;
-            if (__jsonProps.Contains("parameters.engine")) __score19++;
-            if (__jsonProps.Contains("parameters.excluded_domains")) __score19++;
             if (__jsonProps.Contains("parameters.max_results")) __score19++;
-            if (__jsonProps.Contains("parameters.max_total_results")) __score19++;
-            if (__jsonProps.Contains("parameters.search_context_size")) __score19++;
-            if (__jsonProps.Contains("parameters.user_location")) __score19++;
             if (__jsonProps.Contains("type")) __score19++;
             var __score20 = 0;
             if (__jsonProps.Contains("parameters")) __score20++;
+            if (__jsonProps.Contains("parameters.allowed_domains")) __score20++;
+            if (__jsonProps.Contains("parameters.blocked_domains")) __score20++;
             if (__jsonProps.Contains("parameters.engine")) __score20++;
+            if (__jsonProps.Contains("parameters.max_content_tokens")) __score20++;
+            if (__jsonProps.Contains("parameters.max_uses")) __score20++;
             if (__jsonProps.Contains("type")) __score20++;
+            var __score21 = 0;
+            if (__jsonProps.Contains("parameters")) __score21++;
+            if (__jsonProps.Contains("parameters.allowed_domains")) __score21++;
+            if (__jsonProps.Contains("parameters.engine")) __score21++;
+            if (__jsonProps.Contains("parameters.excluded_domains")) __score21++;
+            if (__jsonProps.Contains("parameters.max_characters")) __score21++;
+            if (__jsonProps.Contains("parameters.max_results")) __score21++;
+            if (__jsonProps.Contains("parameters.max_total_results")) __score21++;
+            if (__jsonProps.Contains("parameters.search_context_size")) __score21++;
+            if (__jsonProps.Contains("parameters.user_location")) __score21++;
+            if (__jsonProps.Contains("type")) __score21++;
+            var __score22 = 0;
+            if (__jsonProps.Contains("parameters")) __score22++;
+            if (__jsonProps.Contains("parameters.engine")) __score22++;
+            if (__jsonProps.Contains("type")) __score22++;
+            var __score23 = 0;
+            if (__jsonProps.Contains("parameters")) __score23++;
+            if (__jsonProps.Contains("parameters.engine")) __score23++;
+            if (__jsonProps.Contains("parameters.environment")) __score23++;
+            if (__jsonProps.Contains("parameters.sleep_after_seconds")) __score23++;
+            if (__jsonProps.Contains("type")) __score23++;
+            var __score24 = 0;
+            if (__jsonProps.Contains("parameters")) __score24++;
+            if (__jsonProps.Contains("parameters.engine")) __score24++;
+            if (__jsonProps.Contains("parameters.environment")) __score24++;
+            if (__jsonProps.Contains("parameters.sleep_after_seconds")) __score24++;
+            if (__jsonProps.Contains("type")) __score24++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -213,6 +250,10 @@ namespace OpenRouter.JsonConverters
             if (__score18 > __bestScore) { __bestScore = __score18; __bestIndex = 18; }
             if (__score19 > __bestScore) { __bestScore = __score19; __bestIndex = 19; }
             if (__score20 > __bestScore) { __bestScore = __score20; __bestIndex = 20; }
+            if (__score21 > __bestScore) { __bestScore = __score21; __bestIndex = 21; }
+            if (__score22 > __bestScore) { __bestScore = __score22; __bestIndex = 22; }
+            if (__score23 > __bestScore) { __bestScore = __score23; __bestIndex = 23; }
+            if (__score24 > __bestScore) { __bestScore = __score24; __bestIndex = 24; }
 
             global::OpenRouter.ResponsesRequestToolsItems0? responsesRequestToolsItems0 = default;
             global::OpenRouter.PreviewWebSearchServerTool? previewWebSearchServerTool = default;
@@ -228,6 +269,8 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.ShellServerTool? shellServerTool = default;
             global::OpenRouter.ApplyPatchServerTool? applyPatchServerTool = default;
             global::OpenRouter.CustomTool? customTool = default;
+            global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerToolOpenRouter = default;
+            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerToolOpenRouter = default;
             global::OpenRouter.DatetimeServerTool? datetimeServerTool = default;
             global::OpenRouter.FusionServerToolOpenRouter? fusionServerToolOpenRouter = default;
             global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter = default;
@@ -235,6 +278,8 @@ namespace OpenRouter.JsonConverters
             global::OpenRouter.WebFetchServerTool? webFetchServerTool = default;
             global::OpenRouter.WebSearchServerToolOpenRouter? webSearchServerToolOpenRouter = default;
             global::OpenRouter.ApplyPatchServerToolOpenRouter? applyPatchServerToolOpenRouter = default;
+            global::OpenRouter.BashServerTool? bashServerTool = default;
+            global::OpenRouter.ShellServerToolOpenRouter? shellServerToolOpenRouter = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -451,6 +496,36 @@ namespace OpenRouter.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AdvisorServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AdvisorServerToolOpenRouter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AdvisorServerToolOpenRouter).Name}");
+                        advisorServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 15)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
+                        subagentServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 16)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
                         datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -462,7 +537,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 15)
+                else if (__bestIndex == 17)
                 {
                     try
                     {
@@ -477,7 +552,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 16)
+                else if (__bestIndex == 18)
                 {
                     try
                     {
@@ -492,7 +567,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 17)
+                else if (__bestIndex == 19)
                 {
                     try
                     {
@@ -507,7 +582,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 18)
+                else if (__bestIndex == 20)
                 {
                     try
                     {
@@ -522,7 +597,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 19)
+                else if (__bestIndex == 21)
                 {
                     try
                     {
@@ -537,7 +612,7 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 20)
+                else if (__bestIndex == 22)
                 {
                     try
                     {
@@ -552,9 +627,39 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 23)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BashServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BashServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BashServerTool).Name}");
+                        bashServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 24)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerToolOpenRouter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerToolOpenRouter).Name}");
+                        shellServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -571,7 +676,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -588,7 +693,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -605,7 +710,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -622,7 +727,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -639,7 +744,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -656,7 +761,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -673,7 +778,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -690,7 +795,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -707,7 +812,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -724,7 +829,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -741,7 +846,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -758,7 +863,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -775,7 +880,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -792,7 +897,41 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AdvisorServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AdvisorServerToolOpenRouter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AdvisorServerToolOpenRouter).Name}");
+                    advisorServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
+                    subagentServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -809,7 +948,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -826,7 +965,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -843,7 +982,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -860,7 +999,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -877,7 +1016,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -894,7 +1033,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null)
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
             {
                 try
                 {
@@ -902,6 +1041,40 @@ namespace OpenRouter.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchServerToolOpenRouter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchServerToolOpenRouter).Name}");
                     applyPatchServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BashServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BashServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BashServerTool).Name}");
+                    bashServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (responsesRequestToolsItems0 == null && previewWebSearchServerTool == null && preview20250311WebSearchServerTool == null && legacyWebSearchServerTool == null && webSearchServerTool == null && fileSearchServerTool == null && computerUseServerTool == null && codeInterpreterServerTool == null && mcpServerTool == null && imageGenerationServerTool == null && codexLocalShellTool == null && shellServerTool == null && applyPatchServerTool == null && customTool == null && advisorServerToolOpenRouter == null && subagentServerToolOpenRouter == null && datetimeServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && webFetchServerTool == null && webSearchServerToolOpenRouter == null && applyPatchServerToolOpenRouter == null && bashServerTool == null && shellServerToolOpenRouter == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerToolOpenRouter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerToolOpenRouter).Name}");
+                    shellServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -940,6 +1113,10 @@ namespace OpenRouter.JsonConverters
 
                 customTool,
 
+                advisorServerToolOpenRouter,
+
+                subagentServerToolOpenRouter,
+
                 datetimeServerTool,
 
                 fusionServerToolOpenRouter,
@@ -952,7 +1129,11 @@ namespace OpenRouter.JsonConverters
 
                 webSearchServerToolOpenRouter,
 
-                applyPatchServerToolOpenRouter
+                applyPatchServerToolOpenRouter,
+
+                bashServerTool,
+
+                shellServerToolOpenRouter
                 );
 
             return __value;
@@ -1051,6 +1232,18 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomTool!, typeInfo);
             }
+            else if (value.IsAdvisorServerToolOpenRouter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AdvisorServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AdvisorServerToolOpenRouter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AdvisorServerToolOpenRouter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AdvisorServerToolOpenRouter!, typeInfo);
+            }
+            else if (value.IsSubagentServerToolOpenRouter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SubagentServerToolOpenRouter!, typeInfo);
+            }
             else if (value.IsDatetimeServerTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool?> ??
@@ -1092,6 +1285,18 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchServerToolOpenRouter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchServerToolOpenRouter).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApplyPatchServerToolOpenRouter!, typeInfo);
+            }
+            else if (value.IsBashServerTool)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BashServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BashServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BashServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BashServerTool!, typeInfo);
+            }
+            else if (value.IsShellServerToolOpenRouter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerToolOpenRouter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerToolOpenRouter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShellServerToolOpenRouter!, typeInfo);
             }
         }
     }

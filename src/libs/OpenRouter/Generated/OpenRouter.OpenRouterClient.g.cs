@@ -10,7 +10,7 @@ namespace OpenRouter
     public sealed partial class OpenRouterClient : global::OpenRouter.IOpenRouterClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Production server
         /// </summary>
         public const string DefaultBaseUrl = "https://openrouter.ai/api/v1";
 
@@ -61,6 +61,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         public SubpackageApiKeysClient SubpackageApiKeys => new SubpackageApiKeysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageBetaAnalyticsClient SubpackageBetaAnalytics => new SubpackageBetaAnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -124,6 +133,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         public SubpackageEndpointsClient SubpackageEndpoints => new SubpackageEndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubpackageFilesClient SubpackageFiles => new SubpackageFilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Constrains effort on reasoning for reasoning models
+    /// Shorthand for setting reasoning effort. Equivalent to setting reasoning.effort. Cannot be used simultaneously with reasoning.effort if they differ.
     /// </summary>
     public enum ChatRequestReasoningEffort
     {

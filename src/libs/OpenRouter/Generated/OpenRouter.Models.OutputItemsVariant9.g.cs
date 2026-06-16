@@ -4,22 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:apply_patch server tool output item. The turn halts when validation succeeds so the client can apply the patch and echo an `apply_patch_call_output` on the next turn.
+    /// An openrouter:advisor server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant9
     {
         /// <summary>
-        /// Discriminator value: openrouter:apply_patch
+        /// Discriminator value: openrouter:advisor
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant9TypeJsonConverter))]
         public global::OpenRouter.OutputItemsVariant9Type Type { get; set; }
 
         /// <summary>
-        /// 
+        /// The advisor model's response (the advice text returned to the executor).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
-        public string? CallId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("advice")]
+        public string? Advice { get; set; }
+
+        /// <summary>
+        /// Error message when the advisor call did not produce advice.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -28,11 +34,22 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+        /// Provider-safe function name of the specific advisor instance that produced this item (e.g. `openrouter_advisor__1`). Present only when more than one advisor tool is configured; omitted for the default single advisor. Echo this field back unchanged so the advisor's cross-request memory stays namespaced to the correct instance. This identity is positional: it is derived from the index of the advisor entry in the request `tools` array, so clients must keep the order of advisor tool entries stable across requests in a conversation. Reordering or inserting advisor entries shifts these names and causes each advisor's cross-request memory to be attributed to the wrong instance.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationJsonConverter))]
-        public global::OpenRouter.ApplyPatchCallOperation? Operation { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("instance_name")]
+        public string? InstanceName { get; set; }
+
+        /// <summary>
+        /// Slug of the advisor model that was consulted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
+
+        /// <summary>
+        /// The prompt the executor sent to the advisor.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
 
         /// <summary>
         /// 
@@ -53,12 +70,23 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:apply_patch
+        /// Discriminator value: openrouter:advisor
         /// </param>
-        /// <param name="callId"></param>
+        /// <param name="advice">
+        /// The advisor model's response (the advice text returned to the executor).
+        /// </param>
+        /// <param name="error">
+        /// Error message when the advisor call did not produce advice.
+        /// </param>
         /// <param name="id"></param>
-        /// <param name="operation">
-        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+        /// <param name="instanceName">
+        /// Provider-safe function name of the specific advisor instance that produced this item (e.g. `openrouter_advisor__1`). Present only when more than one advisor tool is configured; omitted for the default single advisor. Echo this field back unchanged so the advisor's cross-request memory stays namespaced to the correct instance. This identity is positional: it is derived from the index of the advisor entry in the request `tools` array, so clients must keep the order of advisor tool entries stable across requests in a conversation. Reordering or inserting advisor entries shifts these names and causes each advisor's cross-request memory to be attributed to the wrong instance.
+        /// </param>
+        /// <param name="model">
+        /// Slug of the advisor model that was consulted.
+        /// </param>
+        /// <param name="prompt">
+        /// The prompt the executor sent to the advisor.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,14 +94,20 @@ namespace OpenRouter
         public OutputItemsVariant9(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant9Type type,
-            string? callId,
+            string? advice,
+            string? error,
             string? id,
-            global::OpenRouter.ApplyPatchCallOperation? operation)
+            string? instanceName,
+            string? model,
+            string? prompt)
         {
             this.Type = type;
-            this.CallId = callId;
+            this.Advice = advice;
+            this.Error = error;
             this.Id = id;
-            this.Operation = operation;
+            this.InstanceName = instanceName;
+            this.Model = model;
+            this.Prompt = prompt;
             this.Status = status;
         }
 

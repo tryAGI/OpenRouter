@@ -697,6 +697,9 @@ namespace OpenRouter
         /// <param name="metadata">
         /// Key-value pairs for additional object information (max 16 pairs, 64 char keys, 512 char values)
         /// </param>
+        /// <param name="minP">
+        /// Minimum probability threshold relative to the most likely token. Tokens with probability below min_p * (probability of top token) are filtered out. Not all providers support this parameter.
+        /// </param>
         /// <param name="modalities">
         /// Output modalities for the response. Supported values are "text", "image", and "audio".
         /// </param>
@@ -721,6 +724,12 @@ namespace OpenRouter
         /// <param name="reasoning">
         /// Configuration options for reasoning models
         /// </param>
+        /// <param name="reasoningEffort">
+        /// Shorthand for setting reasoning effort. Equivalent to setting reasoning.effort. Cannot be used simultaneously with reasoning.effort if they differ.
+        /// </param>
+        /// <param name="repetitionPenalty">
+        /// Penalizes tokens based on how much they have already appeared in the text. A value of 1.0 means no penalty. Values above 1.0 penalize repeated tokens more strongly. Not all providers support this parameter.
+        /// </param>
         /// <param name="responseFormat">
         /// Response format configuration
         /// </param>
@@ -734,7 +743,7 @@ namespace OpenRouter
         /// The service tier to use for processing this request.
         /// </param>
         /// <param name="sessionId">
-        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
+        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
         /// <param name="stop">
         /// Stop sequences (up to 4)
@@ -757,6 +766,12 @@ namespace OpenRouter
         /// </param>
         /// <param name="tools">
         /// Available tools for function calling
+        /// </param>
+        /// <param name="topA">
+        /// Consider only tokens with "sufficiently high" probabilities based on the probability of the most likely token. Not all providers support this parameter.
+        /// </param>
+        /// <param name="topK">
+        /// Limits the model to choose from the top K most likely tokens at each step. A value of 1 means the model will always pick the most likely next token. Not all providers support this parameter.
         /// </param>
         /// <param name="topLogprobs">
         /// Number of top log probabilities to return (0-20)
@@ -785,6 +800,7 @@ namespace OpenRouter
             int? maxCompletionTokens = default,
             int? maxTokens = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            double? minP = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestModalitiesItems>? modalities = default,
             string? model = default,
             global::System.Collections.Generic.IList<string>? models = default,
@@ -793,6 +809,8 @@ namespace OpenRouter
             double? presencePenalty = default,
             global::OpenRouter.ProviderPreferences? provider = default,
             global::OpenRouter.ChatRequestReasoning? reasoning = default,
+            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? reasoningEffort = default,
+            double? repetitionPenalty = default,
             global::OpenRouter.ChatRequestResponseFormat? responseFormat = default,
             object? route = default,
             int? seed = default,
@@ -805,6 +823,8 @@ namespace OpenRouter
             double? temperature = default,
             global::OpenRouter.ChatToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatFunctionTool>? tools = default,
+            double? topA = default,
+            int? topK = default,
             int? topLogprobs = default,
             double? topP = default,
             global::OpenRouter.TraceConfig? trace = default,
@@ -824,6 +844,7 @@ namespace OpenRouter
                 MaxTokens = maxTokens,
                 Messages = messages,
                 Metadata = metadata,
+                MinP = minP,
                 Modalities = modalities,
                 Model = model,
                 Models = models,
@@ -832,6 +853,8 @@ namespace OpenRouter
                 PresencePenalty = presencePenalty,
                 Provider = provider,
                 Reasoning = reasoning,
+                ReasoningEffort = reasoningEffort,
+                RepetitionPenalty = repetitionPenalty,
                 ResponseFormat = responseFormat,
                 Route = route,
                 Seed = seed,
@@ -844,6 +867,8 @@ namespace OpenRouter
                 Temperature = temperature,
                 ToolChoice = toolChoice,
                 Tools = tools,
+                TopA = topA,
+                TopK = topK,
                 TopLogprobs = topLogprobs,
                 TopP = topP,
                 Trace = trace,

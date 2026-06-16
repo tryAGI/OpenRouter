@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider-specific options keyed by provider slug. The options for the matched provider are spread into the upstream request body.
+    /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
     /// </summary>
     public sealed partial class VideoGenerationRequestProviderOptions
     {
@@ -187,6 +187,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("darkbloom")]
         public object? Darkbloom { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("decart")]
+        public object? Decart { get; set; }
 
         /// <summary>
         /// 
@@ -665,6 +671,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wafer")]
+        public object? Wafer { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wandb")]
         public object? Wandb { get; set; }
 
@@ -725,6 +737,7 @@ namespace OpenRouter
         /// <param name="crucible"></param>
         /// <param name="crusoe"></param>
         /// <param name="darkbloom"></param>
+        /// <param name="decart"></param>
         /// <param name="deepinfra"></param>
         /// <param name="deepseek"></param>
         /// <param name="dekallm"></param>
@@ -804,6 +817,7 @@ namespace OpenRouter
         /// <param name="ubicloud"></param>
         /// <param name="upstage"></param>
         /// <param name="venice"></param>
+        /// <param name="wafer"></param>
         /// <param name="wandb"></param>
         /// <param name="xai"></param>
         /// <param name="xiaomi"></param>
@@ -842,6 +856,7 @@ namespace OpenRouter
             object? crucible,
             object? crusoe,
             object? darkbloom,
+            object? decart,
             object? deepinfra,
             object? deepseek,
             object? dekallm,
@@ -921,6 +936,7 @@ namespace OpenRouter
             object? ubicloud,
             object? upstage,
             object? venice,
+            object? wafer,
             object? wandb,
             object? xai,
             object? xiaomi,
@@ -956,6 +972,7 @@ namespace OpenRouter
             this.Crucible = crucible;
             this.Crusoe = crusoe;
             this.Darkbloom = darkbloom;
+            this.Decart = decart;
             this.Deepinfra = deepinfra;
             this.Deepseek = deepseek;
             this.Dekallm = dekallm;
@@ -1035,6 +1052,7 @@ namespace OpenRouter
             this.Ubicloud = ubicloud;
             this.Upstage = upstage;
             this.Venice = venice;
+            this.Wafer = wafer;
             this.Wandb = wandb;
             this.Xai = xai;
             this.Xiaomi = xiaomi;

@@ -43,6 +43,9 @@ namespace OpenRouter
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
         /// <param name="contextManagement"></param>
+        /// <param name="fallbacks">
+        /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.
+        /// </param>
         /// <param name="maxTokens"></param>
         /// <param name="messages"></param>
         /// <param name="metadata"></param>
@@ -62,7 +65,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="sessionId">
-        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
+        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
         /// <param name="speed"></param>
         /// <param name="stopSequences"></param>
@@ -91,6 +94,7 @@ namespace OpenRouter
             string model,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
+            global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks = default,
             int? maxTokens = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,
             global::OpenRouter.MessagesRequestMetadata? metadata = default,

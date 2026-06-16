@@ -27,12 +27,12 @@ namespace OpenRouter
             };
         partial void PrepareCreateResponsesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata,
+            ref global::OpenRouter.MetadataLevel? xOpenRouterMetadata,
             global::OpenRouter.ResponsesRequest request);
         partial void PrepareCreateResponsesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata,
             global::OpenRouter.ResponsesRequest request);
         partial void ProcessCreateResponsesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,7 +47,7 @@ namespace OpenRouter
         /// Create a response<br/>
         /// Creates a streaming or non-streaming response using OpenResponses API format
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -57,14 +57,14 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.OpenResponsesResult> CreateResponsesAsync(
 
             global::OpenRouter.ResponsesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateResponsesAsResponseAsync(
 
                 request: request,
-                xOpenRouterExperimentalMetadata: xOpenRouterExperimentalMetadata,
+                xOpenRouterMetadata: xOpenRouterMetadata,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -75,7 +75,7 @@ namespace OpenRouter
         /// Create a response<br/>
         /// Creates a streaming or non-streaming response using OpenResponses API format
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="request"></param>
@@ -85,7 +85,7 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OpenResponsesResult>> CreateResponsesAsResponseAsync(
 
             global::OpenRouter.ResponsesRequest request,
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -95,7 +95,7 @@ namespace OpenRouter
                 client: HttpClient);
             PrepareCreateResponsesArguments(
                 httpClient: HttpClient,
-                xOpenRouterExperimentalMetadata: ref xOpenRouterExperimentalMetadata,
+                xOpenRouterMetadata: ref xOpenRouterMetadata,
                 request: request);
 
 
@@ -154,9 +154,9 @@ namespace OpenRouter
                 } 
             }
 
-            if (xOpenRouterExperimentalMetadata != default)
+            if (xOpenRouterMetadata != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("X-OpenRouter-Experimental-Metadata", xOpenRouterExperimentalMetadata?.ToValueString() ?? string.Empty);
+                __httpRequest.Headers.TryAddWithoutValidation("X-OpenRouter-Metadata", xOpenRouterMetadata?.ToValueString() ?? string.Empty);
             }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
@@ -176,7 +176,7 @@ namespace OpenRouter
                 PrepareCreateResponsesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xOpenRouterExperimentalMetadata: xOpenRouterExperimentalMetadata,
+                    xOpenRouterMetadata: xOpenRouterMetadata,
                     request: request);
 
                 return __httpRequest;
@@ -467,7 +467,7 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Experimental-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
+                            // Forbidden - Authentication successful but insufficient permissions, or a guardrail blocked the request. When guardrails block and the `X-OpenRouter-Metadata: enabled` header is present, the response includes `openrouter_metadata` with full routing context and a `pipeline` array containing guardrail stage details.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -900,7 +900,7 @@ namespace OpenRouter
         /// Create a response<br/>
         /// Creates a streaming or non-streaming response using OpenResponses API format
         /// </summary>
-        /// <param name="xOpenRouterExperimentalMetadata">
+        /// <param name="xOpenRouterMetadata">
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="background"></param>
@@ -944,7 +944,7 @@ namespace OpenRouter
         /// <param name="safetyIdentifier"></param>
         /// <param name="serviceTier"></param>
         /// <param name="sessionId">
-        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow) for observability. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
+        /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
         /// <param name="stopServerToolsWhen">
         /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
@@ -973,7 +973,7 @@ namespace OpenRouter
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.OpenResponsesResult> CreateResponsesAsync(
-            global::OpenRouter.MetadataLevel? xOpenRouterExperimentalMetadata = default,
+            global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             bool? background = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
             double? frequencyPenalty = default,
@@ -1058,7 +1058,7 @@ namespace OpenRouter
             };
 
             return await CreateResponsesAsync(
-                xOpenRouterExperimentalMetadata: xOpenRouterExperimentalMetadata,
+                xOpenRouterMetadata: xOpenRouterMetadata,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

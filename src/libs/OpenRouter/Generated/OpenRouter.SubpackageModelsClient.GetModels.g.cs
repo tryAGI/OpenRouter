@@ -30,16 +30,40 @@ namespace OpenRouter
             ref global::OpenRouter.ModelsGetParametersCategory? category,
             ref string? supportedParameters,
             ref string? outputModalities,
+            ref global::OpenRouter.ModelsGetParametersSort? sort,
             ref string? useRss,
-            ref string? useRssChatLinks);
+            ref string? useRssChatLinks,
+            ref string? q,
+            ref string? inputModalities,
+            ref int? context,
+            ref double? minPrice,
+            ref double? maxPrice,
+            ref string? arch,
+            ref string? modelAuthors,
+            ref string? providers,
+            ref global::OpenRouter.ModelsGetParametersDistillable? distillable,
+            ref global::OpenRouter.ModelsGetParametersZdr? zdr,
+            ref global::OpenRouter.ModelsGetParametersRegion? region);
         partial void PrepareGetModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::OpenRouter.ModelsGetParametersCategory? category,
             string? supportedParameters,
             string? outputModalities,
+            global::OpenRouter.ModelsGetParametersSort? sort,
             string? useRss,
-            string? useRssChatLinks);
+            string? useRssChatLinks,
+            string? q,
+            string? inputModalities,
+            int? context,
+            double? minPrice,
+            double? maxPrice,
+            string? arch,
+            string? modelAuthors,
+            string? providers,
+            global::OpenRouter.ModelsGetParametersDistillable? distillable,
+            global::OpenRouter.ModelsGetParametersZdr? zdr,
+            global::OpenRouter.ModelsGetParametersRegion? region);
         partial void ProcessGetModelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,8 +81,28 @@ namespace OpenRouter
         /// </param>
         /// <param name="supportedParameters"></param>
         /// <param name="outputModalities"></param>
+        /// <param name="sort">
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.
+        /// </param>
         /// <param name="useRss"></param>
         /// <param name="useRssChatLinks"></param>
+        /// <param name="q"></param>
+        /// <param name="inputModalities"></param>
+        /// <param name="context"></param>
+        /// <param name="minPrice"></param>
+        /// <param name="maxPrice"></param>
+        /// <param name="arch"></param>
+        /// <param name="modelAuthors"></param>
+        /// <param name="providers"></param>
+        /// <param name="distillable">
+        /// Filter by distillation capability. "true" returns only distillable models, "false" excludes them.
+        /// </param>
+        /// <param name="zdr">
+        /// When set to "true", return only models with zero data retention endpoints.
+        /// </param>
+        /// <param name="region">
+        /// Filter to models with endpoints in the given data region. Currently only "eu" is supported.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -66,8 +110,20 @@ namespace OpenRouter
             global::OpenRouter.ModelsGetParametersCategory? category = default,
             string? supportedParameters = default,
             string? outputModalities = default,
+            global::OpenRouter.ModelsGetParametersSort? sort = default,
             string? useRss = default,
             string? useRssChatLinks = default,
+            string? q = default,
+            string? inputModalities = default,
+            int? context = default,
+            double? minPrice = default,
+            double? maxPrice = default,
+            string? arch = default,
+            string? modelAuthors = default,
+            string? providers = default,
+            global::OpenRouter.ModelsGetParametersDistillable? distillable = default,
+            global::OpenRouter.ModelsGetParametersZdr? zdr = default,
+            global::OpenRouter.ModelsGetParametersRegion? region = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -75,8 +131,20 @@ namespace OpenRouter
                 category: category,
                 supportedParameters: supportedParameters,
                 outputModalities: outputModalities,
+                sort: sort,
                 useRss: useRss,
                 useRssChatLinks: useRssChatLinks,
+                q: q,
+                inputModalities: inputModalities,
+                context: context,
+                minPrice: minPrice,
+                maxPrice: maxPrice,
+                arch: arch,
+                modelAuthors: modelAuthors,
+                providers: providers,
+                distillable: distillable,
+                zdr: zdr,
+                region: region,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -91,8 +159,28 @@ namespace OpenRouter
         /// </param>
         /// <param name="supportedParameters"></param>
         /// <param name="outputModalities"></param>
+        /// <param name="sort">
+        /// Sort the returned models server-side. Prefer this over fetching the full list and sorting client-side. Options: pricing-low-to-high, pricing-high-to-low (average prompt/completion price), context-high-to-low (context length), throughput-high-to-low, latency-low-to-high (recent median performance), most-popular, top-weekly (tokens processed in the last week), newest (creation date). When omitted, the existing default ordering is preserved.
+        /// </param>
         /// <param name="useRss"></param>
         /// <param name="useRssChatLinks"></param>
+        /// <param name="q"></param>
+        /// <param name="inputModalities"></param>
+        /// <param name="context"></param>
+        /// <param name="minPrice"></param>
+        /// <param name="maxPrice"></param>
+        /// <param name="arch"></param>
+        /// <param name="modelAuthors"></param>
+        /// <param name="providers"></param>
+        /// <param name="distillable">
+        /// Filter by distillation capability. "true" returns only distillable models, "false" excludes them.
+        /// </param>
+        /// <param name="zdr">
+        /// When set to "true", return only models with zero data retention endpoints.
+        /// </param>
+        /// <param name="region">
+        /// Filter to models with endpoints in the given data region. Currently only "eu" is supported.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -100,8 +188,20 @@ namespace OpenRouter
             global::OpenRouter.ModelsGetParametersCategory? category = default,
             string? supportedParameters = default,
             string? outputModalities = default,
+            global::OpenRouter.ModelsGetParametersSort? sort = default,
             string? useRss = default,
             string? useRssChatLinks = default,
+            string? q = default,
+            string? inputModalities = default,
+            int? context = default,
+            double? minPrice = default,
+            double? maxPrice = default,
+            string? arch = default,
+            string? modelAuthors = default,
+            string? providers = default,
+            global::OpenRouter.ModelsGetParametersDistillable? distillable = default,
+            global::OpenRouter.ModelsGetParametersZdr? zdr = default,
+            global::OpenRouter.ModelsGetParametersRegion? region = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,8 +212,20 @@ namespace OpenRouter
                 category: ref category,
                 supportedParameters: ref supportedParameters,
                 outputModalities: ref outputModalities,
+                sort: ref sort,
                 useRss: ref useRss,
-                useRssChatLinks: ref useRssChatLinks);
+                useRssChatLinks: ref useRssChatLinks,
+                q: ref q,
+                inputModalities: ref inputModalities,
+                context: ref context,
+                minPrice: ref minPrice,
+                maxPrice: ref maxPrice,
+                arch: ref arch,
+                modelAuthors: ref modelAuthors,
+                providers: ref providers,
+                distillable: ref distillable,
+                zdr: ref zdr,
+                region: ref region);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -145,8 +257,20 @@ namespace OpenRouter
                                 .AddOptionalParameter("category", category?.ToValueString())
                                 .AddOptionalParameter("supported_parameters", supportedParameters)
                                 .AddOptionalParameter("output_modalities", outputModalities)
+                                .AddOptionalParameter("sort", sort?.ToValueString())
                                 .AddOptionalParameter("use_rss", useRss)
                                 .AddOptionalParameter("use_rss_chat_links", useRssChatLinks)
+                                .AddOptionalParameter("q", q)
+                                .AddOptionalParameter("input_modalities", inputModalities)
+                                .AddOptionalParameter("context", context?.ToString())
+                                .AddOptionalParameter("min_price", minPrice?.ToString())
+                                .AddOptionalParameter("max_price", maxPrice?.ToString())
+                                .AddOptionalParameter("arch", arch)
+                                .AddOptionalParameter("model_authors", modelAuthors)
+                                .AddOptionalParameter("providers", providers)
+                                .AddOptionalParameter("distillable", distillable?.ToValueString())
+                                .AddOptionalParameter("zdr", zdr?.ToValueString())
+                                .AddOptionalParameter("region", region?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -191,8 +315,20 @@ namespace OpenRouter
                     category: category,
                     supportedParameters: supportedParameters,
                     outputModalities: outputModalities,
+                    sort: sort,
                     useRss: useRss,
-                    useRssChatLinks: useRssChatLinks);
+                    useRssChatLinks: useRssChatLinks,
+                    q: q,
+                    inputModalities: inputModalities,
+                    context: context,
+                    minPrice: minPrice,
+                    maxPrice: maxPrice,
+                    arch: arch,
+                    modelAuthors: modelAuthors,
+                    providers: providers,
+                    distillable: distillable,
+                    zdr: zdr,
+                    region: region);
 
                 return __httpRequest;
             }
