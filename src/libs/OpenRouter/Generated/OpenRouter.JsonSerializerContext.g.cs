@@ -2553,6 +2553,18 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter),
@@ -2880,6 +2892,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WorkspaceBudgetResetInterval?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>),
 
@@ -5940,6 +5956,18 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter),
@@ -6267,6 +6295,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WorkspaceBudgetResetInterval?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>),
 
@@ -9327,6 +9359,18 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter),
@@ -9654,6 +9698,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WorkspaceBudgetResetInterval?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>),
 
@@ -12714,6 +12762,18 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter),
@@ -13042,6 +13102,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
 
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WorkspaceBudgetResetInterval?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>),
+
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>),
@@ -13302,6 +13366,18 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceResponseData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudgetResetInterval), TypeInfoPropertyName = "WorkspaceBudgetResetInterval2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudget))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.WorkspaceBudgetResetInterval?, object>), TypeInfoPropertyName = "OneOfWorkspaceBudgetResetIntervalObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListWorkspaceBudgetsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.WorkspaceBudget>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudgetInterval), TypeInfoPropertyName = "WorkspaceBudgetInterval2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval), TypeInfoPropertyName = "UpsertWorkspaceBudgetResponseDataResetInterval2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>), TypeInfoPropertyName = "OneOfUpsertWorkspaceBudgetResponseDataResetIntervalObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DeleteWorkspaceBudgetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkAddWorkspaceMembersRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceMemberRole), TypeInfoPropertyName = "WorkspaceMemberRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceMember))]
@@ -13467,6 +13543,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModelSupportedSizesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.VideoModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.Workspace>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WorkspaceBudget>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WorkspaceMember>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems>))]
@@ -14786,6 +14863,12 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.VideoModelSupportedResolutionsItemsNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ImageConfigJsonConverter());
@@ -14950,6 +15033,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultContextManagement, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WorkspaceBudgetResetInterval?, object>());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>());
