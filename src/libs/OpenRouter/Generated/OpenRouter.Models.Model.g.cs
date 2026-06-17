@@ -109,6 +109,12 @@ namespace OpenRouter
         public required global::OpenRouter.PublicPricing Pricing { get; set; }
 
         /// <summary>
+        /// Reasoning effort configuration. Omitted for non-reasoning models and dynamic router models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
+        public global::OpenRouter.ModelReasoning? Reasoning { get; set; }
+
+        /// <summary>
         /// List of supported parameters for this model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_parameters")]
@@ -188,6 +194,9 @@ namespace OpenRouter
         /// <param name="knowledgeCutoff">
         /// The date up to which the model was trained on data. ISO 8601 date string (YYYY-MM-DD) or null if unknown.
         /// </param>
+        /// <param name="reasoning">
+        /// Reasoning effort configuration. Omitted for non-reasoning models and dynamic router models.
+        /// </param>
         /// <param name="supportedVoices">
         /// List of supported voice identifiers for TTS models. Null for non-TTS models.
         /// </param>
@@ -212,6 +221,7 @@ namespace OpenRouter
             string? expirationDate,
             string? huggingFaceId,
             string? knowledgeCutoff,
+            global::OpenRouter.ModelReasoning? reasoning,
             global::System.Collections.Generic.IList<string>? supportedVoices)
         {
             this.Architecture = architecture ?? throw new global::System.ArgumentNullException(nameof(architecture));
@@ -229,6 +239,7 @@ namespace OpenRouter
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PerRequestLimits = perRequestLimits ?? throw new global::System.ArgumentNullException(nameof(perRequestLimits));
             this.Pricing = pricing ?? throw new global::System.ArgumentNullException(nameof(pricing));
+            this.Reasoning = reasoning;
             this.SupportedParameters = supportedParameters ?? throw new global::System.ArgumentNullException(nameof(supportedParameters));
             this.SupportedVoices = supportedVoices;
             this.TopProvider = topProvider ?? throw new global::System.ArgumentNullException(nameof(topProvider));
