@@ -1189,6 +1189,38 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
@@ -1396,34 +1428,6 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatJsonConverter),
 
@@ -2712,6 +2716,8 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2ItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsJsonConverter),
 
@@ -4592,6 +4598,38 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
@@ -4799,34 +4837,6 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatJsonConverter),
 
@@ -6116,6 +6126,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingAssistantContentJsonConverter),
@@ -6575,6 +6587,23 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnalyticsQueryPostResponsesContentApplicationJsonSchemaData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataDataItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BetaAnalyticsQueryAnalyticsResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksGetParametersSource), TypeInfoPropertyName = "BenchmarksGetParametersSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksGetParametersTaskType), TypeInfoPropertyName = "BenchmarksGetParametersTaskType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksGetParametersArena), TypeInfoPropertyName = "BenchmarksGetParametersArena2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarkPricing))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsDiscriminatorMappingDesignArenaTournamentStats))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItems), TypeInfoPropertyName = "UnifiedBenchmarksResponseDataItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1Source), TypeInfoPropertyName = "UnifiedBenchmarksResponseDataItemsVariant1Source2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2Source), TypeInfoPropertyName = "UnifiedBenchmarksResponseDataItemsVariant2Source2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsDiscriminatorSource), TypeInfoPropertyName = "UnifiedBenchmarksResponseDataItemsDiscriminatorSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksMetaSource), TypeInfoPropertyName = "UnifiedBenchmarksMetaSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksMetaVersion), TypeInfoPropertyName = "UnifiedBenchmarksMetaVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksMeta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnifiedBenchmarksResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.UnifiedBenchmarksResponseDataItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ByokGetParametersProvider), TypeInfoPropertyName = "ByokGetParametersProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BYOKProviderSlug), TypeInfoPropertyName = "BYOKProviderSlug2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BYOKKey))]
@@ -6744,24 +6773,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RankingsDailyMeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AppRankingsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AppRankingsItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarkPricing))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksAAItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksAaMetaSource), TypeInfoPropertyName = "BenchmarksAaMetaSource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksAaMetaSourceUrl), TypeInfoPropertyName = "BenchmarksAaMetaSourceUrl2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksAaMetaVersion), TypeInfoPropertyName = "BenchmarksAaMetaVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksAAMeta))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksAAResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BenchmarksAAItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DatasetsBenchmarksDesignArenaGetParametersArena), TypeInfoPropertyName = "DatasetsBenchmarksDesignArenaGetParametersArena2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDaItemTournamentStats))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDAItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDaMetaEloBounds))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDaMetaSource), TypeInfoPropertyName = "BenchmarksDaMetaSource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDaMetaSourceUrl), TypeInfoPropertyName = "BenchmarksDaMetaSourceUrl2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDaMetaVersion), TypeInfoPropertyName = "BenchmarksDaMetaVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDAMeta))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BenchmarksDAResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BenchmarksDAItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RankingsDailyItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RankingsDailyResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.RankingsDailyItem>))]
@@ -6808,6 +6819,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelArchitectureInstructType), TypeInfoPropertyName = "ModelArchitectureInstructType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputModality), TypeInfoPropertyName = "OutputModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelGroup), TypeInfoPropertyName = "ModelGroup2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelArchitecture))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -7995,6 +8007,38 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
@@ -8202,34 +8246,6 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatJsonConverter),
 
@@ -9519,6 +9535,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingAssistantContentJsonConverter),
@@ -9711,7 +9729,6 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelArchitecture))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputModality>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ModelArchitectureInstructType?, object>), TypeInfoPropertyName = "OneOfModelArchitectureInstructTypeObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OutputModality>))]
@@ -10211,6 +10228,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingWebhookConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestination), TypeInfoPropertyName = "ObservabilityDestination2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1Type), TypeInfoPropertyName = "ObservabilityDestinationVariant1Type2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -11398,6 +11416,38 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
@@ -11605,34 +11655,6 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlNullableJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionJsonConverter),
-
-            typeof(global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatJsonConverter),
 
@@ -12922,6 +12944,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.ChatContentItemsJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingAssistantContentJsonConverter),
@@ -13114,7 +13138,6 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1Type), TypeInfoPropertyName = "ObservabilityDestinationVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2Type), TypeInfoPropertyName = "ObservabilityDestinationVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant3))]
@@ -13462,6 +13485,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataDataItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.UnifiedBenchmarksResponseDataItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BYOKKey>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatContentItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatAssistantImagesItems>))]
@@ -13476,8 +13500,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatTokenLogprob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatChoice>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AppRankingsItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BenchmarksAAItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.BenchmarksDAItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RankingsDailyItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>))]
@@ -14184,6 +14206,22 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsValueTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ByokGetParametersProviderJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter());
@@ -14288,20 +14326,6 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersSortNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.RankingsDailyMetaVersionJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.RankingsDailyMetaVersionNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksAaMetaSourceUrlNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksAaMetaVersionNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.DatasetsBenchmarksDesignArenaGetParametersArenaNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksDaMetaSourceUrlNullableJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionJsonConverter());
-            options.Converters.Add(new global::OpenRouter.JsonConverters.BenchmarksDaMetaVersionNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0TypeJsonConverter());
@@ -14946,6 +14970,7 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.OpenResponsesResultToolsItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2ItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ChatContentItemsJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingAssistantContentJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ReasoningDetailUnionJsonConverter());
