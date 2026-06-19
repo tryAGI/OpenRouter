@@ -2873,6 +2873,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>),
 
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>),
+
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ModelArchitectureInstructType?, object>),
@@ -6282,6 +6284,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>),
 
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>),
+
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ModelArchitectureInstructType?, object>),
@@ -6757,9 +6761,11 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatUsageCompletionTokensDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CostDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatUsagePromptTokensDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatUsageServerToolUseDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>), TypeInfoPropertyName = "OneOfChatUsageCompletionTokensDetailsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>), TypeInfoPropertyName = "OneOfChatUsagePromptTokensDetailsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsageServerToolUseDetails, object>), TypeInfoPropertyName = "OneOfChatUsageServerToolUseDetailsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ChatChoice>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTimeOffset))]
@@ -6818,8 +6824,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InputModality), TypeInfoPropertyName = "InputModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelArchitectureInstructType), TypeInfoPropertyName = "ModelArchitectureInstructType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OutputModality), TypeInfoPropertyName = "OutputModality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelGroup), TypeInfoPropertyName = "ModelGroup2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelArchitecture))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -9691,6 +9695,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>),
 
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>),
+
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ModelArchitectureInstructType?, object>),
@@ -9729,6 +9735,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelGroup), TypeInfoPropertyName = "ModelGroup2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ModelArchitecture))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputModality>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ModelArchitectureInstructType?, object>), TypeInfoPropertyName = "OneOfModelArchitectureInstructTypeObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OutputModality>))]
@@ -10227,8 +10235,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingWebhookConfigMethod), TypeInfoPropertyName = "UpdateObservabilityDestinationResponseDataDiscriminatorMappingWebhookConfigMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateObservabilityDestinationResponseDataDiscriminatorMappingWebhookConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestination), TypeInfoPropertyName = "ObservabilityDestination2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1Type), TypeInfoPropertyName = "ObservabilityDestinationVariant1Type2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -13100,6 +13106,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>),
 
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>),
+
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
 
             typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ModelArchitectureInstructType?, object>),
@@ -13138,6 +13146,8 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant1Type), TypeInfoPropertyName = "ObservabilityDestinationVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant2Type), TypeInfoPropertyName = "ObservabilityDestinationVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ObservabilityDestinationVariant3))]
@@ -15048,6 +15058,7 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestServiceTier?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageCompletionTokensDetails, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ModelArchitectureInstructType?, object>());
             options.Converters.Add(new global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.InstructType2?, object>());
