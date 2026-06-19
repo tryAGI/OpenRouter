@@ -55,6 +55,13 @@ namespace OpenRouter
         public global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? PromptTokensDetails { get; set; }
 
         /// <summary>
+        /// Usage for server-side tool execution (e.g., web search)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use_details")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.ChatUsageServerToolUseDetails, object>? ServerToolUseDetails { get; set; }
+
+        /// <summary>
         /// Total number of tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
@@ -94,6 +101,9 @@ namespace OpenRouter
         /// <param name="promptTokensDetails">
         /// Detailed prompt token usage
         /// </param>
+        /// <param name="serverToolUseDetails">
+        /// Usage for server-side tool execution (e.g., web search)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -105,7 +115,8 @@ namespace OpenRouter
             double? cost,
             global::OpenRouter.CostDetails? costDetails,
             bool? isByok,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? promptTokensDetails)
+            global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? promptTokensDetails,
+            global::OpenRouter.OneOf<global::OpenRouter.ChatUsageServerToolUseDetails, object>? serverToolUseDetails)
         {
             this.CompletionTokens = completionTokens;
             this.CompletionTokensDetails = completionTokensDetails;
@@ -114,6 +125,7 @@ namespace OpenRouter
             this.IsByok = isByok;
             this.PromptTokens = promptTokens;
             this.PromptTokensDetails = promptTokensDetails;
+            this.ServerToolUseDetails = serverToolUseDetails;
             this.TotalTokens = totalTokens;
         }
 
