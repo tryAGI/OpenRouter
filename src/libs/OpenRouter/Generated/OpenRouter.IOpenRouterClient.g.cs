@@ -122,6 +122,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageImagesClient SubpackageImages { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageModelsClient SubpackageModels { get; }
 
         /// <summary>

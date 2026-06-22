@@ -21,6 +21,12 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
+        /// Debug options for inspecting request transformations (streaming only)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("debug")]
+        public global::OpenRouter.ChatDebugOptions? Debug { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
@@ -254,6 +260,9 @@ namespace OpenRouter
         /// <param name="cacheControl">
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
+        /// <param name="debug">
+        /// Debug options for inspecting request transformations (streaming only)
+        /// </param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig"></param>
         /// <param name="include"></param>
@@ -322,6 +331,7 @@ namespace OpenRouter
         public ResponsesRequest(
             bool? background,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
+            global::OpenRouter.ChatDebugOptions? debug,
             double? frequencyPenalty,
             global::OpenRouter.ImageConfig? imageConfig,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include,
@@ -361,6 +371,7 @@ namespace OpenRouter
         {
             this.Background = background;
             this.CacheControl = cacheControl;
+            this.Debug = debug;
             this.FrequencyPenalty = frequencyPenalty;
             this.ImageConfig = imageConfig;
             this.Include = include;

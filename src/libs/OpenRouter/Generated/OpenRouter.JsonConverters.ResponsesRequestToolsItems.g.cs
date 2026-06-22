@@ -177,6 +177,7 @@ namespace OpenRouter.JsonConverters
             var __score17 = 0;
             if (__jsonProps.Contains("parameters")) __score17++;
             if (__jsonProps.Contains("parameters.analysis_models")) __score17++;
+            if (__jsonProps.Contains("parameters.cache_control")) __score17++;
             if (__jsonProps.Contains("parameters.max_completion_tokens")) __score17++;
             if (__jsonProps.Contains("parameters.max_tool_calls")) __score17++;
             if (__jsonProps.Contains("parameters.model")) __score17++;
