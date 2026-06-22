@@ -907,6 +907,9 @@ namespace OpenRouter
         /// <param name="cacheControl">
         /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
         /// </param>
+        /// <param name="debug">
+        /// Debug options for inspecting request transformations (streaming only)
+        /// </param>
         /// <param name="frequencyPenalty"></param>
         /// <param name="imageConfig"></param>
         /// <param name="include"></param>
@@ -976,6 +979,7 @@ namespace OpenRouter
             global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             bool? background = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
+            global::OpenRouter.ChatDebugOptions? debug = default,
             double? frequencyPenalty = default,
             global::OpenRouter.ImageConfig? imageConfig = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? include = default,
@@ -1019,6 +1023,7 @@ namespace OpenRouter
             {
                 Background = background,
                 CacheControl = cacheControl,
+                Debug = debug,
                 FrequencyPenalty = frequencyPenalty,
                 ImageConfig = imageConfig,
                 Include = include,

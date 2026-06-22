@@ -379,6 +379,213 @@
         }
       }
     },
+    "/images": {
+      "post": {
+        "operationId": "create-images",
+        "summary": "Generate an image",
+        "description": "Generates an image from a text prompt via the image generation router",
+        "tags": [
+          "subpackage_images"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Image generation response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageGenerationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters or malformed input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required - Insufficient credits or quota to complete request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentRequiredResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authentication successful but insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway - Provider/upstream API failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadGatewayResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageGenerationRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/images/models": {
+      "get": {
+        "operationId": "list-image-models",
+        "summary": "List image generation models",
+        "description": "Lists every image generation model with its top-level supported-parameter superset and a URL to its full per-endpoint records.",
+        "tags": [
+          "subpackage_images"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of image generation models",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageModelsListResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/images/models/{author}/{slug}/endpoints": {
+      "get": {
+        "operationId": "list-image-model-endpoints",
+        "summary": "List endpoints for an image model",
+        "description": "Returns the full per-endpoint records for an image model: each endpoint's definitive supported parameters, pricing, and passthrough allowlist.",
+        "tags": [
+          "subpackage_images"
+        ],
+        "parameters": [
+          {
+            "name": "author",
+            "in": "path",
+            "description": "Model author/organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "Model slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The full per-endpoint records for an image model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageModelEndpointsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Unexpected server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/audio/speech": {
       "post": {
         "operationId": "create-audio-speech",
@@ -7014,6 +7221,17 @@
         "description": "Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.",
         "title": "AnthropicCacheControlDirective"
       },
+      "ChatDebugOptions": {
+        "type": "object",
+        "properties": {
+          "echo_upstream_body": {
+            "type": "boolean",
+            "description": "If true, includes the transformed upstream request body in a debug chunk at the start of the stream. Only works with streaming mode."
+          }
+        },
+        "description": "Debug options for inspecting request transformations (streaming only)",
+        "title": "ChatDebugOptions"
+      },
       "ImageConfig": {
         "oneOf": [
           {
@@ -13367,6 +13585,9 @@
             },
             "description": "Slugs of models to run in parallel as the analysis panel. Each model receives the user prompt with openrouter:web_search and openrouter:web_fetch enabled, then a judge model summarizes the collective output into structured analysis JSON. Capped at 8 models to bound cost amplification. Defaults to the Quality preset from /labs/fusion."
           },
+          "cache_control": {
+            "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          },
           "max_completion_tokens": {
             "type": "integer",
             "description": "Maximum number of output tokens (including reasoning tokens) each panelist and the judge model may produce per inner call. Controls the total output budget so reasoning-heavy models like GPT-5.5 do not exhaust their token allowance before producing visible text. When omitted, the provider's default applies."
@@ -14032,6 +14253,9 @@
           },
           "cache_control": {
             "$ref": "#/components/schemas/AnthropicCacheControlDirective"
+          },
+          "debug": {
+            "$ref": "#/components/schemas/ChatDebugOptions"
           },
           "frequency_penalty": {
             "type": [
@@ -17872,6 +18096,1622 @@
         "description": "Conflict - Resource conflict or concurrent modification",
         "title": "ConflictResponse"
       },
+      "ImageGenerationRequestAspectRatio": {
+        "type": "string",
+        "enum": [
+          "1:1",
+          "1:2",
+          "1:4",
+          "1:8",
+          "2:1",
+          "2:3",
+          "3:2",
+          "3:4",
+          "4:1",
+          "4:3",
+          "4:5",
+          "5:4",
+          "8:1",
+          "9:16",
+          "16:9",
+          "9:19.5",
+          "19.5:9",
+          "9:20",
+          "20:9",
+          "9:21",
+          "21:9",
+          "auto"
+        ],
+        "description": "Normalized aspect ratio of the generated image. Providers clamp to their supported subset.",
+        "title": "ImageGenerationRequestAspectRatio"
+      },
+      "ImageGenerationRequestBackground": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "transparent",
+          "opaque"
+        ],
+        "description": "Background treatment. `transparent` requires an output_format that supports alpha (png or webp).",
+        "title": "ImageGenerationRequestBackground"
+      },
+      "InputReferenceDiscriminatorMappingImageUrlImageUrl": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "title": "InputReferenceDiscriminatorMappingImageUrlImageUrl"
+      },
+      "ContentPartImage": {
+        "type": "object",
+        "properties": {
+          "image_url": {
+            "$ref": "#/components/schemas/InputReferenceDiscriminatorMappingImageUrlImageUrl"
+          }
+        },
+        "required": [
+          "image_url"
+        ],
+        "title": "ContentPartImage"
+      },
+      "ImageGenerationRequestOutputFormat": {
+        "type": "string",
+        "enum": [
+          "png",
+          "jpeg",
+          "webp"
+        ],
+        "description": "Encoding of the returned image bytes.",
+        "title": "ImageGenerationRequestOutputFormat"
+      },
+      "ImageGenerationRequestProviderOptions": {
+        "type": "object",
+        "properties": {
+          "01ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ai21": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "aion-labs": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "akashml": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "alibaba": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "amazon-bedrock": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "amazon-nova": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ambient": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "anthropic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "anyscale": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "arcee-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "atlas-cloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "atoma": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "avian": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "azure": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "baidu": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "baseten": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "black-forest-labs": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "byteplus": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "centml": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cerebras": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "chutes": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cirrascale": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "clarifai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cloudflare": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "cohere": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crofai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crucible": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "crusoe": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "darkbloom": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "decart": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "deepinfra": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "deepseek": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "dekallm": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "digitalocean": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "enfer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "fake-provider": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "featherless": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "fireworks": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "friendli": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "gmicloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "google-ai-studio": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "google-vertex": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "gopomelo": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "groq": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "huggingface": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "hyperbolic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "hyperbolic-quantized": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inception": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inceptron": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inference-net": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "infermatic": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inflection": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inocloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "io-net": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ionstream": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "klusterai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lambda": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lepton": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "liquid": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lynn": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "lynn-private": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mancer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mancer-old": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mara": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "minimax": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "mistral": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modal": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modelrun": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "modular": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "moonshotai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "morph": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ncompass": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nebius": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nex-agi": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nextbit": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nineteen": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "novita": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "nvidia": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "octoai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "open-inference": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "openai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "parasail": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "perceptron": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "perplexity": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "phala": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "poolside": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "recraft": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "recursal": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "reflection": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "reka": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "relace": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "replicate": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sambanova": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sambanova-cloaked": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "seed": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sf-compute": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "siliconflow": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sourceful": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "stealth": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "stepfun": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "streamlake": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "switchpoint": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "targon": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "together": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "together-lite": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "ubicloud": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "upstage": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "venice": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "wafer": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "wandb": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "xai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "xiaomi": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "z-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          }
+        },
+        "description": "Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.",
+        "title": "ImageGenerationRequestProviderOptions"
+      },
+      "ImageGenerationRequestProvider": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/ImageGenerationRequestProviderOptions"
+          }
+        },
+        "description": "Provider-specific passthrough configuration",
+        "title": "ImageGenerationRequestProvider"
+      },
+      "ImageGenerationRequestQuality": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "low",
+          "medium",
+          "high"
+        ],
+        "description": "Rendering quality. Providers without a quality knob ignore this.",
+        "title": "ImageGenerationRequestQuality"
+      },
+      "ImageGenerationRequestResolution": {
+        "type": "string",
+        "enum": [
+          "512",
+          "1K",
+          "2K",
+          "4K"
+        ],
+        "description": "Normalized resolution tier of the generated image. Concrete pixel dimensions are derived per-provider.",
+        "title": "ImageGenerationRequestResolution"
+      },
+      "ImageGenerationRequest": {
+        "type": "object",
+        "properties": {
+          "aspect_ratio": {
+            "$ref": "#/components/schemas/ImageGenerationRequestAspectRatio",
+            "description": "Normalized aspect ratio of the generated image. Providers clamp to their supported subset."
+          },
+          "background": {
+            "$ref": "#/components/schemas/ImageGenerationRequestBackground",
+            "description": "Background treatment. `transparent` requires an output_format that supports alpha (png or webp)."
+          },
+          "input_references": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentPartImage"
+            },
+            "description": "Reference images to guide image-to-image generation, as base64 data URLs or HTTP(S) URLs."
+          },
+          "model": {
+            "type": "string",
+            "description": "The image generation model to use"
+          },
+          "n": {
+            "type": "integer",
+            "description": "Number of images to generate (1-10). Providers that only support single-image generation reject n > 1."
+          },
+          "output_compression": {
+            "type": "integer",
+            "description": "Compression level (0-100) for webp/jpeg output. Ignored for png and by providers without a compression knob."
+          },
+          "output_format": {
+            "$ref": "#/components/schemas/ImageGenerationRequestOutputFormat",
+            "description": "Encoding of the returned image bytes."
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text description of the desired image"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ImageGenerationRequestProvider",
+            "description": "Provider-specific passthrough configuration"
+          },
+          "quality": {
+            "$ref": "#/components/schemas/ImageGenerationRequestQuality",
+            "description": "Rendering quality. Providers without a quality knob ignore this."
+          },
+          "resolution": {
+            "$ref": "#/components/schemas/ImageGenerationRequestResolution",
+            "description": "Normalized resolution tier of the generated image. Concrete pixel dimensions are derived per-provider."
+          },
+          "seed": {
+            "type": "integer",
+            "description": "If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers."
+          },
+          "size": {
+            "type": "string",
+            "description": "Optional. A convenience shorthand for output dimensions — pass a tier (\"2K\", \"4K\") or explicit pixels (\"2048x2048\") and we normalize it to the right dimensions for the chosen provider. Interchangeable with resolution + aspect_ratio; use those directly for enumerated, per-model discoverable values. Conflicting size + resolution/aspect_ratio is rejected."
+          },
+          "stream": {
+            "type": "boolean",
+            "description": "If true, partial images are streamed as SSE events as they become available. Only supported by providers with native streaming (currently OpenAI). Non-streaming providers ignore this flag and return a buffered response."
+          }
+        },
+        "required": [
+          "model",
+          "prompt"
+        ],
+        "description": "Image generation request input",
+        "title": "ImageGenerationRequest"
+      },
+      "ImageGenerationResponseDataItems": {
+        "type": "object",
+        "properties": {
+          "b64_json": {
+            "type": "string",
+            "description": "Base64-encoded image bytes"
+          }
+        },
+        "required": [
+          "b64_json"
+        ],
+        "title": "ImageGenerationResponseDataItems"
+      },
+      "ImageGenerationUsageCompletionTokensDetails": {
+        "type": "object",
+        "properties": {
+          "audio_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens generated by the model for audio output."
+          },
+          "image_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens generated by the model for image output."
+          },
+          "reasoning_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens generated by the model for reasoning."
+          }
+        },
+        "title": "ImageGenerationUsageCompletionTokensDetails"
+      },
+      "CostDetails": {
+        "type": "object",
+        "properties": {
+          "upstream_inference_completions_cost": {
+            "type": "number",
+            "format": "double"
+          },
+          "upstream_inference_cost": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "upstream_inference_prompt_cost": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "upstream_inference_completions_cost",
+          "upstream_inference_prompt_cost"
+        ],
+        "description": "Breakdown of upstream inference costs",
+        "title": "CostDetails"
+      },
+      "AnthropicIterationCacheCreation": {
+        "type": "object",
+        "properties": {
+          "ephemeral_1h_input_tokens": {
+            "type": "integer"
+          },
+          "ephemeral_5m_input_tokens": {
+            "type": "integer"
+          }
+        },
+        "title": "AnthropicIterationCacheCreation"
+      },
+      "AnthropicCompactionUsageIterationType": {
+        "type": "string",
+        "enum": [
+          "compaction"
+        ],
+        "title": "AnthropicCompactionUsageIterationType"
+      },
+      "AnthropicCompactionUsageIteration": {
+        "type": "object",
+        "properties": {
+          "cache_creation": {
+            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer"
+          },
+          "cache_read_input_tokens": {
+            "type": "integer"
+          },
+          "input_tokens": {
+            "type": "integer"
+          },
+          "output_tokens": {
+            "type": "integer"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AnthropicCompactionUsageIterationType"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "AnthropicCompactionUsageIteration"
+      },
+      "AnthropicMessageUsageIterationType": {
+        "type": "string",
+        "enum": [
+          "message"
+        ],
+        "title": "AnthropicMessageUsageIterationType"
+      },
+      "AnthropicMessageUsageIteration": {
+        "type": "object",
+        "properties": {
+          "cache_creation": {
+            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer"
+          },
+          "cache_read_input_tokens": {
+            "type": "integer"
+          },
+          "input_tokens": {
+            "type": "integer"
+          },
+          "output_tokens": {
+            "type": "integer"
+          },
+          "model": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AnthropicMessageUsageIterationType"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "AnthropicMessageUsageIteration"
+      },
+      "AnthropicAdvisorMessageUsageIterationType": {
+        "type": "string",
+        "enum": [
+          "advisor_message"
+        ],
+        "title": "AnthropicAdvisorMessageUsageIterationType"
+      },
+      "AnthropicAdvisorMessageUsageIteration": {
+        "type": "object",
+        "properties": {
+          "cache_creation": {
+            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer"
+          },
+          "cache_read_input_tokens": {
+            "type": "integer"
+          },
+          "input_tokens": {
+            "type": "integer"
+          },
+          "output_tokens": {
+            "type": "integer"
+          },
+          "model": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AnthropicAdvisorMessageUsageIterationType"
+          }
+        },
+        "required": [
+          "model",
+          "type"
+        ],
+        "title": "AnthropicAdvisorMessageUsageIteration"
+      },
+      "AnthropicUnknownUsageIteration": {
+        "type": "object",
+        "properties": {
+          "cache_creation": {
+            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer"
+          },
+          "cache_read_input_tokens": {
+            "type": "integer"
+          },
+          "input_tokens": {
+            "type": "integer"
+          },
+          "output_tokens": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "AnthropicUnknownUsageIteration"
+      },
+      "AnthropicUsageIteration": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AnthropicCompactionUsageIteration"
+          },
+          {
+            "$ref": "#/components/schemas/AnthropicMessageUsageIteration"
+          },
+          {
+            "$ref": "#/components/schemas/AnthropicAdvisorMessageUsageIteration"
+          },
+          {
+            "$ref": "#/components/schemas/AnthropicUnknownUsageIteration"
+          }
+        ],
+        "title": "AnthropicUsageIteration"
+      },
+      "ImageGenerationUsagePromptTokensDetails": {
+        "type": "object",
+        "properties": {
+          "audio_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens used for input audio."
+          },
+          "cache_write_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens written to cache. Only returned for models with explicit caching and cache write pricing."
+          },
+          "cached_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens cached by the endpoint."
+          },
+          "file_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens used for input files/documents."
+          },
+          "video_tokens": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Tokens used for input video."
+          }
+        },
+        "description": "Breakdown of tokens used in the prompt.",
+        "title": "ImageGenerationUsagePromptTokensDetails"
+      },
+      "ImageGenerationUsageServerToolUse": {
+        "type": "object",
+        "properties": {
+          "tool_calls_executed": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Number of OpenRouter server tool calls that executed and produced a result."
+          },
+          "tool_calls_requested": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Total number of OpenRouter server-orchestrated tool calls the model requested, across all tool types. Provider-native tools (e.g. native web search) are not counted here."
+          },
+          "web_search_requests": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Number of web searches performed by server-side tools. For server-orchestrated tool calls a web search is also counted in tool_calls_requested; provider-native web search may report web_search_requests only. Do not sum the two."
+          }
+        },
+        "description": "Usage for server-side tool execution (e.g., web search)",
+        "title": "ImageGenerationUsageServerToolUse"
+      },
+      "AnthropicSpeed": {
+        "type": "string",
+        "enum": [
+          "fast",
+          "standard"
+        ],
+        "title": "AnthropicSpeed"
+      },
+      "ImageGenerationUsage": {
+        "type": "object",
+        "properties": {
+          "completion_tokens": {
+            "type": "integer",
+            "description": "The tokens generated"
+          },
+          "completion_tokens_details": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ImageGenerationUsageCompletionTokensDetails"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "cost": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Cost of the completion"
+          },
+          "cost_details": {
+            "$ref": "#/components/schemas/CostDetails"
+          },
+          "is_byok": {
+            "type": "boolean",
+            "description": "Whether a request was made using a Bring Your Own Key configuration"
+          },
+          "iterations": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AnthropicUsageIteration"
+            }
+          },
+          "prompt_tokens": {
+            "type": "integer",
+            "description": "Including images, input audio, and tools if any"
+          },
+          "prompt_tokens_details": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ImageGenerationUsagePromptTokensDetails"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Breakdown of tokens used in the prompt."
+          },
+          "server_tool_use": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ImageGenerationUsageServerToolUse"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Usage for server-side tool execution (e.g., web search)"
+          },
+          "service_tier": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The service tier used by the upstream provider for this request"
+          },
+          "speed": {
+            "$ref": "#/components/schemas/AnthropicSpeed"
+          },
+          "total_tokens": {
+            "type": "integer",
+            "description": "Sum of the above two fields"
+          }
+        },
+        "required": [
+          "completion_tokens",
+          "prompt_tokens",
+          "total_tokens"
+        ],
+        "description": "Token and cost usage for the image generation request, when available",
+        "title": "ImageGenerationUsage"
+      },
+      "ImageGenerationResponse": {
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer",
+            "description": "Unix timestamp (seconds) when the image was generated"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageGenerationResponseDataItems"
+            },
+            "description": "Generated images"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/ImageGenerationUsage"
+          }
+        },
+        "required": [
+          "created",
+          "data"
+        ],
+        "description": "Image generation response",
+        "title": "ImageGenerationResponse"
+      },
+      "InputModality": {
+        "type": "string",
+        "enum": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "title": "InputModality"
+      },
+      "ImageOutputModality": {
+        "type": "string",
+        "enum": [
+          "text",
+          "image",
+          "embeddings",
+          "audio",
+          "video",
+          "rerank",
+          "speech",
+          "transcription"
+        ],
+        "title": "ImageOutputModality"
+      },
+      "ImageModelArchitecture": {
+        "type": "object",
+        "properties": {
+          "input_modalities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InputModality"
+            },
+            "description": "Supported input modalities"
+          },
+          "output_modalities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageOutputModality"
+            },
+            "description": "Supported output modalities"
+          }
+        },
+        "required": [
+          "input_modalities",
+          "output_modalities"
+        ],
+        "title": "ImageModelArchitecture"
+      },
+      "EnumCapabilityType": {
+        "type": "string",
+        "enum": [
+          "enum"
+        ],
+        "title": "EnumCapabilityType"
+      },
+      "RangeCapabilityType": {
+        "type": "string",
+        "enum": [
+          "range"
+        ],
+        "title": "RangeCapabilityType"
+      },
+      "CapabilityDescriptor": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "boolean"
+                ],
+                "description": "Discriminator value: boolean"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "description": "A supported-or-not flag. Present means the parameter is accepted."
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/EnumCapabilityType"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "type",
+              "values"
+            ],
+            "description": "A parameter that accepts one of a discrete set of string values."
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/RangeCapabilityType"
+              },
+              "max": {
+                "type": "number",
+                "format": "double"
+              },
+              "min": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "required": [
+              "type",
+              "max",
+              "min"
+            ],
+            "description": "A parameter that accepts any value within an inclusive numeric range."
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type"
+        },
+        "description": "A typed descriptor for one supported request parameter.",
+        "title": "CapabilityDescriptor"
+      },
+      "SupportedParameters": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CapabilityDescriptor"
+        },
+        "description": "Union of supported parameters across every endpoint of this model. Coarse discovery aid; the definitive per-endpoint set is behind the endpoints URL.",
+        "title": "SupportedParameters"
+      },
+      "ImageModelListItem": {
+        "type": "object",
+        "properties": {
+          "architecture": {
+            "$ref": "#/components/schemas/ImageModelArchitecture"
+          },
+          "created": {
+            "type": "integer",
+            "description": "Unix timestamp (seconds) of when the model was created"
+          },
+          "description": {
+            "type": "string"
+          },
+          "endpoints": {
+            "type": "string",
+            "description": "Relative URL to the full per-endpoint records for this model"
+          },
+          "id": {
+            "type": "string",
+            "description": "Model slug"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name"
+          },
+          "supported_parameters": {
+            "$ref": "#/components/schemas/SupportedParameters"
+          },
+          "supports_streaming": {
+            "type": "boolean",
+            "description": "Whether any endpoint of this model supports native SSE streaming on the dedicated Image API (i.e. `stream: true` in the request). OR across endpoints."
+          }
+        },
+        "required": [
+          "architecture",
+          "created",
+          "description",
+          "endpoints",
+          "id",
+          "name",
+          "supported_parameters",
+          "supports_streaming"
+        ],
+        "description": "A single image model in the discovery listing.",
+        "title": "ImageModelListItem"
+      },
+      "ImageModelsListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageModelListItem"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "description": "List of image generation models.",
+        "title": "ImageModelsListResponse"
+      },
+      "ImagePricingEntryBillable": {
+        "type": "string",
+        "enum": [
+          "output_image",
+          "input_image",
+          "input_font",
+          "input_reference",
+          "input_text"
+        ],
+        "title": "ImagePricingEntryBillable"
+      },
+      "ImagePricingEntryUnit": {
+        "type": "string",
+        "enum": [
+          "image",
+          "megapixel",
+          "token"
+        ],
+        "title": "ImagePricingEntryUnit"
+      },
+      "ImagePricingEntry": {
+        "type": "object",
+        "properties": {
+          "billable": {
+            "$ref": "#/components/schemas/ImagePricingEntryBillable"
+          },
+          "cost_usd": {
+            "type": "number",
+            "format": "double"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/ImagePricingEntryUnit"
+          },
+          "variant": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "billable",
+          "cost_usd",
+          "unit"
+        ],
+        "description": "One billable pricing line for an image provider.",
+        "title": "ImagePricingEntry"
+      },
+      "ImageEndpoint": {
+        "type": "object",
+        "properties": {
+          "allowed_passthrough_parameters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Provider-specific options accepted under provider.options[provider_slug]."
+          },
+          "pricing": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagePricingEntry"
+            },
+            "description": "Billable pricing lines for this endpoint."
+          },
+          "provider_name": {
+            "type": "string",
+            "description": "Provider display name"
+          },
+          "provider_slug": {
+            "type": "string",
+            "description": "Provider slug"
+          },
+          "provider_tag": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Provider tag for request-side selection"
+          },
+          "supported_parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CapabilityDescriptor"
+            }
+          },
+          "supports_streaming": {
+            "type": "boolean",
+            "description": "Whether this endpoint supports native SSE streaming (`stream: true` in the request)."
+          }
+        },
+        "required": [
+          "allowed_passthrough_parameters",
+          "pricing",
+          "provider_name",
+          "provider_slug",
+          "provider_tag",
+          "supported_parameters",
+          "supports_streaming"
+        ],
+        "description": "An endpoint that serves a given image model.",
+        "title": "ImageEndpoint"
+      },
+      "ImageModelEndpointsResponse": {
+        "type": "object",
+        "properties": {
+          "endpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageEndpoint"
+            }
+          },
+          "id": {
+            "type": "string",
+            "description": "Model slug"
+          }
+        },
+        "required": [
+          "endpoints",
+          "id"
+        ],
+        "description": "The full per-endpoint records for an image model.",
+        "title": "ImageModelEndpointsResponse"
+      },
       "ProviderOptions": {
         "type": "object",
         "properties": {
@@ -20193,17 +22033,6 @@
         ],
         "title": "UpdateBYOKKeyResponse"
       },
-      "ChatDebugOptions": {
-        "type": "object",
-        "properties": {
-          "echo_upstream_body": {
-            "type": "boolean",
-            "description": "If true, includes the transformed upstream request body in a debug chunk at the start of the stream. Only works with streaming mode."
-          }
-        },
-        "description": "Debug options for inspecting request transformations (streaming only)",
-        "title": "ChatDebugOptions"
-      },
       "ChatAudioOutput": {
         "type": "object",
         "properties": {
@@ -22238,32 +24067,6 @@
         "description": "Detailed completion token usage",
         "title": "ChatUsageCompletionTokensDetails"
       },
-      "CostDetails": {
-        "type": "object",
-        "properties": {
-          "upstream_inference_completions_cost": {
-            "type": "number",
-            "format": "double"
-          },
-          "upstream_inference_cost": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
-          "upstream_inference_prompt_cost": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "required": [
-          "upstream_inference_completions_cost",
-          "upstream_inference_prompt_cost"
-        ],
-        "description": "Breakdown of upstream inference costs",
-        "title": "CostDetails"
-      },
       "ChatUsagePromptTokensDetails": {
         "type": "object",
         "properties": {
@@ -23240,17 +25043,6 @@
         ],
         "description": "Embeddings response containing embedding vectors",
         "title": "Embeddings_createEmbeddings_Response_200"
-      },
-      "InputModality": {
-        "type": "string",
-        "enum": [
-          "text",
-          "image",
-          "file",
-          "audio",
-          "video"
-        ],
-        "title": "InputModality"
       },
       "ModelArchitectureInstructType": {
         "type": "string",
@@ -28964,14 +30756,6 @@
         },
         "title": "MessagesRequestPluginsItems"
       },
-      "AnthropicSpeed": {
-        "type": "string",
-        "enum": [
-          "fast",
-          "standard"
-        ],
-        "title": "AnthropicSpeed"
-      },
       "MessagesRequestSystem1": {
         "type": "array",
         "items": {
@@ -31365,171 +33149,6 @@
           "batch"
         ],
         "title": "AnthropicServiceTier"
-      },
-      "AnthropicIterationCacheCreation": {
-        "type": "object",
-        "properties": {
-          "ephemeral_1h_input_tokens": {
-            "type": "integer"
-          },
-          "ephemeral_5m_input_tokens": {
-            "type": "integer"
-          }
-        },
-        "title": "AnthropicIterationCacheCreation"
-      },
-      "AnthropicCompactionUsageIterationType": {
-        "type": "string",
-        "enum": [
-          "compaction"
-        ],
-        "title": "AnthropicCompactionUsageIterationType"
-      },
-      "AnthropicCompactionUsageIteration": {
-        "type": "object",
-        "properties": {
-          "cache_creation": {
-            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
-          },
-          "cache_creation_input_tokens": {
-            "type": "integer"
-          },
-          "cache_read_input_tokens": {
-            "type": "integer"
-          },
-          "input_tokens": {
-            "type": "integer"
-          },
-          "output_tokens": {
-            "type": "integer"
-          },
-          "type": {
-            "$ref": "#/components/schemas/AnthropicCompactionUsageIterationType"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "AnthropicCompactionUsageIteration"
-      },
-      "AnthropicMessageUsageIterationType": {
-        "type": "string",
-        "enum": [
-          "message"
-        ],
-        "title": "AnthropicMessageUsageIterationType"
-      },
-      "AnthropicMessageUsageIteration": {
-        "type": "object",
-        "properties": {
-          "cache_creation": {
-            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
-          },
-          "cache_creation_input_tokens": {
-            "type": "integer"
-          },
-          "cache_read_input_tokens": {
-            "type": "integer"
-          },
-          "input_tokens": {
-            "type": "integer"
-          },
-          "output_tokens": {
-            "type": "integer"
-          },
-          "model": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/AnthropicMessageUsageIterationType"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "AnthropicMessageUsageIteration"
-      },
-      "AnthropicAdvisorMessageUsageIterationType": {
-        "type": "string",
-        "enum": [
-          "advisor_message"
-        ],
-        "title": "AnthropicAdvisorMessageUsageIterationType"
-      },
-      "AnthropicAdvisorMessageUsageIteration": {
-        "type": "object",
-        "properties": {
-          "cache_creation": {
-            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
-          },
-          "cache_creation_input_tokens": {
-            "type": "integer"
-          },
-          "cache_read_input_tokens": {
-            "type": "integer"
-          },
-          "input_tokens": {
-            "type": "integer"
-          },
-          "output_tokens": {
-            "type": "integer"
-          },
-          "model": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/AnthropicAdvisorMessageUsageIterationType"
-          }
-        },
-        "required": [
-          "model",
-          "type"
-        ],
-        "title": "AnthropicAdvisorMessageUsageIteration"
-      },
-      "AnthropicUnknownUsageIteration": {
-        "type": "object",
-        "properties": {
-          "cache_creation": {
-            "$ref": "#/components/schemas/AnthropicIterationCacheCreation"
-          },
-          "cache_creation_input_tokens": {
-            "type": "integer"
-          },
-          "cache_read_input_tokens": {
-            "type": "integer"
-          },
-          "input_tokens": {
-            "type": "integer"
-          },
-          "output_tokens": {
-            "type": "integer"
-          },
-          "type": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "title": "AnthropicUnknownUsageIteration"
-      },
-      "AnthropicUsageIteration": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/AnthropicCompactionUsageIteration"
-          },
-          {
-            "$ref": "#/components/schemas/AnthropicMessageUsageIteration"
-          },
-          {
-            "$ref": "#/components/schemas/AnthropicAdvisorMessageUsageIteration"
-          },
-          {
-            "$ref": "#/components/schemas/AnthropicUnknownUsageIteration"
-          }
-        ],
-        "title": "AnthropicUsageIteration"
       },
       "MessagesResultUsage": {
         "type": "object",
@@ -39615,18 +41234,6 @@
           "url"
         ],
         "title": "InputReferenceDiscriminatorMappingAudioUrlAudioUrl"
-      },
-      "InputReferenceDiscriminatorMappingImageUrlImageUrl": {
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "url"
-        ],
-        "title": "InputReferenceDiscriminatorMappingImageUrlImageUrl"
       },
       "InputReferenceDiscriminatorMappingVideoUrlVideoUrl": {
         "type": "object",

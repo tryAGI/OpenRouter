@@ -15,6 +15,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? AnalysisModels { get; set; }
 
         /// <summary>
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+
+        /// <summary>
         /// Maximum number of output tokens (including reasoning tokens) each panelist and the judge model may produce per inner call. Controls the total output budget so reasoning-heavy models like GPT-5.5 do not exhaust their token allowance before producing visible text. When omitted, the provider's default applies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
@@ -62,6 +68,9 @@ namespace OpenRouter
         /// <param name="analysisModels">
         /// Slugs of models to run in parallel as the analysis panel. Each model receives the user prompt with openrouter:web_search and openrouter:web_fetch enabled, then a judge model summarizes the collective output into structured analysis JSON. Capped at 8 models to bound cost amplification. Defaults to the Quality preset from /labs/fusion.
         /// </param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// </param>
         /// <param name="maxCompletionTokens">
         /// Maximum number of output tokens (including reasoning tokens) each panelist and the judge model may produce per inner call. Controls the total output budget so reasoning-heavy models like GPT-5.5 do not exhaust their token allowance before producing visible text. When omitted, the provider's default applies.
         /// </param>
@@ -85,6 +94,7 @@ namespace OpenRouter
 #endif
         public FusionServerToolConfig(
             global::System.Collections.Generic.IList<string>? analysisModels,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             int? maxCompletionTokens,
             int? maxToolCalls,
             string? model,
@@ -93,6 +103,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.FusionServerToolConfigToolsItems>? tools)
         {
             this.AnalysisModels = analysisModels;
+            this.CacheControl = cacheControl;
             this.MaxCompletionTokens = maxCompletionTokens;
             this.MaxToolCalls = maxToolCalls;
             this.Model = model;
