@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Max,
+        /// <summary>
+        /// 
+        /// </summary>
         Medium,
         /// <summary>
         /// 
@@ -48,6 +52,7 @@ namespace OpenRouter
             {
                 SubagentReasoningEffort.High => "high",
                 SubagentReasoningEffort.Low => "low",
+                SubagentReasoningEffort.Max => "max",
                 SubagentReasoningEffort.Medium => "medium",
                 SubagentReasoningEffort.Minimal => "minimal",
                 SubagentReasoningEffort.None => "none",
@@ -64,6 +69,7 @@ namespace OpenRouter
             {
                 "high" => SubagentReasoningEffort.High,
                 "low" => SubagentReasoningEffort.Low,
+                "max" => SubagentReasoningEffort.Max,
                 "medium" => SubagentReasoningEffort.Medium,
                 "minimal" => SubagentReasoningEffort.Minimal,
                 "none" => SubagentReasoningEffort.None,

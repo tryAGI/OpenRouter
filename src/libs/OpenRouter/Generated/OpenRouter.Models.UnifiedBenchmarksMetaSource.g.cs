@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// The source filter applied.
+    /// The source filter applied, or null when all sources are returned.
     /// </summary>
     public enum UnifiedBenchmarksMetaSource
     {

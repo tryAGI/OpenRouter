@@ -28,7 +28,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
-        /// 
+        /// The name of the tracing project in Arize AX
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelId")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -51,7 +51,9 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UpdateObservabilityDestinationResponseDataDiscriminatorMappingArizeConfig" /> class.
         /// </summary>
         /// <param name="apiKey"></param>
-        /// <param name="modelId"></param>
+        /// <param name="modelId">
+        /// The name of the tracing project in Arize AX
+        /// </param>
         /// <param name="spaceKey"></param>
         /// <param name="baseUrl">
         /// Default Value: https://otlp.arize.com

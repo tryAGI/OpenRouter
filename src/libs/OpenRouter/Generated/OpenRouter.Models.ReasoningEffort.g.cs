@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Max,
+        /// <summary>
+        /// 
+        /// </summary>
         Medium,
         /// <summary>
         /// 
@@ -48,6 +52,7 @@ namespace OpenRouter
             {
                 ReasoningEffort.High => "high",
                 ReasoningEffort.Low => "low",
+                ReasoningEffort.Max => "max",
                 ReasoningEffort.Medium => "medium",
                 ReasoningEffort.Minimal => "minimal",
                 ReasoningEffort.None => "none",
@@ -64,6 +69,7 @@ namespace OpenRouter
             {
                 "high" => ReasoningEffort.High,
                 "low" => ReasoningEffort.Low,
+                "max" => ReasoningEffort.Max,
                 "medium" => ReasoningEffort.Medium,
                 "minimal" => ReasoningEffort.Minimal,
                 "none" => ReasoningEffort.None,

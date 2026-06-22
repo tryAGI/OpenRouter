@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Max,
+        /// <summary>
+        /// 
+        /// </summary>
         Medium,
         /// <summary>
         /// 
@@ -48,6 +52,7 @@ namespace OpenRouter
             {
                 ChatRequestReasoningEffort.High => "high",
                 ChatRequestReasoningEffort.Low => "low",
+                ChatRequestReasoningEffort.Max => "max",
                 ChatRequestReasoningEffort.Medium => "medium",
                 ChatRequestReasoningEffort.Minimal => "minimal",
                 ChatRequestReasoningEffort.None => "none",
@@ -64,6 +69,7 @@ namespace OpenRouter
             {
                 "high" => ChatRequestReasoningEffort.High,
                 "low" => ChatRequestReasoningEffort.Low,
+                "max" => ChatRequestReasoningEffort.Max,
                 "medium" => ChatRequestReasoningEffort.Medium,
                 "minimal" => ChatRequestReasoningEffort.Minimal,
                 "none" => ChatRequestReasoningEffort.None,
