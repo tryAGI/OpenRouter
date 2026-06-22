@@ -16,11 +16,10 @@ namespace OpenRouter
         public required string AsOf { get; set; }
 
         /// <summary>
-        /// Required attribution when republishing this data.
+        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Citation { get; set; }
+        public string? Citation { get; set; }
 
         /// <summary>
         /// Number of unique models in the response.
@@ -30,19 +29,18 @@ namespace OpenRouter
         public required int ModelCount { get; set; }
 
         /// <summary>
-        /// The source filter applied.
+        /// The source filter applied, or null when all sources are returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UnifiedBenchmarksMetaSource?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.UnifiedBenchmarksMetaSource Source { get; set; }
+        public required global::OpenRouter.OneOf<global::OpenRouter.UnifiedBenchmarksMetaSource?, object> Source { get; set; }
 
         /// <summary>
-        /// URL of the upstream data source.
+        /// URL of the upstream data source, or null when results span multiple sources.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SourceUrl { get; set; }
+        public string? SourceUrl { get; set; }
 
         /// <summary>
         /// The task_type filter applied, or null if showing all.
@@ -69,17 +67,17 @@ namespace OpenRouter
         /// <param name="asOf">
         /// ISO-8601 timestamp of when this data was last updated.
         /// </param>
-        /// <param name="citation">
-        /// Required attribution when republishing this data.
-        /// </param>
         /// <param name="modelCount">
         /// Number of unique models in the response.
         /// </param>
         /// <param name="source">
-        /// The source filter applied.
+        /// The source filter applied, or null when all sources are returned.
+        /// </param>
+        /// <param name="citation">
+        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).
         /// </param>
         /// <param name="sourceUrl">
-        /// URL of the upstream data source.
+        /// URL of the upstream data source, or null when results span multiple sources.
         /// </param>
         /// <param name="taskType">
         /// The task_type filter applied, or null if showing all.
@@ -92,18 +90,18 @@ namespace OpenRouter
 #endif
         public UnifiedBenchmarksMeta(
             string asOf,
-            string citation,
             int modelCount,
-            global::OpenRouter.UnifiedBenchmarksMetaSource source,
-            string sourceUrl,
+            global::OpenRouter.OneOf<global::OpenRouter.UnifiedBenchmarksMetaSource?, object> source,
+            string? citation,
+            string? sourceUrl,
             string? taskType,
             global::OpenRouter.UnifiedBenchmarksMetaVersion version)
         {
             this.AsOf = asOf ?? throw new global::System.ArgumentNullException(nameof(asOf));
-            this.Citation = citation ?? throw new global::System.ArgumentNullException(nameof(citation));
+            this.Citation = citation;
             this.ModelCount = modelCount;
             this.Source = source;
-            this.SourceUrl = sourceUrl ?? throw new global::System.ArgumentNullException(nameof(sourceUrl));
+            this.SourceUrl = sourceUrl;
             this.TaskType = taskType;
             this.Version = version;
         }

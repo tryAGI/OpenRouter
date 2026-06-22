@@ -19,6 +19,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Max,
+        /// <summary>
+        /// 
+        /// </summary>
         Medium,
         /// <summary>
         /// 
@@ -48,6 +52,7 @@ namespace OpenRouter
             {
                 FusionServerToolConfigReasoningEffort.High => "high",
                 FusionServerToolConfigReasoningEffort.Low => "low",
+                FusionServerToolConfigReasoningEffort.Max => "max",
                 FusionServerToolConfigReasoningEffort.Medium => "medium",
                 FusionServerToolConfigReasoningEffort.Minimal => "minimal",
                 FusionServerToolConfigReasoningEffort.None => "none",
@@ -64,6 +69,7 @@ namespace OpenRouter
             {
                 "high" => FusionServerToolConfigReasoningEffort.High,
                 "low" => FusionServerToolConfigReasoningEffort.Low,
+                "max" => FusionServerToolConfigReasoningEffort.Max,
                 "medium" => FusionServerToolConfigReasoningEffort.Medium,
                 "minimal" => FusionServerToolConfigReasoningEffort.Minimal,
                 "none" => FusionServerToolConfigReasoningEffort.None,

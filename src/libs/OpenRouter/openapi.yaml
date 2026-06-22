@@ -893,8 +893,8 @@
           {
             "name": "source",
             "in": "query",
-            "description": "Benchmark source to query. Determines the shape of the returned items.",
-            "required": true,
+            "description": "Benchmark source to query. Determines the shape of the returned items. When omitted, returns results from all sources.",
+            "required": false,
             "schema": {
               "$ref": "#/components/schemas/BenchmarksGetParametersSource"
             }
@@ -929,11 +929,10 @@
           {
             "name": "max_results",
             "in": "query",
-            "description": "Max results to return (1–100, default 50).",
+            "description": "Maximum number of items to return. When omitted, all matching results are returned.",
             "required": false,
             "schema": {
-              "type": "integer",
-              "default": 50
+              "type": "integer"
             }
           }
         ],
@@ -11458,6 +11457,7 @@
       "ReasoningEffort": {
         "type": "string",
         "enum": [
+          "max",
           "xhigh",
           "high",
           "medium",
@@ -13047,6 +13047,7 @@
       "AdvisorReasoningEffort": {
         "type": "string",
         "enum": [
+          "max",
           "xhigh",
           "high",
           "medium",
@@ -13167,6 +13168,7 @@
       "SubagentReasoningEffort": {
         "type": "string",
         "enum": [
+          "max",
           "xhigh",
           "high",
           "medium",
@@ -13309,6 +13311,7 @@
       "FusionServerToolConfigReasoningEffort": {
         "type": "string",
         "enum": [
+          "max",
           "xhigh",
           "high",
           "medium",
@@ -19164,7 +19167,7 @@
           "artificial-analysis",
           "design-arena"
         ],
-        "description": "Benchmark source to query. Determines the shape of the returned items.",
+        "description": "Benchmark source to query. Determines the shape of the returned items. When omitted, returns results from all sources.",
         "title": "BenchmarksGetParametersSource"
       },
       "BenchmarksGetParametersTaskType": {
@@ -19387,7 +19390,7 @@
           "artificial-analysis",
           "design-arena"
         ],
-        "description": "The source filter applied.",
+        "description": "The source filter applied, or null when all sources are returned.",
         "title": "UnifiedBenchmarksMetaSource"
       },
       "UnifiedBenchmarksMetaVersion": {
@@ -19406,20 +19409,33 @@
             "description": "ISO-8601 timestamp of when this data was last updated."
           },
           "citation": {
-            "type": "string",
-            "description": "Required attribution when republishing this data."
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator)."
           },
           "model_count": {
             "type": "integer",
             "description": "Number of unique models in the response."
           },
           "source": {
-            "$ref": "#/components/schemas/UnifiedBenchmarksMetaSource",
-            "description": "The source filter applied."
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnifiedBenchmarksMetaSource"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The source filter applied, or null when all sources are returned."
           },
           "source_url": {
-            "type": "string",
-            "description": "URL of the upstream data source."
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "URL of the upstream data source, or null when results span multiple sources."
           },
           "task_type": {
             "type": [
@@ -21241,6 +21257,7 @@
       "ChatRequestReasoningEffort": {
         "type": "string",
         "enum": [
+          "max",
           "xhigh",
           "high",
           "medium",
@@ -31831,7 +31848,8 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "modelId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the tracing project in Arize AX"
           },
           "spaceKey": {
             "type": "string"
