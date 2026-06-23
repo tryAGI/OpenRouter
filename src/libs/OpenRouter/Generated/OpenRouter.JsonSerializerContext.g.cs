@@ -1481,6 +1481,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ChatResultObjectNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryNullableJsonConverter),
@@ -4951,6 +4955,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.ChatResultObjectJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatResultObjectNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryJsonConverter),
 
@@ -8423,6 +8431,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.ChatResultObjectNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryNullableJsonConverter),
@@ -9918,6 +9930,15 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsageServerToolUseDetails, object>), TypeInfoPropertyName = "OneOfChatUsageServerToolUseDetailsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ChatChoice>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ClassificationsTaskGetParametersWindow), TypeInfoPropertyName = "ClassificationsTaskGetParametersWindow2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TaskClassificationModel))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TaskClassificationItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.TaskClassificationModel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TaskClassificationMacroCategory))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TaskClassificationResponseData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.TaskClassificationItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.TaskClassificationMacroCategory>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.TaskClassificationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsGetResponsesContentApplicationJsonSchemaData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreditsGetCreditsResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DatasetsAppRankingsGetParametersCategory), TypeInfoPropertyName = "DatasetsAppRankingsGetParametersCategory2")]
@@ -10406,15 +10427,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ORAnthropicContentBlockDiscriminatorType), TypeInfoPropertyName = "ORAnthropicContentBlockDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultRole), TypeInfoPropertyName = "MessagesResultRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetailsCategory), TypeInfoPropertyName = "AnthropicRefusalStopDetailsCategory2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetailsType), TypeInfoPropertyName = "AnthropicRefusalStopDetailsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetails))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.AnthropicRefusalStopDetailsCategory?, object>), TypeInfoPropertyName = "OneOfAnthropicRefusalStopDetailsCategoryObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ORAnthropicStopReason), TypeInfoPropertyName = "ORAnthropicStopReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultType), TypeInfoPropertyName = "MessagesResultType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCacheCreation))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicOutputTokensDetails))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServerToolUsage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServiceTier), TypeInfoPropertyName = "AnthropicServiceTier2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -11893,6 +11905,10 @@ namespace OpenRouter
             typeof(global::OpenRouter.JsonConverters.ChatResultObjectJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.ChatResultObjectNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowNullableJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryJsonConverter),
 
@@ -13386,6 +13402,15 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetailsType), TypeInfoPropertyName = "AnthropicRefusalStopDetailsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.AnthropicRefusalStopDetailsCategory?, object>), TypeInfoPropertyName = "OneOfAnthropicRefusalStopDetailsCategoryObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ORAnthropicStopReason), TypeInfoPropertyName = "ORAnthropicStopReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultType), TypeInfoPropertyName = "MessagesResultType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicCacheCreation))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicOutputTokensDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServerToolUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicServiceTier), TypeInfoPropertyName = "AnthropicServiceTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultContextManagementAppliedEditsItems))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultContextManagement))]
@@ -13803,6 +13828,9 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatTokenLogprobTopLogprobsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatTokenLogprob>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.ChatChoice>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.TaskClassificationModel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.TaskClassificationItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.TaskClassificationMacroCategory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AppRankingsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RankingsDailyItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems>))]
@@ -14654,6 +14682,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.ChatFinishReasonEnumNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ChatResultObjectJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.ChatResultObjectNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersSubcategoryJsonConverter());

@@ -87,6 +87,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageClassificationsClient SubpackageClassifications { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageCreditsClient SubpackageCredits { get; }
 
         /// <summary>
