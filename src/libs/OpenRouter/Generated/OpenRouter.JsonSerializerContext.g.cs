@@ -1145,6 +1145,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.TruncationNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeNullableJsonConverter),
@@ -4620,6 +4624,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.TruncationNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeNullableJsonConverter),
@@ -6634,6 +6642,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UsageOutputTokensDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UsageCostDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Usage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ApiErrorType), TypeInfoPropertyName = "ApiErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.RouterAttempt))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.EndpointInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.EndpointsMetadata))]
@@ -6951,7 +6960,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatUsageServerToolUseDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>), TypeInfoPropertyName = "OneOfChatUsageCompletionTokensDetailsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>), TypeInfoPropertyName = "OneOfChatUsagePromptTokensDetailsObject2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -8095,6 +8103,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.TruncationNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeNullableJsonConverter),
@@ -9927,6 +9939,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>), TypeInfoPropertyName = "OneOfChatUsagePromptTokensDetailsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.ChatUsageServerToolUseDetails, object>), TypeInfoPropertyName = "OneOfChatUsageServerToolUseDetailsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ChatResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ChatChoice>))]
@@ -10426,7 +10439,6 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ORAnthropicContentBlockDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ORAnthropicContentBlockDiscriminatorType), TypeInfoPropertyName = "ORAnthropicContentBlockDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.MessagesResultRole), TypeInfoPropertyName = "MessagesResultRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetailsCategory), TypeInfoPropertyName = "AnthropicRefusalStopDetailsCategory2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -11570,6 +11582,10 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.TruncationNullableJsonConverter),
 
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeNullableJsonConverter),
+
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter),
 
             typeof(global::OpenRouter.JsonConverters.PipelineStageTypeNullableJsonConverter),
@@ -13402,6 +13418,7 @@ namespace OpenRouter
 
             typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetailsCategory), TypeInfoPropertyName = "AnthropicRefusalStopDetailsCategory2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetailsType), TypeInfoPropertyName = "AnthropicRefusalStopDetailsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.AnthropicRefusalStopDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.OneOf<global::OpenRouter.AnthropicRefusalStopDetailsCategory?, object>), TypeInfoPropertyName = "OneOfAnthropicRefusalStopDetailsCategoryObject2")]
@@ -13901,8 +13918,2987 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WorkspaceBudget>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WorkspaceMember>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems>))]
     internal sealed partial class SourceGenerationContextChunk3 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::OpenRouter.JsonConverters.MetadataLevelJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MetadataLevelNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlTtlJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlTtlNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlDirectiveTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlDirectiveTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponseIncludesEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponseIncludesEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningTextContentTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningTextContentTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemStatus0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemStatus0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemStatus1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemStatus1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemStatus2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemStatus2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningSummaryTextTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningSummaryTextTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningFormatNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageContentOneOf0ItemsOneOf1DetailJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageContentOneOf0ItemsOneOf1DetailNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageContentOneOf0ItemsOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageContentOneOf0ItemsOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputAudioInputAudioFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputAudioInputAudioFormatNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputVideoTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputVideoTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessagePhase0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessagePhase0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessagePhase1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessagePhase1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole3JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRole3NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemContentItemsOneOf1DetailJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemContentItemsOneOf1DetailNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemContentItemsOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemContentItemsOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemRole0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemRole0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemRole1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemRole1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemRole2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemRole2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolCallStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetailJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputImageDetailNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOutputItemStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOutputItemStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOutputItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOutputItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileCitationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileCitationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UrlCitationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UrlCitationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FilePathTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FilePathTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponseOutputTextTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponseOutputTextTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesRefusalContentTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesRefusalContentTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatus0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatus0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatus1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatus1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatus2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatus2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchSourceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionOneOf2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionOneOf2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFileSearchCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFileSearchCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputImageGenerationCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputImageGenerationCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemOutputsItemsOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemOutputsItemsOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemOutputsItemsOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemOutputsItemsOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorMappingComputerCallStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorMappingComputerCallStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionSourcesItemsTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionSourcesItemsTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemActionTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemCommandJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemCommandNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebFetchServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebFetchServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputToolSearchServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputToolSearchServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMemoryServerToolItemActionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMemoryServerToolItemActionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMemoryServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMemoryServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMcpServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMcpServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputSearchModelsServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputSearchModelsServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputSubagentServerToolItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputSubagentServerToolItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LocalShellCallItemActionTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LocalShellCallItemActionTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LocalShellCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LocalShellCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LocalShellCallOutputItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LocalShellCallOutputItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellCallOutputItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellCallOutputItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpListToolsItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpListToolsItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpApprovalRequestItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpApprovalRequestItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpApprovalResponseItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpApprovalResponseItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CompactionItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CompactionItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ItemReferenceItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ItemReferenceItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputModalityEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputModalityEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContextCompressionEngineJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContextCompressionEngineNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PdfParserEngine0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PdfParserEngine0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PdfParserEngine1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PdfParserEngine1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionPresetNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchEngineJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchEngineNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchPluginIdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchPluginIdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchPluginUserLocationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchPluginUserLocationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebFetchPluginIdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebFetchPluginIdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant1IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant1IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant2IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant2IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant3IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant3IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant4IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant4IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant5IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant5IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant6IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant6IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant7IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsVariant7IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorIdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorIdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderPreferencesDataCollectionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderPreferencesDataCollectionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderNameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderNameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.QuantizationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.QuantizationNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderSortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderSortConfigByJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderSortConfigByNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderSortConfigPartitionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderSortConfigPartitionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningSummaryVerbosityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningSummaryVerbosityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestServiceTierJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestServiceTierNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenFinishReasonIsTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenFinishReasonIsTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenHasToolCallTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenHasToolCallTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenMaxCostTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenMaxCostTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenMaxTokensUsedTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenMaxTokensUsedTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenStepCountIsTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenStepCountIsTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenConditionDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenConditionDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FormatTextConfigTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FormatTextConfigTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FormatJsonObjectConfigTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FormatJsonObjectConfigTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FormatJsonSchemaConfigTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FormatJsonSchemaConfigTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.TextExtendedConfigVerbosityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.TextExtendedConfigVerbosityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoice2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf4Type0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf4Type0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf4Type1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf4Type1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedMode0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedMode0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedMode1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedMode1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf6TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf6TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf7TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf7TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestToolsItemsOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestToolsItemsOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchEngineEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchEngineEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SearchContextSizeEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SearchContextSizeEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PreviewWebSearchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PreviewWebSearchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PreviewWebSearchUserLocationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PreviewWebSearchUserLocationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.Preview20250311WebSearchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.Preview20250311WebSearchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LegacyWebSearchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LegacyWebSearchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolFiltersOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolFiltersOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CompoundFilterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CompoundFilterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolRankingOptionsRankerJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolRankingOptionsRankerNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolEnvironmentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolEnvironmentNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerOneOf1MemoryLimitJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerOneOf1MemoryLimitNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolConnectorIdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolConnectorIdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolRequireApproval1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolRequireApproval1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolRequireApproval2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolRequireApproval2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolBackgroundJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolBackgroundNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolInputFidelityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolInputFidelityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolModelJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolModelNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolModerationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolModerationNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolOutputFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolOutputFormatNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolQualityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolQualityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolSizeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolSizeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodexLocalShellToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodexLocalShellToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf1SyntaxJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf1SyntaxNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolFormatOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AdvisorServerToolOpenRouterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SubagentReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SubagentReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SubagentServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SubagentServerToolOpenRouterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FusionServerToolConfigReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FusionServerToolConfigReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FusionServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FusionServerToolOpenRouterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolOpenRouterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatSearchModelsServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatSearchModelsServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebFetchEngineEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebFetchEngineEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebFetchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebFetchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SearchQualityLevelJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SearchQualityLevelNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchUserLocationServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WebSearchServerToolOpenRouterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchEngineEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchEngineEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchServerToolOpenRouterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEngineJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEngineNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEngineJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEngineNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEnvironmentVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEnvironmentVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEnvironmentVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEnvironmentVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEnvironmentDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEnvironmentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolOpenRouterTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolOpenRouterTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAIResponsesTruncationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAIResponsesTruncationNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesErrorFieldCodeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesErrorFieldCodeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.IncompleteDetailsReasonJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.IncompleteDetailsReasonNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Phase0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Phase0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Phase1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Phase1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role3JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0Role3NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRole0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRole0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRole1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRole1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRole2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRole2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemImageGenerationCallTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemImageGenerationCallTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessagePhase0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessagePhase0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessagePhase1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessagePhase1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageStatus0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageStatus0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageStatus1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageStatus1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageStatus2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageStatus2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenResponsesResultObjectJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenResponsesResultObjectNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhase0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhase0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhase1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhase1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatus0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatus0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatus1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatus1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatus2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatus2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatus0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatus0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatus1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatus1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatus2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatus2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellCallStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellCallStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemOutputItemsOutcomeOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemOutputItemsOutcomeOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemOutputItemsOutcomeOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemOutputItemsOutcomeOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant9TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant9TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant10TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant10TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant11TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant11TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant12TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant12TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant13TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant13TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant14TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant14TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant16TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant16TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant17TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant17TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant18TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsVariant18TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ServiceTier2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ServiceTier2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAIResponsesResponseStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAIResponsesResponseStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenResponsesResultToolsItemsOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenResponsesResultToolsItemsOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.TruncationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.TruncationNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApiErrorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PipelineStageTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RoutingStrategyJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RoutingStrategyNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestAspectRatioJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestAspectRatioNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestBackgroundJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestBackgroundNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestOutputFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestOutputFormatNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestQualityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestQualityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestResolutionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageGenerationRequestResolutionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCompactionUsageIterationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCompactionUsageIterationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicMessageUsageIterationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicMessageUsageIterationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicAdvisorMessageUsageIterationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicAdvisorMessageUsageIterationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicSpeedJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicSpeedNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputModalityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputModalityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageOutputModalityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageOutputModalityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EnumCapabilityTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EnumCapabilityTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RangeCapabilityTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RangeCapabilityTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CapabilityDescriptorVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CapabilityDescriptorVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CapabilityDescriptorDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CapabilityDescriptorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImagePricingEntryBillableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImagePricingEntryBillableNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImagePricingEntryUnitJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImagePricingEntryUnitNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SpeechRequestResponseFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.SpeechRequestResponseFormatNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItemsNameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItemsNameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItemsDisplayFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItemsDisplayFormatNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsNameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsNameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsValueTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsValueTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirectionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersTaskTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BenchmarksGetParametersArenaNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant1SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsVariant2SourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsDiscriminatorSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaVersionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ByokGetParametersProviderNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BYOKProviderSlugNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LegacyChatContentVideoTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.LegacyChatContentVideoTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentCacheControlTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentCacheControlTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentTextTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentTextTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentVideoTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentVideoTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolCallTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolCallTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatSystemMessageRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatSystemMessageRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolMessageRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolMessageRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatUserMessageRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatUserMessageRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesVariant1RoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesVariant1RoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesVariant2RoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesVariant2RoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestModalitiesItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestModalitiesItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant1IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant1IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant2IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant2IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant3IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant3IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant4IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant4IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant5IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant5IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant6IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant6IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant7IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant7IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsDiscriminatorIdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsDiscriminatorIdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatReasoningSummaryVerbosityEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatReasoningSummaryVerbosityEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestServiceTierJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestServiceTierNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolChoice0JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolChoice0NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolChoice1JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolChoice1NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolChoice2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolChoice2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatNamedToolChoiceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatNamedToolChoiceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatFunctionToolOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatFunctionToolOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenRouterWebSearchServerToolTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenRouterWebSearchServerToolTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatWebSearchShorthandTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatWebSearchShorthandTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatFinishReasonEnumJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatFinishReasonEnumNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatResultObjectJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatResultObjectNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ClassificationsTaskGetParametersWindowNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersCategoryNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersSubcategoryJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersSubcategoryNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.DatasetsAppRankingsGetParametersSortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RankingsDailyMetaVersionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormatNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartInputAudioTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartInputAudioTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartInputVideoTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartInputVideoTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartInputFileTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentPartInputFileTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollectionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollectionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsObjectJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsObjectNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaObjectJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaObjectNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelArchitectureInstructTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelArchitectureInstructTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputModalityJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputModalityNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelGroupJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelGroupNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ParameterJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ParameterNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EndpointStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EndpointStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InstructType2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InstructType2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileMetadataTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileMetadataTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileDeleteResponseTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileDeleteResponseTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GenerationResponseDataApiTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GenerationResponseDataApiTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GenerationResponseDataDataRegionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GenerationResponseDataDataRegionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderResponseProviderNameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderResponseProviderNameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinActionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PromptInjectionScanScopeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterBuiltinSlugNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterActionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ContentFilterActionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GuardrailIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GuardrailIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.KeysPostRequestBodyContentApplicationJsonSchemaLimitResetJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.KeysPostRequestBodyContentApplicationJsonSchemaLimitResetNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitResetJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitResetNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicInputTokensClearAtLeastTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicInputTokensClearAtLeastTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolUsesKeepTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolUsesKeepTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicThinkingTurnsTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicThinkingTurnsTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf1KeepOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf1KeepOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf1Keep2JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf1Keep2NullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TriggerTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TriggerTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageMimeTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageMimeTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicUrlImageSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicUrlImageSourceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamSourceVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamSourceVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBase64PdfSourceMediaTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBase64PdfSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBase64PdfSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBase64PdfSourceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicPlainTextSourceMediaTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicPlainTextSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicPlainTextSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicPlainTextSourceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceOneOf2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceOneOf2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicUrlPdfSourceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicFileDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicSearchResultBlockParamTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicSearchResultBlockParamTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf6TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf6TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf7TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf7TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchResultBlockParamTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchResultBlockParamTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf1ErrorCodeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf1ErrorCodeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf8TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf8TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf10TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf10TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesAdvisorToolResultBlockTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesAdvisorToolResultBlockTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigEffortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigEffortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigFormatTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigFormatTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigTaskBudgetTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigTaskBudgetTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant1IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant1IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant2IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant2IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant3IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant3IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant4IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant4IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant5IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant5IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant6IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant6IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant7IdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsVariant7IdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsDiscriminatorIdJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsDiscriminatorIdNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicThinkingDisplayJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicThinkingDisplayNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingOneOf2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceOneOf3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf0TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf0TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf1NameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf1NameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf2NameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf2NameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf3NameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf3NameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolUserLocationTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolUserLocationTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicAllowedCallersItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicAllowedCallersItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf4NameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf4NameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf5CachingTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf5CachingTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf5NameJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf5NameNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionOutputTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionOutputTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionToolResultErrorErrorCodeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionToolResultErrorErrorCodeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionToolResultErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionToolResultErrorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionContentDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionContentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionOutputTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionOutputTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicServerToolErrorCodeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicServerToolErrorCodeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionToolResultErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionToolResultErrorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicEncryptedCodeExecutionResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicEncryptedCodeExecutionResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionContentDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionContentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OrAnthropicServerToolUseBlockTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OrAnthropicServerToolUseBlockTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionCreateResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionCreateResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionStrReplaceResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionStrReplaceResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionToolResultErrorErrorCodeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionToolResultErrorErrorCodeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionToolResultErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionToolResultErrorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionViewResultFileTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionViewResultFileTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionViewResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionViewResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionContentDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionContentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchResultErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchResultErrorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolReferenceTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolReferenceTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchContentDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchContentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultErrorErrorCodeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultErrorErrorCodeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchToolResultErrorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchContentVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchContentVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchContentDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchContentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultErrorErrorCodeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultErrorErrorCodeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultErrorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebSearchToolResultErrorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant6TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant6TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant8TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant8TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant9TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant9TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant10TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant10TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant11TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant11TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant12TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant12TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant13TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant13TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant14TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockVariant14TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesResultRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesResultRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsCategoryJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsCategoryNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicStopReasonJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicStopReasonNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesResultTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesResultTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicServiceTierJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicServiceTierNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesErrorResponseTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesErrorResponseTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersCategoryJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersCategoryNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersSortNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersDistillableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersDistillableNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersZdrJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersZdrNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersRegionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ModelsGetParametersRegionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRulesConfigGroupsItemsLogicJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRulesConfigGroupsItemsLogicNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRulesConfigGroupsItemsRulesItemsFieldJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRulesConfigGroupsItemsRulesItemsFieldNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRulesConfigGroupsItemsRulesItemsOperatorJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRulesConfigGroupsItemsRulesItemsOperatorNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataDiscriminatorMappingNewrelicConfigRegionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataDiscriminatorMappingNewrelicConfigRegionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataDiscriminatorMappingWebhookConfigMethodJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataDiscriminatorMappingWebhookConfigMethodNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant6TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant6TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant7TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant7TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant8TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant8TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant9TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant9TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant10TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant10TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant11TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant11TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant12TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant12TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant13TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant13TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant14TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant14TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant15TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant15TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant16TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant16TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant17TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationVariant17TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationRequestTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationRequestTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant6TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant6TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant7TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant7TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant8TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant8TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant9TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant9TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant10TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant10TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant11TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant11TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant12TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant12TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant13TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant13TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant14TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant14TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant15TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant15TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant16TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant16TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant17TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataVariant17TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant6TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant6TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant7TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant7TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant8TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant8TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant9TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant9TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant10TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant10TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant11TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant11TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant12TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant12TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant13TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant13TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant14TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant14TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant15TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant15TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant16TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant16TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant17TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataVariant17TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationRequestFilterRulesGroupsItemsLogicJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationRequestFilterRulesGroupsItemsLogicNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationRequestFilterRulesGroupsItemsRulesItemsFieldJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationRequestFilterRulesGroupsItemsRulesItemsFieldNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationRequestFilterRulesGroupsItemsRulesItemsOperatorJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationRequestFilterRulesGroupsItemsRulesItemsOperatorNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant4TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant5TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant5TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant6TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant6TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant7TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant7TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant8TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant8TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant9TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant9TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant10TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant10TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant11TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant11TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant12TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant12TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant13TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant13TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant14TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant14TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant15TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant15TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant16TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant16TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant17TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataVariant17TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PresetStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PresetStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquartersJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquartersNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollectionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollectionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestAspectRatioJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestAspectRatioNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FrameImageTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FrameImageTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FrameImageFrameTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FrameImageFrameTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant1TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant2TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceVariant3TypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationRequestResolutionNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationResponseStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoGenerationResponseStatusNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedAspectRatiosItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedAspectRatiosItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedFrameImagesItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedFrameImagesItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedResolutionsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedResolutionsItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.VideoModelSupportedSizesItemsNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ImageConfigJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningItemStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageContentOneOf0ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessagePhaseJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EasyInputMessageRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemContentItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputMessageItemRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FunctionCallOutputItemOutputJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAIResponsesAnnotationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputsOneOf1ItemsOneOf7ContentOneOf0ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputsOneOf1ItemsOneOf7ContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputFunctionCallItemStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemOutputsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolCallOutputItemOutputJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputsOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PDFParserEngineJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf5JsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestPluginsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StoredPromptTemplateVariablesJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderPreferencesIgnoreItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderPreferencesOnlyItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderPreferencesOrderItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PreferredMaxLatencyJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.PreferredMinThroughputJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ProviderPreferencesSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenConditionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FormatsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponsesToolChoiceOneOf4TypeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedModeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAIResponsesToolChoiceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolFiltersOneOf0ValueJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.FileSearchServerToolFiltersJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolAllowedToolsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.McpServerToolRequireApprovalJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CustomToolFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ShellServerToolEnvironmentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ResponsesRequestToolsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0ContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0PhaseJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsOneOf0RoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemContentItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRoleJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageContentItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessagePhaseJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.BaseInputsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemContentItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhaseJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputMessageItemStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputReasoningItemStatusJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemOutputItemsOutcomeJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OutputItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OpenResponsesResultToolsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicUsageIterationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CapabilityDescriptorJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksResponseDataItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatContentItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingAssistantContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingDeveloperContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatSystemMessageContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolMessageContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatUserMessageContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatMessagesJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatRequestStopJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatToolChoiceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ChatFunctionToolJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GenerationContentDataInputJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0TriggerJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf1KeepJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestContextManagementEditsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextBlockParamCitationsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicImageBlockParamSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceOneOf2ContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf4ContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsOneOf8ContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentOneOf1ItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestPluginsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestSystemJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestThinkingJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolChoiceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicBashCodeExecutionContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextCitationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicCallerJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockSourceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.AnthropicWebFetchContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContentJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ORAnthropicContentBlockJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRulesConfigGroupsItemsRulesItemsValueJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.ObservabilityDestinationJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.CreateObservabilityDestinationResponseDataJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.GetObservabilityDestinationResponseDataJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationRequestFilterRulesGroupsItemsRulesItemsValueJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.UpdateObservabilityDestinationResponseDataJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderOrderItemsJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.InputReferenceJsonConverter),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigBy?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigPartition?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderPreferencesDataCollection?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.TextExtendedConfigVerbosity?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationServerToolInputFidelity?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ResponsesRequestServiceTier?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ServiceTier2?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationUsageCompletionTokensDetails, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationUsagePromptTokensDetails, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationUsageServerToolUse, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UnifiedBenchmarksMetaSource?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestReasoningEffort?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestReasoningEffort?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestServiceTier?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageCompletionTokensDetails, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsageCostDetails, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ModelArchitectureInstructType?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.InstructType2?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.GenerationResponseDataApiType?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AnthropicDocumentBlockParamCitations, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesOutputConfigEffort?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesOutputConfigFormat, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesOutputConfigTaskBudget, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesRequestContextManagement, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AnthropicRefusalStopDetailsCategory?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultContextManagement, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WorkspaceBudgetResetInterval?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>),
+
+            typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems>))]
+    internal sealed partial class SourceGenerationContextChunk4 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
     /// <summary>
@@ -13917,7 +16913,9 @@ namespace OpenRouter
 
             SourceGenerationContextChunk2.Default,
 
-            SourceGenerationContextChunk3.Default
+            SourceGenerationContextChunk3.Default,
+
+            SourceGenerationContextChunk4.Default
             );
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
@@ -14514,6 +17512,8 @@ namespace OpenRouter
             options.Converters.Add(new global::OpenRouter.JsonConverters.OpenResponsesResultToolsItemsOneOf0TypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.TruncationJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.TruncationNullableJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter());
+            options.Converters.Add(new global::OpenRouter.JsonConverters.ApiErrorTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.PipelineStageTypeNullableJsonConverter());
             options.Converters.Add(new global::OpenRouter.JsonConverters.RoutingStrategyJsonConverter());

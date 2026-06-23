@@ -9,6 +9,13 @@ namespace OpenRouter
     public sealed partial class MessagesErrorDetail
     {
         /// <summary>
+        /// Canonical OpenRouter error type, stable across all API formats
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter))]
+        public global::OpenRouter.ApiErrorType? ErrorType { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
@@ -33,13 +40,18 @@ namespace OpenRouter
         /// </summary>
         /// <param name="message"></param>
         /// <param name="type"></param>
+        /// <param name="errorType">
+        /// Canonical OpenRouter error type, stable across all API formats
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesErrorDetail(
             string message,
-            string type)
+            string type,
+            global::OpenRouter.ApiErrorType? errorType)
         {
+            this.ErrorType = errorType;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
