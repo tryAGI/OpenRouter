@@ -231,6 +231,13 @@ namespace OpenRouter
         public string? User { get; set; }
 
         /// <summary>
+        /// Canonical OpenRouter error type, stable across all API formats
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter))]
+        public global::OpenRouter.ApiErrorType? ErrorType { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("openrouter_metadata")]
@@ -287,6 +294,9 @@ namespace OpenRouter
         /// Token usage information for the response
         /// </param>
         /// <param name="user"></param>
+        /// <param name="errorType">
+        /// Canonical OpenRouter error type, stable across all API formats
+        /// </param>
         /// <param name="openrouterMetadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -326,6 +336,7 @@ namespace OpenRouter
             global::OpenRouter.Truncation? truncation,
             global::OpenRouter.Usage? usage,
             string? user,
+            global::OpenRouter.ApiErrorType? errorType,
             global::OpenRouter.OpenRouterMetadata? openrouterMetadata)
         {
             this.Background = background;
@@ -362,6 +373,7 @@ namespace OpenRouter
             this.Truncation = truncation;
             this.Usage = usage;
             this.User = user;
+            this.ErrorType = errorType;
             this.OpenrouterMetadata = openrouterMetadata;
         }
 
