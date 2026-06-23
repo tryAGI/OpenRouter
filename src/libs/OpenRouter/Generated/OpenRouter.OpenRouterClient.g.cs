@@ -114,6 +114,15 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageClassificationsClient SubpackageClassifications => new SubpackageClassificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageCreditsClient SubpackageCredits => new SubpackageCreditsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
