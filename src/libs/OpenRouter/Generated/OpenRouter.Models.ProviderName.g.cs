@@ -323,6 +323,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Tenstorrent,
+        /// <summary>
+        /// 
+        /// </summary>
         Together,
         /// <summary>
         /// 
@@ -444,6 +448,7 @@ namespace OpenRouter
                 ProviderName.StepFun => "StepFun",
                 ProviderName.StreamLake => "StreamLake",
                 ProviderName.Switchpoint => "Switchpoint",
+                ProviderName.Tenstorrent => "Tenstorrent",
                 ProviderName.Together => "Together",
                 ProviderName.Upstage => "Upstage",
                 ProviderName.Venice => "Venice",
@@ -540,6 +545,7 @@ namespace OpenRouter
                 "StepFun" => ProviderName.StepFun,
                 "StreamLake" => ProviderName.StreamLake,
                 "Switchpoint" => ProviderName.Switchpoint,
+                "Tenstorrent" => ProviderName.Tenstorrent,
                 "Together" => ProviderName.Together,
                 "Upstage" => ProviderName.Upstage,
                 "Venice" => ProviderName.Venice,
