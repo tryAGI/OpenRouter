@@ -311,6 +311,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Tenstorrent,
+        /// <summary>
+        /// 
+        /// </summary>
         Together,
         /// <summary>
         /// 
@@ -429,6 +433,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Stepfun => "stepfun",
                 BYOKProviderSlug.Streamlake => "streamlake",
                 BYOKProviderSlug.Switchpoint => "switchpoint",
+                BYOKProviderSlug.Tenstorrent => "tenstorrent",
                 BYOKProviderSlug.Together => "together",
                 BYOKProviderSlug.Upstage => "upstage",
                 BYOKProviderSlug.Venice => "venice",
@@ -522,6 +527,7 @@ namespace OpenRouter
                 "stepfun" => BYOKProviderSlug.Stepfun,
                 "streamlake" => BYOKProviderSlug.Streamlake,
                 "switchpoint" => BYOKProviderSlug.Switchpoint,
+                "tenstorrent" => BYOKProviderSlug.Tenstorrent,
                 "together" => BYOKProviderSlug.Together,
                 "upstage" => BYOKProviderSlug.Upstage,
                 "venice" => BYOKProviderSlug.Venice,

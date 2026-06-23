@@ -641,6 +641,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tenstorrent")]
+        public object? Tenstorrent { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("together")]
         public object? Together { get; set; }
 
@@ -812,6 +818,7 @@ namespace OpenRouter
         /// <param name="streamlake"></param>
         /// <param name="switchpoint"></param>
         /// <param name="targon"></param>
+        /// <param name="tenstorrent"></param>
         /// <param name="together"></param>
         /// <param name="togetherLite"></param>
         /// <param name="ubicloud"></param>
@@ -931,6 +938,7 @@ namespace OpenRouter
             object? streamlake,
             object? switchpoint,
             object? targon,
+            object? tenstorrent,
             object? together,
             object? togetherLite,
             object? ubicloud,
@@ -1047,6 +1055,7 @@ namespace OpenRouter
             this.Streamlake = streamlake;
             this.Switchpoint = switchpoint;
             this.Targon = targon;
+            this.Tenstorrent = tenstorrent;
             this.Together = together;
             this.TogetherLite = togetherLite;
             this.Ubicloud = ubicloud;

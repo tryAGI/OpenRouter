@@ -11373,6 +11373,7 @@
           "Stealth",
           "StreamLake",
           "Switchpoint",
+          "Tenstorrent",
           "Together",
           "Upstage",
           "Venice",
@@ -18912,6 +18913,12 @@
               "description": "Any type"
             }
           },
+          "tenstorrent": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "together": {
             "type": "object",
             "additionalProperties": {
@@ -20455,6 +20462,12 @@
               "description": "Any type"
             }
           },
+          "tenstorrent": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "together": {
             "type": "object",
             "additionalProperties": {
@@ -21507,6 +21520,7 @@
           "stepfun",
           "streamlake",
           "switchpoint",
+          "tenstorrent",
           "together",
           "upstage",
           "venice",
@@ -21597,6 +21611,7 @@
           "stepfun",
           "streamlake",
           "switchpoint",
+          "tenstorrent",
           "together",
           "upstage",
           "venice",
@@ -26514,6 +26529,7 @@
           "Stealth",
           "StreamLake",
           "Switchpoint",
+          "Tenstorrent",
           "Together",
           "Upstage",
           "Venice",
@@ -42222,6 +42238,12 @@
             }
           },
           "targon": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "tenstorrent": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"

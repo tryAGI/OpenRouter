@@ -431,6 +431,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Tenstorrent,
+        /// <summary>
+        /// 
+        /// </summary>
         Together,
         /// <summary>
         /// 
@@ -587,6 +591,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.StreamLake => "StreamLake",
                 ProviderResponseProviderName.Switchpoint => "Switchpoint",
                 ProviderResponseProviderName.Targon => "Targon",
+                ProviderResponseProviderName.Tenstorrent => "Tenstorrent",
                 ProviderResponseProviderName.Together => "Together",
                 ProviderResponseProviderName.Together2 => "Together 2",
                 ProviderResponseProviderName.Ubicloud => "Ubicloud",
@@ -712,6 +717,7 @@ namespace OpenRouter
                 "StreamLake" => ProviderResponseProviderName.StreamLake,
                 "Switchpoint" => ProviderResponseProviderName.Switchpoint,
                 "Targon" => ProviderResponseProviderName.Targon,
+                "Tenstorrent" => ProviderResponseProviderName.Tenstorrent,
                 "Together" => ProviderResponseProviderName.Together,
                 "Together 2" => ProviderResponseProviderName.Together2,
                 "Ubicloud" => ProviderResponseProviderName.Ubicloud,
