@@ -171,6 +171,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        InferactVLLM,
+        /// <summary>
+        /// 
+        /// </summary>
         InferenceNet,
         /// <summary>
         /// 
@@ -414,6 +418,7 @@ namespace OpenRouter
                 ProviderName.Groq => "Groq",
                 ProviderName.Inception => "Inception",
                 ProviderName.Inceptron => "Inceptron",
+                ProviderName.InferactVLLM => "Inferact vLLM",
                 ProviderName.InferenceNet => "InferenceNet",
                 ProviderName.Infermatic => "Infermatic",
                 ProviderName.Inflection => "Inflection",
@@ -512,6 +517,7 @@ namespace OpenRouter
                 "Groq" => ProviderName.Groq,
                 "Inception" => ProviderName.Inception,
                 "Inceptron" => ProviderName.Inceptron,
+                "Inferact vLLM" => ProviderName.InferactVLLM,
                 "InferenceNet" => ProviderName.InferenceNet,
                 "Infermatic" => ProviderName.Infermatic,
                 "Inflection" => ProviderName.Inflection,

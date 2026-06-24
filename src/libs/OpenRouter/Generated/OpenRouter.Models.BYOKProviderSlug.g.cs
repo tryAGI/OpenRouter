@@ -163,6 +163,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        InferactVllm,
+        /// <summary>
+        /// 
+        /// </summary>
         InferenceNet,
         /// <summary>
         /// 
@@ -400,6 +404,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Groq => "groq",
                 BYOKProviderSlug.Inception => "inception",
                 BYOKProviderSlug.Inceptron => "inceptron",
+                BYOKProviderSlug.InferactVllm => "inferact-vllm",
                 BYOKProviderSlug.InferenceNet => "inference-net",
                 BYOKProviderSlug.Infermatic => "infermatic",
                 BYOKProviderSlug.Inflection => "inflection",
@@ -495,6 +500,7 @@ namespace OpenRouter
                 "groq" => BYOKProviderSlug.Groq,
                 "inception" => BYOKProviderSlug.Inception,
                 "inceptron" => BYOKProviderSlug.Inceptron,
+                "inferact-vllm" => BYOKProviderSlug.InferactVllm,
                 "inference-net" => BYOKProviderSlug.InferenceNet,
                 "infermatic" => BYOKProviderSlug.Infermatic,
                 "inflection" => BYOKProviderSlug.Inflection,

@@ -163,6 +163,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        InferactVllm,
+        /// <summary>
+        /// 
+        /// </summary>
         InferenceNet,
         /// <summary>
         /// 
@@ -400,6 +404,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Groq => "groq",
                 ByokGetParametersProvider.Inception => "inception",
                 ByokGetParametersProvider.Inceptron => "inceptron",
+                ByokGetParametersProvider.InferactVllm => "inferact-vllm",
                 ByokGetParametersProvider.InferenceNet => "inference-net",
                 ByokGetParametersProvider.Infermatic => "infermatic",
                 ByokGetParametersProvider.Inflection => "inflection",
@@ -495,6 +500,7 @@ namespace OpenRouter
                 "groq" => ByokGetParametersProvider.Groq,
                 "inception" => ByokGetParametersProvider.Inception,
                 "inceptron" => ByokGetParametersProvider.Inceptron,
+                "inferact-vllm" => ByokGetParametersProvider.InferactVllm,
                 "inference-net" => ByokGetParametersProvider.InferenceNet,
                 "infermatic" => ByokGetParametersProvider.Infermatic,
                 "inflection" => ByokGetParametersProvider.Inflection,

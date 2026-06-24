@@ -311,6 +311,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inferact-vllm")]
+        public object? InferactVllm { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference-net")]
         public object? InferenceNet { get; set; }
 
@@ -769,6 +775,7 @@ namespace OpenRouter
         /// <param name="hyperbolicQuantized"></param>
         /// <param name="inception"></param>
         /// <param name="inceptron"></param>
+        /// <param name="inferactVllm"></param>
         /// <param name="inferenceNet"></param>
         /// <param name="infermatic"></param>
         /// <param name="inflection"></param>
@@ -890,6 +897,7 @@ namespace OpenRouter
             object? hyperbolicQuantized,
             object? inception,
             object? inceptron,
+            object? inferactVllm,
             object? inferenceNet,
             object? infermatic,
             object? inflection,
@@ -1008,6 +1016,7 @@ namespace OpenRouter
             this.HyperbolicQuantized = hyperbolicQuantized;
             this.Inception = inception;
             this.Inceptron = inceptron;
+            this.InferactVllm = inferactVllm;
             this.InferenceNet = inferenceNet;
             this.Infermatic = infermatic;
             this.Inflection = inflection;
