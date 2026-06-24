@@ -10777,7 +10777,8 @@
         "type": "string",
         "enum": [
           "general-high",
-          "general-budget"
+          "general-budget",
+          "general-fast"
         ],
         "description": "A curated OpenRouter fusion preset (slugs follow `<task>-<tier>`, e.g. `general-high`). Expands server-side into the preset's analysis_models panel and judge model, so callers never name individual models. Explicitly provided `analysis_models` / `model` take precedence.",
         "title": "ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset"
@@ -11339,6 +11340,7 @@
           "Ionstream",
           "Infermatic",
           "Io Net",
+          "Inferact vLLM",
           "Inflection",
           "Liquid",
           "Mara",
@@ -18584,6 +18586,12 @@
               "description": "Any type"
             }
           },
+          "inferact-vllm": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "inference-net": {
             "type": "object",
             "additionalProperties": {
@@ -20139,6 +20147,12 @@
               "description": "Any type"
             }
           },
+          "inferact-vllm": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "inference-net": {
             "type": "object",
             "additionalProperties": {
@@ -21496,6 +21510,7 @@
           "groq",
           "inception",
           "inceptron",
+          "inferact-vllm",
           "inference-net",
           "infermatic",
           "inflection",
@@ -21588,6 +21603,7 @@
           "groq",
           "inception",
           "inceptron",
+          "inferact-vllm",
           "inference-net",
           "infermatic",
           "inflection",
@@ -26510,6 +26526,7 @@
           "Ionstream",
           "Infermatic",
           "Io Net",
+          "Inferact vLLM",
           "Inflection",
           "Liquid",
           "Mara",
@@ -41926,6 +41943,12 @@
             }
           },
           "inceptron": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "inferact-vllm": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"

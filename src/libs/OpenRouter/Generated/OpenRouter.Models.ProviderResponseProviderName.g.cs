@@ -211,6 +211,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        InferactVLLM,
+        /// <summary>
+        /// 
+        /// </summary>
         InferenceNet,
         /// <summary>
         /// 
@@ -540,6 +544,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Hyperbolic2 => "Hyperbolic 2",
                 ProviderResponseProviderName.Inception => "Inception",
                 ProviderResponseProviderName.Inceptron => "Inceptron",
+                ProviderResponseProviderName.InferactVLLM => "Inferact vLLM",
                 ProviderResponseProviderName.InferenceNet => "InferenceNet",
                 ProviderResponseProviderName.Infermatic => "Infermatic",
                 ProviderResponseProviderName.Inflection => "Inflection",
@@ -667,6 +672,7 @@ namespace OpenRouter
                 "Hyperbolic 2" => ProviderResponseProviderName.Hyperbolic2,
                 "Inception" => ProviderResponseProviderName.Inception,
                 "Inceptron" => ProviderResponseProviderName.Inceptron,
+                "Inferact vLLM" => ProviderResponseProviderName.InferactVLLM,
                 "InferenceNet" => ProviderResponseProviderName.InferenceNet,
                 "Infermatic" => ProviderResponseProviderName.Infermatic,
                 "Inflection" => ProviderResponseProviderName.Inflection,

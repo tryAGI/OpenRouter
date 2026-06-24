@@ -15,6 +15,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        GeneralFast,
+        /// <summary>
+        /// 
+        /// </summary>
         GeneralHigh,
     }
 
@@ -31,6 +35,7 @@ namespace OpenRouter
             return value switch
             {
                 ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset.GeneralBudget => "general-budget",
+                ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset.GeneralFast => "general-fast",
                 ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset.GeneralHigh => "general-high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace OpenRouter
             return value switch
             {
                 "general-budget" => ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset.GeneralBudget,
+                "general-fast" => ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset.GeneralFast,
                 "general-high" => ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset.GeneralHigh,
                 _ => null,
             };
