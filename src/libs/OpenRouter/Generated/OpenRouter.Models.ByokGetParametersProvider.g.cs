@@ -283,6 +283,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        SakanaAi,
+        /// <summary>
+        /// 
+        /// </summary>
         Sambanova,
         /// <summary>
         /// 
@@ -426,6 +430,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Recraft => "recraft",
                 ByokGetParametersProvider.Reka => "reka",
                 ByokGetParametersProvider.Relace => "relace",
+                ByokGetParametersProvider.SakanaAi => "sakana-ai",
                 ByokGetParametersProvider.Sambanova => "sambanova",
                 ByokGetParametersProvider.Seed => "seed",
                 ByokGetParametersProvider.Siliconflow => "siliconflow",
@@ -520,6 +525,7 @@ namespace OpenRouter
                 "recraft" => ByokGetParametersProvider.Recraft,
                 "reka" => ByokGetParametersProvider.Reka,
                 "relace" => ByokGetParametersProvider.Relace,
+                "sakana-ai" => ByokGetParametersProvider.SakanaAi,
                 "sambanova" => ByokGetParametersProvider.Sambanova,
                 "seed" => ByokGetParametersProvider.Seed,
                 "siliconflow" => ByokGetParametersProvider.Siliconflow,

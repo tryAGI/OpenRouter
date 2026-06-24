@@ -575,6 +575,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sakana-ai")]
+        public object? SakanaAi { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sambanova")]
         public object? Sambanova { get; set; }
 
@@ -807,6 +813,7 @@ namespace OpenRouter
         /// <param name="reka"></param>
         /// <param name="relace"></param>
         /// <param name="replicate"></param>
+        /// <param name="sakanaAi"></param>
         /// <param name="sambanova"></param>
         /// <param name="sambanovaCloaked"></param>
         /// <param name="seed"></param>
@@ -927,6 +934,7 @@ namespace OpenRouter
             object? reka,
             object? relace,
             object? replicate,
+            object? sakanaAi,
             object? sambanova,
             object? sambanovaCloaked,
             object? seed,
@@ -1044,6 +1052,7 @@ namespace OpenRouter
             this.Reka = reka;
             this.Relace = relace;
             this.Replicate = replicate;
+            this.SakanaAi = sakanaAi;
             this.Sambanova = sambanova;
             this.SambanovaCloaked = sambanovaCloaked;
             this.Seed = seed;

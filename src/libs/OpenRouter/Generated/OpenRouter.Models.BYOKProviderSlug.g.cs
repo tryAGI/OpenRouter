@@ -283,6 +283,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        SakanaAi,
+        /// <summary>
+        /// 
+        /// </summary>
         Sambanova,
         /// <summary>
         /// 
@@ -426,6 +430,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Recraft => "recraft",
                 BYOKProviderSlug.Reka => "reka",
                 BYOKProviderSlug.Relace => "relace",
+                BYOKProviderSlug.SakanaAi => "sakana-ai",
                 BYOKProviderSlug.Sambanova => "sambanova",
                 BYOKProviderSlug.Seed => "seed",
                 BYOKProviderSlug.Siliconflow => "siliconflow",
@@ -520,6 +525,7 @@ namespace OpenRouter
                 "recraft" => BYOKProviderSlug.Recraft,
                 "reka" => BYOKProviderSlug.Reka,
                 "relace" => BYOKProviderSlug.Relace,
+                "sakana-ai" => BYOKProviderSlug.SakanaAi,
                 "sambanova" => BYOKProviderSlug.Sambanova,
                 "seed" => BYOKProviderSlug.Seed,
                 "siliconflow" => BYOKProviderSlug.Siliconflow,
