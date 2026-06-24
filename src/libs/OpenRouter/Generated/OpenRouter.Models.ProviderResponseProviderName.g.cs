@@ -391,6 +391,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        SakanaAi,
+        /// <summary>
+        /// 
+        /// </summary>
         SambaNova,
         /// <summary>
         /// 
@@ -581,6 +585,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Relace => "Relace",
                 ProviderResponseProviderName.Replicate => "Replicate",
                 ProviderResponseProviderName.SfCompute => "SF Compute",
+                ProviderResponseProviderName.SakanaAi => "Sakana AI",
                 ProviderResponseProviderName.SambaNova => "SambaNova",
                 ProviderResponseProviderName.SambaNova2 => "SambaNova 2",
                 ProviderResponseProviderName.Seed => "Seed",
@@ -707,6 +712,7 @@ namespace OpenRouter
                 "Relace" => ProviderResponseProviderName.Relace,
                 "Replicate" => ProviderResponseProviderName.Replicate,
                 "SF Compute" => ProviderResponseProviderName.SfCompute,
+                "Sakana AI" => ProviderResponseProviderName.SakanaAi,
                 "SambaNova" => ProviderResponseProviderName.SambaNova,
                 "SambaNova 2" => ProviderResponseProviderName.SambaNova2,
                 "Seed" => ProviderResponseProviderName.Seed,

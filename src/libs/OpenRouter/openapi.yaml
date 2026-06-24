@@ -11365,6 +11365,7 @@
           "Recraft",
           "Reka",
           "Relace",
+          "Sakana AI",
           "SambaNova",
           "Seed",
           "SiliconFlow",
@@ -13681,7 +13682,7 @@
           "temperature": {
             "type": "number",
             "format": "double",
-            "description": "Sampling temperature forwarded to panelist and judge inner calls. When omitted, the provider's default applies."
+            "description": "Temperature forwarded to panelist inner calls. The judge always runs at temperature 0 regardless of this value. When omitted, the provider's default applies."
           },
           "tools": {
             "type": "array",
@@ -18847,6 +18848,12 @@
               "description": "Any type"
             }
           },
+          "sakana-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "sambanova": {
             "type": "object",
             "additionalProperties": {
@@ -20396,6 +20403,12 @@
               "description": "Any type"
             }
           },
+          "sakana-ai": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "sambanova": {
             "type": "object",
             "additionalProperties": {
@@ -21513,6 +21526,7 @@
           "recraft",
           "reka",
           "relace",
+          "sakana-ai",
           "sambanova",
           "seed",
           "siliconflow",
@@ -21604,6 +21618,7 @@
           "recraft",
           "reka",
           "relace",
+          "sakana-ai",
           "sambanova",
           "seed",
           "siliconflow",
@@ -26521,6 +26536,7 @@
           "Recraft",
           "Reka",
           "Relace",
+          "Sakana AI",
           "SambaNova",
           "Seed",
           "SiliconFlow",
@@ -42172,6 +42188,12 @@
             }
           },
           "replicate": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "sakana-ai": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"

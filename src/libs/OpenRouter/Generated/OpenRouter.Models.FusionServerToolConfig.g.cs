@@ -45,7 +45,7 @@ namespace OpenRouter
         public global::OpenRouter.FusionServerToolConfigReasoning? Reasoning { get; set; }
 
         /// <summary>
-        /// Sampling temperature forwarded to panelist and judge inner calls. When omitted, the provider's default applies.
+        /// Temperature forwarded to panelist inner calls. The judge always runs at temperature 0 regardless of this value. When omitted, the provider's default applies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
@@ -84,7 +84,7 @@ namespace OpenRouter
         /// Reasoning configuration forwarded to panelist and judge inner calls. Use this to control reasoning effort and token budget for models that support extended thinking.
         /// </param>
         /// <param name="temperature">
-        /// Sampling temperature forwarded to panelist and judge inner calls. When omitted, the provider's default applies.
+        /// Temperature forwarded to panelist inner calls. The judge always runs at temperature 0 regardless of this value. When omitted, the provider's default applies.
         /// </param>
         /// <param name="tools">
         /// Server tools available to panelist and judge inner calls. Each entry uses the same `{ type, parameters? }` shorthand as the outer Chat Completions request. When omitted, defaults to `[{ type: "openrouter:web_search" }, { type: "openrouter:web_fetch" }]`. Pass an empty array to disable tools entirely (panelists answer from parametric knowledge only).

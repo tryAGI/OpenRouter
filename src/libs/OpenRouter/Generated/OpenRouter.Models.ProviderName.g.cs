@@ -291,6 +291,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        SakanaAi,
+        /// <summary>
+        /// 
+        /// </summary>
         SambaNova,
         /// <summary>
         /// 
@@ -440,6 +444,7 @@ namespace OpenRouter
                 ProviderName.Recraft => "Recraft",
                 ProviderName.Reka => "Reka",
                 ProviderName.Relace => "Relace",
+                ProviderName.SakanaAi => "Sakana AI",
                 ProviderName.SambaNova => "SambaNova",
                 ProviderName.Seed => "Seed",
                 ProviderName.SiliconFlow => "SiliconFlow",
@@ -537,6 +542,7 @@ namespace OpenRouter
                 "Recraft" => ProviderName.Recraft,
                 "Reka" => ProviderName.Reka,
                 "Relace" => ProviderName.Relace,
+                "Sakana AI" => ProviderName.SakanaAi,
                 "SambaNova" => ProviderName.SambaNova,
                 "Seed" => ProviderName.Seed,
                 "SiliconFlow" => ProviderName.SiliconFlow,
