@@ -155,6 +155,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Heygen,
+        /// <summary>
+        /// 
+        /// </summary>
         Inception,
         /// <summary>
         /// 
@@ -402,6 +406,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.GoogleAiStudio => "google-ai-studio",
                 ByokGetParametersProvider.GoogleVertex => "google-vertex",
                 ByokGetParametersProvider.Groq => "groq",
+                ByokGetParametersProvider.Heygen => "heygen",
                 ByokGetParametersProvider.Inception => "inception",
                 ByokGetParametersProvider.Inceptron => "inceptron",
                 ByokGetParametersProvider.InferactVllm => "inferact-vllm",
@@ -498,6 +503,7 @@ namespace OpenRouter
                 "google-ai-studio" => ByokGetParametersProvider.GoogleAiStudio,
                 "google-vertex" => ByokGetParametersProvider.GoogleVertex,
                 "groq" => ByokGetParametersProvider.Groq,
+                "heygen" => ByokGetParametersProvider.Heygen,
                 "inception" => ByokGetParametersProvider.Inception,
                 "inceptron" => ByokGetParametersProvider.Inceptron,
                 "inferact-vllm" => ByokGetParametersProvider.InferactVllm,

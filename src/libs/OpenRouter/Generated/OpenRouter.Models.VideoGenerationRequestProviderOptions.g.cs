@@ -281,6 +281,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("heygen")]
+        public object? Heygen { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("huggingface")]
         public object? Huggingface { get; set; }
 
@@ -770,6 +776,7 @@ namespace OpenRouter
         /// <param name="googleVertex"></param>
         /// <param name="gopomelo"></param>
         /// <param name="groq"></param>
+        /// <param name="heygen"></param>
         /// <param name="huggingface"></param>
         /// <param name="hyperbolic"></param>
         /// <param name="hyperbolicQuantized"></param>
@@ -892,6 +899,7 @@ namespace OpenRouter
             object? googleVertex,
             object? gopomelo,
             object? groq,
+            object? heygen,
             object? huggingface,
             object? hyperbolic,
             object? hyperbolicQuantized,
@@ -1011,6 +1019,7 @@ namespace OpenRouter
             this.GoogleVertex = googleVertex;
             this.Gopomelo = gopomelo;
             this.Groq = groq;
+            this.Heygen = heygen;
             this.Huggingface = huggingface;
             this.Hyperbolic = hyperbolic;
             this.HyperbolicQuantized = hyperbolicQuantized;

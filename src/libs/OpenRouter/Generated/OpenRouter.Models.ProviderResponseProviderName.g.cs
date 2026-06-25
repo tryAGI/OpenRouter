@@ -191,6 +191,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        HeyGen,
+        /// <summary>
+        /// 
+        /// </summary>
         HuggingFace,
         /// <summary>
         /// 
@@ -539,6 +543,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Google => "Google",
                 ProviderResponseProviderName.GoogleAiStudio => "Google AI Studio",
                 ProviderResponseProviderName.Groq => "Groq",
+                ProviderResponseProviderName.HeyGen => "HeyGen",
                 ProviderResponseProviderName.HuggingFace => "HuggingFace",
                 ProviderResponseProviderName.Hyperbolic => "Hyperbolic",
                 ProviderResponseProviderName.Hyperbolic2 => "Hyperbolic 2",
@@ -667,6 +672,7 @@ namespace OpenRouter
                 "Google" => ProviderResponseProviderName.Google,
                 "Google AI Studio" => ProviderResponseProviderName.GoogleAiStudio,
                 "Groq" => ProviderResponseProviderName.Groq,
+                "HeyGen" => ProviderResponseProviderName.HeyGen,
                 "HuggingFace" => ProviderResponseProviderName.HuggingFace,
                 "Hyperbolic" => ProviderResponseProviderName.Hyperbolic,
                 "Hyperbolic 2" => ProviderResponseProviderName.Hyperbolic2,

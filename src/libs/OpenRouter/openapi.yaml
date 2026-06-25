@@ -11334,6 +11334,7 @@
           "Google",
           "Google AI Studio",
           "Groq",
+          "HeyGen",
           "Inception",
           "Inceptron",
           "InferenceNet",
@@ -18556,6 +18557,12 @@
               "description": "Any type"
             }
           },
+          "heygen": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "huggingface": {
             "type": "object",
             "additionalProperties": {
@@ -20117,6 +20124,12 @@
               "description": "Any type"
             }
           },
+          "heygen": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "huggingface": {
             "type": "object",
             "additionalProperties": {
@@ -21508,6 +21521,7 @@
           "google-ai-studio",
           "google-vertex",
           "groq",
+          "heygen",
           "inception",
           "inceptron",
           "inferact-vllm",
@@ -21601,6 +21615,7 @@
           "google-ai-studio",
           "google-vertex",
           "groq",
+          "heygen",
           "inception",
           "inceptron",
           "inferact-vllm",
@@ -26520,6 +26535,7 @@
           "Google",
           "Google AI Studio",
           "Groq",
+          "HeyGen",
           "Inception",
           "Inceptron",
           "InferenceNet",
@@ -41913,6 +41929,12 @@
             }
           },
           "groq": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "heygen": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"

@@ -163,6 +163,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        HeyGen,
+        /// <summary>
+        /// 
+        /// </summary>
         Inception,
         /// <summary>
         /// 
@@ -416,6 +420,7 @@ namespace OpenRouter
                 ProviderName.Google => "Google",
                 ProviderName.GoogleAiStudio => "Google AI Studio",
                 ProviderName.Groq => "Groq",
+                ProviderName.HeyGen => "HeyGen",
                 ProviderName.Inception => "Inception",
                 ProviderName.Inceptron => "Inceptron",
                 ProviderName.InferactVLLM => "Inferact vLLM",
@@ -515,6 +520,7 @@ namespace OpenRouter
                 "Google" => ProviderName.Google,
                 "Google AI Studio" => ProviderName.GoogleAiStudio,
                 "Groq" => ProviderName.Groq,
+                "HeyGen" => ProviderName.HeyGen,
                 "Inception" => ProviderName.Inception,
                 "Inceptron" => ProviderName.Inceptron,
                 "Inferact vLLM" => ProviderName.InferactVLLM,
