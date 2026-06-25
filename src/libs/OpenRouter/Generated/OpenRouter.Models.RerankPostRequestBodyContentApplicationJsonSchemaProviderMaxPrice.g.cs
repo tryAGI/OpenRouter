@@ -9,31 +9,31 @@ namespace OpenRouter
     public sealed partial class RerankPostRequestBodyContentApplicationJsonSchemaProviderMaxPrice
     {
         /// <summary>
-        /// Price per million prompt tokens
+        /// Maximum price in USD per audio unit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         public string? Audio { get; set; }
 
         /// <summary>
-        /// Price per million prompt tokens
+        /// Maximum price in USD per million completion tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion")]
         public string? Completion { get; set; }
 
         /// <summary>
-        /// Price per million prompt tokens
+        /// Maximum price in USD per image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         public string? Image { get; set; }
 
         /// <summary>
-        /// Price per million prompt tokens
+        /// Maximum price in USD per million prompt tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// Price per million prompt tokens
+        /// Maximum price in USD per request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request")]
         public string? Request { get; set; }
@@ -48,19 +48,19 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="RerankPostRequestBodyContentApplicationJsonSchemaProviderMaxPrice" /> class.
         /// </summary>
         /// <param name="audio">
-        /// Price per million prompt tokens
+        /// Maximum price in USD per audio unit
         /// </param>
         /// <param name="completion">
-        /// Price per million prompt tokens
+        /// Maximum price in USD per million completion tokens
         /// </param>
         /// <param name="image">
-        /// Price per million prompt tokens
+        /// Maximum price in USD per image
         /// </param>
         /// <param name="prompt">
-        /// Price per million prompt tokens
+        /// Maximum price in USD per million prompt tokens
         /// </param>
         /// <param name="request">
-        /// Price per million prompt tokens
+        /// Maximum price in USD per request
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
