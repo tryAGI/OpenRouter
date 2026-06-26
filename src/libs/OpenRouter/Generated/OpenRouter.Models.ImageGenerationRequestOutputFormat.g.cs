@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Encoding of the returned image bytes.
+    /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.
     /// </summary>
     public enum ImageGenerationRequestOutputFormat
     {
@@ -16,6 +16,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Png,
+        /// <summary>
+        /// 
+        /// </summary>
+        Svg,
         /// <summary>
         /// 
         /// </summary>
@@ -36,6 +40,7 @@ namespace OpenRouter
             {
                 ImageGenerationRequestOutputFormat.Jpeg => "jpeg",
                 ImageGenerationRequestOutputFormat.Png => "png",
+                ImageGenerationRequestOutputFormat.Svg => "svg",
                 ImageGenerationRequestOutputFormat.Webp => "webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace OpenRouter
             {
                 "jpeg" => ImageGenerationRequestOutputFormat.Jpeg,
                 "png" => ImageGenerationRequestOutputFormat.Png,
+                "svg" => ImageGenerationRequestOutputFormat.Svg,
                 "webp" => ImageGenerationRequestOutputFormat.Webp,
                 _ => null,
             };

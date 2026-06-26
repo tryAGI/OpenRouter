@@ -752,7 +752,7 @@ namespace OpenRouter
         /// Compression level (0-100) for webp/jpeg output. Ignored for png and by providers without a compression knob.
         /// </param>
         /// <param name="outputFormat">
-        /// Encoding of the returned image bytes.
+        /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.
         /// </param>
         /// <param name="prompt">
         /// Text description of the desired image
