@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Create a new API key<br/>
-        /// Create a new API key for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a new API key for the authenticated user. The plaintext `key` is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new API key<br/>
-        /// Create a new API key for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a new API key for the authenticated user. The plaintext `key` is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,7 +32,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new API key<br/>
-        /// Create a new API key for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Create a new API key for the authenticated user. The plaintext `key` is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="creatorUserId">
         /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
