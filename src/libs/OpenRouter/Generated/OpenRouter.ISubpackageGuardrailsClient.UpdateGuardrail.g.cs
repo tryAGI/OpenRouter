@@ -6,7 +6,7 @@ namespace OpenRouter
     {
         /// <summary>
         /// Update a guardrail<br/>
-        /// Update an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update an existing guardrail. Collection fields use replace semantics: send the full desired set on every update. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -21,7 +21,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a guardrail<br/>
-        /// Update an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update an existing guardrail. Collection fields use replace semantics: send the full desired set on every update. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -36,7 +36,7 @@ namespace OpenRouter
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a guardrail<br/>
-        /// Update an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update an existing guardrail. Collection fields use replace semantics: send the full desired set on every update. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="allowedModels">

@@ -1280,7 +1280,7 @@
       "post": {
         "operationId": "create-byok-key",
         "summary": "Create a BYOK provider credential",
-        "description": "Create a new bring-your-own-key (BYOK) provider credential. The raw key is encrypted at rest and never returned in API responses. Defaults to the authenticated entity's default workspace; use the `workspace_id` body field to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Create a new bring-your-own-key (BYOK) provider credential. The raw key is encrypted at rest and never returned in API responses. Defaults to the authenticated entity's default workspace; use the `workspace_id` body field to scope to a different workspace. Treat the raw key as write-only; it is never returned after creation. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
           "subpackage_byok"
         ],
@@ -3247,7 +3247,7 @@
       "patch": {
         "operationId": "update-guardrail",
         "summary": "Update a guardrail",
-        "description": "Update an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Update an existing guardrail. Collection fields use replace semantics: send the full desired set on every update. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
           "subpackage_guardrails"
         ],
@@ -3410,7 +3410,7 @@
       "post": {
         "operationId": "bulk-assign-keys-to-guardrail",
         "summary": "Bulk assign keys to a guardrail",
-        "description": "Assign multiple API keys to a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
           "subpackage_guardrails"
         ],
@@ -4069,7 +4069,7 @@
       "post": {
         "operationId": "create-keys",
         "summary": "Create a new API key",
-        "description": "Create a new API key for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Create a new API key for the authenticated user. The plaintext `key` is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
           "subpackage_apiKeys"
         ],
@@ -6365,7 +6365,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Video content stream",
+            "description": "Video content stream. The body is the raw video bytes proxied from the upstream provider, and the Content-Type reflects the provider media type (video/mp4).",
             "content": {
               "application/octet-stream": {
                 "schema": {
@@ -6668,7 +6668,7 @@
       "delete": {
         "operationId": "delete-workspace",
         "summary": "Delete a workspace",
-        "description": "Delete an existing workspace. The default workspace cannot be deleted. Workspaces with active API keys cannot be deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
+        "description": "Delete an existing workspace. The default workspace cannot be deleted. Workspaces with active API keys cannot be deleted; remove the keys first. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
           "subpackage_workspaces"
         ],
@@ -19113,6 +19113,10 @@
           "b64_json": {
             "type": "string",
             "description": "Base64-encoded image bytes"
+          },
+          "media_type": {
+            "type": "string",
+            "description": "Media type (MIME type) of the image. Omitted when the output is a standard raster format (PNG). Present for non-raster outputs such as SVG (`image/svg+xml`)."
           }
         },
         "required": [

@@ -16,6 +16,12 @@ namespace OpenRouter
         public required string B64Json { get; set; }
 
         /// <summary>
+        /// Media type (MIME type) of the image. Omitted when the output is a standard raster format (PNG). Present for non-raster outputs such as SVG (`image/svg+xml`).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
+        public string? MediaType { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -27,13 +33,18 @@ namespace OpenRouter
         /// <param name="b64Json">
         /// Base64-encoded image bytes
         /// </param>
+        /// <param name="mediaType">
+        /// Media type (MIME type) of the image. Omitted when the output is a standard raster format (PNG). Present for non-raster outputs such as SVG (`image/svg+xml`).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageGenerationResponseDataItems(
-            string b64Json)
+            string b64Json,
+            string? mediaType)
         {
             this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
+            this.MediaType = mediaType;
         }
 
         /// <summary>
