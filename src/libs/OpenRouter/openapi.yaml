@@ -25719,7 +25719,11 @@
           },
           "input_cache_write": {
             "type": "string",
-            "description": "Price in USD per cached input token (write)"
+            "description": "Price per cache-write token, in USD per token. For providers with multiple cache TTLs (e.g. Anthropic), this is the default (5-minute) cache-write rate."
+          },
+          "input_cache_write_1h": {
+            "type": "string",
+            "description": "Price per 1-hour cache-write token, in USD per token. Only present for providers that price an extended (1-hour) cache TTL separately, such as Anthropic."
           },
           "internal_reasoning": {
             "type": "string",
@@ -26046,7 +26050,11 @@
           },
           "input_cache_write": {
             "type": "string",
-            "description": "Price in USD per cached input token (write)"
+            "description": "Price per cache-write token, in USD per token. For providers with multiple cache TTLs (e.g. Anthropic), this is the default (5-minute) cache-write rate."
+          },
+          "input_cache_write_1h": {
+            "type": "string",
+            "description": "Price per 1-hour cache-write token, in USD per token. Only present for providers that price an extended (1-hour) cache TTL separately, such as Anthropic."
           },
           "internal_reasoning": {
             "type": "string",
