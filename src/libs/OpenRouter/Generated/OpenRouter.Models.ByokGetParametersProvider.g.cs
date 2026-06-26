@@ -279,6 +279,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Quiver,
+        /// <summary>
+        /// 
+        /// </summary>
         Recraft,
         /// <summary>
         /// 
@@ -437,6 +441,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Perplexity => "perplexity",
                 ByokGetParametersProvider.Phala => "phala",
                 ByokGetParametersProvider.Poolside => "poolside",
+                ByokGetParametersProvider.Quiver => "quiver",
                 ByokGetParametersProvider.Recraft => "recraft",
                 ByokGetParametersProvider.Reka => "reka",
                 ByokGetParametersProvider.Relace => "relace",
@@ -534,6 +539,7 @@ namespace OpenRouter
                 "perplexity" => ByokGetParametersProvider.Perplexity,
                 "phala" => ByokGetParametersProvider.Phala,
                 "poolside" => ByokGetParametersProvider.Poolside,
+                "quiver" => ByokGetParametersProvider.Quiver,
                 "recraft" => ByokGetParametersProvider.Recraft,
                 "reka" => ByokGetParametersProvider.Reka,
                 "relace" => ByokGetParametersProvider.Relace,

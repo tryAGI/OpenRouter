@@ -11383,6 +11383,7 @@
           "Venice",
           "Wafer",
           "WandB",
+          "Quiver",
           "Xiaomi",
           "xAI",
           "Z.AI",
@@ -18279,9 +18280,10 @@
         "enum": [
           "png",
           "jpeg",
-          "webp"
+          "webp",
+          "svg"
         ],
-        "description": "Encoding of the returned image bytes.",
+        "description": "Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.",
         "title": "ImageGenerationRequestOutputFormat"
       },
       "ImageGenerationRequestProviderOptions": {
@@ -18827,6 +18829,12 @@
               "description": "Any type"
             }
           },
+          "quiver": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "recraft": {
             "type": "object",
             "additionalProperties": {
@@ -19069,7 +19077,7 @@
           },
           "output_format": {
             "$ref": "#/components/schemas/ImageGenerationRequestOutputFormat",
-            "description": "Encoding of the returned image bytes."
+            "description": "Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`."
           },
           "prompt": {
             "type": "string",
@@ -20398,6 +20406,12 @@
               "description": "Any type"
             }
           },
+          "quiver": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
           "recraft": {
             "type": "object",
             "additionalProperties": {
@@ -21556,6 +21570,7 @@
           "perplexity",
           "phala",
           "poolside",
+          "quiver",
           "recraft",
           "reka",
           "relace",
@@ -21650,6 +21665,7 @@
           "perplexity",
           "phala",
           "poolside",
+          "quiver",
           "recraft",
           "reka",
           "relace",
@@ -26629,6 +26645,7 @@
           "Venice",
           "Wafer",
           "WandB",
+          "Quiver",
           "Xiaomi",
           "xAI",
           "Z.AI",
@@ -42249,6 +42266,12 @@
             }
           },
           "poolside": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "quiver": {
             "type": "object",
             "additionalProperties": {
               "description": "Any type"
