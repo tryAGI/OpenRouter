@@ -64,10 +64,16 @@ namespace OpenRouter
         public string? InputCacheRead { get; set; }
 
         /// <summary>
-        /// Price in USD per cached input token (write)
+        /// Price per cache-write token, in USD per token. For providers with multiple cache TTLs (e.g. Anthropic), this is the default (5-minute) cache-write rate.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write")]
         public string? InputCacheWrite { get; set; }
+
+        /// <summary>
+        /// Price per 1-hour cache-write token, in USD per token. Only present for providers that price an extended (1-hour) cache TTL separately, such as Anthropic.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write_1h")]
+        public string? InputCacheWrite1h { get; set; }
 
         /// <summary>
         /// Price in USD per internal reasoning token
@@ -134,7 +140,10 @@ namespace OpenRouter
         /// Price in USD per cached input token (read)
         /// </param>
         /// <param name="inputCacheWrite">
-        /// Price in USD per cached input token (write)
+        /// Price per cache-write token, in USD per token. For providers with multiple cache TTLs (e.g. Anthropic), this is the default (5-minute) cache-write rate.
+        /// </param>
+        /// <param name="inputCacheWrite1h">
+        /// Price per 1-hour cache-write token, in USD per token. Only present for providers that price an extended (1-hour) cache TTL separately, such as Anthropic.
         /// </param>
         /// <param name="internalReasoning">
         /// Price in USD per internal reasoning token
@@ -160,6 +169,7 @@ namespace OpenRouter
             string? inputAudioCache,
             string? inputCacheRead,
             string? inputCacheWrite,
+            string? inputCacheWrite1h,
             string? internalReasoning,
             string? request,
             string? webSearch)
@@ -174,6 +184,7 @@ namespace OpenRouter
             this.InputAudioCache = inputAudioCache;
             this.InputCacheRead = inputCacheRead;
             this.InputCacheWrite = inputCacheWrite;
+            this.InputCacheWrite1h = inputCacheWrite1h;
             this.InternalReasoning = internalReasoning;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Request = request;
