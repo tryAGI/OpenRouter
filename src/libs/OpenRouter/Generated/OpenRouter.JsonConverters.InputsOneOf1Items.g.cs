@@ -228,6 +228,7 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("failure_reason")) __score30++;
             if (__jsonProps.Contains("id")) __score30++;
             if (__jsonProps.Contains("responses")) __score30++;
+            if (__jsonProps.Contains("sources")) __score30++;
             if (__jsonProps.Contains("status")) __score30++;
             var __score31 = 0;
             if (__jsonProps.Contains("advice")) __score31++;
