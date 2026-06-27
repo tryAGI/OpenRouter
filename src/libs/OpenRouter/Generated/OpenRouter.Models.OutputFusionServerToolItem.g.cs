@@ -45,6 +45,12 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? Responses { get; set; }
 
         /// <summary>
+        /// Web pages the analysis panels and judge retrieved via web search during this fusion run, deduplicated by URL across the whole run. Present when at least one model cited a source.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.FusionSource>? Sources { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -78,6 +84,9 @@ namespace OpenRouter
         /// <param name="responses">
         /// Analysis models that produced a response in this fusion run, with each model's full panel content.
         /// </param>
+        /// <param name="sources">
+        /// Web pages the analysis panels and judge retrieved via web search during this fusion run, deduplicated by URL across the whole run. Present when at least one model cited a source.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,7 +97,8 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? failedModels,
             string? failureReason,
             string? id,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? responses)
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? responses,
+            global::System.Collections.Generic.IList<global::OpenRouter.FusionSource>? sources)
         {
             this.Analysis = analysis;
             this.Error = error;
@@ -96,6 +106,7 @@ namespace OpenRouter
             this.FailureReason = failureReason;
             this.Id = id;
             this.Responses = responses;
+            this.Sources = sources;
             this.Status = status;
         }
 
