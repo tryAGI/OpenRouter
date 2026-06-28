@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ChatContentItemsDiscriminatorMappingImageUrlImageUrl
     {
         /// <summary>
-        /// Image detail level for vision models
+        /// Image detail level for vision models. `original` is an OpenRouter extension (not in the OpenAI Chat Completions spec) requesting true original-resolution media; it is downgraded to `high` for providers that lack an original-resolution tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetailJsonConverter))]
@@ -35,7 +35,7 @@ namespace OpenRouter
         /// URL of the image (data: URLs supported)
         /// </param>
         /// <param name="detail">
-        /// Image detail level for vision models
+        /// Image detail level for vision models. `original` is an OpenRouter extension (not in the OpenAI Chat Completions spec) requesting true original-resolution media; it is downgraded to `high` for providers that lack an original-resolution tier.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

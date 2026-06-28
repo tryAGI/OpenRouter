@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Image detail level for vision models
+    /// Image detail level for vision models. `original` is an OpenRouter extension (not in the OpenAI Chat Completions spec) requesting true original-resolution media; it is downgraded to `high` for providers that lack an original-resolution tier.
     /// </summary>
     public enum ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail
     {
@@ -20,6 +20,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Original,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace OpenRouter
                 ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.Auto => "auto",
                 ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.High => "high",
                 ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.Low => "low",
+                ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.Original => "original",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace OpenRouter
                 "auto" => ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.Auto,
                 "high" => ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.High,
                 "low" => ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.Low,
+                "original" => ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail.Original,
                 _ => null,
             };
         }
