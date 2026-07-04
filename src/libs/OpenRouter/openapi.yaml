@@ -11,7 +11,7 @@
         "summary": "Create a response",
         "description": "Creates a streaming or non-streaming response using OpenResponses API format",
         "tags": [
-          "subpackage_betaResponses"
+          "beta.responses"
         ],
         "parameters": [
           {
@@ -173,7 +173,7 @@
         "summary": "Exchange authorization code for API key",
         "description": "Exchange an authorization code from the PKCE flow for a user-controlled API key",
         "tags": [
-          "subpackage_oAuth"
+          "oAuth"
         ],
         "parameters": [],
         "responses": {
@@ -259,7 +259,7 @@
         "summary": "Create authorization code",
         "description": "Create an authorization code for the PKCE flow to generate a user-controlled API key",
         "tags": [
-          "subpackage_oAuth"
+          "oAuth"
         ],
         "parameters": [],
         "responses": {
@@ -385,7 +385,7 @@
         "summary": "Generate an image",
         "description": "Generates an image from a text prompt via the image generation router",
         "tags": [
-          "subpackage_images"
+          "images"
         ],
         "parameters": [],
         "responses": {
@@ -497,7 +497,7 @@
         "summary": "List image generation models",
         "description": "Lists every image generation model with its top-level supported-parameter superset and a URL to its full per-endpoint records.",
         "tags": [
-          "subpackage_images"
+          "images"
         ],
         "parameters": [],
         "responses": {
@@ -530,7 +530,7 @@
         "summary": "List endpoints for an image model",
         "description": "Returns the full per-endpoint records for an image model: each endpoint's definitive supported parameters, pricing, and passthrough allowlist.",
         "tags": [
-          "subpackage_images"
+          "images"
         ],
         "parameters": [
           {
@@ -592,7 +592,7 @@
         "summary": "Create speech",
         "description": "Synthesizes audio from the input text. Returns a raw audio bytestream in the requested format (e.g. mp3, pcm, wav).",
         "tags": [
-          "subpackage_tts"
+          "tts"
         ],
         "parameters": [],
         "responses": {
@@ -705,7 +705,7 @@
         "summary": "Create transcription",
         "description": "Transcribes audio into text. Accepts base64-encoded audio input and returns the transcribed text.",
         "tags": [
-          "subpackage_stt"
+          "stt"
         ],
         "parameters": [],
         "responses": {
@@ -817,7 +817,7 @@
         "summary": "Get user activity grouped by endpoint",
         "description": "Returns user activity data grouped by endpoint for the last 30 (completed) UTC days. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_analytics"
+          "analytics"
         ],
         "parameters": [
           {
@@ -918,7 +918,7 @@
         "summary": "Get available analytics metrics and dimensions",
         "description": "Returns the available metrics, dimensions, filter operators, and granularities for the analytics query endpoint. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_betaAnalytics"
+          "betaAnalytics"
         ],
         "parameters": [],
         "responses": {
@@ -971,7 +971,7 @@
         "summary": "Query analytics data",
         "description": "Execute an analytics query with specified metrics, dimensions, filters, and time range. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_betaAnalytics"
+          "betaAnalytics"
         ],
         "parameters": [],
         "responses": {
@@ -1094,7 +1094,7 @@
         "summary": "List Benchmarks",
         "description": "Unified benchmark endpoint that aggregates scores from multiple benchmark sources (Artificial Analysis, Design Arena). Filter by source to reproduce the exact shapes from the legacy per-source endpoints, or use task_type to find models suited for specific workloads. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.",
         "tags": [
-          "subpackage_benchmarks"
+          "benchmarks"
         ],
         "parameters": [
           {
@@ -1203,7 +1203,7 @@
         "summary": "List BYOK provider credentials",
         "description": "List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_byok"
+          "byok"
         ],
         "parameters": [
           {
@@ -1282,7 +1282,7 @@
         "summary": "Create a BYOK provider credential",
         "description": "Create a new bring-your-own-key (BYOK) provider credential. The raw key is encrypted at rest and never returned in API responses. Defaults to the authenticated entity's default workspace; use the `workspace_id` body field to scope to a different workspace. Treat the raw key as write-only; it is never returned after creation. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_byok"
+          "byok"
         ],
         "parameters": [],
         "responses": {
@@ -1354,7 +1354,7 @@
         "summary": "Get a BYOK provider credential",
         "description": "Get a single bring-your-own-key (BYOK) provider credential by its `id`. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_byok"
+          "byok"
         ],
         "parameters": [
           {
@@ -1416,7 +1416,7 @@
         "summary": "Delete a BYOK provider credential",
         "description": "Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_byok"
+          "byok"
         ],
         "parameters": [
           {
@@ -1478,7 +1478,7 @@
         "summary": "Update a BYOK provider credential",
         "description": "Update an existing bring-your-own-key (BYOK) provider credential by its `id`. Include the `key` field to rotate the raw provider API key in-place (the previous key material is overwritten). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_byok"
+          "byok"
         ],
         "parameters": [
           {
@@ -1561,7 +1561,7 @@
         "summary": "Create a chat completion",
         "description": "Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.",
         "tags": [
-          "subpackage_chat"
+          "chat"
         ],
         "parameters": [
           {
@@ -1723,7 +1723,7 @@
         "summary": "Task classification market share",
         "description": "Returns the market-share breakdown of OpenRouter traffic by task classification\n(e.g. code generation, web search, summarization) over a trailing time window.\n\nEach classification reports its share of classified sampled requests (`usage_share`)\nand classified sampled token volume (`token_share`) as fractions between 0 and 1.\nThe unclassified `other` bucket is excluded. Absolute volumes are not exposed\nbecause the underlying data is sampled.\n\nEach classification also includes a `models` array listing the top models by\nrequest volume within that classification, with their within-tag usage and token shares.\n\nClassifications are grouped into macro-categories (Code, Data, Agent, General)\nwith aggregate shares provided for each.\n\nAuthenticate with any valid OpenRouter API key (same key used for inference).\nRate-limited to 30 requests/minute per key and 500 requests/day per account.\n\nWhen republishing or quoting this data, cite as:\n\"Source: OpenRouter (openrouter.ai/rankings), as of {as_of}.\"",
         "tags": [
-          "subpackage_classifications"
+          "classifications"
         ],
         "parameters": [
           {
@@ -1796,7 +1796,7 @@
         "summary": "Get remaining credits",
         "description": "Get total credits purchased and used for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_credits"
+          "credits"
         ],
         "parameters": [],
         "responses": {
@@ -1849,7 +1849,7 @@
         "summary": "Top apps by token usage",
         "description": "Returns the top public apps on OpenRouter ranked by token usage inside the requested\ndate window, matching the public apps marketplace on openrouter.ai/apps. Token totals\nare `prompt_tokens + completion_tokens`; hidden and private apps are excluded and\ntraffic from related app aliases is merged into the canonical visible app.\n\n`sort=popular` (default) ranks by total token volume inside the window.\n`sort=trending` ranks by absolute excess token growth: window volume minus the average\nvolume of the three equal-length periods immediately preceding the window. Apps with\nno excess growth are omitted, so `trending` may return fewer than `limit` rows.\n\nFilter with `category` (marketplace category group, e.g. `coding`) or `subcategory`\n(e.g. `cli-agent`). Ranks are re-numbered 1..N after filtering. Page with `offset` —\n`rank` stays absolute, so the first row of `offset=50` is `rank: 51`.\n\nAuthenticate with any valid OpenRouter API key (same key used for inference).\nRate-limited to 30 requests/minute per key and 500 requests/day per account.\n\nWhen republishing or quoting this dataset, OpenRouter must be cited as:\n\"Source: OpenRouter (openrouter.ai/apps), as of {as_of}.\"\n\nToken counts come from each upstream provider's own tokenizer, so a token attributed\nto one app is not directly comparable to a token attributed to another app whose\ntraffic flows through a different provider.",
         "tags": [
-          "subpackage_datasets"
+          "datasets"
         ],
         "parameters": [
           {
@@ -1978,7 +1978,7 @@
         "summary": "Daily token totals for top 50 models",
         "description": "Returns the top 50 public models per day by total token usage on OpenRouter, plus a\nsingle aggregated `other` row per day that sums every model outside that top 50.\nToken totals are `prompt_tokens + completion_tokens`, matching the public rankings\nchart on openrouter.ai/rankings.\n\nEach row is a distinct `(date, model_permaslug)` pair. The `other` row uses the\nreserved permaslug `other` and is always returned last within its date, so callers\ncan compute `top-50 traffic / total daily traffic` without a second request.\n\nAuthenticate with any valid OpenRouter API key (same key used for inference).\nRate-limited to 30 requests/minute per key and 500 requests/day per account.\n\nWhen republishing or quoting this dataset, OpenRouter must be cited as:\n\"Source: OpenRouter (openrouter.ai/rankings), as of {as_of}.\"\n\nToken counts come from each upstream provider's own tokenizer (Anthropic counts\nare as reported by Anthropic, OpenAI counts are as reported by OpenAI, etc.), so\na token in one row is not directly comparable to a token in another row from a\ndifferent provider.",
         "tags": [
-          "subpackage_datasets"
+          "datasets"
         ],
         "parameters": [
           {
@@ -2060,7 +2060,7 @@
         "summary": "Submit an embedding request",
         "description": "Submits an embedding request to the embeddings router",
         "tags": [
-          "subpackage_embeddings"
+          "embeddings"
         ],
         "parameters": [],
         "responses": {
@@ -2206,7 +2206,7 @@
         "summary": "List all embeddings models",
         "description": "Returns a list of all available embeddings models and their properties",
         "tags": [
-          "subpackage_embeddings"
+          "embeddings"
         ],
         "parameters": [],
         "responses": {
@@ -2248,7 +2248,7 @@
         "operationId": "list-endpoints-zdr",
         "summary": "Preview the impact of ZDR on the available endpoints",
         "tags": [
-          "subpackage_endpoints"
+          "endpoints"
         ],
         "parameters": [],
         "responses": {
@@ -2280,7 +2280,7 @@
         "operationId": "list-endpoints",
         "summary": "List all endpoints for a model",
         "tags": [
-          "subpackage_endpoints"
+          "endpoints"
         ],
         "parameters": [
           {
@@ -2342,7 +2342,7 @@
         "summary": "List files",
         "description": "Lists files belonging to the workspace of the authenticating API key.",
         "tags": [
-          "subpackage_files"
+          "files"
         ],
         "parameters": [
           {
@@ -2432,7 +2432,7 @@
         "summary": "Upload a file",
         "description": "Uploads a file to be referenced in future API calls. The file is stored under the workspace of the authenticating API key. Maximum file size: 100 MB.",
         "tags": [
-          "subpackage_files"
+          "files"
         ],
         "parameters": [
           {
@@ -2544,7 +2544,7 @@
         "summary": "Get file metadata",
         "description": "Retrieves metadata for a single file owned by the requesting workspace.",
         "tags": [
-          "subpackage_files"
+          "files"
         ],
         "parameters": [
           {
@@ -2624,7 +2624,7 @@
         "summary": "Delete a file",
         "description": "Deletes a file owned by the requesting workspace. Deletion is irreversible.",
         "tags": [
-          "subpackage_files"
+          "files"
         ],
         "parameters": [
           {
@@ -2706,7 +2706,7 @@
         "summary": "Download file content",
         "description": "Downloads the raw bytes of a file. Only files created server-side are downloadable; uploaded files return 400.",
         "tags": [
-          "subpackage_files"
+          "files"
         ],
         "parameters": [
           {
@@ -2798,7 +2798,7 @@
         "operationId": "get-generation",
         "summary": "Get request & usage metadata for a generation",
         "tags": [
-          "subpackage_generations"
+          "generations"
         ],
         "parameters": [
           {
@@ -2890,7 +2890,7 @@
         "operationId": "list-generation-content",
         "summary": "Get stored prompt and completion content for a generation",
         "tags": [
-          "subpackage_generations"
+          "generations"
         ],
         "parameters": [
           {
@@ -2983,7 +2983,7 @@
         "summary": "List guardrails",
         "description": "List all guardrails for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3053,7 +3053,7 @@
         "summary": "Create a guardrail",
         "description": "Create a new guardrail for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [],
         "responses": {
@@ -3125,7 +3125,7 @@
         "summary": "Get a guardrail",
         "description": "Get a single guardrail by ID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3187,7 +3187,7 @@
         "summary": "Delete a guardrail",
         "description": "Delete an existing guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3249,7 +3249,7 @@
         "summary": "Update a guardrail",
         "description": "Update an existing guardrail. Collection fields use replace semantics: send the full desired set on every update. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3332,7 +3332,7 @@
         "summary": "List key assignments for a guardrail",
         "description": "List all API key assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3412,7 +3412,7 @@
         "summary": "Bulk assign keys to a guardrail",
         "description": "Assign multiple API keys to a specific guardrail. A key may hold at most one guardrail; assigning replaces any existing assignment. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3495,7 +3495,7 @@
         "summary": "Bulk unassign keys from a guardrail",
         "description": "Unassign multiple API keys from a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3578,7 +3578,7 @@
         "summary": "List member assignments for a guardrail",
         "description": "List all organization member assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3658,7 +3658,7 @@
         "summary": "Bulk assign members to a guardrail",
         "description": "Assign multiple organization members to a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3741,7 +3741,7 @@
         "summary": "Bulk unassign members from a guardrail",
         "description": "Unassign multiple organization members from a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3824,7 +3824,7 @@
         "summary": "List all key assignments",
         "description": "List all API key guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3886,7 +3886,7 @@
         "summary": "List all member assignments",
         "description": "List all organization member guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_guardrails"
+          "guardrails"
         ],
         "parameters": [
           {
@@ -3948,7 +3948,7 @@
         "summary": "Get current API key",
         "description": "Get information on the API key associated with the current authentication session",
         "tags": [
-          "subpackage_apiKeys"
+          "apiKeys"
         ],
         "parameters": [],
         "responses": {
@@ -3991,7 +3991,7 @@
         "summary": "List API keys",
         "description": "List all API keys for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_apiKeys"
+          "apiKeys"
         ],
         "parameters": [
           {
@@ -4071,7 +4071,7 @@
         "summary": "Create a new API key",
         "description": "Create a new API key for the authenticated user. The plaintext `key` is returned only in this response. Treat it as a write-only, sensitive value; it cannot be retrieved later. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_apiKeys"
+          "apiKeys"
         ],
         "parameters": [],
         "responses": {
@@ -4205,7 +4205,7 @@
         "summary": "Get a single API key",
         "description": "Get a single API key by hash. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_apiKeys"
+          "apiKeys"
         ],
         "parameters": [
           {
@@ -4276,7 +4276,7 @@
         "summary": "Delete an API key",
         "description": "Delete an existing API key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_apiKeys"
+          "apiKeys"
         ],
         "parameters": [
           {
@@ -4347,7 +4347,7 @@
         "summary": "Update an API key",
         "description": "Update an existing API key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_apiKeys"
+          "apiKeys"
         ],
         "parameters": [
           {
@@ -4472,7 +4472,7 @@
         "summary": "Create a message",
         "description": "Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.",
         "tags": [
-          "subpackage_anthropicMessages"
+          "anthropicMessages"
         ],
         "parameters": [
           {
@@ -4584,7 +4584,7 @@
         "summary": "Get a model by its slug",
         "description": "Returns full details for a single model identified by its author and slug (e.g. openai/gpt-4). Supports variant suffixes (e.g. openai/gpt-4:free) and resolves known slug aliases.",
         "tags": [
-          "subpackage_models"
+          "models"
         ],
         "parameters": [
           {
@@ -4645,7 +4645,7 @@
         "operationId": "get-models",
         "summary": "List all models and their properties",
         "tags": [
-          "subpackage_models"
+          "models"
         ],
         "parameters": [
           {
@@ -4843,7 +4843,7 @@
         "operationId": "list-models-count",
         "summary": "Get total count of available models",
         "tags": [
-          "subpackage_models"
+          "models"
         ],
         "parameters": [
           {
@@ -4896,7 +4896,7 @@
         "summary": "List models filtered by user provider preferences, privacy settings, and guardrails",
         "description": "List models filtered by user provider preferences, [privacy settings](https://openrouter.ai/docs/guides/privacy/provider-logging), and [guardrails](https://openrouter.ai/docs/guides/features/guardrails). If requesting through `eu.openrouter.ai/api/v1/...` the results will be filtered to models that satisfy [EU in-region routing](https://openrouter.ai/docs/guides/privacy/provider-logging#enterprise-eu-in-region-routing).",
         "tags": [
-          "subpackage_models"
+          "models"
         ],
         "parameters": [],
         "responses": {
@@ -4949,7 +4949,7 @@
         "summary": "List observability destinations",
         "description": "List the observability destinations configured for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace. Only destinations with stable release status are surfaced — destinations of other types are excluded. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_observability"
+          "observability"
         ],
         "parameters": [
           {
@@ -5019,7 +5019,7 @@
         "summary": "Create an observability destination",
         "description": "Create a new observability destination. A maximum of 5 destinations per type is allowed. Defaults to the authenticated entity's default workspace; use the `workspace_id` body field to scope to a different workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_observability"
+          "observability"
         ],
         "parameters": [],
         "responses": {
@@ -5101,7 +5101,7 @@
         "summary": "Get an observability destination",
         "description": "Fetch a single observability destination by its UUID. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_observability"
+          "observability"
         ],
         "parameters": [
           {
@@ -5163,7 +5163,7 @@
         "summary": "Delete an observability destination",
         "description": "Delete an existing observability destination. This performs a soft delete. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_observability"
+          "observability"
         ],
         "parameters": [
           {
@@ -5225,7 +5225,7 @@
         "summary": "Update an observability destination",
         "description": "Update an existing observability destination. Only the fields provided in the request body are updated. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_observability"
+          "observability"
         ],
         "parameters": [
           {
@@ -5318,7 +5318,7 @@
         "summary": "List organization members",
         "description": "List all members of the organization associated with the authenticated management key. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_organization"
+          "organization"
         ],
         "parameters": [
           {
@@ -5390,7 +5390,7 @@
         "summary": "List presets",
         "description": "Lists all presets for the authenticated user, ordered by most recently updated first.",
         "tags": [
-          "subpackage_presets"
+          "presets"
         ],
         "parameters": [
           {
@@ -5462,7 +5462,7 @@
         "summary": "Get a preset",
         "description": "Retrieves a preset by its slug with its currently designated version inline.",
         "tags": [
-          "subpackage_presets"
+          "presets"
         ],
         "parameters": [
           {
@@ -5535,7 +5535,7 @@
         "summary": "Create a preset from a chat-completions request body",
         "description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.",
         "tags": [
-          "subpackage_presets"
+          "presets"
         ],
         "parameters": [
           {
@@ -5637,7 +5637,7 @@
         "summary": "Create a preset from a messages request body",
         "description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.",
         "tags": [
-          "subpackage_presets"
+          "presets"
         ],
         "parameters": [
           {
@@ -5739,7 +5739,7 @@
         "summary": "Create a preset from a responses request body",
         "description": "Creates a preset (or a new version of an existing one) from an inference request body. Only fields that overlap with the preset config are persisted; other fields (e.g. `messages`, `stream`, `prompt`) are silently ignored.",
         "tags": [
-          "subpackage_presets"
+          "presets"
         ],
         "parameters": [
           {
@@ -5841,7 +5841,7 @@
         "summary": "List versions of a preset",
         "description": "Lists all versions of a preset, ordered by version number ascending (oldest first).",
         "tags": [
-          "subpackage_presets"
+          "presets"
         ],
         "parameters": [
           {
@@ -5932,7 +5932,7 @@
         "summary": "Get a specific version of a preset",
         "description": "Retrieves a specific version of a preset by its slug and version number.",
         "tags": [
-          "subpackage_presets"
+          "presets"
         ],
         "parameters": [
           {
@@ -6013,7 +6013,7 @@
         "operationId": "list-providers",
         "summary": "List all providers",
         "tags": [
-          "subpackage_providers"
+          "providers"
         ],
         "parameters": [],
         "responses": {
@@ -6046,7 +6046,7 @@
         "summary": "Submit a rerank request",
         "description": "Submits a rerank request to the rerank router",
         "tags": [
-          "subpackage_rerank"
+          "rerank"
         ],
         "parameters": [],
         "responses": {
@@ -6188,7 +6188,7 @@
         "summary": "Submit a video generation request",
         "description": "Submits a video generation request and returns a polling URL to check status",
         "tags": [
-          "subpackage_videoGeneration"
+          "videoGeneration"
         ],
         "parameters": [],
         "responses": {
@@ -6280,7 +6280,7 @@
         "summary": "Poll video generation status",
         "description": "Returns job status and content URLs when completed",
         "tags": [
-          "subpackage_videoGeneration"
+          "videoGeneration"
         ],
         "parameters": [
           {
@@ -6342,7 +6342,7 @@
         "summary": "Download generated video content",
         "description": "Streams the generated video content from the upstream provider",
         "tags": [
-          "subpackage_videoGeneration"
+          "videoGeneration"
         ],
         "parameters": [
           {
@@ -6434,7 +6434,7 @@
         "summary": "List all video generation models",
         "description": "Returns a list of all available video generation models and their properties",
         "tags": [
-          "subpackage_videoGeneration"
+          "videoGeneration"
         ],
         "parameters": [],
         "responses": {
@@ -6477,7 +6477,7 @@
         "summary": "List workspaces",
         "description": "List all workspaces for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -6537,7 +6537,7 @@
         "summary": "Create a workspace",
         "description": "Create a new workspace for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [],
         "responses": {
@@ -6609,7 +6609,7 @@
         "summary": "Get a workspace",
         "description": "Get a single workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -6670,7 +6670,7 @@
         "summary": "Delete a workspace",
         "description": "Delete an existing workspace. The default workspace cannot be deleted. Workspaces with active API keys cannot be deleted; remove the keys first. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -6751,7 +6751,7 @@
         "summary": "Update a workspace",
         "description": "Update an existing workspace by ID or slug. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -6843,7 +6843,7 @@
         "summary": "List workspace budgets",
         "description": "List all budgets configured for a workspace. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -6906,7 +6906,7 @@
         "summary": "Create or update a workspace budget",
         "description": "Create or update the budget for a given interval. Budget limits must strictly decrease as the interval narrows (lifetime > monthly > weekly > daily). [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -6995,7 +6995,7 @@
         "summary": "Delete a workspace budget",
         "description": "Remove the budget for a given interval. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -7067,7 +7067,7 @@
         "summary": "Bulk add members to a workspace",
         "description": "Add multiple organization members to a workspace. Members are assigned the same role they hold in the organization. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
@@ -7159,7 +7159,7 @@
         "summary": "Bulk remove members from a workspace",
         "description": "Remove multiple members from a workspace. Members with active API keys in the workspace cannot be removed. [Management key](/docs/guides/overview/auth/management-api-keys) required.",
         "tags": [
-          "subpackage_workspaces"
+          "workspaces"
         ],
         "parameters": [
           {
