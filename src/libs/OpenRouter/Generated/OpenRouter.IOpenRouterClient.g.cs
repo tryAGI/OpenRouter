@@ -47,142 +47,142 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAnalyticsClient SubpackageAnalytics { get; }
+        public AnalyticsClient Analytics { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAnthropicMessagesClient SubpackageAnthropicMessages { get; }
+        public AnthropicMessagesClient AnthropicMessages { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageApiKeysClient SubpackageApiKeys { get; }
+        public ApiKeysClient ApiKeys { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageBenchmarksClient SubpackageBenchmarks { get; }
+        public BenchmarksClient Benchmarks { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageBetaAnalyticsClient SubpackageBetaAnalytics { get; }
+        public BetaAnalyticsClient BetaAnalytics { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageBetaResponsesClient SubpackageBetaResponses { get; }
+        public BetaResponsesClient BetaResponses { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageByokClient SubpackageByok { get; }
+        public ByokClient Byok { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageChatClient SubpackageChat { get; }
+        public ChatClient Chat { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageClassificationsClient SubpackageClassifications { get; }
+        public ClassificationsClient Classifications { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageCreditsClient SubpackageCredits { get; }
+        public CreditsClient Credits { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDatasetsClient SubpackageDatasets { get; }
+        public DatasetsClient Datasets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEmbeddingsClient SubpackageEmbeddings { get; }
+        public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEndpointsClient SubpackageEndpoints { get; }
+        public EndpointsClient Endpoints { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageFilesClient SubpackageFiles { get; }
+        public FilesClient Files { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageGenerationsClient SubpackageGenerations { get; }
+        public GenerationsClient Generations { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageGuardrailsClient SubpackageGuardrails { get; }
+        public GuardrailsClient Guardrails { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageImagesClient SubpackageImages { get; }
+        public ImagesClient Images { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageModelsClient SubpackageModels { get; }
+        public ModelsClient Models { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageOAuthClient SubpackageOAuth { get; }
+        public OAuthClient OAuth { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageObservabilityClient SubpackageObservability { get; }
+        public ObservabilityClient Observability { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageOrganizationClient SubpackageOrganization { get; }
+        public OrganizationClient Organization { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackagePresetsClient SubpackagePresets { get; }
+        public PresetsClient Presets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageProvidersClient SubpackageProviders { get; }
+        public ProvidersClient Providers { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageRerankClient SubpackageRerank { get; }
+        public RerankClient Rerank { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageSttClient SubpackageStt { get; }
+        public SttClient Stt { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTtsClient SubpackageTts { get; }
+        public TtsClient Tts { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVideoGenerationClient SubpackageVideoGeneration { get; }
+        public VideoGenerationClient VideoGeneration { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageWorkspacesClient SubpackageWorkspaces { get; }
+        public WorkspacesClient Workspaces { get; }
 
     }
 }

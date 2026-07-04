@@ -42,7 +42,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAnalyticsClient SubpackageAnalytics => new SubpackageAnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAnthropicMessagesClient SubpackageAnthropicMessages => new SubpackageAnthropicMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AnthropicMessagesClient AnthropicMessages => new AnthropicMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -60,7 +60,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageApiKeysClient SubpackageApiKeys => new SubpackageApiKeysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ApiKeysClient ApiKeys => new ApiKeysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -69,7 +69,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageBenchmarksClient SubpackageBenchmarks => new SubpackageBenchmarksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public BenchmarksClient Benchmarks => new BenchmarksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -78,7 +78,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageBetaAnalyticsClient SubpackageBetaAnalytics => new SubpackageBetaAnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public BetaAnalyticsClient BetaAnalytics => new BetaAnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -87,7 +87,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageBetaResponsesClient SubpackageBetaResponses => new SubpackageBetaResponsesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public BetaResponsesClient BetaResponses => new BetaResponsesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -96,7 +96,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageByokClient SubpackageByok => new SubpackageByokClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ByokClient Byok => new ByokClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -105,7 +105,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageChatClient SubpackageChat => new SubpackageChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ChatClient Chat => new ChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -114,7 +114,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageClassificationsClient SubpackageClassifications => new SubpackageClassificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ClassificationsClient Classifications => new ClassificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -123,7 +123,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageCreditsClient SubpackageCredits => new SubpackageCreditsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public CreditsClient Credits => new CreditsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -132,7 +132,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDatasetsClient SubpackageDatasets => new SubpackageDatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -141,7 +141,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEmbeddingsClient SubpackageEmbeddings => new SubpackageEmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -150,7 +150,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEndpointsClient SubpackageEndpoints => new SubpackageEndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public EndpointsClient Endpoints => new EndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -159,7 +159,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageFilesClient SubpackageFiles => new SubpackageFilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public FilesClient Files => new FilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -168,7 +168,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageGenerationsClient SubpackageGenerations => new SubpackageGenerationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public GenerationsClient Generations => new GenerationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -177,7 +177,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageGuardrailsClient SubpackageGuardrails => new SubpackageGuardrailsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public GuardrailsClient Guardrails => new GuardrailsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -186,7 +186,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageImagesClient SubpackageImages => new SubpackageImagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ImagesClient Images => new ImagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -195,7 +195,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageModelsClient SubpackageModels => new SubpackageModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -204,7 +204,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageOAuthClient SubpackageOAuth => new SubpackageOAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public OAuthClient OAuth => new OAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -213,7 +213,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageObservabilityClient SubpackageObservability => new SubpackageObservabilityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ObservabilityClient Observability => new ObservabilityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -222,7 +222,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageOrganizationClient SubpackageOrganization => new SubpackageOrganizationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public OrganizationClient Organization => new OrganizationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -231,7 +231,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackagePresetsClient SubpackagePresets => new SubpackagePresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public PresetsClient Presets => new PresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -240,7 +240,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageProvidersClient SubpackageProviders => new SubpackageProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ProvidersClient Providers => new ProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -249,7 +249,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageRerankClient SubpackageRerank => new SubpackageRerankClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public RerankClient Rerank => new RerankClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -258,7 +258,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageSttClient SubpackageStt => new SubpackageSttClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public SttClient Stt => new SttClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -267,7 +267,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTtsClient SubpackageTts => new SubpackageTtsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public TtsClient Tts => new TtsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -276,7 +276,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVideoGenerationClient SubpackageVideoGeneration => new SubpackageVideoGenerationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public VideoGenerationClient VideoGeneration => new VideoGenerationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -285,7 +285,7 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageWorkspacesClient SubpackageWorkspaces => new SubpackageWorkspacesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
