@@ -9,6 +9,12 @@ namespace OpenRouter
     public sealed partial class InputText
     {
         /// <summary>
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
@@ -25,12 +31,17 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="InputText" /> class.
         /// </summary>
         /// <param name="text"></param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputText(
-            string text)
+            string text,
+            global::OpenRouter.PromptCacheBreakpoint? promptCacheBreakpoint)
         {
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 

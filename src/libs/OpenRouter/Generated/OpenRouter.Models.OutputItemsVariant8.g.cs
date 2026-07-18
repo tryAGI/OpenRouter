@@ -33,8 +33,8 @@ namespace OpenRouter
         /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageItemPhaseJsonConverter))]
-        public global::OpenRouter.OutputMessageItemPhase? Phase { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.OutputMessageItemPhase?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.OutputMessageItemPhase?, object>? Phase { get; set; }
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageItemContentItems> content,
             string id,
             global::OpenRouter.OutputMessageItemType type,
-            global::OpenRouter.OutputMessageItemPhase? phase,
+            global::OpenRouter.OneOf<global::OpenRouter.OutputMessageItemPhase?, object>? phase,
             global::OpenRouter.OutputMessageItemRole role,
             global::OpenRouter.OutputMessageItemStatus? status)
         {

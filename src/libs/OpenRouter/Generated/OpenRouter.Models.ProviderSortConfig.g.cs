@@ -12,15 +12,15 @@ namespace OpenRouter
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigBy?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ProviderSortConfigBy?, object>? By { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderSortConfigByJsonConverter))]
+        public global::OpenRouter.ProviderSortConfigBy? By { get; set; }
 
         /// <summary>
         /// Partitioning strategy for sorting: "model" (default) groups endpoints by model before sorting (fallback models remain fallbacks), "none" sorts all endpoints together regardless of model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderSortConfigPartition?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ProviderSortConfigPartition?, object>? Partition { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderSortConfigPartitionJsonConverter))]
+        public global::OpenRouter.ProviderSortConfigPartition? Partition { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,8 +41,8 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProviderSortConfig(
-            global::OpenRouter.OneOf<global::OpenRouter.ProviderSortConfigBy?, object>? by,
-            global::OpenRouter.OneOf<global::OpenRouter.ProviderSortConfigPartition?, object>? partition)
+            global::OpenRouter.ProviderSortConfigBy? by,
+            global::OpenRouter.ProviderSortConfigPartition? partition)
         {
             this.By = by;
             this.Partition = partition;

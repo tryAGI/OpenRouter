@@ -74,9 +74,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quantization")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.QuantizationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.Quantization?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.Quantization Quantization { get; set; }
+        public required global::OpenRouter.OneOf<global::OpenRouter.Quantization?, object> Quantization { get; set; }
 
         /// <summary>
         /// 
@@ -179,7 +179,7 @@ namespace OpenRouter
             string name,
             global::OpenRouter.PublicEndpointPricing pricing,
             global::OpenRouter.ProviderName providerName,
-            global::OpenRouter.Quantization quantization,
+            global::OpenRouter.OneOf<global::OpenRouter.Quantization?, object> quantization,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             bool supportsImplicitCaching,
             string tag,

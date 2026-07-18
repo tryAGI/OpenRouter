@@ -123,6 +123,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Deepgram,
+        /// <summary>
+        /// 
+        /// </summary>
         DekaLLM,
         /// <summary>
         /// 
@@ -140,6 +144,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Fireworks,
+        /// <summary>
+        /// 
+        /// </summary>
+        FishAudio,
         /// <summary>
         /// 
         /// </summary>
@@ -199,6 +207,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Krea,
+        /// <summary>
+        /// 
+        /// </summary>
         Liquid,
         /// <summary>
         /// 
@@ -208,6 +220,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Mara,
+        /// <summary>
+        /// 
+        /// </summary>
+        Meta,
         /// <summary>
         /// 
         /// </summary>
@@ -303,6 +319,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        SailResearch,
+        /// <summary>
+        /// 
+        /// </summary>
         SakanaAi,
         /// <summary>
         /// 
@@ -336,6 +356,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Switchpoint,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tencent,
         /// <summary>
         /// 
         /// </summary>
@@ -414,11 +438,13 @@ namespace OpenRouter
                 ProviderName.Decart => "Decart",
                 ProviderName.DeepInfra => "DeepInfra",
                 ProviderName.DeepSeek => "DeepSeek",
+                ProviderName.Deepgram => "Deepgram",
                 ProviderName.DekaLLM => "DekaLLM",
                 ProviderName.DigitalOcean => "DigitalOcean",
                 ProviderName.FakeProvider => "FakeProvider",
                 ProviderName.Featherless => "Featherless",
                 ProviderName.Fireworks => "Fireworks",
+                ProviderName.FishAudio => "Fish Audio",
                 ProviderName.Friendli => "Friendli",
                 ProviderName.GMICloud => "GMICloud",
                 ProviderName.Google => "Google",
@@ -433,9 +459,11 @@ namespace OpenRouter
                 ProviderName.Inflection => "Inflection",
                 ProviderName.IoNet => "Io Net",
                 ProviderName.Ionstream => "Ionstream",
+                ProviderName.Krea => "Krea",
                 ProviderName.Liquid => "Liquid",
                 ProviderName.Mancer2 => "Mancer 2",
                 ProviderName.Mara => "Mara",
+                ProviderName.Meta => "Meta",
                 ProviderName.Minimax => "Minimax",
                 ProviderName.Mistral => "Mistral",
                 ProviderName.ModelRun => "ModelRun",
@@ -459,6 +487,7 @@ namespace OpenRouter
                 ProviderName.Recraft => "Recraft",
                 ProviderName.Reka => "Reka",
                 ProviderName.Relace => "Relace",
+                ProviderName.SailResearch => "Sail Research",
                 ProviderName.SakanaAi => "Sakana AI",
                 ProviderName.SambaNova => "SambaNova",
                 ProviderName.Seed => "Seed",
@@ -468,6 +497,7 @@ namespace OpenRouter
                 ProviderName.StepFun => "StepFun",
                 ProviderName.StreamLake => "StreamLake",
                 ProviderName.Switchpoint => "Switchpoint",
+                ProviderName.Tencent => "Tencent",
                 ProviderName.Tenstorrent => "Tenstorrent",
                 ProviderName.Together => "Together",
                 ProviderName.Upstage => "Upstage",
@@ -515,11 +545,13 @@ namespace OpenRouter
                 "Decart" => ProviderName.Decart,
                 "DeepInfra" => ProviderName.DeepInfra,
                 "DeepSeek" => ProviderName.DeepSeek,
+                "Deepgram" => ProviderName.Deepgram,
                 "DekaLLM" => ProviderName.DekaLLM,
                 "DigitalOcean" => ProviderName.DigitalOcean,
                 "FakeProvider" => ProviderName.FakeProvider,
                 "Featherless" => ProviderName.Featherless,
                 "Fireworks" => ProviderName.Fireworks,
+                "Fish Audio" => ProviderName.FishAudio,
                 "Friendli" => ProviderName.Friendli,
                 "GMICloud" => ProviderName.GMICloud,
                 "Google" => ProviderName.Google,
@@ -534,9 +566,11 @@ namespace OpenRouter
                 "Inflection" => ProviderName.Inflection,
                 "Io Net" => ProviderName.IoNet,
                 "Ionstream" => ProviderName.Ionstream,
+                "Krea" => ProviderName.Krea,
                 "Liquid" => ProviderName.Liquid,
                 "Mancer 2" => ProviderName.Mancer2,
                 "Mara" => ProviderName.Mara,
+                "Meta" => ProviderName.Meta,
                 "Minimax" => ProviderName.Minimax,
                 "Mistral" => ProviderName.Mistral,
                 "ModelRun" => ProviderName.ModelRun,
@@ -560,6 +594,7 @@ namespace OpenRouter
                 "Recraft" => ProviderName.Recraft,
                 "Reka" => ProviderName.Reka,
                 "Relace" => ProviderName.Relace,
+                "Sail Research" => ProviderName.SailResearch,
                 "Sakana AI" => ProviderName.SakanaAi,
                 "SambaNova" => ProviderName.SambaNova,
                 "Seed" => ProviderName.Seed,
@@ -569,6 +604,7 @@ namespace OpenRouter
                 "StepFun" => ProviderName.StepFun,
                 "StreamLake" => ProviderName.StreamLake,
                 "Switchpoint" => ProviderName.Switchpoint,
+                "Tencent" => ProviderName.Tencent,
                 "Tenstorrent" => ProviderName.Tenstorrent,
                 "Together" => ProviderName.Together,
                 "Upstage" => ProviderName.Upstage,

@@ -18,8 +18,8 @@ namespace OpenRouter
         /// ISO 3166-1 Alpha-2 country code of the provider headquarters
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headquarters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>? Headquarters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquartersJsonConverter))]
+        public global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters? Headquarters { get; set; }
 
         /// <summary>
         /// Display name of the provider
@@ -90,7 +90,7 @@ namespace OpenRouter
             string name,
             string slug,
             global::System.Collections.Generic.IList<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems>? datacenters,
-            global::OpenRouter.OneOf<global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>? headquarters,
+            global::OpenRouter.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters? headquarters,
             string? privacyPolicyUrl,
             string? statusPageUrl,
             string? termsOfServiceUrl)

@@ -19,9 +19,9 @@ namespace OpenRouter
         /// Instruction format type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instruct_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.InstructType2?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InstructTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.InstructType2?, object> InstructType { get; set; }
+        public required global::OpenRouter.InstructType InstructType { get; set; }
 
         /// <summary>
         /// Primary modality of the model
@@ -73,7 +73,7 @@ namespace OpenRouter
 #endif
         public ListEndpointsResponseArchitecture(
             global::System.Collections.Generic.IList<global::OpenRouter.InputModality> inputModalities,
-            global::OpenRouter.OneOf<global::OpenRouter.InstructType2?, object> instructType,
+            global::OpenRouter.InstructType instructType,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> outputModalities,
             global::OpenRouter.ModelGroup tokenizer,
             string? modality)

@@ -4,16 +4,40 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:image_generation server tool output item
+    /// An openrouter:fusion server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant18
     {
         /// <summary>
-        /// Discriminator value: openrouter:image_generation
+        /// Discriminator value: openrouter:fusion
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant18TypeJsonConverter))]
         public global::OpenRouter.OutputItemsVariant18Type Type { get; set; }
+
+        /// <summary>
+        /// Structured analysis produced by the fusion judge model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("analysis")]
+        public global::OpenRouter.FusionAnalysisResult? Analysis { get; set; }
+
+        /// <summary>
+        /// Error message when the fusion run did not produce an analysis result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
+        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("failed_models")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? FailedModels { get; set; }
+
+        /// <summary>
+        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
+        public string? FailureReason { get; set; }
 
         /// <summary>
         /// 
@@ -22,28 +46,16 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Analysis models that produced a response in this fusion run, with each model's full panel content.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageB64")]
-        public string? ImageB64 { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("responses")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? Responses { get; set; }
 
         /// <summary>
-        /// 
+        /// Web pages the analysis panels and judge retrieved via web search during this fusion run, deduplicated by URL across the whole run. Present when at least one model cited a source.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imageUrl")]
-        public string? ImageUrl { get; set; }
-
-        /// <summary>
-        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string? Result { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("revisedPrompt")]
-        public string? RevisedPrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.FusionSource>? Sources { get; set; }
 
         /// <summary>
         /// 
@@ -64,33 +76,49 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:image_generation
+        /// Discriminator value: openrouter:fusion
+        /// </param>
+        /// <param name="analysis">
+        /// Structured analysis produced by the fusion judge model.
+        /// </param>
+        /// <param name="error">
+        /// Error message when the fusion run did not produce an analysis result.
+        /// </param>
+        /// <param name="failedModels">
+        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
+        /// </param>
+        /// <param name="failureReason">
+        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
         /// </param>
         /// <param name="id"></param>
-        /// <param name="imageB64"></param>
-        /// <param name="imageUrl"></param>
-        /// <param name="result">
-        /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
+        /// <param name="responses">
+        /// Analysis models that produced a response in this fusion run, with each model's full panel content.
         /// </param>
-        /// <param name="revisedPrompt"></param>
+        /// <param name="sources">
+        /// Web pages the analysis panels and judge retrieved via web search during this fusion run, deduplicated by URL across the whole run. Present when at least one model cited a source.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant18(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant18Type type,
+            global::OpenRouter.FusionAnalysisResult? analysis,
+            string? error,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? failedModels,
+            string? failureReason,
             string? id,
-            string? imageB64,
-            string? imageUrl,
-            string? result,
-            string? revisedPrompt)
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? responses,
+            global::System.Collections.Generic.IList<global::OpenRouter.FusionSource>? sources)
         {
             this.Type = type;
+            this.Analysis = analysis;
+            this.Error = error;
+            this.FailedModels = failedModels;
+            this.FailureReason = failureReason;
             this.Id = id;
-            this.ImageB64 = imageB64;
-            this.ImageUrl = imageUrl;
-            this.Result = result;
-            this.RevisedPrompt = revisedPrompt;
+            this.Responses = responses;
+            this.Sources = sources;
             this.Status = status;
         }
 

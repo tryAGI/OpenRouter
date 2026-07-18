@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class McpListToolsItemToolsItems
     {
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         public object? Annotations { get; set; }
@@ -45,7 +45,9 @@ namespace OpenRouter
         /// </summary>
         /// <param name="inputSchema"></param>
         /// <param name="name"></param>
-        /// <param name="annotations"></param>
+        /// <param name="annotations">
+        /// Any type
+        /// </param>
         /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

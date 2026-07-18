@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: auto-router
+    /// Discriminator value: auto-beta-router
     /// </summary>
     public enum MessagesRequestPluginsItemsVariant1Id
     {
         /// <summary>
-        /// auto-router
+        /// auto-beta-router
         /// </summary>
-        AutoRouter,
+        AutoBetaRouter,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                MessagesRequestPluginsItemsVariant1Id.AutoRouter => "auto-router",
+                MessagesRequestPluginsItemsVariant1Id.AutoBetaRouter => "auto-beta-router",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "auto-router" => MessagesRequestPluginsItemsVariant1Id.AutoRouter,
+                "auto-beta-router" => MessagesRequestPluginsItemsVariant1Id.AutoBetaRouter,
                 _ => null,
             };
         }

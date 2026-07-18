@@ -9,6 +9,18 @@ namespace OpenRouter
     public sealed partial class QueryAnalyticsRequest
     {
         /// <summary>
+        /// Group results by custom classifier tags, breaking down metrics by the specified dimension values. Requires an active classifier on the workspace.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classifier_dimensions")]
+        public global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierDimensions? ClassifierDimensions { get; set; }
+
+        /// <summary>
+        /// Filter results to generations with specific classifier tag values. Can be combined with classifier_dimensions (must use the same classifier_id) or used independently with standard dimensions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classifier_filters")]
+        public global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierFilters? ClassifierFilters { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dimensions")]
@@ -67,6 +79,12 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="QueryAnalyticsRequest" /> class.
         /// </summary>
         /// <param name="metrics"></param>
+        /// <param name="classifierDimensions">
+        /// Group results by custom classifier tags, breaking down metrics by the specified dimension values. Requires an active classifier on the workspace.
+        /// </param>
+        /// <param name="classifierFilters">
+        /// Filter results to generations with specific classifier tag values. Can be combined with classifier_dimensions (must use the same classifier_id) or used independently with standard dimensions.
+        /// </param>
         /// <param name="dimensions"></param>
         /// <param name="filters"></param>
         /// <param name="granularity">
@@ -85,6 +103,8 @@ namespace OpenRouter
 #endif
         public QueryAnalyticsRequest(
             global::System.Collections.Generic.IList<string> metrics,
+            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierDimensions? classifierDimensions,
+            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierFilters? classifierFilters,
             global::System.Collections.Generic.IList<string>? dimensions,
             global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems>? filters,
             string? granularity,
@@ -93,6 +113,8 @@ namespace OpenRouter
             global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderBy? orderBy,
             global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaTimeRange? timeRange)
         {
+            this.ClassifierDimensions = classifierDimensions;
+            this.ClassifierFilters = classifierFilters;
             this.Dimensions = dimensions;
             this.Filters = filters;
             this.Granularity = granularity;

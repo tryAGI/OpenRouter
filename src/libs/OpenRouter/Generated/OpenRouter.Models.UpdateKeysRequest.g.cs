@@ -30,8 +30,8 @@ namespace OpenRouter
         /// New limit reset type for the API key (daily, weekly, monthly, or null for no reset). Resets happen automatically at midnight UTC, and weeks are Monday through Sunday.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_reset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? LimitReset { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitResetJsonConverter))]
+        public global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset? LimitReset { get; set; }
 
         /// <summary>
         /// New name for the API key
@@ -70,7 +70,7 @@ namespace OpenRouter
             bool? disabled,
             bool? includeByokInLimit,
             double? limit,
-            global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset,
+            global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset? limitReset,
             string? name)
         {
             this.Disabled = disabled;

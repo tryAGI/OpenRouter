@@ -18,8 +18,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_limit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>? MemoryLimit { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerOneOf1MemoryLimitJsonConverter))]
+        public global::OpenRouter.CodeInterpreterServerToolContainerOneOf1MemoryLimit? MemoryLimit { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace OpenRouter
 #endif
         public CodeInterpreterServerToolContainer1(
             global::System.Collections.Generic.IList<string>? fileIds,
-            global::OpenRouter.OneOf<global::OpenRouter.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>? memoryLimit,
+            global::OpenRouter.CodeInterpreterServerToolContainerOneOf1MemoryLimit? memoryLimit,
             global::OpenRouter.CodeInterpreterServerToolContainerOneOf1Type type)
         {
             this.FileIds = fileIds;

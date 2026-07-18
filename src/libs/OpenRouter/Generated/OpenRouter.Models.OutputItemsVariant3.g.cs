@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.OutputItemsVariant3Type Type { get; set; }
 
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         public object? Action { get; set; }
@@ -64,7 +64,9 @@ namespace OpenRouter
         /// <param name="type">
         /// Discriminator value: computer_call
         /// </param>
-        /// <param name="action"></param>
+        /// <param name="action">
+        /// Any type
+        /// </param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

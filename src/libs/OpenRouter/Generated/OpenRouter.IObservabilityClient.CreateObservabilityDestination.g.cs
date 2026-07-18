@@ -72,7 +72,7 @@ namespace OpenRouter
             global::OpenRouter.CreateObservabilityDestinationRequestType type,
             global::System.Collections.Generic.IList<string>? apiKeyHashes = default,
             bool? enabled = default,
-            global::OpenRouter.ObservabilityFilterRulesConfig? filterRules = default,
+            global::OpenRouter.ObservabilityFilterRulesConfigNullable? filterRules = default,
             bool? privacyMode = default,
             double? samplingRate = default,
             global::System.Guid? workspaceId = default,

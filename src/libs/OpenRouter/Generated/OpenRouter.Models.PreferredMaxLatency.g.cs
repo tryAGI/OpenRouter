@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::OpenRouter.PercentileLatencyCutoffs PickPercentileLatencyCutoffs() => IsPercentileLatencyCutoffs
             ? PercentileLatencyCutoffs!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileLatencyCutoffs' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? PreferredMaxLatencyVariant3 { get; init; }
-#else
-        public object? PreferredMaxLatencyVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMaxLatencyVariant3))]
-#endif
-        public bool IsPreferredMaxLatencyVariant3 => PreferredMaxLatencyVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickPreferredMaxLatencyVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = PreferredMaxLatencyVariant3;
-            return IsPreferredMaxLatencyVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickPreferredMaxLatencyVariant3() => IsPreferredMaxLatencyVariant3
-            ? PreferredMaxLatencyVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMaxLatencyVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -170,20 +133,17 @@ namespace OpenRouter
         /// </summary>
         public PreferredMaxLatency(
             double? preferredMaxLatencyVariant1,
-            global::OpenRouter.PercentileLatencyCutoffs? percentileLatencyCutoffs,
-            object? preferredMaxLatencyVariant3
+            global::OpenRouter.PercentileLatencyCutoffs? percentileLatencyCutoffs
             )
         {
             PreferredMaxLatencyVariant1 = preferredMaxLatencyVariant1;
             PercentileLatencyCutoffs = percentileLatencyCutoffs;
-            PreferredMaxLatencyVariant3 = preferredMaxLatencyVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            PreferredMaxLatencyVariant3 as object ??
             PercentileLatencyCutoffs as object ??
             PreferredMaxLatencyVariant1 as object 
             ;
@@ -193,8 +153,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             PreferredMaxLatencyVariant1?.ToString() ??
-            PercentileLatencyCutoffs?.ToString() ??
-            PreferredMaxLatencyVariant3?.ToString() 
+            PercentileLatencyCutoffs?.ToString() 
             ;
 
         /// <summary>
@@ -202,7 +161,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsPreferredMaxLatencyVariant1 && !IsPercentileLatencyCutoffs && !IsPreferredMaxLatencyVariant3 || !IsPreferredMaxLatencyVariant1 && IsPercentileLatencyCutoffs && !IsPreferredMaxLatencyVariant3 || !IsPreferredMaxLatencyVariant1 && !IsPercentileLatencyCutoffs && IsPreferredMaxLatencyVariant3;
+            return IsPreferredMaxLatencyVariant1 && !IsPercentileLatencyCutoffs || !IsPreferredMaxLatencyVariant1 && IsPercentileLatencyCutoffs;
         }
 
         /// <summary>
@@ -211,7 +170,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<double?, TResult>? preferredMaxLatencyVariant1 = null,
             global::System.Func<global::OpenRouter.PercentileLatencyCutoffs, TResult>? percentileLatencyCutoffs = null,
-            global::System.Func<object, TResult>? preferredMaxLatencyVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +185,6 @@ namespace OpenRouter
             {
                 return percentileLatencyCutoffs(PercentileLatencyCutoffs!);
             }
-            else if (IsPreferredMaxLatencyVariant3 && preferredMaxLatencyVariant3 != null)
-            {
-                return preferredMaxLatencyVariant3(PreferredMaxLatencyVariant3!);
-            }
 
             return default(TResult);
         }
@@ -242,8 +196,6 @@ namespace OpenRouter
             global::System.Action<double?>? preferredMaxLatencyVariant1 = null,
 
             global::System.Action<global::OpenRouter.PercentileLatencyCutoffs>? percentileLatencyCutoffs = null,
-
-            global::System.Action<object>? preferredMaxLatencyVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +210,6 @@ namespace OpenRouter
             else if (IsPercentileLatencyCutoffs)
             {
                 percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
-            }
-            else if (IsPreferredMaxLatencyVariant3)
-            {
-                preferredMaxLatencyVariant3?.Invoke(PreferredMaxLatencyVariant3!);
             }
         }
 
@@ -271,7 +219,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<double?>? preferredMaxLatencyVariant1 = null,
             global::System.Action<global::OpenRouter.PercentileLatencyCutoffs>? percentileLatencyCutoffs = null,
-            global::System.Action<object>? preferredMaxLatencyVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -286,10 +233,6 @@ namespace OpenRouter
             else if (IsPercentileLatencyCutoffs)
             {
                 percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
-            }
-            else if (IsPreferredMaxLatencyVariant3)
-            {
-                preferredMaxLatencyVariant3?.Invoke(PreferredMaxLatencyVariant3!);
             }
         }
 
@@ -304,8 +247,6 @@ namespace OpenRouter
                 typeof(double),
                 PercentileLatencyCutoffs,
                 typeof(global::OpenRouter.PercentileLatencyCutoffs),
-                PreferredMaxLatencyVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -323,8 +264,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(PreferredMaxLatencyVariant1, other.PreferredMaxLatencyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PercentileLatencyCutoffs?>.Default.Equals(PercentileLatencyCutoffs, other.PercentileLatencyCutoffs) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(PreferredMaxLatencyVariant3, other.PreferredMaxLatencyVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PercentileLatencyCutoffs?>.Default.Equals(PercentileLatencyCutoffs, other.PercentileLatencyCutoffs) 
                 ;
         }
 

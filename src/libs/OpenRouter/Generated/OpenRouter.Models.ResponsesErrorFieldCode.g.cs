@@ -11,6 +11,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        BioPolicy,
+        /// <summary>
+        /// 
+        /// </summary>
         EmptyImageFile,
         /// <summary>
         /// 
@@ -94,6 +98,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                ResponsesErrorFieldCode.BioPolicy => "bio_policy",
                 ResponsesErrorFieldCode.EmptyImageFile => "empty_image_file",
                 ResponsesErrorFieldCode.FailedToDownloadImage => "failed_to_download_image",
                 ResponsesErrorFieldCode.ImageContentPolicyViolation => "image_content_policy_violation",
@@ -122,6 +127,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                "bio_policy" => ResponsesErrorFieldCode.BioPolicy,
                 "empty_image_file" => ResponsesErrorFieldCode.EmptyImageFile,
                 "failed_to_download_image" => ResponsesErrorFieldCode.FailedToDownloadImage,
                 "image_content_policy_violation" => ResponsesErrorFieldCode.ImageContentPolicyViolation,

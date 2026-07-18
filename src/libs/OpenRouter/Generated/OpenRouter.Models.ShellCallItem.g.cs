@@ -23,7 +23,7 @@ namespace OpenRouter
         public required string CallId { get; set; }
 
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         public object? Environment { get; set; }
@@ -38,8 +38,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
-        public global::OpenRouter.ToolCallStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ToolCallStatus?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.ToolCallStatus?, object>? Status { get; set; }
 
         /// <summary>
         /// 
@@ -59,7 +59,9 @@ namespace OpenRouter
         /// </summary>
         /// <param name="action"></param>
         /// <param name="callId"></param>
-        /// <param name="environment"></param>
+        /// <param name="environment">
+        /// Any type
+        /// </param>
         /// <param name="id"></param>
         /// <param name="status"></param>
         /// <param name="type"></param>
@@ -71,7 +73,7 @@ namespace OpenRouter
             string callId,
             object? environment,
             string? id,
-            global::OpenRouter.ToolCallStatus? status,
+            global::OpenRouter.OneOf<global::OpenRouter.ToolCallStatus?, object>? status,
             global::OpenRouter.ShellCallItemType type)
         {
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));

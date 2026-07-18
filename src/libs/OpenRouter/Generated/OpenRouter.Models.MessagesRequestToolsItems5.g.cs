@@ -15,16 +15,17 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicAllowedCallersItems>? AllowedCallers { get; set; }
 
         /// <summary>
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caching")]
-        public global::OpenRouter.MessagesRequestToolsItemsOneOf5Caching? Caching { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AnthropicCacheControlDirective, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.AnthropicCacheControlDirective, object>? Caching { get; set; }
 
         /// <summary>
         /// 
@@ -71,11 +72,9 @@ namespace OpenRouter
         /// <param name="model"></param>
         /// <param name="allowedCallers"></param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </param>
-        /// <param name="caching">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
-        /// </param>
+        /// <param name="caching"></param>
         /// <param name="deferLoading"></param>
         /// <param name="maxUses"></param>
         /// <param name="name"></param>
@@ -87,7 +86,7 @@ namespace OpenRouter
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicAllowedCallersItems>? allowedCallers,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
-            global::OpenRouter.MessagesRequestToolsItemsOneOf5Caching? caching,
+            global::OpenRouter.OneOf<global::OpenRouter.AnthropicCacheControlDirective, object>? caching,
             bool? deferLoading,
             int? maxUses,
             global::OpenRouter.MessagesRequestToolsItemsOneOf5Name name,

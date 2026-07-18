@@ -9,11 +9,11 @@ namespace OpenRouter
     public sealed partial class ChatRequestResponseFormatVariant2
     {
         /// <summary>
-        /// 
+        /// Discriminator value: json_object
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FormatJsonObjectConfigTypeJsonConverter))]
-        public global::OpenRouter.FormatJsonObjectConfigType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestResponseFormatVariant2TypeJsonConverter))]
+        public global::OpenRouter.ChatRequestResponseFormatVariant2Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,12 +24,14 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatRequestResponseFormatVariant2" /> class.
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Discriminator value: json_object
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatRequestResponseFormatVariant2(
-            global::OpenRouter.FormatJsonObjectConfigType type)
+            global::OpenRouter.ChatRequestResponseFormatVariant2Type type)
         {
             this.Type = type;
         }

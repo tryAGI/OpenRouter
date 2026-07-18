@@ -47,7 +47,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="background"></param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -74,9 +74,14 @@ namespace OpenRouter
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
         /// <param name="presencePenalty"></param>
-        /// <param name="previousResponseId"></param>
+        /// <param name="previousResponseId">
+        /// Not supported. The Responses API is stateless: no responses are stored, so a previous response cannot be referenced. Requests with a non-null value are rejected with a 400 error. Send the full conversation history in `input` instead.
+        /// </param>
         /// <param name="prompt"></param>
         /// <param name="promptCacheKey"></param>
+        /// <param name="promptCacheOptions">
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
+        /// </param>
         /// <param name="provider">
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </param>
@@ -87,7 +92,9 @@ namespace OpenRouter
         /// Any type
         /// </param>
         /// <param name="safetyIdentifier"></param>
-        /// <param name="serviceTier"></param>
+        /// <param name="serviceTier">
+        /// Default Value: auto
+        /// </param>
         /// <param name="sessionId">
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
         /// </param>
@@ -136,14 +143,15 @@ namespace OpenRouter
             bool? parallelToolCalls = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItems>? plugins = default,
             double? presencePenalty = default,
-            string? previousResponseId = default,
+            object? previousResponseId = default,
             global::OpenRouter.StoredPromptTemplate? prompt = default,
             string? promptCacheKey = default,
+            global::OpenRouter.PromptCacheOptions? promptCacheOptions = default,
             global::OpenRouter.ProviderPreferences? provider = default,
             global::OpenRouter.ReasoningConfig? reasoning = default,
             object? route = default,
             string? safetyIdentifier = default,
-            global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestServiceTier?, object>? serviceTier = default,
+            global::OpenRouter.ResponsesRequestServiceTier? serviceTier = default,
             string? sessionId = default,
             global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? store = default,

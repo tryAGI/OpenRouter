@@ -58,8 +58,7 @@ namespace OpenRouter
         /// Usage for server-side tool execution (e.g., web search)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageServerToolUseDetails, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatUsageServerToolUseDetails, object>? ServerToolUseDetails { get; set; }
+        public global::OpenRouter.ServerToolUseDetails? ServerToolUseDetails { get; set; }
 
         /// <summary>
         /// Total number of tokens
@@ -116,7 +115,7 @@ namespace OpenRouter
             global::OpenRouter.CostDetails? costDetails,
             bool? isByok,
             global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? promptTokensDetails,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatUsageServerToolUseDetails, object>? serverToolUseDetails)
+            global::OpenRouter.ServerToolUseDetails? serverToolUseDetails)
         {
             this.CompletionTokens = completionTokens;
             this.CompletionTokensDetails = completionTokensDetails;

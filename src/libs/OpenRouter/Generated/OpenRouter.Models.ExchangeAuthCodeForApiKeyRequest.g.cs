@@ -19,8 +19,8 @@ namespace OpenRouter
         /// The method used to generate the code challenge
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_challenge_method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? CodeChallengeMethod { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodJsonConverter))]
+        public global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? CodeChallengeMethod { get; set; }
 
         /// <summary>
         /// The code verifier if code_challenge was used in the authorization request
@@ -51,7 +51,7 @@ namespace OpenRouter
 #endif
         public ExchangeAuthCodeForApiKeyRequest(
             string code,
-            global::OpenRouter.OneOf<global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod,
+            global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod,
             string? codeVerifier)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));

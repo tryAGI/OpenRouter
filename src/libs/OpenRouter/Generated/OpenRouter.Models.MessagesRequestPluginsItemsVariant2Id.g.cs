@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: context-compression
+    /// Discriminator value: auto-router
     /// </summary>
     public enum MessagesRequestPluginsItemsVariant2Id
     {
         /// <summary>
-        /// context-compression
+        /// auto-router
         /// </summary>
-        ContextCompression,
+        AutoRouter,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                MessagesRequestPluginsItemsVariant2Id.ContextCompression => "context-compression",
+                MessagesRequestPluginsItemsVariant2Id.AutoRouter => "auto-router",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "context-compression" => MessagesRequestPluginsItemsVariant2Id.ContextCompression,
+                "auto-router" => MessagesRequestPluginsItemsVariant2Id.AutoRouter,
                 _ => null,
             };
         }

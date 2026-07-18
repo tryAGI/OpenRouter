@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::OpenRouter.OutputMessageItemPhase1 PickOutputMessageItemPhase1() => IsOutputMessageItemPhase1
             ? OutputMessageItemPhase1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhase1' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? OutputMessageItemPhaseVariant3 { get; init; }
-#else
-        public object? OutputMessageItemPhaseVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageItemPhaseVariant3))]
-#endif
-        public bool IsOutputMessageItemPhaseVariant3 => OutputMessageItemPhaseVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickOutputMessageItemPhaseVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = OutputMessageItemPhaseVariant3;
-            return IsOutputMessageItemPhaseVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickOutputMessageItemPhaseVariant3() => IsOutputMessageItemPhaseVariant3
-            ? OutputMessageItemPhaseVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemPhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -170,20 +133,17 @@ namespace OpenRouter
         /// </summary>
         public OutputMessageItemPhase(
             global::OpenRouter.OutputMessageItemPhase0? outputMessageItemPhase0,
-            global::OpenRouter.OutputMessageItemPhase1? outputMessageItemPhase1,
-            object? outputMessageItemPhaseVariant3
+            global::OpenRouter.OutputMessageItemPhase1? outputMessageItemPhase1
             )
         {
             OutputMessageItemPhase0 = outputMessageItemPhase0;
             OutputMessageItemPhase1 = outputMessageItemPhase1;
-            OutputMessageItemPhaseVariant3 = outputMessageItemPhaseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            OutputMessageItemPhaseVariant3 as object ??
             OutputMessageItemPhase1 as object ??
             OutputMessageItemPhase0 as object 
             ;
@@ -193,8 +153,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             OutputMessageItemPhase0?.ToValueString() ??
-            OutputMessageItemPhase1?.ToValueString() ??
-            OutputMessageItemPhaseVariant3?.ToString() 
+            OutputMessageItemPhase1?.ToValueString() 
             ;
 
         /// <summary>
@@ -202,7 +161,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsOutputMessageItemPhase0 && !IsOutputMessageItemPhase1 && !IsOutputMessageItemPhaseVariant3 || !IsOutputMessageItemPhase0 && IsOutputMessageItemPhase1 && !IsOutputMessageItemPhaseVariant3 || !IsOutputMessageItemPhase0 && !IsOutputMessageItemPhase1 && IsOutputMessageItemPhaseVariant3;
+            return IsOutputMessageItemPhase0 && !IsOutputMessageItemPhase1 || !IsOutputMessageItemPhase0 && IsOutputMessageItemPhase1;
         }
 
         /// <summary>
@@ -211,7 +170,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OutputMessageItemPhase0?, TResult>? outputMessageItemPhase0 = null,
             global::System.Func<global::OpenRouter.OutputMessageItemPhase1?, TResult>? outputMessageItemPhase1 = null,
-            global::System.Func<object, TResult>? outputMessageItemPhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +185,6 @@ namespace OpenRouter
             {
                 return outputMessageItemPhase1(OutputMessageItemPhase1!);
             }
-            else if (IsOutputMessageItemPhaseVariant3 && outputMessageItemPhaseVariant3 != null)
-            {
-                return outputMessageItemPhaseVariant3(OutputMessageItemPhaseVariant3!);
-            }
 
             return default(TResult);
         }
@@ -242,8 +196,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.OutputMessageItemPhase0?>? outputMessageItemPhase0 = null,
 
             global::System.Action<global::OpenRouter.OutputMessageItemPhase1?>? outputMessageItemPhase1 = null,
-
-            global::System.Action<object>? outputMessageItemPhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +210,6 @@ namespace OpenRouter
             else if (IsOutputMessageItemPhase1)
             {
                 outputMessageItemPhase1?.Invoke(OutputMessageItemPhase1!);
-            }
-            else if (IsOutputMessageItemPhaseVariant3)
-            {
-                outputMessageItemPhaseVariant3?.Invoke(OutputMessageItemPhaseVariant3!);
             }
         }
 
@@ -271,7 +219,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<global::OpenRouter.OutputMessageItemPhase0?>? outputMessageItemPhase0 = null,
             global::System.Action<global::OpenRouter.OutputMessageItemPhase1?>? outputMessageItemPhase1 = null,
-            global::System.Action<object>? outputMessageItemPhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -286,10 +233,6 @@ namespace OpenRouter
             else if (IsOutputMessageItemPhase1)
             {
                 outputMessageItemPhase1?.Invoke(OutputMessageItemPhase1!);
-            }
-            else if (IsOutputMessageItemPhaseVariant3)
-            {
-                outputMessageItemPhaseVariant3?.Invoke(OutputMessageItemPhaseVariant3!);
             }
         }
 
@@ -304,8 +247,6 @@ namespace OpenRouter
                 typeof(global::OpenRouter.OutputMessageItemPhase0),
                 OutputMessageItemPhase1,
                 typeof(global::OpenRouter.OutputMessageItemPhase1),
-                OutputMessageItemPhaseVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -323,8 +264,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessageItemPhase0?>.Default.Equals(OutputMessageItemPhase0, other.OutputMessageItemPhase0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessageItemPhase1?>.Default.Equals(OutputMessageItemPhase1, other.OutputMessageItemPhase1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(OutputMessageItemPhaseVariant3, other.OutputMessageItemPhaseVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessageItemPhase1?>.Default.Equals(OutputMessageItemPhase1, other.OutputMessageItemPhase1) 
                 ;
         }
 

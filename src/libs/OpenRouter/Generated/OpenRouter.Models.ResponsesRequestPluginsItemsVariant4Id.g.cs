@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: fusion
+    /// Discriminator value: file-parser
     /// </summary>
     public enum ResponsesRequestPluginsItemsVariant4Id
     {
         /// <summary>
-        /// fusion
+        /// file-parser
         /// </summary>
-        Fusion,
+        FileParser,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ResponsesRequestPluginsItemsVariant4Id.Fusion => "fusion",
+                ResponsesRequestPluginsItemsVariant4Id.FileParser => "file-parser",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "fusion" => ResponsesRequestPluginsItemsVariant4Id.Fusion,
+                "file-parser" => ResponsesRequestPluginsItemsVariant4Id.FileParser,
                 _ => null,
             };
         }

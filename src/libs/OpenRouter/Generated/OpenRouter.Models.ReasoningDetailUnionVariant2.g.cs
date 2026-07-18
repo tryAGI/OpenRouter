@@ -4,16 +4,23 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reasoning detail summary schema
+    /// Record of an OpenRouter server-tool invocation (e.g. openrouter:fusion), carried in reasoning_details so a prior tool call can be rehydrated into a later turn of the same conversation.
     /// </summary>
     public sealed partial class ReasoningDetailUnionVariant2
     {
         /// <summary>
-        /// Discriminator value: reasoning.summary
+        /// Discriminator value: reasoning.server_tool_call
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant2TypeJsonConverter))]
         public global::OpenRouter.ReasoningDetailUnionVariant2Type Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Arguments { get; set; }
 
         /// <summary>
         /// 
@@ -37,9 +44,22 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Summary { get; set; }
+        public required string Result { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_id")]
+        public string? ToolCallId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ToolName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,28 +70,37 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningDetailUnionVariant2" /> class.
         /// </summary>
-        /// <param name="summary"></param>
+        /// <param name="arguments"></param>
+        /// <param name="result"></param>
+        /// <param name="toolName"></param>
         /// <param name="type">
-        /// Discriminator value: reasoning.summary
+        /// Discriminator value: reasoning.server_tool_call
         /// </param>
         /// <param name="format"></param>
         /// <param name="id"></param>
         /// <param name="index"></param>
+        /// <param name="toolCallId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ReasoningDetailUnionVariant2(
-            string summary,
+            string arguments,
+            string result,
+            string toolName,
             global::OpenRouter.ReasoningDetailUnionVariant2Type type,
             global::OpenRouter.ReasoningFormat? format,
             string? id,
-            int? index)
+            int? index,
+            string? toolCallId)
         {
             this.Type = type;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Format = format;
             this.Id = id;
             this.Index = index;
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
+            this.ToolCallId = toolCallId;
+            this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
         }
 
         /// <summary>

@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string> PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2
             ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 { get; init; }
-#else
-        public object? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3))]
-#endif
-        public bool IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
-            return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3
-            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -147,20 +110,17 @@ namespace OpenRouter
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(
             bool? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1,
-            global::System.Collections.Generic.IList<string>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2,
-            object? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3
+            global::System.Collections.Generic.IList<string>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2
             )
         {
             MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1;
             MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2;
-            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 as object ??
             MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 as object ??
             MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 as object 
             ;
@@ -170,8 +130,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.ToString().ToLowerInvariant() ??
-            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.ToString() ??
-            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.ToString() 
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -179,7 +138,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 || !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 || !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
+            return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 || !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2;
         }
 
         /// <summary>
@@ -188,7 +147,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
-            global::System.Func<object, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -204,10 +162,6 @@ namespace OpenRouter
             {
                 return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 != null)
-            {
-                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
-            }
 
             return default(TResult);
         }
@@ -219,8 +173,6 @@ namespace OpenRouter
             global::System.Action<bool?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
 
             global::System.Action<global::System.Collections.Generic.IList<string>>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
-
-            global::System.Action<object>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -235,10 +187,6 @@ namespace OpenRouter
             else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
             {
                 messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
-            }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
-            {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
             }
         }
 
@@ -248,7 +196,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<bool?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<string>>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
-            global::System.Action<object>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -263,10 +210,6 @@ namespace OpenRouter
             else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
             {
                 messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
-            }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
-            {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
             }
         }
 
@@ -281,8 +224,6 @@ namespace OpenRouter
                 typeof(bool),
                 MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
-                MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -300,8 +241,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1, other.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2, other.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3, other.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2, other.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2) 
                 ;
         }
 

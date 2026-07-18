@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::OpenRouter.EasyInputMessagePhase1 PickEasyInputMessagePhase1() => IsEasyInputMessagePhase1
             ? EasyInputMessagePhase1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase1' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? EasyInputMessagePhaseVariant3 { get; init; }
-#else
-        public object? EasyInputMessagePhaseVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessagePhaseVariant3))]
-#endif
-        public bool IsEasyInputMessagePhaseVariant3 => EasyInputMessagePhaseVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickEasyInputMessagePhaseVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = EasyInputMessagePhaseVariant3;
-            return IsEasyInputMessagePhaseVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickEasyInputMessagePhaseVariant3() => IsEasyInputMessagePhaseVariant3
-            ? EasyInputMessagePhaseVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -170,20 +133,17 @@ namespace OpenRouter
         /// </summary>
         public EasyInputMessagePhase(
             global::OpenRouter.EasyInputMessagePhase0? easyInputMessagePhase0,
-            global::OpenRouter.EasyInputMessagePhase1? easyInputMessagePhase1,
-            object? easyInputMessagePhaseVariant3
+            global::OpenRouter.EasyInputMessagePhase1? easyInputMessagePhase1
             )
         {
             EasyInputMessagePhase0 = easyInputMessagePhase0;
             EasyInputMessagePhase1 = easyInputMessagePhase1;
-            EasyInputMessagePhaseVariant3 = easyInputMessagePhaseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            EasyInputMessagePhaseVariant3 as object ??
             EasyInputMessagePhase1 as object ??
             EasyInputMessagePhase0 as object 
             ;
@@ -193,8 +153,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             EasyInputMessagePhase0?.ToValueString() ??
-            EasyInputMessagePhase1?.ToValueString() ??
-            EasyInputMessagePhaseVariant3?.ToString() 
+            EasyInputMessagePhase1?.ToValueString() 
             ;
 
         /// <summary>
@@ -202,7 +161,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsEasyInputMessagePhase0 && !IsEasyInputMessagePhase1 && !IsEasyInputMessagePhaseVariant3 || !IsEasyInputMessagePhase0 && IsEasyInputMessagePhase1 && !IsEasyInputMessagePhaseVariant3 || !IsEasyInputMessagePhase0 && !IsEasyInputMessagePhase1 && IsEasyInputMessagePhaseVariant3;
+            return IsEasyInputMessagePhase0 && !IsEasyInputMessagePhase1 || !IsEasyInputMessagePhase0 && IsEasyInputMessagePhase1;
         }
 
         /// <summary>
@@ -211,7 +170,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.EasyInputMessagePhase0?, TResult>? easyInputMessagePhase0 = null,
             global::System.Func<global::OpenRouter.EasyInputMessagePhase1?, TResult>? easyInputMessagePhase1 = null,
-            global::System.Func<object, TResult>? easyInputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +185,6 @@ namespace OpenRouter
             {
                 return easyInputMessagePhase1(EasyInputMessagePhase1!);
             }
-            else if (IsEasyInputMessagePhaseVariant3 && easyInputMessagePhaseVariant3 != null)
-            {
-                return easyInputMessagePhaseVariant3(EasyInputMessagePhaseVariant3!);
-            }
 
             return default(TResult);
         }
@@ -242,8 +196,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.EasyInputMessagePhase0?>? easyInputMessagePhase0 = null,
 
             global::System.Action<global::OpenRouter.EasyInputMessagePhase1?>? easyInputMessagePhase1 = null,
-
-            global::System.Action<object>? easyInputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +210,6 @@ namespace OpenRouter
             else if (IsEasyInputMessagePhase1)
             {
                 easyInputMessagePhase1?.Invoke(EasyInputMessagePhase1!);
-            }
-            else if (IsEasyInputMessagePhaseVariant3)
-            {
-                easyInputMessagePhaseVariant3?.Invoke(EasyInputMessagePhaseVariant3!);
             }
         }
 
@@ -271,7 +219,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<global::OpenRouter.EasyInputMessagePhase0?>? easyInputMessagePhase0 = null,
             global::System.Action<global::OpenRouter.EasyInputMessagePhase1?>? easyInputMessagePhase1 = null,
-            global::System.Action<object>? easyInputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -286,10 +233,6 @@ namespace OpenRouter
             else if (IsEasyInputMessagePhase1)
             {
                 easyInputMessagePhase1?.Invoke(EasyInputMessagePhase1!);
-            }
-            else if (IsEasyInputMessagePhaseVariant3)
-            {
-                easyInputMessagePhaseVariant3?.Invoke(EasyInputMessagePhaseVariant3!);
             }
         }
 
@@ -304,8 +247,6 @@ namespace OpenRouter
                 typeof(global::OpenRouter.EasyInputMessagePhase0),
                 EasyInputMessagePhase1,
                 typeof(global::OpenRouter.EasyInputMessagePhase1),
-                EasyInputMessagePhaseVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -323,8 +264,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessagePhase0?>.Default.Equals(EasyInputMessagePhase0, other.EasyInputMessagePhase0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessagePhase1?>.Default.Equals(EasyInputMessagePhase1, other.EasyInputMessagePhase1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(EasyInputMessagePhaseVariant3, other.EasyInputMessagePhaseVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessagePhase1?>.Default.Equals(EasyInputMessagePhase1, other.EasyInputMessagePhase1) 
                 ;
         }
 

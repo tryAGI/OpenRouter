@@ -78,8 +78,7 @@ namespace OpenRouter
         /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string> Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -140,6 +139,12 @@ namespace OpenRouter
         public string? PromptCacheKey { get; set; }
 
         /// <summary>
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::OpenRouter.PromptCacheOptions? PromptCacheOptions { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
@@ -155,8 +160,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ServiceTier2?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ServiceTier2?, object>? ServiceTier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ServiceTierJsonConverter))]
+        public global::OpenRouter.ServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// 
@@ -259,9 +264,6 @@ namespace OpenRouter
         /// <param name="id"></param>
         /// <param name="incompleteDetails"></param>
         /// <param name="instructions"></param>
-        /// <param name="metadata">
-        /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
-        /// </param>
         /// <param name="model"></param>
         /// <param name="output"></param>
         /// <param name="parallelToolCalls"></param>
@@ -273,12 +275,18 @@ namespace OpenRouter
         /// <param name="frequencyPenalty"></param>
         /// <param name="maxOutputTokens"></param>
         /// <param name="maxToolCalls"></param>
+        /// <param name="metadata">
+        /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
+        /// </param>
         /// <param name="object"></param>
         /// <param name="outputText"></param>
         /// <param name="presencePenalty"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="prompt"></param>
         /// <param name="promptCacheKey"></param>
+        /// <param name="promptCacheOptions">
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
+        /// </param>
         /// <param name="reasoning"></param>
         /// <param name="safetyIdentifier"></param>
         /// <param name="serviceTier"></param>
@@ -307,7 +315,6 @@ namespace OpenRouter
             string id,
             global::OpenRouter.IncompleteDetails incompleteDetails,
             global::OpenRouter.BaseInputs instructions,
-            global::System.Collections.Generic.Dictionary<string, string> metadata,
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputItems> output,
             bool parallelToolCalls,
@@ -319,15 +326,17 @@ namespace OpenRouter
             double? frequencyPenalty,
             int? maxOutputTokens,
             int? maxToolCalls,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::OpenRouter.OpenResponsesResultObject @object,
             string? outputText,
             double? presencePenalty,
             string? previousResponseId,
             global::OpenRouter.StoredPromptTemplate? prompt,
             string? promptCacheKey,
+            global::OpenRouter.PromptCacheOptions? promptCacheOptions,
             global::OpenRouter.BaseReasoningConfig? reasoning,
             string? safetyIdentifier,
-            global::OpenRouter.OneOf<global::OpenRouter.ServiceTier2?, object>? serviceTier,
+            global::OpenRouter.ServiceTier? serviceTier,
             bool? store,
             double? temperature,
             global::OpenRouter.TextExtendedConfig? text,
@@ -349,7 +358,7 @@ namespace OpenRouter
             this.Instructions = instructions;
             this.MaxOutputTokens = maxOutputTokens;
             this.MaxToolCalls = maxToolCalls;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Metadata = metadata;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
@@ -359,6 +368,7 @@ namespace OpenRouter
             this.PreviousResponseId = previousResponseId;
             this.Prompt = prompt;
             this.PromptCacheKey = promptCacheKey;
+            this.PromptCacheOptions = promptCacheOptions;
             this.Reasoning = reasoning;
             this.SafetyIdentifier = safetyIdentifier;
             this.ServiceTier = serviceTier;

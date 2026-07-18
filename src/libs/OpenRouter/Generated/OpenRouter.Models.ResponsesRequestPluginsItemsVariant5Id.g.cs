@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: moderation
+    /// Discriminator value: fusion
     /// </summary>
     public enum ResponsesRequestPluginsItemsVariant5Id
     {
         /// <summary>
-        /// moderation
+        /// fusion
         /// </summary>
-        Moderation,
+        Fusion,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ResponsesRequestPluginsItemsVariant5Id.Moderation => "moderation",
+                ResponsesRequestPluginsItemsVariant5Id.Fusion => "fusion",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "moderation" => ResponsesRequestPluginsItemsVariant5Id.Moderation,
+                "fusion" => ResponsesRequestPluginsItemsVariant5Id.Fusion,
                 _ => null,
             };
         }

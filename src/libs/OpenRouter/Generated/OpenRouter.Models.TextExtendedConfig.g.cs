@@ -19,8 +19,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.TextExtendedConfigVerbosity?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.TextExtendedConfigVerbosity?, object>? Verbosity { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.TextExtendedConfigVerbosityJsonConverter))]
+        public global::OpenRouter.TextExtendedConfigVerbosity? Verbosity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace OpenRouter
 #endif
         public TextExtendedConfig(
             global::OpenRouter.Formats? format,
-            global::OpenRouter.OneOf<global::OpenRouter.TextExtendedConfigVerbosity?, object>? verbosity)
+            global::OpenRouter.TextExtendedConfigVerbosity? verbosity)
         {
             this.Format = format;
             this.Verbosity = verbosity;

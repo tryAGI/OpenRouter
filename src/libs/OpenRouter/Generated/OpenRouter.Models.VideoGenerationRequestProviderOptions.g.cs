@@ -197,6 +197,12 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deepgram")]
+        public object? Deepgram { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deepinfra")]
         public object? Deepinfra { get; set; }
 
@@ -241,6 +247,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fireworks")]
         public object? Fireworks { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fish-audio")]
+        public object? FishAudio { get; set; }
 
         /// <summary>
         /// 
@@ -361,6 +373,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("klusterai")]
         public object? Klusterai { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("krea")]
+        public object? Krea { get; set; }
 
         /// <summary>
         /// 
@@ -593,8 +611,14 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sakana-ai")]
-        public object? SakanaAi { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("sail-research")]
+        public object? SailResearch { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sakana")]
+        public object? Sakana { get; set; }
 
         /// <summary>
         /// 
@@ -661,6 +685,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("targon")]
         public object? Targon { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tencent")]
+        public object? Tencent { get; set; }
 
         /// <summary>
         /// 
@@ -768,6 +798,7 @@ namespace OpenRouter
         /// <param name="crusoe"></param>
         /// <param name="darkbloom"></param>
         /// <param name="decart"></param>
+        /// <param name="deepgram"></param>
         /// <param name="deepinfra"></param>
         /// <param name="deepseek"></param>
         /// <param name="dekallm"></param>
@@ -776,6 +807,7 @@ namespace OpenRouter
         /// <param name="fakeProvider"></param>
         /// <param name="featherless"></param>
         /// <param name="fireworks"></param>
+        /// <param name="fishAudio"></param>
         /// <param name="friendli"></param>
         /// <param name="gmicloud"></param>
         /// <param name="googleAiStudio"></param>
@@ -796,6 +828,7 @@ namespace OpenRouter
         /// <param name="ioNet"></param>
         /// <param name="ionstream"></param>
         /// <param name="klusterai"></param>
+        /// <param name="krea"></param>
         /// <param name="lambda"></param>
         /// <param name="lepton"></param>
         /// <param name="liquid"></param>
@@ -834,7 +867,8 @@ namespace OpenRouter
         /// <param name="reka"></param>
         /// <param name="relace"></param>
         /// <param name="replicate"></param>
-        /// <param name="sakanaAi"></param>
+        /// <param name="sailResearch"></param>
+        /// <param name="sakana"></param>
         /// <param name="sambanova"></param>
         /// <param name="sambanovaCloaked"></param>
         /// <param name="seed"></param>
@@ -846,6 +880,7 @@ namespace OpenRouter
         /// <param name="streamlake"></param>
         /// <param name="switchpoint"></param>
         /// <param name="targon"></param>
+        /// <param name="tencent"></param>
         /// <param name="tenstorrent"></param>
         /// <param name="together"></param>
         /// <param name="togetherLite"></param>
@@ -892,6 +927,7 @@ namespace OpenRouter
             object? crusoe,
             object? darkbloom,
             object? decart,
+            object? deepgram,
             object? deepinfra,
             object? deepseek,
             object? dekallm,
@@ -900,6 +936,7 @@ namespace OpenRouter
             object? fakeProvider,
             object? featherless,
             object? fireworks,
+            object? fishAudio,
             object? friendli,
             object? gmicloud,
             object? googleAiStudio,
@@ -920,6 +957,7 @@ namespace OpenRouter
             object? ioNet,
             object? ionstream,
             object? klusterai,
+            object? krea,
             object? lambda,
             object? lepton,
             object? liquid,
@@ -958,7 +996,8 @@ namespace OpenRouter
             object? reka,
             object? relace,
             object? replicate,
-            object? sakanaAi,
+            object? sailResearch,
+            object? sakana,
             object? sambanova,
             object? sambanovaCloaked,
             object? seed,
@@ -970,6 +1009,7 @@ namespace OpenRouter
             object? streamlake,
             object? switchpoint,
             object? targon,
+            object? tencent,
             object? tenstorrent,
             object? together,
             object? togetherLite,
@@ -1013,6 +1053,7 @@ namespace OpenRouter
             this.Crusoe = crusoe;
             this.Darkbloom = darkbloom;
             this.Decart = decart;
+            this.Deepgram = deepgram;
             this.Deepinfra = deepinfra;
             this.Deepseek = deepseek;
             this.Dekallm = dekallm;
@@ -1021,6 +1062,7 @@ namespace OpenRouter
             this.FakeProvider = fakeProvider;
             this.Featherless = featherless;
             this.Fireworks = fireworks;
+            this.FishAudio = fishAudio;
             this.Friendli = friendli;
             this.Gmicloud = gmicloud;
             this.GoogleAiStudio = googleAiStudio;
@@ -1041,6 +1083,7 @@ namespace OpenRouter
             this.IoNet = ioNet;
             this.Ionstream = ionstream;
             this.Klusterai = klusterai;
+            this.Krea = krea;
             this.Lambda = lambda;
             this.Lepton = lepton;
             this.Liquid = liquid;
@@ -1079,7 +1122,8 @@ namespace OpenRouter
             this.Reka = reka;
             this.Relace = relace;
             this.Replicate = replicate;
-            this.SakanaAi = sakanaAi;
+            this.SailResearch = sailResearch;
+            this.Sakana = sakana;
             this.Sambanova = sambanova;
             this.SambanovaCloaked = sambanovaCloaked;
             this.Seed = seed;
@@ -1091,6 +1135,7 @@ namespace OpenRouter
             this.Streamlake = streamlake;
             this.Switchpoint = switchpoint;
             this.Targon = targon;
+            this.Tencent = tencent;
             this.Tenstorrent = tenstorrent;
             this.Together = together;
             this.TogetherLite = togetherLite;

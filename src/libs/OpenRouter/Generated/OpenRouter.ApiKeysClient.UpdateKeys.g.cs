@@ -655,7 +655,7 @@ namespace OpenRouter
             bool? disabled = default,
             bool? includeByokInLimit = default,
             double? limit = default,
-            global::OpenRouter.OneOf<global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
+            global::OpenRouter.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset? limitReset = default,
             string? name = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -4,28 +4,29 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// file-parser variant
+    /// context-compression variant
     /// </summary>
     public sealed partial class ChatRequestPluginsItemsVariant3
     {
         /// <summary>
-        /// Discriminator value: file-parser
+        /// Discriminator value: context-compression
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestPluginsItemsVariant3IdJsonConverter))]
         public global::OpenRouter.ChatRequestPluginsItemsVariant3Id Id { get; set; }
 
         /// <summary>
-        /// Set to false to disable the file-parser plugin for this request. Defaults to true.
+        /// Set to false to disable the context-compression plugin for this request. Defaults to true.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Options for PDF parsing.
+        /// The compression engine to use. Defaults to "middle-out".
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pdf")]
-        public global::OpenRouter.PDFParserOptions? Pdf { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ContextCompressionEngineJsonConverter))]
+        public global::OpenRouter.ContextCompressionEngine? Engine { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,13 +38,13 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatRequestPluginsItemsVariant3" /> class.
         /// </summary>
         /// <param name="id">
-        /// Discriminator value: file-parser
+        /// Discriminator value: context-compression
         /// </param>
         /// <param name="enabled">
-        /// Set to false to disable the file-parser plugin for this request. Defaults to true.
+        /// Set to false to disable the context-compression plugin for this request. Defaults to true.
         /// </param>
-        /// <param name="pdf">
-        /// Options for PDF parsing.
+        /// <param name="engine">
+        /// The compression engine to use. Defaults to "middle-out".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -51,11 +52,11 @@ namespace OpenRouter
         public ChatRequestPluginsItemsVariant3(
             global::OpenRouter.ChatRequestPluginsItemsVariant3Id id,
             bool? enabled,
-            global::OpenRouter.PDFParserOptions? pdf)
+            global::OpenRouter.ContextCompressionEngine? engine)
         {
             this.Id = id;
             this.Enabled = enabled;
-            this.Pdf = pdf;
+            this.Engine = engine;
         }
 
         /// <summary>

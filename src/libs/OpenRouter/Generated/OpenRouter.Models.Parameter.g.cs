@@ -43,6 +43,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Prediction,
+        /// <summary>
+        /// 
+        /// </summary>
         PresencePenalty,
         /// <summary>
         /// 
@@ -130,6 +134,7 @@ namespace OpenRouter
                 Parameter.MaxTokens => "max_tokens",
                 Parameter.MinP => "min_p",
                 Parameter.ParallelToolCalls => "parallel_tool_calls",
+                Parameter.Prediction => "prediction",
                 Parameter.PresencePenalty => "presence_penalty",
                 Parameter.Reasoning => "reasoning",
                 Parameter.ReasoningEffort => "reasoning_effort",
@@ -165,6 +170,7 @@ namespace OpenRouter
                 "max_tokens" => Parameter.MaxTokens,
                 "min_p" => Parameter.MinP,
                 "parallel_tool_calls" => Parameter.ParallelToolCalls,
+                "prediction" => Parameter.Prediction,
                 "presence_penalty" => Parameter.PresencePenalty,
                 "reasoning" => Parameter.Reasoning,
                 "reasoning_effort" => Parameter.ReasoningEffort,

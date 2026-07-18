@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class MessagesRequestToolsItemsOneOf0InputSchema
     {
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
         public object? Properties { get; set; }
@@ -35,7 +35,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesRequestToolsItemsOneOf0InputSchema" /> class.
         /// </summary>
-        /// <param name="properties"></param>
+        /// <param name="properties">
+        /// Any type
+        /// </param>
         /// <param name="required"></param>
         /// <param name="type">
         /// Default Value: object

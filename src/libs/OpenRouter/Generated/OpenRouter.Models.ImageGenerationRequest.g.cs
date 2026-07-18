@@ -62,10 +62,10 @@ namespace OpenRouter
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// Provider-specific passthrough configuration
+        /// Provider routing preferences and provider-specific passthrough configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        public global::OpenRouter.ImageGenerationRequestProvider? Provider { get; set; }
+        public global::OpenRouter.ImageGenerationProviderPreferences? Provider { get; set; }
 
         /// <summary>
         /// Rendering quality. Providers without a quality knob ignore this.
@@ -88,7 +88,7 @@ namespace OpenRouter
         public int? Seed { get; set; }
 
         /// <summary>
-        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. Interchangeable with resolution + aspect_ratio; use those directly for enumerated, per-model discoverable values. Conflicting size + resolution/aspect_ratio is rejected.
+        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. A tier size is equivalent to setting `resolution` and combines with `aspect_ratio`. An explicit pixel size is authoritative: a mismatched `resolution` or `aspect_ratio` alongside it is rejected with a 400.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         public string? Size { get; set; }
@@ -133,7 +133,7 @@ namespace OpenRouter
         /// Encoding of the returned image bytes. Most models produce raster formats (png, jpeg, webp). SVG is supported by vectorization models (e.g. Quiver) — the SVG markup is UTF-8 base64-encoded in `b64_json`.
         /// </param>
         /// <param name="provider">
-        /// Provider-specific passthrough configuration
+        /// Provider routing preferences and provider-specific passthrough configuration.
         /// </param>
         /// <param name="quality">
         /// Rendering quality. Providers without a quality knob ignore this.
@@ -145,7 +145,7 @@ namespace OpenRouter
         /// If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.
         /// </param>
         /// <param name="size">
-        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. Interchangeable with resolution + aspect_ratio; use those directly for enumerated, per-model discoverable values. Conflicting size + resolution/aspect_ratio is rejected.
+        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. A tier size is equivalent to setting `resolution` and combines with `aspect_ratio`. An explicit pixel size is authoritative: a mismatched `resolution` or `aspect_ratio` alongside it is rejected with a 400.
         /// </param>
         /// <param name="stream">
         /// If true, partial images are streamed as SSE events as they become available. Only supported by providers with native streaming (currently OpenAI). Non-streaming providers ignore this flag and return a buffered response.
@@ -162,7 +162,7 @@ namespace OpenRouter
             int? n,
             int? outputCompression,
             global::OpenRouter.ImageGenerationRequestOutputFormat? outputFormat,
-            global::OpenRouter.ImageGenerationRequestProvider? provider,
+            global::OpenRouter.ImageGenerationProviderPreferences? provider,
             global::OpenRouter.ImageGenerationRequestQuality? quality,
             global::OpenRouter.ImageGenerationRequestResolution? resolution,
             int? seed,

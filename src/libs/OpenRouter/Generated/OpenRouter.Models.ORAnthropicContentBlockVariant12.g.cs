@@ -31,7 +31,7 @@ namespace OpenRouter
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         public object? Input { get; set; }
@@ -58,7 +58,9 @@ namespace OpenRouter
         /// <param name="type">
         /// Discriminator value: tool_use
         /// </param>
-        /// <param name="input"></param>
+        /// <param name="input">
+        /// Any type
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

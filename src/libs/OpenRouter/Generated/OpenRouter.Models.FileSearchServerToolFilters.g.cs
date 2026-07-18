@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::OpenRouter.CompoundFilter PickCompoundFilter() => IsCompoundFilter
             ? CompoundFilter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? FileSearchServerToolFiltersVariant3 { get; init; }
-#else
-        public object? FileSearchServerToolFiltersVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersVariant3))]
-#endif
-        public bool IsFileSearchServerToolFiltersVariant3 => FileSearchServerToolFiltersVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickFileSearchServerToolFiltersVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = FileSearchServerToolFiltersVariant3;
-            return IsFileSearchServerToolFiltersVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickFileSearchServerToolFiltersVariant3() => IsFileSearchServerToolFiltersVariant3
-            ? FileSearchServerToolFiltersVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -170,20 +133,17 @@ namespace OpenRouter
         /// </summary>
         public FileSearchServerToolFilters(
             global::OpenRouter.FileSearchServerToolFilters0? fileSearchServerToolFilters0,
-            global::OpenRouter.CompoundFilter? compoundFilter,
-            object? fileSearchServerToolFiltersVariant3
+            global::OpenRouter.CompoundFilter? compoundFilter
             )
         {
             FileSearchServerToolFilters0 = fileSearchServerToolFilters0;
             CompoundFilter = compoundFilter;
-            FileSearchServerToolFiltersVariant3 = fileSearchServerToolFiltersVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            FileSearchServerToolFiltersVariant3 as object ??
             CompoundFilter as object ??
             FileSearchServerToolFilters0 as object 
             ;
@@ -193,8 +153,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             FileSearchServerToolFilters0?.ToString() ??
-            CompoundFilter?.ToString() ??
-            FileSearchServerToolFiltersVariant3?.ToString() 
+            CompoundFilter?.ToString() 
             ;
 
         /// <summary>
@@ -202,7 +161,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsFileSearchServerToolFilters0 && !IsCompoundFilter && !IsFileSearchServerToolFiltersVariant3 || !IsFileSearchServerToolFilters0 && IsCompoundFilter && !IsFileSearchServerToolFiltersVariant3 || !IsFileSearchServerToolFilters0 && !IsCompoundFilter && IsFileSearchServerToolFiltersVariant3;
+            return IsFileSearchServerToolFilters0 && !IsCompoundFilter || !IsFileSearchServerToolFilters0 && IsCompoundFilter;
         }
 
         /// <summary>
@@ -211,7 +170,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.FileSearchServerToolFilters0, TResult>? fileSearchServerToolFilters0 = null,
             global::System.Func<global::OpenRouter.CompoundFilter, TResult>? compoundFilter = null,
-            global::System.Func<object, TResult>? fileSearchServerToolFiltersVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +185,6 @@ namespace OpenRouter
             {
                 return compoundFilter(CompoundFilter!);
             }
-            else if (IsFileSearchServerToolFiltersVariant3 && fileSearchServerToolFiltersVariant3 != null)
-            {
-                return fileSearchServerToolFiltersVariant3(FileSearchServerToolFiltersVariant3!);
-            }
 
             return default(TResult);
         }
@@ -242,8 +196,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.FileSearchServerToolFilters0>? fileSearchServerToolFilters0 = null,
 
             global::System.Action<global::OpenRouter.CompoundFilter>? compoundFilter = null,
-
-            global::System.Action<object>? fileSearchServerToolFiltersVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +210,6 @@ namespace OpenRouter
             else if (IsCompoundFilter)
             {
                 compoundFilter?.Invoke(CompoundFilter!);
-            }
-            else if (IsFileSearchServerToolFiltersVariant3)
-            {
-                fileSearchServerToolFiltersVariant3?.Invoke(FileSearchServerToolFiltersVariant3!);
             }
         }
 
@@ -271,7 +219,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<global::OpenRouter.FileSearchServerToolFilters0>? fileSearchServerToolFilters0 = null,
             global::System.Action<global::OpenRouter.CompoundFilter>? compoundFilter = null,
-            global::System.Action<object>? fileSearchServerToolFiltersVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -286,10 +233,6 @@ namespace OpenRouter
             else if (IsCompoundFilter)
             {
                 compoundFilter?.Invoke(CompoundFilter!);
-            }
-            else if (IsFileSearchServerToolFiltersVariant3)
-            {
-                fileSearchServerToolFiltersVariant3?.Invoke(FileSearchServerToolFiltersVariant3!);
             }
         }
 
@@ -304,8 +247,6 @@ namespace OpenRouter
                 typeof(global::OpenRouter.FileSearchServerToolFilters0),
                 CompoundFilter,
                 typeof(global::OpenRouter.CompoundFilter),
-                FileSearchServerToolFiltersVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -323,8 +264,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FileSearchServerToolFilters0?>.Default.Equals(FileSearchServerToolFilters0, other.FileSearchServerToolFilters0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(FileSearchServerToolFiltersVariant3, other.FileSearchServerToolFiltersVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter) 
                 ;
         }
 

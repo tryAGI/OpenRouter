@@ -12,8 +12,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_tools")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpServerToolAllowedToolsJsonConverter))]
-        public global::OpenRouter.McpServerToolAllowedTools? AllowedTools { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.McpServerToolAllowedTools?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.McpServerToolAllowedTools?, object>? AllowedTools { get; set; }
 
         /// <summary>
         /// 
@@ -38,8 +38,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_approval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpServerToolRequireApprovalJsonConverter))]
-        public global::OpenRouter.McpServerToolRequireApproval? RequireApproval { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.McpServerToolRequireApproval?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.McpServerToolRequireApproval?, object>? RequireApproval { get; set; }
 
         /// <summary>
         /// 
@@ -90,11 +90,11 @@ namespace OpenRouter
 #endif
         public McpServerTool(
             string serverLabel,
-            global::OpenRouter.McpServerToolAllowedTools? allowedTools,
+            global::OpenRouter.OneOf<global::OpenRouter.McpServerToolAllowedTools?, object>? allowedTools,
             string? authorization,
             global::OpenRouter.McpServerToolConnectorId? connectorId,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
-            global::OpenRouter.McpServerToolRequireApproval? requireApproval,
+            global::OpenRouter.OneOf<global::OpenRouter.McpServerToolRequireApproval?, object>? requireApproval,
             string? serverDescription,
             string? serverUrl,
             global::OpenRouter.McpServerToolType type)

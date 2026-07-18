@@ -46,6 +46,13 @@ namespace OpenRouter
         public global::OpenRouter.ProviderResponseProviderName? ProviderName { get; set; }
 
         /// <summary>
+        /// The service tier this request was routed to (e.g. flex, priority). The tier actually applied and billed is determined by the provider response and may differ.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("routed_service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderResponseRoutedServiceTierJsonConverter))]
+        public global::OpenRouter.ProviderResponseRoutedServiceTier? RoutedServiceTier { get; set; }
+
+        /// <summary>
         /// HTTP status code from the provider
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -78,6 +85,9 @@ namespace OpenRouter
         /// <param name="providerName">
         /// Name of the provider
         /// </param>
+        /// <param name="routedServiceTier">
+        /// The service tier this request was routed to (e.g. flex, priority). The tier actually applied and billed is determined by the provider response and may differ.
+        /// </param>
         /// <param name="status">
         /// HTTP status code from the provider
         /// </param>
@@ -91,6 +101,7 @@ namespace OpenRouter
             double? latency,
             string? modelPermaslug,
             global::OpenRouter.ProviderResponseProviderName? providerName,
+            global::OpenRouter.ProviderResponseRoutedServiceTier? routedServiceTier,
             int? status)
         {
             this.EndpointId = endpointId;
@@ -99,6 +110,7 @@ namespace OpenRouter
             this.Latency = latency;
             this.ModelPermaslug = modelPermaslug;
             this.ProviderName = providerName;
+            this.RoutedServiceTier = routedServiceTier;
             this.Status = status;
         }
 

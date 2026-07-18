@@ -12,8 +12,8 @@ namespace OpenRouter
         /// Constrains effort on reasoning for reasoning models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestReasoningEffort?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? Effort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningEffortJsonConverter))]
+        public global::OpenRouter.ChatRequestReasoningEffort? Effort { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatRequestReasoning(
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? effort,
+            global::OpenRouter.ChatRequestReasoningEffort? effort,
             global::OpenRouter.ChatReasoningSummaryVerbosityEnum? summary)
         {
             this.Effort = effort;

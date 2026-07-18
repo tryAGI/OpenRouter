@@ -11,6 +11,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        AutoBetaRouter,
+        /// <summary>
+        /// 
+        /// </summary>
         AutoRouter,
         /// <summary>
         /// 
@@ -58,6 +62,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                ChatRequestPluginsItemsDiscriminatorId.AutoBetaRouter => "auto-beta-router",
                 ChatRequestPluginsItemsDiscriminatorId.AutoRouter => "auto-router",
                 ChatRequestPluginsItemsDiscriminatorId.ContextCompression => "context-compression",
                 ChatRequestPluginsItemsDiscriminatorId.FileParser => "file-parser",
@@ -77,6 +82,7 @@ namespace OpenRouter
         {
             return value switch
             {
+                "auto-beta-router" => ChatRequestPluginsItemsDiscriminatorId.AutoBetaRouter,
                 "auto-router" => ChatRequestPluginsItemsDiscriminatorId.AutoRouter,
                 "context-compression" => ChatRequestPluginsItemsDiscriminatorId.ContextCompression,
                 "file-parser" => ChatRequestPluginsItemsDiscriminatorId.FileParser,

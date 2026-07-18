@@ -34,6 +34,12 @@ namespace OpenRouter
         /// Query analytics data<br/>
         /// Execute an analytics query with specified metrics, dimensions, filters, and time range. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
+        /// <param name="classifierDimensions">
+        /// Group results by custom classifier tags, breaking down metrics by the specified dimension values. Requires an active classifier on the workspace.
+        /// </param>
+        /// <param name="classifierFilters">
+        /// Filter results to generations with specific classifier tag values. Can be combined with classifier_dimensions (must use the same classifier_id) or used independently with standard dimensions.
+        /// </param>
         /// <param name="dimensions"></param>
         /// <param name="filters"></param>
         /// <param name="granularity">
@@ -53,6 +59,8 @@ namespace OpenRouter
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.BetaAnalyticsQueryAnalyticsResponse200> QueryAnalyticsAsync(
             global::System.Collections.Generic.IList<string> metrics,
+            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierDimensions? classifierDimensions = default,
+            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierFilters? classifierFilters = default,
             global::System.Collections.Generic.IList<string>? dimensions = default,
             global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems>? filters = default,
             string? granularity = default,

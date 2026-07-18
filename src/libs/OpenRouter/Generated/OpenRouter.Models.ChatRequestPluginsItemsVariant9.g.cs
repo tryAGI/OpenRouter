@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// web-fetch variant
+    /// web variant
     /// </summary>
     public sealed partial class ChatRequestPluginsItemsVariant9
     {
@@ -12,32 +12,58 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebFetchPluginIdJsonConverter))]
-        public global::OpenRouter.WebFetchPluginId Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchPluginIdJsonConverter))]
+        public global::OpenRouter.WebSearchPluginId Id { get; set; }
 
         /// <summary>
-        /// Only fetch from these domains.
+        /// Set to false to disable the web-search plugin for this request. Defaults to true.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
-        public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
+        public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Never fetch from these domains.
+        /// The search engine to use for web search.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("blocked_domains")]
-        public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchEngineJsonConverter))]
+        public global::OpenRouter.WebSearchEngine? Engine { get; set; }
 
         /// <summary>
-        /// Maximum content length in approximate tokens. Content exceeding this limit is truncated.
+        /// A list of domains to exclude from web search results. Supports wildcards (e.g. "*.substack.com") and path filtering (e.g. "openai.com/blog").
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_content_tokens")]
-        public int? MaxContentTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("exclude_domains")]
+        public global::System.Collections.Generic.IList<string>? ExcludeDomains { get; set; }
 
         /// <summary>
-        /// Maximum number of web fetches per request. Once exceeded, the tool returns an error.
+        /// A list of domains to restrict web search results to. Supports wildcards (e.g. "*.substack.com") and path filtering (e.g. "openai.com/blog").
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_domains")]
+        public global::System.Collections.Generic.IList<string>? IncludeDomains { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Maximum number of times the model can invoke web search in a single turn. Passed through to native providers that support it (e.g. Anthropic).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_uses")]
         public int? MaxUses { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_prompt")]
+        public string? SearchPrompt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WebSearchPluginUserLocation, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.WebSearchPluginUserLocation, object>? UserLocation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,33 +75,47 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatRequestPluginsItemsVariant9" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="allowedDomains">
-        /// Only fetch from these domains.
+        /// <param name="enabled">
+        /// Set to false to disable the web-search plugin for this request. Defaults to true.
         /// </param>
-        /// <param name="blockedDomains">
-        /// Never fetch from these domains.
+        /// <param name="engine">
+        /// The search engine to use for web search.
         /// </param>
-        /// <param name="maxContentTokens">
-        /// Maximum content length in approximate tokens. Content exceeding this limit is truncated.
+        /// <param name="excludeDomains">
+        /// A list of domains to exclude from web search results. Supports wildcards (e.g. "*.substack.com") and path filtering (e.g. "openai.com/blog").
         /// </param>
+        /// <param name="includeDomains">
+        /// A list of domains to restrict web search results to. Supports wildcards (e.g. "*.substack.com") and path filtering (e.g. "openai.com/blog").
+        /// </param>
+        /// <param name="maxResults"></param>
         /// <param name="maxUses">
-        /// Maximum number of web fetches per request. Once exceeded, the tool returns an error.
+        /// Maximum number of times the model can invoke web search in a single turn. Passed through to native providers that support it (e.g. Anthropic).
         /// </param>
+        /// <param name="searchPrompt"></param>
+        /// <param name="userLocation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatRequestPluginsItemsVariant9(
-            global::OpenRouter.WebFetchPluginId id,
-            global::System.Collections.Generic.IList<string>? allowedDomains,
-            global::System.Collections.Generic.IList<string>? blockedDomains,
-            int? maxContentTokens,
-            int? maxUses)
+            global::OpenRouter.WebSearchPluginId id,
+            bool? enabled,
+            global::OpenRouter.WebSearchEngine? engine,
+            global::System.Collections.Generic.IList<string>? excludeDomains,
+            global::System.Collections.Generic.IList<string>? includeDomains,
+            int? maxResults,
+            int? maxUses,
+            string? searchPrompt,
+            global::OpenRouter.OneOf<global::OpenRouter.WebSearchPluginUserLocation, object>? userLocation)
         {
             this.Id = id;
-            this.AllowedDomains = allowedDomains;
-            this.BlockedDomains = blockedDomains;
-            this.MaxContentTokens = maxContentTokens;
+            this.Enabled = enabled;
+            this.Engine = engine;
+            this.ExcludeDomains = excludeDomains;
+            this.IncludeDomains = includeDomains;
+            this.MaxResults = maxResults;
             this.MaxUses = maxUses;
+            this.SearchPrompt = searchPrompt;
+            this.UserLocation = userLocation;
         }
 
         /// <summary>

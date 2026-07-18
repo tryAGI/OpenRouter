@@ -16,7 +16,7 @@ namespace OpenRouter
         public required string B64Json { get; set; }
 
         /// <summary>
-        /// Media type (MIME type) of the image. Omitted when the output is a standard raster format (PNG). Present for non-raster outputs such as SVG (`image/svg+xml`).
+        /// Media type (MIME type) of the image, e.g. `image/png`, `image/jpeg`, `image/webp`, `image/svg+xml`. May be omitted if the format could not be determined.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
         public string? MediaType { get; set; }
@@ -34,7 +34,7 @@ namespace OpenRouter
         /// Base64-encoded image bytes
         /// </param>
         /// <param name="mediaType">
-        /// Media type (MIME type) of the image. Omitted when the output is a standard raster format (PNG). Present for non-raster outputs such as SVG (`image/svg+xml`).
+        /// Media type (MIME type) of the image, e.g. `image/png`, `image/jpeg`, `image/webp`, `image/svg+xml`. May be omitted if the format could not be determined.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

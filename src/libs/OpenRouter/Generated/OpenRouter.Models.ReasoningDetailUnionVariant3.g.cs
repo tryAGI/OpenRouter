@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reasoning detail text schema
+    /// Reasoning detail summary schema
     /// </summary>
     public sealed partial class ReasoningDetailUnionVariant3
     {
         /// <summary>
-        /// Discriminator value: reasoning.text
+        /// Discriminator value: reasoning.summary
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningDetailUnionVariant3TypeJsonConverter))]
@@ -37,14 +37,9 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        public string? Signature { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,31 +50,28 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningDetailUnionVariant3" /> class.
         /// </summary>
+        /// <param name="summary"></param>
         /// <param name="type">
-        /// Discriminator value: reasoning.text
+        /// Discriminator value: reasoning.summary
         /// </param>
         /// <param name="format"></param>
         /// <param name="id"></param>
         /// <param name="index"></param>
-        /// <param name="signature"></param>
-        /// <param name="text"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ReasoningDetailUnionVariant3(
+            string summary,
             global::OpenRouter.ReasoningDetailUnionVariant3Type type,
             global::OpenRouter.ReasoningFormat? format,
             string? id,
-            int? index,
-            string? signature,
-            string? text)
+            int? index)
         {
             this.Type = type;
             this.Format = format;
             this.Id = id;
             this.Index = index;
-            this.Signature = signature;
-            this.Text = text;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
         }
 
         /// <summary>

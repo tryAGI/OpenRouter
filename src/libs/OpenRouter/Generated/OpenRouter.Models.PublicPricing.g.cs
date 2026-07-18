@@ -82,6 +82,12 @@ namespace OpenRouter
         public string? InternalReasoning { get; set; }
 
         /// <summary>
+        /// Conditional overrides of the base pricing (e.g. long-context or time-based pricing). An entry applies when all of its condition fields (e.g. min_prompt_tokens, or the utc_start/utc_end time window) match the request; among applicable entries, later entries win per key; price keys absent from an entry inherit the base price. The top-level pricing keys always reflect the price that applies under default conditions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("overrides")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.PricingOverride>? Overrides { get; set; }
+
+        /// <summary>
         /// Price in USD per token for prompt (input) processing
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -148,6 +154,9 @@ namespace OpenRouter
         /// <param name="internalReasoning">
         /// Price in USD per internal reasoning token
         /// </param>
+        /// <param name="overrides">
+        /// Conditional overrides of the base pricing (e.g. long-context or time-based pricing). An entry applies when all of its condition fields (e.g. min_prompt_tokens, or the utc_start/utc_end time window) match the request; among applicable entries, later entries win per key; price keys absent from an entry inherit the base price. The top-level pricing keys always reflect the price that applies under default conditions.
+        /// </param>
         /// <param name="request">
         /// Price in USD per request
         /// </param>
@@ -171,6 +180,7 @@ namespace OpenRouter
             string? inputCacheWrite,
             string? inputCacheWrite1h,
             string? internalReasoning,
+            global::System.Collections.Generic.IList<global::OpenRouter.PricingOverride>? overrides,
             string? request,
             string? webSearch)
         {
@@ -186,6 +196,7 @@ namespace OpenRouter
             this.InputCacheWrite = inputCacheWrite;
             this.InputCacheWrite1h = inputCacheWrite1h;
             this.InternalReasoning = internalReasoning;
+            this.Overrides = overrides;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Request = request;
             this.WebSearch = webSearch;

@@ -9,6 +9,12 @@ namespace OpenRouter
     public sealed partial class ImageGenerationUsage
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
+        public global::OpenRouter.AnthropicCacheCreation? CacheCreation { get; set; }
+
+        /// <summary>
         /// The tokens generated
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
@@ -105,6 +111,7 @@ namespace OpenRouter
         /// <param name="totalTokens">
         /// Sum of the above two fields
         /// </param>
+        /// <param name="cacheCreation"></param>
         /// <param name="completionTokensDetails"></param>
         /// <param name="cost">
         /// Cost of the completion
@@ -133,6 +140,7 @@ namespace OpenRouter
             int completionTokens,
             int promptTokens,
             int totalTokens,
+            global::OpenRouter.AnthropicCacheCreation? cacheCreation,
             global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationUsageCompletionTokensDetails, object>? completionTokensDetails,
             double? cost,
             global::OpenRouter.CostDetails? costDetails,
@@ -143,6 +151,7 @@ namespace OpenRouter
             string? serviceTier,
             global::OpenRouter.AnthropicSpeed? speed)
         {
+            this.CacheCreation = cacheCreation;
             this.CompletionTokens = completionTokens;
             this.CompletionTokensDetails = completionTokensDetails;
             this.Cost = cost;

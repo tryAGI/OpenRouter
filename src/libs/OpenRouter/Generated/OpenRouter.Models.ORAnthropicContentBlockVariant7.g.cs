@@ -19,8 +19,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCallerJsonConverter))]
-        public global::OpenRouter.ORAnthropicNullableCaller? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCaller2JsonConverter))]
+        public global::OpenRouter.ORAnthropicNullableCaller2? Caller { get; set; }
 
         /// <summary>
         /// 
@@ -30,7 +30,7 @@ namespace OpenRouter
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         public object? Input { get; set; }
@@ -55,7 +55,9 @@ namespace OpenRouter
         /// <param name="name"></param>
         /// <param name="type"></param>
         /// <param name="caller"></param>
-        /// <param name="input"></param>
+        /// <param name="input">
+        /// Any type
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,7 +65,7 @@ namespace OpenRouter
             string id,
             string name,
             global::OpenRouter.OrAnthropicServerToolUseBlockType type,
-            global::OpenRouter.ORAnthropicNullableCaller? caller,
+            global::OpenRouter.ORAnthropicNullableCaller2? caller,
             object? input)
         {
             this.Type = type;

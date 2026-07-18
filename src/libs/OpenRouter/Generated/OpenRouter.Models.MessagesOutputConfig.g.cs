@@ -12,8 +12,8 @@ namespace OpenRouter
         /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesOutputConfigEffort?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigEffort?, object>? Effort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigEffortJsonConverter))]
+        public global::OpenRouter.MessagesOutputConfigEffort? Effort { get; set; }
 
         /// <summary>
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).
@@ -51,7 +51,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesOutputConfig(
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigEffort?, object>? effort,
+            global::OpenRouter.MessagesOutputConfigEffort? effort,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigFormat, object>? format,
             global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigTaskBudget, object>? taskBudget)
         {

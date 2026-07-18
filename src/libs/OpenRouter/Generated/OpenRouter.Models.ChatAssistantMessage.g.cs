@@ -18,8 +18,8 @@ namespace OpenRouter
         /// Assistant message content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatMessagesDiscriminatorMappingAssistantContentJsonConverter))]
-        public global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent?, object>? Content { get; set; }
 
         /// <summary>
         /// Generated images from image generation models
@@ -95,7 +95,7 @@ namespace OpenRouter
 #endif
         public ChatAssistantMessage(
             global::OpenRouter.ChatAudioOutput? audio,
-            global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent? content,
+            global::OpenRouter.OneOf<global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent?, object>? content,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatAssistantImagesItems>? images,
             string? name,
             string? reasoning,
