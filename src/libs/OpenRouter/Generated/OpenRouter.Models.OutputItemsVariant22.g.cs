@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:text_editor server tool output item
+    /// An openrouter:subagent server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant22
     {
@@ -12,21 +12,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemTypeJsonConverter))]
-        public global::OpenRouter.OutputTextEditorServerToolItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputSubagentServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputSubagentServerToolItemType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// Error message when the subagent task did not produce an outcome.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("command")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputTextEditorServerToolItemCommandJsonConverter))]
-        public global::OpenRouter.OutputTextEditorServerToolItemCommand? Command { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filePath")]
-        public string? FilePath { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -35,12 +28,36 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
+        /// Slug of the worker model that executed the task.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
+
+        /// <summary>
+        /// The worker model's result (the outcome text returned to the delegating model).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("outcome")]
+        public string? Outcome { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        /// The task description the delegating model sent to the worker.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("task_description")]
+        public string? TaskDescription { get; set; }
+
+        /// <summary>
+        /// The short task identifier the delegating model supplied.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("task_name")]
+        public string? TaskName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,24 +70,43 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type"></param>
-        /// <param name="command"></param>
-        /// <param name="filePath"></param>
+        /// <param name="error">
+        /// Error message when the subagent task did not produce an outcome.
+        /// </param>
         /// <param name="id"></param>
+        /// <param name="model">
+        /// Slug of the worker model that executed the task.
+        /// </param>
+        /// <param name="outcome">
+        /// The worker model's result (the outcome text returned to the delegating model).
+        /// </param>
+        /// <param name="taskDescription">
+        /// The task description the delegating model sent to the worker.
+        /// </param>
+        /// <param name="taskName">
+        /// The short task identifier the delegating model supplied.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant22(
             global::OpenRouter.ToolCallStatus status,
-            global::OpenRouter.OutputTextEditorServerToolItemType type,
-            global::OpenRouter.OutputTextEditorServerToolItemCommand? command,
-            string? filePath,
-            string? id)
+            global::OpenRouter.OutputSubagentServerToolItemType type,
+            string? error,
+            string? id,
+            string? model,
+            string? outcome,
+            string? taskDescription,
+            string? taskName)
         {
             this.Type = type;
-            this.Command = command;
-            this.FilePath = filePath;
+            this.Error = error;
             this.Id = id;
+            this.Model = model;
+            this.Outcome = outcome;
             this.Status = status;
+            this.TaskDescription = taskDescription;
+            this.TaskName = taskName;
         }
 
         /// <summary>

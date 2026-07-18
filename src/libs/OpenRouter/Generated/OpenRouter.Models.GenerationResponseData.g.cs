@@ -12,9 +12,9 @@ namespace OpenRouter
         /// Type of API used for the generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.GenerationResponseDataApiType?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.GenerationResponseDataApiTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.GenerationResponseDataApiType?, object> ApiType { get; set; }
+        public required global::OpenRouter.GenerationResponseDataApiType ApiType { get; set; }
 
         /// <summary>
         /// ID of the app that made the request
@@ -428,7 +428,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GenerationResponseData(
-            global::OpenRouter.OneOf<global::OpenRouter.GenerationResponseDataApiType?, object> apiType,
+            global::OpenRouter.GenerationResponseDataApiType apiType,
             string createdAt,
             global::OpenRouter.GenerationResponseDataDataRegion dataRegion,
             string id,

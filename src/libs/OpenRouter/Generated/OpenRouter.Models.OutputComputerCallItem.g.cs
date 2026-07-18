@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class OutputComputerCallItem
     {
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         public object? Action { get; set; }
@@ -54,7 +54,9 @@ namespace OpenRouter
         /// <param name="callId"></param>
         /// <param name="pendingSafetyChecks"></param>
         /// <param name="status"></param>
-        /// <param name="action"></param>
+        /// <param name="action">
+        /// Any type
+        /// </param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

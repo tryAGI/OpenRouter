@@ -19,7 +19,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRulesConfigGroupsItems> Groups { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRuleGroup> Groups { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ObservabilityFilterRulesConfig(
-            global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRulesConfigGroupsItems> groups,
+            global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRuleGroup> groups,
             bool? enabled)
         {
             this.Enabled = enabled;

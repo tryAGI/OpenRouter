@@ -51,8 +51,12 @@ namespace OpenRouter
         /// List BYOK provider credentials<br/>
         /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="offset"></param>
-        /// <param name="limit"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
         /// <param name="workspaceId"></param>
         /// <param name="provider">
         /// Optional provider slug to filter by (e.g. `openai`, `anthropic`, `amazon-bedrock`).
@@ -83,8 +87,12 @@ namespace OpenRouter
         /// List BYOK provider credentials<br/>
         /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="offset"></param>
-        /// <param name="limit"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
         /// <param name="workspaceId"></param>
         /// <param name="provider">
         /// Optional provider slug to filter by (e.g. `openai`, `anthropic`, `amazon-bedrock`).

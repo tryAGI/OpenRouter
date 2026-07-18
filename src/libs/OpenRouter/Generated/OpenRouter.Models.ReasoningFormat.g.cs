@@ -23,6 +23,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        MetaResponsesV1,
+        /// <summary>
+        /// 
+        /// </summary>
         OpenaiResponsesV1,
         /// <summary>
         /// 
@@ -49,6 +53,7 @@ namespace OpenRouter
                 ReasoningFormat.AnthropicClaudeV1 => "anthropic-claude-v1",
                 ReasoningFormat.AzureOpenaiResponsesV1 => "azure-openai-responses-v1",
                 ReasoningFormat.GoogleGeminiV1 => "google-gemini-v1",
+                ReasoningFormat.MetaResponsesV1 => "meta-responses-v1",
                 ReasoningFormat.OpenaiResponsesV1 => "openai-responses-v1",
                 ReasoningFormat.Unknown => "unknown",
                 ReasoningFormat.XaiResponsesV1 => "xai-responses-v1",
@@ -65,6 +70,7 @@ namespace OpenRouter
                 "anthropic-claude-v1" => ReasoningFormat.AnthropicClaudeV1,
                 "azure-openai-responses-v1" => ReasoningFormat.AzureOpenaiResponsesV1,
                 "google-gemini-v1" => ReasoningFormat.GoogleGeminiV1,
+                "meta-responses-v1" => ReasoningFormat.MetaResponsesV1,
                 "openai-responses-v1" => ReasoningFormat.OpenaiResponsesV1,
                 "unknown" => ReasoningFormat.Unknown,
                 "xai-responses-v1" => ReasoningFormat.XaiResponsesV1,

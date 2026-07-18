@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class MessagesRequestToolsItems2
     {
         /// <summary>
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
@@ -38,7 +38,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesRequestToolsItems2" /> class.
         /// </summary>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </param>
         /// <param name="name"></param>
         /// <param name="type"></param>

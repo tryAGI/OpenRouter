@@ -45,7 +45,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        public global::OpenRouter.PreviewWebSearchUserLocation? UserLocation { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PreviewWebSearchUserLocation2JsonConverter))]
+        public global::OpenRouter.PreviewWebSearchUserLocation2? UserLocation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +78,7 @@ namespace OpenRouter
             int? maxResults,
             global::OpenRouter.SearchContextSizeEnum? searchContextSize,
             global::OpenRouter.PreviewWebSearchServerToolType type,
-            global::OpenRouter.PreviewWebSearchUserLocation? userLocation)
+            global::OpenRouter.PreviewWebSearchUserLocation2? userLocation)
         {
             this.Engine = engine;
             this.Filters = filters;

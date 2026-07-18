@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.UsageInputTokensDetails InputTokensDetails { get; set; }
+        public required global::OpenRouter.OpenAiResponsesUsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.UsageOutputTokensDetails OutputTokensDetails { get; set; }
+        public required global::OpenRouter.OpenAiResponsesUsageOutputTokensDetails OutputTokensDetails { get; set; }
 
         /// <summary>
         /// 
@@ -62,6 +62,12 @@ namespace OpenRouter
         public bool? IsByok { get; set; }
 
         /// <summary>
+        /// Usage for server-side tool execution (e.g., web search)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use_details")]
+        public global::OpenRouter.ServerToolUseDetails? ServerToolUseDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -82,18 +88,22 @@ namespace OpenRouter
         /// <param name="isByok">
         /// Whether a request was made using a Bring Your Own Key configuration
         /// </param>
+        /// <param name="serverToolUseDetails">
+        /// Usage for server-side tool execution (e.g., web search)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Usage(
             int inputTokens,
-            global::OpenRouter.UsageInputTokensDetails inputTokensDetails,
+            global::OpenRouter.OpenAiResponsesUsageInputTokensDetails inputTokensDetails,
             int outputTokens,
-            global::OpenRouter.UsageOutputTokensDetails outputTokensDetails,
+            global::OpenRouter.OpenAiResponsesUsageOutputTokensDetails outputTokensDetails,
             int totalTokens,
             double? cost,
             global::OpenRouter.UsageCostDetails? costDetails,
-            bool? isByok)
+            bool? isByok,
+            global::OpenRouter.ServerToolUseDetails? serverToolUseDetails)
         {
             this.InputTokens = inputTokens;
             this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));
@@ -103,6 +113,7 @@ namespace OpenRouter
             this.Cost = cost;
             this.CostDetails = costDetails;
             this.IsByok = isByok;
+            this.ServerToolUseDetails = serverToolUseDetails;
         }
 
         /// <summary>

@@ -12,9 +12,9 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AnthropicRefusalStopDetailsCategory?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsCategoryJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.AnthropicRefusalStopDetailsCategory?, object> Category { get; set; }
+        public required global::OpenRouter.AnthropicRefusalStopDetailsCategory Category { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicRefusalStopDetails(
-            global::OpenRouter.OneOf<global::OpenRouter.AnthropicRefusalStopDetailsCategory?, object> category,
+            global::OpenRouter.AnthropicRefusalStopDetailsCategory category,
             string? explanation,
             global::OpenRouter.AnthropicRefusalStopDetailsType type)
         {

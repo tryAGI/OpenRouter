@@ -52,8 +52,6 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("instructions")) __score2++;
             if (__jsonProps.Contains("pause_after_compaction")) __score2++;
             if (__jsonProps.Contains("trigger")) __score2++;
-            if (__jsonProps.Contains("trigger.type")) __score2++;
-            if (__jsonProps.Contains("trigger.value")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;

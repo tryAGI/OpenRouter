@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: response-healing
+    /// Discriminator value: pareto-router
     /// </summary>
     public enum ResponsesRequestPluginsItemsVariant7Id
     {
         /// <summary>
-        /// response-healing
+        /// pareto-router
         /// </summary>
-        ResponseHealing,
+        ParetoRouter,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ResponsesRequestPluginsItemsVariant7Id.ResponseHealing => "response-healing",
+                ResponsesRequestPluginsItemsVariant7Id.ParetoRouter => "pareto-router",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "response-healing" => ResponsesRequestPluginsItemsVariant7Id.ResponseHealing,
+                "pareto-router" => ResponsesRequestPluginsItemsVariant7Id.ParetoRouter,
                 _ => null,
             };
         }

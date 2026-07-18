@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ChatFunctionTool0
     {
         /// <summary>
-        /// Cache control for the content part
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
@@ -41,7 +41,7 @@ namespace OpenRouter
         /// Function definition for tool calling
         /// </param>
         /// <param name="cacheControl">
-        /// Cache control for the content part
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

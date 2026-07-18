@@ -592,7 +592,7 @@ namespace OpenRouter
         /// List of allowed provider IDs
         /// </param>
         /// <param name="contentFilterBuiltins">
-        /// Builtin content filters to apply. The "flag" action is only supported for "regex-prompt-injection"; PII slugs (email, phone, ssn, credit-card, ip-address, person-name, address) accept "block" or "redact" only.
+        /// Builtin content filters to apply. Every builtin slug supports "block", "redact", and the detect-only "flag" action.
         /// </param>
         /// <param name="contentFilters">
         /// Custom regex content filters to apply to request messages
@@ -601,7 +601,7 @@ namespace OpenRouter
         /// Description of the guardrail
         /// </param>
         /// <param name="enforceZdr">
-        /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.
+        /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.
         /// </param>
         /// <param name="enforceZdrAnthropic">
         /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.
@@ -613,7 +613,10 @@ namespace OpenRouter
         /// Whether to enforce zero data retention for OpenAI models. Falls back to enforce_zdr when not provided.
         /// </param>
         /// <param name="enforceZdrOther">
-        /// Whether to enforce zero data retention for models that are not from Anthropic, OpenAI, or Google. Falls back to enforce_zdr when not provided.
+        /// Whether to enforce zero data retention for models that are not from Anthropic, OpenAI, Google, or xAI. Falls back to enforce_zdr when not provided.
+        /// </param>
+        /// <param name="enforceZdrXai">
+        /// Whether to enforce zero data retention for xAI models. Falls back to enforce_zdr when not provided.
         /// </param>
         /// <param name="ignoredModels">
         /// Array of model identifiers to exclude from routing (slug or canonical_slug accepted)
@@ -648,6 +651,7 @@ namespace OpenRouter
             bool? enforceZdrGoogle = default,
             bool? enforceZdrOpenai = default,
             bool? enforceZdrOther = default,
+            bool? enforceZdrXai = default,
             global::System.Collections.Generic.IList<string>? ignoredModels = default,
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             double? limitUsd = default,
@@ -668,6 +672,7 @@ namespace OpenRouter
                 EnforceZdrGoogle = enforceZdrGoogle,
                 EnforceZdrOpenai = enforceZdrOpenai,
                 EnforceZdrOther = enforceZdrOther,
+                EnforceZdrXai = enforceZdrXai,
                 IgnoredModels = ignoredModels,
                 IgnoredProviders = ignoredProviders,
                 LimitUsd = limitUsd,

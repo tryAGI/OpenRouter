@@ -21,72 +21,81 @@ namespace OpenRouter.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenRouter.MessagesRequestPluginsItemsVariant1? autoRouter = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.AutoRouter)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant1? autoBetaRouter = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.AutoBetaRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant1)}");
-                autoRouter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                autoBetaRouter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant2? contextCompression = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.ContextCompression)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant2? autoRouter = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.AutoRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant2)}");
-                contextCompression = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                autoRouter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant3? fileParser = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.FileParser)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant3? contextCompression = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.ContextCompression)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant3)}");
-                fileParser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                contextCompression = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant4? fusion = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.Fusion)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant4? fileParser = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.FileParser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant4)}");
-                fusion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileParser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant5? moderation = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.Moderation)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant5? fusion = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.Fusion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant5)}");
-                moderation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fusion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant6? paretoRouter = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.ParetoRouter)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant6? moderation = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.Moderation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant6> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant6)}");
-                paretoRouter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                moderation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant7? responseHealing = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.ResponseHealing)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant7? paretoRouter = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.ParetoRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant7> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant7)}");
-                responseHealing = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                paretoRouter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant8? web = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.Web)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant8? responseHealing = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.ResponseHealing)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant8> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant8)}");
-                web = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseHealing = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.MessagesRequestPluginsItemsVariant9? webFetch = default;
-            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.WebFetch)
+            global::OpenRouter.MessagesRequestPluginsItemsVariant9? web = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.Web)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant9> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant9)}");
+                web = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.MessagesRequestPluginsItemsVariant10? webFetch = default;
+            if (discriminator?.Id == global::OpenRouter.MessagesRequestPluginsItemsDiscriminatorId.WebFetch)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant10> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.MessagesRequestPluginsItemsVariant10)}");
                 webFetch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::OpenRouter.MessagesRequestPluginsItems(
                 discriminator?.Id,
+                autoBetaRouter,
+
                 autoRouter,
 
                 contextCompression,
@@ -118,58 +127,64 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAutoRouter)
+            if (value.IsAutoBetaRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoBetaRouter!, typeInfo);
+            }
+            else if (value.IsAutoRouter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoRouter!, typeInfo);
             }
             else if (value.IsContextCompression)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant3?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant3).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextCompression!, typeInfo);
             }
             else if (value.IsFileParser)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant3).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant4?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant4).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileParser!, typeInfo);
             }
             else if (value.IsFusion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant4?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant4).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant5?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant5).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fusion!, typeInfo);
             }
             else if (value.IsModeration)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant5?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant5).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant6?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant6).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Moderation!, typeInfo);
             }
             else if (value.IsParetoRouter)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant6?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant6).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant7?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant7).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParetoRouter!, typeInfo);
             }
             else if (value.IsResponseHealing)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant7?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant7).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant8?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant8).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseHealing!, typeInfo);
             }
             else if (value.IsWeb)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant8?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant8).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant9?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Web!, typeInfo);
             }
             else if (value.IsWebFetch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant9?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant9).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesRequestPluginsItemsVariant10?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesRequestPluginsItemsVariant10).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetch!, typeInfo);
             }
         }

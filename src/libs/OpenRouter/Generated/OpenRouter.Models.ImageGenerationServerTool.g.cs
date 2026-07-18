@@ -19,8 +19,8 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_fidelity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationServerToolInputFidelity?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationServerToolInputFidelity?, object>? InputFidelity { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolInputFidelityJsonConverter))]
+        public global::OpenRouter.ImageGenerationServerToolInputFidelity? InputFidelity { get; set; }
 
         /// <summary>
         /// 
@@ -32,8 +32,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolModelJsonConverter))]
-        public global::OpenRouter.ImageGenerationServerToolModel? Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// 
@@ -72,8 +71,7 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageGenerationServerToolSizeJsonConverter))]
-        public global::OpenRouter.ImageGenerationServerToolSize? Size { get; set; }
+        public string? Size { get; set; }
 
         /// <summary>
         /// 
@@ -107,15 +105,15 @@ namespace OpenRouter
 #endif
         public ImageGenerationServerTool(
             global::OpenRouter.ImageGenerationServerToolBackground? background,
-            global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationServerToolInputFidelity?, object>? inputFidelity,
+            global::OpenRouter.ImageGenerationServerToolInputFidelity? inputFidelity,
             global::OpenRouter.ImageGenerationServerToolInputImageMask? inputImageMask,
-            global::OpenRouter.ImageGenerationServerToolModel? model,
+            string? model,
             global::OpenRouter.ImageGenerationServerToolModeration? moderation,
             int? outputCompression,
             global::OpenRouter.ImageGenerationServerToolOutputFormat? outputFormat,
             int? partialImages,
             global::OpenRouter.ImageGenerationServerToolQuality? quality,
-            global::OpenRouter.ImageGenerationServerToolSize? size,
+            string? size,
             global::OpenRouter.ImageGenerationServerToolType type)
         {
             this.Background = background;

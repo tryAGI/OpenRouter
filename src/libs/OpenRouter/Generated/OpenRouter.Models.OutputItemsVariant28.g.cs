@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A native `shell_call_output` item matching OpenAI's Responses API shape. Carries per-command stdout, stderr, and the exit/timeout outcome.
+    /// A native `shell_call` output item matching OpenAI's Responses API shape. Emitted for the sandbox-backed `shell` tool.
     /// </summary>
     public sealed partial class OutputItemsVariant28
     {
@@ -12,8 +12,14 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemTypeJsonConverter))]
-        public global::OpenRouter.OutputShellCallOutputItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputShellCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputShellCallItemType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        public global::OpenRouter.OutputShellCallItemAction? Action { get; set; }
 
         /// <summary>
         /// 
@@ -28,19 +34,6 @@ namespace OpenRouter
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_length")]
-        public int? MaxOutputLength { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputShellCallOutputItemOutputItems> Output { get; set; }
 
         /// <summary>
         /// Status of a shell call or its output.
@@ -61,28 +54,25 @@ namespace OpenRouter
         /// </summary>
         /// <param name="callId"></param>
         /// <param name="id"></param>
-        /// <param name="output"></param>
         /// <param name="status">
         /// Status of a shell call or its output.
         /// </param>
         /// <param name="type"></param>
-        /// <param name="maxOutputLength"></param>
+        /// <param name="action"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant28(
             string callId,
             string id,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputShellCallOutputItemOutputItems> output,
             global::OpenRouter.ShellCallStatus status,
-            global::OpenRouter.OutputShellCallOutputItemType type,
-            int? maxOutputLength)
+            global::OpenRouter.OutputShellCallItemType type,
+            global::OpenRouter.OutputShellCallItemAction? action)
         {
             this.Type = type;
+            this.Action = action;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.MaxOutputLength = maxOutputLength;
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Status = status;
         }
 

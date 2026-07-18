@@ -12,15 +12,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EasyInputMessageContentJsonConverter))]
-        public global::OpenRouter.EasyInputMessageContent? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EasyInputMessageContent?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.EasyInputMessageContent?, object>? Content { get; set; }
 
         /// <summary>
         /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EasyInputMessagePhaseJsonConverter))]
-        public global::OpenRouter.EasyInputMessagePhase? Phase { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EasyInputMessagePhase?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.EasyInputMessagePhase?, object>? Phase { get; set; }
 
         /// <summary>
         /// 
@@ -57,8 +57,8 @@ namespace OpenRouter
 #endif
         public EasyInputMessage(
             global::OpenRouter.EasyInputMessageRole role,
-            global::OpenRouter.EasyInputMessageContent? content,
-            global::OpenRouter.EasyInputMessagePhase? phase,
+            global::OpenRouter.OneOf<global::OpenRouter.EasyInputMessageContent?, object>? content,
+            global::OpenRouter.OneOf<global::OpenRouter.EasyInputMessagePhase?, object>? phase,
             global::OpenRouter.EasyInputMessageType? type)
         {
             this.Content = content;

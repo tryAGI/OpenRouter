@@ -18,8 +18,7 @@ namespace OpenRouter
         /// Breakdown of upstream inference costs
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsageCostDetails, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsageCostDetails, object>? CostDetails { get; set; }
+        public global::OpenRouter.CostDetails? CostDetails { get; set; }
 
         /// <summary>
         /// Whether a request was made using a Bring Your Own Key configuration
@@ -81,7 +80,7 @@ namespace OpenRouter
             int promptTokens,
             int totalTokens,
             double? cost,
-            global::OpenRouter.OneOf<global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsageCostDetails, object>? costDetails,
+            global::OpenRouter.CostDetails? costDetails,
             bool? isByok,
             global::OpenRouter.EmbeddingsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails? promptTokensDetails)
         {

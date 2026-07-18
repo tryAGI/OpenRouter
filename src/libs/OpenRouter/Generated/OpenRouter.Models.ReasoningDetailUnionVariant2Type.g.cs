@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: reasoning.summary
+    /// Discriminator value: reasoning.server_tool_call
     /// </summary>
     public enum ReasoningDetailUnionVariant2Type
     {
         /// <summary>
-        /// reasoning.summary
+        /// reasoning.server_tool_call
         /// </summary>
-        ReasoningSummary,
+        ReasoningServerToolCall,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ReasoningDetailUnionVariant2Type.ReasoningSummary => "reasoning.summary",
+                ReasoningDetailUnionVariant2Type.ReasoningServerToolCall => "reasoning.server_tool_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "reasoning.summary" => ReasoningDetailUnionVariant2Type.ReasoningSummary,
+                "reasoning.server_tool_call" => ReasoningDetailUnionVariant2Type.ReasoningServerToolCall,
                 _ => null,
             };
         }

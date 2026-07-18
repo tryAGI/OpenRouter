@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::OpenRouter.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
             ? ProviderSortConfig!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 { get; init; }
-#else
-        public object? RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3))]
-#endif
-        public bool IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 => RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
-            return IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3() => IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3
-            ? RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -170,20 +133,17 @@ namespace OpenRouter
         /// </summary>
         public RerankPostRequestBodyContentApplicationJsonSchemaProviderSort(
             global::OpenRouter.ProviderSort? providerSort,
-            global::OpenRouter.ProviderSortConfig? providerSortConfig,
-            object? rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3
+            global::OpenRouter.ProviderSortConfig? providerSortConfig
             )
         {
             ProviderSort = providerSort;
             ProviderSortConfig = providerSortConfig;
-            RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 as object ??
             ProviderSortConfig as object ??
             ProviderSort as object 
             ;
@@ -193,8 +153,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             ProviderSort?.ToValueString() ??
-            ProviderSortConfig?.ToString() ??
-            RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3?.ToString() 
+            ProviderSortConfig?.ToString() 
             ;
 
         /// <summary>
@@ -202,7 +161,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsProviderSort && !IsProviderSortConfig && !IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 || !IsProviderSort && IsProviderSortConfig && !IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 || !IsProviderSort && !IsProviderSortConfig && IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3;
+            return IsProviderSort && !IsProviderSortConfig || !IsProviderSort && IsProviderSortConfig;
         }
 
         /// <summary>
@@ -211,7 +170,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderSort?, TResult>? providerSort = null,
             global::System.Func<global::OpenRouter.ProviderSortConfig, TResult>? providerSortConfig = null,
-            global::System.Func<object, TResult>? rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +185,6 @@ namespace OpenRouter
             {
                 return providerSortConfig(ProviderSortConfig!);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 && rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 != null)
-            {
-                return rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3(RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3!);
-            }
 
             return default(TResult);
         }
@@ -242,8 +196,6 @@ namespace OpenRouter
             global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
 
             global::System.Action<global::OpenRouter.ProviderSortConfig>? providerSortConfig = null,
-
-            global::System.Action<object>? rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +210,6 @@ namespace OpenRouter
             else if (IsProviderSortConfig)
             {
                 providerSortConfig?.Invoke(ProviderSortConfig!);
-            }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3)
-            {
-                rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3!);
             }
         }
 
@@ -271,7 +219,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
             global::System.Action<global::OpenRouter.ProviderSortConfig>? providerSortConfig = null,
-            global::System.Action<object>? rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -286,10 +233,6 @@ namespace OpenRouter
             else if (IsProviderSortConfig)
             {
                 providerSortConfig?.Invoke(ProviderSortConfig!);
-            }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3)
-            {
-                rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3!);
             }
         }
 
@@ -304,8 +247,6 @@ namespace OpenRouter
                 typeof(global::OpenRouter.ProviderSort),
                 ProviderSortConfig,
                 typeof(global::OpenRouter.ProviderSortConfig),
-                RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -323,8 +264,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSort?>.Default.Equals(ProviderSort, other.ProviderSort) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSortConfig?>.Default.Equals(ProviderSortConfig, other.ProviderSortConfig) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3, other.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSortConfig?>.Default.Equals(ProviderSortConfig, other.ProviderSortConfig) 
                 ;
         }
 

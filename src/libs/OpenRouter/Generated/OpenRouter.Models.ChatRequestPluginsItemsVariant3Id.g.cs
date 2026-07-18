@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: file-parser
+    /// Discriminator value: context-compression
     /// </summary>
     public enum ChatRequestPluginsItemsVariant3Id
     {
         /// <summary>
-        /// file-parser
+        /// context-compression
         /// </summary>
-        FileParser,
+        ContextCompression,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                ChatRequestPluginsItemsVariant3Id.FileParser => "file-parser",
+                ChatRequestPluginsItemsVariant3Id.ContextCompression => "context-compression",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "file-parser" => ChatRequestPluginsItemsVariant3Id.FileParser,
+                "context-compression" => ChatRequestPluginsItemsVariant3Id.ContextCompression,
                 _ => null,
             };
         }

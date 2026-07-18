@@ -33,9 +33,9 @@ namespace OpenRouter
         /// Interval at which spend resets. Null means a lifetime (one-time) budget.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reset_interval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object> ResetInterval { get; set; }
+        public required global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval ResetInterval { get; set; }
 
         /// <summary>
         /// ISO 8601 timestamp of when the budget was last updated
@@ -85,7 +85,7 @@ namespace OpenRouter
             string createdAt,
             global::System.Guid id,
             double limitUsd,
-            global::OpenRouter.OneOf<global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?, object> resetInterval,
+            global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval resetInterval,
             string updatedAt,
             global::System.Guid workspaceId)
         {

@@ -143,6 +143,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Deepgram,
+        /// <summary>
+        /// 
+        /// </summary>
         DekaLLM,
         /// <summary>
         /// 
@@ -164,6 +168,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Fireworks,
+        /// <summary>
+        /// 
+        /// </summary>
+        FishAudio,
         /// <summary>
         /// 
         /// </summary>
@@ -244,6 +252,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Kluster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Krea,
         /// <summary>
         /// 
         /// </summary>
@@ -403,6 +415,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        SailResearch,
+        /// <summary>
+        /// 
+        /// </summary>
         SakanaAi,
         /// <summary>
         /// 
@@ -444,6 +460,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Targon,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tencent,
         /// <summary>
         /// 
         /// </summary>
@@ -535,12 +555,14 @@ namespace OpenRouter
                 ProviderResponseProviderName.Decart => "Decart",
                 ProviderResponseProviderName.DeepInfra => "DeepInfra",
                 ProviderResponseProviderName.DeepSeek => "DeepSeek",
+                ProviderResponseProviderName.Deepgram => "Deepgram",
                 ProviderResponseProviderName.DekaLLM => "DekaLLM",
                 ProviderResponseProviderName.DigitalOcean => "DigitalOcean",
                 ProviderResponseProviderName.Enfer => "Enfer",
                 ProviderResponseProviderName.FakeProvider => "FakeProvider",
                 ProviderResponseProviderName.Featherless => "Featherless",
                 ProviderResponseProviderName.Fireworks => "Fireworks",
+                ProviderResponseProviderName.FishAudio => "Fish Audio",
                 ProviderResponseProviderName.Friendli => "Friendli",
                 ProviderResponseProviderName.GMICloud => "GMICloud",
                 ProviderResponseProviderName.GoPomelo => "GoPomelo",
@@ -561,6 +583,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.IoNet => "Io Net",
                 ProviderResponseProviderName.Ionstream => "Ionstream",
                 ProviderResponseProviderName.Kluster => "Kluster",
+                ProviderResponseProviderName.Krea => "Krea",
                 ProviderResponseProviderName.Lambda => "Lambda",
                 ProviderResponseProviderName.Lepton => "Lepton",
                 ProviderResponseProviderName.Liquid => "Liquid",
@@ -600,6 +623,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.Relace => "Relace",
                 ProviderResponseProviderName.Replicate => "Replicate",
                 ProviderResponseProviderName.SfCompute => "SF Compute",
+                ProviderResponseProviderName.SailResearch => "Sail Research",
                 ProviderResponseProviderName.SakanaAi => "Sakana AI",
                 ProviderResponseProviderName.SambaNova => "SambaNova",
                 ProviderResponseProviderName.SambaNova2 => "SambaNova 2",
@@ -611,6 +635,7 @@ namespace OpenRouter
                 ProviderResponseProviderName.StreamLake => "StreamLake",
                 ProviderResponseProviderName.Switchpoint => "Switchpoint",
                 ProviderResponseProviderName.Targon => "Targon",
+                ProviderResponseProviderName.Tencent => "Tencent",
                 ProviderResponseProviderName.Tenstorrent => "Tenstorrent",
                 ProviderResponseProviderName.Together => "Together",
                 ProviderResponseProviderName.Together2 => "Together 2",
@@ -665,12 +690,14 @@ namespace OpenRouter
                 "Decart" => ProviderResponseProviderName.Decart,
                 "DeepInfra" => ProviderResponseProviderName.DeepInfra,
                 "DeepSeek" => ProviderResponseProviderName.DeepSeek,
+                "Deepgram" => ProviderResponseProviderName.Deepgram,
                 "DekaLLM" => ProviderResponseProviderName.DekaLLM,
                 "DigitalOcean" => ProviderResponseProviderName.DigitalOcean,
                 "Enfer" => ProviderResponseProviderName.Enfer,
                 "FakeProvider" => ProviderResponseProviderName.FakeProvider,
                 "Featherless" => ProviderResponseProviderName.Featherless,
                 "Fireworks" => ProviderResponseProviderName.Fireworks,
+                "Fish Audio" => ProviderResponseProviderName.FishAudio,
                 "Friendli" => ProviderResponseProviderName.Friendli,
                 "GMICloud" => ProviderResponseProviderName.GMICloud,
                 "GoPomelo" => ProviderResponseProviderName.GoPomelo,
@@ -691,6 +718,7 @@ namespace OpenRouter
                 "Io Net" => ProviderResponseProviderName.IoNet,
                 "Ionstream" => ProviderResponseProviderName.Ionstream,
                 "Kluster" => ProviderResponseProviderName.Kluster,
+                "Krea" => ProviderResponseProviderName.Krea,
                 "Lambda" => ProviderResponseProviderName.Lambda,
                 "Lepton" => ProviderResponseProviderName.Lepton,
                 "Liquid" => ProviderResponseProviderName.Liquid,
@@ -730,6 +758,7 @@ namespace OpenRouter
                 "Relace" => ProviderResponseProviderName.Relace,
                 "Replicate" => ProviderResponseProviderName.Replicate,
                 "SF Compute" => ProviderResponseProviderName.SfCompute,
+                "Sail Research" => ProviderResponseProviderName.SailResearch,
                 "Sakana AI" => ProviderResponseProviderName.SakanaAi,
                 "SambaNova" => ProviderResponseProviderName.SambaNova,
                 "SambaNova 2" => ProviderResponseProviderName.SambaNova2,
@@ -741,6 +770,7 @@ namespace OpenRouter
                 "StreamLake" => ProviderResponseProviderName.StreamLake,
                 "Switchpoint" => ProviderResponseProviderName.Switchpoint,
                 "Targon" => ProviderResponseProviderName.Targon,
+                "Tencent" => ProviderResponseProviderName.Tencent,
                 "Tenstorrent" => ProviderResponseProviderName.Tenstorrent,
                 "Together" => ProviderResponseProviderName.Together,
                 "Together 2" => ProviderResponseProviderName.Together2,

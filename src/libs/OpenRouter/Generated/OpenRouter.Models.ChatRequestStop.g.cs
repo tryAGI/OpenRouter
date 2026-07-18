@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string> PickChatRequestStopVariant2() => IsChatRequestStopVariant2
             ? ChatRequestStopVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant2' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? ChatRequestStopVariant3 { get; init; }
-#else
-        public object? ChatRequestStopVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant3))]
-#endif
-        public bool IsChatRequestStopVariant3 => ChatRequestStopVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickChatRequestStopVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = ChatRequestStopVariant3;
-            return IsChatRequestStopVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickChatRequestStopVariant3() => IsChatRequestStopVariant3
-            ? ChatRequestStopVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -147,20 +110,17 @@ namespace OpenRouter
         /// </summary>
         public ChatRequestStop(
             string? chatRequestStopVariant1,
-            global::System.Collections.Generic.IList<string>? chatRequestStopVariant2,
-            object? chatRequestStopVariant3
+            global::System.Collections.Generic.IList<string>? chatRequestStopVariant2
             )
         {
             ChatRequestStopVariant1 = chatRequestStopVariant1;
             ChatRequestStopVariant2 = chatRequestStopVariant2;
-            ChatRequestStopVariant3 = chatRequestStopVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ChatRequestStopVariant3 as object ??
             ChatRequestStopVariant2 as object ??
             ChatRequestStopVariant1 as object 
             ;
@@ -170,8 +130,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             ChatRequestStopVariant1?.ToString() ??
-            ChatRequestStopVariant2?.ToString() ??
-            ChatRequestStopVariant3?.ToString() 
+            ChatRequestStopVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -179,7 +138,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatRequestStopVariant1 && !IsChatRequestStopVariant2 && !IsChatRequestStopVariant3 || !IsChatRequestStopVariant1 && IsChatRequestStopVariant2 && !IsChatRequestStopVariant3 || !IsChatRequestStopVariant1 && !IsChatRequestStopVariant2 && IsChatRequestStopVariant3;
+            return IsChatRequestStopVariant1 && !IsChatRequestStopVariant2 || !IsChatRequestStopVariant1 && IsChatRequestStopVariant2;
         }
 
         /// <summary>
@@ -188,7 +147,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? chatRequestStopVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? chatRequestStopVariant2 = null,
-            global::System.Func<object, TResult>? chatRequestStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -204,10 +162,6 @@ namespace OpenRouter
             {
                 return chatRequestStopVariant2(ChatRequestStopVariant2!);
             }
-            else if (IsChatRequestStopVariant3 && chatRequestStopVariant3 != null)
-            {
-                return chatRequestStopVariant3(ChatRequestStopVariant3!);
-            }
 
             return default(TResult);
         }
@@ -219,8 +173,6 @@ namespace OpenRouter
             global::System.Action<string>? chatRequestStopVariant1 = null,
 
             global::System.Action<global::System.Collections.Generic.IList<string>>? chatRequestStopVariant2 = null,
-
-            global::System.Action<object>? chatRequestStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -235,10 +187,6 @@ namespace OpenRouter
             else if (IsChatRequestStopVariant2)
             {
                 chatRequestStopVariant2?.Invoke(ChatRequestStopVariant2!);
-            }
-            else if (IsChatRequestStopVariant3)
-            {
-                chatRequestStopVariant3?.Invoke(ChatRequestStopVariant3!);
             }
         }
 
@@ -248,7 +196,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<string>? chatRequestStopVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<string>>? chatRequestStopVariant2 = null,
-            global::System.Action<object>? chatRequestStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -263,10 +210,6 @@ namespace OpenRouter
             else if (IsChatRequestStopVariant2)
             {
                 chatRequestStopVariant2?.Invoke(ChatRequestStopVariant2!);
-            }
-            else if (IsChatRequestStopVariant3)
-            {
-                chatRequestStopVariant3?.Invoke(ChatRequestStopVariant3!);
             }
         }
 
@@ -281,8 +224,6 @@ namespace OpenRouter
                 typeof(string),
                 ChatRequestStopVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
-                ChatRequestStopVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -300,8 +241,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatRequestStopVariant1, other.ChatRequestStopVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(ChatRequestStopVariant2, other.ChatRequestStopVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ChatRequestStopVariant3, other.ChatRequestStopVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(ChatRequestStopVariant2, other.ChatRequestStopVariant2) 
                 ;
         }
 

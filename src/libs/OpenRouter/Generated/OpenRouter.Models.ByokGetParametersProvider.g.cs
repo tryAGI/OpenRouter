@@ -111,6 +111,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Deepgram,
+        /// <summary>
+        /// 
+        /// </summary>
         Deepinfra,
         /// <summary>
         /// 
@@ -132,6 +136,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Fireworks,
+        /// <summary>
+        /// 
+        /// </summary>
+        FishAudio,
         /// <summary>
         /// 
         /// </summary>
@@ -191,6 +199,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Krea,
+        /// <summary>
+        /// 
+        /// </summary>
         Liquid,
         /// <summary>
         /// 
@@ -200,6 +212,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Mara,
+        /// <summary>
+        /// 
+        /// </summary>
+        Meta,
         /// <summary>
         /// 
         /// </summary>
@@ -295,7 +311,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        SakanaAi,
+        SailResearch,
+        /// <summary>
+        /// 
+        /// </summary>
+        Sakana,
         /// <summary>
         /// 
         /// </summary>
@@ -324,6 +344,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Switchpoint,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tencent,
         /// <summary>
         /// 
         /// </summary>
@@ -399,12 +423,14 @@ namespace OpenRouter
                 ByokGetParametersProvider.Crusoe => "crusoe",
                 ByokGetParametersProvider.Darkbloom => "darkbloom",
                 ByokGetParametersProvider.Decart => "decart",
+                ByokGetParametersProvider.Deepgram => "deepgram",
                 ByokGetParametersProvider.Deepinfra => "deepinfra",
                 ByokGetParametersProvider.Deepseek => "deepseek",
                 ByokGetParametersProvider.Dekallm => "dekallm",
                 ByokGetParametersProvider.Digitalocean => "digitalocean",
                 ByokGetParametersProvider.Featherless => "featherless",
                 ByokGetParametersProvider.Fireworks => "fireworks",
+                ByokGetParametersProvider.FishAudio => "fish-audio",
                 ByokGetParametersProvider.Friendli => "friendli",
                 ByokGetParametersProvider.Gmicloud => "gmicloud",
                 ByokGetParametersProvider.GoogleAiStudio => "google-ai-studio",
@@ -419,9 +445,11 @@ namespace OpenRouter
                 ByokGetParametersProvider.Inflection => "inflection",
                 ByokGetParametersProvider.IoNet => "io-net",
                 ByokGetParametersProvider.Ionstream => "ionstream",
+                ByokGetParametersProvider.Krea => "krea",
                 ByokGetParametersProvider.Liquid => "liquid",
                 ByokGetParametersProvider.Mancer => "mancer",
                 ByokGetParametersProvider.Mara => "mara",
+                ByokGetParametersProvider.Meta => "meta",
                 ByokGetParametersProvider.Minimax => "minimax",
                 ByokGetParametersProvider.Mistral => "mistral",
                 ByokGetParametersProvider.Modelrun => "modelrun",
@@ -445,7 +473,8 @@ namespace OpenRouter
                 ByokGetParametersProvider.Recraft => "recraft",
                 ByokGetParametersProvider.Reka => "reka",
                 ByokGetParametersProvider.Relace => "relace",
-                ByokGetParametersProvider.SakanaAi => "sakana-ai",
+                ByokGetParametersProvider.SailResearch => "sail-research",
+                ByokGetParametersProvider.Sakana => "sakana",
                 ByokGetParametersProvider.Sambanova => "sambanova",
                 ByokGetParametersProvider.Seed => "seed",
                 ByokGetParametersProvider.Siliconflow => "siliconflow",
@@ -453,6 +482,7 @@ namespace OpenRouter
                 ByokGetParametersProvider.Stepfun => "stepfun",
                 ByokGetParametersProvider.Streamlake => "streamlake",
                 ByokGetParametersProvider.Switchpoint => "switchpoint",
+                ByokGetParametersProvider.Tencent => "tencent",
                 ByokGetParametersProvider.Tenstorrent => "tenstorrent",
                 ByokGetParametersProvider.Together => "together",
                 ByokGetParametersProvider.Upstage => "upstage",
@@ -497,12 +527,14 @@ namespace OpenRouter
                 "crusoe" => ByokGetParametersProvider.Crusoe,
                 "darkbloom" => ByokGetParametersProvider.Darkbloom,
                 "decart" => ByokGetParametersProvider.Decart,
+                "deepgram" => ByokGetParametersProvider.Deepgram,
                 "deepinfra" => ByokGetParametersProvider.Deepinfra,
                 "deepseek" => ByokGetParametersProvider.Deepseek,
                 "dekallm" => ByokGetParametersProvider.Dekallm,
                 "digitalocean" => ByokGetParametersProvider.Digitalocean,
                 "featherless" => ByokGetParametersProvider.Featherless,
                 "fireworks" => ByokGetParametersProvider.Fireworks,
+                "fish-audio" => ByokGetParametersProvider.FishAudio,
                 "friendli" => ByokGetParametersProvider.Friendli,
                 "gmicloud" => ByokGetParametersProvider.Gmicloud,
                 "google-ai-studio" => ByokGetParametersProvider.GoogleAiStudio,
@@ -517,9 +549,11 @@ namespace OpenRouter
                 "inflection" => ByokGetParametersProvider.Inflection,
                 "io-net" => ByokGetParametersProvider.IoNet,
                 "ionstream" => ByokGetParametersProvider.Ionstream,
+                "krea" => ByokGetParametersProvider.Krea,
                 "liquid" => ByokGetParametersProvider.Liquid,
                 "mancer" => ByokGetParametersProvider.Mancer,
                 "mara" => ByokGetParametersProvider.Mara,
+                "meta" => ByokGetParametersProvider.Meta,
                 "minimax" => ByokGetParametersProvider.Minimax,
                 "mistral" => ByokGetParametersProvider.Mistral,
                 "modelrun" => ByokGetParametersProvider.Modelrun,
@@ -543,7 +577,8 @@ namespace OpenRouter
                 "recraft" => ByokGetParametersProvider.Recraft,
                 "reka" => ByokGetParametersProvider.Reka,
                 "relace" => ByokGetParametersProvider.Relace,
-                "sakana-ai" => ByokGetParametersProvider.SakanaAi,
+                "sail-research" => ByokGetParametersProvider.SailResearch,
+                "sakana" => ByokGetParametersProvider.Sakana,
                 "sambanova" => ByokGetParametersProvider.Sambanova,
                 "seed" => ByokGetParametersProvider.Seed,
                 "siliconflow" => ByokGetParametersProvider.Siliconflow,
@@ -551,6 +586,7 @@ namespace OpenRouter
                 "stepfun" => ByokGetParametersProvider.Stepfun,
                 "streamlake" => ByokGetParametersProvider.Streamlake,
                 "switchpoint" => ByokGetParametersProvider.Switchpoint,
+                "tencent" => ByokGetParametersProvider.Tencent,
                 "tenstorrent" => ByokGetParametersProvider.Tenstorrent,
                 "together" => ByokGetParametersProvider.Together,
                 "upstage" => ByokGetParametersProvider.Upstage,

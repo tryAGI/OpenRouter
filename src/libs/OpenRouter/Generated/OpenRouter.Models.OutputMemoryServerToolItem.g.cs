@@ -43,7 +43,7 @@ namespace OpenRouter
         public global::OpenRouter.OutputMemoryServerToolItemType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// Any type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public object? Value { get; set; }
@@ -62,7 +62,9 @@ namespace OpenRouter
         /// <param name="id"></param>
         /// <param name="key"></param>
         /// <param name="type"></param>
-        /// <param name="value"></param>
+        /// <param name="value">
+        /// Any type
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

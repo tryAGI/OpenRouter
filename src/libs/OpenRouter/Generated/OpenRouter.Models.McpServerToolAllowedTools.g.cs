@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::OpenRouter.McpServerToolAllowedTools1 PickMcpServerToolAllowedTools1() => IsMcpServerToolAllowedTools1
             ? McpServerToolAllowedTools1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedTools1' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? McpServerToolAllowedToolsVariant3 { get; init; }
-#else
-        public object? McpServerToolAllowedToolsVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolAllowedToolsVariant3))]
-#endif
-        public bool IsMcpServerToolAllowedToolsVariant3 => McpServerToolAllowedToolsVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickMcpServerToolAllowedToolsVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = McpServerToolAllowedToolsVariant3;
-            return IsMcpServerToolAllowedToolsVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickMcpServerToolAllowedToolsVariant3() => IsMcpServerToolAllowedToolsVariant3
-            ? McpServerToolAllowedToolsVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -147,20 +110,17 @@ namespace OpenRouter
         /// </summary>
         public McpServerToolAllowedTools(
             global::System.Collections.Generic.IList<string>? mcpServerToolAllowedToolsVariant1,
-            global::OpenRouter.McpServerToolAllowedTools1? mcpServerToolAllowedTools1,
-            object? mcpServerToolAllowedToolsVariant3
+            global::OpenRouter.McpServerToolAllowedTools1? mcpServerToolAllowedTools1
             )
         {
             McpServerToolAllowedToolsVariant1 = mcpServerToolAllowedToolsVariant1;
             McpServerToolAllowedTools1 = mcpServerToolAllowedTools1;
-            McpServerToolAllowedToolsVariant3 = mcpServerToolAllowedToolsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            McpServerToolAllowedToolsVariant3 as object ??
             McpServerToolAllowedTools1 as object ??
             McpServerToolAllowedToolsVariant1 as object 
             ;
@@ -170,8 +130,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             McpServerToolAllowedToolsVariant1?.ToString() ??
-            McpServerToolAllowedTools1?.ToString() ??
-            McpServerToolAllowedToolsVariant3?.ToString() 
+            McpServerToolAllowedTools1?.ToString() 
             ;
 
         /// <summary>
@@ -179,7 +138,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsMcpServerToolAllowedToolsVariant1 && !IsMcpServerToolAllowedTools1 && !IsMcpServerToolAllowedToolsVariant3 || !IsMcpServerToolAllowedToolsVariant1 && IsMcpServerToolAllowedTools1 && !IsMcpServerToolAllowedToolsVariant3 || !IsMcpServerToolAllowedToolsVariant1 && !IsMcpServerToolAllowedTools1 && IsMcpServerToolAllowedToolsVariant3;
+            return IsMcpServerToolAllowedToolsVariant1 && !IsMcpServerToolAllowedTools1 || !IsMcpServerToolAllowedToolsVariant1 && IsMcpServerToolAllowedTools1;
         }
 
         /// <summary>
@@ -188,7 +147,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? mcpServerToolAllowedToolsVariant1 = null,
             global::System.Func<global::OpenRouter.McpServerToolAllowedTools1, TResult>? mcpServerToolAllowedTools1 = null,
-            global::System.Func<object, TResult>? mcpServerToolAllowedToolsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -204,10 +162,6 @@ namespace OpenRouter
             {
                 return mcpServerToolAllowedTools1(McpServerToolAllowedTools1!);
             }
-            else if (IsMcpServerToolAllowedToolsVariant3 && mcpServerToolAllowedToolsVariant3 != null)
-            {
-                return mcpServerToolAllowedToolsVariant3(McpServerToolAllowedToolsVariant3!);
-            }
 
             return default(TResult);
         }
@@ -219,8 +173,6 @@ namespace OpenRouter
             global::System.Action<global::System.Collections.Generic.IList<string>>? mcpServerToolAllowedToolsVariant1 = null,
 
             global::System.Action<global::OpenRouter.McpServerToolAllowedTools1>? mcpServerToolAllowedTools1 = null,
-
-            global::System.Action<object>? mcpServerToolAllowedToolsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -235,10 +187,6 @@ namespace OpenRouter
             else if (IsMcpServerToolAllowedTools1)
             {
                 mcpServerToolAllowedTools1?.Invoke(McpServerToolAllowedTools1!);
-            }
-            else if (IsMcpServerToolAllowedToolsVariant3)
-            {
-                mcpServerToolAllowedToolsVariant3?.Invoke(McpServerToolAllowedToolsVariant3!);
             }
         }
 
@@ -248,7 +196,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<string>>? mcpServerToolAllowedToolsVariant1 = null,
             global::System.Action<global::OpenRouter.McpServerToolAllowedTools1>? mcpServerToolAllowedTools1 = null,
-            global::System.Action<object>? mcpServerToolAllowedToolsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -263,10 +210,6 @@ namespace OpenRouter
             else if (IsMcpServerToolAllowedTools1)
             {
                 mcpServerToolAllowedTools1?.Invoke(McpServerToolAllowedTools1!);
-            }
-            else if (IsMcpServerToolAllowedToolsVariant3)
-            {
-                mcpServerToolAllowedToolsVariant3?.Invoke(McpServerToolAllowedToolsVariant3!);
             }
         }
 
@@ -281,8 +224,6 @@ namespace OpenRouter
                 typeof(global::System.Collections.Generic.IList<string>),
                 McpServerToolAllowedTools1,
                 typeof(global::OpenRouter.McpServerToolAllowedTools1),
-                McpServerToolAllowedToolsVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -300,8 +241,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(McpServerToolAllowedToolsVariant1, other.McpServerToolAllowedToolsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpServerToolAllowedTools1?>.Default.Equals(McpServerToolAllowedTools1, other.McpServerToolAllowedTools1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolAllowedToolsVariant3, other.McpServerToolAllowedToolsVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.McpServerToolAllowedTools1?>.Default.Equals(McpServerToolAllowedTools1, other.McpServerToolAllowedTools1) 
                 ;
         }
 

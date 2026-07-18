@@ -22,8 +22,8 @@ namespace OpenRouter
         /// - deny: use only providers which do not collect user data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_collection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>? DataCollection { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollectionJsonConverter))]
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection? DataCollection { get; set; }
 
         /// <summary>
         /// Whether to restrict routing to only models that allow text distillation. When true, only models where the author has allowed distillation will be used.
@@ -85,8 +85,8 @@ namespace OpenRouter
         /// The sorting strategy to use for this request, if "order" is not specified. When set, no load balancing is performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSortJsonConverter))]
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort? Sort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort?, object>? Sort { get; set; }
 
         /// <summary>
         /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.
@@ -151,7 +151,7 @@ namespace OpenRouter
 #endif
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaProvider(
             bool? allowFallbacks,
-            global::OpenRouter.OneOf<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection?, object>? dataCollection,
+            global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderDataCollection? dataCollection,
             bool? enforceDistillableText,
             global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItems>? ignore,
             global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderMaxPrice? maxPrice,
@@ -161,7 +161,7 @@ namespace OpenRouter
             global::OpenRouter.PreferredMinThroughput? preferredMinThroughput,
             global::System.Collections.Generic.IList<global::OpenRouter.Quantization>? quantizations,
             bool? requireParameters,
-            global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort? sort,
+            global::OpenRouter.OneOf<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderSort?, object>? sort,
             bool? zdr)
         {
             this.AllowFallbacks = allowFallbacks;

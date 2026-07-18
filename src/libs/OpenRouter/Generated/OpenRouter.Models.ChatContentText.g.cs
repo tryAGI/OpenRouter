@@ -9,10 +9,16 @@ namespace OpenRouter
     public sealed partial class ChatContentText
     {
         /// <summary>
-        /// Cache control for the content part
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
+
+        /// <summary>
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +45,10 @@ namespace OpenRouter
         /// </summary>
         /// <param name="text"></param>
         /// <param name="cacheControl">
-        /// Cache control for the content part
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
+        /// </param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -48,9 +57,11 @@ namespace OpenRouter
         public ChatContentText(
             string text,
             global::OpenRouter.ChatContentCacheControl? cacheControl,
+            global::OpenRouter.PromptCacheBreakpoint? promptCacheBreakpoint,
             global::OpenRouter.ChatContentTextType type)
         {
             this.CacheControl = cacheControl;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }

@@ -16,6 +16,12 @@ namespace OpenRouter
         public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4Type Type { get; set; }
 
         /// <summary>
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
@@ -35,14 +41,19 @@ namespace OpenRouter
         /// <param name="type">
         /// Discriminator value: input_text
         /// </param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenAiResponseInputMessageItemContentItemsVariant4(
             string text,
-            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4Type type)
+            global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4Type type,
+            global::OpenRouter.PromptCacheBreakpoint? promptCacheBreakpoint)
         {
             this.Type = type;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 

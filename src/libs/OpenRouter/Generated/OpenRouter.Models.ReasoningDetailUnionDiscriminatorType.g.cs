@@ -15,6 +15,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        ReasoningServerToolCall,
+        /// <summary>
+        /// 
+        /// </summary>
         ReasoningSummary,
         /// <summary>
         /// 
@@ -35,6 +39,7 @@ namespace OpenRouter
             return value switch
             {
                 ReasoningDetailUnionDiscriminatorType.ReasoningEncrypted => "reasoning.encrypted",
+                ReasoningDetailUnionDiscriminatorType.ReasoningServerToolCall => "reasoning.server_tool_call",
                 ReasoningDetailUnionDiscriminatorType.ReasoningSummary => "reasoning.summary",
                 ReasoningDetailUnionDiscriminatorType.ReasoningText => "reasoning.text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace OpenRouter
             return value switch
             {
                 "reasoning.encrypted" => ReasoningDetailUnionDiscriminatorType.ReasoningEncrypted,
+                "reasoning.server_tool_call" => ReasoningDetailUnionDiscriminatorType.ReasoningServerToolCall,
                 "reasoning.summary" => ReasoningDetailUnionDiscriminatorType.ReasoningSummary,
                 "reasoning.text" => ReasoningDetailUnionDiscriminatorType.ReasoningText,
                 _ => null,

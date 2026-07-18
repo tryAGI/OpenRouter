@@ -111,6 +111,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Deepgram,
+        /// <summary>
+        /// 
+        /// </summary>
         Deepinfra,
         /// <summary>
         /// 
@@ -132,6 +136,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Fireworks,
+        /// <summary>
+        /// 
+        /// </summary>
+        FishAudio,
         /// <summary>
         /// 
         /// </summary>
@@ -191,6 +199,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Krea,
+        /// <summary>
+        /// 
+        /// </summary>
         Liquid,
         /// <summary>
         /// 
@@ -200,6 +212,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Mara,
+        /// <summary>
+        /// 
+        /// </summary>
+        Meta,
         /// <summary>
         /// 
         /// </summary>
@@ -295,7 +311,11 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        SakanaAi,
+        SailResearch,
+        /// <summary>
+        /// 
+        /// </summary>
+        Sakana,
         /// <summary>
         /// 
         /// </summary>
@@ -324,6 +344,10 @@ namespace OpenRouter
         /// 
         /// </summary>
         Switchpoint,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tencent,
         /// <summary>
         /// 
         /// </summary>
@@ -399,12 +423,14 @@ namespace OpenRouter
                 BYOKProviderSlug.Crusoe => "crusoe",
                 BYOKProviderSlug.Darkbloom => "darkbloom",
                 BYOKProviderSlug.Decart => "decart",
+                BYOKProviderSlug.Deepgram => "deepgram",
                 BYOKProviderSlug.Deepinfra => "deepinfra",
                 BYOKProviderSlug.Deepseek => "deepseek",
                 BYOKProviderSlug.Dekallm => "dekallm",
                 BYOKProviderSlug.Digitalocean => "digitalocean",
                 BYOKProviderSlug.Featherless => "featherless",
                 BYOKProviderSlug.Fireworks => "fireworks",
+                BYOKProviderSlug.FishAudio => "fish-audio",
                 BYOKProviderSlug.Friendli => "friendli",
                 BYOKProviderSlug.Gmicloud => "gmicloud",
                 BYOKProviderSlug.GoogleAiStudio => "google-ai-studio",
@@ -419,9 +445,11 @@ namespace OpenRouter
                 BYOKProviderSlug.Inflection => "inflection",
                 BYOKProviderSlug.IoNet => "io-net",
                 BYOKProviderSlug.Ionstream => "ionstream",
+                BYOKProviderSlug.Krea => "krea",
                 BYOKProviderSlug.Liquid => "liquid",
                 BYOKProviderSlug.Mancer => "mancer",
                 BYOKProviderSlug.Mara => "mara",
+                BYOKProviderSlug.Meta => "meta",
                 BYOKProviderSlug.Minimax => "minimax",
                 BYOKProviderSlug.Mistral => "mistral",
                 BYOKProviderSlug.Modelrun => "modelrun",
@@ -445,7 +473,8 @@ namespace OpenRouter
                 BYOKProviderSlug.Recraft => "recraft",
                 BYOKProviderSlug.Reka => "reka",
                 BYOKProviderSlug.Relace => "relace",
-                BYOKProviderSlug.SakanaAi => "sakana-ai",
+                BYOKProviderSlug.SailResearch => "sail-research",
+                BYOKProviderSlug.Sakana => "sakana",
                 BYOKProviderSlug.Sambanova => "sambanova",
                 BYOKProviderSlug.Seed => "seed",
                 BYOKProviderSlug.Siliconflow => "siliconflow",
@@ -453,6 +482,7 @@ namespace OpenRouter
                 BYOKProviderSlug.Stepfun => "stepfun",
                 BYOKProviderSlug.Streamlake => "streamlake",
                 BYOKProviderSlug.Switchpoint => "switchpoint",
+                BYOKProviderSlug.Tencent => "tencent",
                 BYOKProviderSlug.Tenstorrent => "tenstorrent",
                 BYOKProviderSlug.Together => "together",
                 BYOKProviderSlug.Upstage => "upstage",
@@ -497,12 +527,14 @@ namespace OpenRouter
                 "crusoe" => BYOKProviderSlug.Crusoe,
                 "darkbloom" => BYOKProviderSlug.Darkbloom,
                 "decart" => BYOKProviderSlug.Decart,
+                "deepgram" => BYOKProviderSlug.Deepgram,
                 "deepinfra" => BYOKProviderSlug.Deepinfra,
                 "deepseek" => BYOKProviderSlug.Deepseek,
                 "dekallm" => BYOKProviderSlug.Dekallm,
                 "digitalocean" => BYOKProviderSlug.Digitalocean,
                 "featherless" => BYOKProviderSlug.Featherless,
                 "fireworks" => BYOKProviderSlug.Fireworks,
+                "fish-audio" => BYOKProviderSlug.FishAudio,
                 "friendli" => BYOKProviderSlug.Friendli,
                 "gmicloud" => BYOKProviderSlug.Gmicloud,
                 "google-ai-studio" => BYOKProviderSlug.GoogleAiStudio,
@@ -517,9 +549,11 @@ namespace OpenRouter
                 "inflection" => BYOKProviderSlug.Inflection,
                 "io-net" => BYOKProviderSlug.IoNet,
                 "ionstream" => BYOKProviderSlug.Ionstream,
+                "krea" => BYOKProviderSlug.Krea,
                 "liquid" => BYOKProviderSlug.Liquid,
                 "mancer" => BYOKProviderSlug.Mancer,
                 "mara" => BYOKProviderSlug.Mara,
+                "meta" => BYOKProviderSlug.Meta,
                 "minimax" => BYOKProviderSlug.Minimax,
                 "mistral" => BYOKProviderSlug.Mistral,
                 "modelrun" => BYOKProviderSlug.Modelrun,
@@ -543,7 +577,8 @@ namespace OpenRouter
                 "recraft" => BYOKProviderSlug.Recraft,
                 "reka" => BYOKProviderSlug.Reka,
                 "relace" => BYOKProviderSlug.Relace,
-                "sakana-ai" => BYOKProviderSlug.SakanaAi,
+                "sail-research" => BYOKProviderSlug.SailResearch,
+                "sakana" => BYOKProviderSlug.Sakana,
                 "sambanova" => BYOKProviderSlug.Sambanova,
                 "seed" => BYOKProviderSlug.Seed,
                 "siliconflow" => BYOKProviderSlug.Siliconflow,
@@ -551,6 +586,7 @@ namespace OpenRouter
                 "stepfun" => BYOKProviderSlug.Stepfun,
                 "streamlake" => BYOKProviderSlug.Streamlake,
                 "switchpoint" => BYOKProviderSlug.Switchpoint,
+                "tencent" => BYOKProviderSlug.Tencent,
                 "tenstorrent" => BYOKProviderSlug.Tenstorrent,
                 "together" => BYOKProviderSlug.Together,
                 "upstage" => BYOKProviderSlug.Upstage,

@@ -4,14 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Discriminator value: openrouter:fusion
+    /// Discriminator value: openrouter:files
     /// </summary>
     public enum OutputItemsVariant17Type
     {
         /// <summary>
-        /// openrouter:fusion
+        /// openrouter:files
         /// </summary>
-        Openrouter_fusion,
+        Openrouter_files,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                OutputItemsVariant17Type.Openrouter_fusion => "openrouter:fusion",
+                OutputItemsVariant17Type.Openrouter_files => "openrouter:files",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenRouter
         {
             return value switch
             {
-                "openrouter:fusion" => OutputItemsVariant17Type.Openrouter_fusion,
+                "openrouter:files" => OutputItemsVariant17Type.Openrouter_files,
                 _ => null,
             };
         }

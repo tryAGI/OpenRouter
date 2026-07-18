@@ -15,6 +15,10 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
+        Flag,
+        /// <summary>
+        /// 
+        /// </summary>
         Redact,
     }
 
@@ -31,6 +35,7 @@ namespace OpenRouter
             return value switch
             {
                 ContentFilterAction.Block => "block",
+                ContentFilterAction.Flag => "flag",
                 ContentFilterAction.Redact => "redact",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace OpenRouter
             return value switch
             {
                 "block" => ContentFilterAction.Block,
+                "flag" => ContentFilterAction.Flag,
                 "redact" => ContentFilterAction.Redact,
                 _ => null,
             };

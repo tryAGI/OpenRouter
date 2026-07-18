@@ -35,6 +35,8 @@ namespace OpenRouter.JsonConverters
             }
 
             var __score0 = 0;
+            if (__jsonProps.Contains("prompt_cache_breakpoint")) __score0++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint.mode")) __score0++;
             if (__jsonProps.Contains("text")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("detail")) __score1++;

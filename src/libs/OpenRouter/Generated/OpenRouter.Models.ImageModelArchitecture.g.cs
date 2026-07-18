@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_modalities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.InputModality> InputModalities { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ImageInputModality> InputModalities { get; set; }
 
         /// <summary>
         /// Supported output modalities
@@ -41,7 +41,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageModelArchitecture(
-            global::System.Collections.Generic.IList<global::OpenRouter.InputModality> inputModalities,
+            global::System.Collections.Generic.IList<global::OpenRouter.ImageInputModality> inputModalities,
             global::System.Collections.Generic.IList<global::OpenRouter.ImageOutputModality> outputModalities)
         {
             this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));

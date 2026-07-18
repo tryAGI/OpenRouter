@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// web_search_call variant
+    /// A native `shell_call_output` item matching OpenAI's Responses API shape. Carries per-command stdout, stderr, and the exit/timeout outcome.
     /// </summary>
     public sealed partial class OutputItemsVariant29
     {
@@ -12,15 +12,15 @@ namespace OpenRouter
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemTypeJsonConverter))]
-        public global::OpenRouter.OutputWebSearchCallItemType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemTypeJsonConverter))]
+        public global::OpenRouter.OutputShellCallOutputItemType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputWebSearchCallItemActionJsonConverter))]
-        public global::OpenRouter.OutputWebSearchCallItemAction? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CallId { get; set; }
 
         /// <summary>
         /// 
@@ -32,10 +32,23 @@ namespace OpenRouter
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_length")]
+        public int? MaxOutputLength { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.WebSearchStatus Status { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputShellCallOutputItemOutputItems> Output { get; set; }
+
+        /// <summary>
+        /// Status of a shell call or its output.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ShellCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.ShellCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,22 +59,30 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputItemsVariant29" /> class.
         /// </summary>
+        /// <param name="callId"></param>
         /// <param name="id"></param>
-        /// <param name="status"></param>
+        /// <param name="output"></param>
+        /// <param name="status">
+        /// Status of a shell call or its output.
+        /// </param>
         /// <param name="type"></param>
-        /// <param name="action"></param>
+        /// <param name="maxOutputLength"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputItemsVariant29(
+            string callId,
             string id,
-            global::OpenRouter.WebSearchStatus status,
-            global::OpenRouter.OutputWebSearchCallItemType type,
-            global::OpenRouter.OutputWebSearchCallItemAction? action)
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputShellCallOutputItemOutputItems> output,
+            global::OpenRouter.ShellCallStatus status,
+            global::OpenRouter.OutputShellCallOutputItemType type,
+            int? maxOutputLength)
         {
             this.Type = type;
-            this.Action = action;
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.MaxOutputLength = maxOutputLength;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Status = status;
         }
 

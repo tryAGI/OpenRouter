@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("video_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ChatContentVideoInput VideoUrl { get; set; }
+        public required global::OpenRouter.LegacyChatContentVideoInput VideoUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatContentItemsVariant4(
-            global::OpenRouter.ChatContentVideoInput videoUrl,
+            global::OpenRouter.LegacyChatContentVideoInput videoUrl,
             global::OpenRouter.LegacyChatContentVideoType type)
         {
             this.Type = type;

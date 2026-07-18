@@ -82,43 +82,6 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items> PickBaseInputs1() => IsBaseInputs1
             ? BaseInputs1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputs1' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Any type
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? BaseInputsVariant3 { get; init; }
-#else
-        public object? BaseInputsVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsVariant3))]
-#endif
-        public bool IsBaseInputsVariant3 => BaseInputsVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickBaseInputsVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = BaseInputsVariant3;
-            return IsBaseInputsVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickBaseInputsVariant3() => IsBaseInputsVariant3
-            ? BaseInputsVariant3!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -147,20 +110,17 @@ namespace OpenRouter
         /// </summary>
         public BaseInputs(
             string? baseInputsVariant1,
-            global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>? baseInputs1,
-            object? baseInputsVariant3
+            global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>? baseInputs1
             )
         {
             BaseInputsVariant1 = baseInputsVariant1;
             BaseInputs1 = baseInputs1;
-            BaseInputsVariant3 = baseInputsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            BaseInputsVariant3 as object ??
             BaseInputs1 as object ??
             BaseInputsVariant1 as object 
             ;
@@ -170,8 +130,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             BaseInputsVariant1?.ToString() ??
-            BaseInputs1?.ToString() ??
-            BaseInputsVariant3?.ToString() 
+            BaseInputs1?.ToString() 
             ;
 
         /// <summary>
@@ -179,7 +138,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsBaseInputsVariant1 && !IsBaseInputs1 && !IsBaseInputsVariant3 || !IsBaseInputsVariant1 && IsBaseInputs1 && !IsBaseInputsVariant3 || !IsBaseInputsVariant1 && !IsBaseInputs1 && IsBaseInputsVariant3;
+            return IsBaseInputsVariant1 && !IsBaseInputs1 || !IsBaseInputsVariant1 && IsBaseInputs1;
         }
 
         /// <summary>
@@ -188,7 +147,6 @@ namespace OpenRouter
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? baseInputsVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>, TResult>? baseInputs1 = null,
-            global::System.Func<object, TResult>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -204,10 +162,6 @@ namespace OpenRouter
             {
                 return baseInputs1(BaseInputs1!);
             }
-            else if (IsBaseInputsVariant3 && baseInputsVariant3 != null)
-            {
-                return baseInputsVariant3(BaseInputsVariant3!);
-            }
 
             return default(TResult);
         }
@@ -219,8 +173,6 @@ namespace OpenRouter
             global::System.Action<string>? baseInputsVariant1 = null,
 
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>>? baseInputs1 = null,
-
-            global::System.Action<object>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -235,10 +187,6 @@ namespace OpenRouter
             else if (IsBaseInputs1)
             {
                 baseInputs1?.Invoke(BaseInputs1!);
-            }
-            else if (IsBaseInputsVariant3)
-            {
-                baseInputsVariant3?.Invoke(BaseInputsVariant3!);
             }
         }
 
@@ -248,7 +196,6 @@ namespace OpenRouter
         public void Switch(
             global::System.Action<string>? baseInputsVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>>? baseInputs1 = null,
-            global::System.Action<object>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -263,10 +210,6 @@ namespace OpenRouter
             else if (IsBaseInputs1)
             {
                 baseInputs1?.Invoke(BaseInputs1!);
-            }
-            else if (IsBaseInputsVariant3)
-            {
-                baseInputsVariant3?.Invoke(BaseInputsVariant3!);
             }
         }
 
@@ -281,8 +224,6 @@ namespace OpenRouter
                 typeof(string),
                 BaseInputs1,
                 typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>),
-                BaseInputsVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -300,8 +241,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BaseInputsVariant1, other.BaseInputsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>?>.Default.Equals(BaseInputs1, other.BaseInputs1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BaseInputsVariant3, other.BaseInputsVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>?>.Default.Equals(BaseInputs1, other.BaseInputs1) 
                 ;
         }
 

@@ -32,9 +32,9 @@ namespace OpenRouter
         /// The source filter applied, or null when all sources are returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.UnifiedBenchmarksMetaSource?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.UnifiedBenchmarksMetaSource?, object> Source { get; set; }
+        public required global::OpenRouter.UnifiedBenchmarksMetaSource Source { get; set; }
 
         /// <summary>
         /// URL of the upstream data source, or null when results span multiple sources.
@@ -91,7 +91,7 @@ namespace OpenRouter
         public UnifiedBenchmarksMeta(
             string asOf,
             int modelCount,
-            global::OpenRouter.OneOf<global::OpenRouter.UnifiedBenchmarksMetaSource?, object> source,
+            global::OpenRouter.UnifiedBenchmarksMetaSource source,
             string? citation,
             string? sourceUrl,
             string? taskType,

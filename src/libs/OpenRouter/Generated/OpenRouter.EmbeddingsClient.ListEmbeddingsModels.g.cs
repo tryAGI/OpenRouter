@@ -26,10 +26,14 @@ namespace OpenRouter
             {                s_ListEmbeddingsModelsSecurityRequirement0,
             };
         partial void PrepareListEmbeddingsModelsArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref int? offset,
+            ref int? limit);
         partial void PrepareListEmbeddingsModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? offset,
+            int? limit);
         partial void ProcessListEmbeddingsModelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,14 +47,24 @@ namespace OpenRouter
         /// List all embeddings models<br/>
         /// Returns a list of all available embeddings models and their properties
         /// </summary>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 500
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ModelsListResponse> ListEmbeddingsModelsAsync(
+            int? offset = default,
+            int? limit = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListEmbeddingsModelsAsResponseAsync(
+                offset: offset,
+                limit: limit,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -61,17 +75,27 @@ namespace OpenRouter
         /// List all embeddings models<br/>
         /// Returns a list of all available embeddings models and their properties
         /// </summary>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 500
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ModelsListResponse>> ListEmbeddingsModelsAsResponseAsync(
+            int? offset = default,
+            int? limit = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListEmbeddingsModelsArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                offset: ref offset,
+                limit: ref limit);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
@@ -99,6 +123,10 @@ namespace OpenRouter
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
                                 path: "/embeddings/models",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("offset", offset?.ToString())
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -138,7 +166,9 @@ namespace OpenRouter
                     request: __httpRequest);
                 PrepareListEmbeddingsModelsRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    offset: offset,
+                    limit: limit);
 
                 return __httpRequest;
             }

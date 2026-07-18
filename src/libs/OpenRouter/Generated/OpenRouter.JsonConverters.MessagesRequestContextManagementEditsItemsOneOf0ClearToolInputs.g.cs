@@ -49,26 +49,13 @@ namespace OpenRouter.JsonConverters
                     }
                 }
             }
-            var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             bool? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = default;
             global::System.Collections.Generic.IList<string>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = default;
-            object? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -104,26 +91,9 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 == null)
+            if (messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 == null)
             {
                 try
                 {
@@ -140,7 +110,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 == null)
+            if (messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 == null)
             {
                 try
                 {
@@ -157,29 +127,10 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(
                 messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1,
 
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2,
-
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2
                 );
 
             return __value;
@@ -205,12 +156,6 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!, typeInfo);
-            }
-            else if (value.IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!, typeInfo);
             }
         }
     }

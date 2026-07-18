@@ -652,7 +652,7 @@ namespace OpenRouter
             global::System.DateTime? expiresAt = default,
             bool? includeByokInLimit = default,
             double? limit = default,
-            global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
+            global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? limitReset = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

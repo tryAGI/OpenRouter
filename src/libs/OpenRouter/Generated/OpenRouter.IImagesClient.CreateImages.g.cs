@@ -59,7 +59,7 @@ namespace OpenRouter
         /// Text description of the desired image
         /// </param>
         /// <param name="provider">
-        /// Provider-specific passthrough configuration
+        /// Provider routing preferences and provider-specific passthrough configuration.
         /// </param>
         /// <param name="quality">
         /// Rendering quality. Providers without a quality knob ignore this.
@@ -71,7 +71,7 @@ namespace OpenRouter
         /// If specified, the generation will sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed for all providers.
         /// </param>
         /// <param name="size">
-        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. Interchangeable with resolution + aspect_ratio; use those directly for enumerated, per-model discoverable values. Conflicting size + resolution/aspect_ratio is rejected.
+        /// Optional. A convenience shorthand for output dimensions — pass a tier ("2K", "4K") or explicit pixels ("2048x2048") and we normalize it to the right dimensions for the chosen provider. A tier size is equivalent to setting `resolution` and combines with `aspect_ratio`. An explicit pixel size is authoritative: a mismatched `resolution` or `aspect_ratio` alongside it is rejected with a 400.
         /// </param>
         /// <param name="stream">
         /// If true, partial images are streamed as SSE events as they become available. Only supported by providers with native streaming (currently OpenAI). Non-streaming providers ignore this flag and return a buffered response.
@@ -88,7 +88,7 @@ namespace OpenRouter
             int? n = default,
             int? outputCompression = default,
             global::OpenRouter.ImageGenerationRequestOutputFormat? outputFormat = default,
-            global::OpenRouter.ImageGenerationRequestProvider? provider = default,
+            global::OpenRouter.ImageGenerationProviderPreferences? provider = default,
             global::OpenRouter.ImageGenerationRequestQuality? quality = default,
             global::OpenRouter.ImageGenerationRequestResolution? resolution = default,
             int? seed = default,

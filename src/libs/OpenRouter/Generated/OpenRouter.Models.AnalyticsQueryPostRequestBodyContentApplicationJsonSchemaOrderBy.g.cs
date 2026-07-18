@@ -17,7 +17,7 @@ namespace OpenRouter
         public required global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderByDirection Direction { get; set; }
 
         /// <summary>
-        /// Field to order by
+        /// Field to order by: a metric included in `metrics` (or "request_count", which may be ordered by without being requested), a requested dimension, or "date".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -34,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         /// <param name="direction"></param>
         /// <param name="field">
-        /// Field to order by
+        /// Field to order by: a metric included in `metrics` (or "request_count", which may be ordered by without being requested), a requested dimension, or "date".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

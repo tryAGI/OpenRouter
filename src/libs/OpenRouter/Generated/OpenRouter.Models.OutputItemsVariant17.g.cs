@@ -4,40 +4,34 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:fusion server tool output item
+    /// An openrouter:files server tool output item
     /// </summary>
     public sealed partial class OutputItemsVariant17
     {
         /// <summary>
-        /// Discriminator value: openrouter:fusion
+        /// Discriminator value: openrouter:files
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsVariant17TypeJsonConverter))]
         public global::OpenRouter.OutputItemsVariant17Type Type { get; set; }
 
         /// <summary>
-        /// Structured analysis produced by the fusion judge model.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("analysis")]
-        public global::OpenRouter.FusionAnalysisResult? Analysis { get; set; }
-
-        /// <summary>
-        /// Error message when the fusion run did not produce an analysis result.
+        /// Error message when the file operation failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
 
         /// <summary>
-        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
+        /// The target file id supplied in the tool-call arguments.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("failed_models")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? FailedModels { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
+        public string? FileId { get; set; }
 
         /// <summary>
-        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
+        /// The target filename supplied in the tool-call arguments.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
-        public string? FailureReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        public string? Filename { get; set; }
 
         /// <summary>
         /// 
@@ -46,16 +40,16 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// Analysis models that produced a response in this fusion run, with each model's full panel content.
+        /// The file operation performed (list, read, write, or edit).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("responses")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? Responses { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
+        public string? Operation { get; set; }
 
         /// <summary>
-        /// Web pages the analysis panels and judge retrieved via web search during this fusion run, deduplicated by URL across the whole run. Present when at least one model cited a source.
+        /// JSON-serialized result of the file operation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.FusionSource>? Sources { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
+        public string? Result { get; set; }
 
         /// <summary>
         /// 
@@ -76,26 +70,23 @@ namespace OpenRouter
         /// </summary>
         /// <param name="status"></param>
         /// <param name="type">
-        /// Discriminator value: openrouter:fusion
-        /// </param>
-        /// <param name="analysis">
-        /// Structured analysis produced by the fusion judge model.
+        /// Discriminator value: openrouter:files
         /// </param>
         /// <param name="error">
-        /// Error message when the fusion run did not produce an analysis result.
+        /// Error message when the file operation failed.
         /// </param>
-        /// <param name="failedModels">
-        /// Models that were requested as part of the analysis panel but did not produce a response. Present when at least one requested analysis model failed. The fusion result is still usable but was produced from a degraded panel.
+        /// <param name="fileId">
+        /// The target file id supplied in the tool-call arguments.
         /// </param>
-        /// <param name="failureReason">
-        /// Typed failure reason when the fusion run failed. Possible values include: all_panels_failed, insufficient_credits, rate_limited, judge_not_valid_json, judge_schema_mismatch, judge_upstream_error, judge_empty_completion.
+        /// <param name="filename">
+        /// The target filename supplied in the tool-call arguments.
         /// </param>
         /// <param name="id"></param>
-        /// <param name="responses">
-        /// Analysis models that produced a response in this fusion run, with each model's full panel content.
+        /// <param name="operation">
+        /// The file operation performed (list, read, write, or edit).
         /// </param>
-        /// <param name="sources">
-        /// Web pages the analysis panels and judge retrieved via web search during this fusion run, deduplicated by URL across the whole run. Present when at least one model cited a source.
+        /// <param name="result">
+        /// JSON-serialized result of the file operation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -103,22 +94,20 @@ namespace OpenRouter
         public OutputItemsVariant17(
             global::OpenRouter.ToolCallStatus status,
             global::OpenRouter.OutputItemsVariant17Type type,
-            global::OpenRouter.FusionAnalysisResult? analysis,
             string? error,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionFailedModelsItems>? failedModels,
-            string? failureReason,
+            string? fileId,
+            string? filename,
             string? id,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingOpenrouterFusionResponsesItems>? responses,
-            global::System.Collections.Generic.IList<global::OpenRouter.FusionSource>? sources)
+            string? operation,
+            string? result)
         {
             this.Type = type;
-            this.Analysis = analysis;
             this.Error = error;
-            this.FailedModels = failedModels;
-            this.FailureReason = failureReason;
+            this.FileId = fileId;
+            this.Filename = filename;
             this.Id = id;
-            this.Responses = responses;
-            this.Sources = sources;
+            this.Operation = operation;
+            this.Result = result;
             this.Status = status;
         }
 

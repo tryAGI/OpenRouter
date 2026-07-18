@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ChatRequest
     {
         /// <summary>
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
@@ -107,10 +107,28 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? Plugins { get; set; }
 
         /// <summary>
+        /// Static predicted output content. Supported models can use this to reduce latency when much of the response is known in advance.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
+        public global::OpenRouter.Prediction? Prediction { get; set; }
+
+        /// <summary>
         /// Presence penalty (-2.0 to 2.0)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
         public double? PresencePenalty { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
+        public string? PromptCacheKey { get; set; }
+
+        /// <summary>
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::OpenRouter.PromptCacheOptions? PromptCacheOptions { get; set; }
 
         /// <summary>
         /// When multiple model providers are available, optionally indicate your routing preference.
@@ -128,8 +146,8 @@ namespace OpenRouter
         /// Shorthand for setting reasoning effort. Equivalent to setting reasoning.effort. Cannot be used simultaneously with reasoning.effort if they differ.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestReasoningEffort?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? ReasoningEffort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningEffortJsonConverter))]
+        public global::OpenRouter.ChatRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Penalizes tokens based on how much they have already appeared in the text. A value of 1.0 means no penalty. Values above 1.0 penalize repeated tokens more strongly. Not all providers support this parameter.
@@ -160,8 +178,8 @@ namespace OpenRouter
         /// The service tier to use for processing this request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestServiceTier?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatRequestServiceTier?, object>? ServiceTier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestServiceTierJsonConverter))]
+        public global::OpenRouter.ChatRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters.
@@ -173,8 +191,8 @@ namespace OpenRouter
         /// Stop sequences (up to 4)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestStopJsonConverter))]
-        public global::OpenRouter.ChatRequestStop? Stop { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestStop?, object>))]
+        public global::OpenRouter.OneOf<global::OpenRouter.ChatRequestStop?, object>? Stop { get; set; }
 
         /// <summary>
         /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
@@ -263,7 +281,7 @@ namespace OpenRouter
         /// List of messages for the conversation
         /// </param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -305,8 +323,15 @@ namespace OpenRouter
         /// <param name="plugins">
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
+        /// <param name="prediction">
+        /// Static predicted output content. Supported models can use this to reduce latency when much of the response is known in advance.
+        /// </param>
         /// <param name="presencePenalty">
         /// Presence penalty (-2.0 to 2.0)
+        /// </param>
+        /// <param name="promptCacheKey"></param>
+        /// <param name="promptCacheOptions">
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
         /// </param>
         /// <param name="provider">
         /// When multiple model providers are available, optionally indicate your routing preference.
@@ -395,17 +420,20 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? models,
             bool? parallelToolCalls,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? plugins,
+            global::OpenRouter.Prediction? prediction,
             double? presencePenalty,
+            string? promptCacheKey,
+            global::OpenRouter.PromptCacheOptions? promptCacheOptions,
             global::OpenRouter.ProviderPreferences? provider,
             global::OpenRouter.ChatRequestReasoning? reasoning,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? reasoningEffort,
+            global::OpenRouter.ChatRequestReasoningEffort? reasoningEffort,
             double? repetitionPenalty,
             global::OpenRouter.ChatRequestResponseFormat? responseFormat,
             object? route,
             int? seed,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestServiceTier?, object>? serviceTier,
+            global::OpenRouter.ChatRequestServiceTier? serviceTier,
             string? sessionId,
-            global::OpenRouter.ChatRequestStop? stop,
+            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestStop?, object>? stop,
             global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen,
             bool? stream,
             global::OpenRouter.ChatStreamOptions? streamOptions,
@@ -435,7 +463,10 @@ namespace OpenRouter
             this.Models = models;
             this.ParallelToolCalls = parallelToolCalls;
             this.Plugins = plugins;
+            this.Prediction = prediction;
             this.PresencePenalty = presencePenalty;
+            this.PromptCacheKey = promptCacheKey;
+            this.PromptCacheOptions = promptCacheOptions;
             this.Provider = provider;
             this.Reasoning = reasoning;
             this.ReasoningEffort = reasoningEffort;

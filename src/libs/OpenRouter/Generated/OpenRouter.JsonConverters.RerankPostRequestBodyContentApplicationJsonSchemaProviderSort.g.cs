@@ -31,16 +31,13 @@ namespace OpenRouter.JsonConverters
             var __score1 = 0;
             if (__jsonProps.Contains("by")) __score1++;
             if (__jsonProps.Contains("partition")) __score1++;
-            var __score2 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::OpenRouter.ProviderSort? providerSort = default;
             global::OpenRouter.ProviderSortConfig? providerSortConfig = default;
-            object? rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -73,24 +70,9 @@ namespace OpenRouter.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (providerSort == null && providerSortConfig == null && rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 == null)
+            if (providerSort == null && providerSortConfig == null)
             {
                 try
                 {
@@ -107,7 +89,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (providerSort == null && providerSortConfig == null && rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 == null)
+            if (providerSort == null && providerSortConfig == null)
             {
                 try
                 {
@@ -124,29 +106,10 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (providerSort == null && providerSortConfig == null && rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaProviderSort(
                 providerSort,
 
-                providerSortConfig,
-
-                rerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3
+                providerSortConfig
                 );
 
             return __value;
@@ -172,12 +135,6 @@ namespace OpenRouter.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ProviderSortConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ProviderSortConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ProviderSortConfig).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSortConfig!, typeInfo);
-            }
-            else if (value.IsRerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RerankPostRequestBodyContentApplicationJsonSchemaProviderSortVariant3!, typeInfo);
             }
         }
     }

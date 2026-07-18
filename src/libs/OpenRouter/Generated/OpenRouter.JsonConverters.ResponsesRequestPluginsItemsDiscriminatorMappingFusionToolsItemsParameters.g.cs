@@ -62,7 +62,7 @@ namespace OpenRouter.JsonConverters
             }
             var __score3 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -73,34 +73,12 @@ namespace OpenRouter.JsonConverters
             }
             var __score4 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
                     {
                         if (__jsonProps.Contains(__prop.Name)) __score4++;
-                    }
-                }
-            }
-            var __score5 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score5++;
-                    }
-                }
-            }
-            var __score6 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score6++;
                     }
                 }
             }
@@ -111,16 +89,12 @@ namespace OpenRouter.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
             if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
-            if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
-            if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
 
             string? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 = default;
             double? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 = default;
             bool? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 = default;
-            object? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 = default;
-            global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 = default;
-            global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 = default;
-            object? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 = default;
+            global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = default;
+            global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -179,9 +153,9 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>).Name}");
+                        responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -196,43 +170,9 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4).Name}");
                         responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-
-                else if (__bestIndex == 5)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5).Name}");
-                        responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-
-                else if (__bestIndex == 6)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -243,7 +183,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 == null)
+            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null)
             {
                 try
                 {
@@ -260,7 +200,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 == null)
+            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null)
             {
                 try
                 {
@@ -277,7 +217,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 == null)
+            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null)
             {
                 try
                 {
@@ -294,14 +234,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 == null)
+            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>).Name}");
+                    responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -311,48 +251,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 == null)
+            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4).Name}");
                     responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5).Name}");
-                    responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5 == null && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -369,13 +275,9 @@ namespace OpenRouter.JsonConverters
 
                 responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3,
 
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4,
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3,
 
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4,
-
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5,
-
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4
                 );
 
             return __value;
@@ -408,29 +310,17 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3!.Value, typeInfo);
             }
-            else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4)
+            else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant4!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3!, typeInfo);
             }
             else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Items>).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4!, typeInfo);
-            }
-            else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters5!, typeInfo);
-            }
-            else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant7!, typeInfo);
             }
         }
     }

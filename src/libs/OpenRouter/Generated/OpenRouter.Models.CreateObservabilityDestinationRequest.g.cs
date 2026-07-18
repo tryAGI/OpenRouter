@@ -32,7 +32,7 @@ namespace OpenRouter
         /// Optional structured filter rules controlling which events are forwarded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter_rules")]
-        public global::OpenRouter.ObservabilityFilterRulesConfig? FilterRules { get; set; }
+        public global::OpenRouter.ObservabilityFilterRulesConfigNullable? FilterRules { get; set; }
 
         /// <summary>
         /// Human-readable name for the destination.
@@ -115,7 +115,7 @@ namespace OpenRouter
             global::OpenRouter.CreateObservabilityDestinationRequestType type,
             global::System.Collections.Generic.IList<string>? apiKeyHashes,
             bool? enabled,
-            global::OpenRouter.ObservabilityFilterRulesConfig? filterRules,
+            global::OpenRouter.ObservabilityFilterRulesConfigNullable? filterRules,
             bool? privacyMode,
             double? samplingRate,
             global::System.Guid? workspaceId)

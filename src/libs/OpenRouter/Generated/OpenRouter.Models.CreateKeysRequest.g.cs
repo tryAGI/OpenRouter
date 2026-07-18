@@ -36,8 +36,8 @@ namespace OpenRouter
         /// Type of limit reset for the API key (daily, weekly, monthly, or null for no reset). Resets happen automatically at midnight UTC, and weeks are Monday through Sunday.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_reset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? LimitReset { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.KeysPostRequestBodyContentApplicationJsonSchemaLimitResetJsonConverter))]
+        public global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? LimitReset { get; set; }
 
         /// <summary>
         /// Name for the new API key
@@ -91,7 +91,7 @@ namespace OpenRouter
             global::System.DateTime? expiresAt,
             bool? includeByokInLimit,
             double? limit,
-            global::OpenRouter.OneOf<global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset,
+            global::OpenRouter.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? limitReset,
             global::System.Guid? workspaceId)
         {
             this.CreatorUserId = creatorUserId;

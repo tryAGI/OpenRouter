@@ -16,10 +16,16 @@ namespace OpenRouter
         public global::OpenRouter.ChatContentTextType Type { get; set; }
 
         /// <summary>
-        /// Cache control for the content part
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
+
+        /// <summary>
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +46,10 @@ namespace OpenRouter
         /// <param name="text"></param>
         /// <param name="type"></param>
         /// <param name="cacheControl">
-        /// Cache control for the content part
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
+        /// </param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,10 +57,12 @@ namespace OpenRouter
         public ChatContentItemsVariant5(
             string text,
             global::OpenRouter.ChatContentTextType type,
-            global::OpenRouter.ChatContentCacheControl? cacheControl)
+            global::OpenRouter.ChatContentCacheControl? cacheControl,
+            global::OpenRouter.PromptCacheBreakpoint? promptCacheBreakpoint)
         {
             this.Type = type;
             this.CacheControl = cacheControl;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 

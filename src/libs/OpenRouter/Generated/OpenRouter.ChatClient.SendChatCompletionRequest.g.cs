@@ -904,7 +904,7 @@ namespace OpenRouter
         /// Opt-in level for surfacing routing metadata on the response under `openrouter_metadata`.
         /// </param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. Currently supported for Anthropic Claude models.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
         /// </param>
         /// <param name="debug">
         /// Debug options for inspecting request transformations (streaming only)
@@ -949,8 +949,15 @@ namespace OpenRouter
         /// <param name="plugins">
         /// Plugins you want to enable for this request, including their settings.
         /// </param>
+        /// <param name="prediction">
+        /// Static predicted output content. Supported models can use this to reduce latency when much of the response is known in advance.
+        /// </param>
         /// <param name="presencePenalty">
         /// Presence penalty (-2.0 to 2.0)
+        /// </param>
+        /// <param name="promptCacheKey"></param>
+        /// <param name="promptCacheOptions">
+        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
         /// </param>
         /// <param name="provider">
         /// When multiple model providers are available, optionally indicate your routing preference.
@@ -1040,17 +1047,20 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<string>? models = default,
             bool? parallelToolCalls = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatRequestPluginsItems>? plugins = default,
+            global::OpenRouter.Prediction? prediction = default,
             double? presencePenalty = default,
+            string? promptCacheKey = default,
+            global::OpenRouter.PromptCacheOptions? promptCacheOptions = default,
             global::OpenRouter.ProviderPreferences? provider = default,
             global::OpenRouter.ChatRequestReasoning? reasoning = default,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestReasoningEffort?, object>? reasoningEffort = default,
+            global::OpenRouter.ChatRequestReasoningEffort? reasoningEffort = default,
             double? repetitionPenalty = default,
             global::OpenRouter.ChatRequestResponseFormat? responseFormat = default,
             object? route = default,
             int? seed = default,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestServiceTier?, object>? serviceTier = default,
+            global::OpenRouter.ChatRequestServiceTier? serviceTier = default,
             string? sessionId = default,
-            global::OpenRouter.ChatRequestStop? stop = default,
+            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestStop?, object>? stop = default,
             global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen = default,
             bool? stream = default,
             global::OpenRouter.ChatStreamOptions? streamOptions = default,
@@ -1084,7 +1094,10 @@ namespace OpenRouter
                 Models = models,
                 ParallelToolCalls = parallelToolCalls,
                 Plugins = plugins,
+                Prediction = prediction,
                 PresencePenalty = presencePenalty,
+                PromptCacheKey = promptCacheKey,
+                PromptCacheOptions = promptCacheOptions,
                 Provider = provider,
                 Reasoning = reasoning,
                 ReasoningEffort = reasoningEffort,
