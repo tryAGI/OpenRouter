@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace OpenRouter
@@ -12,6 +14,7 @@ namespace OpenRouter
         /// Deprecated: This field has no effect. Full usage details are always included.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_usage")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? IncludeUsage { get; set; }
 
         /// <summary>
@@ -19,28 +22,6 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChatStreamOptions" /> class.
-        /// </summary>
-        /// <param name="includeUsage">
-        /// Deprecated: This field has no effect. Full usage details are always included.
-        /// </param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-#endif
-        public ChatStreamOptions(
-            bool? includeUsage)
-        {
-            this.IncludeUsage = includeUsage;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChatStreamOptions" /> class.
-        /// </summary>
-        public ChatStreamOptions()
-        {
-        }
 
     }
 }
