@@ -6,6 +6,7 @@ namespace OpenRouter
     /// <summary>
     /// Legacy rate limit information about a key. Will always return -1.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class KeyGetResponsesContentApplicationJsonSchemaDataRateLimit
     {
         /// <summary>
@@ -13,6 +14,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Interval { get; set; }
 
         /// <summary>
@@ -20,6 +22,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Note { get; set; }
 
         /// <summary>
@@ -27,6 +30,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required int Requests { get; set; }
 
         /// <summary>

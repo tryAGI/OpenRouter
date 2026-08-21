@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace OpenRouter
 {
     public partial class GuardrailsClient
@@ -610,9 +612,6 @@ namespace OpenRouter
         /// <param name="description">
         /// New description for the guardrail
         /// </param>
-        /// <param name="enforceZdr">
-        /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.
-        /// </param>
         /// <param name="enforceZdrAnthropic">
         /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.
         /// </param>
@@ -653,7 +652,6 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntryInput>? contentFilterBuiltins = default,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters = default,
             string? description = default,
-            bool? enforceZdr = default,
             bool? enforceZdrAnthropic = default,
             bool? enforceZdrGoogle = default,
             bool? enforceZdrOpenai = default,
@@ -674,7 +672,6 @@ namespace OpenRouter
                 ContentFilterBuiltins = contentFilterBuiltins,
                 ContentFilters = contentFilters,
                 Description = description,
-                EnforceZdr = enforceZdr,
                 EnforceZdrAnthropic = enforceZdrAnthropic,
                 EnforceZdrGoogle = enforceZdrGoogle,
                 EnforceZdrOpenai = enforceZdrOpenai,

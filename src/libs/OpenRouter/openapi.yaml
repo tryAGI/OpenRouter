@@ -346,6 +346,7 @@
                   },
                   "key_label": {
                     "type": "string",
+                    "maxLength": 100,
                     "description": "Optional custom label for the API key. Defaults to the app name if not provided."
                   },
                   "limit": {
@@ -1150,7 +1151,8 @@
             "description": "Maximum number of items to return. When omitted, all matching results are returned.",
             "required": false,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           }
         ],
@@ -1227,6 +1229,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -1237,6 +1240,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           },
@@ -1901,7 +1906,8 @@
             "description": "Start of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to 30 days before `end_date`. The dataset begins at 2025-01-01; earlier values are clamped forward to that floor and the resolved value is echoed in `meta.start_date`.",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
             }
           },
           {
@@ -1910,7 +1916,8 @@
             "description": "End of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to the most recent completed UTC day. Must be on or after 2025-01-01; earlier values are rejected with a 400.",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
             }
           },
           {
@@ -1920,6 +1927,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           },
@@ -1933,6 +1942,8 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
+              "maximum": 100,
               "default": 0
             }
           }
@@ -2006,7 +2017,8 @@
             "description": "Start of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to 30 days before `end_date`. The dataset begins at 2025-01-01; earlier values are clamped forward to that floor and the resolved value is echoed in `meta.start_date`.",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
             }
           },
           {
@@ -2015,7 +2027,8 @@
             "description": "End of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to the most recent completed UTC day. Must be on or after 2025-01-01; earlier values are rejected with a 400.",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
             }
           },
           {
@@ -2228,6 +2241,7 @@
                 "properties": {
                   "dimensions": {
                     "type": "integer",
+                    "minimum": 1,
                     "description": "The number of dimensions for the output embeddings"
                   },
                   "encoding_format": {
@@ -2283,6 +2297,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -2293,6 +2308,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
               "default": 500
             }
           }
@@ -2439,7 +2456,9 @@
             "description": "Maximum number of files to return (1–1000).",
             "required": false,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
             }
           },
           {
@@ -2895,7 +2914,8 @@
             "description": "The generation ID",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -2987,7 +3007,8 @@
             "description": "The generation ID",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -3166,6 +3187,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -3176,6 +3198,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           },
@@ -3530,6 +3554,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -3540,6 +3565,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -3781,6 +3808,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -3791,6 +3819,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -4022,6 +4052,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -4032,6 +4063,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -4089,6 +4122,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -4099,6 +4133,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -4207,7 +4243,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "minimum": 0
             }
           },
           {
@@ -4345,6 +4382,7 @@
                       "string",
                       "null"
                     ],
+                    "minLength": 1,
                     "description": "Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key."
                   },
                   "expires_at": {
@@ -4373,6 +4411,7 @@
                   },
                   "name": {
                     "type": "string",
+                    "minLength": 1,
                     "description": "Name for the new API key"
                   },
                   "workspace_id": {
@@ -4842,6 +4881,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -4852,6 +4892,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
               "default": 500
             }
           },
@@ -4933,7 +4975,8 @@
             "description": "Minimum context length (tokens). Models with smaller context are excluded.",
             "required": false,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -4946,7 +4989,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -4959,7 +5003,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5026,7 +5071,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5039,7 +5085,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5051,7 +5098,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "minimum": 0
             }
           },
           {
@@ -5063,7 +5111,8 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "minimum": 0
             }
           },
           {
@@ -5076,7 +5125,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5089,7 +5139,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5102,7 +5153,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5115,7 +5167,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5128,7 +5181,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5141,7 +5195,8 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             }
           },
           {
@@ -5154,7 +5209,9 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1
             }
           },
           {
@@ -5167,7 +5224,9 @@
                 "number",
                 "null"
               ],
-              "format": "double"
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1
             }
           }
         ],
@@ -5276,6 +5335,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -5286,6 +5346,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
               "default": 500
             }
           }
@@ -5353,6 +5415,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -5363,6 +5426,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           },
@@ -5727,6 +5792,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -5737,6 +5803,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -5804,6 +5872,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -5814,6 +5883,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -5877,7 +5948,8 @@
             "description": "URL-safe slug identifying the preset.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -5950,7 +6022,8 @@
             "description": "URL-safe slug identifying the preset. Created if it does not exist.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -6052,7 +6125,8 @@
             "description": "URL-safe slug identifying the preset. Created if it does not exist.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -6154,7 +6228,8 @@
             "description": "URL-safe slug identifying the preset. Created if it does not exist.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -6256,7 +6331,8 @@
             "description": "URL-safe slug identifying the preset.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           {
@@ -6269,6 +6345,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -6279,6 +6356,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -6352,7 +6431,8 @@
             "description": "URL-safe slug identifying the preset.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           {
@@ -6361,7 +6441,8 @@
             "description": "Version number of the preset.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -6579,6 +6660,7 @@
                   },
                   "top_n": {
                     "type": "integer",
+                    "minimum": 1,
                     "description": "Number of most relevant documents to return"
                   }
                 },
@@ -6699,7 +6781,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -6761,7 +6844,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           {
@@ -6773,6 +6857,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           }
@@ -6904,6 +6989,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -6914,6 +7000,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -7037,7 +7125,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -7098,7 +7187,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -7179,7 +7269,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -7271,7 +7362,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -7334,7 +7426,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           {
@@ -7423,7 +7516,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           {
@@ -7495,7 +7589,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           {
@@ -7508,6 +7603,7 @@
                 "integer",
                 "null"
               ],
+              "minimum": 0,
               "default": 0
             }
           },
@@ -7518,6 +7614,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 50
             }
           }
@@ -7591,7 +7689,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -7683,7 +7782,8 @@
             "description": "The workspace ID (UUID) or slug",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         ],
@@ -12458,6 +12558,8 @@
           },
           "max_tool_calls": {
             "type": "integer",
+            "minimum": 1,
+            "maximum": 25,
             "description": "Maximum number of tool-calling steps the advisor sub-agent may take during its agentic loop. Capped at 25. Only relevant when the advisor is given tools."
           },
           "model": {
@@ -12466,6 +12568,9 @@
           },
           "name": {
             "type": "string",
+            "pattern": "^[a-zA-Z0-9 _-]+$",
+            "minLength": 1,
+            "maxLength": 64,
             "description": "Optional name for this advisor. The model sees one tool per named advisor (and one default for an unnamed entry). Names must be unique across advisor entries. Letters, digits, spaces, underscores, and dashes; trimmed; 1–64 chars."
           },
           "reasoning": {
@@ -12575,6 +12680,8 @@
           },
           "max_tool_calls": {
             "type": "integer",
+            "minimum": 1,
+            "maximum": 25,
             "description": "Maximum number of tool-calling steps the subagent may take during its agentic loop. Capped at 25. Only relevant when the subagent is given tools. Accepted and validated but not yet enforced on the subagent call."
           },
           "model": {
@@ -12754,6 +12861,8 @@
           },
           "max_tool_calls": {
             "type": "integer",
+            "minimum": 1,
+            "maximum": 16,
             "description": "Maximum number of tool-calling steps each panelist (analysis model) and the judge model may take during their agentic web-research loop. Models with web_search/web_fetch enabled iterate until they produce a text response or hit this ceiling. Defaults to 8. Capped at 16."
           },
           "model": {
@@ -13138,6 +13247,9 @@
               },
               "container_id": {
                 "type": "string",
+                "pattern": "^[\\w-]+$",
+                "minLength": 1,
+                "maxLength": 20,
                 "description": "Identifier of an existing container to reuse (max 20 characters)."
               }
             },
@@ -13237,6 +13349,9 @@
               },
               "container_id": {
                 "type": "string",
+                "pattern": "^[\\w-]+$",
+                "minLength": 1,
+                "maxLength": 20,
                 "description": "Identifier of an existing container to reuse (max 20 characters)."
               }
             },
@@ -13747,7 +13862,8 @@
           "null"
         ],
         "additionalProperties": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 512
         },
         "description": "Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.",
         "title": "RequestMetadata"
@@ -14022,6 +14138,8 @@
               },
               "cost_quality_tradeoff": {
                 "type": "integer",
+                "minimum": 0,
+                "maximum": 10,
                 "description": "Balances routing between cost and quality on a 0-10 scale. The auto-beta-router ranks models for the classified task type by community spend share, then filters candidates by their average cost per generation for that task. Higher values favor cheaper models: 10 keeps only models around the cheapest 10th percentile, while 0 permits models up to the 90th percentile for cost. Defaults to 7."
               },
               "enabled": {
@@ -14053,6 +14171,8 @@
               },
               "cost_quality_tradeoff": {
                 "type": "integer",
+                "minimum": 0,
+                "maximum": 10,
                 "description": "Controls cost vs. quality routing tradeoff (0–10). 0 = pure quality (best model regardless of cost), 10 = maximize for cost (cheapest model wins). Intermediate values blend quality and cost signals continuously. Defaults to 7."
               },
               "enabled": {
@@ -14134,6 +14254,8 @@
               },
               "max_tool_calls": {
                 "type": "integer",
+                "minimum": 1,
+                "maximum": 16,
                 "description": "Maximum number of tool-calling steps each panelist (analysis model) and the judge model may take during their agentic web-research loop. Models with web_search/web_fetch enabled iterate until they produce a text response or hit this ceiling. Defaults to 8. Capped at 16."
               },
               "model": {
@@ -14190,6 +14312,8 @@
               "min_coding_score": {
                 "type": "number",
                 "format": "double",
+                "minimum": 0,
+                "maximum": 1,
                 "description": "Minimum coding quality score between 0 and 1. Maps to internal quality tiers: >= 0.66 → high (top coding models), >= 0.33 → medium (strong modern flagships), < 0.33 → low (capable coders above the median). Omit to default to the highest tier (equivalent to >= 0.66)."
               },
               "price_source": {
@@ -14975,7 +15099,8 @@
                 "$ref": "#/components/schemas/StopServerToolsWhenFinishReasonIsType"
               },
               "reason": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             },
             "required": [
@@ -14991,7 +15116,8 @@
                 "$ref": "#/components/schemas/StopServerToolsWhenHasToolCallType"
               },
               "tool_name": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             },
             "required": [
@@ -15681,6 +15807,7 @@
           },
           "session_id": {
             "type": "string",
+            "maxLength": 256,
             "description": "A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters."
           },
           "stop_server_tools_when": {
@@ -15739,6 +15866,7 @@
           },
           "user": {
             "type": "string",
+            "maxLength": 256,
             "description": "A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters."
           }
         },
@@ -20532,6 +20660,7 @@
           },
           "prompt": {
             "type": "string",
+            "minLength": 1,
             "description": "Text description of the desired image"
           },
           "provider": {
@@ -23586,6 +23715,7 @@
           },
           "key": {
             "type": "string",
+            "minLength": 1,
             "description": "The raw provider API key or credential. This value is encrypted at rest and never returned in API responses."
           },
           "name": {
@@ -23593,6 +23723,7 @@
               "string",
               "null"
             ],
+            "maxLength": 255,
             "description": "Optional human-readable name for the credential."
           },
           "provider": {
@@ -23863,6 +23994,7 @@
           },
           "key": {
             "type": "string",
+            "minLength": 1,
             "description": "A new raw provider API key to rotate the credential in-place. The previous key material is overwritten and the masked label is regenerated. Encrypted at rest and never returned in API responses."
           },
           "name": {
@@ -23870,6 +24002,7 @@
               "string",
               "null"
             ],
+            "maxLength": 255,
             "description": "Optional human-readable name for the credential."
           }
         },
@@ -24847,6 +24980,8 @@
               },
               "cost_quality_tradeoff": {
                 "type": "integer",
+                "minimum": 0,
+                "maximum": 10,
                 "description": "Balances routing between cost and quality on a 0-10 scale. The auto-beta-router ranks models for the classified task type by community spend share, then filters candidates by their average cost per generation for that task. Higher values favor cheaper models: 10 keeps only models around the cheapest 10th percentile, while 0 permits models up to the 90th percentile for cost. Defaults to 7."
               },
               "enabled": {
@@ -24878,6 +25013,8 @@
               },
               "cost_quality_tradeoff": {
                 "type": "integer",
+                "minimum": 0,
+                "maximum": 10,
                 "description": "Controls cost vs. quality routing tradeoff (0–10). 0 = pure quality (best model regardless of cost), 10 = maximize for cost (cheapest model wins). Intermediate values blend quality and cost signals continuously. Defaults to 7."
               },
               "enabled": {
@@ -24959,6 +25096,8 @@
               },
               "max_tool_calls": {
                 "type": "integer",
+                "minimum": 1,
+                "maximum": 16,
                 "description": "Maximum number of tool-calling steps each panelist (analysis model) and the judge model may take during their agentic web-research loop. Models with web_search/web_fetch enabled iterate until they produce a text response or hit this ceiling. Defaults to 8. Capped at 16."
               },
               "model": {
@@ -25015,6 +25154,8 @@
               "min_coding_score": {
                 "type": "number",
                 "format": "double",
+                "minimum": 0,
+                "maximum": 1,
                 "description": "Minimum coding quality score between 0 and 1. Maps to internal quality tiers: >= 0.66 → high (top coding models), >= 0.33 → medium (strong modern flagships), < 0.33 → low (capable coders above the median). Omit to default to the highest tier (equivalent to >= 0.66)."
               },
               "price_source": {
@@ -25252,6 +25393,7 @@
           },
           "name": {
             "type": "string",
+            "maxLength": 64,
             "description": "Schema name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)"
           },
           "schema": {
@@ -25405,7 +25547,8 @@
         "properties": {
           "include_usage": {
             "type": "boolean",
-            "description": "Deprecated: This field has no effect. Full usage details are always included."
+            "description": "Deprecated: This field has no effect. Full usage details are always included.",
+            "deprecated": true
           }
         },
         "description": "Streaming configuration options",
@@ -25513,6 +25656,7 @@
           },
           "name": {
             "type": "string",
+            "maxLength": 64,
             "description": "Function name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)"
           },
           "parameters": {
@@ -25913,6 +26057,7 @@
           },
           "session_id": {
             "type": "string",
+            "maxLength": 256,
             "description": "A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters."
           },
           "stop": {
@@ -29209,10 +29354,12 @@
           },
           "comment": {
             "type": "string",
+            "maxLength": 1000,
             "description": "An optional free-text comment describing the feedback"
           },
           "generation_id": {
             "type": "string",
+            "minLength": 1,
             "description": "The generation to submit feedback on"
           }
         },
@@ -29294,6 +29441,7 @@
           },
           "label": {
             "type": "string",
+            "maxLength": 100,
             "description": "Read-only, system-assigned redaction placeholder derived from the slug (e.g. \"[EMAIL]\", \"[PHONE]\"). Not settable by the caller."
           },
           "scan_scope": {
@@ -29331,10 +29479,12 @@
               "string",
               "null"
             ],
+            "maxLength": 100,
             "description": "Optional label used in redaction placeholders or error messages"
           },
           "pattern": {
             "type": "string",
+            "minLength": 1,
             "description": "A regex pattern to match against request content"
           }
         },
@@ -29414,7 +29564,8 @@
               "boolean",
               "null"
             ],
-            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request."
+            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
+            "deprecated": true
           },
           "enforce_zdr_anthropic": {
             "type": [
@@ -29540,7 +29691,9 @@
           },
           "label": {
             "type": "string",
-            "description": "Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored."
+            "maxLength": 100,
+            "description": "Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored.",
+            "deprecated": true
           },
           "scan_scope": {
             "$ref": "#/components/schemas/PromptInjectionScanScope"
@@ -29604,6 +29757,7 @@
               "string",
               "null"
             ],
+            "maxLength": 1000,
             "description": "Description of the guardrail"
           },
           "enforce_zdr": {
@@ -29611,7 +29765,8 @@
               "boolean",
               "null"
             ],
-            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request."
+            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
+            "deprecated": true
           },
           "enforce_zdr_anthropic": {
             "type": [
@@ -29678,6 +29833,8 @@
           },
           "name": {
             "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
             "description": "Name for the new guardrail"
           },
           "reset_interval": {
@@ -29753,7 +29910,8 @@
               "boolean",
               "null"
             ],
-            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request."
+            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
+            "deprecated": true
           },
           "enforce_zdr_anthropic": {
             "type": [
@@ -29922,7 +30080,8 @@
               "boolean",
               "null"
             ],
-            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request."
+            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
+            "deprecated": true
           },
           "enforce_zdr_anthropic": {
             "type": [
@@ -30096,6 +30255,7 @@
               "string",
               "null"
             ],
+            "maxLength": 1000,
             "description": "New description for the guardrail"
           },
           "enforce_zdr": {
@@ -30103,7 +30263,8 @@
               "boolean",
               "null"
             ],
-            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request."
+            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
+            "deprecated": true
           },
           "enforce_zdr_anthropic": {
             "type": [
@@ -30170,6 +30331,8 @@
           },
           "name": {
             "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
             "description": "New name for the guardrail"
           },
           "reset_interval": {
@@ -30237,7 +30400,8 @@
               "boolean",
               "null"
             ],
-            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request."
+            "description": "Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.",
+            "deprecated": true
           },
           "enforce_zdr_anthropic": {
             "type": [
@@ -30422,7 +30586,8 @@
           "key_hashes": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "description": "Array of API key hashes to assign to the guardrail"
           }
@@ -30451,7 +30616,8 @@
           "key_hashes": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "description": "Array of API key hashes to unassign from the guardrail"
           }
@@ -30544,7 +30710,8 @@
           "member_user_ids": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "description": "Array of member user IDs to assign to the guardrail"
           }
@@ -30573,7 +30740,8 @@
           "member_user_ids": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "description": "Array of member user IDs to unassign from the guardrail"
           }
@@ -30618,7 +30786,8 @@
           "requests"
         ],
         "description": "Legacy rate limit information about a key. Will always return -1.",
-        "title": "KeyGetResponsesContentApplicationJsonSchemaDataRateLimit"
+        "title": "KeyGetResponsesContentApplicationJsonSchemaDataRateLimit",
+        "deprecated": true
       },
       "KeyGetResponsesContentApplicationJsonSchemaData": {
         "type": "object",
@@ -30672,7 +30841,8 @@
           },
           "is_provisioning_key": {
             "type": "boolean",
-            "description": "Whether this is a management key"
+            "description": "Whether this is a management key",
+            "deprecated": true
           },
           "label": {
             "type": "string",
@@ -30703,7 +30873,8 @@
           },
           "rate_limit": {
             "$ref": "#/components/schemas/KeyGetResponsesContentApplicationJsonSchemaDataRateLimit",
-            "description": "Legacy rate limit information about a key. Will always return -1."
+            "description": "Legacy rate limit information about a key. Will always return -1.",
+            "deprecated": true
           },
           "usage": {
             "type": "number",
@@ -32957,10 +33128,12 @@
             "type": [
               "integer",
               "null"
-            ]
+            ],
+            "minimum": 0
           },
           "total": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 20000
           },
           "type": {
             "$ref": "#/components/schemas/MessagesOutputConfigTaskBudgetType"
@@ -33027,6 +33200,8 @@
               },
               "cost_quality_tradeoff": {
                 "type": "integer",
+                "minimum": 0,
+                "maximum": 10,
                 "description": "Balances routing between cost and quality on a 0-10 scale. The auto-beta-router ranks models for the classified task type by community spend share, then filters candidates by their average cost per generation for that task. Higher values favor cheaper models: 10 keeps only models around the cheapest 10th percentile, while 0 permits models up to the 90th percentile for cost. Defaults to 7."
               },
               "enabled": {
@@ -33058,6 +33233,8 @@
               },
               "cost_quality_tradeoff": {
                 "type": "integer",
+                "minimum": 0,
+                "maximum": 10,
                 "description": "Controls cost vs. quality routing tradeoff (0–10). 0 = pure quality (best model regardless of cost), 10 = maximize for cost (cheapest model wins). Intermediate values blend quality and cost signals continuously. Defaults to 7."
               },
               "enabled": {
@@ -33139,6 +33316,8 @@
               },
               "max_tool_calls": {
                 "type": "integer",
+                "minimum": 1,
+                "maximum": 16,
                 "description": "Maximum number of tool-calling steps each panelist (analysis model) and the judge model may take during their agentic web-research loop. Models with web_search/web_fetch enabled iterate until they produce a text response or hit this ceiling. Defaults to 8. Capped at 16."
               },
               "model": {
@@ -33195,6 +33374,8 @@
               "min_coding_score": {
                 "type": "number",
                 "format": "double",
+                "minimum": 0,
+                "maximum": 1,
                 "description": "Minimum coding quality score between 0 and 1. Maps to internal quality tiers: >= 0.66 → high (top coding models), >= 0.33 → medium (strong modern flagships), < 0.33 → low (capable coders above the median). Omit to default to the highest tier (equivalent to >= 0.66)."
               },
               "price_source": {
@@ -34041,6 +34222,7 @@
           },
           "session_id": {
             "type": "string",
+            "maxLength": 256,
             "description": "A unique identifier for grouping related requests (e.g., a conversation or agent workflow). When provided, OpenRouter uses it as the sticky routing key, routing all requests in the session to the same provider to maximize prompt cache hits. Also used for observability grouping. If provided in both the request body and the x-session-id header, the body value takes precedence. Maximum of 256 characters."
           },
           "speed": {
@@ -34089,6 +34271,7 @@
           },
           "user": {
             "type": "string",
+            "maxLength": 256,
             "description": "A unique identifier representing your end-user, which helps distinguish between different users of your app. This allows your app to identify specific users in case of abuse reports, preventing your entire app from being affected by the actions of individual users. Maximum of 256 characters."
           }
         },
@@ -35998,7 +36181,8 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "baseUrl": {
             "type": "string",
@@ -36013,10 +36197,12 @@
           },
           "modelId": {
             "type": "string",
+            "minLength": 1,
             "description": "The name of the tracing project in Arize AX"
           },
           "spaceKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -36145,7 +36331,8 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "baseUrl": {
             "type": "string",
@@ -36159,7 +36346,8 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -36172,7 +36360,8 @@
         "type": "object",
         "properties": {
           "database": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "headers": {
             "type": "object",
@@ -36182,10 +36371,12 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "host": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "password": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "table": {
             "type": "string",
@@ -36193,6 +36384,7 @@
           },
           "username": {
             "type": "string",
+            "minLength": 1,
             "description": "If you have not set a specific username in ClickHouse, simply type in 'default' below."
           }
         },
@@ -36209,6 +36401,7 @@
         "properties": {
           "apiKey": {
             "type": "string",
+            "minLength": 1,
             "description": "Datadog API key must have LLM Observability permissions. Create at: "
           },
           "headers": {
@@ -36220,6 +36413,7 @@
           },
           "mlApp": {
             "type": "string",
+            "minLength": 1,
             "description": "Name to identify your application in Datadog LLM Observability"
           },
           "url": {
@@ -36238,7 +36432,8 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "baseUrl": {
             "type": "string",
@@ -36252,7 +36447,8 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "instanceId": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -36276,10 +36472,12 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "publicKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "secretKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -36292,7 +36490,8 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "endpoint": {
             "type": "string",
@@ -36307,6 +36506,7 @@
           },
           "project": {
             "type": "string",
+            "minLength": 1,
             "default": "main",
             "description": "The name for this project, such as pr-openrouter-demo. Defaults to \"main\" if not set."
           },
@@ -36340,7 +36540,8 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "licenseKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "region": {
             "$ref": "#/components/schemas/UpdateObservabilityDestinationResponseDataDiscriminatorMappingNewrelicConfigRegion"
@@ -36355,7 +36556,8 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "headers": {
             "type": "object",
@@ -36365,10 +36567,12 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "projectName": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "workspace": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -36401,7 +36605,8 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "endpoint": {
             "type": "string",
@@ -36425,6 +36630,7 @@
         "properties": {
           "apiKey": {
             "type": "string",
+            "minLength": 1,
             "description": "Generate this in your Ramp integration settings."
           },
           "baseUrl": {
@@ -36448,10 +36654,12 @@
         "type": "object",
         "properties": {
           "accessKeyId": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "bucketName": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "endpoint": {
             "type": "string",
@@ -36478,7 +36686,8 @@
             "type": "string"
           },
           "secretAccessKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "sessionToken": {
             "type": "string"
@@ -36495,7 +36704,9 @@
         "type": "object",
         "properties": {
           "dsn": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^https:\\/\\/([^:@]+)(?::[^@]*)?@([^/]+)(?:\\/[^/]+)*\\/(\\d+)\\/?$",
+            "minLength": 1
           },
           "headers": {
             "type": "object",
@@ -36518,7 +36729,8 @@
         "type": "object",
         "properties": {
           "account": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "database": {
             "type": "string",
@@ -36540,7 +36752,8 @@
             "default": "OPENROUTER_TRACES"
           },
           "token": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "warehouse": {
             "type": "string",
@@ -36557,14 +36770,16 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "baseUrl": {
             "type": "string",
             "default": "https://trace.wandb.ai"
           },
           "entity": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "headers": {
             "type": "object",
@@ -36574,7 +36789,8 @@
             "description": "Custom HTTP headers to include in requests to this destination."
           },
           "project": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -44575,6 +44791,7 @@
           },
           "duration": {
             "type": "integer",
+            "minimum": 1,
             "description": "Duration of the generated video in seconds"
           },
           "frame_images": {
@@ -45070,6 +45287,7 @@
               "string",
               "null"
             ],
+            "maxLength": 500,
             "description": "Description of the workspace"
           },
           "io_logging_api_key_ids": {
@@ -45101,10 +45319,15 @@
           },
           "name": {
             "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
             "description": "Name for the new workspace"
           },
           "slug": {
             "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "minLength": 1,
+            "maxLength": 50,
             "description": "URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)"
           }
         },
@@ -45403,6 +45626,7 @@
               "string",
               "null"
             ],
+            "maxLength": 500,
             "description": "New description for the workspace"
           },
           "io_logging_api_key_ids": {
@@ -45434,10 +45658,15 @@
           },
           "name": {
             "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
             "description": "New name for the workspace"
           },
           "slug": {
             "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "minLength": 1,
+            "maxLength": 50,
             "description": "New URL-friendly slug (lowercase alphanumeric segments separated by single hyphens, no leading/trailing hyphens)"
           }
         },

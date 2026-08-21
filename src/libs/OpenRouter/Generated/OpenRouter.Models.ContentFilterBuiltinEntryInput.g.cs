@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace OpenRouter
@@ -20,6 +22,7 @@ namespace OpenRouter
         /// Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Label { get; set; }
 
         /// <summary>
@@ -52,9 +55,6 @@ namespace OpenRouter
         /// <param name="slug">
         /// The builtin filter identifier
         /// </param>
-        /// <param name="label">
-        /// Deprecated: labels are system-assigned and cannot be set by the caller. Accepted for backward compatibility but silently ignored.
-        /// </param>
         /// <param name="scanScope">
         /// Which message roles to scan for prompt injection. Only applies to the regex-prompt-injection builtin. Defaults to all_messages.
         /// </param>
@@ -64,11 +64,9 @@ namespace OpenRouter
         public ContentFilterBuiltinEntryInput(
             global::OpenRouter.ContentFilterBuiltinAction action,
             global::OpenRouter.ContentFilterBuiltinSlug slug,
-            string? label,
             global::OpenRouter.PromptInjectionScanScope? scanScope)
         {
             this.Action = action;
-            this.Label = label;
             this.ScanScope = scanScope;
             this.Slug = slug;
         }

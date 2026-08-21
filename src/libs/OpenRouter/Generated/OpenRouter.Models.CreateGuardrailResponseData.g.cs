@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace OpenRouter
@@ -49,6 +51,7 @@ namespace OpenRouter
         /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforce_zdr")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? EnforceZdr { get; set; }
 
         /// <summary>
@@ -169,9 +172,6 @@ namespace OpenRouter
         /// <param name="description">
         /// Description of the guardrail
         /// </param>
-        /// <param name="enforceZdr">
-        /// Deprecated. Use enforce_zdr_anthropic, enforce_zdr_openai, enforce_zdr_google, enforce_zdr_xai, and enforce_zdr_other instead. When provided, its value is copied into any of those per-provider fields that are not explicitly specified on the request.
-        /// </param>
         /// <param name="enforceZdrAnthropic">
         /// Whether to enforce zero data retention for Anthropic models. Falls back to enforce_zdr when not provided.
         /// </param>
@@ -215,7 +215,6 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterBuiltinEntry>? contentFilterBuiltins,
             global::System.Collections.Generic.IList<global::OpenRouter.ContentFilterEntry>? contentFilters,
             string? description,
-            bool? enforceZdr,
             bool? enforceZdrAnthropic,
             bool? enforceZdrGoogle,
             bool? enforceZdrOpenai,
@@ -233,7 +232,6 @@ namespace OpenRouter
             this.ContentFilters = contentFilters;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Description = description;
-            this.EnforceZdr = enforceZdr;
             this.EnforceZdrAnthropic = enforceZdrAnthropic;
             this.EnforceZdrGoogle = enforceZdrGoogle;
             this.EnforceZdrOpenai = enforceZdrOpenai;
