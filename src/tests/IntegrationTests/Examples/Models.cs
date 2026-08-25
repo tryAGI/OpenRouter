@@ -16,7 +16,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// List all available models on OpenRouter.
-        var response = await client.SubpackageModels.GetModelsAsync();
+        var response = await client.Models.GetModelsAsync();
 
         response.Should().NotBeNull();
         response.Data.Should().NotBeNullOrEmpty();
@@ -38,7 +38,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Get the total count of available models.
-        var response = await client.SubpackageModels.ListModelsCountAsync();
+        var response = await client.Models.ListModelsCountAsync();
 
         response.Should().NotBeNull();
         response.Data.Count.Should().BeGreaterThan(0);
@@ -51,7 +51,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Filter models by category (e.g., programming).
-        var response = await client.SubpackageModels.GetModelsAsync(
+        var response = await client.Models.GetModelsAsync(
             category: ModelsGetParametersCategory.Programming);
 
         response.Should().NotBeNull();

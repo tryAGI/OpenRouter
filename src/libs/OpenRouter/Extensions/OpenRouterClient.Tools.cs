@@ -22,7 +22,7 @@ public static class OpenRouterToolExtensions
         return AIFunctionFactory.Create(
             async (string? category, CancellationToken cancellationToken) =>
             {
-                var response = await client.SubpackageModels.GetModelsAsync(
+                var response = await client.Models.GetModelsAsync(
                     category: category is not null
                         ? ModelsGetParametersCategoryExtensions.ToEnum(category)
                         : null,
@@ -50,7 +50,7 @@ public static class OpenRouterToolExtensions
         return AIFunctionFactory.Create(
             async (string modelId, CancellationToken cancellationToken) =>
             {
-                var response = await client.SubpackageModels.GetModelsAsync(
+                var response = await client.Models.GetModelsAsync(
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 var model = response.Data.FirstOrDefault(m =>
@@ -82,7 +82,7 @@ public static class OpenRouterToolExtensions
         return AIFunctionFactory.Create(
             async (string generationId, CancellationToken cancellationToken) =>
             {
-                var response = await client.SubpackageGenerations.GetGenerationAsync(
+                var response = await client.Generations.GetGenerationAsync(
                     id: generationId,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
@@ -105,7 +105,7 @@ public static class OpenRouterToolExtensions
         return AIFunctionFactory.Create(
             async (CancellationToken cancellationToken) =>
             {
-                var response = await client.SubpackageCredits.GetCreditsAsync(
+                var response = await client.Credits.GetCreditsAsync(
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 var data = response.Data;
