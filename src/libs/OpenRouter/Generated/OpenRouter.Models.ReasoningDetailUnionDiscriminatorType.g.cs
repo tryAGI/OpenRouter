@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ReasoningDetailUnionDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningEncrypted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningServerToolCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningSummary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningText,
     }

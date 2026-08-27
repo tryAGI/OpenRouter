@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.ORAnthropicContentBlockVariant14Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCallerJsonConverter))]
@@ -24,7 +24,7 @@ namespace OpenRouter
         public required global::OpenRouter.AnthropicCaller Caller { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContentJsonConverter))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public required global::OpenRouter.OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

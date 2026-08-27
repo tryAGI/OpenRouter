@@ -4,18 +4,18 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class McpServerToolRequireApproval0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("always")]
         public global::OpenRouter.McpServerToolRequireApprovalOneOf0Always? Always { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("never")]
         public global::OpenRouter.McpServerToolRequireApprovalOneOf0Never? Never { get; set; }

@@ -16,7 +16,7 @@ namespace OpenRouter
         public required global::System.Guid ClassifierId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dimension_names")]
         public global::System.Collections.Generic.IList<string>? DimensionNames { get; set; }

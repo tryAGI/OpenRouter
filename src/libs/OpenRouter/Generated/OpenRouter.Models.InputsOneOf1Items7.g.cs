@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class InputsOneOf1Items7
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.InputsOneOf1ItemsOneOf7Content?, object>))]

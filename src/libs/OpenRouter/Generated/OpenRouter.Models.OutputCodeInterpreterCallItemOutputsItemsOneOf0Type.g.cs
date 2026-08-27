@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputCodeInterpreterCallItemOutputsItemsOneOf0Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
     }

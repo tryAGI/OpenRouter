@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicUsageIteration : global::System.IEquatable<AnthropicUsageIteration>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicCompactionUsageIteration? AnthropicCompactionUsageIteration { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCompactionUsageIteration))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsAnthropicCompactionUsageIteration => AnthropicCompactionUsageIteration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicCompactionUsageIteration(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicCompactionUsageIteration PickAnthropicCompactionUsageIteration() => IsAnthropicCompactionUsageIteration
             ? AnthropicCompactionUsageIteration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicCompactionUsageIteration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicMessageUsageIteration? AnthropicMessageUsageIteration { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicMessageUsageIteration))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsAnthropicMessageUsageIteration => AnthropicMessageUsageIteration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicMessageUsageIteration(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicMessageUsageIteration PickAnthropicMessageUsageIteration() => IsAnthropicMessageUsageIteration
             ? AnthropicMessageUsageIteration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicMessageUsageIteration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicAdvisorMessageUsageIteration? AnthropicAdvisorMessageUsageIteration { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicAdvisorMessageUsageIteration))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsAnthropicAdvisorMessageUsageIteration => AnthropicAdvisorMessageUsageIteration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicAdvisorMessageUsageIteration(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicAdvisorMessageUsageIteration PickAnthropicAdvisorMessageUsageIteration() => IsAnthropicAdvisorMessageUsageIteration
             ? AnthropicAdvisorMessageUsageIteration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicAdvisorMessageUsageIteration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicUnknownUsageIteration? AnthropicUnknownUsageIteration { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicUnknownUsageIteration))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsAnthropicUnknownUsageIteration => AnthropicUnknownUsageIteration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicUnknownUsageIteration(
 #if NET6_0_OR_GREATER
@@ -151,23 +151,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicUnknownUsageIteration PickAnthropicUnknownUsageIteration() => IsAnthropicUnknownUsageIteration
             ? AnthropicUnknownUsageIteration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicUnknownUsageIteration' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicUsageIteration(global::OpenRouter.AnthropicCompactionUsageIteration value) => new AnthropicUsageIteration((global::OpenRouter.AnthropicCompactionUsageIteration?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicCompactionUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicCompactionUsageIteration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicCompactionUsageIteration? value)
         {
@@ -175,22 +175,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicUsageIteration FromAnthropicCompactionUsageIteration(global::OpenRouter.AnthropicCompactionUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicUsageIteration(global::OpenRouter.AnthropicMessageUsageIteration value) => new AnthropicUsageIteration((global::OpenRouter.AnthropicMessageUsageIteration?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicMessageUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicMessageUsageIteration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicMessageUsageIteration? value)
         {
@@ -198,22 +198,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicUsageIteration FromAnthropicMessageUsageIteration(global::OpenRouter.AnthropicMessageUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicUsageIteration(global::OpenRouter.AnthropicAdvisorMessageUsageIteration value) => new AnthropicUsageIteration((global::OpenRouter.AnthropicAdvisorMessageUsageIteration?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicAdvisorMessageUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicAdvisorMessageUsageIteration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicAdvisorMessageUsageIteration? value)
         {
@@ -221,22 +221,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicUsageIteration FromAnthropicAdvisorMessageUsageIteration(global::OpenRouter.AnthropicAdvisorMessageUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicUsageIteration(global::OpenRouter.AnthropicUnknownUsageIteration value) => new AnthropicUsageIteration((global::OpenRouter.AnthropicUnknownUsageIteration?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicUnknownUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicUnknownUsageIteration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicUnknownUsageIteration? value)
         {
@@ -244,12 +244,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicUsageIteration FromAnthropicUnknownUsageIteration(global::OpenRouter.AnthropicUnknownUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicUsageIteration(
             global::OpenRouter.AnthropicCompactionUsageIteration? anthropicCompactionUsageIteration,
@@ -265,27 +265,27 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AnthropicUnknownUsageIteration as object ??
             AnthropicAdvisorMessageUsageIteration as object ??
             AnthropicMessageUsageIteration as object ??
-            AnthropicCompactionUsageIteration as object 
+            AnthropicCompactionUsageIteration as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AnthropicCompactionUsageIteration?.ToString() ??
             AnthropicMessageUsageIteration?.ToString() ??
             AnthropicAdvisorMessageUsageIteration?.ToString() ??
-            AnthropicUnknownUsageIteration?.ToString() 
+            AnthropicUnknownUsageIteration?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicCompactionUsageIteration, TResult>? anthropicCompactionUsageIteration = null,
@@ -328,7 +328,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration>? anthropicCompactionUsageIteration = null,
@@ -364,7 +364,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration>? anthropicCompactionUsageIteration = null,
@@ -397,7 +397,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -422,7 +422,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicUsageIteration other)
         {
@@ -430,12 +430,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCompactionUsageIteration?>.Default.Equals(AnthropicCompactionUsageIteration, other.AnthropicCompactionUsageIteration) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicMessageUsageIteration?>.Default.Equals(AnthropicMessageUsageIteration, other.AnthropicMessageUsageIteration) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?>.Default.Equals(AnthropicAdvisorMessageUsageIteration, other.AnthropicAdvisorMessageUsageIteration) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicUnknownUsageIteration?>.Default.Equals(AnthropicUnknownUsageIteration, other.AnthropicUnknownUsageIteration) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicUnknownUsageIteration?>.Default.Equals(AnthropicUnknownUsageIteration, other.AnthropicUnknownUsageIteration)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicUsageIteration obj1, AnthropicUsageIteration obj2)
         {
@@ -443,7 +443,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicUsageIteration obj1, AnthropicUsageIteration obj2)
         {
@@ -451,7 +451,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

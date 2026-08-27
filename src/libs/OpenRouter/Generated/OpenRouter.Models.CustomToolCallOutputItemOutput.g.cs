@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CustomToolCallOutputItemOutput : global::System.IEquatable<CustomToolCallOutputItemOutput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? CustomToolCallOutputItemOutputVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallOutputItemOutputVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsCustomToolCallOutputItemOutputVariant1 => CustomToolCallOutputItemOutputVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCallOutputItemOutputVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickCustomToolCallOutputItemOutputVariant1() => IsCustomToolCallOutputItemOutputVariant1
             ? CustomToolCallOutputItemOutputVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItemOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items>? CustomToolCallOutputItemOutput1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallOutputItemOutput1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsCustomToolCallOutputItemOutput1 => CustomToolCallOutputItemOutput1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCallOutputItemOutput1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items> PickCustomToolCallOutputItemOutput1() => IsCustomToolCallOutputItemOutput1
             ? CustomToolCallOutputItemOutput1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItemOutput1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CustomToolCallOutputItemOutput(string value) => new CustomToolCallOutputItemOutput((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(CustomToolCallOutputItemOutput @this) => @this.CustomToolCallOutputItemOutputVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolCallOutputItemOutput(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CustomToolCallOutputItemOutput FromCustomToolCallOutputItemOutputVariant1(string? value) => new CustomToolCallOutputItemOutput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolCallOutputItemOutput(
             string? customToolCallOutputItemOutputVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CustomToolCallOutputItemOutput1 as object ??
-            CustomToolCallOutputItemOutputVariant1 as object 
+            CustomToolCallOutputItemOutputVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             CustomToolCallOutputItemOutputVariant1?.ToString() ??
-            CustomToolCallOutputItemOutput1?.ToString() 
+            CustomToolCallOutputItemOutput1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? customToolCallOutputItemOutputVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? customToolCallOutputItemOutputVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? customToolCallOutputItemOutputVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CustomToolCallOutputItemOutput other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(CustomToolCallOutputItemOutputVariant1, other.CustomToolCallOutputItemOutputVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items>?>.Default.Equals(CustomToolCallOutputItemOutput1, other.CustomToolCallOutputItemOutput1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items>?>.Default.Equals(CustomToolCallOutputItemOutput1, other.CustomToolCallOutputItemOutput1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CustomToolCallOutputItemOutput obj1, CustomToolCallOutputItemOutput obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CustomToolCallOutputItemOutput obj1, CustomToolCallOutputItemOutput obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

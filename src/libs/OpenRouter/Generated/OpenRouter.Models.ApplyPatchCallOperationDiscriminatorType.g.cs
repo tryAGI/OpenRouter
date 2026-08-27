@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ApplyPatchCallOperationDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFile,
     }

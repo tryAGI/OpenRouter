@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum McpServerToolRequireApproval1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Always,
     }

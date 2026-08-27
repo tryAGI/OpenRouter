@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesMessageParamContentOneOf1ItemsOneOf4Content : global::System.IEquatable<MessagesMessageParamContentOneOf1ItemsOneOf4Content>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1
             ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>? MessagesMessageParamContentOneOf1ItemsOneOf4Content1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4Content1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1 => MessagesMessageParamContentOneOf1ItemsOneOf4Content1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf4Content1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items> PickMessagesMessageParamContentOneOf1ItemsOneOf4Content1() => IsMessagesMessageParamContentOneOf1ItemsOneOf4Content1
             ? MessagesMessageParamContentOneOf1ItemsOneOf4Content1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4Content1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4Content(string value) => new MessagesMessageParamContentOneOf1ItemsOneOf4Content((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(MessagesMessageParamContentOneOf1ItemsOneOf4Content @this) => @this.MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf4Content(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1ItemsOneOf4Content FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1(string? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4Content(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf4Content(
             string? messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessagesMessageParamContentOneOf1ItemsOneOf4Content1 as object ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 as object 
+            MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1?.ToString() ??
-            MessagesMessageParamContentOneOf1ItemsOneOf4Content1?.ToString() 
+            MessagesMessageParamContentOneOf1ItemsOneOf4Content1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? messagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesMessageParamContentOneOf1ItemsOneOf4Content other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1, other.MessagesMessageParamContentOneOf1ItemsOneOf4ContentVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4Content1, other.MessagesMessageParamContentOneOf1ItemsOneOf4Content1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items>?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf4Content1, other.MessagesMessageParamContentOneOf1ItemsOneOf4Content1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesMessageParamContentOneOf1ItemsOneOf4Content obj1, MessagesMessageParamContentOneOf1ItemsOneOf4Content obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesMessageParamContentOneOf1ItemsOneOf4Content obj1, MessagesMessageParamContentOneOf1ItemsOneOf4Content obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

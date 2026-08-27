@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesRequestContextManagementEditsItemsOneOf0Trigger : global::System.IEquatable<MessagesRequestContextManagementEditsItemsOneOf0Trigger>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputTokens))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsInputTokens => InputTokens != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputTokens(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1 PickInputTokens() => IsInputTokens
             ? InputTokens!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUses))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsToolUses => ToolUses != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolUses(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2 PickToolUses() => IsToolUses
             ? ToolUses!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUses' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1 value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.InputTokens;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? value)
         {
@@ -106,22 +106,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromInputTokens(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2 value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?(MessagesRequestContextManagementEditsItemsOneOf0Trigger @this) => @this.ToolUses;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? value)
         {
@@ -129,12 +129,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromToolUses(global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0Trigger(
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ToolUses as object ??
-            InputTokens as object 
+            InputTokens as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputTokens?.ToString() ??
-            ToolUses?.ToString() 
+            ToolUses?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1, TResult>? inputTokens = null,
@@ -198,7 +198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1>? inputTokens = null,
@@ -222,7 +222,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1>? inputTokens = null,
@@ -245,7 +245,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesRequestContextManagementEditsItemsOneOf0Trigger other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1?>.Default.Equals(InputTokens, other.InputTokens) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?>.Default.Equals(ToolUses, other.ToolUses) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant2?>.Default.Equals(ToolUses, other.ToolUses)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesRequestContextManagementEditsItemsOneOf0Trigger obj1, MessagesRequestContextManagementEditsItemsOneOf0Trigger obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesRequestContextManagementEditsItemsOneOf0Trigger obj1, MessagesRequestContextManagementEditsItemsOneOf0Trigger obj2)
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

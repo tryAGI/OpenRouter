@@ -9,7 +9,7 @@ namespace OpenRouter
     public enum ModelsGetParametersRegion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eu,
     }

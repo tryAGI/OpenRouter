@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FusionServerToolOpenRouterType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_fusion,
     }

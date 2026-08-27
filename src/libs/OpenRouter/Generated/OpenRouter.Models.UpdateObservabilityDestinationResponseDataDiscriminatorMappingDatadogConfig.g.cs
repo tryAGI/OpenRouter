@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateObservabilityDestinationResponseDataDiscriminatorMappingDatadogConfig
     {
         /// <summary>
-        /// Datadog API key must have LLM Observability permissions. Create at: 
+        /// Datadog API key must have LLM Observability permissions. Create at:
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiKey")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -45,7 +45,7 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UpdateObservabilityDestinationResponseDataDiscriminatorMappingDatadogConfig" /> class.
         /// </summary>
         /// <param name="apiKey">
-        /// Datadog API key must have LLM Observability permissions. Create at: 
+        /// Datadog API key must have LLM Observability permissions. Create at:
         /// </param>
         /// <param name="mlApp">
         /// Name to identify your application in Datadog LLM Observability

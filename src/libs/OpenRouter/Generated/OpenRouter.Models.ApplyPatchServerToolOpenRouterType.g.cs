@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ApplyPatchServerToolOpenRouterType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_applyPatch,
     }

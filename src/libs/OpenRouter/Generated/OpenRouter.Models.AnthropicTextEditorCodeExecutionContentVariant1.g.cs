@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class AnthropicTextEditorCodeExecutionContentVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicTextEditorCodeExecutionCreateResultTypeJsonConverter))]
         public global::OpenRouter.AnthropicTextEditorCodeExecutionCreateResultType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_file_update")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,28 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicTextBlockParamCitationsItemsDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CharLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentBlockLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PageLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchResultLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchResultLocation,
     }

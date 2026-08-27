@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CodeInterpreterServerToolContainer : global::System.IEquatable<CodeInterpreterServerToolContainer>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? CodeInterpreterServerToolContainerVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerToolContainerVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsCodeInterpreterServerToolContainerVariant1 => CodeInterpreterServerToolContainerVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeInterpreterServerToolContainerVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickCodeInterpreterServerToolContainerVariant1() => IsCodeInterpreterServerToolContainerVariant1
             ? CodeInterpreterServerToolContainerVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainerVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.CodeInterpreterServerToolContainer1? CodeInterpreterServerToolContainer1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerToolContainer1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsCodeInterpreterServerToolContainer1 => CodeInterpreterServerToolContainer1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeInterpreterServerToolContainer1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CodeInterpreterServerToolContainer1 PickCodeInterpreterServerToolContainer1() => IsCodeInterpreterServerToolContainer1
             ? CodeInterpreterServerToolContainer1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainer1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CodeInterpreterServerToolContainer(string value) => new CodeInterpreterServerToolContainer((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(CodeInterpreterServerToolContainer @this) => @this.CodeInterpreterServerToolContainerVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CodeInterpreterServerToolContainer(string? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainerVariant1(string? value) => new CodeInterpreterServerToolContainer(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CodeInterpreterServerToolContainer(global::OpenRouter.CodeInterpreterServerToolContainer1 value) => new CodeInterpreterServerToolContainer((global::OpenRouter.CodeInterpreterServerToolContainer1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CodeInterpreterServerToolContainer1?(CodeInterpreterServerToolContainer @this) => @this.CodeInterpreterServerToolContainer1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CodeInterpreterServerToolContainer(global::OpenRouter.CodeInterpreterServerToolContainer1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainer1(global::OpenRouter.CodeInterpreterServerToolContainer1? value) => new CodeInterpreterServerToolContainer(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CodeInterpreterServerToolContainer(
             string? codeInterpreterServerToolContainerVariant1,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CodeInterpreterServerToolContainer1 as object ??
-            CodeInterpreterServerToolContainerVariant1 as object 
+            CodeInterpreterServerToolContainerVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             CodeInterpreterServerToolContainerVariant1?.ToString() ??
-            CodeInterpreterServerToolContainer1?.ToString() 
+            CodeInterpreterServerToolContainer1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? codeInterpreterServerToolContainerVariant1 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CodeInterpreterServerToolContainer other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(CodeInterpreterServerToolContainerVariant1, other.CodeInterpreterServerToolContainerVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CodeInterpreterServerToolContainer1?>.Default.Equals(CodeInterpreterServerToolContainer1, other.CodeInterpreterServerToolContainer1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CodeInterpreterServerToolContainer1?>.Default.Equals(CodeInterpreterServerToolContainer1, other.CodeInterpreterServerToolContainer1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CodeInterpreterServerToolContainer obj1, CodeInterpreterServerToolContainer obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CodeInterpreterServerToolContainer obj1, CodeInterpreterServerToolContainer obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

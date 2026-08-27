@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CustomToolCallOutputItemOutputOneOf1Items : global::System.IEquatable<CustomToolCallOutputItemOutputOneOf1Items>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputFile(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1 PickInputFile() => IsInputFile
             ? InputFile!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputImage(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2 PickInputImage() => IsInputImage
             ? InputImage!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3 PickInputText() => IsInputText
             ? InputText!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CustomToolCallOutputItemOutputOneOf1Items(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1 value) => new CustomToolCallOutputItemOutputOneOf1Items((global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1?(CustomToolCallOutputItemOutputOneOf1Items @this) => @this.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolCallOutputItemOutputOneOf1Items(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1? value)
         {
@@ -143,22 +143,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CustomToolCallOutputItemOutputOneOf1Items FromInputFile(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1? value) => new CustomToolCallOutputItemOutputOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CustomToolCallOutputItemOutputOneOf1Items(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2 value) => new CustomToolCallOutputItemOutputOneOf1Items((global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2?(CustomToolCallOutputItemOutputOneOf1Items @this) => @this.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolCallOutputItemOutputOneOf1Items(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2? value)
         {
@@ -166,22 +166,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CustomToolCallOutputItemOutputOneOf1Items FromInputImage(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2? value) => new CustomToolCallOutputItemOutputOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CustomToolCallOutputItemOutputOneOf1Items(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3 value) => new CustomToolCallOutputItemOutputOneOf1Items((global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3?(CustomToolCallOutputItemOutputOneOf1Items @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolCallOutputItemOutputOneOf1Items(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3? value)
         {
@@ -189,12 +189,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CustomToolCallOutputItemOutputOneOf1Items FromInputText(global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3? value) => new CustomToolCallOutputItemOutputOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolCallOutputItemOutputOneOf1Items(
             global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputText as object ??
             InputImage as object ??
-            InputFile as object 
+            InputFile as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputFile?.ToString() ??
             InputImage?.ToString() ??
-            InputText?.ToString() 
+            InputText?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1, TResult>? inputFile = null,
@@ -267,7 +267,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1>? inputFile = null,
@@ -297,7 +297,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1>? inputFile = null,
@@ -325,7 +325,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CustomToolCallOutputItemOutputOneOf1Items other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant1?>.Default.Equals(InputFile, other.InputFile) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant2?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3?>.Default.Equals(InputText, other.InputText) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1ItemsVariant3?>.Default.Equals(InputText, other.InputText)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CustomToolCallOutputItemOutputOneOf1Items obj1, CustomToolCallOutputItemOutputOneOf1Items obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CustomToolCallOutputItemOutputOneOf1Items obj1, CustomToolCallOutputItemOutputOneOf1Items obj2)
         {
@@ -376,7 +376,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

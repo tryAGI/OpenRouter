@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Preview20250311WebSearchServerToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview20250311,
     }

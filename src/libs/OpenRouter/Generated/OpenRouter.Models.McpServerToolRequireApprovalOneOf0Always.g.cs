@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class McpServerToolRequireApprovalOneOf0Always
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_names")]
         public global::System.Collections.Generic.IList<string>? ToolNames { get; set; }

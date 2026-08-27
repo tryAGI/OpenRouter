@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ContentPartInputFileType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputFile,
     }

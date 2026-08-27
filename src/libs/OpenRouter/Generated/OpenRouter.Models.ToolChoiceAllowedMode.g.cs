@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ToolChoiceAllowedMode : global::System.IEquatable<ToolChoiceAllowedMode>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ToolChoiceAllowedMode0? ToolChoiceAllowedMode0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceAllowedMode0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsToolChoiceAllowedMode0 => ToolChoiceAllowedMode0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolChoiceAllowedMode0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ToolChoiceAllowedMode0 PickToolChoiceAllowedMode0() => IsToolChoiceAllowedMode0
             ? ToolChoiceAllowedMode0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceAllowedMode0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ToolChoiceAllowedMode1? ToolChoiceAllowedMode1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceAllowedMode1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsToolChoiceAllowedMode1 => ToolChoiceAllowedMode1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolChoiceAllowedMode1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ToolChoiceAllowedMode1 PickToolChoiceAllowedMode1() => IsToolChoiceAllowedMode1
             ? ToolChoiceAllowedMode1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceAllowedMode1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceAllowedMode(global::OpenRouter.ToolChoiceAllowedMode0 value) => new ToolChoiceAllowedMode((global::OpenRouter.ToolChoiceAllowedMode0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ToolChoiceAllowedMode0?(ToolChoiceAllowedMode @this) => @this.ToolChoiceAllowedMode0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceAllowedMode(global::OpenRouter.ToolChoiceAllowedMode0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceAllowedMode FromToolChoiceAllowedMode0(global::OpenRouter.ToolChoiceAllowedMode0? value) => new ToolChoiceAllowedMode(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceAllowedMode(global::OpenRouter.ToolChoiceAllowedMode1 value) => new ToolChoiceAllowedMode((global::OpenRouter.ToolChoiceAllowedMode1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ToolChoiceAllowedMode1?(ToolChoiceAllowedMode @this) => @this.ToolChoiceAllowedMode1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceAllowedMode(global::OpenRouter.ToolChoiceAllowedMode1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceAllowedMode FromToolChoiceAllowedMode1(global::OpenRouter.ToolChoiceAllowedMode1? value) => new ToolChoiceAllowedMode(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceAllowedMode(
             global::OpenRouter.ToolChoiceAllowedMode0? toolChoiceAllowedMode0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ToolChoiceAllowedMode1 as object ??
-            ToolChoiceAllowedMode0 as object 
+            ToolChoiceAllowedMode0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ToolChoiceAllowedMode0?.ToValueString() ??
-            ToolChoiceAllowedMode1?.ToValueString() 
+            ToolChoiceAllowedMode1?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ToolChoiceAllowedMode0?, TResult>? toolChoiceAllowedMode0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ToolChoiceAllowedMode0?>? toolChoiceAllowedMode0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ToolChoiceAllowedMode0?>? toolChoiceAllowedMode0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolChoiceAllowedMode other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceAllowedMode0?>.Default.Equals(ToolChoiceAllowedMode0, other.ToolChoiceAllowedMode0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceAllowedMode1?>.Default.Equals(ToolChoiceAllowedMode1, other.ToolChoiceAllowedMode1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceAllowedMode1?>.Default.Equals(ToolChoiceAllowedMode1, other.ToolChoiceAllowedMode1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolChoiceAllowedMode obj1, ToolChoiceAllowedMode obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolChoiceAllowedMode obj1, ToolChoiceAllowedMode obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

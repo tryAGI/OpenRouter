@@ -9,7 +9,7 @@ namespace OpenRouter
     public enum RankingsDailyMetaVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1,
     }

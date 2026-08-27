@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CustomToolFormatOneOf1Syntax
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lark,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regex,
     }

@@ -9,63 +9,63 @@ namespace OpenRouter
     public enum DatasetsAppRankingsGetParametersSubcategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioGen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CliAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CloudAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreativeWriting,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Game,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GeneralChat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdeExtension,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Legal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NativeAppBuilder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PersonalAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProgrammingApp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Roleplay,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VideoGen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WritingAssistant,
     }

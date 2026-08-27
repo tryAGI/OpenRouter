@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesRequestToolsItems : global::System.IEquatable<MessagesRequestToolsItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems0? MessagesRequestToolsItems0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems0 => MessagesRequestToolsItems0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestToolsItems0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestToolsItems0 PickMessagesRequestToolsItems0() => IsMessagesRequestToolsItems0
             ? MessagesRequestToolsItems0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems1? MessagesRequestToolsItems1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems1 => MessagesRequestToolsItems1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestToolsItems1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestToolsItems1 PickMessagesRequestToolsItems1() => IsMessagesRequestToolsItems1
             ? MessagesRequestToolsItems1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems2? MessagesRequestToolsItems2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems2 => MessagesRequestToolsItems2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestToolsItems2(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestToolsItems2 PickMessagesRequestToolsItems2() => IsMessagesRequestToolsItems2
             ? MessagesRequestToolsItems2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems3? MessagesRequestToolsItems3 { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems3))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems3 => MessagesRequestToolsItems3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestToolsItems3(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestToolsItems3 PickMessagesRequestToolsItems3() => IsMessagesRequestToolsItems3
             ? MessagesRequestToolsItems3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems4? MessagesRequestToolsItems4 { get; init; }
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems4))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems4 => MessagesRequestToolsItems4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestToolsItems4(
 #if NET6_0_OR_GREATER
@@ -188,14 +188,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestToolsItems4 PickMessagesRequestToolsItems4() => IsMessagesRequestToolsItems4
             ? MessagesRequestToolsItems4!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems5? MessagesRequestToolsItems5 { get; init; }
@@ -204,7 +204,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems5))]
@@ -212,7 +212,7 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems5 => MessagesRequestToolsItems5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestToolsItems5(
 #if NET6_0_OR_GREATER
@@ -225,7 +225,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestToolsItems5 PickMessagesRequestToolsItems5() => IsMessagesRequestToolsItems5
             ? MessagesRequestToolsItems5!
@@ -241,7 +241,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashServerTool))]
@@ -249,7 +249,7 @@ namespace OpenRouter
         public bool IsBashServerTool => BashServerTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBashServerTool(
 #if NET6_0_OR_GREATER
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.BashServerTool PickBashServerTool() => IsBashServerTool
             ? BashServerTool!
@@ -278,7 +278,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeServerTool))]
@@ -286,7 +286,7 @@ namespace OpenRouter
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDatetimeServerTool(
 #if NET6_0_OR_GREATER
@@ -299,7 +299,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
             ? DatetimeServerTool!
@@ -315,7 +315,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerToolOpenRouter))]
@@ -323,7 +323,7 @@ namespace OpenRouter
         public bool IsImageGenerationServerToolOpenRouter => ImageGenerationServerToolOpenRouter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageGenerationServerToolOpenRouter(
 #if NET6_0_OR_GREATER
@@ -336,7 +336,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerToolOpenRouter() => IsImageGenerationServerToolOpenRouter
             ? ImageGenerationServerToolOpenRouter!
@@ -352,7 +352,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesSearchModelsServerTool))]
@@ -360,7 +360,7 @@ namespace OpenRouter
         public bool IsMessagesSearchModelsServerTool => MessagesSearchModelsServerTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesSearchModelsServerTool(
 #if NET6_0_OR_GREATER
@@ -373,7 +373,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesSearchModelsServerTool PickMessagesSearchModelsServerTool() => IsMessagesSearchModelsServerTool
             ? MessagesSearchModelsServerTool!
@@ -389,7 +389,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchServerTool))]
@@ -397,7 +397,7 @@ namespace OpenRouter
         public bool IsWebFetchServerTool => WebFetchServerTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebFetchServerTool(
 #if NET6_0_OR_GREATER
@@ -410,7 +410,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.WebFetchServerTool PickWebFetchServerTool() => IsWebFetchServerTool
             ? WebFetchServerTool!
@@ -426,7 +426,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenRouterWebSearchServerTool))]
@@ -434,7 +434,7 @@ namespace OpenRouter
         public bool IsOpenRouterWebSearchServerTool => OpenRouterWebSearchServerTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenRouterWebSearchServerTool(
 #if NET6_0_OR_GREATER
@@ -447,14 +447,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServerTool() => IsOpenRouterWebSearchServerTool
             ? OpenRouterWebSearchServerTool!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenRouterWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestToolsItems12? MessagesRequestToolsItems12 { get; init; }
@@ -463,7 +463,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems12))]
@@ -471,7 +471,7 @@ namespace OpenRouter
         public bool IsMessagesRequestToolsItems12 => MessagesRequestToolsItems12 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestToolsItems12(
 #if NET6_0_OR_GREATER
@@ -484,23 +484,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestToolsItems12 PickMessagesRequestToolsItems12() => IsMessagesRequestToolsItems12
             ? MessagesRequestToolsItems12!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems12' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems0 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestToolsItems0?(MessagesRequestToolsItems @this) => @this.MessagesRequestToolsItems0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems0? value)
         {
@@ -508,22 +508,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesRequestToolsItems0(global::OpenRouter.MessagesRequestToolsItems0? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems1 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestToolsItems1?(MessagesRequestToolsItems @this) => @this.MessagesRequestToolsItems1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems1? value)
         {
@@ -531,22 +531,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesRequestToolsItems1(global::OpenRouter.MessagesRequestToolsItems1? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems2 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestToolsItems2?(MessagesRequestToolsItems @this) => @this.MessagesRequestToolsItems2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems2? value)
         {
@@ -554,22 +554,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesRequestToolsItems2(global::OpenRouter.MessagesRequestToolsItems2? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems3 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestToolsItems3?(MessagesRequestToolsItems @this) => @this.MessagesRequestToolsItems3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems3? value)
         {
@@ -577,22 +577,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesRequestToolsItems3(global::OpenRouter.MessagesRequestToolsItems3? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems4 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestToolsItems4?(MessagesRequestToolsItems @this) => @this.MessagesRequestToolsItems4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems4? value)
         {
@@ -600,22 +600,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesRequestToolsItems4(global::OpenRouter.MessagesRequestToolsItems4? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems5 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestToolsItems5?(MessagesRequestToolsItems @this) => @this.MessagesRequestToolsItems5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems5? value)
         {
@@ -623,22 +623,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesRequestToolsItems5(global::OpenRouter.MessagesRequestToolsItems5? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.BashServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.BashServerTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.BashServerTool?(MessagesRequestToolsItems @this) => @this.BashServerTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.BashServerTool? value)
         {
@@ -646,22 +646,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromBashServerTool(global::OpenRouter.BashServerTool? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.DatetimeServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.DatetimeServerTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.DatetimeServerTool?(MessagesRequestToolsItems @this) => @this.DatetimeServerTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.DatetimeServerTool? value)
         {
@@ -669,22 +669,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromDatetimeServerTool(global::OpenRouter.DatetimeServerTool? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.ImageGenerationServerToolOpenRouter value) => new MessagesRequestToolsItems((global::OpenRouter.ImageGenerationServerToolOpenRouter?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ImageGenerationServerToolOpenRouter?(MessagesRequestToolsItems @this) => @this.ImageGenerationServerToolOpenRouter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
         {
@@ -692,22 +692,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromImageGenerationServerToolOpenRouter(global::OpenRouter.ImageGenerationServerToolOpenRouter? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesSearchModelsServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesSearchModelsServerTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesSearchModelsServerTool?(MessagesRequestToolsItems @this) => @this.MessagesSearchModelsServerTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesSearchModelsServerTool? value)
         {
@@ -715,22 +715,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesSearchModelsServerTool(global::OpenRouter.MessagesSearchModelsServerTool? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.WebFetchServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.WebFetchServerTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.WebFetchServerTool?(MessagesRequestToolsItems @this) => @this.WebFetchServerTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.WebFetchServerTool? value)
         {
@@ -738,22 +738,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromWebFetchServerTool(global::OpenRouter.WebFetchServerTool? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.OpenRouterWebSearchServerTool value) => new MessagesRequestToolsItems((global::OpenRouter.OpenRouterWebSearchServerTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenRouterWebSearchServerTool?(MessagesRequestToolsItems @this) => @this.OpenRouterWebSearchServerTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.OpenRouterWebSearchServerTool? value)
         {
@@ -761,22 +761,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromOpenRouterWebSearchServerTool(global::OpenRouter.OpenRouterWebSearchServerTool? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems12 value) => new MessagesRequestToolsItems((global::OpenRouter.MessagesRequestToolsItems12?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestToolsItems12?(MessagesRequestToolsItems @this) => @this.MessagesRequestToolsItems12;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(global::OpenRouter.MessagesRequestToolsItems12? value)
         {
@@ -784,12 +784,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestToolsItems FromMessagesRequestToolsItems12(global::OpenRouter.MessagesRequestToolsItems12? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestToolsItems(
             global::OpenRouter.MessagesRequestToolsItems0? messagesRequestToolsItems0,
@@ -823,7 +823,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessagesRequestToolsItems12 as object ??
@@ -838,11 +838,11 @@ namespace OpenRouter
             MessagesRequestToolsItems3 as object ??
             MessagesRequestToolsItems2 as object ??
             MessagesRequestToolsItems1 as object ??
-            MessagesRequestToolsItems0 as object 
+            MessagesRequestToolsItems0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessagesRequestToolsItems0?.ToString() ??
@@ -857,11 +857,11 @@ namespace OpenRouter
             MessagesSearchModelsServerTool?.ToString() ??
             WebFetchServerTool?.ToString() ??
             OpenRouterWebSearchServerTool?.ToString() ??
-            MessagesRequestToolsItems12?.ToString() 
+            MessagesRequestToolsItems12?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -869,7 +869,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.MessagesRequestToolsItems0, TResult>? messagesRequestToolsItems0 = null,
@@ -949,7 +949,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.MessagesRequestToolsItems0>? messagesRequestToolsItems0 = null,
@@ -1039,7 +1039,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.MessagesRequestToolsItems0>? messagesRequestToolsItems0 = null,
@@ -1117,7 +1117,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1160,7 +1160,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesRequestToolsItems other)
         {
@@ -1177,12 +1177,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesSearchModelsServerTool?>.Default.Equals(MessagesSearchModelsServerTool, other.MessagesSearchModelsServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebFetchServerTool?>.Default.Equals(WebFetchServerTool, other.WebFetchServerTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServerTool, other.OpenRouterWebSearchServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestToolsItems12?>.Default.Equals(MessagesRequestToolsItems12, other.MessagesRequestToolsItems12) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestToolsItems12?>.Default.Equals(MessagesRequestToolsItems12, other.MessagesRequestToolsItems12)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesRequestToolsItems obj1, MessagesRequestToolsItems obj2)
         {
@@ -1190,7 +1190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesRequestToolsItems obj1, MessagesRequestToolsItems obj2)
         {
@@ -1198,7 +1198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

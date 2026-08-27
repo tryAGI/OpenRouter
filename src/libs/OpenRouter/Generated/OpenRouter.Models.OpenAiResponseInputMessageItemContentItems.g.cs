@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OpenAiResponseInputMessageItemContentItems : global::System.IEquatable<OpenAiResponseInputMessageItemContentItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudio(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1 PickInputAudio() => IsInputAudio
             ? InputAudio!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputFile(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2 PickInputFile() => IsInputFile
             ? InputFile!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputImage(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3 PickInputImage() => IsInputImage
             ? InputImage!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4 PickInputText() => IsInputText
             ? InputText!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputAudio;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? value)
         {
@@ -180,22 +180,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseInputMessageItemContentItems FromInputAudio(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1? value) => new OpenAiResponseInputMessageItemContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? value)
         {
@@ -203,22 +203,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseInputMessageItemContentItems FromInputFile(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2? value) => new OpenAiResponseInputMessageItemContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? value)
         {
@@ -226,22 +226,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseInputMessageItemContentItems FromInputImage(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3? value) => new OpenAiResponseInputMessageItemContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4 value) => new OpenAiResponseInputMessageItemContentItems((global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?(OpenAiResponseInputMessageItemContentItems @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemContentItems(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? value)
         {
@@ -249,12 +249,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseInputMessageItemContentItems FromInputText(global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4? value) => new OpenAiResponseInputMessageItemContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemContentItems(
             global::OpenRouter.OpenAiResponseInputMessageItemContentItemsDiscriminatorType? type,
@@ -273,27 +273,27 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputText as object ??
             InputImage as object ??
             InputFile as object ??
-            InputAudio as object 
+            InputAudio as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputAudio?.ToString() ??
             InputFile?.ToString() ??
             InputImage?.ToString() ??
-            InputText?.ToString() 
+            InputText?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1, TResult>? inputAudio = null,
@@ -336,7 +336,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1>? inputAudio = null,
@@ -372,7 +372,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1>? inputAudio = null,
@@ -405,7 +405,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OpenAiResponseInputMessageItemContentItems other)
         {
@@ -438,12 +438,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1?>.Default.Equals(InputAudio, other.InputAudio) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2?>.Default.Equals(InputFile, other.InputFile) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?>.Default.Equals(InputText, other.InputText) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4?>.Default.Equals(InputText, other.InputText)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OpenAiResponseInputMessageItemContentItems obj1, OpenAiResponseInputMessageItemContentItems obj2)
         {
@@ -451,7 +451,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OpenAiResponseInputMessageItemContentItems obj1, OpenAiResponseInputMessageItemContentItems obj2)
         {
@@ -459,7 +459,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

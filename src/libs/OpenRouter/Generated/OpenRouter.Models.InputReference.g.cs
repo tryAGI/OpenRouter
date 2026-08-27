@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct InputReference : global::System.IEquatable<InputReference>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputReferenceDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioUrl))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsAudioUrl => AudioUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAudioUrl(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputReferenceVariant1 PickAudioUrl() => IsAudioUrl
             ? AudioUrl!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageUrl(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputReferenceVariant2 PickImageUrl() => IsImageUrl
             ? ImageUrl!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoUrl))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsVideoUrl => VideoUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVideoUrl(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputReferenceVariant3 PickVideoUrl() => IsVideoUrl
             ? VideoUrl!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputReference(global::OpenRouter.InputReferenceVariant1 value) => new InputReference((global::OpenRouter.InputReferenceVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputReferenceVariant1?(InputReference @this) => @this.AudioUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputReference(global::OpenRouter.InputReferenceVariant1? value)
         {
@@ -143,22 +143,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputReference FromAudioUrl(global::OpenRouter.InputReferenceVariant1? value) => new InputReference(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputReference(global::OpenRouter.InputReferenceVariant2 value) => new InputReference((global::OpenRouter.InputReferenceVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputReferenceVariant2?(InputReference @this) => @this.ImageUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputReference(global::OpenRouter.InputReferenceVariant2? value)
         {
@@ -166,22 +166,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputReference FromImageUrl(global::OpenRouter.InputReferenceVariant2? value) => new InputReference(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputReference(global::OpenRouter.InputReferenceVariant3 value) => new InputReference((global::OpenRouter.InputReferenceVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputReferenceVariant3?(InputReference @this) => @this.VideoUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputReference(global::OpenRouter.InputReferenceVariant3? value)
         {
@@ -189,12 +189,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputReference FromVideoUrl(global::OpenRouter.InputReferenceVariant3? value) => new InputReference(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputReference(
             global::OpenRouter.InputReferenceDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             VideoUrl as object ??
             ImageUrl as object ??
-            AudioUrl as object 
+            AudioUrl as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AudioUrl?.ToString() ??
             ImageUrl?.ToString() ??
-            VideoUrl?.ToString() 
+            VideoUrl?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.InputReferenceVariant1, TResult>? audioUrl = null,
@@ -267,7 +267,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.InputReferenceVariant1>? audioUrl = null,
@@ -297,7 +297,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.InputReferenceVariant1>? audioUrl = null,
@@ -325,7 +325,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(InputReference other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputReferenceVariant1?>.Default.Equals(AudioUrl, other.AudioUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputReferenceVariant2?>.Default.Equals(ImageUrl, other.ImageUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputReferenceVariant3?>.Default.Equals(VideoUrl, other.VideoUrl) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputReferenceVariant3?>.Default.Equals(VideoUrl, other.VideoUrl)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(InputReference obj1, InputReference obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(InputReference obj1, InputReference obj2)
         {
@@ -376,7 +376,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

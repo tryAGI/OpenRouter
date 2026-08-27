@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicServiceTier
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Batch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Priority,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

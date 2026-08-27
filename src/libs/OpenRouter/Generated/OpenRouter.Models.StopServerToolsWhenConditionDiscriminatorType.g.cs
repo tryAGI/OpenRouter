@@ -4,28 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StopServerToolsWhenConditionDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FinishReasonIs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HasToolCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokensUsed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StepCountIs,
     }

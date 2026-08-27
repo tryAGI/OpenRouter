@@ -4,36 +4,36 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ReasoningFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicClaudeV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureOpenaiResponsesV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GoogleGeminiV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MetaResponsesV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiResponsesV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XaiResponsesV1,
     }

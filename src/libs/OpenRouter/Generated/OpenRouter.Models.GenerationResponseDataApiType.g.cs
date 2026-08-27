@@ -9,31 +9,31 @@ namespace OpenRouter
     public enum GenerationResponseDataApiType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Embeddings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rerank,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

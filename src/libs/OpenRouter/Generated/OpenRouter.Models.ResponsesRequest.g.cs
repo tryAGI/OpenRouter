@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ResponsesRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
         public bool? Background { get; set; }
@@ -27,20 +27,20 @@ namespace OpenRouter
         public global::OpenRouter.ChatDebugOptions? Debug { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
         public double? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_config")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageConfigJsonConverter))]
         public global::OpenRouter.ImageConfig? ImageConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
         public global::System.Collections.Generic.IList<global::OpenRouter.ResponseIncludesEnum>? Include { get; set; }
@@ -53,19 +53,19 @@ namespace OpenRouter
         public global::OpenRouter.Inputs? Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
         public int? MaxOutputTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tool_calls")]
         public int? MaxToolCalls { get; set; }
@@ -83,19 +83,19 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.OutputModalityEnum>? Modalities { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("models")]
         public global::System.Collections.Generic.IList<string>? Models { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         public bool? ParallelToolCalls { get; set; }
@@ -107,7 +107,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItems>? Plugins { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
         public double? PresencePenalty { get; set; }
@@ -119,13 +119,13 @@ namespace OpenRouter
         public object? PreviousResponseId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::OpenRouter.StoredPromptTemplate? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
         public string? PromptCacheKey { get; set; }
@@ -155,7 +155,7 @@ namespace OpenRouter
         public object? Route { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
         public string? SafetyIdentifier { get; set; }
@@ -180,7 +180,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? StopServerToolsWhen { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
         public bool? Store { get; set; }
@@ -192,7 +192,7 @@ namespace OpenRouter
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
@@ -204,32 +204,32 @@ namespace OpenRouter
         public global::OpenRouter.TextExtendedConfig? Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponsesToolChoiceJsonConverter))]
         public global::OpenRouter.OpenAIResponsesToolChoice? ToolChoice { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestToolsItems>? Tools { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
         public int? TopK { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
         public int? TopLogprobs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
         public double? TopP { get; set; }
@@ -241,7 +241,7 @@ namespace OpenRouter
         public global::OpenRouter.TraceConfig? Trace { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponsesTruncationJsonConverter))]

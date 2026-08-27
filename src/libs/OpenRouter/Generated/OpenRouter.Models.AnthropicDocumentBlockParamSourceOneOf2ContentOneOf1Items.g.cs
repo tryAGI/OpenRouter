@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items : global::System.IEquatable<AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1 PickImage() => IsImage
             ? Image!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2 PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1 value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items((global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1? value)
         {
@@ -106,22 +106,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items FromImage(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1? value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2 value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items((global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2? value)
         {
@@ -129,12 +129,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items FromText(global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2? value) => new AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items(
             global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Text as object ??
-            Image as object 
+            Image as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Image?.ToString() ??
-            Text?.ToString() 
+            Text?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1, TResult>? image = null,
@@ -198,7 +198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1>? image = null,
@@ -222,7 +222,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1>? image = null,
@@ -245,7 +245,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant1?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1ItemsVariant2?>.Default.Equals(Text, other.Text)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items obj1, AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items obj1, AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items obj2)
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

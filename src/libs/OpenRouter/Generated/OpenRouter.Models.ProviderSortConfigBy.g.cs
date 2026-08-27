@@ -9,19 +9,19 @@ namespace OpenRouter
     public enum ProviderSortConfigBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exacto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Price,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Throughput,
     }

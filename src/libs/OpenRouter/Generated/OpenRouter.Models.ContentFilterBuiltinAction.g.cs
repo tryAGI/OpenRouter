@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum ContentFilterBuiltinAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Block,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flag,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Redact,
     }

@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputTextEditorServerToolItemCommand
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Create,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Insert,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StrReplace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         View,
     }

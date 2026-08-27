@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicCacheControlTtl
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1h,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x5m,
     }

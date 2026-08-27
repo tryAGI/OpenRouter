@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicTextEditorCodeExecutionContent : global::System.IEquatable<AnthropicTextEditorCodeExecutionContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextEditorCodeExecutionContentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionCreateResult))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionCreateResult => TextEditorCodeExecutionCreateResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextEditorCodeExecutionCreateResult(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1 PickTextEditorCodeExecutionCreateResult() => IsTextEditorCodeExecutionCreateResult
             ? TextEditorCodeExecutionCreateResult!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionStrReplaceResult))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionStrReplaceResult => TextEditorCodeExecutionStrReplaceResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextEditorCodeExecutionStrReplaceResult(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2 PickTextEditorCodeExecutionStrReplaceResult() => IsTextEditorCodeExecutionStrReplaceResult
             ? TextEditorCodeExecutionStrReplaceResult!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResultError))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionToolResultError => TextEditorCodeExecutionToolResultError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextEditorCodeExecutionToolResultError(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 PickTextEditorCodeExecutionToolResultError() => IsTextEditorCodeExecutionToolResultError
             ? TextEditorCodeExecutionToolResultError!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionViewResult))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionViewResult => TextEditorCodeExecutionViewResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextEditorCodeExecutionViewResult(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4 PickTextEditorCodeExecutionViewResult() => IsTextEditorCodeExecutionViewResult
             ? TextEditorCodeExecutionViewResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionViewResult' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1 value) => new AnthropicTextEditorCodeExecutionContent((global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1?(AnthropicTextEditorCodeExecutionContent @this) => @this.TextEditorCodeExecutionCreateResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? value)
         {
@@ -180,22 +180,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionCreateResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2 value) => new AnthropicTextEditorCodeExecutionContent((global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2?(AnthropicTextEditorCodeExecutionContent @this) => @this.TextEditorCodeExecutionStrReplaceResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? value)
         {
@@ -203,22 +203,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionStrReplaceResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 value) => new AnthropicTextEditorCodeExecutionContent((global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?(AnthropicTextEditorCodeExecutionContent @this) => @this.TextEditorCodeExecutionToolResultError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? value)
         {
@@ -226,22 +226,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionToolResultError(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4 value) => new AnthropicTextEditorCodeExecutionContent((global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?(AnthropicTextEditorCodeExecutionContent @this) => @this.TextEditorCodeExecutionViewResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextEditorCodeExecutionContent(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? value)
         {
@@ -249,12 +249,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextEditorCodeExecutionContent FromTextEditorCodeExecutionViewResult(global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4? value) => new AnthropicTextEditorCodeExecutionContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextEditorCodeExecutionContent(
             global::OpenRouter.AnthropicTextEditorCodeExecutionContentDiscriminatorType? type,
@@ -273,27 +273,27 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TextEditorCodeExecutionViewResult as object ??
             TextEditorCodeExecutionToolResultError as object ??
             TextEditorCodeExecutionStrReplaceResult as object ??
-            TextEditorCodeExecutionCreateResult as object 
+            TextEditorCodeExecutionCreateResult as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TextEditorCodeExecutionCreateResult?.ToString() ??
             TextEditorCodeExecutionStrReplaceResult?.ToString() ??
             TextEditorCodeExecutionToolResultError?.ToString() ??
-            TextEditorCodeExecutionViewResult?.ToString() 
+            TextEditorCodeExecutionViewResult?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1, TResult>? textEditorCodeExecutionCreateResult = null,
@@ -336,7 +336,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1>? textEditorCodeExecutionCreateResult = null,
@@ -372,7 +372,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1>? textEditorCodeExecutionCreateResult = null,
@@ -405,7 +405,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicTextEditorCodeExecutionContent other)
         {
@@ -438,12 +438,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1?>.Default.Equals(TextEditorCodeExecutionCreateResult, other.TextEditorCodeExecutionCreateResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2?>.Default.Equals(TextEditorCodeExecutionStrReplaceResult, other.TextEditorCodeExecutionStrReplaceResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3?>.Default.Equals(TextEditorCodeExecutionToolResultError, other.TextEditorCodeExecutionToolResultError) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?>.Default.Equals(TextEditorCodeExecutionViewResult, other.TextEditorCodeExecutionViewResult) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4?>.Default.Equals(TextEditorCodeExecutionViewResult, other.TextEditorCodeExecutionViewResult)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicTextEditorCodeExecutionContent obj1, AnthropicTextEditorCodeExecutionContent obj2)
         {
@@ -451,7 +451,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicTextEditorCodeExecutionContent obj1, AnthropicTextEditorCodeExecutionContent obj2)
         {
@@ -459,7 +459,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

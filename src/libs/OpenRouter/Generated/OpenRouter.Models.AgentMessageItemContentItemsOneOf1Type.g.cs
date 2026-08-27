@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AgentMessageItemContentItemsOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
     }

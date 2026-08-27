@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum GenerationResponseDataDataRegion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Europe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Global,
     }

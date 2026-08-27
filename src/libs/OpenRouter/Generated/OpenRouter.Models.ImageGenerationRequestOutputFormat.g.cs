@@ -9,19 +9,19 @@ namespace OpenRouter
     public enum ImageGenerationRequestOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Svg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

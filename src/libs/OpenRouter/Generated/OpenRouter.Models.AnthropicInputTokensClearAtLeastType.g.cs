@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicInputTokensClearAtLeastType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputTokens,
     }

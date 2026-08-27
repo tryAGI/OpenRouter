@@ -4,19 +4,19 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnthropicServerToolUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_fetch_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int WebFetchRequests { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_search_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum PromptInjectionScanScope
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllMessages,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserOnly,
     }

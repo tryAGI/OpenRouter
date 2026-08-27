@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputItemImageGenerationCallType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGenerationCall,
     }

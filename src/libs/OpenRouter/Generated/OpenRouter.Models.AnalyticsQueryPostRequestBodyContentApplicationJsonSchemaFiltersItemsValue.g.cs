@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue : global::System.IEquatable<AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 => AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1() => IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1
             ? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 => AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2() => IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2
             ? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items>? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 => AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items> PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2() => IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2
             ? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue(string value) => new AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue @this) => @this.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue(string? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue FromAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1(string? value) => new AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue(double value) => new AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue @this) => @this.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue(double? value)
         {
@@ -161,12 +161,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue FromAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2(double? value) => new AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue(
             string? analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1,
@@ -180,25 +180,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 as object ??
             AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 as object ??
-            AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 as object 
+            AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1?.ToString() ??
             AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2?.ToString() ??
-            AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2?.ToString() 
+            AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -206,7 +206,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 = null,
@@ -236,7 +236,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 = null,
@@ -266,7 +266,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 = null,
@@ -294,7 +294,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -317,19 +317,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1, other.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2, other.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items>?>.Default.Equals(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2, other.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items>?>.Default.Equals(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2, other.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue obj1, AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue obj2)
         {
@@ -337,7 +337,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue obj1, AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue obj2)
         {
@@ -345,7 +345,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

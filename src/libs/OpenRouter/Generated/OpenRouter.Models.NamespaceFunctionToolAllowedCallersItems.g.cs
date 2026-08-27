@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NamespaceFunctionToolAllowedCallersItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Direct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Programmatic,
     }

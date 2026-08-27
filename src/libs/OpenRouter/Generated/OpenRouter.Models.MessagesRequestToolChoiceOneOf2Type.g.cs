@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestToolChoiceOneOf2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

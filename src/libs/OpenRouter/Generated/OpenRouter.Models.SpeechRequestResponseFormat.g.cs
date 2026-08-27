@@ -10,11 +10,11 @@ namespace OpenRouter
     public enum SpeechRequestResponseFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm,
     }

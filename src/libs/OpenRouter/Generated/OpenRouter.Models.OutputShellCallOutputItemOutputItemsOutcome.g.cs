@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OutputShellCallOutputItemOutputItemsOutcome : global::System.IEquatable<OutputShellCallOutputItemOutputItemsOutcome>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0? OutputShellCallOutputItemOutputItemsOutcome0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputShellCallOutputItemOutputItemsOutcome0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsOutputShellCallOutputItemOutputItemsOutcome0 => OutputShellCallOutputItemOutputItemsOutcome0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputShellCallOutputItemOutputItemsOutcome0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0 PickOutputShellCallOutputItemOutputItemsOutcome0() => IsOutputShellCallOutputItemOutputItemsOutcome0
             ? OutputShellCallOutputItemOutputItemsOutcome0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputShellCallOutputItemOutputItemsOutcome0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1? OutputShellCallOutputItemOutputItemsOutcome1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputShellCallOutputItemOutputItemsOutcome1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOutputShellCallOutputItemOutputItemsOutcome1 => OutputShellCallOutputItemOutputItemsOutcome1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputShellCallOutputItemOutputItemsOutcome1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1 PickOutputShellCallOutputItemOutputItemsOutcome1() => IsOutputShellCallOutputItemOutputItemsOutcome1
             ? OutputShellCallOutputItemOutputItemsOutcome1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputShellCallOutputItemOutputItemsOutcome1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputShellCallOutputItemOutputItemsOutcome(global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0 value) => new OutputShellCallOutputItemOutputItemsOutcome((global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0?(OutputShellCallOutputItemOutputItemsOutcome @this) => @this.OutputShellCallOutputItemOutputItemsOutcome0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputShellCallOutputItemOutputItemsOutcome(global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputShellCallOutputItemOutputItemsOutcome FromOutputShellCallOutputItemOutputItemsOutcome0(global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0? value) => new OutputShellCallOutputItemOutputItemsOutcome(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputShellCallOutputItemOutputItemsOutcome(global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1 value) => new OutputShellCallOutputItemOutputItemsOutcome((global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1?(OutputShellCallOutputItemOutputItemsOutcome @this) => @this.OutputShellCallOutputItemOutputItemsOutcome1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputShellCallOutputItemOutputItemsOutcome(global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputShellCallOutputItemOutputItemsOutcome FromOutputShellCallOutputItemOutputItemsOutcome1(global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1? value) => new OutputShellCallOutputItemOutputItemsOutcome(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputShellCallOutputItemOutputItemsOutcome(
             global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0? outputShellCallOutputItemOutputItemsOutcome0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OutputShellCallOutputItemOutputItemsOutcome1 as object ??
-            OutputShellCallOutputItemOutputItemsOutcome0 as object 
+            OutputShellCallOutputItemOutputItemsOutcome0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OutputShellCallOutputItemOutputItemsOutcome0?.ToString() ??
-            OutputShellCallOutputItemOutputItemsOutcome1?.ToString() 
+            OutputShellCallOutputItemOutputItemsOutcome1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0, TResult>? outputShellCallOutputItemOutputItemsOutcome0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0>? outputShellCallOutputItemOutputItemsOutcome0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0>? outputShellCallOutputItemOutputItemsOutcome0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OutputShellCallOutputItemOutputItemsOutcome other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0?>.Default.Equals(OutputShellCallOutputItemOutputItemsOutcome0, other.OutputShellCallOutputItemOutputItemsOutcome0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1?>.Default.Equals(OutputShellCallOutputItemOutputItemsOutcome1, other.OutputShellCallOutputItemOutputItemsOutcome1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1?>.Default.Equals(OutputShellCallOutputItemOutputItemsOutcome1, other.OutputShellCallOutputItemOutputItemsOutcome1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OutputShellCallOutputItemOutputItemsOutcome obj1, OutputShellCallOutputItemOutputItemsOutcome obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OutputShellCallOutputItemOutputItemsOutcome obj1, OutputShellCallOutputItemOutputItemsOutcome obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

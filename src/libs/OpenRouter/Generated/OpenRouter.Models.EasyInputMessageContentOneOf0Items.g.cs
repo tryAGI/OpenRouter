@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EasyInputMessageContentOneOf0Items : global::System.IEquatable<EasyInputMessageContentOneOf0Items>
     {
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputText PickInputText() => IsInputText
             ? InputText!
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageContentOneOf0Items1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEasyInputMessageContentOneOf0Items1 => EasyInputMessageContentOneOf0Items1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessageContentOneOf0Items1(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessageContentOneOf0Items1 PickEasyInputMessageContentOneOf0Items1() => IsEasyInputMessageContentOneOf0Items1
             ? EasyInputMessageContentOneOf0Items1!
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputFile(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputFile PickInputFile() => IsInputFile
             ? InputFile!
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudio(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputAudio PickInputAudio() => IsInputAudio
             ? InputAudio!
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputVideo))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsInputVideo => InputVideo != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputVideo(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputVideo PickInputVideo() => IsInputVideo
             ? InputVideo!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::OpenRouter.InputText value) => new EasyInputMessageContentOneOf0Items((global::OpenRouter.InputText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputText?(EasyInputMessageContentOneOf0Items @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContentOneOf0Items(global::OpenRouter.InputText? value)
         {
@@ -212,22 +212,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageContentOneOf0Items FromInputText(global::OpenRouter.InputText? value) => new EasyInputMessageContentOneOf0Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::OpenRouter.EasyInputMessageContentOneOf0Items1 value) => new EasyInputMessageContentOneOf0Items((global::OpenRouter.EasyInputMessageContentOneOf0Items1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessageContentOneOf0Items1?(EasyInputMessageContentOneOf0Items @this) => @this.EasyInputMessageContentOneOf0Items1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContentOneOf0Items(global::OpenRouter.EasyInputMessageContentOneOf0Items1? value)
         {
@@ -235,22 +235,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageContentOneOf0Items FromEasyInputMessageContentOneOf0Items1(global::OpenRouter.EasyInputMessageContentOneOf0Items1? value) => new EasyInputMessageContentOneOf0Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::OpenRouter.InputFile value) => new EasyInputMessageContentOneOf0Items((global::OpenRouter.InputFile?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputFile?(EasyInputMessageContentOneOf0Items @this) => @this.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContentOneOf0Items(global::OpenRouter.InputFile? value)
         {
@@ -258,22 +258,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageContentOneOf0Items FromInputFile(global::OpenRouter.InputFile? value) => new EasyInputMessageContentOneOf0Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::OpenRouter.InputAudio value) => new EasyInputMessageContentOneOf0Items((global::OpenRouter.InputAudio?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputAudio?(EasyInputMessageContentOneOf0Items @this) => @this.InputAudio;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContentOneOf0Items(global::OpenRouter.InputAudio? value)
         {
@@ -281,22 +281,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageContentOneOf0Items FromInputAudio(global::OpenRouter.InputAudio? value) => new EasyInputMessageContentOneOf0Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::OpenRouter.InputVideo value) => new EasyInputMessageContentOneOf0Items((global::OpenRouter.InputVideo?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputVideo?(EasyInputMessageContentOneOf0Items @this) => @this.InputVideo;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContentOneOf0Items(global::OpenRouter.InputVideo? value)
         {
@@ -304,12 +304,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageContentOneOf0Items FromInputVideo(global::OpenRouter.InputVideo? value) => new EasyInputMessageContentOneOf0Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContentOneOf0Items(
             global::OpenRouter.InputText? inputText,
@@ -327,29 +327,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputVideo as object ??
             InputAudio as object ??
             InputFile as object ??
             EasyInputMessageContentOneOf0Items1 as object ??
-            InputText as object 
+            InputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
             EasyInputMessageContentOneOf0Items1?.ToString() ??
             InputFile?.ToString() ??
             InputAudio?.ToString() ??
-            InputVideo?.ToString() 
+            InputVideo?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -357,7 +357,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.InputText, TResult>? inputText = null,
@@ -397,7 +397,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.InputText>? inputText = null,
@@ -439,7 +439,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.InputText>? inputText = null,
@@ -477,7 +477,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -504,7 +504,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EasyInputMessageContentOneOf0Items other)
         {
@@ -513,12 +513,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessageContentOneOf0Items1?>.Default.Equals(EasyInputMessageContentOneOf0Items1, other.EasyInputMessageContentOneOf0Items1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputFile?>.Default.Equals(InputFile, other.InputFile) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputAudio?>.Default.Equals(InputAudio, other.InputAudio) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputVideo?>.Default.Equals(InputVideo, other.InputVideo) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputVideo?>.Default.Equals(InputVideo, other.InputVideo)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EasyInputMessageContentOneOf0Items obj1, EasyInputMessageContentOneOf0Items obj2)
         {
@@ -526,7 +526,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EasyInputMessageContentOneOf0Items obj1, EasyInputMessageContentOneOf0Items obj2)
         {
@@ -534,7 +534,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

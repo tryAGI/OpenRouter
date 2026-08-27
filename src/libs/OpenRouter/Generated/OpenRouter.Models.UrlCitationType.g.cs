@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UrlCitationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlCitation,
     }

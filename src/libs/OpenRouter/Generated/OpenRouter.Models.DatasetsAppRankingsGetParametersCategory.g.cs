@@ -9,19 +9,19 @@ namespace OpenRouter
     public enum DatasetsAppRankingsGetParametersCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Coding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Creative,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Entertainment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Productivity,
     }

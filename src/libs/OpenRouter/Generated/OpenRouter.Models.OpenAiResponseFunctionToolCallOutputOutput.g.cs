@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OpenAiResponseFunctionToolCallOutputOutput : global::System.IEquatable<OpenAiResponseFunctionToolCallOutputOutput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? OpenAiResponseFunctionToolCallOutputOutputVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponseFunctionToolCallOutputOutputVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsOpenAiResponseFunctionToolCallOutputOutputVariant1 => OpenAiResponseFunctionToolCallOutputOutputVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAiResponseFunctionToolCallOutputOutputVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickOpenAiResponseFunctionToolCallOutputOutputVariant1() => IsOpenAiResponseFunctionToolCallOutputOutputVariant1
             ? OpenAiResponseFunctionToolCallOutputOutputVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseFunctionToolCallOutputOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>? OpenAiResponseFunctionToolCallOutputOutput1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponseFunctionToolCallOutputOutput1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOpenAiResponseFunctionToolCallOutputOutput1 => OpenAiResponseFunctionToolCallOutputOutput1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAiResponseFunctionToolCallOutputOutput1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items> PickOpenAiResponseFunctionToolCallOutputOutput1() => IsOpenAiResponseFunctionToolCallOutputOutput1
             ? OpenAiResponseFunctionToolCallOutputOutput1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseFunctionToolCallOutputOutput1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseFunctionToolCallOutputOutput(string value) => new OpenAiResponseFunctionToolCallOutputOutput((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(OpenAiResponseFunctionToolCallOutputOutput @this) => @this.OpenAiResponseFunctionToolCallOutputOutputVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseFunctionToolCallOutputOutput(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseFunctionToolCallOutputOutput FromOpenAiResponseFunctionToolCallOutputOutputVariant1(string? value) => new OpenAiResponseFunctionToolCallOutputOutput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseFunctionToolCallOutputOutput(
             string? openAiResponseFunctionToolCallOutputOutputVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OpenAiResponseFunctionToolCallOutputOutput1 as object ??
-            OpenAiResponseFunctionToolCallOutputOutputVariant1 as object 
+            OpenAiResponseFunctionToolCallOutputOutputVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OpenAiResponseFunctionToolCallOutputOutputVariant1?.ToString() ??
-            OpenAiResponseFunctionToolCallOutputOutput1?.ToString() 
+            OpenAiResponseFunctionToolCallOutputOutput1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? openAiResponseFunctionToolCallOutputOutputVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OpenAiResponseFunctionToolCallOutputOutput other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(OpenAiResponseFunctionToolCallOutputOutputVariant1, other.OpenAiResponseFunctionToolCallOutputOutputVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>?>.Default.Equals(OpenAiResponseFunctionToolCallOutputOutput1, other.OpenAiResponseFunctionToolCallOutputOutput1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items>?>.Default.Equals(OpenAiResponseFunctionToolCallOutputOutput1, other.OpenAiResponseFunctionToolCallOutputOutput1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OpenAiResponseFunctionToolCallOutputOutput obj1, OpenAiResponseFunctionToolCallOutputOutput obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OpenAiResponseFunctionToolCallOutputOutput obj1, OpenAiResponseFunctionToolCallOutputOutput obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

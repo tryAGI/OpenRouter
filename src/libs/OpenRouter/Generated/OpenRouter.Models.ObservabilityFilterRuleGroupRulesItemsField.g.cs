@@ -4,56 +4,56 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ObservabilityFilterRuleGroupRulesItemsField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyName,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FinishReason,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Input,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Model,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Output,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Provider,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalCost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TotalTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserId,
     }

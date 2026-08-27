@@ -9,13 +9,13 @@ namespace OpenRouter
     public sealed partial class OpenRouterWebSearchServerTool
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.WebSearchConfig? Parameters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenRouterWebSearchServerToolTypeJsonConverter))]

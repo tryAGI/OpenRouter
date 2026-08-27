@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ImageModelEndpointsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoints")]
         [global::System.Text.Json.Serialization.JsonRequired]

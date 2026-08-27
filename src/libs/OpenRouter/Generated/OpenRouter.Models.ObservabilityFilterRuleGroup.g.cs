@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ObservabilityFilterRuleGroup
     {
@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.ObservabilityFilterRuleGroupLogic? Logic { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         [global::System.Text.Json.Serialization.JsonRequired]

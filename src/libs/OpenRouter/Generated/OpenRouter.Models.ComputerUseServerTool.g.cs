@@ -9,21 +9,21 @@ namespace OpenRouter
     public sealed partial class ComputerUseServerTool
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_height")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DisplayHeight { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_width")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DisplayWidth { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolEnvironmentJsonConverter))]
@@ -31,7 +31,7 @@ namespace OpenRouter
         public required global::OpenRouter.ComputerUseServerToolEnvironment Environment { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ComputerUseServerToolTypeJsonConverter))]

@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ImageGenerationUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
         public global::OpenRouter.AnthropicCacheCreation? CacheCreation { get; set; }
@@ -22,7 +22,7 @@ namespace OpenRouter
         public required int CompletionTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_details")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationUsageCompletionTokensDetails, object>))]
@@ -47,7 +47,7 @@ namespace OpenRouter
         public bool? IsByok { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iterations")]
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? Iterations { get; set; }
@@ -80,7 +80,7 @@ namespace OpenRouter
         public string? ServiceTier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicSpeedJsonConverter))]

@@ -9,7 +9,7 @@ namespace OpenRouter
     public enum ModelsGetParametersZdr
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         True,
     }

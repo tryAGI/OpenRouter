@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AgentMessageItemContentItems : global::System.IEquatable<AgentMessageItemContentItems>
     {
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputText PickInputText() => IsInputText
             ? InputText!
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentMessageItemContentItems1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsAgentMessageItemContentItems1 => AgentMessageItemContentItems1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentMessageItemContentItems1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AgentMessageItemContentItems1 PickAgentMessageItemContentItems1() => IsAgentMessageItemContentItems1
             ? AgentMessageItemContentItems1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessageItemContentItems1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AgentMessageItemContentItems2? AgentMessageItemContentItems2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentMessageItemContentItems2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsAgentMessageItemContentItems2 => AgentMessageItemContentItems2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentMessageItemContentItems2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AgentMessageItemContentItems2 PickAgentMessageItemContentItems2() => IsAgentMessageItemContentItems2
             ? AgentMessageItemContentItems2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessageItemContentItems2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AgentMessageItemContentItems(global::OpenRouter.InputText value) => new AgentMessageItemContentItems((global::OpenRouter.InputText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputText?(AgentMessageItemContentItems @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentMessageItemContentItems(global::OpenRouter.InputText? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AgentMessageItemContentItems FromInputText(global::OpenRouter.InputText? value) => new AgentMessageItemContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AgentMessageItemContentItems(global::OpenRouter.AgentMessageItemContentItems1 value) => new AgentMessageItemContentItems((global::OpenRouter.AgentMessageItemContentItems1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AgentMessageItemContentItems1?(AgentMessageItemContentItems @this) => @this.AgentMessageItemContentItems1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentMessageItemContentItems(global::OpenRouter.AgentMessageItemContentItems1? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AgentMessageItemContentItems FromAgentMessageItemContentItems1(global::OpenRouter.AgentMessageItemContentItems1? value) => new AgentMessageItemContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AgentMessageItemContentItems(global::OpenRouter.AgentMessageItemContentItems2 value) => new AgentMessageItemContentItems((global::OpenRouter.AgentMessageItemContentItems2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AgentMessageItemContentItems2?(AgentMessageItemContentItems @this) => @this.AgentMessageItemContentItems2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentMessageItemContentItems(global::OpenRouter.AgentMessageItemContentItems2? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AgentMessageItemContentItems FromAgentMessageItemContentItems2(global::OpenRouter.AgentMessageItemContentItems2? value) => new AgentMessageItemContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentMessageItemContentItems(
             global::OpenRouter.InputText? inputText,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AgentMessageItemContentItems2 as object ??
             AgentMessageItemContentItems1 as object ??
-            InputText as object 
+            InputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
             AgentMessageItemContentItems1?.ToString() ??
-            AgentMessageItemContentItems2?.ToString() 
+            AgentMessageItemContentItems2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.InputText, TResult>? inputText = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.InputText>? inputText = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.InputText>? inputText = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AgentMessageItemContentItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputText?>.Default.Equals(InputText, other.InputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AgentMessageItemContentItems1?>.Default.Equals(AgentMessageItemContentItems1, other.AgentMessageItemContentItems1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AgentMessageItemContentItems2?>.Default.Equals(AgentMessageItemContentItems2, other.AgentMessageItemContentItems2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AgentMessageItemContentItems2?>.Default.Equals(AgentMessageItemContentItems2, other.AgentMessageItemContentItems2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AgentMessageItemContentItems obj1, AgentMessageItemContentItems obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AgentMessageItemContentItems obj1, AgentMessageItemContentItems obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

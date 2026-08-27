@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicToolSearchContentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolResultError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolSearchResult,
     }

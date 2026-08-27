@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DatetimeServerToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_datetime,
     }

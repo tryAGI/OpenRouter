@@ -4,32 +4,32 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicWebSearchToolResultErrorErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxUsesExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryTooLong,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequestTooLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
     }

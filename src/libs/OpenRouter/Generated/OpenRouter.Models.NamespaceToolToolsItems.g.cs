@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct NamespaceToolToolsItems : global::System.IEquatable<NamespaceToolToolsItems>
     {
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NamespaceFunctionTool))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsNamespaceFunctionTool => NamespaceFunctionTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNamespaceFunctionTool(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.NamespaceFunctionTool PickNamespaceFunctionTool() => IsNamespaceFunctionTool
             ? NamespaceFunctionTool!
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomTool))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsCustomTool => CustomTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomTool(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomTool PickCustomTool() => IsCustomTool
             ? CustomTool!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator NamespaceToolToolsItems(global::OpenRouter.NamespaceFunctionTool value) => new NamespaceToolToolsItems((global::OpenRouter.NamespaceFunctionTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.NamespaceFunctionTool?(NamespaceToolToolsItems @this) => @this.NamespaceFunctionTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NamespaceToolToolsItems(global::OpenRouter.NamespaceFunctionTool? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NamespaceToolToolsItems FromNamespaceFunctionTool(global::OpenRouter.NamespaceFunctionTool? value) => new NamespaceToolToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator NamespaceToolToolsItems(global::OpenRouter.CustomTool value) => new NamespaceToolToolsItems((global::OpenRouter.CustomTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomTool?(NamespaceToolToolsItems @this) => @this.CustomTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NamespaceToolToolsItems(global::OpenRouter.CustomTool? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NamespaceToolToolsItems FromCustomTool(global::OpenRouter.CustomTool? value) => new NamespaceToolToolsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NamespaceToolToolsItems(
             global::OpenRouter.NamespaceFunctionTool? namespaceFunctionTool,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CustomTool as object ??
-            NamespaceFunctionTool as object 
+            NamespaceFunctionTool as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             NamespaceFunctionTool?.ToString() ??
-            CustomTool?.ToString() 
+            CustomTool?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.NamespaceFunctionTool, TResult>? namespaceFunctionTool = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.NamespaceFunctionTool>? namespaceFunctionTool = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.NamespaceFunctionTool>? namespaceFunctionTool = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(NamespaceToolToolsItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.NamespaceFunctionTool?>.Default.Equals(NamespaceFunctionTool, other.NamespaceFunctionTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomTool?>.Default.Equals(CustomTool, other.CustomTool) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomTool?>.Default.Equals(CustomTool, other.CustomTool)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(NamespaceToolToolsItems obj1, NamespaceToolToolsItems obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(NamespaceToolToolsItems obj1, NamespaceToolToolsItems obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

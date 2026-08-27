@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum ReasoningMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

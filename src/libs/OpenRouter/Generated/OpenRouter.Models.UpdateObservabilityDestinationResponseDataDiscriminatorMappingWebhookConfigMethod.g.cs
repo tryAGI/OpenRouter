@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum UpdateObservabilityDestinationResponseDataDiscriminatorMappingWebhookConfigMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Post,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Put,
     }

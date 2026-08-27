@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ImageConfig : global::System.IEquatable<ImageConfig>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ImageConfigVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageConfigVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsImageConfigVariant1 => ImageConfigVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageConfigVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickImageConfigVariant1() => IsImageConfigVariant1
             ? ImageConfigVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? ImageConfigVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageConfigVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsImageConfigVariant2 => ImageConfigVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageConfigVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickImageConfigVariant2() => IsImageConfigVariant2
             ? ImageConfigVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? ImageConfigVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageConfigVariant3))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsImageConfigVariant3 => ImageConfigVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageConfigVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<object> PickImageConfigVariant3() => IsImageConfigVariant3
             ? ImageConfigVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ImageConfig(string value) => new ImageConfig((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ImageConfig @this) => @this.ImageConfigVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageConfig(string? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ImageConfig FromImageConfigVariant1(string? value) => new ImageConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ImageConfig(double value) => new ImageConfig((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(ImageConfig @this) => @this.ImageConfigVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageConfig(double? value)
         {
@@ -161,12 +161,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ImageConfig FromImageConfigVariant2(double? value) => new ImageConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageConfig(
             string? imageConfigVariant1,
@@ -180,25 +180,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ImageConfigVariant3 as object ??
             ImageConfigVariant2 as object ??
-            ImageConfigVariant1 as object 
+            ImageConfigVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ImageConfigVariant1?.ToString() ??
             ImageConfigVariant2?.ToString() ??
-            ImageConfigVariant3?.ToString() 
+            ImageConfigVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -206,7 +206,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? imageConfigVariant1 = null,
@@ -236,7 +236,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? imageConfigVariant1 = null,
@@ -266,7 +266,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? imageConfigVariant1 = null,
@@ -294,7 +294,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -317,19 +317,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ImageConfig other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ImageConfigVariant1, other.ImageConfigVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(ImageConfigVariant2, other.ImageConfigVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(ImageConfigVariant3, other.ImageConfigVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(ImageConfigVariant3, other.ImageConfigVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ImageConfig obj1, ImageConfig obj2)
         {
@@ -337,7 +337,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ImageConfig obj1, ImageConfig obj2)
         {
@@ -345,7 +345,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

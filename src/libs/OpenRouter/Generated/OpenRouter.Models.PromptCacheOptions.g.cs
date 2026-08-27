@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class PromptCacheOptions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PromptCacheOptionsModeJsonConverter))]
         public global::OpenRouter.PromptCacheOptionsMode Mode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
         public string? Ttl { get; set; }

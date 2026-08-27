@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum ApplyPatchCallStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

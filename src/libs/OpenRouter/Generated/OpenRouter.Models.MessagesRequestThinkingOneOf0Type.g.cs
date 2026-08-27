@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestThinkingOneOf0Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enabled,
     }

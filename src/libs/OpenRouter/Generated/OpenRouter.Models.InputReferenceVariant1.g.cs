@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.InputReferenceVariant1Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

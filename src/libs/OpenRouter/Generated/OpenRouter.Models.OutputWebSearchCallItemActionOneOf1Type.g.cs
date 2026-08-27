@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputWebSearchCallItemActionOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenPage,
     }

@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class AgentMessageItemContentItems1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AgentMessageItemContentItemsOneOf1DetailJsonConverter))]
@@ -17,13 +17,13 @@ namespace OpenRouter
         public required global::OpenRouter.AgentMessageItemContentItemsOneOf1Detail Detail { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         public string? ImageUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AgentMessageItemContentItemsOneOf1TypeJsonConverter))]

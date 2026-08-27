@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.ORAnthropicContentBlockVariant5Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

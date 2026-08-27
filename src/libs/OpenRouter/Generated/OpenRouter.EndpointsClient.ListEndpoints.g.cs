@@ -140,7 +140,7 @@ namespace OpenRouter
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::OpenRouter.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

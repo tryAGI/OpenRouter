@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BaseInputsOneOf1ItemsOneOf0Phase : global::System.IEquatable<BaseInputsOneOf1ItemsOneOf0Phase>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? BaseInputsOneOf1ItemsOneOf0Phase0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0Phase0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsBaseInputsOneOf1ItemsOneOf0Phase0 => BaseInputsOneOf1ItemsOneOf0Phase0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseInputsOneOf1ItemsOneOf0Phase0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => IsBaseInputsOneOf1ItemsOneOf0Phase0
             ? BaseInputsOneOf1ItemsOneOf0Phase0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? BaseInputsOneOf1ItemsOneOf0Phase1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0Phase1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsBaseInputsOneOf1ItemsOneOf0Phase1 => BaseInputsOneOf1ItemsOneOf0Phase1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseInputsOneOf1ItemsOneOf0Phase1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => IsBaseInputsOneOf1ItemsOneOf0Phase1
             ? BaseInputsOneOf1ItemsOneOf0Phase1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Phase(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0 value) => new BaseInputsOneOf1ItemsOneOf0Phase((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?(BaseInputsOneOf1ItemsOneOf0Phase @this) => @this.BaseInputsOneOf1ItemsOneOf0Phase0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf0Phase(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase0(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Phase(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 value) => new BaseInputsOneOf1ItemsOneOf0Phase((global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?(BaseInputsOneOf1ItemsOneOf0Phase @this) => @this.BaseInputsOneOf1ItemsOneOf0Phase1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf0Phase(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase1(global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf0Phase(
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0? baseInputsOneOf1ItemsOneOf0Phase0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BaseInputsOneOf1ItemsOneOf0Phase1 as object ??
-            BaseInputsOneOf1ItemsOneOf0Phase0 as object 
+            BaseInputsOneOf1ItemsOneOf0Phase0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BaseInputsOneOf1ItemsOneOf0Phase0?.ToValueString() ??
-            BaseInputsOneOf1ItemsOneOf0Phase1?.ToValueString() 
+            BaseInputsOneOf1ItemsOneOf0Phase1?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?, TResult>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BaseInputsOneOf1ItemsOneOf0Phase other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0Phase0, other.BaseInputsOneOf1ItemsOneOf0Phase0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0Phase1, other.BaseInputsOneOf1ItemsOneOf0Phase1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0Phase1, other.BaseInputsOneOf1ItemsOneOf0Phase1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BaseInputsOneOf1ItemsOneOf0Phase obj1, BaseInputsOneOf1ItemsOneOf0Phase obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BaseInputsOneOf1ItemsOneOf0Phase obj1, BaseInputsOneOf1ItemsOneOf0Phase obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

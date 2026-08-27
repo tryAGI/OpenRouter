@@ -9,23 +9,23 @@ namespace OpenRouter
     public enum AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataGranularitiesItemsName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hour,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Month,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Week,
     }

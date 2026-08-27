@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestThinkingOneOf2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Adaptive,
     }

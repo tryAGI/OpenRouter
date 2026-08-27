@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ChatContentItemsVariant5
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentTextTypeJsonConverter))]
@@ -28,7 +28,7 @@ namespace OpenRouter
         public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]

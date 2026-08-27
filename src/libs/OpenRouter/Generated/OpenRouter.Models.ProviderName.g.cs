@@ -4,396 +4,396 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProviderName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ai21,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AionLabs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AkashML,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alibaba,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AmazonBedrock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AmazonNova,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ambient,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ArceeAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AtlasCloud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Azure,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Baidu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BaseTen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BlackForestLabs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytePlus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cerebras,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chutes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cirrascale,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clarifai,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cloudflare,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cohere,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Crucible,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Crusoe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Darkbloom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Decart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeepInfra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeepSeek,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deepgram,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DekaLLM,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigitalOcean,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FakeProvider,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Featherless,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fireworks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FishAudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Friendli,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GMICloud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Google,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GoogleAiStudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Groq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HeyGen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inception,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inceptron,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InferactVLLM,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InferenceNet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Infermatic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inflection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IoNet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ionstream,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Krea,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Liquid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mancer2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mara,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Meta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minimax,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mistral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Modular,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MoonshotAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Morph,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NCompass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nebius,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NexAgi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NextBit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Novita,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nvidia,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenAI,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenInference,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parasail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Perceptron,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Perplexity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phala,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Poolside,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Quiver,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reka,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Relace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SailResearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SakanaAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SambaNova,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SiliconFlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sourceful,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stealth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StepFun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreamLake,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Switchpoint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tencent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tenstorrent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Together,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upstage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Venice,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wafer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WandB,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xiaomi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xai,
     }

@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum ApplyPatchEngineEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Native,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter,
     }

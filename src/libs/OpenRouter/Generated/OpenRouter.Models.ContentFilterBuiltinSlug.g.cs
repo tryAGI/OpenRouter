@@ -9,35 +9,35 @@ namespace OpenRouter
     public enum ContentFilterBuiltinSlug
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Address,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreditCard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IpAddress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PersonName,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RegexPromptInjection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ssn,
     }

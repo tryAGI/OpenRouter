@@ -4,84 +4,84 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponsesErrorFieldCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BioPolicy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmptyImageFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FailedToDownloadImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageContentPolicyViolation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageFileNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageFileTooLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageParseError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageTooLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageTooSmall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidBase64Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidImageFormat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidImageMode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidPrompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnsupportedImageMediaType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VectorStoreTimeout,
     }

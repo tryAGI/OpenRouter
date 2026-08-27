@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OpenAIResponsesAnnotation : global::System.IEquatable<OpenAIResponsesAnnotation>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FileCitation? FileCitation { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileCitation(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.FileCitation PickFileCitation() => IsFileCitation
             ? FileCitation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.URLCitation? URLCitation { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(URLCitation))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsURLCitation => URLCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickURLCitation(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.URLCitation PickURLCitation() => IsURLCitation
             ? URLCitation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'URLCitation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FilePath? FilePath { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsFilePath => FilePath != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFilePath(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.FilePath PickFilePath() => IsFilePath
             ? FilePath!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilePath' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAIResponsesAnnotation(global::OpenRouter.FileCitation value) => new OpenAIResponsesAnnotation((global::OpenRouter.FileCitation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.FileCitation?(OpenAIResponsesAnnotation @this) => @this.FileCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAIResponsesAnnotation(global::OpenRouter.FileCitation? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAIResponsesAnnotation FromFileCitation(global::OpenRouter.FileCitation? value) => new OpenAIResponsesAnnotation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAIResponsesAnnotation(global::OpenRouter.URLCitation value) => new OpenAIResponsesAnnotation((global::OpenRouter.URLCitation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.URLCitation?(OpenAIResponsesAnnotation @this) => @this.URLCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAIResponsesAnnotation(global::OpenRouter.URLCitation? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAIResponsesAnnotation FromURLCitation(global::OpenRouter.URLCitation? value) => new OpenAIResponsesAnnotation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAIResponsesAnnotation(global::OpenRouter.FilePath value) => new OpenAIResponsesAnnotation((global::OpenRouter.FilePath?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.FilePath?(OpenAIResponsesAnnotation @this) => @this.FilePath;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAIResponsesAnnotation(global::OpenRouter.FilePath? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAIResponsesAnnotation FromFilePath(global::OpenRouter.FilePath? value) => new OpenAIResponsesAnnotation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAIResponsesAnnotation(
             global::OpenRouter.FileCitation? fileCitation,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FilePath as object ??
             URLCitation as object ??
-            FileCitation as object 
+            FileCitation as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FileCitation?.ToString() ??
             URLCitation?.ToString() ??
-            FilePath?.ToString() 
+            FilePath?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.FileCitation, TResult>? fileCitation = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.FileCitation>? fileCitation = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.FileCitation>? fileCitation = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OpenAIResponsesAnnotation other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FileCitation?>.Default.Equals(FileCitation, other.FileCitation) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.URLCitation?>.Default.Equals(URLCitation, other.URLCitation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FilePath?>.Default.Equals(FilePath, other.FilePath) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FilePath?>.Default.Equals(FilePath, other.FilePath)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OpenAIResponsesAnnotation obj1, OpenAIResponsesAnnotation obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OpenAIResponsesAnnotation obj1, OpenAIResponsesAnnotation obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

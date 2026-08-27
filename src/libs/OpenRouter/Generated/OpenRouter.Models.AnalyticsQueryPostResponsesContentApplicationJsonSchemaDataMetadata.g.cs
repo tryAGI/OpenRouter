@@ -4,26 +4,26 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnalyticsQueryPostResponsesContentApplicationJsonSchemaDataMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_time_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double QueryTimeMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("row_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int RowCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncated")]
         [global::System.Text.Json.Serialization.JsonRequired]

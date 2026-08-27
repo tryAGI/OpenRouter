@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicRefusalStopDetailsCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cyber,
     }

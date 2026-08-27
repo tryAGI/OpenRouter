@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ResponsesRequestPluginsItemsVariant9
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchPluginIdJsonConverter))]
@@ -41,7 +41,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? IncludeDomains { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
         public int? MaxResults { get; set; }
@@ -53,13 +53,13 @@ namespace OpenRouter
         public int? MaxUses { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_prompt")]
         public string? SearchPrompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WebSearchPluginUserLocation, object>))]

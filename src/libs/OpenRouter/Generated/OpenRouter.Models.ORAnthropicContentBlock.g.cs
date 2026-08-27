@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ORAnthropicContentBlock : global::System.IEquatable<ORAnthropicContentBlock>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorToolResult))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsAdvisorToolResult => AdvisorToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdvisorToolResult(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant1 PickAdvisorToolResult() => IsAdvisorToolResult
             ? AdvisorToolResult!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResult))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsBashCodeExecutionToolResult => BashCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBashCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant2 PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
             ? BashCodeExecutionToolResult!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant3 PickCodeExecutionToolResult() => IsCodeExecutionToolResult
             ? CodeExecutionToolResult!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsCompaction => Compaction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompaction(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant4 PickCompaction() => IsCompaction
             ? Compaction!
@@ -172,7 +172,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsContainerUpload => ContainerUpload != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerUpload(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant5 PickContainerUpload() => IsContainerUpload
             ? ContainerUpload!
@@ -209,7 +209,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
@@ -217,7 +217,7 @@ namespace OpenRouter
         public bool IsRedactedThinking => RedactedThinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRedactedThinking(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant6 PickRedactedThinking() => IsRedactedThinking
             ? RedactedThinking!
@@ -246,7 +246,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
@@ -254,7 +254,7 @@ namespace OpenRouter
         public bool IsServerToolUse => ServerToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickServerToolUse(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant7 PickServerToolUse() => IsServerToolUse
             ? ServerToolUse!
@@ -283,7 +283,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -291,7 +291,7 @@ namespace OpenRouter
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant8 PickText() => IsText
             ? Text!
@@ -320,7 +320,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
@@ -328,7 +328,7 @@ namespace OpenRouter
         public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextEditorCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant9 PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
             ? TextEditorCodeExecutionToolResult!
@@ -357,7 +357,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
@@ -365,7 +365,7 @@ namespace OpenRouter
         public bool IsThinking => Thinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinking(
 #if NET6_0_OR_GREATER
@@ -378,7 +378,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant10 PickThinking() => IsThinking
             ? Thinking!
@@ -394,7 +394,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResult))]
@@ -402,7 +402,7 @@ namespace OpenRouter
         public bool IsToolSearchToolResult => ToolSearchToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolSearchToolResult(
 #if NET6_0_OR_GREATER
@@ -415,7 +415,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant11 PickToolSearchToolResult() => IsToolSearchToolResult
             ? ToolSearchToolResult!
@@ -431,7 +431,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
@@ -439,7 +439,7 @@ namespace OpenRouter
         public bool IsToolUse => ToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolUse(
 #if NET6_0_OR_GREATER
@@ -452,7 +452,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant12 PickToolUse() => IsToolUse
             ? ToolUse!
@@ -468,7 +468,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchToolResult))]
@@ -476,7 +476,7 @@ namespace OpenRouter
         public bool IsWebFetchToolResult => WebFetchToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebFetchToolResult(
 #if NET6_0_OR_GREATER
@@ -489,7 +489,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant13 PickWebFetchToolResult() => IsWebFetchToolResult
             ? WebFetchToolResult!
@@ -505,7 +505,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
@@ -513,7 +513,7 @@ namespace OpenRouter
         public bool IsWebSearchToolResult => WebSearchToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearchToolResult(
 #if NET6_0_OR_GREATER
@@ -526,23 +526,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ORAnthropicContentBlockVariant14 PickWebSearchToolResult() => IsWebSearchToolResult
             ? WebSearchToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant1 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant1?(ORAnthropicContentBlock @this) => @this.AdvisorToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant1? value)
         {
@@ -550,22 +550,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromAdvisorToolResult(global::OpenRouter.ORAnthropicContentBlockVariant1? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant2 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant2?(ORAnthropicContentBlock @this) => @this.BashCodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant2? value)
         {
@@ -573,22 +573,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromBashCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant2? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant3 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant3?(ORAnthropicContentBlock @this) => @this.CodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant3? value)
         {
@@ -596,22 +596,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant3? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant4 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant4?(ORAnthropicContentBlock @this) => @this.Compaction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant4? value)
         {
@@ -619,22 +619,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromCompaction(global::OpenRouter.ORAnthropicContentBlockVariant4? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant5 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant5?(ORAnthropicContentBlock @this) => @this.ContainerUpload;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant5? value)
         {
@@ -642,22 +642,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromContainerUpload(global::OpenRouter.ORAnthropicContentBlockVariant5? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant6 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant6?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant6?(ORAnthropicContentBlock @this) => @this.RedactedThinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant6? value)
         {
@@ -665,22 +665,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromRedactedThinking(global::OpenRouter.ORAnthropicContentBlockVariant6? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant7 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant7?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant7?(ORAnthropicContentBlock @this) => @this.ServerToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant7? value)
         {
@@ -688,22 +688,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromServerToolUse(global::OpenRouter.ORAnthropicContentBlockVariant7? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant8 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant8?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant8?(ORAnthropicContentBlock @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant8? value)
         {
@@ -711,22 +711,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromText(global::OpenRouter.ORAnthropicContentBlockVariant8? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant9 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant9?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant9?(ORAnthropicContentBlock @this) => @this.TextEditorCodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant9? value)
         {
@@ -734,22 +734,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromTextEditorCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant9? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant10 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant10?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant10?(ORAnthropicContentBlock @this) => @this.Thinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant10? value)
         {
@@ -757,22 +757,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromThinking(global::OpenRouter.ORAnthropicContentBlockVariant10? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant11 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant11?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant11?(ORAnthropicContentBlock @this) => @this.ToolSearchToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant11? value)
         {
@@ -780,22 +780,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromToolSearchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant11? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant12 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant12?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant12?(ORAnthropicContentBlock @this) => @this.ToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant12? value)
         {
@@ -803,22 +803,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromToolUse(global::OpenRouter.ORAnthropicContentBlockVariant12? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant13 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant13?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant13?(ORAnthropicContentBlock @this) => @this.WebFetchToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant13? value)
         {
@@ -826,22 +826,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromWebFetchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant13? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant14 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant14?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant14?(ORAnthropicContentBlock @this) => @this.WebSearchToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant14? value)
         {
@@ -849,12 +849,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicContentBlock FromWebSearchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant14? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicContentBlock(
             global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? type,
@@ -893,7 +893,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WebSearchToolResult as object ??
@@ -909,11 +909,11 @@ namespace OpenRouter
             Compaction as object ??
             CodeExecutionToolResult as object ??
             BashCodeExecutionToolResult as object ??
-            AdvisorToolResult as object 
+            AdvisorToolResult as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AdvisorToolResult?.ToString() ??
@@ -929,11 +929,11 @@ namespace OpenRouter
             ToolSearchToolResult?.ToString() ??
             ToolUse?.ToString() ??
             WebFetchToolResult?.ToString() ??
-            WebSearchToolResult?.ToString() 
+            WebSearchToolResult?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -941,7 +941,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant1, TResult>? advisorToolResult = null,
@@ -1026,7 +1026,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant1>? advisorToolResult = null,
@@ -1122,7 +1122,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant1>? advisorToolResult = null,
@@ -1205,7 +1205,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1250,7 +1250,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ORAnthropicContentBlock other)
         {
@@ -1268,12 +1268,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant11?>.Default.Equals(ToolSearchToolResult, other.ToolSearchToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant12?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant13?>.Default.Equals(WebFetchToolResult, other.WebFetchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant14?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant14?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ORAnthropicContentBlock obj1, ORAnthropicContentBlock obj2)
         {
@@ -1281,7 +1281,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ORAnthropicContentBlock obj1, ORAnthropicContentBlock obj2)
         {
@@ -1289,7 +1289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct UnifiedBenchmarksResponseDataItems : global::System.IEquatable<UnifiedBenchmarksResponseDataItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.UnifiedBenchmarksResponseDataItemsDiscriminatorSource? Source { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ArtificialAnalysis))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsArtificialAnalysis => ArtificialAnalysis != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickArtificialAnalysis(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1 PickArtificialAnalysis() => IsArtificialAnalysis
             ? ArtificialAnalysis!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DesignArena))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsDesignArena => DesignArena != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDesignArena(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2 PickDesignArena() => IsDesignArena
             ? DesignArena!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DesignArena' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UnifiedBenchmarksResponseDataItems(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1 value) => new UnifiedBenchmarksResponseDataItems((global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1?(UnifiedBenchmarksResponseDataItems @this) => @this.ArtificialAnalysis;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UnifiedBenchmarksResponseDataItems(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1? value)
         {
@@ -106,22 +106,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UnifiedBenchmarksResponseDataItems FromArtificialAnalysis(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1? value) => new UnifiedBenchmarksResponseDataItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UnifiedBenchmarksResponseDataItems(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2 value) => new UnifiedBenchmarksResponseDataItems((global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2?(UnifiedBenchmarksResponseDataItems @this) => @this.DesignArena;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UnifiedBenchmarksResponseDataItems(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2? value)
         {
@@ -129,12 +129,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UnifiedBenchmarksResponseDataItems FromDesignArena(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2? value) => new UnifiedBenchmarksResponseDataItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UnifiedBenchmarksResponseDataItems(
             global::OpenRouter.UnifiedBenchmarksResponseDataItemsDiscriminatorSource? source,
@@ -149,23 +149,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DesignArena as object ??
-            ArtificialAnalysis as object 
+            ArtificialAnalysis as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ArtificialAnalysis?.ToString() ??
-            DesignArena?.ToString() 
+            DesignArena?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1, TResult>? artificialAnalysis = null,
@@ -198,7 +198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1>? artificialAnalysis = null,
@@ -222,7 +222,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1>? artificialAnalysis = null,
@@ -245,7 +245,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(UnifiedBenchmarksResponseDataItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1?>.Default.Equals(ArtificialAnalysis, other.ArtificialAnalysis) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2?>.Default.Equals(DesignArena, other.DesignArena) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2?>.Default.Equals(DesignArena, other.DesignArena)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(UnifiedBenchmarksResponseDataItems obj1, UnifiedBenchmarksResponseDataItems obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(UnifiedBenchmarksResponseDataItems obj1, UnifiedBenchmarksResponseDataItems obj2)
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

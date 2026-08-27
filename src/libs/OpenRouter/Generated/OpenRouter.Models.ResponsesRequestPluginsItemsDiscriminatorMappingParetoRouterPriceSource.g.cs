@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum ResponsesRequestPluginsItemsDiscriminatorMappingParetoRouterPriceSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WeightedAvg,
     }

@@ -9,35 +9,35 @@ namespace OpenRouter
     public sealed partial class AnthropicCodeExecutionContentVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCodeExecutionResultTypeJsonConverter))]
         public global::OpenRouter.AnthropicCodeExecutionResultType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::OpenRouter.AnthropicCodeExecutionOutput> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ReturnCode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Stderr { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stdout")]
         [global::System.Text.Json.Serialization.JsonRequired]

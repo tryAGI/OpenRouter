@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestToolsItemsOneOf2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditor20250124,
     }

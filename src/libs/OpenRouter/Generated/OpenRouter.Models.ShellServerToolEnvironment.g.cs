@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct ShellServerToolEnvironment : global::System.IEquatable<ShellServerToolEnvironment>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ShellServerToolEnvironmentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerAuto))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsContainerAuto => ContainerAuto != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerAuto(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ShellServerToolEnvironmentVariant1 PickContainerAuto() => IsContainerAuto
             ? ContainerAuto!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerReference))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsContainerReference => ContainerReference != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerReference(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ShellServerToolEnvironmentVariant2 PickContainerReference() => IsContainerReference
             ? ContainerReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant1 value) => new ShellServerToolEnvironment((global::OpenRouter.ShellServerToolEnvironmentVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ShellServerToolEnvironmentVariant1?(ShellServerToolEnvironment @this) => @this.ContainerAuto;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant1? value)
         {
@@ -106,22 +106,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ShellServerToolEnvironment FromContainerAuto(global::OpenRouter.ShellServerToolEnvironmentVariant1? value) => new ShellServerToolEnvironment(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant2 value) => new ShellServerToolEnvironment((global::OpenRouter.ShellServerToolEnvironmentVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ShellServerToolEnvironmentVariant2?(ShellServerToolEnvironment @this) => @this.ContainerReference;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant2? value)
         {
@@ -129,12 +129,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ShellServerToolEnvironment FromContainerReference(global::OpenRouter.ShellServerToolEnvironmentVariant2? value) => new ShellServerToolEnvironment(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShellServerToolEnvironment(
             global::OpenRouter.ShellServerToolEnvironmentDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ContainerReference as object ??
-            ContainerAuto as object 
+            ContainerAuto as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ContainerAuto?.ToString() ??
-            ContainerReference?.ToString() 
+            ContainerReference?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ShellServerToolEnvironmentVariant1, TResult>? containerAuto = null,
@@ -198,7 +198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ShellServerToolEnvironmentVariant1>? containerAuto = null,
@@ -222,7 +222,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ShellServerToolEnvironmentVariant1>? containerAuto = null,
@@ -245,7 +245,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ShellServerToolEnvironment other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellServerToolEnvironmentVariant1?>.Default.Equals(ContainerAuto, other.ContainerAuto) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellServerToolEnvironmentVariant2?>.Default.Equals(ContainerReference, other.ContainerReference) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellServerToolEnvironmentVariant2?>.Default.Equals(ContainerReference, other.ContainerReference)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ShellServerToolEnvironment obj1, ShellServerToolEnvironment obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ShellServerToolEnvironment obj1, ShellServerToolEnvironment obj2)
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

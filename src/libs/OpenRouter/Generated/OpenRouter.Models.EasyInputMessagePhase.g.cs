@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct EasyInputMessagePhase : global::System.IEquatable<EasyInputMessagePhase>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessagePhase0? EasyInputMessagePhase0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessagePhase0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsEasyInputMessagePhase0 => EasyInputMessagePhase0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessagePhase0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessagePhase0 PickEasyInputMessagePhase0() => IsEasyInputMessagePhase0
             ? EasyInputMessagePhase0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessagePhase1? EasyInputMessagePhase1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessagePhase1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEasyInputMessagePhase1 => EasyInputMessagePhase1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessagePhase1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessagePhase1 PickEasyInputMessagePhase1() => IsEasyInputMessagePhase1
             ? EasyInputMessagePhase1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessagePhase(global::OpenRouter.EasyInputMessagePhase0 value) => new EasyInputMessagePhase((global::OpenRouter.EasyInputMessagePhase0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessagePhase0?(EasyInputMessagePhase @this) => @this.EasyInputMessagePhase0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessagePhase(global::OpenRouter.EasyInputMessagePhase0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessagePhase FromEasyInputMessagePhase0(global::OpenRouter.EasyInputMessagePhase0? value) => new EasyInputMessagePhase(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessagePhase(global::OpenRouter.EasyInputMessagePhase1 value) => new EasyInputMessagePhase((global::OpenRouter.EasyInputMessagePhase1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessagePhase1?(EasyInputMessagePhase @this) => @this.EasyInputMessagePhase1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessagePhase(global::OpenRouter.EasyInputMessagePhase1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessagePhase FromEasyInputMessagePhase1(global::OpenRouter.EasyInputMessagePhase1? value) => new EasyInputMessagePhase(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessagePhase(
             global::OpenRouter.EasyInputMessagePhase0? easyInputMessagePhase0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EasyInputMessagePhase1 as object ??
-            EasyInputMessagePhase0 as object 
+            EasyInputMessagePhase0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EasyInputMessagePhase0?.ToValueString() ??
-            EasyInputMessagePhase1?.ToValueString() 
+            EasyInputMessagePhase1?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.EasyInputMessagePhase0?, TResult>? easyInputMessagePhase0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.EasyInputMessagePhase0?>? easyInputMessagePhase0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.EasyInputMessagePhase0?>? easyInputMessagePhase0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EasyInputMessagePhase other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessagePhase0?>.Default.Equals(EasyInputMessagePhase0, other.EasyInputMessagePhase0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessagePhase1?>.Default.Equals(EasyInputMessagePhase1, other.EasyInputMessagePhase1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessagePhase1?>.Default.Equals(EasyInputMessagePhase1, other.EasyInputMessagePhase1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EasyInputMessagePhase obj1, EasyInputMessagePhase obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EasyInputMessagePhase obj1, EasyInputMessagePhase obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

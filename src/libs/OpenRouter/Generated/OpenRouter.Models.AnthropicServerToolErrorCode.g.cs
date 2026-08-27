@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicServerToolErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExecutionTimeExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
     }

@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct GenerationContentDataInput : global::System.IEquatable<GenerationContentDataInput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.GenerationContentDataInput0? GenerationContentDataInput0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationContentDataInput0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsGenerationContentDataInput0 => GenerationContentDataInput0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGenerationContentDataInput0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.GenerationContentDataInput0 PickGenerationContentDataInput0() => IsGenerationContentDataInput0
             ? GenerationContentDataInput0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationContentDataInput0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.GenerationContentDataInput1? GenerationContentDataInput1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationContentDataInput1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsGenerationContentDataInput1 => GenerationContentDataInput1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGenerationContentDataInput1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.GenerationContentDataInput1 PickGenerationContentDataInput1() => IsGenerationContentDataInput1
             ? GenerationContentDataInput1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationContentDataInput1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerationContentDataInput(global::OpenRouter.GenerationContentDataInput0 value) => new GenerationContentDataInput((global::OpenRouter.GenerationContentDataInput0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.GenerationContentDataInput0?(GenerationContentDataInput @this) => @this.GenerationContentDataInput0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerationContentDataInput(global::OpenRouter.GenerationContentDataInput0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerationContentDataInput FromGenerationContentDataInput0(global::OpenRouter.GenerationContentDataInput0? value) => new GenerationContentDataInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GenerationContentDataInput(global::OpenRouter.GenerationContentDataInput1 value) => new GenerationContentDataInput((global::OpenRouter.GenerationContentDataInput1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.GenerationContentDataInput1?(GenerationContentDataInput @this) => @this.GenerationContentDataInput1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerationContentDataInput(global::OpenRouter.GenerationContentDataInput1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GenerationContentDataInput FromGenerationContentDataInput1(global::OpenRouter.GenerationContentDataInput1? value) => new GenerationContentDataInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerationContentDataInput(
             global::OpenRouter.GenerationContentDataInput0? generationContentDataInput0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             GenerationContentDataInput1 as object ??
-            GenerationContentDataInput0 as object 
+            GenerationContentDataInput0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             GenerationContentDataInput0?.ToString() ??
-            GenerationContentDataInput1?.ToString() 
+            GenerationContentDataInput1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.GenerationContentDataInput0, TResult>? generationContentDataInput0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.GenerationContentDataInput0>? generationContentDataInput0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.GenerationContentDataInput0>? generationContentDataInput0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GenerationContentDataInput other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.GenerationContentDataInput0?>.Default.Equals(GenerationContentDataInput0, other.GenerationContentDataInput0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.GenerationContentDataInput1?>.Default.Equals(GenerationContentDataInput1, other.GenerationContentDataInput1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.GenerationContentDataInput1?>.Default.Equals(GenerationContentDataInput1, other.GenerationContentDataInput1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GenerationContentDataInput obj1, GenerationContentDataInput obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GenerationContentDataInput obj1, GenerationContentDataInput obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

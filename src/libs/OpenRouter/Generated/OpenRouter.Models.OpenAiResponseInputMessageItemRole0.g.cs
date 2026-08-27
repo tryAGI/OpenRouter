@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OpenAiResponseInputMessageItemRole0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

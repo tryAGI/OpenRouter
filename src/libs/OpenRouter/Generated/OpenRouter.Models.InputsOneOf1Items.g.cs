@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct InputsOneOf1Items : global::System.IEquatable<InputsOneOf1Items>
     {
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningItem))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsReasoningItem => ReasoningItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoningItem(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ReasoningItem PickReasoningItem() => IsReasoningItem
             ? ReasoningItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessage? EasyInputMessage { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessage))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEasyInputMessage => EasyInputMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessage(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessage PickEasyInputMessage() => IsEasyInputMessage
             ? EasyInputMessage!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessage' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.InputMessageItem? InputMessageItem { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageItem))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsInputMessageItem => InputMessageItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputMessageItem(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputMessageItem PickInputMessageItem() => IsInputMessageItem
             ? InputMessageItem!
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallItem))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsFunctionCallItem => FunctionCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallItem(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.FunctionCallItem PickFunctionCallItem() => IsFunctionCallItem
             ? FunctionCallItem!
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputItem))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsFunctionCallOutputItem => FunctionCallOutputItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallOutputItem(
 #if NET6_0_OR_GREATER
@@ -188,7 +188,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.FunctionCallOutputItem PickFunctionCallOutputItem() => IsFunctionCallOutputItem
             ? FunctionCallOutputItem!
@@ -204,7 +204,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallItem))]
@@ -212,7 +212,7 @@ namespace OpenRouter
         public bool IsApplyPatchCallItem => ApplyPatchCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCallItem(
 #if NET6_0_OR_GREATER
@@ -225,7 +225,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => IsApplyPatchCallItem
             ? ApplyPatchCallItem!
@@ -241,7 +241,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutputItem))]
@@ -249,7 +249,7 @@ namespace OpenRouter
         public bool IsApplyPatchCallOutputItem => ApplyPatchCallOutputItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCallOutputItem(
 #if NET6_0_OR_GREATER
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => IsApplyPatchCallOutputItem
             ? ApplyPatchCallOutputItem!
@@ -278,7 +278,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1Items7))]
@@ -286,7 +286,7 @@ namespace OpenRouter
         public bool IsInputsOneOf1Items7 => InputsOneOf1Items7 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputsOneOf1Items7(
 #if NET6_0_OR_GREATER
@@ -299,7 +299,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputsOneOf1Items7 PickInputsOneOf1Items7() => IsInputsOneOf1Items7
             ? InputsOneOf1Items7!
@@ -315,7 +315,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1Items8))]
@@ -323,7 +323,7 @@ namespace OpenRouter
         public bool IsInputsOneOf1Items8 => InputsOneOf1Items8 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputsOneOf1Items8(
 #if NET6_0_OR_GREATER
@@ -336,14 +336,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputsOneOf1Items8 PickInputsOneOf1Items8() => IsInputsOneOf1Items8
             ? InputsOneOf1Items8!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items8' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFunctionCallItem? OutputFunctionCallItem { get; init; }
@@ -352,7 +352,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFunctionCallItem))]
@@ -360,7 +360,7 @@ namespace OpenRouter
         public bool IsOutputFunctionCallItem => OutputFunctionCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputFunctionCallItem(
 #if NET6_0_OR_GREATER
@@ -373,7 +373,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputFunctionCallItem PickOutputFunctionCallItem() => IsOutputFunctionCallItem
             ? OutputFunctionCallItem!
@@ -389,7 +389,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputCustomToolCallItem))]
@@ -397,7 +397,7 @@ namespace OpenRouter
         public bool IsOutputCustomToolCallItem => OutputCustomToolCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputCustomToolCallItem(
 #if NET6_0_OR_GREATER
@@ -410,14 +410,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputCustomToolCallItem PickOutputCustomToolCallItem() => IsOutputCustomToolCallItem
             ? OutputCustomToolCallItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCustomToolCallItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputWebSearchCallItem? OutputWebSearchCallItem { get; init; }
@@ -426,7 +426,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputWebSearchCallItem))]
@@ -434,7 +434,7 @@ namespace OpenRouter
         public bool IsOutputWebSearchCallItem => OutputWebSearchCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputWebSearchCallItem(
 #if NET6_0_OR_GREATER
@@ -447,14 +447,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputWebSearchCallItem PickOutputWebSearchCallItem() => IsOutputWebSearchCallItem
             ? OutputWebSearchCallItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputFileSearchCallItem? OutputFileSearchCallItem { get; init; }
@@ -463,7 +463,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFileSearchCallItem))]
@@ -471,7 +471,7 @@ namespace OpenRouter
         public bool IsOutputFileSearchCallItem => OutputFileSearchCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputFileSearchCallItem(
 #if NET6_0_OR_GREATER
@@ -484,14 +484,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputFileSearchCallItem PickOutputFileSearchCallItem() => IsOutputFileSearchCallItem
             ? OutputFileSearchCallItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFileSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputImageGenerationCallItem? OutputImageGenerationCallItem { get; init; }
@@ -500,7 +500,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputImageGenerationCallItem))]
@@ -508,7 +508,7 @@ namespace OpenRouter
         public bool IsOutputImageGenerationCallItem => OutputImageGenerationCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputImageGenerationCallItem(
 #if NET6_0_OR_GREATER
@@ -521,7 +521,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputImageGenerationCallItem PickOutputImageGenerationCallItem() => IsOutputImageGenerationCallItem
             ? OutputImageGenerationCallItem!
@@ -537,7 +537,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputCodeInterpreterCallItem))]
@@ -545,7 +545,7 @@ namespace OpenRouter
         public bool IsOutputCodeInterpreterCallItem => OutputCodeInterpreterCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputCodeInterpreterCallItem(
 #if NET6_0_OR_GREATER
@@ -558,14 +558,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputCodeInterpreterCallItem PickOutputCodeInterpreterCallItem() => IsOutputCodeInterpreterCallItem
             ? OutputCodeInterpreterCallItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputComputerCallItem? OutputComputerCallItem { get; init; }
@@ -574,7 +574,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputComputerCallItem))]
@@ -582,7 +582,7 @@ namespace OpenRouter
         public bool IsOutputComputerCallItem => OutputComputerCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputComputerCallItem(
 #if NET6_0_OR_GREATER
@@ -595,7 +595,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputComputerCallItem PickOutputComputerCallItem() => IsOutputComputerCallItem
             ? OutputComputerCallItem!
@@ -611,7 +611,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputDatetimeItem))]
@@ -619,7 +619,7 @@ namespace OpenRouter
         public bool IsOutputDatetimeItem => OutputDatetimeItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputDatetimeItem(
 #if NET6_0_OR_GREATER
@@ -632,7 +632,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputDatetimeItem PickOutputDatetimeItem() => IsOutputDatetimeItem
             ? OutputDatetimeItem!
@@ -648,7 +648,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputWebSearchServerToolItem))]
@@ -656,7 +656,7 @@ namespace OpenRouter
         public bool IsOutputWebSearchServerToolItem => OutputWebSearchServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputWebSearchServerToolItem(
 #if NET6_0_OR_GREATER
@@ -669,7 +669,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputWebSearchServerToolItem PickOutputWebSearchServerToolItem() => IsOutputWebSearchServerToolItem
             ? OutputWebSearchServerToolItem!
@@ -685,7 +685,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputCodeInterpreterServerToolItem))]
@@ -693,7 +693,7 @@ namespace OpenRouter
         public bool IsOutputCodeInterpreterServerToolItem => OutputCodeInterpreterServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputCodeInterpreterServerToolItem(
 #if NET6_0_OR_GREATER
@@ -706,7 +706,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputCodeInterpreterServerToolItem PickOutputCodeInterpreterServerToolItem() => IsOutputCodeInterpreterServerToolItem
             ? OutputCodeInterpreterServerToolItem!
@@ -722,7 +722,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFileSearchServerToolItem))]
@@ -730,7 +730,7 @@ namespace OpenRouter
         public bool IsOutputFileSearchServerToolItem => OutputFileSearchServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputFileSearchServerToolItem(
 #if NET6_0_OR_GREATER
@@ -743,7 +743,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputFileSearchServerToolItem PickOutputFileSearchServerToolItem() => IsOutputFileSearchServerToolItem
             ? OutputFileSearchServerToolItem!
@@ -759,7 +759,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputImageGenerationServerToolItem))]
@@ -767,7 +767,7 @@ namespace OpenRouter
         public bool IsOutputImageGenerationServerToolItem => OutputImageGenerationServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputImageGenerationServerToolItem(
 #if NET6_0_OR_GREATER
@@ -780,7 +780,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputImageGenerationServerToolItem PickOutputImageGenerationServerToolItem() => IsOutputImageGenerationServerToolItem
             ? OutputImageGenerationServerToolItem!
@@ -796,7 +796,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputBrowserUseServerToolItem))]
@@ -804,7 +804,7 @@ namespace OpenRouter
         public bool IsOutputBrowserUseServerToolItem => OutputBrowserUseServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputBrowserUseServerToolItem(
 #if NET6_0_OR_GREATER
@@ -817,7 +817,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputBrowserUseServerToolItem PickOutputBrowserUseServerToolItem() => IsOutputBrowserUseServerToolItem
             ? OutputBrowserUseServerToolItem!
@@ -833,7 +833,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputBashServerToolItem))]
@@ -841,7 +841,7 @@ namespace OpenRouter
         public bool IsOutputBashServerToolItem => OutputBashServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputBashServerToolItem(
 #if NET6_0_OR_GREATER
@@ -854,7 +854,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputBashServerToolItem PickOutputBashServerToolItem() => IsOutputBashServerToolItem
             ? OutputBashServerToolItem!
@@ -870,7 +870,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputTextEditorServerToolItem))]
@@ -878,7 +878,7 @@ namespace OpenRouter
         public bool IsOutputTextEditorServerToolItem => OutputTextEditorServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputTextEditorServerToolItem(
 #if NET6_0_OR_GREATER
@@ -891,7 +891,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputTextEditorServerToolItem PickOutputTextEditorServerToolItem() => IsOutputTextEditorServerToolItem
             ? OutputTextEditorServerToolItem!
@@ -907,7 +907,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputApplyPatchServerToolItem))]
@@ -915,7 +915,7 @@ namespace OpenRouter
         public bool IsOutputApplyPatchServerToolItem => OutputApplyPatchServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputApplyPatchServerToolItem(
 #if NET6_0_OR_GREATER
@@ -928,7 +928,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputApplyPatchServerToolItem PickOutputApplyPatchServerToolItem() => IsOutputApplyPatchServerToolItem
             ? OutputApplyPatchServerToolItem!
@@ -944,7 +944,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputWebFetchServerToolItem))]
@@ -952,7 +952,7 @@ namespace OpenRouter
         public bool IsOutputWebFetchServerToolItem => OutputWebFetchServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputWebFetchServerToolItem(
 #if NET6_0_OR_GREATER
@@ -965,7 +965,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputWebFetchServerToolItem PickOutputWebFetchServerToolItem() => IsOutputWebFetchServerToolItem
             ? OutputWebFetchServerToolItem!
@@ -981,7 +981,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputToolSearchServerToolItem))]
@@ -989,7 +989,7 @@ namespace OpenRouter
         public bool IsOutputToolSearchServerToolItem => OutputToolSearchServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputToolSearchServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1002,7 +1002,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputToolSearchServerToolItem PickOutputToolSearchServerToolItem() => IsOutputToolSearchServerToolItem
             ? OutputToolSearchServerToolItem!
@@ -1018,7 +1018,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMemoryServerToolItem))]
@@ -1026,7 +1026,7 @@ namespace OpenRouter
         public bool IsOutputMemoryServerToolItem => OutputMemoryServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMemoryServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1039,7 +1039,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMemoryServerToolItem PickOutputMemoryServerToolItem() => IsOutputMemoryServerToolItem
             ? OutputMemoryServerToolItem!
@@ -1055,7 +1055,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMcpServerToolItem))]
@@ -1063,7 +1063,7 @@ namespace OpenRouter
         public bool IsOutputMcpServerToolItem => OutputMcpServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMcpServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1076,7 +1076,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMcpServerToolItem PickOutputMcpServerToolItem() => IsOutputMcpServerToolItem
             ? OutputMcpServerToolItem!
@@ -1092,7 +1092,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputSearchModelsServerToolItem))]
@@ -1100,7 +1100,7 @@ namespace OpenRouter
         public bool IsOutputSearchModelsServerToolItem => OutputSearchModelsServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputSearchModelsServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1113,7 +1113,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputSearchModelsServerToolItem PickOutputSearchModelsServerToolItem() => IsOutputSearchModelsServerToolItem
             ? OutputSearchModelsServerToolItem!
@@ -1129,7 +1129,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFusionServerToolItem))]
@@ -1137,7 +1137,7 @@ namespace OpenRouter
         public bool IsOutputFusionServerToolItem => OutputFusionServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputFusionServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1150,7 +1150,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputFusionServerToolItem PickOutputFusionServerToolItem() => IsOutputFusionServerToolItem
             ? OutputFusionServerToolItem!
@@ -1166,7 +1166,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAdvisorServerToolItem))]
@@ -1174,7 +1174,7 @@ namespace OpenRouter
         public bool IsOutputAdvisorServerToolItem => OutputAdvisorServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputAdvisorServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1187,7 +1187,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputAdvisorServerToolItem PickOutputAdvisorServerToolItem() => IsOutputAdvisorServerToolItem
             ? OutputAdvisorServerToolItem!
@@ -1203,7 +1203,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputSubagentServerToolItem))]
@@ -1211,7 +1211,7 @@ namespace OpenRouter
         public bool IsOutputSubagentServerToolItem => OutputSubagentServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputSubagentServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1224,7 +1224,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputSubagentServerToolItem PickOutputSubagentServerToolItem() => IsOutputSubagentServerToolItem
             ? OutputSubagentServerToolItem!
@@ -1240,7 +1240,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFilesServerToolItem))]
@@ -1248,7 +1248,7 @@ namespace OpenRouter
         public bool IsOutputFilesServerToolItem => OutputFilesServerToolItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputFilesServerToolItem(
 #if NET6_0_OR_GREATER
@@ -1261,7 +1261,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputFilesServerToolItem PickOutputFilesServerToolItem() => IsOutputFilesServerToolItem
             ? OutputFilesServerToolItem!
@@ -1277,7 +1277,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCallItem))]
@@ -1285,7 +1285,7 @@ namespace OpenRouter
         public bool IsLocalShellCallItem => LocalShellCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocalShellCallItem(
 #if NET6_0_OR_GREATER
@@ -1298,7 +1298,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.LocalShellCallItem PickLocalShellCallItem() => IsLocalShellCallItem
             ? LocalShellCallItem!
@@ -1314,7 +1314,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCallOutputItem))]
@@ -1322,7 +1322,7 @@ namespace OpenRouter
         public bool IsLocalShellCallOutputItem => LocalShellCallOutputItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocalShellCallOutputItem(
 #if NET6_0_OR_GREATER
@@ -1335,7 +1335,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.LocalShellCallOutputItem PickLocalShellCallOutputItem() => IsLocalShellCallOutputItem
             ? LocalShellCallOutputItem!
@@ -1351,7 +1351,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCallItem))]
@@ -1359,7 +1359,7 @@ namespace OpenRouter
         public bool IsShellCallItem => ShellCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCallItem(
 #if NET6_0_OR_GREATER
@@ -1372,7 +1372,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ShellCallItem PickShellCallItem() => IsShellCallItem
             ? ShellCallItem!
@@ -1388,7 +1388,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCallOutputItem))]
@@ -1396,7 +1396,7 @@ namespace OpenRouter
         public bool IsShellCallOutputItem => ShellCallOutputItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCallOutputItem(
 #if NET6_0_OR_GREATER
@@ -1409,7 +1409,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ShellCallOutputItem PickShellCallOutputItem() => IsShellCallOutputItem
             ? ShellCallOutputItem!
@@ -1425,7 +1425,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListToolsItem))]
@@ -1433,7 +1433,7 @@ namespace OpenRouter
         public bool IsMcpListToolsItem => McpListToolsItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListToolsItem(
 #if NET6_0_OR_GREATER
@@ -1446,7 +1446,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.McpListToolsItem PickMcpListToolsItem() => IsMcpListToolsItem
             ? McpListToolsItem!
@@ -1462,7 +1462,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequestItem))]
@@ -1470,7 +1470,7 @@ namespace OpenRouter
         public bool IsMcpApprovalRequestItem => McpApprovalRequestItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalRequestItem(
 #if NET6_0_OR_GREATER
@@ -1483,7 +1483,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.McpApprovalRequestItem PickMcpApprovalRequestItem() => IsMcpApprovalRequestItem
             ? McpApprovalRequestItem!
@@ -1499,7 +1499,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponseItem))]
@@ -1507,7 +1507,7 @@ namespace OpenRouter
         public bool IsMcpApprovalResponseItem => McpApprovalResponseItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalResponseItem(
 #if NET6_0_OR_GREATER
@@ -1520,7 +1520,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.McpApprovalResponseItem PickMcpApprovalResponseItem() => IsMcpApprovalResponseItem
             ? McpApprovalResponseItem!
@@ -1536,7 +1536,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCallItem))]
@@ -1544,7 +1544,7 @@ namespace OpenRouter
         public bool IsMcpCallItem => McpCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpCallItem(
 #if NET6_0_OR_GREATER
@@ -1557,7 +1557,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.McpCallItem PickMcpCallItem() => IsMcpCallItem
             ? McpCallItem!
@@ -1573,7 +1573,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallItem))]
@@ -1581,7 +1581,7 @@ namespace OpenRouter
         public bool IsCustomToolCallItem => CustomToolCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCallItem(
 #if NET6_0_OR_GREATER
@@ -1594,7 +1594,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolCallItem PickCustomToolCallItem() => IsCustomToolCallItem
             ? CustomToolCallItem!
@@ -1610,7 +1610,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallOutputItem))]
@@ -1618,7 +1618,7 @@ namespace OpenRouter
         public bool IsCustomToolCallOutputItem => CustomToolCallOutputItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCallOutputItem(
 #if NET6_0_OR_GREATER
@@ -1631,7 +1631,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolCallOutputItem PickCustomToolCallOutputItem() => IsCustomToolCallOutputItem
             ? CustomToolCallOutputItem!
@@ -1647,7 +1647,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompactionItem))]
@@ -1655,7 +1655,7 @@ namespace OpenRouter
         public bool IsCompactionItem => CompactionItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompactionItem(
 #if NET6_0_OR_GREATER
@@ -1668,7 +1668,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CompactionItem PickCompactionItem() => IsCompactionItem
             ? CompactionItem!
@@ -1684,7 +1684,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextCompactionItem))]
@@ -1692,7 +1692,7 @@ namespace OpenRouter
         public bool IsContextCompactionItem => ContextCompactionItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContextCompactionItem(
 #if NET6_0_OR_GREATER
@@ -1705,7 +1705,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ContextCompactionItem PickContextCompactionItem() => IsContextCompactionItem
             ? ContextCompactionItem!
@@ -1721,7 +1721,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ItemReferenceItem))]
@@ -1729,7 +1729,7 @@ namespace OpenRouter
         public bool IsItemReferenceItem => ItemReferenceItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickItemReferenceItem(
 #if NET6_0_OR_GREATER
@@ -1742,7 +1742,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ItemReferenceItem PickItemReferenceItem() => IsItemReferenceItem
             ? ItemReferenceItem!
@@ -1758,7 +1758,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdditionalToolsItem))]
@@ -1766,7 +1766,7 @@ namespace OpenRouter
         public bool IsAdditionalToolsItem => AdditionalToolsItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdditionalToolsItem(
 #if NET6_0_OR_GREATER
@@ -1779,7 +1779,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AdditionalToolsItem PickAdditionalToolsItem() => IsAdditionalToolsItem
             ? AdditionalToolsItem!
@@ -1795,7 +1795,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentMessageItem))]
@@ -1803,7 +1803,7 @@ namespace OpenRouter
         public bool IsAgentMessageItem => AgentMessageItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentMessageItem(
 #if NET6_0_OR_GREATER
@@ -1816,23 +1816,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AgentMessageItem PickAgentMessageItem() => IsAgentMessageItem
             ? AgentMessageItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessageItem' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.ReasoningItem value) => new InputsOneOf1Items((global::OpenRouter.ReasoningItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ReasoningItem?(InputsOneOf1Items @this) => @this.ReasoningItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.ReasoningItem? value)
         {
@@ -1840,22 +1840,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromReasoningItem(global::OpenRouter.ReasoningItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.EasyInputMessage value) => new InputsOneOf1Items((global::OpenRouter.EasyInputMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessage?(InputsOneOf1Items @this) => @this.EasyInputMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.EasyInputMessage? value)
         {
@@ -1863,22 +1863,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromEasyInputMessage(global::OpenRouter.EasyInputMessage? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.InputMessageItem value) => new InputsOneOf1Items((global::OpenRouter.InputMessageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputMessageItem?(InputsOneOf1Items @this) => @this.InputMessageItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.InputMessageItem? value)
         {
@@ -1886,22 +1886,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromInputMessageItem(global::OpenRouter.InputMessageItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.FunctionCallItem value) => new InputsOneOf1Items((global::OpenRouter.FunctionCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.FunctionCallItem?(InputsOneOf1Items @this) => @this.FunctionCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.FunctionCallItem? value)
         {
@@ -1909,22 +1909,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromFunctionCallItem(global::OpenRouter.FunctionCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.FunctionCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.FunctionCallOutputItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.FunctionCallOutputItem?(InputsOneOf1Items @this) => @this.FunctionCallOutputItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.FunctionCallOutputItem? value)
         {
@@ -1932,22 +1932,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromFunctionCallOutputItem(global::OpenRouter.FunctionCallOutputItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem value) => new InputsOneOf1Items((global::OpenRouter.ApplyPatchCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ApplyPatchCallItem?(InputsOneOf1Items @this) => @this.ApplyPatchCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem? value)
         {
@@ -1955,22 +1955,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromApplyPatchCallItem(global::OpenRouter.ApplyPatchCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.ApplyPatchCallOutputItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ApplyPatchCallOutputItem?(InputsOneOf1Items @this) => @this.ApplyPatchCallOutputItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem? value)
         {
@@ -1978,22 +1978,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromApplyPatchCallOutputItem(global::OpenRouter.ApplyPatchCallOutputItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items7 value) => new InputsOneOf1Items((global::OpenRouter.InputsOneOf1Items7?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputsOneOf1Items7?(InputsOneOf1Items @this) => @this.InputsOneOf1Items7;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items7? value)
         {
@@ -2001,22 +2001,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromInputsOneOf1Items7(global::OpenRouter.InputsOneOf1Items7? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items8 value) => new InputsOneOf1Items((global::OpenRouter.InputsOneOf1Items8?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputsOneOf1Items8?(InputsOneOf1Items @this) => @this.InputsOneOf1Items8;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.InputsOneOf1Items8? value)
         {
@@ -2024,22 +2024,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromInputsOneOf1Items8(global::OpenRouter.InputsOneOf1Items8? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputFunctionCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputFunctionCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputFunctionCallItem?(InputsOneOf1Items @this) => @this.OutputFunctionCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputFunctionCallItem? value)
         {
@@ -2047,22 +2047,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputFunctionCallItem(global::OpenRouter.OutputFunctionCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCustomToolCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCustomToolCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputCustomToolCallItem?(InputsOneOf1Items @this) => @this.OutputCustomToolCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputCustomToolCallItem? value)
         {
@@ -2070,22 +2070,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputCustomToolCallItem(global::OpenRouter.OutputCustomToolCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputWebSearchCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputWebSearchCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputWebSearchCallItem?(InputsOneOf1Items @this) => @this.OutputWebSearchCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputWebSearchCallItem? value)
         {
@@ -2093,22 +2093,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputWebSearchCallItem(global::OpenRouter.OutputWebSearchCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputFileSearchCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputFileSearchCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputFileSearchCallItem?(InputsOneOf1Items @this) => @this.OutputFileSearchCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputFileSearchCallItem? value)
         {
@@ -2116,22 +2116,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputFileSearchCallItem(global::OpenRouter.OutputFileSearchCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputImageGenerationCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputImageGenerationCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputImageGenerationCallItem?(InputsOneOf1Items @this) => @this.OutputImageGenerationCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputImageGenerationCallItem? value)
         {
@@ -2139,22 +2139,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputImageGenerationCallItem(global::OpenRouter.OutputImageGenerationCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCodeInterpreterCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputCodeInterpreterCallItem?(InputsOneOf1Items @this) => @this.OutputCodeInterpreterCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterCallItem? value)
         {
@@ -2162,22 +2162,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputCodeInterpreterCallItem(global::OpenRouter.OutputCodeInterpreterCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputComputerCallItem value) => new InputsOneOf1Items((global::OpenRouter.OutputComputerCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputComputerCallItem?(InputsOneOf1Items @this) => @this.OutputComputerCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputComputerCallItem? value)
         {
@@ -2185,22 +2185,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputComputerCallItem(global::OpenRouter.OutputComputerCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputDatetimeItem value) => new InputsOneOf1Items((global::OpenRouter.OutputDatetimeItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputDatetimeItem?(InputsOneOf1Items @this) => @this.OutputDatetimeItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputDatetimeItem? value)
         {
@@ -2208,22 +2208,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputDatetimeItem(global::OpenRouter.OutputDatetimeItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputWebSearchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputWebSearchServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputWebSearchServerToolItem?(InputsOneOf1Items @this) => @this.OutputWebSearchServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputWebSearchServerToolItem? value)
         {
@@ -2231,22 +2231,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputWebSearchServerToolItem(global::OpenRouter.OutputWebSearchServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputCodeInterpreterServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputCodeInterpreterServerToolItem?(InputsOneOf1Items @this) => @this.OutputCodeInterpreterServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputCodeInterpreterServerToolItem? value)
         {
@@ -2254,22 +2254,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputCodeInterpreterServerToolItem(global::OpenRouter.OutputCodeInterpreterServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputFileSearchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputFileSearchServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputFileSearchServerToolItem?(InputsOneOf1Items @this) => @this.OutputFileSearchServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputFileSearchServerToolItem? value)
         {
@@ -2277,22 +2277,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputFileSearchServerToolItem(global::OpenRouter.OutputFileSearchServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputImageGenerationServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputImageGenerationServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputImageGenerationServerToolItem?(InputsOneOf1Items @this) => @this.OutputImageGenerationServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputImageGenerationServerToolItem? value)
         {
@@ -2300,22 +2300,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputImageGenerationServerToolItem(global::OpenRouter.OutputImageGenerationServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputBrowserUseServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputBrowserUseServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputBrowserUseServerToolItem?(InputsOneOf1Items @this) => @this.OutputBrowserUseServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputBrowserUseServerToolItem? value)
         {
@@ -2323,22 +2323,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputBrowserUseServerToolItem(global::OpenRouter.OutputBrowserUseServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputBashServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputBashServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputBashServerToolItem?(InputsOneOf1Items @this) => @this.OutputBashServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputBashServerToolItem? value)
         {
@@ -2346,22 +2346,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputBashServerToolItem(global::OpenRouter.OutputBashServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputTextEditorServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputTextEditorServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputTextEditorServerToolItem?(InputsOneOf1Items @this) => @this.OutputTextEditorServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputTextEditorServerToolItem? value)
         {
@@ -2369,22 +2369,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputTextEditorServerToolItem(global::OpenRouter.OutputTextEditorServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputApplyPatchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputApplyPatchServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputApplyPatchServerToolItem?(InputsOneOf1Items @this) => @this.OutputApplyPatchServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputApplyPatchServerToolItem? value)
         {
@@ -2392,22 +2392,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputApplyPatchServerToolItem(global::OpenRouter.OutputApplyPatchServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputWebFetchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputWebFetchServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputWebFetchServerToolItem?(InputsOneOf1Items @this) => @this.OutputWebFetchServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputWebFetchServerToolItem? value)
         {
@@ -2415,22 +2415,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputWebFetchServerToolItem(global::OpenRouter.OutputWebFetchServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputToolSearchServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputToolSearchServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputToolSearchServerToolItem?(InputsOneOf1Items @this) => @this.OutputToolSearchServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputToolSearchServerToolItem? value)
         {
@@ -2438,22 +2438,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputToolSearchServerToolItem(global::OpenRouter.OutputToolSearchServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputMemoryServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputMemoryServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMemoryServerToolItem?(InputsOneOf1Items @this) => @this.OutputMemoryServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputMemoryServerToolItem? value)
         {
@@ -2461,22 +2461,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputMemoryServerToolItem(global::OpenRouter.OutputMemoryServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputMcpServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputMcpServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMcpServerToolItem?(InputsOneOf1Items @this) => @this.OutputMcpServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputMcpServerToolItem? value)
         {
@@ -2484,22 +2484,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputMcpServerToolItem(global::OpenRouter.OutputMcpServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputSearchModelsServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputSearchModelsServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputSearchModelsServerToolItem?(InputsOneOf1Items @this) => @this.OutputSearchModelsServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputSearchModelsServerToolItem? value)
         {
@@ -2507,22 +2507,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputSearchModelsServerToolItem(global::OpenRouter.OutputSearchModelsServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputFusionServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputFusionServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputFusionServerToolItem?(InputsOneOf1Items @this) => @this.OutputFusionServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputFusionServerToolItem? value)
         {
@@ -2530,22 +2530,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputFusionServerToolItem(global::OpenRouter.OutputFusionServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputAdvisorServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputAdvisorServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputAdvisorServerToolItem?(InputsOneOf1Items @this) => @this.OutputAdvisorServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputAdvisorServerToolItem? value)
         {
@@ -2553,22 +2553,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputAdvisorServerToolItem(global::OpenRouter.OutputAdvisorServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputSubagentServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputSubagentServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputSubagentServerToolItem?(InputsOneOf1Items @this) => @this.OutputSubagentServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputSubagentServerToolItem? value)
         {
@@ -2576,22 +2576,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputSubagentServerToolItem(global::OpenRouter.OutputSubagentServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.OutputFilesServerToolItem value) => new InputsOneOf1Items((global::OpenRouter.OutputFilesServerToolItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputFilesServerToolItem?(InputsOneOf1Items @this) => @this.OutputFilesServerToolItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.OutputFilesServerToolItem? value)
         {
@@ -2599,22 +2599,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromOutputFilesServerToolItem(global::OpenRouter.OutputFilesServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.LocalShellCallItem value) => new InputsOneOf1Items((global::OpenRouter.LocalShellCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.LocalShellCallItem?(InputsOneOf1Items @this) => @this.LocalShellCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.LocalShellCallItem? value)
         {
@@ -2622,22 +2622,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromLocalShellCallItem(global::OpenRouter.LocalShellCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.LocalShellCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.LocalShellCallOutputItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.LocalShellCallOutputItem?(InputsOneOf1Items @this) => @this.LocalShellCallOutputItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.LocalShellCallOutputItem? value)
         {
@@ -2645,22 +2645,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromLocalShellCallOutputItem(global::OpenRouter.LocalShellCallOutputItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.ShellCallItem value) => new InputsOneOf1Items((global::OpenRouter.ShellCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ShellCallItem?(InputsOneOf1Items @this) => @this.ShellCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.ShellCallItem? value)
         {
@@ -2668,22 +2668,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromShellCallItem(global::OpenRouter.ShellCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.ShellCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.ShellCallOutputItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ShellCallOutputItem?(InputsOneOf1Items @this) => @this.ShellCallOutputItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.ShellCallOutputItem? value)
         {
@@ -2691,22 +2691,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromShellCallOutputItem(global::OpenRouter.ShellCallOutputItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.McpListToolsItem value) => new InputsOneOf1Items((global::OpenRouter.McpListToolsItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.McpListToolsItem?(InputsOneOf1Items @this) => @this.McpListToolsItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.McpListToolsItem? value)
         {
@@ -2714,22 +2714,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromMcpListToolsItem(global::OpenRouter.McpListToolsItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.McpApprovalRequestItem value) => new InputsOneOf1Items((global::OpenRouter.McpApprovalRequestItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.McpApprovalRequestItem?(InputsOneOf1Items @this) => @this.McpApprovalRequestItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.McpApprovalRequestItem? value)
         {
@@ -2737,22 +2737,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromMcpApprovalRequestItem(global::OpenRouter.McpApprovalRequestItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.McpApprovalResponseItem value) => new InputsOneOf1Items((global::OpenRouter.McpApprovalResponseItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.McpApprovalResponseItem?(InputsOneOf1Items @this) => @this.McpApprovalResponseItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.McpApprovalResponseItem? value)
         {
@@ -2760,22 +2760,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromMcpApprovalResponseItem(global::OpenRouter.McpApprovalResponseItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.McpCallItem value) => new InputsOneOf1Items((global::OpenRouter.McpCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.McpCallItem?(InputsOneOf1Items @this) => @this.McpCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.McpCallItem? value)
         {
@@ -2783,22 +2783,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromMcpCallItem(global::OpenRouter.McpCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.CustomToolCallItem value) => new InputsOneOf1Items((global::OpenRouter.CustomToolCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomToolCallItem?(InputsOneOf1Items @this) => @this.CustomToolCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.CustomToolCallItem? value)
         {
@@ -2806,22 +2806,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromCustomToolCallItem(global::OpenRouter.CustomToolCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.CustomToolCallOutputItem value) => new InputsOneOf1Items((global::OpenRouter.CustomToolCallOutputItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomToolCallOutputItem?(InputsOneOf1Items @this) => @this.CustomToolCallOutputItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.CustomToolCallOutputItem? value)
         {
@@ -2829,22 +2829,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromCustomToolCallOutputItem(global::OpenRouter.CustomToolCallOutputItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.CompactionItem value) => new InputsOneOf1Items((global::OpenRouter.CompactionItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CompactionItem?(InputsOneOf1Items @this) => @this.CompactionItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.CompactionItem? value)
         {
@@ -2852,22 +2852,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromCompactionItem(global::OpenRouter.CompactionItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.ContextCompactionItem value) => new InputsOneOf1Items((global::OpenRouter.ContextCompactionItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ContextCompactionItem?(InputsOneOf1Items @this) => @this.ContextCompactionItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.ContextCompactionItem? value)
         {
@@ -2875,22 +2875,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromContextCompactionItem(global::OpenRouter.ContextCompactionItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.ItemReferenceItem value) => new InputsOneOf1Items((global::OpenRouter.ItemReferenceItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ItemReferenceItem?(InputsOneOf1Items @this) => @this.ItemReferenceItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.ItemReferenceItem? value)
         {
@@ -2898,22 +2898,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromItemReferenceItem(global::OpenRouter.ItemReferenceItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.AdditionalToolsItem value) => new InputsOneOf1Items((global::OpenRouter.AdditionalToolsItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AdditionalToolsItem?(InputsOneOf1Items @this) => @this.AdditionalToolsItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.AdditionalToolsItem? value)
         {
@@ -2921,22 +2921,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromAdditionalToolsItem(global::OpenRouter.AdditionalToolsItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputsOneOf1Items(global::OpenRouter.AgentMessageItem value) => new InputsOneOf1Items((global::OpenRouter.AgentMessageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AgentMessageItem?(InputsOneOf1Items @this) => @this.AgentMessageItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(global::OpenRouter.AgentMessageItem? value)
         {
@@ -2944,12 +2944,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputsOneOf1Items FromAgentMessageItem(global::OpenRouter.AgentMessageItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputsOneOf1Items(
             global::OpenRouter.ReasoningItem? reasoningItem,
@@ -3055,7 +3055,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AgentMessageItem as object ??
@@ -3106,11 +3106,11 @@ namespace OpenRouter
             FunctionCallItem as object ??
             InputMessageItem as object ??
             EasyInputMessage as object ??
-            ReasoningItem as object 
+            ReasoningItem as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ReasoningItem?.ToString() ??
@@ -3161,11 +3161,11 @@ namespace OpenRouter
             ContextCompactionItem?.ToString() ??
             ItemReferenceItem?.ToString() ??
             AdditionalToolsItem?.ToString() ??
-            AgentMessageItem?.ToString() 
+            AgentMessageItem?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -3173,7 +3173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ReasoningItem, TResult>? reasoningItem = null,
@@ -3433,7 +3433,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ReasoningItem>? reasoningItem = null,
@@ -3739,7 +3739,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ReasoningItem>? reasoningItem = null,
@@ -3997,7 +3997,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -4112,7 +4112,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(InputsOneOf1Items other)
         {
@@ -4165,12 +4165,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContextCompactionItem?>.Default.Equals(ContextCompactionItem, other.ContextCompactionItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ItemReferenceItem?>.Default.Equals(ItemReferenceItem, other.ItemReferenceItem) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AdditionalToolsItem?>.Default.Equals(AdditionalToolsItem, other.AdditionalToolsItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AgentMessageItem?>.Default.Equals(AgentMessageItem, other.AgentMessageItem) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AgentMessageItem?>.Default.Equals(AgentMessageItem, other.AgentMessageItem)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(InputsOneOf1Items obj1, InputsOneOf1Items obj2)
         {
@@ -4178,7 +4178,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(InputsOneOf1Items obj1, InputsOneOf1Items obj2)
         {
@@ -4186,7 +4186,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

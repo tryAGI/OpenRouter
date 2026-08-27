@@ -39,148 +39,148 @@ namespace OpenRouter
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnalyticsClient Analytics { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicMessagesClient AnthropicMessages { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApiKeysClient ApiKeys { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BenchmarksClient Benchmarks { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaAnalyticsClient BetaAnalytics { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaResponsesClient BetaResponses { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ByokClient Byok { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClassificationsClient Classifications { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreditsClient Credits { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatasetsClient Datasets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EndpointsClient Endpoints { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FilesClient Files { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerationsClient Generations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GuardrailsClient Guardrails { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImagesClient Images { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OAuthClient OAuth { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObservabilityClient Observability { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrganizationClient Organization { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PresetsClient Presets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProvidersClient Providers { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RerankClient Rerank { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SttClient Stt { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TtsClient Tts { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VideoGenerationClient VideoGeneration { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkspacesClient Workspaces { get; }
 

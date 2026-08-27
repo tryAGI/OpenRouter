@@ -9,20 +9,20 @@ namespace OpenRouter
     public sealed partial class CostDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_inference_completions_cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double UpstreamInferenceCompletionsCost { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_inference_cost")]
         public double? UpstreamInferenceCost { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_inference_prompt_cost")]
         [global::System.Text.Json.Serialization.JsonRequired]

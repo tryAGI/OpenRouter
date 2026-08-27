@@ -9,111 +9,111 @@ namespace OpenRouter
     public enum ApiErrorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Authentication,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentPolicyViolation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContextLengthExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageDownloadFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageTooLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageTooSmall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidPrompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokensExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PayloadTooLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PaymentRequired,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PermissionDenied,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreconditionFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderOverloaded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderUnavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refusal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Server,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StringTooLong,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timeout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TokenLimitExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unmapped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unprocessable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnsupportedImageFormat,
     }

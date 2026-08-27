@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct ChatRequestStop : global::System.IEquatable<ChatRequestStop>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ChatRequestStopVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsChatRequestStopVariant1 => ChatRequestStopVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatRequestStopVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickChatRequestStopVariant1() => IsChatRequestStopVariant1
             ? ChatRequestStopVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? ChatRequestStopVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsChatRequestStopVariant2 => ChatRequestStopVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatRequestStopVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickChatRequestStopVariant2() => IsChatRequestStopVariant2
             ? ChatRequestStopVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatRequestStop(string value) => new ChatRequestStop((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ChatRequestStop @this) => @this.ChatRequestStopVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestStop(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatRequestStop FromChatRequestStopVariant1(string? value) => new ChatRequestStop(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestStop(
             string? chatRequestStopVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ChatRequestStopVariant2 as object ??
-            ChatRequestStopVariant1 as object 
+            ChatRequestStopVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ChatRequestStopVariant1?.ToString() ??
-            ChatRequestStopVariant2?.ToString() 
+            ChatRequestStopVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? chatRequestStopVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? chatRequestStopVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? chatRequestStopVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatRequestStop other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatRequestStopVariant1, other.ChatRequestStopVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(ChatRequestStopVariant2, other.ChatRequestStopVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(ChatRequestStopVariant2, other.ChatRequestStopVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatRequestStop obj1, ChatRequestStop obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatRequestStop obj1, ChatRequestStop obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

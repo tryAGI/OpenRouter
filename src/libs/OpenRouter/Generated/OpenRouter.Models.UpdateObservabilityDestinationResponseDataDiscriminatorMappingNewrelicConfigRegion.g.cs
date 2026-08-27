@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum UpdateObservabilityDestinationResponseDataDiscriminatorMappingNewrelicConfigRegion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Us,
     }

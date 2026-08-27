@@ -9,23 +9,23 @@ namespace OpenRouter
     public enum AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataMetricsItemsDisplayFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Currency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Number,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Percent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Throughput,
     }

@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicImageBlockParamSource : global::System.IEquatable<AnthropicImageBlockParamSource>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicImageBlockParamSourceDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base64))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsBase64 => Base64 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase64(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicImageBlockParamSourceVariant1 PickBase64() => IsBase64
             ? Base64!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsUrl => Url != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrl(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicImageBlockParamSourceVariant2 PickUrl() => IsUrl
             ? Url!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicImageBlockParamSource(global::OpenRouter.AnthropicImageBlockParamSourceVariant1 value) => new AnthropicImageBlockParamSource((global::OpenRouter.AnthropicImageBlockParamSourceVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicImageBlockParamSourceVariant1?(AnthropicImageBlockParamSource @this) => @this.Base64;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicImageBlockParamSource(global::OpenRouter.AnthropicImageBlockParamSourceVariant1? value)
         {
@@ -106,22 +106,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicImageBlockParamSource FromBase64(global::OpenRouter.AnthropicImageBlockParamSourceVariant1? value) => new AnthropicImageBlockParamSource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicImageBlockParamSource(global::OpenRouter.AnthropicImageBlockParamSourceVariant2 value) => new AnthropicImageBlockParamSource((global::OpenRouter.AnthropicImageBlockParamSourceVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicImageBlockParamSourceVariant2?(AnthropicImageBlockParamSource @this) => @this.Url;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicImageBlockParamSource(global::OpenRouter.AnthropicImageBlockParamSourceVariant2? value)
         {
@@ -129,12 +129,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicImageBlockParamSource FromUrl(global::OpenRouter.AnthropicImageBlockParamSourceVariant2? value) => new AnthropicImageBlockParamSource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicImageBlockParamSource(
             global::OpenRouter.AnthropicImageBlockParamSourceDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Url as object ??
-            Base64 as object 
+            Base64 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base64?.ToString() ??
-            Url?.ToString() 
+            Url?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicImageBlockParamSourceVariant1, TResult>? base64 = null,
@@ -198,7 +198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant1>? base64 = null,
@@ -222,7 +222,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.AnthropicImageBlockParamSourceVariant1>? base64 = null,
@@ -245,7 +245,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicImageBlockParamSource other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicImageBlockParamSourceVariant1?>.Default.Equals(Base64, other.Base64) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicImageBlockParamSourceVariant2?>.Default.Equals(Url, other.Url) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicImageBlockParamSourceVariant2?>.Default.Equals(Url, other.Url)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicImageBlockParamSource obj1, AnthropicImageBlockParamSource obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicImageBlockParamSource obj1, AnthropicImageBlockParamSource obj2)
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,40 +4,40 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum McpServerToolConnectorId
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorDropbox,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorGmail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorGooglecalendar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorGoogledrive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorMicrosoftteams,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorOutlookcalendar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorOutlookemail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorSharepoint,
     }

@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum WorkspaceMemberRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Admin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Member,
     }

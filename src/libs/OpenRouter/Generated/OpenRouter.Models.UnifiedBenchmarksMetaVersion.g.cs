@@ -9,7 +9,7 @@ namespace OpenRouter
     public enum UnifiedBenchmarksMetaVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1,
     }

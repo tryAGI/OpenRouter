@@ -16,14 +16,14 @@ namespace OpenRouter
         public global::OpenRouter.ORAnthropicContentBlockVariant10Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Signature { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         [global::System.Text.Json.Serialization.JsonRequired]

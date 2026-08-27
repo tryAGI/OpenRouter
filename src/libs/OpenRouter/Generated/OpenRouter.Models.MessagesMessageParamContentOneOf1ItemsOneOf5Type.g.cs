@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesMessageParamContentOneOf1ItemsOneOf5Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
     }

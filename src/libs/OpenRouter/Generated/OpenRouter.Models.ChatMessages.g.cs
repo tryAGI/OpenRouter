@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct ChatMessages : global::System.IEquatable<ChatMessages>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatMessagesDiscriminatorRole? Role { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsAssistant => Assistant != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAssistant(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatMessagesVariant1 PickAssistant() => IsAssistant
             ? Assistant!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsDeveloper => Developer != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDeveloper(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatMessagesVariant2 PickDeveloper() => IsDeveloper
             ? Developer!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsSystem => System != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSystem(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatMessagesVariant3 PickSystem() => IsSystem
             ? System!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsTool => Tool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTool(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatMessagesVariant4 PickTool() => IsTool
             ? Tool!
@@ -172,7 +172,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsUser => User != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUser(
 #if NET6_0_OR_GREATER
@@ -193,23 +193,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatMessagesVariant5 PickUser() => IsUser
             ? User!
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant1 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatMessagesVariant1?(ChatMessages @this) => @this.Assistant;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessages(global::OpenRouter.ChatMessagesVariant1? value)
         {
@@ -217,22 +217,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessages FromAssistant(global::OpenRouter.ChatMessagesVariant1? value) => new ChatMessages(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant2 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatMessagesVariant2?(ChatMessages @this) => @this.Developer;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessages(global::OpenRouter.ChatMessagesVariant2? value)
         {
@@ -240,22 +240,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessages FromDeveloper(global::OpenRouter.ChatMessagesVariant2? value) => new ChatMessages(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant3 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatMessagesVariant3?(ChatMessages @this) => @this.System;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessages(global::OpenRouter.ChatMessagesVariant3? value)
         {
@@ -263,22 +263,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessages FromSystem(global::OpenRouter.ChatMessagesVariant3? value) => new ChatMessages(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant4 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatMessagesVariant4?(ChatMessages @this) => @this.Tool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessages(global::OpenRouter.ChatMessagesVariant4? value)
         {
@@ -286,22 +286,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessages FromTool(global::OpenRouter.ChatMessagesVariant4? value) => new ChatMessages(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant5 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatMessagesVariant5?(ChatMessages @this) => @this.User;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessages(global::OpenRouter.ChatMessagesVariant5? value)
         {
@@ -309,12 +309,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessages FromUser(global::OpenRouter.ChatMessagesVariant5? value) => new ChatMessages(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessages(
             global::OpenRouter.ChatMessagesDiscriminatorRole? role,
@@ -335,29 +335,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             User as object ??
             Tool as object ??
             System as object ??
             Developer as object ??
-            Assistant as object 
+            Assistant as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Assistant?.ToString() ??
             Developer?.ToString() ??
             System?.ToString() ??
             Tool?.ToString() ??
-            User?.ToString() 
+            User?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -365,7 +365,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ChatMessagesVariant1, TResult>? assistant = null,
@@ -405,7 +405,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ChatMessagesVariant1>? assistant = null,
@@ -447,7 +447,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ChatMessagesVariant1>? assistant = null,
@@ -485,7 +485,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -512,7 +512,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatMessages other)
         {
@@ -521,12 +521,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant2?>.Default.Equals(Developer, other.Developer) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant3?>.Default.Equals(System, other.System) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant4?>.Default.Equals(Tool, other.Tool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant5?>.Default.Equals(User, other.User) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant5?>.Default.Equals(User, other.User)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatMessages obj1, ChatMessages obj2)
         {
@@ -534,7 +534,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatMessages obj1, ChatMessages obj2)
         {
@@ -542,7 +542,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

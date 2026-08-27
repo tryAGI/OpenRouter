@@ -16,14 +16,14 @@ namespace OpenRouter
         public global::OpenRouter.ApplyPatchCallOperationVariant1Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Diff { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FormatTextConfig))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsFormatTextConfig => FormatTextConfig != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFormatTextConfig(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.FormatTextConfig PickFormatTextConfig() => IsFormatTextConfig
             ? FormatTextConfig!
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FormatJsonObjectConfig))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsFormatJsonObjectConfig => FormatJsonObjectConfig != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFormatJsonObjectConfig(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.FormatJsonObjectConfig PickFormatJsonObjectConfig() => IsFormatJsonObjectConfig
             ? FormatJsonObjectConfig!
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FormatJsonSchemaConfig))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsFormatJsonSchemaConfig => FormatJsonSchemaConfig != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFormatJsonSchemaConfig(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.FormatJsonSchemaConfig PickFormatJsonSchemaConfig() => IsFormatJsonSchemaConfig
             ? FormatJsonSchemaConfig!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonSchemaConfig' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Formats(global::OpenRouter.FormatTextConfig value) => new Formats((global::OpenRouter.FormatTextConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.FormatTextConfig?(Formats @this) => @this.FormatTextConfig;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Formats(global::OpenRouter.FormatTextConfig? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Formats FromFormatTextConfig(global::OpenRouter.FormatTextConfig? value) => new Formats(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Formats(global::OpenRouter.FormatJsonObjectConfig value) => new Formats((global::OpenRouter.FormatJsonObjectConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.FormatJsonObjectConfig?(Formats @this) => @this.FormatJsonObjectConfig;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Formats(global::OpenRouter.FormatJsonObjectConfig? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Formats FromFormatJsonObjectConfig(global::OpenRouter.FormatJsonObjectConfig? value) => new Formats(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Formats(global::OpenRouter.FormatJsonSchemaConfig value) => new Formats((global::OpenRouter.FormatJsonSchemaConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.FormatJsonSchemaConfig?(Formats @this) => @this.FormatJsonSchemaConfig;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Formats(global::OpenRouter.FormatJsonSchemaConfig? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Formats FromFormatJsonSchemaConfig(global::OpenRouter.FormatJsonSchemaConfig? value) => new Formats(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Formats(
             global::OpenRouter.FormatTextConfig? formatTextConfig,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FormatJsonSchemaConfig as object ??
             FormatJsonObjectConfig as object ??
-            FormatTextConfig as object 
+            FormatTextConfig as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FormatTextConfig?.ToString() ??
             FormatJsonObjectConfig?.ToString() ??
-            FormatJsonSchemaConfig?.ToString() 
+            FormatJsonSchemaConfig?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.FormatTextConfig, TResult>? formatTextConfig = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.FormatTextConfig>? formatTextConfig = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.FormatTextConfig>? formatTextConfig = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Formats other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FormatTextConfig?>.Default.Equals(FormatTextConfig, other.FormatTextConfig) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FormatJsonObjectConfig?>.Default.Equals(FormatJsonObjectConfig, other.FormatJsonObjectConfig) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FormatJsonSchemaConfig?>.Default.Equals(FormatJsonSchemaConfig, other.FormatJsonSchemaConfig) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FormatJsonSchemaConfig?>.Default.Equals(FormatJsonSchemaConfig, other.FormatJsonSchemaConfig)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Formats obj1, Formats obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Formats obj1, Formats obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

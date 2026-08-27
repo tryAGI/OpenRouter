@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EasyInputMessagePhase0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Commentary,
     }

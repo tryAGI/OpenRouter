@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OpenAiResponsesToolChoiceOneOf4Type : global::System.IEquatable<OpenAiResponsesToolChoiceOneOf4Type>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0? OpenAiResponsesToolChoiceOneOf4Type0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoiceOneOf4Type0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsOpenAiResponsesToolChoiceOneOf4Type0 => OpenAiResponsesToolChoiceOneOf4Type0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAiResponsesToolChoiceOneOf4Type0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0 PickOpenAiResponsesToolChoiceOneOf4Type0() => IsOpenAiResponsesToolChoiceOneOf4Type0
             ? OpenAiResponsesToolChoiceOneOf4Type0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoiceOneOf4Type0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1? OpenAiResponsesToolChoiceOneOf4Type1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoiceOneOf4Type1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOpenAiResponsesToolChoiceOneOf4Type1 => OpenAiResponsesToolChoiceOneOf4Type1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAiResponsesToolChoiceOneOf4Type1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1 PickOpenAiResponsesToolChoiceOneOf4Type1() => IsOpenAiResponsesToolChoiceOneOf4Type1
             ? OpenAiResponsesToolChoiceOneOf4Type1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoiceOneOf4Type1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponsesToolChoiceOneOf4Type(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0 value) => new OpenAiResponsesToolChoiceOneOf4Type((global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?(OpenAiResponsesToolChoiceOneOf4Type @this) => @this.OpenAiResponsesToolChoiceOneOf4Type0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponsesToolChoiceOneOf4Type(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponsesToolChoiceOneOf4Type FromOpenAiResponsesToolChoiceOneOf4Type0(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0? value) => new OpenAiResponsesToolChoiceOneOf4Type(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponsesToolChoiceOneOf4Type(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1 value) => new OpenAiResponsesToolChoiceOneOf4Type((global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1?(OpenAiResponsesToolChoiceOneOf4Type @this) => @this.OpenAiResponsesToolChoiceOneOf4Type1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponsesToolChoiceOneOf4Type(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponsesToolChoiceOneOf4Type FromOpenAiResponsesToolChoiceOneOf4Type1(global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1? value) => new OpenAiResponsesToolChoiceOneOf4Type(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponsesToolChoiceOneOf4Type(
             global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0? openAiResponsesToolChoiceOneOf4Type0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OpenAiResponsesToolChoiceOneOf4Type1 as object ??
-            OpenAiResponsesToolChoiceOneOf4Type0 as object 
+            OpenAiResponsesToolChoiceOneOf4Type0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OpenAiResponsesToolChoiceOneOf4Type0?.ToValueString() ??
-            OpenAiResponsesToolChoiceOneOf4Type1?.ToValueString() 
+            OpenAiResponsesToolChoiceOneOf4Type1?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?, TResult>? openAiResponsesToolChoiceOneOf4Type0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?>? openAiResponsesToolChoiceOneOf4Type0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?>? openAiResponsesToolChoiceOneOf4Type0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OpenAiResponsesToolChoiceOneOf4Type other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type0?>.Default.Equals(OpenAiResponsesToolChoiceOneOf4Type0, other.OpenAiResponsesToolChoiceOneOf4Type0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1?>.Default.Equals(OpenAiResponsesToolChoiceOneOf4Type1, other.OpenAiResponsesToolChoiceOneOf4Type1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoiceOneOf4Type1?>.Default.Equals(OpenAiResponsesToolChoiceOneOf4Type1, other.OpenAiResponsesToolChoiceOneOf4Type1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OpenAiResponsesToolChoiceOneOf4Type obj1, OpenAiResponsesToolChoiceOneOf4Type obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OpenAiResponsesToolChoiceOneOf4Type obj1, OpenAiResponsesToolChoiceOneOf4Type obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

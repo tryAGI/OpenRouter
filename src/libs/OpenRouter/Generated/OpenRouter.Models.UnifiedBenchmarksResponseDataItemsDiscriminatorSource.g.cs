@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UnifiedBenchmarksResponseDataItemsDiscriminatorSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ArtificialAnalysis,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DesignArena,
     }

@@ -9,35 +9,35 @@ namespace OpenRouter
     public sealed partial class Usage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int InputTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.OpenAiResponsesUsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OutputTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.OpenAiResponsesUsageOutputTokensDetails OutputTokensDetails { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,7 +50,7 @@ namespace OpenRouter
         public double? Cost { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
         public global::OpenRouter.UsageCostDetails? CostDetails { get; set; }

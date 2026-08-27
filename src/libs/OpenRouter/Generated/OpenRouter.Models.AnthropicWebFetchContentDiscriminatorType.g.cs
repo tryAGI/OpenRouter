@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicWebFetchContentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetchResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetchToolResultError,
     }

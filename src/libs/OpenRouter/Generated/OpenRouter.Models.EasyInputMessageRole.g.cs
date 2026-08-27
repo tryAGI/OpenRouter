@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EasyInputMessageRole : global::System.IEquatable<EasyInputMessageRole>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessageRole0? EasyInputMessageRole0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageRole0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsEasyInputMessageRole0 => EasyInputMessageRole0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessageRole0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessageRole0 PickEasyInputMessageRole0() => IsEasyInputMessageRole0
             ? EasyInputMessageRole0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessageRole1? EasyInputMessageRole1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageRole1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEasyInputMessageRole1 => EasyInputMessageRole1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessageRole1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessageRole1 PickEasyInputMessageRole1() => IsEasyInputMessageRole1
             ? EasyInputMessageRole1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessageRole2? EasyInputMessageRole2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageRole2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsEasyInputMessageRole2 => EasyInputMessageRole2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessageRole2(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessageRole2 PickEasyInputMessageRole2() => IsEasyInputMessageRole2
             ? EasyInputMessageRole2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EasyInputMessageRole3? EasyInputMessageRole3 { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageRole3))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsEasyInputMessageRole3 => EasyInputMessageRole3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessageRole3(
 #if NET6_0_OR_GREATER
@@ -151,23 +151,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EasyInputMessageRole3 PickEasyInputMessageRole3() => IsEasyInputMessageRole3
             ? EasyInputMessageRole3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole0 value) => new EasyInputMessageRole((global::OpenRouter.EasyInputMessageRole0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessageRole0?(EasyInputMessageRole @this) => @this.EasyInputMessageRole0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole0? value)
         {
@@ -175,22 +175,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageRole FromEasyInputMessageRole0(global::OpenRouter.EasyInputMessageRole0? value) => new EasyInputMessageRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole1 value) => new EasyInputMessageRole((global::OpenRouter.EasyInputMessageRole1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessageRole1?(EasyInputMessageRole @this) => @this.EasyInputMessageRole1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole1? value)
         {
@@ -198,22 +198,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageRole FromEasyInputMessageRole1(global::OpenRouter.EasyInputMessageRole1? value) => new EasyInputMessageRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole2 value) => new EasyInputMessageRole((global::OpenRouter.EasyInputMessageRole2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessageRole2?(EasyInputMessageRole @this) => @this.EasyInputMessageRole2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole2? value)
         {
@@ -221,22 +221,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageRole FromEasyInputMessageRole2(global::OpenRouter.EasyInputMessageRole2? value) => new EasyInputMessageRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole3 value) => new EasyInputMessageRole((global::OpenRouter.EasyInputMessageRole3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EasyInputMessageRole3?(EasyInputMessageRole @this) => @this.EasyInputMessageRole3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageRole(global::OpenRouter.EasyInputMessageRole3? value)
         {
@@ -244,12 +244,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageRole FromEasyInputMessageRole3(global::OpenRouter.EasyInputMessageRole3? value) => new EasyInputMessageRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageRole(
             global::OpenRouter.EasyInputMessageRole0? easyInputMessageRole0,
@@ -265,27 +265,27 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EasyInputMessageRole3 as object ??
             EasyInputMessageRole2 as object ??
             EasyInputMessageRole1 as object ??
-            EasyInputMessageRole0 as object 
+            EasyInputMessageRole0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EasyInputMessageRole0?.ToValueString() ??
             EasyInputMessageRole1?.ToValueString() ??
             EasyInputMessageRole2?.ToValueString() ??
-            EasyInputMessageRole3?.ToValueString() 
+            EasyInputMessageRole3?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.EasyInputMessageRole0?, TResult>? easyInputMessageRole0 = null,
@@ -328,7 +328,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.EasyInputMessageRole0?>? easyInputMessageRole0 = null,
@@ -364,7 +364,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.EasyInputMessageRole0?>? easyInputMessageRole0 = null,
@@ -397,7 +397,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -422,7 +422,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EasyInputMessageRole other)
         {
@@ -430,12 +430,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessageRole0?>.Default.Equals(EasyInputMessageRole0, other.EasyInputMessageRole0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessageRole1?>.Default.Equals(EasyInputMessageRole1, other.EasyInputMessageRole1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessageRole2?>.Default.Equals(EasyInputMessageRole2, other.EasyInputMessageRole2) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessageRole3?>.Default.Equals(EasyInputMessageRole3, other.EasyInputMessageRole3) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EasyInputMessageRole3?>.Default.Equals(EasyInputMessageRole3, other.EasyInputMessageRole3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EasyInputMessageRole obj1, EasyInputMessageRole obj2)
         {
@@ -443,7 +443,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EasyInputMessageRole obj1, EasyInputMessageRole obj2)
         {
@@ -451,7 +451,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

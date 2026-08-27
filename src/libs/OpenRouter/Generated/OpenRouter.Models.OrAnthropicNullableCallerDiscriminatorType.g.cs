@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OrAnthropicNullableCallerDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecution20250825,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecution20260120,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Direct,
     }

@@ -4,128 +4,128 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputItemsDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatchCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeInterpreterCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CustomToolCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileSearchCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FunctionCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGenerationCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_advisor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_applyPatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_bash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_browserUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_codeInterpreter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_datetime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_experimentalSearchModels,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_fileSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_files,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_fusion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_imageGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_mcp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_memory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_subagent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_textEditor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_toolSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_webFetch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_webSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reasoning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchCall,
     }

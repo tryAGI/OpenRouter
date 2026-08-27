@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicDocumentBlockParamSourceOneOf2Content : global::System.IEquatable<AnthropicDocumentBlockParamSourceOneOf2Content>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicDocumentBlockParamSourceOneOf2ContentVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1 => AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicDocumentBlockParamSourceOneOf2ContentVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickAnthropicDocumentBlockParamSourceOneOf2ContentVariant1() => IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1
             ? AnthropicDocumentBlockParamSourceOneOf2ContentVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSourceOneOf2ContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>? AnthropicDocumentBlockParamSourceOneOf2Content1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicDocumentBlockParamSourceOneOf2Content1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsAnthropicDocumentBlockParamSourceOneOf2Content1 => AnthropicDocumentBlockParamSourceOneOf2Content1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicDocumentBlockParamSourceOneOf2Content1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items> PickAnthropicDocumentBlockParamSourceOneOf2Content1() => IsAnthropicDocumentBlockParamSourceOneOf2Content1
             ? AnthropicDocumentBlockParamSourceOneOf2Content1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSourceOneOf2Content1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicDocumentBlockParamSourceOneOf2Content(string value) => new AnthropicDocumentBlockParamSourceOneOf2Content((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(AnthropicDocumentBlockParamSourceOneOf2Content @this) => @this.AnthropicDocumentBlockParamSourceOneOf2ContentVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicDocumentBlockParamSourceOneOf2Content(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicDocumentBlockParamSourceOneOf2Content FromAnthropicDocumentBlockParamSourceOneOf2ContentVariant1(string? value) => new AnthropicDocumentBlockParamSourceOneOf2Content(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicDocumentBlockParamSourceOneOf2Content(
             string? anthropicDocumentBlockParamSourceOneOf2ContentVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AnthropicDocumentBlockParamSourceOneOf2Content1 as object ??
-            AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 as object 
+            AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AnthropicDocumentBlockParamSourceOneOf2ContentVariant1?.ToString() ??
-            AnthropicDocumentBlockParamSourceOneOf2Content1?.ToString() 
+            AnthropicDocumentBlockParamSourceOneOf2Content1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? anthropicDocumentBlockParamSourceOneOf2ContentVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicDocumentBlockParamSourceOneOf2Content other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(AnthropicDocumentBlockParamSourceOneOf2ContentVariant1, other.AnthropicDocumentBlockParamSourceOneOf2ContentVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>?>.Default.Equals(AnthropicDocumentBlockParamSourceOneOf2Content1, other.AnthropicDocumentBlockParamSourceOneOf2Content1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items>?>.Default.Equals(AnthropicDocumentBlockParamSourceOneOf2Content1, other.AnthropicDocumentBlockParamSourceOneOf2Content1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicDocumentBlockParamSourceOneOf2Content obj1, AnthropicDocumentBlockParamSourceOneOf2Content obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicDocumentBlockParamSourceOneOf2Content obj1, AnthropicDocumentBlockParamSourceOneOf2Content obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

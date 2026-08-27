@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FunctionCallOutputItemOutput : global::System.IEquatable<FunctionCallOutputItemOutput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? FunctionCallOutputItemOutputVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputItemOutputVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsFunctionCallOutputItemOutputVariant1 => FunctionCallOutputItemOutputVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallOutputItemOutputVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickFunctionCallOutputItemOutputVariant1() => IsFunctionCallOutputItemOutputVariant1
             ? FunctionCallOutputItemOutputVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItemOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>? FunctionCallOutputItemOutput1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputItemOutput1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsFunctionCallOutputItemOutput1 => FunctionCallOutputItemOutput1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallOutputItemOutput1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items> PickFunctionCallOutputItemOutput1() => IsFunctionCallOutputItemOutput1
             ? FunctionCallOutputItemOutput1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItemOutput1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FunctionCallOutputItemOutput(string value) => new FunctionCallOutputItemOutput((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(FunctionCallOutputItemOutput @this) => @this.FunctionCallOutputItemOutputVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionCallOutputItemOutput(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FunctionCallOutputItemOutput FromFunctionCallOutputItemOutputVariant1(string? value) => new FunctionCallOutputItemOutput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionCallOutputItemOutput(
             string? functionCallOutputItemOutputVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FunctionCallOutputItemOutput1 as object ??
-            FunctionCallOutputItemOutputVariant1 as object 
+            FunctionCallOutputItemOutputVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FunctionCallOutputItemOutputVariant1?.ToString() ??
-            FunctionCallOutputItemOutput1?.ToString() 
+            FunctionCallOutputItemOutput1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? functionCallOutputItemOutputVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? functionCallOutputItemOutputVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? functionCallOutputItemOutputVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FunctionCallOutputItemOutput other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FunctionCallOutputItemOutputVariant1, other.FunctionCallOutputItemOutputVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>?>.Default.Equals(FunctionCallOutputItemOutput1, other.FunctionCallOutputItemOutput1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.FunctionCallOutputItemOutputOneOf1Items>?>.Default.Equals(FunctionCallOutputItemOutput1, other.FunctionCallOutputItemOutput1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FunctionCallOutputItemOutput obj1, FunctionCallOutputItemOutput obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FunctionCallOutputItemOutput obj1, FunctionCallOutputItemOutput obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

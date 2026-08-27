@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ObservabilityFilterRuleGroupRulesItemsValue : global::System.IEquatable<ObservabilityFilterRuleGroupRulesItemsValue>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ObservabilityFilterRuleGroupRulesItemsValueVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObservabilityFilterRuleGroupRulesItemsValueVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsObservabilityFilterRuleGroupRulesItemsValueVariant1 => ObservabilityFilterRuleGroupRulesItemsValueVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObservabilityFilterRuleGroupRulesItemsValueVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickObservabilityFilterRuleGroupRulesItemsValueVariant1() => IsObservabilityFilterRuleGroupRulesItemsValueVariant1
             ? ObservabilityFilterRuleGroupRulesItemsValueVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObservabilityFilterRuleGroupRulesItemsValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? ObservabilityFilterRuleGroupRulesItemsValueVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObservabilityFilterRuleGroupRulesItemsValueVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsObservabilityFilterRuleGroupRulesItemsValueVariant2 => ObservabilityFilterRuleGroupRulesItemsValueVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObservabilityFilterRuleGroupRulesItemsValueVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickObservabilityFilterRuleGroupRulesItemsValueVariant2() => IsObservabilityFilterRuleGroupRulesItemsValueVariant2
             ? ObservabilityFilterRuleGroupRulesItemsValueVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObservabilityFilterRuleGroupRulesItemsValueVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ObservabilityFilterRuleGroupRulesItemsValue(string value) => new ObservabilityFilterRuleGroupRulesItemsValue((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ObservabilityFilterRuleGroupRulesItemsValue @this) => @this.ObservabilityFilterRuleGroupRulesItemsValueVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObservabilityFilterRuleGroupRulesItemsValue(string? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ObservabilityFilterRuleGroupRulesItemsValue FromObservabilityFilterRuleGroupRulesItemsValueVariant1(string? value) => new ObservabilityFilterRuleGroupRulesItemsValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ObservabilityFilterRuleGroupRulesItemsValue(double value) => new ObservabilityFilterRuleGroupRulesItemsValue((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(ObservabilityFilterRuleGroupRulesItemsValue @this) => @this.ObservabilityFilterRuleGroupRulesItemsValueVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObservabilityFilterRuleGroupRulesItemsValue(double? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ObservabilityFilterRuleGroupRulesItemsValue FromObservabilityFilterRuleGroupRulesItemsValueVariant2(double? value) => new ObservabilityFilterRuleGroupRulesItemsValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObservabilityFilterRuleGroupRulesItemsValue(
             string? observabilityFilterRuleGroupRulesItemsValueVariant1,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ObservabilityFilterRuleGroupRulesItemsValueVariant2 as object ??
-            ObservabilityFilterRuleGroupRulesItemsValueVariant1 as object 
+            ObservabilityFilterRuleGroupRulesItemsValueVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ObservabilityFilterRuleGroupRulesItemsValueVariant1?.ToString() ??
-            ObservabilityFilterRuleGroupRulesItemsValueVariant2?.ToString() 
+            ObservabilityFilterRuleGroupRulesItemsValueVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? observabilityFilterRuleGroupRulesItemsValueVariant1 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? observabilityFilterRuleGroupRulesItemsValueVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? observabilityFilterRuleGroupRulesItemsValueVariant1 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ObservabilityFilterRuleGroupRulesItemsValue other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ObservabilityFilterRuleGroupRulesItemsValueVariant1, other.ObservabilityFilterRuleGroupRulesItemsValueVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(ObservabilityFilterRuleGroupRulesItemsValueVariant2, other.ObservabilityFilterRuleGroupRulesItemsValueVariant2) 
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(ObservabilityFilterRuleGroupRulesItemsValueVariant2, other.ObservabilityFilterRuleGroupRulesItemsValueVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ObservabilityFilterRuleGroupRulesItemsValue obj1, ObservabilityFilterRuleGroupRulesItemsValue obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ObservabilityFilterRuleGroupRulesItemsValue obj1, ObservabilityFilterRuleGroupRulesItemsValue obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputShellCallOutputItemOutputItemsOutcomeOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timeout,
     }

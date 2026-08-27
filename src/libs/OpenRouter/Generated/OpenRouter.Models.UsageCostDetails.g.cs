@@ -4,25 +4,25 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UsageCostDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_inference_cost")]
         public double? UpstreamInferenceCost { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_inference_input_cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double UpstreamInferenceInputCost { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_inference_output_cost")]
         [global::System.Text.Json.Serialization.JsonRequired]

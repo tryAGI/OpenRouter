@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicBase64PdfSourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
     }

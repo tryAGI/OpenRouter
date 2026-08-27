@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class AnthropicRefusalStopDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsCategoryJsonConverter))]
@@ -17,13 +17,13 @@ namespace OpenRouter
         public required global::OpenRouter.AnthropicRefusalStopDetailsCategory Category { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("explanation")]
         public string? Explanation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsTypeJsonConverter))]

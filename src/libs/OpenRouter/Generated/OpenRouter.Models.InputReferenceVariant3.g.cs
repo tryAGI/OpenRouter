@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.InputReferenceVariant3Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("video_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

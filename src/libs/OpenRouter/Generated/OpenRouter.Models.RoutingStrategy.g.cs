@@ -4,44 +4,44 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RoutingStrategy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alias,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bodybuilder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Direct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fallback,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Free,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fusion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pareto,
     }

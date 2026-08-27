@@ -9,51 +9,51 @@ namespace OpenRouter
     public enum ModelsGetParametersCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Academia,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Finance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Health,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Legal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Marketing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MarketingSeo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Programming,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Roleplay,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Science,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Technology,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Translation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trivia,
     }

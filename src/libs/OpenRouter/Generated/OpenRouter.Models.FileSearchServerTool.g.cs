@@ -9,33 +9,33 @@ namespace OpenRouter
     public sealed partial class FileSearchServerTool
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.FileSearchServerToolFilters?, object>))]
         public global::OpenRouter.OneOf<global::OpenRouter.FileSearchServerToolFilters?, object>? Filters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_num_results")]
         public int? MaxNumResults { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranking_options")]
         public global::OpenRouter.FileSearchServerToolRankingOptions? RankingOptions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FileSearchServerToolTypeJsonConverter))]
         public global::OpenRouter.FileSearchServerToolType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]

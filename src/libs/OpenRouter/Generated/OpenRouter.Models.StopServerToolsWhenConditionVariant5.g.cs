@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class StopServerToolsWhenConditionVariant5
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenStepCountIsTypeJsonConverter))]
         public global::OpenRouter.StopServerToolsWhenStepCountIsType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_count")]
         [global::System.Text.Json.Serialization.JsonRequired]

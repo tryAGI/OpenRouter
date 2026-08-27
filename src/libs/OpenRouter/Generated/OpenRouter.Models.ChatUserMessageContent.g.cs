@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct ChatUserMessageContent : global::System.IEquatable<ChatUserMessageContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ChatUserMessageContentVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatUserMessageContentVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsChatUserMessageContentVariant1 => ChatUserMessageContentVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatUserMessageContentVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickChatUserMessageContentVariant1() => IsChatUserMessageContentVariant1
             ? ChatUserMessageContentVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatUserMessageContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>? ChatUserMessageContent1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatUserMessageContent1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsChatUserMessageContent1 => ChatUserMessageContent1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatUserMessageContent1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems> PickChatUserMessageContent1() => IsChatUserMessageContent1
             ? ChatUserMessageContent1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatUserMessageContent1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatUserMessageContent(string value) => new ChatUserMessageContent((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ChatUserMessageContent @this) => @this.ChatUserMessageContentVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatUserMessageContent(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatUserMessageContent FromChatUserMessageContentVariant1(string? value) => new ChatUserMessageContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatUserMessageContent(
             string? chatUserMessageContentVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ChatUserMessageContent1 as object ??
-            ChatUserMessageContentVariant1 as object 
+            ChatUserMessageContentVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ChatUserMessageContentVariant1?.ToString() ??
-            ChatUserMessageContent1?.ToString() 
+            ChatUserMessageContent1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? chatUserMessageContentVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? chatUserMessageContentVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? chatUserMessageContentVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatUserMessageContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatUserMessageContentVariant1, other.ChatUserMessageContentVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>?>.Default.Equals(ChatUserMessageContent1, other.ChatUserMessageContent1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>?>.Default.Equals(ChatUserMessageContent1, other.ChatUserMessageContent1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatUserMessageContent obj1, ChatUserMessageContent obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatUserMessageContent obj1, ChatUserMessageContent obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

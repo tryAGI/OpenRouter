@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestToolsItemsOneOf5Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Advisor20260301,
     }

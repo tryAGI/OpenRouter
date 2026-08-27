@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0TriggerVariant1Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]

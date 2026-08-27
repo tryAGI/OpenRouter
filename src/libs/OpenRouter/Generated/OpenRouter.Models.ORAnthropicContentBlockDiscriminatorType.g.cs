@@ -4,64 +4,64 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ORAnthropicContentBlockDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AdvisorToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BashCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compaction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerUpload,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RedactedThinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetchToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchToolResult,
     }

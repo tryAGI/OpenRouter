@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProviderSort))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsProviderSort => ProviderSort != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProviderSort(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ProviderSort PickProviderSort() => IsProviderSort
             ? ProviderSort!.Value
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProviderSortConfig))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsProviderSortConfig => ProviderSortConfig != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProviderSortConfig(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
             ? ProviderSortConfig!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ProviderPreferencesSort(global::OpenRouter.ProviderSort value) => new ProviderPreferencesSort((global::OpenRouter.ProviderSort?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ProviderSort?(ProviderPreferencesSort @this) => @this.ProviderSort;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProviderPreferencesSort(global::OpenRouter.ProviderSort? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ProviderPreferencesSort FromProviderSort(global::OpenRouter.ProviderSort? value) => new ProviderPreferencesSort(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ProviderPreferencesSort(global::OpenRouter.ProviderSortConfig value) => new ProviderPreferencesSort((global::OpenRouter.ProviderSortConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ProviderSortConfig?(ProviderPreferencesSort @this) => @this.ProviderSortConfig;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProviderPreferencesSort(global::OpenRouter.ProviderSortConfig? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ProviderPreferencesSort FromProviderSortConfig(global::OpenRouter.ProviderSortConfig? value) => new ProviderPreferencesSort(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProviderPreferencesSort(
             global::OpenRouter.ProviderSort? providerSort,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ProviderSortConfig as object ??
-            ProviderSort as object 
+            ProviderSort as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ProviderSort?.ToValueString() ??
-            ProviderSortConfig?.ToString() 
+            ProviderSortConfig?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderSort?, TResult>? providerSort = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ProviderSort?>? providerSort = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ProviderPreferencesSort other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSort?>.Default.Equals(ProviderSort, other.ProviderSort) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSortConfig?>.Default.Equals(ProviderSortConfig, other.ProviderSortConfig) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderSortConfig?>.Default.Equals(ProviderSortConfig, other.ProviderSortConfig)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ProviderPreferencesSort obj1, ProviderPreferencesSort obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ProviderPreferencesSort obj1, ProviderPreferencesSort obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

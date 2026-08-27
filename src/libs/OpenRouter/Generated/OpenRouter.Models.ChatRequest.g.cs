@@ -27,7 +27,7 @@ namespace OpenRouter
         public double? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_config")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImageConfigJsonConverter))]
@@ -119,7 +119,7 @@ namespace OpenRouter
         public double? PresencePenalty { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
         public string? PromptCacheKey { get; set; }

@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum ModelsGetParametersDistillable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         False,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         True,
     }

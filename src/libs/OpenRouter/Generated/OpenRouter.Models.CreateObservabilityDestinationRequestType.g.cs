@@ -9,71 +9,71 @@ namespace OpenRouter
     public enum CreateObservabilityDestinationRequestType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Arize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Braintrust,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clickhouse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Datadog,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grafana,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Langfuse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Langsmith,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Newrelic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opik,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OtelCollector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Posthog,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ramp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sentry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snowflake,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weave,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webhook,
     }

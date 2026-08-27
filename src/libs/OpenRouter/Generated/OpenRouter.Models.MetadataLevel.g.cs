@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum MetadataLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enabled,
     }

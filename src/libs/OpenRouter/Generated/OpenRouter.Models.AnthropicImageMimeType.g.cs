@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicImageMimeType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageJpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImagePng,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageWebp,
     }

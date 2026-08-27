@@ -38,14 +38,14 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatResultObjectJsonConverter))]
         public global::OpenRouter.ChatResultObject Object { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("openrouter_metadata")]
         public global::OpenRouter.OpenRouterMetadata? OpenrouterMetadata { get; set; }

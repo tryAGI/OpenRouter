@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicThinkingDisplay
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Omitted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Summarized,
     }

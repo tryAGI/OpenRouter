@@ -9,83 +9,83 @@ namespace OpenRouter
     public enum ModelGroup
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Claude,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cohere,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeepSeek,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grok,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llama2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llama3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llama4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Media,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mistral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nova,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PaLM,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qwen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qwen3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rwkv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Router,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Yi,
     }

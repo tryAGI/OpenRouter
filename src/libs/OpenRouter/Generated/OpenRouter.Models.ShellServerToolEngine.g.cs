@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum ShellServerToolEngine
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter,
     }

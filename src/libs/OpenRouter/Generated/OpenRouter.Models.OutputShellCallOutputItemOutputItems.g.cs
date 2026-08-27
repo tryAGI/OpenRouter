@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OutputShellCallOutputItemOutputItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outcome")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputShellCallOutputItemOutputItemsOutcomeJsonConverter))]
@@ -17,14 +17,14 @@ namespace OpenRouter
         public required global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome Outcome { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Stderr { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stdout")]
         [global::System.Text.Json.Serialization.JsonRequired]

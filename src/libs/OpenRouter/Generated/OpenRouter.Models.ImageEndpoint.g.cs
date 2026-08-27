@@ -43,7 +43,7 @@ namespace OpenRouter
         public string? ProviderTag { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_parameters")]
         [global::System.Text.Json.Serialization.JsonRequired]

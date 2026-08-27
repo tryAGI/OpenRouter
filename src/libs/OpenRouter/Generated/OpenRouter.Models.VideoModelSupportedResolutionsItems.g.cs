@@ -4,32 +4,32 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VideoModelSupportedResolutionsItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080p,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x480p,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720p,
     }
