@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicTextEditorCodeExecutionViewResultFileType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pdf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

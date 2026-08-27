@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct CapabilityDescriptor : global::System.IEquatable<CapabilityDescriptor>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CapabilityDescriptorDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Boolean))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsBoolean => Boolean != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBoolean(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CapabilityDescriptorVariant1 PickBoolean() => IsBoolean
             ? Boolean!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CapabilityDescriptorVariant2 PickEnum() => IsEnum
             ? Enum!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Range))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsRange => Range != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRange(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CapabilityDescriptorVariant3 PickRange() => IsRange
             ? Range!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Range' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CapabilityDescriptor(global::OpenRouter.CapabilityDescriptorVariant1 value) => new CapabilityDescriptor((global::OpenRouter.CapabilityDescriptorVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CapabilityDescriptorVariant1?(CapabilityDescriptor @this) => @this.Boolean;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CapabilityDescriptor(global::OpenRouter.CapabilityDescriptorVariant1? value)
         {
@@ -143,22 +143,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CapabilityDescriptor FromBoolean(global::OpenRouter.CapabilityDescriptorVariant1? value) => new CapabilityDescriptor(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CapabilityDescriptor(global::OpenRouter.CapabilityDescriptorVariant2 value) => new CapabilityDescriptor((global::OpenRouter.CapabilityDescriptorVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CapabilityDescriptorVariant2?(CapabilityDescriptor @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CapabilityDescriptor(global::OpenRouter.CapabilityDescriptorVariant2? value)
         {
@@ -166,22 +166,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CapabilityDescriptor FromEnum(global::OpenRouter.CapabilityDescriptorVariant2? value) => new CapabilityDescriptor(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CapabilityDescriptor(global::OpenRouter.CapabilityDescriptorVariant3 value) => new CapabilityDescriptor((global::OpenRouter.CapabilityDescriptorVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CapabilityDescriptorVariant3?(CapabilityDescriptor @this) => @this.Range;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CapabilityDescriptor(global::OpenRouter.CapabilityDescriptorVariant3? value)
         {
@@ -189,12 +189,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CapabilityDescriptor FromRange(global::OpenRouter.CapabilityDescriptorVariant3? value) => new CapabilityDescriptor(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CapabilityDescriptor(
             global::OpenRouter.CapabilityDescriptorDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Range as object ??
             Enum as object ??
-            Boolean as object 
+            Boolean as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Boolean?.ToString() ??
             Enum?.ToString() ??
-            Range?.ToString() 
+            Range?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.CapabilityDescriptorVariant1, TResult>? boolean = null,
@@ -267,7 +267,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.CapabilityDescriptorVariant1>? boolean = null,
@@ -297,7 +297,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.CapabilityDescriptorVariant1>? boolean = null,
@@ -325,7 +325,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CapabilityDescriptor other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CapabilityDescriptorVariant1?>.Default.Equals(Boolean, other.Boolean) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CapabilityDescriptorVariant2?>.Default.Equals(Enum, other.Enum) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CapabilityDescriptorVariant3?>.Default.Equals(Range, other.Range) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CapabilityDescriptorVariant3?>.Default.Equals(Range, other.Range)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CapabilityDescriptor obj1, CapabilityDescriptor obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CapabilityDescriptor obj1, CapabilityDescriptor obj2)
         {
@@ -376,7 +376,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

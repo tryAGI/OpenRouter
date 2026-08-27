@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WebFetchServerToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_webFetch,
     }

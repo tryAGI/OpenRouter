@@ -20,7 +20,7 @@ namespace OpenRouter.JsonConverters
                     {
                         return global::OpenRouter.ImageGenerationServerToolTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

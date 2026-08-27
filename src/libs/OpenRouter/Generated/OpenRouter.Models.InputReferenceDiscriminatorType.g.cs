@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum InputReferenceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VideoUrl,
     }

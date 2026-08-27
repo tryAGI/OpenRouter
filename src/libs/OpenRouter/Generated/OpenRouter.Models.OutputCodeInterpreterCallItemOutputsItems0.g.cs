@@ -4,19 +4,19 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OutputCodeInterpreterCallItemOutputsItems0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemOutputsItemsOneOf0TypeJsonConverter))]
         public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItemsOneOf0Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]

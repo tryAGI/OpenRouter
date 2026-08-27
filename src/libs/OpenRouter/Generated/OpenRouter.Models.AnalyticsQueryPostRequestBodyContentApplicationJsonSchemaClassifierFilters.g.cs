@@ -16,7 +16,7 @@ namespace OpenRouter
         public required global::System.Guid ClassifierId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct PreferredMaxLatency : global::System.IEquatable<PreferredMaxLatency>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? PreferredMaxLatencyVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMaxLatencyVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsPreferredMaxLatencyVariant1 => PreferredMaxLatencyVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPreferredMaxLatencyVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickPreferredMaxLatencyVariant1() => IsPreferredMaxLatencyVariant1
             ? PreferredMaxLatencyVariant1!.Value
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PercentileLatencyCutoffs))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsPercentileLatencyCutoffs => PercentileLatencyCutoffs != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPercentileLatencyCutoffs(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.PercentileLatencyCutoffs PickPercentileLatencyCutoffs() => IsPercentileLatencyCutoffs
             ? PercentileLatencyCutoffs!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileLatencyCutoffs' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PreferredMaxLatency(double value) => new PreferredMaxLatency((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(PreferredMaxLatency @this) => @this.PreferredMaxLatencyVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PreferredMaxLatency(double? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PreferredMaxLatency FromPreferredMaxLatencyVariant1(double? value) => new PreferredMaxLatency(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PreferredMaxLatency(global::OpenRouter.PercentileLatencyCutoffs value) => new PreferredMaxLatency((global::OpenRouter.PercentileLatencyCutoffs?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.PercentileLatencyCutoffs?(PreferredMaxLatency @this) => @this.PercentileLatencyCutoffs;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PreferredMaxLatency(global::OpenRouter.PercentileLatencyCutoffs? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PreferredMaxLatency FromPercentileLatencyCutoffs(global::OpenRouter.PercentileLatencyCutoffs? value) => new PreferredMaxLatency(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PreferredMaxLatency(
             double? preferredMaxLatencyVariant1,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             PercentileLatencyCutoffs as object ??
-            PreferredMaxLatencyVariant1 as object 
+            PreferredMaxLatencyVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             PreferredMaxLatencyVariant1?.ToString() ??
-            PercentileLatencyCutoffs?.ToString() 
+            PercentileLatencyCutoffs?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<double?, TResult>? preferredMaxLatencyVariant1 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<double?>? preferredMaxLatencyVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<double?>? preferredMaxLatencyVariant1 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PreferredMaxLatency other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(PreferredMaxLatencyVariant1, other.PreferredMaxLatencyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PercentileLatencyCutoffs?>.Default.Equals(PercentileLatencyCutoffs, other.PercentileLatencyCutoffs) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PercentileLatencyCutoffs?>.Default.Equals(PercentileLatencyCutoffs, other.PercentileLatencyCutoffs)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PreferredMaxLatency obj1, PreferredMaxLatency obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PreferredMaxLatency obj1, PreferredMaxLatency obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

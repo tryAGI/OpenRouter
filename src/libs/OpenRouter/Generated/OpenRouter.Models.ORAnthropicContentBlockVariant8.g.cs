@@ -16,13 +16,13 @@ namespace OpenRouter
         public global::OpenRouter.ORAnthropicContentBlockVariant8Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextCitation>? Citations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]

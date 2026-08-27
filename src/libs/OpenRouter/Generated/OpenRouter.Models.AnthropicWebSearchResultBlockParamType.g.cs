@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicWebSearchResultBlockParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchResult,
     }

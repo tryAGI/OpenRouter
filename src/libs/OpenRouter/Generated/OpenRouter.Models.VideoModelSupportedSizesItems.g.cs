@@ -4,152 +4,152 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VideoModelSupportedSizesItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080x1080,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080x1440,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080x1620,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080x1920,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080x2520,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080x720,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1120x480,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1280x720,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1440x1080,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1620x1080,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1680x720,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1920x1080,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2160x2160,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2160x2880,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2160x3240,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2160x3840,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2160x5040,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2520x1080,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2880x2160,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3240x2160,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3840x2160,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x480x1120,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x480x480,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x480x640,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x480x720,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x480x854,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x5040x2160,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x640x480,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720x1080,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720x1280,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720x1680,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720x480,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720x720,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720x960,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x854x480,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x960x720,
     }

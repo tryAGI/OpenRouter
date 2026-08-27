@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MessagesRequestToolsItemsOneOf0InputSchema
     {
@@ -15,7 +15,7 @@ namespace OpenRouter
         public object? Properties { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required")]
         public global::System.Collections.Generic.IList<string>? Required { get; set; }

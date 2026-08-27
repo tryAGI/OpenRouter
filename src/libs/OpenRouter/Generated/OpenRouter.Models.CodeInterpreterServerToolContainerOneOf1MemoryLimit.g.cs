@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CodeInterpreterServerToolContainerOneOf1MemoryLimit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x16g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x64g,
     }

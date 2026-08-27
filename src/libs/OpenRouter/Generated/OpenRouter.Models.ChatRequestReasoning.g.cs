@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.ChatRequestReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatReasoningSummaryVerbosityEnumJsonConverter))]

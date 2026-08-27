@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesMessageParamContentOneOf1ItemsOneOf8Content : global::System.IEquatable<MessagesMessageParamContentOneOf1ItemsOneOf8Content>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>? MessagesMessageParamContentOneOf1ItemsOneOf8Content0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf8Content0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0 => MessagesMessageParamContentOneOf1ItemsOneOf8Content0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf8Content0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam> PickMessagesMessageParamContentOneOf1ItemsOneOf8Content0() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0
             ? MessagesMessageParamContentOneOf1ItemsOneOf8Content0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? MessagesMessageParamContentOneOf1ItemsOneOf8Content1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf8Content1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1 => MessagesMessageParamContentOneOf1ItemsOneOf8Content1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf8Content1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1 PickMessagesMessageParamContentOneOf1ItemsOneOf8Content1() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1
             ? MessagesMessageParamContentOneOf1ItemsOneOf8Content1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf8Content(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1 value) => new MessagesMessageParamContentOneOf1ItemsOneOf8Content((global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?(MessagesMessageParamContentOneOf1ItemsOneOf8Content @this) => @this.MessagesMessageParamContentOneOf1ItemsOneOf8Content1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf8Content(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1ItemsOneOf8Content FromMessagesMessageParamContentOneOf1ItemsOneOf8Content1(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? value) => new MessagesMessageParamContentOneOf1ItemsOneOf8Content(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf8Content(
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>? messagesMessageParamContentOneOf1ItemsOneOf8Content0,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessagesMessageParamContentOneOf1ItemsOneOf8Content1 as object ??
-            MessagesMessageParamContentOneOf1ItemsOneOf8Content0 as object 
+            MessagesMessageParamContentOneOf1ItemsOneOf8Content0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessagesMessageParamContentOneOf1ItemsOneOf8Content0?.ToString() ??
-            MessagesMessageParamContentOneOf1ItemsOneOf8Content1?.ToString() 
+            MessagesMessageParamContentOneOf1ItemsOneOf8Content1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>, TResult>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>>? messagesMessageParamContentOneOf1ItemsOneOf8Content0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam>?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content0, other.MessagesMessageParamContentOneOf1ItemsOneOf8Content0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content1, other.MessagesMessageParamContentOneOf1ItemsOneOf8Content1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1?>.Default.Equals(MessagesMessageParamContentOneOf1ItemsOneOf8Content1, other.MessagesMessageParamContentOneOf1ItemsOneOf8Content1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesMessageParamContentOneOf1ItemsOneOf8Content obj1, MessagesMessageParamContentOneOf1ItemsOneOf8Content obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesMessageParamContentOneOf1ItemsOneOf8Content obj1, MessagesMessageParamContentOneOf1ItemsOneOf8Content obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

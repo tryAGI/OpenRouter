@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatWebSearchShorthandType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch20250826,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview20250311,
     }

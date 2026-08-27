@@ -22,7 +22,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? ApiKeyHashes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]

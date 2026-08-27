@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct ChatToolChoice : global::System.IEquatable<ChatToolChoice>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ChatToolChoice0? ChatToolChoice0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoice0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsChatToolChoice0 => ChatToolChoice0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatToolChoice0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatToolChoice0 PickChatToolChoice0() => IsChatToolChoice0
             ? ChatToolChoice0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ChatToolChoice1? ChatToolChoice1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoice1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsChatToolChoice1 => ChatToolChoice1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatToolChoice1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatToolChoice1 PickChatToolChoice1() => IsChatToolChoice1
             ? ChatToolChoice1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ChatToolChoice2? ChatToolChoice2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoice2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsChatToolChoice2 => ChatToolChoice2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatToolChoice2(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatToolChoice2 PickChatToolChoice2() => IsChatToolChoice2
             ? ChatToolChoice2!.Value
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatNamedToolChoice))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsChatNamedToolChoice => ChatNamedToolChoice != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatNamedToolChoice(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatNamedToolChoice PickChatNamedToolChoice() => IsChatNamedToolChoice
             ? ChatNamedToolChoice!
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatServerToolChoice))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsChatServerToolChoice => ChatServerToolChoice != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatServerToolChoice(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatServerToolChoice PickChatServerToolChoice() => IsChatServerToolChoice
             ? ChatServerToolChoice!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatServerToolChoice' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoice0 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoice0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatToolChoice0?(ChatToolChoice @this) => @this.ChatToolChoice0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolChoice(global::OpenRouter.ChatToolChoice0? value)
         {
@@ -212,22 +212,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolChoice FromChatToolChoice0(global::OpenRouter.ChatToolChoice0? value) => new ChatToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoice1 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoice1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatToolChoice1?(ChatToolChoice @this) => @this.ChatToolChoice1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolChoice(global::OpenRouter.ChatToolChoice1? value)
         {
@@ -235,22 +235,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolChoice FromChatToolChoice1(global::OpenRouter.ChatToolChoice1? value) => new ChatToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoice2 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoice2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatToolChoice2?(ChatToolChoice @this) => @this.ChatToolChoice2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolChoice(global::OpenRouter.ChatToolChoice2? value)
         {
@@ -258,22 +258,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolChoice FromChatToolChoice2(global::OpenRouter.ChatToolChoice2? value) => new ChatToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolChoice(global::OpenRouter.ChatNamedToolChoice value) => new ChatToolChoice((global::OpenRouter.ChatNamedToolChoice?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatNamedToolChoice?(ChatToolChoice @this) => @this.ChatNamedToolChoice;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolChoice(global::OpenRouter.ChatNamedToolChoice? value)
         {
@@ -281,22 +281,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolChoice FromChatNamedToolChoice(global::OpenRouter.ChatNamedToolChoice? value) => new ChatToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatToolChoice(global::OpenRouter.ChatServerToolChoice value) => new ChatToolChoice((global::OpenRouter.ChatServerToolChoice?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatServerToolChoice?(ChatToolChoice @this) => @this.ChatServerToolChoice;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolChoice(global::OpenRouter.ChatServerToolChoice? value)
         {
@@ -304,12 +304,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatToolChoice FromChatServerToolChoice(global::OpenRouter.ChatServerToolChoice? value) => new ChatToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatToolChoice(
             global::OpenRouter.ChatToolChoice0? chatToolChoice0,
@@ -327,29 +327,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ChatServerToolChoice as object ??
             ChatNamedToolChoice as object ??
             ChatToolChoice2 as object ??
             ChatToolChoice1 as object ??
-            ChatToolChoice0 as object 
+            ChatToolChoice0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ChatToolChoice0?.ToValueString() ??
             ChatToolChoice1?.ToValueString() ??
             ChatToolChoice2?.ToValueString() ??
             ChatNamedToolChoice?.ToString() ??
-            ChatServerToolChoice?.ToString() 
+            ChatServerToolChoice?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -357,7 +357,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ChatToolChoice0?, TResult>? chatToolChoice0 = null,
@@ -397,7 +397,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ChatToolChoice0?>? chatToolChoice0 = null,
@@ -439,7 +439,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ChatToolChoice0?>? chatToolChoice0 = null,
@@ -477,7 +477,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -504,7 +504,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatToolChoice other)
         {
@@ -513,12 +513,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoice1?>.Default.Equals(ChatToolChoice1, other.ChatToolChoice1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoice2?>.Default.Equals(ChatToolChoice2, other.ChatToolChoice2) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatNamedToolChoice?>.Default.Equals(ChatNamedToolChoice, other.ChatNamedToolChoice) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatServerToolChoice?>.Default.Equals(ChatServerToolChoice, other.ChatServerToolChoice) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatServerToolChoice?>.Default.Equals(ChatServerToolChoice, other.ChatServerToolChoice)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatToolChoice obj1, ChatToolChoice obj2)
         {
@@ -526,7 +526,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatToolChoice obj1, ChatToolChoice obj2)
         {
@@ -534,7 +534,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

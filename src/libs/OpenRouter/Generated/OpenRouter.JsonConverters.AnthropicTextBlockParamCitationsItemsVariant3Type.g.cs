@@ -20,7 +20,7 @@ namespace OpenRouter.JsonConverters
                     {
                         return global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3TypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

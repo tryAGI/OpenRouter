@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EasyInputMessageContent : global::System.IEquatable<EasyInputMessageContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>? EasyInputMessageContent0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageContent0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsEasyInputMessageContent0 => EasyInputMessageContent0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessageContent0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items> PickEasyInputMessageContent0() => IsEasyInputMessageContent0
             ? EasyInputMessageContent0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContent0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? EasyInputMessageContentVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageContentVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEasyInputMessageContentVariant2 => EasyInputMessageContentVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEasyInputMessageContentVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickEasyInputMessageContentVariant2() => IsEasyInputMessageContentVariant2
             ? EasyInputMessageContentVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContentVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EasyInputMessageContent(string value) => new EasyInputMessageContent((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(EasyInputMessageContent @this) => @this.EasyInputMessageContentVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContent(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EasyInputMessageContent FromEasyInputMessageContentVariant2(string? value) => new EasyInputMessageContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EasyInputMessageContent(
             global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>? easyInputMessageContent0,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EasyInputMessageContentVariant2 as object ??
-            EasyInputMessageContent0 as object 
+            EasyInputMessageContent0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EasyInputMessageContent0?.ToString() ??
-            EasyInputMessageContentVariant2?.ToString() 
+            EasyInputMessageContentVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>, TResult>? easyInputMessageContent0 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>>? easyInputMessageContent0 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>>? easyInputMessageContent0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EasyInputMessageContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.EasyInputMessageContentOneOf0Items>?>.Default.Equals(EasyInputMessageContent0, other.EasyInputMessageContent0) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(EasyInputMessageContentVariant2, other.EasyInputMessageContentVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(EasyInputMessageContentVariant2, other.EasyInputMessageContentVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EasyInputMessageContent obj1, EasyInputMessageContent obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EasyInputMessageContent obj1, EasyInputMessageContent obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

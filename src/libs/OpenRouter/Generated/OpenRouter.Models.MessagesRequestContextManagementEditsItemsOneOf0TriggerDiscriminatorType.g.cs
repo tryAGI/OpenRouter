@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestContextManagementEditsItemsOneOf0TriggerDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUses,
     }

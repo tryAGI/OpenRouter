@@ -4,44 +4,44 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Quantization
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bf16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fp16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fp32,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fp4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fp6,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fp8,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Int4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Int8,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
     }

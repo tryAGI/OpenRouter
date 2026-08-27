@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputCodeInterpreterCallItemOutputsItemsOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Logs,
     }

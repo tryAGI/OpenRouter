@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesMessageParamContentOneOf1Items : global::System.IEquatable<MessagesMessageParamContentOneOf1Items>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicTextBlockParam? AnthropicTextBlockParam { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicTextBlockParam))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsAnthropicTextBlockParam => AnthropicTextBlockParam != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicTextBlockParam(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextBlockParam PickAnthropicTextBlockParam() => IsAnthropicTextBlockParam
             ? AnthropicTextBlockParam!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicTextBlockParam' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicImageBlockParam? AnthropicImageBlockParam { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicImageBlockParam))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsAnthropicImageBlockParam => AnthropicImageBlockParam != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicImageBlockParam(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicImageBlockParam PickAnthropicImageBlockParam() => IsAnthropicImageBlockParam
             ? AnthropicImageBlockParam!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicImageBlockParam' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicDocumentBlockParam? AnthropicDocumentBlockParam { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicDocumentBlockParam))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsAnthropicDocumentBlockParam => AnthropicDocumentBlockParam != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicDocumentBlockParam(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicDocumentBlockParam PickAnthropicDocumentBlockParam() => IsAnthropicDocumentBlockParam
             ? AnthropicDocumentBlockParam!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParam' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items3? MessagesMessageParamContentOneOf1Items3 { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items3))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1Items3 => MessagesMessageParamContentOneOf1Items3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1Items3(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items3 PickMessagesMessageParamContentOneOf1Items3() => IsMessagesMessageParamContentOneOf1Items3
             ? MessagesMessageParamContentOneOf1Items3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items4? MessagesMessageParamContentOneOf1Items4 { get; init; }
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items4))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1Items4 => MessagesMessageParamContentOneOf1Items4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1Items4(
 #if NET6_0_OR_GREATER
@@ -188,14 +188,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items4 PickMessagesMessageParamContentOneOf1Items4() => IsMessagesMessageParamContentOneOf1Items4
             ? MessagesMessageParamContentOneOf1Items4!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items5? MessagesMessageParamContentOneOf1Items5 { get; init; }
@@ -204,7 +204,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items5))]
@@ -212,7 +212,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1Items5 => MessagesMessageParamContentOneOf1Items5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1Items5(
 #if NET6_0_OR_GREATER
@@ -225,14 +225,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items5 PickMessagesMessageParamContentOneOf1Items5() => IsMessagesMessageParamContentOneOf1Items5
             ? MessagesMessageParamContentOneOf1Items5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items5' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items6? MessagesMessageParamContentOneOf1Items6 { get; init; }
@@ -241,7 +241,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items6))]
@@ -249,7 +249,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1Items6 => MessagesMessageParamContentOneOf1Items6 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1Items6(
 #if NET6_0_OR_GREATER
@@ -262,14 +262,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items6 PickMessagesMessageParamContentOneOf1Items6() => IsMessagesMessageParamContentOneOf1Items6
             ? MessagesMessageParamContentOneOf1Items6!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items6' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items7? MessagesMessageParamContentOneOf1Items7 { get; init; }
@@ -278,7 +278,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items7))]
@@ -286,7 +286,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1Items7 => MessagesMessageParamContentOneOf1Items7 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1Items7(
 #if NET6_0_OR_GREATER
@@ -299,14 +299,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items7 PickMessagesMessageParamContentOneOf1Items7() => IsMessagesMessageParamContentOneOf1Items7
             ? MessagesMessageParamContentOneOf1Items7!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items7' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items8? MessagesMessageParamContentOneOf1Items8 { get; init; }
@@ -315,7 +315,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items8))]
@@ -323,7 +323,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1Items8 => MessagesMessageParamContentOneOf1Items8 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1Items8(
 #if NET6_0_OR_GREATER
@@ -336,14 +336,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items8 PickMessagesMessageParamContentOneOf1Items8() => IsMessagesMessageParamContentOneOf1Items8
             ? MessagesMessageParamContentOneOf1Items8!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items8' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.AnthropicSearchResultBlockParam? AnthropicSearchResultBlockParam { get; init; }
@@ -352,7 +352,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicSearchResultBlockParam))]
@@ -360,7 +360,7 @@ namespace OpenRouter
         public bool IsAnthropicSearchResultBlockParam => AnthropicSearchResultBlockParam != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicSearchResultBlockParam(
 #if NET6_0_OR_GREATER
@@ -373,14 +373,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicSearchResultBlockParam PickAnthropicSearchResultBlockParam() => IsAnthropicSearchResultBlockParam
             ? AnthropicSearchResultBlockParam!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicSearchResultBlockParam' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items10? MessagesMessageParamContentOneOf1Items10 { get; init; }
@@ -389,7 +389,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items10))]
@@ -397,7 +397,7 @@ namespace OpenRouter
         public bool IsMessagesMessageParamContentOneOf1Items10 => MessagesMessageParamContentOneOf1Items10 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesMessageParamContentOneOf1Items10(
 #if NET6_0_OR_GREATER
@@ -410,7 +410,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesMessageParamContentOneOf1Items10 PickMessagesMessageParamContentOneOf1Items10() => IsMessagesMessageParamContentOneOf1Items10
             ? MessagesMessageParamContentOneOf1Items10!
@@ -426,7 +426,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesAdvisorToolResultBlock))]
@@ -434,7 +434,7 @@ namespace OpenRouter
         public bool IsMessagesAdvisorToolResultBlock => MessagesAdvisorToolResultBlock != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesAdvisorToolResultBlock(
 #if NET6_0_OR_GREATER
@@ -447,23 +447,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesAdvisorToolResultBlock PickMessagesAdvisorToolResultBlock() => IsMessagesAdvisorToolResultBlock
             ? MessagesAdvisorToolResultBlock!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesAdvisorToolResultBlock' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicTextBlockParam value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.AnthropicTextBlockParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextBlockParam?(MessagesMessageParamContentOneOf1Items @this) => @this.AnthropicTextBlockParam;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicTextBlockParam? value)
         {
@@ -471,22 +471,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromAnthropicTextBlockParam(global::OpenRouter.AnthropicTextBlockParam? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicImageBlockParam value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.AnthropicImageBlockParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicImageBlockParam?(MessagesMessageParamContentOneOf1Items @this) => @this.AnthropicImageBlockParam;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicImageBlockParam? value)
         {
@@ -494,22 +494,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromAnthropicImageBlockParam(global::OpenRouter.AnthropicImageBlockParam? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParam value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.AnthropicDocumentBlockParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicDocumentBlockParam?(MessagesMessageParamContentOneOf1Items @this) => @this.AnthropicDocumentBlockParam;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicDocumentBlockParam? value)
         {
@@ -517,22 +517,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromAnthropicDocumentBlockParam(global::OpenRouter.AnthropicDocumentBlockParam? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items3 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items3?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items3? value)
         {
@@ -540,22 +540,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesMessageParamContentOneOf1Items3(global::OpenRouter.MessagesMessageParamContentOneOf1Items3? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items4 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items4?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items4? value)
         {
@@ -563,22 +563,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesMessageParamContentOneOf1Items4(global::OpenRouter.MessagesMessageParamContentOneOf1Items4? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items5 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items5?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items5? value)
         {
@@ -586,22 +586,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesMessageParamContentOneOf1Items5(global::OpenRouter.MessagesMessageParamContentOneOf1Items5? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items6 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items6?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items6?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items6;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items6? value)
         {
@@ -609,22 +609,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesMessageParamContentOneOf1Items6(global::OpenRouter.MessagesMessageParamContentOneOf1Items6? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items7 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items7?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items7?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items7;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items7? value)
         {
@@ -632,22 +632,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesMessageParamContentOneOf1Items7(global::OpenRouter.MessagesMessageParamContentOneOf1Items7? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items8 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items8?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items8?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items8;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items8? value)
         {
@@ -655,22 +655,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesMessageParamContentOneOf1Items8(global::OpenRouter.MessagesMessageParamContentOneOf1Items8? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicSearchResultBlockParam value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.AnthropicSearchResultBlockParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicSearchResultBlockParam?(MessagesMessageParamContentOneOf1Items @this) => @this.AnthropicSearchResultBlockParam;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.AnthropicSearchResultBlockParam? value)
         {
@@ -678,22 +678,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromAnthropicSearchResultBlockParam(global::OpenRouter.AnthropicSearchResultBlockParam? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items10 value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesMessageParamContentOneOf1Items10?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesMessageParamContentOneOf1Items10?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesMessageParamContentOneOf1Items10;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesMessageParamContentOneOf1Items10? value)
         {
@@ -701,22 +701,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesMessageParamContentOneOf1Items10(global::OpenRouter.MessagesMessageParamContentOneOf1Items10? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesAdvisorToolResultBlock value) => new MessagesMessageParamContentOneOf1Items((global::OpenRouter.MessagesAdvisorToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesAdvisorToolResultBlock?(MessagesMessageParamContentOneOf1Items @this) => @this.MessagesAdvisorToolResultBlock;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(global::OpenRouter.MessagesAdvisorToolResultBlock? value)
         {
@@ -724,12 +724,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesMessageParamContentOneOf1Items FromMessagesAdvisorToolResultBlock(global::OpenRouter.MessagesAdvisorToolResultBlock? value) => new MessagesMessageParamContentOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesMessageParamContentOneOf1Items(
             global::OpenRouter.AnthropicTextBlockParam? anthropicTextBlockParam,
@@ -761,7 +761,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessagesAdvisorToolResultBlock as object ??
@@ -775,11 +775,11 @@ namespace OpenRouter
             MessagesMessageParamContentOneOf1Items3 as object ??
             AnthropicDocumentBlockParam as object ??
             AnthropicImageBlockParam as object ??
-            AnthropicTextBlockParam as object 
+            AnthropicTextBlockParam as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AnthropicTextBlockParam?.ToString() ??
@@ -793,11 +793,11 @@ namespace OpenRouter
             MessagesMessageParamContentOneOf1Items8?.ToString() ??
             AnthropicSearchResultBlockParam?.ToString() ??
             MessagesMessageParamContentOneOf1Items10?.ToString() ??
-            MessagesAdvisorToolResultBlock?.ToString() 
+            MessagesAdvisorToolResultBlock?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -805,7 +805,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicTextBlockParam, TResult>? anthropicTextBlockParam = null,
@@ -880,7 +880,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicTextBlockParam>? anthropicTextBlockParam = null,
@@ -964,7 +964,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.AnthropicTextBlockParam>? anthropicTextBlockParam = null,
@@ -1037,7 +1037,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1078,7 +1078,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesMessageParamContentOneOf1Items other)
         {
@@ -1094,12 +1094,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1Items8?>.Default.Equals(MessagesMessageParamContentOneOf1Items8, other.MessagesMessageParamContentOneOf1Items8) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicSearchResultBlockParam?>.Default.Equals(AnthropicSearchResultBlockParam, other.AnthropicSearchResultBlockParam) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?>.Default.Equals(MessagesMessageParamContentOneOf1Items10, other.MessagesMessageParamContentOneOf1Items10) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesAdvisorToolResultBlock?>.Default.Equals(MessagesAdvisorToolResultBlock, other.MessagesAdvisorToolResultBlock) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesAdvisorToolResultBlock?>.Default.Equals(MessagesAdvisorToolResultBlock, other.MessagesAdvisorToolResultBlock)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesMessageParamContentOneOf1Items obj1, MessagesMessageParamContentOneOf1Items obj2)
         {
@@ -1107,7 +1107,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesMessageParamContentOneOf1Items obj1, MessagesMessageParamContentOneOf1Items obj2)
         {
@@ -1115,7 +1115,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

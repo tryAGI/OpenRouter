@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class ApplyPatchCallItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CallId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -38,7 +38,7 @@ namespace OpenRouter
         public required global::OpenRouter.ApplyPatchCallStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallItemTypeJsonConverter))]

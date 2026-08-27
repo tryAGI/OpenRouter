@@ -9,23 +9,23 @@ namespace OpenRouter
     public enum PipelineStageType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContextCompression,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Guardrail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plugin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseHealing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerTools,
     }

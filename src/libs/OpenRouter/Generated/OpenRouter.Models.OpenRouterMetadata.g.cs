@@ -4,64 +4,64 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OpenRouterMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attempt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Attempt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attempts")]
         public global::System.Collections.Generic.IList<global::OpenRouter.RouterAttempt>? Attempts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoints")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.EndpointsMetadata Endpoints { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_byok")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsByok { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         public global::OpenRouter.RouterParams? Params { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipeline")]
         public global::System.Collections.Generic.IList<global::OpenRouter.PipelineStage>? Pipeline { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("region")]
         public string? Region { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Requested { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.RoutingStrategyJsonConverter))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public required global::OpenRouter.RoutingStrategy Strategy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]

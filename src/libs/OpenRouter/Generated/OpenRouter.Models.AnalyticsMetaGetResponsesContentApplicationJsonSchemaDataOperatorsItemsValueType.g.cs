@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum AnalyticsMetaGetResponsesContentApplicationJsonSchemaDataOperatorsItemsValueType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Array,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scalar,
     }

@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsVariant1Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
         [global::System.Text.Json.Serialization.JsonRequired]

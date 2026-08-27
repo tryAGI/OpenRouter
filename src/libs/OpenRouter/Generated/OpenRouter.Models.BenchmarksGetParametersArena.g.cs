@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum BenchmarksGetParametersArena
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agents,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Builders,
         /// <summary>

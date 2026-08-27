@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum OrganizationMembersGetResponsesContentApplicationJsonSchemaDataItemsRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Org_admin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Org_member,
     }

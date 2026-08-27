@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ORAnthropicNullableCaller2 : global::System.IEquatable<ORAnthropicNullableCaller2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OrAnthropicNullableCaller? OrAnthropicNullableCaller { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrAnthropicNullableCaller))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsOrAnthropicNullableCaller => OrAnthropicNullableCaller != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrAnthropicNullableCaller(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OrAnthropicNullableCaller PickOrAnthropicNullableCaller() => IsOrAnthropicNullableCaller
             ? OrAnthropicNullableCaller!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrAnthropicNullableCaller' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? CallerVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CallerVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsCallerVariant2 => CallerVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCallerVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickCallerVariant2() => IsCallerVariant2
             ? CallerVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CallerVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ORAnthropicNullableCaller2(global::OpenRouter.OrAnthropicNullableCaller value) => new ORAnthropicNullableCaller2((global::OpenRouter.OrAnthropicNullableCaller?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OrAnthropicNullableCaller?(ORAnthropicNullableCaller2 @this) => @this.OrAnthropicNullableCaller;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicNullableCaller2(global::OpenRouter.OrAnthropicNullableCaller? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ORAnthropicNullableCaller2 FromOrAnthropicNullableCaller(global::OpenRouter.OrAnthropicNullableCaller? value) => new ORAnthropicNullableCaller2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ORAnthropicNullableCaller2(
             global::OpenRouter.OrAnthropicNullableCaller? orAnthropicNullableCaller,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CallerVariant2 as object ??
-            OrAnthropicNullableCaller as object 
+            OrAnthropicNullableCaller as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OrAnthropicNullableCaller?.ToString() ??
-            CallerVariant2?.ToString() 
+            CallerVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OrAnthropicNullableCaller?, TResult>? orAnthropicNullableCaller = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OrAnthropicNullableCaller?>? orAnthropicNullableCaller = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.OrAnthropicNullableCaller?>? orAnthropicNullableCaller = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ORAnthropicNullableCaller2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OrAnthropicNullableCaller?>.Default.Equals(OrAnthropicNullableCaller, other.OrAnthropicNullableCaller) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(CallerVariant2, other.CallerVariant2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(CallerVariant2, other.CallerVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ORAnthropicNullableCaller2 obj1, ORAnthropicNullableCaller2 obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ORAnthropicNullableCaller2 obj1, ORAnthropicNullableCaller2 obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

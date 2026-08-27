@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicImageBlockParamSourceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Url,
     }

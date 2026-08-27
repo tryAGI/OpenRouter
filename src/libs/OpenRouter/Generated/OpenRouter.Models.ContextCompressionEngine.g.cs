@@ -9,7 +9,7 @@ namespace OpenRouter
     public enum ContextCompressionEngine
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MiddleOut,
     }

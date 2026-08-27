@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestToolsItemsOneOf4Name
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
     }

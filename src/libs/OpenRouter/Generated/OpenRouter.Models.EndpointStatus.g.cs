@@ -4,32 +4,32 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EndpointStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minus1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minus10,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minus2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minus3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minus5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x0,
     }

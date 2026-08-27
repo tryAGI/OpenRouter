@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OutputMessageStatus : global::System.IEquatable<OutputMessageStatus>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageStatus0? OutputMessageStatus0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageStatus0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsOutputMessageStatus0 => OutputMessageStatus0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMessageStatus0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMessageStatus0 PickOutputMessageStatus0() => IsOutputMessageStatus0
             ? OutputMessageStatus0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageStatus1? OutputMessageStatus1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageStatus1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOutputMessageStatus1 => OutputMessageStatus1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMessageStatus1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMessageStatus1 PickOutputMessageStatus1() => IsOutputMessageStatus1
             ? OutputMessageStatus1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessageStatus2? OutputMessageStatus2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessageStatus2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsOutputMessageStatus2 => OutputMessageStatus2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMessageStatus2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMessageStatus2 PickOutputMessageStatus2() => IsOutputMessageStatus2
             ? OutputMessageStatus2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputMessageStatus(global::OpenRouter.OutputMessageStatus0 value) => new OutputMessageStatus((global::OpenRouter.OutputMessageStatus0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMessageStatus0?(OutputMessageStatus @this) => @this.OutputMessageStatus0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessageStatus(global::OpenRouter.OutputMessageStatus0? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputMessageStatus FromOutputMessageStatus0(global::OpenRouter.OutputMessageStatus0? value) => new OutputMessageStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputMessageStatus(global::OpenRouter.OutputMessageStatus1 value) => new OutputMessageStatus((global::OpenRouter.OutputMessageStatus1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMessageStatus1?(OutputMessageStatus @this) => @this.OutputMessageStatus1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessageStatus(global::OpenRouter.OutputMessageStatus1? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputMessageStatus FromOutputMessageStatus1(global::OpenRouter.OutputMessageStatus1? value) => new OutputMessageStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputMessageStatus(global::OpenRouter.OutputMessageStatus2 value) => new OutputMessageStatus((global::OpenRouter.OutputMessageStatus2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMessageStatus2?(OutputMessageStatus @this) => @this.OutputMessageStatus2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessageStatus(global::OpenRouter.OutputMessageStatus2? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputMessageStatus FromOutputMessageStatus2(global::OpenRouter.OutputMessageStatus2? value) => new OutputMessageStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessageStatus(
             global::OpenRouter.OutputMessageStatus0? outputMessageStatus0,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OutputMessageStatus2 as object ??
             OutputMessageStatus1 as object ??
-            OutputMessageStatus0 as object 
+            OutputMessageStatus0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OutputMessageStatus0?.ToValueString() ??
             OutputMessageStatus1?.ToValueString() ??
-            OutputMessageStatus2?.ToValueString() 
+            OutputMessageStatus2?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OutputMessageStatus0?, TResult>? outputMessageStatus0 = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OutputMessageStatus0?>? outputMessageStatus0 = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.OutputMessageStatus0?>? outputMessageStatus0 = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OutputMessageStatus other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessageStatus0?>.Default.Equals(OutputMessageStatus0, other.OutputMessageStatus0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessageStatus1?>.Default.Equals(OutputMessageStatus1, other.OutputMessageStatus1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessageStatus2?>.Default.Equals(OutputMessageStatus2, other.OutputMessageStatus2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessageStatus2?>.Default.Equals(OutputMessageStatus2, other.OutputMessageStatus2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OutputMessageStatus obj1, OutputMessageStatus obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OutputMessageStatus obj1, OutputMessageStatus obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

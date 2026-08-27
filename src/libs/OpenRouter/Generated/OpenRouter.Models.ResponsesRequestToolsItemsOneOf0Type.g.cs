@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponsesRequestToolsItemsOneOf0Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

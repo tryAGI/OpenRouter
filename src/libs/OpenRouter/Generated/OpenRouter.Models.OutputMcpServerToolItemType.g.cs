@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputMcpServerToolItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_mcp,
     }

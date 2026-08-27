@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput : global::System.IEquatable<EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<double>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<double> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 { get; init; }
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(string value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput @this) => @this.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(string? value)
         {
@@ -212,12 +212,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1(string? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(
             string? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1,
@@ -235,29 +235,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 as object ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 as object ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 as object ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 as object ??
-            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 as object 
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1?.ToString() ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2?.ToString() ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3?.ToString() ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4?.ToString() ??
-            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4?.ToString() 
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -265,7 +265,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
@@ -305,7 +305,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
@@ -347,7 +347,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
@@ -385,7 +385,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -412,7 +412,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput other)
         {
@@ -421,12 +421,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<double>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput obj1, EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput obj2)
         {
@@ -434,7 +434,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput obj1, EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput obj2)
         {
@@ -442,7 +442,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OpenAiResponseInputMessageItemRole : global::System.IEquatable<OpenAiResponseInputMessageItemRole>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponseInputMessageItemRole0? OpenAiResponseInputMessageItemRole0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponseInputMessageItemRole0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsOpenAiResponseInputMessageItemRole0 => OpenAiResponseInputMessageItemRole0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAiResponseInputMessageItemRole0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemRole0 PickOpenAiResponseInputMessageItemRole0() => IsOpenAiResponseInputMessageItemRole0
             ? OpenAiResponseInputMessageItemRole0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponseInputMessageItemRole1? OpenAiResponseInputMessageItemRole1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponseInputMessageItemRole1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOpenAiResponseInputMessageItemRole1 => OpenAiResponseInputMessageItemRole1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAiResponseInputMessageItemRole1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemRole1 PickOpenAiResponseInputMessageItemRole1() => IsOpenAiResponseInputMessageItemRole1
             ? OpenAiResponseInputMessageItemRole1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAiResponseInputMessageItemRole2? OpenAiResponseInputMessageItemRole2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponseInputMessageItemRole2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsOpenAiResponseInputMessageItemRole2 => OpenAiResponseInputMessageItemRole2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAiResponseInputMessageItemRole2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAiResponseInputMessageItemRole2 PickOpenAiResponseInputMessageItemRole2() => IsOpenAiResponseInputMessageItemRole2
             ? OpenAiResponseInputMessageItemRole2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemRole(global::OpenRouter.OpenAiResponseInputMessageItemRole0 value) => new OpenAiResponseInputMessageItemRole((global::OpenRouter.OpenAiResponseInputMessageItemRole0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemRole0?(OpenAiResponseInputMessageItemRole @this) => @this.OpenAiResponseInputMessageItemRole0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemRole(global::OpenRouter.OpenAiResponseInputMessageItemRole0? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseInputMessageItemRole FromOpenAiResponseInputMessageItemRole0(global::OpenRouter.OpenAiResponseInputMessageItemRole0? value) => new OpenAiResponseInputMessageItemRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemRole(global::OpenRouter.OpenAiResponseInputMessageItemRole1 value) => new OpenAiResponseInputMessageItemRole((global::OpenRouter.OpenAiResponseInputMessageItemRole1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemRole1?(OpenAiResponseInputMessageItemRole @this) => @this.OpenAiResponseInputMessageItemRole1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemRole(global::OpenRouter.OpenAiResponseInputMessageItemRole1? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseInputMessageItemRole FromOpenAiResponseInputMessageItemRole1(global::OpenRouter.OpenAiResponseInputMessageItemRole1? value) => new OpenAiResponseInputMessageItemRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OpenAiResponseInputMessageItemRole(global::OpenRouter.OpenAiResponseInputMessageItemRole2 value) => new OpenAiResponseInputMessageItemRole((global::OpenRouter.OpenAiResponseInputMessageItemRole2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAiResponseInputMessageItemRole2?(OpenAiResponseInputMessageItemRole @this) => @this.OpenAiResponseInputMessageItemRole2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemRole(global::OpenRouter.OpenAiResponseInputMessageItemRole2? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OpenAiResponseInputMessageItemRole FromOpenAiResponseInputMessageItemRole2(global::OpenRouter.OpenAiResponseInputMessageItemRole2? value) => new OpenAiResponseInputMessageItemRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAiResponseInputMessageItemRole(
             global::OpenRouter.OpenAiResponseInputMessageItemRole0? openAiResponseInputMessageItemRole0,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OpenAiResponseInputMessageItemRole2 as object ??
             OpenAiResponseInputMessageItemRole1 as object ??
-            OpenAiResponseInputMessageItemRole0 as object 
+            OpenAiResponseInputMessageItemRole0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OpenAiResponseInputMessageItemRole0?.ToValueString() ??
             OpenAiResponseInputMessageItemRole1?.ToValueString() ??
-            OpenAiResponseInputMessageItemRole2?.ToValueString() 
+            OpenAiResponseInputMessageItemRole2?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OpenAiResponseInputMessageItemRole0?, TResult>? openAiResponseInputMessageItemRole0 = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole0?>? openAiResponseInputMessageItemRole0 = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.OpenAiResponseInputMessageItemRole0?>? openAiResponseInputMessageItemRole0 = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OpenAiResponseInputMessageItemRole other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemRole0?>.Default.Equals(OpenAiResponseInputMessageItemRole0, other.OpenAiResponseInputMessageItemRole0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemRole1?>.Default.Equals(OpenAiResponseInputMessageItemRole1, other.OpenAiResponseInputMessageItemRole1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemRole2?>.Default.Equals(OpenAiResponseInputMessageItemRole2, other.OpenAiResponseInputMessageItemRole2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponseInputMessageItemRole2?>.Default.Equals(OpenAiResponseInputMessageItemRole2, other.OpenAiResponseInputMessageItemRole2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OpenAiResponseInputMessageItemRole obj1, OpenAiResponseInputMessageItemRole obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OpenAiResponseInputMessageItemRole obj1, OpenAiResponseInputMessageItemRole obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

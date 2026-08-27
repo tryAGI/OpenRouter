@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateObservabilityDestinationResponseDataDiscriminatorMappingOtelCollectorConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]

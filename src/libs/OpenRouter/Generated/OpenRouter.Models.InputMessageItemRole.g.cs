@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct InputMessageItemRole : global::System.IEquatable<InputMessageItemRole>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.InputMessageItemRole0? InputMessageItemRole0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageItemRole0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsInputMessageItemRole0 => InputMessageItemRole0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputMessageItemRole0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputMessageItemRole0 PickInputMessageItemRole0() => IsInputMessageItemRole0
             ? InputMessageItemRole0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.InputMessageItemRole1? InputMessageItemRole1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageItemRole1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsInputMessageItemRole1 => InputMessageItemRole1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputMessageItemRole1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputMessageItemRole1 PickInputMessageItemRole1() => IsInputMessageItemRole1
             ? InputMessageItemRole1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.InputMessageItemRole2? InputMessageItemRole2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageItemRole2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsInputMessageItemRole2 => InputMessageItemRole2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputMessageItemRole2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.InputMessageItemRole2 PickInputMessageItemRole2() => IsInputMessageItemRole2
             ? InputMessageItemRole2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputMessageItemRole(global::OpenRouter.InputMessageItemRole0 value) => new InputMessageItemRole((global::OpenRouter.InputMessageItemRole0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputMessageItemRole0?(InputMessageItemRole @this) => @this.InputMessageItemRole0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputMessageItemRole(global::OpenRouter.InputMessageItemRole0? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputMessageItemRole FromInputMessageItemRole0(global::OpenRouter.InputMessageItemRole0? value) => new InputMessageItemRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputMessageItemRole(global::OpenRouter.InputMessageItemRole1 value) => new InputMessageItemRole((global::OpenRouter.InputMessageItemRole1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputMessageItemRole1?(InputMessageItemRole @this) => @this.InputMessageItemRole1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputMessageItemRole(global::OpenRouter.InputMessageItemRole1? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputMessageItemRole FromInputMessageItemRole1(global::OpenRouter.InputMessageItemRole1? value) => new InputMessageItemRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputMessageItemRole(global::OpenRouter.InputMessageItemRole2 value) => new InputMessageItemRole((global::OpenRouter.InputMessageItemRole2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.InputMessageItemRole2?(InputMessageItemRole @this) => @this.InputMessageItemRole2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputMessageItemRole(global::OpenRouter.InputMessageItemRole2? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputMessageItemRole FromInputMessageItemRole2(global::OpenRouter.InputMessageItemRole2? value) => new InputMessageItemRole(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputMessageItemRole(
             global::OpenRouter.InputMessageItemRole0? inputMessageItemRole0,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputMessageItemRole2 as object ??
             InputMessageItemRole1 as object ??
-            InputMessageItemRole0 as object 
+            InputMessageItemRole0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputMessageItemRole0?.ToValueString() ??
             InputMessageItemRole1?.ToValueString() ??
-            InputMessageItemRole2?.ToValueString() 
+            InputMessageItemRole2?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.InputMessageItemRole0?, TResult>? inputMessageItemRole0 = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.InputMessageItemRole0?>? inputMessageItemRole0 = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.InputMessageItemRole0?>? inputMessageItemRole0 = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(InputMessageItemRole other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputMessageItemRole0?>.Default.Equals(InputMessageItemRole0, other.InputMessageItemRole0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputMessageItemRole1?>.Default.Equals(InputMessageItemRole1, other.InputMessageItemRole1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputMessageItemRole2?>.Default.Equals(InputMessageItemRole2, other.InputMessageItemRole2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputMessageItemRole2?>.Default.Equals(InputMessageItemRole2, other.InputMessageItemRole2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(InputMessageItemRole obj1, InputMessageItemRole obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(InputMessageItemRole obj1, InputMessageItemRole obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

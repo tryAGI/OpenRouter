@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BaseInputsOneOf1ItemsOneOf0Role0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

@@ -16,27 +16,27 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicTextCitationVariant5Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CitedText { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EncryptedIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]

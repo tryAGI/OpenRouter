@@ -4,28 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf1ErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxUsesExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryTooLong,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
     }

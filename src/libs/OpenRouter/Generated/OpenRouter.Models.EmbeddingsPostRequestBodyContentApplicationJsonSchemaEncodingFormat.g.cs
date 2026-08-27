@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum EmbeddingsPostRequestBodyContentApplicationJsonSchemaEncodingFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Float,
     }

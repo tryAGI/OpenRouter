@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatContentTextType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

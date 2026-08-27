@@ -9,27 +9,27 @@ namespace OpenRouter
     public sealed partial class OutputItemsVariant28
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputShellCallItemTypeJsonConverter))]
         public global::OpenRouter.OutputShellCallItemType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         public global::OpenRouter.OutputShellCallItemAction? Action { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CallId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

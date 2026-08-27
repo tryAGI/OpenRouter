@@ -4,19 +4,19 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaTimeRange
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime End { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         [global::System.Text.Json.Serialization.JsonRequired]

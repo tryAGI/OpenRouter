@@ -4,28 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatFinishReasonEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFilter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Length,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCalls,
     }

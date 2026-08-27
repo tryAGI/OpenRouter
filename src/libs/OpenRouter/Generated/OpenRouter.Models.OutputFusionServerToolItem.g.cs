@@ -33,7 +33,7 @@ namespace OpenRouter
         public string? FailureReason { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -51,7 +51,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<global::OpenRouter.FusionSource>? Sources { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]

@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicBashCodeExecutionContentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BashCodeExecutionResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BashCodeExecutionToolResultError,
     }

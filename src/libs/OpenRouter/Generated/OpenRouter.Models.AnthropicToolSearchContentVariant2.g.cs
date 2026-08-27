@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class AnthropicToolSearchContentVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchResultTypeJsonConverter))]
         public global::OpenRouter.AnthropicToolSearchResultType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_references")]
         [global::System.Text.Json.Serialization.JsonRequired]

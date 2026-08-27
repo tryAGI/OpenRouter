@@ -4,36 +4,36 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ORAnthropicStopReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compaction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndTurn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PauseTurn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refusal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StopSequence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUse,
     }

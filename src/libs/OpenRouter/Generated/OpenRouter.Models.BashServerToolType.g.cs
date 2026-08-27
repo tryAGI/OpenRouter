@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BashServerToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_bash,
     }

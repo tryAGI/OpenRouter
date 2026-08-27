@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicSpeed
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

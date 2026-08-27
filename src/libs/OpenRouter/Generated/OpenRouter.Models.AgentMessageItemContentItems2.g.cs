@@ -4,19 +4,19 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AgentMessageItemContentItems2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EncryptedContent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AgentMessageItemContentItemsOneOf2TypeJsonConverter))]

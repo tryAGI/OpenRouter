@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct StopServerToolsWhenCondition : global::System.IEquatable<StopServerToolsWhenCondition>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.StopServerToolsWhenConditionDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FinishReasonIs))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsFinishReasonIs => FinishReasonIs != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFinishReasonIs(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.StopServerToolsWhenConditionVariant1 PickFinishReasonIs() => IsFinishReasonIs
             ? FinishReasonIs!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HasToolCall))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsHasToolCall => HasToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHasToolCall(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.StopServerToolsWhenConditionVariant2 PickHasToolCall() => IsHasToolCall
             ? HasToolCall!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxCost))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsMaxCost => MaxCost != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMaxCost(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.StopServerToolsWhenConditionVariant3 PickMaxCost() => IsMaxCost
             ? MaxCost!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxTokensUsed))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsMaxTokensUsed => MaxTokensUsed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMaxTokensUsed(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.StopServerToolsWhenConditionVariant4 PickMaxTokensUsed() => IsMaxTokensUsed
             ? MaxTokensUsed!
@@ -172,7 +172,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StepCountIs))]
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsStepCountIs => StepCountIs != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStepCountIs(
 #if NET6_0_OR_GREATER
@@ -193,23 +193,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.StopServerToolsWhenConditionVariant5 PickStepCountIs() => IsStepCountIs
             ? StepCountIs!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StepCountIs' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant1 value) => new StopServerToolsWhenCondition((global::OpenRouter.StopServerToolsWhenConditionVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.StopServerToolsWhenConditionVariant1?(StopServerToolsWhenCondition @this) => @this.FinishReasonIs;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant1? value)
         {
@@ -217,22 +217,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StopServerToolsWhenCondition FromFinishReasonIs(global::OpenRouter.StopServerToolsWhenConditionVariant1? value) => new StopServerToolsWhenCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant2 value) => new StopServerToolsWhenCondition((global::OpenRouter.StopServerToolsWhenConditionVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.StopServerToolsWhenConditionVariant2?(StopServerToolsWhenCondition @this) => @this.HasToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant2? value)
         {
@@ -240,22 +240,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StopServerToolsWhenCondition FromHasToolCall(global::OpenRouter.StopServerToolsWhenConditionVariant2? value) => new StopServerToolsWhenCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant3 value) => new StopServerToolsWhenCondition((global::OpenRouter.StopServerToolsWhenConditionVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.StopServerToolsWhenConditionVariant3?(StopServerToolsWhenCondition @this) => @this.MaxCost;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant3? value)
         {
@@ -263,22 +263,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StopServerToolsWhenCondition FromMaxCost(global::OpenRouter.StopServerToolsWhenConditionVariant3? value) => new StopServerToolsWhenCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant4 value) => new StopServerToolsWhenCondition((global::OpenRouter.StopServerToolsWhenConditionVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.StopServerToolsWhenConditionVariant4?(StopServerToolsWhenCondition @this) => @this.MaxTokensUsed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant4? value)
         {
@@ -286,22 +286,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StopServerToolsWhenCondition FromMaxTokensUsed(global::OpenRouter.StopServerToolsWhenConditionVariant4? value) => new StopServerToolsWhenCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant5 value) => new StopServerToolsWhenCondition((global::OpenRouter.StopServerToolsWhenConditionVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.StopServerToolsWhenConditionVariant5?(StopServerToolsWhenCondition @this) => @this.StepCountIs;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopServerToolsWhenCondition(global::OpenRouter.StopServerToolsWhenConditionVariant5? value)
         {
@@ -309,12 +309,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StopServerToolsWhenCondition FromStepCountIs(global::OpenRouter.StopServerToolsWhenConditionVariant5? value) => new StopServerToolsWhenCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopServerToolsWhenCondition(
             global::OpenRouter.StopServerToolsWhenConditionDiscriminatorType? type,
@@ -335,29 +335,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             StepCountIs as object ??
             MaxTokensUsed as object ??
             MaxCost as object ??
             HasToolCall as object ??
-            FinishReasonIs as object 
+            FinishReasonIs as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FinishReasonIs?.ToString() ??
             HasToolCall?.ToString() ??
             MaxCost?.ToString() ??
             MaxTokensUsed?.ToString() ??
-            StepCountIs?.ToString() 
+            StepCountIs?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -365,7 +365,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.StopServerToolsWhenConditionVariant1, TResult>? finishReasonIs = null,
@@ -405,7 +405,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.StopServerToolsWhenConditionVariant1>? finishReasonIs = null,
@@ -447,7 +447,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.StopServerToolsWhenConditionVariant1>? finishReasonIs = null,
@@ -485,7 +485,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -512,7 +512,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StopServerToolsWhenCondition other)
         {
@@ -521,12 +521,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.StopServerToolsWhenConditionVariant2?>.Default.Equals(HasToolCall, other.HasToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.StopServerToolsWhenConditionVariant3?>.Default.Equals(MaxCost, other.MaxCost) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.StopServerToolsWhenConditionVariant4?>.Default.Equals(MaxTokensUsed, other.MaxTokensUsed) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.StopServerToolsWhenConditionVariant5?>.Default.Equals(StepCountIs, other.StepCountIs) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.StopServerToolsWhenConditionVariant5?>.Default.Equals(StepCountIs, other.StepCountIs)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StopServerToolsWhenCondition obj1, StopServerToolsWhenCondition obj2)
         {
@@ -534,7 +534,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StopServerToolsWhenCondition obj1, StopServerToolsWhenCondition obj2)
         {
@@ -542,7 +542,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

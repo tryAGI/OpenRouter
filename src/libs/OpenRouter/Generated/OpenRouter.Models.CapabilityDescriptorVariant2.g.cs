@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class CapabilityDescriptorVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EnumCapabilityTypeJsonConverter))]
         public global::OpenRouter.EnumCapabilityType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
         [global::System.Text.Json.Serialization.JsonRequired]

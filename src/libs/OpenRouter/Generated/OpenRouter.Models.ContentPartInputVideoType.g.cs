@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ContentPartInputVideoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVideo,
     }

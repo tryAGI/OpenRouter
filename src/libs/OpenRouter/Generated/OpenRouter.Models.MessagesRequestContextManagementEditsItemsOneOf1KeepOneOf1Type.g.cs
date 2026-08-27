@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestContextManagementEditsItemsOneOf1KeepOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
     }

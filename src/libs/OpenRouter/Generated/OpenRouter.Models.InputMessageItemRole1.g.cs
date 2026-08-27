@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum InputMessageItemRole1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
     }

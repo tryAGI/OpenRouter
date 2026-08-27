@@ -9,31 +9,31 @@ namespace OpenRouter
     public enum SubmitGenerationFeedbackRequestCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Billing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Formatting,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incoherence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IncorrectResponse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
     }

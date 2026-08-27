@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Daily,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Monthly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weekly,
     }

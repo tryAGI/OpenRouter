@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputMemoryServerToolItemAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Read,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Write,
     }

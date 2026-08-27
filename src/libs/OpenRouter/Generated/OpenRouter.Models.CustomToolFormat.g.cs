@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CustomToolFormat : global::System.IEquatable<CustomToolFormat>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.CustomToolFormat0? CustomToolFormat0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolFormat0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsCustomToolFormat0 => CustomToolFormat0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolFormat0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolFormat0 PickCustomToolFormat0() => IsCustomToolFormat0
             ? CustomToolFormat0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.CustomToolFormat1? CustomToolFormat1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolFormat1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsCustomToolFormat1 => CustomToolFormat1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolFormat1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CustomToolFormat1 PickCustomToolFormat1() => IsCustomToolFormat1
             ? CustomToolFormat1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CustomToolFormat(global::OpenRouter.CustomToolFormat0 value) => new CustomToolFormat((global::OpenRouter.CustomToolFormat0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomToolFormat0?(CustomToolFormat @this) => @this.CustomToolFormat0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolFormat(global::OpenRouter.CustomToolFormat0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CustomToolFormat FromCustomToolFormat0(global::OpenRouter.CustomToolFormat0? value) => new CustomToolFormat(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CustomToolFormat(global::OpenRouter.CustomToolFormat1 value) => new CustomToolFormat((global::OpenRouter.CustomToolFormat1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CustomToolFormat1?(CustomToolFormat @this) => @this.CustomToolFormat1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolFormat(global::OpenRouter.CustomToolFormat1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CustomToolFormat FromCustomToolFormat1(global::OpenRouter.CustomToolFormat1? value) => new CustomToolFormat(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomToolFormat(
             global::OpenRouter.CustomToolFormat0? customToolFormat0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CustomToolFormat1 as object ??
-            CustomToolFormat0 as object 
+            CustomToolFormat0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             CustomToolFormat0?.ToString() ??
-            CustomToolFormat1?.ToString() 
+            CustomToolFormat1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.CustomToolFormat0, TResult>? customToolFormat0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.CustomToolFormat0>? customToolFormat0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.CustomToolFormat0>? customToolFormat0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CustomToolFormat other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomToolFormat0?>.Default.Equals(CustomToolFormat0, other.CustomToolFormat0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomToolFormat1?>.Default.Equals(CustomToolFormat1, other.CustomToolFormat1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CustomToolFormat1?>.Default.Equals(CustomToolFormat1, other.CustomToolFormat1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CustomToolFormat obj1, CustomToolFormat obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CustomToolFormat obj1, CustomToolFormat obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

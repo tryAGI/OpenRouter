@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum UpsertWorkspaceBudgetResponseDataResetInterval
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Daily,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Monthly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weekly,
     }

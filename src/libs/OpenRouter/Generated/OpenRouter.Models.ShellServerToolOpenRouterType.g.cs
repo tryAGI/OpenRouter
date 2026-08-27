@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ShellServerToolOpenRouterType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_shell,
     }

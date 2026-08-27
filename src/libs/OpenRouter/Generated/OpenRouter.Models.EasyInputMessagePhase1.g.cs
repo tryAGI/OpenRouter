@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EasyInputMessagePhase1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FinalAnswer,
     }

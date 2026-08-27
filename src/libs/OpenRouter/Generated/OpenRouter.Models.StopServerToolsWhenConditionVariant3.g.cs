@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class StopServerToolsWhenConditionVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenMaxCostTypeJsonConverter))]
         public global::OpenRouter.StopServerToolsWhenMaxCostType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_cost_in_dollars")]
         [global::System.Text.Json.Serialization.JsonRequired]

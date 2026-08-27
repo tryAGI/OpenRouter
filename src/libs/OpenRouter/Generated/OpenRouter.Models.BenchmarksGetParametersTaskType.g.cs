@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum BenchmarksGetParametersTaskType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Coding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Intelligence,
     }

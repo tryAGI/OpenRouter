@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum ObservabilityFilterRuleGroupLogic
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         And,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Or,
     }

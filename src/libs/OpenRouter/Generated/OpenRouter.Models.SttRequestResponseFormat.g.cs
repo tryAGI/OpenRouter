@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum SttRequestResponseFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Json,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VerboseJson,
     }

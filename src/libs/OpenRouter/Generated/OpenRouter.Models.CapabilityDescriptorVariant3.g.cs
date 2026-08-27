@@ -9,21 +9,21 @@ namespace OpenRouter
     public sealed partial class CapabilityDescriptorVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.RangeCapabilityTypeJsonConverter))]
         public global::OpenRouter.RangeCapabilityType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Max { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min")]
         [global::System.Text.Json.Serialization.JsonRequired]

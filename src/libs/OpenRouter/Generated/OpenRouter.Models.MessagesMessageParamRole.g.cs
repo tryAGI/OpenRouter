@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesMessageParamRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

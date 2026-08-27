@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BaseInputsOneOf1ItemsOneOf0ContentOneOf0ItemsDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
     }

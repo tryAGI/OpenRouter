@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateObservabilityDestinationResponseDataDiscriminatorMappingSentryConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dsn")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,7 +22,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("otlpEndpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,48 +4,48 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponsesRequestPluginsItemsDiscriminatorId
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AutoBetaRouter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AutoRouter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContextCompression,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileParser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fusion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Moderation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParetoRouter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseHealing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Web,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetch,
     }

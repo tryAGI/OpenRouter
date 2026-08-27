@@ -9,27 +9,27 @@ namespace OpenRouter
     public enum WebFetchEngineEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Firecrawl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Native,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parallel,
     }

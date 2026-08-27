@@ -4,40 +4,40 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AdditionalToolsItemRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Critic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Developer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Discriminator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

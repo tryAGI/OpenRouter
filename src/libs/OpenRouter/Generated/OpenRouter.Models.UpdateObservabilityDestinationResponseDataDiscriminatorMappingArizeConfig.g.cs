@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateObservabilityDestinationResponseDataDiscriminatorMappingArizeConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiKey")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +35,7 @@ namespace OpenRouter
         public required string ModelId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spaceKey")]
         [global::System.Text.Json.Serialization.JsonRequired]

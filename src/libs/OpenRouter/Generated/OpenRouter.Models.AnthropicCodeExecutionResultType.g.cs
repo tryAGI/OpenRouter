@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicCodeExecutionResultType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionResult,
     }

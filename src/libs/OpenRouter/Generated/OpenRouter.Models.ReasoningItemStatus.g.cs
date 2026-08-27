@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ReasoningItemStatus : global::System.IEquatable<ReasoningItemStatus>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ReasoningItemStatus0? ReasoningItemStatus0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningItemStatus0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsReasoningItemStatus0 => ReasoningItemStatus0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoningItemStatus0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ReasoningItemStatus0 PickReasoningItemStatus0() => IsReasoningItemStatus0
             ? ReasoningItemStatus0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ReasoningItemStatus1? ReasoningItemStatus1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningItemStatus1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsReasoningItemStatus1 => ReasoningItemStatus1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoningItemStatus1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ReasoningItemStatus1 PickReasoningItemStatus1() => IsReasoningItemStatus1
             ? ReasoningItemStatus1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ReasoningItemStatus2? ReasoningItemStatus2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningItemStatus2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsReasoningItemStatus2 => ReasoningItemStatus2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoningItemStatus2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ReasoningItemStatus2 PickReasoningItemStatus2() => IsReasoningItemStatus2
             ? ReasoningItemStatus2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReasoningItemStatus(global::OpenRouter.ReasoningItemStatus0 value) => new ReasoningItemStatus((global::OpenRouter.ReasoningItemStatus0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ReasoningItemStatus0?(ReasoningItemStatus @this) => @this.ReasoningItemStatus0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReasoningItemStatus(global::OpenRouter.ReasoningItemStatus0? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReasoningItemStatus FromReasoningItemStatus0(global::OpenRouter.ReasoningItemStatus0? value) => new ReasoningItemStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReasoningItemStatus(global::OpenRouter.ReasoningItemStatus1 value) => new ReasoningItemStatus((global::OpenRouter.ReasoningItemStatus1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ReasoningItemStatus1?(ReasoningItemStatus @this) => @this.ReasoningItemStatus1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReasoningItemStatus(global::OpenRouter.ReasoningItemStatus1? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReasoningItemStatus FromReasoningItemStatus1(global::OpenRouter.ReasoningItemStatus1? value) => new ReasoningItemStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReasoningItemStatus(global::OpenRouter.ReasoningItemStatus2 value) => new ReasoningItemStatus((global::OpenRouter.ReasoningItemStatus2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ReasoningItemStatus2?(ReasoningItemStatus @this) => @this.ReasoningItemStatus2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReasoningItemStatus(global::OpenRouter.ReasoningItemStatus2? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReasoningItemStatus FromReasoningItemStatus2(global::OpenRouter.ReasoningItemStatus2? value) => new ReasoningItemStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReasoningItemStatus(
             global::OpenRouter.ReasoningItemStatus0? reasoningItemStatus0,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ReasoningItemStatus2 as object ??
             ReasoningItemStatus1 as object ??
-            ReasoningItemStatus0 as object 
+            ReasoningItemStatus0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ReasoningItemStatus0?.ToValueString() ??
             ReasoningItemStatus1?.ToValueString() ??
-            ReasoningItemStatus2?.ToValueString() 
+            ReasoningItemStatus2?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ReasoningItemStatus0?, TResult>? reasoningItemStatus0 = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ReasoningItemStatus0?>? reasoningItemStatus0 = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ReasoningItemStatus0?>? reasoningItemStatus0 = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ReasoningItemStatus other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ReasoningItemStatus0?>.Default.Equals(ReasoningItemStatus0, other.ReasoningItemStatus0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ReasoningItemStatus1?>.Default.Equals(ReasoningItemStatus1, other.ReasoningItemStatus1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ReasoningItemStatus2?>.Default.Equals(ReasoningItemStatus2, other.ReasoningItemStatus2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ReasoningItemStatus2?>.Default.Equals(ReasoningItemStatus2, other.ReasoningItemStatus2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ReasoningItemStatus obj1, ReasoningItemStatus obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ReasoningItemStatus obj1, ReasoningItemStatus obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

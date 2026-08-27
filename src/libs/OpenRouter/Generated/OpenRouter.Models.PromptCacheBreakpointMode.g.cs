@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PromptCacheBreakpointMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Explicit,
     }

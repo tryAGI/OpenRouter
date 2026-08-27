@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicTextBlockParamCitationsItems : global::System.IEquatable<AnthropicTextBlockParamCitationsItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CharLocation))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsCharLocation => CharLocation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCharLocation(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1 PickCharLocation() => IsCharLocation
             ? CharLocation!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsContentBlockLocation => ContentBlockLocation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentBlockLocation(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2 PickContentBlockLocation() => IsContentBlockLocation
             ? ContentBlockLocation!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsPageLocation => PageLocation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPageLocation(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3 PickPageLocation() => IsPageLocation
             ? PageLocation!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResultLocation))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsSearchResultLocation => SearchResultLocation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchResultLocation(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4 PickSearchResultLocation() => IsSearchResultLocation
             ? SearchResultLocation!
@@ -172,7 +172,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchResultLocation))]
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsWebSearchResultLocation => WebSearchResultLocation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearchResultLocation(
 #if NET6_0_OR_GREATER
@@ -193,23 +193,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5 PickWebSearchResultLocation() => IsWebSearchResultLocation
             ? WebSearchResultLocation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchResultLocation' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1 value) => new AnthropicTextBlockParamCitationsItems((global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1?(AnthropicTextBlockParamCitationsItems @this) => @this.CharLocation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1? value)
         {
@@ -217,22 +217,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextBlockParamCitationsItems FromCharLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2 value) => new AnthropicTextBlockParamCitationsItems((global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2?(AnthropicTextBlockParamCitationsItems @this) => @this.ContentBlockLocation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2? value)
         {
@@ -240,22 +240,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextBlockParamCitationsItems FromContentBlockLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3 value) => new AnthropicTextBlockParamCitationsItems((global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3?(AnthropicTextBlockParamCitationsItems @this) => @this.PageLocation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3? value)
         {
@@ -263,22 +263,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextBlockParamCitationsItems FromPageLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4 value) => new AnthropicTextBlockParamCitationsItems((global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4?(AnthropicTextBlockParamCitationsItems @this) => @this.SearchResultLocation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4? value)
         {
@@ -286,22 +286,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextBlockParamCitationsItems FromSearchResultLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5 value) => new AnthropicTextBlockParamCitationsItems((global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5?(AnthropicTextBlockParamCitationsItems @this) => @this.WebSearchResultLocation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextBlockParamCitationsItems(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5? value)
         {
@@ -309,12 +309,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicTextBlockParamCitationsItems FromWebSearchResultLocation(global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5? value) => new AnthropicTextBlockParamCitationsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicTextBlockParamCitationsItems(
             global::OpenRouter.AnthropicTextBlockParamCitationsItemsDiscriminatorType? type,
@@ -335,29 +335,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WebSearchResultLocation as object ??
             SearchResultLocation as object ??
             PageLocation as object ??
             ContentBlockLocation as object ??
-            CharLocation as object 
+            CharLocation as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             CharLocation?.ToString() ??
             ContentBlockLocation?.ToString() ??
             PageLocation?.ToString() ??
             SearchResultLocation?.ToString() ??
-            WebSearchResultLocation?.ToString() 
+            WebSearchResultLocation?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -365,7 +365,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1, TResult>? charLocation = null,
@@ -405,7 +405,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1>? charLocation = null,
@@ -447,7 +447,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant1>? charLocation = null,
@@ -485,7 +485,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -512,7 +512,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicTextBlockParamCitationsItems other)
         {
@@ -521,12 +521,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant2?>.Default.Equals(ContentBlockLocation, other.ContentBlockLocation) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant3?>.Default.Equals(PageLocation, other.PageLocation) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4?>.Default.Equals(SearchResultLocation, other.SearchResultLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5?>.Default.Equals(WebSearchResultLocation, other.WebSearchResultLocation) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant5?>.Default.Equals(WebSearchResultLocation, other.WebSearchResultLocation)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicTextBlockParamCitationsItems obj1, AnthropicTextBlockParamCitationsItems obj2)
         {
@@ -534,7 +534,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicTextBlockParamCitationsItems obj1, AnthropicTextBlockParamCitationsItems obj2)
         {
@@ -542,7 +542,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

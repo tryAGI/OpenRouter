@@ -4,18 +4,18 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OpenAiResponsesUsageInputTokensDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_write_tokens")]
         public int? CacheWriteTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]

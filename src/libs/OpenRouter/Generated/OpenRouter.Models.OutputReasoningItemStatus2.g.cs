@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputReasoningItemStatus2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

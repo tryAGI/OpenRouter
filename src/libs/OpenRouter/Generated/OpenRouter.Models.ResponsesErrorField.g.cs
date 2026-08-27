@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ResponsesErrorField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ResponsesErrorFieldCodeJsonConverter))]
@@ -17,7 +17,7 @@ namespace OpenRouter
         public required global::OpenRouter.ResponsesErrorFieldCode Code { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]

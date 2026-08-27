@@ -22,7 +22,7 @@ namespace OpenRouter
         public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]

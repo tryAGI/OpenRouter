@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems : global::System.IEquatable<RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 => RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1() => IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1
             ? RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1!
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 => RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 PickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1() => IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1
             ? RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems(string value) => new RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems @this) => @this.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems(string? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems FromRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1(string? value) => new RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems(global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 value) => new RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems((global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems @this) => @this.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems(global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems FromRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1(global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1? value) => new RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems(
             string? rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 as object ??
-            RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 as object 
+            RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1?.ToString() ??
-            RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?.ToString() 
+            RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1, other.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?>.Default.Equals(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1, other.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?>.Default.Equals(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1, other.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems obj1, RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems obj1, RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

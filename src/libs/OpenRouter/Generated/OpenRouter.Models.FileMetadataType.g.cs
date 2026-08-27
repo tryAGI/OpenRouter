@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FileMetadataType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         File,
     }

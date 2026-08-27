@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatFunctionTool0
     {
@@ -22,7 +22,7 @@ namespace OpenRouter
         public required global::OpenRouter.ChatFunctionToolOneOf0Function Function { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatFunctionToolOneOf0TypeJsonConverter))]

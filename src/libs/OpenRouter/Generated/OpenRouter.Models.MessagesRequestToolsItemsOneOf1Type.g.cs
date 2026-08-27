@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestToolsItemsOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bash20250124,
     }

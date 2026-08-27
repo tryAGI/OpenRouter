@@ -4,32 +4,32 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatContentItemsDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         File,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVideo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VideoUrl,
     }

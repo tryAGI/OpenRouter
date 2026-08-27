@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class PromptCacheBreakpoint
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PromptCacheBreakpointModeJsonConverter))]

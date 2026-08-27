@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateObservabilityDestinationResponseDataDiscriminatorMappingLangfuseConfig
     {
@@ -21,14 +21,14 @@ namespace OpenRouter
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("publicKey")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PublicKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secretKey")]
         [global::System.Text.Json.Serialization.JsonRequired]

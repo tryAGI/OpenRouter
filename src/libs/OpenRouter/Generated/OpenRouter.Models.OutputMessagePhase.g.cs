@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct OutputMessagePhase : global::System.IEquatable<OutputMessagePhase>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessagePhase0? OutputMessagePhase0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessagePhase0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsOutputMessagePhase0 => OutputMessagePhase0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMessagePhase0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMessagePhase0 PickOutputMessagePhase0() => IsOutputMessagePhase0
             ? OutputMessagePhase0!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessagePhase1? OutputMessagePhase1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessagePhase1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOutputMessagePhase1 => OutputMessagePhase1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMessagePhase1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMessagePhase1 PickOutputMessagePhase1() => IsOutputMessagePhase1
             ? OutputMessagePhase1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputMessagePhase(global::OpenRouter.OutputMessagePhase0 value) => new OutputMessagePhase((global::OpenRouter.OutputMessagePhase0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMessagePhase0?(OutputMessagePhase @this) => @this.OutputMessagePhase0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessagePhase(global::OpenRouter.OutputMessagePhase0? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputMessagePhase FromOutputMessagePhase0(global::OpenRouter.OutputMessagePhase0? value) => new OutputMessagePhase(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputMessagePhase(global::OpenRouter.OutputMessagePhase1 value) => new OutputMessagePhase((global::OpenRouter.OutputMessagePhase1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMessagePhase1?(OutputMessagePhase @this) => @this.OutputMessagePhase1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessagePhase(global::OpenRouter.OutputMessagePhase1? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputMessagePhase FromOutputMessagePhase1(global::OpenRouter.OutputMessagePhase1? value) => new OutputMessagePhase(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessagePhase(
             global::OpenRouter.OutputMessagePhase0? outputMessagePhase0,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OutputMessagePhase1 as object ??
-            OutputMessagePhase0 as object 
+            OutputMessagePhase0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OutputMessagePhase0?.ToValueString() ??
-            OutputMessagePhase1?.ToValueString() 
+            OutputMessagePhase1?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.OutputMessagePhase0?, TResult>? outputMessagePhase0 = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.OutputMessagePhase0?>? outputMessagePhase0 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.OutputMessagePhase0?>? outputMessagePhase0 = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OutputMessagePhase other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessagePhase0?>.Default.Equals(OutputMessagePhase0, other.OutputMessagePhase0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessagePhase1?>.Default.Equals(OutputMessagePhase1, other.OutputMessagePhase1) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OutputMessagePhase1?>.Default.Equals(OutputMessagePhase1, other.OutputMessagePhase1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OutputMessagePhase obj1, OutputMessagePhase obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OutputMessagePhase obj1, OutputMessagePhase obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

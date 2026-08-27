@@ -9,19 +9,19 @@ namespace OpenRouter
     public enum ChatContentItemsDiscriminatorMappingImageUrlImageUrlDetail
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Original,
     }

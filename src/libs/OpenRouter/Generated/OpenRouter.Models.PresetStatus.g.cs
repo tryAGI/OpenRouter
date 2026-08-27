@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum PresetStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Archived,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

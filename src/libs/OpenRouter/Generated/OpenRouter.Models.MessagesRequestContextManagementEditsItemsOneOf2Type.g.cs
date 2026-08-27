@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestContextManagementEditsItemsOneOf2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compact20260112,
     }

@@ -9,27 +9,27 @@ namespace OpenRouter
     public enum WebSearchEngineEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Firecrawl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Native,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parallel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Perplexity,
     }

@@ -9,23 +9,23 @@ namespace OpenRouter
     public enum ChatRequestServiceTier
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Priority,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scale,
     }

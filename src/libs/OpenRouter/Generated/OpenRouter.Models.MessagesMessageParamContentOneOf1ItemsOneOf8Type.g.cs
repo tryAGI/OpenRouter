@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesMessageParamContentOneOf1ItemsOneOf8Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchToolResult,
     }

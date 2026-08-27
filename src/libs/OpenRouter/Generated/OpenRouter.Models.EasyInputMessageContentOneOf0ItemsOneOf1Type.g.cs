@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EasyInputMessageContentOneOf0ItemsOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
     }

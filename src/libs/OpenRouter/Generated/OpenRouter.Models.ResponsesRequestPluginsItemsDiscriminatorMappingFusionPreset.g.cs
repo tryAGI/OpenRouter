@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum ResponsesRequestPluginsItemsDiscriminatorMappingFusionPreset
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GeneralBudget,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GeneralFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GeneralHigh,
     }

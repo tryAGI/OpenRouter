@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesRequestThinking : global::System.IEquatable<MessagesRequestThinking>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestThinking0? MessagesRequestThinking0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestThinking0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsMessagesRequestThinking0 => MessagesRequestThinking0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestThinking0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestThinking0 PickMessagesRequestThinking0() => IsMessagesRequestThinking0
             ? MessagesRequestThinking0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestThinking1? MessagesRequestThinking1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestThinking1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsMessagesRequestThinking1 => MessagesRequestThinking1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestThinking1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestThinking1 PickMessagesRequestThinking1() => IsMessagesRequestThinking1
             ? MessagesRequestThinking1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestThinking2? MessagesRequestThinking2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestThinking2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsMessagesRequestThinking2 => MessagesRequestThinking2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestThinking2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestThinking2 PickMessagesRequestThinking2() => IsMessagesRequestThinking2
             ? MessagesRequestThinking2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestThinking(global::OpenRouter.MessagesRequestThinking0 value) => new MessagesRequestThinking((global::OpenRouter.MessagesRequestThinking0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestThinking0?(MessagesRequestThinking @this) => @this.MessagesRequestThinking0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestThinking(global::OpenRouter.MessagesRequestThinking0? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestThinking FromMessagesRequestThinking0(global::OpenRouter.MessagesRequestThinking0? value) => new MessagesRequestThinking(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestThinking(global::OpenRouter.MessagesRequestThinking1 value) => new MessagesRequestThinking((global::OpenRouter.MessagesRequestThinking1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestThinking1?(MessagesRequestThinking @this) => @this.MessagesRequestThinking1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestThinking(global::OpenRouter.MessagesRequestThinking1? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestThinking FromMessagesRequestThinking1(global::OpenRouter.MessagesRequestThinking1? value) => new MessagesRequestThinking(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestThinking(global::OpenRouter.MessagesRequestThinking2 value) => new MessagesRequestThinking((global::OpenRouter.MessagesRequestThinking2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestThinking2?(MessagesRequestThinking @this) => @this.MessagesRequestThinking2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestThinking(global::OpenRouter.MessagesRequestThinking2? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestThinking FromMessagesRequestThinking2(global::OpenRouter.MessagesRequestThinking2? value) => new MessagesRequestThinking(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestThinking(
             global::OpenRouter.MessagesRequestThinking0? messagesRequestThinking0,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessagesRequestThinking2 as object ??
             MessagesRequestThinking1 as object ??
-            MessagesRequestThinking0 as object 
+            MessagesRequestThinking0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessagesRequestThinking0?.ToString() ??
             MessagesRequestThinking1?.ToString() ??
-            MessagesRequestThinking2?.ToString() 
+            MessagesRequestThinking2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.MessagesRequestThinking0, TResult>? messagesRequestThinking0 = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.MessagesRequestThinking0>? messagesRequestThinking0 = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.MessagesRequestThinking0>? messagesRequestThinking0 = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesRequestThinking other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestThinking0?>.Default.Equals(MessagesRequestThinking0, other.MessagesRequestThinking0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestThinking1?>.Default.Equals(MessagesRequestThinking1, other.MessagesRequestThinking1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestThinking2?>.Default.Equals(MessagesRequestThinking2, other.MessagesRequestThinking2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestThinking2?>.Default.Equals(MessagesRequestThinking2, other.MessagesRequestThinking2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesRequestThinking obj1, MessagesRequestThinking obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesRequestThinking obj1, MessagesRequestThinking obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

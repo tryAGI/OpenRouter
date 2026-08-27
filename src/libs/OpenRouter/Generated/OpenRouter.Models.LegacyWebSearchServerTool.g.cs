@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchEngineEnum? Engine { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         public global::OpenRouter.WebSearchDomainFilter? Filters { get; set; }
@@ -35,7 +35,7 @@ namespace OpenRouter
         public global::OpenRouter.SearchContextSizeEnum? SearchContextSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.LegacyWebSearchServerToolTypeJsonConverter))]

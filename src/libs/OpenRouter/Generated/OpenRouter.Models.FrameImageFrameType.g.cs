@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum FrameImageFrameType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstFrame,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastFrame,
     }

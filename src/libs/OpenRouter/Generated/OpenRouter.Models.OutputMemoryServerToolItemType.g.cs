@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputMemoryServerToolItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_memory,
     }

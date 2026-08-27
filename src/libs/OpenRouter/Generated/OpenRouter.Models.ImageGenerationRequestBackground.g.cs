@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum ImageGenerationRequestBackground
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opaque,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transparent,
     }

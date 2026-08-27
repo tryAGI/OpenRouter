@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ResponsesRequestPluginsItems : global::System.IEquatable<ResponsesRequestPluginsItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorId? Id { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoBetaRouter))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsAutoBetaRouter => AutoBetaRouter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAutoBetaRouter(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant1 PickAutoBetaRouter() => IsAutoBetaRouter
             ? AutoBetaRouter!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoRouter))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsAutoRouter => AutoRouter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAutoRouter(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant2 PickAutoRouter() => IsAutoRouter
             ? AutoRouter!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextCompression))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsContextCompression => ContextCompression != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContextCompression(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant3 PickContextCompression() => IsContextCompression
             ? ContextCompression!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileParser))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsFileParser => FileParser != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileParser(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant4 PickFileParser() => IsFileParser
             ? FileParser!
@@ -172,7 +172,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fusion))]
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsFusion => Fusion != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFusion(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant5 PickFusion() => IsFusion
             ? Fusion!
@@ -209,7 +209,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Moderation))]
@@ -217,7 +217,7 @@ namespace OpenRouter
         public bool IsModeration => Moderation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModeration(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant6 PickModeration() => IsModeration
             ? Moderation!
@@ -246,7 +246,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ParetoRouter))]
@@ -254,7 +254,7 @@ namespace OpenRouter
         public bool IsParetoRouter => ParetoRouter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickParetoRouter(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant7 PickParetoRouter() => IsParetoRouter
             ? ParetoRouter!
@@ -283,7 +283,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseHealing))]
@@ -291,7 +291,7 @@ namespace OpenRouter
         public bool IsResponseHealing => ResponseHealing != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseHealing(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant8 PickResponseHealing() => IsResponseHealing
             ? ResponseHealing!
@@ -320,7 +320,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Web))]
@@ -328,7 +328,7 @@ namespace OpenRouter
         public bool IsWeb => Web != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWeb(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant9 PickWeb() => IsWeb
             ? Web!
@@ -357,7 +357,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetch))]
@@ -365,7 +365,7 @@ namespace OpenRouter
         public bool IsWebFetch => WebFetch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebFetch(
 #if NET6_0_OR_GREATER
@@ -378,23 +378,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponsesRequestPluginsItemsVariant10 PickWebFetch() => IsWebFetch
             ? WebFetch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetch' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant1 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant1?(ResponsesRequestPluginsItems @this) => @this.AutoBetaRouter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant1? value)
         {
@@ -402,22 +402,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromAutoBetaRouter(global::OpenRouter.ResponsesRequestPluginsItemsVariant1? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant2 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant2?(ResponsesRequestPluginsItems @this) => @this.AutoRouter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant2? value)
         {
@@ -425,22 +425,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromAutoRouter(global::OpenRouter.ResponsesRequestPluginsItemsVariant2? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant3 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant3?(ResponsesRequestPluginsItems @this) => @this.ContextCompression;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant3? value)
         {
@@ -448,22 +448,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromContextCompression(global::OpenRouter.ResponsesRequestPluginsItemsVariant3? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant4 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant4?(ResponsesRequestPluginsItems @this) => @this.FileParser;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value)
         {
@@ -471,22 +471,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromFileParser(global::OpenRouter.ResponsesRequestPluginsItemsVariant4? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant5 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant5?(ResponsesRequestPluginsItems @this) => @this.Fusion;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value)
         {
@@ -494,22 +494,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromFusion(global::OpenRouter.ResponsesRequestPluginsItemsVariant5? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant6 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant6?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant6?(ResponsesRequestPluginsItems @this) => @this.Moderation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value)
         {
@@ -517,22 +517,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromModeration(global::OpenRouter.ResponsesRequestPluginsItemsVariant6? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant7 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant7?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant7?(ResponsesRequestPluginsItems @this) => @this.ParetoRouter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value)
         {
@@ -540,22 +540,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromParetoRouter(global::OpenRouter.ResponsesRequestPluginsItemsVariant7? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant8 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant8?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant8?(ResponsesRequestPluginsItems @this) => @this.ResponseHealing;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant8? value)
         {
@@ -563,22 +563,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromResponseHealing(global::OpenRouter.ResponsesRequestPluginsItemsVariant8? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant9 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant9?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant9?(ResponsesRequestPluginsItems @this) => @this.Web;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant9? value)
         {
@@ -586,22 +586,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromWeb(global::OpenRouter.ResponsesRequestPluginsItemsVariant9? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant10 value) => new ResponsesRequestPluginsItems((global::OpenRouter.ResponsesRequestPluginsItemsVariant10?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponsesRequestPluginsItemsVariant10?(ResponsesRequestPluginsItems @this) => @this.WebFetch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(global::OpenRouter.ResponsesRequestPluginsItemsVariant10? value)
         {
@@ -609,12 +609,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItems FromWebFetch(global::OpenRouter.ResponsesRequestPluginsItemsVariant10? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItems(
             global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorId? id,
@@ -645,7 +645,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WebFetch as object ??
@@ -657,11 +657,11 @@ namespace OpenRouter
             FileParser as object ??
             ContextCompression as object ??
             AutoRouter as object ??
-            AutoBetaRouter as object 
+            AutoBetaRouter as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AutoBetaRouter?.ToString() ??
@@ -673,11 +673,11 @@ namespace OpenRouter
             ParetoRouter?.ToString() ??
             ResponseHealing?.ToString() ??
             Web?.ToString() ??
-            WebFetch?.ToString() 
+            WebFetch?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -685,7 +685,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsVariant1, TResult>? autoBetaRouter = null,
@@ -750,7 +750,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant1>? autoBetaRouter = null,
@@ -822,7 +822,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsVariant1>? autoBetaRouter = null,
@@ -885,7 +885,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -922,7 +922,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResponsesRequestPluginsItems other)
         {
@@ -936,12 +936,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant7?>.Default.Equals(ParetoRouter, other.ParetoRouter) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant8?>.Default.Equals(ResponseHealing, other.ResponseHealing) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant9?>.Default.Equals(Web, other.Web) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant10?>.Default.Equals(WebFetch, other.WebFetch) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsVariant10?>.Default.Equals(WebFetch, other.WebFetch)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResponsesRequestPluginsItems obj1, ResponsesRequestPluginsItems obj2)
         {
@@ -949,7 +949,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResponsesRequestPluginsItems obj1, ResponsesRequestPluginsItems obj2)
         {
@@ -957,7 +957,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

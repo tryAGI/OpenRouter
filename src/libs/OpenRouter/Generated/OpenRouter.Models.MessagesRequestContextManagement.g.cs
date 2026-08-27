@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MessagesRequestContextManagement
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edits")]
         public global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestContextManagementEditsItems>? Edits { get; set; }

@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct CreateObservabilityDestinationResponseData : global::System.IEquatable<CreateObservabilityDestinationResponseData>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Arize))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsArize => Arize != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickArize(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1 PickArize() => IsArize
             ? Arize!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Braintrust))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsBraintrust => Braintrust != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBraintrust(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2 PickBraintrust() => IsBraintrust
             ? Braintrust!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Clickhouse))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsClickhouse => Clickhouse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClickhouse(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3 PickClickhouse() => IsClickhouse
             ? Clickhouse!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Datadog))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsDatadog => Datadog != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDatadog(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4 PickDatadog() => IsDatadog
             ? Datadog!
@@ -172,7 +172,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Grafana))]
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsGrafana => Grafana != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGrafana(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5 PickGrafana() => IsGrafana
             ? Grafana!
@@ -209,7 +209,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Langfuse))]
@@ -217,7 +217,7 @@ namespace OpenRouter
         public bool IsLangfuse => Langfuse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLangfuse(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6 PickLangfuse() => IsLangfuse
             ? Langfuse!
@@ -246,7 +246,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Langsmith))]
@@ -254,7 +254,7 @@ namespace OpenRouter
         public bool IsLangsmith => Langsmith != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLangsmith(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7 PickLangsmith() => IsLangsmith
             ? Langsmith!
@@ -283,7 +283,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Newrelic))]
@@ -291,7 +291,7 @@ namespace OpenRouter
         public bool IsNewrelic => Newrelic != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNewrelic(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8 PickNewrelic() => IsNewrelic
             ? Newrelic!
@@ -320,7 +320,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Opik))]
@@ -328,7 +328,7 @@ namespace OpenRouter
         public bool IsOpik => Opik != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpik(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9 PickOpik() => IsOpik
             ? Opik!
@@ -357,7 +357,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OtelCollector))]
@@ -365,7 +365,7 @@ namespace OpenRouter
         public bool IsOtelCollector => OtelCollector != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOtelCollector(
 #if NET6_0_OR_GREATER
@@ -378,7 +378,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10 PickOtelCollector() => IsOtelCollector
             ? OtelCollector!
@@ -394,7 +394,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Posthog))]
@@ -402,7 +402,7 @@ namespace OpenRouter
         public bool IsPosthog => Posthog != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPosthog(
 #if NET6_0_OR_GREATER
@@ -415,7 +415,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11 PickPosthog() => IsPosthog
             ? Posthog!
@@ -431,7 +431,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ramp))]
@@ -439,7 +439,7 @@ namespace OpenRouter
         public bool IsRamp => Ramp != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRamp(
 #if NET6_0_OR_GREATER
@@ -452,7 +452,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12 PickRamp() => IsRamp
             ? Ramp!
@@ -468,7 +468,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(S3))]
@@ -476,7 +476,7 @@ namespace OpenRouter
         public bool IsS3 => S3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickS3(
 #if NET6_0_OR_GREATER
@@ -489,7 +489,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13 PickS3() => IsS3
             ? S3!
@@ -505,7 +505,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sentry))]
@@ -513,7 +513,7 @@ namespace OpenRouter
         public bool IsSentry => Sentry != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSentry(
 #if NET6_0_OR_GREATER
@@ -526,7 +526,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14 PickSentry() => IsSentry
             ? Sentry!
@@ -542,7 +542,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Snowflake))]
@@ -550,7 +550,7 @@ namespace OpenRouter
         public bool IsSnowflake => Snowflake != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSnowflake(
 #if NET6_0_OR_GREATER
@@ -563,7 +563,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15 PickSnowflake() => IsSnowflake
             ? Snowflake!
@@ -579,7 +579,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Weave))]
@@ -587,7 +587,7 @@ namespace OpenRouter
         public bool IsWeave => Weave != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWeave(
 #if NET6_0_OR_GREATER
@@ -600,7 +600,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16 PickWeave() => IsWeave
             ? Weave!
@@ -616,7 +616,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Webhook))]
@@ -624,7 +624,7 @@ namespace OpenRouter
         public bool IsWebhook => Webhook != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebhook(
 #if NET6_0_OR_GREATER
@@ -637,23 +637,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17 PickWebhook() => IsWebhook
             ? Webhook!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1?(CreateObservabilityDestinationResponseData @this) => @this.Arize;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1? value)
         {
@@ -661,22 +661,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromArize(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2?(CreateObservabilityDestinationResponseData @this) => @this.Braintrust;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2? value)
         {
@@ -684,22 +684,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromBraintrust(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3?(CreateObservabilityDestinationResponseData @this) => @this.Clickhouse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3? value)
         {
@@ -707,22 +707,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromClickhouse(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4?(CreateObservabilityDestinationResponseData @this) => @this.Datadog;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4? value)
         {
@@ -730,22 +730,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromDatadog(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5?(CreateObservabilityDestinationResponseData @this) => @this.Grafana;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5? value)
         {
@@ -753,22 +753,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromGrafana(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6?(CreateObservabilityDestinationResponseData @this) => @this.Langfuse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6? value)
         {
@@ -776,22 +776,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromLangfuse(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7?(CreateObservabilityDestinationResponseData @this) => @this.Langsmith;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7? value)
         {
@@ -799,22 +799,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromLangsmith(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8?(CreateObservabilityDestinationResponseData @this) => @this.Newrelic;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8? value)
         {
@@ -822,22 +822,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromNewrelic(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9?(CreateObservabilityDestinationResponseData @this) => @this.Opik;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9? value)
         {
@@ -845,22 +845,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromOpik(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10?(CreateObservabilityDestinationResponseData @this) => @this.OtelCollector;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10? value)
         {
@@ -868,22 +868,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromOtelCollector(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11?(CreateObservabilityDestinationResponseData @this) => @this.Posthog;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11? value)
         {
@@ -891,22 +891,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromPosthog(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12?(CreateObservabilityDestinationResponseData @this) => @this.Ramp;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12? value)
         {
@@ -914,22 +914,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromRamp(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13?(CreateObservabilityDestinationResponseData @this) => @this.S3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13? value)
         {
@@ -937,22 +937,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromS3(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14?(CreateObservabilityDestinationResponseData @this) => @this.Sentry;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14? value)
         {
@@ -960,22 +960,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromSentry(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15?(CreateObservabilityDestinationResponseData @this) => @this.Snowflake;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15? value)
         {
@@ -983,22 +983,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromSnowflake(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16?(CreateObservabilityDestinationResponseData @this) => @this.Weave;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16? value)
         {
@@ -1006,22 +1006,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromWeave(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17 value) => new CreateObservabilityDestinationResponseData((global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17?(CreateObservabilityDestinationResponseData @this) => @this.Webhook;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17? value)
         {
@@ -1029,12 +1029,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateObservabilityDestinationResponseData FromWebhook(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17? value) => new CreateObservabilityDestinationResponseData(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateObservabilityDestinationResponseData(
             global::OpenRouter.CreateObservabilityDestinationResponseDataDiscriminatorType? type,
@@ -1079,7 +1079,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Webhook as object ??
@@ -1098,11 +1098,11 @@ namespace OpenRouter
             Datadog as object ??
             Clickhouse as object ??
             Braintrust as object ??
-            Arize as object 
+            Arize as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Arize?.ToString() ??
@@ -1121,11 +1121,11 @@ namespace OpenRouter
             Sentry?.ToString() ??
             Snowflake?.ToString() ??
             Weave?.ToString() ??
-            Webhook?.ToString() 
+            Webhook?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -1133,7 +1133,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1, TResult>? arize = null,
@@ -1233,7 +1233,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1>? arize = null,
@@ -1347,7 +1347,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1>? arize = null,
@@ -1445,7 +1445,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1496,7 +1496,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateObservabilityDestinationResponseData other)
         {
@@ -1517,12 +1517,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14?>.Default.Equals(Sentry, other.Sentry) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15?>.Default.Equals(Snowflake, other.Snowflake) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16?>.Default.Equals(Weave, other.Weave) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17?>.Default.Equals(Webhook, other.Webhook) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17?>.Default.Equals(Webhook, other.Webhook)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateObservabilityDestinationResponseData obj1, CreateObservabilityDestinationResponseData obj2)
         {
@@ -1530,7 +1530,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateObservabilityDestinationResponseData obj1, CreateObservabilityDestinationResponseData obj2)
         {
@@ -1538,7 +1538,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

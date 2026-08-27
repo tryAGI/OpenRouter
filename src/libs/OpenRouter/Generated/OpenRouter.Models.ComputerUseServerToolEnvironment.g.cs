@@ -4,28 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ComputerUseServerToolEnvironment
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Browser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Linux,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ubuntu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Windows,
     }

@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputFunctionCallItemStatus1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

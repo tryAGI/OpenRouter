@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OutputMessageContentItems : global::System.IEquatable<OutputMessageContentItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ResponseOutputText? ResponseOutputText { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputText))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsResponseOutputText => ResponseOutputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputText(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ResponseOutputText PickResponseOutputText() => IsResponseOutputText
             ? ResponseOutputText!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputText' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponsesRefusalContent? OpenAIResponsesRefusalContent { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesRefusalContent))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOpenAIResponsesRefusalContent => OpenAIResponsesRefusalContent != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAIResponsesRefusalContent(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAIResponsesRefusalContent PickOpenAIResponsesRefusalContent() => IsOpenAIResponsesRefusalContent
             ? OpenAIResponsesRefusalContent!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesRefusalContent' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputMessageContentItems(global::OpenRouter.ResponseOutputText value) => new OutputMessageContentItems((global::OpenRouter.ResponseOutputText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ResponseOutputText?(OutputMessageContentItems @this) => @this.ResponseOutputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessageContentItems(global::OpenRouter.ResponseOutputText? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputMessageContentItems FromResponseOutputText(global::OpenRouter.ResponseOutputText? value) => new OutputMessageContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputMessageContentItems(global::OpenRouter.OpenAIResponsesRefusalContent value) => new OutputMessageContentItems((global::OpenRouter.OpenAIResponsesRefusalContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAIResponsesRefusalContent?(OutputMessageContentItems @this) => @this.OpenAIResponsesRefusalContent;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessageContentItems(global::OpenRouter.OpenAIResponsesRefusalContent? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputMessageContentItems FromOpenAIResponsesRefusalContent(global::OpenRouter.OpenAIResponsesRefusalContent? value) => new OutputMessageContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputMessageContentItems(
             global::OpenRouter.ResponseOutputText? responseOutputText,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OpenAIResponsesRefusalContent as object ??
-            ResponseOutputText as object 
+            ResponseOutputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ResponseOutputText?.ToString() ??
-            OpenAIResponsesRefusalContent?.ToString() 
+            OpenAIResponsesRefusalContent?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ResponseOutputText, TResult>? responseOutputText = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ResponseOutputText>? responseOutputText = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ResponseOutputText>? responseOutputText = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OutputMessageContentItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponseOutputText?>.Default.Equals(ResponseOutputText, other.ResponseOutputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesRefusalContent?>.Default.Equals(OpenAIResponsesRefusalContent, other.OpenAIResponsesRefusalContent) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesRefusalContent?>.Default.Equals(OpenAIResponsesRefusalContent, other.OpenAIResponsesRefusalContent)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OutputMessageContentItems obj1, OutputMessageContentItems obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OutputMessageContentItems obj1, OutputMessageContentItems obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

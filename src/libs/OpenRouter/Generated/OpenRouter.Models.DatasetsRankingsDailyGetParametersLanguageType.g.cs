@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum DatasetsRankingsDailyGetParametersLanguageType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Natural,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Programming,
     }

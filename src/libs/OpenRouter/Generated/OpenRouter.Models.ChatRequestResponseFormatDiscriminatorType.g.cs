@@ -4,28 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatRequestResponseFormatDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grammar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonSchema,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Python,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

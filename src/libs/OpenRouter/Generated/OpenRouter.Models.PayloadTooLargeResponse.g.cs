@@ -16,13 +16,13 @@ namespace OpenRouter
         public required global::OpenRouter.PayloadTooLargeResponseErrorData Error { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("openrouter_metadata")]
         public object? OpenrouterMetadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         public string? UserId { get; set; }

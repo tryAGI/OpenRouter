@@ -4,1004 +4,1004 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ae,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Af,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ag,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ai,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Al,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Am,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ao,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Aq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         As,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         At,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Au,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Aw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ax,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Az,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ba,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Be,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bj,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Br,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         By,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ca,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ci,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ck,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Co,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         De,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dj,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Do,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ec,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ee,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Er,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Es,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Et,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fj,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ga,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ht,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ie,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Il,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Im,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         In,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Io,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Iq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ir,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Is,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         It,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Je,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ke,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ki,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Km,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ky,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         La,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Li,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Md,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Me,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ml,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         My,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Na,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ne,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ng,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ni,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         No,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Np,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Om,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ph,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ps,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Py,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Re,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ru,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Se,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Si,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sj,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         So,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ss,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         St,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Td,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Th,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tj,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         To,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ua,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ug,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Um,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Us,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Va,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ve,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ws,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ye,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Yt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Za,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zw,
     }

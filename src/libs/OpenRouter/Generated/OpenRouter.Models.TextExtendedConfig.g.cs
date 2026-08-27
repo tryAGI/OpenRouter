@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.Formats? Format { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.TextExtendedConfigVerbosityJsonConverter))]

@@ -6,7 +6,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateGuardrailRequest
     {

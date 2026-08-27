@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class AnthropicToolSearchContentVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchResultErrorTypeJsonConverter))]
         public global::OpenRouter.AnthropicToolSearchResultErrorType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicServerToolErrorCodeJsonConverter))]
@@ -24,7 +24,7 @@ namespace OpenRouter
         public required global::OpenRouter.AnthropicServerToolErrorCode ErrorCode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
         public string? ErrorMessage { get; set; }

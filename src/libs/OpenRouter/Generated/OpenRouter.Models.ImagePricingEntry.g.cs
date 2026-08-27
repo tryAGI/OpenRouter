@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ImagePricingEntry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billable")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImagePricingEntryBillableJsonConverter))]
@@ -17,14 +17,14 @@ namespace OpenRouter
         public required global::OpenRouter.ImagePricingEntryBillable Billable { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_usd")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double CostUsd { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unit")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ImagePricingEntryUnitJsonConverter))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public required global::OpenRouter.ImagePricingEntryUnit Unit { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variant")]
         public string? Variant { get; set; }

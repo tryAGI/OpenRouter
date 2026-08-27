@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicBashCodeExecutionContent : global::System.IEquatable<AnthropicBashCodeExecutionContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionResult))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsBashCodeExecutionResult => BashCodeExecutionResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBashCodeExecutionResult(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicBashCodeExecutionContentVariant1 PickBashCodeExecutionResult() => IsBashCodeExecutionResult
             ? BashCodeExecutionResult!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResultError))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsBashCodeExecutionToolResultError => BashCodeExecutionToolResultError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBashCodeExecutionToolResultError(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.AnthropicBashCodeExecutionContentVariant2 PickBashCodeExecutionToolResultError() => IsBashCodeExecutionToolResultError
             ? BashCodeExecutionToolResultError!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResultError' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1 value) => new AnthropicBashCodeExecutionContent((global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?(AnthropicBashCodeExecutionContent @this) => @this.BashCodeExecutionResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? value)
         {
@@ -106,22 +106,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicBashCodeExecutionContent FromBashCodeExecutionResult(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? value) => new AnthropicBashCodeExecutionContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2 value) => new AnthropicBashCodeExecutionContent((global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?(AnthropicBashCodeExecutionContent @this) => @this.BashCodeExecutionToolResultError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicBashCodeExecutionContent(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? value)
         {
@@ -129,12 +129,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicBashCodeExecutionContent FromBashCodeExecutionToolResultError(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? value) => new AnthropicBashCodeExecutionContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicBashCodeExecutionContent(
             global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BashCodeExecutionToolResultError as object ??
-            BashCodeExecutionResult as object 
+            BashCodeExecutionResult as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BashCodeExecutionResult?.ToString() ??
-            BashCodeExecutionToolResultError?.ToString() 
+            BashCodeExecutionToolResultError?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1, TResult>? bashCodeExecutionResult = null,
@@ -198,7 +198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1>? bashCodeExecutionResult = null,
@@ -222,7 +222,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1>? bashCodeExecutionResult = null,
@@ -245,7 +245,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicBashCodeExecutionContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?>.Default.Equals(BashCodeExecutionResult, other.BashCodeExecutionResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?>.Default.Equals(BashCodeExecutionToolResultError, other.BashCodeExecutionToolResultError) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?>.Default.Equals(BashCodeExecutionToolResultError, other.BashCodeExecutionToolResultError)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicBashCodeExecutionContent obj1, AnthropicBashCodeExecutionContent obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicBashCodeExecutionContent obj1, AnthropicBashCodeExecutionContent obj2)
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

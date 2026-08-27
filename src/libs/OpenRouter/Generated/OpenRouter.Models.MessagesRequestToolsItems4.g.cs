@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MessagesRequestToolsItems4
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicAllowedCallersItems>? AllowedCallers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("blocked_domains")]
         public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
@@ -33,27 +33,27 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_uses")]
         public int? MaxUses { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf4NameJsonConverter))]
         public global::OpenRouter.MessagesRequestToolsItemsOneOf4Name Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolsItemsOneOf4TypeJsonConverter))]
         public global::OpenRouter.MessagesRequestToolsItemsOneOf4Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
         public global::OpenRouter.AnthropicWebSearchToolUserLocation? UserLocation { get; set; }

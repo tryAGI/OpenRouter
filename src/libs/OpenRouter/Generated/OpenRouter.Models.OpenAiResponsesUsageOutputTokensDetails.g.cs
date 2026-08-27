@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OpenAiResponsesUsageOutputTokensDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]

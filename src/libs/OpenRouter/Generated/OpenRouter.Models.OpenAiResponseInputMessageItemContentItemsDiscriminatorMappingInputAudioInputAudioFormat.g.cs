@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OpenAiResponseInputMessageItemContentItemsDiscriminatorMappingInputAudioInputAudioFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

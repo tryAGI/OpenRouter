@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class MessagesMessageParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamContentJsonConverter))]
@@ -17,7 +17,7 @@ namespace OpenRouter
         public required global::OpenRouter.MessagesMessageParamContent Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesMessageParamRoleJsonConverter))]

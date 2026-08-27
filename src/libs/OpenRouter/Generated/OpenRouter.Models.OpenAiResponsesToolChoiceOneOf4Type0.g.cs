@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OpenAiResponsesToolChoiceOneOf4Type0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview20250311,
     }

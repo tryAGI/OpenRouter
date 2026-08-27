@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ChatMessagesVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatSystemMessageRoleJsonConverter))]

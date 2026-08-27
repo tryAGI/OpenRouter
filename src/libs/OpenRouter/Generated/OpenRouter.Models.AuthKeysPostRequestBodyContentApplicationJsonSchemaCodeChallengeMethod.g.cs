@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S256,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plain,
     }

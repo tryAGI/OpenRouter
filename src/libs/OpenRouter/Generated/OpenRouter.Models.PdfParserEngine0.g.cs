@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PdfParserEngine0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CloudflareAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MistralOcr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Native,
     }

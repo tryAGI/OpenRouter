@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems : global::System.IEquatable<EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ContentPartInputAudio? ContentPartInputAudio { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartInputAudio))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsContentPartInputAudio => ContentPartInputAudio != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentPartInputAudio(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ContentPartInputAudio PickContentPartInputAudio() => IsContentPartInputAudio
             ? ContentPartInputAudio!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentPartInputAudio' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ContentPartInputVideo? ContentPartInputVideo { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartInputVideo))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsContentPartInputVideo => ContentPartInputVideo != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentPartInputVideo(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ContentPartInputVideo PickContentPartInputVideo() => IsContentPartInputVideo
             ? ContentPartInputVideo!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentPartInputVideo' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ContentPartInputFile? ContentPartInputFile { get; init; }
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartInputFile))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsContentPartInputFile => ContentPartInputFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentPartInputFile(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ContentPartInputFile PickContentPartInputFile() => IsContentPartInputFile
             ? ContentPartInputFile!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentPartInputFile' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems((global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems @this) => @this.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? value)
         {
@@ -212,22 +212,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems((global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems @this) => @this.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? value)
         {
@@ -235,22 +235,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1(global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.ContentPartInputAudio value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems((global::OpenRouter.ContentPartInputAudio?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ContentPartInputAudio?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems @this) => @this.ContentPartInputAudio;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.ContentPartInputAudio? value)
         {
@@ -258,22 +258,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromContentPartInputAudio(global::OpenRouter.ContentPartInputAudio? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.ContentPartInputVideo value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems((global::OpenRouter.ContentPartInputVideo?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ContentPartInputVideo?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems @this) => @this.ContentPartInputVideo;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.ContentPartInputVideo? value)
         {
@@ -281,22 +281,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromContentPartInputVideo(global::OpenRouter.ContentPartInputVideo? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.ContentPartInputFile value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems((global::OpenRouter.ContentPartInputFile?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ContentPartInputFile?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems @this) => @this.ContentPartInputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::OpenRouter.ContentPartInputFile? value)
         {
@@ -304,12 +304,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromContentPartInputFile(global::OpenRouter.ContentPartInputFile? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(
             global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0,
@@ -327,29 +327,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ContentPartInputFile as object ??
             ContentPartInputVideo as object ??
             ContentPartInputAudio as object ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 as object ??
-            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 as object 
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?.ToString() ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?.ToString() ??
             ContentPartInputAudio?.ToString() ??
             ContentPartInputVideo?.ToString() ??
-            ContentPartInputFile?.ToString() 
+            ContentPartInputFile?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -357,7 +357,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 = null,
@@ -397,7 +397,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 = null,
@@ -439,7 +439,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 = null,
@@ -477,7 +477,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -504,7 +504,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems other)
         {
@@ -513,12 +513,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContentPartInputAudio?>.Default.Equals(ContentPartInputAudio, other.ContentPartInputAudio) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContentPartInputVideo?>.Default.Equals(ContentPartInputVideo, other.ContentPartInputVideo) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContentPartInputFile?>.Default.Equals(ContentPartInputFile, other.ContentPartInputFile) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContentPartInputFile?>.Default.Equals(ContentPartInputFile, other.ContentPartInputFile)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems obj1, EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems obj2)
         {
@@ -526,7 +526,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems obj1, EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems obj2)
         {
@@ -534,7 +534,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

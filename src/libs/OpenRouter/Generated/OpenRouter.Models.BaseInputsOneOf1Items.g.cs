@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BaseInputsOneOf1Items : global::System.IEquatable<BaseInputsOneOf1Items>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.BaseInputsOneOf1Items0? BaseInputsOneOf1Items0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1Items0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsBaseInputsOneOf1Items0 => BaseInputsOneOf1Items0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBaseInputsOneOf1Items0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.BaseInputsOneOf1Items0 PickBaseInputsOneOf1Items0() => IsBaseInputsOneOf1Items0
             ? BaseInputsOneOf1Items0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseInputMessageItem? OpenAIResponseInputMessageItem { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseInputMessageItem))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsOpenAIResponseInputMessageItem => OpenAIResponseInputMessageItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAIResponseInputMessageItem(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAIResponseInputMessageItem PickOpenAIResponseInputMessageItem() => IsOpenAIResponseInputMessageItem
             ? OpenAIResponseInputMessageItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseInputMessageItem' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseFunctionToolCallOutput? OpenAIResponseFunctionToolCallOutput { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseFunctionToolCallOutput))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsOpenAIResponseFunctionToolCallOutput => OpenAIResponseFunctionToolCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAIResponseFunctionToolCallOutput(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAIResponseFunctionToolCallOutput PickOpenAIResponseFunctionToolCallOutput() => IsOpenAIResponseFunctionToolCallOutput
             ? OpenAIResponseFunctionToolCallOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseFunctionToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseFunctionToolCall? OpenAIResponseFunctionToolCall { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseFunctionToolCall))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsOpenAIResponseFunctionToolCall => OpenAIResponseFunctionToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAIResponseFunctionToolCall(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAIResponseFunctionToolCall PickOpenAIResponseFunctionToolCall() => IsOpenAIResponseFunctionToolCall
             ? OpenAIResponseFunctionToolCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseFunctionToolCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputItemImageGenerationCall? OutputItemImageGenerationCall { get; init; }
@@ -167,7 +167,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemImageGenerationCall))]
@@ -175,7 +175,7 @@ namespace OpenRouter
         public bool IsOutputItemImageGenerationCall => OutputItemImageGenerationCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputItemImageGenerationCall(
 #if NET6_0_OR_GREATER
@@ -188,14 +188,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => IsOutputItemImageGenerationCall
             ? OutputItemImageGenerationCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemImageGenerationCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OutputMessage? OutputMessage { get; init; }
@@ -204,7 +204,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessage))]
@@ -212,7 +212,7 @@ namespace OpenRouter
         public bool IsOutputMessage => OutputMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMessage(
 #if NET6_0_OR_GREATER
@@ -225,14 +225,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OutputMessage PickOutputMessage() => IsOutputMessage
             ? OutputMessage!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessage' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseCustomToolCall? OpenAIResponseCustomToolCall { get; init; }
@@ -241,7 +241,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseCustomToolCall))]
@@ -249,7 +249,7 @@ namespace OpenRouter
         public bool IsOpenAIResponseCustomToolCall => OpenAIResponseCustomToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAIResponseCustomToolCall(
 #if NET6_0_OR_GREATER
@@ -262,14 +262,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAIResponseCustomToolCall PickOpenAIResponseCustomToolCall() => IsOpenAIResponseCustomToolCall
             ? OpenAIResponseCustomToolCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseCustomToolCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.OpenAIResponseCustomToolCallOutput? OpenAIResponseCustomToolCallOutput { get; init; }
@@ -278,7 +278,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponseCustomToolCallOutput))]
@@ -286,7 +286,7 @@ namespace OpenRouter
         public bool IsOpenAIResponseCustomToolCallOutput => OpenAIResponseCustomToolCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpenAIResponseCustomToolCallOutput(
 #if NET6_0_OR_GREATER
@@ -299,7 +299,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.OpenAIResponseCustomToolCallOutput PickOpenAIResponseCustomToolCallOutput() => IsOpenAIResponseCustomToolCallOutput
             ? OpenAIResponseCustomToolCallOutput!
@@ -315,7 +315,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallItem))]
@@ -323,7 +323,7 @@ namespace OpenRouter
         public bool IsApplyPatchCallItem => ApplyPatchCallItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCallItem(
 #if NET6_0_OR_GREATER
@@ -336,7 +336,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => IsApplyPatchCallItem
             ? ApplyPatchCallItem!
@@ -352,7 +352,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutputItem))]
@@ -360,7 +360,7 @@ namespace OpenRouter
         public bool IsApplyPatchCallOutputItem => ApplyPatchCallOutputItem != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCallOutputItem(
 #if NET6_0_OR_GREATER
@@ -373,23 +373,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => IsApplyPatchCallOutputItem
             ? ApplyPatchCallOutputItem!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutputItem' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items0 value) => new BaseInputsOneOf1Items((global::OpenRouter.BaseInputsOneOf1Items0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.BaseInputsOneOf1Items0?(BaseInputsOneOf1Items @this) => @this.BaseInputsOneOf1Items0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.BaseInputsOneOf1Items0? value)
         {
@@ -397,22 +397,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromBaseInputsOneOf1Items0(global::OpenRouter.BaseInputsOneOf1Items0? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseInputMessageItem value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseInputMessageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAIResponseInputMessageItem?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseInputMessageItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseInputMessageItem? value)
         {
@@ -420,22 +420,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromOpenAIResponseInputMessageItem(global::OpenRouter.OpenAIResponseInputMessageItem? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCallOutput value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseFunctionToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAIResponseFunctionToolCallOutput?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseFunctionToolCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCallOutput? value)
         {
@@ -443,22 +443,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromOpenAIResponseFunctionToolCallOutput(global::OpenRouter.OpenAIResponseFunctionToolCallOutput? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCall value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseFunctionToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAIResponseFunctionToolCall?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseFunctionToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseFunctionToolCall? value)
         {
@@ -466,22 +466,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromOpenAIResponseFunctionToolCall(global::OpenRouter.OpenAIResponseFunctionToolCall? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OutputItemImageGenerationCall value) => new BaseInputsOneOf1Items((global::OpenRouter.OutputItemImageGenerationCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputItemImageGenerationCall?(BaseInputsOneOf1Items @this) => @this.OutputItemImageGenerationCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.OutputItemImageGenerationCall? value)
         {
@@ -489,22 +489,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromOutputItemImageGenerationCall(global::OpenRouter.OutputItemImageGenerationCall? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OutputMessage value) => new BaseInputsOneOf1Items((global::OpenRouter.OutputMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OutputMessage?(BaseInputsOneOf1Items @this) => @this.OutputMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.OutputMessage? value)
         {
@@ -512,22 +512,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromOutputMessage(global::OpenRouter.OutputMessage? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCall value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseCustomToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAIResponseCustomToolCall?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseCustomToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCall? value)
         {
@@ -535,22 +535,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromOpenAIResponseCustomToolCall(global::OpenRouter.OpenAIResponseCustomToolCall? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCallOutput value) => new BaseInputsOneOf1Items((global::OpenRouter.OpenAIResponseCustomToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.OpenAIResponseCustomToolCallOutput?(BaseInputsOneOf1Items @this) => @this.OpenAIResponseCustomToolCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.OpenAIResponseCustomToolCallOutput? value)
         {
@@ -558,22 +558,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromOpenAIResponseCustomToolCallOutput(global::OpenRouter.OpenAIResponseCustomToolCallOutput? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem value) => new BaseInputsOneOf1Items((global::OpenRouter.ApplyPatchCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ApplyPatchCallItem?(BaseInputsOneOf1Items @this) => @this.ApplyPatchCallItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.ApplyPatchCallItem? value)
         {
@@ -581,22 +581,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromApplyPatchCallItem(global::OpenRouter.ApplyPatchCallItem? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem value) => new BaseInputsOneOf1Items((global::OpenRouter.ApplyPatchCallOutputItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ApplyPatchCallOutputItem?(BaseInputsOneOf1Items @this) => @this.ApplyPatchCallOutputItem;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(global::OpenRouter.ApplyPatchCallOutputItem? value)
         {
@@ -604,12 +604,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BaseInputsOneOf1Items FromApplyPatchCallOutputItem(global::OpenRouter.ApplyPatchCallOutputItem? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BaseInputsOneOf1Items(
             global::OpenRouter.BaseInputsOneOf1Items0? baseInputsOneOf1Items0,
@@ -637,7 +637,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ApplyPatchCallOutputItem as object ??
@@ -649,11 +649,11 @@ namespace OpenRouter
             OpenAIResponseFunctionToolCall as object ??
             OpenAIResponseFunctionToolCallOutput as object ??
             OpenAIResponseInputMessageItem as object ??
-            BaseInputsOneOf1Items0 as object 
+            BaseInputsOneOf1Items0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BaseInputsOneOf1Items0?.ToString() ??
@@ -665,11 +665,11 @@ namespace OpenRouter
             OpenAIResponseCustomToolCall?.ToString() ??
             OpenAIResponseCustomToolCallOutput?.ToString() ??
             ApplyPatchCallItem?.ToString() ??
-            ApplyPatchCallOutputItem?.ToString() 
+            ApplyPatchCallOutputItem?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -677,7 +677,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.BaseInputsOneOf1Items0, TResult>? baseInputsOneOf1Items0 = null,
@@ -742,7 +742,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.BaseInputsOneOf1Items0>? baseInputsOneOf1Items0 = null,
@@ -814,7 +814,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.BaseInputsOneOf1Items0>? baseInputsOneOf1Items0 = null,
@@ -877,7 +877,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -914,7 +914,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BaseInputsOneOf1Items other)
         {
@@ -928,12 +928,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseCustomToolCall?>.Default.Equals(OpenAIResponseCustomToolCall, other.OpenAIResponseCustomToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponseCustomToolCallOutput?>.Default.Equals(OpenAIResponseCustomToolCallOutput, other.OpenAIResponseCustomToolCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallItem?>.Default.Equals(ApplyPatchCallItem, other.ApplyPatchCallItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallOutputItem?>.Default.Equals(ApplyPatchCallOutputItem, other.ApplyPatchCallOutputItem) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallOutputItem?>.Default.Equals(ApplyPatchCallOutputItem, other.ApplyPatchCallOutputItem)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BaseInputsOneOf1Items obj1, BaseInputsOneOf1Items obj2)
         {
@@ -941,7 +941,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BaseInputsOneOf1Items obj1, BaseInputsOneOf1Items obj2)
         {
@@ -949,7 +949,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items : global::System.IEquatable<ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 => ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1
             ? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2 => ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2
             ? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public bool? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3 => ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3
             ? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(string value) => new ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items @this) => @this.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(string? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items FromResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1(string? value) => new ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(double value) => new ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items @this) => @this.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(double? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items FromResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2(double? value) => new ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(bool value) => new ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items @this) => @this.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(bool? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items FromResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3(bool? value) => new ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items(
             string? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3 as object ??
             ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2 as object ??
-            ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 as object 
+            ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1?.ToString() ??
             ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2?.ToString() ??
-            ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3?.ToString().ToLowerInvariant() 
+            ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3?.ToString().ToLowerInvariant()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1 = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3ItemsVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items obj1, ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items obj1, ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

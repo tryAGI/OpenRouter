@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputToolSearchServerToolItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_toolSearch,
     }

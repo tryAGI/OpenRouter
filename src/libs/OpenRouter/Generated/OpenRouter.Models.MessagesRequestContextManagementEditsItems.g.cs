@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesRequestContextManagementEditsItems : global::System.IEquatable<MessagesRequestContextManagementEditsItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestContextManagementEditsItems0? MessagesRequestContextManagementEditsItems0 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItems0))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsMessagesRequestContextManagementEditsItems0 => MessagesRequestContextManagementEditsItems0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestContextManagementEditsItems0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestContextManagementEditsItems0 PickMessagesRequestContextManagementEditsItems0() => IsMessagesRequestContextManagementEditsItems0
             ? MessagesRequestContextManagementEditsItems0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestContextManagementEditsItems1? MessagesRequestContextManagementEditsItems1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItems1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsMessagesRequestContextManagementEditsItems1 => MessagesRequestContextManagementEditsItems1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestContextManagementEditsItems1(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestContextManagementEditsItems1 PickMessagesRequestContextManagementEditsItems1() => IsMessagesRequestContextManagementEditsItems1
             ? MessagesRequestContextManagementEditsItems1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.MessagesRequestContextManagementEditsItems2? MessagesRequestContextManagementEditsItems2 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItems2))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsMessagesRequestContextManagementEditsItems2 => MessagesRequestContextManagementEditsItems2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestContextManagementEditsItems2(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.MessagesRequestContextManagementEditsItems2 PickMessagesRequestContextManagementEditsItems2() => IsMessagesRequestContextManagementEditsItems2
             ? MessagesRequestContextManagementEditsItems2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItems(global::OpenRouter.MessagesRequestContextManagementEditsItems0 value) => new MessagesRequestContextManagementEditsItems((global::OpenRouter.MessagesRequestContextManagementEditsItems0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItems0?(MessagesRequestContextManagementEditsItems @this) => @this.MessagesRequestContextManagementEditsItems0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestContextManagementEditsItems(global::OpenRouter.MessagesRequestContextManagementEditsItems0? value)
         {
@@ -138,22 +138,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems0(global::OpenRouter.MessagesRequestContextManagementEditsItems0? value) => new MessagesRequestContextManagementEditsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItems(global::OpenRouter.MessagesRequestContextManagementEditsItems1 value) => new MessagesRequestContextManagementEditsItems((global::OpenRouter.MessagesRequestContextManagementEditsItems1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItems1?(MessagesRequestContextManagementEditsItems @this) => @this.MessagesRequestContextManagementEditsItems1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestContextManagementEditsItems(global::OpenRouter.MessagesRequestContextManagementEditsItems1? value)
         {
@@ -161,22 +161,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems1(global::OpenRouter.MessagesRequestContextManagementEditsItems1? value) => new MessagesRequestContextManagementEditsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItems(global::OpenRouter.MessagesRequestContextManagementEditsItems2 value) => new MessagesRequestContextManagementEditsItems((global::OpenRouter.MessagesRequestContextManagementEditsItems2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.MessagesRequestContextManagementEditsItems2?(MessagesRequestContextManagementEditsItems @this) => @this.MessagesRequestContextManagementEditsItems2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestContextManagementEditsItems(global::OpenRouter.MessagesRequestContextManagementEditsItems2? value)
         {
@@ -184,12 +184,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems2(global::OpenRouter.MessagesRequestContextManagementEditsItems2? value) => new MessagesRequestContextManagementEditsItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestContextManagementEditsItems(
             global::OpenRouter.MessagesRequestContextManagementEditsItems0? messagesRequestContextManagementEditsItems0,
@@ -203,25 +203,25 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessagesRequestContextManagementEditsItems2 as object ??
             MessagesRequestContextManagementEditsItems1 as object ??
-            MessagesRequestContextManagementEditsItems0 as object 
+            MessagesRequestContextManagementEditsItems0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessagesRequestContextManagementEditsItems0?.ToString() ??
             MessagesRequestContextManagementEditsItems1?.ToString() ??
-            MessagesRequestContextManagementEditsItems2?.ToString() 
+            MessagesRequestContextManagementEditsItems2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.MessagesRequestContextManagementEditsItems0, TResult>? messagesRequestContextManagementEditsItems0 = null,
@@ -259,7 +259,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems0>? messagesRequestContextManagementEditsItems0 = null,
@@ -289,7 +289,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.MessagesRequestContextManagementEditsItems0>? messagesRequestContextManagementEditsItems0 = null,
@@ -317,7 +317,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesRequestContextManagementEditsItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItems0?>.Default.Equals(MessagesRequestContextManagementEditsItems0, other.MessagesRequestContextManagementEditsItems0) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItems1?>.Default.Equals(MessagesRequestContextManagementEditsItems1, other.MessagesRequestContextManagementEditsItems1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItems2?>.Default.Equals(MessagesRequestContextManagementEditsItems2, other.MessagesRequestContextManagementEditsItems2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.MessagesRequestContextManagementEditsItems2?>.Default.Equals(MessagesRequestContextManagementEditsItems2, other.MessagesRequestContextManagementEditsItems2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesRequestContextManagementEditsItems obj1, MessagesRequestContextManagementEditsItems obj2)
         {
@@ -360,7 +360,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesRequestContextManagementEditsItems obj1, MessagesRequestContextManagementEditsItems obj2)
         {
@@ -368,7 +368,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

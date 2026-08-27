@@ -4,24 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicTextEditorCodeExecutionContentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionCreateResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionStrReplaceResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionToolResultError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionViewResult,
     }

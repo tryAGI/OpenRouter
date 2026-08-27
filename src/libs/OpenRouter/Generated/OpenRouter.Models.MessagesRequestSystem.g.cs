@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesRequestSystem : global::System.IEquatable<MessagesRequestSystem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? MessagesRequestSystemVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestSystemVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsMessagesRequestSystemVariant1 => MessagesRequestSystemVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestSystemVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickMessagesRequestSystemVariant1() => IsMessagesRequestSystemVariant1
             ? MessagesRequestSystemVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>? MessagesRequestSystem1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestSystem1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsMessagesRequestSystem1 => MessagesRequestSystem1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessagesRequestSystem1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam> PickMessagesRequestSystem1() => IsMessagesRequestSystem1
             ? MessagesRequestSystem1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystem1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesRequestSystem(string value) => new MessagesRequestSystem((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(MessagesRequestSystem @this) => @this.MessagesRequestSystemVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestSystem(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesRequestSystem FromMessagesRequestSystemVariant1(string? value) => new MessagesRequestSystem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesRequestSystem(
             string? messagesRequestSystemVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessagesRequestSystem1 as object ??
-            MessagesRequestSystemVariant1 as object 
+            MessagesRequestSystemVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessagesRequestSystemVariant1?.ToString() ??
-            MessagesRequestSystem1?.ToString() 
+            MessagesRequestSystem1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? messagesRequestSystemVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? messagesRequestSystemVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? messagesRequestSystemVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesRequestSystem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MessagesRequestSystemVariant1, other.MessagesRequestSystemVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>?>.Default.Equals(MessagesRequestSystem1, other.MessagesRequestSystem1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParam>?>.Default.Equals(MessagesRequestSystem1, other.MessagesRequestSystem1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesRequestSystem obj1, MessagesRequestSystem obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesRequestSystem obj1, MessagesRequestSystem obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

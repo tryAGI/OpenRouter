@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class CodeInterpreterServerTool
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerJsonConverter))]
@@ -17,7 +17,7 @@ namespace OpenRouter
         public required global::OpenRouter.CodeInterpreterServerToolContainer Container { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolTypeJsonConverter))]

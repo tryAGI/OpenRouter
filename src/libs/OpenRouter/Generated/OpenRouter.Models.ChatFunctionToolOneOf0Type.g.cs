@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatFunctionToolOneOf0Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

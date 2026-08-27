@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class MessagesFallbackParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]

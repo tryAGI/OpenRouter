@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OpenAiResponseFunctionToolCallOutputOutputOneOf1ItemsDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
     }

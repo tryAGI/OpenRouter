@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolChoiceAllowedMode1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Required,
     }

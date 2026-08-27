@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IncompleteDetailsReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFilter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxOutputTokens,
     }

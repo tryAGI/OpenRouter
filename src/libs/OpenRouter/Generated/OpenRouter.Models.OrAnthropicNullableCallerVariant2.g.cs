@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.OrAnthropicNullableCallerVariant2Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

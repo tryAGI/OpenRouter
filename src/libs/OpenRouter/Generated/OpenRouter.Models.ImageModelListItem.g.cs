@@ -9,7 +9,7 @@ namespace OpenRouter
     public sealed partial class ImageModelListItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("architecture")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,7 @@ namespace OpenRouter
         public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]

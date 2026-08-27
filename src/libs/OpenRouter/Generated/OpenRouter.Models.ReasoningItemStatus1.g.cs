@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ReasoningItemStatus1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

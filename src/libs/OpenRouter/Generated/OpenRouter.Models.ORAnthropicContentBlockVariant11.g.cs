@@ -16,7 +16,7 @@ namespace OpenRouter
         public global::OpenRouter.ORAnthropicContentBlockVariant11Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicToolSearchContentJsonConverter))]
@@ -24,7 +24,7 @@ namespace OpenRouter
         public required global::OpenRouter.AnthropicToolSearchContent Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

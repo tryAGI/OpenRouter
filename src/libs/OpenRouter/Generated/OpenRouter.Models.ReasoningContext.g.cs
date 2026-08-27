@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum ReasoningContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllTurns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CurrentTurn,
     }

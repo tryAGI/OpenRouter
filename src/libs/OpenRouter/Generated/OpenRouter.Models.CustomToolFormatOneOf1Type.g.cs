@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CustomToolFormatOneOf1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grammar,
     }

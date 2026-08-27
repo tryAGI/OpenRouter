@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems : global::System.IEquatable<EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ProviderName? ProviderName { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProviderName))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsProviderName => ProviderName != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProviderName(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
             ? ProviderName!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2
             ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(global::OpenRouter.ProviderName value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems((global::OpenRouter.ProviderName?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ProviderName?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems @this) => @this.ProviderName;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(global::OpenRouter.ProviderName? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems FromProviderName(global::OpenRouter.ProviderName? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(string value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems @this) => @this.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(string? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2(string? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems(
             global::OpenRouter.ProviderName? providerName,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 as object ??
-            ProviderName as object 
+            ProviderName as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ProviderName?.ToValueString() ??
-            EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2?.ToString() 
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderName?, TResult>? providerName = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderName?>.Default.Equals(ProviderName, other.ProviderName) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems obj1, EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems obj1, EmbeddingsPostRequestBodyContentApplicationJsonSchemaProviderOnlyItems obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

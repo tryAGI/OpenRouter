@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ShellServerToolEnvironmentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerAuto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerReference,
     }

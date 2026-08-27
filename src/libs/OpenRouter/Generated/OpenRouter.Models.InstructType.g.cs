@@ -9,91 +9,91 @@ namespace OpenRouter
     public enum InstructType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Airoboros,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alpaca,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlpacaModif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chatml,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Claude,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeLlama,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeepseekR1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeepseekV31,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llama2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llama3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mistral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nemotron,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neural,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openchat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phi3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qwen3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qwq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rwkv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vicuna,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zephyr,
     }

@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum BenchmarksGetParametersSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ArtificialAnalysis,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DesignArena,
     }

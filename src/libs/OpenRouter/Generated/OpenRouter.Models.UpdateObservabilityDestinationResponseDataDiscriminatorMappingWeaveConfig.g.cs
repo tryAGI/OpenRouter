@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateObservabilityDestinationResponseDataDiscriminatorMappingWeaveConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiKey")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,7 +22,7 @@ namespace OpenRouter
         public string? BaseUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entity")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +35,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project")]
         [global::System.Text.Json.Serialization.JsonRequired]

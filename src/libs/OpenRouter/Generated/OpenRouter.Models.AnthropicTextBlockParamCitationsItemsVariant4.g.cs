@@ -16,42 +16,42 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicTextBlockParamCitationsItemsVariant4Type Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CitedText { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EndBlockIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_result_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SearchResultIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Source { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartBlockIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }

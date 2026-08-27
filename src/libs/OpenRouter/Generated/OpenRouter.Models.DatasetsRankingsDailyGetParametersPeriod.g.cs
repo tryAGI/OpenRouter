@@ -9,15 +9,15 @@ namespace OpenRouter
     public enum DatasetsRankingsDailyGetParametersPeriod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Month,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Week,
     }

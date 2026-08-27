@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PdfParserEngine1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PdfText,
     }

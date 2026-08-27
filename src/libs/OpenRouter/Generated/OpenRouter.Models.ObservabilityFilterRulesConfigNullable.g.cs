@@ -15,7 +15,7 @@ namespace OpenRouter
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
         [global::System.Text.Json.Serialization.JsonRequired]

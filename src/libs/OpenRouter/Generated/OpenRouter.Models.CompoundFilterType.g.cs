@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CompoundFilterType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         And,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Or,
     }

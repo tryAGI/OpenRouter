@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RankingsDailyResponse
     {
@@ -16,7 +16,7 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.RankingsDailyItem> Data { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         [global::System.Text.Json.Serialization.JsonRequired]

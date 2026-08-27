@@ -15,7 +15,7 @@ namespace OpenRouter
         public global::OpenRouter.DatetimeServerToolConfig? Parameters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.DatetimeServerToolTypeJsonConverter))]

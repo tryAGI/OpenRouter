@@ -4,18 +4,18 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnthropicIterationCacheCreation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_1h_input_tokens")]
         public int? Ephemeral1hInputTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_5m_input_tokens")]
         public int? Ephemeral5mInputTokens { get; set; }

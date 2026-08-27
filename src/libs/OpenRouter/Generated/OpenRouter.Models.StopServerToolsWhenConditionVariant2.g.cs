@@ -9,14 +9,14 @@ namespace OpenRouter
     public sealed partial class StopServerToolsWhenConditionVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.StopServerToolsWhenHasToolCallTypeJsonConverter))]
         public global::OpenRouter.StopServerToolsWhenHasToolCallType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

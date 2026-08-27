@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VideoModelSupportedFrameImagesItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstFrame,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastFrame,
     }

@@ -9,11 +9,11 @@ namespace OpenRouter
     public enum STTTimestampGranularity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Segment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Word,
     }

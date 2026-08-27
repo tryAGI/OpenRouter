@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputReasoningItemStatus1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

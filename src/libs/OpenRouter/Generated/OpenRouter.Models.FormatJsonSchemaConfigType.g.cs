@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FormatJsonSchemaConfigType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonSchema,
     }

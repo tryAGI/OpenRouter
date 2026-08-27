@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct ChatRequestResponseFormat : global::System.IEquatable<ChatRequestResponseFormat>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatRequestResponseFormatDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Grammar))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsGrammar => Grammar != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGrammar(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatRequestResponseFormatVariant1 PickGrammar() => IsGrammar
             ? Grammar!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonObject(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatRequestResponseFormatVariant2 PickJsonObject() => IsJsonObject
             ? JsonObject!
@@ -98,7 +98,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
@@ -106,7 +106,7 @@ namespace OpenRouter
         public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonSchema(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatRequestResponseFormatVariant3 PickJsonSchema() => IsJsonSchema
             ? JsonSchema!
@@ -135,7 +135,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Python))]
@@ -143,7 +143,7 @@ namespace OpenRouter
         public bool IsPython => Python != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPython(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatRequestResponseFormatVariant4 PickPython() => IsPython
             ? Python!
@@ -172,7 +172,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -180,7 +180,7 @@ namespace OpenRouter
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -193,23 +193,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ChatRequestResponseFormatVariant5 PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant1 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant1?(ChatRequestResponseFormat @this) => @this.Grammar;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant1? value)
         {
@@ -217,22 +217,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatRequestResponseFormat FromGrammar(global::OpenRouter.ChatRequestResponseFormatVariant1? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant2 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant2?(ChatRequestResponseFormat @this) => @this.JsonObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant2? value)
         {
@@ -240,22 +240,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatRequestResponseFormat FromJsonObject(global::OpenRouter.ChatRequestResponseFormatVariant2? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant3 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant3?(ChatRequestResponseFormat @this) => @this.JsonSchema;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant3? value)
         {
@@ -263,22 +263,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatRequestResponseFormat FromJsonSchema(global::OpenRouter.ChatRequestResponseFormatVariant3? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant4 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant4?(ChatRequestResponseFormat @this) => @this.Python;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant4? value)
         {
@@ -286,22 +286,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatRequestResponseFormat FromPython(global::OpenRouter.ChatRequestResponseFormatVariant4? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant5 value) => new ChatRequestResponseFormat((global::OpenRouter.ChatRequestResponseFormatVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ChatRequestResponseFormatVariant5?(ChatRequestResponseFormat @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestResponseFormat(global::OpenRouter.ChatRequestResponseFormatVariant5? value)
         {
@@ -309,12 +309,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatRequestResponseFormat FromText(global::OpenRouter.ChatRequestResponseFormatVariant5? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatRequestResponseFormat(
             global::OpenRouter.ChatRequestResponseFormatDiscriminatorType? type,
@@ -335,29 +335,29 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Text as object ??
             Python as object ??
             JsonSchema as object ??
             JsonObject as object ??
-            Grammar as object 
+            Grammar as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Grammar?.ToString() ??
             JsonObject?.ToString() ??
             JsonSchema?.ToString() ??
             Python?.ToString() ??
-            Text?.ToString() 
+            Text?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -365,7 +365,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ChatRequestResponseFormatVariant1, TResult>? grammar = null,
@@ -405,7 +405,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant1>? grammar = null,
@@ -447,7 +447,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ChatRequestResponseFormatVariant1>? grammar = null,
@@ -485,7 +485,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -512,7 +512,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatRequestResponseFormat other)
         {
@@ -521,12 +521,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant2?>.Default.Equals(JsonObject, other.JsonObject) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant3?>.Default.Equals(JsonSchema, other.JsonSchema) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant4?>.Default.Equals(Python, other.Python) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant5?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatRequestResponseFormatVariant5?>.Default.Equals(Text, other.Text)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatRequestResponseFormat obj1, ChatRequestResponseFormat obj2)
         {
@@ -534,7 +534,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatRequestResponseFormat obj1, ChatRequestResponseFormat obj2)
         {
@@ -542,7 +542,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

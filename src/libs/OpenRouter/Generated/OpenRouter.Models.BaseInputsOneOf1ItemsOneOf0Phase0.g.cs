@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BaseInputsOneOf1ItemsOneOf0Phase0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Commentary,
     }

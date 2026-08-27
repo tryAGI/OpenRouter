@@ -4,40 +4,40 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicWebFetchToolResultErrorErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxUsesExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnsupportedContentType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlNotAccessible,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlNotAllowed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlTooLong,
     }

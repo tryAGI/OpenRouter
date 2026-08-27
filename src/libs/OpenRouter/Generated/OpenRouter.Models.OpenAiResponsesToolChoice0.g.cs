@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OpenAiResponsesToolChoice0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
     }

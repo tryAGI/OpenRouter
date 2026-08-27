@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatToolChoice0
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

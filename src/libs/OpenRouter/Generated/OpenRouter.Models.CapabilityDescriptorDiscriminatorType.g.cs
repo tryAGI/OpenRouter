@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CapabilityDescriptorDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Boolean,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enum,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Range,
     }

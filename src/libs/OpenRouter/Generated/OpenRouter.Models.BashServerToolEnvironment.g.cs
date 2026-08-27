@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct BashServerToolEnvironment : global::System.IEquatable<BashServerToolEnvironment>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.BashServerToolEnvironmentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerAuto))]
@@ -32,7 +32,7 @@ namespace OpenRouter
         public bool IsContainerAuto => ContainerAuto != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerAuto(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.BashServerToolEnvironmentVariant1 PickContainerAuto() => IsContainerAuto
             ? ContainerAuto!
@@ -61,7 +61,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerReference))]
@@ -69,7 +69,7 @@ namespace OpenRouter
         public bool IsContainerReference => ContainerReference != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerReference(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.BashServerToolEnvironmentVariant2 PickContainerReference() => IsContainerReference
             ? ContainerReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BashServerToolEnvironment(global::OpenRouter.BashServerToolEnvironmentVariant1 value) => new BashServerToolEnvironment((global::OpenRouter.BashServerToolEnvironmentVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.BashServerToolEnvironmentVariant1?(BashServerToolEnvironment @this) => @this.ContainerAuto;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BashServerToolEnvironment(global::OpenRouter.BashServerToolEnvironmentVariant1? value)
         {
@@ -106,22 +106,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BashServerToolEnvironment FromContainerAuto(global::OpenRouter.BashServerToolEnvironmentVariant1? value) => new BashServerToolEnvironment(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BashServerToolEnvironment(global::OpenRouter.BashServerToolEnvironmentVariant2 value) => new BashServerToolEnvironment((global::OpenRouter.BashServerToolEnvironmentVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.BashServerToolEnvironmentVariant2?(BashServerToolEnvironment @this) => @this.ContainerReference;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BashServerToolEnvironment(global::OpenRouter.BashServerToolEnvironmentVariant2? value)
         {
@@ -129,12 +129,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BashServerToolEnvironment FromContainerReference(global::OpenRouter.BashServerToolEnvironmentVariant2? value) => new BashServerToolEnvironment(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BashServerToolEnvironment(
             global::OpenRouter.BashServerToolEnvironmentDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ContainerReference as object ??
-            ContainerAuto as object 
+            ContainerAuto as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ContainerAuto?.ToString() ??
-            ContainerReference?.ToString() 
+            ContainerReference?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.BashServerToolEnvironmentVariant1, TResult>? containerAuto = null,
@@ -198,7 +198,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.BashServerToolEnvironmentVariant1>? containerAuto = null,
@@ -222,7 +222,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.BashServerToolEnvironmentVariant1>? containerAuto = null,
@@ -245,7 +245,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BashServerToolEnvironment other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BashServerToolEnvironmentVariant1?>.Default.Equals(ContainerAuto, other.ContainerAuto) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BashServerToolEnvironmentVariant2?>.Default.Equals(ContainerReference, other.ContainerReference) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BashServerToolEnvironmentVariant2?>.Default.Equals(ContainerReference, other.ContainerReference)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BashServerToolEnvironment obj1, BashServerToolEnvironment obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BashServerToolEnvironment obj1, BashServerToolEnvironment obj2)
         {
@@ -293,7 +293,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

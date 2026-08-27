@@ -10,7 +10,7 @@ namespace OpenRouter
     public enum ClassificationsTaskGetParametersWindow
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x7d,
     }

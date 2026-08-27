@@ -4,60 +4,60 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ObservabilityFilterRuleGroupRulesItemsOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndsWith,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Equals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotContains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotEquals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartsWith,
     }

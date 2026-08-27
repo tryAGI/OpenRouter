@@ -9,27 +9,27 @@ namespace OpenRouter
     public enum VideoGenerationRequestResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080p,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x480p,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720p,
     }

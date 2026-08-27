@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesRequestContextManagementEditsItemsOneOf0Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClearToolUses20250919,
     }

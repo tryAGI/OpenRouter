@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ImageGenerationProviderPreferencesIgnoreItems : global::System.IEquatable<ImageGenerationProviderPreferencesIgnoreItems>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.ProviderName? ProviderName { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProviderName))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsProviderName => ProviderName != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProviderName(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
             ? ProviderName!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ImageGenerationProviderPreferencesIgnoreItemsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationProviderPreferencesIgnoreItemsVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsImageGenerationProviderPreferencesIgnoreItemsVariant2 => ImageGenerationProviderPreferencesIgnoreItemsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageGenerationProviderPreferencesIgnoreItemsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickImageGenerationProviderPreferencesIgnoreItemsVariant2() => IsImageGenerationProviderPreferencesIgnoreItemsVariant2
             ? ImageGenerationProviderPreferencesIgnoreItemsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationProviderPreferencesIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ImageGenerationProviderPreferencesIgnoreItems(global::OpenRouter.ProviderName value) => new ImageGenerationProviderPreferencesIgnoreItems((global::OpenRouter.ProviderName?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.ProviderName?(ImageGenerationProviderPreferencesIgnoreItems @this) => @this.ProviderName;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageGenerationProviderPreferencesIgnoreItems(global::OpenRouter.ProviderName? value)
         {
@@ -101,22 +101,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ImageGenerationProviderPreferencesIgnoreItems FromProviderName(global::OpenRouter.ProviderName? value) => new ImageGenerationProviderPreferencesIgnoreItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ImageGenerationProviderPreferencesIgnoreItems(string value) => new ImageGenerationProviderPreferencesIgnoreItems((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ImageGenerationProviderPreferencesIgnoreItems @this) => @this.ImageGenerationProviderPreferencesIgnoreItemsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageGenerationProviderPreferencesIgnoreItems(string? value)
         {
@@ -124,12 +124,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ImageGenerationProviderPreferencesIgnoreItems FromImageGenerationProviderPreferencesIgnoreItemsVariant2(string? value) => new ImageGenerationProviderPreferencesIgnoreItems(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageGenerationProviderPreferencesIgnoreItems(
             global::OpenRouter.ProviderName? providerName,
@@ -141,23 +141,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ImageGenerationProviderPreferencesIgnoreItemsVariant2 as object ??
-            ProviderName as object 
+            ProviderName as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ProviderName?.ToValueString() ??
-            ImageGenerationProviderPreferencesIgnoreItemsVariant2?.ToString() 
+            ImageGenerationProviderPreferencesIgnoreItemsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.ProviderName?, TResult>? providerName = null,
@@ -190,7 +190,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.ProviderName?>? providerName = null,
@@ -237,7 +237,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ImageGenerationProviderPreferencesIgnoreItems other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ProviderName?>.Default.Equals(ProviderName, other.ProviderName) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ImageGenerationProviderPreferencesIgnoreItemsVariant2, other.ImageGenerationProviderPreferencesIgnoreItemsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ImageGenerationProviderPreferencesIgnoreItemsVariant2, other.ImageGenerationProviderPreferencesIgnoreItemsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ImageGenerationProviderPreferencesIgnoreItems obj1, ImageGenerationProviderPreferencesIgnoreItems obj2)
         {
@@ -277,7 +277,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ImageGenerationProviderPreferencesIgnoreItems obj1, ImageGenerationProviderPreferencesIgnoreItems obj2)
         {
@@ -285,7 +285,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

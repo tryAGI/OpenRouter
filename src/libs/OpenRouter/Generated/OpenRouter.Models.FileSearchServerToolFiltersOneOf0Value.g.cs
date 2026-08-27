@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FileSearchServerToolFiltersOneOf0Value : global::System.IEquatable<FileSearchServerToolFiltersOneOf0Value>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? FileSearchServerToolFiltersOneOf0ValueVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0ValueVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsFileSearchServerToolFiltersOneOf0ValueVariant1 => FileSearchServerToolFiltersOneOf0ValueVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileSearchServerToolFiltersOneOf0ValueVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickFileSearchServerToolFiltersOneOf0ValueVariant1() => IsFileSearchServerToolFiltersOneOf0ValueVariant1
             ? FileSearchServerToolFiltersOneOf0ValueVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? FileSearchServerToolFiltersOneOf0ValueVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0ValueVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsFileSearchServerToolFiltersOneOf0ValueVariant2 => FileSearchServerToolFiltersOneOf0ValueVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileSearchServerToolFiltersOneOf0ValueVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickFileSearchServerToolFiltersOneOf0ValueVariant2() => IsFileSearchServerToolFiltersOneOf0ValueVariant2
             ? FileSearchServerToolFiltersOneOf0ValueVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public bool? FileSearchServerToolFiltersOneOf0ValueVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0ValueVariant3))]
@@ -101,7 +101,7 @@ namespace OpenRouter
         public bool IsFileSearchServerToolFiltersOneOf0ValueVariant3 => FileSearchServerToolFiltersOneOf0ValueVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileSearchServerToolFiltersOneOf0ValueVariant3(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickFileSearchServerToolFiltersOneOf0ValueVariant3() => IsFileSearchServerToolFiltersOneOf0ValueVariant3
             ? FileSearchServerToolFiltersOneOf0ValueVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>? FileSearchServerToolFiltersOneOf0Value3 { get; init; }
@@ -130,7 +130,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0Value3))]
@@ -138,7 +138,7 @@ namespace OpenRouter
         public bool IsFileSearchServerToolFiltersOneOf0Value3 => FileSearchServerToolFiltersOneOf0Value3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileSearchServerToolFiltersOneOf0Value3(
 #if NET6_0_OR_GREATER
@@ -151,23 +151,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.FileSearchServerToolFiltersOneOf0ValueOneOf3Items> PickFileSearchServerToolFiltersOneOf0Value3() => IsFileSearchServerToolFiltersOneOf0Value3
             ? FileSearchServerToolFiltersOneOf0Value3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0Value3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FileSearchServerToolFiltersOneOf0Value(string value) => new FileSearchServerToolFiltersOneOf0Value((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(FileSearchServerToolFiltersOneOf0Value @this) => @this.FileSearchServerToolFiltersOneOf0ValueVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FileSearchServerToolFiltersOneOf0Value(string? value)
         {
@@ -175,22 +175,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FileSearchServerToolFiltersOneOf0Value FromFileSearchServerToolFiltersOneOf0ValueVariant1(string? value) => new FileSearchServerToolFiltersOneOf0Value(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FileSearchServerToolFiltersOneOf0Value(double value) => new FileSearchServerToolFiltersOneOf0Value((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(FileSearchServerToolFiltersOneOf0Value @this) => @this.FileSearchServerToolFiltersOneOf0ValueVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FileSearchServerToolFiltersOneOf0Value(double? value)
         {
@@ -198,22 +198,22 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FileSearchServerToolFiltersOneOf0Value FromFileSearchServerToolFiltersOneOf0ValueVariant2(double? value) => new FileSearchServerToolFiltersOneOf0Value(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FileSearchServerToolFiltersOneOf0Value(bool value) => new FileSearchServerToolFiltersOneOf0Value((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(FileSearchServerToolFiltersOneOf0Value @this) => @this.FileSearchServerToolFiltersOneOf0ValueVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FileSearchServerToolFiltersOneOf0Value(bool? value)
         {
@@ -221,12 +221,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FileSearchServerToolFiltersOneOf0Value FromFileSearchServerToolFiltersOneOf0ValueVariant3(bool? value) => new FileSearchServerToolFiltersOneOf0Value(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FileSearchServerToolFiltersOneOf0Value(
             string? fileSearchServerToolFiltersOneOf0ValueVariant1,
@@ -242,27 +242,27 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FileSearchServerToolFiltersOneOf0Value3 as object ??
             FileSearchServerToolFiltersOneOf0ValueVariant3 as object ??
             FileSearchServerToolFiltersOneOf0ValueVariant2 as object ??
-            FileSearchServerToolFiltersOneOf0ValueVariant1 as object 
+            FileSearchServerToolFiltersOneOf0ValueVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FileSearchServerToolFiltersOneOf0ValueVariant1?.ToString() ??
             FileSearchServerToolFiltersOneOf0ValueVariant2?.ToString() ??
             FileSearchServerToolFiltersOneOf0ValueVariant3?.ToString().ToLowerInvariant() ??
-            FileSearchServerToolFiltersOneOf0Value3?.ToString() 
+            FileSearchServerToolFiltersOneOf0Value3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -270,7 +270,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
@@ -305,7 +305,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
@@ -341,7 +341,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
@@ -374,7 +374,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -399,7 +399,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FileSearchServerToolFiltersOneOf0Value other)
         {
@@ -407,12 +407,12 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FileSearchServerToolFiltersOneOf0ValueVariant1, other.FileSearchServerToolFiltersOneOf0ValueVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(FileSearchServerToolFiltersOneOf0ValueVariant2, other.FileSearchServerToolFiltersOneOf0ValueVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(FileSearchServerToolFiltersOneOf0ValueVariant3, other.FileSearchServerToolFiltersOneOf0ValueVariant3) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>?>.Default.Equals(FileSearchServerToolFiltersOneOf0Value3, other.FileSearchServerToolFiltersOneOf0Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>?>.Default.Equals(FileSearchServerToolFiltersOneOf0Value3, other.FileSearchServerToolFiltersOneOf0Value3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FileSearchServerToolFiltersOneOf0Value obj1, FileSearchServerToolFiltersOneOf0Value obj2)
         {
@@ -420,7 +420,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FileSearchServerToolFiltersOneOf0Value obj1, FileSearchServerToolFiltersOneOf0Value obj2)
         {
@@ -428,7 +428,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

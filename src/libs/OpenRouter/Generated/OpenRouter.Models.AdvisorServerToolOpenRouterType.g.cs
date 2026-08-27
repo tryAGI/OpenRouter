@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AdvisorServerToolOpenRouterType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_advisor,
     }

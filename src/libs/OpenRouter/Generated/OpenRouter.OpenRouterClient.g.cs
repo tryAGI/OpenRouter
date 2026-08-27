@@ -37,7 +37,7 @@ namespace OpenRouter
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::OpenRouter.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -47,7 +47,7 @@ namespace OpenRouter
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -56,7 +56,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicMessagesClient AnthropicMessages => new AnthropicMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -65,7 +65,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApiKeysClient ApiKeys => new ApiKeysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -74,7 +74,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BenchmarksClient Benchmarks => new BenchmarksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -83,7 +83,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaAnalyticsClient BetaAnalytics => new BetaAnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -92,7 +92,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaResponsesClient BetaResponses => new BetaResponsesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -101,7 +101,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ByokClient Byok => new ByokClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -110,7 +110,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -119,7 +119,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClassificationsClient Classifications => new ClassificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -128,7 +128,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreditsClient Credits => new CreditsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -137,7 +137,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -146,7 +146,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -155,7 +155,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EndpointsClient Endpoints => new EndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -164,7 +164,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -173,7 +173,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerationsClient Generations => new GenerationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -182,7 +182,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GuardrailsClient Guardrails => new GuardrailsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -191,7 +191,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImagesClient Images => new ImagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -200,7 +200,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -209,7 +209,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OAuthClient OAuth => new OAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -218,7 +218,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObservabilityClient Observability => new ObservabilityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -227,7 +227,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrganizationClient Organization => new OrganizationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -236,7 +236,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PresetsClient Presets => new PresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -245,7 +245,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProvidersClient Providers => new ProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RerankClient Rerank => new RerankClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -263,7 +263,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SttClient Stt => new SttClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -272,7 +272,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TtsClient Tts => new TtsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -281,7 +281,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VideoGenerationClient VideoGeneration => new VideoGenerationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -290,7 +290,7 @@ namespace OpenRouter
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

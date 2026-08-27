@@ -9,33 +9,33 @@ namespace OpenRouter
     public sealed partial class McpApprovalResponseItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ApprovalRequestId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approve")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Approve { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         public string? Reason { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpApprovalResponseItemTypeJsonConverter))]

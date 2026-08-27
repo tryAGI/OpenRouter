@@ -9,21 +9,21 @@ namespace OpenRouter
     public sealed partial class MessagesAdvisorToolResultBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolUseId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesAdvisorToolResultBlockTypeJsonConverter))]

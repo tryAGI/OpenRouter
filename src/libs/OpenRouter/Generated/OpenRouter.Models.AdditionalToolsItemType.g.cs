@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AdditionalToolsItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AdditionalTools,
     }

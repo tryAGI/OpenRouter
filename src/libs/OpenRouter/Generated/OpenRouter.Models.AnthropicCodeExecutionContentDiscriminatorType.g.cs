@@ -4,20 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicCodeExecutionContentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionToolResultError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EncryptedCodeExecutionResult,
     }

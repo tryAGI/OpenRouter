@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatSearchModelsServerToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_experimentalSearchModels,
     }

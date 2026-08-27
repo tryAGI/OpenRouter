@@ -4,112 +4,112 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Parameter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FrequencyPenalty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IncludeReasoning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LogitBias,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Logprobs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxCompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MinP,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParallelToolCalls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prediction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PresencePenalty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reasoning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningEffort,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RepetitionPenalty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFormat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StructuredOutputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Temperature,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolChoice,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tools,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TopA,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TopK,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TopLogprobs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TopP,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Verbosity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchOptions,
     }

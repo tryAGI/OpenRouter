@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnthropicDocumentBlockParamSourceOneOf2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Content,
     }

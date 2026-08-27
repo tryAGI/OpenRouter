@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BashServerToolEnvironmentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerAuto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerReference,
     }

@@ -10,7 +10,7 @@ namespace OpenRouter
     public readonly partial struct ChatMessagesDiscriminatorMappingDeveloperContent : global::System.IEquatable<ChatMessagesDiscriminatorMappingDeveloperContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ChatMessagesDiscriminatorMappingDeveloperContentVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatMessagesDiscriminatorMappingDeveloperContentVariant1))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsChatMessagesDiscriminatorMappingDeveloperContentVariant1 => ChatMessagesDiscriminatorMappingDeveloperContentVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatMessagesDiscriminatorMappingDeveloperContentVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickChatMessagesDiscriminatorMappingDeveloperContentVariant1() => IsChatMessagesDiscriminatorMappingDeveloperContentVariant1
             ? ChatMessagesDiscriminatorMappingDeveloperContentVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingDeveloperContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText>? ChatMessagesDiscriminatorMappingDeveloperContent1 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatMessagesDiscriminatorMappingDeveloperContent1))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsChatMessagesDiscriminatorMappingDeveloperContent1 => ChatMessagesDiscriminatorMappingDeveloperContent1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatMessagesDiscriminatorMappingDeveloperContent1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText> PickChatMessagesDiscriminatorMappingDeveloperContent1() => IsChatMessagesDiscriminatorMappingDeveloperContent1
             ? ChatMessagesDiscriminatorMappingDeveloperContent1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingDeveloperContent1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatMessagesDiscriminatorMappingDeveloperContent(string value) => new ChatMessagesDiscriminatorMappingDeveloperContent((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ChatMessagesDiscriminatorMappingDeveloperContent @this) => @this.ChatMessagesDiscriminatorMappingDeveloperContentVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessagesDiscriminatorMappingDeveloperContent(string? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatMessagesDiscriminatorMappingDeveloperContent FromChatMessagesDiscriminatorMappingDeveloperContentVariant1(string? value) => new ChatMessagesDiscriminatorMappingDeveloperContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatMessagesDiscriminatorMappingDeveloperContent(
             string? chatMessagesDiscriminatorMappingDeveloperContentVariant1,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ChatMessagesDiscriminatorMappingDeveloperContent1 as object ??
-            ChatMessagesDiscriminatorMappingDeveloperContentVariant1 as object 
+            ChatMessagesDiscriminatorMappingDeveloperContentVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ChatMessagesDiscriminatorMappingDeveloperContentVariant1?.ToString() ??
-            ChatMessagesDiscriminatorMappingDeveloperContent1?.ToString() 
+            ChatMessagesDiscriminatorMappingDeveloperContent1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? chatMessagesDiscriminatorMappingDeveloperContentVariant1 = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? chatMessagesDiscriminatorMappingDeveloperContentVariant1 = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? chatMessagesDiscriminatorMappingDeveloperContentVariant1 = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatMessagesDiscriminatorMappingDeveloperContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatMessagesDiscriminatorMappingDeveloperContentVariant1, other.ChatMessagesDiscriminatorMappingDeveloperContentVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText>?>.Default.Equals(ChatMessagesDiscriminatorMappingDeveloperContent1, other.ChatMessagesDiscriminatorMappingDeveloperContent1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText>?>.Default.Equals(ChatMessagesDiscriminatorMappingDeveloperContent1, other.ChatMessagesDiscriminatorMappingDeveloperContent1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatMessagesDiscriminatorMappingDeveloperContent obj1, ChatMessagesDiscriminatorMappingDeveloperContent obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatMessagesDiscriminatorMappingDeveloperContent obj1, ChatMessagesDiscriminatorMappingDeveloperContent obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,28 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponseIncludesEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeInterpreterCallOutputs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerCallOutputOutputImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileSearchCallResults,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageInputImageImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningEncryptedContent,
     }

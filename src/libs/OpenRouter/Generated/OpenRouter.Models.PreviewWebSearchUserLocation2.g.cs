@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct PreviewWebSearchUserLocation2 : global::System.IEquatable<PreviewWebSearchUserLocation2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.PreviewWebSearchUserLocation? PreviewWebSearchUserLocation { get; init; }
@@ -19,7 +19,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreviewWebSearchUserLocation))]
@@ -27,7 +27,7 @@ namespace OpenRouter
         public bool IsPreviewWebSearchUserLocation => PreviewWebSearchUserLocation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPreviewWebSearchUserLocation(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::OpenRouter.PreviewWebSearchUserLocation PickPreviewWebSearchUserLocation() => IsPreviewWebSearchUserLocation
             ? PreviewWebSearchUserLocation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreviewWebSearchUserLocation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? LocationVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace OpenRouter
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocationVariant2))]
@@ -64,7 +64,7 @@ namespace OpenRouter
         public bool IsLocationVariant2 => LocationVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocationVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickLocationVariant2() => IsLocationVariant2
             ? LocationVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocationVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PreviewWebSearchUserLocation2(global::OpenRouter.PreviewWebSearchUserLocation value) => new PreviewWebSearchUserLocation2((global::OpenRouter.PreviewWebSearchUserLocation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::OpenRouter.PreviewWebSearchUserLocation?(PreviewWebSearchUserLocation2 @this) => @this.PreviewWebSearchUserLocation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PreviewWebSearchUserLocation2(global::OpenRouter.PreviewWebSearchUserLocation? value)
         {
@@ -101,12 +101,12 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PreviewWebSearchUserLocation2 FromPreviewWebSearchUserLocation(global::OpenRouter.PreviewWebSearchUserLocation? value) => new PreviewWebSearchUserLocation2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PreviewWebSearchUserLocation2(
             global::OpenRouter.PreviewWebSearchUserLocation? previewWebSearchUserLocation,
@@ -118,23 +118,23 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             LocationVariant2 as object ??
-            PreviewWebSearchUserLocation as object 
+            PreviewWebSearchUserLocation as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             PreviewWebSearchUserLocation?.ToString() ??
-            LocationVariant2?.ToString() 
+            LocationVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::OpenRouter.PreviewWebSearchUserLocation, TResult>? previewWebSearchUserLocation = null,
@@ -167,7 +167,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::OpenRouter.PreviewWebSearchUserLocation>? previewWebSearchUserLocation = null,
@@ -191,7 +191,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::OpenRouter.PreviewWebSearchUserLocation>? previewWebSearchUserLocation = null,
@@ -214,7 +214,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PreviewWebSearchUserLocation2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PreviewWebSearchUserLocation?>.Default.Equals(PreviewWebSearchUserLocation, other.PreviewWebSearchUserLocation) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(LocationVariant2, other.LocationVariant2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(LocationVariant2, other.LocationVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PreviewWebSearchUserLocation2 obj1, PreviewWebSearchUserLocation2 obj2)
         {
@@ -254,7 +254,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PreviewWebSearchUserLocation2 obj1, PreviewWebSearchUserLocation2 obj2)
         {
@@ -262,7 +262,7 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

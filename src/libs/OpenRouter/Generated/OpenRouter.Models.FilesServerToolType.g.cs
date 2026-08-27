@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FilesServerToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Openrouter_files,
     }

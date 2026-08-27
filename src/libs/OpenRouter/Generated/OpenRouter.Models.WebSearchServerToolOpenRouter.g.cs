@@ -15,7 +15,7 @@ namespace OpenRouter
         public global::OpenRouter.WebSearchServerToolConfig? Parameters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebSearchServerToolOpenRouterTypeJsonConverter))]
