@@ -24,8 +24,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caching")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AnthropicCacheControlDirective, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.AnthropicCacheControlDirective, object>? Caching { get; set; }
+        public global::OpenRouter.AnthropicCacheControlDirective? Caching { get; set; }
 
         /// <summary>
         ///
@@ -86,7 +85,7 @@ namespace OpenRouter
             string model,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicAllowedCallersItems>? allowedCallers,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
-            global::OpenRouter.OneOf<global::OpenRouter.AnthropicCacheControlDirective, object>? caching,
+            global::OpenRouter.AnthropicCacheControlDirective? caching,
             bool? deferLoading,
             int? maxUses,
             global::OpenRouter.MessagesRequestToolsItemsOneOf5Name name,

@@ -12,8 +12,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AgentMessageItemAgent, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.AgentMessageItemAgent, object>? Agent { get; set; }
+        public global::OpenRouter.AgentMessageItemAgent? Agent { get; set; }
 
         /// <summary>
         ///
@@ -71,7 +70,7 @@ namespace OpenRouter
             string author,
             global::System.Collections.Generic.IList<global::OpenRouter.AgentMessageItemContentItems> content,
             string recipient,
-            global::OpenRouter.OneOf<global::OpenRouter.AgentMessageItemAgent, object>? agent,
+            global::OpenRouter.AgentMessageItemAgent? agent,
             string? id,
             global::OpenRouter.AgentMessageItemType type)
         {

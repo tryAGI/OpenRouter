@@ -18,8 +18,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clear_tool_inputs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs?, object>? ClearToolInputs { get; set; }
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs? ClearToolInputs { get; set; }
 
         /// <summary>
         ///
@@ -67,7 +66,7 @@ namespace OpenRouter
 #endif
         public MessagesRequestContextManagementEditsItems0(
             global::OpenRouter.AnthropicInputTokensClearAtLeast? clearAtLeast,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs?, object>? clearToolInputs,
+            global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs? clearToolInputs,
             global::System.Collections.Generic.IList<string>? excludeTools,
             global::OpenRouter.AnthropicToolUsesKeep? keep,
             global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf0Trigger? trigger,

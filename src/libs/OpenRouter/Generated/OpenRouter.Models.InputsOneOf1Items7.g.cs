@@ -12,8 +12,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.InputsOneOf1ItemsOneOf7Content?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.InputsOneOf1ItemsOneOf7Content?, object>? Content { get; set; }
+        public global::OpenRouter.InputsOneOf1ItemsOneOf7Content? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +28,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputsOneOf1Items7(
-            global::OpenRouter.OneOf<global::OpenRouter.InputsOneOf1ItemsOneOf7Content?, object>? content)
+            global::OpenRouter.InputsOneOf1ItemsOneOf7Content? content)
         {
             this.Content = content;
         }

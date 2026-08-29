@@ -33,8 +33,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ToolCallStatus?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ToolCallStatus?, object>? Status { get; set; }
+        public global::OpenRouter.ToolCallStatus? Status { get; set; }
 
         /// <summary>
         ///
@@ -64,7 +63,7 @@ namespace OpenRouter
             string callId,
             global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutput output,
             string? id,
-            global::OpenRouter.OneOf<global::OpenRouter.ToolCallStatus?, object>? status,
+            global::OpenRouter.ToolCallStatus? status,
             global::OpenRouter.OpenAiResponseFunctionToolCallOutputType type)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));

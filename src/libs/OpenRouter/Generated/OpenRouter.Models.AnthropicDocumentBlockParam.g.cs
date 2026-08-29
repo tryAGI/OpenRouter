@@ -18,8 +18,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AnthropicDocumentBlockParamCitations, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.AnthropicDocumentBlockParamCitations, object>? Citations { get; set; }
+        public global::OpenRouter.AnthropicDocumentBlockParamCitations? Citations { get; set; }
 
         /// <summary>
         ///
@@ -71,7 +70,7 @@ namespace OpenRouter
         public AnthropicDocumentBlockParam(
             global::OpenRouter.AnthropicDocumentBlockParamSource source,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
-            global::OpenRouter.OneOf<global::OpenRouter.AnthropicDocumentBlockParamCitations, object>? citations,
+            global::OpenRouter.AnthropicDocumentBlockParamCitations? citations,
             string? context,
             string? title,
             global::OpenRouter.AnthropicDocumentBlockParamType type)

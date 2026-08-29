@@ -772,7 +772,7 @@ namespace OpenRouter
             string model,
             global::OpenRouter.MetadataLevel? xOpenRouterMetadata = default,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl = default,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement = default,
+            global::OpenRouter.MessagesRequestContextManagement? contextManagement = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks = default,
             int? maxTokens = default,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages = default,

@@ -19,8 +19,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ORAnthropicNullableCaller2JsonConverter))]
-        public global::OpenRouter.ORAnthropicNullableCaller2? Caller { get; set; }
+        public global::OpenRouter.OrAnthropicNullableCaller? Caller { get; set; }
 
         /// <summary>
         ///
@@ -65,7 +64,7 @@ namespace OpenRouter
             string id,
             string name,
             global::OpenRouter.OrAnthropicServerToolUseBlockType type,
-            global::OpenRouter.ORAnthropicNullableCaller2? caller,
+            global::OpenRouter.OrAnthropicNullableCaller? caller,
             object? input)
         {
             this.Type = type;

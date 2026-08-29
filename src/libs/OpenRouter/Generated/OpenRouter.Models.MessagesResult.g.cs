@@ -82,8 +82,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesResultContextManagement, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesResultContextManagement, object>? ContextManagement { get; set; }
+        public global::OpenRouter.MessagesResultContextManagement? ContextManagement { get; set; }
 
         /// <summary>
         ///
@@ -136,7 +135,7 @@ namespace OpenRouter
             global::OpenRouter.MessagesResultRole role,
             string? stopSequence,
             global::OpenRouter.MessagesResultType type,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesResultContextManagement, object>? contextManagement,
+            global::OpenRouter.MessagesResultContextManagement? contextManagement,
             global::OpenRouter.OpenRouterMetadata? openrouterMetadata,
             global::OpenRouter.ProviderName? provider)
         {
