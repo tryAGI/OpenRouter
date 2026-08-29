@@ -74,9 +74,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quantization")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.Quantization?, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OneOf<global::OpenRouter.Quantization?, object> Quantization { get; set; }
+        public global::OpenRouter.Quantization? Quantization { get; set; }
 
         /// <summary>
         ///
@@ -151,7 +149,6 @@ namespace OpenRouter
         /// <param name="name"></param>
         /// <param name="pricing"></param>
         /// <param name="providerName"></param>
-        /// <param name="quantization"></param>
         /// <param name="supportedParameters"></param>
         /// <param name="supportsImplicitCaching"></param>
         /// <param name="tag"></param>
@@ -160,6 +157,7 @@ namespace OpenRouter
         /// </param>
         /// <param name="maxCompletionTokens"></param>
         /// <param name="maxPromptTokens"></param>
+        /// <param name="quantization"></param>
         /// <param name="status"></param>
         /// <param name="uptimeLast1d">
         /// Uptime percentage over the last 1 day, calculated as successful requests / (successful + error requests) * 100. Rate-limited requests are excluded. Returns null if insufficient data.
@@ -179,13 +177,13 @@ namespace OpenRouter
             string name,
             global::OpenRouter.PublicEndpointPricing pricing,
             global::OpenRouter.ProviderName providerName,
-            global::OpenRouter.OneOf<global::OpenRouter.Quantization?, object> quantization,
             global::System.Collections.Generic.IList<global::OpenRouter.Parameter> supportedParameters,
             bool supportsImplicitCaching,
             string tag,
             global::OpenRouter.PublicEndpointThroughputLast30M throughputLast30m,
             int? maxCompletionTokens,
             int? maxPromptTokens,
+            global::OpenRouter.Quantization? quantization,
             global::OpenRouter.EndpointStatus? status,
             double? uptimeLast1d,
             double? uptimeLast30m,

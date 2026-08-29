@@ -18,8 +18,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesRequestContextManagement, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? ContextManagement { get; set; }
+        public global::OpenRouter.MessagesRequestContextManagement? ContextManagement { get; set; }
 
         /// <summary>
         /// Fallback models to try if the primary model fails or refuses, in order. Handled by OpenRouter multi-model routing rather than Anthropic server-side fallbacks; cannot be combined with `models`. Each entry accepts only `model`. Maximum of 3 entries.
@@ -238,7 +237,7 @@ namespace OpenRouter
         public MessagesRequest(
             string model,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagement, object>? contextManagement,
+            global::OpenRouter.MessagesRequestContextManagement? contextManagement,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesFallbackParam>? fallbacks,
             int? maxTokens,
             global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParam>? messages,

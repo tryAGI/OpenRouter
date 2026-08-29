@@ -62,8 +62,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.WebSearchPluginUserLocation, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.WebSearchPluginUserLocation, object>? UserLocation { get; set; }
+        public global::OpenRouter.WebSearchPluginUserLocation? UserLocation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -105,7 +104,7 @@ namespace OpenRouter
             int? maxResults,
             int? maxUses,
             string? searchPrompt,
-            global::OpenRouter.OneOf<global::OpenRouter.WebSearchPluginUserLocation, object>? userLocation)
+            global::OpenRouter.WebSearchPluginUserLocation? userLocation)
         {
             this.Id = id;
             this.Enabled = enabled;

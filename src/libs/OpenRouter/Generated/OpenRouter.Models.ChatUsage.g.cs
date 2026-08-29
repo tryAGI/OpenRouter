@@ -19,8 +19,7 @@ namespace OpenRouter
         /// Detailed completion token usage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsageCompletionTokensDetails, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>? CompletionTokensDetails { get; set; }
+        public global::OpenRouter.ChatUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
 
         /// <summary>
         /// Cost of the completion
@@ -51,8 +50,7 @@ namespace OpenRouter
         /// Detailed prompt token usage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatUsagePromptTokensDetails, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? PromptTokensDetails { get; set; }
+        public global::OpenRouter.ChatUsagePromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
         /// Usage for server-side tool execution (e.g., web search)
@@ -110,11 +108,11 @@ namespace OpenRouter
             int completionTokens,
             int promptTokens,
             int totalTokens,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatUsageCompletionTokensDetails, object>? completionTokensDetails,
+            global::OpenRouter.ChatUsageCompletionTokensDetails? completionTokensDetails,
             double? cost,
             global::OpenRouter.CostDetails? costDetails,
             bool? isByok,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatUsagePromptTokensDetails, object>? promptTokensDetails,
+            global::OpenRouter.ChatUsagePromptTokensDetails? promptTokensDetails,
             global::OpenRouter.ServerToolUseDetails? serverToolUseDetails)
         {
             this.CompletionTokens = completionTokens;

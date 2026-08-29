@@ -191,8 +191,7 @@ namespace OpenRouter
         /// Stop sequences (up to 4)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ChatRequestStop?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ChatRequestStop?, object>? Stop { get; set; }
+        public global::OpenRouter.ChatRequestStop? Stop { get; set; }
 
         /// <summary>
         /// Stop conditions for the server-tool agent loop. Any condition firing halts the loop (OR logic). When set, this overrides `max_tool_calls`.
@@ -433,7 +432,7 @@ namespace OpenRouter
             int? seed,
             global::OpenRouter.ChatRequestServiceTier? serviceTier,
             string? sessionId,
-            global::OpenRouter.OneOf<global::OpenRouter.ChatRequestStop?, object>? stop,
+            global::OpenRouter.ChatRequestStop? stop,
             global::System.Collections.Generic.IList<global::OpenRouter.StopServerToolsWhenCondition>? stopServerToolsWhen,
             bool? stream,
             global::OpenRouter.ChatStreamOptions? streamOptions,

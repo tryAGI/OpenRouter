@@ -124,9 +124,9 @@ namespace OpenRouter
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 { get; init; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 { get; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 { get; }
 #endif
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>? value)
+            out global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>? value)
         {
             value = ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3;
             return IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3;
@@ -153,7 +153,7 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>> PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3
+        public global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?> PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3
             ? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3' but the value was {ToString()}.");
 
@@ -292,7 +292,7 @@ namespace OpenRouter
             string? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1,
             double? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2,
             bool? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3,
-            global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3,
+            global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3,
             global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4
             )
         {
@@ -340,7 +340,7 @@ namespace OpenRouter
             global::System.Func<string, TResult>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 = null,
             global::System.Func<double?, TResult>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 = null,
             global::System.Func<bool?, TResult>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>, TResult>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>, TResult>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = null,
             global::System.Func<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4, TResult>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 = null,
             bool validate = true)
         {
@@ -383,7 +383,7 @@ namespace OpenRouter
 
             global::System.Action<bool?>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 = null,
 
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = null,
 
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 = null,
             bool validate = true)
@@ -422,7 +422,7 @@ namespace OpenRouter
             global::System.Action<string>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1 = null,
             global::System.Action<double?>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2 = null,
             global::System.Action<bool?>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3 = null,
             global::System.Action<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4>? responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4 = null,
             bool validate = true)
         {
@@ -467,7 +467,7 @@ namespace OpenRouter
                 ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3,
                 typeof(bool),
                 ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3,
-                typeof(global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>),
+                typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>),
                 ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4,
                 typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4),
             };
@@ -489,7 +489,7 @@ namespace OpenRouter
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?, object>>?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4?>.Default.Equals(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4, other.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4)
                 ;
         }

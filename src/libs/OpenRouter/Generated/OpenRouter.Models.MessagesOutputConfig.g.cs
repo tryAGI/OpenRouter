@@ -19,15 +19,13 @@ namespace OpenRouter
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesOutputConfigFormat, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigFormat, object>? Format { get; set; }
+        public global::OpenRouter.MessagesOutputConfigFormat? Format { get; set; }
 
         /// <summary>
         /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("task_budget")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.MessagesOutputConfigTaskBudget, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigTaskBudget, object>? TaskBudget { get; set; }
+        public global::OpenRouter.MessagesOutputConfigTaskBudget? TaskBudget { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,8 +50,8 @@ namespace OpenRouter
 #endif
         public MessagesOutputConfig(
             global::OpenRouter.MessagesOutputConfigEffort? effort,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigFormat, object>? format,
-            global::OpenRouter.OneOf<global::OpenRouter.MessagesOutputConfigTaskBudget, object>? taskBudget)
+            global::OpenRouter.MessagesOutputConfigFormat? format,
+            global::OpenRouter.MessagesOutputConfigTaskBudget? taskBudget)
         {
             this.Effort = effort;
             this.Format = format;

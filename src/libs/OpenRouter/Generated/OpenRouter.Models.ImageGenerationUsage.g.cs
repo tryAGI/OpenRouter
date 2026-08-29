@@ -25,8 +25,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationUsageCompletionTokensDetails, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationUsageCompletionTokensDetails, object>? CompletionTokensDetails { get; set; }
+        public global::OpenRouter.ImageGenerationUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
 
         /// <summary>
         /// Cost of the completion
@@ -63,15 +62,13 @@ namespace OpenRouter
         /// Breakdown of tokens used in the prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationUsagePromptTokensDetails, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationUsagePromptTokensDetails, object>? PromptTokensDetails { get; set; }
+        public global::OpenRouter.ImageGenerationUsagePromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
         /// Usage for server-side tool execution (e.g., web search)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationUsageServerToolUse, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationUsageServerToolUse, object>? ServerToolUse { get; set; }
+        public global::OpenRouter.ImageGenerationUsageServerToolUse? ServerToolUse { get; set; }
 
         /// <summary>
         /// The service tier used by the upstream provider for this request
@@ -141,13 +138,13 @@ namespace OpenRouter
             int promptTokens,
             int totalTokens,
             global::OpenRouter.AnthropicCacheCreation? cacheCreation,
-            global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationUsageCompletionTokensDetails, object>? completionTokensDetails,
+            global::OpenRouter.ImageGenerationUsageCompletionTokensDetails? completionTokensDetails,
             double? cost,
             global::OpenRouter.CostDetails? costDetails,
             bool? isByok,
             global::System.Collections.Generic.IList<global::OpenRouter.AnthropicUsageIteration>? iterations,
-            global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationUsagePromptTokensDetails, object>? promptTokensDetails,
-            global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationUsageServerToolUse, object>? serverToolUse,
+            global::OpenRouter.ImageGenerationUsagePromptTokensDetails? promptTokensDetails,
+            global::OpenRouter.ImageGenerationUsageServerToolUse? serverToolUse,
             string? serviceTier,
             global::OpenRouter.AnthropicSpeed? speed)
         {

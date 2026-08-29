@@ -44,8 +44,7 @@ namespace OpenRouter
         /// The sorting strategy to use for this request, if "order" is not specified. When set, no load balancing is performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ImageGenerationProviderPreferencesSort?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationProviderPreferencesSort?, object>? Sort { get; set; }
+        public global::OpenRouter.ImageGenerationProviderPreferencesSort? Sort { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -85,7 +84,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationProviderPreferencesOnlyItems>? only,
             global::OpenRouter.ImageGenerationProviderPreferencesOptions? options,
             global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationProviderPreferencesOrderItems>? order,
-            global::OpenRouter.OneOf<global::OpenRouter.ImageGenerationProviderPreferencesSort?, object>? sort)
+            global::OpenRouter.ImageGenerationProviderPreferencesSort? sort)
         {
             this.AllowFallbacks = allowFallbacks;
             this.Ignore = ignore;

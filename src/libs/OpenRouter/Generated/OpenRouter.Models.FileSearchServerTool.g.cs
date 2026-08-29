@@ -12,8 +12,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.FileSearchServerToolFilters?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.FileSearchServerToolFilters?, object>? Filters { get; set; }
+        public global::OpenRouter.FileSearchServerToolFilters? Filters { get; set; }
 
         /// <summary>
         ///
@@ -60,7 +59,7 @@ namespace OpenRouter
 #endif
         public FileSearchServerTool(
             global::System.Collections.Generic.IList<string> vectorStoreIds,
-            global::OpenRouter.OneOf<global::OpenRouter.FileSearchServerToolFilters?, object>? filters,
+            global::OpenRouter.FileSearchServerToolFilters? filters,
             int? maxNumResults,
             global::OpenRouter.FileSearchServerToolRankingOptions? rankingOptions,
             global::OpenRouter.FileSearchServerToolType type)

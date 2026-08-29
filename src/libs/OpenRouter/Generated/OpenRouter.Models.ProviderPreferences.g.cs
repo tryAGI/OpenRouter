@@ -85,8 +85,7 @@ namespace OpenRouter
         /// The sorting strategy to use for this request, if "order" is not specified. When set, no load balancing is performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.ProviderPreferencesSort?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.ProviderPreferencesSort?, object>? Sort { get; set; }
+        public global::OpenRouter.ProviderPreferencesSort? Sort { get; set; }
 
         /// <summary>
         /// Whether to restrict routing to only ZDR (Zero Data Retention) endpoints. When true, only endpoints that do not retain prompts will be used.
@@ -161,7 +160,7 @@ namespace OpenRouter
             global::OpenRouter.PreferredMinThroughput? preferredMinThroughput,
             global::System.Collections.Generic.IList<global::OpenRouter.Quantization>? quantizations,
             bool? requireParameters,
-            global::OpenRouter.OneOf<global::OpenRouter.ProviderPreferencesSort?, object>? sort,
+            global::OpenRouter.ProviderPreferencesSort? sort,
             bool? zdr)
         {
             this.AllowFallbacks = allowFallbacks;

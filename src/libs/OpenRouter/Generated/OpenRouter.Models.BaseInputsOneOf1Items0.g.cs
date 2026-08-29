@@ -20,8 +20,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase?, object>))]
-        public global::OpenRouter.OneOf<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase?, object>? Phase { get; set; }
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase? Phase { get; set; }
 
         /// <summary>
         ///
@@ -57,7 +56,7 @@ namespace OpenRouter
         public BaseInputsOneOf1Items0(
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Content content,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Role role,
-            global::OpenRouter.OneOf<global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase?, object>? phase,
+            global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase? phase,
             global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Type? type)
         {
             this.Content = content;
