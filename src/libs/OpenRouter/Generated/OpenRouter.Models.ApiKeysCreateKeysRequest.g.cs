@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class CreateKeysRequest
+    public sealed partial class ApiKeysCreateKeysRequest
     {
         /// <summary>
         /// Optional user ID of the key creator. Only meaningful for organization-owned keys where a specific member is creating the key.
@@ -59,7 +59,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateKeysRequest" /> class.
+        /// Initializes a new instance of the <see cref="ApiKeysCreateKeysRequest" /> class.
         /// </summary>
         /// <param name="name">
         /// Name for the new API key
@@ -85,7 +85,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public CreateKeysRequest(
+        public ApiKeysCreateKeysRequest(
             string name,
             string? creatorUserId,
             global::System.DateTime? expiresAt,
@@ -104,9 +104,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateKeysRequest" /> class.
+        /// Initializes a new instance of the <see cref="ApiKeysCreateKeysRequest" /> class.
         /// </summary>
-        public CreateKeysRequest()
+        public ApiKeysCreateKeysRequest()
         {
         }
 

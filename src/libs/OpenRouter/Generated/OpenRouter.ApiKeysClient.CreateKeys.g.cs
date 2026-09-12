@@ -27,11 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareCreateKeysArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.CreateKeysRequest request);
+            global::OpenRouter.ApiKeysCreateKeysRequest request);
         partial void PrepareCreateKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.CreateKeysRequest request);
+            global::OpenRouter.ApiKeysCreateKeysRequest request);
         partial void ProcessCreateKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysCreateKeysResponse201> CreateKeysAsync(
 
-            global::OpenRouter.CreateKeysRequest request,
+            global::OpenRouter.ApiKeysCreateKeysRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,7 +74,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ApiKeysCreateKeysResponse201>> CreateKeysAsResponseAsync(
 
-            global::OpenRouter.CreateKeysRequest request,
+            global::OpenRouter.ApiKeysCreateKeysRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -657,7 +657,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.CreateKeysRequest
+            var __request = new global::OpenRouter.ApiKeysCreateKeysRequest
             {
                 CreatorUserId = creatorUserId,
                 ExpiresAt = expiresAt,

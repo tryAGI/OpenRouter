@@ -7,7 +7,7 @@ namespace OpenRouter
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetByokKeySecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_GetBYOKKeySecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,22 +21,22 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetByokKeySecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_GetBYOKKeySecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_GetByokKeySecurityRequirement0,
+            {                s_GetBYOKKeySecurityRequirement0,
             };
-        partial void PrepareGetByokKeyArguments(
+        partial void PrepareGetBYOKKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id);
-        partial void PrepareGetByokKeyRequest(
+        partial void PrepareGetBYOKKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid id);
-        partial void ProcessGetByokKeyResponse(
+        partial void ProcessGetBYOKKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetByokKeyResponseContent(
+        partial void ProcessGetBYOKKeyResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -49,12 +49,12 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.GetBYOKKeyResponse> GetByokKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.GetBYOKKeyResponse> GetBYOKKeyAsync(
             global::System.Guid id,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetByokKeyAsResponseAsync(
+            var __response = await GetBYOKKeyAsResponseAsync(
                 id: id,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -70,22 +70,22 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GetBYOKKeyResponse>> GetByokKeyAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.GetBYOKKeyResponse>> GetBYOKKeyAsResponseAsync(
             global::System.Guid id,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetByokKeyArguments(
+            PrepareGetBYOKKeyArguments(
                 httpClient: HttpClient,
                 id: ref id);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetByokKeySecurityRequirements,
-                operationName: "GetByokKeyAsync");
+                securityRequirements: s_GetBYOKKeySecurityRequirements,
+                operationName: "GetBYOKKeyAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -144,7 +144,7 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetByokKeyRequest(
+                PrepareGetBYOKKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     id: id!);
@@ -164,8 +164,8 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetByokKey",
-                                methodName: "GetByokKeyAsync",
+                                operationId: "GetBYOKKey",
+                                methodName: "GetBYOKKeyAsync",
                                 pathTemplate: "$\"/byok/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
@@ -198,8 +198,8 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetByokKey",
-                                methodName: "GetByokKeyAsync",
+                                operationId: "GetBYOKKey",
+                                methodName: "GetBYOKKeyAsync",
                                 pathTemplate: "$\"/byok/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
@@ -239,8 +239,8 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetByokKey",
-                                methodName: "GetByokKeyAsync",
+                                operationId: "GetBYOKKey",
+                                methodName: "GetBYOKKeyAsync",
                                 pathTemplate: "$\"/byok/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
@@ -279,7 +279,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetByokKeyResponse(
+                ProcessGetBYOKKeyResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -287,8 +287,8 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetByokKey",
-                                methodName: "GetByokKeyAsync",
+                                operationId: "GetBYOKKey",
+                                methodName: "GetBYOKKeyAsync",
                                 pathTemplate: "$\"/byok/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
@@ -309,8 +309,8 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetByokKey",
-                                methodName: "GetByokKeyAsync",
+                                operationId: "GetBYOKKey",
+                                methodName: "GetBYOKKeyAsync",
                                 pathTemplate: "$\"/byok/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
@@ -450,7 +450,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetByokKeyResponseContent(
+                                ProcessGetBYOKKeyResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);

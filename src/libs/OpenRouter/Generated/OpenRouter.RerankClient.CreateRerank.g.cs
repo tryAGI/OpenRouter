@@ -27,11 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareCreateRerankArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.CreateRerankRequest request);
+            global::OpenRouter.RerankCreateRerankRequest request);
         partial void PrepareCreateRerankRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.CreateRerankRequest request);
+            global::OpenRouter.RerankCreateRerankRequest request);
         partial void ProcessCreateRerankResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.RerankCreateRerankResponse200> CreateRerankAsync(
 
-            global::OpenRouter.CreateRerankRequest request,
+            global::OpenRouter.RerankCreateRerankRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,7 +74,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.RerankCreateRerankResponse200>> CreateRerankAsResponseAsync(
 
-            global::OpenRouter.CreateRerankRequest request,
+            global::OpenRouter.RerankCreateRerankRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -760,7 +760,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.CreateRerankRequest
+            var __request = new global::OpenRouter.RerankCreateRerankRequest
             {
                 Documents = documents,
                 Model = model,

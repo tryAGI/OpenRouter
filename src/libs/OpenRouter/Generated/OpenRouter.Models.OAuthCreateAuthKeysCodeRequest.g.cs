@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class CreateAuthKeysCodeRequest
+    public sealed partial class OAuthCreateAuthKeysCodeRequest
     {
         /// <summary>
         /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.
@@ -66,7 +66,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAuthKeysCodeRequest" /> class.
+        /// Initializes a new instance of the <see cref="OAuthCreateAuthKeysCodeRequest" /> class.
         /// </summary>
         /// <param name="callbackUrl">
         /// The callback URL to redirect to after authorization. Supports https URLs and localhost/127.0.0.1 URLs on any port for local CLI tools.
@@ -95,7 +95,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public CreateAuthKeysCodeRequest(
+        public OAuthCreateAuthKeysCodeRequest(
             string callbackUrl,
             string? codeChallenge,
             global::OpenRouter.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod,
@@ -116,9 +116,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAuthKeysCodeRequest" /> class.
+        /// Initializes a new instance of the <see cref="OAuthCreateAuthKeysCodeRequest" /> class.
         /// </summary>
-        public CreateAuthKeysCodeRequest()
+        public OAuthCreateAuthKeysCodeRequest()
         {
         }
 

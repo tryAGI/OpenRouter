@@ -21,7 +21,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.ListBYOKKeysResponse> ListByokKeysAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.ListBYOKKeysResponse> ListBYOKKeysAsync(
             int? offset = default,
             int? limit = default,
             global::System.Guid? workspaceId = default,
@@ -45,7 +45,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListBYOKKeysResponse>> ListByokKeysAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListBYOKKeysResponse>> ListBYOKKeysAsResponseAsync(
             int? offset = default,
             int? limit = default,
             global::System.Guid? workspaceId = default,

@@ -27,11 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareCreateEmbeddingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.CreateEmbeddingsRequest request);
+            global::OpenRouter.EmbeddingsCreateEmbeddingsRequest request);
         partial void PrepareCreateEmbeddingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.CreateEmbeddingsRequest request);
+            global::OpenRouter.EmbeddingsCreateEmbeddingsRequest request);
         partial void ProcessCreateEmbeddingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200> CreateEmbeddingsAsync(
 
-            global::OpenRouter.CreateEmbeddingsRequest request,
+            global::OpenRouter.EmbeddingsCreateEmbeddingsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,7 +74,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200>> CreateEmbeddingsAsResponseAsync(
 
-            global::OpenRouter.CreateEmbeddingsRequest request,
+            global::OpenRouter.EmbeddingsCreateEmbeddingsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -768,7 +768,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.CreateEmbeddingsRequest
+            var __request = new global::OpenRouter.EmbeddingsCreateEmbeddingsRequest
             {
                 Dimensions = dimensions,
                 EncodingFormat = encodingFormat,

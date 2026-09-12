@@ -27,11 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareQueryAnalyticsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.QueryAnalyticsRequest request);
+            global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest request);
         partial void PrepareQueryAnalyticsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.QueryAnalyticsRequest request);
+            global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest request);
         partial void ProcessQueryAnalyticsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.BetaAnalyticsQueryAnalyticsResponse200> QueryAnalyticsAsync(
 
-            global::OpenRouter.QueryAnalyticsRequest request,
+            global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,7 +74,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.BetaAnalyticsQueryAnalyticsResponse200>> QueryAnalyticsAsResponseAsync(
 
-            global::OpenRouter.QueryAnalyticsRequest request,
+            global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -659,7 +659,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.QueryAnalyticsRequest
+            var __request = new global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest
             {
                 ClassifierDimensions = classifierDimensions,
                 ClassifierFilters = classifierFilters,

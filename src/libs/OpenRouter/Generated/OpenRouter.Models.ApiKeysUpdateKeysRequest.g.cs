@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class UpdateKeysRequest
+    public sealed partial class ApiKeysUpdateKeysRequest
     {
         /// <summary>
         /// Whether to disable the API key
@@ -46,7 +46,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateKeysRequest" /> class.
+        /// Initializes a new instance of the <see cref="ApiKeysUpdateKeysRequest" /> class.
         /// </summary>
         /// <param name="disabled">
         /// Whether to disable the API key
@@ -66,7 +66,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public UpdateKeysRequest(
+        public ApiKeysUpdateKeysRequest(
             bool? disabled,
             bool? includeByokInLimit,
             double? limit,
@@ -81,9 +81,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateKeysRequest" /> class.
+        /// Initializes a new instance of the <see cref="ApiKeysUpdateKeysRequest" /> class.
         /// </summary>
-        public UpdateKeysRequest()
+        public ApiKeysUpdateKeysRequest()
         {
         }
 

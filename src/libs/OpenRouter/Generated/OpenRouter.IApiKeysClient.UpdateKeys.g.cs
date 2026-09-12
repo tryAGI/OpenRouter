@@ -16,7 +16,7 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysUpdateKeysResponse200> UpdateKeysAsync(
             string hash,
 
-            global::OpenRouter.UpdateKeysRequest request,
+            global::OpenRouter.ApiKeysUpdateKeysRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -31,7 +31,7 @@ namespace OpenRouter
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ApiKeysUpdateKeysResponse200>> UpdateKeysAsResponseAsync(
             string hash,
 
-            global::OpenRouter.UpdateKeysRequest request,
+            global::OpenRouter.ApiKeysUpdateKeysRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

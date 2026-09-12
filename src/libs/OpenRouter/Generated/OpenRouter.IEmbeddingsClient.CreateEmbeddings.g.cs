@@ -14,7 +14,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200> CreateEmbeddingsAsync(
 
-            global::OpenRouter.CreateEmbeddingsRequest request,
+            global::OpenRouter.EmbeddingsCreateEmbeddingsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -27,7 +27,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.EmbeddingsCreateEmbeddingsResponse200>> CreateEmbeddingsAsResponseAsync(
 
-            global::OpenRouter.CreateEmbeddingsRequest request,
+            global::OpenRouter.EmbeddingsCreateEmbeddingsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
