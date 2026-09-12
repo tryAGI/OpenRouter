@@ -7,7 +7,7 @@ namespace OpenRouter
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_CreateByokKeySecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_UpdateBYOKKeySecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,41 +21,46 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_CreateByokKeySecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_UpdateBYOKKeySecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_CreateByokKeySecurityRequirement0,
+            {                s_UpdateBYOKKeySecurityRequirement0,
             };
-        partial void PrepareCreateByokKeyArguments(
+        partial void PrepareUpdateBYOKKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.CreateBYOKKeyRequest request);
-        partial void PrepareCreateByokKeyRequest(
+            ref global::System.Guid id,
+            global::OpenRouter.UpdateBYOKKeyRequest request);
+        partial void PrepareUpdateBYOKKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.CreateBYOKKeyRequest request);
-        partial void ProcessCreateByokKeyResponse(
+            global::System.Guid id,
+            global::OpenRouter.UpdateBYOKKeyRequest request);
+        partial void ProcessUpdateBYOKKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateByokKeyResponseContent(
+        partial void ProcessUpdateBYOKKeyResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create a BYOK provider credential<br/>
-        /// Create a new bring-your-own-key (BYOK) provider credential. The raw key is encrypted at rest and never returned in API responses. Defaults to the authenticated entity's default workspace; use the `workspace_id` body field to scope to a different workspace. Treat the raw key as write-only; it is never returned after creation. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update a BYOK provider credential<br/>
+        /// Update an existing bring-your-own-key (BYOK) provider credential by its `id`. Include the `key` field to rotate the raw provider API key in-place (the previous key material is overwritten). [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.CreateBYOKKeyResponse> CreateByokKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.UpdateBYOKKeyResponse> UpdateBYOKKeyAsync(
+            global::System.Guid id,
 
-            global::OpenRouter.CreateBYOKKeyRequest request,
+            global::OpenRouter.UpdateBYOKKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateByokKeyAsResponseAsync(
+            var __response = await UpdateBYOKKeyAsResponseAsync(
+                id: id,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -65,16 +70,18 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// Create a BYOK provider credential<br/>
-        /// Create a new bring-your-own-key (BYOK) provider credential. The raw key is encrypted at rest and never returned in API responses. Defaults to the authenticated entity's default workspace; use the `workspace_id` body field to scope to a different workspace. Treat the raw key as write-only; it is never returned after creation. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update a BYOK provider credential<br/>
+        /// Update an existing bring-your-own-key (BYOK) provider credential by its `id`. Include the `key` field to rotate the raw provider API key in-place (the previous key material is overwritten). [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.CreateBYOKKeyResponse>> CreateByokKeyAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.UpdateBYOKKeyResponse>> UpdateBYOKKeyAsResponseAsync(
+            global::System.Guid id,
 
-            global::OpenRouter.CreateBYOKKeyRequest request,
+            global::OpenRouter.UpdateBYOKKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -82,15 +89,16 @@ namespace OpenRouter
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateByokKeyArguments(
+            PrepareUpdateBYOKKeyArguments(
                 httpClient: HttpClient,
+                id: ref id,
                 request: request);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateByokKeySecurityRequirements,
-                operationName: "CreateByokKeyAsync");
+                securityRequirements: s_UpdateBYOKKeySecurityRequirements,
+                operationName: "UpdateBYOKKeyAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -110,7 +118,7 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/byok",
+                                path: $"/byok/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -118,7 +126,7 @@ namespace OpenRouter
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -155,9 +163,10 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateByokKeyRequest(
+                PrepareUpdateBYOKKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    id: id!,
                     request: request);
 
                 return __httpRequest;
@@ -175,10 +184,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateByokKey",
-                                methodName: "CreateByokKeyAsync",
-                                pathTemplate: "\"/byok\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateBYOKKey",
+                                methodName: "UpdateBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -209,10 +218,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateByokKey",
-                                methodName: "CreateByokKeyAsync",
-                                pathTemplate: "\"/byok\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateBYOKKey",
+                                methodName: "UpdateBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -250,10 +259,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateByokKey",
-                                methodName: "CreateByokKeyAsync",
-                                pathTemplate: "\"/byok\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateBYOKKey",
+                                methodName: "UpdateBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -290,7 +299,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateByokKeyResponse(
+                ProcessUpdateBYOKKeyResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -298,10 +307,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateByokKey",
-                                methodName: "CreateByokKeyAsync",
-                                pathTemplate: "\"/byok\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateBYOKKey",
+                                methodName: "UpdateBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -320,10 +329,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateByokKey",
-                                methodName: "CreateByokKeyAsync",
-                                pathTemplate: "\"/byok\"",
-                                httpMethod: "POST",
+                                operationId: "UpdateBYOKKey",
+                                methodName: "UpdateBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -411,38 +420,38 @@ namespace OpenRouter
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden - Authentication successful but insufficient permissions
-                            if ((int)__response.StatusCode == 403)
+                            // Not Found - Resource does not exist
+                            if ((int)__response.StatusCode == 404)
                             {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::OpenRouter.NotFoundResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_403 = __ex;
+                                    __exception_404 = __ex;
                                 }
 
 
-                                throw global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>.Create(
+                                throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
-                                    responseBody: __content_403,
-                                    responseObject: __value_403,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -498,7 +507,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateByokKeyResponseContent(
+                                ProcessUpdateBYOKKeyResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -507,9 +516,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.CreateBYOKKeyResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.UpdateBYOKKeyResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.CreateBYOKKeyResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.UpdateBYOKKeyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -539,9 +548,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.CreateBYOKKeyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.UpdateBYOKKeyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.CreateBYOKKeyResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.UpdateBYOKKeyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -582,9 +591,10 @@ namespace OpenRouter
             }
         }
         /// <summary>
-        /// Create a BYOK provider credential<br/>
-        /// Create a new bring-your-own-key (BYOK) provider credential. The raw key is encrypted at rest and never returned in API responses. Defaults to the authenticated entity's default workspace; use the `workspace_id` body field to scope to a different workspace. Treat the raw key as write-only; it is never returned after creation. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// Update a BYOK provider credential<br/>
+        /// Update an existing bring-your-own-key (BYOK) provider credential by its `id`. Include the `key` field to rotate the raw provider API key in-place (the previous key material is overwritten). [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="allowedModels">
         /// Optional allowlist of model slugs this credential may be used for. `null` means no restriction.
         /// </param>
@@ -592,39 +602,32 @@ namespace OpenRouter
         /// Optional allowlist of user IDs that may use this credential. `null` means no restriction.
         /// </param>
         /// <param name="disabled">
-        /// Whether this credential should be created in a disabled state.
+        /// Whether this credential is disabled.
         /// </param>
         /// <param name="isFallback">
         /// Whether this credential is treated as a fallback — used only after non-fallback keys for the same provider have been tried.
         /// </param>
         /// <param name="key">
-        /// The raw provider API key or credential. This value is encrypted at rest and never returned in API responses.
+        /// A new raw provider API key to rotate the credential in-place. The previous key material is overwritten and the masked label is regenerated. Encrypted at rest and never returned in API responses.
         /// </param>
         /// <param name="name">
         /// Optional human-readable name for the credential.
         /// </param>
-        /// <param name="provider">
-        /// The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).
-        /// </param>
-        /// <param name="workspaceId">
-        /// Optional workspace ID. Defaults to the authenticated entity's default workspace.
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.CreateBYOKKeyResponse> CreateByokKeyAsync(
-            string key,
-            global::OpenRouter.BYOKProviderSlug provider,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.UpdateBYOKKeyResponse> UpdateBYOKKeyAsync(
+            global::System.Guid id,
             global::System.Collections.Generic.IList<string>? allowedModels = default,
             global::System.Collections.Generic.IList<string>? allowedUserIds = default,
             bool? disabled = default,
             bool? isFallback = default,
+            string? key = default,
             string? name = default,
-            global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.CreateBYOKKeyRequest
+            var __request = new global::OpenRouter.UpdateBYOKKeyRequest
             {
                 AllowedModels = allowedModels,
                 AllowedUserIds = allowedUserIds,
@@ -632,11 +635,10 @@ namespace OpenRouter
                 IsFallback = isFallback,
                 Key = key,
                 Name = name,
-                Provider = provider,
-                WorkspaceId = workspaceId,
             };
 
-            return await CreateByokKeyAsync(
+            return await UpdateBYOKKeyAsync(
+                id: id,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

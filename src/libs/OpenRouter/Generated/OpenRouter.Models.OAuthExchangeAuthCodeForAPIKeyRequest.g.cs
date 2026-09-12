@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class ExchangeAuthCodeForApiKeyRequest
+    public sealed partial class OAuthExchangeAuthCodeForAPIKeyRequest
     {
         /// <summary>
         /// The authorization code received from the OAuth redirect
@@ -35,7 +35,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExchangeAuthCodeForApiKeyRequest" /> class.
+        /// Initializes a new instance of the <see cref="OAuthExchangeAuthCodeForAPIKeyRequest" /> class.
         /// </summary>
         /// <param name="code">
         /// The authorization code received from the OAuth redirect
@@ -49,7 +49,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ExchangeAuthCodeForApiKeyRequest(
+        public OAuthExchangeAuthCodeForAPIKeyRequest(
             string code,
             global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod,
             string? codeVerifier)
@@ -60,9 +60,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExchangeAuthCodeForApiKeyRequest" /> class.
+        /// Initializes a new instance of the <see cref="OAuthExchangeAuthCodeForAPIKeyRequest" /> class.
         /// </summary>
-        public ExchangeAuthCodeForApiKeyRequest()
+        public OAuthExchangeAuthCodeForAPIKeyRequest()
         {
         }
 

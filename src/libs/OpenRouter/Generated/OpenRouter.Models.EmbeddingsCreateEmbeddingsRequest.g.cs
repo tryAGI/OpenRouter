@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class CreateEmbeddingsRequest
+    public sealed partial class EmbeddingsCreateEmbeddingsRequest
     {
         /// <summary>
         /// The number of dimensions for the output embeddings
@@ -61,7 +61,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEmbeddingsRequest" /> class.
+        /// Initializes a new instance of the <see cref="EmbeddingsCreateEmbeddingsRequest" /> class.
         /// </summary>
         /// <param name="input">
         /// Text, token, or multimodal input(s) to embed
@@ -87,7 +87,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public CreateEmbeddingsRequest(
+        public EmbeddingsCreateEmbeddingsRequest(
             global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput input,
             string model,
             int? dimensions,
@@ -106,9 +106,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEmbeddingsRequest" /> class.
+        /// Initializes a new instance of the <see cref="EmbeddingsCreateEmbeddingsRequest" /> class.
         /// </summary>
-        public CreateEmbeddingsRequest()
+        public EmbeddingsCreateEmbeddingsRequest()
         {
         }
 

@@ -12,7 +12,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.DeleteBYOKKeyResponse> DeleteByokKeyAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.DeleteBYOKKeyResponse> DeleteBYOKKeyAsync(
             global::System.Guid id,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -24,7 +24,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>> DeleteByokKeyAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>> DeleteBYOKKeyAsResponseAsync(
             global::System.Guid id,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

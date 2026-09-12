@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class QueryAnalyticsRequest
+    public sealed partial class BetaAnalyticsQueryAnalyticsRequest
     {
         /// <summary>
         /// Group results by custom classifier tags, breaking down metrics by the specified dimension values. Requires an active classifier on the workspace.
@@ -76,7 +76,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryAnalyticsRequest" /> class.
+        /// Initializes a new instance of the <see cref="BetaAnalyticsQueryAnalyticsRequest" /> class.
         /// </summary>
         /// <param name="metrics"></param>
         /// <param name="classifierDimensions">
@@ -101,7 +101,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public QueryAnalyticsRequest(
+        public BetaAnalyticsQueryAnalyticsRequest(
             global::System.Collections.Generic.IList<string> metrics,
             global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierDimensions? classifierDimensions,
             global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierFilters? classifierFilters,
@@ -126,9 +126,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryAnalyticsRequest" /> class.
+        /// Initializes a new instance of the <see cref="BetaAnalyticsQueryAnalyticsRequest" /> class.
         /// </summary>
-        public QueryAnalyticsRequest()
+        public BetaAnalyticsQueryAnalyticsRequest()
         {
         }
 

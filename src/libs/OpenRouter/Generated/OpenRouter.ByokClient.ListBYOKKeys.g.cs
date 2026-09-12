@@ -7,7 +7,7 @@ namespace OpenRouter
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_DeleteByokKeySecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_ListBYOKKeysSecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,41 +21,62 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_DeleteByokKeySecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_ListBYOKKeysSecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_DeleteByokKeySecurityRequirement0,
+            {                s_ListBYOKKeysSecurityRequirement0,
             };
-        partial void PrepareDeleteByokKeyArguments(
+        partial void PrepareListBYOKKeysArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid id);
-        partial void PrepareDeleteByokKeyRequest(
+            ref int? offset,
+            ref int? limit,
+            ref global::System.Guid? workspaceId,
+            ref global::OpenRouter.ByokGetParametersProvider? provider);
+        partial void PrepareListBYOKKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid id);
-        partial void ProcessDeleteByokKeyResponse(
+            int? offset,
+            int? limit,
+            global::System.Guid? workspaceId,
+            global::OpenRouter.ByokGetParametersProvider? provider);
+        partial void ProcessListBYOKKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDeleteByokKeyResponseContent(
+        partial void ProcessListBYOKKeysResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Delete a BYOK provider credential<br/>
-        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List BYOK provider credentials<br/>
+        /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="workspaceId"></param>
+        /// <param name="provider">
+        /// Optional provider slug to filter by (e.g. `openai`, `anthropic`, `amazon-bedrock`).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.DeleteBYOKKeyResponse> DeleteByokKeyAsync(
-            global::System.Guid id,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ListBYOKKeysResponse> ListBYOKKeysAsync(
+            int? offset = default,
+            int? limit = default,
+            global::System.Guid? workspaceId = default,
+            global::OpenRouter.ByokGetParametersProvider? provider = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await DeleteByokKeyAsResponseAsync(
-                id: id,
+            var __response = await ListBYOKKeysAsResponseAsync(
+                offset: offset,
+                limit: limit,
+                workspaceId: workspaceId,
+                provider: provider,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -63,29 +84,44 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// Delete a BYOK provider credential<br/>
-        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.
+        /// List BYOK provider credentials<br/>
+        /// List the bring-your-own-key (BYOK) provider credentials for the authenticated entity's default workspace. Use the `workspace_id` query parameter to scope the result to a different workspace, or the `provider` query parameter to filter by upstream provider. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="workspaceId"></param>
+        /// <param name="provider">
+        /// Optional provider slug to filter by (e.g. `openai`, `anthropic`, `amazon-bedrock`).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>> DeleteByokKeyAsResponseAsync(
-            global::System.Guid id,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListBYOKKeysResponse>> ListBYOKKeysAsResponseAsync(
+            int? offset = default,
+            int? limit = default,
+            global::System.Guid? workspaceId = default,
+            global::OpenRouter.ByokGetParametersProvider? provider = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareDeleteByokKeyArguments(
+            PrepareListBYOKKeysArguments(
                 httpClient: HttpClient,
-                id: ref id);
+                offset: ref offset,
+                limit: ref limit,
+                workspaceId: ref workspaceId,
+                provider: ref provider);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_DeleteByokKeySecurityRequirements,
-                operationName: "DeleteByokKeyAsync");
+                securityRequirements: s_ListBYOKKeysSecurityRequirements,
+                operationName: "ListBYOKKeysAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -105,15 +141,21 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: $"/byok/{id}",
+                                path: "/byok",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("offset", offset?.ToString())
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("workspace_id", workspaceId?.ToString())
+                                .AddOptionalParameter("provider", provider?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Delete,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -144,10 +186,13 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareDeleteByokKeyRequest(
+                PrepareListBYOKKeysRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!);
+                    offset: offset,
+                    limit: limit,
+                    workspaceId: workspaceId,
+                    provider: provider);
 
                 return __httpRequest;
             }
@@ -164,10 +209,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteByokKey",
-                                methodName: "DeleteByokKeyAsync",
-                                pathTemplate: "$\"/byok/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListBYOKKeys",
+                                methodName: "ListBYOKKeysAsync",
+                                pathTemplate: "\"/byok\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -198,10 +243,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteByokKey",
-                                methodName: "DeleteByokKeyAsync",
-                                pathTemplate: "$\"/byok/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListBYOKKeys",
+                                methodName: "ListBYOKKeysAsync",
+                                pathTemplate: "\"/byok\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -239,10 +284,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteByokKey",
-                                methodName: "DeleteByokKeyAsync",
-                                pathTemplate: "$\"/byok/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListBYOKKeys",
+                                methodName: "ListBYOKKeysAsync",
+                                pathTemplate: "\"/byok\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -279,7 +324,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessDeleteByokKeyResponse(
+                ProcessListBYOKKeysResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -287,10 +332,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteByokKey",
-                                methodName: "DeleteByokKeyAsync",
-                                pathTemplate: "$\"/byok/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListBYOKKeys",
+                                methodName: "ListBYOKKeysAsync",
+                                pathTemplate: "\"/byok\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -309,10 +354,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteByokKey",
-                                methodName: "DeleteByokKeyAsync",
-                                pathTemplate: "$\"/byok/{id}\"",
-                                httpMethod: "DELETE",
+                                operationId: "ListBYOKKeys",
+                                methodName: "ListBYOKKeysAsync",
+                                pathTemplate: "\"/byok\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -358,43 +403,6 @@ namespace OpenRouter
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Not Found - Resource does not exist
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                global::OpenRouter.NotFoundResponse? __value_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-
-                                throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    responseBody: __content_404,
-                                    responseObject: __value_404,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -450,7 +458,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessDeleteByokKeyResponseContent(
+                                ProcessListBYOKKeysResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -459,9 +467,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.DeleteBYOKKeyResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.ListBYOKKeysResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListBYOKKeysResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -491,9 +499,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.DeleteBYOKKeyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.ListBYOKKeysResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListBYOKKeysResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

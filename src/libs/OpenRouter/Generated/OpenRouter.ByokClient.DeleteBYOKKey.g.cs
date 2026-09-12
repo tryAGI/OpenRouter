@@ -3,11 +3,11 @@
 
 namespace OpenRouter
 {
-    public partial class OAuthClient
+    public partial class ByokClient
     {
 
 
-        private static readonly global::OpenRouter.EndPointSecurityRequirement s_ExchangeAuthCodeForApiKeySecurityRequirement0 =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement s_DeleteBYOKKeySecurityRequirement0 =
             new global::OpenRouter.EndPointSecurityRequirement
             {
                 Authorizations = new global::OpenRouter.EndPointAuthorizationRequirement[]
@@ -21,43 +21,41 @@ namespace OpenRouter
                     },
                 },
             };
-        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_ExchangeAuthCodeForApiKeySecurityRequirements =
+        private static readonly global::OpenRouter.EndPointSecurityRequirement[] s_DeleteBYOKKeySecurityRequirements =
             new global::OpenRouter.EndPointSecurityRequirement[]
-            {                s_ExchangeAuthCodeForApiKeySecurityRequirement0,
+            {                s_DeleteBYOKKeySecurityRequirement0,
             };
-        partial void PrepareExchangeAuthCodeForApiKeyArguments(
+        partial void PrepareDeleteBYOKKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.ExchangeAuthCodeForApiKeyRequest request);
-        partial void PrepareExchangeAuthCodeForApiKeyRequest(
+            ref global::System.Guid id);
+        partial void PrepareDeleteBYOKKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.ExchangeAuthCodeForApiKeyRequest request);
-        partial void ProcessExchangeAuthCodeForApiKeyResponse(
+            global::System.Guid id);
+        partial void ProcessDeleteBYOKKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessExchangeAuthCodeForApiKeyResponseContent(
+        partial void ProcessDeleteBYOKKeyResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Exchange authorization code for API key<br/>
-        /// Exchange an authorization code from the PKCE flow for a user-controlled API key
+        /// Delete a BYOK provider credential<br/>
+        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForApiKeyAsync(
-
-            global::OpenRouter.ExchangeAuthCodeForApiKeyRequest request,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.DeleteBYOKKeyResponse> DeleteBYOKKeyAsync(
+            global::System.Guid id,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ExchangeAuthCodeForApiKeyAsResponseAsync(
-
-                request: request,
+            var __response = await DeleteBYOKKeyAsResponseAsync(
+                id: id,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -65,32 +63,29 @@ namespace OpenRouter
             return __response.Body;
         }
         /// <summary>
-        /// Exchange authorization code for API key<br/>
-        /// Exchange an authorization code from the PKCE flow for a user-controlled API key
+        /// Delete a BYOK provider credential<br/>
+        /// Delete (soft-delete) a bring-your-own-key (BYOK) provider credential by its `id`. The encrypted key material is wiped and the record is marked as deleted. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>> ExchangeAuthCodeForApiKeyAsResponseAsync(
-
-            global::OpenRouter.ExchangeAuthCodeForApiKeyRequest request,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>> DeleteBYOKKeyAsResponseAsync(
+            global::System.Guid id,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareExchangeAuthCodeForApiKeyArguments(
+            PrepareDeleteBYOKKeyArguments(
                 httpClient: HttpClient,
-                request: request);
+                id: ref id);
 
 
             var __authorizations = global::OpenRouter.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ExchangeAuthCodeForApiKeySecurityRequirements,
-                operationName: "ExchangeAuthCodeForApiKeyAsync");
+                securityRequirements: s_DeleteBYOKKeySecurityRequirements,
+                operationName: "DeleteBYOKKeyAsync");
 
             using var __timeoutCancellationTokenSource = global::OpenRouter.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -110,7 +105,7 @@ namespace OpenRouter
             {
 
                             var __pathBuilder = new global::OpenRouter.PathBuilder(
-                                path: "/auth/keys",
+                                path: $"/byok/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::OpenRouter.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -118,7 +113,7 @@ namespace OpenRouter
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -141,12 +136,6 @@ namespace OpenRouter
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::OpenRouter.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -155,10 +144,10 @@ namespace OpenRouter
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareExchangeAuthCodeForApiKeyRequest(
+                PrepareDeleteBYOKKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    id: id!);
 
                 return __httpRequest;
             }
@@ -175,10 +164,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExchangeAuthCodeForApiKey",
-                                methodName: "ExchangeAuthCodeForApiKeyAsync",
-                                pathTemplate: "\"/auth/keys\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteBYOKKey",
+                                methodName: "DeleteBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -209,10 +198,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExchangeAuthCodeForApiKey",
-                                methodName: "ExchangeAuthCodeForApiKeyAsync",
-                                pathTemplate: "\"/auth/keys\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteBYOKKey",
+                                methodName: "DeleteBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -250,10 +239,10 @@ namespace OpenRouter
                         await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExchangeAuthCodeForApiKey",
-                                methodName: "ExchangeAuthCodeForApiKeyAsync",
-                                pathTemplate: "\"/auth/keys\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteBYOKKey",
+                                methodName: "DeleteBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -290,7 +279,7 @@ namespace OpenRouter
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessExchangeAuthCodeForApiKeyResponse(
+                ProcessDeleteBYOKKeyResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -298,10 +287,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExchangeAuthCodeForApiKey",
-                                methodName: "ExchangeAuthCodeForApiKeyAsync",
-                                pathTemplate: "\"/auth/keys\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteBYOKKey",
+                                methodName: "DeleteBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -320,10 +309,10 @@ namespace OpenRouter
                     await global::OpenRouter.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::OpenRouter.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ExchangeAuthCodeForApiKey",
-                                methodName: "ExchangeAuthCodeForApiKeyAsync",
-                                pathTemplate: "\"/auth/keys\"",
-                                httpMethod: "POST",
+                                operationId: "DeleteBYOKKey",
+                                methodName: "DeleteBYOKKeyAsync",
+                                pathTemplate: "$\"/byok/{id}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -337,75 +326,75 @@ namespace OpenRouter
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request - Invalid request parameters or malformed input
-                            if ((int)__response.StatusCode == 400)
+                            // Unauthorized - Authentication required or invalid credentials
+                            if ((int)__response.StatusCode == 401)
                             {
-                                string? __content_400 = null;
-                                global::System.Exception? __exception_400 = null;
-                                global::OpenRouter.BadRequestResponse? __value_400 = null;
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::OpenRouter.UnauthorizedResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_401 = global::OpenRouter.UnauthorizedResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_400 = __ex;
+                                    __exception_401 = __ex;
                                 }
 
 
-                                throw global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>.Create(
+                                throw global::OpenRouter.ApiException<global::OpenRouter.UnauthorizedResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_400,
-                                    responseBody: __content_400,
-                                    responseObject: __value_400,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden - Authentication successful but insufficient permissions
-                            if ((int)__response.StatusCode == 403)
+                            // Not Found - Resource does not exist
+                            if ((int)__response.StatusCode == 404)
                             {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::OpenRouter.ForbiddenResponse? __value_403 = null;
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::OpenRouter.NotFoundResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::OpenRouter.ForbiddenResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_404 = global::OpenRouter.NotFoundResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_403 = __ex;
+                                    __exception_404 = __ex;
                                 }
 
 
-                                throw global::OpenRouter.ApiException<global::OpenRouter.ForbiddenResponse>.Create(
+                                throw global::OpenRouter.ApiException<global::OpenRouter.NotFoundResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
-                                    responseBody: __content_403,
-                                    responseObject: __value_403,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -461,7 +450,7 @@ namespace OpenRouter
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessExchangeAuthCodeForApiKeyResponseContent(
+                                ProcessDeleteBYOKKeyResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -470,9 +459,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.DeleteBYOKKeyResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -502,9 +491,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.DeleteBYOKKeyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.DeleteBYOKKeyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -543,41 +532,6 @@ namespace OpenRouter
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Exchange authorization code for API key<br/>
-        /// Exchange an authorization code from the PKCE flow for a user-controlled API key
-        /// </summary>
-        /// <param name="code">
-        /// The authorization code received from the OAuth redirect
-        /// </param>
-        /// <param name="codeChallengeMethod">
-        /// The method used to generate the code challenge
-        /// </param>
-        /// <param name="codeVerifier">
-        /// The code verifier if code_challenge was used in the authorization request
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForApiKeyAsync(
-            string code,
-            global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod = default,
-            string? codeVerifier = default,
-            global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::OpenRouter.ExchangeAuthCodeForApiKeyRequest
-            {
-                Code = code,
-                CodeChallengeMethod = codeChallengeMethod,
-                CodeVerifier = codeVerifier,
-            };
-
-            return await ExchangeAuthCodeForApiKeyAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

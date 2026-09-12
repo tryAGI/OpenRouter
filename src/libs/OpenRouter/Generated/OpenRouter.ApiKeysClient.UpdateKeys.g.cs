@@ -28,12 +28,12 @@ namespace OpenRouter
         partial void PrepareUpdateKeysArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string hash,
-            global::OpenRouter.UpdateKeysRequest request);
+            global::OpenRouter.ApiKeysUpdateKeysRequest request);
         partial void PrepareUpdateKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string hash,
-            global::OpenRouter.UpdateKeysRequest request);
+            global::OpenRouter.ApiKeysUpdateKeysRequest request);
         partial void ProcessUpdateKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,7 +55,7 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysUpdateKeysResponse200> UpdateKeysAsync(
             string hash,
 
-            global::OpenRouter.UpdateKeysRequest request,
+            global::OpenRouter.ApiKeysUpdateKeysRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -81,7 +81,7 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ApiKeysUpdateKeysResponse200>> UpdateKeysAsResponseAsync(
             string hash,
 
-            global::OpenRouter.UpdateKeysRequest request,
+            global::OpenRouter.ApiKeysUpdateKeysRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -660,7 +660,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.UpdateKeysRequest
+            var __request = new global::OpenRouter.ApiKeysUpdateKeysRequest
             {
                 Disabled = disabled,
                 IncludeByokInLimit = includeByokInLimit,
