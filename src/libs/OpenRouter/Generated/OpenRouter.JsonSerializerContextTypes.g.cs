@@ -7561,15 +7561,15 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest? Type1882 { get; set; }
+        public global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest? Type1882 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OAuthCreateAuthKeysCodeRequest? Type1883 { get; set; }
+        public global::OpenRouter.CreateAuthKeysCodeRequest? Type1883 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest? Type1884 { get; set; }
+        public global::OpenRouter.QueryAnalyticsRequest? Type1884 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7577,11 +7577,11 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.EmbeddingsCreateEmbeddingsRequest? Type1886 { get; set; }
+        public global::OpenRouter.CreateEmbeddingsRequest? Type1886 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FilesUploadFileRequest? Type1887 { get; set; }
+        public global::OpenRouter.UploadFileRequest? Type1887 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7589,15 +7589,15 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApiKeysCreateKeysRequest? Type1889 { get; set; }
+        public global::OpenRouter.CreateKeysRequest? Type1889 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApiKeysUpdateKeysRequest? Type1890 { get; set; }
+        public global::OpenRouter.UpdateKeysRequest? Type1890 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.RerankCreateRerankRequest? Type1891 { get; set; }
+        public global::OpenRouter.CreateRerankRequest? Type1891 { get; set; }
         /// <summary>
         ///
         /// </summary>

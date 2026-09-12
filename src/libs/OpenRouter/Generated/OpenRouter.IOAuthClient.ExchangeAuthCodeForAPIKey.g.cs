@@ -14,7 +14,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForAPIKeyAsync(
 
-            global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest request,
+            global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -27,7 +27,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>> ExchangeAuthCodeForAPIKeyAsResponseAsync(
 
-            global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest request,
+            global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class FilesUploadFileRequest
+    public sealed partial class UploadFileRequest
     {
         /// <summary>
         ///
@@ -29,14 +29,14 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilesUploadFileRequest" /> class.
+        /// Initializes a new instance of the <see cref="UploadFileRequest" /> class.
         /// </summary>
         /// <param name="file"></param>
         /// <param name="filename"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public FilesUploadFileRequest(
+        public UploadFileRequest(
             byte[] file,
             string filename)
         {
@@ -45,9 +45,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilesUploadFileRequest" /> class.
+        /// Initializes a new instance of the <see cref="UploadFileRequest" /> class.
         /// </summary>
-        public FilesUploadFileRequest()
+        public UploadFileRequest()
         {
         }
 

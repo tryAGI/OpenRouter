@@ -14,7 +14,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.BetaAnalyticsQueryAnalyticsResponse200> QueryAnalyticsAsync(
 
-            global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest request,
+            global::OpenRouter.QueryAnalyticsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -27,7 +27,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.BetaAnalyticsQueryAnalyticsResponse200>> QueryAnalyticsAsResponseAsync(
 
-            global::OpenRouter.BetaAnalyticsQueryAnalyticsRequest request,
+            global::OpenRouter.QueryAnalyticsRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

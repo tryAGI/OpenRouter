@@ -15,7 +15,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.FileMetadata> UploadFileAsync(
 
-            global::OpenRouter.FilesUploadFileRequest request,
+            global::OpenRouter.UploadFileRequest request,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -30,7 +30,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.FileMetadata>> UploadFileAsResponseAsync(
 
-            global::OpenRouter.FilesUploadFileRequest request,
+            global::OpenRouter.UploadFileRequest request,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
