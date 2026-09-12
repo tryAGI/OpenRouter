@@ -27,11 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareExchangeAuthCodeForAPIKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest request);
+            global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request);
         partial void PrepareExchangeAuthCodeForAPIKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest request);
+            global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request);
         partial void ProcessExchangeAuthCodeForAPIKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForAPIKeyAsync(
 
-            global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest request,
+            global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,7 +74,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>> ExchangeAuthCodeForAPIKeyAsResponseAsync(
 
-            global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest request,
+            global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -567,7 +567,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyRequest
+            var __request = new global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest
             {
                 Code = code,
                 CodeChallengeMethod = codeChallengeMethod,

@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class RerankCreateRerankRequest
+    public sealed partial class CreateRerankRequest
     {
         /// <summary>
         /// The list of documents to rerank. Documents may be plain strings, or structured objects with `text` and/or `image` for multimodal models.
@@ -48,7 +48,7 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RerankCreateRerankRequest" /> class.
+        /// Initializes a new instance of the <see cref="CreateRerankRequest" /> class.
         /// </summary>
         /// <param name="documents">
         /// The list of documents to rerank. Documents may be plain strings, or structured objects with `text` and/or `image` for multimodal models.
@@ -68,7 +68,7 @@ namespace OpenRouter
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RerankCreateRerankRequest(
+        public CreateRerankRequest(
             global::System.Collections.Generic.IList<global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems> documents,
             string model,
             string query,
@@ -83,9 +83,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RerankCreateRerankRequest" /> class.
+        /// Initializes a new instance of the <see cref="CreateRerankRequest" /> class.
         /// </summary>
-        public RerankCreateRerankRequest()
+        public CreateRerankRequest()
         {
         }
 

@@ -28,12 +28,12 @@ namespace OpenRouter
         partial void PrepareUploadFileArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid? workspaceId,
-            global::OpenRouter.FilesUploadFileRequest request);
+            global::OpenRouter.UploadFileRequest request);
         partial void PrepareUploadFileRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid? workspaceId,
-            global::OpenRouter.FilesUploadFileRequest request);
+            global::OpenRouter.UploadFileRequest request);
         partial void ProcessUploadFileResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,7 +54,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.FileMetadata> UploadFileAsync(
 
-            global::OpenRouter.FilesUploadFileRequest request,
+            global::OpenRouter.UploadFileRequest request,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -80,7 +80,7 @@ namespace OpenRouter
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.FileMetadata>> UploadFileAsResponseAsync(
 
-            global::OpenRouter.FilesUploadFileRequest request,
+            global::OpenRouter.UploadFileRequest request,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -720,7 +720,7 @@ namespace OpenRouter
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::OpenRouter.FilesUploadFileRequest
+            var __request = new global::OpenRouter.UploadFileRequest
             {
                 File = file,
                 Filename = filename,
@@ -754,7 +754,7 @@ namespace OpenRouter
         {
 
             file = file ?? throw new global::System.ArgumentNullException(nameof(file));
-            var request = new global::OpenRouter.FilesUploadFileRequest
+            var request = new global::OpenRouter.UploadFileRequest
             {
                 File = global::System.Array.Empty<byte>(),
                 Filename = filename,
@@ -1388,7 +1388,7 @@ namespace OpenRouter
         {
 
             file = file ?? throw new global::System.ArgumentNullException(nameof(file));
-            var request = new global::OpenRouter.FilesUploadFileRequest
+            var request = new global::OpenRouter.UploadFileRequest
             {
                 File = global::System.Array.Empty<byte>(),
                 Filename = filename,
