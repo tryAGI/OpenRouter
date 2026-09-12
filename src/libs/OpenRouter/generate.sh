@@ -54,4 +54,5 @@ autosdk generate openapi.yaml \
   --clientClassName OpenRouterClient \
   --targetFramework net10.0 \
   --output Generated \
+  --strip-redundant-operation-id-tag-prefixes \
   --exclude-deprecated-operations
