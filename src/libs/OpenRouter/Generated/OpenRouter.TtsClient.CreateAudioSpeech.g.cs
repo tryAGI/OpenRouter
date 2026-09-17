@@ -160,6 +160,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     request: request);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -779,6 +781,8 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
+
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

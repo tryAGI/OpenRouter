@@ -164,7 +164,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/auth/keys": {
@@ -175,7 +180,6 @@
         "tags": [
           "oAuth"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Successfully exchanged code for an API key",
@@ -243,7 +247,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/auth/keys/code": {
@@ -254,7 +264,6 @@
         "tags": [
           "oAuth"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Successfully created authorization code",
@@ -370,7 +379,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/images": {
@@ -381,7 +396,6 @@
         "tags": [
           "images"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Image generation response",
@@ -492,7 +506,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/images/models": {
@@ -503,7 +523,6 @@
         "tags": [
           "images"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "List of image generation models",
@@ -525,7 +544,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/images/models/{author}/{slug}/endpoints": {
@@ -587,7 +612,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/audio/speech": {
@@ -598,7 +628,6 @@
         "tags": [
           "tts"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Audio bytes stream",
@@ -700,7 +729,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/audio/transcriptions": {
@@ -711,7 +746,6 @@
         "tags": [
           "stt"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Transcription result",
@@ -812,7 +846,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/activity": {
@@ -913,7 +953,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/analytics/meta": {
@@ -924,7 +969,6 @@
         "tags": [
           "betaAnalytics"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Returns analytics query metadata",
@@ -966,7 +1010,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/analytics/query": {
@@ -977,7 +1027,6 @@
         "tags": [
           "betaAnalytics"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Analytics query results",
@@ -1097,7 +1146,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/benchmarks": {
@@ -1207,7 +1262,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/byok": {
@@ -1296,7 +1356,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "byok_createBYOKKey",
@@ -1305,7 +1370,6 @@
         "tags": [
           "byok"
         ],
-        "parameters": [],
         "responses": {
           "201": {
             "description": "BYOK credential created successfully",
@@ -1366,7 +1430,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/byok/{id}": {
@@ -1430,7 +1500,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "delete": {
         "operationId": "byok_deleteBYOKKey",
@@ -1492,7 +1567,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "patch": {
         "operationId": "byok_updateBYOKKey",
@@ -1573,7 +1653,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/chat/completions": {
@@ -1735,7 +1820,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/classifications/task": {
@@ -1808,7 +1898,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/credits": {
@@ -1819,7 +1914,6 @@
         "tags": [
           "credits"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Returns the total credits purchased and used",
@@ -1861,7 +1955,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/datasets/app-rankings": {
@@ -1999,7 +2099,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/datasets/rankings-daily": {
@@ -2128,7 +2233,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/embeddings": {
@@ -2139,7 +2249,6 @@
         "tags": [
           "embeddings"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Embedding response",
@@ -2275,7 +2384,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/embeddings/models": {
@@ -2345,7 +2460,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/endpoints/zdr": {
@@ -2355,7 +2475,6 @@
         "tags": [
           "endpoints"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Returns a list of endpoints",
@@ -2377,7 +2496,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/models/{author}/{slug}/endpoints": {
@@ -2438,7 +2563,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/files": {
@@ -2532,7 +2662,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "files_uploadFile",
@@ -2642,7 +2777,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/files/{file_id}": {
@@ -2724,7 +2864,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "delete": {
         "operationId": "files_deleteFile",
@@ -2804,7 +2949,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/files/{file_id}/content": {
@@ -2897,7 +3047,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/generation": {
@@ -2990,7 +3145,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/generation/content": {
@@ -3083,7 +3243,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/generation/feedback": {
@@ -3094,7 +3259,6 @@
         "tags": [
           "generations"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Feedback recorded successfully",
@@ -3165,7 +3329,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/guardrails": {
@@ -3245,7 +3415,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "guardrails_createGuardrail",
@@ -3254,7 +3429,6 @@
         "tags": [
           "guardrails"
         ],
-        "parameters": [],
         "responses": {
           "201": {
             "description": "Guardrail created successfully",
@@ -3315,7 +3489,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/guardrails/{id}": {
@@ -3379,7 +3559,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "delete": {
         "operationId": "guardrails_deleteGuardrail",
@@ -3441,7 +3626,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "patch": {
         "operationId": "guardrails_updateGuardrail",
@@ -3522,7 +3712,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/guardrails/{id}/assignments/keys": {
@@ -3612,7 +3807,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "guardrails_bulkAssignKeysToGuardrail",
@@ -3693,7 +3893,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/guardrails/{id}/assignments/keys/remove": {
@@ -3776,7 +3981,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/guardrails/{id}/assignments/members": {
@@ -3866,7 +4076,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "guardrails_bulkAssignMembersToGuardrail",
@@ -3947,7 +4162,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/guardrails/{id}/assignments/members/remove": {
@@ -4030,7 +4250,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/guardrails/assignments/keys": {
@@ -4100,7 +4325,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/guardrails/assignments/members": {
@@ -4170,7 +4400,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/key": {
@@ -4181,14 +4416,13 @@
         "tags": [
           "apiKeys"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "API key details",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKeys_getCurrentKey_Response_200"
+                  "$ref": "#/components/schemas/API_Keys_getCurrentKey_Response_200"
                 }
               }
             }
@@ -4213,7 +4447,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/keys": {
@@ -4264,7 +4504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKeys_list_Response_200"
+                  "$ref": "#/components/schemas/API_Keys_list_Response_200"
                 }
               }
             }
@@ -4299,7 +4539,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "apiKeys_createKeys",
@@ -4308,14 +4553,13 @@
         "tags": [
           "apiKeys"
         ],
-        "parameters": [],
         "responses": {
           "201": {
             "description": "API key created successfully",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKeys_createKeys_Response_201"
+                  "$ref": "#/components/schemas/API_Keys_createKeys_Response_201"
                 }
               }
             }
@@ -4426,7 +4670,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/keys/{hash}": {
@@ -4454,7 +4704,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKeys_getKey_Response_200"
+                  "$ref": "#/components/schemas/API_Keys_getKey_Response_200"
                 }
               }
             }
@@ -4499,7 +4749,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "delete": {
         "operationId": "apiKeys_deleteKeys",
@@ -4525,7 +4780,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKeys_deleteKeys_Response_200"
+                  "$ref": "#/components/schemas/API_Keys_deleteKeys_Response_200"
                 }
               }
             }
@@ -4570,7 +4825,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "patch": {
         "operationId": "apiKeys_updateKeys",
@@ -4596,7 +4856,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKeys_updateKeys_Response_200"
+                  "$ref": "#/components/schemas/API_Keys_updateKeys_Response_200"
                 }
               }
             }
@@ -4686,7 +4946,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/messages": {
@@ -4798,7 +5063,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/model/{author}/{slug}": {
@@ -4860,7 +5130,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/models": {
@@ -5261,7 +5536,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/models/count": {
@@ -5313,7 +5593,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/models/user": {
@@ -5393,7 +5678,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/observability/destinations": {
@@ -5473,7 +5763,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "observability_createObservabilityDestination",
@@ -5482,7 +5777,6 @@
         "tags": [
           "observability"
         ],
-        "parameters": [],
         "responses": {
           "201": {
             "description": "Destination created successfully",
@@ -5553,7 +5847,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/observability/destinations/{id}": {
@@ -5617,7 +5917,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "delete": {
         "operationId": "observability_deleteObservabilityDestination",
@@ -5679,7 +5984,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "patch": {
         "operationId": "observability_updateObservabilityDestination",
@@ -5770,7 +6080,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/organization/members": {
@@ -5850,7 +6165,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/presets": {
@@ -5930,7 +6250,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/presets/{slug}": {
@@ -6004,7 +6329,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/presets/{slug}/chat/completions": {
@@ -6107,7 +6437,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/presets/{slug}/messages": {
@@ -6210,7 +6545,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/presets/{slug}/responses": {
@@ -6313,7 +6653,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/presets/{slug}/versions": {
@@ -6413,7 +6758,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/presets/{slug}/versions/{version}": {
@@ -6497,7 +6847,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/providers": {
@@ -6507,7 +6862,6 @@
         "tags": [
           "providers"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Returns a list of providers",
@@ -6529,7 +6883,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/rerank": {
@@ -6540,7 +6900,6 @@
         "tags": [
           "rerank"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Rerank response",
@@ -6672,7 +7031,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/videos": {
@@ -6683,7 +7048,6 @@
         "tags": [
           "videoGeneration"
         ],
-        "parameters": [],
         "responses": {
           "202": {
             "description": "Video generation request accepted",
@@ -6764,7 +7128,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/videos/{jobId}": {
@@ -6827,7 +7197,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/videos/{jobId}/content": {
@@ -6924,7 +7299,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/videos/models": {
@@ -6935,7 +7315,6 @@
         "tags": [
           "videoGeneration"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Returns a list of video generation models",
@@ -6967,7 +7346,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/workspaces": {
@@ -7037,7 +7422,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "post": {
         "operationId": "workspaces_createWorkspace",
@@ -7046,7 +7436,6 @@
         "tags": [
           "workspaces"
         ],
-        "parameters": [],
         "responses": {
           "201": {
             "description": "Workspace created successfully",
@@ -7107,7 +7496,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "parameters": []
       }
     },
     "/workspaces/{id}": {
@@ -7171,7 +7566,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "delete": {
         "operationId": "workspaces_deleteWorkspace",
@@ -7253,7 +7653,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "patch": {
         "operationId": "workspaces_updateWorkspace",
@@ -7344,7 +7749,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/workspaces/{id}/budgets": {
@@ -7408,7 +7818,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/workspaces/{id}/budgets/{interval}": {
@@ -7500,7 +7915,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       },
       "delete": {
         "operationId": "workspaces_deleteWorkspaceBudget",
@@ -7571,7 +7991,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/workspaces/{id}/members": {
@@ -7671,7 +8096,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/workspaces/{id}/members/add": {
@@ -7764,7 +8194,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     },
     "/workspaces/{id}/members/remove": {
@@ -7857,10 +8292,101 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
       }
     }
   },
+  "tags": [
+    {
+      "name": "beta.responses"
+    },
+    {
+      "name": "oAuth"
+    },
+    {
+      "name": "images"
+    },
+    {
+      "name": "tts"
+    },
+    {
+      "name": "stt"
+    },
+    {
+      "name": "analytics"
+    },
+    {
+      "name": "betaAnalytics"
+    },
+    {
+      "name": "benchmarks"
+    },
+    {
+      "name": "byok"
+    },
+    {
+      "name": "chat"
+    },
+    {
+      "name": "classifications"
+    },
+    {
+      "name": "credits"
+    },
+    {
+      "name": "datasets"
+    },
+    {
+      "name": "embeddings"
+    },
+    {
+      "name": "endpoints"
+    },
+    {
+      "name": "files"
+    },
+    {
+      "name": "generations"
+    },
+    {
+      "name": "guardrails"
+    },
+    {
+      "name": "apiKeys"
+    },
+    {
+      "name": "anthropicMessages"
+    },
+    {
+      "name": "models"
+    },
+    {
+      "name": "observability"
+    },
+    {
+      "name": "organization"
+    },
+    {
+      "name": "presets"
+    },
+    {
+      "name": "providers"
+    },
+    {
+      "name": "rerank"
+    },
+    {
+      "name": "videoGeneration"
+    },
+    {
+      "name": "workspaces"
+    }
+  ],
   "servers": [
     {
       "url": "https://openrouter.ai/api/v1",
@@ -30920,7 +31446,7 @@
         "description": "Current API key information",
         "title": "KeyGetResponsesContentApplicationJsonSchemaData"
       },
-      "ApiKeys_getCurrentKey_Response_200": {
+      "API_Keys_getCurrentKey_Response_200": {
         "type": "object",
         "properties": {
           "data": {
@@ -31074,7 +31600,7 @@
         ],
         "title": "KeysGetResponsesContentApplicationJsonSchemaDataItems"
       },
-      "ApiKeys_list_Response_200": {
+      "API_Keys_list_Response_200": {
         "type": "object",
         "properties": {
           "data": {
@@ -31242,7 +31768,7 @@
         "description": "The created API key information",
         "title": "KeysPostResponsesContentApplicationJsonSchemaData"
       },
-      "ApiKeys_createKeys_Response_201": {
+      "API_Keys_createKeys_Response_201": {
         "type": "object",
         "properties": {
           "data": {
@@ -31402,7 +31928,7 @@
         "description": "The API key information",
         "title": "KeysHashGetResponsesContentApplicationJsonSchemaData"
       },
-      "ApiKeys_getKey_Response_200": {
+      "API_Keys_getKey_Response_200": {
         "type": "object",
         "properties": {
           "data": {
@@ -31415,7 +31941,7 @@
         ],
         "title": "API Keys_getKey_Response_200"
       },
-      "ApiKeys_deleteKeys_Response_200": {
+      "API_Keys_deleteKeys_Response_200": {
         "type": "object",
         "properties": {
           "deleted": {
@@ -31583,7 +32109,7 @@
         "description": "The updated API key information",
         "title": "KeysHashPatchResponsesContentApplicationJsonSchemaData"
       },
-      "ApiKeys_updateKeys_Response_200": {
+      "API_Keys_updateKeys_Response_200": {
         "type": "object",
         "properties": {
           "data": {

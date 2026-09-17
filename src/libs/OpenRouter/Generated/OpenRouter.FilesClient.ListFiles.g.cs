@@ -172,6 +172,8 @@ namespace OpenRouter
                     cursor: cursor,
                     workspaceId: workspaceId);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

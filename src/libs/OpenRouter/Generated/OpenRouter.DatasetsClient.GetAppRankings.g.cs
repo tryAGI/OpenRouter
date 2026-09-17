@@ -268,6 +268,8 @@ namespace OpenRouter
                     limit: limit,
                     offset: offset);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

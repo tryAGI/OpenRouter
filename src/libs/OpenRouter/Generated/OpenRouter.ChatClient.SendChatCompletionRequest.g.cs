@@ -179,6 +179,8 @@ namespace OpenRouter
                     xOpenRouterMetadata: xOpenRouterMetadata,
                     request: request);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

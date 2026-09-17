@@ -172,6 +172,8 @@ namespace OpenRouter
                     apiKeyHash: apiKeyHash,
                     userId: userId);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

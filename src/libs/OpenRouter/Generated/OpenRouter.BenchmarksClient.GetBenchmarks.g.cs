@@ -204,6 +204,8 @@ namespace OpenRouter
                     category: category,
                     maxResults: maxResults);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
