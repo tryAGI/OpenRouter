@@ -162,6 +162,8 @@ namespace OpenRouter
                     id: id!,
                     interval: interval!);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

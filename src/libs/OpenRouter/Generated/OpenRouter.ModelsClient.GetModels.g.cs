@@ -478,6 +478,8 @@ namespace OpenRouter
                     minToolSuccessRate: minToolSuccessRate,
                     maxToolSuccessRate: maxToolSuccessRate);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -149,6 +149,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     jobId: jobId!);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

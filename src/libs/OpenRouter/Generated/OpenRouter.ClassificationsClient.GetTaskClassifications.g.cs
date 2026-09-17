@@ -184,6 +184,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     window: window);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

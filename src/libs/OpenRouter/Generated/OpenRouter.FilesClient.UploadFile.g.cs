@@ -208,6 +208,8 @@ namespace OpenRouter
                     workspaceId: workspaceId,
                     request: request);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -880,6 +882,8 @@ namespace OpenRouter
                     workspaceId: workspaceId,
                     request: request);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -1513,6 +1517,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     workspaceId: workspaceId,
                     request: request);
+
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

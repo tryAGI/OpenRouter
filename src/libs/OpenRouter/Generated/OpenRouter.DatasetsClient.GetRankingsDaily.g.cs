@@ -272,6 +272,8 @@ namespace OpenRouter
                     category: category,
                     languageType: languageType);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

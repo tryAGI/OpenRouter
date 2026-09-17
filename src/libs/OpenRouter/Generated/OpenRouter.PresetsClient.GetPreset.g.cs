@@ -149,6 +149,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     slug: slug!);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -165,6 +165,8 @@ namespace OpenRouter
                     jobId: jobId!,
                     index: index);
 
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -673,6 +675,8 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     jobId: jobId!,
                     index: index);
+
+                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }
