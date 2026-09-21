@@ -100,7 +100,7 @@ namespace OpenRouter
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CapabilityDescriptorVariant3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CapabilityDescriptorDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CapabilityDescriptorDiscriminatorType), TypeInfoPropertyName = "CapabilityDescriptorDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.SupportedParameters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::OpenRouter.CapabilityDescriptor>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageModelListItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ImageModelsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ImageModelListItem>))]
