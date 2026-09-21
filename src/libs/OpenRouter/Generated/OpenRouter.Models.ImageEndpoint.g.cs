@@ -47,7 +47,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_parameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object SupportedParameters { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::OpenRouter.CapabilityDescriptor> SupportedParameters { get; set; }
 
         /// <summary>
         /// Whether this endpoint supports native SSE streaming (`stream: true` in the request).
@@ -92,7 +92,7 @@ namespace OpenRouter
             global::System.Collections.Generic.IList<global::OpenRouter.ImagePricingEntry> pricing,
             string providerName,
             string providerSlug,
-            object supportedParameters,
+            global::System.Collections.Generic.Dictionary<string, global::OpenRouter.CapabilityDescriptor> supportedParameters,
             bool supportsStreaming,
             string? providerTag)
         {

@@ -56,7 +56,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_parameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.SupportedParameters SupportedParameters { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::OpenRouter.CapabilityDescriptor> SupportedParameters { get; set; }
 
         /// <summary>
         /// Whether any endpoint of this model supports native SSE streaming on the dedicated Image API (i.e. `stream: true` in the request). OR across endpoints.
@@ -104,7 +104,7 @@ namespace OpenRouter
             string endpoints,
             string id,
             string name,
-            global::OpenRouter.SupportedParameters supportedParameters,
+            global::System.Collections.Generic.Dictionary<string, global::OpenRouter.CapabilityDescriptor> supportedParameters,
             bool supportsStreaming)
         {
             this.Architecture = architecture ?? throw new global::System.ArgumentNullException(nameof(architecture));
