@@ -131,61 +131,61 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoBetaRouter!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAutoBetaRouter(), typeInfo);
             }
             else if (value.IsAutoRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoRouter!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAutoRouter(), typeInfo);
             }
             else if (value.IsContextCompression)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextCompression!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContextCompression(), typeInfo);
             }
             else if (value.IsFileParser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileParser!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileParser(), typeInfo);
             }
             else if (value.IsFusion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fusion!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFusion(), typeInfo);
             }
             else if (value.IsModeration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Moderation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModeration(), typeInfo);
             }
             else if (value.IsParetoRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant7?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant7).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParetoRouter!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickParetoRouter(), typeInfo);
             }
             else if (value.IsResponseHealing)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant8?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant8).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseHealing!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseHealing(), typeInfo);
             }
             else if (value.IsWeb)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant9?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant9).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Web!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWeb(), typeInfo);
             }
             else if (value.IsWebFetch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatRequestPluginsItemsVariant10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatRequestPluginsItemsVariant10?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatRequestPluginsItemsVariant10).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetch!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebFetch(), typeInfo);
             }
         }
     }

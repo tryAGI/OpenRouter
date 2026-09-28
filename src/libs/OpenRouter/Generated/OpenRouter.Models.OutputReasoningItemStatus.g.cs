@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputReasoningItemStatus0 PickOutputReasoningItemStatus0() => IsOutputReasoningItemStatus0
-            ? OutputReasoningItemStatus0!.Value
+        public global::OpenRouter.OutputReasoningItemStatus0 PickOutputReasoningItemStatus0() => OutputReasoningItemStatus0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputReasoningItemStatus0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputReasoningItemStatus1 PickOutputReasoningItemStatus1() => IsOutputReasoningItemStatus1
-            ? OutputReasoningItemStatus1!.Value
+        public global::OpenRouter.OutputReasoningItemStatus1 PickOutputReasoningItemStatus1() => OutputReasoningItemStatus1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputReasoningItemStatus1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputReasoningItemStatus2 PickOutputReasoningItemStatus2() => IsOutputReasoningItemStatus2
-            ? OutputReasoningItemStatus2!.Value
+        public global::OpenRouter.OutputReasoningItemStatus2 PickOutputReasoningItemStatus2() => OutputReasoningItemStatus2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputReasoningItemStatus2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputReasoningItemStatus0 && outputReasoningItemStatus0 != null)
+            if (OutputReasoningItemStatus0 is { } __value0 && outputReasoningItemStatus0 != null)
             {
-                return outputReasoningItemStatus0(OutputReasoningItemStatus0!);
+                return outputReasoningItemStatus0(__value0);
             }
-            else if (IsOutputReasoningItemStatus1 && outputReasoningItemStatus1 != null)
+            else if (OutputReasoningItemStatus1 is { } __value1 && outputReasoningItemStatus1 != null)
             {
-                return outputReasoningItemStatus1(OutputReasoningItemStatus1!);
+                return outputReasoningItemStatus1(__value1);
             }
-            else if (IsOutputReasoningItemStatus2 && outputReasoningItemStatus2 != null)
+            else if (OutputReasoningItemStatus2 is { } __value2 && outputReasoningItemStatus2 != null)
             {
-                return outputReasoningItemStatus2(OutputReasoningItemStatus2!);
+                return outputReasoningItemStatus2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputReasoningItemStatus0)
+            if (OutputReasoningItemStatus0 is { } __value0)
             {
-                outputReasoningItemStatus0?.Invoke(OutputReasoningItemStatus0!);
+                outputReasoningItemStatus0?.Invoke(__value0);
             }
-            else if (IsOutputReasoningItemStatus1)
+            else if (OutputReasoningItemStatus1 is { } __value1)
             {
-                outputReasoningItemStatus1?.Invoke(OutputReasoningItemStatus1!);
+                outputReasoningItemStatus1?.Invoke(__value1);
             }
-            else if (IsOutputReasoningItemStatus2)
+            else if (OutputReasoningItemStatus2 is { } __value2)
             {
-                outputReasoningItemStatus2?.Invoke(OutputReasoningItemStatus2!);
+                outputReasoningItemStatus2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputReasoningItemStatus0)
+            if (OutputReasoningItemStatus0 is { } __value0)
             {
-                outputReasoningItemStatus0?.Invoke(OutputReasoningItemStatus0!);
+                outputReasoningItemStatus0?.Invoke(__value0);
             }
-            else if (IsOutputReasoningItemStatus1)
+            else if (OutputReasoningItemStatus1 is { } __value1)
             {
-                outputReasoningItemStatus1?.Invoke(OutputReasoningItemStatus1!);
+                outputReasoningItemStatus1?.Invoke(__value1);
             }
-            else if (IsOutputReasoningItemStatus2)
+            else if (OutputReasoningItemStatus2 is { } __value2)
             {
-                outputReasoningItemStatus2?.Invoke(OutputReasoningItemStatus2!);
+                outputReasoningItemStatus2?.Invoke(__value2);
             }
         }
 

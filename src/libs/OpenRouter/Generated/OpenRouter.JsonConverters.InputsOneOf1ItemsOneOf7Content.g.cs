@@ -149,13 +149,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1ItemsOneOf7ContentOneOf0Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1ItemsOneOf7ContentOneOf0Items>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1ItemsOneOf7ContentOneOf0Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1ItemsOneOf7Content0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputsOneOf1ItemsOneOf7Content0(), typeInfo);
             }
             else if (value.IsInputsOneOf1ItemsOneOf7ContentVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1ItemsOneOf7ContentVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputsOneOf1ItemsOneOf7ContentVariant2(), typeInfo);
             }
         }
     }

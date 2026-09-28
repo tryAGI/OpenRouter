@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicImageBlockParamSourceVariant1 PickBase64() => IsBase64
-            ? Base64!
+        public global::OpenRouter.AnthropicImageBlockParamSourceVariant1 PickBase64() => Base64 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicImageBlockParamSourceVariant2 PickUrl() => IsUrl
-            ? Url!
+        public global::OpenRouter.AnthropicImageBlockParamSourceVariant2 PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBase64 && base64 != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return base64(Base64!);
+                return base64(__value0);
             }
-            else if (IsUrl && url != null)
+            else if (Url is { } __value1 && url != null)
             {
-                return url(Url!);
+                return url(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
         }
 

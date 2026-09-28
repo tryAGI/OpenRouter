@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.BaseInputsOneOf1Items0 PickBaseInputsOneOf1Items0() => IsBaseInputsOneOf1Items0
-            ? BaseInputsOneOf1Items0!
+        public global::OpenRouter.BaseInputsOneOf1Items0 PickBaseInputsOneOf1Items0() => BaseInputsOneOf1Items0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAIResponseInputMessageItem PickOpenAIResponseInputMessageItem() => IsOpenAIResponseInputMessageItem
-            ? OpenAIResponseInputMessageItem!
+        public global::OpenRouter.OpenAIResponseInputMessageItem PickOpenAIResponseInputMessageItem() => OpenAIResponseInputMessageItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseInputMessageItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAIResponseFunctionToolCallOutput PickOpenAIResponseFunctionToolCallOutput() => IsOpenAIResponseFunctionToolCallOutput
-            ? OpenAIResponseFunctionToolCallOutput!
+        public global::OpenRouter.OpenAIResponseFunctionToolCallOutput PickOpenAIResponseFunctionToolCallOutput() => OpenAIResponseFunctionToolCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseFunctionToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAIResponseFunctionToolCall PickOpenAIResponseFunctionToolCall() => IsOpenAIResponseFunctionToolCall
-            ? OpenAIResponseFunctionToolCall!
+        public global::OpenRouter.OpenAIResponseFunctionToolCall PickOpenAIResponseFunctionToolCall() => OpenAIResponseFunctionToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseFunctionToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => IsOutputItemImageGenerationCall
-            ? OutputItemImageGenerationCall!
+        public global::OpenRouter.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => OutputItemImageGenerationCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemImageGenerationCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMessage PickOutputMessage() => IsOutputMessage
-            ? OutputMessage!
+        public global::OpenRouter.OutputMessage PickOutputMessage() => OutputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAIResponseCustomToolCall PickOpenAIResponseCustomToolCall() => IsOpenAIResponseCustomToolCall
-            ? OpenAIResponseCustomToolCall!
+        public global::OpenRouter.OpenAIResponseCustomToolCall PickOpenAIResponseCustomToolCall() => OpenAIResponseCustomToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseCustomToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAIResponseCustomToolCallOutput PickOpenAIResponseCustomToolCallOutput() => IsOpenAIResponseCustomToolCallOutput
-            ? OpenAIResponseCustomToolCallOutput!
+        public global::OpenRouter.OpenAIResponseCustomToolCallOutput PickOpenAIResponseCustomToolCallOutput() => OpenAIResponseCustomToolCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseCustomToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => IsApplyPatchCallItem
-            ? ApplyPatchCallItem!
+        public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => ApplyPatchCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => IsApplyPatchCallOutputItem
-            ? ApplyPatchCallOutputItem!
+        public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => ApplyPatchCallOutputItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutputItem' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -697,45 +697,45 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1Items0 && baseInputsOneOf1Items0 != null)
+            if (BaseInputsOneOf1Items0 is { } __value0 && baseInputsOneOf1Items0 != null)
             {
-                return baseInputsOneOf1Items0(BaseInputsOneOf1Items0!);
+                return baseInputsOneOf1Items0(__value0);
             }
-            else if (IsOpenAIResponseInputMessageItem && openAIResponseInputMessageItem != null)
+            else if (OpenAIResponseInputMessageItem is { } __value1 && openAIResponseInputMessageItem != null)
             {
-                return openAIResponseInputMessageItem(OpenAIResponseInputMessageItem!);
+                return openAIResponseInputMessageItem(__value1);
             }
-            else if (IsOpenAIResponseFunctionToolCallOutput && openAIResponseFunctionToolCallOutput != null)
+            else if (OpenAIResponseFunctionToolCallOutput is { } __value2 && openAIResponseFunctionToolCallOutput != null)
             {
-                return openAIResponseFunctionToolCallOutput(OpenAIResponseFunctionToolCallOutput!);
+                return openAIResponseFunctionToolCallOutput(__value2);
             }
-            else if (IsOpenAIResponseFunctionToolCall && openAIResponseFunctionToolCall != null)
+            else if (OpenAIResponseFunctionToolCall is { } __value3 && openAIResponseFunctionToolCall != null)
             {
-                return openAIResponseFunctionToolCall(OpenAIResponseFunctionToolCall!);
+                return openAIResponseFunctionToolCall(__value3);
             }
-            else if (IsOutputItemImageGenerationCall && outputItemImageGenerationCall != null)
+            else if (OutputItemImageGenerationCall is { } __value4 && outputItemImageGenerationCall != null)
             {
-                return outputItemImageGenerationCall(OutputItemImageGenerationCall!);
+                return outputItemImageGenerationCall(__value4);
             }
-            else if (IsOutputMessage && outputMessage != null)
+            else if (OutputMessage is { } __value5 && outputMessage != null)
             {
-                return outputMessage(OutputMessage!);
+                return outputMessage(__value5);
             }
-            else if (IsOpenAIResponseCustomToolCall && openAIResponseCustomToolCall != null)
+            else if (OpenAIResponseCustomToolCall is { } __value6 && openAIResponseCustomToolCall != null)
             {
-                return openAIResponseCustomToolCall(OpenAIResponseCustomToolCall!);
+                return openAIResponseCustomToolCall(__value6);
             }
-            else if (IsOpenAIResponseCustomToolCallOutput && openAIResponseCustomToolCallOutput != null)
+            else if (OpenAIResponseCustomToolCallOutput is { } __value7 && openAIResponseCustomToolCallOutput != null)
             {
-                return openAIResponseCustomToolCallOutput(OpenAIResponseCustomToolCallOutput!);
+                return openAIResponseCustomToolCallOutput(__value7);
             }
-            else if (IsApplyPatchCallItem && applyPatchCallItem != null)
+            else if (ApplyPatchCallItem is { } __value8 && applyPatchCallItem != null)
             {
-                return applyPatchCallItem(ApplyPatchCallItem!);
+                return applyPatchCallItem(__value8);
             }
-            else if (IsApplyPatchCallOutputItem && applyPatchCallOutputItem != null)
+            else if (ApplyPatchCallOutputItem is { } __value9 && applyPatchCallOutputItem != null)
             {
-                return applyPatchCallOutputItem(ApplyPatchCallOutputItem!);
+                return applyPatchCallOutputItem(__value9);
             }
 
             return default(TResult);
@@ -771,45 +771,45 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1Items0)
+            if (BaseInputsOneOf1Items0 is { } __value0)
             {
-                baseInputsOneOf1Items0?.Invoke(BaseInputsOneOf1Items0!);
+                baseInputsOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsOpenAIResponseInputMessageItem)
+            else if (OpenAIResponseInputMessageItem is { } __value1)
             {
-                openAIResponseInputMessageItem?.Invoke(OpenAIResponseInputMessageItem!);
+                openAIResponseInputMessageItem?.Invoke(__value1);
             }
-            else if (IsOpenAIResponseFunctionToolCallOutput)
+            else if (OpenAIResponseFunctionToolCallOutput is { } __value2)
             {
-                openAIResponseFunctionToolCallOutput?.Invoke(OpenAIResponseFunctionToolCallOutput!);
+                openAIResponseFunctionToolCallOutput?.Invoke(__value2);
             }
-            else if (IsOpenAIResponseFunctionToolCall)
+            else if (OpenAIResponseFunctionToolCall is { } __value3)
             {
-                openAIResponseFunctionToolCall?.Invoke(OpenAIResponseFunctionToolCall!);
+                openAIResponseFunctionToolCall?.Invoke(__value3);
             }
-            else if (IsOutputItemImageGenerationCall)
+            else if (OutputItemImageGenerationCall is { } __value4)
             {
-                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+                outputItemImageGenerationCall?.Invoke(__value4);
             }
-            else if (IsOutputMessage)
+            else if (OutputMessage is { } __value5)
             {
-                outputMessage?.Invoke(OutputMessage!);
+                outputMessage?.Invoke(__value5);
             }
-            else if (IsOpenAIResponseCustomToolCall)
+            else if (OpenAIResponseCustomToolCall is { } __value6)
             {
-                openAIResponseCustomToolCall?.Invoke(OpenAIResponseCustomToolCall!);
+                openAIResponseCustomToolCall?.Invoke(__value6);
             }
-            else if (IsOpenAIResponseCustomToolCallOutput)
+            else if (OpenAIResponseCustomToolCallOutput is { } __value7)
             {
-                openAIResponseCustomToolCallOutput?.Invoke(OpenAIResponseCustomToolCallOutput!);
+                openAIResponseCustomToolCallOutput?.Invoke(__value7);
             }
-            else if (IsApplyPatchCallItem)
+            else if (ApplyPatchCallItem is { } __value8)
             {
-                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
+                applyPatchCallItem?.Invoke(__value8);
             }
-            else if (IsApplyPatchCallOutputItem)
+            else if (ApplyPatchCallOutputItem is { } __value9)
             {
-                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
+                applyPatchCallOutputItem?.Invoke(__value9);
             }
         }
 
@@ -834,45 +834,45 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1Items0)
+            if (BaseInputsOneOf1Items0 is { } __value0)
             {
-                baseInputsOneOf1Items0?.Invoke(BaseInputsOneOf1Items0!);
+                baseInputsOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsOpenAIResponseInputMessageItem)
+            else if (OpenAIResponseInputMessageItem is { } __value1)
             {
-                openAIResponseInputMessageItem?.Invoke(OpenAIResponseInputMessageItem!);
+                openAIResponseInputMessageItem?.Invoke(__value1);
             }
-            else if (IsOpenAIResponseFunctionToolCallOutput)
+            else if (OpenAIResponseFunctionToolCallOutput is { } __value2)
             {
-                openAIResponseFunctionToolCallOutput?.Invoke(OpenAIResponseFunctionToolCallOutput!);
+                openAIResponseFunctionToolCallOutput?.Invoke(__value2);
             }
-            else if (IsOpenAIResponseFunctionToolCall)
+            else if (OpenAIResponseFunctionToolCall is { } __value3)
             {
-                openAIResponseFunctionToolCall?.Invoke(OpenAIResponseFunctionToolCall!);
+                openAIResponseFunctionToolCall?.Invoke(__value3);
             }
-            else if (IsOutputItemImageGenerationCall)
+            else if (OutputItemImageGenerationCall is { } __value4)
             {
-                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+                outputItemImageGenerationCall?.Invoke(__value4);
             }
-            else if (IsOutputMessage)
+            else if (OutputMessage is { } __value5)
             {
-                outputMessage?.Invoke(OutputMessage!);
+                outputMessage?.Invoke(__value5);
             }
-            else if (IsOpenAIResponseCustomToolCall)
+            else if (OpenAIResponseCustomToolCall is { } __value6)
             {
-                openAIResponseCustomToolCall?.Invoke(OpenAIResponseCustomToolCall!);
+                openAIResponseCustomToolCall?.Invoke(__value6);
             }
-            else if (IsOpenAIResponseCustomToolCallOutput)
+            else if (OpenAIResponseCustomToolCallOutput is { } __value7)
             {
-                openAIResponseCustomToolCallOutput?.Invoke(OpenAIResponseCustomToolCallOutput!);
+                openAIResponseCustomToolCallOutput?.Invoke(__value7);
             }
-            else if (IsApplyPatchCallItem)
+            else if (ApplyPatchCallItem is { } __value8)
             {
-                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
+                applyPatchCallItem?.Invoke(__value8);
             }
-            else if (IsApplyPatchCallOutputItem)
+            else if (ApplyPatchCallOutputItem is { } __value9)
             {
-                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
+                applyPatchCallOutputItem?.Invoke(__value9);
             }
         }
 

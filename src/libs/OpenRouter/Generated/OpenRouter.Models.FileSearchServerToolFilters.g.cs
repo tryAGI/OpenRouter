@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FileSearchServerToolFilters0 PickFileSearchServerToolFilters0() => IsFileSearchServerToolFilters0
-            ? FileSearchServerToolFilters0!
+        public global::OpenRouter.FileSearchServerToolFilters0 PickFileSearchServerToolFilters0() => FileSearchServerToolFilters0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFilters0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CompoundFilter PickCompoundFilter() => IsCompoundFilter
-            ? CompoundFilter!
+        public global::OpenRouter.CompoundFilter PickCompoundFilter() => CompoundFilter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFileSearchServerToolFilters0 && fileSearchServerToolFilters0 != null)
+            if (FileSearchServerToolFilters0 is { } __value0 && fileSearchServerToolFilters0 != null)
             {
-                return fileSearchServerToolFilters0(FileSearchServerToolFilters0!);
+                return fileSearchServerToolFilters0(__value0);
             }
-            else if (IsCompoundFilter && compoundFilter != null)
+            else if (CompoundFilter is { } __value1 && compoundFilter != null)
             {
-                return compoundFilter(CompoundFilter!);
+                return compoundFilter(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFileSearchServerToolFilters0)
+            if (FileSearchServerToolFilters0 is { } __value0)
             {
-                fileSearchServerToolFilters0?.Invoke(FileSearchServerToolFilters0!);
+                fileSearchServerToolFilters0?.Invoke(__value0);
             }
-            else if (IsCompoundFilter)
+            else if (CompoundFilter is { } __value1)
             {
-                compoundFilter?.Invoke(CompoundFilter!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFileSearchServerToolFilters0)
+            if (FileSearchServerToolFilters0 is { } __value0)
             {
-                fileSearchServerToolFilters0?.Invoke(FileSearchServerToolFilters0!);
+                fileSearchServerToolFilters0?.Invoke(__value0);
             }
-            else if (IsCompoundFilter)
+            else if (CompoundFilter is { } __value1)
             {
-                compoundFilter?.Invoke(CompoundFilter!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 

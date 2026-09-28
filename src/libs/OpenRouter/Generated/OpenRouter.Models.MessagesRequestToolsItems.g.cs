@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolsItems0 PickMessagesRequestToolsItems0() => IsMessagesRequestToolsItems0
-            ? MessagesRequestToolsItems0!
+        public global::OpenRouter.MessagesRequestToolsItems0 PickMessagesRequestToolsItems0() => MessagesRequestToolsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolsItems1 PickMessagesRequestToolsItems1() => IsMessagesRequestToolsItems1
-            ? MessagesRequestToolsItems1!
+        public global::OpenRouter.MessagesRequestToolsItems1 PickMessagesRequestToolsItems1() => MessagesRequestToolsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolsItems2 PickMessagesRequestToolsItems2() => IsMessagesRequestToolsItems2
-            ? MessagesRequestToolsItems2!
+        public global::OpenRouter.MessagesRequestToolsItems2 PickMessagesRequestToolsItems2() => MessagesRequestToolsItems2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems2' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolsItems3 PickMessagesRequestToolsItems3() => IsMessagesRequestToolsItems3
-            ? MessagesRequestToolsItems3!
+        public global::OpenRouter.MessagesRequestToolsItems3 PickMessagesRequestToolsItems3() => MessagesRequestToolsItems3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems3' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolsItems4 PickMessagesRequestToolsItems4() => IsMessagesRequestToolsItems4
-            ? MessagesRequestToolsItems4!
+        public global::OpenRouter.MessagesRequestToolsItems4 PickMessagesRequestToolsItems4() => MessagesRequestToolsItems4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems4' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolsItems5 PickMessagesRequestToolsItems5() => IsMessagesRequestToolsItems5
-            ? MessagesRequestToolsItems5!
+        public global::OpenRouter.MessagesRequestToolsItems5 PickMessagesRequestToolsItems5() => MessagesRequestToolsItems5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems5' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.BashServerTool PickBashServerTool() => IsBashServerTool
-            ? BashServerTool!
+        public global::OpenRouter.BashServerTool PickBashServerTool() => BashServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
-            ? DatetimeServerTool!
+        public global::OpenRouter.DatetimeServerTool PickDatetimeServerTool() => DatetimeServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerToolOpenRouter() => IsImageGenerationServerToolOpenRouter
-            ? ImageGenerationServerToolOpenRouter!
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerToolOpenRouter() => ImageGenerationServerToolOpenRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerToolOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesSearchModelsServerTool PickMessagesSearchModelsServerTool() => IsMessagesSearchModelsServerTool
-            ? MessagesSearchModelsServerTool!
+        public global::OpenRouter.MessagesSearchModelsServerTool PickMessagesSearchModelsServerTool() => MessagesSearchModelsServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesSearchModelsServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -412,8 +412,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.WebFetchServerTool PickWebFetchServerTool() => IsWebFetchServerTool
-            ? WebFetchServerTool!
+        public global::OpenRouter.WebFetchServerTool PickWebFetchServerTool() => WebFetchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -449,8 +449,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServerTool() => IsOpenRouterWebSearchServerTool
-            ? OpenRouterWebSearchServerTool!
+        public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServerTool() => OpenRouterWebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenRouterWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -486,8 +486,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolsItems12 PickMessagesRequestToolsItems12() => IsMessagesRequestToolsItems12
-            ? MessagesRequestToolsItems12!
+        public global::OpenRouter.MessagesRequestToolsItems12 PickMessagesRequestToolsItems12() => MessagesRequestToolsItems12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems12' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -892,57 +892,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestToolsItems0 && messagesRequestToolsItems0 != null)
+            if (MessagesRequestToolsItems0 is { } __value0 && messagesRequestToolsItems0 != null)
             {
-                return messagesRequestToolsItems0(MessagesRequestToolsItems0!);
+                return messagesRequestToolsItems0(__value0);
             }
-            else if (IsMessagesRequestToolsItems1 && messagesRequestToolsItems1 != null)
+            else if (MessagesRequestToolsItems1 is { } __value1 && messagesRequestToolsItems1 != null)
             {
-                return messagesRequestToolsItems1(MessagesRequestToolsItems1!);
+                return messagesRequestToolsItems1(__value1);
             }
-            else if (IsMessagesRequestToolsItems2 && messagesRequestToolsItems2 != null)
+            else if (MessagesRequestToolsItems2 is { } __value2 && messagesRequestToolsItems2 != null)
             {
-                return messagesRequestToolsItems2(MessagesRequestToolsItems2!);
+                return messagesRequestToolsItems2(__value2);
             }
-            else if (IsMessagesRequestToolsItems3 && messagesRequestToolsItems3 != null)
+            else if (MessagesRequestToolsItems3 is { } __value3 && messagesRequestToolsItems3 != null)
             {
-                return messagesRequestToolsItems3(MessagesRequestToolsItems3!);
+                return messagesRequestToolsItems3(__value3);
             }
-            else if (IsMessagesRequestToolsItems4 && messagesRequestToolsItems4 != null)
+            else if (MessagesRequestToolsItems4 is { } __value4 && messagesRequestToolsItems4 != null)
             {
-                return messagesRequestToolsItems4(MessagesRequestToolsItems4!);
+                return messagesRequestToolsItems4(__value4);
             }
-            else if (IsMessagesRequestToolsItems5 && messagesRequestToolsItems5 != null)
+            else if (MessagesRequestToolsItems5 is { } __value5 && messagesRequestToolsItems5 != null)
             {
-                return messagesRequestToolsItems5(MessagesRequestToolsItems5!);
+                return messagesRequestToolsItems5(__value5);
             }
-            else if (IsBashServerTool && bashServerTool != null)
+            else if (BashServerTool is { } __value6 && bashServerTool != null)
             {
-                return bashServerTool(BashServerTool!);
+                return bashServerTool(__value6);
             }
-            else if (IsDatetimeServerTool && datetimeServerTool != null)
+            else if (DatetimeServerTool is { } __value7 && datetimeServerTool != null)
             {
-                return datetimeServerTool(DatetimeServerTool!);
+                return datetimeServerTool(__value7);
             }
-            else if (IsImageGenerationServerToolOpenRouter && imageGenerationServerToolOpenRouter != null)
+            else if (ImageGenerationServerToolOpenRouter is { } __value8 && imageGenerationServerToolOpenRouter != null)
             {
-                return imageGenerationServerToolOpenRouter(ImageGenerationServerToolOpenRouter!);
+                return imageGenerationServerToolOpenRouter(__value8);
             }
-            else if (IsMessagesSearchModelsServerTool && messagesSearchModelsServerTool != null)
+            else if (MessagesSearchModelsServerTool is { } __value9 && messagesSearchModelsServerTool != null)
             {
-                return messagesSearchModelsServerTool(MessagesSearchModelsServerTool!);
+                return messagesSearchModelsServerTool(__value9);
             }
-            else if (IsWebFetchServerTool && webFetchServerTool != null)
+            else if (WebFetchServerTool is { } __value10 && webFetchServerTool != null)
             {
-                return webFetchServerTool(WebFetchServerTool!);
+                return webFetchServerTool(__value10);
             }
-            else if (IsOpenRouterWebSearchServerTool && openRouterWebSearchServerTool != null)
+            else if (OpenRouterWebSearchServerTool is { } __value11 && openRouterWebSearchServerTool != null)
             {
-                return openRouterWebSearchServerTool(OpenRouterWebSearchServerTool!);
+                return openRouterWebSearchServerTool(__value11);
             }
-            else if (IsMessagesRequestToolsItems12 && messagesRequestToolsItems12 != null)
+            else if (MessagesRequestToolsItems12 is { } __value12 && messagesRequestToolsItems12 != null)
             {
-                return messagesRequestToolsItems12(MessagesRequestToolsItems12!);
+                return messagesRequestToolsItems12(__value12);
             }
 
             return default(TResult);
@@ -984,57 +984,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestToolsItems0)
+            if (MessagesRequestToolsItems0 is { } __value0)
             {
-                messagesRequestToolsItems0?.Invoke(MessagesRequestToolsItems0!);
+                messagesRequestToolsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestToolsItems1)
+            else if (MessagesRequestToolsItems1 is { } __value1)
             {
-                messagesRequestToolsItems1?.Invoke(MessagesRequestToolsItems1!);
+                messagesRequestToolsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestToolsItems2)
+            else if (MessagesRequestToolsItems2 is { } __value2)
             {
-                messagesRequestToolsItems2?.Invoke(MessagesRequestToolsItems2!);
+                messagesRequestToolsItems2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestToolsItems3)
+            else if (MessagesRequestToolsItems3 is { } __value3)
             {
-                messagesRequestToolsItems3?.Invoke(MessagesRequestToolsItems3!);
+                messagesRequestToolsItems3?.Invoke(__value3);
             }
-            else if (IsMessagesRequestToolsItems4)
+            else if (MessagesRequestToolsItems4 is { } __value4)
             {
-                messagesRequestToolsItems4?.Invoke(MessagesRequestToolsItems4!);
+                messagesRequestToolsItems4?.Invoke(__value4);
             }
-            else if (IsMessagesRequestToolsItems5)
+            else if (MessagesRequestToolsItems5 is { } __value5)
             {
-                messagesRequestToolsItems5?.Invoke(MessagesRequestToolsItems5!);
+                messagesRequestToolsItems5?.Invoke(__value5);
             }
-            else if (IsBashServerTool)
+            else if (BashServerTool is { } __value6)
             {
-                bashServerTool?.Invoke(BashServerTool!);
+                bashServerTool?.Invoke(__value6);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value7)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value7);
             }
-            else if (IsImageGenerationServerToolOpenRouter)
+            else if (ImageGenerationServerToolOpenRouter is { } __value8)
             {
-                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+                imageGenerationServerToolOpenRouter?.Invoke(__value8);
             }
-            else if (IsMessagesSearchModelsServerTool)
+            else if (MessagesSearchModelsServerTool is { } __value9)
             {
-                messagesSearchModelsServerTool?.Invoke(MessagesSearchModelsServerTool!);
+                messagesSearchModelsServerTool?.Invoke(__value9);
             }
-            else if (IsWebFetchServerTool)
+            else if (WebFetchServerTool is { } __value10)
             {
-                webFetchServerTool?.Invoke(WebFetchServerTool!);
+                webFetchServerTool?.Invoke(__value10);
             }
-            else if (IsOpenRouterWebSearchServerTool)
+            else if (OpenRouterWebSearchServerTool is { } __value11)
             {
-                openRouterWebSearchServerTool?.Invoke(OpenRouterWebSearchServerTool!);
+                openRouterWebSearchServerTool?.Invoke(__value11);
             }
-            else if (IsMessagesRequestToolsItems12)
+            else if (MessagesRequestToolsItems12 is { } __value12)
             {
-                messagesRequestToolsItems12?.Invoke(MessagesRequestToolsItems12!);
+                messagesRequestToolsItems12?.Invoke(__value12);
             }
         }
 
@@ -1062,57 +1062,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestToolsItems0)
+            if (MessagesRequestToolsItems0 is { } __value0)
             {
-                messagesRequestToolsItems0?.Invoke(MessagesRequestToolsItems0!);
+                messagesRequestToolsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestToolsItems1)
+            else if (MessagesRequestToolsItems1 is { } __value1)
             {
-                messagesRequestToolsItems1?.Invoke(MessagesRequestToolsItems1!);
+                messagesRequestToolsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestToolsItems2)
+            else if (MessagesRequestToolsItems2 is { } __value2)
             {
-                messagesRequestToolsItems2?.Invoke(MessagesRequestToolsItems2!);
+                messagesRequestToolsItems2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestToolsItems3)
+            else if (MessagesRequestToolsItems3 is { } __value3)
             {
-                messagesRequestToolsItems3?.Invoke(MessagesRequestToolsItems3!);
+                messagesRequestToolsItems3?.Invoke(__value3);
             }
-            else if (IsMessagesRequestToolsItems4)
+            else if (MessagesRequestToolsItems4 is { } __value4)
             {
-                messagesRequestToolsItems4?.Invoke(MessagesRequestToolsItems4!);
+                messagesRequestToolsItems4?.Invoke(__value4);
             }
-            else if (IsMessagesRequestToolsItems5)
+            else if (MessagesRequestToolsItems5 is { } __value5)
             {
-                messagesRequestToolsItems5?.Invoke(MessagesRequestToolsItems5!);
+                messagesRequestToolsItems5?.Invoke(__value5);
             }
-            else if (IsBashServerTool)
+            else if (BashServerTool is { } __value6)
             {
-                bashServerTool?.Invoke(BashServerTool!);
+                bashServerTool?.Invoke(__value6);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value7)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value7);
             }
-            else if (IsImageGenerationServerToolOpenRouter)
+            else if (ImageGenerationServerToolOpenRouter is { } __value8)
             {
-                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+                imageGenerationServerToolOpenRouter?.Invoke(__value8);
             }
-            else if (IsMessagesSearchModelsServerTool)
+            else if (MessagesSearchModelsServerTool is { } __value9)
             {
-                messagesSearchModelsServerTool?.Invoke(MessagesSearchModelsServerTool!);
+                messagesSearchModelsServerTool?.Invoke(__value9);
             }
-            else if (IsWebFetchServerTool)
+            else if (WebFetchServerTool is { } __value10)
             {
-                webFetchServerTool?.Invoke(WebFetchServerTool!);
+                webFetchServerTool?.Invoke(__value10);
             }
-            else if (IsOpenRouterWebSearchServerTool)
+            else if (OpenRouterWebSearchServerTool is { } __value11)
             {
-                openRouterWebSearchServerTool?.Invoke(OpenRouterWebSearchServerTool!);
+                openRouterWebSearchServerTool?.Invoke(__value11);
             }
-            else if (IsMessagesRequestToolsItems12)
+            else if (MessagesRequestToolsItems12 is { } __value12)
             {
-                messagesRequestToolsItems12?.Invoke(MessagesRequestToolsItems12!);
+                messagesRequestToolsItems12?.Invoke(__value12);
             }
         }
 

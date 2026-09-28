@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicTextBlockParam PickAnthropicTextBlockParam() => IsAnthropicTextBlockParam
-            ? AnthropicTextBlockParam!
+        public global::OpenRouter.AnthropicTextBlockParam PickAnthropicTextBlockParam() => AnthropicTextBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicTextBlockParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicImageBlockParam PickAnthropicImageBlockParam() => IsAnthropicImageBlockParam
-            ? AnthropicImageBlockParam!
+        public global::OpenRouter.AnthropicImageBlockParam PickAnthropicImageBlockParam() => AnthropicImageBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicImageBlockParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2
-            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2() => MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicSearchResultBlockParam PickAnthropicSearchResultBlockParam() => IsAnthropicSearchResultBlockParam
-            ? AnthropicSearchResultBlockParam!
+        public global::OpenRouter.AnthropicSearchResultBlockParam PickAnthropicSearchResultBlockParam() => AnthropicSearchResultBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicSearchResultBlockParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicDocumentBlockParam PickAnthropicDocumentBlockParam() => IsAnthropicDocumentBlockParam
-            ? AnthropicDocumentBlockParam!
+        public global::OpenRouter.AnthropicDocumentBlockParam PickAnthropicDocumentBlockParam() => AnthropicDocumentBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParam' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam && anthropicTextBlockParam != null)
+            if (AnthropicTextBlockParam is { } __value0 && anthropicTextBlockParam != null)
             {
-                return anthropicTextBlockParam(AnthropicTextBlockParam!);
+                return anthropicTextBlockParam(__value0);
             }
-            else if (IsAnthropicImageBlockParam && anthropicImageBlockParam != null)
+            else if (AnthropicImageBlockParam is { } __value1 && anthropicImageBlockParam != null)
             {
-                return anthropicImageBlockParam(AnthropicImageBlockParam!);
+                return anthropicImageBlockParam(__value1);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 && messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 != null)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 is { } __value2 && messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!);
+                return messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2(__value2);
             }
-            else if (IsAnthropicSearchResultBlockParam && anthropicSearchResultBlockParam != null)
+            else if (AnthropicSearchResultBlockParam is { } __value3 && anthropicSearchResultBlockParam != null)
             {
-                return anthropicSearchResultBlockParam(AnthropicSearchResultBlockParam!);
+                return anthropicSearchResultBlockParam(__value3);
             }
-            else if (IsAnthropicDocumentBlockParam && anthropicDocumentBlockParam != null)
+            else if (AnthropicDocumentBlockParam is { } __value4 && anthropicDocumentBlockParam != null)
             {
-                return anthropicDocumentBlockParam(AnthropicDocumentBlockParam!);
+                return anthropicDocumentBlockParam(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam)
+            if (AnthropicTextBlockParam is { } __value0)
             {
-                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
+                anthropicTextBlockParam?.Invoke(__value0);
             }
-            else if (IsAnthropicImageBlockParam)
+            else if (AnthropicImageBlockParam is { } __value1)
             {
-                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
+                anthropicImageBlockParam?.Invoke(__value1);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 is { } __value2)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!);
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?.Invoke(__value2);
             }
-            else if (IsAnthropicSearchResultBlockParam)
+            else if (AnthropicSearchResultBlockParam is { } __value3)
             {
-                anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
+                anthropicSearchResultBlockParam?.Invoke(__value3);
             }
-            else if (IsAnthropicDocumentBlockParam)
+            else if (AnthropicDocumentBlockParam is { } __value4)
             {
-                anthropicDocumentBlockParam?.Invoke(AnthropicDocumentBlockParam!);
+                anthropicDocumentBlockParam?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam)
+            if (AnthropicTextBlockParam is { } __value0)
             {
-                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
+                anthropicTextBlockParam?.Invoke(__value0);
             }
-            else if (IsAnthropicImageBlockParam)
+            else if (AnthropicImageBlockParam is { } __value1)
             {
-                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
+                anthropicImageBlockParam?.Invoke(__value1);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 is { } __value2)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!);
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?.Invoke(__value2);
             }
-            else if (IsAnthropicSearchResultBlockParam)
+            else if (AnthropicSearchResultBlockParam is { } __value3)
             {
-                anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
+                anthropicSearchResultBlockParam?.Invoke(__value3);
             }
-            else if (IsAnthropicDocumentBlockParam)
+            else if (AnthropicDocumentBlockParam is { } __value4)
             {
-                anthropicDocumentBlockParam?.Invoke(AnthropicDocumentBlockParam!);
+                anthropicDocumentBlockParam?.Invoke(__value4);
             }
         }
 

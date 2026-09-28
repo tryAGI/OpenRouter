@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.StopServerToolsWhenConditionVariant1 PickFinishReasonIs() => IsFinishReasonIs
-            ? FinishReasonIs!
+        public global::OpenRouter.StopServerToolsWhenConditionVariant1 PickFinishReasonIs() => FinishReasonIs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FinishReasonIs' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.StopServerToolsWhenConditionVariant2 PickHasToolCall() => IsHasToolCall
-            ? HasToolCall!
+        public global::OpenRouter.StopServerToolsWhenConditionVariant2 PickHasToolCall() => HasToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HasToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.StopServerToolsWhenConditionVariant3 PickMaxCost() => IsMaxCost
-            ? MaxCost!
+        public global::OpenRouter.StopServerToolsWhenConditionVariant3 PickMaxCost() => MaxCost is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxCost' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.StopServerToolsWhenConditionVariant4 PickMaxTokensUsed() => IsMaxTokensUsed
-            ? MaxTokensUsed!
+        public global::OpenRouter.StopServerToolsWhenConditionVariant4 PickMaxTokensUsed() => MaxTokensUsed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxTokensUsed' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.StopServerToolsWhenConditionVariant5 PickStepCountIs() => IsStepCountIs
-            ? StepCountIs!
+        public global::OpenRouter.StopServerToolsWhenConditionVariant5 PickStepCountIs() => StepCountIs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StepCountIs' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFinishReasonIs && finishReasonIs != null)
+            if (FinishReasonIs is { } __value0 && finishReasonIs != null)
             {
-                return finishReasonIs(FinishReasonIs!);
+                return finishReasonIs(__value0);
             }
-            else if (IsHasToolCall && hasToolCall != null)
+            else if (HasToolCall is { } __value1 && hasToolCall != null)
             {
-                return hasToolCall(HasToolCall!);
+                return hasToolCall(__value1);
             }
-            else if (IsMaxCost && maxCost != null)
+            else if (MaxCost is { } __value2 && maxCost != null)
             {
-                return maxCost(MaxCost!);
+                return maxCost(__value2);
             }
-            else if (IsMaxTokensUsed && maxTokensUsed != null)
+            else if (MaxTokensUsed is { } __value3 && maxTokensUsed != null)
             {
-                return maxTokensUsed(MaxTokensUsed!);
+                return maxTokensUsed(__value3);
             }
-            else if (IsStepCountIs && stepCountIs != null)
+            else if (StepCountIs is { } __value4 && stepCountIs != null)
             {
-                return stepCountIs(StepCountIs!);
+                return stepCountIs(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFinishReasonIs)
+            if (FinishReasonIs is { } __value0)
             {
-                finishReasonIs?.Invoke(FinishReasonIs!);
+                finishReasonIs?.Invoke(__value0);
             }
-            else if (IsHasToolCall)
+            else if (HasToolCall is { } __value1)
             {
-                hasToolCall?.Invoke(HasToolCall!);
+                hasToolCall?.Invoke(__value1);
             }
-            else if (IsMaxCost)
+            else if (MaxCost is { } __value2)
             {
-                maxCost?.Invoke(MaxCost!);
+                maxCost?.Invoke(__value2);
             }
-            else if (IsMaxTokensUsed)
+            else if (MaxTokensUsed is { } __value3)
             {
-                maxTokensUsed?.Invoke(MaxTokensUsed!);
+                maxTokensUsed?.Invoke(__value3);
             }
-            else if (IsStepCountIs)
+            else if (StepCountIs is { } __value4)
             {
-                stepCountIs?.Invoke(StepCountIs!);
+                stepCountIs?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFinishReasonIs)
+            if (FinishReasonIs is { } __value0)
             {
-                finishReasonIs?.Invoke(FinishReasonIs!);
+                finishReasonIs?.Invoke(__value0);
             }
-            else if (IsHasToolCall)
+            else if (HasToolCall is { } __value1)
             {
-                hasToolCall?.Invoke(HasToolCall!);
+                hasToolCall?.Invoke(__value1);
             }
-            else if (IsMaxCost)
+            else if (MaxCost is { } __value2)
             {
-                maxCost?.Invoke(MaxCost!);
+                maxCost?.Invoke(__value2);
             }
-            else if (IsMaxTokensUsed)
+            else if (MaxTokensUsed is { } __value3)
             {
-                maxTokensUsed?.Invoke(MaxTokensUsed!);
+                maxTokensUsed?.Invoke(__value3);
             }
-            else if (IsStepCountIs)
+            else if (StepCountIs is { } __value4)
             {
-                stepCountIs?.Invoke(StepCountIs!);
+                stepCountIs?.Invoke(__value4);
             }
         }
 

@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant1 PickCodeExecutionResult() => IsCodeExecutionResult
-            ? CodeExecutionResult!
+        public global::OpenRouter.AnthropicCodeExecutionContentVariant1 PickCodeExecutionResult() => CodeExecutionResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant2 PickCodeExecutionToolResultError() => IsCodeExecutionToolResultError
-            ? CodeExecutionToolResultError!
+        public global::OpenRouter.AnthropicCodeExecutionContentVariant2 PickCodeExecutionToolResultError() => CodeExecutionToolResultError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResultError' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant3 PickEncryptedCodeExecutionResult() => IsEncryptedCodeExecutionResult
-            ? EncryptedCodeExecutionResult!
+        public global::OpenRouter.AnthropicCodeExecutionContentVariant3 PickEncryptedCodeExecutionResult() => EncryptedCodeExecutionResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EncryptedCodeExecutionResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCodeExecutionResult && codeExecutionResult != null)
+            if (CodeExecutionResult is { } __value0 && codeExecutionResult != null)
             {
-                return codeExecutionResult(CodeExecutionResult!);
+                return codeExecutionResult(__value0);
             }
-            else if (IsCodeExecutionToolResultError && codeExecutionToolResultError != null)
+            else if (CodeExecutionToolResultError is { } __value1 && codeExecutionToolResultError != null)
             {
-                return codeExecutionToolResultError(CodeExecutionToolResultError!);
+                return codeExecutionToolResultError(__value1);
             }
-            else if (IsEncryptedCodeExecutionResult && encryptedCodeExecutionResult != null)
+            else if (EncryptedCodeExecutionResult is { } __value2 && encryptedCodeExecutionResult != null)
             {
-                return encryptedCodeExecutionResult(EncryptedCodeExecutionResult!);
+                return encryptedCodeExecutionResult(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCodeExecutionResult)
+            if (CodeExecutionResult is { } __value0)
             {
-                codeExecutionResult?.Invoke(CodeExecutionResult!);
+                codeExecutionResult?.Invoke(__value0);
             }
-            else if (IsCodeExecutionToolResultError)
+            else if (CodeExecutionToolResultError is { } __value1)
             {
-                codeExecutionToolResultError?.Invoke(CodeExecutionToolResultError!);
+                codeExecutionToolResultError?.Invoke(__value1);
             }
-            else if (IsEncryptedCodeExecutionResult)
+            else if (EncryptedCodeExecutionResult is { } __value2)
             {
-                encryptedCodeExecutionResult?.Invoke(EncryptedCodeExecutionResult!);
+                encryptedCodeExecutionResult?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCodeExecutionResult)
+            if (CodeExecutionResult is { } __value0)
             {
-                codeExecutionResult?.Invoke(CodeExecutionResult!);
+                codeExecutionResult?.Invoke(__value0);
             }
-            else if (IsCodeExecutionToolResultError)
+            else if (CodeExecutionToolResultError is { } __value1)
             {
-                codeExecutionToolResultError?.Invoke(CodeExecutionToolResultError!);
+                codeExecutionToolResultError?.Invoke(__value1);
             }
-            else if (IsEncryptedCodeExecutionResult)
+            else if (EncryptedCodeExecutionResult is { } __value2)
             {
-                encryptedCodeExecutionResult?.Invoke(EncryptedCodeExecutionResult!);
+                encryptedCodeExecutionResult?.Invoke(__value2);
             }
         }
 

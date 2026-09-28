@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ResponseOutputText PickResponseOutputText() => IsResponseOutputText
-            ? ResponseOutputText!
+        public global::OpenRouter.ResponseOutputText PickResponseOutputText() => ResponseOutputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAIResponsesRefusalContent PickOpenAIResponsesRefusalContent() => IsOpenAIResponsesRefusalContent
-            ? OpenAIResponsesRefusalContent!
+        public global::OpenRouter.OpenAIResponsesRefusalContent PickOpenAIResponsesRefusalContent() => OpenAIResponsesRefusalContent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesRefusalContent' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsResponseOutputText && responseOutputText != null)
+            if (ResponseOutputText is { } __value0 && responseOutputText != null)
             {
-                return responseOutputText(ResponseOutputText!);
+                return responseOutputText(__value0);
             }
-            else if (IsOpenAIResponsesRefusalContent && openAIResponsesRefusalContent != null)
+            else if (OpenAIResponsesRefusalContent is { } __value1 && openAIResponsesRefusalContent != null)
             {
-                return openAIResponsesRefusalContent(OpenAIResponsesRefusalContent!);
+                return openAIResponsesRefusalContent(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsResponseOutputText)
+            if (ResponseOutputText is { } __value0)
             {
-                responseOutputText?.Invoke(ResponseOutputText!);
+                responseOutputText?.Invoke(__value0);
             }
-            else if (IsOpenAIResponsesRefusalContent)
+            else if (OpenAIResponsesRefusalContent is { } __value1)
             {
-                openAIResponsesRefusalContent?.Invoke(OpenAIResponsesRefusalContent!);
+                openAIResponsesRefusalContent?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsResponseOutputText)
+            if (ResponseOutputText is { } __value0)
             {
-                responseOutputText?.Invoke(ResponseOutputText!);
+                responseOutputText?.Invoke(__value0);
             }
-            else if (IsOpenAIResponsesRefusalContent)
+            else if (OpenAIResponsesRefusalContent is { } __value1)
             {
-                openAIResponsesRefusalContent?.Invoke(OpenAIResponsesRefusalContent!);
+                openAIResponsesRefusalContent?.Invoke(__value1);
             }
         }
 

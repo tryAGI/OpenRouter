@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicThinkingTurns PickAnthropicThinkingTurns() => IsAnthropicThinkingTurns
-            ? AnthropicThinkingTurns!
+        public global::OpenRouter.AnthropicThinkingTurns PickAnthropicThinkingTurns() => AnthropicThinkingTurns is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicThinkingTurns' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1 PickMessagesRequestContextManagementEditsItemsOneOf1Keep1() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep1
-            ? MessagesRequestContextManagementEditsItemsOneOf1Keep1!
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep1 PickMessagesRequestContextManagementEditsItemsOneOf1Keep1() => MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2 PickMessagesRequestContextManagementEditsItemsOneOf1Keep2() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep2
-            ? MessagesRequestContextManagementEditsItemsOneOf1Keep2!.Value
+        public global::OpenRouter.MessagesRequestContextManagementEditsItemsOneOf1Keep2 PickMessagesRequestContextManagementEditsItemsOneOf1Keep2() => MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicThinkingTurns && anthropicThinkingTurns != null)
+            if (AnthropicThinkingTurns is { } __value0 && anthropicThinkingTurns != null)
             {
-                return anthropicThinkingTurns(AnthropicThinkingTurns!);
+                return anthropicThinkingTurns(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && messagesRequestContextManagementEditsItemsOneOf1Keep1 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } __value1 && messagesRequestContextManagementEditsItemsOneOf1Keep1 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf1Keep1(MessagesRequestContextManagementEditsItemsOneOf1Keep1!);
+                return messagesRequestContextManagementEditsItemsOneOf1Keep1(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep2 && messagesRequestContextManagementEditsItemsOneOf1Keep2 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } __value2 && messagesRequestContextManagementEditsItemsOneOf1Keep2 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf1Keep2(MessagesRequestContextManagementEditsItemsOneOf1Keep2!);
+                return messagesRequestContextManagementEditsItemsOneOf1Keep2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicThinkingTurns)
+            if (AnthropicThinkingTurns is { } __value0)
             {
-                anthropicThinkingTurns?.Invoke(AnthropicThinkingTurns!);
+                anthropicThinkingTurns?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep1!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } __value2)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep2!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicThinkingTurns)
+            if (AnthropicThinkingTurns is { } __value0)
             {
-                anthropicThinkingTurns?.Invoke(AnthropicThinkingTurns!);
+                anthropicThinkingTurns?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep1!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } __value2)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep2!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(__value2);
             }
         }
 

@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1 PickTextEditorCodeExecutionCreateResult() => IsTextEditorCodeExecutionCreateResult
-            ? TextEditorCodeExecutionCreateResult!
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant1 PickTextEditorCodeExecutionCreateResult() => TextEditorCodeExecutionCreateResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionCreateResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2 PickTextEditorCodeExecutionStrReplaceResult() => IsTextEditorCodeExecutionStrReplaceResult
-            ? TextEditorCodeExecutionStrReplaceResult!
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant2 PickTextEditorCodeExecutionStrReplaceResult() => TextEditorCodeExecutionStrReplaceResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionStrReplaceResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 PickTextEditorCodeExecutionToolResultError() => IsTextEditorCodeExecutionToolResultError
-            ? TextEditorCodeExecutionToolResultError!
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant3 PickTextEditorCodeExecutionToolResultError() => TextEditorCodeExecutionToolResultError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResultError' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4 PickTextEditorCodeExecutionViewResult() => IsTextEditorCodeExecutionViewResult
-            ? TextEditorCodeExecutionViewResult!
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionContentVariant4 PickTextEditorCodeExecutionViewResult() => TextEditorCodeExecutionViewResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionViewResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsTextEditorCodeExecutionCreateResult && textEditorCodeExecutionCreateResult != null)
+            if (TextEditorCodeExecutionCreateResult is { } __value0 && textEditorCodeExecutionCreateResult != null)
             {
-                return textEditorCodeExecutionCreateResult(TextEditorCodeExecutionCreateResult!);
+                return textEditorCodeExecutionCreateResult(__value0);
             }
-            else if (IsTextEditorCodeExecutionStrReplaceResult && textEditorCodeExecutionStrReplaceResult != null)
+            else if (TextEditorCodeExecutionStrReplaceResult is { } __value1 && textEditorCodeExecutionStrReplaceResult != null)
             {
-                return textEditorCodeExecutionStrReplaceResult(TextEditorCodeExecutionStrReplaceResult!);
+                return textEditorCodeExecutionStrReplaceResult(__value1);
             }
-            else if (IsTextEditorCodeExecutionToolResultError && textEditorCodeExecutionToolResultError != null)
+            else if (TextEditorCodeExecutionToolResultError is { } __value2 && textEditorCodeExecutionToolResultError != null)
             {
-                return textEditorCodeExecutionToolResultError(TextEditorCodeExecutionToolResultError!);
+                return textEditorCodeExecutionToolResultError(__value2);
             }
-            else if (IsTextEditorCodeExecutionViewResult && textEditorCodeExecutionViewResult != null)
+            else if (TextEditorCodeExecutionViewResult is { } __value3 && textEditorCodeExecutionViewResult != null)
             {
-                return textEditorCodeExecutionViewResult(TextEditorCodeExecutionViewResult!);
+                return textEditorCodeExecutionViewResult(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsTextEditorCodeExecutionCreateResult)
+            if (TextEditorCodeExecutionCreateResult is { } __value0)
             {
-                textEditorCodeExecutionCreateResult?.Invoke(TextEditorCodeExecutionCreateResult!);
+                textEditorCodeExecutionCreateResult?.Invoke(__value0);
             }
-            else if (IsTextEditorCodeExecutionStrReplaceResult)
+            else if (TextEditorCodeExecutionStrReplaceResult is { } __value1)
             {
-                textEditorCodeExecutionStrReplaceResult?.Invoke(TextEditorCodeExecutionStrReplaceResult!);
+                textEditorCodeExecutionStrReplaceResult?.Invoke(__value1);
             }
-            else if (IsTextEditorCodeExecutionToolResultError)
+            else if (TextEditorCodeExecutionToolResultError is { } __value2)
             {
-                textEditorCodeExecutionToolResultError?.Invoke(TextEditorCodeExecutionToolResultError!);
+                textEditorCodeExecutionToolResultError?.Invoke(__value2);
             }
-            else if (IsTextEditorCodeExecutionViewResult)
+            else if (TextEditorCodeExecutionViewResult is { } __value3)
             {
-                textEditorCodeExecutionViewResult?.Invoke(TextEditorCodeExecutionViewResult!);
+                textEditorCodeExecutionViewResult?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsTextEditorCodeExecutionCreateResult)
+            if (TextEditorCodeExecutionCreateResult is { } __value0)
             {
-                textEditorCodeExecutionCreateResult?.Invoke(TextEditorCodeExecutionCreateResult!);
+                textEditorCodeExecutionCreateResult?.Invoke(__value0);
             }
-            else if (IsTextEditorCodeExecutionStrReplaceResult)
+            else if (TextEditorCodeExecutionStrReplaceResult is { } __value1)
             {
-                textEditorCodeExecutionStrReplaceResult?.Invoke(TextEditorCodeExecutionStrReplaceResult!);
+                textEditorCodeExecutionStrReplaceResult?.Invoke(__value1);
             }
-            else if (IsTextEditorCodeExecutionToolResultError)
+            else if (TextEditorCodeExecutionToolResultError is { } __value2)
             {
-                textEditorCodeExecutionToolResultError?.Invoke(TextEditorCodeExecutionToolResultError!);
+                textEditorCodeExecutionToolResultError?.Invoke(__value2);
             }
-            else if (IsTextEditorCodeExecutionViewResult)
+            else if (TextEditorCodeExecutionViewResult is { } __value3)
             {
-                textEditorCodeExecutionViewResult?.Invoke(TextEditorCodeExecutionViewResult!);
+                textEditorCodeExecutionViewResult?.Invoke(__value3);
             }
         }
 

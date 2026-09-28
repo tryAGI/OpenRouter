@@ -59,13 +59,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ArtificialAnalysis!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickArtificialAnalysis(), typeInfo);
             }
             else if (value.IsDesignArena)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DesignArena!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDesignArena(), typeInfo);
             }
         }
     }

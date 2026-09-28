@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickOpenAiResponseFunctionToolCallOutputOutputVariant1() => IsOpenAiResponseFunctionToolCallOutputOutputVariant1
-            ? OpenAiResponseFunctionToolCallOutputOutputVariant1!
+        public string PickOpenAiResponseFunctionToolCallOutputOutputVariant1() => OpenAiResponseFunctionToolCallOutputOutputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseFunctionToolCallOutputOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items> PickOpenAiResponseFunctionToolCallOutputOutput1() => IsOpenAiResponseFunctionToolCallOutputOutput1
-            ? OpenAiResponseFunctionToolCallOutputOutput1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutputOneOf1Items> PickOpenAiResponseFunctionToolCallOutputOutput1() => OpenAiResponseFunctionToolCallOutputOutput1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseFunctionToolCallOutputOutput1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseFunctionToolCallOutputOutputVariant1 && openAiResponseFunctionToolCallOutputOutputVariant1 != null)
+            if (OpenAiResponseFunctionToolCallOutputOutputVariant1 is { } __value0 && openAiResponseFunctionToolCallOutputOutputVariant1 != null)
             {
-                return openAiResponseFunctionToolCallOutputOutputVariant1(OpenAiResponseFunctionToolCallOutputOutputVariant1!);
+                return openAiResponseFunctionToolCallOutputOutputVariant1(__value0);
             }
-            else if (IsOpenAiResponseFunctionToolCallOutputOutput1 && openAiResponseFunctionToolCallOutputOutput1 != null)
+            else if (OpenAiResponseFunctionToolCallOutputOutput1 is { } __value1 && openAiResponseFunctionToolCallOutputOutput1 != null)
             {
-                return openAiResponseFunctionToolCallOutputOutput1(OpenAiResponseFunctionToolCallOutputOutput1!);
+                return openAiResponseFunctionToolCallOutputOutput1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseFunctionToolCallOutputOutputVariant1)
+            if (OpenAiResponseFunctionToolCallOutputOutputVariant1 is { } __value0)
             {
-                openAiResponseFunctionToolCallOutputOutputVariant1?.Invoke(OpenAiResponseFunctionToolCallOutputOutputVariant1!);
+                openAiResponseFunctionToolCallOutputOutputVariant1?.Invoke(__value0);
             }
-            else if (IsOpenAiResponseFunctionToolCallOutputOutput1)
+            else if (OpenAiResponseFunctionToolCallOutputOutput1 is { } __value1)
             {
-                openAiResponseFunctionToolCallOutputOutput1?.Invoke(OpenAiResponseFunctionToolCallOutputOutput1!);
+                openAiResponseFunctionToolCallOutputOutput1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseFunctionToolCallOutputOutputVariant1)
+            if (OpenAiResponseFunctionToolCallOutputOutputVariant1 is { } __value0)
             {
-                openAiResponseFunctionToolCallOutputOutputVariant1?.Invoke(OpenAiResponseFunctionToolCallOutputOutputVariant1!);
+                openAiResponseFunctionToolCallOutputOutputVariant1?.Invoke(__value0);
             }
-            else if (IsOpenAiResponseFunctionToolCallOutputOutput1)
+            else if (OpenAiResponseFunctionToolCallOutputOutput1 is { } __value1)
             {
-                openAiResponseFunctionToolCallOutputOutput1?.Invoke(OpenAiResponseFunctionToolCallOutputOutput1!);
+                openAiResponseFunctionToolCallOutputOutput1?.Invoke(__value1);
             }
         }
 

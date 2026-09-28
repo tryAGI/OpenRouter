@@ -128,13 +128,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0(), typeInfo);
             }
             else if (value.IsAnthropicWebSearchToolResultError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicWebSearchToolResultError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicWebSearchToolResultError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicWebSearchToolResultError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicWebSearchToolResultError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicWebSearchToolResultError(), typeInfo);
             }
         }
     }

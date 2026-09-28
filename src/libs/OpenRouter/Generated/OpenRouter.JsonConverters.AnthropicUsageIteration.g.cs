@@ -241,25 +241,25 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicCompactionUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicCompactionUsageIteration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicCompactionUsageIteration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicCompactionUsageIteration!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicCompactionUsageIteration(), typeInfo);
             }
             else if (value.IsAnthropicMessageUsageIteration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicMessageUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicMessageUsageIteration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicMessageUsageIteration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicMessageUsageIteration!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicMessageUsageIteration(), typeInfo);
             }
             else if (value.IsAnthropicAdvisorMessageUsageIteration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicAdvisorMessageUsageIteration!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicAdvisorMessageUsageIteration(), typeInfo);
             }
             else if (value.IsAnthropicUnknownUsageIteration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicUnknownUsageIteration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicUnknownUsageIteration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicUnknownUsageIteration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicUnknownUsageIteration!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicUnknownUsageIteration(), typeInfo);
             }
         }
     }

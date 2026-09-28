@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FileCitation PickFileCitation() => IsFileCitation
-            ? FileCitation!
+        public global::OpenRouter.FileCitation PickFileCitation() => FileCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.URLCitation PickURLCitation() => IsURLCitation
-            ? URLCitation!
+        public global::OpenRouter.URLCitation PickURLCitation() => URLCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'URLCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FilePath PickFilePath() => IsFilePath
-            ? FilePath!
+        public global::OpenRouter.FilePath PickFilePath() => FilePath is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilePath' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFileCitation && fileCitation != null)
+            if (FileCitation is { } __value0 && fileCitation != null)
             {
-                return fileCitation(FileCitation!);
+                return fileCitation(__value0);
             }
-            else if (IsURLCitation && uRLCitation != null)
+            else if (URLCitation is { } __value1 && uRLCitation != null)
             {
-                return uRLCitation(URLCitation!);
+                return uRLCitation(__value1);
             }
-            else if (IsFilePath && filePath != null)
+            else if (FilePath is { } __value2 && filePath != null)
             {
-                return filePath(FilePath!);
+                return filePath(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsURLCitation)
+            else if (URLCitation is { } __value1)
             {
-                uRLCitation?.Invoke(URLCitation!);
+                uRLCitation?.Invoke(__value1);
             }
-            else if (IsFilePath)
+            else if (FilePath is { } __value2)
             {
-                filePath?.Invoke(FilePath!);
+                filePath?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsURLCitation)
+            else if (URLCitation is { } __value1)
             {
-                uRLCitation?.Invoke(URLCitation!);
+                uRLCitation?.Invoke(__value1);
             }
-            else if (IsFilePath)
+            else if (FilePath is { } __value2)
             {
-                filePath?.Invoke(FilePath!);
+                filePath?.Invoke(__value2);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickObservabilityFilterRuleGroupRulesItemsValueVariant1() => IsObservabilityFilterRuleGroupRulesItemsValueVariant1
-            ? ObservabilityFilterRuleGroupRulesItemsValueVariant1!
+        public string PickObservabilityFilterRuleGroupRulesItemsValueVariant1() => ObservabilityFilterRuleGroupRulesItemsValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObservabilityFilterRuleGroupRulesItemsValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public double PickObservabilityFilterRuleGroupRulesItemsValueVariant2() => IsObservabilityFilterRuleGroupRulesItemsValueVariant2
-            ? ObservabilityFilterRuleGroupRulesItemsValueVariant2!.Value
+        public double PickObservabilityFilterRuleGroupRulesItemsValueVariant2() => ObservabilityFilterRuleGroupRulesItemsValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObservabilityFilterRuleGroupRulesItemsValueVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsObservabilityFilterRuleGroupRulesItemsValueVariant1 && observabilityFilterRuleGroupRulesItemsValueVariant1 != null)
+            if (ObservabilityFilterRuleGroupRulesItemsValueVariant1 is { } __value0 && observabilityFilterRuleGroupRulesItemsValueVariant1 != null)
             {
-                return observabilityFilterRuleGroupRulesItemsValueVariant1(ObservabilityFilterRuleGroupRulesItemsValueVariant1!);
+                return observabilityFilterRuleGroupRulesItemsValueVariant1(__value0);
             }
-            else if (IsObservabilityFilterRuleGroupRulesItemsValueVariant2 && observabilityFilterRuleGroupRulesItemsValueVariant2 != null)
+            else if (ObservabilityFilterRuleGroupRulesItemsValueVariant2 is { } __value1 && observabilityFilterRuleGroupRulesItemsValueVariant2 != null)
             {
-                return observabilityFilterRuleGroupRulesItemsValueVariant2(ObservabilityFilterRuleGroupRulesItemsValueVariant2!);
+                return observabilityFilterRuleGroupRulesItemsValueVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsObservabilityFilterRuleGroupRulesItemsValueVariant1)
+            if (ObservabilityFilterRuleGroupRulesItemsValueVariant1 is { } __value0)
             {
-                observabilityFilterRuleGroupRulesItemsValueVariant1?.Invoke(ObservabilityFilterRuleGroupRulesItemsValueVariant1!);
+                observabilityFilterRuleGroupRulesItemsValueVariant1?.Invoke(__value0);
             }
-            else if (IsObservabilityFilterRuleGroupRulesItemsValueVariant2)
+            else if (ObservabilityFilterRuleGroupRulesItemsValueVariant2 is { } __value1)
             {
-                observabilityFilterRuleGroupRulesItemsValueVariant2?.Invoke(ObservabilityFilterRuleGroupRulesItemsValueVariant2!);
+                observabilityFilterRuleGroupRulesItemsValueVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsObservabilityFilterRuleGroupRulesItemsValueVariant1)
+            if (ObservabilityFilterRuleGroupRulesItemsValueVariant1 is { } __value0)
             {
-                observabilityFilterRuleGroupRulesItemsValueVariant1?.Invoke(ObservabilityFilterRuleGroupRulesItemsValueVariant1!);
+                observabilityFilterRuleGroupRulesItemsValueVariant1?.Invoke(__value0);
             }
-            else if (IsObservabilityFilterRuleGroupRulesItemsValueVariant2)
+            else if (ObservabilityFilterRuleGroupRulesItemsValueVariant2 is { } __value1)
             {
-                observabilityFilterRuleGroupRulesItemsValueVariant2?.Invoke(ObservabilityFilterRuleGroupRulesItemsValueVariant2!);
+                observabilityFilterRuleGroupRulesItemsValueVariant2?.Invoke(__value1);
             }
         }
 

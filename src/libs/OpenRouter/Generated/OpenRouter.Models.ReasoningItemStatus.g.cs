@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningItemStatus0 PickReasoningItemStatus0() => IsReasoningItemStatus0
-            ? ReasoningItemStatus0!.Value
+        public global::OpenRouter.ReasoningItemStatus0 PickReasoningItemStatus0() => ReasoningItemStatus0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningItemStatus1 PickReasoningItemStatus1() => IsReasoningItemStatus1
-            ? ReasoningItemStatus1!.Value
+        public global::OpenRouter.ReasoningItemStatus1 PickReasoningItemStatus1() => ReasoningItemStatus1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningItemStatus2 PickReasoningItemStatus2() => IsReasoningItemStatus2
-            ? ReasoningItemStatus2!.Value
+        public global::OpenRouter.ReasoningItemStatus2 PickReasoningItemStatus2() => ReasoningItemStatus2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItemStatus2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningItemStatus0 && reasoningItemStatus0 != null)
+            if (ReasoningItemStatus0 is { } __value0 && reasoningItemStatus0 != null)
             {
-                return reasoningItemStatus0(ReasoningItemStatus0!);
+                return reasoningItemStatus0(__value0);
             }
-            else if (IsReasoningItemStatus1 && reasoningItemStatus1 != null)
+            else if (ReasoningItemStatus1 is { } __value1 && reasoningItemStatus1 != null)
             {
-                return reasoningItemStatus1(ReasoningItemStatus1!);
+                return reasoningItemStatus1(__value1);
             }
-            else if (IsReasoningItemStatus2 && reasoningItemStatus2 != null)
+            else if (ReasoningItemStatus2 is { } __value2 && reasoningItemStatus2 != null)
             {
-                return reasoningItemStatus2(ReasoningItemStatus2!);
+                return reasoningItemStatus2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningItemStatus0)
+            if (ReasoningItemStatus0 is { } __value0)
             {
-                reasoningItemStatus0?.Invoke(ReasoningItemStatus0!);
+                reasoningItemStatus0?.Invoke(__value0);
             }
-            else if (IsReasoningItemStatus1)
+            else if (ReasoningItemStatus1 is { } __value1)
             {
-                reasoningItemStatus1?.Invoke(ReasoningItemStatus1!);
+                reasoningItemStatus1?.Invoke(__value1);
             }
-            else if (IsReasoningItemStatus2)
+            else if (ReasoningItemStatus2 is { } __value2)
             {
-                reasoningItemStatus2?.Invoke(ReasoningItemStatus2!);
+                reasoningItemStatus2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningItemStatus0)
+            if (ReasoningItemStatus0 is { } __value0)
             {
-                reasoningItemStatus0?.Invoke(ReasoningItemStatus0!);
+                reasoningItemStatus0?.Invoke(__value0);
             }
-            else if (IsReasoningItemStatus1)
+            else if (ReasoningItemStatus1 is { } __value1)
             {
-                reasoningItemStatus1?.Invoke(ReasoningItemStatus1!);
+                reasoningItemStatus1?.Invoke(__value1);
             }
-            else if (IsReasoningItemStatus2)
+            else if (ReasoningItemStatus2 is { } __value2)
             {
-                reasoningItemStatus2?.Invoke(ReasoningItemStatus2!);
+                reasoningItemStatus2?.Invoke(__value2);
             }
         }
 

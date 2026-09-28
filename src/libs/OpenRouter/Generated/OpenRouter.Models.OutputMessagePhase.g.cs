@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMessagePhase0 PickOutputMessagePhase0() => IsOutputMessagePhase0
-            ? OutputMessagePhase0!.Value
+        public global::OpenRouter.OutputMessagePhase0 PickOutputMessagePhase0() => OutputMessagePhase0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMessagePhase1 PickOutputMessagePhase1() => IsOutputMessagePhase1
-            ? OutputMessagePhase1!.Value
+        public global::OpenRouter.OutputMessagePhase1 PickOutputMessagePhase1() => OutputMessagePhase1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputMessagePhase0 && outputMessagePhase0 != null)
+            if (OutputMessagePhase0 is { } __value0 && outputMessagePhase0 != null)
             {
-                return outputMessagePhase0(OutputMessagePhase0!);
+                return outputMessagePhase0(__value0);
             }
-            else if (IsOutputMessagePhase1 && outputMessagePhase1 != null)
+            else if (OutputMessagePhase1 is { } __value1 && outputMessagePhase1 != null)
             {
-                return outputMessagePhase1(OutputMessagePhase1!);
+                return outputMessagePhase1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputMessagePhase0)
+            if (OutputMessagePhase0 is { } __value0)
             {
-                outputMessagePhase0?.Invoke(OutputMessagePhase0!);
+                outputMessagePhase0?.Invoke(__value0);
             }
-            else if (IsOutputMessagePhase1)
+            else if (OutputMessagePhase1 is { } __value1)
             {
-                outputMessagePhase1?.Invoke(OutputMessagePhase1!);
+                outputMessagePhase1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputMessagePhase0)
+            if (OutputMessagePhase0 is { } __value0)
             {
-                outputMessagePhase0?.Invoke(OutputMessagePhase0!);
+                outputMessagePhase0?.Invoke(__value0);
             }
-            else if (IsOutputMessagePhase1)
+            else if (OutputMessagePhase1 is { } __value1)
             {
-                outputMessagePhase1?.Invoke(OutputMessagePhase1!);
+                outputMessagePhase1?.Invoke(__value1);
             }
         }
 

@@ -198,19 +198,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1(), typeInfo);
             }
             else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2(), typeInfo);
             }
             else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3(), typeInfo);
             }
         }
     }

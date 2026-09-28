@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public double PickPreferredMinThroughputVariant1() => IsPreferredMinThroughputVariant1
-            ? PreferredMinThroughputVariant1!.Value
+        public double PickPreferredMinThroughputVariant1() => PreferredMinThroughputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMinThroughputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.PercentileThroughputCutoffs PickPercentileThroughputCutoffs() => IsPercentileThroughputCutoffs
-            ? PercentileThroughputCutoffs!
+        public global::OpenRouter.PercentileThroughputCutoffs PickPercentileThroughputCutoffs() => PercentileThroughputCutoffs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileThroughputCutoffs' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPreferredMinThroughputVariant1 && preferredMinThroughputVariant1 != null)
+            if (PreferredMinThroughputVariant1 is { } __value0 && preferredMinThroughputVariant1 != null)
             {
-                return preferredMinThroughputVariant1(PreferredMinThroughputVariant1!);
+                return preferredMinThroughputVariant1(__value0);
             }
-            else if (IsPercentileThroughputCutoffs && percentileThroughputCutoffs != null)
+            else if (PercentileThroughputCutoffs is { } __value1 && percentileThroughputCutoffs != null)
             {
-                return percentileThroughputCutoffs(PercentileThroughputCutoffs!);
+                return percentileThroughputCutoffs(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPreferredMinThroughputVariant1)
+            if (PreferredMinThroughputVariant1 is { } __value0)
             {
-                preferredMinThroughputVariant1?.Invoke(PreferredMinThroughputVariant1!);
+                preferredMinThroughputVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileThroughputCutoffs)
+            else if (PercentileThroughputCutoffs is { } __value1)
             {
-                percentileThroughputCutoffs?.Invoke(PercentileThroughputCutoffs!);
+                percentileThroughputCutoffs?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPreferredMinThroughputVariant1)
+            if (PreferredMinThroughputVariant1 is { } __value0)
             {
-                preferredMinThroughputVariant1?.Invoke(PreferredMinThroughputVariant1!);
+                preferredMinThroughputVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileThroughputCutoffs)
+            else if (PercentileThroughputCutoffs is { } __value1)
             {
-                percentileThroughputCutoffs?.Invoke(PercentileThroughputCutoffs!);
+                percentileThroughputCutoffs?.Invoke(__value1);
             }
         }
 

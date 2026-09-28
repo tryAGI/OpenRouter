@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ToolChoiceAllowedMode0 PickToolChoiceAllowedMode0() => IsToolChoiceAllowedMode0
-            ? ToolChoiceAllowedMode0!.Value
+        public global::OpenRouter.ToolChoiceAllowedMode0 PickToolChoiceAllowedMode0() => ToolChoiceAllowedMode0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceAllowedMode0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ToolChoiceAllowedMode1 PickToolChoiceAllowedMode1() => IsToolChoiceAllowedMode1
-            ? ToolChoiceAllowedMode1!.Value
+        public global::OpenRouter.ToolChoiceAllowedMode1 PickToolChoiceAllowedMode1() => ToolChoiceAllowedMode1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceAllowedMode1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsToolChoiceAllowedMode0 && toolChoiceAllowedMode0 != null)
+            if (ToolChoiceAllowedMode0 is { } __value0 && toolChoiceAllowedMode0 != null)
             {
-                return toolChoiceAllowedMode0(ToolChoiceAllowedMode0!);
+                return toolChoiceAllowedMode0(__value0);
             }
-            else if (IsToolChoiceAllowedMode1 && toolChoiceAllowedMode1 != null)
+            else if (ToolChoiceAllowedMode1 is { } __value1 && toolChoiceAllowedMode1 != null)
             {
-                return toolChoiceAllowedMode1(ToolChoiceAllowedMode1!);
+                return toolChoiceAllowedMode1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsToolChoiceAllowedMode0)
+            if (ToolChoiceAllowedMode0 is { } __value0)
             {
-                toolChoiceAllowedMode0?.Invoke(ToolChoiceAllowedMode0!);
+                toolChoiceAllowedMode0?.Invoke(__value0);
             }
-            else if (IsToolChoiceAllowedMode1)
+            else if (ToolChoiceAllowedMode1 is { } __value1)
             {
-                toolChoiceAllowedMode1?.Invoke(ToolChoiceAllowedMode1!);
+                toolChoiceAllowedMode1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsToolChoiceAllowedMode0)
+            if (ToolChoiceAllowedMode0 is { } __value0)
             {
-                toolChoiceAllowedMode0?.Invoke(ToolChoiceAllowedMode0!);
+                toolChoiceAllowedMode0?.Invoke(__value0);
             }
-            else if (IsToolChoiceAllowedMode1)
+            else if (ToolChoiceAllowedMode1 is { } __value1)
             {
-                toolChoiceAllowedMode1?.Invoke(ToolChoiceAllowedMode1!);
+                toolChoiceAllowedMode1?.Invoke(__value1);
             }
         }
 

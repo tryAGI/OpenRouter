@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1 PickArtificialAnalysis() => IsArtificialAnalysis
-            ? ArtificialAnalysis!
+        public global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant1 PickArtificialAnalysis() => ArtificialAnalysis is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtificialAnalysis' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2 PickDesignArena() => IsDesignArena
-            ? DesignArena!
+        public global::OpenRouter.UnifiedBenchmarksResponseDataItemsVariant2 PickDesignArena() => DesignArena is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DesignArena' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsArtificialAnalysis && artificialAnalysis != null)
+            if (ArtificialAnalysis is { } __value0 && artificialAnalysis != null)
             {
-                return artificialAnalysis(ArtificialAnalysis!);
+                return artificialAnalysis(__value0);
             }
-            else if (IsDesignArena && designArena != null)
+            else if (DesignArena is { } __value1 && designArena != null)
             {
-                return designArena(DesignArena!);
+                return designArena(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsArtificialAnalysis)
+            if (ArtificialAnalysis is { } __value0)
             {
-                artificialAnalysis?.Invoke(ArtificialAnalysis!);
+                artificialAnalysis?.Invoke(__value0);
             }
-            else if (IsDesignArena)
+            else if (DesignArena is { } __value1)
             {
-                designArena?.Invoke(DesignArena!);
+                designArena?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsArtificialAnalysis)
+            if (ArtificialAnalysis is { } __value0)
             {
-                artificialAnalysis?.Invoke(ArtificialAnalysis!);
+                artificialAnalysis?.Invoke(__value0);
             }
-            else if (IsDesignArena)
+            else if (DesignArena is { } __value1)
             {
-                designArena?.Invoke(DesignArena!);
+                designArena?.Invoke(__value1);
             }
         }
 

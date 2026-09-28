@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponseInputMessageItemRole0 PickOpenAiResponseInputMessageItemRole0() => IsOpenAiResponseInputMessageItemRole0
-            ? OpenAiResponseInputMessageItemRole0!.Value
+        public global::OpenRouter.OpenAiResponseInputMessageItemRole0 PickOpenAiResponseInputMessageItemRole0() => OpenAiResponseInputMessageItemRole0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponseInputMessageItemRole1 PickOpenAiResponseInputMessageItemRole1() => IsOpenAiResponseInputMessageItemRole1
-            ? OpenAiResponseInputMessageItemRole1!.Value
+        public global::OpenRouter.OpenAiResponseInputMessageItemRole1 PickOpenAiResponseInputMessageItemRole1() => OpenAiResponseInputMessageItemRole1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponseInputMessageItemRole2 PickOpenAiResponseInputMessageItemRole2() => IsOpenAiResponseInputMessageItemRole2
-            ? OpenAiResponseInputMessageItemRole2!.Value
+        public global::OpenRouter.OpenAiResponseInputMessageItemRole2 PickOpenAiResponseInputMessageItemRole2() => OpenAiResponseInputMessageItemRole2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseInputMessageItemRole2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseInputMessageItemRole0 && openAiResponseInputMessageItemRole0 != null)
+            if (OpenAiResponseInputMessageItemRole0 is { } __value0 && openAiResponseInputMessageItemRole0 != null)
             {
-                return openAiResponseInputMessageItemRole0(OpenAiResponseInputMessageItemRole0!);
+                return openAiResponseInputMessageItemRole0(__value0);
             }
-            else if (IsOpenAiResponseInputMessageItemRole1 && openAiResponseInputMessageItemRole1 != null)
+            else if (OpenAiResponseInputMessageItemRole1 is { } __value1 && openAiResponseInputMessageItemRole1 != null)
             {
-                return openAiResponseInputMessageItemRole1(OpenAiResponseInputMessageItemRole1!);
+                return openAiResponseInputMessageItemRole1(__value1);
             }
-            else if (IsOpenAiResponseInputMessageItemRole2 && openAiResponseInputMessageItemRole2 != null)
+            else if (OpenAiResponseInputMessageItemRole2 is { } __value2 && openAiResponseInputMessageItemRole2 != null)
             {
-                return openAiResponseInputMessageItemRole2(OpenAiResponseInputMessageItemRole2!);
+                return openAiResponseInputMessageItemRole2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseInputMessageItemRole0)
+            if (OpenAiResponseInputMessageItemRole0 is { } __value0)
             {
-                openAiResponseInputMessageItemRole0?.Invoke(OpenAiResponseInputMessageItemRole0!);
+                openAiResponseInputMessageItemRole0?.Invoke(__value0);
             }
-            else if (IsOpenAiResponseInputMessageItemRole1)
+            else if (OpenAiResponseInputMessageItemRole1 is { } __value1)
             {
-                openAiResponseInputMessageItemRole1?.Invoke(OpenAiResponseInputMessageItemRole1!);
+                openAiResponseInputMessageItemRole1?.Invoke(__value1);
             }
-            else if (IsOpenAiResponseInputMessageItemRole2)
+            else if (OpenAiResponseInputMessageItemRole2 is { } __value2)
             {
-                openAiResponseInputMessageItemRole2?.Invoke(OpenAiResponseInputMessageItemRole2!);
+                openAiResponseInputMessageItemRole2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseInputMessageItemRole0)
+            if (OpenAiResponseInputMessageItemRole0 is { } __value0)
             {
-                openAiResponseInputMessageItemRole0?.Invoke(OpenAiResponseInputMessageItemRole0!);
+                openAiResponseInputMessageItemRole0?.Invoke(__value0);
             }
-            else if (IsOpenAiResponseInputMessageItemRole1)
+            else if (OpenAiResponseInputMessageItemRole1 is { } __value1)
             {
-                openAiResponseInputMessageItemRole1?.Invoke(OpenAiResponseInputMessageItemRole1!);
+                openAiResponseInputMessageItemRole1?.Invoke(__value1);
             }
-            else if (IsOpenAiResponseInputMessageItemRole2)
+            else if (OpenAiResponseInputMessageItemRole2 is { } __value2)
             {
-                openAiResponseInputMessageItemRole2?.Invoke(OpenAiResponseInputMessageItemRole2!);
+                openAiResponseInputMessageItemRole2?.Invoke(__value2);
             }
         }
 

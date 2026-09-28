@@ -571,73 +571,73 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicTextBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicTextBlockParam(), typeInfo);
             }
             else if (value.IsAnthropicImageBlockParam)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicImageBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicImageBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicImageBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicImageBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicImageBlockParam(), typeInfo);
             }
             else if (value.IsAnthropicDocumentBlockParam)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicDocumentBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicDocumentBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicDocumentBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicDocumentBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicDocumentBlockParam(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1Items3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1Items3(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1Items4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1Items4(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1Items5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1Items5(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1Items6)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items6!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1Items6(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1Items7)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items7?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items7).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items7!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1Items7(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1Items8)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items8?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items8).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items8!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1Items8(), typeInfo);
             }
             else if (value.IsAnthropicSearchResultBlockParam)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicSearchResultBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicSearchResultBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicSearchResultBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicSearchResultBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicSearchResultBlockParam(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1Items10)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1Items10?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1Items10).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1Items10!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1Items10(), typeInfo);
             }
             else if (value.IsMessagesAdvisorToolResultBlock)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesAdvisorToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesAdvisorToolResultBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesAdvisorToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesAdvisorToolResultBlock!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesAdvisorToolResultBlock(), typeInfo);
             }
         }
     }

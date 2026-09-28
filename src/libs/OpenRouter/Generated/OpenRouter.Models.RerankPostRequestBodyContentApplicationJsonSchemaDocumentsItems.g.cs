@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1() => IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1
-            ? RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1!
+        public string PickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1() => RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 PickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1() => IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1
-            ? RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1!
+        public global::OpenRouter.RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 PickRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1() => RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 && rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 != null)
+            if (RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 is { } __value0 && rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 != null)
             {
-                return rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1!);
+                return rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 && rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 != null)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 is { } __value1 && rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 != null)
             {
-                return rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1!);
+                return rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1)
+            if (RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 is { } __value0)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1!);
+                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1?.Invoke(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 is { } __value1)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1!);
+                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1)
+            if (RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1 is { } __value0)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1!);
+                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItemsVariant1?.Invoke(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1 is { } __value1)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1!);
+                rerankPostRequestBodyContentApplicationJsonSchemaDocumentsItems1?.Invoke(__value1);
             }
         }
 

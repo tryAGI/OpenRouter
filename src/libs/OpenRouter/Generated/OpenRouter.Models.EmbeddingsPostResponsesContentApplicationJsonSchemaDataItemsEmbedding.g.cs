@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<double> PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1() => IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1
-            ? EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1!
+        public global::System.Collections.Generic.IList<double> PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1() => EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2() => IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2
-            ? EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2!
+        public string PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2() => EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 && embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 != null)
+            if (EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 is { } __value0 && embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 != null)
             {
-                return embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1!);
+                return embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1(__value0);
             }
-            else if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 && embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 != null)
+            else if (EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 is { } __value1 && embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 != null)
             {
-                return embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2!);
+                return embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1)
+            if (EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 is { } __value0)
             {
-                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1?.Invoke(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1!);
+                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2)
+            else if (EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 is { } __value1)
             {
-                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2?.Invoke(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2!);
+                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1)
+            if (EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1 is { } __value0)
             {
-                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1?.Invoke(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1!);
+                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2)
+            else if (EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2 is { } __value1)
             {
-                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2?.Invoke(EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2!);
+                embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2?.Invoke(__value1);
             }
         }
 

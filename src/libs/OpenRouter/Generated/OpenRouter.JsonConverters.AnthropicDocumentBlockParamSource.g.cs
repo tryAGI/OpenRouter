@@ -249,31 +249,31 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBase64PdfSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBase64PdfSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicBase64PdfSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicBase64PdfSource!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicBase64PdfSource(), typeInfo);
             }
             else if (value.IsAnthropicPlainTextSource)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicPlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicPlainTextSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicPlainTextSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicPlainTextSource!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicPlainTextSource(), typeInfo);
             }
             else if (value.IsAnthropicDocumentBlockParamSource2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicDocumentBlockParamSource2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicDocumentBlockParamSource2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicDocumentBlockParamSource2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicDocumentBlockParamSource2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicDocumentBlockParamSource2(), typeInfo);
             }
             else if (value.IsAnthropicUrlPdfSource)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicUrlPdfSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicUrlPdfSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicUrlPdfSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicUrlPdfSource!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicUrlPdfSource(), typeInfo);
             }
             else if (value.IsAnthropicFileDocumentSource)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicFileDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicFileDocumentSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicFileDocumentSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicFileDocumentSource!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicFileDocumentSource(), typeInfo);
             }
         }
     }

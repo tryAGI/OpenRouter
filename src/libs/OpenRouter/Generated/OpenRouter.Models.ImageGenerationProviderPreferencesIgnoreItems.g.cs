@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
-            ? ProviderName!.Value
+        public global::OpenRouter.ProviderName PickProviderName() => ProviderName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickImageGenerationProviderPreferencesIgnoreItemsVariant2() => IsImageGenerationProviderPreferencesIgnoreItemsVariant2
-            ? ImageGenerationProviderPreferencesIgnoreItemsVariant2!
+        public string PickImageGenerationProviderPreferencesIgnoreItemsVariant2() => ImageGenerationProviderPreferencesIgnoreItemsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationProviderPreferencesIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName && providerName != null)
+            if (ProviderName is { } __value0 && providerName != null)
             {
-                return providerName(ProviderName!);
+                return providerName(__value0);
             }
-            else if (IsImageGenerationProviderPreferencesIgnoreItemsVariant2 && imageGenerationProviderPreferencesIgnoreItemsVariant2 != null)
+            else if (ImageGenerationProviderPreferencesIgnoreItemsVariant2 is { } __value1 && imageGenerationProviderPreferencesIgnoreItemsVariant2 != null)
             {
-                return imageGenerationProviderPreferencesIgnoreItemsVariant2(ImageGenerationProviderPreferencesIgnoreItemsVariant2!);
+                return imageGenerationProviderPreferencesIgnoreItemsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsImageGenerationProviderPreferencesIgnoreItemsVariant2)
+            else if (ImageGenerationProviderPreferencesIgnoreItemsVariant2 is { } __value1)
             {
-                imageGenerationProviderPreferencesIgnoreItemsVariant2?.Invoke(ImageGenerationProviderPreferencesIgnoreItemsVariant2!);
+                imageGenerationProviderPreferencesIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsImageGenerationProviderPreferencesIgnoreItemsVariant2)
+            else if (ImageGenerationProviderPreferencesIgnoreItemsVariant2 is { } __value1)
             {
-                imageGenerationProviderPreferencesIgnoreItemsVariant2?.Invoke(ImageGenerationProviderPreferencesIgnoreItemsVariant2!);
+                imageGenerationProviderPreferencesIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 

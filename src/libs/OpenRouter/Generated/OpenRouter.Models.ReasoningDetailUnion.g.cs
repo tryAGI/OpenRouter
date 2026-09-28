@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningDetailUnionVariant1 PickReasoningEncrypted() => IsReasoningEncrypted
-            ? ReasoningEncrypted!
+        public global::OpenRouter.ReasoningDetailUnionVariant1 PickReasoningEncrypted() => ReasoningEncrypted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningEncrypted' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningDetailUnionVariant2 PickReasoningServerToolCall() => IsReasoningServerToolCall
-            ? ReasoningServerToolCall!
+        public global::OpenRouter.ReasoningDetailUnionVariant2 PickReasoningServerToolCall() => ReasoningServerToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningServerToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningDetailUnionVariant3 PickReasoningSummary() => IsReasoningSummary
-            ? ReasoningSummary!
+        public global::OpenRouter.ReasoningDetailUnionVariant3 PickReasoningSummary() => ReasoningSummary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningSummary' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningDetailUnionVariant4 PickReasoningText() => IsReasoningText
-            ? ReasoningText!
+        public global::OpenRouter.ReasoningDetailUnionVariant4 PickReasoningText() => ReasoningText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningText' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningEncrypted && reasoningEncrypted != null)
+            if (ReasoningEncrypted is { } __value0 && reasoningEncrypted != null)
             {
-                return reasoningEncrypted(ReasoningEncrypted!);
+                return reasoningEncrypted(__value0);
             }
-            else if (IsReasoningServerToolCall && reasoningServerToolCall != null)
+            else if (ReasoningServerToolCall is { } __value1 && reasoningServerToolCall != null)
             {
-                return reasoningServerToolCall(ReasoningServerToolCall!);
+                return reasoningServerToolCall(__value1);
             }
-            else if (IsReasoningSummary && reasoningSummary != null)
+            else if (ReasoningSummary is { } __value2 && reasoningSummary != null)
             {
-                return reasoningSummary(ReasoningSummary!);
+                return reasoningSummary(__value2);
             }
-            else if (IsReasoningText && reasoningText != null)
+            else if (ReasoningText is { } __value3 && reasoningText != null)
             {
-                return reasoningText(ReasoningText!);
+                return reasoningText(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningEncrypted)
+            if (ReasoningEncrypted is { } __value0)
             {
-                reasoningEncrypted?.Invoke(ReasoningEncrypted!);
+                reasoningEncrypted?.Invoke(__value0);
             }
-            else if (IsReasoningServerToolCall)
+            else if (ReasoningServerToolCall is { } __value1)
             {
-                reasoningServerToolCall?.Invoke(ReasoningServerToolCall!);
+                reasoningServerToolCall?.Invoke(__value1);
             }
-            else if (IsReasoningSummary)
+            else if (ReasoningSummary is { } __value2)
             {
-                reasoningSummary?.Invoke(ReasoningSummary!);
+                reasoningSummary?.Invoke(__value2);
             }
-            else if (IsReasoningText)
+            else if (ReasoningText is { } __value3)
             {
-                reasoningText?.Invoke(ReasoningText!);
+                reasoningText?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningEncrypted)
+            if (ReasoningEncrypted is { } __value0)
             {
-                reasoningEncrypted?.Invoke(ReasoningEncrypted!);
+                reasoningEncrypted?.Invoke(__value0);
             }
-            else if (IsReasoningServerToolCall)
+            else if (ReasoningServerToolCall is { } __value1)
             {
-                reasoningServerToolCall?.Invoke(ReasoningServerToolCall!);
+                reasoningServerToolCall?.Invoke(__value1);
             }
-            else if (IsReasoningSummary)
+            else if (ReasoningSummary is { } __value2)
             {
-                reasoningSummary?.Invoke(ReasoningSummary!);
+                reasoningSummary?.Invoke(__value2);
             }
-            else if (IsReasoningText)
+            else if (ReasoningText is { } __value3)
             {
-                reasoningText?.Invoke(ReasoningText!);
+                reasoningText?.Invoke(__value3);
             }
         }
 

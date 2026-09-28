@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCompactionUsageIteration PickAnthropicCompactionUsageIteration() => IsAnthropicCompactionUsageIteration
-            ? AnthropicCompactionUsageIteration!
+        public global::OpenRouter.AnthropicCompactionUsageIteration PickAnthropicCompactionUsageIteration() => AnthropicCompactionUsageIteration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicCompactionUsageIteration' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicMessageUsageIteration PickAnthropicMessageUsageIteration() => IsAnthropicMessageUsageIteration
-            ? AnthropicMessageUsageIteration!
+        public global::OpenRouter.AnthropicMessageUsageIteration PickAnthropicMessageUsageIteration() => AnthropicMessageUsageIteration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicMessageUsageIteration' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration PickAnthropicAdvisorMessageUsageIteration() => IsAnthropicAdvisorMessageUsageIteration
-            ? AnthropicAdvisorMessageUsageIteration!
+        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration PickAnthropicAdvisorMessageUsageIteration() => AnthropicAdvisorMessageUsageIteration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicAdvisorMessageUsageIteration' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicUnknownUsageIteration PickAnthropicUnknownUsageIteration() => IsAnthropicUnknownUsageIteration
-            ? AnthropicUnknownUsageIteration!
+        public global::OpenRouter.AnthropicUnknownUsageIteration PickAnthropicUnknownUsageIteration() => AnthropicUnknownUsageIteration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicUnknownUsageIteration' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -307,21 +307,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicCompactionUsageIteration && anthropicCompactionUsageIteration != null)
+            if (AnthropicCompactionUsageIteration is { } __value0 && anthropicCompactionUsageIteration != null)
             {
-                return anthropicCompactionUsageIteration(AnthropicCompactionUsageIteration!);
+                return anthropicCompactionUsageIteration(__value0);
             }
-            else if (IsAnthropicMessageUsageIteration && anthropicMessageUsageIteration != null)
+            else if (AnthropicMessageUsageIteration is { } __value1 && anthropicMessageUsageIteration != null)
             {
-                return anthropicMessageUsageIteration(AnthropicMessageUsageIteration!);
+                return anthropicMessageUsageIteration(__value1);
             }
-            else if (IsAnthropicAdvisorMessageUsageIteration && anthropicAdvisorMessageUsageIteration != null)
+            else if (AnthropicAdvisorMessageUsageIteration is { } __value2 && anthropicAdvisorMessageUsageIteration != null)
             {
-                return anthropicAdvisorMessageUsageIteration(AnthropicAdvisorMessageUsageIteration!);
+                return anthropicAdvisorMessageUsageIteration(__value2);
             }
-            else if (IsAnthropicUnknownUsageIteration && anthropicUnknownUsageIteration != null)
+            else if (AnthropicUnknownUsageIteration is { } __value3 && anthropicUnknownUsageIteration != null)
             {
-                return anthropicUnknownUsageIteration(AnthropicUnknownUsageIteration!);
+                return anthropicUnknownUsageIteration(__value3);
             }
 
             return default(TResult);
@@ -345,21 +345,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicCompactionUsageIteration)
+            if (AnthropicCompactionUsageIteration is { } __value0)
             {
-                anthropicCompactionUsageIteration?.Invoke(AnthropicCompactionUsageIteration!);
+                anthropicCompactionUsageIteration?.Invoke(__value0);
             }
-            else if (IsAnthropicMessageUsageIteration)
+            else if (AnthropicMessageUsageIteration is { } __value1)
             {
-                anthropicMessageUsageIteration?.Invoke(AnthropicMessageUsageIteration!);
+                anthropicMessageUsageIteration?.Invoke(__value1);
             }
-            else if (IsAnthropicAdvisorMessageUsageIteration)
+            else if (AnthropicAdvisorMessageUsageIteration is { } __value2)
             {
-                anthropicAdvisorMessageUsageIteration?.Invoke(AnthropicAdvisorMessageUsageIteration!);
+                anthropicAdvisorMessageUsageIteration?.Invoke(__value2);
             }
-            else if (IsAnthropicUnknownUsageIteration)
+            else if (AnthropicUnknownUsageIteration is { } __value3)
             {
-                anthropicUnknownUsageIteration?.Invoke(AnthropicUnknownUsageIteration!);
+                anthropicUnknownUsageIteration?.Invoke(__value3);
             }
         }
 
@@ -378,21 +378,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicCompactionUsageIteration)
+            if (AnthropicCompactionUsageIteration is { } __value0)
             {
-                anthropicCompactionUsageIteration?.Invoke(AnthropicCompactionUsageIteration!);
+                anthropicCompactionUsageIteration?.Invoke(__value0);
             }
-            else if (IsAnthropicMessageUsageIteration)
+            else if (AnthropicMessageUsageIteration is { } __value1)
             {
-                anthropicMessageUsageIteration?.Invoke(AnthropicMessageUsageIteration!);
+                anthropicMessageUsageIteration?.Invoke(__value1);
             }
-            else if (IsAnthropicAdvisorMessageUsageIteration)
+            else if (AnthropicAdvisorMessageUsageIteration is { } __value2)
             {
-                anthropicAdvisorMessageUsageIteration?.Invoke(AnthropicAdvisorMessageUsageIteration!);
+                anthropicAdvisorMessageUsageIteration?.Invoke(__value2);
             }
-            else if (IsAnthropicUnknownUsageIteration)
+            else if (AnthropicUnknownUsageIteration is { } __value3)
             {
-                anthropicUnknownUsageIteration?.Invoke(AnthropicUnknownUsageIteration!);
+                anthropicUnknownUsageIteration?.Invoke(__value3);
             }
         }
 

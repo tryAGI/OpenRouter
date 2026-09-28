@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => IsBaseInputsOneOf1ItemsOneOf0Phase0
-            ? BaseInputsOneOf1ItemsOneOf0Phase0!.Value
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => BaseInputsOneOf1ItemsOneOf0Phase0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => IsBaseInputsOneOf1ItemsOneOf0Phase1
-            ? BaseInputsOneOf1ItemsOneOf0Phase1!.Value
+        public global::OpenRouter.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => BaseInputsOneOf1ItemsOneOf0Phase1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf0Phase0 && baseInputsOneOf1ItemsOneOf0Phase0 != null)
+            if (BaseInputsOneOf1ItemsOneOf0Phase0 is { } __value0 && baseInputsOneOf1ItemsOneOf0Phase0 != null)
             {
-                return baseInputsOneOf1ItemsOneOf0Phase0(BaseInputsOneOf1ItemsOneOf0Phase0!);
+                return baseInputsOneOf1ItemsOneOf0Phase0(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1 && baseInputsOneOf1ItemsOneOf0Phase1 != null)
+            else if (BaseInputsOneOf1ItemsOneOf0Phase1 is { } __value1 && baseInputsOneOf1ItemsOneOf0Phase1 != null)
             {
-                return baseInputsOneOf1ItemsOneOf0Phase1(BaseInputsOneOf1ItemsOneOf0Phase1!);
+                return baseInputsOneOf1ItemsOneOf0Phase1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf0Phase0)
+            if (BaseInputsOneOf1ItemsOneOf0Phase0 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase0!);
+                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1)
+            else if (BaseInputsOneOf1ItemsOneOf0Phase1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase1!);
+                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf0Phase0)
+            if (BaseInputsOneOf1ItemsOneOf0Phase0 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase0!);
+                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1)
+            else if (BaseInputsOneOf1ItemsOneOf0Phase1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase1!);
+                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(__value1);
             }
         }
 

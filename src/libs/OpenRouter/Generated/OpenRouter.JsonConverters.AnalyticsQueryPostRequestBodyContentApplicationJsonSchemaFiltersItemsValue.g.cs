@@ -198,19 +198,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1(), typeInfo);
             }
             else if (value.IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2(), typeInfo);
             }
             else if (value.IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2(), typeInfo);
             }
         }
     }

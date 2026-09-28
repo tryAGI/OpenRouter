@@ -77,25 +77,25 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailUnionVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailUnionVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailUnionVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningEncrypted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoningEncrypted(), typeInfo);
             }
             else if (value.IsReasoningServerToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailUnionVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailUnionVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailUnionVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningServerToolCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoningServerToolCall(), typeInfo);
             }
             else if (value.IsReasoningSummary)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailUnionVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailUnionVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailUnionVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningSummary!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoningSummary(), typeInfo);
             }
             else if (value.IsReasoningText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ReasoningDetailUnionVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ReasoningDetailUnionVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ReasoningDetailUnionVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoningText(), typeInfo);
             }
         }
     }

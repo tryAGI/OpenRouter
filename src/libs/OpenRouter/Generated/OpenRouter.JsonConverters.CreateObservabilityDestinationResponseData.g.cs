@@ -194,103 +194,103 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Arize!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickArize(), typeInfo);
             }
             else if (value.IsBraintrust)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Braintrust!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBraintrust(), typeInfo);
             }
             else if (value.IsClickhouse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Clickhouse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClickhouse(), typeInfo);
             }
             else if (value.IsDatadog)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Datadog!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatadog(), typeInfo);
             }
             else if (value.IsGrafana)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Grafana!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGrafana(), typeInfo);
             }
             else if (value.IsLangfuse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Langfuse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLangfuse(), typeInfo);
             }
             else if (value.IsLangsmith)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant7).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Langsmith!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLangsmith(), typeInfo);
             }
             else if (value.IsNewrelic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant8).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Newrelic!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNewrelic(), typeInfo);
             }
             else if (value.IsOpik)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant9).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Opik!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpik(), typeInfo);
             }
             else if (value.IsOtelCollector)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant10).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OtelCollector!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOtelCollector(), typeInfo);
             }
             else if (value.IsPosthog)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant11).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Posthog!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPosthog(), typeInfo);
             }
             else if (value.IsRamp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant12).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ramp!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRamp(), typeInfo);
             }
             else if (value.IsS3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant13).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickS3(), typeInfo);
             }
             else if (value.IsSentry)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant14).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sentry!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSentry(), typeInfo);
             }
             else if (value.IsSnowflake)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant15).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Snowflake!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSnowflake(), typeInfo);
             }
             else if (value.IsWeave)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant16).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Weave!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWeave(), typeInfo);
             }
             else if (value.IsWebhook)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CreateObservabilityDestinationResponseDataVariant17).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebhook(), typeInfo);
             }
         }
     }

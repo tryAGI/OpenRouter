@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestResponseFormatVariant1 PickGrammar() => IsGrammar
-            ? Grammar!
+        public global::OpenRouter.ChatRequestResponseFormatVariant1 PickGrammar() => Grammar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Grammar' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestResponseFormatVariant2 PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::OpenRouter.ChatRequestResponseFormatVariant2 PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestResponseFormatVariant3 PickJsonSchema() => IsJsonSchema
-            ? JsonSchema!
+        public global::OpenRouter.ChatRequestResponseFormatVariant3 PickJsonSchema() => JsonSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestResponseFormatVariant4 PickPython() => IsPython
-            ? Python!
+        public global::OpenRouter.ChatRequestResponseFormatVariant4 PickPython() => Python is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Python' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestResponseFormatVariant5 PickText() => IsText
-            ? Text!
+        public global::OpenRouter.ChatRequestResponseFormatVariant5 PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsGrammar && grammar != null)
+            if (Grammar is { } __value0 && grammar != null)
             {
-                return grammar(Grammar!);
+                return grammar(__value0);
             }
-            else if (IsJsonObject && jsonObject != null)
+            else if (JsonObject is { } __value1 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value1);
             }
-            else if (IsJsonSchema && jsonSchema != null)
+            else if (JsonSchema is { } __value2 && jsonSchema != null)
             {
-                return jsonSchema(JsonSchema!);
+                return jsonSchema(__value2);
             }
-            else if (IsPython && python != null)
+            else if (Python is { } __value3 && python != null)
             {
-                return python(Python!);
+                return python(__value3);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value4 && text != null)
             {
-                return text(Text!);
+                return text(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsGrammar)
+            if (Grammar is { } __value0)
             {
-                grammar?.Invoke(Grammar!);
+                grammar?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value2)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value2);
             }
-            else if (IsPython)
+            else if (Python is { } __value3)
             {
-                python?.Invoke(Python!);
+                python?.Invoke(__value3);
             }
-            else if (IsText)
+            else if (Text is { } __value4)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsGrammar)
+            if (Grammar is { } __value0)
             {
-                grammar?.Invoke(Grammar!);
+                grammar?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value2)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value2);
             }
-            else if (IsPython)
+            else if (Python is { } __value3)
             {
-                python?.Invoke(Python!);
+                python?.Invoke(__value3);
             }
-            else if (IsText)
+            else if (Text is { } __value4)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value4);
             }
         }
 

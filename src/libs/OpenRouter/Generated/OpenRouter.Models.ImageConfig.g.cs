@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickImageConfigVariant1() => IsImageConfigVariant1
-            ? ImageConfigVariant1!
+        public string PickImageConfigVariant1() => ImageConfigVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public double PickImageConfigVariant2() => IsImageConfigVariant2
-            ? ImageConfigVariant2!.Value
+        public double PickImageConfigVariant2() => ImageConfigVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<object> PickImageConfigVariant3() => IsImageConfigVariant3
-            ? ImageConfigVariant3!
+        public global::System.Collections.Generic.IList<object> PickImageConfigVariant3() => ImageConfigVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageConfigVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -219,17 +219,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsImageConfigVariant1 && imageConfigVariant1 != null)
+            if (ImageConfigVariant1 is { } __value0 && imageConfigVariant1 != null)
             {
-                return imageConfigVariant1(ImageConfigVariant1!);
+                return imageConfigVariant1(__value0);
             }
-            else if (IsImageConfigVariant2 && imageConfigVariant2 != null)
+            else if (ImageConfigVariant2 is { } __value1 && imageConfigVariant2 != null)
             {
-                return imageConfigVariant2(ImageConfigVariant2!);
+                return imageConfigVariant2(__value1);
             }
-            else if (IsImageConfigVariant3 && imageConfigVariant3 != null)
+            else if (ImageConfigVariant3 is { } __value2 && imageConfigVariant3 != null)
             {
-                return imageConfigVariant3(ImageConfigVariant3!);
+                return imageConfigVariant3(__value2);
             }
 
             return default(TResult);
@@ -251,17 +251,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsImageConfigVariant1)
+            if (ImageConfigVariant1 is { } __value0)
             {
-                imageConfigVariant1?.Invoke(ImageConfigVariant1!);
+                imageConfigVariant1?.Invoke(__value0);
             }
-            else if (IsImageConfigVariant2)
+            else if (ImageConfigVariant2 is { } __value1)
             {
-                imageConfigVariant2?.Invoke(ImageConfigVariant2!);
+                imageConfigVariant2?.Invoke(__value1);
             }
-            else if (IsImageConfigVariant3)
+            else if (ImageConfigVariant3 is { } __value2)
             {
-                imageConfigVariant3?.Invoke(ImageConfigVariant3!);
+                imageConfigVariant3?.Invoke(__value2);
             }
         }
 
@@ -279,17 +279,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsImageConfigVariant1)
+            if (ImageConfigVariant1 is { } __value0)
             {
-                imageConfigVariant1?.Invoke(ImageConfigVariant1!);
+                imageConfigVariant1?.Invoke(__value0);
             }
-            else if (IsImageConfigVariant2)
+            else if (ImageConfigVariant2 is { } __value1)
             {
-                imageConfigVariant2?.Invoke(ImageConfigVariant2!);
+                imageConfigVariant2?.Invoke(__value1);
             }
-            else if (IsImageConfigVariant3)
+            else if (ImageConfigVariant3 is { } __value2)
             {
-                imageConfigVariant3?.Invoke(ImageConfigVariant3!);
+                imageConfigVariant3?.Invoke(__value2);
             }
         }
 

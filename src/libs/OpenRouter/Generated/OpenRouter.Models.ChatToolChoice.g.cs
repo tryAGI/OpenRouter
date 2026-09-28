@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatToolChoice0 PickChatToolChoice0() => IsChatToolChoice0
-            ? ChatToolChoice0!.Value
+        public global::OpenRouter.ChatToolChoice0 PickChatToolChoice0() => ChatToolChoice0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatToolChoice1 PickChatToolChoice1() => IsChatToolChoice1
-            ? ChatToolChoice1!.Value
+        public global::OpenRouter.ChatToolChoice1 PickChatToolChoice1() => ChatToolChoice1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatToolChoice2 PickChatToolChoice2() => IsChatToolChoice2
-            ? ChatToolChoice2!.Value
+        public global::OpenRouter.ChatToolChoice2 PickChatToolChoice2() => ChatToolChoice2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice2' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatNamedToolChoice PickChatNamedToolChoice() => IsChatNamedToolChoice
-            ? ChatNamedToolChoice!
+        public global::OpenRouter.ChatNamedToolChoice PickChatNamedToolChoice() => ChatNamedToolChoice is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatNamedToolChoice' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatServerToolChoice PickChatServerToolChoice() => IsChatServerToolChoice
-            ? ChatServerToolChoice!
+        public global::OpenRouter.ChatServerToolChoice PickChatServerToolChoice() => ChatServerToolChoice is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatServerToolChoice' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatToolChoice0 && chatToolChoice0 != null)
+            if (ChatToolChoice0 is { } __value0 && chatToolChoice0 != null)
             {
-                return chatToolChoice0(ChatToolChoice0!);
+                return chatToolChoice0(__value0);
             }
-            else if (IsChatToolChoice1 && chatToolChoice1 != null)
+            else if (ChatToolChoice1 is { } __value1 && chatToolChoice1 != null)
             {
-                return chatToolChoice1(ChatToolChoice1!);
+                return chatToolChoice1(__value1);
             }
-            else if (IsChatToolChoice2 && chatToolChoice2 != null)
+            else if (ChatToolChoice2 is { } __value2 && chatToolChoice2 != null)
             {
-                return chatToolChoice2(ChatToolChoice2!);
+                return chatToolChoice2(__value2);
             }
-            else if (IsChatNamedToolChoice && chatNamedToolChoice != null)
+            else if (ChatNamedToolChoice is { } __value3 && chatNamedToolChoice != null)
             {
-                return chatNamedToolChoice(ChatNamedToolChoice!);
+                return chatNamedToolChoice(__value3);
             }
-            else if (IsChatServerToolChoice && chatServerToolChoice != null)
+            else if (ChatServerToolChoice is { } __value4 && chatServerToolChoice != null)
             {
-                return chatServerToolChoice(ChatServerToolChoice!);
+                return chatServerToolChoice(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatToolChoice0)
+            if (ChatToolChoice0 is { } __value0)
             {
-                chatToolChoice0?.Invoke(ChatToolChoice0!);
+                chatToolChoice0?.Invoke(__value0);
             }
-            else if (IsChatToolChoice1)
+            else if (ChatToolChoice1 is { } __value1)
             {
-                chatToolChoice1?.Invoke(ChatToolChoice1!);
+                chatToolChoice1?.Invoke(__value1);
             }
-            else if (IsChatToolChoice2)
+            else if (ChatToolChoice2 is { } __value2)
             {
-                chatToolChoice2?.Invoke(ChatToolChoice2!);
+                chatToolChoice2?.Invoke(__value2);
             }
-            else if (IsChatNamedToolChoice)
+            else if (ChatNamedToolChoice is { } __value3)
             {
-                chatNamedToolChoice?.Invoke(ChatNamedToolChoice!);
+                chatNamedToolChoice?.Invoke(__value3);
             }
-            else if (IsChatServerToolChoice)
+            else if (ChatServerToolChoice is { } __value4)
             {
-                chatServerToolChoice?.Invoke(ChatServerToolChoice!);
+                chatServerToolChoice?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatToolChoice0)
+            if (ChatToolChoice0 is { } __value0)
             {
-                chatToolChoice0?.Invoke(ChatToolChoice0!);
+                chatToolChoice0?.Invoke(__value0);
             }
-            else if (IsChatToolChoice1)
+            else if (ChatToolChoice1 is { } __value1)
             {
-                chatToolChoice1?.Invoke(ChatToolChoice1!);
+                chatToolChoice1?.Invoke(__value1);
             }
-            else if (IsChatToolChoice2)
+            else if (ChatToolChoice2 is { } __value2)
             {
-                chatToolChoice2?.Invoke(ChatToolChoice2!);
+                chatToolChoice2?.Invoke(__value2);
             }
-            else if (IsChatNamedToolChoice)
+            else if (ChatNamedToolChoice is { } __value3)
             {
-                chatNamedToolChoice?.Invoke(ChatNamedToolChoice!);
+                chatNamedToolChoice?.Invoke(__value3);
             }
-            else if (IsChatServerToolChoice)
+            else if (ChatServerToolChoice is { } __value4)
             {
-                chatServerToolChoice?.Invoke(ChatServerToolChoice!);
+                chatServerToolChoice?.Invoke(__value4);
             }
         }
 

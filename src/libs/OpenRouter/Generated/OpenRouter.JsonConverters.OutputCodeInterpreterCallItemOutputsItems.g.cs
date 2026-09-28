@@ -130,13 +130,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputCodeInterpreterCallItemOutputsItems0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputCodeInterpreterCallItemOutputsItems0(), typeInfo);
             }
             else if (value.IsOutputCodeInterpreterCallItemOutputsItems1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputCodeInterpreterCallItemOutputsItems1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputCodeInterpreterCallItemOutputsItems1(), typeInfo);
             }
         }
     }

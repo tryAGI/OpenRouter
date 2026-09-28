@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ShellServerToolEnvironmentVariant1 PickContainerAuto() => IsContainerAuto
-            ? ContainerAuto!
+        public global::OpenRouter.ShellServerToolEnvironmentVariant1 PickContainerAuto() => ContainerAuto is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerAuto' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ShellServerToolEnvironmentVariant2 PickContainerReference() => IsContainerReference
-            ? ContainerReference!
+        public global::OpenRouter.ShellServerToolEnvironmentVariant2 PickContainerReference() => ContainerReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsContainerAuto && containerAuto != null)
+            if (ContainerAuto is { } __value0 && containerAuto != null)
             {
-                return containerAuto(ContainerAuto!);
+                return containerAuto(__value0);
             }
-            else if (IsContainerReference && containerReference != null)
+            else if (ContainerReference is { } __value1 && containerReference != null)
             {
-                return containerReference(ContainerReference!);
+                return containerReference(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsContainerAuto)
+            if (ContainerAuto is { } __value0)
             {
-                containerAuto?.Invoke(ContainerAuto!);
+                containerAuto?.Invoke(__value0);
             }
-            else if (IsContainerReference)
+            else if (ContainerReference is { } __value1)
             {
-                containerReference?.Invoke(ContainerReference!);
+                containerReference?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsContainerAuto)
+            if (ContainerAuto is { } __value0)
             {
-                containerAuto?.Invoke(ContainerAuto!);
+                containerAuto?.Invoke(__value0);
             }
-            else if (IsContainerReference)
+            else if (ContainerReference is { } __value1)
             {
-                containerReference?.Invoke(ContainerReference!);
+                containerReference?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickMessagesMessageParamContentVariant1() => IsMessagesMessageParamContentVariant1
-            ? MessagesMessageParamContentVariant1!
+        public string PickMessagesMessageParamContentVariant1() => MessagesMessageParamContentVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items> PickMessagesMessageParamContent1() => IsMessagesMessageParamContent1
-            ? MessagesMessageParamContent1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesMessageParamContentOneOf1Items> PickMessagesMessageParamContent1() => MessagesMessageParamContent1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContent1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentVariant1 && messagesMessageParamContentVariant1 != null)
+            if (MessagesMessageParamContentVariant1 is { } __value0 && messagesMessageParamContentVariant1 != null)
             {
-                return messagesMessageParamContentVariant1(MessagesMessageParamContentVariant1!);
+                return messagesMessageParamContentVariant1(__value0);
             }
-            else if (IsMessagesMessageParamContent1 && messagesMessageParamContent1 != null)
+            else if (MessagesMessageParamContent1 is { } __value1 && messagesMessageParamContent1 != null)
             {
-                return messagesMessageParamContent1(MessagesMessageParamContent1!);
+                return messagesMessageParamContent1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentVariant1)
+            if (MessagesMessageParamContentVariant1 is { } __value0)
             {
-                messagesMessageParamContentVariant1?.Invoke(MessagesMessageParamContentVariant1!);
+                messagesMessageParamContentVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContent1)
+            else if (MessagesMessageParamContent1 is { } __value1)
             {
-                messagesMessageParamContent1?.Invoke(MessagesMessageParamContent1!);
+                messagesMessageParamContent1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentVariant1)
+            if (MessagesMessageParamContentVariant1 is { } __value0)
             {
-                messagesMessageParamContentVariant1?.Invoke(MessagesMessageParamContentVariant1!);
+                messagesMessageParamContentVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContent1)
+            else if (MessagesMessageParamContent1 is { } __value1)
             {
-                messagesMessageParamContent1?.Invoke(MessagesMessageParamContent1!);
+                messagesMessageParamContent1?.Invoke(__value1);
             }
         }
 

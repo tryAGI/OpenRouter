@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1() => IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1
-            ? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1!
+        public string PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1() => AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public double PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2() => IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2
-            ? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2!.Value
+        public double PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2() => AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items> PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2() => IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2
-            ? AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2!
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueOneOf2Items> PickAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2() => AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -219,17 +219,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 && analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 != null)
+            if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 is { } __value0 && analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 != null)
             {
-                return analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1!);
+                return analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1(__value0);
             }
-            else if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 && analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 != null)
+            else if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 is { } __value1 && analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 != null)
             {
-                return analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2!);
+                return analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2(__value1);
             }
-            else if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 && analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 != null)
+            else if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 is { } __value2 && analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 != null)
             {
-                return analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2!);
+                return analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2(__value2);
             }
 
             return default(TResult);
@@ -251,17 +251,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1)
+            if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 is { } __value0)
             {
-                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1?.Invoke(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1!);
+                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1?.Invoke(__value0);
             }
-            else if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2)
+            else if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 is { } __value1)
             {
-                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2?.Invoke(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2!);
+                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2?.Invoke(__value1);
             }
-            else if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2)
+            else if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 is { } __value2)
             {
-                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2?.Invoke(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2!);
+                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2?.Invoke(__value2);
             }
         }
 
@@ -279,17 +279,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1)
+            if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1 is { } __value0)
             {
-                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1?.Invoke(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1!);
+                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant1?.Invoke(__value0);
             }
-            else if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2)
+            else if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2 is { } __value1)
             {
-                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2?.Invoke(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2!);
+                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValueVariant2?.Invoke(__value1);
             }
-            else if (IsAnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2)
+            else if (AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2 is { } __value2)
             {
-                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2?.Invoke(AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2!);
+                analyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItemsValue2?.Invoke(__value2);
             }
         }
 

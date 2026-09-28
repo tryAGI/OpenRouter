@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickCustomToolCallOutputItemOutputVariant1() => IsCustomToolCallOutputItemOutputVariant1
-            ? CustomToolCallOutputItemOutputVariant1!
+        public string PickCustomToolCallOutputItemOutputVariant1() => CustomToolCallOutputItemOutputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItemOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items> PickCustomToolCallOutputItemOutput1() => IsCustomToolCallOutputItemOutput1
-            ? CustomToolCallOutputItemOutput1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.CustomToolCallOutputItemOutputOneOf1Items> PickCustomToolCallOutputItemOutput1() => CustomToolCallOutputItemOutput1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItemOutput1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCustomToolCallOutputItemOutputVariant1 && customToolCallOutputItemOutputVariant1 != null)
+            if (CustomToolCallOutputItemOutputVariant1 is { } __value0 && customToolCallOutputItemOutputVariant1 != null)
             {
-                return customToolCallOutputItemOutputVariant1(CustomToolCallOutputItemOutputVariant1!);
+                return customToolCallOutputItemOutputVariant1(__value0);
             }
-            else if (IsCustomToolCallOutputItemOutput1 && customToolCallOutputItemOutput1 != null)
+            else if (CustomToolCallOutputItemOutput1 is { } __value1 && customToolCallOutputItemOutput1 != null)
             {
-                return customToolCallOutputItemOutput1(CustomToolCallOutputItemOutput1!);
+                return customToolCallOutputItemOutput1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCustomToolCallOutputItemOutputVariant1)
+            if (CustomToolCallOutputItemOutputVariant1 is { } __value0)
             {
-                customToolCallOutputItemOutputVariant1?.Invoke(CustomToolCallOutputItemOutputVariant1!);
+                customToolCallOutputItemOutputVariant1?.Invoke(__value0);
             }
-            else if (IsCustomToolCallOutputItemOutput1)
+            else if (CustomToolCallOutputItemOutput1 is { } __value1)
             {
-                customToolCallOutputItemOutput1?.Invoke(CustomToolCallOutputItemOutput1!);
+                customToolCallOutputItemOutput1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCustomToolCallOutputItemOutputVariant1)
+            if (CustomToolCallOutputItemOutputVariant1 is { } __value0)
             {
-                customToolCallOutputItemOutputVariant1?.Invoke(CustomToolCallOutputItemOutputVariant1!);
+                customToolCallOutputItemOutputVariant1?.Invoke(__value0);
             }
-            else if (IsCustomToolCallOutputItemOutput1)
+            else if (CustomToolCallOutputItemOutput1 is { } __value1)
             {
-                customToolCallOutputItemOutput1?.Invoke(CustomToolCallOutputItemOutput1!);
+                customToolCallOutputItemOutput1?.Invoke(__value1);
             }
         }
 

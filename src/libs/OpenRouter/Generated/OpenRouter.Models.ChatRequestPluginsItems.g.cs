@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant1 PickAutoBetaRouter() => IsAutoBetaRouter
-            ? AutoBetaRouter!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant1 PickAutoBetaRouter() => AutoBetaRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoBetaRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant2 PickAutoRouter() => IsAutoRouter
-            ? AutoRouter!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant2 PickAutoRouter() => AutoRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant3 PickContextCompression() => IsContextCompression
-            ? ContextCompression!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant3 PickContextCompression() => ContextCompression is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContextCompression' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant4 PickFileParser() => IsFileParser
-            ? FileParser!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant4 PickFileParser() => FileParser is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileParser' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant5 PickFusion() => IsFusion
-            ? Fusion!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant5 PickFusion() => Fusion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant6 PickModeration() => IsModeration
-            ? Moderation!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant6 PickModeration() => Moderation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Moderation' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant7 PickParetoRouter() => IsParetoRouter
-            ? ParetoRouter!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant7 PickParetoRouter() => ParetoRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ParetoRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant8 PickResponseHealing() => IsResponseHealing
-            ? ResponseHealing!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant8 PickResponseHealing() => ResponseHealing is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseHealing' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant9 PickWeb() => IsWeb
-            ? Web!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant9 PickWeb() => Web is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Web' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatRequestPluginsItemsVariant10 PickWebFetch() => IsWebFetch
-            ? WebFetch!
+        public global::OpenRouter.ChatRequestPluginsItemsVariant10 PickWebFetch() => WebFetch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -705,45 +705,45 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAutoBetaRouter && autoBetaRouter != null)
+            if (AutoBetaRouter is { } __value0 && autoBetaRouter != null)
             {
-                return autoBetaRouter(AutoBetaRouter!);
+                return autoBetaRouter(__value0);
             }
-            else if (IsAutoRouter && autoRouter != null)
+            else if (AutoRouter is { } __value1 && autoRouter != null)
             {
-                return autoRouter(AutoRouter!);
+                return autoRouter(__value1);
             }
-            else if (IsContextCompression && contextCompression != null)
+            else if (ContextCompression is { } __value2 && contextCompression != null)
             {
-                return contextCompression(ContextCompression!);
+                return contextCompression(__value2);
             }
-            else if (IsFileParser && fileParser != null)
+            else if (FileParser is { } __value3 && fileParser != null)
             {
-                return fileParser(FileParser!);
+                return fileParser(__value3);
             }
-            else if (IsFusion && fusion != null)
+            else if (Fusion is { } __value4 && fusion != null)
             {
-                return fusion(Fusion!);
+                return fusion(__value4);
             }
-            else if (IsModeration && moderation != null)
+            else if (Moderation is { } __value5 && moderation != null)
             {
-                return moderation(Moderation!);
+                return moderation(__value5);
             }
-            else if (IsParetoRouter && paretoRouter != null)
+            else if (ParetoRouter is { } __value6 && paretoRouter != null)
             {
-                return paretoRouter(ParetoRouter!);
+                return paretoRouter(__value6);
             }
-            else if (IsResponseHealing && responseHealing != null)
+            else if (ResponseHealing is { } __value7 && responseHealing != null)
             {
-                return responseHealing(ResponseHealing!);
+                return responseHealing(__value7);
             }
-            else if (IsWeb && web != null)
+            else if (Web is { } __value8 && web != null)
             {
-                return web(Web!);
+                return web(__value8);
             }
-            else if (IsWebFetch && webFetch != null)
+            else if (WebFetch is { } __value9 && webFetch != null)
             {
-                return webFetch(WebFetch!);
+                return webFetch(__value9);
             }
 
             return default(TResult);
@@ -779,45 +779,45 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAutoBetaRouter)
+            if (AutoBetaRouter is { } __value0)
             {
-                autoBetaRouter?.Invoke(AutoBetaRouter!);
+                autoBetaRouter?.Invoke(__value0);
             }
-            else if (IsAutoRouter)
+            else if (AutoRouter is { } __value1)
             {
-                autoRouter?.Invoke(AutoRouter!);
+                autoRouter?.Invoke(__value1);
             }
-            else if (IsContextCompression)
+            else if (ContextCompression is { } __value2)
             {
-                contextCompression?.Invoke(ContextCompression!);
+                contextCompression?.Invoke(__value2);
             }
-            else if (IsFileParser)
+            else if (FileParser is { } __value3)
             {
-                fileParser?.Invoke(FileParser!);
+                fileParser?.Invoke(__value3);
             }
-            else if (IsFusion)
+            else if (Fusion is { } __value4)
             {
-                fusion?.Invoke(Fusion!);
+                fusion?.Invoke(__value4);
             }
-            else if (IsModeration)
+            else if (Moderation is { } __value5)
             {
-                moderation?.Invoke(Moderation!);
+                moderation?.Invoke(__value5);
             }
-            else if (IsParetoRouter)
+            else if (ParetoRouter is { } __value6)
             {
-                paretoRouter?.Invoke(ParetoRouter!);
+                paretoRouter?.Invoke(__value6);
             }
-            else if (IsResponseHealing)
+            else if (ResponseHealing is { } __value7)
             {
-                responseHealing?.Invoke(ResponseHealing!);
+                responseHealing?.Invoke(__value7);
             }
-            else if (IsWeb)
+            else if (Web is { } __value8)
             {
-                web?.Invoke(Web!);
+                web?.Invoke(__value8);
             }
-            else if (IsWebFetch)
+            else if (WebFetch is { } __value9)
             {
-                webFetch?.Invoke(WebFetch!);
+                webFetch?.Invoke(__value9);
             }
         }
 
@@ -842,45 +842,45 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAutoBetaRouter)
+            if (AutoBetaRouter is { } __value0)
             {
-                autoBetaRouter?.Invoke(AutoBetaRouter!);
+                autoBetaRouter?.Invoke(__value0);
             }
-            else if (IsAutoRouter)
+            else if (AutoRouter is { } __value1)
             {
-                autoRouter?.Invoke(AutoRouter!);
+                autoRouter?.Invoke(__value1);
             }
-            else if (IsContextCompression)
+            else if (ContextCompression is { } __value2)
             {
-                contextCompression?.Invoke(ContextCompression!);
+                contextCompression?.Invoke(__value2);
             }
-            else if (IsFileParser)
+            else if (FileParser is { } __value3)
             {
-                fileParser?.Invoke(FileParser!);
+                fileParser?.Invoke(__value3);
             }
-            else if (IsFusion)
+            else if (Fusion is { } __value4)
             {
-                fusion?.Invoke(Fusion!);
+                fusion?.Invoke(__value4);
             }
-            else if (IsModeration)
+            else if (Moderation is { } __value5)
             {
-                moderation?.Invoke(Moderation!);
+                moderation?.Invoke(__value5);
             }
-            else if (IsParetoRouter)
+            else if (ParetoRouter is { } __value6)
             {
-                paretoRouter?.Invoke(ParetoRouter!);
+                paretoRouter?.Invoke(__value6);
             }
-            else if (IsResponseHealing)
+            else if (ResponseHealing is { } __value7)
             {
-                responseHealing?.Invoke(ResponseHealing!);
+                responseHealing?.Invoke(__value7);
             }
-            else if (IsWeb)
+            else if (Web is { } __value8)
             {
-                web?.Invoke(Web!);
+                web?.Invoke(__value8);
             }
-            else if (IsWebFetch)
+            else if (WebFetch is { } __value9)
             {
-                webFetch?.Invoke(WebFetch!);
+                webFetch?.Invoke(__value9);
             }
         }
 

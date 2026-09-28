@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant1 PickBashCodeExecutionResult() => IsBashCodeExecutionResult
-            ? BashCodeExecutionResult!
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant1 PickBashCodeExecutionResult() => BashCodeExecutionResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant2 PickBashCodeExecutionToolResultError() => IsBashCodeExecutionToolResultError
-            ? BashCodeExecutionToolResultError!
+        public global::OpenRouter.AnthropicBashCodeExecutionContentVariant2 PickBashCodeExecutionToolResultError() => BashCodeExecutionToolResultError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResultError' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBashCodeExecutionResult && bashCodeExecutionResult != null)
+            if (BashCodeExecutionResult is { } __value0 && bashCodeExecutionResult != null)
             {
-                return bashCodeExecutionResult(BashCodeExecutionResult!);
+                return bashCodeExecutionResult(__value0);
             }
-            else if (IsBashCodeExecutionToolResultError && bashCodeExecutionToolResultError != null)
+            else if (BashCodeExecutionToolResultError is { } __value1 && bashCodeExecutionToolResultError != null)
             {
-                return bashCodeExecutionToolResultError(BashCodeExecutionToolResultError!);
+                return bashCodeExecutionToolResultError(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBashCodeExecutionResult)
+            if (BashCodeExecutionResult is { } __value0)
             {
-                bashCodeExecutionResult?.Invoke(BashCodeExecutionResult!);
+                bashCodeExecutionResult?.Invoke(__value0);
             }
-            else if (IsBashCodeExecutionToolResultError)
+            else if (BashCodeExecutionToolResultError is { } __value1)
             {
-                bashCodeExecutionToolResultError?.Invoke(BashCodeExecutionToolResultError!);
+                bashCodeExecutionToolResultError?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBashCodeExecutionResult)
+            if (BashCodeExecutionResult is { } __value0)
             {
-                bashCodeExecutionResult?.Invoke(BashCodeExecutionResult!);
+                bashCodeExecutionResult?.Invoke(__value0);
             }
-            else if (IsBashCodeExecutionToolResultError)
+            else if (BashCodeExecutionToolResultError is { } __value1)
             {
-                bashCodeExecutionToolResultError?.Invoke(BashCodeExecutionToolResultError!);
+                bashCodeExecutionToolResultError?.Invoke(__value1);
             }
         }
 

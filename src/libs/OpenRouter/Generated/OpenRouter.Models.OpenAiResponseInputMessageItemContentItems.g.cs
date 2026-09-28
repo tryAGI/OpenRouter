@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1 PickInputAudio() => IsInputAudio
-            ? InputAudio!
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant1 PickInputAudio() => InputAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2 PickInputFile() => IsInputFile
-            ? InputFile!
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant2 PickInputFile() => InputFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3 PickInputImage() => IsInputImage
-            ? InputImage!
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant3 PickInputImage() => InputImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4 PickInputText() => IsInputText
-            ? InputText!
+        public global::OpenRouter.OpenAiResponseInputMessageItemContentItemsVariant4 PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputAudio && inputAudio != null)
+            if (InputAudio is { } __value0 && inputAudio != null)
             {
-                return inputAudio(InputAudio!);
+                return inputAudio(__value0);
             }
-            else if (IsInputFile && inputFile != null)
+            else if (InputFile is { } __value1 && inputFile != null)
             {
-                return inputFile(InputFile!);
+                return inputFile(__value1);
             }
-            else if (IsInputImage && inputImage != null)
+            else if (InputImage is { } __value2 && inputImage != null)
             {
-                return inputImage(InputImage!);
+                return inputImage(__value2);
             }
-            else if (IsInputText && inputText != null)
+            else if (InputText is { } __value3 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputAudio)
+            if (InputAudio is { } __value0)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value0);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value1)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value1);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value2)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value2);
             }
-            else if (IsInputText)
+            else if (InputText is { } __value3)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputAudio)
+            if (InputAudio is { } __value0)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value0);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value1)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value1);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value2)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value2);
             }
-            else if (IsInputText)
+            else if (InputText is { } __value3)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value3);
             }
         }
 

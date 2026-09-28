@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
-            ? ProviderName!.Value
+        public global::OpenRouter.ProviderName PickProviderName() => ProviderName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2() => IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2
-            ? RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!
+        public string PickRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2() => RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName && providerName != null)
+            if (ProviderName is { } __value0 && providerName != null)
             {
-                return providerName(ProviderName!);
+                return providerName(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 && rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 != null)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 is { } __value1 && rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 != null)
             {
-                return rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2(RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!);
+                return rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 is { } __value1)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!);
+                rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2 is { } __value1)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2!);
+                rerankPostRequestBodyContentApplicationJsonSchemaProviderIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 

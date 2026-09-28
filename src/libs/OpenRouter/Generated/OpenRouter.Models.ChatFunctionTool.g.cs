@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatFunctionTool0 PickChatFunctionTool0() => IsChatFunctionTool0
-            ? ChatFunctionTool0!
+        public global::OpenRouter.ChatFunctionTool0 PickChatFunctionTool0() => ChatFunctionTool0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFunctionTool0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AdvisorServerToolOpenRouter PickAdvisorServerToolOpenRouter() => IsAdvisorServerToolOpenRouter
-            ? AdvisorServerToolOpenRouter!
+        public global::OpenRouter.AdvisorServerToolOpenRouter PickAdvisorServerToolOpenRouter() => AdvisorServerToolOpenRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorServerToolOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.BashServerTool PickBashServerTool() => IsBashServerTool
-            ? BashServerTool!
+        public global::OpenRouter.BashServerTool PickBashServerTool() => BashServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
-            ? DatetimeServerTool!
+        public global::OpenRouter.DatetimeServerTool PickDatetimeServerTool() => DatetimeServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FilesServerTool PickFilesServerTool() => IsFilesServerTool
-            ? FilesServerTool!
+        public global::OpenRouter.FilesServerTool PickFilesServerTool() => FilesServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilesServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FusionServerToolOpenRouter PickFusionServerToolOpenRouter() => IsFusionServerToolOpenRouter
-            ? FusionServerToolOpenRouter!
+        public global::OpenRouter.FusionServerToolOpenRouter PickFusionServerToolOpenRouter() => FusionServerToolOpenRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FusionServerToolOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerToolOpenRouter() => IsImageGenerationServerToolOpenRouter
-            ? ImageGenerationServerToolOpenRouter!
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerToolOpenRouter() => ImageGenerationServerToolOpenRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerToolOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatSearchModelsServerTool PickChatSearchModelsServerTool() => IsChatSearchModelsServerTool
-            ? ChatSearchModelsServerTool!
+        public global::OpenRouter.ChatSearchModelsServerTool PickChatSearchModelsServerTool() => ChatSearchModelsServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSearchModelsServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.SubagentServerToolOpenRouter PickSubagentServerToolOpenRouter() => IsSubagentServerToolOpenRouter
-            ? SubagentServerToolOpenRouter!
+        public global::OpenRouter.SubagentServerToolOpenRouter PickSubagentServerToolOpenRouter() => SubagentServerToolOpenRouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SubagentServerToolOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.WebFetchServerTool PickWebFetchServerTool() => IsWebFetchServerTool
-            ? WebFetchServerTool!
+        public global::OpenRouter.WebFetchServerTool PickWebFetchServerTool() => WebFetchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -412,8 +412,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServerTool() => IsOpenRouterWebSearchServerTool
-            ? OpenRouterWebSearchServerTool!
+        public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServerTool() => OpenRouterWebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenRouterWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -449,8 +449,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatWebSearchShorthand PickChatWebSearchShorthand() => IsChatWebSearchShorthand
-            ? ChatWebSearchShorthand!
+        public global::OpenRouter.ChatWebSearchShorthand PickChatWebSearchShorthand() => ChatWebSearchShorthand is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatWebSearchShorthand' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -827,53 +827,53 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatFunctionTool0 && chatFunctionTool0 != null)
+            if (ChatFunctionTool0 is { } __value0 && chatFunctionTool0 != null)
             {
-                return chatFunctionTool0(ChatFunctionTool0!);
+                return chatFunctionTool0(__value0);
             }
-            else if (IsAdvisorServerToolOpenRouter && advisorServerToolOpenRouter != null)
+            else if (AdvisorServerToolOpenRouter is { } __value1 && advisorServerToolOpenRouter != null)
             {
-                return advisorServerToolOpenRouter(AdvisorServerToolOpenRouter!);
+                return advisorServerToolOpenRouter(__value1);
             }
-            else if (IsBashServerTool && bashServerTool != null)
+            else if (BashServerTool is { } __value2 && bashServerTool != null)
             {
-                return bashServerTool(BashServerTool!);
+                return bashServerTool(__value2);
             }
-            else if (IsDatetimeServerTool && datetimeServerTool != null)
+            else if (DatetimeServerTool is { } __value3 && datetimeServerTool != null)
             {
-                return datetimeServerTool(DatetimeServerTool!);
+                return datetimeServerTool(__value3);
             }
-            else if (IsFilesServerTool && filesServerTool != null)
+            else if (FilesServerTool is { } __value4 && filesServerTool != null)
             {
-                return filesServerTool(FilesServerTool!);
+                return filesServerTool(__value4);
             }
-            else if (IsFusionServerToolOpenRouter && fusionServerToolOpenRouter != null)
+            else if (FusionServerToolOpenRouter is { } __value5 && fusionServerToolOpenRouter != null)
             {
-                return fusionServerToolOpenRouter(FusionServerToolOpenRouter!);
+                return fusionServerToolOpenRouter(__value5);
             }
-            else if (IsImageGenerationServerToolOpenRouter && imageGenerationServerToolOpenRouter != null)
+            else if (ImageGenerationServerToolOpenRouter is { } __value6 && imageGenerationServerToolOpenRouter != null)
             {
-                return imageGenerationServerToolOpenRouter(ImageGenerationServerToolOpenRouter!);
+                return imageGenerationServerToolOpenRouter(__value6);
             }
-            else if (IsChatSearchModelsServerTool && chatSearchModelsServerTool != null)
+            else if (ChatSearchModelsServerTool is { } __value7 && chatSearchModelsServerTool != null)
             {
-                return chatSearchModelsServerTool(ChatSearchModelsServerTool!);
+                return chatSearchModelsServerTool(__value7);
             }
-            else if (IsSubagentServerToolOpenRouter && subagentServerToolOpenRouter != null)
+            else if (SubagentServerToolOpenRouter is { } __value8 && subagentServerToolOpenRouter != null)
             {
-                return subagentServerToolOpenRouter(SubagentServerToolOpenRouter!);
+                return subagentServerToolOpenRouter(__value8);
             }
-            else if (IsWebFetchServerTool && webFetchServerTool != null)
+            else if (WebFetchServerTool is { } __value9 && webFetchServerTool != null)
             {
-                return webFetchServerTool(WebFetchServerTool!);
+                return webFetchServerTool(__value9);
             }
-            else if (IsOpenRouterWebSearchServerTool && openRouterWebSearchServerTool != null)
+            else if (OpenRouterWebSearchServerTool is { } __value10 && openRouterWebSearchServerTool != null)
             {
-                return openRouterWebSearchServerTool(OpenRouterWebSearchServerTool!);
+                return openRouterWebSearchServerTool(__value10);
             }
-            else if (IsChatWebSearchShorthand && chatWebSearchShorthand != null)
+            else if (ChatWebSearchShorthand is { } __value11 && chatWebSearchShorthand != null)
             {
-                return chatWebSearchShorthand(ChatWebSearchShorthand!);
+                return chatWebSearchShorthand(__value11);
             }
 
             return default(TResult);
@@ -913,53 +913,53 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatFunctionTool0)
+            if (ChatFunctionTool0 is { } __value0)
             {
-                chatFunctionTool0?.Invoke(ChatFunctionTool0!);
+                chatFunctionTool0?.Invoke(__value0);
             }
-            else if (IsAdvisorServerToolOpenRouter)
+            else if (AdvisorServerToolOpenRouter is { } __value1)
             {
-                advisorServerToolOpenRouter?.Invoke(AdvisorServerToolOpenRouter!);
+                advisorServerToolOpenRouter?.Invoke(__value1);
             }
-            else if (IsBashServerTool)
+            else if (BashServerTool is { } __value2)
             {
-                bashServerTool?.Invoke(BashServerTool!);
+                bashServerTool?.Invoke(__value2);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value3)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value3);
             }
-            else if (IsFilesServerTool)
+            else if (FilesServerTool is { } __value4)
             {
-                filesServerTool?.Invoke(FilesServerTool!);
+                filesServerTool?.Invoke(__value4);
             }
-            else if (IsFusionServerToolOpenRouter)
+            else if (FusionServerToolOpenRouter is { } __value5)
             {
-                fusionServerToolOpenRouter?.Invoke(FusionServerToolOpenRouter!);
+                fusionServerToolOpenRouter?.Invoke(__value5);
             }
-            else if (IsImageGenerationServerToolOpenRouter)
+            else if (ImageGenerationServerToolOpenRouter is { } __value6)
             {
-                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+                imageGenerationServerToolOpenRouter?.Invoke(__value6);
             }
-            else if (IsChatSearchModelsServerTool)
+            else if (ChatSearchModelsServerTool is { } __value7)
             {
-                chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
+                chatSearchModelsServerTool?.Invoke(__value7);
             }
-            else if (IsSubagentServerToolOpenRouter)
+            else if (SubagentServerToolOpenRouter is { } __value8)
             {
-                subagentServerToolOpenRouter?.Invoke(SubagentServerToolOpenRouter!);
+                subagentServerToolOpenRouter?.Invoke(__value8);
             }
-            else if (IsWebFetchServerTool)
+            else if (WebFetchServerTool is { } __value9)
             {
-                webFetchServerTool?.Invoke(WebFetchServerTool!);
+                webFetchServerTool?.Invoke(__value9);
             }
-            else if (IsOpenRouterWebSearchServerTool)
+            else if (OpenRouterWebSearchServerTool is { } __value10)
             {
-                openRouterWebSearchServerTool?.Invoke(OpenRouterWebSearchServerTool!);
+                openRouterWebSearchServerTool?.Invoke(__value10);
             }
-            else if (IsChatWebSearchShorthand)
+            else if (ChatWebSearchShorthand is { } __value11)
             {
-                chatWebSearchShorthand?.Invoke(ChatWebSearchShorthand!);
+                chatWebSearchShorthand?.Invoke(__value11);
             }
         }
 
@@ -986,53 +986,53 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatFunctionTool0)
+            if (ChatFunctionTool0 is { } __value0)
             {
-                chatFunctionTool0?.Invoke(ChatFunctionTool0!);
+                chatFunctionTool0?.Invoke(__value0);
             }
-            else if (IsAdvisorServerToolOpenRouter)
+            else if (AdvisorServerToolOpenRouter is { } __value1)
             {
-                advisorServerToolOpenRouter?.Invoke(AdvisorServerToolOpenRouter!);
+                advisorServerToolOpenRouter?.Invoke(__value1);
             }
-            else if (IsBashServerTool)
+            else if (BashServerTool is { } __value2)
             {
-                bashServerTool?.Invoke(BashServerTool!);
+                bashServerTool?.Invoke(__value2);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value3)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value3);
             }
-            else if (IsFilesServerTool)
+            else if (FilesServerTool is { } __value4)
             {
-                filesServerTool?.Invoke(FilesServerTool!);
+                filesServerTool?.Invoke(__value4);
             }
-            else if (IsFusionServerToolOpenRouter)
+            else if (FusionServerToolOpenRouter is { } __value5)
             {
-                fusionServerToolOpenRouter?.Invoke(FusionServerToolOpenRouter!);
+                fusionServerToolOpenRouter?.Invoke(__value5);
             }
-            else if (IsImageGenerationServerToolOpenRouter)
+            else if (ImageGenerationServerToolOpenRouter is { } __value6)
             {
-                imageGenerationServerToolOpenRouter?.Invoke(ImageGenerationServerToolOpenRouter!);
+                imageGenerationServerToolOpenRouter?.Invoke(__value6);
             }
-            else if (IsChatSearchModelsServerTool)
+            else if (ChatSearchModelsServerTool is { } __value7)
             {
-                chatSearchModelsServerTool?.Invoke(ChatSearchModelsServerTool!);
+                chatSearchModelsServerTool?.Invoke(__value7);
             }
-            else if (IsSubagentServerToolOpenRouter)
+            else if (SubagentServerToolOpenRouter is { } __value8)
             {
-                subagentServerToolOpenRouter?.Invoke(SubagentServerToolOpenRouter!);
+                subagentServerToolOpenRouter?.Invoke(__value8);
             }
-            else if (IsWebFetchServerTool)
+            else if (WebFetchServerTool is { } __value9)
             {
-                webFetchServerTool?.Invoke(WebFetchServerTool!);
+                webFetchServerTool?.Invoke(__value9);
             }
-            else if (IsOpenRouterWebSearchServerTool)
+            else if (OpenRouterWebSearchServerTool is { } __value10)
             {
-                openRouterWebSearchServerTool?.Invoke(OpenRouterWebSearchServerTool!);
+                openRouterWebSearchServerTool?.Invoke(__value10);
             }
-            else if (IsChatWebSearchShorthand)
+            else if (ChatWebSearchShorthand is { } __value11)
             {
-                chatWebSearchShorthand?.Invoke(ChatWebSearchShorthand!);
+                chatWebSearchShorthand?.Invoke(__value11);
             }
         }
 

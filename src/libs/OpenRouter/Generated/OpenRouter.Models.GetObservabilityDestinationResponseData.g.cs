@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant1 PickArize() => IsArize
-            ? Arize!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant1 PickArize() => Arize is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Arize' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant2 PickBraintrust() => IsBraintrust
-            ? Braintrust!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant2 PickBraintrust() => Braintrust is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Braintrust' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant3 PickClickhouse() => IsClickhouse
-            ? Clickhouse!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant3 PickClickhouse() => Clickhouse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Clickhouse' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant4 PickDatadog() => IsDatadog
-            ? Datadog!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant4 PickDatadog() => Datadog is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Datadog' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant5 PickGrafana() => IsGrafana
-            ? Grafana!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant5 PickGrafana() => Grafana is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Grafana' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant6 PickLangfuse() => IsLangfuse
-            ? Langfuse!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant6 PickLangfuse() => Langfuse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Langfuse' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant7 PickLangsmith() => IsLangsmith
-            ? Langsmith!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant7 PickLangsmith() => Langsmith is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Langsmith' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant8 PickNewrelic() => IsNewrelic
-            ? Newrelic!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant8 PickNewrelic() => Newrelic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Newrelic' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant9 PickOpik() => IsOpik
-            ? Opik!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant9 PickOpik() => Opik is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Opik' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant10 PickOtelCollector() => IsOtelCollector
-            ? OtelCollector!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant10 PickOtelCollector() => OtelCollector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OtelCollector' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant11 PickPosthog() => IsPosthog
-            ? Posthog!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant11 PickPosthog() => Posthog is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Posthog' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant12 PickRamp() => IsRamp
-            ? Ramp!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant12 PickRamp() => Ramp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ramp' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant13 PickS3() => IsS3
-            ? S3!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant13 PickS3() => S3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant14 PickSentry() => IsSentry
-            ? Sentry!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant14 PickSentry() => Sentry is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sentry' but the value was {ToString()}.");
 
         /// <summary>
@@ -565,8 +565,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant15 PickSnowflake() => IsSnowflake
-            ? Snowflake!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant15 PickSnowflake() => Snowflake is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Snowflake' but the value was {ToString()}.");
 
         /// <summary>
@@ -602,8 +602,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant16 PickWeave() => IsWeave
-            ? Weave!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant16 PickWeave() => Weave is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Weave' but the value was {ToString()}.");
 
         /// <summary>
@@ -639,8 +639,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant17 PickWebhook() => IsWebhook
-            ? Webhook!
+        public global::OpenRouter.GetObservabilityDestinationResponseDataVariant17 PickWebhook() => Webhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -1160,73 +1160,73 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsArize && arize != null)
+            if (Arize is { } __value0 && arize != null)
             {
-                return arize(Arize!);
+                return arize(__value0);
             }
-            else if (IsBraintrust && braintrust != null)
+            else if (Braintrust is { } __value1 && braintrust != null)
             {
-                return braintrust(Braintrust!);
+                return braintrust(__value1);
             }
-            else if (IsClickhouse && clickhouse != null)
+            else if (Clickhouse is { } __value2 && clickhouse != null)
             {
-                return clickhouse(Clickhouse!);
+                return clickhouse(__value2);
             }
-            else if (IsDatadog && datadog != null)
+            else if (Datadog is { } __value3 && datadog != null)
             {
-                return datadog(Datadog!);
+                return datadog(__value3);
             }
-            else if (IsGrafana && grafana != null)
+            else if (Grafana is { } __value4 && grafana != null)
             {
-                return grafana(Grafana!);
+                return grafana(__value4);
             }
-            else if (IsLangfuse && langfuse != null)
+            else if (Langfuse is { } __value5 && langfuse != null)
             {
-                return langfuse(Langfuse!);
+                return langfuse(__value5);
             }
-            else if (IsLangsmith && langsmith != null)
+            else if (Langsmith is { } __value6 && langsmith != null)
             {
-                return langsmith(Langsmith!);
+                return langsmith(__value6);
             }
-            else if (IsNewrelic && newrelic != null)
+            else if (Newrelic is { } __value7 && newrelic != null)
             {
-                return newrelic(Newrelic!);
+                return newrelic(__value7);
             }
-            else if (IsOpik && opik != null)
+            else if (Opik is { } __value8 && opik != null)
             {
-                return opik(Opik!);
+                return opik(__value8);
             }
-            else if (IsOtelCollector && otelCollector != null)
+            else if (OtelCollector is { } __value9 && otelCollector != null)
             {
-                return otelCollector(OtelCollector!);
+                return otelCollector(__value9);
             }
-            else if (IsPosthog && posthog != null)
+            else if (Posthog is { } __value10 && posthog != null)
             {
-                return posthog(Posthog!);
+                return posthog(__value10);
             }
-            else if (IsRamp && ramp != null)
+            else if (Ramp is { } __value11 && ramp != null)
             {
-                return ramp(Ramp!);
+                return ramp(__value11);
             }
-            else if (IsS3 && s3 != null)
+            else if (S3 is { } __value12 && s3 != null)
             {
-                return s3(S3!);
+                return s3(__value12);
             }
-            else if (IsSentry && sentry != null)
+            else if (Sentry is { } __value13 && sentry != null)
             {
-                return sentry(Sentry!);
+                return sentry(__value13);
             }
-            else if (IsSnowflake && snowflake != null)
+            else if (Snowflake is { } __value14 && snowflake != null)
             {
-                return snowflake(Snowflake!);
+                return snowflake(__value14);
             }
-            else if (IsWeave && weave != null)
+            else if (Weave is { } __value15 && weave != null)
             {
-                return weave(Weave!);
+                return weave(__value15);
             }
-            else if (IsWebhook && webhook != null)
+            else if (Webhook is { } __value16 && webhook != null)
             {
-                return webhook(Webhook!);
+                return webhook(__value16);
             }
 
             return default(TResult);
@@ -1276,73 +1276,73 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsArize)
+            if (Arize is { } __value0)
             {
-                arize?.Invoke(Arize!);
+                arize?.Invoke(__value0);
             }
-            else if (IsBraintrust)
+            else if (Braintrust is { } __value1)
             {
-                braintrust?.Invoke(Braintrust!);
+                braintrust?.Invoke(__value1);
             }
-            else if (IsClickhouse)
+            else if (Clickhouse is { } __value2)
             {
-                clickhouse?.Invoke(Clickhouse!);
+                clickhouse?.Invoke(__value2);
             }
-            else if (IsDatadog)
+            else if (Datadog is { } __value3)
             {
-                datadog?.Invoke(Datadog!);
+                datadog?.Invoke(__value3);
             }
-            else if (IsGrafana)
+            else if (Grafana is { } __value4)
             {
-                grafana?.Invoke(Grafana!);
+                grafana?.Invoke(__value4);
             }
-            else if (IsLangfuse)
+            else if (Langfuse is { } __value5)
             {
-                langfuse?.Invoke(Langfuse!);
+                langfuse?.Invoke(__value5);
             }
-            else if (IsLangsmith)
+            else if (Langsmith is { } __value6)
             {
-                langsmith?.Invoke(Langsmith!);
+                langsmith?.Invoke(__value6);
             }
-            else if (IsNewrelic)
+            else if (Newrelic is { } __value7)
             {
-                newrelic?.Invoke(Newrelic!);
+                newrelic?.Invoke(__value7);
             }
-            else if (IsOpik)
+            else if (Opik is { } __value8)
             {
-                opik?.Invoke(Opik!);
+                opik?.Invoke(__value8);
             }
-            else if (IsOtelCollector)
+            else if (OtelCollector is { } __value9)
             {
-                otelCollector?.Invoke(OtelCollector!);
+                otelCollector?.Invoke(__value9);
             }
-            else if (IsPosthog)
+            else if (Posthog is { } __value10)
             {
-                posthog?.Invoke(Posthog!);
+                posthog?.Invoke(__value10);
             }
-            else if (IsRamp)
+            else if (Ramp is { } __value11)
             {
-                ramp?.Invoke(Ramp!);
+                ramp?.Invoke(__value11);
             }
-            else if (IsS3)
+            else if (S3 is { } __value12)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value12);
             }
-            else if (IsSentry)
+            else if (Sentry is { } __value13)
             {
-                sentry?.Invoke(Sentry!);
+                sentry?.Invoke(__value13);
             }
-            else if (IsSnowflake)
+            else if (Snowflake is { } __value14)
             {
-                snowflake?.Invoke(Snowflake!);
+                snowflake?.Invoke(__value14);
             }
-            else if (IsWeave)
+            else if (Weave is { } __value15)
             {
-                weave?.Invoke(Weave!);
+                weave?.Invoke(__value15);
             }
-            else if (IsWebhook)
+            else if (Webhook is { } __value16)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value16);
             }
         }
 
@@ -1374,73 +1374,73 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsArize)
+            if (Arize is { } __value0)
             {
-                arize?.Invoke(Arize!);
+                arize?.Invoke(__value0);
             }
-            else if (IsBraintrust)
+            else if (Braintrust is { } __value1)
             {
-                braintrust?.Invoke(Braintrust!);
+                braintrust?.Invoke(__value1);
             }
-            else if (IsClickhouse)
+            else if (Clickhouse is { } __value2)
             {
-                clickhouse?.Invoke(Clickhouse!);
+                clickhouse?.Invoke(__value2);
             }
-            else if (IsDatadog)
+            else if (Datadog is { } __value3)
             {
-                datadog?.Invoke(Datadog!);
+                datadog?.Invoke(__value3);
             }
-            else if (IsGrafana)
+            else if (Grafana is { } __value4)
             {
-                grafana?.Invoke(Grafana!);
+                grafana?.Invoke(__value4);
             }
-            else if (IsLangfuse)
+            else if (Langfuse is { } __value5)
             {
-                langfuse?.Invoke(Langfuse!);
+                langfuse?.Invoke(__value5);
             }
-            else if (IsLangsmith)
+            else if (Langsmith is { } __value6)
             {
-                langsmith?.Invoke(Langsmith!);
+                langsmith?.Invoke(__value6);
             }
-            else if (IsNewrelic)
+            else if (Newrelic is { } __value7)
             {
-                newrelic?.Invoke(Newrelic!);
+                newrelic?.Invoke(__value7);
             }
-            else if (IsOpik)
+            else if (Opik is { } __value8)
             {
-                opik?.Invoke(Opik!);
+                opik?.Invoke(__value8);
             }
-            else if (IsOtelCollector)
+            else if (OtelCollector is { } __value9)
             {
-                otelCollector?.Invoke(OtelCollector!);
+                otelCollector?.Invoke(__value9);
             }
-            else if (IsPosthog)
+            else if (Posthog is { } __value10)
             {
-                posthog?.Invoke(Posthog!);
+                posthog?.Invoke(__value10);
             }
-            else if (IsRamp)
+            else if (Ramp is { } __value11)
             {
-                ramp?.Invoke(Ramp!);
+                ramp?.Invoke(__value11);
             }
-            else if (IsS3)
+            else if (S3 is { } __value12)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value12);
             }
-            else if (IsSentry)
+            else if (Sentry is { } __value13)
             {
-                sentry?.Invoke(Sentry!);
+                sentry?.Invoke(__value13);
             }
-            else if (IsSnowflake)
+            else if (Snowflake is { } __value14)
             {
-                snowflake?.Invoke(Snowflake!);
+                snowflake?.Invoke(__value14);
             }
-            else if (IsWeave)
+            else if (Weave is { } __value15)
             {
-                weave?.Invoke(Weave!);
+                weave?.Invoke(__value15);
             }
-            else if (IsWebhook)
+            else if (Webhook is { } __value16)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value16);
             }
         }
 

@@ -130,13 +130,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMaxLatencyVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPreferredMaxLatencyVariant1(), typeInfo);
             }
             else if (value.IsPercentileLatencyCutoffs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PercentileLatencyCutoffs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PercentileLatencyCutoffs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PercentileLatencyCutoffs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PercentileLatencyCutoffs!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPercentileLatencyCutoffs(), typeInfo);
             }
         }
     }

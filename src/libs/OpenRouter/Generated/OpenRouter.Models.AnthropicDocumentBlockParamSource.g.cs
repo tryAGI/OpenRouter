@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicBase64PdfSource PickAnthropicBase64PdfSource() => IsAnthropicBase64PdfSource
-            ? AnthropicBase64PdfSource!
+        public global::OpenRouter.AnthropicBase64PdfSource PickAnthropicBase64PdfSource() => AnthropicBase64PdfSource is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBase64PdfSource' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicPlainTextSource PickAnthropicPlainTextSource() => IsAnthropicPlainTextSource
-            ? AnthropicPlainTextSource!
+        public global::OpenRouter.AnthropicPlainTextSource PickAnthropicPlainTextSource() => AnthropicPlainTextSource is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicPlainTextSource' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicDocumentBlockParamSource2 PickAnthropicDocumentBlockParamSource2() => IsAnthropicDocumentBlockParamSource2
-            ? AnthropicDocumentBlockParamSource2!
+        public global::OpenRouter.AnthropicDocumentBlockParamSource2 PickAnthropicDocumentBlockParamSource2() => AnthropicDocumentBlockParamSource2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSource2' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicUrlPdfSource PickAnthropicUrlPdfSource() => IsAnthropicUrlPdfSource
-            ? AnthropicUrlPdfSource!
+        public global::OpenRouter.AnthropicUrlPdfSource PickAnthropicUrlPdfSource() => AnthropicUrlPdfSource is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicUrlPdfSource' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicFileDocumentSource PickAnthropicFileDocumentSource() => IsAnthropicFileDocumentSource
-            ? AnthropicFileDocumentSource!
+        public global::OpenRouter.AnthropicFileDocumentSource PickAnthropicFileDocumentSource() => AnthropicFileDocumentSource is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicFileDocumentSource' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PdfSource && anthropicBase64PdfSource != null)
+            if (AnthropicBase64PdfSource is { } __value0 && anthropicBase64PdfSource != null)
             {
-                return anthropicBase64PdfSource(AnthropicBase64PdfSource!);
+                return anthropicBase64PdfSource(__value0);
             }
-            else if (IsAnthropicPlainTextSource && anthropicPlainTextSource != null)
+            else if (AnthropicPlainTextSource is { } __value1 && anthropicPlainTextSource != null)
             {
-                return anthropicPlainTextSource(AnthropicPlainTextSource!);
+                return anthropicPlainTextSource(__value1);
             }
-            else if (IsAnthropicDocumentBlockParamSource2 && anthropicDocumentBlockParamSource2 != null)
+            else if (AnthropicDocumentBlockParamSource2 is { } __value2 && anthropicDocumentBlockParamSource2 != null)
             {
-                return anthropicDocumentBlockParamSource2(AnthropicDocumentBlockParamSource2!);
+                return anthropicDocumentBlockParamSource2(__value2);
             }
-            else if (IsAnthropicUrlPdfSource && anthropicUrlPdfSource != null)
+            else if (AnthropicUrlPdfSource is { } __value3 && anthropicUrlPdfSource != null)
             {
-                return anthropicUrlPdfSource(AnthropicUrlPdfSource!);
+                return anthropicUrlPdfSource(__value3);
             }
-            else if (IsAnthropicFileDocumentSource && anthropicFileDocumentSource != null)
+            else if (AnthropicFileDocumentSource is { } __value4 && anthropicFileDocumentSource != null)
             {
-                return anthropicFileDocumentSource(AnthropicFileDocumentSource!);
+                return anthropicFileDocumentSource(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PdfSource)
+            if (AnthropicBase64PdfSource is { } __value0)
             {
-                anthropicBase64PdfSource?.Invoke(AnthropicBase64PdfSource!);
+                anthropicBase64PdfSource?.Invoke(__value0);
             }
-            else if (IsAnthropicPlainTextSource)
+            else if (AnthropicPlainTextSource is { } __value1)
             {
-                anthropicPlainTextSource?.Invoke(AnthropicPlainTextSource!);
+                anthropicPlainTextSource?.Invoke(__value1);
             }
-            else if (IsAnthropicDocumentBlockParamSource2)
+            else if (AnthropicDocumentBlockParamSource2 is { } __value2)
             {
-                anthropicDocumentBlockParamSource2?.Invoke(AnthropicDocumentBlockParamSource2!);
+                anthropicDocumentBlockParamSource2?.Invoke(__value2);
             }
-            else if (IsAnthropicUrlPdfSource)
+            else if (AnthropicUrlPdfSource is { } __value3)
             {
-                anthropicUrlPdfSource?.Invoke(AnthropicUrlPdfSource!);
+                anthropicUrlPdfSource?.Invoke(__value3);
             }
-            else if (IsAnthropicFileDocumentSource)
+            else if (AnthropicFileDocumentSource is { } __value4)
             {
-                anthropicFileDocumentSource?.Invoke(AnthropicFileDocumentSource!);
+                anthropicFileDocumentSource?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PdfSource)
+            if (AnthropicBase64PdfSource is { } __value0)
             {
-                anthropicBase64PdfSource?.Invoke(AnthropicBase64PdfSource!);
+                anthropicBase64PdfSource?.Invoke(__value0);
             }
-            else if (IsAnthropicPlainTextSource)
+            else if (AnthropicPlainTextSource is { } __value1)
             {
-                anthropicPlainTextSource?.Invoke(AnthropicPlainTextSource!);
+                anthropicPlainTextSource?.Invoke(__value1);
             }
-            else if (IsAnthropicDocumentBlockParamSource2)
+            else if (AnthropicDocumentBlockParamSource2 is { } __value2)
             {
-                anthropicDocumentBlockParamSource2?.Invoke(AnthropicDocumentBlockParamSource2!);
+                anthropicDocumentBlockParamSource2?.Invoke(__value2);
             }
-            else if (IsAnthropicUrlPdfSource)
+            else if (AnthropicUrlPdfSource is { } __value3)
             {
-                anthropicUrlPdfSource?.Invoke(AnthropicUrlPdfSource!);
+                anthropicUrlPdfSource?.Invoke(__value3);
             }
-            else if (IsAnthropicFileDocumentSource)
+            else if (AnthropicFileDocumentSource is { } __value4)
             {
-                anthropicFileDocumentSource?.Invoke(AnthropicFileDocumentSource!);
+                anthropicFileDocumentSource?.Invoke(__value4);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickChatMessagesDiscriminatorMappingAssistantContentVariant1() => IsChatMessagesDiscriminatorMappingAssistantContentVariant1
-            ? ChatMessagesDiscriminatorMappingAssistantContentVariant1!
+        public string PickChatMessagesDiscriminatorMappingAssistantContentVariant1() => ChatMessagesDiscriminatorMappingAssistantContentVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems> PickChatMessagesDiscriminatorMappingAssistantContent1() => IsChatMessagesDiscriminatorMappingAssistantContent1
-            ? ChatMessagesDiscriminatorMappingAssistantContent1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems> PickChatMessagesDiscriminatorMappingAssistantContent1() => ChatMessagesDiscriminatorMappingAssistantContent1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessagesDiscriminatorMappingAssistantContent1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatMessagesDiscriminatorMappingAssistantContentVariant1 && chatMessagesDiscriminatorMappingAssistantContentVariant1 != null)
+            if (ChatMessagesDiscriminatorMappingAssistantContentVariant1 is { } __value0 && chatMessagesDiscriminatorMappingAssistantContentVariant1 != null)
             {
-                return chatMessagesDiscriminatorMappingAssistantContentVariant1(ChatMessagesDiscriminatorMappingAssistantContentVariant1!);
+                return chatMessagesDiscriminatorMappingAssistantContentVariant1(__value0);
             }
-            else if (IsChatMessagesDiscriminatorMappingAssistantContent1 && chatMessagesDiscriminatorMappingAssistantContent1 != null)
+            else if (ChatMessagesDiscriminatorMappingAssistantContent1 is { } __value1 && chatMessagesDiscriminatorMappingAssistantContent1 != null)
             {
-                return chatMessagesDiscriminatorMappingAssistantContent1(ChatMessagesDiscriminatorMappingAssistantContent1!);
+                return chatMessagesDiscriminatorMappingAssistantContent1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatMessagesDiscriminatorMappingAssistantContentVariant1)
+            if (ChatMessagesDiscriminatorMappingAssistantContentVariant1 is { } __value0)
             {
-                chatMessagesDiscriminatorMappingAssistantContentVariant1?.Invoke(ChatMessagesDiscriminatorMappingAssistantContentVariant1!);
+                chatMessagesDiscriminatorMappingAssistantContentVariant1?.Invoke(__value0);
             }
-            else if (IsChatMessagesDiscriminatorMappingAssistantContent1)
+            else if (ChatMessagesDiscriminatorMappingAssistantContent1 is { } __value1)
             {
-                chatMessagesDiscriminatorMappingAssistantContent1?.Invoke(ChatMessagesDiscriminatorMappingAssistantContent1!);
+                chatMessagesDiscriminatorMappingAssistantContent1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatMessagesDiscriminatorMappingAssistantContentVariant1)
+            if (ChatMessagesDiscriminatorMappingAssistantContentVariant1 is { } __value0)
             {
-                chatMessagesDiscriminatorMappingAssistantContentVariant1?.Invoke(ChatMessagesDiscriminatorMappingAssistantContentVariant1!);
+                chatMessagesDiscriminatorMappingAssistantContentVariant1?.Invoke(__value0);
             }
-            else if (IsChatMessagesDiscriminatorMappingAssistantContent1)
+            else if (ChatMessagesDiscriminatorMappingAssistantContent1 is { } __value1)
             {
-                chatMessagesDiscriminatorMappingAssistantContent1?.Invoke(ChatMessagesDiscriminatorMappingAssistantContent1!);
+                chatMessagesDiscriminatorMappingAssistantContent1?.Invoke(__value1);
             }
         }
 
