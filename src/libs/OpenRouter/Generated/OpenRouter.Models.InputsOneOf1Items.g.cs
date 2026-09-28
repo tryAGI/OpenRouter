@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ReasoningItem PickReasoningItem() => IsReasoningItem
-            ? ReasoningItem!
+        public global::OpenRouter.ReasoningItem PickReasoningItem() => ReasoningItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.EasyInputMessage PickEasyInputMessage() => IsEasyInputMessage
-            ? EasyInputMessage!
+        public global::OpenRouter.EasyInputMessage PickEasyInputMessage() => EasyInputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputMessageItem PickInputMessageItem() => IsInputMessageItem
-            ? InputMessageItem!
+        public global::OpenRouter.InputMessageItem PickInputMessageItem() => InputMessageItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FunctionCallItem PickFunctionCallItem() => IsFunctionCallItem
-            ? FunctionCallItem!
+        public global::OpenRouter.FunctionCallItem PickFunctionCallItem() => FunctionCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FunctionCallOutputItem PickFunctionCallOutputItem() => IsFunctionCallOutputItem
-            ? FunctionCallOutputItem!
+        public global::OpenRouter.FunctionCallOutputItem PickFunctionCallOutputItem() => FunctionCallOutputItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => IsApplyPatchCallItem
-            ? ApplyPatchCallItem!
+        public global::OpenRouter.ApplyPatchCallItem PickApplyPatchCallItem() => ApplyPatchCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => IsApplyPatchCallOutputItem
-            ? ApplyPatchCallOutputItem!
+        public global::OpenRouter.ApplyPatchCallOutputItem PickApplyPatchCallOutputItem() => ApplyPatchCallOutputItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutputItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputsOneOf1Items7 PickInputsOneOf1Items7() => IsInputsOneOf1Items7
-            ? InputsOneOf1Items7!
+        public global::OpenRouter.InputsOneOf1Items7 PickInputsOneOf1Items7() => InputsOneOf1Items7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items7' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputsOneOf1Items8 PickInputsOneOf1Items8() => IsInputsOneOf1Items8
-            ? InputsOneOf1Items8!
+        public global::OpenRouter.InputsOneOf1Items8 PickInputsOneOf1Items8() => InputsOneOf1Items8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items8' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFunctionCallItem PickOutputFunctionCallItem() => IsOutputFunctionCallItem
-            ? OutputFunctionCallItem!
+        public global::OpenRouter.OutputFunctionCallItem PickOutputFunctionCallItem() => OutputFunctionCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -412,8 +412,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputCustomToolCallItem PickOutputCustomToolCallItem() => IsOutputCustomToolCallItem
-            ? OutputCustomToolCallItem!
+        public global::OpenRouter.OutputCustomToolCallItem PickOutputCustomToolCallItem() => OutputCustomToolCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCustomToolCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -449,8 +449,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputWebSearchCallItem PickOutputWebSearchCallItem() => IsOutputWebSearchCallItem
-            ? OutputWebSearchCallItem!
+        public global::OpenRouter.OutputWebSearchCallItem PickOutputWebSearchCallItem() => OutputWebSearchCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -486,8 +486,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFileSearchCallItem PickOutputFileSearchCallItem() => IsOutputFileSearchCallItem
-            ? OutputFileSearchCallItem!
+        public global::OpenRouter.OutputFileSearchCallItem PickOutputFileSearchCallItem() => OutputFileSearchCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFileSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -523,8 +523,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputImageGenerationCallItem PickOutputImageGenerationCallItem() => IsOutputImageGenerationCallItem
-            ? OutputImageGenerationCallItem!
+        public global::OpenRouter.OutputImageGenerationCallItem PickOutputImageGenerationCallItem() => OutputImageGenerationCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputImageGenerationCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -560,8 +560,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputCodeInterpreterCallItem PickOutputCodeInterpreterCallItem() => IsOutputCodeInterpreterCallItem
-            ? OutputCodeInterpreterCallItem!
+        public global::OpenRouter.OutputCodeInterpreterCallItem PickOutputCodeInterpreterCallItem() => OutputCodeInterpreterCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -597,8 +597,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputComputerCallItem PickOutputComputerCallItem() => IsOutputComputerCallItem
-            ? OutputComputerCallItem!
+        public global::OpenRouter.OutputComputerCallItem PickOutputComputerCallItem() => OutputComputerCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputComputerCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -634,8 +634,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputDatetimeItem PickOutputDatetimeItem() => IsOutputDatetimeItem
-            ? OutputDatetimeItem!
+        public global::OpenRouter.OutputDatetimeItem PickOutputDatetimeItem() => OutputDatetimeItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputDatetimeItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -671,8 +671,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputWebSearchServerToolItem PickOutputWebSearchServerToolItem() => IsOutputWebSearchServerToolItem
-            ? OutputWebSearchServerToolItem!
+        public global::OpenRouter.OutputWebSearchServerToolItem PickOutputWebSearchServerToolItem() => OutputWebSearchServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -708,8 +708,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputCodeInterpreterServerToolItem PickOutputCodeInterpreterServerToolItem() => IsOutputCodeInterpreterServerToolItem
-            ? OutputCodeInterpreterServerToolItem!
+        public global::OpenRouter.OutputCodeInterpreterServerToolItem PickOutputCodeInterpreterServerToolItem() => OutputCodeInterpreterServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -745,8 +745,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFileSearchServerToolItem PickOutputFileSearchServerToolItem() => IsOutputFileSearchServerToolItem
-            ? OutputFileSearchServerToolItem!
+        public global::OpenRouter.OutputFileSearchServerToolItem PickOutputFileSearchServerToolItem() => OutputFileSearchServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFileSearchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -782,8 +782,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputImageGenerationServerToolItem PickOutputImageGenerationServerToolItem() => IsOutputImageGenerationServerToolItem
-            ? OutputImageGenerationServerToolItem!
+        public global::OpenRouter.OutputImageGenerationServerToolItem PickOutputImageGenerationServerToolItem() => OutputImageGenerationServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputImageGenerationServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -819,8 +819,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputBrowserUseServerToolItem PickOutputBrowserUseServerToolItem() => IsOutputBrowserUseServerToolItem
-            ? OutputBrowserUseServerToolItem!
+        public global::OpenRouter.OutputBrowserUseServerToolItem PickOutputBrowserUseServerToolItem() => OutputBrowserUseServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputBrowserUseServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -856,8 +856,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputBashServerToolItem PickOutputBashServerToolItem() => IsOutputBashServerToolItem
-            ? OutputBashServerToolItem!
+        public global::OpenRouter.OutputBashServerToolItem PickOutputBashServerToolItem() => OutputBashServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputBashServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -893,8 +893,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputTextEditorServerToolItem PickOutputTextEditorServerToolItem() => IsOutputTextEditorServerToolItem
-            ? OutputTextEditorServerToolItem!
+        public global::OpenRouter.OutputTextEditorServerToolItem PickOutputTextEditorServerToolItem() => OutputTextEditorServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputTextEditorServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -930,8 +930,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputApplyPatchServerToolItem PickOutputApplyPatchServerToolItem() => IsOutputApplyPatchServerToolItem
-            ? OutputApplyPatchServerToolItem!
+        public global::OpenRouter.OutputApplyPatchServerToolItem PickOutputApplyPatchServerToolItem() => OutputApplyPatchServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputApplyPatchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -967,8 +967,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputWebFetchServerToolItem PickOutputWebFetchServerToolItem() => IsOutputWebFetchServerToolItem
-            ? OutputWebFetchServerToolItem!
+        public global::OpenRouter.OutputWebFetchServerToolItem PickOutputWebFetchServerToolItem() => OutputWebFetchServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebFetchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1004,8 +1004,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputToolSearchServerToolItem PickOutputToolSearchServerToolItem() => IsOutputToolSearchServerToolItem
-            ? OutputToolSearchServerToolItem!
+        public global::OpenRouter.OutputToolSearchServerToolItem PickOutputToolSearchServerToolItem() => OutputToolSearchServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputToolSearchServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1041,8 +1041,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMemoryServerToolItem PickOutputMemoryServerToolItem() => IsOutputMemoryServerToolItem
-            ? OutputMemoryServerToolItem!
+        public global::OpenRouter.OutputMemoryServerToolItem PickOutputMemoryServerToolItem() => OutputMemoryServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMemoryServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1078,8 +1078,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMcpServerToolItem PickOutputMcpServerToolItem() => IsOutputMcpServerToolItem
-            ? OutputMcpServerToolItem!
+        public global::OpenRouter.OutputMcpServerToolItem PickOutputMcpServerToolItem() => OutputMcpServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMcpServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1115,8 +1115,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputSearchModelsServerToolItem PickOutputSearchModelsServerToolItem() => IsOutputSearchModelsServerToolItem
-            ? OutputSearchModelsServerToolItem!
+        public global::OpenRouter.OutputSearchModelsServerToolItem PickOutputSearchModelsServerToolItem() => OutputSearchModelsServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputSearchModelsServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1152,8 +1152,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFusionServerToolItem PickOutputFusionServerToolItem() => IsOutputFusionServerToolItem
-            ? OutputFusionServerToolItem!
+        public global::OpenRouter.OutputFusionServerToolItem PickOutputFusionServerToolItem() => OutputFusionServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFusionServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1189,8 +1189,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputAdvisorServerToolItem PickOutputAdvisorServerToolItem() => IsOutputAdvisorServerToolItem
-            ? OutputAdvisorServerToolItem!
+        public global::OpenRouter.OutputAdvisorServerToolItem PickOutputAdvisorServerToolItem() => OutputAdvisorServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAdvisorServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1226,8 +1226,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputSubagentServerToolItem PickOutputSubagentServerToolItem() => IsOutputSubagentServerToolItem
-            ? OutputSubagentServerToolItem!
+        public global::OpenRouter.OutputSubagentServerToolItem PickOutputSubagentServerToolItem() => OutputSubagentServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputSubagentServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1263,8 +1263,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFilesServerToolItem PickOutputFilesServerToolItem() => IsOutputFilesServerToolItem
-            ? OutputFilesServerToolItem!
+        public global::OpenRouter.OutputFilesServerToolItem PickOutputFilesServerToolItem() => OutputFilesServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFilesServerToolItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1300,8 +1300,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.LocalShellCallItem PickLocalShellCallItem() => IsLocalShellCallItem
-            ? LocalShellCallItem!
+        public global::OpenRouter.LocalShellCallItem PickLocalShellCallItem() => LocalShellCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShellCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1337,8 +1337,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.LocalShellCallOutputItem PickLocalShellCallOutputItem() => IsLocalShellCallOutputItem
-            ? LocalShellCallOutputItem!
+        public global::OpenRouter.LocalShellCallOutputItem PickLocalShellCallOutputItem() => LocalShellCallOutputItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShellCallOutputItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1374,8 +1374,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ShellCallItem PickShellCallItem() => IsShellCallItem
-            ? ShellCallItem!
+        public global::OpenRouter.ShellCallItem PickShellCallItem() => ShellCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1411,8 +1411,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ShellCallOutputItem PickShellCallOutputItem() => IsShellCallOutputItem
-            ? ShellCallOutputItem!
+        public global::OpenRouter.ShellCallOutputItem PickShellCallOutputItem() => ShellCallOutputItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutputItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1448,8 +1448,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpListToolsItem PickMcpListToolsItem() => IsMcpListToolsItem
-            ? McpListToolsItem!
+        public global::OpenRouter.McpListToolsItem PickMcpListToolsItem() => McpListToolsItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpListToolsItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1485,8 +1485,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpApprovalRequestItem PickMcpApprovalRequestItem() => IsMcpApprovalRequestItem
-            ? McpApprovalRequestItem!
+        public global::OpenRouter.McpApprovalRequestItem PickMcpApprovalRequestItem() => McpApprovalRequestItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequestItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1522,8 +1522,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpApprovalResponseItem PickMcpApprovalResponseItem() => IsMcpApprovalResponseItem
-            ? McpApprovalResponseItem!
+        public global::OpenRouter.McpApprovalResponseItem PickMcpApprovalResponseItem() => McpApprovalResponseItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponseItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1559,8 +1559,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpCallItem PickMcpCallItem() => IsMcpCallItem
-            ? McpCallItem!
+        public global::OpenRouter.McpCallItem PickMcpCallItem() => McpCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1596,8 +1596,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CustomToolCallItem PickCustomToolCallItem() => IsCustomToolCallItem
-            ? CustomToolCallItem!
+        public global::OpenRouter.CustomToolCallItem PickCustomToolCallItem() => CustomToolCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1633,8 +1633,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CustomToolCallOutputItem PickCustomToolCallOutputItem() => IsCustomToolCallOutputItem
-            ? CustomToolCallOutputItem!
+        public global::OpenRouter.CustomToolCallOutputItem PickCustomToolCallOutputItem() => CustomToolCallOutputItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutputItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1670,8 +1670,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CompactionItem PickCompactionItem() => IsCompactionItem
-            ? CompactionItem!
+        public global::OpenRouter.CompactionItem PickCompactionItem() => CompactionItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompactionItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1707,8 +1707,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ContextCompactionItem PickContextCompactionItem() => IsContextCompactionItem
-            ? ContextCompactionItem!
+        public global::OpenRouter.ContextCompactionItem PickContextCompactionItem() => ContextCompactionItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContextCompactionItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1744,8 +1744,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ItemReferenceItem PickItemReferenceItem() => IsItemReferenceItem
-            ? ItemReferenceItem!
+        public global::OpenRouter.ItemReferenceItem PickItemReferenceItem() => ItemReferenceItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ItemReferenceItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1781,8 +1781,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AdditionalToolsItem PickAdditionalToolsItem() => IsAdditionalToolsItem
-            ? AdditionalToolsItem!
+        public global::OpenRouter.AdditionalToolsItem PickAdditionalToolsItem() => AdditionalToolsItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdditionalToolsItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -1818,8 +1818,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AgentMessageItem PickAgentMessageItem() => IsAgentMessageItem
-            ? AgentMessageItem!
+        public global::OpenRouter.AgentMessageItem PickAgentMessageItem() => AgentMessageItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessageItem' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -3232,201 +3232,201 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningItem && reasoningItem != null)
+            if (ReasoningItem is { } __value0 && reasoningItem != null)
             {
-                return reasoningItem(ReasoningItem!);
+                return reasoningItem(__value0);
             }
-            else if (IsEasyInputMessage && easyInputMessage != null)
+            else if (EasyInputMessage is { } __value1 && easyInputMessage != null)
             {
-                return easyInputMessage(EasyInputMessage!);
+                return easyInputMessage(__value1);
             }
-            else if (IsInputMessageItem && inputMessageItem != null)
+            else if (InputMessageItem is { } __value2 && inputMessageItem != null)
             {
-                return inputMessageItem(InputMessageItem!);
+                return inputMessageItem(__value2);
             }
-            else if (IsFunctionCallItem && functionCallItem != null)
+            else if (FunctionCallItem is { } __value3 && functionCallItem != null)
             {
-                return functionCallItem(FunctionCallItem!);
+                return functionCallItem(__value3);
             }
-            else if (IsFunctionCallOutputItem && functionCallOutputItem != null)
+            else if (FunctionCallOutputItem is { } __value4 && functionCallOutputItem != null)
             {
-                return functionCallOutputItem(FunctionCallOutputItem!);
+                return functionCallOutputItem(__value4);
             }
-            else if (IsApplyPatchCallItem && applyPatchCallItem != null)
+            else if (ApplyPatchCallItem is { } __value5 && applyPatchCallItem != null)
             {
-                return applyPatchCallItem(ApplyPatchCallItem!);
+                return applyPatchCallItem(__value5);
             }
-            else if (IsApplyPatchCallOutputItem && applyPatchCallOutputItem != null)
+            else if (ApplyPatchCallOutputItem is { } __value6 && applyPatchCallOutputItem != null)
             {
-                return applyPatchCallOutputItem(ApplyPatchCallOutputItem!);
+                return applyPatchCallOutputItem(__value6);
             }
-            else if (IsInputsOneOf1Items7 && inputsOneOf1Items7 != null)
+            else if (InputsOneOf1Items7 is { } __value7 && inputsOneOf1Items7 != null)
             {
-                return inputsOneOf1Items7(InputsOneOf1Items7!);
+                return inputsOneOf1Items7(__value7);
             }
-            else if (IsInputsOneOf1Items8 && inputsOneOf1Items8 != null)
+            else if (InputsOneOf1Items8 is { } __value8 && inputsOneOf1Items8 != null)
             {
-                return inputsOneOf1Items8(InputsOneOf1Items8!);
+                return inputsOneOf1Items8(__value8);
             }
-            else if (IsOutputFunctionCallItem && outputFunctionCallItem != null)
+            else if (OutputFunctionCallItem is { } __value9 && outputFunctionCallItem != null)
             {
-                return outputFunctionCallItem(OutputFunctionCallItem!);
+                return outputFunctionCallItem(__value9);
             }
-            else if (IsOutputCustomToolCallItem && outputCustomToolCallItem != null)
+            else if (OutputCustomToolCallItem is { } __value10 && outputCustomToolCallItem != null)
             {
-                return outputCustomToolCallItem(OutputCustomToolCallItem!);
+                return outputCustomToolCallItem(__value10);
             }
-            else if (IsOutputWebSearchCallItem && outputWebSearchCallItem != null)
+            else if (OutputWebSearchCallItem is { } __value11 && outputWebSearchCallItem != null)
             {
-                return outputWebSearchCallItem(OutputWebSearchCallItem!);
+                return outputWebSearchCallItem(__value11);
             }
-            else if (IsOutputFileSearchCallItem && outputFileSearchCallItem != null)
+            else if (OutputFileSearchCallItem is { } __value12 && outputFileSearchCallItem != null)
             {
-                return outputFileSearchCallItem(OutputFileSearchCallItem!);
+                return outputFileSearchCallItem(__value12);
             }
-            else if (IsOutputImageGenerationCallItem && outputImageGenerationCallItem != null)
+            else if (OutputImageGenerationCallItem is { } __value13 && outputImageGenerationCallItem != null)
             {
-                return outputImageGenerationCallItem(OutputImageGenerationCallItem!);
+                return outputImageGenerationCallItem(__value13);
             }
-            else if (IsOutputCodeInterpreterCallItem && outputCodeInterpreterCallItem != null)
+            else if (OutputCodeInterpreterCallItem is { } __value14 && outputCodeInterpreterCallItem != null)
             {
-                return outputCodeInterpreterCallItem(OutputCodeInterpreterCallItem!);
+                return outputCodeInterpreterCallItem(__value14);
             }
-            else if (IsOutputComputerCallItem && outputComputerCallItem != null)
+            else if (OutputComputerCallItem is { } __value15 && outputComputerCallItem != null)
             {
-                return outputComputerCallItem(OutputComputerCallItem!);
+                return outputComputerCallItem(__value15);
             }
-            else if (IsOutputDatetimeItem && outputDatetimeItem != null)
+            else if (OutputDatetimeItem is { } __value16 && outputDatetimeItem != null)
             {
-                return outputDatetimeItem(OutputDatetimeItem!);
+                return outputDatetimeItem(__value16);
             }
-            else if (IsOutputWebSearchServerToolItem && outputWebSearchServerToolItem != null)
+            else if (OutputWebSearchServerToolItem is { } __value17 && outputWebSearchServerToolItem != null)
             {
-                return outputWebSearchServerToolItem(OutputWebSearchServerToolItem!);
+                return outputWebSearchServerToolItem(__value17);
             }
-            else if (IsOutputCodeInterpreterServerToolItem && outputCodeInterpreterServerToolItem != null)
+            else if (OutputCodeInterpreterServerToolItem is { } __value18 && outputCodeInterpreterServerToolItem != null)
             {
-                return outputCodeInterpreterServerToolItem(OutputCodeInterpreterServerToolItem!);
+                return outputCodeInterpreterServerToolItem(__value18);
             }
-            else if (IsOutputFileSearchServerToolItem && outputFileSearchServerToolItem != null)
+            else if (OutputFileSearchServerToolItem is { } __value19 && outputFileSearchServerToolItem != null)
             {
-                return outputFileSearchServerToolItem(OutputFileSearchServerToolItem!);
+                return outputFileSearchServerToolItem(__value19);
             }
-            else if (IsOutputImageGenerationServerToolItem && outputImageGenerationServerToolItem != null)
+            else if (OutputImageGenerationServerToolItem is { } __value20 && outputImageGenerationServerToolItem != null)
             {
-                return outputImageGenerationServerToolItem(OutputImageGenerationServerToolItem!);
+                return outputImageGenerationServerToolItem(__value20);
             }
-            else if (IsOutputBrowserUseServerToolItem && outputBrowserUseServerToolItem != null)
+            else if (OutputBrowserUseServerToolItem is { } __value21 && outputBrowserUseServerToolItem != null)
             {
-                return outputBrowserUseServerToolItem(OutputBrowserUseServerToolItem!);
+                return outputBrowserUseServerToolItem(__value21);
             }
-            else if (IsOutputBashServerToolItem && outputBashServerToolItem != null)
+            else if (OutputBashServerToolItem is { } __value22 && outputBashServerToolItem != null)
             {
-                return outputBashServerToolItem(OutputBashServerToolItem!);
+                return outputBashServerToolItem(__value22);
             }
-            else if (IsOutputTextEditorServerToolItem && outputTextEditorServerToolItem != null)
+            else if (OutputTextEditorServerToolItem is { } __value23 && outputTextEditorServerToolItem != null)
             {
-                return outputTextEditorServerToolItem(OutputTextEditorServerToolItem!);
+                return outputTextEditorServerToolItem(__value23);
             }
-            else if (IsOutputApplyPatchServerToolItem && outputApplyPatchServerToolItem != null)
+            else if (OutputApplyPatchServerToolItem is { } __value24 && outputApplyPatchServerToolItem != null)
             {
-                return outputApplyPatchServerToolItem(OutputApplyPatchServerToolItem!);
+                return outputApplyPatchServerToolItem(__value24);
             }
-            else if (IsOutputWebFetchServerToolItem && outputWebFetchServerToolItem != null)
+            else if (OutputWebFetchServerToolItem is { } __value25 && outputWebFetchServerToolItem != null)
             {
-                return outputWebFetchServerToolItem(OutputWebFetchServerToolItem!);
+                return outputWebFetchServerToolItem(__value25);
             }
-            else if (IsOutputToolSearchServerToolItem && outputToolSearchServerToolItem != null)
+            else if (OutputToolSearchServerToolItem is { } __value26 && outputToolSearchServerToolItem != null)
             {
-                return outputToolSearchServerToolItem(OutputToolSearchServerToolItem!);
+                return outputToolSearchServerToolItem(__value26);
             }
-            else if (IsOutputMemoryServerToolItem && outputMemoryServerToolItem != null)
+            else if (OutputMemoryServerToolItem is { } __value27 && outputMemoryServerToolItem != null)
             {
-                return outputMemoryServerToolItem(OutputMemoryServerToolItem!);
+                return outputMemoryServerToolItem(__value27);
             }
-            else if (IsOutputMcpServerToolItem && outputMcpServerToolItem != null)
+            else if (OutputMcpServerToolItem is { } __value28 && outputMcpServerToolItem != null)
             {
-                return outputMcpServerToolItem(OutputMcpServerToolItem!);
+                return outputMcpServerToolItem(__value28);
             }
-            else if (IsOutputSearchModelsServerToolItem && outputSearchModelsServerToolItem != null)
+            else if (OutputSearchModelsServerToolItem is { } __value29 && outputSearchModelsServerToolItem != null)
             {
-                return outputSearchModelsServerToolItem(OutputSearchModelsServerToolItem!);
+                return outputSearchModelsServerToolItem(__value29);
             }
-            else if (IsOutputFusionServerToolItem && outputFusionServerToolItem != null)
+            else if (OutputFusionServerToolItem is { } __value30 && outputFusionServerToolItem != null)
             {
-                return outputFusionServerToolItem(OutputFusionServerToolItem!);
+                return outputFusionServerToolItem(__value30);
             }
-            else if (IsOutputAdvisorServerToolItem && outputAdvisorServerToolItem != null)
+            else if (OutputAdvisorServerToolItem is { } __value31 && outputAdvisorServerToolItem != null)
             {
-                return outputAdvisorServerToolItem(OutputAdvisorServerToolItem!);
+                return outputAdvisorServerToolItem(__value31);
             }
-            else if (IsOutputSubagentServerToolItem && outputSubagentServerToolItem != null)
+            else if (OutputSubagentServerToolItem is { } __value32 && outputSubagentServerToolItem != null)
             {
-                return outputSubagentServerToolItem(OutputSubagentServerToolItem!);
+                return outputSubagentServerToolItem(__value32);
             }
-            else if (IsOutputFilesServerToolItem && outputFilesServerToolItem != null)
+            else if (OutputFilesServerToolItem is { } __value33 && outputFilesServerToolItem != null)
             {
-                return outputFilesServerToolItem(OutputFilesServerToolItem!);
+                return outputFilesServerToolItem(__value33);
             }
-            else if (IsLocalShellCallItem && localShellCallItem != null)
+            else if (LocalShellCallItem is { } __value34 && localShellCallItem != null)
             {
-                return localShellCallItem(LocalShellCallItem!);
+                return localShellCallItem(__value34);
             }
-            else if (IsLocalShellCallOutputItem && localShellCallOutputItem != null)
+            else if (LocalShellCallOutputItem is { } __value35 && localShellCallOutputItem != null)
             {
-                return localShellCallOutputItem(LocalShellCallOutputItem!);
+                return localShellCallOutputItem(__value35);
             }
-            else if (IsShellCallItem && shellCallItem != null)
+            else if (ShellCallItem is { } __value36 && shellCallItem != null)
             {
-                return shellCallItem(ShellCallItem!);
+                return shellCallItem(__value36);
             }
-            else if (IsShellCallOutputItem && shellCallOutputItem != null)
+            else if (ShellCallOutputItem is { } __value37 && shellCallOutputItem != null)
             {
-                return shellCallOutputItem(ShellCallOutputItem!);
+                return shellCallOutputItem(__value37);
             }
-            else if (IsMcpListToolsItem && mcpListToolsItem != null)
+            else if (McpListToolsItem is { } __value38 && mcpListToolsItem != null)
             {
-                return mcpListToolsItem(McpListToolsItem!);
+                return mcpListToolsItem(__value38);
             }
-            else if (IsMcpApprovalRequestItem && mcpApprovalRequestItem != null)
+            else if (McpApprovalRequestItem is { } __value39 && mcpApprovalRequestItem != null)
             {
-                return mcpApprovalRequestItem(McpApprovalRequestItem!);
+                return mcpApprovalRequestItem(__value39);
             }
-            else if (IsMcpApprovalResponseItem && mcpApprovalResponseItem != null)
+            else if (McpApprovalResponseItem is { } __value40 && mcpApprovalResponseItem != null)
             {
-                return mcpApprovalResponseItem(McpApprovalResponseItem!);
+                return mcpApprovalResponseItem(__value40);
             }
-            else if (IsMcpCallItem && mcpCallItem != null)
+            else if (McpCallItem is { } __value41 && mcpCallItem != null)
             {
-                return mcpCallItem(McpCallItem!);
+                return mcpCallItem(__value41);
             }
-            else if (IsCustomToolCallItem && customToolCallItem != null)
+            else if (CustomToolCallItem is { } __value42 && customToolCallItem != null)
             {
-                return customToolCallItem(CustomToolCallItem!);
+                return customToolCallItem(__value42);
             }
-            else if (IsCustomToolCallOutputItem && customToolCallOutputItem != null)
+            else if (CustomToolCallOutputItem is { } __value43 && customToolCallOutputItem != null)
             {
-                return customToolCallOutputItem(CustomToolCallOutputItem!);
+                return customToolCallOutputItem(__value43);
             }
-            else if (IsCompactionItem && compactionItem != null)
+            else if (CompactionItem is { } __value44 && compactionItem != null)
             {
-                return compactionItem(CompactionItem!);
+                return compactionItem(__value44);
             }
-            else if (IsContextCompactionItem && contextCompactionItem != null)
+            else if (ContextCompactionItem is { } __value45 && contextCompactionItem != null)
             {
-                return contextCompactionItem(ContextCompactionItem!);
+                return contextCompactionItem(__value45);
             }
-            else if (IsItemReferenceItem && itemReferenceItem != null)
+            else if (ItemReferenceItem is { } __value46 && itemReferenceItem != null)
             {
-                return itemReferenceItem(ItemReferenceItem!);
+                return itemReferenceItem(__value46);
             }
-            else if (IsAdditionalToolsItem && additionalToolsItem != null)
+            else if (AdditionalToolsItem is { } __value47 && additionalToolsItem != null)
             {
-                return additionalToolsItem(AdditionalToolsItem!);
+                return additionalToolsItem(__value47);
             }
-            else if (IsAgentMessageItem && agentMessageItem != null)
+            else if (AgentMessageItem is { } __value48 && agentMessageItem != null)
             {
-                return agentMessageItem(AgentMessageItem!);
+                return agentMessageItem(__value48);
             }
 
             return default(TResult);
@@ -3540,201 +3540,201 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningItem)
+            if (ReasoningItem is { } __value0)
             {
-                reasoningItem?.Invoke(ReasoningItem!);
+                reasoningItem?.Invoke(__value0);
             }
-            else if (IsEasyInputMessage)
+            else if (EasyInputMessage is { } __value1)
             {
-                easyInputMessage?.Invoke(EasyInputMessage!);
+                easyInputMessage?.Invoke(__value1);
             }
-            else if (IsInputMessageItem)
+            else if (InputMessageItem is { } __value2)
             {
-                inputMessageItem?.Invoke(InputMessageItem!);
+                inputMessageItem?.Invoke(__value2);
             }
-            else if (IsFunctionCallItem)
+            else if (FunctionCallItem is { } __value3)
             {
-                functionCallItem?.Invoke(FunctionCallItem!);
+                functionCallItem?.Invoke(__value3);
             }
-            else if (IsFunctionCallOutputItem)
+            else if (FunctionCallOutputItem is { } __value4)
             {
-                functionCallOutputItem?.Invoke(FunctionCallOutputItem!);
+                functionCallOutputItem?.Invoke(__value4);
             }
-            else if (IsApplyPatchCallItem)
+            else if (ApplyPatchCallItem is { } __value5)
             {
-                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
+                applyPatchCallItem?.Invoke(__value5);
             }
-            else if (IsApplyPatchCallOutputItem)
+            else if (ApplyPatchCallOutputItem is { } __value6)
             {
-                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
+                applyPatchCallOutputItem?.Invoke(__value6);
             }
-            else if (IsInputsOneOf1Items7)
+            else if (InputsOneOf1Items7 is { } __value7)
             {
-                inputsOneOf1Items7?.Invoke(InputsOneOf1Items7!);
+                inputsOneOf1Items7?.Invoke(__value7);
             }
-            else if (IsInputsOneOf1Items8)
+            else if (InputsOneOf1Items8 is { } __value8)
             {
-                inputsOneOf1Items8?.Invoke(InputsOneOf1Items8!);
+                inputsOneOf1Items8?.Invoke(__value8);
             }
-            else if (IsOutputFunctionCallItem)
+            else if (OutputFunctionCallItem is { } __value9)
             {
-                outputFunctionCallItem?.Invoke(OutputFunctionCallItem!);
+                outputFunctionCallItem?.Invoke(__value9);
             }
-            else if (IsOutputCustomToolCallItem)
+            else if (OutputCustomToolCallItem is { } __value10)
             {
-                outputCustomToolCallItem?.Invoke(OutputCustomToolCallItem!);
+                outputCustomToolCallItem?.Invoke(__value10);
             }
-            else if (IsOutputWebSearchCallItem)
+            else if (OutputWebSearchCallItem is { } __value11)
             {
-                outputWebSearchCallItem?.Invoke(OutputWebSearchCallItem!);
+                outputWebSearchCallItem?.Invoke(__value11);
             }
-            else if (IsOutputFileSearchCallItem)
+            else if (OutputFileSearchCallItem is { } __value12)
             {
-                outputFileSearchCallItem?.Invoke(OutputFileSearchCallItem!);
+                outputFileSearchCallItem?.Invoke(__value12);
             }
-            else if (IsOutputImageGenerationCallItem)
+            else if (OutputImageGenerationCallItem is { } __value13)
             {
-                outputImageGenerationCallItem?.Invoke(OutputImageGenerationCallItem!);
+                outputImageGenerationCallItem?.Invoke(__value13);
             }
-            else if (IsOutputCodeInterpreterCallItem)
+            else if (OutputCodeInterpreterCallItem is { } __value14)
             {
-                outputCodeInterpreterCallItem?.Invoke(OutputCodeInterpreterCallItem!);
+                outputCodeInterpreterCallItem?.Invoke(__value14);
             }
-            else if (IsOutputComputerCallItem)
+            else if (OutputComputerCallItem is { } __value15)
             {
-                outputComputerCallItem?.Invoke(OutputComputerCallItem!);
+                outputComputerCallItem?.Invoke(__value15);
             }
-            else if (IsOutputDatetimeItem)
+            else if (OutputDatetimeItem is { } __value16)
             {
-                outputDatetimeItem?.Invoke(OutputDatetimeItem!);
+                outputDatetimeItem?.Invoke(__value16);
             }
-            else if (IsOutputWebSearchServerToolItem)
+            else if (OutputWebSearchServerToolItem is { } __value17)
             {
-                outputWebSearchServerToolItem?.Invoke(OutputWebSearchServerToolItem!);
+                outputWebSearchServerToolItem?.Invoke(__value17);
             }
-            else if (IsOutputCodeInterpreterServerToolItem)
+            else if (OutputCodeInterpreterServerToolItem is { } __value18)
             {
-                outputCodeInterpreterServerToolItem?.Invoke(OutputCodeInterpreterServerToolItem!);
+                outputCodeInterpreterServerToolItem?.Invoke(__value18);
             }
-            else if (IsOutputFileSearchServerToolItem)
+            else if (OutputFileSearchServerToolItem is { } __value19)
             {
-                outputFileSearchServerToolItem?.Invoke(OutputFileSearchServerToolItem!);
+                outputFileSearchServerToolItem?.Invoke(__value19);
             }
-            else if (IsOutputImageGenerationServerToolItem)
+            else if (OutputImageGenerationServerToolItem is { } __value20)
             {
-                outputImageGenerationServerToolItem?.Invoke(OutputImageGenerationServerToolItem!);
+                outputImageGenerationServerToolItem?.Invoke(__value20);
             }
-            else if (IsOutputBrowserUseServerToolItem)
+            else if (OutputBrowserUseServerToolItem is { } __value21)
             {
-                outputBrowserUseServerToolItem?.Invoke(OutputBrowserUseServerToolItem!);
+                outputBrowserUseServerToolItem?.Invoke(__value21);
             }
-            else if (IsOutputBashServerToolItem)
+            else if (OutputBashServerToolItem is { } __value22)
             {
-                outputBashServerToolItem?.Invoke(OutputBashServerToolItem!);
+                outputBashServerToolItem?.Invoke(__value22);
             }
-            else if (IsOutputTextEditorServerToolItem)
+            else if (OutputTextEditorServerToolItem is { } __value23)
             {
-                outputTextEditorServerToolItem?.Invoke(OutputTextEditorServerToolItem!);
+                outputTextEditorServerToolItem?.Invoke(__value23);
             }
-            else if (IsOutputApplyPatchServerToolItem)
+            else if (OutputApplyPatchServerToolItem is { } __value24)
             {
-                outputApplyPatchServerToolItem?.Invoke(OutputApplyPatchServerToolItem!);
+                outputApplyPatchServerToolItem?.Invoke(__value24);
             }
-            else if (IsOutputWebFetchServerToolItem)
+            else if (OutputWebFetchServerToolItem is { } __value25)
             {
-                outputWebFetchServerToolItem?.Invoke(OutputWebFetchServerToolItem!);
+                outputWebFetchServerToolItem?.Invoke(__value25);
             }
-            else if (IsOutputToolSearchServerToolItem)
+            else if (OutputToolSearchServerToolItem is { } __value26)
             {
-                outputToolSearchServerToolItem?.Invoke(OutputToolSearchServerToolItem!);
+                outputToolSearchServerToolItem?.Invoke(__value26);
             }
-            else if (IsOutputMemoryServerToolItem)
+            else if (OutputMemoryServerToolItem is { } __value27)
             {
-                outputMemoryServerToolItem?.Invoke(OutputMemoryServerToolItem!);
+                outputMemoryServerToolItem?.Invoke(__value27);
             }
-            else if (IsOutputMcpServerToolItem)
+            else if (OutputMcpServerToolItem is { } __value28)
             {
-                outputMcpServerToolItem?.Invoke(OutputMcpServerToolItem!);
+                outputMcpServerToolItem?.Invoke(__value28);
             }
-            else if (IsOutputSearchModelsServerToolItem)
+            else if (OutputSearchModelsServerToolItem is { } __value29)
             {
-                outputSearchModelsServerToolItem?.Invoke(OutputSearchModelsServerToolItem!);
+                outputSearchModelsServerToolItem?.Invoke(__value29);
             }
-            else if (IsOutputFusionServerToolItem)
+            else if (OutputFusionServerToolItem is { } __value30)
             {
-                outputFusionServerToolItem?.Invoke(OutputFusionServerToolItem!);
+                outputFusionServerToolItem?.Invoke(__value30);
             }
-            else if (IsOutputAdvisorServerToolItem)
+            else if (OutputAdvisorServerToolItem is { } __value31)
             {
-                outputAdvisorServerToolItem?.Invoke(OutputAdvisorServerToolItem!);
+                outputAdvisorServerToolItem?.Invoke(__value31);
             }
-            else if (IsOutputSubagentServerToolItem)
+            else if (OutputSubagentServerToolItem is { } __value32)
             {
-                outputSubagentServerToolItem?.Invoke(OutputSubagentServerToolItem!);
+                outputSubagentServerToolItem?.Invoke(__value32);
             }
-            else if (IsOutputFilesServerToolItem)
+            else if (OutputFilesServerToolItem is { } __value33)
             {
-                outputFilesServerToolItem?.Invoke(OutputFilesServerToolItem!);
+                outputFilesServerToolItem?.Invoke(__value33);
             }
-            else if (IsLocalShellCallItem)
+            else if (LocalShellCallItem is { } __value34)
             {
-                localShellCallItem?.Invoke(LocalShellCallItem!);
+                localShellCallItem?.Invoke(__value34);
             }
-            else if (IsLocalShellCallOutputItem)
+            else if (LocalShellCallOutputItem is { } __value35)
             {
-                localShellCallOutputItem?.Invoke(LocalShellCallOutputItem!);
+                localShellCallOutputItem?.Invoke(__value35);
             }
-            else if (IsShellCallItem)
+            else if (ShellCallItem is { } __value36)
             {
-                shellCallItem?.Invoke(ShellCallItem!);
+                shellCallItem?.Invoke(__value36);
             }
-            else if (IsShellCallOutputItem)
+            else if (ShellCallOutputItem is { } __value37)
             {
-                shellCallOutputItem?.Invoke(ShellCallOutputItem!);
+                shellCallOutputItem?.Invoke(__value37);
             }
-            else if (IsMcpListToolsItem)
+            else if (McpListToolsItem is { } __value38)
             {
-                mcpListToolsItem?.Invoke(McpListToolsItem!);
+                mcpListToolsItem?.Invoke(__value38);
             }
-            else if (IsMcpApprovalRequestItem)
+            else if (McpApprovalRequestItem is { } __value39)
             {
-                mcpApprovalRequestItem?.Invoke(McpApprovalRequestItem!);
+                mcpApprovalRequestItem?.Invoke(__value39);
             }
-            else if (IsMcpApprovalResponseItem)
+            else if (McpApprovalResponseItem is { } __value40)
             {
-                mcpApprovalResponseItem?.Invoke(McpApprovalResponseItem!);
+                mcpApprovalResponseItem?.Invoke(__value40);
             }
-            else if (IsMcpCallItem)
+            else if (McpCallItem is { } __value41)
             {
-                mcpCallItem?.Invoke(McpCallItem!);
+                mcpCallItem?.Invoke(__value41);
             }
-            else if (IsCustomToolCallItem)
+            else if (CustomToolCallItem is { } __value42)
             {
-                customToolCallItem?.Invoke(CustomToolCallItem!);
+                customToolCallItem?.Invoke(__value42);
             }
-            else if (IsCustomToolCallOutputItem)
+            else if (CustomToolCallOutputItem is { } __value43)
             {
-                customToolCallOutputItem?.Invoke(CustomToolCallOutputItem!);
+                customToolCallOutputItem?.Invoke(__value43);
             }
-            else if (IsCompactionItem)
+            else if (CompactionItem is { } __value44)
             {
-                compactionItem?.Invoke(CompactionItem!);
+                compactionItem?.Invoke(__value44);
             }
-            else if (IsContextCompactionItem)
+            else if (ContextCompactionItem is { } __value45)
             {
-                contextCompactionItem?.Invoke(ContextCompactionItem!);
+                contextCompactionItem?.Invoke(__value45);
             }
-            else if (IsItemReferenceItem)
+            else if (ItemReferenceItem is { } __value46)
             {
-                itemReferenceItem?.Invoke(ItemReferenceItem!);
+                itemReferenceItem?.Invoke(__value46);
             }
-            else if (IsAdditionalToolsItem)
+            else if (AdditionalToolsItem is { } __value47)
             {
-                additionalToolsItem?.Invoke(AdditionalToolsItem!);
+                additionalToolsItem?.Invoke(__value47);
             }
-            else if (IsAgentMessageItem)
+            else if (AgentMessageItem is { } __value48)
             {
-                agentMessageItem?.Invoke(AgentMessageItem!);
+                agentMessageItem?.Invoke(__value48);
             }
         }
 
@@ -3798,201 +3798,201 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsReasoningItem)
+            if (ReasoningItem is { } __value0)
             {
-                reasoningItem?.Invoke(ReasoningItem!);
+                reasoningItem?.Invoke(__value0);
             }
-            else if (IsEasyInputMessage)
+            else if (EasyInputMessage is { } __value1)
             {
-                easyInputMessage?.Invoke(EasyInputMessage!);
+                easyInputMessage?.Invoke(__value1);
             }
-            else if (IsInputMessageItem)
+            else if (InputMessageItem is { } __value2)
             {
-                inputMessageItem?.Invoke(InputMessageItem!);
+                inputMessageItem?.Invoke(__value2);
             }
-            else if (IsFunctionCallItem)
+            else if (FunctionCallItem is { } __value3)
             {
-                functionCallItem?.Invoke(FunctionCallItem!);
+                functionCallItem?.Invoke(__value3);
             }
-            else if (IsFunctionCallOutputItem)
+            else if (FunctionCallOutputItem is { } __value4)
             {
-                functionCallOutputItem?.Invoke(FunctionCallOutputItem!);
+                functionCallOutputItem?.Invoke(__value4);
             }
-            else if (IsApplyPatchCallItem)
+            else if (ApplyPatchCallItem is { } __value5)
             {
-                applyPatchCallItem?.Invoke(ApplyPatchCallItem!);
+                applyPatchCallItem?.Invoke(__value5);
             }
-            else if (IsApplyPatchCallOutputItem)
+            else if (ApplyPatchCallOutputItem is { } __value6)
             {
-                applyPatchCallOutputItem?.Invoke(ApplyPatchCallOutputItem!);
+                applyPatchCallOutputItem?.Invoke(__value6);
             }
-            else if (IsInputsOneOf1Items7)
+            else if (InputsOneOf1Items7 is { } __value7)
             {
-                inputsOneOf1Items7?.Invoke(InputsOneOf1Items7!);
+                inputsOneOf1Items7?.Invoke(__value7);
             }
-            else if (IsInputsOneOf1Items8)
+            else if (InputsOneOf1Items8 is { } __value8)
             {
-                inputsOneOf1Items8?.Invoke(InputsOneOf1Items8!);
+                inputsOneOf1Items8?.Invoke(__value8);
             }
-            else if (IsOutputFunctionCallItem)
+            else if (OutputFunctionCallItem is { } __value9)
             {
-                outputFunctionCallItem?.Invoke(OutputFunctionCallItem!);
+                outputFunctionCallItem?.Invoke(__value9);
             }
-            else if (IsOutputCustomToolCallItem)
+            else if (OutputCustomToolCallItem is { } __value10)
             {
-                outputCustomToolCallItem?.Invoke(OutputCustomToolCallItem!);
+                outputCustomToolCallItem?.Invoke(__value10);
             }
-            else if (IsOutputWebSearchCallItem)
+            else if (OutputWebSearchCallItem is { } __value11)
             {
-                outputWebSearchCallItem?.Invoke(OutputWebSearchCallItem!);
+                outputWebSearchCallItem?.Invoke(__value11);
             }
-            else if (IsOutputFileSearchCallItem)
+            else if (OutputFileSearchCallItem is { } __value12)
             {
-                outputFileSearchCallItem?.Invoke(OutputFileSearchCallItem!);
+                outputFileSearchCallItem?.Invoke(__value12);
             }
-            else if (IsOutputImageGenerationCallItem)
+            else if (OutputImageGenerationCallItem is { } __value13)
             {
-                outputImageGenerationCallItem?.Invoke(OutputImageGenerationCallItem!);
+                outputImageGenerationCallItem?.Invoke(__value13);
             }
-            else if (IsOutputCodeInterpreterCallItem)
+            else if (OutputCodeInterpreterCallItem is { } __value14)
             {
-                outputCodeInterpreterCallItem?.Invoke(OutputCodeInterpreterCallItem!);
+                outputCodeInterpreterCallItem?.Invoke(__value14);
             }
-            else if (IsOutputComputerCallItem)
+            else if (OutputComputerCallItem is { } __value15)
             {
-                outputComputerCallItem?.Invoke(OutputComputerCallItem!);
+                outputComputerCallItem?.Invoke(__value15);
             }
-            else if (IsOutputDatetimeItem)
+            else if (OutputDatetimeItem is { } __value16)
             {
-                outputDatetimeItem?.Invoke(OutputDatetimeItem!);
+                outputDatetimeItem?.Invoke(__value16);
             }
-            else if (IsOutputWebSearchServerToolItem)
+            else if (OutputWebSearchServerToolItem is { } __value17)
             {
-                outputWebSearchServerToolItem?.Invoke(OutputWebSearchServerToolItem!);
+                outputWebSearchServerToolItem?.Invoke(__value17);
             }
-            else if (IsOutputCodeInterpreterServerToolItem)
+            else if (OutputCodeInterpreterServerToolItem is { } __value18)
             {
-                outputCodeInterpreterServerToolItem?.Invoke(OutputCodeInterpreterServerToolItem!);
+                outputCodeInterpreterServerToolItem?.Invoke(__value18);
             }
-            else if (IsOutputFileSearchServerToolItem)
+            else if (OutputFileSearchServerToolItem is { } __value19)
             {
-                outputFileSearchServerToolItem?.Invoke(OutputFileSearchServerToolItem!);
+                outputFileSearchServerToolItem?.Invoke(__value19);
             }
-            else if (IsOutputImageGenerationServerToolItem)
+            else if (OutputImageGenerationServerToolItem is { } __value20)
             {
-                outputImageGenerationServerToolItem?.Invoke(OutputImageGenerationServerToolItem!);
+                outputImageGenerationServerToolItem?.Invoke(__value20);
             }
-            else if (IsOutputBrowserUseServerToolItem)
+            else if (OutputBrowserUseServerToolItem is { } __value21)
             {
-                outputBrowserUseServerToolItem?.Invoke(OutputBrowserUseServerToolItem!);
+                outputBrowserUseServerToolItem?.Invoke(__value21);
             }
-            else if (IsOutputBashServerToolItem)
+            else if (OutputBashServerToolItem is { } __value22)
             {
-                outputBashServerToolItem?.Invoke(OutputBashServerToolItem!);
+                outputBashServerToolItem?.Invoke(__value22);
             }
-            else if (IsOutputTextEditorServerToolItem)
+            else if (OutputTextEditorServerToolItem is { } __value23)
             {
-                outputTextEditorServerToolItem?.Invoke(OutputTextEditorServerToolItem!);
+                outputTextEditorServerToolItem?.Invoke(__value23);
             }
-            else if (IsOutputApplyPatchServerToolItem)
+            else if (OutputApplyPatchServerToolItem is { } __value24)
             {
-                outputApplyPatchServerToolItem?.Invoke(OutputApplyPatchServerToolItem!);
+                outputApplyPatchServerToolItem?.Invoke(__value24);
             }
-            else if (IsOutputWebFetchServerToolItem)
+            else if (OutputWebFetchServerToolItem is { } __value25)
             {
-                outputWebFetchServerToolItem?.Invoke(OutputWebFetchServerToolItem!);
+                outputWebFetchServerToolItem?.Invoke(__value25);
             }
-            else if (IsOutputToolSearchServerToolItem)
+            else if (OutputToolSearchServerToolItem is { } __value26)
             {
-                outputToolSearchServerToolItem?.Invoke(OutputToolSearchServerToolItem!);
+                outputToolSearchServerToolItem?.Invoke(__value26);
             }
-            else if (IsOutputMemoryServerToolItem)
+            else if (OutputMemoryServerToolItem is { } __value27)
             {
-                outputMemoryServerToolItem?.Invoke(OutputMemoryServerToolItem!);
+                outputMemoryServerToolItem?.Invoke(__value27);
             }
-            else if (IsOutputMcpServerToolItem)
+            else if (OutputMcpServerToolItem is { } __value28)
             {
-                outputMcpServerToolItem?.Invoke(OutputMcpServerToolItem!);
+                outputMcpServerToolItem?.Invoke(__value28);
             }
-            else if (IsOutputSearchModelsServerToolItem)
+            else if (OutputSearchModelsServerToolItem is { } __value29)
             {
-                outputSearchModelsServerToolItem?.Invoke(OutputSearchModelsServerToolItem!);
+                outputSearchModelsServerToolItem?.Invoke(__value29);
             }
-            else if (IsOutputFusionServerToolItem)
+            else if (OutputFusionServerToolItem is { } __value30)
             {
-                outputFusionServerToolItem?.Invoke(OutputFusionServerToolItem!);
+                outputFusionServerToolItem?.Invoke(__value30);
             }
-            else if (IsOutputAdvisorServerToolItem)
+            else if (OutputAdvisorServerToolItem is { } __value31)
             {
-                outputAdvisorServerToolItem?.Invoke(OutputAdvisorServerToolItem!);
+                outputAdvisorServerToolItem?.Invoke(__value31);
             }
-            else if (IsOutputSubagentServerToolItem)
+            else if (OutputSubagentServerToolItem is { } __value32)
             {
-                outputSubagentServerToolItem?.Invoke(OutputSubagentServerToolItem!);
+                outputSubagentServerToolItem?.Invoke(__value32);
             }
-            else if (IsOutputFilesServerToolItem)
+            else if (OutputFilesServerToolItem is { } __value33)
             {
-                outputFilesServerToolItem?.Invoke(OutputFilesServerToolItem!);
+                outputFilesServerToolItem?.Invoke(__value33);
             }
-            else if (IsLocalShellCallItem)
+            else if (LocalShellCallItem is { } __value34)
             {
-                localShellCallItem?.Invoke(LocalShellCallItem!);
+                localShellCallItem?.Invoke(__value34);
             }
-            else if (IsLocalShellCallOutputItem)
+            else if (LocalShellCallOutputItem is { } __value35)
             {
-                localShellCallOutputItem?.Invoke(LocalShellCallOutputItem!);
+                localShellCallOutputItem?.Invoke(__value35);
             }
-            else if (IsShellCallItem)
+            else if (ShellCallItem is { } __value36)
             {
-                shellCallItem?.Invoke(ShellCallItem!);
+                shellCallItem?.Invoke(__value36);
             }
-            else if (IsShellCallOutputItem)
+            else if (ShellCallOutputItem is { } __value37)
             {
-                shellCallOutputItem?.Invoke(ShellCallOutputItem!);
+                shellCallOutputItem?.Invoke(__value37);
             }
-            else if (IsMcpListToolsItem)
+            else if (McpListToolsItem is { } __value38)
             {
-                mcpListToolsItem?.Invoke(McpListToolsItem!);
+                mcpListToolsItem?.Invoke(__value38);
             }
-            else if (IsMcpApprovalRequestItem)
+            else if (McpApprovalRequestItem is { } __value39)
             {
-                mcpApprovalRequestItem?.Invoke(McpApprovalRequestItem!);
+                mcpApprovalRequestItem?.Invoke(__value39);
             }
-            else if (IsMcpApprovalResponseItem)
+            else if (McpApprovalResponseItem is { } __value40)
             {
-                mcpApprovalResponseItem?.Invoke(McpApprovalResponseItem!);
+                mcpApprovalResponseItem?.Invoke(__value40);
             }
-            else if (IsMcpCallItem)
+            else if (McpCallItem is { } __value41)
             {
-                mcpCallItem?.Invoke(McpCallItem!);
+                mcpCallItem?.Invoke(__value41);
             }
-            else if (IsCustomToolCallItem)
+            else if (CustomToolCallItem is { } __value42)
             {
-                customToolCallItem?.Invoke(CustomToolCallItem!);
+                customToolCallItem?.Invoke(__value42);
             }
-            else if (IsCustomToolCallOutputItem)
+            else if (CustomToolCallOutputItem is { } __value43)
             {
-                customToolCallOutputItem?.Invoke(CustomToolCallOutputItem!);
+                customToolCallOutputItem?.Invoke(__value43);
             }
-            else if (IsCompactionItem)
+            else if (CompactionItem is { } __value44)
             {
-                compactionItem?.Invoke(CompactionItem!);
+                compactionItem?.Invoke(__value44);
             }
-            else if (IsContextCompactionItem)
+            else if (ContextCompactionItem is { } __value45)
             {
-                contextCompactionItem?.Invoke(ContextCompactionItem!);
+                contextCompactionItem?.Invoke(__value45);
             }
-            else if (IsItemReferenceItem)
+            else if (ItemReferenceItem is { } __value46)
             {
-                itemReferenceItem?.Invoke(ItemReferenceItem!);
+                itemReferenceItem?.Invoke(__value46);
             }
-            else if (IsAdditionalToolsItem)
+            else if (AdditionalToolsItem is { } __value47)
             {
-                additionalToolsItem?.Invoke(AdditionalToolsItem!);
+                additionalToolsItem?.Invoke(__value47);
             }
-            else if (IsAgentMessageItem)
+            else if (AgentMessageItem is { } __value48)
             {
-                agentMessageItem?.Invoke(AgentMessageItem!);
+                agentMessageItem?.Invoke(__value48);
             }
         }
 

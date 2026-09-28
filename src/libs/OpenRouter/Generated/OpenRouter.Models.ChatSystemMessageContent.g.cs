@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickChatSystemMessageContentVariant1() => IsChatSystemMessageContentVariant1
-            ? ChatSystemMessageContentVariant1!
+        public string PickChatSystemMessageContentVariant1() => ChatSystemMessageContentVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSystemMessageContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText> PickChatSystemMessageContent1() => IsChatSystemMessageContent1
-            ? ChatSystemMessageContent1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatContentText> PickChatSystemMessageContent1() => ChatSystemMessageContent1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSystemMessageContent1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatSystemMessageContentVariant1 && chatSystemMessageContentVariant1 != null)
+            if (ChatSystemMessageContentVariant1 is { } __value0 && chatSystemMessageContentVariant1 != null)
             {
-                return chatSystemMessageContentVariant1(ChatSystemMessageContentVariant1!);
+                return chatSystemMessageContentVariant1(__value0);
             }
-            else if (IsChatSystemMessageContent1 && chatSystemMessageContent1 != null)
+            else if (ChatSystemMessageContent1 is { } __value1 && chatSystemMessageContent1 != null)
             {
-                return chatSystemMessageContent1(ChatSystemMessageContent1!);
+                return chatSystemMessageContent1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatSystemMessageContentVariant1)
+            if (ChatSystemMessageContentVariant1 is { } __value0)
             {
-                chatSystemMessageContentVariant1?.Invoke(ChatSystemMessageContentVariant1!);
+                chatSystemMessageContentVariant1?.Invoke(__value0);
             }
-            else if (IsChatSystemMessageContent1)
+            else if (ChatSystemMessageContent1 is { } __value1)
             {
-                chatSystemMessageContent1?.Invoke(ChatSystemMessageContent1!);
+                chatSystemMessageContent1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatSystemMessageContentVariant1)
+            if (ChatSystemMessageContentVariant1 is { } __value0)
             {
-                chatSystemMessageContentVariant1?.Invoke(ChatSystemMessageContentVariant1!);
+                chatSystemMessageContentVariant1?.Invoke(__value0);
             }
-            else if (IsChatSystemMessageContent1)
+            else if (ChatSystemMessageContent1 is { } __value1)
             {
-                chatSystemMessageContent1?.Invoke(ChatSystemMessageContent1!);
+                chatSystemMessageContent1?.Invoke(__value1);
             }
         }
 

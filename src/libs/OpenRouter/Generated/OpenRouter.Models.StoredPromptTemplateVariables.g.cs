@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickStoredPromptTemplateVariablesVariant1() => IsStoredPromptTemplateVariablesVariant1
-            ? StoredPromptTemplateVariablesVariant1!
+        public string PickStoredPromptTemplateVariablesVariant1() => StoredPromptTemplateVariablesVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StoredPromptTemplateVariablesVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputText PickInputText() => IsInputText
-            ? InputText!
+        public global::OpenRouter.InputText PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputImage PickInputImage() => IsInputImage
-            ? InputImage!
+        public global::OpenRouter.InputImage PickInputImage() => InputImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputFile PickInputFile() => IsInputFile
-            ? InputFile!
+        public global::OpenRouter.InputFile PickInputFile() => InputFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -307,21 +307,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsStoredPromptTemplateVariablesVariant1 && storedPromptTemplateVariablesVariant1 != null)
+            if (StoredPromptTemplateVariablesVariant1 is { } __value0 && storedPromptTemplateVariablesVariant1 != null)
             {
-                return storedPromptTemplateVariablesVariant1(StoredPromptTemplateVariablesVariant1!);
+                return storedPromptTemplateVariablesVariant1(__value0);
             }
-            else if (IsInputText && inputText != null)
+            else if (InputText is { } __value1 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value1);
             }
-            else if (IsInputImage && inputImage != null)
+            else if (InputImage is { } __value2 && inputImage != null)
             {
-                return inputImage(InputImage!);
+                return inputImage(__value2);
             }
-            else if (IsInputFile && inputFile != null)
+            else if (InputFile is { } __value3 && inputFile != null)
             {
-                return inputFile(InputFile!);
+                return inputFile(__value3);
             }
 
             return default(TResult);
@@ -345,21 +345,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsStoredPromptTemplateVariablesVariant1)
+            if (StoredPromptTemplateVariablesVariant1 is { } __value0)
             {
-                storedPromptTemplateVariablesVariant1?.Invoke(StoredPromptTemplateVariablesVariant1!);
+                storedPromptTemplateVariablesVariant1?.Invoke(__value0);
             }
-            else if (IsInputText)
+            else if (InputText is { } __value1)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value1);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value2)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value2);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value3)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value3);
             }
         }
 
@@ -378,21 +378,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsStoredPromptTemplateVariablesVariant1)
+            if (StoredPromptTemplateVariablesVariant1 is { } __value0)
             {
-                storedPromptTemplateVariablesVariant1?.Invoke(StoredPromptTemplateVariablesVariant1!);
+                storedPromptTemplateVariablesVariant1?.Invoke(__value0);
             }
-            else if (IsInputText)
+            else if (InputText is { } __value1)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value1);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value2)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value2);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value3)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value3);
             }
         }
 

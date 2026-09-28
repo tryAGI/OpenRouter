@@ -132,13 +132,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBase64PdfSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBase64PdfSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicBase64PdfSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicBase64PdfSource!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicBase64PdfSource(), typeInfo);
             }
             else if (value.IsAnthropicPlainTextSource)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicPlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicPlainTextSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicPlainTextSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicPlainTextSource!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicPlainTextSource(), typeInfo);
             }
         }
     }

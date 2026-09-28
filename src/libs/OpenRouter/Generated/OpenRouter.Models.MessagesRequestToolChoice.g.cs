@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolChoice0 PickMessagesRequestToolChoice0() => IsMessagesRequestToolChoice0
-            ? MessagesRequestToolChoice0!
+        public global::OpenRouter.MessagesRequestToolChoice0 PickMessagesRequestToolChoice0() => MessagesRequestToolChoice0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolChoice1 PickMessagesRequestToolChoice1() => IsMessagesRequestToolChoice1
-            ? MessagesRequestToolChoice1!
+        public global::OpenRouter.MessagesRequestToolChoice1 PickMessagesRequestToolChoice1() => MessagesRequestToolChoice1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolChoice2 PickMessagesRequestToolChoice2() => IsMessagesRequestToolChoice2
-            ? MessagesRequestToolChoice2!
+        public global::OpenRouter.MessagesRequestToolChoice2 PickMessagesRequestToolChoice2() => MessagesRequestToolChoice2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice2' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestToolChoice3 PickMessagesRequestToolChoice3() => IsMessagesRequestToolChoice3
-            ? MessagesRequestToolChoice3!
+        public global::OpenRouter.MessagesRequestToolChoice3 PickMessagesRequestToolChoice3() => MessagesRequestToolChoice3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -307,21 +307,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestToolChoice0 && messagesRequestToolChoice0 != null)
+            if (MessagesRequestToolChoice0 is { } __value0 && messagesRequestToolChoice0 != null)
             {
-                return messagesRequestToolChoice0(MessagesRequestToolChoice0!);
+                return messagesRequestToolChoice0(__value0);
             }
-            else if (IsMessagesRequestToolChoice1 && messagesRequestToolChoice1 != null)
+            else if (MessagesRequestToolChoice1 is { } __value1 && messagesRequestToolChoice1 != null)
             {
-                return messagesRequestToolChoice1(MessagesRequestToolChoice1!);
+                return messagesRequestToolChoice1(__value1);
             }
-            else if (IsMessagesRequestToolChoice2 && messagesRequestToolChoice2 != null)
+            else if (MessagesRequestToolChoice2 is { } __value2 && messagesRequestToolChoice2 != null)
             {
-                return messagesRequestToolChoice2(MessagesRequestToolChoice2!);
+                return messagesRequestToolChoice2(__value2);
             }
-            else if (IsMessagesRequestToolChoice3 && messagesRequestToolChoice3 != null)
+            else if (MessagesRequestToolChoice3 is { } __value3 && messagesRequestToolChoice3 != null)
             {
-                return messagesRequestToolChoice3(MessagesRequestToolChoice3!);
+                return messagesRequestToolChoice3(__value3);
             }
 
             return default(TResult);
@@ -345,21 +345,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestToolChoice0)
+            if (MessagesRequestToolChoice0 is { } __value0)
             {
-                messagesRequestToolChoice0?.Invoke(MessagesRequestToolChoice0!);
+                messagesRequestToolChoice0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestToolChoice1)
+            else if (MessagesRequestToolChoice1 is { } __value1)
             {
-                messagesRequestToolChoice1?.Invoke(MessagesRequestToolChoice1!);
+                messagesRequestToolChoice1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestToolChoice2)
+            else if (MessagesRequestToolChoice2 is { } __value2)
             {
-                messagesRequestToolChoice2?.Invoke(MessagesRequestToolChoice2!);
+                messagesRequestToolChoice2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestToolChoice3)
+            else if (MessagesRequestToolChoice3 is { } __value3)
             {
-                messagesRequestToolChoice3?.Invoke(MessagesRequestToolChoice3!);
+                messagesRequestToolChoice3?.Invoke(__value3);
             }
         }
 
@@ -378,21 +378,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestToolChoice0)
+            if (MessagesRequestToolChoice0 is { } __value0)
             {
-                messagesRequestToolChoice0?.Invoke(MessagesRequestToolChoice0!);
+                messagesRequestToolChoice0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestToolChoice1)
+            else if (MessagesRequestToolChoice1 is { } __value1)
             {
-                messagesRequestToolChoice1?.Invoke(MessagesRequestToolChoice1!);
+                messagesRequestToolChoice1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestToolChoice2)
+            else if (MessagesRequestToolChoice2 is { } __value2)
             {
-                messagesRequestToolChoice2?.Invoke(MessagesRequestToolChoice2!);
+                messagesRequestToolChoice2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestToolChoice3)
+            else if (MessagesRequestToolChoice3 is { } __value3)
             {
-                messagesRequestToolChoice3?.Invoke(MessagesRequestToolChoice3!);
+                messagesRequestToolChoice3?.Invoke(__value3);
             }
         }
 

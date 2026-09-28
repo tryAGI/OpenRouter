@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickMcpServerToolAllowedToolsVariant1() => IsMcpServerToolAllowedToolsVariant1
-            ? McpServerToolAllowedToolsVariant1!
+        public global::System.Collections.Generic.IList<string> PickMcpServerToolAllowedToolsVariant1() => McpServerToolAllowedToolsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpServerToolAllowedTools1 PickMcpServerToolAllowedTools1() => IsMcpServerToolAllowedTools1
-            ? McpServerToolAllowedTools1!
+        public global::OpenRouter.McpServerToolAllowedTools1 PickMcpServerToolAllowedTools1() => McpServerToolAllowedTools1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedTools1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMcpServerToolAllowedToolsVariant1 && mcpServerToolAllowedToolsVariant1 != null)
+            if (McpServerToolAllowedToolsVariant1 is { } __value0 && mcpServerToolAllowedToolsVariant1 != null)
             {
-                return mcpServerToolAllowedToolsVariant1(McpServerToolAllowedToolsVariant1!);
+                return mcpServerToolAllowedToolsVariant1(__value0);
             }
-            else if (IsMcpServerToolAllowedTools1 && mcpServerToolAllowedTools1 != null)
+            else if (McpServerToolAllowedTools1 is { } __value1 && mcpServerToolAllowedTools1 != null)
             {
-                return mcpServerToolAllowedTools1(McpServerToolAllowedTools1!);
+                return mcpServerToolAllowedTools1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMcpServerToolAllowedToolsVariant1)
+            if (McpServerToolAllowedToolsVariant1 is { } __value0)
             {
-                mcpServerToolAllowedToolsVariant1?.Invoke(McpServerToolAllowedToolsVariant1!);
+                mcpServerToolAllowedToolsVariant1?.Invoke(__value0);
             }
-            else if (IsMcpServerToolAllowedTools1)
+            else if (McpServerToolAllowedTools1 is { } __value1)
             {
-                mcpServerToolAllowedTools1?.Invoke(McpServerToolAllowedTools1!);
+                mcpServerToolAllowedTools1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMcpServerToolAllowedToolsVariant1)
+            if (McpServerToolAllowedToolsVariant1 is { } __value0)
             {
-                mcpServerToolAllowedToolsVariant1?.Invoke(McpServerToolAllowedToolsVariant1!);
+                mcpServerToolAllowedToolsVariant1?.Invoke(__value0);
             }
-            else if (IsMcpServerToolAllowedTools1)
+            else if (McpServerToolAllowedTools1 is { } __value1)
             {
-                mcpServerToolAllowedTools1?.Invoke(McpServerToolAllowedTools1!);
+                mcpServerToolAllowedTools1?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickOpenAiResponseCustomToolCallOutputOutputVariant1() => IsOpenAiResponseCustomToolCallOutputOutputVariant1
-            ? OpenAiResponseCustomToolCallOutputOutputVariant1!
+        public string PickOpenAiResponseCustomToolCallOutputOutputVariant1() => OpenAiResponseCustomToolCallOutputOutputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseCustomToolCallOutputOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items> PickOpenAiResponseCustomToolCallOutputOutput1() => IsOpenAiResponseCustomToolCallOutputOutput1
-            ? OpenAiResponseCustomToolCallOutputOutput1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items> PickOpenAiResponseCustomToolCallOutputOutput1() => OpenAiResponseCustomToolCallOutputOutput1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponseCustomToolCallOutputOutput1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseCustomToolCallOutputOutputVariant1 && openAiResponseCustomToolCallOutputOutputVariant1 != null)
+            if (OpenAiResponseCustomToolCallOutputOutputVariant1 is { } __value0 && openAiResponseCustomToolCallOutputOutputVariant1 != null)
             {
-                return openAiResponseCustomToolCallOutputOutputVariant1(OpenAiResponseCustomToolCallOutputOutputVariant1!);
+                return openAiResponseCustomToolCallOutputOutputVariant1(__value0);
             }
-            else if (IsOpenAiResponseCustomToolCallOutputOutput1 && openAiResponseCustomToolCallOutputOutput1 != null)
+            else if (OpenAiResponseCustomToolCallOutputOutput1 is { } __value1 && openAiResponseCustomToolCallOutputOutput1 != null)
             {
-                return openAiResponseCustomToolCallOutputOutput1(OpenAiResponseCustomToolCallOutputOutput1!);
+                return openAiResponseCustomToolCallOutputOutput1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseCustomToolCallOutputOutputVariant1)
+            if (OpenAiResponseCustomToolCallOutputOutputVariant1 is { } __value0)
             {
-                openAiResponseCustomToolCallOutputOutputVariant1?.Invoke(OpenAiResponseCustomToolCallOutputOutputVariant1!);
+                openAiResponseCustomToolCallOutputOutputVariant1?.Invoke(__value0);
             }
-            else if (IsOpenAiResponseCustomToolCallOutputOutput1)
+            else if (OpenAiResponseCustomToolCallOutputOutput1 is { } __value1)
             {
-                openAiResponseCustomToolCallOutputOutput1?.Invoke(OpenAiResponseCustomToolCallOutputOutput1!);
+                openAiResponseCustomToolCallOutputOutput1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOpenAiResponseCustomToolCallOutputOutputVariant1)
+            if (OpenAiResponseCustomToolCallOutputOutputVariant1 is { } __value0)
             {
-                openAiResponseCustomToolCallOutputOutputVariant1?.Invoke(OpenAiResponseCustomToolCallOutputOutputVariant1!);
+                openAiResponseCustomToolCallOutputOutputVariant1?.Invoke(__value0);
             }
-            else if (IsOpenAiResponseCustomToolCallOutputOutput1)
+            else if (OpenAiResponseCustomToolCallOutputOutput1 is { } __value1)
             {
-                openAiResponseCustomToolCallOutputOutput1?.Invoke(OpenAiResponseCustomToolCallOutputOutput1!);
+                openAiResponseCustomToolCallOutputOutput1?.Invoke(__value1);
             }
         }
 

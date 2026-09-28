@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestContextManagementEditsItems0 PickMessagesRequestContextManagementEditsItems0() => IsMessagesRequestContextManagementEditsItems0
-            ? MessagesRequestContextManagementEditsItems0!
+        public global::OpenRouter.MessagesRequestContextManagementEditsItems0 PickMessagesRequestContextManagementEditsItems0() => MessagesRequestContextManagementEditsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestContextManagementEditsItems1 PickMessagesRequestContextManagementEditsItems1() => IsMessagesRequestContextManagementEditsItems1
-            ? MessagesRequestContextManagementEditsItems1!
+        public global::OpenRouter.MessagesRequestContextManagementEditsItems1 PickMessagesRequestContextManagementEditsItems1() => MessagesRequestContextManagementEditsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestContextManagementEditsItems2 PickMessagesRequestContextManagementEditsItems2() => IsMessagesRequestContextManagementEditsItems2
-            ? MessagesRequestContextManagementEditsItems2!
+        public global::OpenRouter.MessagesRequestContextManagementEditsItems2 PickMessagesRequestContextManagementEditsItems2() => MessagesRequestContextManagementEditsItems2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItems0 && messagesRequestContextManagementEditsItems0 != null)
+            if (MessagesRequestContextManagementEditsItems0 is { } __value0 && messagesRequestContextManagementEditsItems0 != null)
             {
-                return messagesRequestContextManagementEditsItems0(MessagesRequestContextManagementEditsItems0!);
+                return messagesRequestContextManagementEditsItems0(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItems1 && messagesRequestContextManagementEditsItems1 != null)
+            else if (MessagesRequestContextManagementEditsItems1 is { } __value1 && messagesRequestContextManagementEditsItems1 != null)
             {
-                return messagesRequestContextManagementEditsItems1(MessagesRequestContextManagementEditsItems1!);
+                return messagesRequestContextManagementEditsItems1(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItems2 && messagesRequestContextManagementEditsItems2 != null)
+            else if (MessagesRequestContextManagementEditsItems2 is { } __value2 && messagesRequestContextManagementEditsItems2 != null)
             {
-                return messagesRequestContextManagementEditsItems2(MessagesRequestContextManagementEditsItems2!);
+                return messagesRequestContextManagementEditsItems2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItems0)
+            if (MessagesRequestContextManagementEditsItems0 is { } __value0)
             {
-                messagesRequestContextManagementEditsItems0?.Invoke(MessagesRequestContextManagementEditsItems0!);
+                messagesRequestContextManagementEditsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItems1)
+            else if (MessagesRequestContextManagementEditsItems1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItems1?.Invoke(MessagesRequestContextManagementEditsItems1!);
+                messagesRequestContextManagementEditsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItems2)
+            else if (MessagesRequestContextManagementEditsItems2 is { } __value2)
             {
-                messagesRequestContextManagementEditsItems2?.Invoke(MessagesRequestContextManagementEditsItems2!);
+                messagesRequestContextManagementEditsItems2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItems0)
+            if (MessagesRequestContextManagementEditsItems0 is { } __value0)
             {
-                messagesRequestContextManagementEditsItems0?.Invoke(MessagesRequestContextManagementEditsItems0!);
+                messagesRequestContextManagementEditsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItems1)
+            else if (MessagesRequestContextManagementEditsItems1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItems1?.Invoke(MessagesRequestContextManagementEditsItems1!);
+                messagesRequestContextManagementEditsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItems2)
+            else if (MessagesRequestContextManagementEditsItems2 is { } __value2)
             {
-                messagesRequestContextManagementEditsItems2?.Invoke(MessagesRequestContextManagementEditsItems2!);
+                messagesRequestContextManagementEditsItems2?.Invoke(__value2);
             }
         }
 

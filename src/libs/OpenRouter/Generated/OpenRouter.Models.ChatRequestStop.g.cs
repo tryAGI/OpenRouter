@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickChatRequestStopVariant1() => IsChatRequestStopVariant1
-            ? ChatRequestStopVariant1!
+        public string PickChatRequestStopVariant1() => ChatRequestStopVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickChatRequestStopVariant2() => IsChatRequestStopVariant2
-            ? ChatRequestStopVariant2!
+        public global::System.Collections.Generic.IList<string> PickChatRequestStopVariant2() => ChatRequestStopVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestStopVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatRequestStopVariant1 && chatRequestStopVariant1 != null)
+            if (ChatRequestStopVariant1 is { } __value0 && chatRequestStopVariant1 != null)
             {
-                return chatRequestStopVariant1(ChatRequestStopVariant1!);
+                return chatRequestStopVariant1(__value0);
             }
-            else if (IsChatRequestStopVariant2 && chatRequestStopVariant2 != null)
+            else if (ChatRequestStopVariant2 is { } __value1 && chatRequestStopVariant2 != null)
             {
-                return chatRequestStopVariant2(ChatRequestStopVariant2!);
+                return chatRequestStopVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatRequestStopVariant1)
+            if (ChatRequestStopVariant1 is { } __value0)
             {
-                chatRequestStopVariant1?.Invoke(ChatRequestStopVariant1!);
+                chatRequestStopVariant1?.Invoke(__value0);
             }
-            else if (IsChatRequestStopVariant2)
+            else if (ChatRequestStopVariant2 is { } __value1)
             {
-                chatRequestStopVariant2?.Invoke(ChatRequestStopVariant2!);
+                chatRequestStopVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsChatRequestStopVariant1)
+            if (ChatRequestStopVariant1 is { } __value0)
             {
-                chatRequestStopVariant1?.Invoke(ChatRequestStopVariant1!);
+                chatRequestStopVariant1?.Invoke(__value0);
             }
-            else if (IsChatRequestStopVariant2)
+            else if (ChatRequestStopVariant2 is { } __value1)
             {
-                chatRequestStopVariant2?.Invoke(ChatRequestStopVariant2!);
+                chatRequestStopVariant2?.Invoke(__value1);
             }
         }
 

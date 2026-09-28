@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFunctionCallItemStatus0 PickOutputFunctionCallItemStatus0() => IsOutputFunctionCallItemStatus0
-            ? OutputFunctionCallItemStatus0!.Value
+        public global::OpenRouter.OutputFunctionCallItemStatus0 PickOutputFunctionCallItemStatus0() => OutputFunctionCallItemStatus0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFunctionCallItemStatus1 PickOutputFunctionCallItemStatus1() => IsOutputFunctionCallItemStatus1
-            ? OutputFunctionCallItemStatus1!.Value
+        public global::OpenRouter.OutputFunctionCallItemStatus1 PickOutputFunctionCallItemStatus1() => OutputFunctionCallItemStatus1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputFunctionCallItemStatus2 PickOutputFunctionCallItemStatus2() => IsOutputFunctionCallItemStatus2
-            ? OutputFunctionCallItemStatus2!.Value
+        public global::OpenRouter.OutputFunctionCallItemStatus2 PickOutputFunctionCallItemStatus2() => OutputFunctionCallItemStatus2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItemStatus2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputFunctionCallItemStatus0 && outputFunctionCallItemStatus0 != null)
+            if (OutputFunctionCallItemStatus0 is { } __value0 && outputFunctionCallItemStatus0 != null)
             {
-                return outputFunctionCallItemStatus0(OutputFunctionCallItemStatus0!);
+                return outputFunctionCallItemStatus0(__value0);
             }
-            else if (IsOutputFunctionCallItemStatus1 && outputFunctionCallItemStatus1 != null)
+            else if (OutputFunctionCallItemStatus1 is { } __value1 && outputFunctionCallItemStatus1 != null)
             {
-                return outputFunctionCallItemStatus1(OutputFunctionCallItemStatus1!);
+                return outputFunctionCallItemStatus1(__value1);
             }
-            else if (IsOutputFunctionCallItemStatus2 && outputFunctionCallItemStatus2 != null)
+            else if (OutputFunctionCallItemStatus2 is { } __value2 && outputFunctionCallItemStatus2 != null)
             {
-                return outputFunctionCallItemStatus2(OutputFunctionCallItemStatus2!);
+                return outputFunctionCallItemStatus2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputFunctionCallItemStatus0)
+            if (OutputFunctionCallItemStatus0 is { } __value0)
             {
-                outputFunctionCallItemStatus0?.Invoke(OutputFunctionCallItemStatus0!);
+                outputFunctionCallItemStatus0?.Invoke(__value0);
             }
-            else if (IsOutputFunctionCallItemStatus1)
+            else if (OutputFunctionCallItemStatus1 is { } __value1)
             {
-                outputFunctionCallItemStatus1?.Invoke(OutputFunctionCallItemStatus1!);
+                outputFunctionCallItemStatus1?.Invoke(__value1);
             }
-            else if (IsOutputFunctionCallItemStatus2)
+            else if (OutputFunctionCallItemStatus2 is { } __value2)
             {
-                outputFunctionCallItemStatus2?.Invoke(OutputFunctionCallItemStatus2!);
+                outputFunctionCallItemStatus2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputFunctionCallItemStatus0)
+            if (OutputFunctionCallItemStatus0 is { } __value0)
             {
-                outputFunctionCallItemStatus0?.Invoke(OutputFunctionCallItemStatus0!);
+                outputFunctionCallItemStatus0?.Invoke(__value0);
             }
-            else if (IsOutputFunctionCallItemStatus1)
+            else if (OutputFunctionCallItemStatus1 is { } __value1)
             {
-                outputFunctionCallItemStatus1?.Invoke(OutputFunctionCallItemStatus1!);
+                outputFunctionCallItemStatus1?.Invoke(__value1);
             }
-            else if (IsOutputFunctionCallItemStatus2)
+            else if (OutputFunctionCallItemStatus2 is { } __value2)
             {
-                outputFunctionCallItemStatus2?.Invoke(OutputFunctionCallItemStatus2!);
+                outputFunctionCallItemStatus2?.Invoke(__value2);
             }
         }
 

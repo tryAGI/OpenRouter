@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicWebFetchContentVariant1 PickWebFetchResult() => IsWebFetchResult
-            ? WebFetchResult!
+        public global::OpenRouter.AnthropicWebFetchContentVariant1 PickWebFetchResult() => WebFetchResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicWebFetchContentVariant2 PickWebFetchToolResultError() => IsWebFetchToolResultError
-            ? WebFetchToolResultError!
+        public global::OpenRouter.AnthropicWebFetchContentVariant2 PickWebFetchToolResultError() => WebFetchToolResultError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResultError' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsWebFetchResult && webFetchResult != null)
+            if (WebFetchResult is { } __value0 && webFetchResult != null)
             {
-                return webFetchResult(WebFetchResult!);
+                return webFetchResult(__value0);
             }
-            else if (IsWebFetchToolResultError && webFetchToolResultError != null)
+            else if (WebFetchToolResultError is { } __value1 && webFetchToolResultError != null)
             {
-                return webFetchToolResultError(WebFetchToolResultError!);
+                return webFetchToolResultError(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsWebFetchResult)
+            if (WebFetchResult is { } __value0)
             {
-                webFetchResult?.Invoke(WebFetchResult!);
+                webFetchResult?.Invoke(__value0);
             }
-            else if (IsWebFetchToolResultError)
+            else if (WebFetchToolResultError is { } __value1)
             {
-                webFetchToolResultError?.Invoke(WebFetchToolResultError!);
+                webFetchToolResultError?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsWebFetchResult)
+            if (WebFetchResult is { } __value0)
             {
-                webFetchResult?.Invoke(WebFetchResult!);
+                webFetchResult?.Invoke(__value0);
             }
-            else if (IsWebFetchToolResultError)
+            else if (WebFetchToolResultError is { } __value1)
             {
-                webFetchToolResultError?.Invoke(WebFetchToolResultError!);
+                webFetchToolResultError?.Invoke(__value1);
             }
         }
 

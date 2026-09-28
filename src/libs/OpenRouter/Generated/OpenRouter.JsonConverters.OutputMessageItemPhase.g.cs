@@ -149,13 +149,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessageItemPhase0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessageItemPhase0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessageItemPhase0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageItemPhase0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageItemPhase0(), typeInfo);
             }
             else if (value.IsOutputMessageItemPhase1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessageItemPhase1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessageItemPhase1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessageItemPhase1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageItemPhase1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageItemPhase1(), typeInfo);
             }
         }
     }

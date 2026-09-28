@@ -274,31 +274,31 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicTextBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicTextBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicTextBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicTextBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicTextBlockParam(), typeInfo);
             }
             else if (value.IsAnthropicImageBlockParam)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicImageBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicImageBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicImageBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicImageBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicImageBlockParam(), typeInfo);
             }
             else if (value.IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2(), typeInfo);
             }
             else if (value.IsAnthropicSearchResultBlockParam)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicSearchResultBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicSearchResultBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicSearchResultBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicSearchResultBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicSearchResultBlockParam(), typeInfo);
             }
             else if (value.IsAnthropicDocumentBlockParam)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicDocumentBlockParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicDocumentBlockParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicDocumentBlockParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicDocumentBlockParam!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnthropicDocumentBlockParam(), typeInfo);
             }
         }
     }

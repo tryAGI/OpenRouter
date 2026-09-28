@@ -198,19 +198,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessageItemStatus0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessageItemStatus0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessageItemStatus0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageItemStatus0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageItemStatus0(), typeInfo);
             }
             else if (value.IsOutputMessageItemStatus1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessageItemStatus1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessageItemStatus1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessageItemStatus1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageItemStatus1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageItemStatus1(), typeInfo);
             }
             else if (value.IsOutputMessageItemStatus2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OutputMessageItemStatus2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OutputMessageItemStatus2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OutputMessageItemStatus2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageItemStatus2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageItemStatus2(), typeInfo);
             }
         }
     }

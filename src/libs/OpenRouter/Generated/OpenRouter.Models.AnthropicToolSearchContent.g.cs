@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicToolSearchContentVariant1 PickToolSearchToolResultError() => IsToolSearchToolResultError
-            ? ToolSearchToolResultError!
+        public global::OpenRouter.AnthropicToolSearchContentVariant1 PickToolSearchToolResultError() => ToolSearchToolResultError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResultError' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicToolSearchContentVariant2 PickToolSearchToolSearchResult() => IsToolSearchToolSearchResult
-            ? ToolSearchToolSearchResult!
+        public global::OpenRouter.AnthropicToolSearchContentVariant2 PickToolSearchToolSearchResult() => ToolSearchToolSearchResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolSearchResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsToolSearchToolResultError && toolSearchToolResultError != null)
+            if (ToolSearchToolResultError is { } __value0 && toolSearchToolResultError != null)
             {
-                return toolSearchToolResultError(ToolSearchToolResultError!);
+                return toolSearchToolResultError(__value0);
             }
-            else if (IsToolSearchToolSearchResult && toolSearchToolSearchResult != null)
+            else if (ToolSearchToolSearchResult is { } __value1 && toolSearchToolSearchResult != null)
             {
-                return toolSearchToolSearchResult(ToolSearchToolSearchResult!);
+                return toolSearchToolSearchResult(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsToolSearchToolResultError)
+            if (ToolSearchToolResultError is { } __value0)
             {
-                toolSearchToolResultError?.Invoke(ToolSearchToolResultError!);
+                toolSearchToolResultError?.Invoke(__value0);
             }
-            else if (IsToolSearchToolSearchResult)
+            else if (ToolSearchToolSearchResult is { } __value1)
             {
-                toolSearchToolSearchResult?.Invoke(ToolSearchToolSearchResult!);
+                toolSearchToolSearchResult?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsToolSearchToolResultError)
+            if (ToolSearchToolResultError is { } __value0)
             {
-                toolSearchToolResultError?.Invoke(ToolSearchToolResultError!);
+                toolSearchToolResultError?.Invoke(__value0);
             }
-            else if (IsToolSearchToolSearchResult)
+            else if (ToolSearchToolSearchResult is { } __value1)
             {
-                toolSearchToolSearchResult?.Invoke(ToolSearchToolSearchResult!);
+                toolSearchToolSearchResult?.Invoke(__value1);
             }
         }
 

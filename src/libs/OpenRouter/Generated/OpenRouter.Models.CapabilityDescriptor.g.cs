@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CapabilityDescriptorVariant1 PickBoolean() => IsBoolean
-            ? Boolean!
+        public global::OpenRouter.CapabilityDescriptorVariant1 PickBoolean() => Boolean is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Boolean' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CapabilityDescriptorVariant2 PickEnum() => IsEnum
-            ? Enum!
+        public global::OpenRouter.CapabilityDescriptorVariant2 PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CapabilityDescriptorVariant3 PickRange() => IsRange
-            ? Range!
+        public global::OpenRouter.CapabilityDescriptorVariant3 PickRange() => Range is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Range' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBoolean && boolean != null)
+            if (Boolean is { } __value0 && boolean != null)
             {
-                return boolean(Boolean!);
+                return boolean(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
-            else if (IsRange && range != null)
+            else if (Range is { } __value2 && range != null)
             {
-                return range(Range!);
+                return range(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBoolean)
+            if (Boolean is { } __value0)
             {
-                boolean?.Invoke(Boolean!);
+                boolean?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
-            else if (IsRange)
+            else if (Range is { } __value2)
             {
-                range?.Invoke(Range!);
+                range?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsBoolean)
+            if (Boolean is { } __value0)
             {
-                boolean?.Invoke(Boolean!);
+                boolean?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
-            else if (IsRange)
+            else if (Range is { } __value2)
             {
-                range?.Invoke(Range!);
+                range?.Invoke(__value2);
             }
         }
 

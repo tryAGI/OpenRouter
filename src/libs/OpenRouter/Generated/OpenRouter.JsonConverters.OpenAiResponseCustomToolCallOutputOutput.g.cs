@@ -149,13 +149,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponseCustomToolCallOutputOutputVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAiResponseCustomToolCallOutputOutputVariant1(), typeInfo);
             }
             else if (value.IsOpenAiResponseCustomToolCallOutputOutput1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseCustomToolCallOutputOutputOneOf1Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponseCustomToolCallOutputOutput1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAiResponseCustomToolCallOutputOutput1(), typeInfo);
             }
         }
     }

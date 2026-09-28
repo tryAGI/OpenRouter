@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam> PickMessagesMessageParamContentOneOf1ItemsOneOf8Content0() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0
-            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content0!
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResultBlockParam> PickMessagesMessageParamContentOneOf1ItemsOneOf8Content0() => MessagesMessageParamContentOneOf1ItemsOneOf8Content0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1 PickMessagesMessageParamContentOneOf1ItemsOneOf8Content1() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1
-            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content1!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1ItemsOneOf8Content1 PickMessagesMessageParamContentOneOf1ItemsOneOf8Content1() => MessagesMessageParamContentOneOf1ItemsOneOf8Content1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0 && messagesMessageParamContentOneOf1ItemsOneOf8Content0 != null)
+            if (MessagesMessageParamContentOneOf1ItemsOneOf8Content0 is { } __value0 && messagesMessageParamContentOneOf1ItemsOneOf8Content0 != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf8Content0(MessagesMessageParamContentOneOf1ItemsOneOf8Content0!);
+                return messagesMessageParamContentOneOf1ItemsOneOf8Content0(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1 && messagesMessageParamContentOneOf1ItemsOneOf8Content1 != null)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf8Content1 is { } __value1 && messagesMessageParamContentOneOf1ItemsOneOf8Content1 != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf8Content1(MessagesMessageParamContentOneOf1ItemsOneOf8Content1!);
+                return messagesMessageParamContentOneOf1ItemsOneOf8Content1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0)
+            if (MessagesMessageParamContentOneOf1ItemsOneOf8Content0 is { } __value0)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf8Content0?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf8Content0!);
+                messagesMessageParamContentOneOf1ItemsOneOf8Content0?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf8Content1 is { } __value1)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf8Content1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf8Content1!);
+                messagesMessageParamContentOneOf1ItemsOneOf8Content1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0)
+            if (MessagesMessageParamContentOneOf1ItemsOneOf8Content0 is { } __value0)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf8Content0?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf8Content0!);
+                messagesMessageParamContentOneOf1ItemsOneOf8Content0?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf8Content1 is { } __value1)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf8Content1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf8Content1!);
+                messagesMessageParamContentOneOf1ItemsOneOf8Content1?.Invoke(__value1);
             }
         }
 

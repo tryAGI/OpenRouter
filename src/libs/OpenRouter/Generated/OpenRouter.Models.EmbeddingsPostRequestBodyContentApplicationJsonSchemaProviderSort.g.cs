@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ProviderSort PickProviderSort() => IsProviderSort
-            ? ProviderSort!.Value
+        public global::OpenRouter.ProviderSort PickProviderSort() => ProviderSort is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSort' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
-            ? ProviderSortConfig!
+        public global::OpenRouter.ProviderSortConfig PickProviderSortConfig() => ProviderSortConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderSort && providerSort != null)
+            if (ProviderSort is { } __value0 && providerSort != null)
             {
-                return providerSort(ProviderSort!);
+                return providerSort(__value0);
             }
-            else if (IsProviderSortConfig && providerSortConfig != null)
+            else if (ProviderSortConfig is { } __value1 && providerSortConfig != null)
             {
-                return providerSortConfig(ProviderSortConfig!);
+                return providerSortConfig(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderSort)
+            if (ProviderSort is { } __value0)
             {
-                providerSort?.Invoke(ProviderSort!);
+                providerSort?.Invoke(__value0);
             }
-            else if (IsProviderSortConfig)
+            else if (ProviderSortConfig is { } __value1)
             {
-                providerSortConfig?.Invoke(ProviderSortConfig!);
+                providerSortConfig?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderSort)
+            if (ProviderSort is { } __value0)
             {
-                providerSort?.Invoke(ProviderSort!);
+                providerSort?.Invoke(__value0);
             }
-            else if (IsProviderSortConfig)
+            else if (ProviderSortConfig is { } __value1)
             {
-                providerSortConfig?.Invoke(ProviderSortConfig!);
+                providerSortConfig?.Invoke(__value1);
             }
         }
 

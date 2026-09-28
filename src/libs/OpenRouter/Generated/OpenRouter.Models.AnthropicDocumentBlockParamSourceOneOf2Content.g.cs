@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickAnthropicDocumentBlockParamSourceOneOf2ContentVariant1() => IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1
-            ? AnthropicDocumentBlockParamSourceOneOf2ContentVariant1!
+        public string PickAnthropicDocumentBlockParamSourceOneOf2ContentVariant1() => AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSourceOneOf2ContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items> PickAnthropicDocumentBlockParamSourceOneOf2Content1() => IsAnthropicDocumentBlockParamSourceOneOf2Content1
-            ? AnthropicDocumentBlockParamSourceOneOf2Content1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicDocumentBlockParamSourceOneOf2ContentOneOf1Items> PickAnthropicDocumentBlockParamSourceOneOf2Content1() => AnthropicDocumentBlockParamSourceOneOf2Content1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParamSourceOneOf2Content1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1 && anthropicDocumentBlockParamSourceOneOf2ContentVariant1 != null)
+            if (AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 is { } __value0 && anthropicDocumentBlockParamSourceOneOf2ContentVariant1 != null)
             {
-                return anthropicDocumentBlockParamSourceOneOf2ContentVariant1(AnthropicDocumentBlockParamSourceOneOf2ContentVariant1!);
+                return anthropicDocumentBlockParamSourceOneOf2ContentVariant1(__value0);
             }
-            else if (IsAnthropicDocumentBlockParamSourceOneOf2Content1 && anthropicDocumentBlockParamSourceOneOf2Content1 != null)
+            else if (AnthropicDocumentBlockParamSourceOneOf2Content1 is { } __value1 && anthropicDocumentBlockParamSourceOneOf2Content1 != null)
             {
-                return anthropicDocumentBlockParamSourceOneOf2Content1(AnthropicDocumentBlockParamSourceOneOf2Content1!);
+                return anthropicDocumentBlockParamSourceOneOf2Content1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1)
+            if (AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 is { } __value0)
             {
-                anthropicDocumentBlockParamSourceOneOf2ContentVariant1?.Invoke(AnthropicDocumentBlockParamSourceOneOf2ContentVariant1!);
+                anthropicDocumentBlockParamSourceOneOf2ContentVariant1?.Invoke(__value0);
             }
-            else if (IsAnthropicDocumentBlockParamSourceOneOf2Content1)
+            else if (AnthropicDocumentBlockParamSourceOneOf2Content1 is { } __value1)
             {
-                anthropicDocumentBlockParamSourceOneOf2Content1?.Invoke(AnthropicDocumentBlockParamSourceOneOf2Content1!);
+                anthropicDocumentBlockParamSourceOneOf2Content1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicDocumentBlockParamSourceOneOf2ContentVariant1)
+            if (AnthropicDocumentBlockParamSourceOneOf2ContentVariant1 is { } __value0)
             {
-                anthropicDocumentBlockParamSourceOneOf2ContentVariant1?.Invoke(AnthropicDocumentBlockParamSourceOneOf2ContentVariant1!);
+                anthropicDocumentBlockParamSourceOneOf2ContentVariant1?.Invoke(__value0);
             }
-            else if (IsAnthropicDocumentBlockParamSourceOneOf2Content1)
+            else if (AnthropicDocumentBlockParamSourceOneOf2Content1 is { } __value1)
             {
-                anthropicDocumentBlockParamSourceOneOf2Content1?.Invoke(AnthropicDocumentBlockParamSourceOneOf2Content1!);
+                anthropicDocumentBlockParamSourceOneOf2Content1?.Invoke(__value1);
             }
         }
 

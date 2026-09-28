@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0
-            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0() => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1
-            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!
+        public global::OpenRouter.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1() => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ContentPartInputAudio PickContentPartInputAudio() => IsContentPartInputAudio
-            ? ContentPartInputAudio!
+        public global::OpenRouter.ContentPartInputAudio PickContentPartInputAudio() => ContentPartInputAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentPartInputAudio' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ContentPartInputVideo PickContentPartInputVideo() => IsContentPartInputVideo
-            ? ContentPartInputVideo!
+        public global::OpenRouter.ContentPartInputVideo PickContentPartInputVideo() => ContentPartInputVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentPartInputVideo' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ContentPartInputFile PickContentPartInputFile() => IsContentPartInputFile
-            ? ContentPartInputFile!
+        public global::OpenRouter.ContentPartInputFile PickContentPartInputFile() => ContentPartInputFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentPartInputFile' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 != null)
+            if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 is { } __value0 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 != null)
             {
-                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0(__value0);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 != null)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 is { } __value1 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 != null)
             {
-                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1(__value1);
             }
-            else if (IsContentPartInputAudio && contentPartInputAudio != null)
+            else if (ContentPartInputAudio is { } __value2 && contentPartInputAudio != null)
             {
-                return contentPartInputAudio(ContentPartInputAudio!);
+                return contentPartInputAudio(__value2);
             }
-            else if (IsContentPartInputVideo && contentPartInputVideo != null)
+            else if (ContentPartInputVideo is { } __value3 && contentPartInputVideo != null)
             {
-                return contentPartInputVideo(ContentPartInputVideo!);
+                return contentPartInputVideo(__value3);
             }
-            else if (IsContentPartInputFile && contentPartInputFile != null)
+            else if (ContentPartInputFile is { } __value4 && contentPartInputFile != null)
             {
-                return contentPartInputFile(ContentPartInputFile!);
+                return contentPartInputFile(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0)
+            if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 is { } __value0)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 is { } __value1)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?.Invoke(__value1);
             }
-            else if (IsContentPartInputAudio)
+            else if (ContentPartInputAudio is { } __value2)
             {
-                contentPartInputAudio?.Invoke(ContentPartInputAudio!);
+                contentPartInputAudio?.Invoke(__value2);
             }
-            else if (IsContentPartInputVideo)
+            else if (ContentPartInputVideo is { } __value3)
             {
-                contentPartInputVideo?.Invoke(ContentPartInputVideo!);
+                contentPartInputVideo?.Invoke(__value3);
             }
-            else if (IsContentPartInputFile)
+            else if (ContentPartInputFile is { } __value4)
             {
-                contentPartInputFile?.Invoke(ContentPartInputFile!);
+                contentPartInputFile?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0)
+            if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 is { } __value0)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 is { } __value1)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?.Invoke(__value1);
             }
-            else if (IsContentPartInputAudio)
+            else if (ContentPartInputAudio is { } __value2)
             {
-                contentPartInputAudio?.Invoke(ContentPartInputAudio!);
+                contentPartInputAudio?.Invoke(__value2);
             }
-            else if (IsContentPartInputVideo)
+            else if (ContentPartInputVideo is { } __value3)
             {
-                contentPartInputVideo?.Invoke(ContentPartInputVideo!);
+                contentPartInputVideo?.Invoke(__value3);
             }
-            else if (IsContentPartInputFile)
+            else if (ContentPartInputFile is { } __value4)
             {
-                contentPartInputFile?.Invoke(ContentPartInputFile!);
+                contentPartInputFile?.Invoke(__value4);
             }
         }
 

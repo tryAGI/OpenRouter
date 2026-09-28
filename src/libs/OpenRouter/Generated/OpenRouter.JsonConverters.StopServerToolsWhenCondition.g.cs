@@ -86,31 +86,31 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.StopServerToolsWhenConditionVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.StopServerToolsWhenConditionVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.StopServerToolsWhenConditionVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FinishReasonIs!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFinishReasonIs(), typeInfo);
             }
             else if (value.IsHasToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.StopServerToolsWhenConditionVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.StopServerToolsWhenConditionVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.StopServerToolsWhenConditionVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasToolCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHasToolCall(), typeInfo);
             }
             else if (value.IsMaxCost)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.StopServerToolsWhenConditionVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.StopServerToolsWhenConditionVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.StopServerToolsWhenConditionVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxCost!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMaxCost(), typeInfo);
             }
             else if (value.IsMaxTokensUsed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.StopServerToolsWhenConditionVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.StopServerToolsWhenConditionVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.StopServerToolsWhenConditionVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxTokensUsed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMaxTokensUsed(), typeInfo);
             }
             else if (value.IsStepCountIs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.StopServerToolsWhenConditionVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.StopServerToolsWhenConditionVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.StopServerToolsWhenConditionVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StepCountIs!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStepCountIs(), typeInfo);
             }
         }
     }

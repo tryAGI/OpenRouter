@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.NamespaceFunctionTool PickNamespaceFunctionTool() => IsNamespaceFunctionTool
-            ? NamespaceFunctionTool!
+        public global::OpenRouter.NamespaceFunctionTool PickNamespaceFunctionTool() => NamespaceFunctionTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NamespaceFunctionTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.CustomTool PickCustomTool() => IsCustomTool
-            ? CustomTool!
+        public global::OpenRouter.CustomTool PickCustomTool() => CustomTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsNamespaceFunctionTool && namespaceFunctionTool != null)
+            if (NamespaceFunctionTool is { } __value0 && namespaceFunctionTool != null)
             {
-                return namespaceFunctionTool(NamespaceFunctionTool!);
+                return namespaceFunctionTool(__value0);
             }
-            else if (IsCustomTool && customTool != null)
+            else if (CustomTool is { } __value1 && customTool != null)
             {
-                return customTool(CustomTool!);
+                return customTool(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsNamespaceFunctionTool)
+            if (NamespaceFunctionTool is { } __value0)
             {
-                namespaceFunctionTool?.Invoke(NamespaceFunctionTool!);
+                namespaceFunctionTool?.Invoke(__value0);
             }
-            else if (IsCustomTool)
+            else if (CustomTool is { } __value1)
             {
-                customTool?.Invoke(CustomTool!);
+                customTool?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsNamespaceFunctionTool)
+            if (NamespaceFunctionTool is { } __value0)
             {
-                namespaceFunctionTool?.Invoke(NamespaceFunctionTool!);
+                namespaceFunctionTool?.Invoke(__value0);
             }
-            else if (IsCustomTool)
+            else if (CustomTool is { } __value1)
             {
-                customTool?.Invoke(CustomTool!);
+                customTool?.Invoke(__value1);
             }
         }
 

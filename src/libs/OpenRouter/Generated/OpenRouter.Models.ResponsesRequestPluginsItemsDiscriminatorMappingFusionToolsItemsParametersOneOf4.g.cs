@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1
-            ? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1!
+        public string PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1() => ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public double PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2
-            ? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2!.Value
+        public double PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2() => ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public bool PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3() => IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3
-            ? ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3!.Value
+        public bool PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3() => ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1 && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1 != null)
+            if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1 is { } __value0 && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1 != null)
             {
-                return responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1!);
+                return responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1(__value0);
             }
-            else if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2 && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2 != null)
+            else if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2 is { } __value1 && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2 != null)
             {
-                return responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2!);
+                return responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2(__value1);
             }
-            else if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3 && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3 != null)
+            else if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3 is { } __value2 && responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3 != null)
             {
-                return responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3!);
+                return responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1)
+            if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1 is { } __value0)
             {
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1?.Invoke(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1!);
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1?.Invoke(__value0);
             }
-            else if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2)
+            else if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2 is { } __value1)
             {
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2?.Invoke(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2!);
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2?.Invoke(__value1);
             }
-            else if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3)
+            else if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3 is { } __value2)
             {
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3?.Invoke(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3!);
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1)
+            if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1 is { } __value0)
             {
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1?.Invoke(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1!);
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant1?.Invoke(__value0);
             }
-            else if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2)
+            else if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2 is { } __value1)
             {
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2?.Invoke(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2!);
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant2?.Invoke(__value1);
             }
-            else if (IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3)
+            else if (ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3 is { } __value2)
             {
-                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3?.Invoke(ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3!);
+                responsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf4Variant3?.Invoke(__value2);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputText PickInputText() => IsInputText
-            ? InputText!
+        public global::OpenRouter.InputText PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AgentMessageItemContentItems1 PickAgentMessageItemContentItems1() => IsAgentMessageItemContentItems1
-            ? AgentMessageItemContentItems1!
+        public global::OpenRouter.AgentMessageItemContentItems1 PickAgentMessageItemContentItems1() => AgentMessageItemContentItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessageItemContentItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AgentMessageItemContentItems2 PickAgentMessageItemContentItems2() => IsAgentMessageItemContentItems2
-            ? AgentMessageItemContentItems2!
+        public global::OpenRouter.AgentMessageItemContentItems2 PickAgentMessageItemContentItems2() => AgentMessageItemContentItems2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessageItemContentItems2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (InputText is { } __value0 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value0);
             }
-            else if (IsAgentMessageItemContentItems1 && agentMessageItemContentItems1 != null)
+            else if (AgentMessageItemContentItems1 is { } __value1 && agentMessageItemContentItems1 != null)
             {
-                return agentMessageItemContentItems1(AgentMessageItemContentItems1!);
+                return agentMessageItemContentItems1(__value1);
             }
-            else if (IsAgentMessageItemContentItems2 && agentMessageItemContentItems2 != null)
+            else if (AgentMessageItemContentItems2 is { } __value2 && agentMessageItemContentItems2 != null)
             {
-                return agentMessageItemContentItems2(AgentMessageItemContentItems2!);
+                return agentMessageItemContentItems2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsAgentMessageItemContentItems1)
+            else if (AgentMessageItemContentItems1 is { } __value1)
             {
-                agentMessageItemContentItems1?.Invoke(AgentMessageItemContentItems1!);
+                agentMessageItemContentItems1?.Invoke(__value1);
             }
-            else if (IsAgentMessageItemContentItems2)
+            else if (AgentMessageItemContentItems2 is { } __value2)
             {
-                agentMessageItemContentItems2?.Invoke(AgentMessageItemContentItems2!);
+                agentMessageItemContentItems2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsAgentMessageItemContentItems1)
+            else if (AgentMessageItemContentItems1 is { } __value1)
             {
-                agentMessageItemContentItems1?.Invoke(AgentMessageItemContentItems1!);
+                agentMessageItemContentItems1?.Invoke(__value1);
             }
-            else if (IsAgentMessageItemContentItems2)
+            else if (AgentMessageItemContentItems2 is { } __value2)
             {
-                agentMessageItemContentItems2?.Invoke(AgentMessageItemContentItems2!);
+                agentMessageItemContentItems2?.Invoke(__value2);
             }
         }
 

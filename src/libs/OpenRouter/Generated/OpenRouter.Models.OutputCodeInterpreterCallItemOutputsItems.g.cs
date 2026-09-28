@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0 PickOutputCodeInterpreterCallItemOutputsItems0() => IsOutputCodeInterpreterCallItemOutputsItems0
-            ? OutputCodeInterpreterCallItemOutputsItems0!
+        public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems0 PickOutputCodeInterpreterCallItemOutputsItems0() => OutputCodeInterpreterCallItemOutputsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItemOutputsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1 PickOutputCodeInterpreterCallItemOutputsItems1() => IsOutputCodeInterpreterCallItemOutputsItems1
-            ? OutputCodeInterpreterCallItemOutputsItems1!
+        public global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems1 PickOutputCodeInterpreterCallItemOutputsItems1() => OutputCodeInterpreterCallItemOutputsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItemOutputsItems1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputCodeInterpreterCallItemOutputsItems0 && outputCodeInterpreterCallItemOutputsItems0 != null)
+            if (OutputCodeInterpreterCallItemOutputsItems0 is { } __value0 && outputCodeInterpreterCallItemOutputsItems0 != null)
             {
-                return outputCodeInterpreterCallItemOutputsItems0(OutputCodeInterpreterCallItemOutputsItems0!);
+                return outputCodeInterpreterCallItemOutputsItems0(__value0);
             }
-            else if (IsOutputCodeInterpreterCallItemOutputsItems1 && outputCodeInterpreterCallItemOutputsItems1 != null)
+            else if (OutputCodeInterpreterCallItemOutputsItems1 is { } __value1 && outputCodeInterpreterCallItemOutputsItems1 != null)
             {
-                return outputCodeInterpreterCallItemOutputsItems1(OutputCodeInterpreterCallItemOutputsItems1!);
+                return outputCodeInterpreterCallItemOutputsItems1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputCodeInterpreterCallItemOutputsItems0)
+            if (OutputCodeInterpreterCallItemOutputsItems0 is { } __value0)
             {
-                outputCodeInterpreterCallItemOutputsItems0?.Invoke(OutputCodeInterpreterCallItemOutputsItems0!);
+                outputCodeInterpreterCallItemOutputsItems0?.Invoke(__value0);
             }
-            else if (IsOutputCodeInterpreterCallItemOutputsItems1)
+            else if (OutputCodeInterpreterCallItemOutputsItems1 is { } __value1)
             {
-                outputCodeInterpreterCallItemOutputsItems1?.Invoke(OutputCodeInterpreterCallItemOutputsItems1!);
+                outputCodeInterpreterCallItemOutputsItems1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputCodeInterpreterCallItemOutputsItems0)
+            if (OutputCodeInterpreterCallItemOutputsItems0 is { } __value0)
             {
-                outputCodeInterpreterCallItemOutputsItems0?.Invoke(OutputCodeInterpreterCallItemOutputsItems0!);
+                outputCodeInterpreterCallItemOutputsItems0?.Invoke(__value0);
             }
-            else if (IsOutputCodeInterpreterCallItemOutputsItems1)
+            else if (OutputCodeInterpreterCallItemOutputsItems1 is { } __value1)
             {
-                outputCodeInterpreterCallItemOutputsItems1?.Invoke(OutputCodeInterpreterCallItemOutputsItems1!);
+                outputCodeInterpreterCallItemOutputsItems1?.Invoke(__value1);
             }
         }
 

@@ -198,19 +198,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponseInputMessageItemRole0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponseInputMessageItemRole0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponseInputMessageItemRole0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponseInputMessageItemRole0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAiResponseInputMessageItemRole0(), typeInfo);
             }
             else if (value.IsOpenAiResponseInputMessageItemRole1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponseInputMessageItemRole1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponseInputMessageItemRole1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponseInputMessageItemRole1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponseInputMessageItemRole1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAiResponseInputMessageItemRole1(), typeInfo);
             }
             else if (value.IsOpenAiResponseInputMessageItemRole2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenAiResponseInputMessageItemRole2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenAiResponseInputMessageItemRole2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenAiResponseInputMessageItemRole2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponseInputMessageItemRole2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAiResponseInputMessageItemRole2(), typeInfo);
             }
         }
     }

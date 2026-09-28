@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicBase64PdfSource PickAnthropicBase64PdfSource() => IsAnthropicBase64PdfSource
-            ? AnthropicBase64PdfSource!
+        public global::OpenRouter.AnthropicBase64PdfSource PickAnthropicBase64PdfSource() => AnthropicBase64PdfSource is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBase64PdfSource' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicPlainTextSource PickAnthropicPlainTextSource() => IsAnthropicPlainTextSource
-            ? AnthropicPlainTextSource!
+        public global::OpenRouter.AnthropicPlainTextSource PickAnthropicPlainTextSource() => AnthropicPlainTextSource is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicPlainTextSource' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PdfSource && anthropicBase64PdfSource != null)
+            if (AnthropicBase64PdfSource is { } __value0 && anthropicBase64PdfSource != null)
             {
-                return anthropicBase64PdfSource(AnthropicBase64PdfSource!);
+                return anthropicBase64PdfSource(__value0);
             }
-            else if (IsAnthropicPlainTextSource && anthropicPlainTextSource != null)
+            else if (AnthropicPlainTextSource is { } __value1 && anthropicPlainTextSource != null)
             {
-                return anthropicPlainTextSource(AnthropicPlainTextSource!);
+                return anthropicPlainTextSource(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PdfSource)
+            if (AnthropicBase64PdfSource is { } __value0)
             {
-                anthropicBase64PdfSource?.Invoke(AnthropicBase64PdfSource!);
+                anthropicBase64PdfSource?.Invoke(__value0);
             }
-            else if (IsAnthropicPlainTextSource)
+            else if (AnthropicPlainTextSource is { } __value1)
             {
-                anthropicPlainTextSource?.Invoke(AnthropicPlainTextSource!);
+                anthropicPlainTextSource?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicBase64PdfSource)
+            if (AnthropicBase64PdfSource is { } __value0)
             {
-                anthropicBase64PdfSource?.Invoke(AnthropicBase64PdfSource!);
+                anthropicBase64PdfSource?.Invoke(__value0);
             }
-            else if (IsAnthropicPlainTextSource)
+            else if (AnthropicPlainTextSource is { } __value1)
             {
-                anthropicPlainTextSource?.Invoke(AnthropicPlainTextSource!);
+                anthropicPlainTextSource?.Invoke(__value1);
             }
         }
 

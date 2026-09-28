@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpServerToolRequireApproval0 PickMcpServerToolRequireApproval0() => IsMcpServerToolRequireApproval0
-            ? McpServerToolRequireApproval0!
+        public global::OpenRouter.McpServerToolRequireApproval0 PickMcpServerToolRequireApproval0() => McpServerToolRequireApproval0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpServerToolRequireApproval1 PickMcpServerToolRequireApproval1() => IsMcpServerToolRequireApproval1
-            ? McpServerToolRequireApproval1!.Value
+        public global::OpenRouter.McpServerToolRequireApproval1 PickMcpServerToolRequireApproval1() => McpServerToolRequireApproval1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.McpServerToolRequireApproval2 PickMcpServerToolRequireApproval2() => IsMcpServerToolRequireApproval2
-            ? McpServerToolRequireApproval2!.Value
+        public global::OpenRouter.McpServerToolRequireApproval2 PickMcpServerToolRequireApproval2() => McpServerToolRequireApproval2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMcpServerToolRequireApproval0 && mcpServerToolRequireApproval0 != null)
+            if (McpServerToolRequireApproval0 is { } __value0 && mcpServerToolRequireApproval0 != null)
             {
-                return mcpServerToolRequireApproval0(McpServerToolRequireApproval0!);
+                return mcpServerToolRequireApproval0(__value0);
             }
-            else if (IsMcpServerToolRequireApproval1 && mcpServerToolRequireApproval1 != null)
+            else if (McpServerToolRequireApproval1 is { } __value1 && mcpServerToolRequireApproval1 != null)
             {
-                return mcpServerToolRequireApproval1(McpServerToolRequireApproval1!);
+                return mcpServerToolRequireApproval1(__value1);
             }
-            else if (IsMcpServerToolRequireApproval2 && mcpServerToolRequireApproval2 != null)
+            else if (McpServerToolRequireApproval2 is { } __value2 && mcpServerToolRequireApproval2 != null)
             {
-                return mcpServerToolRequireApproval2(McpServerToolRequireApproval2!);
+                return mcpServerToolRequireApproval2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMcpServerToolRequireApproval0)
+            if (McpServerToolRequireApproval0 is { } __value0)
             {
-                mcpServerToolRequireApproval0?.Invoke(McpServerToolRequireApproval0!);
+                mcpServerToolRequireApproval0?.Invoke(__value0);
             }
-            else if (IsMcpServerToolRequireApproval1)
+            else if (McpServerToolRequireApproval1 is { } __value1)
             {
-                mcpServerToolRequireApproval1?.Invoke(McpServerToolRequireApproval1!);
+                mcpServerToolRequireApproval1?.Invoke(__value1);
             }
-            else if (IsMcpServerToolRequireApproval2)
+            else if (McpServerToolRequireApproval2 is { } __value2)
             {
-                mcpServerToolRequireApproval2?.Invoke(McpServerToolRequireApproval2!);
+                mcpServerToolRequireApproval2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMcpServerToolRequireApproval0)
+            if (McpServerToolRequireApproval0 is { } __value0)
             {
-                mcpServerToolRequireApproval0?.Invoke(McpServerToolRequireApproval0!);
+                mcpServerToolRequireApproval0?.Invoke(__value0);
             }
-            else if (IsMcpServerToolRequireApproval1)
+            else if (McpServerToolRequireApproval1 is { } __value1)
             {
-                mcpServerToolRequireApproval1?.Invoke(McpServerToolRequireApproval1!);
+                mcpServerToolRequireApproval1?.Invoke(__value1);
             }
-            else if (IsMcpServerToolRequireApproval2)
+            else if (McpServerToolRequireApproval2 is { } __value2)
             {
-                mcpServerToolRequireApproval2?.Invoke(McpServerToolRequireApproval2!);
+                mcpServerToolRequireApproval2?.Invoke(__value2);
             }
         }
 

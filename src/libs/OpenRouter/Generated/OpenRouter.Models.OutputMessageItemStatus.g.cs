@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMessageItemStatus0 PickOutputMessageItemStatus0() => IsOutputMessageItemStatus0
-            ? OutputMessageItemStatus0!.Value
+        public global::OpenRouter.OutputMessageItemStatus0 PickOutputMessageItemStatus0() => OutputMessageItemStatus0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemStatus0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMessageItemStatus1 PickOutputMessageItemStatus1() => IsOutputMessageItemStatus1
-            ? OutputMessageItemStatus1!.Value
+        public global::OpenRouter.OutputMessageItemStatus1 PickOutputMessageItemStatus1() => OutputMessageItemStatus1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemStatus1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputMessageItemStatus2 PickOutputMessageItemStatus2() => IsOutputMessageItemStatus2
-            ? OutputMessageItemStatus2!.Value
+        public global::OpenRouter.OutputMessageItemStatus2 PickOutputMessageItemStatus2() => OutputMessageItemStatus2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItemStatus2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputMessageItemStatus0 && outputMessageItemStatus0 != null)
+            if (OutputMessageItemStatus0 is { } __value0 && outputMessageItemStatus0 != null)
             {
-                return outputMessageItemStatus0(OutputMessageItemStatus0!);
+                return outputMessageItemStatus0(__value0);
             }
-            else if (IsOutputMessageItemStatus1 && outputMessageItemStatus1 != null)
+            else if (OutputMessageItemStatus1 is { } __value1 && outputMessageItemStatus1 != null)
             {
-                return outputMessageItemStatus1(OutputMessageItemStatus1!);
+                return outputMessageItemStatus1(__value1);
             }
-            else if (IsOutputMessageItemStatus2 && outputMessageItemStatus2 != null)
+            else if (OutputMessageItemStatus2 is { } __value2 && outputMessageItemStatus2 != null)
             {
-                return outputMessageItemStatus2(OutputMessageItemStatus2!);
+                return outputMessageItemStatus2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputMessageItemStatus0)
+            if (OutputMessageItemStatus0 is { } __value0)
             {
-                outputMessageItemStatus0?.Invoke(OutputMessageItemStatus0!);
+                outputMessageItemStatus0?.Invoke(__value0);
             }
-            else if (IsOutputMessageItemStatus1)
+            else if (OutputMessageItemStatus1 is { } __value1)
             {
-                outputMessageItemStatus1?.Invoke(OutputMessageItemStatus1!);
+                outputMessageItemStatus1?.Invoke(__value1);
             }
-            else if (IsOutputMessageItemStatus2)
+            else if (OutputMessageItemStatus2 is { } __value2)
             {
-                outputMessageItemStatus2?.Invoke(OutputMessageItemStatus2!);
+                outputMessageItemStatus2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputMessageItemStatus0)
+            if (OutputMessageItemStatus0 is { } __value0)
             {
-                outputMessageItemStatus0?.Invoke(OutputMessageItemStatus0!);
+                outputMessageItemStatus0?.Invoke(__value0);
             }
-            else if (IsOutputMessageItemStatus1)
+            else if (OutputMessageItemStatus1 is { } __value1)
             {
-                outputMessageItemStatus1?.Invoke(OutputMessageItemStatus1!);
+                outputMessageItemStatus1?.Invoke(__value1);
             }
-            else if (IsOutputMessageItemStatus2)
+            else if (OutputMessageItemStatus2 is { } __value2)
             {
-                outputMessageItemStatus2?.Invoke(OutputMessageItemStatus2!);
+                outputMessageItemStatus2?.Invoke(__value2);
             }
         }
 

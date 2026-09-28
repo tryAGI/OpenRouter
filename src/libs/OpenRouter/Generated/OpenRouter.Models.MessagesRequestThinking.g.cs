@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestThinking0 PickMessagesRequestThinking0() => IsMessagesRequestThinking0
-            ? MessagesRequestThinking0!
+        public global::OpenRouter.MessagesRequestThinking0 PickMessagesRequestThinking0() => MessagesRequestThinking0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestThinking1 PickMessagesRequestThinking1() => IsMessagesRequestThinking1
-            ? MessagesRequestThinking1!
+        public global::OpenRouter.MessagesRequestThinking1 PickMessagesRequestThinking1() => MessagesRequestThinking1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesRequestThinking2 PickMessagesRequestThinking2() => IsMessagesRequestThinking2
-            ? MessagesRequestThinking2!
+        public global::OpenRouter.MessagesRequestThinking2 PickMessagesRequestThinking2() => MessagesRequestThinking2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestThinking0 && messagesRequestThinking0 != null)
+            if (MessagesRequestThinking0 is { } __value0 && messagesRequestThinking0 != null)
             {
-                return messagesRequestThinking0(MessagesRequestThinking0!);
+                return messagesRequestThinking0(__value0);
             }
-            else if (IsMessagesRequestThinking1 && messagesRequestThinking1 != null)
+            else if (MessagesRequestThinking1 is { } __value1 && messagesRequestThinking1 != null)
             {
-                return messagesRequestThinking1(MessagesRequestThinking1!);
+                return messagesRequestThinking1(__value1);
             }
-            else if (IsMessagesRequestThinking2 && messagesRequestThinking2 != null)
+            else if (MessagesRequestThinking2 is { } __value2 && messagesRequestThinking2 != null)
             {
-                return messagesRequestThinking2(MessagesRequestThinking2!);
+                return messagesRequestThinking2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestThinking0)
+            if (MessagesRequestThinking0 is { } __value0)
             {
-                messagesRequestThinking0?.Invoke(MessagesRequestThinking0!);
+                messagesRequestThinking0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestThinking1)
+            else if (MessagesRequestThinking1 is { } __value1)
             {
-                messagesRequestThinking1?.Invoke(MessagesRequestThinking1!);
+                messagesRequestThinking1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestThinking2)
+            else if (MessagesRequestThinking2 is { } __value2)
             {
-                messagesRequestThinking2?.Invoke(MessagesRequestThinking2!);
+                messagesRequestThinking2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestThinking0)
+            if (MessagesRequestThinking0 is { } __value0)
             {
-                messagesRequestThinking0?.Invoke(MessagesRequestThinking0!);
+                messagesRequestThinking0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestThinking1)
+            else if (MessagesRequestThinking1 is { } __value1)
             {
-                messagesRequestThinking1?.Invoke(MessagesRequestThinking1!);
+                messagesRequestThinking1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestThinking2)
+            else if (MessagesRequestThinking2 is { } __value2)
             {
-                messagesRequestThinking2?.Invoke(MessagesRequestThinking2!);
+                messagesRequestThinking2?.Invoke(__value2);
             }
         }
 

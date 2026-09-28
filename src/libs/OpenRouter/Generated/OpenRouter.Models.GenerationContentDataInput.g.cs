@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GenerationContentDataInput0 PickGenerationContentDataInput0() => IsGenerationContentDataInput0
-            ? GenerationContentDataInput0!
+        public global::OpenRouter.GenerationContentDataInput0 PickGenerationContentDataInput0() => GenerationContentDataInput0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationContentDataInput0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.GenerationContentDataInput1 PickGenerationContentDataInput1() => IsGenerationContentDataInput1
-            ? GenerationContentDataInput1!
+        public global::OpenRouter.GenerationContentDataInput1 PickGenerationContentDataInput1() => GenerationContentDataInput1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationContentDataInput1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsGenerationContentDataInput0 && generationContentDataInput0 != null)
+            if (GenerationContentDataInput0 is { } __value0 && generationContentDataInput0 != null)
             {
-                return generationContentDataInput0(GenerationContentDataInput0!);
+                return generationContentDataInput0(__value0);
             }
-            else if (IsGenerationContentDataInput1 && generationContentDataInput1 != null)
+            else if (GenerationContentDataInput1 is { } __value1 && generationContentDataInput1 != null)
             {
-                return generationContentDataInput1(GenerationContentDataInput1!);
+                return generationContentDataInput1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsGenerationContentDataInput0)
+            if (GenerationContentDataInput0 is { } __value0)
             {
-                generationContentDataInput0?.Invoke(GenerationContentDataInput0!);
+                generationContentDataInput0?.Invoke(__value0);
             }
-            else if (IsGenerationContentDataInput1)
+            else if (GenerationContentDataInput1 is { } __value1)
             {
-                generationContentDataInput1?.Invoke(GenerationContentDataInput1!);
+                generationContentDataInput1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsGenerationContentDataInput0)
+            if (GenerationContentDataInput0 is { } __value0)
             {
-                generationContentDataInput0?.Invoke(GenerationContentDataInput0!);
+                generationContentDataInput0?.Invoke(__value0);
             }
-            else if (IsGenerationContentDataInput1)
+            else if (GenerationContentDataInput1 is { } __value1)
             {
-                generationContentDataInput1?.Invoke(GenerationContentDataInput1!);
+                generationContentDataInput1?.Invoke(__value1);
             }
         }
 

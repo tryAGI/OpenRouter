@@ -68,19 +68,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CapabilityDescriptorVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Boolean!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBoolean(), typeInfo);
             }
             else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CapabilityDescriptorVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
             else if (value.IsRange)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CapabilityDescriptorVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Range!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRange(), typeInfo);
             }
         }
     }

@@ -149,13 +149,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ToolChoiceAllowedMode0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ToolChoiceAllowedMode0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ToolChoiceAllowedMode0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolChoiceAllowedMode0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolChoiceAllowedMode0(), typeInfo);
             }
             else if (value.IsToolChoiceAllowedMode1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ToolChoiceAllowedMode1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ToolChoiceAllowedMode1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ToolChoiceAllowedMode1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolChoiceAllowedMode1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolChoiceAllowedMode1(), typeInfo);
             }
         }
     }

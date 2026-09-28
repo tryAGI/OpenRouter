@@ -174,19 +174,19 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerToolRequireApproval0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerToolRequireApproval0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerToolRequireApproval0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpServerToolRequireApproval0(), typeInfo);
             }
             else if (value.IsMcpServerToolRequireApproval1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerToolRequireApproval1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerToolRequireApproval1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerToolRequireApproval1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpServerToolRequireApproval1(), typeInfo);
             }
             else if (value.IsMcpServerToolRequireApproval2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.McpServerToolRequireApproval2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.McpServerToolRequireApproval2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.McpServerToolRequireApproval2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpServerToolRequireApproval2(), typeInfo);
             }
         }
     }

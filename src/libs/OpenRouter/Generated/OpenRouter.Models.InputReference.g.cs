@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputReferenceVariant1 PickAudioUrl() => IsAudioUrl
-            ? AudioUrl!
+        public global::OpenRouter.InputReferenceVariant1 PickAudioUrl() => AudioUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputReferenceVariant2 PickImageUrl() => IsImageUrl
-            ? ImageUrl!
+        public global::OpenRouter.InputReferenceVariant2 PickImageUrl() => ImageUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputReferenceVariant3 PickVideoUrl() => IsVideoUrl
-            ? VideoUrl!
+        public global::OpenRouter.InputReferenceVariant3 PickVideoUrl() => VideoUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAudioUrl && audioUrl != null)
+            if (AudioUrl is { } __value0 && audioUrl != null)
             {
-                return audioUrl(AudioUrl!);
+                return audioUrl(__value0);
             }
-            else if (IsImageUrl && imageUrl != null)
+            else if (ImageUrl is { } __value1 && imageUrl != null)
             {
-                return imageUrl(ImageUrl!);
+                return imageUrl(__value1);
             }
-            else if (IsVideoUrl && videoUrl != null)
+            else if (VideoUrl is { } __value2 && videoUrl != null)
             {
-                return videoUrl(VideoUrl!);
+                return videoUrl(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAudioUrl)
+            if (AudioUrl is { } __value0)
             {
-                audioUrl?.Invoke(AudioUrl!);
+                audioUrl?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsVideoUrl)
+            else if (VideoUrl is { } __value2)
             {
-                videoUrl?.Invoke(VideoUrl!);
+                videoUrl?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAudioUrl)
+            if (AudioUrl is { } __value0)
             {
-                audioUrl?.Invoke(AudioUrl!);
+                audioUrl?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsVideoUrl)
+            else if (VideoUrl is { } __value2)
             {
-                videoUrl?.Invoke(VideoUrl!);
+                videoUrl?.Invoke(__value2);
             }
         }
 

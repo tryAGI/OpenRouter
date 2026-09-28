@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public bool PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1
-            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!.Value
+        public bool PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1() => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2
-            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!
+        public global::System.Collections.Generic.IList<string> PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2() => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 != null)
+            if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } __value0 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } __value1 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1)
+            if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1)
+            if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickPredictionContentVariant1() => IsPredictionContentVariant1
-            ? PredictionContentVariant1!
+        public string PickPredictionContentVariant1() => PredictionContentVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PredictionContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.PredictionContentText> PickPredictionContent1() => IsPredictionContent1
-            ? PredictionContent1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.PredictionContentText> PickPredictionContent1() => PredictionContent1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PredictionContent1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPredictionContentVariant1 && predictionContentVariant1 != null)
+            if (PredictionContentVariant1 is { } __value0 && predictionContentVariant1 != null)
             {
-                return predictionContentVariant1(PredictionContentVariant1!);
+                return predictionContentVariant1(__value0);
             }
-            else if (IsPredictionContent1 && predictionContent1 != null)
+            else if (PredictionContent1 is { } __value1 && predictionContent1 != null)
             {
-                return predictionContent1(PredictionContent1!);
+                return predictionContent1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPredictionContentVariant1)
+            if (PredictionContentVariant1 is { } __value0)
             {
-                predictionContentVariant1?.Invoke(PredictionContentVariant1!);
+                predictionContentVariant1?.Invoke(__value0);
             }
-            else if (IsPredictionContent1)
+            else if (PredictionContent1 is { } __value1)
             {
-                predictionContent1?.Invoke(PredictionContent1!);
+                predictionContent1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPredictionContentVariant1)
+            if (PredictionContentVariant1 is { } __value0)
             {
-                predictionContentVariant1?.Invoke(PredictionContentVariant1!);
+                predictionContentVariant1?.Invoke(__value0);
             }
-            else if (IsPredictionContent1)
+            else if (PredictionContent1 is { } __value1)
             {
-                predictionContent1?.Invoke(PredictionContent1!);
+                predictionContent1?.Invoke(__value1);
             }
         }
 

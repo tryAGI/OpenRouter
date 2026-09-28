@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant1 PickAdvisorToolResult() => IsAdvisorToolResult
-            ? AdvisorToolResult!
+        public global::OpenRouter.ORAnthropicContentBlockVariant1 PickAdvisorToolResult() => AdvisorToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant2 PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
-            ? BashCodeExecutionToolResult!
+        public global::OpenRouter.ORAnthropicContentBlockVariant2 PickBashCodeExecutionToolResult() => BashCodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant3 PickCodeExecutionToolResult() => IsCodeExecutionToolResult
-            ? CodeExecutionToolResult!
+        public global::OpenRouter.ORAnthropicContentBlockVariant3 PickCodeExecutionToolResult() => CodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant4 PickCompaction() => IsCompaction
-            ? Compaction!
+        public global::OpenRouter.ORAnthropicContentBlockVariant4 PickCompaction() => Compaction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant5 PickContainerUpload() => IsContainerUpload
-            ? ContainerUpload!
+        public global::OpenRouter.ORAnthropicContentBlockVariant5 PickContainerUpload() => ContainerUpload is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerUpload' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant6 PickRedactedThinking() => IsRedactedThinking
-            ? RedactedThinking!
+        public global::OpenRouter.ORAnthropicContentBlockVariant6 PickRedactedThinking() => RedactedThinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant7 PickServerToolUse() => IsServerToolUse
-            ? ServerToolUse!
+        public global::OpenRouter.ORAnthropicContentBlockVariant7 PickServerToolUse() => ServerToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant8 PickText() => IsText
-            ? Text!
+        public global::OpenRouter.ORAnthropicContentBlockVariant8 PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant9 PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
-            ? TextEditorCodeExecutionToolResult!
+        public global::OpenRouter.ORAnthropicContentBlockVariant9 PickTextEditorCodeExecutionToolResult() => TextEditorCodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant10 PickThinking() => IsThinking
-            ? Thinking!
+        public global::OpenRouter.ORAnthropicContentBlockVariant10 PickThinking() => Thinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant11 PickToolSearchToolResult() => IsToolSearchToolResult
-            ? ToolSearchToolResult!
+        public global::OpenRouter.ORAnthropicContentBlockVariant11 PickToolSearchToolResult() => ToolSearchToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant12 PickToolUse() => IsToolUse
-            ? ToolUse!
+        public global::OpenRouter.ORAnthropicContentBlockVariant12 PickToolUse() => ToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant13 PickWebFetchToolResult() => IsWebFetchToolResult
-            ? WebFetchToolResult!
+        public global::OpenRouter.ORAnthropicContentBlockVariant13 PickWebFetchToolResult() => WebFetchToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant14 PickWebSearchToolResult() => IsWebSearchToolResult
-            ? WebSearchToolResult!
+        public global::OpenRouter.ORAnthropicContentBlockVariant14 PickWebSearchToolResult() => WebSearchToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -965,61 +965,61 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAdvisorToolResult && advisorToolResult != null)
+            if (AdvisorToolResult is { } __value0 && advisorToolResult != null)
             {
-                return advisorToolResult(AdvisorToolResult!);
+                return advisorToolResult(__value0);
             }
-            else if (IsBashCodeExecutionToolResult && bashCodeExecutionToolResult != null)
+            else if (BashCodeExecutionToolResult is { } __value1 && bashCodeExecutionToolResult != null)
             {
-                return bashCodeExecutionToolResult(BashCodeExecutionToolResult!);
+                return bashCodeExecutionToolResult(__value1);
             }
-            else if (IsCodeExecutionToolResult && codeExecutionToolResult != null)
+            else if (CodeExecutionToolResult is { } __value2 && codeExecutionToolResult != null)
             {
-                return codeExecutionToolResult(CodeExecutionToolResult!);
+                return codeExecutionToolResult(__value2);
             }
-            else if (IsCompaction && compaction != null)
+            else if (Compaction is { } __value3 && compaction != null)
             {
-                return compaction(Compaction!);
+                return compaction(__value3);
             }
-            else if (IsContainerUpload && containerUpload != null)
+            else if (ContainerUpload is { } __value4 && containerUpload != null)
             {
-                return containerUpload(ContainerUpload!);
+                return containerUpload(__value4);
             }
-            else if (IsRedactedThinking && redactedThinking != null)
+            else if (RedactedThinking is { } __value5 && redactedThinking != null)
             {
-                return redactedThinking(RedactedThinking!);
+                return redactedThinking(__value5);
             }
-            else if (IsServerToolUse && serverToolUse != null)
+            else if (ServerToolUse is { } __value6 && serverToolUse != null)
             {
-                return serverToolUse(ServerToolUse!);
+                return serverToolUse(__value6);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value7 && text != null)
             {
-                return text(Text!);
+                return text(__value7);
             }
-            else if (IsTextEditorCodeExecutionToolResult && textEditorCodeExecutionToolResult != null)
+            else if (TextEditorCodeExecutionToolResult is { } __value8 && textEditorCodeExecutionToolResult != null)
             {
-                return textEditorCodeExecutionToolResult(TextEditorCodeExecutionToolResult!);
+                return textEditorCodeExecutionToolResult(__value8);
             }
-            else if (IsThinking && thinking != null)
+            else if (Thinking is { } __value9 && thinking != null)
             {
-                return thinking(Thinking!);
+                return thinking(__value9);
             }
-            else if (IsToolSearchToolResult && toolSearchToolResult != null)
+            else if (ToolSearchToolResult is { } __value10 && toolSearchToolResult != null)
             {
-                return toolSearchToolResult(ToolSearchToolResult!);
+                return toolSearchToolResult(__value10);
             }
-            else if (IsToolUse && toolUse != null)
+            else if (ToolUse is { } __value11 && toolUse != null)
             {
-                return toolUse(ToolUse!);
+                return toolUse(__value11);
             }
-            else if (IsWebFetchToolResult && webFetchToolResult != null)
+            else if (WebFetchToolResult is { } __value12 && webFetchToolResult != null)
             {
-                return webFetchToolResult(WebFetchToolResult!);
+                return webFetchToolResult(__value12);
             }
-            else if (IsWebSearchToolResult && webSearchToolResult != null)
+            else if (WebSearchToolResult is { } __value13 && webSearchToolResult != null)
             {
-                return webSearchToolResult(WebSearchToolResult!);
+                return webSearchToolResult(__value13);
             }
 
             return default(TResult);
@@ -1063,61 +1063,61 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAdvisorToolResult)
+            if (AdvisorToolResult is { } __value0)
             {
-                advisorToolResult?.Invoke(AdvisorToolResult!);
+                advisorToolResult?.Invoke(__value0);
             }
-            else if (IsBashCodeExecutionToolResult)
+            else if (BashCodeExecutionToolResult is { } __value1)
             {
-                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+                bashCodeExecutionToolResult?.Invoke(__value1);
             }
-            else if (IsCodeExecutionToolResult)
+            else if (CodeExecutionToolResult is { } __value2)
             {
-                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
+                codeExecutionToolResult?.Invoke(__value2);
             }
-            else if (IsCompaction)
+            else if (Compaction is { } __value3)
             {
-                compaction?.Invoke(Compaction!);
+                compaction?.Invoke(__value3);
             }
-            else if (IsContainerUpload)
+            else if (ContainerUpload is { } __value4)
             {
-                containerUpload?.Invoke(ContainerUpload!);
+                containerUpload?.Invoke(__value4);
             }
-            else if (IsRedactedThinking)
+            else if (RedactedThinking is { } __value5)
             {
-                redactedThinking?.Invoke(RedactedThinking!);
+                redactedThinking?.Invoke(__value5);
             }
-            else if (IsServerToolUse)
+            else if (ServerToolUse is { } __value6)
             {
-                serverToolUse?.Invoke(ServerToolUse!);
+                serverToolUse?.Invoke(__value6);
             }
-            else if (IsText)
+            else if (Text is { } __value7)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value7);
             }
-            else if (IsTextEditorCodeExecutionToolResult)
+            else if (TextEditorCodeExecutionToolResult is { } __value8)
             {
-                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+                textEditorCodeExecutionToolResult?.Invoke(__value8);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value9)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value9);
             }
-            else if (IsToolSearchToolResult)
+            else if (ToolSearchToolResult is { } __value10)
             {
-                toolSearchToolResult?.Invoke(ToolSearchToolResult!);
+                toolSearchToolResult?.Invoke(__value10);
             }
-            else if (IsToolUse)
+            else if (ToolUse is { } __value11)
             {
-                toolUse?.Invoke(ToolUse!);
+                toolUse?.Invoke(__value11);
             }
-            else if (IsWebFetchToolResult)
+            else if (WebFetchToolResult is { } __value12)
             {
-                webFetchToolResult?.Invoke(WebFetchToolResult!);
+                webFetchToolResult?.Invoke(__value12);
             }
-            else if (IsWebSearchToolResult)
+            else if (WebSearchToolResult is { } __value13)
             {
-                webSearchToolResult?.Invoke(WebSearchToolResult!);
+                webSearchToolResult?.Invoke(__value13);
             }
         }
 
@@ -1146,61 +1146,61 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAdvisorToolResult)
+            if (AdvisorToolResult is { } __value0)
             {
-                advisorToolResult?.Invoke(AdvisorToolResult!);
+                advisorToolResult?.Invoke(__value0);
             }
-            else if (IsBashCodeExecutionToolResult)
+            else if (BashCodeExecutionToolResult is { } __value1)
             {
-                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+                bashCodeExecutionToolResult?.Invoke(__value1);
             }
-            else if (IsCodeExecutionToolResult)
+            else if (CodeExecutionToolResult is { } __value2)
             {
-                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
+                codeExecutionToolResult?.Invoke(__value2);
             }
-            else if (IsCompaction)
+            else if (Compaction is { } __value3)
             {
-                compaction?.Invoke(Compaction!);
+                compaction?.Invoke(__value3);
             }
-            else if (IsContainerUpload)
+            else if (ContainerUpload is { } __value4)
             {
-                containerUpload?.Invoke(ContainerUpload!);
+                containerUpload?.Invoke(__value4);
             }
-            else if (IsRedactedThinking)
+            else if (RedactedThinking is { } __value5)
             {
-                redactedThinking?.Invoke(RedactedThinking!);
+                redactedThinking?.Invoke(__value5);
             }
-            else if (IsServerToolUse)
+            else if (ServerToolUse is { } __value6)
             {
-                serverToolUse?.Invoke(ServerToolUse!);
+                serverToolUse?.Invoke(__value6);
             }
-            else if (IsText)
+            else if (Text is { } __value7)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value7);
             }
-            else if (IsTextEditorCodeExecutionToolResult)
+            else if (TextEditorCodeExecutionToolResult is { } __value8)
             {
-                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+                textEditorCodeExecutionToolResult?.Invoke(__value8);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value9)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value9);
             }
-            else if (IsToolSearchToolResult)
+            else if (ToolSearchToolResult is { } __value10)
             {
-                toolSearchToolResult?.Invoke(ToolSearchToolResult!);
+                toolSearchToolResult?.Invoke(__value10);
             }
-            else if (IsToolUse)
+            else if (ToolUse is { } __value11)
             {
-                toolUse?.Invoke(ToolUse!);
+                toolUse?.Invoke(__value11);
             }
-            else if (IsWebFetchToolResult)
+            else if (WebFetchToolResult is { } __value12)
             {
-                webFetchToolResult?.Invoke(WebFetchToolResult!);
+                webFetchToolResult?.Invoke(__value12);
             }
-            else if (IsWebSearchToolResult)
+            else if (WebSearchToolResult is { } __value13)
             {
-                webSearchToolResult?.Invoke(WebSearchToolResult!);
+                webSearchToolResult?.Invoke(__value13);
             }
         }
 

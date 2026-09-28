@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant1 PickApplyPatchCall() => IsApplyPatchCall
-            ? ApplyPatchCall!
+        public global::OpenRouter.OutputItemsVariant1 PickApplyPatchCall() => ApplyPatchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant2 PickCodeInterpreterCall() => IsCodeInterpreterCall
-            ? CodeInterpreterCall!
+        public global::OpenRouter.OutputItemsVariant2 PickCodeInterpreterCall() => CodeInterpreterCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant3 PickComputerCall() => IsComputerCall
-            ? ComputerCall!
+        public global::OpenRouter.OutputItemsVariant3 PickComputerCall() => ComputerCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant4 PickCustomToolCall() => IsCustomToolCall
-            ? CustomToolCall!
+        public global::OpenRouter.OutputItemsVariant4 PickCustomToolCall() => CustomToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant5 PickFileSearchCall() => IsFileSearchCall
-            ? FileSearchCall!
+        public global::OpenRouter.OutputItemsVariant5 PickFileSearchCall() => FileSearchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant6 PickFunctionCall() => IsFunctionCall
-            ? FunctionCall!
+        public global::OpenRouter.OutputItemsVariant6 PickFunctionCall() => FunctionCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant7 PickImageGenerationCall() => IsImageGenerationCall
-            ? ImageGenerationCall!
+        public global::OpenRouter.OutputItemsVariant7 PickImageGenerationCall() => ImageGenerationCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant8 PickMessage() => IsMessage
-            ? Message!
+        public global::OpenRouter.OutputItemsVariant8 PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant9 PickOpenrouterAdvisor() => IsOpenrouterAdvisor
-            ? OpenrouterAdvisor!
+        public global::OpenRouter.OutputItemsVariant9 PickOpenrouterAdvisor() => OpenrouterAdvisor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterAdvisor' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant10 PickOpenrouterApplyPatch() => IsOpenrouterApplyPatch
-            ? OpenrouterApplyPatch!
+        public global::OpenRouter.OutputItemsVariant10 PickOpenrouterApplyPatch() => OpenrouterApplyPatch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterApplyPatch' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant11 PickOpenrouterBash() => IsOpenrouterBash
-            ? OpenrouterBash!
+        public global::OpenRouter.OutputItemsVariant11 PickOpenrouterBash() => OpenrouterBash is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterBash' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant12 PickOpenrouterBrowserUse() => IsOpenrouterBrowserUse
-            ? OpenrouterBrowserUse!
+        public global::OpenRouter.OutputItemsVariant12 PickOpenrouterBrowserUse() => OpenrouterBrowserUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterBrowserUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant13 PickOpenrouterCodeInterpreter() => IsOpenrouterCodeInterpreter
-            ? OpenrouterCodeInterpreter!
+        public global::OpenRouter.OutputItemsVariant13 PickOpenrouterCodeInterpreter() => OpenrouterCodeInterpreter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterCodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant14 PickOpenrouterDatetime() => IsOpenrouterDatetime
-            ? OpenrouterDatetime!
+        public global::OpenRouter.OutputItemsVariant14 PickOpenrouterDatetime() => OpenrouterDatetime is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterDatetime' but the value was {ToString()}.");
 
         /// <summary>
@@ -565,8 +565,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant15 PickOpenrouterExperimentalSearchModels() => IsOpenrouterExperimentalSearchModels
-            ? OpenrouterExperimentalSearchModels!
+        public global::OpenRouter.OutputItemsVariant15 PickOpenrouterExperimentalSearchModels() => OpenrouterExperimentalSearchModels is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterExperimentalSearchModels' but the value was {ToString()}.");
 
         /// <summary>
@@ -602,8 +602,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant16 PickOpenrouterFileSearch() => IsOpenrouterFileSearch
-            ? OpenrouterFileSearch!
+        public global::OpenRouter.OutputItemsVariant16 PickOpenrouterFileSearch() => OpenrouterFileSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterFileSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -639,8 +639,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant17 PickOpenrouterFiles() => IsOpenrouterFiles
-            ? OpenrouterFiles!
+        public global::OpenRouter.OutputItemsVariant17 PickOpenrouterFiles() => OpenrouterFiles is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterFiles' but the value was {ToString()}.");
 
         /// <summary>
@@ -676,8 +676,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant18 PickOpenrouterFusion() => IsOpenrouterFusion
-            ? OpenrouterFusion!
+        public global::OpenRouter.OutputItemsVariant18 PickOpenrouterFusion() => OpenrouterFusion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterFusion' but the value was {ToString()}.");
 
         /// <summary>
@@ -713,8 +713,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant19 PickOpenrouterImageGeneration() => IsOpenrouterImageGeneration
-            ? OpenrouterImageGeneration!
+        public global::OpenRouter.OutputItemsVariant19 PickOpenrouterImageGeneration() => OpenrouterImageGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterImageGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -750,8 +750,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant20 PickOpenrouterMcp() => IsOpenrouterMcp
-            ? OpenrouterMcp!
+        public global::OpenRouter.OutputItemsVariant20 PickOpenrouterMcp() => OpenrouterMcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterMcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -787,8 +787,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant21 PickOpenrouterMemory() => IsOpenrouterMemory
-            ? OpenrouterMemory!
+        public global::OpenRouter.OutputItemsVariant21 PickOpenrouterMemory() => OpenrouterMemory is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterMemory' but the value was {ToString()}.");
 
         /// <summary>
@@ -824,8 +824,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant22 PickOpenrouterSubagent() => IsOpenrouterSubagent
-            ? OpenrouterSubagent!
+        public global::OpenRouter.OutputItemsVariant22 PickOpenrouterSubagent() => OpenrouterSubagent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterSubagent' but the value was {ToString()}.");
 
         /// <summary>
@@ -861,8 +861,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant23 PickOpenrouterTextEditor() => IsOpenrouterTextEditor
-            ? OpenrouterTextEditor!
+        public global::OpenRouter.OutputItemsVariant23 PickOpenrouterTextEditor() => OpenrouterTextEditor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterTextEditor' but the value was {ToString()}.");
 
         /// <summary>
@@ -898,8 +898,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant24 PickOpenrouterToolSearch() => IsOpenrouterToolSearch
-            ? OpenrouterToolSearch!
+        public global::OpenRouter.OutputItemsVariant24 PickOpenrouterToolSearch() => OpenrouterToolSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterToolSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -935,8 +935,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant25 PickOpenrouterWebFetch() => IsOpenrouterWebFetch
-            ? OpenrouterWebFetch!
+        public global::OpenRouter.OutputItemsVariant25 PickOpenrouterWebFetch() => OpenrouterWebFetch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterWebFetch' but the value was {ToString()}.");
 
         /// <summary>
@@ -972,8 +972,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant26 PickOpenrouterWebSearch() => IsOpenrouterWebSearch
-            ? OpenrouterWebSearch!
+        public global::OpenRouter.OutputItemsVariant26 PickOpenrouterWebSearch() => OpenrouterWebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterWebSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -1009,8 +1009,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant27 PickReasoning() => IsReasoning
-            ? Reasoning!
+        public global::OpenRouter.OutputItemsVariant27 PickReasoning() => Reasoning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
 
         /// <summary>
@@ -1046,8 +1046,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant28 PickShellCall() => IsShellCall
-            ? ShellCall!
+        public global::OpenRouter.OutputItemsVariant28 PickShellCall() => ShellCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -1083,8 +1083,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant29 PickShellCallOutput() => IsShellCallOutput
-            ? ShellCallOutput!
+        public global::OpenRouter.OutputItemsVariant29 PickShellCallOutput() => ShellCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -1120,8 +1120,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputItemsVariant30 PickWebSearchCall() => IsWebSearchCall
-            ? WebSearchCall!
+        public global::OpenRouter.OutputItemsVariant30 PickWebSearchCall() => WebSearchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchCall' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -2005,125 +2005,125 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsApplyPatchCall && applyPatchCall != null)
+            if (ApplyPatchCall is { } __value0 && applyPatchCall != null)
             {
-                return applyPatchCall(ApplyPatchCall!);
+                return applyPatchCall(__value0);
             }
-            else if (IsCodeInterpreterCall && codeInterpreterCall != null)
+            else if (CodeInterpreterCall is { } __value1 && codeInterpreterCall != null)
             {
-                return codeInterpreterCall(CodeInterpreterCall!);
+                return codeInterpreterCall(__value1);
             }
-            else if (IsComputerCall && computerCall != null)
+            else if (ComputerCall is { } __value2 && computerCall != null)
             {
-                return computerCall(ComputerCall!);
+                return computerCall(__value2);
             }
-            else if (IsCustomToolCall && customToolCall != null)
+            else if (CustomToolCall is { } __value3 && customToolCall != null)
             {
-                return customToolCall(CustomToolCall!);
+                return customToolCall(__value3);
             }
-            else if (IsFileSearchCall && fileSearchCall != null)
+            else if (FileSearchCall is { } __value4 && fileSearchCall != null)
             {
-                return fileSearchCall(FileSearchCall!);
+                return fileSearchCall(__value4);
             }
-            else if (IsFunctionCall && functionCall != null)
+            else if (FunctionCall is { } __value5 && functionCall != null)
             {
-                return functionCall(FunctionCall!);
+                return functionCall(__value5);
             }
-            else if (IsImageGenerationCall && imageGenerationCall != null)
+            else if (ImageGenerationCall is { } __value6 && imageGenerationCall != null)
             {
-                return imageGenerationCall(ImageGenerationCall!);
+                return imageGenerationCall(__value6);
             }
-            else if (IsMessage && message != null)
+            else if (Message is { } __value7 && message != null)
             {
-                return message(Message!);
+                return message(__value7);
             }
-            else if (IsOpenrouterAdvisor && openrouterAdvisor != null)
+            else if (OpenrouterAdvisor is { } __value8 && openrouterAdvisor != null)
             {
-                return openrouterAdvisor(OpenrouterAdvisor!);
+                return openrouterAdvisor(__value8);
             }
-            else if (IsOpenrouterApplyPatch && openrouterApplyPatch != null)
+            else if (OpenrouterApplyPatch is { } __value9 && openrouterApplyPatch != null)
             {
-                return openrouterApplyPatch(OpenrouterApplyPatch!);
+                return openrouterApplyPatch(__value9);
             }
-            else if (IsOpenrouterBash && openrouterBash != null)
+            else if (OpenrouterBash is { } __value10 && openrouterBash != null)
             {
-                return openrouterBash(OpenrouterBash!);
+                return openrouterBash(__value10);
             }
-            else if (IsOpenrouterBrowserUse && openrouterBrowserUse != null)
+            else if (OpenrouterBrowserUse is { } __value11 && openrouterBrowserUse != null)
             {
-                return openrouterBrowserUse(OpenrouterBrowserUse!);
+                return openrouterBrowserUse(__value11);
             }
-            else if (IsOpenrouterCodeInterpreter && openrouterCodeInterpreter != null)
+            else if (OpenrouterCodeInterpreter is { } __value12 && openrouterCodeInterpreter != null)
             {
-                return openrouterCodeInterpreter(OpenrouterCodeInterpreter!);
+                return openrouterCodeInterpreter(__value12);
             }
-            else if (IsOpenrouterDatetime && openrouterDatetime != null)
+            else if (OpenrouterDatetime is { } __value13 && openrouterDatetime != null)
             {
-                return openrouterDatetime(OpenrouterDatetime!);
+                return openrouterDatetime(__value13);
             }
-            else if (IsOpenrouterExperimentalSearchModels && openrouterExperimentalSearchModels != null)
+            else if (OpenrouterExperimentalSearchModels is { } __value14 && openrouterExperimentalSearchModels != null)
             {
-                return openrouterExperimentalSearchModels(OpenrouterExperimentalSearchModels!);
+                return openrouterExperimentalSearchModels(__value14);
             }
-            else if (IsOpenrouterFileSearch && openrouterFileSearch != null)
+            else if (OpenrouterFileSearch is { } __value15 && openrouterFileSearch != null)
             {
-                return openrouterFileSearch(OpenrouterFileSearch!);
+                return openrouterFileSearch(__value15);
             }
-            else if (IsOpenrouterFiles && openrouterFiles != null)
+            else if (OpenrouterFiles is { } __value16 && openrouterFiles != null)
             {
-                return openrouterFiles(OpenrouterFiles!);
+                return openrouterFiles(__value16);
             }
-            else if (IsOpenrouterFusion && openrouterFusion != null)
+            else if (OpenrouterFusion is { } __value17 && openrouterFusion != null)
             {
-                return openrouterFusion(OpenrouterFusion!);
+                return openrouterFusion(__value17);
             }
-            else if (IsOpenrouterImageGeneration && openrouterImageGeneration != null)
+            else if (OpenrouterImageGeneration is { } __value18 && openrouterImageGeneration != null)
             {
-                return openrouterImageGeneration(OpenrouterImageGeneration!);
+                return openrouterImageGeneration(__value18);
             }
-            else if (IsOpenrouterMcp && openrouterMcp != null)
+            else if (OpenrouterMcp is { } __value19 && openrouterMcp != null)
             {
-                return openrouterMcp(OpenrouterMcp!);
+                return openrouterMcp(__value19);
             }
-            else if (IsOpenrouterMemory && openrouterMemory != null)
+            else if (OpenrouterMemory is { } __value20 && openrouterMemory != null)
             {
-                return openrouterMemory(OpenrouterMemory!);
+                return openrouterMemory(__value20);
             }
-            else if (IsOpenrouterSubagent && openrouterSubagent != null)
+            else if (OpenrouterSubagent is { } __value21 && openrouterSubagent != null)
             {
-                return openrouterSubagent(OpenrouterSubagent!);
+                return openrouterSubagent(__value21);
             }
-            else if (IsOpenrouterTextEditor && openrouterTextEditor != null)
+            else if (OpenrouterTextEditor is { } __value22 && openrouterTextEditor != null)
             {
-                return openrouterTextEditor(OpenrouterTextEditor!);
+                return openrouterTextEditor(__value22);
             }
-            else if (IsOpenrouterToolSearch && openrouterToolSearch != null)
+            else if (OpenrouterToolSearch is { } __value23 && openrouterToolSearch != null)
             {
-                return openrouterToolSearch(OpenrouterToolSearch!);
+                return openrouterToolSearch(__value23);
             }
-            else if (IsOpenrouterWebFetch && openrouterWebFetch != null)
+            else if (OpenrouterWebFetch is { } __value24 && openrouterWebFetch != null)
             {
-                return openrouterWebFetch(OpenrouterWebFetch!);
+                return openrouterWebFetch(__value24);
             }
-            else if (IsOpenrouterWebSearch && openrouterWebSearch != null)
+            else if (OpenrouterWebSearch is { } __value25 && openrouterWebSearch != null)
             {
-                return openrouterWebSearch(OpenrouterWebSearch!);
+                return openrouterWebSearch(__value25);
             }
-            else if (IsReasoning && reasoning != null)
+            else if (Reasoning is { } __value26 && reasoning != null)
             {
-                return reasoning(Reasoning!);
+                return reasoning(__value26);
             }
-            else if (IsShellCall && shellCall != null)
+            else if (ShellCall is { } __value27 && shellCall != null)
             {
-                return shellCall(ShellCall!);
+                return shellCall(__value27);
             }
-            else if (IsShellCallOutput && shellCallOutput != null)
+            else if (ShellCallOutput is { } __value28 && shellCallOutput != null)
             {
-                return shellCallOutput(ShellCallOutput!);
+                return shellCallOutput(__value28);
             }
-            else if (IsWebSearchCall && webSearchCall != null)
+            else if (WebSearchCall is { } __value29 && webSearchCall != null)
             {
-                return webSearchCall(WebSearchCall!);
+                return webSearchCall(__value29);
             }
 
             return default(TResult);
@@ -2199,125 +2199,125 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsApplyPatchCall)
+            if (ApplyPatchCall is { } __value0)
             {
-                applyPatchCall?.Invoke(ApplyPatchCall!);
+                applyPatchCall?.Invoke(__value0);
             }
-            else if (IsCodeInterpreterCall)
+            else if (CodeInterpreterCall is { } __value1)
             {
-                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
+                codeInterpreterCall?.Invoke(__value1);
             }
-            else if (IsComputerCall)
+            else if (ComputerCall is { } __value2)
             {
-                computerCall?.Invoke(ComputerCall!);
+                computerCall?.Invoke(__value2);
             }
-            else if (IsCustomToolCall)
+            else if (CustomToolCall is { } __value3)
             {
-                customToolCall?.Invoke(CustomToolCall!);
+                customToolCall?.Invoke(__value3);
             }
-            else if (IsFileSearchCall)
+            else if (FileSearchCall is { } __value4)
             {
-                fileSearchCall?.Invoke(FileSearchCall!);
+                fileSearchCall?.Invoke(__value4);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value5)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value5);
             }
-            else if (IsImageGenerationCall)
+            else if (ImageGenerationCall is { } __value6)
             {
-                imageGenerationCall?.Invoke(ImageGenerationCall!);
+                imageGenerationCall?.Invoke(__value6);
             }
-            else if (IsMessage)
+            else if (Message is { } __value7)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value7);
             }
-            else if (IsOpenrouterAdvisor)
+            else if (OpenrouterAdvisor is { } __value8)
             {
-                openrouterAdvisor?.Invoke(OpenrouterAdvisor!);
+                openrouterAdvisor?.Invoke(__value8);
             }
-            else if (IsOpenrouterApplyPatch)
+            else if (OpenrouterApplyPatch is { } __value9)
             {
-                openrouterApplyPatch?.Invoke(OpenrouterApplyPatch!);
+                openrouterApplyPatch?.Invoke(__value9);
             }
-            else if (IsOpenrouterBash)
+            else if (OpenrouterBash is { } __value10)
             {
-                openrouterBash?.Invoke(OpenrouterBash!);
+                openrouterBash?.Invoke(__value10);
             }
-            else if (IsOpenrouterBrowserUse)
+            else if (OpenrouterBrowserUse is { } __value11)
             {
-                openrouterBrowserUse?.Invoke(OpenrouterBrowserUse!);
+                openrouterBrowserUse?.Invoke(__value11);
             }
-            else if (IsOpenrouterCodeInterpreter)
+            else if (OpenrouterCodeInterpreter is { } __value12)
             {
-                openrouterCodeInterpreter?.Invoke(OpenrouterCodeInterpreter!);
+                openrouterCodeInterpreter?.Invoke(__value12);
             }
-            else if (IsOpenrouterDatetime)
+            else if (OpenrouterDatetime is { } __value13)
             {
-                openrouterDatetime?.Invoke(OpenrouterDatetime!);
+                openrouterDatetime?.Invoke(__value13);
             }
-            else if (IsOpenrouterExperimentalSearchModels)
+            else if (OpenrouterExperimentalSearchModels is { } __value14)
             {
-                openrouterExperimentalSearchModels?.Invoke(OpenrouterExperimentalSearchModels!);
+                openrouterExperimentalSearchModels?.Invoke(__value14);
             }
-            else if (IsOpenrouterFileSearch)
+            else if (OpenrouterFileSearch is { } __value15)
             {
-                openrouterFileSearch?.Invoke(OpenrouterFileSearch!);
+                openrouterFileSearch?.Invoke(__value15);
             }
-            else if (IsOpenrouterFiles)
+            else if (OpenrouterFiles is { } __value16)
             {
-                openrouterFiles?.Invoke(OpenrouterFiles!);
+                openrouterFiles?.Invoke(__value16);
             }
-            else if (IsOpenrouterFusion)
+            else if (OpenrouterFusion is { } __value17)
             {
-                openrouterFusion?.Invoke(OpenrouterFusion!);
+                openrouterFusion?.Invoke(__value17);
             }
-            else if (IsOpenrouterImageGeneration)
+            else if (OpenrouterImageGeneration is { } __value18)
             {
-                openrouterImageGeneration?.Invoke(OpenrouterImageGeneration!);
+                openrouterImageGeneration?.Invoke(__value18);
             }
-            else if (IsOpenrouterMcp)
+            else if (OpenrouterMcp is { } __value19)
             {
-                openrouterMcp?.Invoke(OpenrouterMcp!);
+                openrouterMcp?.Invoke(__value19);
             }
-            else if (IsOpenrouterMemory)
+            else if (OpenrouterMemory is { } __value20)
             {
-                openrouterMemory?.Invoke(OpenrouterMemory!);
+                openrouterMemory?.Invoke(__value20);
             }
-            else if (IsOpenrouterSubagent)
+            else if (OpenrouterSubagent is { } __value21)
             {
-                openrouterSubagent?.Invoke(OpenrouterSubagent!);
+                openrouterSubagent?.Invoke(__value21);
             }
-            else if (IsOpenrouterTextEditor)
+            else if (OpenrouterTextEditor is { } __value22)
             {
-                openrouterTextEditor?.Invoke(OpenrouterTextEditor!);
+                openrouterTextEditor?.Invoke(__value22);
             }
-            else if (IsOpenrouterToolSearch)
+            else if (OpenrouterToolSearch is { } __value23)
             {
-                openrouterToolSearch?.Invoke(OpenrouterToolSearch!);
+                openrouterToolSearch?.Invoke(__value23);
             }
-            else if (IsOpenrouterWebFetch)
+            else if (OpenrouterWebFetch is { } __value24)
             {
-                openrouterWebFetch?.Invoke(OpenrouterWebFetch!);
+                openrouterWebFetch?.Invoke(__value24);
             }
-            else if (IsOpenrouterWebSearch)
+            else if (OpenrouterWebSearch is { } __value25)
             {
-                openrouterWebSearch?.Invoke(OpenrouterWebSearch!);
+                openrouterWebSearch?.Invoke(__value25);
             }
-            else if (IsReasoning)
+            else if (Reasoning is { } __value26)
             {
-                reasoning?.Invoke(Reasoning!);
+                reasoning?.Invoke(__value26);
             }
-            else if (IsShellCall)
+            else if (ShellCall is { } __value27)
             {
-                shellCall?.Invoke(ShellCall!);
+                shellCall?.Invoke(__value27);
             }
-            else if (IsShellCallOutput)
+            else if (ShellCallOutput is { } __value28)
             {
-                shellCallOutput?.Invoke(ShellCallOutput!);
+                shellCallOutput?.Invoke(__value28);
             }
-            else if (IsWebSearchCall)
+            else if (WebSearchCall is { } __value29)
             {
-                webSearchCall?.Invoke(WebSearchCall!);
+                webSearchCall?.Invoke(__value29);
             }
         }
 
@@ -2362,125 +2362,125 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsApplyPatchCall)
+            if (ApplyPatchCall is { } __value0)
             {
-                applyPatchCall?.Invoke(ApplyPatchCall!);
+                applyPatchCall?.Invoke(__value0);
             }
-            else if (IsCodeInterpreterCall)
+            else if (CodeInterpreterCall is { } __value1)
             {
-                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
+                codeInterpreterCall?.Invoke(__value1);
             }
-            else if (IsComputerCall)
+            else if (ComputerCall is { } __value2)
             {
-                computerCall?.Invoke(ComputerCall!);
+                computerCall?.Invoke(__value2);
             }
-            else if (IsCustomToolCall)
+            else if (CustomToolCall is { } __value3)
             {
-                customToolCall?.Invoke(CustomToolCall!);
+                customToolCall?.Invoke(__value3);
             }
-            else if (IsFileSearchCall)
+            else if (FileSearchCall is { } __value4)
             {
-                fileSearchCall?.Invoke(FileSearchCall!);
+                fileSearchCall?.Invoke(__value4);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value5)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value5);
             }
-            else if (IsImageGenerationCall)
+            else if (ImageGenerationCall is { } __value6)
             {
-                imageGenerationCall?.Invoke(ImageGenerationCall!);
+                imageGenerationCall?.Invoke(__value6);
             }
-            else if (IsMessage)
+            else if (Message is { } __value7)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value7);
             }
-            else if (IsOpenrouterAdvisor)
+            else if (OpenrouterAdvisor is { } __value8)
             {
-                openrouterAdvisor?.Invoke(OpenrouterAdvisor!);
+                openrouterAdvisor?.Invoke(__value8);
             }
-            else if (IsOpenrouterApplyPatch)
+            else if (OpenrouterApplyPatch is { } __value9)
             {
-                openrouterApplyPatch?.Invoke(OpenrouterApplyPatch!);
+                openrouterApplyPatch?.Invoke(__value9);
             }
-            else if (IsOpenrouterBash)
+            else if (OpenrouterBash is { } __value10)
             {
-                openrouterBash?.Invoke(OpenrouterBash!);
+                openrouterBash?.Invoke(__value10);
             }
-            else if (IsOpenrouterBrowserUse)
+            else if (OpenrouterBrowserUse is { } __value11)
             {
-                openrouterBrowserUse?.Invoke(OpenrouterBrowserUse!);
+                openrouterBrowserUse?.Invoke(__value11);
             }
-            else if (IsOpenrouterCodeInterpreter)
+            else if (OpenrouterCodeInterpreter is { } __value12)
             {
-                openrouterCodeInterpreter?.Invoke(OpenrouterCodeInterpreter!);
+                openrouterCodeInterpreter?.Invoke(__value12);
             }
-            else if (IsOpenrouterDatetime)
+            else if (OpenrouterDatetime is { } __value13)
             {
-                openrouterDatetime?.Invoke(OpenrouterDatetime!);
+                openrouterDatetime?.Invoke(__value13);
             }
-            else if (IsOpenrouterExperimentalSearchModels)
+            else if (OpenrouterExperimentalSearchModels is { } __value14)
             {
-                openrouterExperimentalSearchModels?.Invoke(OpenrouterExperimentalSearchModels!);
+                openrouterExperimentalSearchModels?.Invoke(__value14);
             }
-            else if (IsOpenrouterFileSearch)
+            else if (OpenrouterFileSearch is { } __value15)
             {
-                openrouterFileSearch?.Invoke(OpenrouterFileSearch!);
+                openrouterFileSearch?.Invoke(__value15);
             }
-            else if (IsOpenrouterFiles)
+            else if (OpenrouterFiles is { } __value16)
             {
-                openrouterFiles?.Invoke(OpenrouterFiles!);
+                openrouterFiles?.Invoke(__value16);
             }
-            else if (IsOpenrouterFusion)
+            else if (OpenrouterFusion is { } __value17)
             {
-                openrouterFusion?.Invoke(OpenrouterFusion!);
+                openrouterFusion?.Invoke(__value17);
             }
-            else if (IsOpenrouterImageGeneration)
+            else if (OpenrouterImageGeneration is { } __value18)
             {
-                openrouterImageGeneration?.Invoke(OpenrouterImageGeneration!);
+                openrouterImageGeneration?.Invoke(__value18);
             }
-            else if (IsOpenrouterMcp)
+            else if (OpenrouterMcp is { } __value19)
             {
-                openrouterMcp?.Invoke(OpenrouterMcp!);
+                openrouterMcp?.Invoke(__value19);
             }
-            else if (IsOpenrouterMemory)
+            else if (OpenrouterMemory is { } __value20)
             {
-                openrouterMemory?.Invoke(OpenrouterMemory!);
+                openrouterMemory?.Invoke(__value20);
             }
-            else if (IsOpenrouterSubagent)
+            else if (OpenrouterSubagent is { } __value21)
             {
-                openrouterSubagent?.Invoke(OpenrouterSubagent!);
+                openrouterSubagent?.Invoke(__value21);
             }
-            else if (IsOpenrouterTextEditor)
+            else if (OpenrouterTextEditor is { } __value22)
             {
-                openrouterTextEditor?.Invoke(OpenrouterTextEditor!);
+                openrouterTextEditor?.Invoke(__value22);
             }
-            else if (IsOpenrouterToolSearch)
+            else if (OpenrouterToolSearch is { } __value23)
             {
-                openrouterToolSearch?.Invoke(OpenrouterToolSearch!);
+                openrouterToolSearch?.Invoke(__value23);
             }
-            else if (IsOpenrouterWebFetch)
+            else if (OpenrouterWebFetch is { } __value24)
             {
-                openrouterWebFetch?.Invoke(OpenrouterWebFetch!);
+                openrouterWebFetch?.Invoke(__value24);
             }
-            else if (IsOpenrouterWebSearch)
+            else if (OpenrouterWebSearch is { } __value25)
             {
-                openrouterWebSearch?.Invoke(OpenrouterWebSearch!);
+                openrouterWebSearch?.Invoke(__value25);
             }
-            else if (IsReasoning)
+            else if (Reasoning is { } __value26)
             {
-                reasoning?.Invoke(Reasoning!);
+                reasoning?.Invoke(__value26);
             }
-            else if (IsShellCall)
+            else if (ShellCall is { } __value27)
             {
-                shellCall?.Invoke(ShellCall!);
+                shellCall?.Invoke(__value27);
             }
-            else if (IsShellCallOutput)
+            else if (ShellCallOutput is { } __value28)
             {
-                shellCallOutput?.Invoke(ShellCallOutput!);
+                shellCallOutput?.Invoke(__value28);
             }
-            else if (IsWebSearchCall)
+            else if (WebSearchCall is { } __value29)
             {
-                webSearchCall?.Invoke(WebSearchCall!);
+                webSearchCall?.Invoke(__value29);
             }
         }
 

@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCallerVariant1 PickCodeExecution20250825() => IsCodeExecution20250825
-            ? CodeExecution20250825!
+        public global::OpenRouter.AnthropicCallerVariant1 PickCodeExecution20250825() => CodeExecution20250825 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20250825' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCallerVariant2 PickCodeExecution20260120() => IsCodeExecution20260120
-            ? CodeExecution20260120!
+        public global::OpenRouter.AnthropicCallerVariant2 PickCodeExecution20260120() => CodeExecution20260120 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20260120' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCallerVariant3 PickDirect() => IsDirect
-            ? Direct!
+        public global::OpenRouter.AnthropicCallerVariant3 PickDirect() => Direct is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Direct' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCodeExecution20250825 && codeExecution20250825 != null)
+            if (CodeExecution20250825 is { } __value0 && codeExecution20250825 != null)
             {
-                return codeExecution20250825(CodeExecution20250825!);
+                return codeExecution20250825(__value0);
             }
-            else if (IsCodeExecution20260120 && codeExecution20260120 != null)
+            else if (CodeExecution20260120 is { } __value1 && codeExecution20260120 != null)
             {
-                return codeExecution20260120(CodeExecution20260120!);
+                return codeExecution20260120(__value1);
             }
-            else if (IsDirect && direct != null)
+            else if (Direct is { } __value2 && direct != null)
             {
-                return direct(Direct!);
+                return direct(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCodeExecution20250825)
+            if (CodeExecution20250825 is { } __value0)
             {
-                codeExecution20250825?.Invoke(CodeExecution20250825!);
+                codeExecution20250825?.Invoke(__value0);
             }
-            else if (IsCodeExecution20260120)
+            else if (CodeExecution20260120 is { } __value1)
             {
-                codeExecution20260120?.Invoke(CodeExecution20260120!);
+                codeExecution20260120?.Invoke(__value1);
             }
-            else if (IsDirect)
+            else if (Direct is { } __value2)
             {
-                direct?.Invoke(Direct!);
+                direct?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsCodeExecution20250825)
+            if (CodeExecution20250825 is { } __value0)
             {
-                codeExecution20250825?.Invoke(CodeExecution20250825!);
+                codeExecution20250825?.Invoke(__value0);
             }
-            else if (IsCodeExecution20260120)
+            else if (CodeExecution20260120 is { } __value1)
             {
-                codeExecution20260120?.Invoke(CodeExecution20260120!);
+                codeExecution20260120?.Invoke(__value1);
             }
-            else if (IsDirect)
+            else if (Direct is { } __value2)
             {
-                direct?.Invoke(Direct!);
+                direct?.Invoke(__value2);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.PdfParserEngine0 PickPdfParserEngine0() => IsPdfParserEngine0
-            ? PdfParserEngine0!.Value
+        public global::OpenRouter.PdfParserEngine0 PickPdfParserEngine0() => PdfParserEngine0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.PdfParserEngine1 PickPdfParserEngine1() => IsPdfParserEngine1
-            ? PdfParserEngine1!.Value
+        public global::OpenRouter.PdfParserEngine1 PickPdfParserEngine1() => PdfParserEngine1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPdfParserEngine0 && pdfParserEngine0 != null)
+            if (PdfParserEngine0 is { } __value0 && pdfParserEngine0 != null)
             {
-                return pdfParserEngine0(PdfParserEngine0!);
+                return pdfParserEngine0(__value0);
             }
-            else if (IsPdfParserEngine1 && pdfParserEngine1 != null)
+            else if (PdfParserEngine1 is { } __value1 && pdfParserEngine1 != null)
             {
-                return pdfParserEngine1(PdfParserEngine1!);
+                return pdfParserEngine1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPdfParserEngine0)
+            if (PdfParserEngine0 is { } __value0)
             {
-                pdfParserEngine0?.Invoke(PdfParserEngine0!);
+                pdfParserEngine0?.Invoke(__value0);
             }
-            else if (IsPdfParserEngine1)
+            else if (PdfParserEngine1 is { } __value1)
             {
-                pdfParserEngine1?.Invoke(PdfParserEngine1!);
+                pdfParserEngine1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPdfParserEngine0)
+            if (PdfParserEngine0 is { } __value0)
             {
-                pdfParserEngine0?.Invoke(PdfParserEngine0!);
+                pdfParserEngine0?.Invoke(__value0);
             }
-            else if (IsPdfParserEngine1)
+            else if (PdfParserEngine1 is { } __value1)
             {
-                pdfParserEngine1?.Invoke(PdfParserEngine1!);
+                pdfParserEngine1?.Invoke(__value1);
             }
         }
 

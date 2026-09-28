@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputWebSearchCallItemAction0 PickOutputWebSearchCallItemAction0() => IsOutputWebSearchCallItemAction0
-            ? OutputWebSearchCallItemAction0!
+        public global::OpenRouter.OutputWebSearchCallItemAction0 PickOutputWebSearchCallItemAction0() => OutputWebSearchCallItemAction0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputWebSearchCallItemAction1 PickOutputWebSearchCallItemAction1() => IsOutputWebSearchCallItemAction1
-            ? OutputWebSearchCallItemAction1!
+        public global::OpenRouter.OutputWebSearchCallItemAction1 PickOutputWebSearchCallItemAction1() => OutputWebSearchCallItemAction1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputWebSearchCallItemAction2 PickOutputWebSearchCallItemAction2() => IsOutputWebSearchCallItemAction2
-            ? OutputWebSearchCallItemAction2!
+        public global::OpenRouter.OutputWebSearchCallItemAction2 PickOutputWebSearchCallItemAction2() => OutputWebSearchCallItemAction2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItemAction2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputWebSearchCallItemAction0 && outputWebSearchCallItemAction0 != null)
+            if (OutputWebSearchCallItemAction0 is { } __value0 && outputWebSearchCallItemAction0 != null)
             {
-                return outputWebSearchCallItemAction0(OutputWebSearchCallItemAction0!);
+                return outputWebSearchCallItemAction0(__value0);
             }
-            else if (IsOutputWebSearchCallItemAction1 && outputWebSearchCallItemAction1 != null)
+            else if (OutputWebSearchCallItemAction1 is { } __value1 && outputWebSearchCallItemAction1 != null)
             {
-                return outputWebSearchCallItemAction1(OutputWebSearchCallItemAction1!);
+                return outputWebSearchCallItemAction1(__value1);
             }
-            else if (IsOutputWebSearchCallItemAction2 && outputWebSearchCallItemAction2 != null)
+            else if (OutputWebSearchCallItemAction2 is { } __value2 && outputWebSearchCallItemAction2 != null)
             {
-                return outputWebSearchCallItemAction2(OutputWebSearchCallItemAction2!);
+                return outputWebSearchCallItemAction2(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputWebSearchCallItemAction0)
+            if (OutputWebSearchCallItemAction0 is { } __value0)
             {
-                outputWebSearchCallItemAction0?.Invoke(OutputWebSearchCallItemAction0!);
+                outputWebSearchCallItemAction0?.Invoke(__value0);
             }
-            else if (IsOutputWebSearchCallItemAction1)
+            else if (OutputWebSearchCallItemAction1 is { } __value1)
             {
-                outputWebSearchCallItemAction1?.Invoke(OutputWebSearchCallItemAction1!);
+                outputWebSearchCallItemAction1?.Invoke(__value1);
             }
-            else if (IsOutputWebSearchCallItemAction2)
+            else if (OutputWebSearchCallItemAction2 is { } __value2)
             {
-                outputWebSearchCallItemAction2?.Invoke(OutputWebSearchCallItemAction2!);
+                outputWebSearchCallItemAction2?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputWebSearchCallItemAction0)
+            if (OutputWebSearchCallItemAction0 is { } __value0)
             {
-                outputWebSearchCallItemAction0?.Invoke(OutputWebSearchCallItemAction0!);
+                outputWebSearchCallItemAction0?.Invoke(__value0);
             }
-            else if (IsOutputWebSearchCallItemAction1)
+            else if (OutputWebSearchCallItemAction1 is { } __value1)
             {
-                outputWebSearchCallItemAction1?.Invoke(OutputWebSearchCallItemAction1!);
+                outputWebSearchCallItemAction1?.Invoke(__value1);
             }
-            else if (IsOutputWebSearchCallItemAction2)
+            else if (OutputWebSearchCallItemAction2 is { } __value2)
             {
-                outputWebSearchCallItemAction2?.Invoke(OutputWebSearchCallItemAction2!);
+                outputWebSearchCallItemAction2?.Invoke(__value2);
             }
         }
 

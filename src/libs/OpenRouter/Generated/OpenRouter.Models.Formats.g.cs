@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FormatTextConfig PickFormatTextConfig() => IsFormatTextConfig
-            ? FormatTextConfig!
+        public global::OpenRouter.FormatTextConfig PickFormatTextConfig() => FormatTextConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FormatTextConfig' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FormatJsonObjectConfig PickFormatJsonObjectConfig() => IsFormatJsonObjectConfig
-            ? FormatJsonObjectConfig!
+        public global::OpenRouter.FormatJsonObjectConfig PickFormatJsonObjectConfig() => FormatJsonObjectConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonObjectConfig' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FormatJsonSchemaConfig PickFormatJsonSchemaConfig() => IsFormatJsonSchemaConfig
-            ? FormatJsonSchemaConfig!
+        public global::OpenRouter.FormatJsonSchemaConfig PickFormatJsonSchemaConfig() => FormatJsonSchemaConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonSchemaConfig' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFormatTextConfig && formatTextConfig != null)
+            if (FormatTextConfig is { } __value0 && formatTextConfig != null)
             {
-                return formatTextConfig(FormatTextConfig!);
+                return formatTextConfig(__value0);
             }
-            else if (IsFormatJsonObjectConfig && formatJsonObjectConfig != null)
+            else if (FormatJsonObjectConfig is { } __value1 && formatJsonObjectConfig != null)
             {
-                return formatJsonObjectConfig(FormatJsonObjectConfig!);
+                return formatJsonObjectConfig(__value1);
             }
-            else if (IsFormatJsonSchemaConfig && formatJsonSchemaConfig != null)
+            else if (FormatJsonSchemaConfig is { } __value2 && formatJsonSchemaConfig != null)
             {
-                return formatJsonSchemaConfig(FormatJsonSchemaConfig!);
+                return formatJsonSchemaConfig(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFormatTextConfig)
+            if (FormatTextConfig is { } __value0)
             {
-                formatTextConfig?.Invoke(FormatTextConfig!);
+                formatTextConfig?.Invoke(__value0);
             }
-            else if (IsFormatJsonObjectConfig)
+            else if (FormatJsonObjectConfig is { } __value1)
             {
-                formatJsonObjectConfig?.Invoke(FormatJsonObjectConfig!);
+                formatJsonObjectConfig?.Invoke(__value1);
             }
-            else if (IsFormatJsonSchemaConfig)
+            else if (FormatJsonSchemaConfig is { } __value2)
             {
-                formatJsonSchemaConfig?.Invoke(FormatJsonSchemaConfig!);
+                formatJsonSchemaConfig?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsFormatTextConfig)
+            if (FormatTextConfig is { } __value0)
             {
-                formatTextConfig?.Invoke(FormatTextConfig!);
+                formatTextConfig?.Invoke(__value0);
             }
-            else if (IsFormatJsonObjectConfig)
+            else if (FormatJsonObjectConfig is { } __value1)
             {
-                formatJsonObjectConfig?.Invoke(FormatJsonObjectConfig!);
+                formatJsonObjectConfig?.Invoke(__value1);
             }
-            else if (IsFormatJsonSchemaConfig)
+            else if (FormatJsonSchemaConfig is { } __value2)
             {
-                formatJsonSchemaConfig?.Invoke(FormatJsonSchemaConfig!);
+                formatJsonSchemaConfig?.Invoke(__value2);
             }
         }
 

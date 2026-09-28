@@ -47,8 +47,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatMessagesVariant1 PickAssistant() => IsAssistant
-            ? Assistant!
+        public global::OpenRouter.ChatMessagesVariant1 PickAssistant() => Assistant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatMessagesVariant2 PickDeveloper() => IsDeveloper
-            ? Developer!
+        public global::OpenRouter.ChatMessagesVariant2 PickDeveloper() => Developer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatMessagesVariant3 PickSystem() => IsSystem
-            ? System!
+        public global::OpenRouter.ChatMessagesVariant3 PickSystem() => System is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatMessagesVariant4 PickTool() => IsTool
-            ? Tool!
+        public global::OpenRouter.ChatMessagesVariant4 PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatMessagesVariant5 PickUser() => IsUser
-            ? User!
+        public global::OpenRouter.ChatMessagesVariant5 PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAssistant && assistant != null)
+            if (Assistant is { } __value0 && assistant != null)
             {
-                return assistant(Assistant!);
+                return assistant(__value0);
             }
-            else if (IsDeveloper && developer != null)
+            else if (Developer is { } __value1 && developer != null)
             {
-                return developer(Developer!);
+                return developer(__value1);
             }
-            else if (IsSystem && system != null)
+            else if (System is { } __value2 && system != null)
             {
-                return system(System!);
+                return system(__value2);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value3 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value3);
             }
-            else if (IsUser && user != null)
+            else if (User is { } __value4 && user != null)
             {
-                return user(User!);
+                return user(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAssistant)
+            if (Assistant is { } __value0)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value0);
             }
-            else if (IsDeveloper)
+            else if (Developer is { } __value1)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value1);
             }
-            else if (IsSystem)
+            else if (System is { } __value2)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value2);
             }
-            else if (IsTool)
+            else if (Tool is { } __value3)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value3);
             }
-            else if (IsUser)
+            else if (User is { } __value4)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAssistant)
+            if (Assistant is { } __value0)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value0);
             }
-            else if (IsDeveloper)
+            else if (Developer is { } __value1)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value1);
             }
-            else if (IsSystem)
+            else if (System is { } __value2)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value2);
             }
-            else if (IsTool)
+            else if (Tool is { } __value3)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value3);
             }
-            else if (IsUser)
+            else if (User is { } __value4)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value4);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickInputsVariant1() => IsInputsVariant1
-            ? InputsVariant1!
+        public string PickInputsVariant1() => InputsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items> PickInputs1() => IsInputs1
-            ? Inputs1!
+        public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items> PickInputs1() => Inputs1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inputs1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputsVariant1 && inputsVariant1 != null)
+            if (InputsVariant1 is { } __value0 && inputsVariant1 != null)
             {
-                return inputsVariant1(InputsVariant1!);
+                return inputsVariant1(__value0);
             }
-            else if (IsInputs1 && inputs1 != null)
+            else if (Inputs1 is { } __value1 && inputs1 != null)
             {
-                return inputs1(Inputs1!);
+                return inputs1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputsVariant1)
+            if (InputsVariant1 is { } __value0)
             {
-                inputsVariant1?.Invoke(InputsVariant1!);
+                inputsVariant1?.Invoke(__value0);
             }
-            else if (IsInputs1)
+            else if (Inputs1 is { } __value1)
             {
-                inputs1?.Invoke(Inputs1!);
+                inputs1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputsVariant1)
+            if (InputsVariant1 is { } __value0)
             {
-                inputsVariant1?.Invoke(InputsVariant1!);
+                inputsVariant1?.Invoke(__value0);
             }
-            else if (IsInputs1)
+            else if (Inputs1 is { } __value1)
             {
-                inputs1?.Invoke(Inputs1!);
+                inputs1?.Invoke(__value1);
             }
         }
 

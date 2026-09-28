@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
-            ? ProviderName!.Value
+        public global::OpenRouter.ProviderName PickProviderName() => ProviderName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickRerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2() => IsRerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2
-            ? RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2!
+        public string PickRerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2() => RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName && providerName != null)
+            if (ProviderName is { } __value0 && providerName != null)
             {
-                return providerName(ProviderName!);
+                return providerName(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 && rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 != null)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 is { } __value1 && rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 != null)
             {
-                return rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2(RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2!);
+                return rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 is { } __value1)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2!);
+                rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsRerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2)
+            else if (RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2 is { } __value1)
             {
-                rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2?.Invoke(RerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2!);
+                rerankPostRequestBodyContentApplicationJsonSchemaProviderOnlyItemsVariant2?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0 PickOutputShellCallOutputItemOutputItemsOutcome0() => IsOutputShellCallOutputItemOutputItemsOutcome0
-            ? OutputShellCallOutputItemOutputItemsOutcome0!
+        public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome0 PickOutputShellCallOutputItemOutputItemsOutcome0() => OutputShellCallOutputItemOutputItemsOutcome0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputShellCallOutputItemOutputItemsOutcome0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1 PickOutputShellCallOutputItemOutputItemsOutcome1() => IsOutputShellCallOutputItemOutputItemsOutcome1
-            ? OutputShellCallOutputItemOutputItemsOutcome1!
+        public global::OpenRouter.OutputShellCallOutputItemOutputItemsOutcome1 PickOutputShellCallOutputItemOutputItemsOutcome1() => OutputShellCallOutputItemOutputItemsOutcome1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputShellCallOutputItemOutputItemsOutcome1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputShellCallOutputItemOutputItemsOutcome0 && outputShellCallOutputItemOutputItemsOutcome0 != null)
+            if (OutputShellCallOutputItemOutputItemsOutcome0 is { } __value0 && outputShellCallOutputItemOutputItemsOutcome0 != null)
             {
-                return outputShellCallOutputItemOutputItemsOutcome0(OutputShellCallOutputItemOutputItemsOutcome0!);
+                return outputShellCallOutputItemOutputItemsOutcome0(__value0);
             }
-            else if (IsOutputShellCallOutputItemOutputItemsOutcome1 && outputShellCallOutputItemOutputItemsOutcome1 != null)
+            else if (OutputShellCallOutputItemOutputItemsOutcome1 is { } __value1 && outputShellCallOutputItemOutputItemsOutcome1 != null)
             {
-                return outputShellCallOutputItemOutputItemsOutcome1(OutputShellCallOutputItemOutputItemsOutcome1!);
+                return outputShellCallOutputItemOutputItemsOutcome1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputShellCallOutputItemOutputItemsOutcome0)
+            if (OutputShellCallOutputItemOutputItemsOutcome0 is { } __value0)
             {
-                outputShellCallOutputItemOutputItemsOutcome0?.Invoke(OutputShellCallOutputItemOutputItemsOutcome0!);
+                outputShellCallOutputItemOutputItemsOutcome0?.Invoke(__value0);
             }
-            else if (IsOutputShellCallOutputItemOutputItemsOutcome1)
+            else if (OutputShellCallOutputItemOutputItemsOutcome1 is { } __value1)
             {
-                outputShellCallOutputItemOutputItemsOutcome1?.Invoke(OutputShellCallOutputItemOutputItemsOutcome1!);
+                outputShellCallOutputItemOutputItemsOutcome1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOutputShellCallOutputItemOutputItemsOutcome0)
+            if (OutputShellCallOutputItemOutputItemsOutcome0 is { } __value0)
             {
-                outputShellCallOutputItemOutputItemsOutcome0?.Invoke(OutputShellCallOutputItemOutputItemsOutcome0!);
+                outputShellCallOutputItemOutputItemsOutcome0?.Invoke(__value0);
             }
-            else if (IsOutputShellCallOutputItemOutputItemsOutcome1)
+            else if (OutputShellCallOutputItemOutputItemsOutcome1 is { } __value1)
             {
-                outputShellCallOutputItemOutputItemsOutcome1?.Invoke(OutputShellCallOutputItemOutputItemsOutcome1!);
+                outputShellCallOutputItemOutputItemsOutcome1?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public double PickPreferredMaxLatencyVariant1() => IsPreferredMaxLatencyVariant1
-            ? PreferredMaxLatencyVariant1!.Value
+        public double PickPreferredMaxLatencyVariant1() => PreferredMaxLatencyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMaxLatencyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.PercentileLatencyCutoffs PickPercentileLatencyCutoffs() => IsPercentileLatencyCutoffs
-            ? PercentileLatencyCutoffs!
+        public global::OpenRouter.PercentileLatencyCutoffs PickPercentileLatencyCutoffs() => PercentileLatencyCutoffs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileLatencyCutoffs' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPreferredMaxLatencyVariant1 && preferredMaxLatencyVariant1 != null)
+            if (PreferredMaxLatencyVariant1 is { } __value0 && preferredMaxLatencyVariant1 != null)
             {
-                return preferredMaxLatencyVariant1(PreferredMaxLatencyVariant1!);
+                return preferredMaxLatencyVariant1(__value0);
             }
-            else if (IsPercentileLatencyCutoffs && percentileLatencyCutoffs != null)
+            else if (PercentileLatencyCutoffs is { } __value1 && percentileLatencyCutoffs != null)
             {
-                return percentileLatencyCutoffs(PercentileLatencyCutoffs!);
+                return percentileLatencyCutoffs(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPreferredMaxLatencyVariant1)
+            if (PreferredMaxLatencyVariant1 is { } __value0)
             {
-                preferredMaxLatencyVariant1?.Invoke(PreferredMaxLatencyVariant1!);
+                preferredMaxLatencyVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileLatencyCutoffs)
+            else if (PercentileLatencyCutoffs is { } __value1)
             {
-                percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
+                percentileLatencyCutoffs?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsPreferredMaxLatencyVariant1)
+            if (PreferredMaxLatencyVariant1 is { } __value0)
             {
-                preferredMaxLatencyVariant1?.Invoke(PreferredMaxLatencyVariant1!);
+                preferredMaxLatencyVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileLatencyCutoffs)
+            else if (PercentileLatencyCutoffs is { } __value1)
             {
-                percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
+                percentileLatencyCutoffs?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputText PickInputText() => IsInputText
-            ? InputText!
+        public global::OpenRouter.InputText PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputMessageItemContentItems1 PickInputMessageItemContentItems1() => IsInputMessageItemContentItems1
-            ? InputMessageItemContentItems1!
+        public global::OpenRouter.InputMessageItemContentItems1 PickInputMessageItemContentItems1() => InputMessageItemContentItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemContentItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputFile PickInputFile() => IsInputFile
-            ? InputFile!
+        public global::OpenRouter.InputFile PickInputFile() => InputFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputAudio PickInputAudio() => IsInputAudio
-            ? InputAudio!
+        public global::OpenRouter.InputAudio PickInputAudio() => InputAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputVideo PickInputVideo() => IsInputVideo
-            ? InputVideo!
+        public global::OpenRouter.InputVideo PickInputVideo() => InputVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (InputText is { } __value0 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value0);
             }
-            else if (IsInputMessageItemContentItems1 && inputMessageItemContentItems1 != null)
+            else if (InputMessageItemContentItems1 is { } __value1 && inputMessageItemContentItems1 != null)
             {
-                return inputMessageItemContentItems1(InputMessageItemContentItems1!);
+                return inputMessageItemContentItems1(__value1);
             }
-            else if (IsInputFile && inputFile != null)
+            else if (InputFile is { } __value2 && inputFile != null)
             {
-                return inputFile(InputFile!);
+                return inputFile(__value2);
             }
-            else if (IsInputAudio && inputAudio != null)
+            else if (InputAudio is { } __value3 && inputAudio != null)
             {
-                return inputAudio(InputAudio!);
+                return inputAudio(__value3);
             }
-            else if (IsInputVideo && inputVideo != null)
+            else if (InputVideo is { } __value4 && inputVideo != null)
             {
-                return inputVideo(InputVideo!);
+                return inputVideo(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsInputMessageItemContentItems1)
+            else if (InputMessageItemContentItems1 is { } __value1)
             {
-                inputMessageItemContentItems1?.Invoke(InputMessageItemContentItems1!);
+                inputMessageItemContentItems1?.Invoke(__value1);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value2)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value2);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value3)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value3);
             }
-            else if (IsInputVideo)
+            else if (InputVideo is { } __value4)
             {
-                inputVideo?.Invoke(InputVideo!);
+                inputVideo?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsInputMessageItemContentItems1)
+            else if (InputMessageItemContentItems1 is { } __value1)
             {
-                inputMessageItemContentItems1?.Invoke(InputMessageItemContentItems1!);
+                inputMessageItemContentItems1?.Invoke(__value1);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value2)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value2);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value3)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value3);
             }
-            else if (IsInputVideo)
+            else if (InputVideo is { } __value4)
             {
-                inputVideo?.Invoke(InputVideo!);
+                inputVideo?.Invoke(__value4);
             }
         }
 

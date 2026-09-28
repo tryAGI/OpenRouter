@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult> PickOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0() => IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0
-            ? OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicWebSearchResult> PickOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0() => OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicWebSearchToolResultError PickAnthropicWebSearchToolResultError() => IsAnthropicWebSearchToolResultError
-            ? AnthropicWebSearchToolResultError!
+        public global::OpenRouter.AnthropicWebSearchToolResultError PickAnthropicWebSearchToolResultError() => AnthropicWebSearchToolResultError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicWebSearchToolResultError' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 && orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 != null)
+            if (OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 is { } __value0 && orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 != null)
             {
-                return orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0(OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!);
+                return orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0(__value0);
             }
-            else if (IsAnthropicWebSearchToolResultError && anthropicWebSearchToolResultError != null)
+            else if (AnthropicWebSearchToolResultError is { } __value1 && anthropicWebSearchToolResultError != null)
             {
-                return anthropicWebSearchToolResultError(AnthropicWebSearchToolResultError!);
+                return anthropicWebSearchToolResultError(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0)
+            if (OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 is { } __value0)
             {
-                orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0?.Invoke(OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!);
+                orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0?.Invoke(__value0);
             }
-            else if (IsAnthropicWebSearchToolResultError)
+            else if (AnthropicWebSearchToolResultError is { } __value1)
             {
-                anthropicWebSearchToolResultError?.Invoke(AnthropicWebSearchToolResultError!);
+                anthropicWebSearchToolResultError?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsOrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0)
+            if (OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0 is { } __value0)
             {
-                orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0?.Invoke(OrAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0!);
+                orAnthropicContentBlockDiscriminatorMappingWebSearchToolResultContent0?.Invoke(__value0);
             }
-            else if (IsAnthropicWebSearchToolResultError)
+            else if (AnthropicWebSearchToolResultError is { } __value1)
             {
-                anthropicWebSearchToolResultError?.Invoke(AnthropicWebSearchToolResultError!);
+                anthropicWebSearchToolResultError?.Invoke(__value1);
             }
         }
 

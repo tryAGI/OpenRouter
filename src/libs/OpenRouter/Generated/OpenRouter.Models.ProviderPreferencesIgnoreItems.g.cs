@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ProviderName PickProviderName() => IsProviderName
-            ? ProviderName!.Value
+        public global::OpenRouter.ProviderName PickProviderName() => ProviderName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public string PickProviderPreferencesIgnoreItemsVariant2() => IsProviderPreferencesIgnoreItemsVariant2
-            ? ProviderPreferencesIgnoreItemsVariant2!
+        public string PickProviderPreferencesIgnoreItemsVariant2() => ProviderPreferencesIgnoreItemsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderPreferencesIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName && providerName != null)
+            if (ProviderName is { } __value0 && providerName != null)
             {
-                return providerName(ProviderName!);
+                return providerName(__value0);
             }
-            else if (IsProviderPreferencesIgnoreItemsVariant2 && providerPreferencesIgnoreItemsVariant2 != null)
+            else if (ProviderPreferencesIgnoreItemsVariant2 is { } __value1 && providerPreferencesIgnoreItemsVariant2 != null)
             {
-                return providerPreferencesIgnoreItemsVariant2(ProviderPreferencesIgnoreItemsVariant2!);
+                return providerPreferencesIgnoreItemsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsProviderPreferencesIgnoreItemsVariant2)
+            else if (ProviderPreferencesIgnoreItemsVariant2 is { } __value1)
             {
-                providerPreferencesIgnoreItemsVariant2?.Invoke(ProviderPreferencesIgnoreItemsVariant2!);
+                providerPreferencesIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsProviderPreferencesIgnoreItemsVariant2)
+            else if (ProviderPreferencesIgnoreItemsVariant2 is { } __value1)
             {
-                providerPreferencesIgnoreItemsVariant2?.Invoke(ProviderPreferencesIgnoreItemsVariant2!);
+                providerPreferencesIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 

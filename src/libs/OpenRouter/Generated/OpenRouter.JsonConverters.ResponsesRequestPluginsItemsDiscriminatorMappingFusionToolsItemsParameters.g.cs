@@ -296,31 +296,31 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant1(), typeInfo);
             }
             else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant2(), typeInfo);
             }
             else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersVariant3(), typeInfo);
             }
             else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParametersOneOf3Items?>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters3(), typeInfo);
             }
             else if (value.IsResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestPluginsItemsDiscriminatorMappingFusionToolsItemsParameters4(), typeInfo);
             }
         }
     }

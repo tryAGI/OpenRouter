@@ -42,8 +42,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicTextBlockParam PickAnthropicTextBlockParam() => IsAnthropicTextBlockParam
-            ? AnthropicTextBlockParam!
+        public global::OpenRouter.AnthropicTextBlockParam PickAnthropicTextBlockParam() => AnthropicTextBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicTextBlockParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicImageBlockParam PickAnthropicImageBlockParam() => IsAnthropicImageBlockParam
-            ? AnthropicImageBlockParam!
+        public global::OpenRouter.AnthropicImageBlockParam PickAnthropicImageBlockParam() => AnthropicImageBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicImageBlockParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicDocumentBlockParam PickAnthropicDocumentBlockParam() => IsAnthropicDocumentBlockParam
-            ? AnthropicDocumentBlockParam!
+        public global::OpenRouter.AnthropicDocumentBlockParam PickAnthropicDocumentBlockParam() => AnthropicDocumentBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicDocumentBlockParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1Items3 PickMessagesMessageParamContentOneOf1Items3() => IsMessagesMessageParamContentOneOf1Items3
-            ? MessagesMessageParamContentOneOf1Items3!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items3 PickMessagesMessageParamContentOneOf1Items3() => MessagesMessageParamContentOneOf1Items3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items3' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1Items4 PickMessagesMessageParamContentOneOf1Items4() => IsMessagesMessageParamContentOneOf1Items4
-            ? MessagesMessageParamContentOneOf1Items4!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items4 PickMessagesMessageParamContentOneOf1Items4() => MessagesMessageParamContentOneOf1Items4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items4' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1Items5 PickMessagesMessageParamContentOneOf1Items5() => IsMessagesMessageParamContentOneOf1Items5
-            ? MessagesMessageParamContentOneOf1Items5!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items5 PickMessagesMessageParamContentOneOf1Items5() => MessagesMessageParamContentOneOf1Items5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items5' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1Items6 PickMessagesMessageParamContentOneOf1Items6() => IsMessagesMessageParamContentOneOf1Items6
-            ? MessagesMessageParamContentOneOf1Items6!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items6 PickMessagesMessageParamContentOneOf1Items6() => MessagesMessageParamContentOneOf1Items6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items6' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1Items7 PickMessagesMessageParamContentOneOf1Items7() => IsMessagesMessageParamContentOneOf1Items7
-            ? MessagesMessageParamContentOneOf1Items7!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items7 PickMessagesMessageParamContentOneOf1Items7() => MessagesMessageParamContentOneOf1Items7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items7' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1Items8 PickMessagesMessageParamContentOneOf1Items8() => IsMessagesMessageParamContentOneOf1Items8
-            ? MessagesMessageParamContentOneOf1Items8!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items8 PickMessagesMessageParamContentOneOf1Items8() => MessagesMessageParamContentOneOf1Items8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items8' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicSearchResultBlockParam PickAnthropicSearchResultBlockParam() => IsAnthropicSearchResultBlockParam
-            ? AnthropicSearchResultBlockParam!
+        public global::OpenRouter.AnthropicSearchResultBlockParam PickAnthropicSearchResultBlockParam() => AnthropicSearchResultBlockParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicSearchResultBlockParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -412,8 +412,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesMessageParamContentOneOf1Items10 PickMessagesMessageParamContentOneOf1Items10() => IsMessagesMessageParamContentOneOf1Items10
-            ? MessagesMessageParamContentOneOf1Items10!
+        public global::OpenRouter.MessagesMessageParamContentOneOf1Items10 PickMessagesMessageParamContentOneOf1Items10() => MessagesMessageParamContentOneOf1Items10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items10' but the value was {ToString()}.");
 
         /// <summary>
@@ -449,8 +449,8 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.MessagesAdvisorToolResultBlock PickMessagesAdvisorToolResultBlock() => IsMessagesAdvisorToolResultBlock
-            ? MessagesAdvisorToolResultBlock!
+        public global::OpenRouter.MessagesAdvisorToolResultBlock PickMessagesAdvisorToolResultBlock() => MessagesAdvisorToolResultBlock is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesAdvisorToolResultBlock' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -827,53 +827,53 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam && anthropicTextBlockParam != null)
+            if (AnthropicTextBlockParam is { } __value0 && anthropicTextBlockParam != null)
             {
-                return anthropicTextBlockParam(AnthropicTextBlockParam!);
+                return anthropicTextBlockParam(__value0);
             }
-            else if (IsAnthropicImageBlockParam && anthropicImageBlockParam != null)
+            else if (AnthropicImageBlockParam is { } __value1 && anthropicImageBlockParam != null)
             {
-                return anthropicImageBlockParam(AnthropicImageBlockParam!);
+                return anthropicImageBlockParam(__value1);
             }
-            else if (IsAnthropicDocumentBlockParam && anthropicDocumentBlockParam != null)
+            else if (AnthropicDocumentBlockParam is { } __value2 && anthropicDocumentBlockParam != null)
             {
-                return anthropicDocumentBlockParam(AnthropicDocumentBlockParam!);
+                return anthropicDocumentBlockParam(__value2);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items3 && messagesMessageParamContentOneOf1Items3 != null)
+            else if (MessagesMessageParamContentOneOf1Items3 is { } __value3 && messagesMessageParamContentOneOf1Items3 != null)
             {
-                return messagesMessageParamContentOneOf1Items3(MessagesMessageParamContentOneOf1Items3!);
+                return messagesMessageParamContentOneOf1Items3(__value3);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items4 && messagesMessageParamContentOneOf1Items4 != null)
+            else if (MessagesMessageParamContentOneOf1Items4 is { } __value4 && messagesMessageParamContentOneOf1Items4 != null)
             {
-                return messagesMessageParamContentOneOf1Items4(MessagesMessageParamContentOneOf1Items4!);
+                return messagesMessageParamContentOneOf1Items4(__value4);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items5 && messagesMessageParamContentOneOf1Items5 != null)
+            else if (MessagesMessageParamContentOneOf1Items5 is { } __value5 && messagesMessageParamContentOneOf1Items5 != null)
             {
-                return messagesMessageParamContentOneOf1Items5(MessagesMessageParamContentOneOf1Items5!);
+                return messagesMessageParamContentOneOf1Items5(__value5);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items6 && messagesMessageParamContentOneOf1Items6 != null)
+            else if (MessagesMessageParamContentOneOf1Items6 is { } __value6 && messagesMessageParamContentOneOf1Items6 != null)
             {
-                return messagesMessageParamContentOneOf1Items6(MessagesMessageParamContentOneOf1Items6!);
+                return messagesMessageParamContentOneOf1Items6(__value6);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items7 && messagesMessageParamContentOneOf1Items7 != null)
+            else if (MessagesMessageParamContentOneOf1Items7 is { } __value7 && messagesMessageParamContentOneOf1Items7 != null)
             {
-                return messagesMessageParamContentOneOf1Items7(MessagesMessageParamContentOneOf1Items7!);
+                return messagesMessageParamContentOneOf1Items7(__value7);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items8 && messagesMessageParamContentOneOf1Items8 != null)
+            else if (MessagesMessageParamContentOneOf1Items8 is { } __value8 && messagesMessageParamContentOneOf1Items8 != null)
             {
-                return messagesMessageParamContentOneOf1Items8(MessagesMessageParamContentOneOf1Items8!);
+                return messagesMessageParamContentOneOf1Items8(__value8);
             }
-            else if (IsAnthropicSearchResultBlockParam && anthropicSearchResultBlockParam != null)
+            else if (AnthropicSearchResultBlockParam is { } __value9 && anthropicSearchResultBlockParam != null)
             {
-                return anthropicSearchResultBlockParam(AnthropicSearchResultBlockParam!);
+                return anthropicSearchResultBlockParam(__value9);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items10 && messagesMessageParamContentOneOf1Items10 != null)
+            else if (MessagesMessageParamContentOneOf1Items10 is { } __value10 && messagesMessageParamContentOneOf1Items10 != null)
             {
-                return messagesMessageParamContentOneOf1Items10(MessagesMessageParamContentOneOf1Items10!);
+                return messagesMessageParamContentOneOf1Items10(__value10);
             }
-            else if (IsMessagesAdvisorToolResultBlock && messagesAdvisorToolResultBlock != null)
+            else if (MessagesAdvisorToolResultBlock is { } __value11 && messagesAdvisorToolResultBlock != null)
             {
-                return messagesAdvisorToolResultBlock(MessagesAdvisorToolResultBlock!);
+                return messagesAdvisorToolResultBlock(__value11);
             }
 
             return default(TResult);
@@ -913,53 +913,53 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam)
+            if (AnthropicTextBlockParam is { } __value0)
             {
-                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
+                anthropicTextBlockParam?.Invoke(__value0);
             }
-            else if (IsAnthropicImageBlockParam)
+            else if (AnthropicImageBlockParam is { } __value1)
             {
-                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
+                anthropicImageBlockParam?.Invoke(__value1);
             }
-            else if (IsAnthropicDocumentBlockParam)
+            else if (AnthropicDocumentBlockParam is { } __value2)
             {
-                anthropicDocumentBlockParam?.Invoke(AnthropicDocumentBlockParam!);
+                anthropicDocumentBlockParam?.Invoke(__value2);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items3)
+            else if (MessagesMessageParamContentOneOf1Items3 is { } __value3)
             {
-                messagesMessageParamContentOneOf1Items3?.Invoke(MessagesMessageParamContentOneOf1Items3!);
+                messagesMessageParamContentOneOf1Items3?.Invoke(__value3);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items4)
+            else if (MessagesMessageParamContentOneOf1Items4 is { } __value4)
             {
-                messagesMessageParamContentOneOf1Items4?.Invoke(MessagesMessageParamContentOneOf1Items4!);
+                messagesMessageParamContentOneOf1Items4?.Invoke(__value4);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items5)
+            else if (MessagesMessageParamContentOneOf1Items5 is { } __value5)
             {
-                messagesMessageParamContentOneOf1Items5?.Invoke(MessagesMessageParamContentOneOf1Items5!);
+                messagesMessageParamContentOneOf1Items5?.Invoke(__value5);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items6)
+            else if (MessagesMessageParamContentOneOf1Items6 is { } __value6)
             {
-                messagesMessageParamContentOneOf1Items6?.Invoke(MessagesMessageParamContentOneOf1Items6!);
+                messagesMessageParamContentOneOf1Items6?.Invoke(__value6);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items7)
+            else if (MessagesMessageParamContentOneOf1Items7 is { } __value7)
             {
-                messagesMessageParamContentOneOf1Items7?.Invoke(MessagesMessageParamContentOneOf1Items7!);
+                messagesMessageParamContentOneOf1Items7?.Invoke(__value7);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items8)
+            else if (MessagesMessageParamContentOneOf1Items8 is { } __value8)
             {
-                messagesMessageParamContentOneOf1Items8?.Invoke(MessagesMessageParamContentOneOf1Items8!);
+                messagesMessageParamContentOneOf1Items8?.Invoke(__value8);
             }
-            else if (IsAnthropicSearchResultBlockParam)
+            else if (AnthropicSearchResultBlockParam is { } __value9)
             {
-                anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
+                anthropicSearchResultBlockParam?.Invoke(__value9);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items10)
+            else if (MessagesMessageParamContentOneOf1Items10 is { } __value10)
             {
-                messagesMessageParamContentOneOf1Items10?.Invoke(MessagesMessageParamContentOneOf1Items10!);
+                messagesMessageParamContentOneOf1Items10?.Invoke(__value10);
             }
-            else if (IsMessagesAdvisorToolResultBlock)
+            else if (MessagesAdvisorToolResultBlock is { } __value11)
             {
-                messagesAdvisorToolResultBlock?.Invoke(MessagesAdvisorToolResultBlock!);
+                messagesAdvisorToolResultBlock?.Invoke(__value11);
             }
         }
 
@@ -986,53 +986,53 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (IsAnthropicTextBlockParam)
+            if (AnthropicTextBlockParam is { } __value0)
             {
-                anthropicTextBlockParam?.Invoke(AnthropicTextBlockParam!);
+                anthropicTextBlockParam?.Invoke(__value0);
             }
-            else if (IsAnthropicImageBlockParam)
+            else if (AnthropicImageBlockParam is { } __value1)
             {
-                anthropicImageBlockParam?.Invoke(AnthropicImageBlockParam!);
+                anthropicImageBlockParam?.Invoke(__value1);
             }
-            else if (IsAnthropicDocumentBlockParam)
+            else if (AnthropicDocumentBlockParam is { } __value2)
             {
-                anthropicDocumentBlockParam?.Invoke(AnthropicDocumentBlockParam!);
+                anthropicDocumentBlockParam?.Invoke(__value2);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items3)
+            else if (MessagesMessageParamContentOneOf1Items3 is { } __value3)
             {
-                messagesMessageParamContentOneOf1Items3?.Invoke(MessagesMessageParamContentOneOf1Items3!);
+                messagesMessageParamContentOneOf1Items3?.Invoke(__value3);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items4)
+            else if (MessagesMessageParamContentOneOf1Items4 is { } __value4)
             {
-                messagesMessageParamContentOneOf1Items4?.Invoke(MessagesMessageParamContentOneOf1Items4!);
+                messagesMessageParamContentOneOf1Items4?.Invoke(__value4);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items5)
+            else if (MessagesMessageParamContentOneOf1Items5 is { } __value5)
             {
-                messagesMessageParamContentOneOf1Items5?.Invoke(MessagesMessageParamContentOneOf1Items5!);
+                messagesMessageParamContentOneOf1Items5?.Invoke(__value5);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items6)
+            else if (MessagesMessageParamContentOneOf1Items6 is { } __value6)
             {
-                messagesMessageParamContentOneOf1Items6?.Invoke(MessagesMessageParamContentOneOf1Items6!);
+                messagesMessageParamContentOneOf1Items6?.Invoke(__value6);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items7)
+            else if (MessagesMessageParamContentOneOf1Items7 is { } __value7)
             {
-                messagesMessageParamContentOneOf1Items7?.Invoke(MessagesMessageParamContentOneOf1Items7!);
+                messagesMessageParamContentOneOf1Items7?.Invoke(__value7);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items8)
+            else if (MessagesMessageParamContentOneOf1Items8 is { } __value8)
             {
-                messagesMessageParamContentOneOf1Items8?.Invoke(MessagesMessageParamContentOneOf1Items8!);
+                messagesMessageParamContentOneOf1Items8?.Invoke(__value8);
             }
-            else if (IsAnthropicSearchResultBlockParam)
+            else if (AnthropicSearchResultBlockParam is { } __value9)
             {
-                anthropicSearchResultBlockParam?.Invoke(AnthropicSearchResultBlockParam!);
+                anthropicSearchResultBlockParam?.Invoke(__value9);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items10)
+            else if (MessagesMessageParamContentOneOf1Items10 is { } __value10)
             {
-                messagesMessageParamContentOneOf1Items10?.Invoke(MessagesMessageParamContentOneOf1Items10!);
+                messagesMessageParamContentOneOf1Items10?.Invoke(__value10);
             }
-            else if (IsMessagesAdvisorToolResultBlock)
+            else if (MessagesAdvisorToolResultBlock is { } __value11)
             {
-                messagesAdvisorToolResultBlock?.Invoke(MessagesAdvisorToolResultBlock!);
+                messagesAdvisorToolResultBlock?.Invoke(__value11);
             }
         }
 

@@ -138,13 +138,13 @@ namespace OpenRouter.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.NamespaceFunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.NamespaceFunctionTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.NamespaceFunctionTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NamespaceFunctionTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNamespaceFunctionTool(), typeInfo);
             }
             else if (value.IsCustomTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CustomTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CustomTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CustomTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustomTool(), typeInfo);
             }
         }
     }
