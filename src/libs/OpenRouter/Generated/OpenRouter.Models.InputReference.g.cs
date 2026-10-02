@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A reference asset used to guide video generation. Image references are supported by all providers; audio and video references are only honored by providers that support them (currently BytePlus Seedance 2.0).
+    /// A reference asset used to guide video generation. Image references are supported by all providers; audio and video references are only honored by providers that support them (including BytePlus Seedance generation 2 and newer).<br/>
+    /// Example: {"image_url":{"url":"https://example.com/image.png"},"type":"image_url"}
     /// </summary>
     public readonly partial struct InputReference : global::System.IEquatable<InputReference>
     {
@@ -15,49 +16,12 @@ namespace OpenRouter
         public global::OpenRouter.InputReferenceDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// audio_url variant
+        /// Example: {"image_url":{"url":"https://example.com/image.png"},"type":"image_url"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputReferenceVariant1? AudioUrl { get; init; }
+        public global::OpenRouter.ContentPartImage? ImageUrl { get; init; }
 #else
-        public global::OpenRouter.InputReferenceVariant1? AudioUrl { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioUrl))]
-#endif
-        public bool IsAudioUrl => AudioUrl != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickAudioUrl(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.InputReferenceVariant1? value)
-        {
-            value = AudioUrl;
-            return IsAudioUrl;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.InputReferenceVariant1 PickAudioUrl() => AudioUrl is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
-
-        /// <summary>
-        /// image_url variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.InputReferenceVariant2? ImageUrl { get; init; }
-#else
-        public global::OpenRouter.InputReferenceVariant2? ImageUrl { get; }
+        public global::OpenRouter.ContentPartImage? ImageUrl { get; }
 #endif
 
         /// <summary>
@@ -75,7 +39,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.InputReferenceVariant2? value)
+            out global::OpenRouter.ContentPartImage? value)
         {
             value = ImageUrl;
             return IsImageUrl;
@@ -84,17 +48,54 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputReferenceVariant2 PickImageUrl() => ImageUrl is { } value
+        public global::OpenRouter.ContentPartImage PickImageUrl() => ImageUrl is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
-        /// video_url variant
+        /// Example: {"audio_url":{"url":"https://example.com/audio.mp3"},"type":"audio_url"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.InputReferenceVariant3? VideoUrl { get; init; }
+        public global::OpenRouter.ContentPartAudio? AudioUrl { get; init; }
 #else
-        public global::OpenRouter.InputReferenceVariant3? VideoUrl { get; }
+        public global::OpenRouter.ContentPartAudio? AudioUrl { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioUrl))]
+#endif
+        public bool IsAudioUrl => AudioUrl != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickAudioUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ContentPartAudio? value)
+        {
+            value = AudioUrl;
+            return IsAudioUrl;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ContentPartAudio PickAudioUrl() => AudioUrl is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"type":"video_url","video_url":{"url":"https://example.com/clip.mp4"}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ContentPartVideo? VideoUrl { get; init; }
+#else
+        public global::OpenRouter.ContentPartVideo? VideoUrl { get; }
 #endif
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.InputReferenceVariant3? value)
+            out global::OpenRouter.ContentPartVideo? value)
         {
             value = VideoUrl;
             return IsVideoUrl;
@@ -121,46 +122,23 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.InputReferenceVariant3 PickVideoUrl() => VideoUrl is { } value
+        public global::OpenRouter.ContentPartVideo PickVideoUrl() => VideoUrl is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator InputReference(global::OpenRouter.InputReferenceVariant1 value) => new InputReference((global::OpenRouter.InputReferenceVariant1?)value);
+        public static implicit operator InputReference(global::OpenRouter.ContentPartImage value) => new InputReference((global::OpenRouter.ContentPartImage?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.InputReferenceVariant1?(InputReference @this) => @this.AudioUrl;
+        public static implicit operator global::OpenRouter.ContentPartImage?(InputReference @this) => @this.ImageUrl;
 
         /// <summary>
         ///
         /// </summary>
-        public InputReference(global::OpenRouter.InputReferenceVariant1? value)
-        {
-            AudioUrl = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static InputReference FromAudioUrl(global::OpenRouter.InputReferenceVariant1? value) => new InputReference(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator InputReference(global::OpenRouter.InputReferenceVariant2 value) => new InputReference((global::OpenRouter.InputReferenceVariant2?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.InputReferenceVariant2?(InputReference @this) => @this.ImageUrl;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public InputReference(global::OpenRouter.InputReferenceVariant2? value)
+        public InputReference(global::OpenRouter.ContentPartImage? value)
         {
             ImageUrl = value;
         }
@@ -168,22 +146,45 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static InputReference FromImageUrl(global::OpenRouter.InputReferenceVariant2? value) => new InputReference(value);
+        public static InputReference FromImageUrl(global::OpenRouter.ContentPartImage? value) => new InputReference(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator InputReference(global::OpenRouter.InputReferenceVariant3 value) => new InputReference((global::OpenRouter.InputReferenceVariant3?)value);
+        public static implicit operator InputReference(global::OpenRouter.ContentPartAudio value) => new InputReference((global::OpenRouter.ContentPartAudio?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.InputReferenceVariant3?(InputReference @this) => @this.VideoUrl;
+        public static implicit operator global::OpenRouter.ContentPartAudio?(InputReference @this) => @this.AudioUrl;
 
         /// <summary>
         ///
         /// </summary>
-        public InputReference(global::OpenRouter.InputReferenceVariant3? value)
+        public InputReference(global::OpenRouter.ContentPartAudio? value)
+        {
+            AudioUrl = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static InputReference FromAudioUrl(global::OpenRouter.ContentPartAudio? value) => new InputReference(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator InputReference(global::OpenRouter.ContentPartVideo value) => new InputReference((global::OpenRouter.ContentPartVideo?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ContentPartVideo?(InputReference @this) => @this.VideoUrl;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public InputReference(global::OpenRouter.ContentPartVideo? value)
         {
             VideoUrl = value;
         }
@@ -191,22 +192,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static InputReference FromVideoUrl(global::OpenRouter.InputReferenceVariant3? value) => new InputReference(value);
+        public static InputReference FromVideoUrl(global::OpenRouter.ContentPartVideo? value) => new InputReference(value);
 
         /// <summary>
         ///
         /// </summary>
         public InputReference(
             global::OpenRouter.InputReferenceDiscriminatorType? type,
-            global::OpenRouter.InputReferenceVariant1? audioUrl,
-            global::OpenRouter.InputReferenceVariant2? imageUrl,
-            global::OpenRouter.InputReferenceVariant3? videoUrl
+            global::OpenRouter.ContentPartImage? imageUrl,
+            global::OpenRouter.ContentPartAudio? audioUrl,
+            global::OpenRouter.ContentPartVideo? videoUrl
             )
         {
             Type = type;
 
-            AudioUrl = audioUrl;
             ImageUrl = imageUrl;
+            AudioUrl = audioUrl;
             VideoUrl = videoUrl;
         }
 
@@ -215,16 +216,16 @@ namespace OpenRouter
         /// </summary>
         public object? Object =>
             VideoUrl as object ??
-            ImageUrl as object ??
-            AudioUrl as object
+            AudioUrl as object ??
+            ImageUrl as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            AudioUrl?.ToString() ??
             ImageUrl?.ToString() ??
+            AudioUrl?.ToString() ??
             VideoUrl?.ToString()
             ;
 
@@ -233,16 +234,16 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAudioUrl && !IsImageUrl && !IsVideoUrl || !IsAudioUrl && IsImageUrl && !IsVideoUrl || !IsAudioUrl && !IsImageUrl && IsVideoUrl;
+            return IsImageUrl && !IsAudioUrl && !IsVideoUrl || !IsImageUrl && IsAudioUrl && !IsVideoUrl || !IsImageUrl && !IsAudioUrl && IsVideoUrl;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.InputReferenceVariant1, TResult>? audioUrl = null,
-            global::System.Func<global::OpenRouter.InputReferenceVariant2, TResult>? imageUrl = null,
-            global::System.Func<global::OpenRouter.InputReferenceVariant3, TResult>? videoUrl = null,
+            global::System.Func<global::OpenRouter.ContentPartImage, TResult>? imageUrl = null,
+            global::System.Func<global::OpenRouter.ContentPartAudio, TResult>? audioUrl = null,
+            global::System.Func<global::OpenRouter.ContentPartVideo, TResult>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -250,13 +251,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AudioUrl is { } __value0 && audioUrl != null)
+            if (ImageUrl is { } __value0 && imageUrl != null)
             {
-                return audioUrl(__value0);
+                return imageUrl(__value0);
             }
-            else if (ImageUrl is { } __value1 && imageUrl != null)
+            else if (AudioUrl is { } __value1 && audioUrl != null)
             {
-                return imageUrl(__value1);
+                return audioUrl(__value1);
             }
             else if (VideoUrl is { } __value2 && videoUrl != null)
             {
@@ -270,11 +271,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.InputReferenceVariant1>? audioUrl = null,
+            global::System.Action<global::OpenRouter.ContentPartImage>? imageUrl = null,
 
-            global::System.Action<global::OpenRouter.InputReferenceVariant2>? imageUrl = null,
+            global::System.Action<global::OpenRouter.ContentPartAudio>? audioUrl = null,
 
-            global::System.Action<global::OpenRouter.InputReferenceVariant3>? videoUrl = null,
+            global::System.Action<global::OpenRouter.ContentPartVideo>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -282,13 +283,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AudioUrl is { } __value0)
+            if (ImageUrl is { } __value0)
             {
-                audioUrl?.Invoke(__value0);
+                imageUrl?.Invoke(__value0);
             }
-            else if (ImageUrl is { } __value1)
+            else if (AudioUrl is { } __value1)
             {
-                imageUrl?.Invoke(__value1);
+                audioUrl?.Invoke(__value1);
             }
             else if (VideoUrl is { } __value2)
             {
@@ -300,9 +301,9 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.InputReferenceVariant1>? audioUrl = null,
-            global::System.Action<global::OpenRouter.InputReferenceVariant2>? imageUrl = null,
-            global::System.Action<global::OpenRouter.InputReferenceVariant3>? videoUrl = null,
+            global::System.Action<global::OpenRouter.ContentPartImage>? imageUrl = null,
+            global::System.Action<global::OpenRouter.ContentPartAudio>? audioUrl = null,
+            global::System.Action<global::OpenRouter.ContentPartVideo>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -310,13 +311,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AudioUrl is { } __value0)
+            if (ImageUrl is { } __value0)
             {
-                audioUrl?.Invoke(__value0);
+                imageUrl?.Invoke(__value0);
             }
-            else if (ImageUrl is { } __value1)
+            else if (AudioUrl is { } __value1)
             {
-                imageUrl?.Invoke(__value1);
+                audioUrl?.Invoke(__value1);
             }
             else if (VideoUrl is { } __value2)
             {
@@ -331,12 +332,12 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AudioUrl,
-                typeof(global::OpenRouter.InputReferenceVariant1),
                 ImageUrl,
-                typeof(global::OpenRouter.InputReferenceVariant2),
+                typeof(global::OpenRouter.ContentPartImage),
+                AudioUrl,
+                typeof(global::OpenRouter.ContentPartAudio),
                 VideoUrl,
-                typeof(global::OpenRouter.InputReferenceVariant3),
+                typeof(global::OpenRouter.ContentPartVideo),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +354,9 @@ namespace OpenRouter
         public bool Equals(InputReference other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputReferenceVariant1?>.Default.Equals(AudioUrl, other.AudioUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputReferenceVariant2?>.Default.Equals(ImageUrl, other.ImageUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.InputReferenceVariant3?>.Default.Equals(VideoUrl, other.VideoUrl)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContentPartImage?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContentPartAudio?>.Default.Equals(AudioUrl, other.AudioUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContentPartVideo?>.Default.Equals(VideoUrl, other.VideoUrl)
                 ;
         }
 

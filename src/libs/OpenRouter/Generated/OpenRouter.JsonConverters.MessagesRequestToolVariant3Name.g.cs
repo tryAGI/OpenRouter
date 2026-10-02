@@ -1,0 +1,53 @@
+#nullable enable
+
+namespace OpenRouter.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class MessagesRequestToolVariant3NameJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.MessagesRequestToolVariant3Name>
+    {
+        /// <inheritdoc />
+        public override global::OpenRouter.MessagesRequestToolVariant3Name Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::OpenRouter.MessagesRequestToolVariant3NameExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::OpenRouter.MessagesRequestToolVariant3Name)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::OpenRouter.MessagesRequestToolVariant3Name);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::OpenRouter.MessagesRequestToolVariant3Name value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::OpenRouter.MessagesRequestToolVariant3NameExtensions.ToValueString(value));
+        }
+    }
+}

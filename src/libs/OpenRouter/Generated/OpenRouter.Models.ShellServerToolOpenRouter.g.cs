@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container (a sandbox-backed clone of OpenAI's hosted shell tool)
+    /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container (a sandbox-backed clone of OpenAI's hosted shell tool)<br/>
+    /// Example: {"parameters":{"engine":"openrouter","environment":{"type":"container_auto"}},"type":"openrouter:shell"}
     /// </summary>
     public sealed partial class ShellServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:shell server tool
+        /// Configuration for the openrouter:shell server tool<br/>
+        /// Example: {"engine":"openrouter","environment":{"type":"container_auto"}}
         /// </summary>
+        /// <example>{"engine":"openrouter","environment":{"type":"container_auto"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.ShellServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ShellServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:shell server tool
+        /// Configuration for the openrouter:shell server tool<br/>
+        /// Example: {"engine":"openrouter","environment":{"type":"container_auto"}}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

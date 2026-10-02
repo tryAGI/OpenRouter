@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class FileListResponse
+    public readonly partial struct FileListResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.FileListResponse),
-                jsonSerializerContext) as global::OpenRouter.FileListResponse;
+                jsonSerializerContext) as global::OpenRouter.FileListResponse?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.FileListResponse),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.FileListResponse;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.FileListResponse?;
         }
 
         /// <summary>

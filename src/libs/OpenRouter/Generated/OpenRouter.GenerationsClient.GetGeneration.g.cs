@@ -44,7 +44,10 @@ namespace OpenRouter
         /// <summary>
         /// Get request &amp; usage metadata for a generation
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// The generation ID<br/>
+        /// Example: gen-1234567890
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -64,7 +67,10 @@ namespace OpenRouter
         /// <summary>
         /// Get request &amp; usage metadata for a generation
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// The generation ID<br/>
+        /// Example: gen-1234567890
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -149,8 +155,6 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     id: id);
-
-                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }
@@ -329,6 +333,43 @@ namespace OpenRouter
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Bad Request - Invalid request parameters or malformed input
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::OpenRouter.BadRequestResponse? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Unauthorized - Authentication required or invalid credentials
                             if ((int)__response.StatusCode == 401)
                             {
@@ -546,6 +587,80 @@ namespace OpenRouter
                                     innerException: __exception_502,
                                     responseBody: __content_502,
                                     responseObject: __value_502,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Infrastructure Timeout - Provider request timed out at edge network
+                            if ((int)__response.StatusCode == 524)
+                            {
+                                string? __content_524 = null;
+                                global::System.Exception? __exception_524 = null;
+                                global::OpenRouter.EdgeNetworkTimeoutResponse? __value_524 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_524 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_524 = global::OpenRouter.EdgeNetworkTimeoutResponse.FromJson(__content_524, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_524 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_524 = global::OpenRouter.EdgeNetworkTimeoutResponse.FromJson(__content_524, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_524 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.EdgeNetworkTimeoutResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_524 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_524,
+                                    responseBody: __content_524,
+                                    responseObject: __value_524,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Provider Overloaded - Provider is temporarily overloaded
+                            if ((int)__response.StatusCode == 529)
+                            {
+                                string? __content_529 = null;
+                                global::System.Exception? __exception_529 = null;
+                                global::OpenRouter.ProviderOverloadedResponse? __value_529 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_529 = global::OpenRouter.ProviderOverloadedResponse.FromJson(__content_529, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_529 = global::OpenRouter.ProviderOverloadedResponse.FromJson(__content_529, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_529 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.ProviderOverloadedResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_529 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_529,
+                                    responseBody: __content_529,
+                                    responseObject: __value_529,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

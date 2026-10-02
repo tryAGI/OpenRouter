@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:datetime server tool output item
+    /// An openrouter:datetime server tool output item<br/>
+    /// Example: {"datetime":"2026-03-12T14:30:00.000Z","id":"dt_tmp_abc123","status":"completed","timezone":"UTC","type":"openrouter:datetime"}
     /// </summary>
     public sealed partial class OutputDatetimeItem
     {
@@ -22,8 +23,9 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,6 +39,13 @@ namespace OpenRouter
         public required string Timezone { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputDatetimeItemTypeJsonConverter))]
+        public global::OpenRouter.OutputDatetimeItemType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,11 +57,14 @@ namespace OpenRouter
         /// <param name="datetime">
         /// ISO 8601 datetime string
         /// </param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="timezone">
         /// IANA timezone name
         /// </param>
         /// <param name="id"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,12 +72,14 @@ namespace OpenRouter
             string datetime,
             global::OpenRouter.ToolCallStatus status,
             string timezone,
-            string? id)
+            string? id,
+            global::OpenRouter.OutputDatetimeItemType type)
         {
             this.Datetime = datetime ?? throw new global::System.ArgumentNullException(nameof(datetime));
             this.Id = id;
             this.Status = status;
             this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
+            this.Type = type;
         }
 
         /// <summary>

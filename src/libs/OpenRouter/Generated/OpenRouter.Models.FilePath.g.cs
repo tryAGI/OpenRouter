@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"file_id":"file-xyz789","index":0,"type":"file_path"}
     /// </summary>
     public sealed partial class FilePath
     {

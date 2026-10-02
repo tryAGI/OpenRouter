@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Token log probability information
+    /// Token log probability information<br/>
+    /// Example: {"bytes":null,"logprob":-0.612345,"token":" Hello","top_logprobs":[{"bytes":null,"logprob":-0.612345,"token":" Hello"}]}
     /// </summary>
     public sealed partial class ChatTokenLogprob
     {
@@ -33,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ChatTokenLogprobTopLogprobsItems> TopLogprobs { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ChatTokenLogprobTopLogprob> TopLogprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +63,7 @@ namespace OpenRouter
         public ChatTokenLogprob(
             double logprob,
             string token,
-            global::System.Collections.Generic.IList<global::OpenRouter.ChatTokenLogprobTopLogprobsItems> topLogprobs,
+            global::System.Collections.Generic.IList<global::OpenRouter.ChatTokenLogprobTopLogprob> topLogprobs,
             global::System.Collections.Generic.IList<long>? bytes)
         {
             this.Bytes = bytes;

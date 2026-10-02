@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for PayloadTooLargeResponse
+    /// Error data for PayloadTooLargeResponse<br/>
+    /// Example: {"code":413,"message":"Request payload too large"}
     /// </summary>
     public sealed partial class PayloadTooLargeResponseErrorData
     {

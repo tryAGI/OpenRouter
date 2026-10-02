@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.
+    /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.<br/>
+    /// Example: {"total":400000,"type":"tokens"}
     /// </summary>
     public sealed partial class MessagesOutputConfigTaskBudget
     {

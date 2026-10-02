@@ -9,8 +9,10 @@ namespace OpenRouter
     public sealed partial class SpeechRequestProvider
     {
         /// <summary>
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
+        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
+        /// Example: {"openai":{"max_tokens":1000}}
         /// </summary>
+        /// <example>{"openai":{"max_tokens":1000}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         public global::OpenRouter.ProviderOptions? Options { get; set; }
 
@@ -24,7 +26,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SpeechRequestProvider" /> class.
         /// </summary>
         /// <param name="options">
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
+        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
+        /// Example: {"openai":{"max_tokens":1000}}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

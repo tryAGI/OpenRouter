@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Bad Request - Invalid request parameters or malformed input
+    /// Bad Request - Invalid request parameters or malformed input<br/>
+    /// Example: {"error":{"code":400,"message":"Invalid request parameters"}}
     /// </summary>
     public sealed partial class BadRequestResponse
     {
         /// <summary>
-        /// Error data for BadRequestResponse
+        /// Error data for BadRequestResponse<br/>
+        /// Example: {"code":400,"message":"Invalid request parameters"}
         /// </summary>
+        /// <example>{"code":400,"message":"Invalid request parameters"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.BadRequestResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BadRequestResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for BadRequestResponse
+        /// Error data for BadRequestResponse<br/>
+        /// Example: {"code":400,"message":"Invalid request parameters"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

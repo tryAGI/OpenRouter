@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// The engine to use for parsing PDF files. "pdf-text" is deprecated and automatically redirected to "cloudflare-ai".
+    /// The engine to use for parsing PDF files. "pdf-text" is deprecated and automatically redirected to "cloudflare-ai".<br/>
+    /// Example: cloudflare-ai
     /// </summary>
     public readonly partial struct PDFParserEngine : global::System.IEquatable<PDFParserEngine>
     {
@@ -13,147 +14,147 @@ namespace OpenRouter
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.PdfParserEngine0? PdfParserEngine0 { get; init; }
+        public global::OpenRouter.PDFParserEngineVariant1? PDFParserEngineVariant1 { get; init; }
 #else
-        public global::OpenRouter.PdfParserEngine0? PdfParserEngine0 { get; }
+        public global::OpenRouter.PDFParserEngineVariant1? PDFParserEngineVariant1 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PdfParserEngine0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PDFParserEngineVariant1))]
 #endif
-        public bool IsPdfParserEngine0 => PdfParserEngine0 != null;
+        public bool IsPDFParserEngineVariant1 => PDFParserEngineVariant1 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickPdfParserEngine0(
+        public bool TryPickPDFParserEngineVariant1(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.PdfParserEngine0? value)
+            out global::OpenRouter.PDFParserEngineVariant1? value)
         {
-            value = PdfParserEngine0;
-            return IsPdfParserEngine0;
+            value = PDFParserEngineVariant1;
+            return IsPDFParserEngineVariant1;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.PdfParserEngine0 PickPdfParserEngine0() => PdfParserEngine0 is { } value
+        public global::OpenRouter.PDFParserEngineVariant1 PickPDFParserEngineVariant1() => PDFParserEngineVariant1 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine0' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PDFParserEngineVariant1' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.PdfParserEngine1? PdfParserEngine1 { get; init; }
+        public global::OpenRouter.PDFParserEngineVariant2? PDFParserEngineVariant2 { get; init; }
 #else
-        public global::OpenRouter.PdfParserEngine1? PdfParserEngine1 { get; }
+        public global::OpenRouter.PDFParserEngineVariant2? PDFParserEngineVariant2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PdfParserEngine1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PDFParserEngineVariant2))]
 #endif
-        public bool IsPdfParserEngine1 => PdfParserEngine1 != null;
+        public bool IsPDFParserEngineVariant2 => PDFParserEngineVariant2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickPdfParserEngine1(
+        public bool TryPickPDFParserEngineVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.PdfParserEngine1? value)
+            out global::OpenRouter.PDFParserEngineVariant2? value)
         {
-            value = PdfParserEngine1;
-            return IsPdfParserEngine1;
+            value = PDFParserEngineVariant2;
+            return IsPDFParserEngineVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.PdfParserEngine1 PickPdfParserEngine1() => PdfParserEngine1 is { } value
+        public global::OpenRouter.PDFParserEngineVariant2 PickPDFParserEngineVariant2() => PDFParserEngineVariant2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PDFParserEngineVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator PDFParserEngine(global::OpenRouter.PdfParserEngine0 value) => new PDFParserEngine((global::OpenRouter.PdfParserEngine0?)value);
+        public static implicit operator PDFParserEngine(global::OpenRouter.PDFParserEngineVariant1 value) => new PDFParserEngine((global::OpenRouter.PDFParserEngineVariant1?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.PdfParserEngine0?(PDFParserEngine @this) => @this.PdfParserEngine0;
+        public static implicit operator global::OpenRouter.PDFParserEngineVariant1?(PDFParserEngine @this) => @this.PDFParserEngineVariant1;
 
         /// <summary>
         ///
         /// </summary>
-        public PDFParserEngine(global::OpenRouter.PdfParserEngine0? value)
+        public PDFParserEngine(global::OpenRouter.PDFParserEngineVariant1? value)
         {
-            PdfParserEngine0 = value;
+            PDFParserEngineVariant1 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static PDFParserEngine FromPdfParserEngine0(global::OpenRouter.PdfParserEngine0? value) => new PDFParserEngine(value);
+        public static PDFParserEngine FromPDFParserEngineVariant1(global::OpenRouter.PDFParserEngineVariant1? value) => new PDFParserEngine(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator PDFParserEngine(global::OpenRouter.PdfParserEngine1 value) => new PDFParserEngine((global::OpenRouter.PdfParserEngine1?)value);
+        public static implicit operator PDFParserEngine(global::OpenRouter.PDFParserEngineVariant2 value) => new PDFParserEngine((global::OpenRouter.PDFParserEngineVariant2?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.PdfParserEngine1?(PDFParserEngine @this) => @this.PdfParserEngine1;
+        public static implicit operator global::OpenRouter.PDFParserEngineVariant2?(PDFParserEngine @this) => @this.PDFParserEngineVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public PDFParserEngine(global::OpenRouter.PdfParserEngine1? value)
+        public PDFParserEngine(global::OpenRouter.PDFParserEngineVariant2? value)
         {
-            PdfParserEngine1 = value;
+            PDFParserEngineVariant2 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static PDFParserEngine FromPdfParserEngine1(global::OpenRouter.PdfParserEngine1? value) => new PDFParserEngine(value);
+        public static PDFParserEngine FromPDFParserEngineVariant2(global::OpenRouter.PDFParserEngineVariant2? value) => new PDFParserEngine(value);
 
         /// <summary>
         ///
         /// </summary>
         public PDFParserEngine(
-            global::OpenRouter.PdfParserEngine0? pdfParserEngine0,
-            global::OpenRouter.PdfParserEngine1? pdfParserEngine1
+            global::OpenRouter.PDFParserEngineVariant1? pDFParserEngineVariant1,
+            global::OpenRouter.PDFParserEngineVariant2? pDFParserEngineVariant2
             )
         {
-            PdfParserEngine0 = pdfParserEngine0;
-            PdfParserEngine1 = pdfParserEngine1;
+            PDFParserEngineVariant1 = pDFParserEngineVariant1;
+            PDFParserEngineVariant2 = pDFParserEngineVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            PdfParserEngine1 as object ??
-            PdfParserEngine0 as object
+            PDFParserEngineVariant2 as object ??
+            PDFParserEngineVariant1 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            PdfParserEngine0?.ToValueString() ??
-            PdfParserEngine1?.ToValueString()
+            PDFParserEngineVariant1?.ToValueString() ??
+            PDFParserEngineVariant2?.ToValueString()
             ;
 
         /// <summary>
@@ -161,15 +162,15 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsPdfParserEngine0 && !IsPdfParserEngine1 || !IsPdfParserEngine0 && IsPdfParserEngine1;
+            return IsPDFParserEngineVariant1 || IsPDFParserEngineVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.PdfParserEngine0?, TResult>? pdfParserEngine0 = null,
-            global::System.Func<global::OpenRouter.PdfParserEngine1?, TResult>? pdfParserEngine1 = null,
+            global::System.Func<global::OpenRouter.PDFParserEngineVariant1?, TResult>? pDFParserEngineVariant1 = null,
+            global::System.Func<global::OpenRouter.PDFParserEngineVariant2?, TResult>? pDFParserEngineVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -177,13 +178,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (PdfParserEngine0 is { } __value0 && pdfParserEngine0 != null)
+            if (PDFParserEngineVariant1 is { } __value0 && pDFParserEngineVariant1 != null)
             {
-                return pdfParserEngine0(__value0);
+                return pDFParserEngineVariant1(__value0);
             }
-            else if (PdfParserEngine1 is { } __value1 && pdfParserEngine1 != null)
+            else if (PDFParserEngineVariant2 is { } __value1 && pDFParserEngineVariant2 != null)
             {
-                return pdfParserEngine1(__value1);
+                return pDFParserEngineVariant2(__value1);
             }
 
             return default(TResult);
@@ -193,9 +194,9 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.PdfParserEngine0?>? pdfParserEngine0 = null,
+            global::System.Action<global::OpenRouter.PDFParserEngineVariant1?>? pDFParserEngineVariant1 = null,
 
-            global::System.Action<global::OpenRouter.PdfParserEngine1?>? pdfParserEngine1 = null,
+            global::System.Action<global::OpenRouter.PDFParserEngineVariant2?>? pDFParserEngineVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -203,13 +204,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (PdfParserEngine0 is { } __value0)
+            if (PDFParserEngineVariant1 is { } __value0)
             {
-                pdfParserEngine0?.Invoke(__value0);
+                pDFParserEngineVariant1?.Invoke(__value0);
             }
-            else if (PdfParserEngine1 is { } __value1)
+            else if (PDFParserEngineVariant2 is { } __value1)
             {
-                pdfParserEngine1?.Invoke(__value1);
+                pDFParserEngineVariant2?.Invoke(__value1);
             }
         }
 
@@ -217,8 +218,8 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.PdfParserEngine0?>? pdfParserEngine0 = null,
-            global::System.Action<global::OpenRouter.PdfParserEngine1?>? pdfParserEngine1 = null,
+            global::System.Action<global::OpenRouter.PDFParserEngineVariant1?>? pDFParserEngineVariant1 = null,
+            global::System.Action<global::OpenRouter.PDFParserEngineVariant2?>? pDFParserEngineVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -226,13 +227,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (PdfParserEngine0 is { } __value0)
+            if (PDFParserEngineVariant1 is { } __value0)
             {
-                pdfParserEngine0?.Invoke(__value0);
+                pDFParserEngineVariant1?.Invoke(__value0);
             }
-            else if (PdfParserEngine1 is { } __value1)
+            else if (PDFParserEngineVariant2 is { } __value1)
             {
-                pdfParserEngine1?.Invoke(__value1);
+                pDFParserEngineVariant2?.Invoke(__value1);
             }
         }
 
@@ -243,10 +244,10 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                PdfParserEngine0,
-                typeof(global::OpenRouter.PdfParserEngine0),
-                PdfParserEngine1,
-                typeof(global::OpenRouter.PdfParserEngine1),
+                PDFParserEngineVariant1,
+                typeof(global::OpenRouter.PDFParserEngineVariant1),
+                PDFParserEngineVariant2,
+                typeof(global::OpenRouter.PDFParserEngineVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -263,8 +264,8 @@ namespace OpenRouter
         public bool Equals(PDFParserEngine other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PdfParserEngine0?>.Default.Equals(PdfParserEngine0, other.PdfParserEngine0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PdfParserEngine1?>.Default.Equals(PdfParserEngine1, other.PdfParserEngine1)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PDFParserEngineVariant1?>.Default.Equals(PDFParserEngineVariant1, other.PDFParserEngineVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.PDFParserEngineVariant2?>.Default.Equals(PDFParserEngineVariant2, other.PDFParserEngineVariant2)
                 ;
         }
 

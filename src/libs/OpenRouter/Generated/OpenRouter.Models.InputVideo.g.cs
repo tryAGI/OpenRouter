@@ -4,10 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Video input content item
+    /// Video input content item<br/>
+    /// Example: {"type":"input_video","video_url":"https://example.com/video.mp4"}
     /// </summary>
     public sealed partial class InputVideo
     {
+        /// <summary>
+        /// Video processing mode. `agentic` enables agentic video processing and `static` forces fixed-rate frame sampling on providers that support it (currently Google Gemini).<br/>
+        /// Example: agentic
+        /// </summary>
+        /// <example>agentic</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("processing")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputVideoProcessingJsonConverter))]
+        public global::OpenRouter.InputVideoProcessing? Processing { get; set; }
+
         /// <summary>
         ///
         /// </summary>
@@ -34,14 +44,20 @@ namespace OpenRouter
         /// <param name="videoUrl">
         /// A base64 data URL or remote URL that resolves to a video file
         /// </param>
+        /// <param name="processing">
+        /// Video processing mode. `agentic` enables agentic video processing and `static` forces fixed-rate frame sampling on providers that support it (currently Google Gemini).<br/>
+        /// Example: agentic
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputVideo(
             string videoUrl,
+            global::OpenRouter.InputVideoProcessing? processing,
             global::OpenRouter.InputVideoType type)
         {
+            this.Processing = processing;
             this.Type = type;
             this.VideoUrl = videoUrl ?? throw new global::System.ArgumentNullException(nameof(videoUrl));
         }

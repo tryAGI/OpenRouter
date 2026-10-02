@@ -4,10 +4,20 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Video input object
+    /// Video input object<br/>
+    /// Example: {"url":"https://example.com/video.mp4"}
     /// </summary>
     public sealed partial class LegacyChatContentVideoInput
     {
+        /// <summary>
+        /// Video processing mode. `agentic` enables agentic video processing and `static` forces fixed-rate frame sampling on providers that support it (currently Google Gemini).<br/>
+        /// Example: agentic
+        /// </summary>
+        /// <example>agentic</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("processing")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.LegacyChatContentVideoInputProcessingJsonConverter))]
+        public global::OpenRouter.LegacyChatContentVideoInputProcessing? Processing { get; set; }
+
         /// <summary>
         /// URL of the video (data: URLs supported)
         /// </summary>
@@ -27,12 +37,18 @@ namespace OpenRouter
         /// <param name="url">
         /// URL of the video (data: URLs supported)
         /// </param>
+        /// <param name="processing">
+        /// Video processing mode. `agentic` enables agentic video processing and `static` forces fixed-rate frame sampling on providers that support it (currently Google Gemini).<br/>
+        /// Example: agentic
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LegacyChatContentVideoInput(
-            string url)
+            string url,
+            global::OpenRouter.LegacyChatContentVideoInputProcessing? processing)
         {
+            this.Processing = processing;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 

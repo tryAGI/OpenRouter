@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: fans out the user prompt to a panel of analysis models, then asks a judge model to summarize their collective output as structured JSON the outer model can synthesize from.
+    /// OpenRouter built-in server tool: fans out the user prompt to a panel of analysis models, then asks an analyst model to summarize their collective output as structured JSON the outer model can synthesize from.<br/>
+    /// Example: {"parameters":{"analysis_models":["~anthropic/claude-opus-latest","~openai/gpt-sol-latest"]},"type":"openrouter:fusion"}
     /// </summary>
     public sealed partial class FusionServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:fusion server tool.
+        /// Configuration for the openrouter:fusion server tool.<br/>
+        /// Example: {"analysis_models":["~anthropic/claude-opus-latest","~openai/gpt-sol-latest","~google/gemini-pro-latest"]}
         /// </summary>
+        /// <example>{"analysis_models":["~anthropic/claude-opus-latest","~openai/gpt-sol-latest","~google/gemini-pro-latest"]}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.FusionServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="FusionServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:fusion server tool.
+        /// Configuration for the openrouter:fusion server tool.<br/>
+        /// Example: {"analysis_models":["~anthropic/claude-opus-latest","~openai/gpt-sol-latest","~google/gemini-pro-latest"]}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"content":[{"text":"Hello! How can I help you today?","type":"output_text"}],"id":"msg-abc123","role":"assistant","status":"completed","type":"message"}
     /// </summary>
     public sealed partial class OutputMessage
     {
@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageContentItems> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ResponseOutputText, global::OpenRouter.OpenAIResponsesRefusalContent>> Content { get; set; }
 
         /// <summary>
         ///
@@ -26,7 +26,8 @@ namespace OpenRouter
         /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        public global::OpenRouter.OutputMessagePhase? Phase { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.OutputMessagePhaseVariant1?, global::OpenRouter.OutputMessagePhaseVariant2?, object>))]
+        public global::OpenRouter.AnyOf<global::OpenRouter.OutputMessagePhaseVariant1?, global::OpenRouter.OutputMessagePhaseVariant2?, object>? Phase { get; set; }
 
         /// <summary>
         ///
@@ -39,8 +40,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputMessageStatusJsonConverter))]
-        public global::OpenRouter.OutputMessageStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.OutputMessageStatusVariant1?, global::OpenRouter.OutputMessageStatusVariant2?, global::OpenRouter.OutputMessageStatusVariant3?>))]
+        public global::OpenRouter.AnyOf<global::OpenRouter.OutputMessageStatusVariant1?, global::OpenRouter.OutputMessageStatusVariant2?, global::OpenRouter.OutputMessageStatusVariant3?>? Status { get; set; }
 
         /// <summary>
         ///
@@ -70,11 +71,11 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputMessage(
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputMessageContentItems> content,
+            global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ResponseOutputText, global::OpenRouter.OpenAIResponsesRefusalContent>> content,
             string id,
-            global::OpenRouter.OutputMessagePhase? phase,
+            global::OpenRouter.AnyOf<global::OpenRouter.OutputMessagePhaseVariant1?, global::OpenRouter.OutputMessagePhaseVariant2?, object>? phase,
             global::OpenRouter.OutputMessageRole role,
-            global::OpenRouter.OutputMessageStatus? status,
+            global::OpenRouter.AnyOf<global::OpenRouter.OutputMessageStatusVariant1?, global::OpenRouter.OutputMessageStatusVariant2?, global::OpenRouter.OutputMessageStatusVariant3?>? status,
             global::OpenRouter.OutputMessageType type)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

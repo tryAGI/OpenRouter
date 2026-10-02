@@ -3,512 +3,1079 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    /// Name of the provider
+    /// Name of the provider<br/>
+    /// Example: OpenAI
     /// </summary>
-    public enum ProviderResponseProviderName
+    public readonly partial struct ProviderResponseProviderName : global::System.IEquatable<ProviderResponseProviderName>
     {
         /// <summary>
         ///
         /// </summary>
-        x01Ai,
+        public ProviderResponseProviderName(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        Ai21,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        AionLabs,
+        public static ProviderResponseProviderName x01Ai { get; } = new("01.AI");
+
         /// <summary>
         ///
         /// </summary>
-        AkashML,
+        public static ProviderResponseProviderName Ai21 { get; } = new("AI21");
+
         /// <summary>
         ///
         /// </summary>
-        Alibaba,
+        public static ProviderResponseProviderName AionLabs { get; } = new("AionLabs");
+
         /// <summary>
         ///
         /// </summary>
-        AmazonBedrock,
+        public static ProviderResponseProviderName AkashML { get; } = new("AkashML");
+
         /// <summary>
         ///
         /// </summary>
-        AmazonNova,
+        public static ProviderResponseProviderName Alibaba { get; } = new("Alibaba");
+
         /// <summary>
         ///
         /// </summary>
-        Ambient,
+        public static ProviderResponseProviderName AmazonBedrock { get; } = new("Amazon Bedrock");
+
         /// <summary>
         ///
         /// </summary>
-        Anthropic,
+        public static ProviderResponseProviderName AmazonNova { get; } = new("Amazon Nova");
+
         /// <summary>
         ///
         /// </summary>
-        AnyScale,
+        public static ProviderResponseProviderName Ambient { get; } = new("Ambient");
+
         /// <summary>
         ///
         /// </summary>
-        ArceeAi,
+        public static ProviderResponseProviderName Anthropic { get; } = new("Anthropic");
+
         /// <summary>
         ///
         /// </summary>
-        AtlasCloud,
+        public static ProviderResponseProviderName AnyScale { get; } = new("AnyScale");
+
         /// <summary>
         ///
         /// </summary>
-        Atoma,
+        public static ProviderResponseProviderName ArceeAi { get; } = new("Arcee AI");
+
         /// <summary>
         ///
         /// </summary>
-        Avian,
+        public static ProviderResponseProviderName AssemblyAI { get; } = new("AssemblyAI");
+
         /// <summary>
         ///
         /// </summary>
-        Azure,
+        public static ProviderResponseProviderName AtlasCloud { get; } = new("AtlasCloud");
+
         /// <summary>
         ///
         /// </summary>
-        Baidu,
+        public static ProviderResponseProviderName Atoma { get; } = new("Atoma");
+
         /// <summary>
         ///
         /// </summary>
-        BaseTen,
+        public static ProviderResponseProviderName Avian { get; } = new("Avian");
+
         /// <summary>
         ///
         /// </summary>
-        BlackForestLabs,
+        public static ProviderResponseProviderName Azure { get; } = new("Azure");
+
         /// <summary>
         ///
         /// </summary>
-        BytePlus,
+        public static ProviderResponseProviderName Baidu { get; } = new("Baidu");
+
         /// <summary>
         ///
         /// </summary>
-        CentMl,
+        public static ProviderResponseProviderName BaseTen { get; } = new("BaseTen");
+
         /// <summary>
         ///
         /// </summary>
-        Cerebras,
+        public static ProviderResponseProviderName BlackForestLabs { get; } = new("Black Forest Labs");
+
         /// <summary>
         ///
         /// </summary>
-        Chutes,
+        public static ProviderResponseProviderName BytePlus { get; } = new("BytePlus");
+
         /// <summary>
         ///
         /// </summary>
-        Cirrascale,
+        public static ProviderResponseProviderName CentMl { get; } = new("Cent-ML");
+
         /// <summary>
         ///
         /// </summary>
-        Clarifai,
+        public static ProviderResponseProviderName Cerebras { get; } = new("Cerebras");
+
         /// <summary>
         ///
         /// </summary>
-        Cloudflare,
+        public static ProviderResponseProviderName Chutes { get; } = new("Chutes");
+
         /// <summary>
         ///
         /// </summary>
-        Cohere,
+        public static ProviderResponseProviderName Cirrascale { get; } = new("Cirrascale");
+
         /// <summary>
         ///
         /// </summary>
-        CrofAI,
+        public static ProviderResponseProviderName Clarifai { get; } = new("Clarifai");
+
         /// <summary>
         ///
         /// </summary>
-        Crucible,
+        public static ProviderResponseProviderName ClaudePlatformOnAws { get; } = new("Claude Platform on AWS");
+
         /// <summary>
         ///
         /// </summary>
-        Crusoe,
+        public static ProviderResponseProviderName Cloudflare { get; } = new("Cloudflare");
+
         /// <summary>
         ///
         /// </summary>
-        Darkbloom,
+        public static ProviderResponseProviderName Cohere { get; } = new("Cohere");
+
         /// <summary>
         ///
         /// </summary>
-        Decart,
+        public static ProviderResponseProviderName CoreWeave { get; } = new("CoreWeave");
+
         /// <summary>
         ///
         /// </summary>
-        DeepInfra,
+        public static ProviderResponseProviderName Cosine { get; } = new("Cosine");
+
         /// <summary>
         ///
         /// </summary>
-        DeepSeek,
+        public static ProviderResponseProviderName CrofAI { get; } = new("CrofAI");
+
         /// <summary>
         ///
         /// </summary>
-        Deepgram,
+        public static ProviderResponseProviderName Crucible { get; } = new("Crucible");
+
         /// <summary>
         ///
         /// </summary>
-        DekaLLM,
+        public static ProviderResponseProviderName Crusoe { get; } = new("Crusoe");
+
         /// <summary>
         ///
         /// </summary>
-        DigitalOcean,
+        public static ProviderResponseProviderName Darkbloom { get; } = new("Darkbloom");
+
         /// <summary>
         ///
         /// </summary>
-        Enfer,
+        public static ProviderResponseProviderName Databricks { get; } = new("Databricks");
+
         /// <summary>
         ///
         /// </summary>
-        FakeProvider,
+        public static ProviderResponseProviderName Decart { get; } = new("Decart");
+
         /// <summary>
         ///
         /// </summary>
-        Featherless,
+        public static ProviderResponseProviderName DeepInfra { get; } = new("DeepInfra");
+
         /// <summary>
         ///
         /// </summary>
-        Fireworks,
+        public static ProviderResponseProviderName DeepSeek { get; } = new("DeepSeek");
+
         /// <summary>
         ///
         /// </summary>
-        FishAudio,
+        public static ProviderResponseProviderName Deepgram { get; } = new("Deepgram");
+
         /// <summary>
         ///
         /// </summary>
-        Friendli,
+        public static ProviderResponseProviderName DekaLLM { get; } = new("DekaLLM");
+
         /// <summary>
         ///
         /// </summary>
-        GMICloud,
+        public static ProviderResponseProviderName DigitalOcean { get; } = new("DigitalOcean");
+
         /// <summary>
         ///
         /// </summary>
-        GoPomelo,
+        public static ProviderResponseProviderName ElevenLabs { get; } = new("ElevenLabs");
+
         /// <summary>
         ///
         /// </summary>
-        Google,
+        public static ProviderResponseProviderName Enfer { get; } = new("Enfer");
+
         /// <summary>
         ///
         /// </summary>
-        GoogleAiStudio,
+        public static ProviderResponseProviderName FakeProvider { get; } = new("FakeProvider");
+
         /// <summary>
         ///
         /// </summary>
-        Groq,
+        public static ProviderResponseProviderName Featherless { get; } = new("Featherless");
+
         /// <summary>
         ///
         /// </summary>
-        HeyGen,
+        public static ProviderResponseProviderName Fireworks { get; } = new("Fireworks");
+
         /// <summary>
         ///
         /// </summary>
-        HuggingFace,
+        public static ProviderResponseProviderName FishAudio { get; } = new("Fish Audio");
+
         /// <summary>
         ///
         /// </summary>
-        Hyperbolic,
+        public static ProviderResponseProviderName Friendli { get; } = new("Friendli");
+
         /// <summary>
         ///
         /// </summary>
-        Hyperbolic2,
+        public static ProviderResponseProviderName GMICloud { get; } = new("GMICloud");
+
         /// <summary>
         ///
         /// </summary>
-        Inception,
+        public static ProviderResponseProviderName GoPomelo { get; } = new("GoPomelo");
+
         /// <summary>
         ///
         /// </summary>
-        Inceptron,
+        public static ProviderResponseProviderName Google { get; } = new("Google");
+
         /// <summary>
         ///
         /// </summary>
-        InferactVLLM,
+        public static ProviderResponseProviderName GoogleAiStudio { get; } = new("Google AI Studio");
+
         /// <summary>
         ///
         /// </summary>
-        InferenceNet,
+        public static ProviderResponseProviderName Groq { get; } = new("Groq");
+
         /// <summary>
         ///
         /// </summary>
-        Infermatic,
+        public static ProviderResponseProviderName HeyGen { get; } = new("HeyGen");
+
         /// <summary>
         ///
         /// </summary>
-        Inflection,
+        public static ProviderResponseProviderName HuggingFace { get; } = new("HuggingFace");
+
         /// <summary>
         ///
         /// </summary>
-        InoCloud,
+        public static ProviderResponseProviderName Hyperbolic { get; } = new("Hyperbolic");
+
         /// <summary>
         ///
         /// </summary>
-        IoNet,
+        public static ProviderResponseProviderName Hyperbolic2 { get; } = new("Hyperbolic 2");
+
         /// <summary>
         ///
         /// </summary>
-        Ionstream,
+        public static ProviderResponseProviderName Inception { get; } = new("Inception");
+
         /// <summary>
         ///
         /// </summary>
-        Kluster,
+        public static ProviderResponseProviderName Inceptron { get; } = new("Inceptron");
+
         /// <summary>
         ///
         /// </summary>
-        Krea,
+        public static ProviderResponseProviderName InferactVLLM { get; } = new("Inferact vLLM");
+
         /// <summary>
         ///
         /// </summary>
-        Lambda,
+        public static ProviderResponseProviderName InferenceNet { get; } = new("InferenceNet");
+
         /// <summary>
         ///
         /// </summary>
-        Lepton,
+        public static ProviderResponseProviderName Infermatic { get; } = new("Infermatic");
+
         /// <summary>
         ///
         /// </summary>
-        Liquid,
+        public static ProviderResponseProviderName Inflection { get; } = new("Inflection");
+
         /// <summary>
         ///
         /// </summary>
-        Lynn,
+        public static ProviderResponseProviderName InoCloud { get; } = new("InoCloud");
+
         /// <summary>
         ///
         /// </summary>
-        Lynn2,
+        public static ProviderResponseProviderName IoNet { get; } = new("Io Net");
+
         /// <summary>
         ///
         /// </summary>
-        Mancer,
+        public static ProviderResponseProviderName Ionstream { get; } = new("Ionstream");
+
         /// <summary>
         ///
         /// </summary>
-        Mancer2,
+        public static ProviderResponseProviderName Kluster { get; } = new("Kluster");
+
         /// <summary>
         ///
         /// </summary>
-        Mara,
+        public static ProviderResponseProviderName Krea { get; } = new("Krea");
+
         /// <summary>
         ///
         /// </summary>
-        Meta,
+        public static ProviderResponseProviderName Lambda { get; } = new("Lambda");
+
         /// <summary>
         ///
         /// </summary>
-        Minimax,
+        public static ProviderResponseProviderName Lepton { get; } = new("Lepton");
+
         /// <summary>
         ///
         /// </summary>
-        Mistral,
+        public static ProviderResponseProviderName Liquid { get; } = new("Liquid");
+
         /// <summary>
         ///
         /// </summary>
-        Modal,
+        public static ProviderResponseProviderName Lynn { get; } = new("Lynn");
+
         /// <summary>
         ///
         /// </summary>
-        ModelRun,
+        public static ProviderResponseProviderName Lynn2 { get; } = new("Lynn 2");
+
         /// <summary>
         ///
         /// </summary>
-        Modular,
+        public static ProviderResponseProviderName Makora { get; } = new("Makora");
+
         /// <summary>
         ///
         /// </summary>
-        MoonshotAi,
+        public static ProviderResponseProviderName Mancer { get; } = new("Mancer");
+
         /// <summary>
         ///
         /// </summary>
-        Morph,
+        public static ProviderResponseProviderName Mancer2 { get; } = new("Mancer 2");
+
         /// <summary>
         ///
         /// </summary>
-        NCompass,
+        public static ProviderResponseProviderName Mara { get; } = new("Mara");
+
         /// <summary>
         ///
         /// </summary>
-        Nebius,
+        public static ProviderResponseProviderName Meta { get; } = new("Meta");
+
         /// <summary>
         ///
         /// </summary>
-        NexAgi,
+        public static ProviderResponseProviderName Minimax { get; } = new("Minimax");
+
         /// <summary>
         ///
         /// </summary>
-        NextBit,
+        public static ProviderResponseProviderName Mistral { get; } = new("Mistral");
+
         /// <summary>
         ///
         /// </summary>
-        Nineteen,
+        public static ProviderResponseProviderName Modal { get; } = new("Modal");
+
         /// <summary>
         ///
         /// </summary>
-        Novita,
+        public static ProviderResponseProviderName ModelRun { get; } = new("ModelRun");
+
         /// <summary>
         ///
         /// </summary>
-        Nvidia,
+        public static ProviderResponseProviderName Modular { get; } = new("Modular");
+
         /// <summary>
         ///
         /// </summary>
-        OctoAI,
+        public static ProviderResponseProviderName MoonshotAi { get; } = new("Moonshot AI");
+
         /// <summary>
         ///
         /// </summary>
-        OpenAI,
+        public static ProviderResponseProviderName Morph { get; } = new("Morph");
+
         /// <summary>
         ///
         /// </summary>
-        OpenInference,
+        public static ProviderResponseProviderName NCompass { get; } = new("NCompass");
+
         /// <summary>
         ///
         /// </summary>
-        Parasail,
+        public static ProviderResponseProviderName NearAi { get; } = new("Near AI");
+
         /// <summary>
         ///
         /// </summary>
-        Perceptron,
+        public static ProviderResponseProviderName Nebius { get; } = new("Nebius");
+
         /// <summary>
         ///
         /// </summary>
-        Perplexity,
+        public static ProviderResponseProviderName NexAgi { get; } = new("Nex AGI");
+
         /// <summary>
         ///
         /// </summary>
-        Phala,
+        public static ProviderResponseProviderName NextBit { get; } = new("NextBit");
+
         /// <summary>
         ///
         /// </summary>
-        Poolside,
+        public static ProviderResponseProviderName Nineteen { get; } = new("Nineteen");
+
         /// <summary>
         ///
         /// </summary>
-        Quiver,
+        public static ProviderResponseProviderName Novita { get; } = new("Novita");
+
         /// <summary>
         ///
         /// </summary>
-        Recraft,
+        public static ProviderResponseProviderName Nvidia { get; } = new("Nvidia");
+
         /// <summary>
         ///
         /// </summary>
-        Recursal,
+        public static ProviderResponseProviderName OctoAI { get; } = new("OctoAI");
+
         /// <summary>
         ///
         /// </summary>
-        Reflection,
+        public static ProviderResponseProviderName Ollama { get; } = new("Ollama");
+
         /// <summary>
         ///
         /// </summary>
-        Reka,
+        public static ProviderResponseProviderName OpenAI { get; } = new("OpenAI");
+
         /// <summary>
         ///
         /// </summary>
-        Relace,
+        public static ProviderResponseProviderName OpenInference { get; } = new("OpenInference");
+
         /// <summary>
         ///
         /// </summary>
-        Replicate,
+        public static ProviderResponseProviderName Parasail { get; } = new("Parasail");
+
         /// <summary>
         ///
         /// </summary>
-        SfCompute,
+        public static ProviderResponseProviderName Perceptron { get; } = new("Perceptron");
+
         /// <summary>
         ///
         /// </summary>
-        SailResearch,
+        public static ProviderResponseProviderName Perplexity { get; } = new("Perplexity");
+
         /// <summary>
         ///
         /// </summary>
-        SakanaAi,
+        public static ProviderResponseProviderName Phala { get; } = new("Phala");
+
         /// <summary>
         ///
         /// </summary>
-        SambaNova,
+        public static ProviderResponseProviderName Poolside { get; } = new("Poolside");
+
         /// <summary>
         ///
         /// </summary>
-        SambaNova2,
+        public static ProviderResponseProviderName PrimeIntellect { get; } = new("PrimeIntellect");
+
         /// <summary>
         ///
         /// </summary>
-        Seed,
+        public static ProviderResponseProviderName Quiver { get; } = new("Quiver");
+
         /// <summary>
         ///
         /// </summary>
-        SiliconFlow,
+        public static ProviderResponseProviderName Recraft { get; } = new("Recraft");
+
         /// <summary>
         ///
         /// </summary>
-        Sourceful,
+        public static ProviderResponseProviderName Recursal { get; } = new("Recursal");
+
         /// <summary>
         ///
         /// </summary>
-        Stealth,
+        public static ProviderResponseProviderName Reflection { get; } = new("Reflection");
+
         /// <summary>
         ///
         /// </summary>
-        StepFun,
+        public static ProviderResponseProviderName Reka { get; } = new("Reka");
+
         /// <summary>
         ///
         /// </summary>
-        StreamLake,
+        public static ProviderResponseProviderName Relace { get; } = new("Relace");
+
         /// <summary>
         ///
         /// </summary>
-        Switchpoint,
+        public static ProviderResponseProviderName Replicate { get; } = new("Replicate");
+
         /// <summary>
         ///
         /// </summary>
-        Targon,
+        public static ProviderResponseProviderName Respan { get; } = new("Respan");
+
         /// <summary>
         ///
         /// </summary>
-        Tencent,
+        public static ProviderResponseProviderName Runway { get; } = new("Runway");
+
         /// <summary>
         ///
         /// </summary>
-        Tenstorrent,
+        public static ProviderResponseProviderName SfCompute { get; } = new("SF Compute");
+
         /// <summary>
         ///
         /// </summary>
-        Together,
+        public static ProviderResponseProviderName SailResearch { get; } = new("Sail Research");
+
         /// <summary>
         ///
         /// </summary>
-        Together2,
+        public static ProviderResponseProviderName SakanaAi { get; } = new("Sakana AI");
+
         /// <summary>
         ///
         /// </summary>
-        Ubicloud,
+        public static ProviderResponseProviderName SambaNova { get; } = new("SambaNova");
+
         /// <summary>
         ///
         /// </summary>
-        Upstage,
+        public static ProviderResponseProviderName SambaNova2 { get; } = new("SambaNova 2");
+
         /// <summary>
         ///
         /// </summary>
-        Venice,
+        public static ProviderResponseProviderName ScaleDown { get; } = new("ScaleDown");
+
         /// <summary>
         ///
         /// </summary>
-        Wafer,
+        public static ProviderResponseProviderName Seed { get; } = new("Seed");
+
         /// <summary>
         ///
         /// </summary>
-        WandB,
+        public static ProviderResponseProviderName SiliconFlow { get; } = new("SiliconFlow");
+
         /// <summary>
         ///
         /// </summary>
-        Xiaomi,
+        public static ProviderResponseProviderName Sourceful { get; } = new("Sourceful");
+
         /// <summary>
         ///
         /// </summary>
-        ZAi,
+        public static ProviderResponseProviderName Stealth { get; } = new("Stealth");
+
         /// <summary>
         ///
         /// </summary>
-        Xai,
+        public static ProviderResponseProviderName StepFun { get; } = new("StepFun");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName StreamLake { get; } = new("StreamLake");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Switchpoint { get; } = new("Switchpoint");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Targon { get; } = new("Targon");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Tencent { get; } = new("Tencent");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Tenstorrent { get; } = new("Tenstorrent");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName ThinkingMachines { get; } = new("Thinking Machines");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Together { get; } = new("Together");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Together2 { get; } = new("Together 2");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName TypeSafe { get; } = new("TypeSafe");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Ubicloud { get; } = new("Ubicloud");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Unbiased { get; } = new("Unbiased");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Upstage { get; } = new("Upstage");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Venice { get; } = new("Venice");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName VoyageAIByMongoDB { get; } = new("VoyageAI by MongoDB");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Wafer { get; } = new("Wafer");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName WandB { get; } = new("WandB");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Xiaomi { get; } = new("Xiaomi");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName ZAi { get; } = new("Z.AI");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName Xai { get; } = new("xAI");
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderResponseProviderName FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "01.AI" => x01Ai,
+                "AI21" => Ai21,
+                "AionLabs" => AionLabs,
+                "AkashML" => AkashML,
+                "Alibaba" => Alibaba,
+                "Amazon Bedrock" => AmazonBedrock,
+                "Amazon Nova" => AmazonNova,
+                "Ambient" => Ambient,
+                "Anthropic" => Anthropic,
+                "AnyScale" => AnyScale,
+                "Arcee AI" => ArceeAi,
+                "AssemblyAI" => AssemblyAI,
+                "AtlasCloud" => AtlasCloud,
+                "Atoma" => Atoma,
+                "Avian" => Avian,
+                "Azure" => Azure,
+                "Baidu" => Baidu,
+                "BaseTen" => BaseTen,
+                "Black Forest Labs" => BlackForestLabs,
+                "BytePlus" => BytePlus,
+                "Cent-ML" => CentMl,
+                "Cerebras" => Cerebras,
+                "Chutes" => Chutes,
+                "Cirrascale" => Cirrascale,
+                "Clarifai" => Clarifai,
+                "Claude Platform on AWS" => ClaudePlatformOnAws,
+                "Cloudflare" => Cloudflare,
+                "Cohere" => Cohere,
+                "CoreWeave" => CoreWeave,
+                "Cosine" => Cosine,
+                "CrofAI" => CrofAI,
+                "Crucible" => Crucible,
+                "Crusoe" => Crusoe,
+                "Darkbloom" => Darkbloom,
+                "Databricks" => Databricks,
+                "Decart" => Decart,
+                "DeepInfra" => DeepInfra,
+                "DeepSeek" => DeepSeek,
+                "Deepgram" => Deepgram,
+                "DekaLLM" => DekaLLM,
+                "DigitalOcean" => DigitalOcean,
+                "ElevenLabs" => ElevenLabs,
+                "Enfer" => Enfer,
+                "FakeProvider" => FakeProvider,
+                "Featherless" => Featherless,
+                "Fireworks" => Fireworks,
+                "Fish Audio" => FishAudio,
+                "Friendli" => Friendli,
+                "GMICloud" => GMICloud,
+                "GoPomelo" => GoPomelo,
+                "Google" => Google,
+                "Google AI Studio" => GoogleAiStudio,
+                "Groq" => Groq,
+                "HeyGen" => HeyGen,
+                "HuggingFace" => HuggingFace,
+                "Hyperbolic" => Hyperbolic,
+                "Hyperbolic 2" => Hyperbolic2,
+                "Inception" => Inception,
+                "Inceptron" => Inceptron,
+                "Inferact vLLM" => InferactVLLM,
+                "InferenceNet" => InferenceNet,
+                "Infermatic" => Infermatic,
+                "Inflection" => Inflection,
+                "InoCloud" => InoCloud,
+                "Io Net" => IoNet,
+                "Ionstream" => Ionstream,
+                "Kluster" => Kluster,
+                "Krea" => Krea,
+                "Lambda" => Lambda,
+                "Lepton" => Lepton,
+                "Liquid" => Liquid,
+                "Lynn" => Lynn,
+                "Lynn 2" => Lynn2,
+                "Makora" => Makora,
+                "Mancer" => Mancer,
+                "Mancer 2" => Mancer2,
+                "Mara" => Mara,
+                "Meta" => Meta,
+                "Minimax" => Minimax,
+                "Mistral" => Mistral,
+                "Modal" => Modal,
+                "ModelRun" => ModelRun,
+                "Modular" => Modular,
+                "Moonshot AI" => MoonshotAi,
+                "Morph" => Morph,
+                "NCompass" => NCompass,
+                "Near AI" => NearAi,
+                "Nebius" => Nebius,
+                "Nex AGI" => NexAgi,
+                "NextBit" => NextBit,
+                "Nineteen" => Nineteen,
+                "Novita" => Novita,
+                "Nvidia" => Nvidia,
+                "OctoAI" => OctoAI,
+                "Ollama" => Ollama,
+                "OpenAI" => OpenAI,
+                "OpenInference" => OpenInference,
+                "Parasail" => Parasail,
+                "Perceptron" => Perceptron,
+                "Perplexity" => Perplexity,
+                "Phala" => Phala,
+                "Poolside" => Poolside,
+                "PrimeIntellect" => PrimeIntellect,
+                "Quiver" => Quiver,
+                "Recraft" => Recraft,
+                "Recursal" => Recursal,
+                "Reflection" => Reflection,
+                "Reka" => Reka,
+                "Relace" => Relace,
+                "Replicate" => Replicate,
+                "Respan" => Respan,
+                "Runway" => Runway,
+                "SF Compute" => SfCompute,
+                "Sail Research" => SailResearch,
+                "Sakana AI" => SakanaAi,
+                "SambaNova" => SambaNova,
+                "SambaNova 2" => SambaNova2,
+                "ScaleDown" => ScaleDown,
+                "Seed" => Seed,
+                "SiliconFlow" => SiliconFlow,
+                "Sourceful" => Sourceful,
+                "Stealth" => Stealth,
+                "StepFun" => StepFun,
+                "StreamLake" => StreamLake,
+                "Switchpoint" => Switchpoint,
+                "Targon" => Targon,
+                "Tencent" => Tencent,
+                "Tenstorrent" => Tenstorrent,
+                "Thinking Machines" => ThinkingMachines,
+                "Together" => Together,
+                "Together 2" => Together2,
+                "TypeSafe" => TypeSafe,
+                "Ubicloud" => Ubicloud,
+                "Unbiased" => Unbiased,
+                "Upstage" => Upstage,
+                "Venice" => Venice,
+                "VoyageAI by MongoDB" => VoyageAIByMongoDB,
+                "Wafer" => Wafer,
+                "WandB" => WandB,
+                "Xiaomi" => Xiaomi,
+                "Z.AI" => ZAi,
+                "xAI" => Xai,
+                _ => new ProviderResponseProviderName(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "01.AI" => true,
+            "AI21" => true,
+            "AionLabs" => true,
+            "AkashML" => true,
+            "Alibaba" => true,
+            "Amazon Bedrock" => true,
+            "Amazon Nova" => true,
+            "Ambient" => true,
+            "Anthropic" => true,
+            "AnyScale" => true,
+            "Arcee AI" => true,
+            "AssemblyAI" => true,
+            "AtlasCloud" => true,
+            "Atoma" => true,
+            "Avian" => true,
+            "Azure" => true,
+            "Baidu" => true,
+            "BaseTen" => true,
+            "Black Forest Labs" => true,
+            "BytePlus" => true,
+            "Cent-ML" => true,
+            "Cerebras" => true,
+            "Chutes" => true,
+            "Cirrascale" => true,
+            "Clarifai" => true,
+            "Claude Platform on AWS" => true,
+            "Cloudflare" => true,
+            "Cohere" => true,
+            "CoreWeave" => true,
+            "Cosine" => true,
+            "CrofAI" => true,
+            "Crucible" => true,
+            "Crusoe" => true,
+            "Darkbloom" => true,
+            "Databricks" => true,
+            "Decart" => true,
+            "DeepInfra" => true,
+            "DeepSeek" => true,
+            "Deepgram" => true,
+            "DekaLLM" => true,
+            "DigitalOcean" => true,
+            "ElevenLabs" => true,
+            "Enfer" => true,
+            "FakeProvider" => true,
+            "Featherless" => true,
+            "Fireworks" => true,
+            "Fish Audio" => true,
+            "Friendli" => true,
+            "GMICloud" => true,
+            "GoPomelo" => true,
+            "Google" => true,
+            "Google AI Studio" => true,
+            "Groq" => true,
+            "HeyGen" => true,
+            "HuggingFace" => true,
+            "Hyperbolic" => true,
+            "Hyperbolic 2" => true,
+            "Inception" => true,
+            "Inceptron" => true,
+            "Inferact vLLM" => true,
+            "InferenceNet" => true,
+            "Infermatic" => true,
+            "Inflection" => true,
+            "InoCloud" => true,
+            "Io Net" => true,
+            "Ionstream" => true,
+            "Kluster" => true,
+            "Krea" => true,
+            "Lambda" => true,
+            "Lepton" => true,
+            "Liquid" => true,
+            "Lynn" => true,
+            "Lynn 2" => true,
+            "Makora" => true,
+            "Mancer" => true,
+            "Mancer 2" => true,
+            "Mara" => true,
+            "Meta" => true,
+            "Minimax" => true,
+            "Mistral" => true,
+            "Modal" => true,
+            "ModelRun" => true,
+            "Modular" => true,
+            "Moonshot AI" => true,
+            "Morph" => true,
+            "NCompass" => true,
+            "Near AI" => true,
+            "Nebius" => true,
+            "Nex AGI" => true,
+            "NextBit" => true,
+            "Nineteen" => true,
+            "Novita" => true,
+            "Nvidia" => true,
+            "OctoAI" => true,
+            "Ollama" => true,
+            "OpenAI" => true,
+            "OpenInference" => true,
+            "Parasail" => true,
+            "Perceptron" => true,
+            "Perplexity" => true,
+            "Phala" => true,
+            "Poolside" => true,
+            "PrimeIntellect" => true,
+            "Quiver" => true,
+            "Recraft" => true,
+            "Recursal" => true,
+            "Reflection" => true,
+            "Reka" => true,
+            "Relace" => true,
+            "Replicate" => true,
+            "Respan" => true,
+            "Runway" => true,
+            "SF Compute" => true,
+            "Sail Research" => true,
+            "Sakana AI" => true,
+            "SambaNova" => true,
+            "SambaNova 2" => true,
+            "ScaleDown" => true,
+            "Seed" => true,
+            "SiliconFlow" => true,
+            "Sourceful" => true,
+            "Stealth" => true,
+            "StepFun" => true,
+            "StreamLake" => true,
+            "Switchpoint" => true,
+            "Targon" => true,
+            "Tencent" => true,
+            "Tenstorrent" => true,
+            "Thinking Machines" => true,
+            "Together" => true,
+            "Together 2" => true,
+            "TypeSafe" => true,
+            "Ubicloud" => true,
+            "Unbiased" => true,
+            "Upstage" => true,
+            "Venice" => true,
+            "VoyageAI by MongoDB" => true,
+            "Wafer" => true,
+            "WandB" => true,
+            "Xiaomi" => true,
+            "Z.AI" => true,
+            "xAI" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(ProviderResponseProviderName other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ProviderResponseProviderName other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(ProviderResponseProviderName left, ProviderResponseProviderName right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(ProviderResponseProviderName left, ProviderResponseProviderName right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -520,270 +1087,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this ProviderResponseProviderName value)
         {
-            return value switch
-            {
-                ProviderResponseProviderName.x01Ai => "01.AI",
-                ProviderResponseProviderName.Ai21 => "AI21",
-                ProviderResponseProviderName.AionLabs => "AionLabs",
-                ProviderResponseProviderName.AkashML => "AkashML",
-                ProviderResponseProviderName.Alibaba => "Alibaba",
-                ProviderResponseProviderName.AmazonBedrock => "Amazon Bedrock",
-                ProviderResponseProviderName.AmazonNova => "Amazon Nova",
-                ProviderResponseProviderName.Ambient => "Ambient",
-                ProviderResponseProviderName.Anthropic => "Anthropic",
-                ProviderResponseProviderName.AnyScale => "AnyScale",
-                ProviderResponseProviderName.ArceeAi => "Arcee AI",
-                ProviderResponseProviderName.AtlasCloud => "AtlasCloud",
-                ProviderResponseProviderName.Atoma => "Atoma",
-                ProviderResponseProviderName.Avian => "Avian",
-                ProviderResponseProviderName.Azure => "Azure",
-                ProviderResponseProviderName.Baidu => "Baidu",
-                ProviderResponseProviderName.BaseTen => "BaseTen",
-                ProviderResponseProviderName.BlackForestLabs => "Black Forest Labs",
-                ProviderResponseProviderName.BytePlus => "BytePlus",
-                ProviderResponseProviderName.CentMl => "Cent-ML",
-                ProviderResponseProviderName.Cerebras => "Cerebras",
-                ProviderResponseProviderName.Chutes => "Chutes",
-                ProviderResponseProviderName.Cirrascale => "Cirrascale",
-                ProviderResponseProviderName.Clarifai => "Clarifai",
-                ProviderResponseProviderName.Cloudflare => "Cloudflare",
-                ProviderResponseProviderName.Cohere => "Cohere",
-                ProviderResponseProviderName.CrofAI => "CrofAI",
-                ProviderResponseProviderName.Crucible => "Crucible",
-                ProviderResponseProviderName.Crusoe => "Crusoe",
-                ProviderResponseProviderName.Darkbloom => "Darkbloom",
-                ProviderResponseProviderName.Decart => "Decart",
-                ProviderResponseProviderName.DeepInfra => "DeepInfra",
-                ProviderResponseProviderName.DeepSeek => "DeepSeek",
-                ProviderResponseProviderName.Deepgram => "Deepgram",
-                ProviderResponseProviderName.DekaLLM => "DekaLLM",
-                ProviderResponseProviderName.DigitalOcean => "DigitalOcean",
-                ProviderResponseProviderName.Enfer => "Enfer",
-                ProviderResponseProviderName.FakeProvider => "FakeProvider",
-                ProviderResponseProviderName.Featherless => "Featherless",
-                ProviderResponseProviderName.Fireworks => "Fireworks",
-                ProviderResponseProviderName.FishAudio => "Fish Audio",
-                ProviderResponseProviderName.Friendli => "Friendli",
-                ProviderResponseProviderName.GMICloud => "GMICloud",
-                ProviderResponseProviderName.GoPomelo => "GoPomelo",
-                ProviderResponseProviderName.Google => "Google",
-                ProviderResponseProviderName.GoogleAiStudio => "Google AI Studio",
-                ProviderResponseProviderName.Groq => "Groq",
-                ProviderResponseProviderName.HeyGen => "HeyGen",
-                ProviderResponseProviderName.HuggingFace => "HuggingFace",
-                ProviderResponseProviderName.Hyperbolic => "Hyperbolic",
-                ProviderResponseProviderName.Hyperbolic2 => "Hyperbolic 2",
-                ProviderResponseProviderName.Inception => "Inception",
-                ProviderResponseProviderName.Inceptron => "Inceptron",
-                ProviderResponseProviderName.InferactVLLM => "Inferact vLLM",
-                ProviderResponseProviderName.InferenceNet => "InferenceNet",
-                ProviderResponseProviderName.Infermatic => "Infermatic",
-                ProviderResponseProviderName.Inflection => "Inflection",
-                ProviderResponseProviderName.InoCloud => "InoCloud",
-                ProviderResponseProviderName.IoNet => "Io Net",
-                ProviderResponseProviderName.Ionstream => "Ionstream",
-                ProviderResponseProviderName.Kluster => "Kluster",
-                ProviderResponseProviderName.Krea => "Krea",
-                ProviderResponseProviderName.Lambda => "Lambda",
-                ProviderResponseProviderName.Lepton => "Lepton",
-                ProviderResponseProviderName.Liquid => "Liquid",
-                ProviderResponseProviderName.Lynn => "Lynn",
-                ProviderResponseProviderName.Lynn2 => "Lynn 2",
-                ProviderResponseProviderName.Mancer => "Mancer",
-                ProviderResponseProviderName.Mancer2 => "Mancer 2",
-                ProviderResponseProviderName.Mara => "Mara",
-                ProviderResponseProviderName.Meta => "Meta",
-                ProviderResponseProviderName.Minimax => "Minimax",
-                ProviderResponseProviderName.Mistral => "Mistral",
-                ProviderResponseProviderName.Modal => "Modal",
-                ProviderResponseProviderName.ModelRun => "ModelRun",
-                ProviderResponseProviderName.Modular => "Modular",
-                ProviderResponseProviderName.MoonshotAi => "Moonshot AI",
-                ProviderResponseProviderName.Morph => "Morph",
-                ProviderResponseProviderName.NCompass => "NCompass",
-                ProviderResponseProviderName.Nebius => "Nebius",
-                ProviderResponseProviderName.NexAgi => "Nex AGI",
-                ProviderResponseProviderName.NextBit => "NextBit",
-                ProviderResponseProviderName.Nineteen => "Nineteen",
-                ProviderResponseProviderName.Novita => "Novita",
-                ProviderResponseProviderName.Nvidia => "Nvidia",
-                ProviderResponseProviderName.OctoAI => "OctoAI",
-                ProviderResponseProviderName.OpenAI => "OpenAI",
-                ProviderResponseProviderName.OpenInference => "OpenInference",
-                ProviderResponseProviderName.Parasail => "Parasail",
-                ProviderResponseProviderName.Perceptron => "Perceptron",
-                ProviderResponseProviderName.Perplexity => "Perplexity",
-                ProviderResponseProviderName.Phala => "Phala",
-                ProviderResponseProviderName.Poolside => "Poolside",
-                ProviderResponseProviderName.Quiver => "Quiver",
-                ProviderResponseProviderName.Recraft => "Recraft",
-                ProviderResponseProviderName.Recursal => "Recursal",
-                ProviderResponseProviderName.Reflection => "Reflection",
-                ProviderResponseProviderName.Reka => "Reka",
-                ProviderResponseProviderName.Relace => "Relace",
-                ProviderResponseProviderName.Replicate => "Replicate",
-                ProviderResponseProviderName.SfCompute => "SF Compute",
-                ProviderResponseProviderName.SailResearch => "Sail Research",
-                ProviderResponseProviderName.SakanaAi => "Sakana AI",
-                ProviderResponseProviderName.SambaNova => "SambaNova",
-                ProviderResponseProviderName.SambaNova2 => "SambaNova 2",
-                ProviderResponseProviderName.Seed => "Seed",
-                ProviderResponseProviderName.SiliconFlow => "SiliconFlow",
-                ProviderResponseProviderName.Sourceful => "Sourceful",
-                ProviderResponseProviderName.Stealth => "Stealth",
-                ProviderResponseProviderName.StepFun => "StepFun",
-                ProviderResponseProviderName.StreamLake => "StreamLake",
-                ProviderResponseProviderName.Switchpoint => "Switchpoint",
-                ProviderResponseProviderName.Targon => "Targon",
-                ProviderResponseProviderName.Tencent => "Tencent",
-                ProviderResponseProviderName.Tenstorrent => "Tenstorrent",
-                ProviderResponseProviderName.Together => "Together",
-                ProviderResponseProviderName.Together2 => "Together 2",
-                ProviderResponseProviderName.Ubicloud => "Ubicloud",
-                ProviderResponseProviderName.Upstage => "Upstage",
-                ProviderResponseProviderName.Venice => "Venice",
-                ProviderResponseProviderName.Wafer => "Wafer",
-                ProviderResponseProviderName.WandB => "WandB",
-                ProviderResponseProviderName.Xiaomi => "Xiaomi",
-                ProviderResponseProviderName.ZAi => "Z.AI",
-                ProviderResponseProviderName.Xai => "xAI",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static ProviderResponseProviderName? ToEnum(string value)
         {
-            return value switch
-            {
-                "01.AI" => ProviderResponseProviderName.x01Ai,
-                "AI21" => ProviderResponseProviderName.Ai21,
-                "AionLabs" => ProviderResponseProviderName.AionLabs,
-                "AkashML" => ProviderResponseProviderName.AkashML,
-                "Alibaba" => ProviderResponseProviderName.Alibaba,
-                "Amazon Bedrock" => ProviderResponseProviderName.AmazonBedrock,
-                "Amazon Nova" => ProviderResponseProviderName.AmazonNova,
-                "Ambient" => ProviderResponseProviderName.Ambient,
-                "Anthropic" => ProviderResponseProviderName.Anthropic,
-                "AnyScale" => ProviderResponseProviderName.AnyScale,
-                "Arcee AI" => ProviderResponseProviderName.ArceeAi,
-                "AtlasCloud" => ProviderResponseProviderName.AtlasCloud,
-                "Atoma" => ProviderResponseProviderName.Atoma,
-                "Avian" => ProviderResponseProviderName.Avian,
-                "Azure" => ProviderResponseProviderName.Azure,
-                "Baidu" => ProviderResponseProviderName.Baidu,
-                "BaseTen" => ProviderResponseProviderName.BaseTen,
-                "Black Forest Labs" => ProviderResponseProviderName.BlackForestLabs,
-                "BytePlus" => ProviderResponseProviderName.BytePlus,
-                "Cent-ML" => ProviderResponseProviderName.CentMl,
-                "Cerebras" => ProviderResponseProviderName.Cerebras,
-                "Chutes" => ProviderResponseProviderName.Chutes,
-                "Cirrascale" => ProviderResponseProviderName.Cirrascale,
-                "Clarifai" => ProviderResponseProviderName.Clarifai,
-                "Cloudflare" => ProviderResponseProviderName.Cloudflare,
-                "Cohere" => ProviderResponseProviderName.Cohere,
-                "CrofAI" => ProviderResponseProviderName.CrofAI,
-                "Crucible" => ProviderResponseProviderName.Crucible,
-                "Crusoe" => ProviderResponseProviderName.Crusoe,
-                "Darkbloom" => ProviderResponseProviderName.Darkbloom,
-                "Decart" => ProviderResponseProviderName.Decart,
-                "DeepInfra" => ProviderResponseProviderName.DeepInfra,
-                "DeepSeek" => ProviderResponseProviderName.DeepSeek,
-                "Deepgram" => ProviderResponseProviderName.Deepgram,
-                "DekaLLM" => ProviderResponseProviderName.DekaLLM,
-                "DigitalOcean" => ProviderResponseProviderName.DigitalOcean,
-                "Enfer" => ProviderResponseProviderName.Enfer,
-                "FakeProvider" => ProviderResponseProviderName.FakeProvider,
-                "Featherless" => ProviderResponseProviderName.Featherless,
-                "Fireworks" => ProviderResponseProviderName.Fireworks,
-                "Fish Audio" => ProviderResponseProviderName.FishAudio,
-                "Friendli" => ProviderResponseProviderName.Friendli,
-                "GMICloud" => ProviderResponseProviderName.GMICloud,
-                "GoPomelo" => ProviderResponseProviderName.GoPomelo,
-                "Google" => ProviderResponseProviderName.Google,
-                "Google AI Studio" => ProviderResponseProviderName.GoogleAiStudio,
-                "Groq" => ProviderResponseProviderName.Groq,
-                "HeyGen" => ProviderResponseProviderName.HeyGen,
-                "HuggingFace" => ProviderResponseProviderName.HuggingFace,
-                "Hyperbolic" => ProviderResponseProviderName.Hyperbolic,
-                "Hyperbolic 2" => ProviderResponseProviderName.Hyperbolic2,
-                "Inception" => ProviderResponseProviderName.Inception,
-                "Inceptron" => ProviderResponseProviderName.Inceptron,
-                "Inferact vLLM" => ProviderResponseProviderName.InferactVLLM,
-                "InferenceNet" => ProviderResponseProviderName.InferenceNet,
-                "Infermatic" => ProviderResponseProviderName.Infermatic,
-                "Inflection" => ProviderResponseProviderName.Inflection,
-                "InoCloud" => ProviderResponseProviderName.InoCloud,
-                "Io Net" => ProviderResponseProviderName.IoNet,
-                "Ionstream" => ProviderResponseProviderName.Ionstream,
-                "Kluster" => ProviderResponseProviderName.Kluster,
-                "Krea" => ProviderResponseProviderName.Krea,
-                "Lambda" => ProviderResponseProviderName.Lambda,
-                "Lepton" => ProviderResponseProviderName.Lepton,
-                "Liquid" => ProviderResponseProviderName.Liquid,
-                "Lynn" => ProviderResponseProviderName.Lynn,
-                "Lynn 2" => ProviderResponseProviderName.Lynn2,
-                "Mancer" => ProviderResponseProviderName.Mancer,
-                "Mancer 2" => ProviderResponseProviderName.Mancer2,
-                "Mara" => ProviderResponseProviderName.Mara,
-                "Meta" => ProviderResponseProviderName.Meta,
-                "Minimax" => ProviderResponseProviderName.Minimax,
-                "Mistral" => ProviderResponseProviderName.Mistral,
-                "Modal" => ProviderResponseProviderName.Modal,
-                "ModelRun" => ProviderResponseProviderName.ModelRun,
-                "Modular" => ProviderResponseProviderName.Modular,
-                "Moonshot AI" => ProviderResponseProviderName.MoonshotAi,
-                "Morph" => ProviderResponseProviderName.Morph,
-                "NCompass" => ProviderResponseProviderName.NCompass,
-                "Nebius" => ProviderResponseProviderName.Nebius,
-                "Nex AGI" => ProviderResponseProviderName.NexAgi,
-                "NextBit" => ProviderResponseProviderName.NextBit,
-                "Nineteen" => ProviderResponseProviderName.Nineteen,
-                "Novita" => ProviderResponseProviderName.Novita,
-                "Nvidia" => ProviderResponseProviderName.Nvidia,
-                "OctoAI" => ProviderResponseProviderName.OctoAI,
-                "OpenAI" => ProviderResponseProviderName.OpenAI,
-                "OpenInference" => ProviderResponseProviderName.OpenInference,
-                "Parasail" => ProviderResponseProviderName.Parasail,
-                "Perceptron" => ProviderResponseProviderName.Perceptron,
-                "Perplexity" => ProviderResponseProviderName.Perplexity,
-                "Phala" => ProviderResponseProviderName.Phala,
-                "Poolside" => ProviderResponseProviderName.Poolside,
-                "Quiver" => ProviderResponseProviderName.Quiver,
-                "Recraft" => ProviderResponseProviderName.Recraft,
-                "Recursal" => ProviderResponseProviderName.Recursal,
-                "Reflection" => ProviderResponseProviderName.Reflection,
-                "Reka" => ProviderResponseProviderName.Reka,
-                "Relace" => ProviderResponseProviderName.Relace,
-                "Replicate" => ProviderResponseProviderName.Replicate,
-                "SF Compute" => ProviderResponseProviderName.SfCompute,
-                "Sail Research" => ProviderResponseProviderName.SailResearch,
-                "Sakana AI" => ProviderResponseProviderName.SakanaAi,
-                "SambaNova" => ProviderResponseProviderName.SambaNova,
-                "SambaNova 2" => ProviderResponseProviderName.SambaNova2,
-                "Seed" => ProviderResponseProviderName.Seed,
-                "SiliconFlow" => ProviderResponseProviderName.SiliconFlow,
-                "Sourceful" => ProviderResponseProviderName.Sourceful,
-                "Stealth" => ProviderResponseProviderName.Stealth,
-                "StepFun" => ProviderResponseProviderName.StepFun,
-                "StreamLake" => ProviderResponseProviderName.StreamLake,
-                "Switchpoint" => ProviderResponseProviderName.Switchpoint,
-                "Targon" => ProviderResponseProviderName.Targon,
-                "Tencent" => ProviderResponseProviderName.Tencent,
-                "Tenstorrent" => ProviderResponseProviderName.Tenstorrent,
-                "Together" => ProviderResponseProviderName.Together,
-                "Together 2" => ProviderResponseProviderName.Together2,
-                "Ubicloud" => ProviderResponseProviderName.Ubicloud,
-                "Upstage" => ProviderResponseProviderName.Upstage,
-                "Venice" => ProviderResponseProviderName.Venice,
-                "Wafer" => ProviderResponseProviderName.Wafer,
-                "WandB" => ProviderResponseProviderName.WandB,
-                "Xiaomi" => ProviderResponseProviderName.Xiaomi,
-                "Z.AI" => ProviderResponseProviderName.ZAi,
-                "xAI" => ProviderResponseProviderName.Xai,
-                _ => null,
-            };
+            return ProviderResponseProviderName.FromValue(value);
         }
     }
 }

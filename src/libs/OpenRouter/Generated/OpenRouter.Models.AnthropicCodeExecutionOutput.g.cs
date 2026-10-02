@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"file_id":"file_01abc","type":"code_execution_output"}
     /// </summary>
     public sealed partial class AnthropicCodeExecutionOutput
     {

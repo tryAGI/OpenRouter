@@ -4,13 +4,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"input_audio":{"data":"data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAA...","format":"wav"},"type":"input_audio"}
     /// </summary>
     public sealed partial class ContentPartInputAudio
     {
         /// <summary>
-        ///
+        /// Example: {"data":"data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAA...","format":"wav"}
         /// </summary>
+        /// <example>{"data":"data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAA...","format":"wav"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.MultimodalMedia InputAudio { get; set; }
@@ -31,7 +32,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentPartInputAudio" /> class.
         /// </summary>
-        /// <param name="inputAudio"></param>
+        /// <param name="inputAudio">
+        /// Example: {"data":"data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAA...","format":"wav"}
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for RequestTimeoutResponse
+    /// Error data for RequestTimeoutResponse<br/>
+    /// Example: {"code":408,"message":"Operation timed out. Please try again later."}
     /// </summary>
     public sealed partial class RequestTimeoutResponseErrorData
     {

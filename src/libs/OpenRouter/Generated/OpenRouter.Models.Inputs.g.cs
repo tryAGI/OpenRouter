@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Input for a response request - can be a string or array of items
+    /// Input for a response request - can be a string or array of items<br/>
+    /// Example: [{"content":"What is the weather today?","role":"user"}]
     /// </summary>
     public readonly partial struct Inputs : global::System.IEquatable<Inputs>
     {
@@ -50,38 +51,38 @@ namespace OpenRouter
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? Inputs1 { get; init; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>? InputsVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? Inputs1 { get; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>? InputsVariant2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Inputs1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsVariant2))]
 #endif
-        public bool IsInputs1 => Inputs1 != null;
+        public bool IsInputsVariant2 => InputsVariant2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputs1(
+        public bool TryPickInputsVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? value)
+            out global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>? value)
         {
-            value = Inputs1;
-            return IsInputs1;
+            value = InputsVariant2;
+            return IsInputsVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items> PickInputs1() => Inputs1 is { } value
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>> PickInputsVariant2() => InputsVariant2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Inputs1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -110,18 +111,18 @@ namespace OpenRouter
         /// </summary>
         public Inputs(
             string? inputsVariant1,
-            global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>? inputs1
+            global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>? inputsVariant2
             )
         {
             InputsVariant1 = inputsVariant1;
-            Inputs1 = inputs1;
+            InputsVariant2 = inputsVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Inputs1 as object ??
+            InputsVariant2 as object ??
             InputsVariant1 as object
             ;
 
@@ -130,7 +131,7 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             InputsVariant1?.ToString() ??
-            Inputs1?.ToString()
+            InputsVariant2?.ToString()
             ;
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsInputsVariant1 && !IsInputs1 || !IsInputsVariant1 && IsInputs1;
+            return IsInputsVariant1 || IsInputsVariant2;
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? inputsVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>, TResult>? inputs1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>, TResult>? inputsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +159,9 @@ namespace OpenRouter
             {
                 return inputsVariant1(__value0);
             }
-            else if (Inputs1 is { } __value1 && inputs1 != null)
+            else if (InputsVariant2 is { } __value1 && inputsVariant2 != null)
             {
-                return inputs1(__value1);
+                return inputsVariant2(__value1);
             }
 
             return default(TResult);
@@ -172,7 +173,7 @@ namespace OpenRouter
         public void Match(
             global::System.Action<string>? inputsVariant1 = null,
 
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>>? inputs1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>>? inputsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -184,9 +185,9 @@ namespace OpenRouter
             {
                 inputsVariant1?.Invoke(__value0);
             }
-            else if (Inputs1 is { } __value1)
+            else if (InputsVariant2 is { } __value1)
             {
-                inputs1?.Invoke(__value1);
+                inputsVariant2?.Invoke(__value1);
             }
         }
 
@@ -195,7 +196,7 @@ namespace OpenRouter
         /// </summary>
         public void Switch(
             global::System.Action<string>? inputsVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>>? inputs1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>>? inputsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -207,9 +208,9 @@ namespace OpenRouter
             {
                 inputsVariant1?.Invoke(__value0);
             }
-            else if (Inputs1 is { } __value1)
+            else if (InputsVariant2 is { } __value1)
             {
-                inputs1?.Invoke(__value1);
+                inputsVariant2?.Invoke(__value1);
             }
         }
 
@@ -222,8 +223,8 @@ namespace OpenRouter
             {
                 InputsVariant1,
                 typeof(string),
-                Inputs1,
-                typeof(global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>),
+                InputsVariant2,
+                typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -241,7 +242,7 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(InputsVariant1, other.InputsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.InputsOneOf1Items>?>.Default.Equals(Inputs1, other.Inputs1)
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.ReasoningItem?, global::OpenRouter.EasyInputMessage, global::OpenRouter.InputMessageItem, global::OpenRouter.FunctionCallItem, global::OpenRouter.FunctionCallOutputItem?, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.AllOf<global::OpenRouter.OutputMessageItem?, global::OpenRouter.InputsVariant2ItemVariant82>?, global::OpenRouter.AllOf<global::OpenRouter.OutputReasoningItem?, global::OpenRouter.InputsVariant2ItemVariant92>?, global::OpenRouter.OutputWebSearchCallItem?, global::OpenRouter.OutputFileSearchCallItem?, global::OpenRouter.OutputImageGenerationCallItem?, global::OpenRouter.OutputCodeInterpreterCallItem?, global::OpenRouter.OutputComputerCallItem, global::OpenRouter.OutputDatetimeItem, global::OpenRouter.OutputWebSearchServerToolItem, global::OpenRouter.OutputCodeInterpreterServerToolItem, global::OpenRouter.OutputFileSearchServerToolItem, global::OpenRouter.OutputImageGenerationServerToolItem, global::OpenRouter.OutputBrowserUseServerToolItem, global::OpenRouter.OutputBashServerToolItem, global::OpenRouter.OutputTextEditorServerToolItem, global::OpenRouter.OutputApplyPatchServerToolItem, global::OpenRouter.OutputWebFetchServerToolItem, global::OpenRouter.OutputToolSearchServerToolItem, global::OpenRouter.OutputMemoryServerToolItem, global::OpenRouter.OutputMcpServerToolItem, global::OpenRouter.OutputSearchModelsServerToolItem, global::OpenRouter.OutputFusionServerToolItem, global::OpenRouter.OutputAdvisorServerToolItem, global::OpenRouter.OutputSubagentServerToolItem, global::OpenRouter.OutputFilesServerToolItem, global::OpenRouter.OutputShellServerToolItem, global::OpenRouter.LocalShellCallItem, global::OpenRouter.LocalShellCallOutputItem, global::OpenRouter.ShellCallItem, global::OpenRouter.ShellCallOutputItem, global::OpenRouter.McpListToolsItem, global::OpenRouter.McpApprovalRequestItem, global::OpenRouter.McpApprovalResponseItem, global::OpenRouter.McpCallItem, global::OpenRouter.CustomToolCallItem, global::OpenRouter.CustomToolCallOutputItem?, global::OpenRouter.CompactionItem, global::OpenRouter.ContextCompactionItem, global::OpenRouter.ItemReferenceItem, global::OpenRouter.AdditionalToolsItem, global::OpenRouter.AgentMessageItem, global::OpenRouter.ConfigurationUpdateItem>>?>.Default.Equals(InputsVariant2, other.InputsVariant2)
                 ;
         }
 

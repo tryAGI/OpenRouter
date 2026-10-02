@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Log probabilities for the completion
+    /// Log probabilities for the completion<br/>
+    /// Example: {"content":[{"bytes":null,"logprob":-0.612345,"token":" Hello","top_logprobs":[]}],"refusal":null}
     /// </summary>
     public sealed partial class ChatTokenLogprobs
     {

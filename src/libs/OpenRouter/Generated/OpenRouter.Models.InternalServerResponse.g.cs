@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Internal Server Error - Unexpected server error
+    /// Internal Server Error - Unexpected server error<br/>
+    /// Example: {"error":{"code":500,"message":"Internal Server Error"}}
     /// </summary>
     public sealed partial class InternalServerResponse
     {
         /// <summary>
-        /// Error data for InternalServerResponse
+        /// Error data for InternalServerResponse<br/>
+        /// Example: {"code":500,"message":"Internal Server Error"}
         /// </summary>
+        /// <example>{"code":500,"message":"Internal Server Error"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.InternalServerResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="InternalServerResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for InternalServerResponse
+        /// Error data for InternalServerResponse<br/>
+        /// Example: {"code":500,"message":"Internal Server Error"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

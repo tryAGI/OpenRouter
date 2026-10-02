@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class OutputFileSearchCallItem
+    public readonly partial struct OutputFileSearchCallItem
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.OutputFileSearchCallItem),
-                jsonSerializerContext) as global::OpenRouter.OutputFileSearchCallItem;
+                jsonSerializerContext) as global::OpenRouter.OutputFileSearchCallItem?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.OutputFileSearchCallItem),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.OutputFileSearchCallItem;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.OutputFileSearchCallItem?;
         }
 
         /// <summary>

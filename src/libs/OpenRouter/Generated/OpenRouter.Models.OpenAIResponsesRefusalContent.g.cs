@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"refusal":"I\u0027m sorry, I cannot assist with that request","type":"refusal"}
     /// </summary>
     public sealed partial class OpenAIResponsesRefusalContent
     {
@@ -19,8 +19,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponsesRefusalContentTypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponsesRefusalContentType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponsesRefusalContentTypeJsonConverter))]
+        public global::OpenRouter.OpenAIResponsesRefusalContentType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace OpenRouter
 #endif
         public OpenAIResponsesRefusalContent(
             string refusal,
-            global::OpenRouter.OpenAiResponsesRefusalContentType type)
+            global::OpenRouter.OpenAIResponsesRefusalContentType type)
         {
             this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
             this.Type = type;

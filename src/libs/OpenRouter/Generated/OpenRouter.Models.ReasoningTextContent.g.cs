@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"text":"Let me think step by step about this problem...","type":"reasoning_text"}
     /// </summary>
     public sealed partial class ReasoningTextContent
     {

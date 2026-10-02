@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:tool_search server tool output item
+    /// An openrouter:tool_search server tool output item<br/>
+    /// Example: {"id":"ts_tmp_abc123","query":"weather tools","status":"completed","type":"openrouter:tool_search"}
     /// </summary>
     public sealed partial class OutputToolSearchServerToolItem
     {
@@ -21,8 +22,9 @@ namespace OpenRouter
         public string? Query { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -44,7 +46,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputToolSearchServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="id"></param>
         /// <param name="query"></param>
         /// <param name="type"></param>

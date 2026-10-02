@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:web_fetch server tool output item
+    /// An openrouter:web_fetch server tool output item<br/>
+    /// Example: {"httpStatus":200,"id":"wf_tmp_abc123","status":"completed","title":"Example Domain","type":"openrouter:web_fetch","url":"https://example.com"}
     /// </summary>
     public sealed partial class OutputWebFetchServerToolItem
     {
@@ -33,8 +34,9 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -68,7 +70,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputWebFetchServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="content"></param>
         /// <param name="error">
         /// The error message if the fetch failed.

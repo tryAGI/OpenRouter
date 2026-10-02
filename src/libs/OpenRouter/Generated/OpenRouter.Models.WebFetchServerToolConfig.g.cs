@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration for the openrouter:web_fetch server tool
+    /// Configuration for the openrouter:web_fetch server tool<br/>
+    /// Example: {"max_content_tokens":100000,"max_uses":10}
     /// </summary>
     public sealed partial class WebFetchServerToolConfig
     {
@@ -21,21 +22,27 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
 
         /// <summary>
-        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK). "parallel" uses the Parallel extract API.
+        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK). "parallel" uses the Parallel extract API.<br/>
+        /// Example: auto
         /// </summary>
+        /// <example>auto</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.WebFetchEngineEnumJsonConverter))]
         public global::OpenRouter.WebFetchEngineEnum? Engine { get; set; }
 
         /// <summary>
-        /// Maximum content length in approximate tokens. Content exceeding this limit is truncated.
+        /// Maximum content length in approximate tokens. Content exceeding this limit is truncated.<br/>
+        /// Example: 100000
         /// </summary>
+        /// <example>100000</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_content_tokens")]
         public int? MaxContentTokens { get; set; }
 
         /// <summary>
-        /// Maximum number of web fetches per request. Once exceeded, the tool returns an error.
+        /// Maximum number of web fetches per request. Once exceeded, the tool returns an error.<br/>
+        /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_uses")]
         public int? MaxUses { get; set; }
 
@@ -55,13 +62,16 @@ namespace OpenRouter
         /// Never fetch from these domains.
         /// </param>
         /// <param name="engine">
-        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK). "parallel" uses the Parallel extract API.
+        /// Which fetch engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in fetch. "exa" uses Exa Contents API. "openrouter" uses direct HTTP fetch. "firecrawl" uses Firecrawl scrape (requires BYOK). "parallel" uses the Parallel extract API.<br/>
+        /// Example: auto
         /// </param>
         /// <param name="maxContentTokens">
-        /// Maximum content length in approximate tokens. Content exceeding this limit is truncated.
+        /// Maximum content length in approximate tokens. Content exceeding this limit is truncated.<br/>
+        /// Example: 100000
         /// </param>
         /// <param name="maxUses">
-        /// Maximum number of web fetches per request. Once exceeded, the tool returns an error.
+        /// Maximum number of web fetches per request. Once exceeded, the tool returns an error.<br/>
+        /// Example: 10
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

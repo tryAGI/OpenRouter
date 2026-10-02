@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A compound filter that combines multiple comparison or compound filters
+    /// A compound filter that combines multiple comparison or compound filters<br/>
+    /// Example: {"filters":[{"key":"author","type":"eq","value":"Alice"}],"type":"and"}
     /// </summary>
     public sealed partial class CompoundFilter
     {

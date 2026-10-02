@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"added_count":1,"data":[{"created_at":"2025-08-24T10:30:00Z","id":"660e8400-e29b-41d4-a716-446655440000","role":"member","user_id":"user_abc123","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}]}
     /// </summary>
     public sealed partial class BulkAddWorkspaceMembersResponse
     {
         /// <summary>
-        /// Number of workspace memberships created or updated
+        /// Number of workspace memberships created or updated<br/>
+        /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int AddedCount { get; set; }
@@ -32,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkAddWorkspaceMembersResponse" /> class.
         /// </summary>
         /// <param name="addedCount">
-        /// Number of workspace memberships created or updated
+        /// Number of workspace memberships created or updated<br/>
+        /// Example: 2
         /// </param>
         /// <param name="data">
         /// List of added workspace memberships

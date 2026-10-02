@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)
+    /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)<br/>
+    /// Example: {"parameters":{"max_uses":10},"type":"openrouter:web_fetch"}
     /// </summary>
     public sealed partial class WebFetchServerTool
     {
         /// <summary>
-        /// Configuration for the openrouter:web_fetch server tool
+        /// Configuration for the openrouter:web_fetch server tool<br/>
+        /// Example: {"max_content_tokens":100000,"max_uses":10}
         /// </summary>
+        /// <example>{"max_content_tokens":100000,"max_uses":10}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.WebFetchServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="WebFetchServerTool" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:web_fetch server tool
+        /// Configuration for the openrouter:web_fetch server tool<br/>
+        /// Example: {"max_content_tokens":100000,"max_uses":10}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: read, write, edit, and list workspace files via the Files API. Requires the `x-openrouter-file-ids: openrouter` request header.
+    /// OpenRouter built-in server tool: read, write, edit, and list workspace files via the Files API. Requires an authenticated request; files come from the API key's workspace (or the default workspace for keys without one).<br/>
+    /// Example: {"parameters":{},"type":"openrouter:files"}
     /// </summary>
     public sealed partial class FilesServerTool
     {
         /// <summary>
-        /// Configuration for the openrouter:files server tool
+        /// Configuration for the openrouter:files server tool<br/>
+        /// Example: {}
         /// </summary>
+        /// <example>{}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.FilesServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="FilesServerTool" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:files server tool
+        /// Configuration for the openrouter:files server tool<br/>
+        /// Example: {}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

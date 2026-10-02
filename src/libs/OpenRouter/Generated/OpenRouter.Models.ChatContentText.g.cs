@@ -4,19 +4,25 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Text content part
+    /// Text content part<br/>
+    /// Example: {"text":"Hello, world!","type":"text"}
     /// </summary>
     public sealed partial class ChatContentText
     {
         /// <summary>
-        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.<br/>
+        /// Example: {"ttl":"5m","type":"ephemeral"}
         /// </summary>
+        /// <example>{"ttl":"5m","type":"ephemeral"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatContentCacheControlJsonConverter))]
         public global::OpenRouter.ChatContentCacheControl? CacheControl { get; set; }
 
         /// <summary>
-        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.<br/>
+        /// Example: {"mode":"explicit"}
         /// </summary>
+        /// <example>{"mode":"explicit"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
         public global::OpenRouter.PromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
 
@@ -45,10 +51,12 @@ namespace OpenRouter
         /// </summary>
         /// <param name="text"></param>
         /// <param name="cacheControl">
-        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.
+        /// Anthropic-style cache breakpoint for the content part. Interchangeable with the OpenAI-style `prompt_cache_breakpoint` marker: OpenRouter converts between the two based on the provider serving the request.<br/>
+        /// Example: {"ttl":"5m","type":"ephemeral"}
         /// </param>
         /// <param name="promptCacheBreakpoint">
-        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.
+        /// Marks an explicit prompt-cache boundary on this content block (OpenAI-style). Everything through the block carrying this marker is part of the candidate cached prefix. Supported natively by OpenAI GPT-5.6 and newer; on providers that use Anthropic-style `cache_control`, OpenRouter converts the marker to that format automatically.<br/>
+        /// Example: {"mode":"explicit"}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

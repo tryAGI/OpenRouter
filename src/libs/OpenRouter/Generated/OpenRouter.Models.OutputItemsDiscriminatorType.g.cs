@@ -95,6 +95,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        Openrouter_shell,
+        /// <summary>
+        ///
+        /// </summary>
         Openrouter_subagent,
         /// <summary>
         ///
@@ -163,6 +167,7 @@ namespace OpenRouter
                 OutputItemsDiscriminatorType.Openrouter_imageGeneration => "openrouter:image_generation",
                 OutputItemsDiscriminatorType.Openrouter_mcp => "openrouter:mcp",
                 OutputItemsDiscriminatorType.Openrouter_memory => "openrouter:memory",
+                OutputItemsDiscriminatorType.Openrouter_shell => "openrouter:shell",
                 OutputItemsDiscriminatorType.Openrouter_subagent => "openrouter:subagent",
                 OutputItemsDiscriminatorType.Openrouter_textEditor => "openrouter:text_editor",
                 OutputItemsDiscriminatorType.Openrouter_toolSearch => "openrouter:tool_search",
@@ -203,6 +208,7 @@ namespace OpenRouter
                 "openrouter:image_generation" => OutputItemsDiscriminatorType.Openrouter_imageGeneration,
                 "openrouter:mcp" => OutputItemsDiscriminatorType.Openrouter_mcp,
                 "openrouter:memory" => OutputItemsDiscriminatorType.Openrouter_memory,
+                "openrouter:shell" => OutputItemsDiscriminatorType.Openrouter_shell,
                 "openrouter:subagent" => OutputItemsDiscriminatorType.Openrouter_subagent,
                 "openrouter:text_editor" => OutputItemsDiscriminatorType.Openrouter_textEditor,
                 "openrouter:tool_search" => OutputItemsDiscriminatorType.Openrouter_toolSearch,

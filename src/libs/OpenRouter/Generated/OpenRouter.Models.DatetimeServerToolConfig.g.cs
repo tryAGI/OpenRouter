@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration for the openrouter:datetime server tool
+    /// Configuration for the openrouter:datetime server tool<br/>
+    /// Example: {"timezone":"America/New_York"}
     /// </summary>
     public sealed partial class DatetimeServerToolConfig
     {
         /// <summary>
-        /// IANA timezone name (e.g. "America/New_York"). Defaults to UTC.
+        /// IANA timezone name (e.g. "America/New_York"). Defaults to UTC.<br/>
+        /// Example: America/New_York
         /// </summary>
+        /// <example>America/New_York</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
         public string? Timezone { get; set; }
 
@@ -24,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="DatetimeServerToolConfig" /> class.
         /// </summary>
         /// <param name="timezone">
-        /// IANA timezone name (e.g. "America/New_York"). Defaults to UTC.
+        /// IANA timezone name (e.g. "America/New_York"). Defaults to UTC.<br/>
+        /// Example: America/New_York
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

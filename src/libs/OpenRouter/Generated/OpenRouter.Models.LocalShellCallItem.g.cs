@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A local shell command execution call
+    /// A local shell command execution call<br/>
+    /// Example: {"action":{"command":["ls","-la"],"env":{"PATH":"/usr/bin"},"timeout_ms":5000,"type":"exec"},"call_id":"call-abc123","id":"shell-abc123","status":"completed","type":"local_shell_call"}
     /// </summary>
     public sealed partial class LocalShellCallItem
     {
@@ -30,8 +31,9 @@ namespace OpenRouter
         public required string Id { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -56,7 +58,9 @@ namespace OpenRouter
         /// <param name="action"></param>
         /// <param name="callId"></param>
         /// <param name="id"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

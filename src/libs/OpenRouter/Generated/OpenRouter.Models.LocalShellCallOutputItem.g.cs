@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Output from a local shell command execution
+    /// Output from a local shell command execution<br/>
+    /// Example: {"id":"output-abc123","output":"total 24\ndrwxr-xr-x  5 user  staff  160 Jan  1 12:00 .","status":"completed","type":"local_shell_call_output"}
     /// </summary>
     public sealed partial class LocalShellCallOutputItem
     {

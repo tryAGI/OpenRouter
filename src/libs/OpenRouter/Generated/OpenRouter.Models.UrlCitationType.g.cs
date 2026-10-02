@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public enum UrlCitationType
+    public enum URLCitationType
     {
         /// <summary>
         ///
@@ -17,27 +17,27 @@ namespace OpenRouter
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class UrlCitationTypeExtensions
+    public static class URLCitationTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this UrlCitationType value)
+        public static string ToValueString(this URLCitationType value)
         {
             return value switch
             {
-                UrlCitationType.UrlCitation => "url_citation",
+                URLCitationType.UrlCitation => "url_citation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UrlCitationType? ToEnum(string value)
+        public static URLCitationType? ToEnum(string value)
         {
             return value switch
             {
-                "url_citation" => UrlCitationType.UrlCitation,
+                "url_citation" => URLCitationType.UrlCitation,
                 _ => null,
             };
         }

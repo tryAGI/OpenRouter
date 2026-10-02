@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Model count data
+    /// Model count data<br/>
+    /// Example: {"count":150}
     /// </summary>
     public sealed partial class ModelsCountResponseData
     {
         /// <summary>
-        /// Total number of available models
+        /// Total number of available models<br/>
+        /// Example: 150
         /// </summary>
+        /// <example>150</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Count { get; set; }
@@ -25,7 +28,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ModelsCountResponseData" /> class.
         /// </summary>
         /// <param name="count">
-        /// Total number of available models
+        /// Total number of available models<br/>
+        /// Example: 150
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

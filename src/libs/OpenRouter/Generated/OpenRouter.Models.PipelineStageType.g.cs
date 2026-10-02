@@ -3,32 +3,120 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    /// Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.
+    /// Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.<br/>
+    /// Example: guardrail
     /// </summary>
-    public enum PipelineStageType
+    public readonly partial struct PipelineStageType : global::System.IEquatable<PipelineStageType>
     {
         /// <summary>
         ///
         /// </summary>
-        ContextCompression,
+        public PipelineStageType(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        Guardrail,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        Plugin,
+        public static PipelineStageType ContextCompression { get; } = new("context_compression");
+
         /// <summary>
         ///
         /// </summary>
-        ResponseHealing,
+        public static PipelineStageType Guardrail { get; } = new("guardrail");
+
         /// <summary>
         ///
         /// </summary>
-        ServerTools,
+        public static PipelineStageType Plugin { get; } = new("plugin");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static PipelineStageType ResponseHealing { get; } = new("response_healing");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static PipelineStageType ServerTools { get; } = new("server_tools");
+        /// <summary>
+        ///
+        /// </summary>
+        public static PipelineStageType FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "context_compression" => ContextCompression,
+                "guardrail" => Guardrail,
+                "plugin" => Plugin,
+                "response_healing" => ResponseHealing,
+                "server_tools" => ServerTools,
+                _ => new PipelineStageType(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "context_compression" => true,
+            "guardrail" => true,
+            "plugin" => true,
+            "response_healing" => true,
+            "server_tools" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(PipelineStageType other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is PipelineStageType other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(PipelineStageType left, PipelineStageType right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(PipelineStageType left, PipelineStageType right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -40,30 +128,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this PipelineStageType value)
         {
-            return value switch
-            {
-                PipelineStageType.ContextCompression => "context_compression",
-                PipelineStageType.Guardrail => "guardrail",
-                PipelineStageType.Plugin => "plugin",
-                PipelineStageType.ResponseHealing => "response_healing",
-                PipelineStageType.ServerTools => "server_tools",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static PipelineStageType? ToEnum(string value)
         {
-            return value switch
-            {
-                "context_compression" => PipelineStageType.ContextCompression,
-                "guardrail" => PipelineStageType.Guardrail,
-                "plugin" => PipelineStageType.Plugin,
-                "response_healing" => PipelineStageType.ResponseHealing,
-                "server_tools" => PipelineStageType.ServerTools,
-                _ => null,
-            };
+            return PipelineStageType.FromValue(value);
         }
     }
 }

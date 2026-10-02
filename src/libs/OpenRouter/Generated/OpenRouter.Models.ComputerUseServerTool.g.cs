@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Computer use preview tool configuration
+    /// Computer use preview tool configuration<br/>
+    /// Example: {"display_height":768,"display_width":1024,"environment":"linux","type":"computer_use_preview"}
     /// </summary>
     public sealed partial class ComputerUseServerTool
     {

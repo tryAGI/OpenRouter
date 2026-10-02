@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class FrameImage
+    public readonly partial struct FrameImage
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.FrameImage),
-                jsonSerializerContext) as global::OpenRouter.FrameImage;
+                jsonSerializerContext) as global::OpenRouter.FrameImage?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.FrameImage),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.FrameImage;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.FrameImage?;
         }
 
         /// <summary>

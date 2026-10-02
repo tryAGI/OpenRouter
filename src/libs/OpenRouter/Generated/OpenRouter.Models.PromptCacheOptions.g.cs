@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
+    /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.<br/>
+    /// Example: {"mode":"explicit","ttl":"30m"}
     /// </summary>
     public sealed partial class PromptCacheOptions
     {

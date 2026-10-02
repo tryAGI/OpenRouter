@@ -3,400 +3,882 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    ///
+    /// Example: OpenAI
     /// </summary>
-    public enum ProviderName
+    public readonly partial struct ProviderName : global::System.IEquatable<ProviderName>
     {
         /// <summary>
         ///
         /// </summary>
-        Ai21,
+        public ProviderName(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        AionLabs,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        AkashML,
+        public static ProviderName Ai21 { get; } = new("AI21");
+
         /// <summary>
         ///
         /// </summary>
-        Alibaba,
+        public static ProviderName AionLabs { get; } = new("AionLabs");
+
         /// <summary>
         ///
         /// </summary>
-        AmazonBedrock,
+        public static ProviderName AkashML { get; } = new("AkashML");
+
         /// <summary>
         ///
         /// </summary>
-        AmazonNova,
+        public static ProviderName Alibaba { get; } = new("Alibaba");
+
         /// <summary>
         ///
         /// </summary>
-        Ambient,
+        public static ProviderName AmazonBedrock { get; } = new("Amazon Bedrock");
+
         /// <summary>
         ///
         /// </summary>
-        Anthropic,
+        public static ProviderName AmazonNova { get; } = new("Amazon Nova");
+
         /// <summary>
         ///
         /// </summary>
-        ArceeAi,
+        public static ProviderName Ambient { get; } = new("Ambient");
+
         /// <summary>
         ///
         /// </summary>
-        AtlasCloud,
+        public static ProviderName Anthropic { get; } = new("Anthropic");
+
         /// <summary>
         ///
         /// </summary>
-        Avian,
+        public static ProviderName ArceeAi { get; } = new("Arcee AI");
+
         /// <summary>
         ///
         /// </summary>
-        Azure,
+        public static ProviderName AssemblyAI { get; } = new("AssemblyAI");
+
         /// <summary>
         ///
         /// </summary>
-        Baidu,
+        public static ProviderName AtlasCloud { get; } = new("AtlasCloud");
+
         /// <summary>
         ///
         /// </summary>
-        BaseTen,
+        public static ProviderName Avian { get; } = new("Avian");
+
         /// <summary>
         ///
         /// </summary>
-        BlackForestLabs,
+        public static ProviderName Azure { get; } = new("Azure");
+
         /// <summary>
         ///
         /// </summary>
-        BytePlus,
+        public static ProviderName Baidu { get; } = new("Baidu");
+
         /// <summary>
         ///
         /// </summary>
-        Cerebras,
+        public static ProviderName BaseTen { get; } = new("BaseTen");
+
         /// <summary>
         ///
         /// </summary>
-        Chutes,
+        public static ProviderName BlackForestLabs { get; } = new("Black Forest Labs");
+
         /// <summary>
         ///
         /// </summary>
-        Cirrascale,
+        public static ProviderName BytePlus { get; } = new("BytePlus");
+
         /// <summary>
         ///
         /// </summary>
-        Clarifai,
+        public static ProviderName Cerebras { get; } = new("Cerebras");
+
         /// <summary>
         ///
         /// </summary>
-        Cloudflare,
+        public static ProviderName Chutes { get; } = new("Chutes");
+
         /// <summary>
         ///
         /// </summary>
-        Cohere,
+        public static ProviderName Cirrascale { get; } = new("Cirrascale");
+
         /// <summary>
         ///
         /// </summary>
-        Crucible,
+        public static ProviderName Clarifai { get; } = new("Clarifai");
+
         /// <summary>
         ///
         /// </summary>
-        Crusoe,
+        public static ProviderName ClaudePlatformOnAws { get; } = new("Claude Platform on AWS");
+
         /// <summary>
         ///
         /// </summary>
-        Darkbloom,
+        public static ProviderName Cloudflare { get; } = new("Cloudflare");
+
         /// <summary>
         ///
         /// </summary>
-        Decart,
+        public static ProviderName Cohere { get; } = new("Cohere");
+
         /// <summary>
         ///
         /// </summary>
-        DeepInfra,
+        public static ProviderName CoreWeave { get; } = new("CoreWeave");
+
         /// <summary>
         ///
         /// </summary>
-        DeepSeek,
+        public static ProviderName Cosine { get; } = new("Cosine");
+
         /// <summary>
         ///
         /// </summary>
-        Deepgram,
+        public static ProviderName Crucible { get; } = new("Crucible");
+
         /// <summary>
         ///
         /// </summary>
-        DekaLLM,
+        public static ProviderName Crusoe { get; } = new("Crusoe");
+
         /// <summary>
         ///
         /// </summary>
-        DigitalOcean,
+        public static ProviderName Darkbloom { get; } = new("Darkbloom");
+
         /// <summary>
         ///
         /// </summary>
-        FakeProvider,
+        public static ProviderName Databricks { get; } = new("Databricks");
+
         /// <summary>
         ///
         /// </summary>
-        Featherless,
+        public static ProviderName Decart { get; } = new("Decart");
+
         /// <summary>
         ///
         /// </summary>
-        Fireworks,
+        public static ProviderName DeepInfra { get; } = new("DeepInfra");
+
         /// <summary>
         ///
         /// </summary>
-        FishAudio,
+        public static ProviderName DeepSeek { get; } = new("DeepSeek");
+
         /// <summary>
         ///
         /// </summary>
-        Friendli,
+        public static ProviderName Deepgram { get; } = new("Deepgram");
+
         /// <summary>
         ///
         /// </summary>
-        GMICloud,
+        public static ProviderName DekaLLM { get; } = new("DekaLLM");
+
         /// <summary>
         ///
         /// </summary>
-        Google,
+        public static ProviderName DigitalOcean { get; } = new("DigitalOcean");
+
         /// <summary>
         ///
         /// </summary>
-        GoogleAiStudio,
+        public static ProviderName ElevenLabs { get; } = new("ElevenLabs");
+
         /// <summary>
         ///
         /// </summary>
-        Groq,
+        public static ProviderName FakeProvider { get; } = new("FakeProvider");
+
         /// <summary>
         ///
         /// </summary>
-        HeyGen,
+        public static ProviderName Featherless { get; } = new("Featherless");
+
         /// <summary>
         ///
         /// </summary>
-        Inception,
+        public static ProviderName Fireworks { get; } = new("Fireworks");
+
         /// <summary>
         ///
         /// </summary>
-        Inceptron,
+        public static ProviderName FishAudio { get; } = new("Fish Audio");
+
         /// <summary>
         ///
         /// </summary>
-        InferactVLLM,
+        public static ProviderName Friendli { get; } = new("Friendli");
+
         /// <summary>
         ///
         /// </summary>
-        InferenceNet,
+        public static ProviderName GMICloud { get; } = new("GMICloud");
+
         /// <summary>
         ///
         /// </summary>
-        Infermatic,
+        public static ProviderName Google { get; } = new("Google");
+
         /// <summary>
         ///
         /// </summary>
-        Inflection,
+        public static ProviderName GoogleAiStudio { get; } = new("Google AI Studio");
+
         /// <summary>
         ///
         /// </summary>
-        IoNet,
+        public static ProviderName Groq { get; } = new("Groq");
+
         /// <summary>
         ///
         /// </summary>
-        Ionstream,
+        public static ProviderName HeyGen { get; } = new("HeyGen");
+
         /// <summary>
         ///
         /// </summary>
-        Krea,
+        public static ProviderName Inception { get; } = new("Inception");
+
         /// <summary>
         ///
         /// </summary>
-        Liquid,
+        public static ProviderName Inceptron { get; } = new("Inceptron");
+
         /// <summary>
         ///
         /// </summary>
-        Mancer2,
+        public static ProviderName InferactVLLM { get; } = new("Inferact vLLM");
+
         /// <summary>
         ///
         /// </summary>
-        Mara,
+        public static ProviderName InferenceNet { get; } = new("InferenceNet");
+
         /// <summary>
         ///
         /// </summary>
-        Meta,
+        public static ProviderName Infermatic { get; } = new("Infermatic");
+
         /// <summary>
         ///
         /// </summary>
-        Minimax,
+        public static ProviderName Inflection { get; } = new("Inflection");
+
         /// <summary>
         ///
         /// </summary>
-        Mistral,
+        public static ProviderName IoNet { get; } = new("Io Net");
+
         /// <summary>
         ///
         /// </summary>
-        ModelRun,
+        public static ProviderName Ionstream { get; } = new("Ionstream");
+
         /// <summary>
         ///
         /// </summary>
-        Modular,
+        public static ProviderName Krea { get; } = new("Krea");
+
         /// <summary>
         ///
         /// </summary>
-        MoonshotAi,
+        public static ProviderName Liquid { get; } = new("Liquid");
+
         /// <summary>
         ///
         /// </summary>
-        Morph,
+        public static ProviderName Makora { get; } = new("Makora");
+
         /// <summary>
         ///
         /// </summary>
-        NCompass,
+        public static ProviderName Mancer2 { get; } = new("Mancer 2");
+
         /// <summary>
         ///
         /// </summary>
-        Nebius,
+        public static ProviderName Mara { get; } = new("Mara");
+
         /// <summary>
         ///
         /// </summary>
-        NexAgi,
+        public static ProviderName Meta { get; } = new("Meta");
+
         /// <summary>
         ///
         /// </summary>
-        NextBit,
+        public static ProviderName Minimax { get; } = new("Minimax");
+
         /// <summary>
         ///
         /// </summary>
-        Novita,
+        public static ProviderName Mistral { get; } = new("Mistral");
+
         /// <summary>
         ///
         /// </summary>
-        Nvidia,
+        public static ProviderName Modal { get; } = new("Modal");
+
         /// <summary>
         ///
         /// </summary>
-        OpenAI,
+        public static ProviderName ModelRun { get; } = new("ModelRun");
+
         /// <summary>
         ///
         /// </summary>
-        OpenInference,
+        public static ProviderName Modular { get; } = new("Modular");
+
         /// <summary>
         ///
         /// </summary>
-        Parasail,
+        public static ProviderName MoonshotAi { get; } = new("Moonshot AI");
+
         /// <summary>
         ///
         /// </summary>
-        Perceptron,
+        public static ProviderName Morph { get; } = new("Morph");
+
         /// <summary>
         ///
         /// </summary>
-        Perplexity,
+        public static ProviderName NearAi { get; } = new("Near AI");
+
         /// <summary>
         ///
         /// </summary>
-        Phala,
+        public static ProviderName Nebius { get; } = new("Nebius");
+
         /// <summary>
         ///
         /// </summary>
-        Poolside,
+        public static ProviderName NexAgi { get; } = new("Nex AGI");
+
         /// <summary>
         ///
         /// </summary>
-        Quiver,
+        public static ProviderName NextBit { get; } = new("NextBit");
+
         /// <summary>
         ///
         /// </summary>
-        Recraft,
+        public static ProviderName Novita { get; } = new("Novita");
+
         /// <summary>
         ///
         /// </summary>
-        Reka,
+        public static ProviderName Nvidia { get; } = new("Nvidia");
+
         /// <summary>
         ///
         /// </summary>
-        Relace,
+        public static ProviderName Ollama { get; } = new("Ollama");
+
         /// <summary>
         ///
         /// </summary>
-        SailResearch,
+        public static ProviderName OpenAI { get; } = new("OpenAI");
+
         /// <summary>
         ///
         /// </summary>
-        SakanaAi,
+        public static ProviderName OpenInference { get; } = new("OpenInference");
+
         /// <summary>
         ///
         /// </summary>
-        SambaNova,
+        public static ProviderName Parasail { get; } = new("Parasail");
+
         /// <summary>
         ///
         /// </summary>
-        Seed,
+        public static ProviderName Perceptron { get; } = new("Perceptron");
+
         /// <summary>
         ///
         /// </summary>
-        SiliconFlow,
+        public static ProviderName Perplexity { get; } = new("Perplexity");
+
         /// <summary>
         ///
         /// </summary>
-        Sourceful,
+        public static ProviderName Phala { get; } = new("Phala");
+
         /// <summary>
         ///
         /// </summary>
-        Stealth,
+        public static ProviderName Poolside { get; } = new("Poolside");
+
         /// <summary>
         ///
         /// </summary>
-        StepFun,
+        public static ProviderName PrimeIntellect { get; } = new("PrimeIntellect");
+
         /// <summary>
         ///
         /// </summary>
-        StreamLake,
+        public static ProviderName Quiver { get; } = new("Quiver");
+
         /// <summary>
         ///
         /// </summary>
-        Switchpoint,
+        public static ProviderName Recraft { get; } = new("Recraft");
+
         /// <summary>
         ///
         /// </summary>
-        Tencent,
+        public static ProviderName Reka { get; } = new("Reka");
+
         /// <summary>
         ///
         /// </summary>
-        Tenstorrent,
+        public static ProviderName Relace { get; } = new("Relace");
+
         /// <summary>
         ///
         /// </summary>
-        Together,
+        public static ProviderName Respan { get; } = new("Respan");
+
         /// <summary>
         ///
         /// </summary>
-        Upstage,
+        public static ProviderName Runway { get; } = new("Runway");
+
         /// <summary>
         ///
         /// </summary>
-        Venice,
+        public static ProviderName SailResearch { get; } = new("Sail Research");
+
         /// <summary>
         ///
         /// </summary>
-        Wafer,
+        public static ProviderName SakanaAi { get; } = new("Sakana AI");
+
         /// <summary>
         ///
         /// </summary>
-        WandB,
+        public static ProviderName SambaNova { get; } = new("SambaNova");
+
         /// <summary>
         ///
         /// </summary>
-        Xiaomi,
+        public static ProviderName ScaleDown { get; } = new("ScaleDown");
+
         /// <summary>
         ///
         /// </summary>
-        ZAi,
+        public static ProviderName Seed { get; } = new("Seed");
+
         /// <summary>
         ///
         /// </summary>
-        Xai,
+        public static ProviderName SiliconFlow { get; } = new("SiliconFlow");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Sourceful { get; } = new("Sourceful");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Stealth { get; } = new("Stealth");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName StepFun { get; } = new("StepFun");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName StreamLake { get; } = new("StreamLake");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Switchpoint { get; } = new("Switchpoint");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Tencent { get; } = new("Tencent");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Tenstorrent { get; } = new("Tenstorrent");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName ThinkingMachines { get; } = new("Thinking Machines");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Together { get; } = new("Together");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName TypeSafe { get; } = new("TypeSafe");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Unbiased { get; } = new("Unbiased");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Upstage { get; } = new("Upstage");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Venice { get; } = new("Venice");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName VoyageAIByMongoDB { get; } = new("VoyageAI by MongoDB");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Wafer { get; } = new("Wafer");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName WandB { get; } = new("WandB");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Xiaomi { get; } = new("Xiaomi");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName ZAi { get; } = new("Z.AI");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName Xai { get; } = new("xAI");
+        /// <summary>
+        ///
+        /// </summary>
+        public static ProviderName FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "AI21" => Ai21,
+                "AionLabs" => AionLabs,
+                "AkashML" => AkashML,
+                "Alibaba" => Alibaba,
+                "Amazon Bedrock" => AmazonBedrock,
+                "Amazon Nova" => AmazonNova,
+                "Ambient" => Ambient,
+                "Anthropic" => Anthropic,
+                "Arcee AI" => ArceeAi,
+                "AssemblyAI" => AssemblyAI,
+                "AtlasCloud" => AtlasCloud,
+                "Avian" => Avian,
+                "Azure" => Azure,
+                "Baidu" => Baidu,
+                "BaseTen" => BaseTen,
+                "Black Forest Labs" => BlackForestLabs,
+                "BytePlus" => BytePlus,
+                "Cerebras" => Cerebras,
+                "Chutes" => Chutes,
+                "Cirrascale" => Cirrascale,
+                "Clarifai" => Clarifai,
+                "Claude Platform on AWS" => ClaudePlatformOnAws,
+                "Cloudflare" => Cloudflare,
+                "Cohere" => Cohere,
+                "CoreWeave" => CoreWeave,
+                "Cosine" => Cosine,
+                "Crucible" => Crucible,
+                "Crusoe" => Crusoe,
+                "Darkbloom" => Darkbloom,
+                "Databricks" => Databricks,
+                "Decart" => Decart,
+                "DeepInfra" => DeepInfra,
+                "DeepSeek" => DeepSeek,
+                "Deepgram" => Deepgram,
+                "DekaLLM" => DekaLLM,
+                "DigitalOcean" => DigitalOcean,
+                "ElevenLabs" => ElevenLabs,
+                "FakeProvider" => FakeProvider,
+                "Featherless" => Featherless,
+                "Fireworks" => Fireworks,
+                "Fish Audio" => FishAudio,
+                "Friendli" => Friendli,
+                "GMICloud" => GMICloud,
+                "Google" => Google,
+                "Google AI Studio" => GoogleAiStudio,
+                "Groq" => Groq,
+                "HeyGen" => HeyGen,
+                "Inception" => Inception,
+                "Inceptron" => Inceptron,
+                "Inferact vLLM" => InferactVLLM,
+                "InferenceNet" => InferenceNet,
+                "Infermatic" => Infermatic,
+                "Inflection" => Inflection,
+                "Io Net" => IoNet,
+                "Ionstream" => Ionstream,
+                "Krea" => Krea,
+                "Liquid" => Liquid,
+                "Makora" => Makora,
+                "Mancer 2" => Mancer2,
+                "Mara" => Mara,
+                "Meta" => Meta,
+                "Minimax" => Minimax,
+                "Mistral" => Mistral,
+                "Modal" => Modal,
+                "ModelRun" => ModelRun,
+                "Modular" => Modular,
+                "Moonshot AI" => MoonshotAi,
+                "Morph" => Morph,
+                "Near AI" => NearAi,
+                "Nebius" => Nebius,
+                "Nex AGI" => NexAgi,
+                "NextBit" => NextBit,
+                "Novita" => Novita,
+                "Nvidia" => Nvidia,
+                "Ollama" => Ollama,
+                "OpenAI" => OpenAI,
+                "OpenInference" => OpenInference,
+                "Parasail" => Parasail,
+                "Perceptron" => Perceptron,
+                "Perplexity" => Perplexity,
+                "Phala" => Phala,
+                "Poolside" => Poolside,
+                "PrimeIntellect" => PrimeIntellect,
+                "Quiver" => Quiver,
+                "Recraft" => Recraft,
+                "Reka" => Reka,
+                "Relace" => Relace,
+                "Respan" => Respan,
+                "Runway" => Runway,
+                "Sail Research" => SailResearch,
+                "Sakana AI" => SakanaAi,
+                "SambaNova" => SambaNova,
+                "ScaleDown" => ScaleDown,
+                "Seed" => Seed,
+                "SiliconFlow" => SiliconFlow,
+                "Sourceful" => Sourceful,
+                "Stealth" => Stealth,
+                "StepFun" => StepFun,
+                "StreamLake" => StreamLake,
+                "Switchpoint" => Switchpoint,
+                "Tencent" => Tencent,
+                "Tenstorrent" => Tenstorrent,
+                "Thinking Machines" => ThinkingMachines,
+                "Together" => Together,
+                "TypeSafe" => TypeSafe,
+                "Unbiased" => Unbiased,
+                "Upstage" => Upstage,
+                "Venice" => Venice,
+                "VoyageAI by MongoDB" => VoyageAIByMongoDB,
+                "Wafer" => Wafer,
+                "WandB" => WandB,
+                "Xiaomi" => Xiaomi,
+                "Z.AI" => ZAi,
+                "xAI" => Xai,
+                _ => new ProviderName(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "AI21" => true,
+            "AionLabs" => true,
+            "AkashML" => true,
+            "Alibaba" => true,
+            "Amazon Bedrock" => true,
+            "Amazon Nova" => true,
+            "Ambient" => true,
+            "Anthropic" => true,
+            "Arcee AI" => true,
+            "AssemblyAI" => true,
+            "AtlasCloud" => true,
+            "Avian" => true,
+            "Azure" => true,
+            "Baidu" => true,
+            "BaseTen" => true,
+            "Black Forest Labs" => true,
+            "BytePlus" => true,
+            "Cerebras" => true,
+            "Chutes" => true,
+            "Cirrascale" => true,
+            "Clarifai" => true,
+            "Claude Platform on AWS" => true,
+            "Cloudflare" => true,
+            "Cohere" => true,
+            "CoreWeave" => true,
+            "Cosine" => true,
+            "Crucible" => true,
+            "Crusoe" => true,
+            "Darkbloom" => true,
+            "Databricks" => true,
+            "Decart" => true,
+            "DeepInfra" => true,
+            "DeepSeek" => true,
+            "Deepgram" => true,
+            "DekaLLM" => true,
+            "DigitalOcean" => true,
+            "ElevenLabs" => true,
+            "FakeProvider" => true,
+            "Featherless" => true,
+            "Fireworks" => true,
+            "Fish Audio" => true,
+            "Friendli" => true,
+            "GMICloud" => true,
+            "Google" => true,
+            "Google AI Studio" => true,
+            "Groq" => true,
+            "HeyGen" => true,
+            "Inception" => true,
+            "Inceptron" => true,
+            "Inferact vLLM" => true,
+            "InferenceNet" => true,
+            "Infermatic" => true,
+            "Inflection" => true,
+            "Io Net" => true,
+            "Ionstream" => true,
+            "Krea" => true,
+            "Liquid" => true,
+            "Makora" => true,
+            "Mancer 2" => true,
+            "Mara" => true,
+            "Meta" => true,
+            "Minimax" => true,
+            "Mistral" => true,
+            "Modal" => true,
+            "ModelRun" => true,
+            "Modular" => true,
+            "Moonshot AI" => true,
+            "Morph" => true,
+            "Near AI" => true,
+            "Nebius" => true,
+            "Nex AGI" => true,
+            "NextBit" => true,
+            "Novita" => true,
+            "Nvidia" => true,
+            "Ollama" => true,
+            "OpenAI" => true,
+            "OpenInference" => true,
+            "Parasail" => true,
+            "Perceptron" => true,
+            "Perplexity" => true,
+            "Phala" => true,
+            "Poolside" => true,
+            "PrimeIntellect" => true,
+            "Quiver" => true,
+            "Recraft" => true,
+            "Reka" => true,
+            "Relace" => true,
+            "Respan" => true,
+            "Runway" => true,
+            "Sail Research" => true,
+            "Sakana AI" => true,
+            "SambaNova" => true,
+            "ScaleDown" => true,
+            "Seed" => true,
+            "SiliconFlow" => true,
+            "Sourceful" => true,
+            "Stealth" => true,
+            "StepFun" => true,
+            "StreamLake" => true,
+            "Switchpoint" => true,
+            "Tencent" => true,
+            "Tenstorrent" => true,
+            "Thinking Machines" => true,
+            "Together" => true,
+            "TypeSafe" => true,
+            "Unbiased" => true,
+            "Upstage" => true,
+            "Venice" => true,
+            "VoyageAI by MongoDB" => true,
+            "Wafer" => true,
+            "WandB" => true,
+            "Xiaomi" => true,
+            "Z.AI" => true,
+            "xAI" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(ProviderName other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ProviderName other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(ProviderName left, ProviderName right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(ProviderName left, ProviderName right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -408,214 +890,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this ProviderName value)
         {
-            return value switch
-            {
-                ProviderName.Ai21 => "AI21",
-                ProviderName.AionLabs => "AionLabs",
-                ProviderName.AkashML => "AkashML",
-                ProviderName.Alibaba => "Alibaba",
-                ProviderName.AmazonBedrock => "Amazon Bedrock",
-                ProviderName.AmazonNova => "Amazon Nova",
-                ProviderName.Ambient => "Ambient",
-                ProviderName.Anthropic => "Anthropic",
-                ProviderName.ArceeAi => "Arcee AI",
-                ProviderName.AtlasCloud => "AtlasCloud",
-                ProviderName.Avian => "Avian",
-                ProviderName.Azure => "Azure",
-                ProviderName.Baidu => "Baidu",
-                ProviderName.BaseTen => "BaseTen",
-                ProviderName.BlackForestLabs => "Black Forest Labs",
-                ProviderName.BytePlus => "BytePlus",
-                ProviderName.Cerebras => "Cerebras",
-                ProviderName.Chutes => "Chutes",
-                ProviderName.Cirrascale => "Cirrascale",
-                ProviderName.Clarifai => "Clarifai",
-                ProviderName.Cloudflare => "Cloudflare",
-                ProviderName.Cohere => "Cohere",
-                ProviderName.Crucible => "Crucible",
-                ProviderName.Crusoe => "Crusoe",
-                ProviderName.Darkbloom => "Darkbloom",
-                ProviderName.Decart => "Decart",
-                ProviderName.DeepInfra => "DeepInfra",
-                ProviderName.DeepSeek => "DeepSeek",
-                ProviderName.Deepgram => "Deepgram",
-                ProviderName.DekaLLM => "DekaLLM",
-                ProviderName.DigitalOcean => "DigitalOcean",
-                ProviderName.FakeProvider => "FakeProvider",
-                ProviderName.Featherless => "Featherless",
-                ProviderName.Fireworks => "Fireworks",
-                ProviderName.FishAudio => "Fish Audio",
-                ProviderName.Friendli => "Friendli",
-                ProviderName.GMICloud => "GMICloud",
-                ProviderName.Google => "Google",
-                ProviderName.GoogleAiStudio => "Google AI Studio",
-                ProviderName.Groq => "Groq",
-                ProviderName.HeyGen => "HeyGen",
-                ProviderName.Inception => "Inception",
-                ProviderName.Inceptron => "Inceptron",
-                ProviderName.InferactVLLM => "Inferact vLLM",
-                ProviderName.InferenceNet => "InferenceNet",
-                ProviderName.Infermatic => "Infermatic",
-                ProviderName.Inflection => "Inflection",
-                ProviderName.IoNet => "Io Net",
-                ProviderName.Ionstream => "Ionstream",
-                ProviderName.Krea => "Krea",
-                ProviderName.Liquid => "Liquid",
-                ProviderName.Mancer2 => "Mancer 2",
-                ProviderName.Mara => "Mara",
-                ProviderName.Meta => "Meta",
-                ProviderName.Minimax => "Minimax",
-                ProviderName.Mistral => "Mistral",
-                ProviderName.ModelRun => "ModelRun",
-                ProviderName.Modular => "Modular",
-                ProviderName.MoonshotAi => "Moonshot AI",
-                ProviderName.Morph => "Morph",
-                ProviderName.NCompass => "NCompass",
-                ProviderName.Nebius => "Nebius",
-                ProviderName.NexAgi => "Nex AGI",
-                ProviderName.NextBit => "NextBit",
-                ProviderName.Novita => "Novita",
-                ProviderName.Nvidia => "Nvidia",
-                ProviderName.OpenAI => "OpenAI",
-                ProviderName.OpenInference => "OpenInference",
-                ProviderName.Parasail => "Parasail",
-                ProviderName.Perceptron => "Perceptron",
-                ProviderName.Perplexity => "Perplexity",
-                ProviderName.Phala => "Phala",
-                ProviderName.Poolside => "Poolside",
-                ProviderName.Quiver => "Quiver",
-                ProviderName.Recraft => "Recraft",
-                ProviderName.Reka => "Reka",
-                ProviderName.Relace => "Relace",
-                ProviderName.SailResearch => "Sail Research",
-                ProviderName.SakanaAi => "Sakana AI",
-                ProviderName.SambaNova => "SambaNova",
-                ProviderName.Seed => "Seed",
-                ProviderName.SiliconFlow => "SiliconFlow",
-                ProviderName.Sourceful => "Sourceful",
-                ProviderName.Stealth => "Stealth",
-                ProviderName.StepFun => "StepFun",
-                ProviderName.StreamLake => "StreamLake",
-                ProviderName.Switchpoint => "Switchpoint",
-                ProviderName.Tencent => "Tencent",
-                ProviderName.Tenstorrent => "Tenstorrent",
-                ProviderName.Together => "Together",
-                ProviderName.Upstage => "Upstage",
-                ProviderName.Venice => "Venice",
-                ProviderName.Wafer => "Wafer",
-                ProviderName.WandB => "WandB",
-                ProviderName.Xiaomi => "Xiaomi",
-                ProviderName.ZAi => "Z.AI",
-                ProviderName.Xai => "xAI",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static ProviderName? ToEnum(string value)
         {
-            return value switch
-            {
-                "AI21" => ProviderName.Ai21,
-                "AionLabs" => ProviderName.AionLabs,
-                "AkashML" => ProviderName.AkashML,
-                "Alibaba" => ProviderName.Alibaba,
-                "Amazon Bedrock" => ProviderName.AmazonBedrock,
-                "Amazon Nova" => ProviderName.AmazonNova,
-                "Ambient" => ProviderName.Ambient,
-                "Anthropic" => ProviderName.Anthropic,
-                "Arcee AI" => ProviderName.ArceeAi,
-                "AtlasCloud" => ProviderName.AtlasCloud,
-                "Avian" => ProviderName.Avian,
-                "Azure" => ProviderName.Azure,
-                "Baidu" => ProviderName.Baidu,
-                "BaseTen" => ProviderName.BaseTen,
-                "Black Forest Labs" => ProviderName.BlackForestLabs,
-                "BytePlus" => ProviderName.BytePlus,
-                "Cerebras" => ProviderName.Cerebras,
-                "Chutes" => ProviderName.Chutes,
-                "Cirrascale" => ProviderName.Cirrascale,
-                "Clarifai" => ProviderName.Clarifai,
-                "Cloudflare" => ProviderName.Cloudflare,
-                "Cohere" => ProviderName.Cohere,
-                "Crucible" => ProviderName.Crucible,
-                "Crusoe" => ProviderName.Crusoe,
-                "Darkbloom" => ProviderName.Darkbloom,
-                "Decart" => ProviderName.Decart,
-                "DeepInfra" => ProviderName.DeepInfra,
-                "DeepSeek" => ProviderName.DeepSeek,
-                "Deepgram" => ProviderName.Deepgram,
-                "DekaLLM" => ProviderName.DekaLLM,
-                "DigitalOcean" => ProviderName.DigitalOcean,
-                "FakeProvider" => ProviderName.FakeProvider,
-                "Featherless" => ProviderName.Featherless,
-                "Fireworks" => ProviderName.Fireworks,
-                "Fish Audio" => ProviderName.FishAudio,
-                "Friendli" => ProviderName.Friendli,
-                "GMICloud" => ProviderName.GMICloud,
-                "Google" => ProviderName.Google,
-                "Google AI Studio" => ProviderName.GoogleAiStudio,
-                "Groq" => ProviderName.Groq,
-                "HeyGen" => ProviderName.HeyGen,
-                "Inception" => ProviderName.Inception,
-                "Inceptron" => ProviderName.Inceptron,
-                "Inferact vLLM" => ProviderName.InferactVLLM,
-                "InferenceNet" => ProviderName.InferenceNet,
-                "Infermatic" => ProviderName.Infermatic,
-                "Inflection" => ProviderName.Inflection,
-                "Io Net" => ProviderName.IoNet,
-                "Ionstream" => ProviderName.Ionstream,
-                "Krea" => ProviderName.Krea,
-                "Liquid" => ProviderName.Liquid,
-                "Mancer 2" => ProviderName.Mancer2,
-                "Mara" => ProviderName.Mara,
-                "Meta" => ProviderName.Meta,
-                "Minimax" => ProviderName.Minimax,
-                "Mistral" => ProviderName.Mistral,
-                "ModelRun" => ProviderName.ModelRun,
-                "Modular" => ProviderName.Modular,
-                "Moonshot AI" => ProviderName.MoonshotAi,
-                "Morph" => ProviderName.Morph,
-                "NCompass" => ProviderName.NCompass,
-                "Nebius" => ProviderName.Nebius,
-                "Nex AGI" => ProviderName.NexAgi,
-                "NextBit" => ProviderName.NextBit,
-                "Novita" => ProviderName.Novita,
-                "Nvidia" => ProviderName.Nvidia,
-                "OpenAI" => ProviderName.OpenAI,
-                "OpenInference" => ProviderName.OpenInference,
-                "Parasail" => ProviderName.Parasail,
-                "Perceptron" => ProviderName.Perceptron,
-                "Perplexity" => ProviderName.Perplexity,
-                "Phala" => ProviderName.Phala,
-                "Poolside" => ProviderName.Poolside,
-                "Quiver" => ProviderName.Quiver,
-                "Recraft" => ProviderName.Recraft,
-                "Reka" => ProviderName.Reka,
-                "Relace" => ProviderName.Relace,
-                "Sail Research" => ProviderName.SailResearch,
-                "Sakana AI" => ProviderName.SakanaAi,
-                "SambaNova" => ProviderName.SambaNova,
-                "Seed" => ProviderName.Seed,
-                "SiliconFlow" => ProviderName.SiliconFlow,
-                "Sourceful" => ProviderName.Sourceful,
-                "Stealth" => ProviderName.Stealth,
-                "StepFun" => ProviderName.StepFun,
-                "StreamLake" => ProviderName.StreamLake,
-                "Switchpoint" => ProviderName.Switchpoint,
-                "Tencent" => ProviderName.Tencent,
-                "Tenstorrent" => ProviderName.Tenstorrent,
-                "Together" => ProviderName.Together,
-                "Upstage" => ProviderName.Upstage,
-                "Venice" => ProviderName.Venice,
-                "Wafer" => ProviderName.Wafer,
-                "WandB" => ProviderName.WandB,
-                "Xiaomi" => ProviderName.Xiaomi,
-                "Z.AI" => ProviderName.ZAi,
-                "xAI" => ProviderName.Xai,
-                _ => null,
-            };
+            return ProviderName.FromValue(value);
         }
     }
 }

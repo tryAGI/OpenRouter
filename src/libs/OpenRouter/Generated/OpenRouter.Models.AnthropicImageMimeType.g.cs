@@ -3,28 +3,112 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    ///
+    /// Example: image/jpeg
     /// </summary>
-    public enum AnthropicImageMimeType
+    public readonly partial struct AnthropicImageMimeType : global::System.IEquatable<AnthropicImageMimeType>
     {
         /// <summary>
         ///
         /// </summary>
-        ImageGif,
+        public AnthropicImageMimeType(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        ImageJpeg,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        ImagePng,
+        public static AnthropicImageMimeType ImageGif { get; } = new("image/gif");
+
         /// <summary>
         ///
         /// </summary>
-        ImageWebp,
+        public static AnthropicImageMimeType ImageJpeg { get; } = new("image/jpeg");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnthropicImageMimeType ImagePng { get; } = new("image/png");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnthropicImageMimeType ImageWebp { get; } = new("image/webp");
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnthropicImageMimeType FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "image/gif" => ImageGif,
+                "image/jpeg" => ImageJpeg,
+                "image/png" => ImagePng,
+                "image/webp" => ImageWebp,
+                _ => new AnthropicImageMimeType(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "image/gif" => true,
+            "image/jpeg" => true,
+            "image/png" => true,
+            "image/webp" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(AnthropicImageMimeType other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is AnthropicImageMimeType other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(AnthropicImageMimeType left, AnthropicImageMimeType right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(AnthropicImageMimeType left, AnthropicImageMimeType right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -36,28 +120,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this AnthropicImageMimeType value)
         {
-            return value switch
-            {
-                AnthropicImageMimeType.ImageGif => "image/gif",
-                AnthropicImageMimeType.ImageJpeg => "image/jpeg",
-                AnthropicImageMimeType.ImagePng => "image/png",
-                AnthropicImageMimeType.ImageWebp => "image/webp",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static AnthropicImageMimeType? ToEnum(string value)
         {
-            return value switch
-            {
-                "image/gif" => AnthropicImageMimeType.ImageGif,
-                "image/jpeg" => AnthropicImageMimeType.ImageJpeg,
-                "image/png" => AnthropicImageMimeType.ImagePng,
-                "image/webp" => AnthropicImageMimeType.ImageWebp,
-                _ => null,
-            };
+            return AnthropicImageMimeType.FromValue(value);
         }
     }
 }

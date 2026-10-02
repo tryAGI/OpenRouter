@@ -6,11 +6,13 @@ namespace OpenRouter
     /// <summary>
     /// Provider-specific passthrough configuration
     /// </summary>
-    public sealed partial class SttRequestProvider
+    public sealed partial class STTRequestProvider
     {
         /// <summary>
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
+        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
+        /// Example: {"openai":{"max_tokens":1000}}
         /// </summary>
+        /// <example>{"openai":{"max_tokens":1000}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         public global::OpenRouter.ProviderOptions? Options { get; set; }
 
@@ -21,24 +23,25 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SttRequestProvider" /> class.
+        /// Initializes a new instance of the <see cref="STTRequestProvider" /> class.
         /// </summary>
         /// <param name="options">
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
+        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
+        /// Example: {"openai":{"max_tokens":1000}}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public SttRequestProvider(
+        public STTRequestProvider(
             global::OpenRouter.ProviderOptions? options)
         {
             this.Options = options;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SttRequestProvider" /> class.
+        /// Initializes a new instance of the <see cref="STTRequestProvider" /> class.
         /// </summary>
-        public SttRequestProvider()
+        public STTRequestProvider()
         {
         }
 

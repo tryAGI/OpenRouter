@@ -1,0 +1,45 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    /// <summary>
+    /// Example: {"error":{"code":400,"message":"custom_id is required on requests[0]."}}
+    /// </summary>
+    public sealed partial class BatchErrorResponse
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.BatchErrorResponseError Error { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchErrorResponse" /> class.
+        /// </summary>
+        /// <param name="error"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BatchErrorResponse(
+            global::OpenRouter.BatchErrorResponseError error)
+        {
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchErrorResponse" /> class.
+        /// </summary>
+        public BatchErrorResponse()
+        {
+        }
+
+    }
+}

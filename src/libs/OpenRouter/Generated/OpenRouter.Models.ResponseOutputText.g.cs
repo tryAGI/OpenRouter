@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"annotations":[{"end_index":42,"start_index":0,"title":"Paris - Wikipedia","type":"url_citation","url":"https://en.wikipedia.org/wiki/Paris"}],"text":"The capital of France is Paris.","type":"output_text"}
     /// </summary>
     public sealed partial class ResponseOutputText
     {
@@ -18,7 +18,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItems>? Logprobs { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprob>? Logprobs { get; set; }
 
         /// <summary>
         ///
@@ -53,7 +53,7 @@ namespace OpenRouter
         public ResponseOutputText(
             string text,
             global::System.Collections.Generic.IList<global::OpenRouter.OpenAIResponsesAnnotation>? annotations,
-            global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprobsItems>? logprobs,
+            global::System.Collections.Generic.IList<global::OpenRouter.ResponseOutputTextLogprob>? logprobs,
             global::OpenRouter.ResponseOutputTextType type)
         {
             this.Annotations = annotations;

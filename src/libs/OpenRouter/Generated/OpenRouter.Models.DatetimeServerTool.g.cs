@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: returns the current date and time
+    /// OpenRouter built-in server tool: returns the current date and time<br/>
+    /// Example: {"parameters":{"timezone":"America/New_York"},"type":"openrouter:datetime"}
     /// </summary>
     public sealed partial class DatetimeServerTool
     {
         /// <summary>
-        /// Configuration for the openrouter:datetime server tool
+        /// Configuration for the openrouter:datetime server tool<br/>
+        /// Example: {"timezone":"America/New_York"}
         /// </summary>
+        /// <example>{"timezone":"America/New_York"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.DatetimeServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="DatetimeServerTool" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:datetime server tool
+        /// Configuration for the openrouter:datetime server tool<br/>
+        /// Example: {"timezone":"America/New_York"}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

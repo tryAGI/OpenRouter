@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":100}
     /// </summary>
     public sealed partial class AnthropicCacheCreation
     {

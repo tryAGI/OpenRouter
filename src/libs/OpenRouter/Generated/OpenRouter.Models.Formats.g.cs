@@ -5,12 +5,14 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Text response format configuration
+    /// Text response format configuration<br/>
+    /// Example: {"type":"text"}
     /// </summary>
     public readonly partial struct Formats : global::System.IEquatable<Formats>
     {
         /// <summary>
-        /// Plain text response format
+        /// Plain text response format<br/>
+        /// Example: {"type":"text"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FormatTextConfig? FormatTextConfig { get; init; }
@@ -47,7 +49,8 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'FormatTextConfig' but the value was {ToString()}.");
 
         /// <summary>
-        /// JSON object response format
+        /// JSON object response format<br/>
+        /// Example: {"type":"json_object"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FormatJsonObjectConfig? FormatJsonObjectConfig { get; init; }
@@ -84,7 +87,8 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonObjectConfig' but the value was {ToString()}.");
 
         /// <summary>
-        /// JSON schema constrained response format
+        /// JSON schema constrained response format<br/>
+        /// Example: {"description":"User information schema","name":"user_info","schema":{"properties":{"age":{"type":"number"},"name":{"type":"string"}},"required":["name"],"type":"object"},"type":"json_schema"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FormatJsonSchemaConfig? FormatJsonSchemaConfig { get; init; }
@@ -225,7 +229,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsFormatTextConfig && !IsFormatJsonObjectConfig && !IsFormatJsonSchemaConfig || !IsFormatTextConfig && IsFormatJsonObjectConfig && !IsFormatJsonSchemaConfig || !IsFormatTextConfig && !IsFormatJsonObjectConfig && IsFormatJsonSchemaConfig;
+            return IsFormatTextConfig || IsFormatJsonObjectConfig || IsFormatJsonSchemaConfig;
         }
 
         /// <summary>

@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"text":"Hello, world!","type":"text"}
     /// </summary>
     public sealed partial class AnthropicTextBlockParam
     {
         /// <summary>
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
+        /// Example: {"type":"ephemeral"}
         /// </summary>
+        /// <example>{"type":"ephemeral"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
@@ -18,7 +20,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParamCitationsItems>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.CitationsItem>? Citations { get; set; }
 
         /// <summary>
         ///
@@ -45,7 +47,8 @@ namespace OpenRouter
         /// </summary>
         /// <param name="text"></param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
+        /// Example: {"type":"ephemeral"}
         /// </param>
         /// <param name="citations"></param>
         /// <param name="type"></param>
@@ -55,7 +58,7 @@ namespace OpenRouter
         public AnthropicTextBlockParam(
             string text,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
-            global::System.Collections.Generic.IList<global::OpenRouter.AnthropicTextBlockParamCitationsItems>? citations,
+            global::System.Collections.Generic.IList<global::OpenRouter.CitationsItem>? citations,
             global::OpenRouter.AnthropicTextBlockParamType type)
         {
             this.CacheControl = cacheControl;

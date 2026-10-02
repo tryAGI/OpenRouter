@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Request Timeout - Operation exceeded time limit
+    /// Request Timeout - Operation exceeded time limit<br/>
+    /// Example: {"error":{"code":408,"message":"Operation timed out. Please try again later."}}
     /// </summary>
     public sealed partial class RequestTimeoutResponse
     {
         /// <summary>
-        /// Error data for RequestTimeoutResponse
+        /// Error data for RequestTimeoutResponse<br/>
+        /// Example: {"code":408,"message":"Operation timed out. Please try again later."}
         /// </summary>
+        /// <example>{"code":408,"message":"Operation timed out. Please try again later."}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.RequestTimeoutResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="RequestTimeoutResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for RequestTimeoutResponse
+        /// Error data for RequestTimeoutResponse<br/>
+        /// Example: {"code":408,"message":"Operation timed out. Please try again later."}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

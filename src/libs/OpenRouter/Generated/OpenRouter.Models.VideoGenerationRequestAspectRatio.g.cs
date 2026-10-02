@@ -3,48 +3,148 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    /// Aspect ratio of the generated video
+    /// Aspect ratio of the generated video<br/>
+    /// Example: 16:9
     /// </summary>
-    public enum VideoGenerationRequestAspectRatio
+    public readonly partial struct VideoGenerationRequestAspectRatio : global::System.IEquatable<VideoGenerationRequestAspectRatio>
     {
         /// <summary>
         ///
         /// </summary>
-        x16_9,
+        public VideoGenerationRequestAspectRatio(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        x1_1,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        x21_9,
+        public static VideoGenerationRequestAspectRatio x16_9 { get; } = new("16:9");
+
         /// <summary>
         ///
         /// </summary>
-        x2_3,
+        public static VideoGenerationRequestAspectRatio x1_1 { get; } = new("1:1");
+
         /// <summary>
         ///
         /// </summary>
-        x3_2,
+        public static VideoGenerationRequestAspectRatio x21_9 { get; } = new("21:9");
+
         /// <summary>
         ///
         /// </summary>
-        x3_4,
+        public static VideoGenerationRequestAspectRatio x2_3 { get; } = new("2:3");
+
         /// <summary>
         ///
         /// </summary>
-        x4_3,
+        public static VideoGenerationRequestAspectRatio x3_2 { get; } = new("3:2");
+
         /// <summary>
         ///
         /// </summary>
-        x9_16,
+        public static VideoGenerationRequestAspectRatio x3_4 { get; } = new("3:4");
+
         /// <summary>
         ///
         /// </summary>
-        x9_21,
+        public static VideoGenerationRequestAspectRatio x4_3 { get; } = new("4:3");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoGenerationRequestAspectRatio x9_16 { get; } = new("9:16");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoGenerationRequestAspectRatio x9_21 { get; } = new("9:21");
+        /// <summary>
+        ///
+        /// </summary>
+        public static VideoGenerationRequestAspectRatio FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "16:9" => x16_9,
+                "1:1" => x1_1,
+                "21:9" => x21_9,
+                "2:3" => x2_3,
+                "3:2" => x3_2,
+                "3:4" => x3_4,
+                "4:3" => x4_3,
+                "9:16" => x9_16,
+                "9:21" => x9_21,
+                _ => new VideoGenerationRequestAspectRatio(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "16:9" => true,
+            "1:1" => true,
+            "21:9" => true,
+            "2:3" => true,
+            "3:2" => true,
+            "3:4" => true,
+            "4:3" => true,
+            "9:16" => true,
+            "9:21" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(VideoGenerationRequestAspectRatio other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is VideoGenerationRequestAspectRatio other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(VideoGenerationRequestAspectRatio left, VideoGenerationRequestAspectRatio right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(VideoGenerationRequestAspectRatio left, VideoGenerationRequestAspectRatio right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -56,38 +156,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this VideoGenerationRequestAspectRatio value)
         {
-            return value switch
-            {
-                VideoGenerationRequestAspectRatio.x16_9 => "16:9",
-                VideoGenerationRequestAspectRatio.x1_1 => "1:1",
-                VideoGenerationRequestAspectRatio.x21_9 => "21:9",
-                VideoGenerationRequestAspectRatio.x2_3 => "2:3",
-                VideoGenerationRequestAspectRatio.x3_2 => "3:2",
-                VideoGenerationRequestAspectRatio.x3_4 => "3:4",
-                VideoGenerationRequestAspectRatio.x4_3 => "4:3",
-                VideoGenerationRequestAspectRatio.x9_16 => "9:16",
-                VideoGenerationRequestAspectRatio.x9_21 => "9:21",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static VideoGenerationRequestAspectRatio? ToEnum(string value)
         {
-            return value switch
-            {
-                "16:9" => VideoGenerationRequestAspectRatio.x16_9,
-                "1:1" => VideoGenerationRequestAspectRatio.x1_1,
-                "21:9" => VideoGenerationRequestAspectRatio.x21_9,
-                "2:3" => VideoGenerationRequestAspectRatio.x2_3,
-                "3:2" => VideoGenerationRequestAspectRatio.x3_2,
-                "3:4" => VideoGenerationRequestAspectRatio.x3_4,
-                "4:3" => VideoGenerationRequestAspectRatio.x4_3,
-                "9:16" => VideoGenerationRequestAspectRatio.x9_16,
-                "9:21" => VideoGenerationRequestAspectRatio.x9_21,
-                _ => null,
-            };
+            return VideoGenerationRequestAspectRatio.FromValue(value);
         }
     }
 }

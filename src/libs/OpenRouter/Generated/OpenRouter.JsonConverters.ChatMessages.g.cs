@@ -21,53 +21,53 @@ namespace OpenRouter.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatMessagesDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenRouter.ChatMessagesVariant1? assistant = default;
-            if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.Assistant)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatMessagesVariant1)}");
-                assistant = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::OpenRouter.ChatMessagesVariant2? developer = default;
-            if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.Developer)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatMessagesVariant2)}");
-                developer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::OpenRouter.ChatMessagesVariant3? system = default;
+            global::OpenRouter.ChatSystemMessage? system = default;
             if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.System)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant3> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatMessagesVariant3)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSystemMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatSystemMessage)}");
                 system = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.ChatMessagesVariant4? tool = default;
-            if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.Tool)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant4> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatMessagesVariant4)}");
-                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::OpenRouter.ChatMessagesVariant5? user = default;
+            global::OpenRouter.ChatUserMessage? user = default;
             if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.User)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant5> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatMessagesVariant5)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatUserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatUserMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatUserMessage)}");
                 user = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.ChatDeveloperMessage? developer = default;
+            if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.Developer)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatDeveloperMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatDeveloperMessage)}");
+                developer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.ChatAssistantMessage? assistant = default;
+            if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.Assistant)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatAssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatAssistantMessage)}");
+                assistant = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.ChatToolMessage? tool = default;
+            if (discriminator?.Role == global::OpenRouter.ChatMessagesDiscriminatorRole.Tool)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatToolMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ChatToolMessage)}");
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::OpenRouter.ChatMessages(
                 discriminator?.Role,
-                assistant,
+                system,
+
+                user,
 
                 developer,
 
-                system,
+                assistant,
 
-                tool,
-
-                user
+                tool
                 );
 
             return __value;
@@ -82,35 +82,35 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAssistant)
+            if (value.IsSystem)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatMessagesVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAssistant(), typeInfo);
-            }
-            else if (value.IsDeveloper)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatMessagesVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeveloper(), typeInfo);
-            }
-            else if (value.IsSystem)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatMessagesVariant3).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSystemMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSystemMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSystem(), typeInfo);
-            }
-            else if (value.IsTool)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant4?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatMessagesVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
             else if (value.IsUser)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatMessagesVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatMessagesVariant5?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatMessagesVariant5).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatUserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatUserMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatUserMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUser(), typeInfo);
+            }
+            else if (value.IsDeveloper)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatDeveloperMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatDeveloperMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeveloper(), typeInfo);
+            }
+            else if (value.IsAssistant)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatAssistantMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatAssistantMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAssistant(), typeInfo);
+            }
+            else if (value.IsTool)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatToolMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatToolMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
         }
     }

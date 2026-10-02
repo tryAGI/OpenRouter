@@ -21,26 +21,26 @@ namespace OpenRouter.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenRouter.AnthropicBashCodeExecutionContentVariant1? bashCodeExecutionResult = default;
-            if (discriminator?.Type == global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminatorType.BashCodeExecutionResult)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1)}");
-                bashCodeExecutionResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::OpenRouter.AnthropicBashCodeExecutionContentVariant2? bashCodeExecutionToolResultError = default;
+            global::OpenRouter.AnthropicBashCodeExecutionToolResultError? bashCodeExecutionToolResultError = default;
             if (discriminator?.Type == global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminatorType.BashCodeExecutionToolResultError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionContentVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionToolResultError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionToolResultError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicBashCodeExecutionToolResultError)}");
                 bashCodeExecutionToolResultError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.AnthropicBashCodeExecutionResult? bashCodeExecutionResult = default;
+            if (discriminator?.Type == global::OpenRouter.AnthropicBashCodeExecutionContentDiscriminatorType.BashCodeExecutionResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicBashCodeExecutionResult)}");
+                bashCodeExecutionResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::OpenRouter.AnthropicBashCodeExecutionContent(
                 discriminator?.Type,
-                bashCodeExecutionResult,
+                bashCodeExecutionToolResultError,
 
-                bashCodeExecutionToolResultError
+                bashCodeExecutionResult
                 );
 
             return __value;
@@ -55,17 +55,17 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsBashCodeExecutionResult)
+            if (value.IsBashCodeExecutionToolResultError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionContentVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBashCodeExecutionResult(), typeInfo);
-            }
-            else if (value.IsBashCodeExecutionToolResultError)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionContentVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicBashCodeExecutionContentVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionToolResultError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionToolResultError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicBashCodeExecutionToolResultError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBashCodeExecutionToolResultError(), typeInfo);
+            }
+            else if (value.IsBashCodeExecutionResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicBashCodeExecutionResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicBashCodeExecutionResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicBashCodeExecutionResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBashCodeExecutionResult(), typeInfo);
             }
         }
     }

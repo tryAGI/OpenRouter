@@ -3,40 +3,134 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    /// Shorthand for setting reasoning effort. Equivalent to setting reasoning.effort. Cannot be used simultaneously with reasoning.effort if they differ.
+    /// Constrains effort on reasoning for reasoning models<br/>
+    /// Example: medium
     /// </summary>
-    public enum ChatRequestReasoningEffort
+    public readonly partial struct ChatRequestReasoningEffort : global::System.IEquatable<ChatRequestReasoningEffort>
     {
         /// <summary>
         ///
         /// </summary>
-        High,
+        public ChatRequestReasoningEffort(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        Low,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        Max,
+        public static ChatRequestReasoningEffort High { get; } = new("high");
+
         /// <summary>
         ///
         /// </summary>
-        Medium,
+        public static ChatRequestReasoningEffort Low { get; } = new("low");
+
         /// <summary>
         ///
         /// </summary>
-        Minimal,
+        public static ChatRequestReasoningEffort Max { get; } = new("max");
+
         /// <summary>
         ///
         /// </summary>
-        None,
+        public static ChatRequestReasoningEffort Medium { get; } = new("medium");
+
         /// <summary>
         ///
         /// </summary>
-        Xhigh,
+        public static ChatRequestReasoningEffort Minimal { get; } = new("minimal");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatRequestReasoningEffort None { get; } = new("none");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatRequestReasoningEffort Xhigh { get; } = new("xhigh");
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatRequestReasoningEffort FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "high" => High,
+                "low" => Low,
+                "max" => Max,
+                "medium" => Medium,
+                "minimal" => Minimal,
+                "none" => None,
+                "xhigh" => Xhigh,
+                _ => new ChatRequestReasoningEffort(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "high" => true,
+            "low" => true,
+            "max" => true,
+            "medium" => true,
+            "minimal" => true,
+            "none" => true,
+            "xhigh" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(ChatRequestReasoningEffort other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ChatRequestReasoningEffort other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(ChatRequestReasoningEffort left, ChatRequestReasoningEffort right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(ChatRequestReasoningEffort left, ChatRequestReasoningEffort right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -48,34 +142,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this ChatRequestReasoningEffort value)
         {
-            return value switch
-            {
-                ChatRequestReasoningEffort.High => "high",
-                ChatRequestReasoningEffort.Low => "low",
-                ChatRequestReasoningEffort.Max => "max",
-                ChatRequestReasoningEffort.Medium => "medium",
-                ChatRequestReasoningEffort.Minimal => "minimal",
-                ChatRequestReasoningEffort.None => "none",
-                ChatRequestReasoningEffort.Xhigh => "xhigh",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static ChatRequestReasoningEffort? ToEnum(string value)
         {
-            return value switch
-            {
-                "high" => ChatRequestReasoningEffort.High,
-                "low" => ChatRequestReasoningEffort.Low,
-                "max" => ChatRequestReasoningEffort.Max,
-                "medium" => ChatRequestReasoningEffort.Medium,
-                "minimal" => ChatRequestReasoningEffort.Minimal,
-                "none" => ChatRequestReasoningEffort.None,
-                "xhigh" => ChatRequestReasoningEffort.Xhigh,
-                _ => null,
-            };
+            return ChatRequestReasoningEffort.FromValue(value);
         }
     }
 }

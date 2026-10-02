@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Any type
+    ///
     /// </summary>
     public sealed partial class ProviderOptionsInocloud2
     {

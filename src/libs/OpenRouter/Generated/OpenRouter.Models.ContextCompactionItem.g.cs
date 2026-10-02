@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A context compaction marker with an optional encrypted summary
+    /// A context compaction marker with an optional encrypted summary<br/>
+    /// Example: {"encrypted_content":"enc_abc123...","type":"context_compaction"}
     /// </summary>
     public sealed partial class ContextCompactionItem
     {

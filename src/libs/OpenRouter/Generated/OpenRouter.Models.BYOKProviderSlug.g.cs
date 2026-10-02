@@ -3,388 +3,890 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    /// The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).
+    /// The upstream provider this credential authenticates against, as a lowercase slug (e.g. `openai`, `anthropic`, `amazon-bedrock`).<br/>
+    /// Example: openai
     /// </summary>
-    public enum BYOKProviderSlug
+    public readonly partial struct BYOKProviderSlug : global::System.IEquatable<BYOKProviderSlug>
     {
         /// <summary>
         ///
         /// </summary>
-        Ai21,
+        public BYOKProviderSlug(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        AionLabs,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        Akashml,
+        public static BYOKProviderSlug Ai21 { get; } = new("ai21");
+
         /// <summary>
         ///
         /// </summary>
-        Alibaba,
+        public static BYOKProviderSlug AionLabs { get; } = new("aion-labs");
+
         /// <summary>
         ///
         /// </summary>
-        AmazonBedrock,
+        public static BYOKProviderSlug Akashml { get; } = new("akashml");
+
         /// <summary>
         ///
         /// </summary>
-        AmazonNova,
+        public static BYOKProviderSlug Alibaba { get; } = new("alibaba");
+
         /// <summary>
         ///
         /// </summary>
-        Ambient,
+        public static BYOKProviderSlug AmazonBedrock { get; } = new("amazon-bedrock");
+
         /// <summary>
         ///
         /// </summary>
-        Anthropic,
+        public static BYOKProviderSlug AmazonBedrockClaudeOnAws { get; } = new("amazon-bedrock/claude-on-aws");
+
         /// <summary>
         ///
         /// </summary>
-        ArceeAi,
+        public static BYOKProviderSlug AmazonNova { get; } = new("amazon-nova");
+
         /// <summary>
         ///
         /// </summary>
-        AtlasCloud,
+        public static BYOKProviderSlug Ambient { get; } = new("ambient");
+
         /// <summary>
         ///
         /// </summary>
-        Avian,
+        public static BYOKProviderSlug Anthropic { get; } = new("anthropic");
+
         /// <summary>
         ///
         /// </summary>
-        Azure,
+        public static BYOKProviderSlug Anthropic2 { get; } = new("anthropic/2");
+
         /// <summary>
         ///
         /// </summary>
-        Baidu,
+        public static BYOKProviderSlug ArceeAi { get; } = new("arcee-ai");
+
         /// <summary>
         ///
         /// </summary>
-        Baseten,
+        public static BYOKProviderSlug Assemblyai { get; } = new("assemblyai");
+
         /// <summary>
         ///
         /// </summary>
-        BlackForestLabs,
+        public static BYOKProviderSlug AtlasCloud { get; } = new("atlas-cloud");
+
         /// <summary>
         ///
         /// </summary>
-        Byteplus,
+        public static BYOKProviderSlug Avian { get; } = new("avian");
+
         /// <summary>
         ///
         /// </summary>
-        Cerebras,
+        public static BYOKProviderSlug Azure { get; } = new("azure");
+
         /// <summary>
         ///
         /// </summary>
-        Chutes,
+        public static BYOKProviderSlug Baidu { get; } = new("baidu");
+
         /// <summary>
         ///
         /// </summary>
-        Cirrascale,
+        public static BYOKProviderSlug Baseten { get; } = new("baseten");
+
         /// <summary>
         ///
         /// </summary>
-        Clarifai,
+        public static BYOKProviderSlug BlackForestLabs { get; } = new("black-forest-labs");
+
         /// <summary>
         ///
         /// </summary>
-        Cloudflare,
+        public static BYOKProviderSlug Byteplus { get; } = new("byteplus");
+
         /// <summary>
         ///
         /// </summary>
-        Cohere,
+        public static BYOKProviderSlug Cerebras { get; } = new("cerebras");
+
         /// <summary>
         ///
         /// </summary>
-        Crusoe,
+        public static BYOKProviderSlug Chutes { get; } = new("chutes");
+
         /// <summary>
         ///
         /// </summary>
-        Darkbloom,
+        public static BYOKProviderSlug Cirrascale { get; } = new("cirrascale");
+
         /// <summary>
         ///
         /// </summary>
-        Decart,
+        public static BYOKProviderSlug Clarifai { get; } = new("clarifai");
+
         /// <summary>
         ///
         /// </summary>
-        Deepgram,
+        public static BYOKProviderSlug ClaudeOnAws { get; } = new("claude-on-aws");
+
         /// <summary>
         ///
         /// </summary>
-        Deepinfra,
+        public static BYOKProviderSlug Cloudflare { get; } = new("cloudflare");
+
         /// <summary>
         ///
         /// </summary>
-        Deepseek,
+        public static BYOKProviderSlug Cohere { get; } = new("cohere");
+
         /// <summary>
         ///
         /// </summary>
-        Dekallm,
+        public static BYOKProviderSlug Coreweave { get; } = new("coreweave");
+
         /// <summary>
         ///
         /// </summary>
-        Digitalocean,
+        public static BYOKProviderSlug Cosine { get; } = new("cosine");
+
         /// <summary>
         ///
         /// </summary>
-        Featherless,
+        public static BYOKProviderSlug Crusoe { get; } = new("crusoe");
+
         /// <summary>
         ///
         /// </summary>
-        Fireworks,
+        public static BYOKProviderSlug Darkbloom { get; } = new("darkbloom");
+
         /// <summary>
         ///
         /// </summary>
-        FishAudio,
+        public static BYOKProviderSlug Databricks { get; } = new("databricks");
+
         /// <summary>
         ///
         /// </summary>
-        Friendli,
+        public static BYOKProviderSlug Decart { get; } = new("decart");
+
         /// <summary>
         ///
         /// </summary>
-        Gmicloud,
+        public static BYOKProviderSlug Deepgram { get; } = new("deepgram");
+
         /// <summary>
         ///
         /// </summary>
-        GoogleAiStudio,
+        public static BYOKProviderSlug Deepinfra { get; } = new("deepinfra");
+
         /// <summary>
         ///
         /// </summary>
-        GoogleVertex,
+        public static BYOKProviderSlug Deepseek { get; } = new("deepseek");
+
         /// <summary>
         ///
         /// </summary>
-        Groq,
+        public static BYOKProviderSlug Dekallm { get; } = new("dekallm");
+
         /// <summary>
         ///
         /// </summary>
-        Heygen,
+        public static BYOKProviderSlug Digitalocean { get; } = new("digitalocean");
+
         /// <summary>
         ///
         /// </summary>
-        Inception,
+        public static BYOKProviderSlug Elevenlabs { get; } = new("elevenlabs");
+
         /// <summary>
         ///
         /// </summary>
-        Inceptron,
+        public static BYOKProviderSlug Featherless { get; } = new("featherless");
+
         /// <summary>
         ///
         /// </summary>
-        InferactVllm,
+        public static BYOKProviderSlug Fireworks { get; } = new("fireworks");
+
         /// <summary>
         ///
         /// </summary>
-        InferenceNet,
+        public static BYOKProviderSlug FishAudio { get; } = new("fish-audio");
+
         /// <summary>
         ///
         /// </summary>
-        Infermatic,
+        public static BYOKProviderSlug Friendli { get; } = new("friendli");
+
         /// <summary>
         ///
         /// </summary>
-        Inflection,
+        public static BYOKProviderSlug Gmicloud { get; } = new("gmicloud");
+
         /// <summary>
         ///
         /// </summary>
-        IoNet,
+        public static BYOKProviderSlug GoogleAiStudio { get; } = new("google-ai-studio");
+
         /// <summary>
         ///
         /// </summary>
-        Ionstream,
+        public static BYOKProviderSlug GoogleVertex { get; } = new("google-vertex");
+
         /// <summary>
         ///
         /// </summary>
-        Krea,
+        public static BYOKProviderSlug Groq { get; } = new("groq");
+
         /// <summary>
         ///
         /// </summary>
-        Liquid,
+        public static BYOKProviderSlug Heygen { get; } = new("heygen");
+
         /// <summary>
         ///
         /// </summary>
-        Mancer,
+        public static BYOKProviderSlug Inception { get; } = new("inception");
+
         /// <summary>
         ///
         /// </summary>
-        Mara,
+        public static BYOKProviderSlug Inceptron { get; } = new("inceptron");
+
         /// <summary>
         ///
         /// </summary>
-        Meta,
+        public static BYOKProviderSlug InferactVllm { get; } = new("inferact-vllm");
+
         /// <summary>
         ///
         /// </summary>
-        Minimax,
+        public static BYOKProviderSlug InferenceNet { get; } = new("inference-net");
+
         /// <summary>
         ///
         /// </summary>
-        Mistral,
+        public static BYOKProviderSlug Infermatic { get; } = new("infermatic");
+
         /// <summary>
         ///
         /// </summary>
-        Modelrun,
+        public static BYOKProviderSlug Inflection { get; } = new("inflection");
+
         /// <summary>
         ///
         /// </summary>
-        Modular,
+        public static BYOKProviderSlug IoNet { get; } = new("io-net");
+
         /// <summary>
         ///
         /// </summary>
-        Moonshotai,
+        public static BYOKProviderSlug Ionstream { get; } = new("ionstream");
+
         /// <summary>
         ///
         /// </summary>
-        Morph,
+        public static BYOKProviderSlug Krea { get; } = new("krea");
+
         /// <summary>
         ///
         /// </summary>
-        Ncompass,
+        public static BYOKProviderSlug Liquid { get; } = new("liquid");
+
         /// <summary>
         ///
         /// </summary>
-        Nebius,
+        public static BYOKProviderSlug Makora { get; } = new("makora");
+
         /// <summary>
         ///
         /// </summary>
-        NexAgi,
+        public static BYOKProviderSlug Mancer { get; } = new("mancer");
+
         /// <summary>
         ///
         /// </summary>
-        Nextbit,
+        public static BYOKProviderSlug Mara { get; } = new("mara");
+
         /// <summary>
         ///
         /// </summary>
-        Novita,
+        public static BYOKProviderSlug Meta { get; } = new("meta");
+
         /// <summary>
         ///
         /// </summary>
-        Nvidia,
+        public static BYOKProviderSlug Minimax { get; } = new("minimax");
+
         /// <summary>
         ///
         /// </summary>
-        OpenInference,
+        public static BYOKProviderSlug Mistral { get; } = new("mistral");
+
         /// <summary>
         ///
         /// </summary>
-        Openai,
+        public static BYOKProviderSlug Modal { get; } = new("modal");
+
         /// <summary>
         ///
         /// </summary>
-        Parasail,
+        public static BYOKProviderSlug Modelrun { get; } = new("modelrun");
+
         /// <summary>
         ///
         /// </summary>
-        Perceptron,
+        public static BYOKProviderSlug Modular { get; } = new("modular");
+
         /// <summary>
         ///
         /// </summary>
-        Perplexity,
+        public static BYOKProviderSlug Moonshotai { get; } = new("moonshotai");
+
         /// <summary>
         ///
         /// </summary>
-        Phala,
+        public static BYOKProviderSlug Morph { get; } = new("morph");
+
         /// <summary>
         ///
         /// </summary>
-        Poolside,
+        public static BYOKProviderSlug NearAi { get; } = new("near-ai");
+
         /// <summary>
         ///
         /// </summary>
-        Quiver,
+        public static BYOKProviderSlug Nebius { get; } = new("nebius");
+
         /// <summary>
         ///
         /// </summary>
-        Recraft,
+        public static BYOKProviderSlug NexAgi { get; } = new("nex-agi");
+
         /// <summary>
         ///
         /// </summary>
-        Reka,
+        public static BYOKProviderSlug Nextbit { get; } = new("nextbit");
+
         /// <summary>
         ///
         /// </summary>
-        Relace,
+        public static BYOKProviderSlug Novita { get; } = new("novita");
+
         /// <summary>
         ///
         /// </summary>
-        SailResearch,
+        public static BYOKProviderSlug Nvidia { get; } = new("nvidia");
+
         /// <summary>
         ///
         /// </summary>
-        Sakana,
+        public static BYOKProviderSlug Ollama { get; } = new("ollama");
+
         /// <summary>
         ///
         /// </summary>
-        Sambanova,
+        public static BYOKProviderSlug OpenInference { get; } = new("open-inference");
+
         /// <summary>
         ///
         /// </summary>
-        Seed,
+        public static BYOKProviderSlug Openai { get; } = new("openai");
+
         /// <summary>
         ///
         /// </summary>
-        Siliconflow,
+        public static BYOKProviderSlug Parasail { get; } = new("parasail");
+
         /// <summary>
         ///
         /// </summary>
-        Sourceful,
+        public static BYOKProviderSlug Perceptron { get; } = new("perceptron");
+
         /// <summary>
         ///
         /// </summary>
-        Stepfun,
+        public static BYOKProviderSlug Perplexity { get; } = new("perplexity");
+
         /// <summary>
         ///
         /// </summary>
-        Streamlake,
+        public static BYOKProviderSlug Phala { get; } = new("phala");
+
         /// <summary>
         ///
         /// </summary>
-        Switchpoint,
+        public static BYOKProviderSlug Poolside { get; } = new("poolside");
+
         /// <summary>
         ///
         /// </summary>
-        Tencent,
+        public static BYOKProviderSlug Primeintellect { get; } = new("primeintellect");
+
         /// <summary>
         ///
         /// </summary>
-        Tenstorrent,
+        public static BYOKProviderSlug Quiver { get; } = new("quiver");
+
         /// <summary>
         ///
         /// </summary>
-        Together,
+        public static BYOKProviderSlug Recraft { get; } = new("recraft");
+
         /// <summary>
         ///
         /// </summary>
-        Upstage,
+        public static BYOKProviderSlug Reka { get; } = new("reka");
+
         /// <summary>
         ///
         /// </summary>
-        Venice,
+        public static BYOKProviderSlug Relace { get; } = new("relace");
+
         /// <summary>
         ///
         /// </summary>
-        Wafer,
+        public static BYOKProviderSlug Respan { get; } = new("respan");
+
         /// <summary>
         ///
         /// </summary>
-        Wandb,
+        public static BYOKProviderSlug Runway { get; } = new("runway");
+
         /// <summary>
         ///
         /// </summary>
-        Xai,
+        public static BYOKProviderSlug SailResearch { get; } = new("sail-research");
+
         /// <summary>
         ///
         /// </summary>
-        Xiaomi,
+        public static BYOKProviderSlug Sakana { get; } = new("sakana");
+
         /// <summary>
         ///
         /// </summary>
-        ZAi,
+        public static BYOKProviderSlug SakanaAi { get; } = new("sakana-ai");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Sambanova { get; } = new("sambanova");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Scaledown { get; } = new("scaledown");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Seed { get; } = new("seed");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Siliconflow { get; } = new("siliconflow");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Sourceful { get; } = new("sourceful");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Stepfun { get; } = new("stepfun");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Streamlake { get; } = new("streamlake");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Switchpoint { get; } = new("switchpoint");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Tencent { get; } = new("tencent");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Tenstorrent { get; } = new("tenstorrent");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Thinkingmachines { get; } = new("thinkingmachines");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Together { get; } = new("together");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Typesafe { get; } = new("typesafe");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Unbiased { get; } = new("unbiased");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Upstage { get; } = new("upstage");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Venice { get; } = new("venice");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Voyageai { get; } = new("voyageai");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Wafer { get; } = new("wafer");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Wandb { get; } = new("wandb");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug WandbLegacy { get; } = new("wandb-legacy");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Xai { get; } = new("xai");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug Xiaomi { get; } = new("xiaomi");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug ZAi { get; } = new("z-ai");
+        /// <summary>
+        ///
+        /// </summary>
+        public static BYOKProviderSlug FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "ai21" => Ai21,
+                "aion-labs" => AionLabs,
+                "akashml" => Akashml,
+                "alibaba" => Alibaba,
+                "amazon-bedrock" => AmazonBedrock,
+                "amazon-bedrock/claude-on-aws" => AmazonBedrockClaudeOnAws,
+                "amazon-nova" => AmazonNova,
+                "ambient" => Ambient,
+                "anthropic" => Anthropic,
+                "anthropic/2" => Anthropic2,
+                "arcee-ai" => ArceeAi,
+                "assemblyai" => Assemblyai,
+                "atlas-cloud" => AtlasCloud,
+                "avian" => Avian,
+                "azure" => Azure,
+                "baidu" => Baidu,
+                "baseten" => Baseten,
+                "black-forest-labs" => BlackForestLabs,
+                "byteplus" => Byteplus,
+                "cerebras" => Cerebras,
+                "chutes" => Chutes,
+                "cirrascale" => Cirrascale,
+                "clarifai" => Clarifai,
+                "claude-on-aws" => ClaudeOnAws,
+                "cloudflare" => Cloudflare,
+                "cohere" => Cohere,
+                "coreweave" => Coreweave,
+                "cosine" => Cosine,
+                "crusoe" => Crusoe,
+                "darkbloom" => Darkbloom,
+                "databricks" => Databricks,
+                "decart" => Decart,
+                "deepgram" => Deepgram,
+                "deepinfra" => Deepinfra,
+                "deepseek" => Deepseek,
+                "dekallm" => Dekallm,
+                "digitalocean" => Digitalocean,
+                "elevenlabs" => Elevenlabs,
+                "featherless" => Featherless,
+                "fireworks" => Fireworks,
+                "fish-audio" => FishAudio,
+                "friendli" => Friendli,
+                "gmicloud" => Gmicloud,
+                "google-ai-studio" => GoogleAiStudio,
+                "google-vertex" => GoogleVertex,
+                "groq" => Groq,
+                "heygen" => Heygen,
+                "inception" => Inception,
+                "inceptron" => Inceptron,
+                "inferact-vllm" => InferactVllm,
+                "inference-net" => InferenceNet,
+                "infermatic" => Infermatic,
+                "inflection" => Inflection,
+                "io-net" => IoNet,
+                "ionstream" => Ionstream,
+                "krea" => Krea,
+                "liquid" => Liquid,
+                "makora" => Makora,
+                "mancer" => Mancer,
+                "mara" => Mara,
+                "meta" => Meta,
+                "minimax" => Minimax,
+                "mistral" => Mistral,
+                "modal" => Modal,
+                "modelrun" => Modelrun,
+                "modular" => Modular,
+                "moonshotai" => Moonshotai,
+                "morph" => Morph,
+                "near-ai" => NearAi,
+                "nebius" => Nebius,
+                "nex-agi" => NexAgi,
+                "nextbit" => Nextbit,
+                "novita" => Novita,
+                "nvidia" => Nvidia,
+                "ollama" => Ollama,
+                "open-inference" => OpenInference,
+                "openai" => Openai,
+                "parasail" => Parasail,
+                "perceptron" => Perceptron,
+                "perplexity" => Perplexity,
+                "phala" => Phala,
+                "poolside" => Poolside,
+                "primeintellect" => Primeintellect,
+                "quiver" => Quiver,
+                "recraft" => Recraft,
+                "reka" => Reka,
+                "relace" => Relace,
+                "respan" => Respan,
+                "runway" => Runway,
+                "sail-research" => SailResearch,
+                "sakana" => Sakana,
+                "sakana-ai" => SakanaAi,
+                "sambanova" => Sambanova,
+                "scaledown" => Scaledown,
+                "seed" => Seed,
+                "siliconflow" => Siliconflow,
+                "sourceful" => Sourceful,
+                "stepfun" => Stepfun,
+                "streamlake" => Streamlake,
+                "switchpoint" => Switchpoint,
+                "tencent" => Tencent,
+                "tenstorrent" => Tenstorrent,
+                "thinkingmachines" => Thinkingmachines,
+                "together" => Together,
+                "typesafe" => Typesafe,
+                "unbiased" => Unbiased,
+                "upstage" => Upstage,
+                "venice" => Venice,
+                "voyageai" => Voyageai,
+                "wafer" => Wafer,
+                "wandb" => Wandb,
+                "wandb-legacy" => WandbLegacy,
+                "xai" => Xai,
+                "xiaomi" => Xiaomi,
+                "z-ai" => ZAi,
+                _ => new BYOKProviderSlug(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "ai21" => true,
+            "aion-labs" => true,
+            "akashml" => true,
+            "alibaba" => true,
+            "amazon-bedrock" => true,
+            "amazon-bedrock/claude-on-aws" => true,
+            "amazon-nova" => true,
+            "ambient" => true,
+            "anthropic" => true,
+            "anthropic/2" => true,
+            "arcee-ai" => true,
+            "assemblyai" => true,
+            "atlas-cloud" => true,
+            "avian" => true,
+            "azure" => true,
+            "baidu" => true,
+            "baseten" => true,
+            "black-forest-labs" => true,
+            "byteplus" => true,
+            "cerebras" => true,
+            "chutes" => true,
+            "cirrascale" => true,
+            "clarifai" => true,
+            "claude-on-aws" => true,
+            "cloudflare" => true,
+            "cohere" => true,
+            "coreweave" => true,
+            "cosine" => true,
+            "crusoe" => true,
+            "darkbloom" => true,
+            "databricks" => true,
+            "decart" => true,
+            "deepgram" => true,
+            "deepinfra" => true,
+            "deepseek" => true,
+            "dekallm" => true,
+            "digitalocean" => true,
+            "elevenlabs" => true,
+            "featherless" => true,
+            "fireworks" => true,
+            "fish-audio" => true,
+            "friendli" => true,
+            "gmicloud" => true,
+            "google-ai-studio" => true,
+            "google-vertex" => true,
+            "groq" => true,
+            "heygen" => true,
+            "inception" => true,
+            "inceptron" => true,
+            "inferact-vllm" => true,
+            "inference-net" => true,
+            "infermatic" => true,
+            "inflection" => true,
+            "io-net" => true,
+            "ionstream" => true,
+            "krea" => true,
+            "liquid" => true,
+            "makora" => true,
+            "mancer" => true,
+            "mara" => true,
+            "meta" => true,
+            "minimax" => true,
+            "mistral" => true,
+            "modal" => true,
+            "modelrun" => true,
+            "modular" => true,
+            "moonshotai" => true,
+            "morph" => true,
+            "near-ai" => true,
+            "nebius" => true,
+            "nex-agi" => true,
+            "nextbit" => true,
+            "novita" => true,
+            "nvidia" => true,
+            "ollama" => true,
+            "open-inference" => true,
+            "openai" => true,
+            "parasail" => true,
+            "perceptron" => true,
+            "perplexity" => true,
+            "phala" => true,
+            "poolside" => true,
+            "primeintellect" => true,
+            "quiver" => true,
+            "recraft" => true,
+            "reka" => true,
+            "relace" => true,
+            "respan" => true,
+            "runway" => true,
+            "sail-research" => true,
+            "sakana" => true,
+            "sakana-ai" => true,
+            "sambanova" => true,
+            "scaledown" => true,
+            "seed" => true,
+            "siliconflow" => true,
+            "sourceful" => true,
+            "stepfun" => true,
+            "streamlake" => true,
+            "switchpoint" => true,
+            "tencent" => true,
+            "tenstorrent" => true,
+            "thinkingmachines" => true,
+            "together" => true,
+            "typesafe" => true,
+            "unbiased" => true,
+            "upstage" => true,
+            "venice" => true,
+            "voyageai" => true,
+            "wafer" => true,
+            "wandb" => true,
+            "wandb-legacy" => true,
+            "xai" => true,
+            "xiaomi" => true,
+            "z-ai" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(BYOKProviderSlug other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is BYOKProviderSlug other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(BYOKProviderSlug left, BYOKProviderSlug right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(BYOKProviderSlug left, BYOKProviderSlug right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -396,208 +898,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this BYOKProviderSlug value)
         {
-            return value switch
-            {
-                BYOKProviderSlug.Ai21 => "ai21",
-                BYOKProviderSlug.AionLabs => "aion-labs",
-                BYOKProviderSlug.Akashml => "akashml",
-                BYOKProviderSlug.Alibaba => "alibaba",
-                BYOKProviderSlug.AmazonBedrock => "amazon-bedrock",
-                BYOKProviderSlug.AmazonNova => "amazon-nova",
-                BYOKProviderSlug.Ambient => "ambient",
-                BYOKProviderSlug.Anthropic => "anthropic",
-                BYOKProviderSlug.ArceeAi => "arcee-ai",
-                BYOKProviderSlug.AtlasCloud => "atlas-cloud",
-                BYOKProviderSlug.Avian => "avian",
-                BYOKProviderSlug.Azure => "azure",
-                BYOKProviderSlug.Baidu => "baidu",
-                BYOKProviderSlug.Baseten => "baseten",
-                BYOKProviderSlug.BlackForestLabs => "black-forest-labs",
-                BYOKProviderSlug.Byteplus => "byteplus",
-                BYOKProviderSlug.Cerebras => "cerebras",
-                BYOKProviderSlug.Chutes => "chutes",
-                BYOKProviderSlug.Cirrascale => "cirrascale",
-                BYOKProviderSlug.Clarifai => "clarifai",
-                BYOKProviderSlug.Cloudflare => "cloudflare",
-                BYOKProviderSlug.Cohere => "cohere",
-                BYOKProviderSlug.Crusoe => "crusoe",
-                BYOKProviderSlug.Darkbloom => "darkbloom",
-                BYOKProviderSlug.Decart => "decart",
-                BYOKProviderSlug.Deepgram => "deepgram",
-                BYOKProviderSlug.Deepinfra => "deepinfra",
-                BYOKProviderSlug.Deepseek => "deepseek",
-                BYOKProviderSlug.Dekallm => "dekallm",
-                BYOKProviderSlug.Digitalocean => "digitalocean",
-                BYOKProviderSlug.Featherless => "featherless",
-                BYOKProviderSlug.Fireworks => "fireworks",
-                BYOKProviderSlug.FishAudio => "fish-audio",
-                BYOKProviderSlug.Friendli => "friendli",
-                BYOKProviderSlug.Gmicloud => "gmicloud",
-                BYOKProviderSlug.GoogleAiStudio => "google-ai-studio",
-                BYOKProviderSlug.GoogleVertex => "google-vertex",
-                BYOKProviderSlug.Groq => "groq",
-                BYOKProviderSlug.Heygen => "heygen",
-                BYOKProviderSlug.Inception => "inception",
-                BYOKProviderSlug.Inceptron => "inceptron",
-                BYOKProviderSlug.InferactVllm => "inferact-vllm",
-                BYOKProviderSlug.InferenceNet => "inference-net",
-                BYOKProviderSlug.Infermatic => "infermatic",
-                BYOKProviderSlug.Inflection => "inflection",
-                BYOKProviderSlug.IoNet => "io-net",
-                BYOKProviderSlug.Ionstream => "ionstream",
-                BYOKProviderSlug.Krea => "krea",
-                BYOKProviderSlug.Liquid => "liquid",
-                BYOKProviderSlug.Mancer => "mancer",
-                BYOKProviderSlug.Mara => "mara",
-                BYOKProviderSlug.Meta => "meta",
-                BYOKProviderSlug.Minimax => "minimax",
-                BYOKProviderSlug.Mistral => "mistral",
-                BYOKProviderSlug.Modelrun => "modelrun",
-                BYOKProviderSlug.Modular => "modular",
-                BYOKProviderSlug.Moonshotai => "moonshotai",
-                BYOKProviderSlug.Morph => "morph",
-                BYOKProviderSlug.Ncompass => "ncompass",
-                BYOKProviderSlug.Nebius => "nebius",
-                BYOKProviderSlug.NexAgi => "nex-agi",
-                BYOKProviderSlug.Nextbit => "nextbit",
-                BYOKProviderSlug.Novita => "novita",
-                BYOKProviderSlug.Nvidia => "nvidia",
-                BYOKProviderSlug.OpenInference => "open-inference",
-                BYOKProviderSlug.Openai => "openai",
-                BYOKProviderSlug.Parasail => "parasail",
-                BYOKProviderSlug.Perceptron => "perceptron",
-                BYOKProviderSlug.Perplexity => "perplexity",
-                BYOKProviderSlug.Phala => "phala",
-                BYOKProviderSlug.Poolside => "poolside",
-                BYOKProviderSlug.Quiver => "quiver",
-                BYOKProviderSlug.Recraft => "recraft",
-                BYOKProviderSlug.Reka => "reka",
-                BYOKProviderSlug.Relace => "relace",
-                BYOKProviderSlug.SailResearch => "sail-research",
-                BYOKProviderSlug.Sakana => "sakana",
-                BYOKProviderSlug.Sambanova => "sambanova",
-                BYOKProviderSlug.Seed => "seed",
-                BYOKProviderSlug.Siliconflow => "siliconflow",
-                BYOKProviderSlug.Sourceful => "sourceful",
-                BYOKProviderSlug.Stepfun => "stepfun",
-                BYOKProviderSlug.Streamlake => "streamlake",
-                BYOKProviderSlug.Switchpoint => "switchpoint",
-                BYOKProviderSlug.Tencent => "tencent",
-                BYOKProviderSlug.Tenstorrent => "tenstorrent",
-                BYOKProviderSlug.Together => "together",
-                BYOKProviderSlug.Upstage => "upstage",
-                BYOKProviderSlug.Venice => "venice",
-                BYOKProviderSlug.Wafer => "wafer",
-                BYOKProviderSlug.Wandb => "wandb",
-                BYOKProviderSlug.Xai => "xai",
-                BYOKProviderSlug.Xiaomi => "xiaomi",
-                BYOKProviderSlug.ZAi => "z-ai",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static BYOKProviderSlug? ToEnum(string value)
         {
-            return value switch
-            {
-                "ai21" => BYOKProviderSlug.Ai21,
-                "aion-labs" => BYOKProviderSlug.AionLabs,
-                "akashml" => BYOKProviderSlug.Akashml,
-                "alibaba" => BYOKProviderSlug.Alibaba,
-                "amazon-bedrock" => BYOKProviderSlug.AmazonBedrock,
-                "amazon-nova" => BYOKProviderSlug.AmazonNova,
-                "ambient" => BYOKProviderSlug.Ambient,
-                "anthropic" => BYOKProviderSlug.Anthropic,
-                "arcee-ai" => BYOKProviderSlug.ArceeAi,
-                "atlas-cloud" => BYOKProviderSlug.AtlasCloud,
-                "avian" => BYOKProviderSlug.Avian,
-                "azure" => BYOKProviderSlug.Azure,
-                "baidu" => BYOKProviderSlug.Baidu,
-                "baseten" => BYOKProviderSlug.Baseten,
-                "black-forest-labs" => BYOKProviderSlug.BlackForestLabs,
-                "byteplus" => BYOKProviderSlug.Byteplus,
-                "cerebras" => BYOKProviderSlug.Cerebras,
-                "chutes" => BYOKProviderSlug.Chutes,
-                "cirrascale" => BYOKProviderSlug.Cirrascale,
-                "clarifai" => BYOKProviderSlug.Clarifai,
-                "cloudflare" => BYOKProviderSlug.Cloudflare,
-                "cohere" => BYOKProviderSlug.Cohere,
-                "crusoe" => BYOKProviderSlug.Crusoe,
-                "darkbloom" => BYOKProviderSlug.Darkbloom,
-                "decart" => BYOKProviderSlug.Decart,
-                "deepgram" => BYOKProviderSlug.Deepgram,
-                "deepinfra" => BYOKProviderSlug.Deepinfra,
-                "deepseek" => BYOKProviderSlug.Deepseek,
-                "dekallm" => BYOKProviderSlug.Dekallm,
-                "digitalocean" => BYOKProviderSlug.Digitalocean,
-                "featherless" => BYOKProviderSlug.Featherless,
-                "fireworks" => BYOKProviderSlug.Fireworks,
-                "fish-audio" => BYOKProviderSlug.FishAudio,
-                "friendli" => BYOKProviderSlug.Friendli,
-                "gmicloud" => BYOKProviderSlug.Gmicloud,
-                "google-ai-studio" => BYOKProviderSlug.GoogleAiStudio,
-                "google-vertex" => BYOKProviderSlug.GoogleVertex,
-                "groq" => BYOKProviderSlug.Groq,
-                "heygen" => BYOKProviderSlug.Heygen,
-                "inception" => BYOKProviderSlug.Inception,
-                "inceptron" => BYOKProviderSlug.Inceptron,
-                "inferact-vllm" => BYOKProviderSlug.InferactVllm,
-                "inference-net" => BYOKProviderSlug.InferenceNet,
-                "infermatic" => BYOKProviderSlug.Infermatic,
-                "inflection" => BYOKProviderSlug.Inflection,
-                "io-net" => BYOKProviderSlug.IoNet,
-                "ionstream" => BYOKProviderSlug.Ionstream,
-                "krea" => BYOKProviderSlug.Krea,
-                "liquid" => BYOKProviderSlug.Liquid,
-                "mancer" => BYOKProviderSlug.Mancer,
-                "mara" => BYOKProviderSlug.Mara,
-                "meta" => BYOKProviderSlug.Meta,
-                "minimax" => BYOKProviderSlug.Minimax,
-                "mistral" => BYOKProviderSlug.Mistral,
-                "modelrun" => BYOKProviderSlug.Modelrun,
-                "modular" => BYOKProviderSlug.Modular,
-                "moonshotai" => BYOKProviderSlug.Moonshotai,
-                "morph" => BYOKProviderSlug.Morph,
-                "ncompass" => BYOKProviderSlug.Ncompass,
-                "nebius" => BYOKProviderSlug.Nebius,
-                "nex-agi" => BYOKProviderSlug.NexAgi,
-                "nextbit" => BYOKProviderSlug.Nextbit,
-                "novita" => BYOKProviderSlug.Novita,
-                "nvidia" => BYOKProviderSlug.Nvidia,
-                "open-inference" => BYOKProviderSlug.OpenInference,
-                "openai" => BYOKProviderSlug.Openai,
-                "parasail" => BYOKProviderSlug.Parasail,
-                "perceptron" => BYOKProviderSlug.Perceptron,
-                "perplexity" => BYOKProviderSlug.Perplexity,
-                "phala" => BYOKProviderSlug.Phala,
-                "poolside" => BYOKProviderSlug.Poolside,
-                "quiver" => BYOKProviderSlug.Quiver,
-                "recraft" => BYOKProviderSlug.Recraft,
-                "reka" => BYOKProviderSlug.Reka,
-                "relace" => BYOKProviderSlug.Relace,
-                "sail-research" => BYOKProviderSlug.SailResearch,
-                "sakana" => BYOKProviderSlug.Sakana,
-                "sambanova" => BYOKProviderSlug.Sambanova,
-                "seed" => BYOKProviderSlug.Seed,
-                "siliconflow" => BYOKProviderSlug.Siliconflow,
-                "sourceful" => BYOKProviderSlug.Sourceful,
-                "stepfun" => BYOKProviderSlug.Stepfun,
-                "streamlake" => BYOKProviderSlug.Streamlake,
-                "switchpoint" => BYOKProviderSlug.Switchpoint,
-                "tencent" => BYOKProviderSlug.Tencent,
-                "tenstorrent" => BYOKProviderSlug.Tenstorrent,
-                "together" => BYOKProviderSlug.Together,
-                "upstage" => BYOKProviderSlug.Upstage,
-                "venice" => BYOKProviderSlug.Venice,
-                "wafer" => BYOKProviderSlug.Wafer,
-                "wandb" => BYOKProviderSlug.Wandb,
-                "xai" => BYOKProviderSlug.Xai,
-                "xiaomi" => BYOKProviderSlug.Xiaomi,
-                "z-ai" => BYOKProviderSlug.ZAi,
-                _ => null,
-            };
+            return BYOKProviderSlug.FromValue(value);
         }
     }
 }

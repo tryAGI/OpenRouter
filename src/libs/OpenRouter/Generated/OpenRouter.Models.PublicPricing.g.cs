@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Pricing information for the model
+    /// Pricing information for the model<br/>
+    /// Example: {"completion":"0.00006","image":"0","prompt":"0.00003","request":"0"}
     /// </summary>
     public sealed partial class PublicPricing
     {

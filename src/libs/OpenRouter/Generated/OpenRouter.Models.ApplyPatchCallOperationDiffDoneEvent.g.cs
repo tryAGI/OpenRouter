@@ -1,0 +1,86 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    /// <summary>
+    /// Emitted when `operation.diff` streaming completes for an `apply_patch_call`.<br/>
+    /// Example: {"diff":"@@\n\u002Bconsole.log(\u0022hi\u0022);\n","item_id":"apc_abc123","output_index":0,"sequence_number":12,"type":"response.apply_patch_call_operation_diff.done"}
+    /// </summary>
+    public sealed partial class ApplyPatchCallOperationDiffDoneEvent
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diff")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Diff { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int OutputIndex { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationDiffDoneEventTypeJsonConverter))]
+        public global::OpenRouter.ApplyPatchCallOperationDiffDoneEventType Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplyPatchCallOperationDiffDoneEvent" /> class.
+        /// </summary>
+        /// <param name="diff"></param>
+        /// <param name="itemId"></param>
+        /// <param name="outputIndex"></param>
+        /// <param name="sequenceNumber"></param>
+        /// <param name="type"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ApplyPatchCallOperationDiffDoneEvent(
+            string diff,
+            string itemId,
+            int outputIndex,
+            int sequenceNumber,
+            global::OpenRouter.ApplyPatchCallOperationDiffDoneEventType type)
+        {
+            this.Diff = diff ?? throw new global::System.ArgumentNullException(nameof(diff));
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplyPatchCallOperationDiffDoneEvent" /> class.
+        /// </summary>
+        public ApplyPatchCallOperationDiffDoneEvent()
+        {
+        }
+
+    }
+}

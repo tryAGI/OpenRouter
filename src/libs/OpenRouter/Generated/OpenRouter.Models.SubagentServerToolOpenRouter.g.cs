@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: delegates self-contained tasks to a smaller, cheaper, faster worker model (any OpenRouter model) mid-generation and returns its outcome. The worker may run as a sub-agent with its own tools.
+    /// OpenRouter built-in server tool: delegates self-contained tasks to a smaller, cheaper, faster worker model (any OpenRouter model) mid-generation and returns its outcome. The worker may run as a sub-agent with its own tools.<br/>
+    /// Example: {"parameters":{"model":"~anthropic/claude-haiku-latest"},"type":"openrouter:subagent"}
     /// </summary>
     public sealed partial class SubagentServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:subagent server tool.
+        /// Configuration for one openrouter:subagent server tool entry.<br/>
+        /// Example: {"model":"~anthropic/claude-haiku-latest","name":"summarizer"}
         /// </summary>
+        /// <example>{"model":"~anthropic/claude-haiku-latest","name":"summarizer"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.SubagentServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SubagentServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:subagent server tool.
+        /// Configuration for one openrouter:subagent server tool entry.<br/>
+        /// Example: {"model":"~anthropic/claude-haiku-latest","name":"summarizer"}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

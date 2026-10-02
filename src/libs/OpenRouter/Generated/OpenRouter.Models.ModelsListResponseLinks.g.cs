@@ -9,8 +9,10 @@ namespace OpenRouter
     public sealed partial class ModelsListResponseLinks
     {
         /// <summary>
-        /// URL for the next page of results, or null if this is the last page
+        /// URL for the next page of results, or null if this is the last page<br/>
+        /// Example: /api/v1/models?offset=500&amp;limit=500
         /// </summary>
+        /// <example>/api/v1/models?offset=500&amp;limit=500</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("next")]
         public string? Next { get; set; }
 
@@ -24,7 +26,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ModelsListResponseLinks" /> class.
         /// </summary>
         /// <param name="next">
-        /// URL for the next page of results, or null if this is the last page
+        /// URL for the next page of results, or null if this is the last page<br/>
+        /// Example: /api/v1/models?offset=500&amp;limit=500
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

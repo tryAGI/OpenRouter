@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration for the openrouter:experimental__search_models server tool
+    /// Configuration for the openrouter:experimental__search_models server tool<br/>
+    /// Example: {"max_results":5}
     /// </summary>
     public sealed partial class SearchModelsServerToolConfig
     {
         /// <summary>
-        /// Maximum number of models to return. Defaults to 5, max 20.
+        /// Maximum number of models to return. Defaults to 5, max 20.<br/>
+        /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_results")]
         public int? MaxResults { get; set; }
 
@@ -24,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SearchModelsServerToolConfig" /> class.
         /// </summary>
         /// <param name="maxResults">
-        /// Maximum number of models to return. Defaults to 5, max 20.
+        /// Maximum number of models to return. Defaults to 5, max 20.<br/>
+        /// Example: 5
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

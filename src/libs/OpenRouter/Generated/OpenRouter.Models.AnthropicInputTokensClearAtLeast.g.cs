@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"type":"input_tokens","value":50000}
     /// </summary>
     public sealed partial class AnthropicInputTokensClearAtLeast
     {

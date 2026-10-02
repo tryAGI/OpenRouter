@@ -3,28 +3,112 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    ///
+    /// Example: completed
     /// </summary>
-    public enum WebSearchStatus
+    public readonly partial struct WebSearchStatus : global::System.IEquatable<WebSearchStatus>
     {
         /// <summary>
         ///
         /// </summary>
-        Completed,
+        public WebSearchStatus(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        Failed,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        InProgress,
+        public static WebSearchStatus Completed { get; } = new("completed");
+
         /// <summary>
         ///
         /// </summary>
-        Searching,
+        public static WebSearchStatus Failed { get; } = new("failed");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static WebSearchStatus InProgress { get; } = new("in_progress");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static WebSearchStatus Searching { get; } = new("searching");
+        /// <summary>
+        ///
+        /// </summary>
+        public static WebSearchStatus FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "completed" => Completed,
+                "failed" => Failed,
+                "in_progress" => InProgress,
+                "searching" => Searching,
+                _ => new WebSearchStatus(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "completed" => true,
+            "failed" => true,
+            "in_progress" => true,
+            "searching" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(WebSearchStatus other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is WebSearchStatus other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(WebSearchStatus left, WebSearchStatus right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(WebSearchStatus left, WebSearchStatus right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -36,28 +120,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this WebSearchStatus value)
         {
-            return value switch
-            {
-                WebSearchStatus.Completed => "completed",
-                WebSearchStatus.Failed => "failed",
-                WebSearchStatus.InProgress => "in_progress",
-                WebSearchStatus.Searching => "searching",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static WebSearchStatus? ToEnum(string value)
         {
-            return value switch
-            {
-                "completed" => WebSearchStatus.Completed,
-                "failed" => WebSearchStatus.Failed,
-                "in_progress" => WebSearchStatus.InProgress,
-                "searching" => WebSearchStatus.Searching,
-                _ => null,
-            };
+            return WebSearchStatus.FromValue(value);
         }
     }
 }

@@ -4,10 +4,19 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A call to a custom (freeform-grammar) tool created by the model — distinct from `function_call`. Used for tools like Codex CLI's `apply_patch` whose payload is opaque text rather than JSON arguments.
+    /// A call to a custom (freeform-grammar) tool created by the model — distinct from `function_call`. Used for tools like Codex CLI's `apply_patch` whose payload is opaque text rather than JSON arguments.<br/>
+    /// Example: {"call_id":"call-abc123","id":"ctc-abc123","input":"*** Begin Patch\n*** End Patch","name":"apply_patch","type":"custom_tool_call"}
     /// </summary>
     public sealed partial class CustomToolCallItem
     {
+        /// <summary>
+        /// True when the model called a tool declared with `async: true` and may continue its turn before the output is returned. Return the result in a later request as a `function_call_output` with this `call_id`.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
+
         /// <summary>
         ///
         /// </summary>
@@ -44,6 +53,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        public global::OpenRouter.ToolCallStatus? Status { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CustomToolCallItemTypeJsonConverter))]
         public global::OpenRouter.CustomToolCallItemType Type { get; set; }
@@ -60,10 +75,15 @@ namespace OpenRouter
         /// <param name="callId"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
+        /// <param name="async">
+        /// True when the model called a tool declared with `async: true` and may continue its turn before the output is returned. Return the result in a later request as a `function_call_output` with this `call_id`.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="id"></param>
         /// <param name="namespace">
         /// Namespace qualifier for tools registered as part of a namespace tool group (e.g. an MCP server)
         /// </param>
+        /// <param name="status"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,15 +92,19 @@ namespace OpenRouter
             string callId,
             string input,
             string name,
+            bool? async,
             string? id,
             string? @namespace,
+            global::OpenRouter.ToolCallStatus? status,
             global::OpenRouter.CustomToolCallItemType type)
         {
+            this.Async = async;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Namespace = @namespace;
+            this.Status = status;
             this.Type = type;
         }
 

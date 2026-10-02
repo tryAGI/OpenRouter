@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:code_interpreter server tool output item
+    /// An openrouter:code_interpreter server tool output item<br/>
+    /// Example: {"code":"print(\u0022hello\u0022)","id":"ci_tmp_abc123","language":"python","status":"completed","stdout":"hello\n","type":"openrouter:code_interpreter"}
     /// </summary>
     public sealed partial class OutputCodeInterpreterServerToolItem
     {
@@ -33,8 +34,9 @@ namespace OpenRouter
         public string? Language { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,6 +55,13 @@ namespace OpenRouter
         public string? Stdout { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputCodeInterpreterServerToolItemType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -61,13 +70,16 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputCodeInterpreterServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="code"></param>
         /// <param name="exitCode"></param>
         /// <param name="id"></param>
         /// <param name="language"></param>
         /// <param name="stderr"></param>
         /// <param name="stdout"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,7 +90,8 @@ namespace OpenRouter
             string? id,
             string? language,
             string? stderr,
-            string? stdout)
+            string? stdout,
+            global::OpenRouter.OutputCodeInterpreterServerToolItemType type)
         {
             this.Code = code;
             this.ExitCode = exitCode;
@@ -87,6 +100,7 @@ namespace OpenRouter
             this.Status = status;
             this.Stderr = stderr;
             this.Stdout = stdout;
+            this.Type = type;
         }
 
         /// <summary>

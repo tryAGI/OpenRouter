@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"data":"data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAA...","format":"wav"}
     /// </summary>
     public sealed partial class MultimodalMedia
     {

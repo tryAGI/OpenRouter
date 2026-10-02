@@ -4,6 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
+    /// Public OpenRouter usage datasets. Data returned by these endpoints is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/): reuse and republish it, including commercially, with attribution to OpenRouter.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -33,6 +34,13 @@ namespace OpenRouter
 
         /// <inheritdoc/>
         public global::OpenRouter.AutoSDKClientOptions Options { get; }
+
+
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString("D");
+
+
+        internal global::OpenRouter.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::OpenRouter.AutoSDKServerConfiguration();
 
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::OpenRouter.DatasetsSourceGenerationContext.Default);
 
@@ -108,10 +116,15 @@ namespace OpenRouter
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+            if (baseUri is not null)
+            {
+                HttpClient.BaseAddress ??= baseUri;
+            }
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::OpenRouter.EndPointAuthorization>();
             Options = options ?? new global::OpenRouter.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
+
+            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }

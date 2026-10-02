@@ -4,16 +4,18 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"deleted":true}
     /// </summary>
     public sealed partial class DeleteBYOKKeyResponse
     {
         /// <summary>
-        /// Confirmation that the BYOK credential was deleted.
+        /// Confirmation that the BYOK credential was deleted.<br/>
+        /// Example: true
         /// </summary>
+        /// <default>true</default>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Deleted { get; set; }
+        public bool Deleted { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,13 +27,14 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="DeleteBYOKKeyResponse" /> class.
         /// </summary>
         /// <param name="deleted">
-        /// Confirmation that the BYOK credential was deleted.
+        /// Confirmation that the BYOK credential was deleted.<br/>
+        /// Example: true
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeleteBYOKKeyResponse(
-            bool deleted)
+            bool deleted = true)
         {
             this.Deleted = deleted;
         }

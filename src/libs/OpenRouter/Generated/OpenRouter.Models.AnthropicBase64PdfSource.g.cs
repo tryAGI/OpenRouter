@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"data":"JVBERi0x...","media_type":"application/pdf","type":"base64"}
     /// </summary>
     public sealed partial class AnthropicBase64PdfSource
     {

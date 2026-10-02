@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:text_editor server tool output item
+    /// An openrouter:text_editor server tool output item<br/>
+    /// Example: {"command":"view","filePath":"/src/main.ts","id":"te_tmp_abc123","status":"completed","type":"openrouter:text_editor"}
     /// </summary>
     public sealed partial class OutputTextEditorServerToolItem
     {
@@ -28,8 +29,9 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -51,7 +53,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputTextEditorServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="command"></param>
         /// <param name="filePath"></param>
         /// <param name="id"></param>

@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class OpenAiResponsesUsageInputTokensDetails
+    public sealed partial class OpenAIResponsesUsageInputTokensDetails
     {
         /// <summary>
         ///
@@ -28,14 +28,14 @@ namespace OpenRouter
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OpenAiResponsesUsageInputTokensDetails" /> class.
+        /// Initializes a new instance of the <see cref="OpenAIResponsesUsageInputTokensDetails" /> class.
         /// </summary>
         /// <param name="cachedTokens"></param>
         /// <param name="cacheWriteTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public OpenAiResponsesUsageInputTokensDetails(
+        public OpenAIResponsesUsageInputTokensDetails(
             int cachedTokens,
             int? cacheWriteTokens)
         {
@@ -44,9 +44,9 @@ namespace OpenRouter
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OpenAiResponsesUsageInputTokensDetails" /> class.
+        /// Initializes a new instance of the <see cref="OpenAIResponsesUsageInputTokensDetails" /> class.
         /// </summary>
-        public OpenAiResponsesUsageInputTokensDetails()
+        public OpenAIResponsesUsageInputTokensDetails()
         {
         }
 

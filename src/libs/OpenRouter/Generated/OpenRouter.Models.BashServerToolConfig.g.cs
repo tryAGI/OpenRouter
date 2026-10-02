@@ -4,29 +4,28 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration for the openrouter:bash server tool
+    /// Configuration for the openrouter:bash server tool<br/>
+    /// Example: {"environment":{"type":"container_auto"}}
     /// </summary>
     public sealed partial class BashServerToolConfig
     {
         /// <summary>
-        /// Which bash engine to use. "openrouter" runs commands server-side in the OpenRouter sandbox. "auto" (default) and "native" use native passthrough, returning the tool call to your application to run client-side; OpenRouter does not execute the commands.
+        /// Which bash engine to use. "openrouter" runs commands server-side in the OpenRouter sandbox. "auto" (default) and "native" use native passthrough, returning the tool call to your application to run client-side; OpenRouter does not execute the commands.<br/>
+        /// Example: auto
         /// </summary>
+        /// <example>auto</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BashServerToolEngineJsonConverter))]
         public global::OpenRouter.BashServerToolEngine? Engine { get; set; }
 
         /// <summary>
-        /// Execution environment for the bash server tool.
+        /// Execution environment for the bash server tool.<br/>
+        /// Example: {"type":"container_auto"}
         /// </summary>
+        /// <example>{"type":"container_auto"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BashServerToolEnvironmentJsonConverter))]
         public global::OpenRouter.BashServerToolEnvironment? Environment { get; set; }
-
-        /// <summary>
-        /// How long (in seconds) the container stays warm after its last command before sleeping, freeing its capacity slot. Idle-based: each command renews the timer. Defaults to 900 (15 minutes); capped at 2592000 (30 days).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sleep_after_seconds")]
-        public int? SleepAfterSeconds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,25 +37,22 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BashServerToolConfig" /> class.
         /// </summary>
         /// <param name="engine">
-        /// Which bash engine to use. "openrouter" runs commands server-side in the OpenRouter sandbox. "auto" (default) and "native" use native passthrough, returning the tool call to your application to run client-side; OpenRouter does not execute the commands.
+        /// Which bash engine to use. "openrouter" runs commands server-side in the OpenRouter sandbox. "auto" (default) and "native" use native passthrough, returning the tool call to your application to run client-side; OpenRouter does not execute the commands.<br/>
+        /// Example: auto
         /// </param>
         /// <param name="environment">
-        /// Execution environment for the bash server tool.
-        /// </param>
-        /// <param name="sleepAfterSeconds">
-        /// How long (in seconds) the container stays warm after its last command before sleeping, freeing its capacity slot. Idle-based: each command renews the timer. Defaults to 900 (15 minutes); capped at 2592000 (30 days).
+        /// Execution environment for the bash server tool.<br/>
+        /// Example: {"type":"container_auto"}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BashServerToolConfig(
             global::OpenRouter.BashServerToolEngine? engine,
-            global::OpenRouter.BashServerToolEnvironment? environment,
-            int? sleepAfterSeconds)
+            global::OpenRouter.BashServerToolEnvironment? environment)
         {
             this.Engine = engine;
             this.Environment = environment;
-            this.SleepAfterSeconds = sleepAfterSeconds;
         }
 
         /// <summary>

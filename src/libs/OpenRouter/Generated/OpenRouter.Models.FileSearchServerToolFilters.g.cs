@@ -1,4 +1,3 @@
-#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -7,289 +6,62 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public readonly partial struct FileSearchServerToolFilters : global::System.IEquatable<FileSearchServerToolFilters>
+    public sealed partial class FileSearchServerToolFilters
     {
         /// <summary>
         ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.FileSearchServerToolFilters0? FileSearchServerToolFilters0 { get; init; }
-#else
-        public global::OpenRouter.FileSearchServerToolFilters0? FileSearchServerToolFilters0 { get; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("key")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Key { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.FileSearchServerToolFiltersTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.FileSearchServerToolFiltersType Type { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>> Value { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileSearchServerToolFilters" /> class.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="type"></param>
+        /// <param name="value"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFilters0))]
-#endif
-        public bool IsFileSearchServerToolFilters0 => FileSearchServerToolFilters0 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickFileSearchServerToolFilters0(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.FileSearchServerToolFilters0? value)
-        {
-            value = FileSearchServerToolFilters0;
-            return IsFileSearchServerToolFilters0;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.FileSearchServerToolFilters0 PickFileSearchServerToolFilters0() => FileSearchServerToolFilters0 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFilters0' but the value was {ToString()}.");
-
-        /// <summary>
-        /// A compound filter that combines multiple comparison or compound filters
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.CompoundFilter? CompoundFilter { get; init; }
-#else
-        public global::OpenRouter.CompoundFilter? CompoundFilter { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
-#endif
-        public bool IsCompoundFilter => CompoundFilter != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCompoundFilter(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.CompoundFilter? value)
-        {
-            value = CompoundFilter;
-            return IsCompoundFilter;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.CompoundFilter PickCompoundFilter() => CompoundFilter is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator FileSearchServerToolFilters(global::OpenRouter.FileSearchServerToolFilters0 value) => new FileSearchServerToolFilters((global::OpenRouter.FileSearchServerToolFilters0?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.FileSearchServerToolFilters0?(FileSearchServerToolFilters @this) => @this.FileSearchServerToolFilters0;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public FileSearchServerToolFilters(global::OpenRouter.FileSearchServerToolFilters0? value)
-        {
-            FileSearchServerToolFilters0 = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static FileSearchServerToolFilters FromFileSearchServerToolFilters0(global::OpenRouter.FileSearchServerToolFilters0? value) => new FileSearchServerToolFilters(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator FileSearchServerToolFilters(global::OpenRouter.CompoundFilter value) => new FileSearchServerToolFilters((global::OpenRouter.CompoundFilter?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.CompoundFilter?(FileSearchServerToolFilters @this) => @this.CompoundFilter;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public FileSearchServerToolFilters(global::OpenRouter.CompoundFilter? value)
-        {
-            CompoundFilter = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static FileSearchServerToolFilters FromCompoundFilter(global::OpenRouter.CompoundFilter? value) => new FileSearchServerToolFilters(value);
-
-        /// <summary>
-        ///
-        /// </summary>
         public FileSearchServerToolFilters(
-            global::OpenRouter.FileSearchServerToolFilters0? fileSearchServerToolFilters0,
-            global::OpenRouter.CompoundFilter? compoundFilter
-            )
+            string key,
+            global::OpenRouter.FileSearchServerToolFiltersType type,
+            global::OpenRouter.AnyOf<string, double?, bool?, global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<string, double?>>> value)
         {
-            FileSearchServerToolFilters0 = fileSearchServerToolFilters0;
-            CompoundFilter = compoundFilter;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Type = type;
+            this.Value = value;
         }
 
         /// <summary>
-        ///
+        /// Initializes a new instance of the <see cref="FileSearchServerToolFilters" /> class.
         /// </summary>
-        public object? Object =>
-            CompoundFilter as object ??
-            FileSearchServerToolFilters0 as object
-            ;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public override string? ToString() =>
-            FileSearchServerToolFilters0?.ToString() ??
-            CompoundFilter?.ToString()
-            ;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool Validate()
+        public FileSearchServerToolFilters()
         {
-            return IsFileSearchServerToolFilters0 && !IsCompoundFilter || !IsFileSearchServerToolFilters0 && IsCompoundFilter;
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.FileSearchServerToolFilters0, TResult>? fileSearchServerToolFilters0 = null,
-            global::System.Func<global::OpenRouter.CompoundFilter, TResult>? compoundFilter = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (FileSearchServerToolFilters0 is { } __value0 && fileSearchServerToolFilters0 != null)
-            {
-                return fileSearchServerToolFilters0(__value0);
-            }
-            else if (CompoundFilter is { } __value1 && compoundFilter != null)
-            {
-                return compoundFilter(__value1);
-            }
-
-            return default(TResult);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public void Match(
-            global::System.Action<global::OpenRouter.FileSearchServerToolFilters0>? fileSearchServerToolFilters0 = null,
-
-            global::System.Action<global::OpenRouter.CompoundFilter>? compoundFilter = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (FileSearchServerToolFilters0 is { } __value0)
-            {
-                fileSearchServerToolFilters0?.Invoke(__value0);
-            }
-            else if (CompoundFilter is { } __value1)
-            {
-                compoundFilter?.Invoke(__value1);
-            }
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public void Switch(
-            global::System.Action<global::OpenRouter.FileSearchServerToolFilters0>? fileSearchServerToolFilters0 = null,
-            global::System.Action<global::OpenRouter.CompoundFilter>? compoundFilter = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (FileSearchServerToolFilters0 is { } __value0)
-            {
-                fileSearchServerToolFilters0?.Invoke(__value0);
-            }
-            else if (CompoundFilter is { } __value1)
-            {
-                compoundFilter?.Invoke(__value1);
-            }
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public override int GetHashCode()
-        {
-            var fields = new object?[]
-            {
-                FileSearchServerToolFilters0,
-                typeof(global::OpenRouter.FileSearchServerToolFilters0),
-                CompoundFilter,
-                typeof(global::OpenRouter.CompoundFilter),
-            };
-            const int offset = unchecked((int)2166136261);
-            const int prime = 16777619;
-            static int HashCodeAggregator(int hashCode, object? value) => value == null
-                ? (hashCode ^ 0) * prime
-                : (hashCode ^ value.GetHashCode()) * prime;
-
-            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool Equals(FileSearchServerToolFilters other)
-        {
-            return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FileSearchServerToolFilters0?>.Default.Equals(FileSearchServerToolFilters0, other.FileSearchServerToolFilters0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter)
-                ;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static bool operator ==(FileSearchServerToolFilters obj1, FileSearchServerToolFilters obj2)
-        {
-            return global::System.Collections.Generic.EqualityComparer<FileSearchServerToolFilters>.Default.Equals(obj1, obj2);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static bool operator !=(FileSearchServerToolFilters obj1, FileSearchServerToolFilters obj2)
-        {
-            return !(obj1 == obj2);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public override bool Equals(object? obj)
-        {
-            return obj is FileSearchServerToolFilters o && Equals(o);
-        }
     }
 }

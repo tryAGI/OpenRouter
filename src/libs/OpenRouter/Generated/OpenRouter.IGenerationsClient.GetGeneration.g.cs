@@ -7,7 +7,10 @@ namespace OpenRouter
         /// <summary>
         /// Get request &amp; usage metadata for a generation
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// The generation ID<br/>
+        /// Example: gen-1234567890
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
@@ -18,7 +21,10 @@ namespace OpenRouter
         /// <summary>
         /// Get request &amp; usage metadata for a generation
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// The generation ID<br/>
+        /// Example: gen-1234567890
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>

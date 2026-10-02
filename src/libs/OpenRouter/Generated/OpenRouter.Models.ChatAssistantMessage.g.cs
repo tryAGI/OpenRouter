@@ -1,16 +1,21 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace OpenRouter
 {
     /// <summary>
-    /// Assistant message for requests and responses
+    /// Assistant message for requests and responses<br/>
+    /// Example: {"content":"The capital of France is Paris.","model":"openai/gpt-4o","role":"assistant"}
     /// </summary>
     public sealed partial class ChatAssistantMessage
     {
         /// <summary>
-        /// Audio output data or reference
+        /// Audio output data or reference<br/>
+        /// Example: {"data":"UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1f","expires_at":1677652400,"id":"audio_abc123","transcript":"Hello! How can I help you today?"}
         /// </summary>
+        /// <example>{"data":"UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1f","expires_at":1677652400,"id":"audio_abc123","transcript":"Hello! How can I help you today?"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         public global::OpenRouter.ChatAudioOutput? Audio { get; set; }
 
@@ -18,13 +23,24 @@ namespace OpenRouter
         /// Assistant message content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>, object>))]
+        public global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>, object>? Content { get; set; }
 
         /// <summary>
-        /// Generated images from image generation models
+        /// Generated images from image generation models<br/>
+        /// Example: [{"image_url":{"url":"data:image/png;base64,iVBORw0KGgo..."}}]
         /// </summary>
+        /// <example>[{"image_url":{"url":"data:image/png;base64,iVBORw0KGgo..."}}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ChatAssistantImagesItems>? Images { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ChatAssistantImage>? Images { get; set; }
+
+        /// <summary>
+        /// Model that generated this assistant message<br/>
+        /// Example: openai/gpt-4o
+        /// </summary>
+        /// <example>openai/gpt-4o</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
 
         /// <summary>
         /// Optional name for the assistant
@@ -39,8 +55,10 @@ namespace OpenRouter
         public string? Reasoning { get; set; }
 
         /// <summary>
-        /// Reasoning details for extended thinking models
+        /// Reasoning details for extended thinking models<br/>
+        /// Example: [{"text":"Let me work through this step by step...","type":"reasoning.text"}]
         /// </summary>
+        /// <example>[{"text":"Let me work through this step by step...","type":"reasoning.text"}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_details")]
         public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningDetailUnion>? ReasoningDetails { get; set; }
 
@@ -49,6 +67,13 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         public string? Refusal { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatAssistantMessageRoleJsonConverter))]
+        public global::OpenRouter.ChatAssistantMessageRole Role { get; set; }
 
         /// <summary>
         /// Tool calls made by the assistant
@@ -66,13 +91,19 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatAssistantMessage" /> class.
         /// </summary>
         /// <param name="audio">
-        /// Audio output data or reference
+        /// Audio output data or reference<br/>
+        /// Example: {"data":"UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1f","expires_at":1677652400,"id":"audio_abc123","transcript":"Hello! How can I help you today?"}
         /// </param>
         /// <param name="content">
         /// Assistant message content
         /// </param>
         /// <param name="images">
-        /// Generated images from image generation models
+        /// Generated images from image generation models<br/>
+        /// Example: [{"image_url":{"url":"data:image/png;base64,iVBORw0KGgo..."}}]
+        /// </param>
+        /// <param name="model">
+        /// Model that generated this assistant message<br/>
+        /// Example: openai/gpt-4o
         /// </param>
         /// <param name="name">
         /// Optional name for the assistant
@@ -81,11 +112,13 @@ namespace OpenRouter
         /// Reasoning output
         /// </param>
         /// <param name="reasoningDetails">
-        /// Reasoning details for extended thinking models
+        /// Reasoning details for extended thinking models<br/>
+        /// Example: [{"text":"Let me work through this step by step...","type":"reasoning.text"}]
         /// </param>
         /// <param name="refusal">
         /// Refusal message if content was refused
         /// </param>
+        /// <param name="role"></param>
         /// <param name="toolCalls">
         /// Tool calls made by the assistant
         /// </param>
@@ -94,21 +127,25 @@ namespace OpenRouter
 #endif
         public ChatAssistantMessage(
             global::OpenRouter.ChatAudioOutput? audio,
-            global::OpenRouter.ChatMessagesDiscriminatorMappingAssistantContent? content,
-            global::System.Collections.Generic.IList<global::OpenRouter.ChatAssistantImagesItems>? images,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.ChatContentItems>, object>? content,
+            global::System.Collections.Generic.IList<global::OpenRouter.ChatAssistantImage>? images,
+            string? model,
             string? name,
             string? reasoning,
             global::System.Collections.Generic.IList<global::OpenRouter.ReasoningDetailUnion>? reasoningDetails,
             string? refusal,
+            global::OpenRouter.ChatAssistantMessageRole role,
             global::System.Collections.Generic.IList<global::OpenRouter.ChatToolCall>? toolCalls)
         {
             this.Audio = audio;
             this.Content = content;
             this.Images = images;
+            this.Model = model;
             this.Name = name;
             this.Reasoning = reasoning;
             this.ReasoningDetails = reasoningDetails;
             this.Refusal = refusal;
+            this.Role = role;
             this.ToolCalls = toolCalls;
         }
 

@@ -4,37 +4,48 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Aggregated usage statistics for the request
+    /// Aggregated usage statistics for the request<br/>
+    /// Example: {"cost":0.000508,"input_tokens":83,"output_tokens":30,"seconds":9.2,"total_tokens":113}
     /// </summary>
     public sealed partial class STTUsage
     {
         /// <summary>
-        /// Total cost of the request in USD
+        /// Total cost of the request in USD<br/>
+        /// Example: 0.000508F
         /// </summary>
+        /// <example>0.000508F</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         public double? Cost { get; set; }
 
         /// <summary>
-        /// Number of input tokens billed for this request
+        /// Number of input tokens billed for this request<br/>
+        /// Example: 83
         /// </summary>
+        /// <example>83</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         public int? InputTokens { get; set; }
 
         /// <summary>
-        /// Number of output tokens generated
+        /// Number of output tokens generated<br/>
+        /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         public int? OutputTokens { get; set; }
 
         /// <summary>
-        /// Duration of the input audio in seconds
+        /// Duration of the input audio in seconds<br/>
+        /// Example: 9.2F
         /// </summary>
+        /// <example>9.2F</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("seconds")]
         public double? Seconds { get; set; }
 
         /// <summary>
-        /// Total number of tokens used (input + output)
+        /// Total number of tokens used (input + output)<br/>
+        /// Example: 113
         /// </summary>
+        /// <example>113</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         public int? TotalTokens { get; set; }
 
@@ -48,19 +59,24 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="STTUsage" /> class.
         /// </summary>
         /// <param name="cost">
-        /// Total cost of the request in USD
+        /// Total cost of the request in USD<br/>
+        /// Example: 0.000508F
         /// </param>
         /// <param name="inputTokens">
-        /// Number of input tokens billed for this request
+        /// Number of input tokens billed for this request<br/>
+        /// Example: 83
         /// </param>
         /// <param name="outputTokens">
-        /// Number of output tokens generated
+        /// Number of output tokens generated<br/>
+        /// Example: 30
         /// </param>
         /// <param name="seconds">
-        /// Duration of the input audio in seconds
+        /// Duration of the input audio in seconds<br/>
+        /// Example: 9.2F
         /// </param>
         /// <param name="totalTokens">
-        /// Total number of tokens used (input + output)
+        /// Total number of tokens used (input + output)<br/>
+        /// Example: 113
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -1,0 +1,55 @@
+#nullable enable
+
+namespace OpenRouter.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class InternChatErrorMetadataReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.InternChatErrorMetadataReason?>
+    {
+        /// <inheritdoc />
+        public override global::OpenRouter.InternChatErrorMetadataReason? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::OpenRouter.InternChatErrorMetadataReasonExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::OpenRouter.InternChatErrorMetadataReason?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::OpenRouter.InternChatErrorMetadataReason? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::OpenRouter.InternChatErrorMetadataReasonExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

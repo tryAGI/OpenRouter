@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
+    /// OpenRouter built-in server tool: generates images from text prompts using an image generation model<br/>
+    /// Example: {"parameters":{"model":"openai/gpt-5-image","quality":"high","size":"1024x1024"},"type":"openrouter:image_generation"}
     /// </summary>
     public sealed partial class ImageGenerationServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:image_generation server tool. Accepts all image_config params (aspect_ratio, quality, size, background, output_format, output_compression, moderation, etc.) plus a model field.
+        /// Configuration for the openrouter:image_generation server tool. Accepts all image_config params (aspect_ratio, quality, size, background, output_format, output_compression, moderation, etc.) plus a model field.<br/>
+        /// Example: {"aspect_ratio":"16:9","model":"openai/gpt-5-image","quality":"high"}
         /// </summary>
+        /// <example>{"aspect_ratio":"16:9","model":"openai/gpt-5-image","quality":"high"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.ImageGenerationServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ImageGenerationServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:image_generation server tool. Accepts all image_config params (aspect_ratio, quality, size, background, output_format, output_compression, moderation, etc.) plus a model field.
+        /// Configuration for the openrouter:image_generation server tool. Accepts all image_config params (aspect_ratio, quality, size, background, output_format, output_compression, moderation, etc.) plus a model field.<br/>
+        /// Example: {"aspect_ratio":"16:9","model":"openai/gpt-5-image","quality":"high"}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

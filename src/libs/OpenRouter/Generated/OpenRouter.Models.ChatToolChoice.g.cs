@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Tool choice configuration
+    /// Tool choice configuration<br/>
+    /// Example: auto
     /// </summary>
     public readonly partial struct ChatToolChoice : global::System.IEquatable<ChatToolChoice>
     {
@@ -13,254 +14,256 @@ namespace OpenRouter
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatToolChoice0? ChatToolChoice0 { get; init; }
+        public global::OpenRouter.ChatToolChoiceVariant1? ChatToolChoiceVariant1 { get; init; }
 #else
-        public global::OpenRouter.ChatToolChoice0? ChatToolChoice0 { get; }
+        public global::OpenRouter.ChatToolChoiceVariant1? ChatToolChoiceVariant1 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoice0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoiceVariant1))]
 #endif
-        public bool IsChatToolChoice0 => ChatToolChoice0 != null;
+        public bool IsChatToolChoiceVariant1 => ChatToolChoiceVariant1 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatToolChoice0(
+        public bool TryPickChatToolChoiceVariant1(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatToolChoice0? value)
+            out global::OpenRouter.ChatToolChoiceVariant1? value)
         {
-            value = ChatToolChoice0;
-            return IsChatToolChoice0;
+            value = ChatToolChoiceVariant1;
+            return IsChatToolChoiceVariant1;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatToolChoice0 PickChatToolChoice0() => ChatToolChoice0 is { } value
+        public global::OpenRouter.ChatToolChoiceVariant1 PickChatToolChoiceVariant1() => ChatToolChoiceVariant1 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice0' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoiceVariant1' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatToolChoice1? ChatToolChoice1 { get; init; }
+        public global::OpenRouter.ChatToolChoiceVariant2? ChatToolChoiceVariant2 { get; init; }
 #else
-        public global::OpenRouter.ChatToolChoice1? ChatToolChoice1 { get; }
+        public global::OpenRouter.ChatToolChoiceVariant2? ChatToolChoiceVariant2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoice1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoiceVariant2))]
 #endif
-        public bool IsChatToolChoice1 => ChatToolChoice1 != null;
+        public bool IsChatToolChoiceVariant2 => ChatToolChoiceVariant2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatToolChoice1(
+        public bool TryPickChatToolChoiceVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatToolChoice1? value)
+            out global::OpenRouter.ChatToolChoiceVariant2? value)
         {
-            value = ChatToolChoice1;
-            return IsChatToolChoice1;
+            value = ChatToolChoiceVariant2;
+            return IsChatToolChoiceVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatToolChoice1 PickChatToolChoice1() => ChatToolChoice1 is { } value
+        public global::OpenRouter.ChatToolChoiceVariant2 PickChatToolChoiceVariant2() => ChatToolChoiceVariant2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoiceVariant2' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatToolChoice2? ChatToolChoice2 { get; init; }
+        public global::OpenRouter.ChatToolChoiceVariant3? ChatToolChoiceVariant3 { get; init; }
 #else
-        public global::OpenRouter.ChatToolChoice2? ChatToolChoice2 { get; }
+        public global::OpenRouter.ChatToolChoiceVariant3? ChatToolChoiceVariant3 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoice2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolChoiceVariant3))]
 #endif
-        public bool IsChatToolChoice2 => ChatToolChoice2 != null;
+        public bool IsChatToolChoiceVariant3 => ChatToolChoiceVariant3 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatToolChoice2(
+        public bool TryPickChatToolChoiceVariant3(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatToolChoice2? value)
+            out global::OpenRouter.ChatToolChoiceVariant3? value)
         {
-            value = ChatToolChoice2;
-            return IsChatToolChoice2;
+            value = ChatToolChoiceVariant3;
+            return IsChatToolChoiceVariant3;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatToolChoice2 PickChatToolChoice2() => ChatToolChoice2 is { } value
+        public global::OpenRouter.ChatToolChoiceVariant3 PickChatToolChoiceVariant3() => ChatToolChoiceVariant3 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoiceVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// Named tool choice for specific function
+        /// Named tool choice for specific function<br/>
+        /// Example: {"function":{"name":"get_weather"},"type":"function"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatNamedToolChoice? ChatNamedToolChoice { get; init; }
+        public global::OpenRouter.ChatNamedToolChoice? Named { get; init; }
 #else
-        public global::OpenRouter.ChatNamedToolChoice? ChatNamedToolChoice { get; }
+        public global::OpenRouter.ChatNamedToolChoice? Named { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatNamedToolChoice))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Named))]
 #endif
-        public bool IsChatNamedToolChoice => ChatNamedToolChoice != null;
+        public bool IsNamed => Named != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatNamedToolChoice(
+        public bool TryPickNamed(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.ChatNamedToolChoice? value)
         {
-            value = ChatNamedToolChoice;
-            return IsChatNamedToolChoice;
+            value = Named;
+            return IsNamed;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatNamedToolChoice PickChatNamedToolChoice() => ChatNamedToolChoice is { } value
+        public global::OpenRouter.ChatNamedToolChoice PickNamed() => Named is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatNamedToolChoice' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Named' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter extension: force a specific server tool by naming it directly in `tool_choice.type` instead of wrapping it in `{ type: "function", function: { name } }`.
+        /// OpenRouter extension: force a specific server tool by naming it directly in `tool_choice.type` instead of wrapping it in `{ type: "function", function: { name } }`.<br/>
+        /// Example: {"type":"openrouter:web_search"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatServerToolChoice? ChatServerToolChoice { get; init; }
+        public global::OpenRouter.ChatServerToolChoice? Server { get; init; }
 #else
-        public global::OpenRouter.ChatServerToolChoice? ChatServerToolChoice { get; }
+        public global::OpenRouter.ChatServerToolChoice? Server { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatServerToolChoice))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Server))]
 #endif
-        public bool IsChatServerToolChoice => ChatServerToolChoice != null;
+        public bool IsServer => Server != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatServerToolChoice(
+        public bool TryPickServer(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.ChatServerToolChoice? value)
         {
-            value = ChatServerToolChoice;
-            return IsChatServerToolChoice;
+            value = Server;
+            return IsServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatServerToolChoice PickChatServerToolChoice() => ChatServerToolChoice is { } value
+        public global::OpenRouter.ChatServerToolChoice PickServer() => Server is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatServerToolChoice' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Server' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoice0 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoice0?)value);
+        public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoiceVariant1 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoiceVariant1?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatToolChoice0?(ChatToolChoice @this) => @this.ChatToolChoice0;
+        public static implicit operator global::OpenRouter.ChatToolChoiceVariant1?(ChatToolChoice @this) => @this.ChatToolChoiceVariant1;
 
         /// <summary>
         ///
         /// </summary>
-        public ChatToolChoice(global::OpenRouter.ChatToolChoice0? value)
+        public ChatToolChoice(global::OpenRouter.ChatToolChoiceVariant1? value)
         {
-            ChatToolChoice0 = value;
+            ChatToolChoiceVariant1 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatToolChoice FromChatToolChoice0(global::OpenRouter.ChatToolChoice0? value) => new ChatToolChoice(value);
+        public static ChatToolChoice FromChatToolChoiceVariant1(global::OpenRouter.ChatToolChoiceVariant1? value) => new ChatToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoice1 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoice1?)value);
+        public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoiceVariant2 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoiceVariant2?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatToolChoice1?(ChatToolChoice @this) => @this.ChatToolChoice1;
+        public static implicit operator global::OpenRouter.ChatToolChoiceVariant2?(ChatToolChoice @this) => @this.ChatToolChoiceVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public ChatToolChoice(global::OpenRouter.ChatToolChoice1? value)
+        public ChatToolChoice(global::OpenRouter.ChatToolChoiceVariant2? value)
         {
-            ChatToolChoice1 = value;
+            ChatToolChoiceVariant2 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatToolChoice FromChatToolChoice1(global::OpenRouter.ChatToolChoice1? value) => new ChatToolChoice(value);
+        public static ChatToolChoice FromChatToolChoiceVariant2(global::OpenRouter.ChatToolChoiceVariant2? value) => new ChatToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoice2 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoice2?)value);
+        public static implicit operator ChatToolChoice(global::OpenRouter.ChatToolChoiceVariant3 value) => new ChatToolChoice((global::OpenRouter.ChatToolChoiceVariant3?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatToolChoice2?(ChatToolChoice @this) => @this.ChatToolChoice2;
+        public static implicit operator global::OpenRouter.ChatToolChoiceVariant3?(ChatToolChoice @this) => @this.ChatToolChoiceVariant3;
 
         /// <summary>
         ///
         /// </summary>
-        public ChatToolChoice(global::OpenRouter.ChatToolChoice2? value)
+        public ChatToolChoice(global::OpenRouter.ChatToolChoiceVariant3? value)
         {
-            ChatToolChoice2 = value;
+            ChatToolChoiceVariant3 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatToolChoice FromChatToolChoice2(global::OpenRouter.ChatToolChoice2? value) => new ChatToolChoice(value);
+        public static ChatToolChoice FromChatToolChoiceVariant3(global::OpenRouter.ChatToolChoiceVariant3? value) => new ChatToolChoice(value);
 
         /// <summary>
         ///
@@ -270,20 +273,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatNamedToolChoice?(ChatToolChoice @this) => @this.ChatNamedToolChoice;
+        public static implicit operator global::OpenRouter.ChatNamedToolChoice?(ChatToolChoice @this) => @this.Named;
 
         /// <summary>
         ///
         /// </summary>
         public ChatToolChoice(global::OpenRouter.ChatNamedToolChoice? value)
         {
-            ChatNamedToolChoice = value;
+            Named = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatToolChoice FromChatNamedToolChoice(global::OpenRouter.ChatNamedToolChoice? value) => new ChatToolChoice(value);
+        public static ChatToolChoice FromNamed(global::OpenRouter.ChatNamedToolChoice? value) => new ChatToolChoice(value);
 
         /// <summary>
         ///
@@ -293,59 +296,59 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatServerToolChoice?(ChatToolChoice @this) => @this.ChatServerToolChoice;
+        public static implicit operator global::OpenRouter.ChatServerToolChoice?(ChatToolChoice @this) => @this.Server;
 
         /// <summary>
         ///
         /// </summary>
         public ChatToolChoice(global::OpenRouter.ChatServerToolChoice? value)
         {
-            ChatServerToolChoice = value;
+            Server = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatToolChoice FromChatServerToolChoice(global::OpenRouter.ChatServerToolChoice? value) => new ChatToolChoice(value);
+        public static ChatToolChoice FromServer(global::OpenRouter.ChatServerToolChoice? value) => new ChatToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
         public ChatToolChoice(
-            global::OpenRouter.ChatToolChoice0? chatToolChoice0,
-            global::OpenRouter.ChatToolChoice1? chatToolChoice1,
-            global::OpenRouter.ChatToolChoice2? chatToolChoice2,
-            global::OpenRouter.ChatNamedToolChoice? chatNamedToolChoice,
-            global::OpenRouter.ChatServerToolChoice? chatServerToolChoice
+            global::OpenRouter.ChatToolChoiceVariant1? chatToolChoiceVariant1,
+            global::OpenRouter.ChatToolChoiceVariant2? chatToolChoiceVariant2,
+            global::OpenRouter.ChatToolChoiceVariant3? chatToolChoiceVariant3,
+            global::OpenRouter.ChatNamedToolChoice? named,
+            global::OpenRouter.ChatServerToolChoice? server
             )
         {
-            ChatToolChoice0 = chatToolChoice0;
-            ChatToolChoice1 = chatToolChoice1;
-            ChatToolChoice2 = chatToolChoice2;
-            ChatNamedToolChoice = chatNamedToolChoice;
-            ChatServerToolChoice = chatServerToolChoice;
+            ChatToolChoiceVariant1 = chatToolChoiceVariant1;
+            ChatToolChoiceVariant2 = chatToolChoiceVariant2;
+            ChatToolChoiceVariant3 = chatToolChoiceVariant3;
+            Named = named;
+            Server = server;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            ChatServerToolChoice as object ??
-            ChatNamedToolChoice as object ??
-            ChatToolChoice2 as object ??
-            ChatToolChoice1 as object ??
-            ChatToolChoice0 as object
+            Server as object ??
+            Named as object ??
+            ChatToolChoiceVariant3 as object ??
+            ChatToolChoiceVariant2 as object ??
+            ChatToolChoiceVariant1 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            ChatToolChoice0?.ToValueString() ??
-            ChatToolChoice1?.ToValueString() ??
-            ChatToolChoice2?.ToValueString() ??
-            ChatNamedToolChoice?.ToString() ??
-            ChatServerToolChoice?.ToString()
+            ChatToolChoiceVariant1?.ToValueString() ??
+            ChatToolChoiceVariant2?.ToValueString() ??
+            ChatToolChoiceVariant3?.ToValueString() ??
+            Named?.ToString() ??
+            Server?.ToString()
             ;
 
         /// <summary>
@@ -353,18 +356,18 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatToolChoice0 && !IsChatToolChoice1 && !IsChatToolChoice2 && !IsChatNamedToolChoice && !IsChatServerToolChoice || !IsChatToolChoice0 && IsChatToolChoice1 && !IsChatToolChoice2 && !IsChatNamedToolChoice && !IsChatServerToolChoice || !IsChatToolChoice0 && !IsChatToolChoice1 && IsChatToolChoice2 && !IsChatNamedToolChoice && !IsChatServerToolChoice || !IsChatToolChoice0 && !IsChatToolChoice1 && !IsChatToolChoice2 && IsChatNamedToolChoice && !IsChatServerToolChoice || !IsChatToolChoice0 && !IsChatToolChoice1 && !IsChatToolChoice2 && !IsChatNamedToolChoice && IsChatServerToolChoice;
+            return IsChatToolChoiceVariant1 || IsChatToolChoiceVariant2 || IsChatToolChoiceVariant3 || IsNamed || IsServer;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatToolChoice0?, TResult>? chatToolChoice0 = null,
-            global::System.Func<global::OpenRouter.ChatToolChoice1?, TResult>? chatToolChoice1 = null,
-            global::System.Func<global::OpenRouter.ChatToolChoice2?, TResult>? chatToolChoice2 = null,
-            global::System.Func<global::OpenRouter.ChatNamedToolChoice, TResult>? chatNamedToolChoice = null,
-            global::System.Func<global::OpenRouter.ChatServerToolChoice, TResult>? chatServerToolChoice = null,
+            global::System.Func<global::OpenRouter.ChatToolChoiceVariant1?, TResult>? chatToolChoiceVariant1 = null,
+            global::System.Func<global::OpenRouter.ChatToolChoiceVariant2?, TResult>? chatToolChoiceVariant2 = null,
+            global::System.Func<global::OpenRouter.ChatToolChoiceVariant3?, TResult>? chatToolChoiceVariant3 = null,
+            global::System.Func<global::OpenRouter.ChatNamedToolChoice, TResult>? named = null,
+            global::System.Func<global::OpenRouter.ChatServerToolChoice, TResult>? server = null,
             bool validate = true)
         {
             if (validate)
@@ -372,25 +375,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ChatToolChoice0 is { } __value0 && chatToolChoice0 != null)
+            if (ChatToolChoiceVariant1 is { } __value0 && chatToolChoiceVariant1 != null)
             {
-                return chatToolChoice0(__value0);
+                return chatToolChoiceVariant1(__value0);
             }
-            else if (ChatToolChoice1 is { } __value1 && chatToolChoice1 != null)
+            else if (ChatToolChoiceVariant2 is { } __value1 && chatToolChoiceVariant2 != null)
             {
-                return chatToolChoice1(__value1);
+                return chatToolChoiceVariant2(__value1);
             }
-            else if (ChatToolChoice2 is { } __value2 && chatToolChoice2 != null)
+            else if (ChatToolChoiceVariant3 is { } __value2 && chatToolChoiceVariant3 != null)
             {
-                return chatToolChoice2(__value2);
+                return chatToolChoiceVariant3(__value2);
             }
-            else if (ChatNamedToolChoice is { } __value3 && chatNamedToolChoice != null)
+            else if (Named is { } __value3 && named != null)
             {
-                return chatNamedToolChoice(__value3);
+                return named(__value3);
             }
-            else if (ChatServerToolChoice is { } __value4 && chatServerToolChoice != null)
+            else if (Server is { } __value4 && server != null)
             {
-                return chatServerToolChoice(__value4);
+                return server(__value4);
             }
 
             return default(TResult);
@@ -400,15 +403,15 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatToolChoice0?>? chatToolChoice0 = null,
+            global::System.Action<global::OpenRouter.ChatToolChoiceVariant1?>? chatToolChoiceVariant1 = null,
 
-            global::System.Action<global::OpenRouter.ChatToolChoice1?>? chatToolChoice1 = null,
+            global::System.Action<global::OpenRouter.ChatToolChoiceVariant2?>? chatToolChoiceVariant2 = null,
 
-            global::System.Action<global::OpenRouter.ChatToolChoice2?>? chatToolChoice2 = null,
+            global::System.Action<global::OpenRouter.ChatToolChoiceVariant3?>? chatToolChoiceVariant3 = null,
 
-            global::System.Action<global::OpenRouter.ChatNamedToolChoice>? chatNamedToolChoice = null,
+            global::System.Action<global::OpenRouter.ChatNamedToolChoice>? named = null,
 
-            global::System.Action<global::OpenRouter.ChatServerToolChoice>? chatServerToolChoice = null,
+            global::System.Action<global::OpenRouter.ChatServerToolChoice>? server = null,
             bool validate = true)
         {
             if (validate)
@@ -416,25 +419,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ChatToolChoice0 is { } __value0)
+            if (ChatToolChoiceVariant1 is { } __value0)
             {
-                chatToolChoice0?.Invoke(__value0);
+                chatToolChoiceVariant1?.Invoke(__value0);
             }
-            else if (ChatToolChoice1 is { } __value1)
+            else if (ChatToolChoiceVariant2 is { } __value1)
             {
-                chatToolChoice1?.Invoke(__value1);
+                chatToolChoiceVariant2?.Invoke(__value1);
             }
-            else if (ChatToolChoice2 is { } __value2)
+            else if (ChatToolChoiceVariant3 is { } __value2)
             {
-                chatToolChoice2?.Invoke(__value2);
+                chatToolChoiceVariant3?.Invoke(__value2);
             }
-            else if (ChatNamedToolChoice is { } __value3)
+            else if (Named is { } __value3)
             {
-                chatNamedToolChoice?.Invoke(__value3);
+                named?.Invoke(__value3);
             }
-            else if (ChatServerToolChoice is { } __value4)
+            else if (Server is { } __value4)
             {
-                chatServerToolChoice?.Invoke(__value4);
+                server?.Invoke(__value4);
             }
         }
 
@@ -442,11 +445,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.ChatToolChoice0?>? chatToolChoice0 = null,
-            global::System.Action<global::OpenRouter.ChatToolChoice1?>? chatToolChoice1 = null,
-            global::System.Action<global::OpenRouter.ChatToolChoice2?>? chatToolChoice2 = null,
-            global::System.Action<global::OpenRouter.ChatNamedToolChoice>? chatNamedToolChoice = null,
-            global::System.Action<global::OpenRouter.ChatServerToolChoice>? chatServerToolChoice = null,
+            global::System.Action<global::OpenRouter.ChatToolChoiceVariant1?>? chatToolChoiceVariant1 = null,
+            global::System.Action<global::OpenRouter.ChatToolChoiceVariant2?>? chatToolChoiceVariant2 = null,
+            global::System.Action<global::OpenRouter.ChatToolChoiceVariant3?>? chatToolChoiceVariant3 = null,
+            global::System.Action<global::OpenRouter.ChatNamedToolChoice>? named = null,
+            global::System.Action<global::OpenRouter.ChatServerToolChoice>? server = null,
             bool validate = true)
         {
             if (validate)
@@ -454,25 +457,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ChatToolChoice0 is { } __value0)
+            if (ChatToolChoiceVariant1 is { } __value0)
             {
-                chatToolChoice0?.Invoke(__value0);
+                chatToolChoiceVariant1?.Invoke(__value0);
             }
-            else if (ChatToolChoice1 is { } __value1)
+            else if (ChatToolChoiceVariant2 is { } __value1)
             {
-                chatToolChoice1?.Invoke(__value1);
+                chatToolChoiceVariant2?.Invoke(__value1);
             }
-            else if (ChatToolChoice2 is { } __value2)
+            else if (ChatToolChoiceVariant3 is { } __value2)
             {
-                chatToolChoice2?.Invoke(__value2);
+                chatToolChoiceVariant3?.Invoke(__value2);
             }
-            else if (ChatNamedToolChoice is { } __value3)
+            else if (Named is { } __value3)
             {
-                chatNamedToolChoice?.Invoke(__value3);
+                named?.Invoke(__value3);
             }
-            else if (ChatServerToolChoice is { } __value4)
+            else if (Server is { } __value4)
             {
-                chatServerToolChoice?.Invoke(__value4);
+                server?.Invoke(__value4);
             }
         }
 
@@ -483,15 +486,15 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                ChatToolChoice0,
-                typeof(global::OpenRouter.ChatToolChoice0),
-                ChatToolChoice1,
-                typeof(global::OpenRouter.ChatToolChoice1),
-                ChatToolChoice2,
-                typeof(global::OpenRouter.ChatToolChoice2),
-                ChatNamedToolChoice,
+                ChatToolChoiceVariant1,
+                typeof(global::OpenRouter.ChatToolChoiceVariant1),
+                ChatToolChoiceVariant2,
+                typeof(global::OpenRouter.ChatToolChoiceVariant2),
+                ChatToolChoiceVariant3,
+                typeof(global::OpenRouter.ChatToolChoiceVariant3),
+                Named,
                 typeof(global::OpenRouter.ChatNamedToolChoice),
-                ChatServerToolChoice,
+                Server,
                 typeof(global::OpenRouter.ChatServerToolChoice),
             };
             const int offset = unchecked((int)2166136261);
@@ -509,11 +512,11 @@ namespace OpenRouter
         public bool Equals(ChatToolChoice other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoice0?>.Default.Equals(ChatToolChoice0, other.ChatToolChoice0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoice1?>.Default.Equals(ChatToolChoice1, other.ChatToolChoice1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoice2?>.Default.Equals(ChatToolChoice2, other.ChatToolChoice2) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatNamedToolChoice?>.Default.Equals(ChatNamedToolChoice, other.ChatNamedToolChoice) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatServerToolChoice?>.Default.Equals(ChatServerToolChoice, other.ChatServerToolChoice)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoiceVariant1?>.Default.Equals(ChatToolChoiceVariant1, other.ChatToolChoiceVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoiceVariant2?>.Default.Equals(ChatToolChoiceVariant2, other.ChatToolChoiceVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolChoiceVariant3?>.Default.Equals(ChatToolChoiceVariant3, other.ChatToolChoiceVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatNamedToolChoice?>.Default.Equals(Named, other.Named) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatServerToolChoice?>.Default.Equals(Server, other.Server)
                 ;
         }
 

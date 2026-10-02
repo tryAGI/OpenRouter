@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Unprocessable Entity - Semantic validation failure
+    /// Unprocessable Entity - Semantic validation failure<br/>
+    /// Example: {"error":{"code":422,"message":"Invalid argument"}}
     /// </summary>
     public sealed partial class UnprocessableEntityResponse
     {
         /// <summary>
-        /// Error data for UnprocessableEntityResponse
+        /// Error data for UnprocessableEntityResponse<br/>
+        /// Example: {"code":422,"message":"Invalid argument"}
         /// </summary>
+        /// <example>{"code":422,"message":"Invalid argument"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.UnprocessableEntityResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UnprocessableEntityResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for UnprocessableEntityResponse
+        /// Error data for UnprocessableEntityResponse<br/>
+        /// Example: {"code":422,"message":"Invalid argument"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

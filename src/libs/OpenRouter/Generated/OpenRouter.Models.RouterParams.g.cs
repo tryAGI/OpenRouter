@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"version_group":"anthropic/claude-sonnet-4"}
     /// </summary>
     public sealed partial class RouterParams
     {

@@ -9,10 +9,11 @@ namespace OpenRouter
     public sealed partial class VideoGenerationRequestProvider
     {
         /// <summary>
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
-        public global::OpenRouter.VideoGenerationRequestProviderOptions? Options { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ProviderOptions, object>))]
+        public global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -23,14 +24,12 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="VideoGenerationRequestProvider" /> class.
         /// </summary>
-        /// <param name="options">
-        /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
-        /// </param>
+        /// <param name="options"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VideoGenerationRequestProvider(
-            global::OpenRouter.VideoGenerationRequestProviderOptions? options)
+            global::OpenRouter.AllOf<global::OpenRouter.ProviderOptions, object>? options)
         {
             this.Options = options;
         }

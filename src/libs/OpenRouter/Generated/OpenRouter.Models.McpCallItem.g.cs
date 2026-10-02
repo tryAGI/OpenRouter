@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An MCP tool call with its output or error
+    /// An MCP tool call with its output or error<br/>
+    /// Example: {"arguments":"{\u0022query\u0022:\u0022SELECT * FROM users\u0022}","id":"mcp-call-abc123","name":"query_database","output":"[{\u0022id\u0022:1,\u0022name\u0022:\u0022Alice\u0022}]","server_label":"database-server","type":"mcp_call"}
     /// </summary>
     public sealed partial class McpCallItem
     {
@@ -16,10 +17,13 @@ namespace OpenRouter
         public required string Arguments { get; set; }
 
         /// <summary>
-        ///
+        /// Error from an MCP tool call, either a plain message or a structured error<br/>
+        /// Example: {"code":503,"message":"Service Unavailable","type":"http_error"}
         /// </summary>
+        /// <example>{"code":503,"message":"Service Unavailable","type":"http_error"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.McpToolCallErrorJsonConverter))]
+        public global::OpenRouter.McpToolCallError? Error { get; set; }
 
         /// <summary>
         ///
@@ -68,7 +72,10 @@ namespace OpenRouter
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="serverLabel"></param>
-        /// <param name="error"></param>
+        /// <param name="error">
+        /// Error from an MCP tool call, either a plain message or a structured error<br/>
+        /// Example: {"code":503,"message":"Service Unavailable","type":"http_error"}
+        /// </param>
         /// <param name="output"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -79,7 +86,7 @@ namespace OpenRouter
             string id,
             string name,
             string serverLabel,
-            string? error,
+            global::OpenRouter.McpToolCallError? error,
             string? output,
             global::OpenRouter.McpCallItemType type)
         {

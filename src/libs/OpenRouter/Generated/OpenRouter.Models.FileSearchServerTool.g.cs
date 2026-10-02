@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// File search tool configuration
+    /// File search tool configuration<br/>
+    /// Example: {"type":"file_search","vector_store_ids":["vs_abc123"]}
     /// </summary>
     public sealed partial class FileSearchServerTool
     {
@@ -12,7 +13,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::OpenRouter.FileSearchServerToolFilters? Filters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.FileSearchServerToolFilters, global::OpenRouter.CompoundFilter, object>))]
+        public global::OpenRouter.AnyOf<global::OpenRouter.FileSearchServerToolFilters, global::OpenRouter.CompoundFilter, object>? Filters { get; set; }
 
         /// <summary>
         ///
@@ -59,7 +61,7 @@ namespace OpenRouter
 #endif
         public FileSearchServerTool(
             global::System.Collections.Generic.IList<string> vectorStoreIds,
-            global::OpenRouter.FileSearchServerToolFilters? filters,
+            global::OpenRouter.AnyOf<global::OpenRouter.FileSearchServerToolFilters, global::OpenRouter.CompoundFilter, object>? filters,
             int? maxNumResults,
             global::OpenRouter.FileSearchServerToolRankingOptions? rankingOptions,
             global::OpenRouter.FileSearchServerToolType type)

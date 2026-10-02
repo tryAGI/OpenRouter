@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"tool_references":[{"tool_name":"my_tool","type":"tool_reference"}],"type":"tool_search_tool_search_result"}
     /// </summary>
     public readonly partial struct AnthropicToolSearchContent : global::System.IEquatable<AnthropicToolSearchContent>
     {
@@ -15,153 +15,153 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicToolSearchContentDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// tool_search_tool_result_error variant
+        /// Example: {"error_code":"unavailable","error_message":null,"type":"tool_search_tool_result_error"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicToolSearchContentVariant1? ToolSearchToolResultError { get; init; }
+        public global::OpenRouter.AnthropicToolSearchResultError? ToolSearchToolResultError1 { get; init; }
 #else
-        public global::OpenRouter.AnthropicToolSearchContentVariant1? ToolSearchToolResultError { get; }
+        public global::OpenRouter.AnthropicToolSearchResultError? ToolSearchToolResultError1 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResultError))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResultError1))]
 #endif
-        public bool IsToolSearchToolResultError => ToolSearchToolResultError != null;
+        public bool IsToolSearchToolResultError1 => ToolSearchToolResultError1 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickToolSearchToolResultError(
+        public bool TryPickToolSearchToolResultError1(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.AnthropicToolSearchContentVariant1? value)
+            out global::OpenRouter.AnthropicToolSearchResultError? value)
         {
-            value = ToolSearchToolResultError;
-            return IsToolSearchToolResultError;
+            value = ToolSearchToolResultError1;
+            return IsToolSearchToolResultError1;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicToolSearchContentVariant1 PickToolSearchToolResultError() => ToolSearchToolResultError is { } value
+        public global::OpenRouter.AnthropicToolSearchResultError PickToolSearchToolResultError1() => ToolSearchToolResultError1 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResultError' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResultError1' but the value was {ToString()}.");
 
         /// <summary>
-        /// tool_search_tool_search_result variant
+        /// Example: {"tool_references":[{"tool_name":"my_tool","type":"tool_reference"}],"type":"tool_search_tool_search_result"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicToolSearchContentVariant2? ToolSearchToolSearchResult { get; init; }
+        public global::OpenRouter.AnthropicToolSearchResult? ToolSearchToolResultError2 { get; init; }
 #else
-        public global::OpenRouter.AnthropicToolSearchContentVariant2? ToolSearchToolSearchResult { get; }
+        public global::OpenRouter.AnthropicToolSearchResult? ToolSearchToolResultError2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolSearchResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResultError2))]
 #endif
-        public bool IsToolSearchToolSearchResult => ToolSearchToolSearchResult != null;
+        public bool IsToolSearchToolResultError2 => ToolSearchToolResultError2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickToolSearchToolSearchResult(
+        public bool TryPickToolSearchToolResultError2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.AnthropicToolSearchContentVariant2? value)
+            out global::OpenRouter.AnthropicToolSearchResult? value)
         {
-            value = ToolSearchToolSearchResult;
-            return IsToolSearchToolSearchResult;
+            value = ToolSearchToolResultError2;
+            return IsToolSearchToolResultError2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicToolSearchContentVariant2 PickToolSearchToolSearchResult() => ToolSearchToolSearchResult is { } value
+        public global::OpenRouter.AnthropicToolSearchResult PickToolSearchToolResultError2() => ToolSearchToolResultError2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolSearchResult' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResultError2' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchContentVariant1 value) => new AnthropicToolSearchContent((global::OpenRouter.AnthropicToolSearchContentVariant1?)value);
+        public static implicit operator AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchResultError value) => new AnthropicToolSearchContent((global::OpenRouter.AnthropicToolSearchResultError?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicToolSearchContentVariant1?(AnthropicToolSearchContent @this) => @this.ToolSearchToolResultError;
+        public static implicit operator global::OpenRouter.AnthropicToolSearchResultError?(AnthropicToolSearchContent @this) => @this.ToolSearchToolResultError1;
 
         /// <summary>
         ///
         /// </summary>
-        public AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchContentVariant1? value)
+        public AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchResultError? value)
         {
-            ToolSearchToolResultError = value;
+            ToolSearchToolResultError1 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicToolSearchContent FromToolSearchToolResultError(global::OpenRouter.AnthropicToolSearchContentVariant1? value) => new AnthropicToolSearchContent(value);
+        public static AnthropicToolSearchContent FromToolSearchToolResultError1(global::OpenRouter.AnthropicToolSearchResultError? value) => new AnthropicToolSearchContent(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchContentVariant2 value) => new AnthropicToolSearchContent((global::OpenRouter.AnthropicToolSearchContentVariant2?)value);
+        public static implicit operator AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchResult value) => new AnthropicToolSearchContent((global::OpenRouter.AnthropicToolSearchResult?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicToolSearchContentVariant2?(AnthropicToolSearchContent @this) => @this.ToolSearchToolSearchResult;
+        public static implicit operator global::OpenRouter.AnthropicToolSearchResult?(AnthropicToolSearchContent @this) => @this.ToolSearchToolResultError2;
 
         /// <summary>
         ///
         /// </summary>
-        public AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchContentVariant2? value)
+        public AnthropicToolSearchContent(global::OpenRouter.AnthropicToolSearchResult? value)
         {
-            ToolSearchToolSearchResult = value;
+            ToolSearchToolResultError2 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicToolSearchContent FromToolSearchToolSearchResult(global::OpenRouter.AnthropicToolSearchContentVariant2? value) => new AnthropicToolSearchContent(value);
+        public static AnthropicToolSearchContent FromToolSearchToolResultError2(global::OpenRouter.AnthropicToolSearchResult? value) => new AnthropicToolSearchContent(value);
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicToolSearchContent(
             global::OpenRouter.AnthropicToolSearchContentDiscriminatorType? type,
-            global::OpenRouter.AnthropicToolSearchContentVariant1? toolSearchToolResultError,
-            global::OpenRouter.AnthropicToolSearchContentVariant2? toolSearchToolSearchResult
+            global::OpenRouter.AnthropicToolSearchResultError? toolSearchToolResultError1,
+            global::OpenRouter.AnthropicToolSearchResult? toolSearchToolResultError2
             )
         {
             Type = type;
 
-            ToolSearchToolResultError = toolSearchToolResultError;
-            ToolSearchToolSearchResult = toolSearchToolSearchResult;
+            ToolSearchToolResultError1 = toolSearchToolResultError1;
+            ToolSearchToolResultError2 = toolSearchToolResultError2;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            ToolSearchToolSearchResult as object ??
-            ToolSearchToolResultError as object
+            ToolSearchToolResultError2 as object ??
+            ToolSearchToolResultError1 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            ToolSearchToolResultError?.ToString() ??
-            ToolSearchToolSearchResult?.ToString()
+            ToolSearchToolResultError1?.ToString() ??
+            ToolSearchToolResultError2?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +169,15 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsToolSearchToolResultError && !IsToolSearchToolSearchResult || !IsToolSearchToolResultError && IsToolSearchToolSearchResult;
+            return IsToolSearchToolResultError1 && !IsToolSearchToolResultError2 || !IsToolSearchToolResultError1 && IsToolSearchToolResultError2;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicToolSearchContentVariant1, TResult>? toolSearchToolResultError = null,
-            global::System.Func<global::OpenRouter.AnthropicToolSearchContentVariant2, TResult>? toolSearchToolSearchResult = null,
+            global::System.Func<global::OpenRouter.AnthropicToolSearchResultError, TResult>? toolSearchToolResultError1 = null,
+            global::System.Func<global::OpenRouter.AnthropicToolSearchResult, TResult>? toolSearchToolResultError2 = null,
             bool validate = true)
         {
             if (validate)
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ToolSearchToolResultError is { } __value0 && toolSearchToolResultError != null)
+            if (ToolSearchToolResultError1 is { } __value0 && toolSearchToolResultError1 != null)
             {
-                return toolSearchToolResultError(__value0);
+                return toolSearchToolResultError1(__value0);
             }
-            else if (ToolSearchToolSearchResult is { } __value1 && toolSearchToolSearchResult != null)
+            else if (ToolSearchToolResultError2 is { } __value1 && toolSearchToolResultError2 != null)
             {
-                return toolSearchToolSearchResult(__value1);
+                return toolSearchToolResultError2(__value1);
             }
 
             return default(TResult);
@@ -201,9 +201,9 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant1>? toolSearchToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchResultError>? toolSearchToolResultError1 = null,
 
-            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant2>? toolSearchToolSearchResult = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchResult>? toolSearchToolResultError2 = null,
             bool validate = true)
         {
             if (validate)
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ToolSearchToolResultError is { } __value0)
+            if (ToolSearchToolResultError1 is { } __value0)
             {
-                toolSearchToolResultError?.Invoke(__value0);
+                toolSearchToolResultError1?.Invoke(__value0);
             }
-            else if (ToolSearchToolSearchResult is { } __value1)
+            else if (ToolSearchToolResultError2 is { } __value1)
             {
-                toolSearchToolSearchResult?.Invoke(__value1);
+                toolSearchToolResultError2?.Invoke(__value1);
             }
         }
 
@@ -225,8 +225,8 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant1>? toolSearchToolResultError = null,
-            global::System.Action<global::OpenRouter.AnthropicToolSearchContentVariant2>? toolSearchToolSearchResult = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchResultError>? toolSearchToolResultError1 = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchResult>? toolSearchToolResultError2 = null,
             bool validate = true)
         {
             if (validate)
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ToolSearchToolResultError is { } __value0)
+            if (ToolSearchToolResultError1 is { } __value0)
             {
-                toolSearchToolResultError?.Invoke(__value0);
+                toolSearchToolResultError1?.Invoke(__value0);
             }
-            else if (ToolSearchToolSearchResult is { } __value1)
+            else if (ToolSearchToolResultError2 is { } __value1)
             {
-                toolSearchToolSearchResult?.Invoke(__value1);
+                toolSearchToolResultError2?.Invoke(__value1);
             }
         }
 
@@ -251,10 +251,10 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                ToolSearchToolResultError,
-                typeof(global::OpenRouter.AnthropicToolSearchContentVariant1),
-                ToolSearchToolSearchResult,
-                typeof(global::OpenRouter.AnthropicToolSearchContentVariant2),
+                ToolSearchToolResultError1,
+                typeof(global::OpenRouter.AnthropicToolSearchResultError),
+                ToolSearchToolResultError2,
+                typeof(global::OpenRouter.AnthropicToolSearchResult),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace OpenRouter
         public bool Equals(AnthropicToolSearchContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolSearchContentVariant1?>.Default.Equals(ToolSearchToolResultError, other.ToolSearchToolResultError) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolSearchContentVariant2?>.Default.Equals(ToolSearchToolSearchResult, other.ToolSearchToolSearchResult)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolSearchResultError?>.Default.Equals(ToolSearchToolResultError1, other.ToolSearchToolResultError1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolSearchResult?>.Default.Equals(ToolSearchToolResultError2, other.ToolSearchToolResultError2)
                 ;
         }
 

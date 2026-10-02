@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for UnauthorizedResponse
+    /// Error data for UnauthorizedResponse<br/>
+    /// Example: {"code":401,"message":"Missing Authentication header"}
     /// </summary>
     public sealed partial class UnauthorizedResponseErrorData
     {

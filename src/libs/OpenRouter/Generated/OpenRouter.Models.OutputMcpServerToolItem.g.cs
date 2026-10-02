@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:mcp server tool output item
+    /// An openrouter:mcp server tool output item<br/>
+    /// Example: {"id":"mcp_tmp_abc123","serverLabel":"my-server","status":"completed","toolName":"get_data","type":"openrouter:mcp"}
     /// </summary>
     public sealed partial class OutputMcpServerToolItem
     {
@@ -21,8 +22,9 @@ namespace OpenRouter
         public string? ServerLabel { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,7 +52,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputMcpServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="id"></param>
         /// <param name="serverLabel"></param>
         /// <param name="toolName"></param>

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:browser_use server tool output item
+    /// An openrouter:browser_use server tool output item<br/>
+    /// Example: {"action":"screenshot","id":"bu_tmp_abc123","status":"completed","type":"openrouter:browser_use"}
     /// </summary>
     public sealed partial class OutputBrowserUseServerToolItem
     {
@@ -27,12 +28,20 @@ namespace OpenRouter
         public string? ScreenshotB64 { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputBrowserUseServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputBrowserUseServerToolItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,10 +52,13 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputBrowserUseServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="action"></param>
         /// <param name="id"></param>
         /// <param name="screenshotB64"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,12 +66,14 @@ namespace OpenRouter
             global::OpenRouter.ToolCallStatus status,
             string? action,
             string? id,
-            string? screenshotB64)
+            string? screenshotB64,
+            global::OpenRouter.OutputBrowserUseServerToolItemType type)
         {
             this.Action = action;
             this.Id = id;
             this.ScreenshotB64 = screenshotB64;
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

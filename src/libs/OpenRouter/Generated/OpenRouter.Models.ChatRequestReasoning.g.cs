@@ -4,20 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration options for reasoning models
+    /// Configuration options for reasoning models<br/>
+    /// Example: {"effort":"medium","summary":"concise"}
     /// </summary>
     public sealed partial class ChatRequestReasoning
     {
         /// <summary>
-        /// Constrains effort on reasoning for reasoning models
+        /// Constrains effort on reasoning for reasoning models<br/>
+        /// Example: medium
         /// </summary>
+        /// <example>medium</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatRequestReasoningEffortJsonConverter))]
         public global::OpenRouter.ChatRequestReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        ///
+        /// Example: concise
         /// </summary>
+        /// <example>concise</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ChatReasoningSummaryVerbosityEnumJsonConverter))]
         public global::OpenRouter.ChatReasoningSummaryVerbosityEnum? Summary { get; set; }
@@ -32,9 +36,12 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatRequestReasoning" /> class.
         /// </summary>
         /// <param name="effort">
-        /// Constrains effort on reasoning for reasoning models
+        /// Constrains effort on reasoning for reasoning models<br/>
+        /// Example: medium
         /// </param>
-        /// <param name="summary"></param>
+        /// <param name="summary">
+        /// Example: concise
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

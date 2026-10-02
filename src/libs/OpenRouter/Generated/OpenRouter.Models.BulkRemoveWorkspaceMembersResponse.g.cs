@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"removed_count":2}
     /// </summary>
     public sealed partial class BulkRemoveWorkspaceMembersResponse
     {
         /// <summary>
-        /// Number of members removed
+        /// Number of members removed<br/>
+        /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("removed_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int RemovedCount { get; set; }
@@ -25,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkRemoveWorkspaceMembersResponse" /> class.
         /// </summary>
         /// <param name="removedCount">
-        /// Number of members removed
+        /// Number of members removed<br/>
+        /// Example: 2
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

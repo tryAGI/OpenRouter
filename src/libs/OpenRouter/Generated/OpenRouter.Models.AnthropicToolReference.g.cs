@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"tool_name":"my_tool","type":"tool_reference"}
     /// </summary>
     public sealed partial class AnthropicToolReference
     {

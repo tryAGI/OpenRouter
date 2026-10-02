@@ -29,21 +29,21 @@ namespace OpenRouter
             global::System.Net.Http.HttpClient httpClient,
             ref string? startDate,
             ref string? endDate,
-            ref global::OpenRouter.DatasetsRankingsDailyGetParametersPeriod? period,
-            ref global::OpenRouter.DatasetsRankingsDailyGetParametersModality? modality,
-            ref global::OpenRouter.DatasetsRankingsDailyGetParametersContextBucket? contextBucket,
-            ref global::OpenRouter.DatasetsRankingsDailyGetParametersCategory? category,
-            ref global::OpenRouter.DatasetsRankingsDailyGetParametersLanguageType? languageType);
+            ref global::OpenRouter.GetRankingsDailyPeriod? period,
+            ref global::OpenRouter.GetRankingsDailyModality? modality,
+            ref global::OpenRouter.GetRankingsDailyContextBucket? contextBucket,
+            ref global::OpenRouter.GetRankingsDailyCategory? category,
+            ref global::OpenRouter.GetRankingsDailyLanguageType? languageType);
         partial void PrepareGetRankingsDailyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? startDate,
             string? endDate,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersPeriod? period,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersModality? modality,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersContextBucket? contextBucket,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersCategory? category,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersLanguageType? languageType);
+            global::OpenRouter.GetRankingsDailyPeriod? period,
+            global::OpenRouter.GetRankingsDailyModality? modality,
+            global::OpenRouter.GetRankingsDailyContextBucket? contextBucket,
+            global::OpenRouter.GetRankingsDailyCategory? category,
+            global::OpenRouter.GetRankingsDailyLanguageType? languageType);
         partial void ProcessGetRankingsDailyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -75,24 +75,36 @@ namespace OpenRouter
         /// Token counts come from each upstream provider's own tokenizer (Anthropic counts<br/>
         /// are as reported by Anthropic, OpenAI counts are as reported by OpenAI, etc.), so<br/>
         /// a token in one row is not directly comparable to a token in another row from a<br/>
-        /// different provider.
+        /// different provider.<br/>
+        /// Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse and republish with attribution to OpenRouter.
         /// </summary>
-        /// <param name="startDate"></param>
-        /// <param name="endDate"></param>
+        /// <param name="startDate">
+        /// Start of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to 30 days before `end_date`. The dataset begins at 2025-01-01; earlier values are clamped forward to that floor and the resolved value is echoed in `meta.start_date`.<br/>
+        /// Example: 2026-04-12
+        /// </param>
+        /// <param name="endDate">
+        /// End of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to the most recent completed UTC day. Must be on or after 2025-01-01; earlier values are rejected with a 400.<br/>
+        /// Example: 2026-05-11
+        /// </param>
         /// <param name="period">
-        /// Time grain of each row. `day` (default) returns the per-UTC-day series; `week` buckets by ISO week start; `month` buckets by month start. With `category` or `language_type` only `week` (default) and `month` are available — `day` is rejected with a 400 because those datasets are aggregated weekly. For those sampled datasets `period=month` buckets each week by its week-start month, so totals are approximate at month boundaries.
+        /// Time grain of each row. `day` (default) returns the per-UTC-day series; `week` buckets by ISO week start; `month` buckets by month start. With `category` or `language_type` only `week` (default) and `month` are available — `day` is rejected with a 400 because those datasets are aggregated weekly. For those sampled datasets `period=month` buckets each week by its week-start month, so totals are approximate at month boundaries.<br/>
+        /// Example: day
         /// </param>
         /// <param name="modality">
-        /// Restrict to models for a modality surface: `text` / `image_output` match output modality, `image` / `audio` match input modality, and `tool_calling` keeps only rows that recorded at least one tool call. Exact dataset — cannot be combined with `category` or `language_type`.
+        /// Restrict to models for a modality surface: `text` / `image_output` match output modality, `image` / `audio` match input modality, and `tool_calling` keeps only rows that recorded at least one tool call. Exact dataset — cannot be combined with `category` or `language_type`.<br/>
+        /// Example: text
         /// </param>
         /// <param name="contextBucket">
-        /// Restrict to requests whose context length falls in this bucket (`1K`, `10K`, `100K`, `1M`, or `10M`). Exact dataset — cannot be combined with `category` or `language_type`.
+        /// Restrict to requests whose context length falls in this bucket (`1K`, `10K`, `100K`, `1M`, or `10M`). Exact dataset — cannot be combined with `category` or `language_type`.<br/>
+        /// Example: 100K
         /// </param>
         /// <param name="category">
-        /// Restrict to a use-case category (e.g. `programming`, `roleplay`). Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `language_type`.
+        /// Restrict to a use-case category (e.g. `programming`, `roleplay`). Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `language_type`.<br/>
+        /// Example: programming
         /// </param>
         /// <param name="languageType">
-        /// Restrict to natural-language or programming-language tagged activity. Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `category`.
+        /// Restrict to natural-language or programming-language tagged activity. Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `category`.<br/>
+        /// Example: natural
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -100,11 +112,11 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.RankingsDailyResponse> GetRankingsDailyAsync(
             string? startDate = default,
             string? endDate = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersPeriod? period = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersModality? modality = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersContextBucket? contextBucket = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersCategory? category = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersLanguageType? languageType = default,
+            global::OpenRouter.GetRankingsDailyPeriod? period = default,
+            global::OpenRouter.GetRankingsDailyModality? modality = default,
+            global::OpenRouter.GetRankingsDailyContextBucket? contextBucket = default,
+            global::OpenRouter.GetRankingsDailyCategory? category = default,
+            global::OpenRouter.GetRankingsDailyLanguageType? languageType = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -144,24 +156,36 @@ namespace OpenRouter
         /// Token counts come from each upstream provider's own tokenizer (Anthropic counts<br/>
         /// are as reported by Anthropic, OpenAI counts are as reported by OpenAI, etc.), so<br/>
         /// a token in one row is not directly comparable to a token in another row from a<br/>
-        /// different provider.
+        /// different provider.<br/>
+        /// Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse and republish with attribution to OpenRouter.
         /// </summary>
-        /// <param name="startDate"></param>
-        /// <param name="endDate"></param>
+        /// <param name="startDate">
+        /// Start of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to 30 days before `end_date`. The dataset begins at 2025-01-01; earlier values are clamped forward to that floor and the resolved value is echoed in `meta.start_date`.<br/>
+        /// Example: 2026-04-12
+        /// </param>
+        /// <param name="endDate">
+        /// End of the date window in YYYY-MM-DD (UTC), inclusive. Defaults to the most recent completed UTC day. Must be on or after 2025-01-01; earlier values are rejected with a 400.<br/>
+        /// Example: 2026-05-11
+        /// </param>
         /// <param name="period">
-        /// Time grain of each row. `day` (default) returns the per-UTC-day series; `week` buckets by ISO week start; `month` buckets by month start. With `category` or `language_type` only `week` (default) and `month` are available — `day` is rejected with a 400 because those datasets are aggregated weekly. For those sampled datasets `period=month` buckets each week by its week-start month, so totals are approximate at month boundaries.
+        /// Time grain of each row. `day` (default) returns the per-UTC-day series; `week` buckets by ISO week start; `month` buckets by month start. With `category` or `language_type` only `week` (default) and `month` are available — `day` is rejected with a 400 because those datasets are aggregated weekly. For those sampled datasets `period=month` buckets each week by its week-start month, so totals are approximate at month boundaries.<br/>
+        /// Example: day
         /// </param>
         /// <param name="modality">
-        /// Restrict to models for a modality surface: `text` / `image_output` match output modality, `image` / `audio` match input modality, and `tool_calling` keeps only rows that recorded at least one tool call. Exact dataset — cannot be combined with `category` or `language_type`.
+        /// Restrict to models for a modality surface: `text` / `image_output` match output modality, `image` / `audio` match input modality, and `tool_calling` keeps only rows that recorded at least one tool call. Exact dataset — cannot be combined with `category` or `language_type`.<br/>
+        /// Example: text
         /// </param>
         /// <param name="contextBucket">
-        /// Restrict to requests whose context length falls in this bucket (`1K`, `10K`, `100K`, `1M`, or `10M`). Exact dataset — cannot be combined with `category` or `language_type`.
+        /// Restrict to requests whose context length falls in this bucket (`1K`, `10K`, `100K`, `1M`, or `10M`). Exact dataset — cannot be combined with `category` or `language_type`.<br/>
+        /// Example: 100K
         /// </param>
         /// <param name="category">
-        /// Restrict to a use-case category (e.g. `programming`, `roleplay`). Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `language_type`.
+        /// Restrict to a use-case category (e.g. `programming`, `roleplay`). Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `language_type`.<br/>
+        /// Example: programming
         /// </param>
         /// <param name="languageType">
-        /// Restrict to natural-language or programming-language tagged activity. Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `category`.
+        /// Restrict to natural-language or programming-language tagged activity. Sourced from a sampled, upsampled dataset, so `total_tokens` is an estimate and is aggregated weekly (the trailing weekly bucket may include traffic past `end_date`). Cannot be combined with `modality`, `context_bucket`, or `category`.<br/>
+        /// Example: natural
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -169,11 +193,11 @@ namespace OpenRouter
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.RankingsDailyResponse>> GetRankingsDailyAsResponseAsync(
             string? startDate = default,
             string? endDate = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersPeriod? period = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersModality? modality = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersContextBucket? contextBucket = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersCategory? category = default,
-            global::OpenRouter.DatasetsRankingsDailyGetParametersLanguageType? languageType = default,
+            global::OpenRouter.GetRankingsDailyPeriod? period = default,
+            global::OpenRouter.GetRankingsDailyModality? modality = default,
+            global::OpenRouter.GetRankingsDailyContextBucket? contextBucket = default,
+            global::OpenRouter.GetRankingsDailyCategory? category = default,
+            global::OpenRouter.GetRankingsDailyLanguageType? languageType = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -271,8 +295,6 @@ namespace OpenRouter
                     contextBucket: contextBucket,
                     category: category,
                     languageType: languageType);
-
-                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

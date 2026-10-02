@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A conditional override of the base pricing. An entry applies only when all of its condition fields (e.g. min_prompt_tokens, or the utc_start/utc_end time window) match the request; among applicable entries, later entries win per price key; price keys absent from an entry inherit the base price.
+    /// A conditional override of the base pricing. An entry applies only when all of its condition fields (e.g. min_prompt_tokens, or the utc_start/utc_end time window) match the request; among applicable entries, later entries win per price key; price keys absent from an entry inherit the base price.<br/>
+    /// Example: {"completion":"0.00002","min_prompt_tokens":200000,"prompt":"0.000005"}
     /// </summary>
     public sealed partial class PricingOverride
     {
@@ -57,6 +58,12 @@ namespace OpenRouter
         public string? Prompt { get; set; }
 
         /// <summary>
+        /// Condition: UTC weekdays the entry applies on, evaluated at the request instant. Scopes the utc_start/utc_end window (or, without a window, the whole UTC day) to the listed days. Absent means every day.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("utc_days")]
+        public global::System.Collections.Generic.IList<global::OpenRouter.PricingOverrideUtcDay>? UtcDays { get; set; }
+
+        /// <summary>
         /// Condition: exclusive end of a daily UTC time window as an HHMM clock number (e.g. 400 = 04:00)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("utc_end")]
@@ -101,6 +108,9 @@ namespace OpenRouter
         /// <param name="prompt">
         /// Overridden price in USD per token for prompt (input) processing
         /// </param>
+        /// <param name="utcDays">
+        /// Condition: UTC weekdays the entry applies on, evaluated at the request instant. Scopes the utc_start/utc_end window (or, without a window, the whole UTC day) to the listed days. Absent means every day.
+        /// </param>
         /// <param name="utcEnd">
         /// Condition: exclusive end of a daily UTC time window as an HHMM clock number (e.g. 400 = 04:00)
         /// </param>
@@ -119,6 +129,7 @@ namespace OpenRouter
             string? inputCacheWrite1h,
             double? minPromptTokens,
             string? prompt,
+            global::System.Collections.Generic.IList<global::OpenRouter.PricingOverrideUtcDay>? utcDays,
             double? utcEnd,
             double? utcStart)
         {
@@ -130,6 +141,7 @@ namespace OpenRouter
             this.InputCacheWrite1h = inputCacheWrite1h;
             this.MinPromptTokens = minPromptTokens;
             this.Prompt = prompt;
+            this.UtcDays = utcDays;
             this.UtcEnd = utcEnd;
             this.UtcStart = utcStart;
         }

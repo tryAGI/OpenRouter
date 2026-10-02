@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class AnthropicCompactionUsageIteration
+    public readonly partial struct AnthropicCompactionUsageIteration
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.AnthropicCompactionUsageIteration),
-                jsonSerializerContext) as global::OpenRouter.AnthropicCompactionUsageIteration;
+                jsonSerializerContext) as global::OpenRouter.AnthropicCompactionUsageIteration?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.AnthropicCompactionUsageIteration),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.AnthropicCompactionUsageIteration;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.AnthropicCompactionUsageIteration?;
         }
 
         /// <summary>

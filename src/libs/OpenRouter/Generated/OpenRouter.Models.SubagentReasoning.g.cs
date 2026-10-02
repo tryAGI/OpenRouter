@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reasoning configuration forwarded to the subagent call. Use this to control reasoning effort and token budget for models that support extended thinking.
+    /// Reasoning configuration forwarded to the subagent call. Use this to control reasoning effort and token budget for models that support extended thinking.<br/>
+    /// Example: {"effort":"low"}
     /// </summary>
     public sealed partial class SubagentReasoning
     {
@@ -16,7 +17,7 @@ namespace OpenRouter
         public global::OpenRouter.SubagentReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        /// Maximum number of reasoning tokens the subagent may use. Accepted and validated but not yet forwarded to the subagent call.
+        /// Maximum number of reasoning tokens the subagent may use. Forwarded to the subagent call as `reasoning.max_tokens`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         public int? MaxTokens { get; set; }
@@ -34,7 +35,7 @@ namespace OpenRouter
         /// Reasoning effort level for the subagent call.
         /// </param>
         /// <param name="maxTokens">
-        /// Maximum number of reasoning tokens the subagent may use. Accepted and validated but not yet forwarded to the subagent call.
+        /// Maximum number of reasoning tokens the subagent may use. Forwarded to the subagent call as `reasoning.max_tokens`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

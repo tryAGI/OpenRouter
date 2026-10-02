@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464<br/>
+    /// Example: {"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0}
     /// </summary>
     public sealed partial class AnthropicIterationCacheCreation
     {

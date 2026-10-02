@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Unauthorized - Authentication required or invalid credentials
+    /// Unauthorized - Authentication required or invalid credentials<br/>
+    /// Example: {"error":{"code":401,"message":"Missing Authentication header"}}
     /// </summary>
     public sealed partial class UnauthorizedResponse
     {
         /// <summary>
-        /// Error data for UnauthorizedResponse
+        /// Error data for UnauthorizedResponse<br/>
+        /// Example: {"code":401,"message":"Missing Authentication header"}
         /// </summary>
+        /// <example>{"code":401,"message":"Missing Authentication header"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.UnauthorizedResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UnauthorizedResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for UnauthorizedResponse
+        /// Error data for UnauthorizedResponse<br/>
+        /// Example: {"code":401,"message":"Missing Authentication header"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

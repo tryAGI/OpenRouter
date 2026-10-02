@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Langfuse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langfuse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
     /// </summary>
     public readonly partial struct ObservabilityDestination : global::System.IEquatable<ObservabilityDestination>
     {
@@ -15,12 +15,12 @@ namespace OpenRouter
         public global::OpenRouter.ObservabilityDestinationDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// arize variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"arize_...AbCd","baseUrl":"https://otlp.arize.com","modelId":"openrouter-prod","spaceKey":"space_...EfGh"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Arize","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"arize","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant1? Arize { get; init; }
+        public global::OpenRouter.ObservabilityArizeDestination? Arize { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant1? Arize { get; }
+        public global::OpenRouter.ObservabilityArizeDestination? Arize { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant1? value)
+            out global::OpenRouter.ObservabilityArizeDestination? value)
         {
             value = Arize;
             return IsArize;
@@ -47,17 +47,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant1 PickArize() => Arize is { } value
+        public global::OpenRouter.ObservabilityArizeDestination PickArize() => Arize is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Arize' but the value was {ToString()}.");
 
         /// <summary>
-        /// braintrust variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"sk-...AbCd","baseUrl":"https://api.braintrust.dev","projectId":"proj_..."},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Braintrust","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"braintrust","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant2? Braintrust { get; init; }
+        public global::OpenRouter.ObservabilityBraintrustDestination? Braintrust { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant2? Braintrust { get; }
+        public global::OpenRouter.ObservabilityBraintrustDestination? Braintrust { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant2? value)
+            out global::OpenRouter.ObservabilityBraintrustDestination? value)
         {
             value = Braintrust;
             return IsBraintrust;
@@ -84,17 +84,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant2 PickBraintrust() => Braintrust is { } value
+        public global::OpenRouter.ObservabilityBraintrustDestination PickBraintrust() => Braintrust is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Braintrust' but the value was {ToString()}.");
 
         /// <summary>
-        /// clickhouse variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"database":"analytics","host":"https://clickhouse.example.com:8123","password":"********","table":"OPENROUTER_TRACES","username":"default"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production ClickHouse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"clickhouse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant3? Clickhouse { get; init; }
+        public global::OpenRouter.ObservabilityClickhouseDestination? Clickhouse { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant3? Clickhouse { get; }
+        public global::OpenRouter.ObservabilityClickhouseDestination? Clickhouse { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant3? value)
+            out global::OpenRouter.ObservabilityClickhouseDestination? value)
         {
             value = Clickhouse;
             return IsClickhouse;
@@ -121,17 +121,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant3 PickClickhouse() => Clickhouse is { } value
+        public global::OpenRouter.ObservabilityClickhouseDestination PickClickhouse() => Clickhouse is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Clickhouse' but the value was {ToString()}.");
 
         /// <summary>
-        /// datadog variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"************...AbCd","mlApp":"my-llm-app","url":"https://api.datadoghq.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Datadog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"datadog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant4? Datadog { get; init; }
+        public global::OpenRouter.ObservabilityDatadogDestination? Datadog { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant4? Datadog { get; }
+        public global::OpenRouter.ObservabilityDatadogDestination? Datadog { get; }
 #endif
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant4? value)
+            out global::OpenRouter.ObservabilityDatadogDestination? value)
         {
             value = Datadog;
             return IsDatadog;
@@ -158,17 +158,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant4 PickDatadog() => Datadog is { } value
+        public global::OpenRouter.ObservabilityDatadogDestination PickDatadog() => Datadog is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Datadog' but the value was {ToString()}.");
 
         /// <summary>
-        /// grafana variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"glc_...AbCd","baseUrl":"https://otlp-gateway-prod-us-west-0.grafana.net","instanceId":"123456"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Grafana","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"grafana","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant5? Grafana { get; init; }
+        public global::OpenRouter.ObservabilityGrafanaDestination? Grafana { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant5? Grafana { get; }
+        public global::OpenRouter.ObservabilityGrafanaDestination? Grafana { get; }
 #endif
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant5? value)
+            out global::OpenRouter.ObservabilityGrafanaDestination? value)
         {
             value = Grafana;
             return IsGrafana;
@@ -195,17 +195,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant5 PickGrafana() => Grafana is { } value
+        public global::OpenRouter.ObservabilityGrafanaDestination PickGrafana() => Grafana is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Grafana' but the value was {ToString()}.");
 
         /// <summary>
-        /// langfuse variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Langfuse","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langfuse","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant6? Langfuse { get; init; }
+        public global::OpenRouter.ObservabilityLangfuseDestination? Langfuse { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant6? Langfuse { get; }
+        public global::OpenRouter.ObservabilityLangfuseDestination? Langfuse { get; }
 #endif
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant6? value)
+            out global::OpenRouter.ObservabilityLangfuseDestination? value)
         {
             value = Langfuse;
             return IsLangfuse;
@@ -232,17 +232,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant6 PickLangfuse() => Langfuse is { } value
+        public global::OpenRouter.ObservabilityLangfuseDestination PickLangfuse() => Langfuse is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Langfuse' but the value was {ToString()}.");
 
         /// <summary>
-        /// langsmith variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"lsv2_...AbCd","endpoint":"https://api.smith.langchain.com","project":"main"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production LangSmith","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"langsmith","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant7? Langsmith { get; init; }
+        public global::OpenRouter.ObservabilityLangsmithDestination? Langsmith { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant7? Langsmith { get; }
+        public global::OpenRouter.ObservabilityLangsmithDestination? Langsmith { get; }
 #endif
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant7? value)
+            out global::OpenRouter.ObservabilityLangsmithDestination? value)
         {
             value = Langsmith;
             return IsLangsmith;
@@ -269,17 +269,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant7 PickLangsmith() => Langsmith is { } value
+        public global::OpenRouter.ObservabilityLangsmithDestination PickLangsmith() => Langsmith is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Langsmith' but the value was {ToString()}.");
 
         /// <summary>
-        /// newrelic variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"licenseKey":"****...AbCd","region":"us"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production New Relic","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"newrelic","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant8? Newrelic { get; init; }
+        public global::OpenRouter.ObservabilityNewrelicDestination? Newrelic { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant8? Newrelic { get; }
+        public global::OpenRouter.ObservabilityNewrelicDestination? Newrelic { get; }
 #endif
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant8? value)
+            out global::OpenRouter.ObservabilityNewrelicDestination? value)
         {
             value = Newrelic;
             return IsNewrelic;
@@ -306,17 +306,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant8 PickNewrelic() => Newrelic is { } value
+        public global::OpenRouter.ObservabilityNewrelicDestination PickNewrelic() => Newrelic is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Newrelic' but the value was {ToString()}.");
 
         /// <summary>
-        /// opik variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"****...AbCd","projectName":"openrouter-prod","workspace":"my-workspace"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Opik","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"opik","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant9? Opik { get; init; }
+        public global::OpenRouter.ObservabilityOpikDestination? Opik { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant9? Opik { get; }
+        public global::OpenRouter.ObservabilityOpikDestination? Opik { get; }
 #endif
 
         /// <summary>
@@ -334,7 +334,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant9? value)
+            out global::OpenRouter.ObservabilityOpikDestination? value)
         {
             value = Opik;
             return IsOpik;
@@ -343,17 +343,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant9 PickOpik() => Opik is { } value
+        public global::OpenRouter.ObservabilityOpikDestination PickOpik() => Opik is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Opik' but the value was {ToString()}.");
 
         /// <summary>
-        /// otel-collector variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"endpoint":"https://otel.example.com:4318"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production OTel Collector","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"otel-collector","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant10? OtelCollector { get; init; }
+        public global::OpenRouter.ObservabilityOtelCollectorDestination? OtelCollector { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant10? OtelCollector { get; }
+        public global::OpenRouter.ObservabilityOtelCollectorDestination? OtelCollector { get; }
 #endif
 
         /// <summary>
@@ -371,7 +371,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant10? value)
+            out global::OpenRouter.ObservabilityOtelCollectorDestination? value)
         {
             value = OtelCollector;
             return IsOtelCollector;
@@ -380,17 +380,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant10 PickOtelCollector() => OtelCollector is { } value
+        public global::OpenRouter.ObservabilityOtelCollectorDestination PickOtelCollector() => OtelCollector is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OtelCollector' but the value was {ToString()}.");
 
         /// <summary>
-        /// posthog variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"phc_...AbCd","endpoint":"https://us.i.posthog.com"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production PostHog","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"posthog","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant11? Posthog { get; init; }
+        public global::OpenRouter.ObservabilityPosthogDestination? Posthog { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant11? Posthog { get; }
+        public global::OpenRouter.ObservabilityPosthogDestination? Posthog { get; }
 #endif
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant11? value)
+            out global::OpenRouter.ObservabilityPosthogDestination? value)
         {
             value = Posthog;
             return IsPosthog;
@@ -417,17 +417,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant11 PickPosthog() => Posthog is { } value
+        public global::OpenRouter.ObservabilityPosthogDestination PickPosthog() => Posthog is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Posthog' but the value was {ToString()}.");
 
         /// <summary>
-        /// ramp variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"rmp_...AbCd","baseUrl":"https://api.ramp.com/developer/v1/ai-usage/openrouter"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Ramp","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"ramp","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant12? Ramp { get; init; }
+        public global::OpenRouter.ObservabilityRampDestination? Ramp { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant12? Ramp { get; }
+        public global::OpenRouter.ObservabilityRampDestination? Ramp { get; }
 #endif
 
         /// <summary>
@@ -445,7 +445,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant12? value)
+            out global::OpenRouter.ObservabilityRampDestination? value)
         {
             value = Ramp;
             return IsRamp;
@@ -454,17 +454,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant12 PickRamp() => Ramp is { } value
+        public global::OpenRouter.ObservabilityRampDestination PickRamp() => Ramp is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ramp' but the value was {ToString()}.");
 
         /// <summary>
-        /// s3 variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"accessKeyId":"AKIA...AbCd","bucketName":"openrouter-traces","secretAccessKey":"****...EfGh"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production S3","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"s3","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant13? S3 { get; init; }
+        public global::OpenRouter.ObservabilityS3Destination? S3 { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant13? S3 { get; }
+        public global::OpenRouter.ObservabilityS3Destination? S3 { get; }
 #endif
 
         /// <summary>
@@ -482,7 +482,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant13? value)
+            out global::OpenRouter.ObservabilityS3Destination? value)
         {
             value = S3;
             return IsS3;
@@ -491,17 +491,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant13 PickS3() => S3 is { } value
+        public global::OpenRouter.ObservabilityS3Destination PickS3() => S3 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
 
         /// <summary>
-        /// sentry variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"dsn":"https://abc123@o0.ingest.sentry.io/0","otlpEndpoint":"https://o0.ingest.sentry.io/api/0/otlp"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Sentry","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"sentry","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant14? Sentry { get; init; }
+        public global::OpenRouter.ObservabilitySentryDestination? Sentry { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant14? Sentry { get; }
+        public global::OpenRouter.ObservabilitySentryDestination? Sentry { get; }
 #endif
 
         /// <summary>
@@ -519,7 +519,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant14? value)
+            out global::OpenRouter.ObservabilitySentryDestination? value)
         {
             value = Sentry;
             return IsSentry;
@@ -528,17 +528,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant14 PickSentry() => Sentry is { } value
+        public global::OpenRouter.ObservabilitySentryDestination PickSentry() => Sentry is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sentry' but the value was {ToString()}.");
 
         /// <summary>
-        /// snowflake variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"account":"xy12345.us-east-1","token":"****...AbCd"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Snowflake","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"snowflake","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant15? Snowflake { get; init; }
+        public global::OpenRouter.ObservabilitySnowflakeDestination? Snowflake { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant15? Snowflake { get; }
+        public global::OpenRouter.ObservabilitySnowflakeDestination? Snowflake { get; }
 #endif
 
         /// <summary>
@@ -556,7 +556,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant15? value)
+            out global::OpenRouter.ObservabilitySnowflakeDestination? value)
         {
             value = Snowflake;
             return IsSnowflake;
@@ -565,17 +565,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant15 PickSnowflake() => Snowflake is { } value
+        public global::OpenRouter.ObservabilitySnowflakeDestination PickSnowflake() => Snowflake is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Snowflake' but the value was {ToString()}.");
 
         /// <summary>
-        /// weave variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"apiKey":"****...AbCd","baseUrl":"https://trace.wandb.ai","entity":"my-team","project":"openrouter-prod"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Weave","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"weave","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant16? Weave { get; init; }
+        public global::OpenRouter.ObservabilityWeaveDestination? Weave { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant16? Weave { get; }
+        public global::OpenRouter.ObservabilityWeaveDestination? Weave { get; }
 #endif
 
         /// <summary>
@@ -593,7 +593,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant16? value)
+            out global::OpenRouter.ObservabilityWeaveDestination? value)
         {
             value = Weave;
             return IsWeave;
@@ -602,17 +602,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant16 PickWeave() => Weave is { } value
+        public global::OpenRouter.ObservabilityWeaveDestination PickWeave() => Weave is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Weave' but the value was {ToString()}.");
 
         /// <summary>
-        /// webhook variant
+        /// Example: {"api_key_hashes":null,"broadcast_generation_cost":false,"broadcast_generation_identity":false,"broadcast_generation_request_context":false,"config":{"url":"https://example.com/openrouter-events"},"created_at":"2025-08-24T10:30:00Z","enabled":true,"filter_rules":null,"id":"99999999-aaaa-bbbb-cccc-dddddddddddd","name":"Production Webhook","privacy_mode":false,"regions":["global"],"sampling_rate":1,"type":"webhook","updated_at":"2025-08-24T15:45:00Z","workspace_id":"550e8400-e29b-41d4-a716-446655440000"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ObservabilityDestinationVariant17? Webhook { get; init; }
+        public global::OpenRouter.ObservabilityWebhookDestination? Webhook { get; init; }
 #else
-        public global::OpenRouter.ObservabilityDestinationVariant17? Webhook { get; }
+        public global::OpenRouter.ObservabilityWebhookDestination? Webhook { get; }
 #endif
 
         /// <summary>
@@ -630,7 +630,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ObservabilityDestinationVariant17? value)
+            out global::OpenRouter.ObservabilityWebhookDestination? value)
         {
             value = Webhook;
             return IsWebhook;
@@ -639,23 +639,23 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ObservabilityDestinationVariant17 PickWebhook() => Webhook is { } value
+        public global::OpenRouter.ObservabilityWebhookDestination PickWebhook() => Webhook is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant1 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant1?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityArizeDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityArizeDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant1?(ObservabilityDestination @this) => @this.Arize;
+        public static implicit operator global::OpenRouter.ObservabilityArizeDestination?(ObservabilityDestination @this) => @this.Arize;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant1? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityArizeDestination? value)
         {
             Arize = value;
         }
@@ -663,22 +663,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromArize(global::OpenRouter.ObservabilityDestinationVariant1? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromArize(global::OpenRouter.ObservabilityArizeDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant2 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant2?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityBraintrustDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityBraintrustDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant2?(ObservabilityDestination @this) => @this.Braintrust;
+        public static implicit operator global::OpenRouter.ObservabilityBraintrustDestination?(ObservabilityDestination @this) => @this.Braintrust;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant2? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityBraintrustDestination? value)
         {
             Braintrust = value;
         }
@@ -686,22 +686,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromBraintrust(global::OpenRouter.ObservabilityDestinationVariant2? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromBraintrust(global::OpenRouter.ObservabilityBraintrustDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant3 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant3?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityClickhouseDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityClickhouseDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant3?(ObservabilityDestination @this) => @this.Clickhouse;
+        public static implicit operator global::OpenRouter.ObservabilityClickhouseDestination?(ObservabilityDestination @this) => @this.Clickhouse;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant3? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityClickhouseDestination? value)
         {
             Clickhouse = value;
         }
@@ -709,22 +709,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromClickhouse(global::OpenRouter.ObservabilityDestinationVariant3? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromClickhouse(global::OpenRouter.ObservabilityClickhouseDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant4 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant4?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDatadogDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDatadogDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant4?(ObservabilityDestination @this) => @this.Datadog;
+        public static implicit operator global::OpenRouter.ObservabilityDatadogDestination?(ObservabilityDestination @this) => @this.Datadog;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant4? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityDatadogDestination? value)
         {
             Datadog = value;
         }
@@ -732,22 +732,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromDatadog(global::OpenRouter.ObservabilityDestinationVariant4? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromDatadog(global::OpenRouter.ObservabilityDatadogDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant5 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant5?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityGrafanaDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityGrafanaDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant5?(ObservabilityDestination @this) => @this.Grafana;
+        public static implicit operator global::OpenRouter.ObservabilityGrafanaDestination?(ObservabilityDestination @this) => @this.Grafana;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant5? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityGrafanaDestination? value)
         {
             Grafana = value;
         }
@@ -755,22 +755,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromGrafana(global::OpenRouter.ObservabilityDestinationVariant5? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromGrafana(global::OpenRouter.ObservabilityGrafanaDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant6 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant6?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityLangfuseDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityLangfuseDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant6?(ObservabilityDestination @this) => @this.Langfuse;
+        public static implicit operator global::OpenRouter.ObservabilityLangfuseDestination?(ObservabilityDestination @this) => @this.Langfuse;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant6? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityLangfuseDestination? value)
         {
             Langfuse = value;
         }
@@ -778,22 +778,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromLangfuse(global::OpenRouter.ObservabilityDestinationVariant6? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromLangfuse(global::OpenRouter.ObservabilityLangfuseDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant7 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant7?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityLangsmithDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityLangsmithDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant7?(ObservabilityDestination @this) => @this.Langsmith;
+        public static implicit operator global::OpenRouter.ObservabilityLangsmithDestination?(ObservabilityDestination @this) => @this.Langsmith;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant7? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityLangsmithDestination? value)
         {
             Langsmith = value;
         }
@@ -801,22 +801,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromLangsmith(global::OpenRouter.ObservabilityDestinationVariant7? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromLangsmith(global::OpenRouter.ObservabilityLangsmithDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant8 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant8?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityNewrelicDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityNewrelicDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant8?(ObservabilityDestination @this) => @this.Newrelic;
+        public static implicit operator global::OpenRouter.ObservabilityNewrelicDestination?(ObservabilityDestination @this) => @this.Newrelic;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant8? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityNewrelicDestination? value)
         {
             Newrelic = value;
         }
@@ -824,22 +824,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromNewrelic(global::OpenRouter.ObservabilityDestinationVariant8? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromNewrelic(global::OpenRouter.ObservabilityNewrelicDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant9 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant9?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityOpikDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityOpikDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant9?(ObservabilityDestination @this) => @this.Opik;
+        public static implicit operator global::OpenRouter.ObservabilityOpikDestination?(ObservabilityDestination @this) => @this.Opik;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant9? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityOpikDestination? value)
         {
             Opik = value;
         }
@@ -847,22 +847,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromOpik(global::OpenRouter.ObservabilityDestinationVariant9? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromOpik(global::OpenRouter.ObservabilityOpikDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant10 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant10?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityOtelCollectorDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityOtelCollectorDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant10?(ObservabilityDestination @this) => @this.OtelCollector;
+        public static implicit operator global::OpenRouter.ObservabilityOtelCollectorDestination?(ObservabilityDestination @this) => @this.OtelCollector;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant10? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityOtelCollectorDestination? value)
         {
             OtelCollector = value;
         }
@@ -870,22 +870,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromOtelCollector(global::OpenRouter.ObservabilityDestinationVariant10? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromOtelCollector(global::OpenRouter.ObservabilityOtelCollectorDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant11 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant11?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityPosthogDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityPosthogDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant11?(ObservabilityDestination @this) => @this.Posthog;
+        public static implicit operator global::OpenRouter.ObservabilityPosthogDestination?(ObservabilityDestination @this) => @this.Posthog;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant11? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityPosthogDestination? value)
         {
             Posthog = value;
         }
@@ -893,22 +893,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromPosthog(global::OpenRouter.ObservabilityDestinationVariant11? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromPosthog(global::OpenRouter.ObservabilityPosthogDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant12 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant12?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityRampDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityRampDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant12?(ObservabilityDestination @this) => @this.Ramp;
+        public static implicit operator global::OpenRouter.ObservabilityRampDestination?(ObservabilityDestination @this) => @this.Ramp;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant12? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityRampDestination? value)
         {
             Ramp = value;
         }
@@ -916,22 +916,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromRamp(global::OpenRouter.ObservabilityDestinationVariant12? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromRamp(global::OpenRouter.ObservabilityRampDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant13 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant13?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityS3Destination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityS3Destination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant13?(ObservabilityDestination @this) => @this.S3;
+        public static implicit operator global::OpenRouter.ObservabilityS3Destination?(ObservabilityDestination @this) => @this.S3;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant13? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityS3Destination? value)
         {
             S3 = value;
         }
@@ -939,22 +939,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromS3(global::OpenRouter.ObservabilityDestinationVariant13? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromS3(global::OpenRouter.ObservabilityS3Destination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant14 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant14?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilitySentryDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilitySentryDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant14?(ObservabilityDestination @this) => @this.Sentry;
+        public static implicit operator global::OpenRouter.ObservabilitySentryDestination?(ObservabilityDestination @this) => @this.Sentry;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant14? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilitySentryDestination? value)
         {
             Sentry = value;
         }
@@ -962,22 +962,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromSentry(global::OpenRouter.ObservabilityDestinationVariant14? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromSentry(global::OpenRouter.ObservabilitySentryDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant15 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant15?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilitySnowflakeDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilitySnowflakeDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant15?(ObservabilityDestination @this) => @this.Snowflake;
+        public static implicit operator global::OpenRouter.ObservabilitySnowflakeDestination?(ObservabilityDestination @this) => @this.Snowflake;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant15? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilitySnowflakeDestination? value)
         {
             Snowflake = value;
         }
@@ -985,22 +985,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromSnowflake(global::OpenRouter.ObservabilityDestinationVariant15? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromSnowflake(global::OpenRouter.ObservabilitySnowflakeDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant16 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant16?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityWeaveDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityWeaveDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant16?(ObservabilityDestination @this) => @this.Weave;
+        public static implicit operator global::OpenRouter.ObservabilityWeaveDestination?(ObservabilityDestination @this) => @this.Weave;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant16? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityWeaveDestination? value)
         {
             Weave = value;
         }
@@ -1008,22 +1008,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromWeave(global::OpenRouter.ObservabilityDestinationVariant16? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromWeave(global::OpenRouter.ObservabilityWeaveDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant17 value) => new ObservabilityDestination((global::OpenRouter.ObservabilityDestinationVariant17?)value);
+        public static implicit operator ObservabilityDestination(global::OpenRouter.ObservabilityWebhookDestination value) => new ObservabilityDestination((global::OpenRouter.ObservabilityWebhookDestination?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ObservabilityDestinationVariant17?(ObservabilityDestination @this) => @this.Webhook;
+        public static implicit operator global::OpenRouter.ObservabilityWebhookDestination?(ObservabilityDestination @this) => @this.Webhook;
 
         /// <summary>
         ///
         /// </summary>
-        public ObservabilityDestination(global::OpenRouter.ObservabilityDestinationVariant17? value)
+        public ObservabilityDestination(global::OpenRouter.ObservabilityWebhookDestination? value)
         {
             Webhook = value;
         }
@@ -1031,30 +1031,30 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ObservabilityDestination FromWebhook(global::OpenRouter.ObservabilityDestinationVariant17? value) => new ObservabilityDestination(value);
+        public static ObservabilityDestination FromWebhook(global::OpenRouter.ObservabilityWebhookDestination? value) => new ObservabilityDestination(value);
 
         /// <summary>
         ///
         /// </summary>
         public ObservabilityDestination(
             global::OpenRouter.ObservabilityDestinationDiscriminatorType? type,
-            global::OpenRouter.ObservabilityDestinationVariant1? arize,
-            global::OpenRouter.ObservabilityDestinationVariant2? braintrust,
-            global::OpenRouter.ObservabilityDestinationVariant3? clickhouse,
-            global::OpenRouter.ObservabilityDestinationVariant4? datadog,
-            global::OpenRouter.ObservabilityDestinationVariant5? grafana,
-            global::OpenRouter.ObservabilityDestinationVariant6? langfuse,
-            global::OpenRouter.ObservabilityDestinationVariant7? langsmith,
-            global::OpenRouter.ObservabilityDestinationVariant8? newrelic,
-            global::OpenRouter.ObservabilityDestinationVariant9? opik,
-            global::OpenRouter.ObservabilityDestinationVariant10? otelCollector,
-            global::OpenRouter.ObservabilityDestinationVariant11? posthog,
-            global::OpenRouter.ObservabilityDestinationVariant12? ramp,
-            global::OpenRouter.ObservabilityDestinationVariant13? s3,
-            global::OpenRouter.ObservabilityDestinationVariant14? sentry,
-            global::OpenRouter.ObservabilityDestinationVariant15? snowflake,
-            global::OpenRouter.ObservabilityDestinationVariant16? weave,
-            global::OpenRouter.ObservabilityDestinationVariant17? webhook
+            global::OpenRouter.ObservabilityArizeDestination? arize,
+            global::OpenRouter.ObservabilityBraintrustDestination? braintrust,
+            global::OpenRouter.ObservabilityClickhouseDestination? clickhouse,
+            global::OpenRouter.ObservabilityDatadogDestination? datadog,
+            global::OpenRouter.ObservabilityGrafanaDestination? grafana,
+            global::OpenRouter.ObservabilityLangfuseDestination? langfuse,
+            global::OpenRouter.ObservabilityLangsmithDestination? langsmith,
+            global::OpenRouter.ObservabilityNewrelicDestination? newrelic,
+            global::OpenRouter.ObservabilityOpikDestination? opik,
+            global::OpenRouter.ObservabilityOtelCollectorDestination? otelCollector,
+            global::OpenRouter.ObservabilityPosthogDestination? posthog,
+            global::OpenRouter.ObservabilityRampDestination? ramp,
+            global::OpenRouter.ObservabilityS3Destination? s3,
+            global::OpenRouter.ObservabilitySentryDestination? sentry,
+            global::OpenRouter.ObservabilitySnowflakeDestination? snowflake,
+            global::OpenRouter.ObservabilityWeaveDestination? weave,
+            global::OpenRouter.ObservabilityWebhookDestination? webhook
             )
         {
             Type = type;
@@ -1136,23 +1136,23 @@ namespace OpenRouter
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant1, TResult>? arize = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant2, TResult>? braintrust = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant3, TResult>? clickhouse = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant4, TResult>? datadog = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant5, TResult>? grafana = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant6, TResult>? langfuse = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant7, TResult>? langsmith = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant8, TResult>? newrelic = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant9, TResult>? opik = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant10, TResult>? otelCollector = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant11, TResult>? posthog = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant12, TResult>? ramp = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant13, TResult>? s3 = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant14, TResult>? sentry = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant15, TResult>? snowflake = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant16, TResult>? weave = null,
-            global::System.Func<global::OpenRouter.ObservabilityDestinationVariant17, TResult>? webhook = null,
+            global::System.Func<global::OpenRouter.ObservabilityArizeDestination, TResult>? arize = null,
+            global::System.Func<global::OpenRouter.ObservabilityBraintrustDestination, TResult>? braintrust = null,
+            global::System.Func<global::OpenRouter.ObservabilityClickhouseDestination, TResult>? clickhouse = null,
+            global::System.Func<global::OpenRouter.ObservabilityDatadogDestination, TResult>? datadog = null,
+            global::System.Func<global::OpenRouter.ObservabilityGrafanaDestination, TResult>? grafana = null,
+            global::System.Func<global::OpenRouter.ObservabilityLangfuseDestination, TResult>? langfuse = null,
+            global::System.Func<global::OpenRouter.ObservabilityLangsmithDestination, TResult>? langsmith = null,
+            global::System.Func<global::OpenRouter.ObservabilityNewrelicDestination, TResult>? newrelic = null,
+            global::System.Func<global::OpenRouter.ObservabilityOpikDestination, TResult>? opik = null,
+            global::System.Func<global::OpenRouter.ObservabilityOtelCollectorDestination, TResult>? otelCollector = null,
+            global::System.Func<global::OpenRouter.ObservabilityPosthogDestination, TResult>? posthog = null,
+            global::System.Func<global::OpenRouter.ObservabilityRampDestination, TResult>? ramp = null,
+            global::System.Func<global::OpenRouter.ObservabilityS3Destination, TResult>? s3 = null,
+            global::System.Func<global::OpenRouter.ObservabilitySentryDestination, TResult>? sentry = null,
+            global::System.Func<global::OpenRouter.ObservabilitySnowflakeDestination, TResult>? snowflake = null,
+            global::System.Func<global::OpenRouter.ObservabilityWeaveDestination, TResult>? weave = null,
+            global::System.Func<global::OpenRouter.ObservabilityWebhookDestination, TResult>? webhook = null,
             bool validate = true)
         {
             if (validate)
@@ -1236,39 +1236,39 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant1>? arize = null,
+            global::System.Action<global::OpenRouter.ObservabilityArizeDestination>? arize = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant2>? braintrust = null,
+            global::System.Action<global::OpenRouter.ObservabilityBraintrustDestination>? braintrust = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant3>? clickhouse = null,
+            global::System.Action<global::OpenRouter.ObservabilityClickhouseDestination>? clickhouse = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant4>? datadog = null,
+            global::System.Action<global::OpenRouter.ObservabilityDatadogDestination>? datadog = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant5>? grafana = null,
+            global::System.Action<global::OpenRouter.ObservabilityGrafanaDestination>? grafana = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant6>? langfuse = null,
+            global::System.Action<global::OpenRouter.ObservabilityLangfuseDestination>? langfuse = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant7>? langsmith = null,
+            global::System.Action<global::OpenRouter.ObservabilityLangsmithDestination>? langsmith = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant8>? newrelic = null,
+            global::System.Action<global::OpenRouter.ObservabilityNewrelicDestination>? newrelic = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant9>? opik = null,
+            global::System.Action<global::OpenRouter.ObservabilityOpikDestination>? opik = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant10>? otelCollector = null,
+            global::System.Action<global::OpenRouter.ObservabilityOtelCollectorDestination>? otelCollector = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant11>? posthog = null,
+            global::System.Action<global::OpenRouter.ObservabilityPosthogDestination>? posthog = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant12>? ramp = null,
+            global::System.Action<global::OpenRouter.ObservabilityRampDestination>? ramp = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant13>? s3 = null,
+            global::System.Action<global::OpenRouter.ObservabilityS3Destination>? s3 = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant14>? sentry = null,
+            global::System.Action<global::OpenRouter.ObservabilitySentryDestination>? sentry = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant15>? snowflake = null,
+            global::System.Action<global::OpenRouter.ObservabilitySnowflakeDestination>? snowflake = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant16>? weave = null,
+            global::System.Action<global::OpenRouter.ObservabilityWeaveDestination>? weave = null,
 
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant17>? webhook = null,
+            global::System.Action<global::OpenRouter.ObservabilityWebhookDestination>? webhook = null,
             bool validate = true)
         {
             if (validate)
@@ -1350,23 +1350,23 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant1>? arize = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant2>? braintrust = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant3>? clickhouse = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant4>? datadog = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant5>? grafana = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant6>? langfuse = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant7>? langsmith = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant8>? newrelic = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant9>? opik = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant10>? otelCollector = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant11>? posthog = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant12>? ramp = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant13>? s3 = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant14>? sentry = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant15>? snowflake = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant16>? weave = null,
-            global::System.Action<global::OpenRouter.ObservabilityDestinationVariant17>? webhook = null,
+            global::System.Action<global::OpenRouter.ObservabilityArizeDestination>? arize = null,
+            global::System.Action<global::OpenRouter.ObservabilityBraintrustDestination>? braintrust = null,
+            global::System.Action<global::OpenRouter.ObservabilityClickhouseDestination>? clickhouse = null,
+            global::System.Action<global::OpenRouter.ObservabilityDatadogDestination>? datadog = null,
+            global::System.Action<global::OpenRouter.ObservabilityGrafanaDestination>? grafana = null,
+            global::System.Action<global::OpenRouter.ObservabilityLangfuseDestination>? langfuse = null,
+            global::System.Action<global::OpenRouter.ObservabilityLangsmithDestination>? langsmith = null,
+            global::System.Action<global::OpenRouter.ObservabilityNewrelicDestination>? newrelic = null,
+            global::System.Action<global::OpenRouter.ObservabilityOpikDestination>? opik = null,
+            global::System.Action<global::OpenRouter.ObservabilityOtelCollectorDestination>? otelCollector = null,
+            global::System.Action<global::OpenRouter.ObservabilityPosthogDestination>? posthog = null,
+            global::System.Action<global::OpenRouter.ObservabilityRampDestination>? ramp = null,
+            global::System.Action<global::OpenRouter.ObservabilityS3Destination>? s3 = null,
+            global::System.Action<global::OpenRouter.ObservabilitySentryDestination>? sentry = null,
+            global::System.Action<global::OpenRouter.ObservabilitySnowflakeDestination>? snowflake = null,
+            global::System.Action<global::OpenRouter.ObservabilityWeaveDestination>? weave = null,
+            global::System.Action<global::OpenRouter.ObservabilityWebhookDestination>? webhook = null,
             bool validate = true)
         {
             if (validate)
@@ -1452,39 +1452,39 @@ namespace OpenRouter
             var fields = new object?[]
             {
                 Arize,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant1),
+                typeof(global::OpenRouter.ObservabilityArizeDestination),
                 Braintrust,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant2),
+                typeof(global::OpenRouter.ObservabilityBraintrustDestination),
                 Clickhouse,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant3),
+                typeof(global::OpenRouter.ObservabilityClickhouseDestination),
                 Datadog,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant4),
+                typeof(global::OpenRouter.ObservabilityDatadogDestination),
                 Grafana,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant5),
+                typeof(global::OpenRouter.ObservabilityGrafanaDestination),
                 Langfuse,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant6),
+                typeof(global::OpenRouter.ObservabilityLangfuseDestination),
                 Langsmith,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant7),
+                typeof(global::OpenRouter.ObservabilityLangsmithDestination),
                 Newrelic,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant8),
+                typeof(global::OpenRouter.ObservabilityNewrelicDestination),
                 Opik,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant9),
+                typeof(global::OpenRouter.ObservabilityOpikDestination),
                 OtelCollector,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant10),
+                typeof(global::OpenRouter.ObservabilityOtelCollectorDestination),
                 Posthog,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant11),
+                typeof(global::OpenRouter.ObservabilityPosthogDestination),
                 Ramp,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant12),
+                typeof(global::OpenRouter.ObservabilityRampDestination),
                 S3,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant13),
+                typeof(global::OpenRouter.ObservabilityS3Destination),
                 Sentry,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant14),
+                typeof(global::OpenRouter.ObservabilitySentryDestination),
                 Snowflake,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant15),
+                typeof(global::OpenRouter.ObservabilitySnowflakeDestination),
                 Weave,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant16),
+                typeof(global::OpenRouter.ObservabilityWeaveDestination),
                 Webhook,
-                typeof(global::OpenRouter.ObservabilityDestinationVariant17),
+                typeof(global::OpenRouter.ObservabilityWebhookDestination),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1501,23 +1501,23 @@ namespace OpenRouter
         public bool Equals(ObservabilityDestination other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant1?>.Default.Equals(Arize, other.Arize) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant2?>.Default.Equals(Braintrust, other.Braintrust) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant3?>.Default.Equals(Clickhouse, other.Clickhouse) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant4?>.Default.Equals(Datadog, other.Datadog) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant5?>.Default.Equals(Grafana, other.Grafana) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant6?>.Default.Equals(Langfuse, other.Langfuse) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant7?>.Default.Equals(Langsmith, other.Langsmith) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant8?>.Default.Equals(Newrelic, other.Newrelic) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant9?>.Default.Equals(Opik, other.Opik) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant10?>.Default.Equals(OtelCollector, other.OtelCollector) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant11?>.Default.Equals(Posthog, other.Posthog) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant12?>.Default.Equals(Ramp, other.Ramp) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant13?>.Default.Equals(S3, other.S3) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant14?>.Default.Equals(Sentry, other.Sentry) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant15?>.Default.Equals(Snowflake, other.Snowflake) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant16?>.Default.Equals(Weave, other.Weave) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDestinationVariant17?>.Default.Equals(Webhook, other.Webhook)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityArizeDestination?>.Default.Equals(Arize, other.Arize) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityBraintrustDestination?>.Default.Equals(Braintrust, other.Braintrust) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityClickhouseDestination?>.Default.Equals(Clickhouse, other.Clickhouse) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityDatadogDestination?>.Default.Equals(Datadog, other.Datadog) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityGrafanaDestination?>.Default.Equals(Grafana, other.Grafana) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityLangfuseDestination?>.Default.Equals(Langfuse, other.Langfuse) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityLangsmithDestination?>.Default.Equals(Langsmith, other.Langsmith) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityNewrelicDestination?>.Default.Equals(Newrelic, other.Newrelic) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityOpikDestination?>.Default.Equals(Opik, other.Opik) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityOtelCollectorDestination?>.Default.Equals(OtelCollector, other.OtelCollector) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityPosthogDestination?>.Default.Equals(Posthog, other.Posthog) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityRampDestination?>.Default.Equals(Ramp, other.Ramp) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityS3Destination?>.Default.Equals(S3, other.S3) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilitySentryDestination?>.Default.Equals(Sentry, other.Sentry) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilitySnowflakeDestination?>.Default.Equals(Snowflake, other.Snowflake) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityWeaveDestination?>.Default.Equals(Weave, other.Weave) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ObservabilityWebhookDestination?>.Default.Equals(Webhook, other.Webhook)
                 ;
         }
 

@@ -21,35 +21,35 @@ namespace OpenRouter.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ApplyPatchCallOperationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenRouter.ApplyPatchCallOperationVariant1? createFile = default;
+            global::OpenRouter.ApplyPatchCreateFileOperation? createFile = default;
             if (discriminator?.Type == global::OpenRouter.ApplyPatchCallOperationDiscriminatorType.CreateFile)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOperationVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOperationVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ApplyPatchCallOperationVariant1)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCreateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCreateFileOperation> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ApplyPatchCreateFileOperation)}");
                 createFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.ApplyPatchCallOperationVariant2? deleteFile = default;
-            if (discriminator?.Type == global::OpenRouter.ApplyPatchCallOperationDiscriminatorType.DeleteFile)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOperationVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOperationVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ApplyPatchCallOperationVariant2)}");
-                deleteFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::OpenRouter.ApplyPatchCallOperationVariant3? updateFile = default;
+            global::OpenRouter.ApplyPatchUpdateFileOperation? updateFile = default;
             if (discriminator?.Type == global::OpenRouter.ApplyPatchCallOperationDiscriminatorType.UpdateFile)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOperationVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOperationVariant3> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ApplyPatchCallOperationVariant3)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchUpdateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchUpdateFileOperation> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ApplyPatchUpdateFileOperation)}");
                 updateFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.ApplyPatchDeleteFileOperation? deleteFile = default;
+            if (discriminator?.Type == global::OpenRouter.ApplyPatchCallOperationDiscriminatorType.DeleteFile)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchDeleteFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchDeleteFileOperation> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ApplyPatchDeleteFileOperation)}");
+                deleteFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::OpenRouter.ApplyPatchCallOperation(
                 discriminator?.Type,
                 createFile,
 
-                deleteFile,
+                updateFile,
 
-                updateFile
+                deleteFile
                 );
 
             return __value;
@@ -66,21 +66,21 @@ namespace OpenRouter.JsonConverters
 
             if (value.IsCreateFile)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOperationVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOperationVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOperationVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCreateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCreateFileOperation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCreateFileOperation).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateFile(), typeInfo);
-            }
-            else if (value.IsDeleteFile)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOperationVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOperationVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOperationVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeleteFile(), typeInfo);
             }
             else if (value.IsUpdateFile)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchCallOperationVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchCallOperationVariant3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchCallOperationVariant3).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchUpdateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchUpdateFileOperation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchUpdateFileOperation).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUpdateFile(), typeInfo);
+            }
+            else if (value.IsDeleteFile)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ApplyPatchDeleteFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ApplyPatchDeleteFileOperation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ApplyPatchDeleteFileOperation).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeleteFile(), typeInfo);
             }
         }
     }

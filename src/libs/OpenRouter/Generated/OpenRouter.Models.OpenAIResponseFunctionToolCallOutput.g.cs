@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"call_id":"call-abc123","output":"{\u0022temperature\u0022:72,\u0022conditions\u0022:\u0022sunny\u0022}","type":"function_call_output"}
     /// </summary>
     public sealed partial class OpenAIResponseFunctionToolCallOutput
     {
@@ -25,9 +25,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputOutputJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item4>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutput Output { get; set; }
+        public required global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item4>> Output { get; set; }
 
         /// <summary>
         ///
@@ -39,8 +39,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseFunctionToolCallOutputTypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponseFunctionToolCallOutputType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponseFunctionToolCallOutputTypeJsonConverter))]
+        public global::OpenRouter.OpenAIResponseFunctionToolCallOutputType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,10 +61,10 @@ namespace OpenRouter
 #endif
         public OpenAIResponseFunctionToolCallOutput(
             string callId,
-            global::OpenRouter.OpenAiResponseFunctionToolCallOutputOutput output,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item4>> output,
             string? id,
             global::OpenRouter.ToolCallStatus? status,
-            global::OpenRouter.OpenAiResponseFunctionToolCallOutputType type)
+            global::OpenRouter.OpenAIResponseFunctionToolCallOutputType type)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id;

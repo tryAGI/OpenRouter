@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Key-value pairs for additional object information (max 16 pairs, 64 char keys, 512 char values)
+    /// Key-value pairs for additional object information (max 16 pairs, 64 char keys, 512 char values)<br/>
+    /// Example: {"session_id":"session-456","user_id":"user-123"}
     /// </summary>
     public sealed partial class ChatRequestMetadata
     {

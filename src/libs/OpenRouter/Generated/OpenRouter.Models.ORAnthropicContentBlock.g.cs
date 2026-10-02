@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"citations":null,"text":"Hello, world!","type":"text"}
     /// </summary>
     public readonly partial struct ORAnthropicContentBlock : global::System.IEquatable<ORAnthropicContentBlock>
     {
@@ -15,271 +15,12 @@ namespace OpenRouter
         public global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// advisor_tool_result variant
+        /// Example: {"citations":null,"text":"Hello, world!","type":"text"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant1? AdvisorToolResult { get; init; }
+        public global::OpenRouter.AnthropicTextBlock? Text { get; init; }
 #else
-        public global::OpenRouter.ORAnthropicContentBlockVariant1? AdvisorToolResult { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorToolResult))]
-#endif
-        public bool IsAdvisorToolResult => AdvisorToolResult != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickAdvisorToolResult(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant1? value)
-        {
-            value = AdvisorToolResult;
-            return IsAdvisorToolResult;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant1 PickAdvisorToolResult() => AdvisorToolResult is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorToolResult' but the value was {ToString()}.");
-
-        /// <summary>
-        /// bash_code_execution_tool_result variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant2? BashCodeExecutionToolResult { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant2? BashCodeExecutionToolResult { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResult))]
-#endif
-        public bool IsBashCodeExecutionToolResult => BashCodeExecutionToolResult != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickBashCodeExecutionToolResult(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant2? value)
-        {
-            value = BashCodeExecutionToolResult;
-            return IsBashCodeExecutionToolResult;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant2 PickBashCodeExecutionToolResult() => BashCodeExecutionToolResult is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
-
-        /// <summary>
-        /// code_execution_tool_result variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant3? CodeExecutionToolResult { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant3? CodeExecutionToolResult { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
-#endif
-        public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCodeExecutionToolResult(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant3? value)
-        {
-            value = CodeExecutionToolResult;
-            return IsCodeExecutionToolResult;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant3 PickCodeExecutionToolResult() => CodeExecutionToolResult is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResult' but the value was {ToString()}.");
-
-        /// <summary>
-        /// compaction variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant4? Compaction { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant4? Compaction { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
-#endif
-        public bool IsCompaction => Compaction != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCompaction(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant4? value)
-        {
-            value = Compaction;
-            return IsCompaction;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant4 PickCompaction() => Compaction is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
-
-        /// <summary>
-        /// container_upload variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant5? ContainerUpload { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant5? ContainerUpload { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
-#endif
-        public bool IsContainerUpload => ContainerUpload != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickContainerUpload(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant5? value)
-        {
-            value = ContainerUpload;
-            return IsContainerUpload;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant5 PickContainerUpload() => ContainerUpload is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerUpload' but the value was {ToString()}.");
-
-        /// <summary>
-        /// redacted_thinking variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant6? RedactedThinking { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant6? RedactedThinking { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
-#endif
-        public bool IsRedactedThinking => RedactedThinking != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickRedactedThinking(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant6? value)
-        {
-            value = RedactedThinking;
-            return IsRedactedThinking;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant6 PickRedactedThinking() => RedactedThinking is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
-
-        /// <summary>
-        /// server_tool_use variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant7? ServerToolUse { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant7? ServerToolUse { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
-#endif
-        public bool IsServerToolUse => ServerToolUse != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickServerToolUse(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant7? value)
-        {
-            value = ServerToolUse;
-            return IsServerToolUse;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant7 PickServerToolUse() => ServerToolUse is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
-
-        /// <summary>
-        /// text variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant8? Text { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant8? Text { get; }
+        public global::OpenRouter.AnthropicTextBlock? Text { get; }
 #endif
 
         /// <summary>
@@ -297,7 +38,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant8? value)
+            out global::OpenRouter.AnthropicTextBlock? value)
         {
             value = Text;
             return IsText;
@@ -306,128 +47,17 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant8 PickText() => Text is { } value
+        public global::OpenRouter.AnthropicTextBlock PickText() => Text is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// text_editor_code_execution_tool_result variant
+        /// Example: {"caller":{"type":"direct"},"id":"toolu_01abc","input":{"location":"San Francisco"},"name":"get_weather","type":"tool_use"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant9? TextEditorCodeExecutionToolResult { get; init; }
+        public global::OpenRouter.AnthropicToolUseBlock? ToolUse { get; init; }
 #else
-        public global::OpenRouter.ORAnthropicContentBlockVariant9? TextEditorCodeExecutionToolResult { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
-#endif
-        public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickTextEditorCodeExecutionToolResult(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant9? value)
-        {
-            value = TextEditorCodeExecutionToolResult;
-            return IsTextEditorCodeExecutionToolResult;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant9 PickTextEditorCodeExecutionToolResult() => TextEditorCodeExecutionToolResult is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
-
-        /// <summary>
-        /// thinking variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant10? Thinking { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant10? Thinking { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
-#endif
-        public bool IsThinking => Thinking != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickThinking(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant10? value)
-        {
-            value = Thinking;
-            return IsThinking;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant10 PickThinking() => Thinking is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
-
-        /// <summary>
-        /// tool_search_tool_result variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant11? ToolSearchToolResult { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant11? ToolSearchToolResult { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResult))]
-#endif
-        public bool IsToolSearchToolResult => ToolSearchToolResult != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickToolSearchToolResult(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant11? value)
-        {
-            value = ToolSearchToolResult;
-            return IsToolSearchToolResult;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant11 PickToolSearchToolResult() => ToolSearchToolResult is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResult' but the value was {ToString()}.");
-
-        /// <summary>
-        /// tool_use variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant12? ToolUse { get; init; }
-#else
-        public global::OpenRouter.ORAnthropicContentBlockVariant12? ToolUse { get; }
+        public global::OpenRouter.AnthropicToolUseBlock? ToolUse { get; }
 #endif
 
         /// <summary>
@@ -445,7 +75,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant12? value)
+            out global::OpenRouter.AnthropicToolUseBlock? value)
         {
             value = ToolUse;
             return IsToolUse;
@@ -454,54 +84,128 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant12 PickToolUse() => ToolUse is { } value
+        public global::OpenRouter.AnthropicToolUseBlock PickToolUse() => ToolUse is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
         /// <summary>
-        /// web_fetch_tool_result variant
+        /// Example: {"signature":"sig_abc123","thinking":"Let me think about this...","type":"thinking"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant13? WebFetchToolResult { get; init; }
+        public global::OpenRouter.AnthropicThinkingBlock? Thinking { get; init; }
 #else
-        public global::OpenRouter.ORAnthropicContentBlockVariant13? WebFetchToolResult { get; }
+        public global::OpenRouter.AnthropicThinkingBlock? Thinking { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchToolResult))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
 #endif
-        public bool IsWebFetchToolResult => WebFetchToolResult != null;
+        public bool IsThinking => Thinking != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickWebFetchToolResult(
+        public bool TryPickThinking(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant13? value)
+            out global::OpenRouter.AnthropicThinkingBlock? value)
         {
-            value = WebFetchToolResult;
-            return IsWebFetchToolResult;
+            value = Thinking;
+            return IsThinking;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant13 PickWebFetchToolResult() => WebFetchToolResult is { } value
+        public global::OpenRouter.AnthropicThinkingBlock PickThinking() => Thinking is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResult' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
-        /// web_search_tool_result variant
+        /// Example: {"data":"cmVkYWN0ZWQ=","type":"redacted_thinking"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ORAnthropicContentBlockVariant14? WebSearchToolResult { get; init; }
+        public global::OpenRouter.AnthropicRedactedThinkingBlock? RedactedThinking { get; init; }
 #else
-        public global::OpenRouter.ORAnthropicContentBlockVariant14? WebSearchToolResult { get; }
+        public global::OpenRouter.AnthropicRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRedactedThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicRedactedThinkingBlock? value)
+        {
+            value = RedactedThinking;
+            return IsRedactedThinking;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.AnthropicRedactedThinkingBlock PickRedactedThinking() => RedactedThinking is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"caller":{"type":"direct"},"id":"srvtoolu_01abc","input":{},"name":"advisor","type":"server_tool_use"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ORAnthropicServerToolUseBlock? ServerToolUse { get; init; }
+#else
+        public global::OpenRouter.ORAnthropicServerToolUseBlock? ServerToolUse { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
+#endif
+        public bool IsServerToolUse => ServerToolUse != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickServerToolUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ORAnthropicServerToolUseBlock? value)
+        {
+            value = ServerToolUse;
+            return IsServerToolUse;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ORAnthropicServerToolUseBlock PickServerToolUse() => ServerToolUse is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"caller":{"type":"direct"},"content":[],"tool_use_id":"srvtoolu_01abc","type":"web_search_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicWebSearchToolResult? WebSearchToolResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicWebSearchToolResult? WebSearchToolResult { get; }
 #endif
 
         /// <summary>
@@ -519,7 +223,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ORAnthropicContentBlockVariant14? value)
+            out global::OpenRouter.AnthropicWebSearchToolResult? value)
         {
             value = WebSearchToolResult;
             return IsWebSearchToolResult;
@@ -528,184 +232,395 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ORAnthropicContentBlockVariant14 PickWebSearchToolResult() => WebSearchToolResult is { } value
+        public global::OpenRouter.AnthropicWebSearchToolResult PickWebSearchToolResult() => WebSearchToolResult is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// Example: {"caller":{"type":"direct"},"content":{"content":{"citations":null,"source":{"data":"","media_type":"text/plain","type":"text"},"title":null,"type":"document"},"retrieved_at":null,"type":"web_fetch_result","url":"https://example.com"},"tool_use_id":"srvtoolu_01abc","type":"web_fetch_tool_result"}
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant1 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant1?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicWebFetchToolResult? WebFetchToolResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicWebFetchToolResult? WebFetchToolResult { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant1?(ORAnthropicContentBlock @this) => @this.AdvisorToolResult;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchToolResult))]
+#endif
+        public bool IsWebFetchToolResult => WebFetchToolResult != null;
 
         /// <summary>
         ///
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant1? value)
+        public bool TryPickWebFetchToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicWebFetchToolResult? value)
         {
-            AdvisorToolResult = value;
+            value = WebFetchToolResult;
+            return IsWebFetchToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromAdvisorToolResult(global::OpenRouter.ORAnthropicContentBlockVariant1? value) => new ORAnthropicContentBlock(value);
+        public global::OpenRouter.AnthropicWebFetchToolResult PickWebFetchToolResult() => WebFetchToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"content":{"content":[],"return_code":0,"stderr":"","stdout":"Hello","type":"code_execution_result"},"tool_use_id":"srvtoolu_01abc","type":"code_execution_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicCodeExecutionToolResult? CodeExecutionToolResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicCodeExecutionToolResult? CodeExecutionToolResult { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant2 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant2?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
+#endif
+        public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant2?(ORAnthropicContentBlock @this) => @this.BashCodeExecutionToolResult;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant2? value)
+        public bool TryPickCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCodeExecutionToolResult? value)
         {
-            BashCodeExecutionToolResult = value;
+            value = CodeExecutionToolResult;
+            return IsCodeExecutionToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromBashCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant2? value) => new ORAnthropicContentBlock(value);
+        public global::OpenRouter.AnthropicCodeExecutionToolResult PickCodeExecutionToolResult() => CodeExecutionToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"content":{"content":[],"return_code":0,"stderr":"","stdout":"Hello","type":"bash_code_execution_result"},"tool_use_id":"srvtoolu_01abc","type":"bash_code_execution_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicBashCodeExecutionToolResult? BashCodeExecutionToolResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicBashCodeExecutionToolResult? BashCodeExecutionToolResult { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant3 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant3?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResult))]
+#endif
+        public bool IsBashCodeExecutionToolResult => BashCodeExecutionToolResult != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant3?(ORAnthropicContentBlock @this) => @this.CodeExecutionToolResult;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant3? value)
+        public bool TryPickBashCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicBashCodeExecutionToolResult? value)
         {
-            CodeExecutionToolResult = value;
+            value = BashCodeExecutionToolResult;
+            return IsBashCodeExecutionToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant3? value) => new ORAnthropicContentBlock(value);
+        public global::OpenRouter.AnthropicBashCodeExecutionToolResult PickBashCodeExecutionToolResult() => BashCodeExecutionToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"content":{"content":"file content","file_type":"text","num_lines":10,"start_line":1,"total_lines":10,"type":"text_editor_code_execution_view_result"},"tool_use_id":"srvtoolu_01abc","type":"text_editor_code_execution_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? TextEditorCodeExecutionToolResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? TextEditorCodeExecutionToolResult { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant4 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant4?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
+#endif
+        public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant4?(ORAnthropicContentBlock @this) => @this.Compaction;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant4? value)
+        public bool TryPickTextEditorCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? value)
         {
-            Compaction = value;
+            value = TextEditorCodeExecutionToolResult;
+            return IsTextEditorCodeExecutionToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromCompaction(global::OpenRouter.ORAnthropicContentBlockVariant4? value) => new ORAnthropicContentBlock(value);
+        public global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult PickTextEditorCodeExecutionToolResult() => TextEditorCodeExecutionToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"content":{"tool_references":[{"tool_name":"my_tool","type":"tool_reference"}],"type":"tool_search_tool_search_result"},"tool_use_id":"srvtoolu_01abc","type":"tool_search_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicToolSearchToolResult? ToolSearchToolResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicToolSearchToolResult? ToolSearchToolResult { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant5 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant5?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResult))]
+#endif
+        public bool IsToolSearchToolResult => ToolSearchToolResult != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant5?(ORAnthropicContentBlock @this) => @this.ContainerUpload;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant5? value)
+        public bool TryPickToolSearchToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicToolSearchToolResult? value)
         {
-            ContainerUpload = value;
+            value = ToolSearchToolResult;
+            return IsToolSearchToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromContainerUpload(global::OpenRouter.ORAnthropicContentBlockVariant5? value) => new ORAnthropicContentBlock(value);
+        public global::OpenRouter.AnthropicToolSearchToolResult PickToolSearchToolResult() => ToolSearchToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"file_id":"file_01abc","type":"container_upload"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicContainerUpload? ContainerUpload { get; init; }
+#else
+        public global::OpenRouter.AnthropicContainerUpload? ContainerUpload { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant6 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant6?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
+#endif
+        public bool IsContainerUpload => ContainerUpload != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant6?(ORAnthropicContentBlock @this) => @this.RedactedThinking;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant6? value)
+        public bool TryPickContainerUpload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicContainerUpload? value)
         {
-            RedactedThinking = value;
+            value = ContainerUpload;
+            return IsContainerUpload;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromRedactedThinking(global::OpenRouter.ORAnthropicContentBlockVariant6? value) => new ORAnthropicContentBlock(value);
+        public global::OpenRouter.AnthropicContainerUpload PickContainerUpload() => ContainerUpload is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerUpload' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"content":"Compacted summary of conversation.","type":"compaction"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicCompactionBlock? Compaction { get; init; }
+#else
+        public global::OpenRouter.AnthropicCompactionBlock? Compaction { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant7 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant7?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
+#endif
+        public bool IsCompaction => Compaction != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant7?(ORAnthropicContentBlock @this) => @this.ServerToolUse;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant7? value)
+        public bool TryPickCompaction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCompactionBlock? value)
         {
-            ServerToolUse = value;
+            value = Compaction;
+            return IsCompaction;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromServerToolUse(global::OpenRouter.ORAnthropicContentBlockVariant7? value) => new ORAnthropicContentBlock(value);
+        public global::OpenRouter.AnthropicCompactionBlock PickCompaction() => Compaction is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"content":{"text":"Advisor response text","type":"advisor_result"},"tool_use_id":"srvtoolu_01abc","type":"advisor_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicAdvisorToolResult? AdvisorToolResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicAdvisorToolResult? AdvisorToolResult { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant8 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant8?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorToolResult))]
+#endif
+        public bool IsAdvisorToolResult => AdvisorToolResult != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant8?(ORAnthropicContentBlock @this) => @this.Text;
+        public bool TryPickAdvisorToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicAdvisorToolResult? value)
+        {
+            value = AdvisorToolResult;
+            return IsAdvisorToolResult;
+        }
 
         /// <summary>
         ///
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant8? value)
+        public global::OpenRouter.AnthropicAdvisorToolResult PickAdvisorToolResult() => AdvisorToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Output of an `openrouter:shell` call executed in the OpenRouter sandbox<br/>
+        /// Example: {"content":{"output":[{"outcome":{"exit_code":0,"type":"exit"},"stderr":"","stdout":"README.md\n"}]},"tool_use_id":"srvtoolu_01abc","type":"openrouter_shell_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ORAnthropicShellToolResult? OpenrouterShellToolResult { get; init; }
+#else
+        public global::OpenRouter.ORAnthropicShellToolResult? OpenrouterShellToolResult { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterShellToolResult))]
+#endif
+        public bool IsOpenrouterShellToolResult => OpenrouterShellToolResult != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickOpenrouterShellToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ORAnthropicShellToolResult? value)
+        {
+            value = OpenrouterShellToolResult;
+            return IsOpenrouterShellToolResult;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ORAnthropicShellToolResult PickOpenrouterShellToolResult() => OpenrouterShellToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterShellToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Output of an `openrouter:bash` call executed in the OpenRouter sandbox (`engine: 'openrouter'`)<br/>
+        /// Example: {"content":{"command":"ls","exitCode":0,"stderr":"","stdout":"README.md\n"},"tool_use_id":"srvtoolu_01abc","type":"openrouter_bash_tool_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ORAnthropicBashToolResult? OpenrouterBashToolResult { get; init; }
+#else
+        public global::OpenRouter.ORAnthropicBashToolResult? OpenrouterBashToolResult { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenrouterBashToolResult))]
+#endif
+        public bool IsOpenrouterBashToolResult => OpenrouterBashToolResult != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickOpenrouterBashToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ORAnthropicBashToolResult? value)
+        {
+            value = OpenrouterBashToolResult;
+            return IsOpenrouterBashToolResult;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ORAnthropicBashToolResult PickOpenrouterBashToolResult() => OpenrouterBashToolResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenrouterBashToolResult' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicTextBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicTextBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicTextBlock?(ORAnthropicContentBlock @this) => @this.Text;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicTextBlock? value)
         {
             Text = value;
         }
@@ -713,91 +628,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromText(global::OpenRouter.ORAnthropicContentBlockVariant8? value) => new ORAnthropicContentBlock(value);
+        public static ORAnthropicContentBlock FromText(global::OpenRouter.AnthropicTextBlock? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant9 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant9?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicToolUseBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicToolUseBlock?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant9?(ORAnthropicContentBlock @this) => @this.TextEditorCodeExecutionToolResult;
+        public static implicit operator global::OpenRouter.AnthropicToolUseBlock?(ORAnthropicContentBlock @this) => @this.ToolUse;
 
         /// <summary>
         ///
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant9? value)
-        {
-            TextEditorCodeExecutionToolResult = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ORAnthropicContentBlock FromTextEditorCodeExecutionToolResult(global::OpenRouter.ORAnthropicContentBlockVariant9? value) => new ORAnthropicContentBlock(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant10 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant10?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant10?(ORAnthropicContentBlock @this) => @this.Thinking;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant10? value)
-        {
-            Thinking = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ORAnthropicContentBlock FromThinking(global::OpenRouter.ORAnthropicContentBlockVariant10? value) => new ORAnthropicContentBlock(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant11 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant11?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant11?(ORAnthropicContentBlock @this) => @this.ToolSearchToolResult;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant11? value)
-        {
-            ToolSearchToolResult = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ORAnthropicContentBlock FromToolSearchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant11? value) => new ORAnthropicContentBlock(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant12 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant12?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant12?(ORAnthropicContentBlock @this) => @this.ToolUse;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant12? value)
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicToolUseBlock? value)
         {
             ToolUse = value;
         }
@@ -805,45 +651,91 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromToolUse(global::OpenRouter.ORAnthropicContentBlockVariant12? value) => new ORAnthropicContentBlock(value);
+        public static ORAnthropicContentBlock FromToolUse(global::OpenRouter.AnthropicToolUseBlock? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant13 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant13?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicThinkingBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicThinkingBlock?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant13?(ORAnthropicContentBlock @this) => @this.WebFetchToolResult;
+        public static implicit operator global::OpenRouter.AnthropicThinkingBlock?(ORAnthropicContentBlock @this) => @this.Thinking;
 
         /// <summary>
         ///
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant13? value)
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicThinkingBlock? value)
         {
-            WebFetchToolResult = value;
+            Thinking = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromWebFetchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant13? value) => new ORAnthropicContentBlock(value);
+        public static ORAnthropicContentBlock FromThinking(global::OpenRouter.AnthropicThinkingBlock? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant14 value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicContentBlockVariant14?)value);
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicRedactedThinkingBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicRedactedThinkingBlock?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ORAnthropicContentBlockVariant14?(ORAnthropicContentBlock @this) => @this.WebSearchToolResult;
+        public static implicit operator global::OpenRouter.AnthropicRedactedThinkingBlock?(ORAnthropicContentBlock @this) => @this.RedactedThinking;
 
         /// <summary>
         ///
         /// </summary>
-        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicContentBlockVariant14? value)
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicRedactedThinkingBlock? value)
+        {
+            RedactedThinking = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromRedactedThinking(global::OpenRouter.AnthropicRedactedThinkingBlock? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicServerToolUseBlock value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicServerToolUseBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ORAnthropicServerToolUseBlock?(ORAnthropicContentBlock @this) => @this.ServerToolUse;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicServerToolUseBlock? value)
+        {
+            ServerToolUse = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromServerToolUse(global::OpenRouter.ORAnthropicServerToolUseBlock? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicWebSearchToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicWebSearchToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicWebSearchToolResult?(ORAnthropicContentBlock @this) => @this.WebSearchToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicWebSearchToolResult? value)
         {
             WebSearchToolResult = value;
         }
@@ -851,85 +743,323 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ORAnthropicContentBlock FromWebSearchToolResult(global::OpenRouter.ORAnthropicContentBlockVariant14? value) => new ORAnthropicContentBlock(value);
+        public static ORAnthropicContentBlock FromWebSearchToolResult(global::OpenRouter.AnthropicWebSearchToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicWebFetchToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicWebFetchToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicWebFetchToolResult?(ORAnthropicContentBlock @this) => @this.WebFetchToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicWebFetchToolResult? value)
+        {
+            WebFetchToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromWebFetchToolResult(global::OpenRouter.AnthropicWebFetchToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicCodeExecutionToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicCodeExecutionToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicCodeExecutionToolResult?(ORAnthropicContentBlock @this) => @this.CodeExecutionToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicCodeExecutionToolResult? value)
+        {
+            CodeExecutionToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromCodeExecutionToolResult(global::OpenRouter.AnthropicCodeExecutionToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicBashCodeExecutionToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicBashCodeExecutionToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicBashCodeExecutionToolResult?(ORAnthropicContentBlock @this) => @this.BashCodeExecutionToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicBashCodeExecutionToolResult? value)
+        {
+            BashCodeExecutionToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromBashCodeExecutionToolResult(global::OpenRouter.AnthropicBashCodeExecutionToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?(ORAnthropicContentBlock @this) => @this.TextEditorCodeExecutionToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? value)
+        {
+            TextEditorCodeExecutionToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromTextEditorCodeExecutionToolResult(global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicToolSearchToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicToolSearchToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicToolSearchToolResult?(ORAnthropicContentBlock @this) => @this.ToolSearchToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicToolSearchToolResult? value)
+        {
+            ToolSearchToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromToolSearchToolResult(global::OpenRouter.AnthropicToolSearchToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicContainerUpload value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicContainerUpload?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicContainerUpload?(ORAnthropicContentBlock @this) => @this.ContainerUpload;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicContainerUpload? value)
+        {
+            ContainerUpload = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromContainerUpload(global::OpenRouter.AnthropicContainerUpload? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicCompactionBlock value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicCompactionBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicCompactionBlock?(ORAnthropicContentBlock @this) => @this.Compaction;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicCompactionBlock? value)
+        {
+            Compaction = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromCompaction(global::OpenRouter.AnthropicCompactionBlock? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.AnthropicAdvisorToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.AnthropicAdvisorToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicAdvisorToolResult?(ORAnthropicContentBlock @this) => @this.AdvisorToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.AnthropicAdvisorToolResult? value)
+        {
+            AdvisorToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromAdvisorToolResult(global::OpenRouter.AnthropicAdvisorToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicShellToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicShellToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ORAnthropicShellToolResult?(ORAnthropicContentBlock @this) => @this.OpenrouterShellToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicShellToolResult? value)
+        {
+            OpenrouterShellToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromOpenrouterShellToolResult(global::OpenRouter.ORAnthropicShellToolResult? value) => new ORAnthropicContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ORAnthropicContentBlock(global::OpenRouter.ORAnthropicBashToolResult value) => new ORAnthropicContentBlock((global::OpenRouter.ORAnthropicBashToolResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ORAnthropicBashToolResult?(ORAnthropicContentBlock @this) => @this.OpenrouterBashToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ORAnthropicContentBlock(global::OpenRouter.ORAnthropicBashToolResult? value)
+        {
+            OpenrouterBashToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ORAnthropicContentBlock FromOpenrouterBashToolResult(global::OpenRouter.ORAnthropicBashToolResult? value) => new ORAnthropicContentBlock(value);
 
         /// <summary>
         ///
         /// </summary>
         public ORAnthropicContentBlock(
             global::OpenRouter.ORAnthropicContentBlockDiscriminatorType? type,
-            global::OpenRouter.ORAnthropicContentBlockVariant1? advisorToolResult,
-            global::OpenRouter.ORAnthropicContentBlockVariant2? bashCodeExecutionToolResult,
-            global::OpenRouter.ORAnthropicContentBlockVariant3? codeExecutionToolResult,
-            global::OpenRouter.ORAnthropicContentBlockVariant4? compaction,
-            global::OpenRouter.ORAnthropicContentBlockVariant5? containerUpload,
-            global::OpenRouter.ORAnthropicContentBlockVariant6? redactedThinking,
-            global::OpenRouter.ORAnthropicContentBlockVariant7? serverToolUse,
-            global::OpenRouter.ORAnthropicContentBlockVariant8? text,
-            global::OpenRouter.ORAnthropicContentBlockVariant9? textEditorCodeExecutionToolResult,
-            global::OpenRouter.ORAnthropicContentBlockVariant10? thinking,
-            global::OpenRouter.ORAnthropicContentBlockVariant11? toolSearchToolResult,
-            global::OpenRouter.ORAnthropicContentBlockVariant12? toolUse,
-            global::OpenRouter.ORAnthropicContentBlockVariant13? webFetchToolResult,
-            global::OpenRouter.ORAnthropicContentBlockVariant14? webSearchToolResult
+            global::OpenRouter.AnthropicTextBlock? text,
+            global::OpenRouter.AnthropicToolUseBlock? toolUse,
+            global::OpenRouter.AnthropicThinkingBlock? thinking,
+            global::OpenRouter.AnthropicRedactedThinkingBlock? redactedThinking,
+            global::OpenRouter.ORAnthropicServerToolUseBlock? serverToolUse,
+            global::OpenRouter.AnthropicWebSearchToolResult? webSearchToolResult,
+            global::OpenRouter.AnthropicWebFetchToolResult? webFetchToolResult,
+            global::OpenRouter.AnthropicCodeExecutionToolResult? codeExecutionToolResult,
+            global::OpenRouter.AnthropicBashCodeExecutionToolResult? bashCodeExecutionToolResult,
+            global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult? textEditorCodeExecutionToolResult,
+            global::OpenRouter.AnthropicToolSearchToolResult? toolSearchToolResult,
+            global::OpenRouter.AnthropicContainerUpload? containerUpload,
+            global::OpenRouter.AnthropicCompactionBlock? compaction,
+            global::OpenRouter.AnthropicAdvisorToolResult? advisorToolResult,
+            global::OpenRouter.ORAnthropicShellToolResult? openrouterShellToolResult,
+            global::OpenRouter.ORAnthropicBashToolResult? openrouterBashToolResult
             )
         {
             Type = type;
 
-            AdvisorToolResult = advisorToolResult;
-            BashCodeExecutionToolResult = bashCodeExecutionToolResult;
-            CodeExecutionToolResult = codeExecutionToolResult;
-            Compaction = compaction;
-            ContainerUpload = containerUpload;
+            Text = text;
+            ToolUse = toolUse;
+            Thinking = thinking;
             RedactedThinking = redactedThinking;
             ServerToolUse = serverToolUse;
-            Text = text;
-            TextEditorCodeExecutionToolResult = textEditorCodeExecutionToolResult;
-            Thinking = thinking;
-            ToolSearchToolResult = toolSearchToolResult;
-            ToolUse = toolUse;
-            WebFetchToolResult = webFetchToolResult;
             WebSearchToolResult = webSearchToolResult;
+            WebFetchToolResult = webFetchToolResult;
+            CodeExecutionToolResult = codeExecutionToolResult;
+            BashCodeExecutionToolResult = bashCodeExecutionToolResult;
+            TextEditorCodeExecutionToolResult = textEditorCodeExecutionToolResult;
+            ToolSearchToolResult = toolSearchToolResult;
+            ContainerUpload = containerUpload;
+            Compaction = compaction;
+            AdvisorToolResult = advisorToolResult;
+            OpenrouterShellToolResult = openrouterShellToolResult;
+            OpenrouterBashToolResult = openrouterBashToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            WebSearchToolResult as object ??
-            WebFetchToolResult as object ??
-            ToolUse as object ??
+            OpenrouterBashToolResult as object ??
+            OpenrouterShellToolResult as object ??
+            AdvisorToolResult as object ??
+            Compaction as object ??
+            ContainerUpload as object ??
             ToolSearchToolResult as object ??
-            Thinking as object ??
             TextEditorCodeExecutionToolResult as object ??
-            Text as object ??
+            BashCodeExecutionToolResult as object ??
+            CodeExecutionToolResult as object ??
+            WebFetchToolResult as object ??
+            WebSearchToolResult as object ??
             ServerToolUse as object ??
             RedactedThinking as object ??
-            ContainerUpload as object ??
-            Compaction as object ??
-            CodeExecutionToolResult as object ??
-            BashCodeExecutionToolResult as object ??
-            AdvisorToolResult as object
+            Thinking as object ??
+            ToolUse as object ??
+            Text as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            AdvisorToolResult?.ToString() ??
-            BashCodeExecutionToolResult?.ToString() ??
-            CodeExecutionToolResult?.ToString() ??
-            Compaction?.ToString() ??
-            ContainerUpload?.ToString() ??
+            Text?.ToString() ??
+            ToolUse?.ToString() ??
+            Thinking?.ToString() ??
             RedactedThinking?.ToString() ??
             ServerToolUse?.ToString() ??
-            Text?.ToString() ??
-            TextEditorCodeExecutionToolResult?.ToString() ??
-            Thinking?.ToString() ??
-            ToolSearchToolResult?.ToString() ??
-            ToolUse?.ToString() ??
+            WebSearchToolResult?.ToString() ??
             WebFetchToolResult?.ToString() ??
-            WebSearchToolResult?.ToString()
+            CodeExecutionToolResult?.ToString() ??
+            BashCodeExecutionToolResult?.ToString() ??
+            TextEditorCodeExecutionToolResult?.ToString() ??
+            ToolSearchToolResult?.ToString() ??
+            ContainerUpload?.ToString() ??
+            Compaction?.ToString() ??
+            AdvisorToolResult?.ToString() ??
+            OpenrouterShellToolResult?.ToString() ??
+            OpenrouterBashToolResult?.ToString()
             ;
 
         /// <summary>
@@ -937,27 +1067,29 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && IsToolUse && !IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && IsWebFetchToolResult && !IsWebSearchToolResult || !IsAdvisorToolResult && !IsBashCodeExecutionToolResult && !IsCodeExecutionToolResult && !IsCompaction && !IsContainerUpload && !IsRedactedThinking && !IsServerToolUse && !IsText && !IsTextEditorCodeExecutionToolResult && !IsThinking && !IsToolSearchToolResult && !IsToolUse && !IsWebFetchToolResult && IsWebSearchToolResult;
+            return IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && IsAdvisorToolResult && !IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && IsOpenrouterShellToolResult && !IsOpenrouterBashToolResult || !IsText && !IsToolUse && !IsThinking && !IsRedactedThinking && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsCompaction && !IsAdvisorToolResult && !IsOpenrouterShellToolResult && IsOpenrouterBashToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant1, TResult>? advisorToolResult = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant2, TResult>? bashCodeExecutionToolResult = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant3, TResult>? codeExecutionToolResult = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant4, TResult>? compaction = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant5, TResult>? containerUpload = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant6, TResult>? redactedThinking = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant7, TResult>? serverToolUse = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant8, TResult>? text = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant9, TResult>? textEditorCodeExecutionToolResult = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant10, TResult>? thinking = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant11, TResult>? toolSearchToolResult = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant12, TResult>? toolUse = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant13, TResult>? webFetchToolResult = null,
-            global::System.Func<global::OpenRouter.ORAnthropicContentBlockVariant14, TResult>? webSearchToolResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextBlock, TResult>? text = null,
+            global::System.Func<global::OpenRouter.AnthropicToolUseBlock, TResult>? toolUse = null,
+            global::System.Func<global::OpenRouter.AnthropicThinkingBlock, TResult>? thinking = null,
+            global::System.Func<global::OpenRouter.AnthropicRedactedThinkingBlock, TResult>? redactedThinking = null,
+            global::System.Func<global::OpenRouter.ORAnthropicServerToolUseBlock, TResult>? serverToolUse = null,
+            global::System.Func<global::OpenRouter.AnthropicWebSearchToolResult, TResult>? webSearchToolResult = null,
+            global::System.Func<global::OpenRouter.AnthropicWebFetchToolResult, TResult>? webFetchToolResult = null,
+            global::System.Func<global::OpenRouter.AnthropicCodeExecutionToolResult, TResult>? codeExecutionToolResult = null,
+            global::System.Func<global::OpenRouter.AnthropicBashCodeExecutionToolResult, TResult>? bashCodeExecutionToolResult = null,
+            global::System.Func<global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult, TResult>? textEditorCodeExecutionToolResult = null,
+            global::System.Func<global::OpenRouter.AnthropicToolSearchToolResult, TResult>? toolSearchToolResult = null,
+            global::System.Func<global::OpenRouter.AnthropicContainerUpload, TResult>? containerUpload = null,
+            global::System.Func<global::OpenRouter.AnthropicCompactionBlock, TResult>? compaction = null,
+            global::System.Func<global::OpenRouter.AnthropicAdvisorToolResult, TResult>? advisorToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicShellToolResult, TResult>? openrouterShellToolResult = null,
+            global::System.Func<global::OpenRouter.ORAnthropicBashToolResult, TResult>? openrouterBashToolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -965,61 +1097,69 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AdvisorToolResult is { } __value0 && advisorToolResult != null)
+            if (Text is { } __value0 && text != null)
             {
-                return advisorToolResult(__value0);
+                return text(__value0);
             }
-            else if (BashCodeExecutionToolResult is { } __value1 && bashCodeExecutionToolResult != null)
+            else if (ToolUse is { } __value1 && toolUse != null)
             {
-                return bashCodeExecutionToolResult(__value1);
+                return toolUse(__value1);
             }
-            else if (CodeExecutionToolResult is { } __value2 && codeExecutionToolResult != null)
+            else if (Thinking is { } __value2 && thinking != null)
             {
-                return codeExecutionToolResult(__value2);
+                return thinking(__value2);
             }
-            else if (Compaction is { } __value3 && compaction != null)
+            else if (RedactedThinking is { } __value3 && redactedThinking != null)
             {
-                return compaction(__value3);
+                return redactedThinking(__value3);
             }
-            else if (ContainerUpload is { } __value4 && containerUpload != null)
+            else if (ServerToolUse is { } __value4 && serverToolUse != null)
             {
-                return containerUpload(__value4);
+                return serverToolUse(__value4);
             }
-            else if (RedactedThinking is { } __value5 && redactedThinking != null)
+            else if (WebSearchToolResult is { } __value5 && webSearchToolResult != null)
             {
-                return redactedThinking(__value5);
+                return webSearchToolResult(__value5);
             }
-            else if (ServerToolUse is { } __value6 && serverToolUse != null)
+            else if (WebFetchToolResult is { } __value6 && webFetchToolResult != null)
             {
-                return serverToolUse(__value6);
+                return webFetchToolResult(__value6);
             }
-            else if (Text is { } __value7 && text != null)
+            else if (CodeExecutionToolResult is { } __value7 && codeExecutionToolResult != null)
             {
-                return text(__value7);
+                return codeExecutionToolResult(__value7);
             }
-            else if (TextEditorCodeExecutionToolResult is { } __value8 && textEditorCodeExecutionToolResult != null)
+            else if (BashCodeExecutionToolResult is { } __value8 && bashCodeExecutionToolResult != null)
             {
-                return textEditorCodeExecutionToolResult(__value8);
+                return bashCodeExecutionToolResult(__value8);
             }
-            else if (Thinking is { } __value9 && thinking != null)
+            else if (TextEditorCodeExecutionToolResult is { } __value9 && textEditorCodeExecutionToolResult != null)
             {
-                return thinking(__value9);
+                return textEditorCodeExecutionToolResult(__value9);
             }
             else if (ToolSearchToolResult is { } __value10 && toolSearchToolResult != null)
             {
                 return toolSearchToolResult(__value10);
             }
-            else if (ToolUse is { } __value11 && toolUse != null)
+            else if (ContainerUpload is { } __value11 && containerUpload != null)
             {
-                return toolUse(__value11);
+                return containerUpload(__value11);
             }
-            else if (WebFetchToolResult is { } __value12 && webFetchToolResult != null)
+            else if (Compaction is { } __value12 && compaction != null)
             {
-                return webFetchToolResult(__value12);
+                return compaction(__value12);
             }
-            else if (WebSearchToolResult is { } __value13 && webSearchToolResult != null)
+            else if (AdvisorToolResult is { } __value13 && advisorToolResult != null)
             {
-                return webSearchToolResult(__value13);
+                return advisorToolResult(__value13);
+            }
+            else if (OpenrouterShellToolResult is { } __value14 && openrouterShellToolResult != null)
+            {
+                return openrouterShellToolResult(__value14);
+            }
+            else if (OpenrouterBashToolResult is { } __value15 && openrouterBashToolResult != null)
+            {
+                return openrouterBashToolResult(__value15);
             }
 
             return default(TResult);
@@ -1029,33 +1169,37 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant1>? advisorToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextBlock>? text = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant2>? bashCodeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicToolUseBlock>? toolUse = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant3>? codeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicThinkingBlock>? thinking = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant4>? compaction = null,
+            global::System.Action<global::OpenRouter.AnthropicRedactedThinkingBlock>? redactedThinking = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant5>? containerUpload = null,
+            global::System.Action<global::OpenRouter.ORAnthropicServerToolUseBlock>? serverToolUse = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant6>? redactedThinking = null,
+            global::System.Action<global::OpenRouter.AnthropicWebSearchToolResult>? webSearchToolResult = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant7>? serverToolUse = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchToolResult>? webFetchToolResult = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant8>? text = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionToolResult>? codeExecutionToolResult = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant9>? textEditorCodeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionToolResult>? bashCodeExecutionToolResult = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant10>? thinking = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult>? textEditorCodeExecutionToolResult = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant11>? toolSearchToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchToolResult>? toolSearchToolResult = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant12>? toolUse = null,
+            global::System.Action<global::OpenRouter.AnthropicContainerUpload>? containerUpload = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant13>? webFetchToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicCompactionBlock>? compaction = null,
 
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant14>? webSearchToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicAdvisorToolResult>? advisorToolResult = null,
+
+            global::System.Action<global::OpenRouter.ORAnthropicShellToolResult>? openrouterShellToolResult = null,
+
+            global::System.Action<global::OpenRouter.ORAnthropicBashToolResult>? openrouterBashToolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -1063,61 +1207,69 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AdvisorToolResult is { } __value0)
+            if (Text is { } __value0)
             {
-                advisorToolResult?.Invoke(__value0);
+                text?.Invoke(__value0);
             }
-            else if (BashCodeExecutionToolResult is { } __value1)
+            else if (ToolUse is { } __value1)
             {
-                bashCodeExecutionToolResult?.Invoke(__value1);
+                toolUse?.Invoke(__value1);
             }
-            else if (CodeExecutionToolResult is { } __value2)
+            else if (Thinking is { } __value2)
             {
-                codeExecutionToolResult?.Invoke(__value2);
+                thinking?.Invoke(__value2);
             }
-            else if (Compaction is { } __value3)
+            else if (RedactedThinking is { } __value3)
             {
-                compaction?.Invoke(__value3);
+                redactedThinking?.Invoke(__value3);
             }
-            else if (ContainerUpload is { } __value4)
+            else if (ServerToolUse is { } __value4)
             {
-                containerUpload?.Invoke(__value4);
+                serverToolUse?.Invoke(__value4);
             }
-            else if (RedactedThinking is { } __value5)
+            else if (WebSearchToolResult is { } __value5)
             {
-                redactedThinking?.Invoke(__value5);
+                webSearchToolResult?.Invoke(__value5);
             }
-            else if (ServerToolUse is { } __value6)
+            else if (WebFetchToolResult is { } __value6)
             {
-                serverToolUse?.Invoke(__value6);
+                webFetchToolResult?.Invoke(__value6);
             }
-            else if (Text is { } __value7)
+            else if (CodeExecutionToolResult is { } __value7)
             {
-                text?.Invoke(__value7);
+                codeExecutionToolResult?.Invoke(__value7);
             }
-            else if (TextEditorCodeExecutionToolResult is { } __value8)
+            else if (BashCodeExecutionToolResult is { } __value8)
             {
-                textEditorCodeExecutionToolResult?.Invoke(__value8);
+                bashCodeExecutionToolResult?.Invoke(__value8);
             }
-            else if (Thinking is { } __value9)
+            else if (TextEditorCodeExecutionToolResult is { } __value9)
             {
-                thinking?.Invoke(__value9);
+                textEditorCodeExecutionToolResult?.Invoke(__value9);
             }
             else if (ToolSearchToolResult is { } __value10)
             {
                 toolSearchToolResult?.Invoke(__value10);
             }
-            else if (ToolUse is { } __value11)
+            else if (ContainerUpload is { } __value11)
             {
-                toolUse?.Invoke(__value11);
+                containerUpload?.Invoke(__value11);
             }
-            else if (WebFetchToolResult is { } __value12)
+            else if (Compaction is { } __value12)
             {
-                webFetchToolResult?.Invoke(__value12);
+                compaction?.Invoke(__value12);
             }
-            else if (WebSearchToolResult is { } __value13)
+            else if (AdvisorToolResult is { } __value13)
             {
-                webSearchToolResult?.Invoke(__value13);
+                advisorToolResult?.Invoke(__value13);
+            }
+            else if (OpenrouterShellToolResult is { } __value14)
+            {
+                openrouterShellToolResult?.Invoke(__value14);
+            }
+            else if (OpenrouterBashToolResult is { } __value15)
+            {
+                openrouterBashToolResult?.Invoke(__value15);
             }
         }
 
@@ -1125,20 +1277,22 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant1>? advisorToolResult = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant2>? bashCodeExecutionToolResult = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant3>? codeExecutionToolResult = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant4>? compaction = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant5>? containerUpload = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant6>? redactedThinking = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant7>? serverToolUse = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant8>? text = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant9>? textEditorCodeExecutionToolResult = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant10>? thinking = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant11>? toolSearchToolResult = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant12>? toolUse = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant13>? webFetchToolResult = null,
-            global::System.Action<global::OpenRouter.ORAnthropicContentBlockVariant14>? webSearchToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextBlock>? text = null,
+            global::System.Action<global::OpenRouter.AnthropicToolUseBlock>? toolUse = null,
+            global::System.Action<global::OpenRouter.AnthropicThinkingBlock>? thinking = null,
+            global::System.Action<global::OpenRouter.AnthropicRedactedThinkingBlock>? redactedThinking = null,
+            global::System.Action<global::OpenRouter.ORAnthropicServerToolUseBlock>? serverToolUse = null,
+            global::System.Action<global::OpenRouter.AnthropicWebSearchToolResult>? webSearchToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchToolResult>? webFetchToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionToolResult>? codeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicBashCodeExecutionToolResult>? bashCodeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult>? textEditorCodeExecutionToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicToolSearchToolResult>? toolSearchToolResult = null,
+            global::System.Action<global::OpenRouter.AnthropicContainerUpload>? containerUpload = null,
+            global::System.Action<global::OpenRouter.AnthropicCompactionBlock>? compaction = null,
+            global::System.Action<global::OpenRouter.AnthropicAdvisorToolResult>? advisorToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicShellToolResult>? openrouterShellToolResult = null,
+            global::System.Action<global::OpenRouter.ORAnthropicBashToolResult>? openrouterBashToolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -1146,61 +1300,69 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AdvisorToolResult is { } __value0)
+            if (Text is { } __value0)
             {
-                advisorToolResult?.Invoke(__value0);
+                text?.Invoke(__value0);
             }
-            else if (BashCodeExecutionToolResult is { } __value1)
+            else if (ToolUse is { } __value1)
             {
-                bashCodeExecutionToolResult?.Invoke(__value1);
+                toolUse?.Invoke(__value1);
             }
-            else if (CodeExecutionToolResult is { } __value2)
+            else if (Thinking is { } __value2)
             {
-                codeExecutionToolResult?.Invoke(__value2);
+                thinking?.Invoke(__value2);
             }
-            else if (Compaction is { } __value3)
+            else if (RedactedThinking is { } __value3)
             {
-                compaction?.Invoke(__value3);
+                redactedThinking?.Invoke(__value3);
             }
-            else if (ContainerUpload is { } __value4)
+            else if (ServerToolUse is { } __value4)
             {
-                containerUpload?.Invoke(__value4);
+                serverToolUse?.Invoke(__value4);
             }
-            else if (RedactedThinking is { } __value5)
+            else if (WebSearchToolResult is { } __value5)
             {
-                redactedThinking?.Invoke(__value5);
+                webSearchToolResult?.Invoke(__value5);
             }
-            else if (ServerToolUse is { } __value6)
+            else if (WebFetchToolResult is { } __value6)
             {
-                serverToolUse?.Invoke(__value6);
+                webFetchToolResult?.Invoke(__value6);
             }
-            else if (Text is { } __value7)
+            else if (CodeExecutionToolResult is { } __value7)
             {
-                text?.Invoke(__value7);
+                codeExecutionToolResult?.Invoke(__value7);
             }
-            else if (TextEditorCodeExecutionToolResult is { } __value8)
+            else if (BashCodeExecutionToolResult is { } __value8)
             {
-                textEditorCodeExecutionToolResult?.Invoke(__value8);
+                bashCodeExecutionToolResult?.Invoke(__value8);
             }
-            else if (Thinking is { } __value9)
+            else if (TextEditorCodeExecutionToolResult is { } __value9)
             {
-                thinking?.Invoke(__value9);
+                textEditorCodeExecutionToolResult?.Invoke(__value9);
             }
             else if (ToolSearchToolResult is { } __value10)
             {
                 toolSearchToolResult?.Invoke(__value10);
             }
-            else if (ToolUse is { } __value11)
+            else if (ContainerUpload is { } __value11)
             {
-                toolUse?.Invoke(__value11);
+                containerUpload?.Invoke(__value11);
             }
-            else if (WebFetchToolResult is { } __value12)
+            else if (Compaction is { } __value12)
             {
-                webFetchToolResult?.Invoke(__value12);
+                compaction?.Invoke(__value12);
             }
-            else if (WebSearchToolResult is { } __value13)
+            else if (AdvisorToolResult is { } __value13)
             {
-                webSearchToolResult?.Invoke(__value13);
+                advisorToolResult?.Invoke(__value13);
+            }
+            else if (OpenrouterShellToolResult is { } __value14)
+            {
+                openrouterShellToolResult?.Invoke(__value14);
+            }
+            else if (OpenrouterBashToolResult is { } __value15)
+            {
+                openrouterBashToolResult?.Invoke(__value15);
             }
         }
 
@@ -1211,34 +1373,38 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AdvisorToolResult,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant1),
-                BashCodeExecutionToolResult,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant2),
-                CodeExecutionToolResult,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant3),
-                Compaction,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant4),
-                ContainerUpload,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant5),
-                RedactedThinking,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant6),
-                ServerToolUse,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant7),
                 Text,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant8),
-                TextEditorCodeExecutionToolResult,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant9),
-                Thinking,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant10),
-                ToolSearchToolResult,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant11),
+                typeof(global::OpenRouter.AnthropicTextBlock),
                 ToolUse,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant12),
-                WebFetchToolResult,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant13),
+                typeof(global::OpenRouter.AnthropicToolUseBlock),
+                Thinking,
+                typeof(global::OpenRouter.AnthropicThinkingBlock),
+                RedactedThinking,
+                typeof(global::OpenRouter.AnthropicRedactedThinkingBlock),
+                ServerToolUse,
+                typeof(global::OpenRouter.ORAnthropicServerToolUseBlock),
                 WebSearchToolResult,
-                typeof(global::OpenRouter.ORAnthropicContentBlockVariant14),
+                typeof(global::OpenRouter.AnthropicWebSearchToolResult),
+                WebFetchToolResult,
+                typeof(global::OpenRouter.AnthropicWebFetchToolResult),
+                CodeExecutionToolResult,
+                typeof(global::OpenRouter.AnthropicCodeExecutionToolResult),
+                BashCodeExecutionToolResult,
+                typeof(global::OpenRouter.AnthropicBashCodeExecutionToolResult),
+                TextEditorCodeExecutionToolResult,
+                typeof(global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult),
+                ToolSearchToolResult,
+                typeof(global::OpenRouter.AnthropicToolSearchToolResult),
+                ContainerUpload,
+                typeof(global::OpenRouter.AnthropicContainerUpload),
+                Compaction,
+                typeof(global::OpenRouter.AnthropicCompactionBlock),
+                AdvisorToolResult,
+                typeof(global::OpenRouter.AnthropicAdvisorToolResult),
+                OpenrouterShellToolResult,
+                typeof(global::OpenRouter.ORAnthropicShellToolResult),
+                OpenrouterBashToolResult,
+                typeof(global::OpenRouter.ORAnthropicBashToolResult),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1255,20 +1421,22 @@ namespace OpenRouter
         public bool Equals(ORAnthropicContentBlock other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant1?>.Default.Equals(AdvisorToolResult, other.AdvisorToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant2?>.Default.Equals(BashCodeExecutionToolResult, other.BashCodeExecutionToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant3?>.Default.Equals(CodeExecutionToolResult, other.CodeExecutionToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant4?>.Default.Equals(Compaction, other.Compaction) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant5?>.Default.Equals(ContainerUpload, other.ContainerUpload) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant6?>.Default.Equals(RedactedThinking, other.RedactedThinking) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant7?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant8?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant9?>.Default.Equals(TextEditorCodeExecutionToolResult, other.TextEditorCodeExecutionToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant10?>.Default.Equals(Thinking, other.Thinking) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant11?>.Default.Equals(ToolSearchToolResult, other.ToolSearchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant12?>.Default.Equals(ToolUse, other.ToolUse) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant13?>.Default.Equals(WebFetchToolResult, other.WebFetchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicContentBlockVariant14?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebSearchToolResult?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebFetchToolResult?>.Default.Equals(WebFetchToolResult, other.WebFetchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecutionToolResult?>.Default.Equals(CodeExecutionToolResult, other.CodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicBashCodeExecutionToolResult?>.Default.Equals(BashCodeExecutionToolResult, other.BashCodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicTextEditorCodeExecutionToolResult?>.Default.Equals(TextEditorCodeExecutionToolResult, other.TextEditorCodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicToolSearchToolResult?>.Default.Equals(ToolSearchToolResult, other.ToolSearchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicContainerUpload?>.Default.Equals(ContainerUpload, other.ContainerUpload) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCompactionBlock?>.Default.Equals(Compaction, other.Compaction) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicAdvisorToolResult?>.Default.Equals(AdvisorToolResult, other.AdvisorToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicShellToolResult?>.Default.Equals(OpenrouterShellToolResult, other.OpenrouterShellToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ORAnthropicBashToolResult?>.Default.Equals(OpenrouterBashToolResult, other.OpenrouterBashToolResult)
                 ;
         }
 

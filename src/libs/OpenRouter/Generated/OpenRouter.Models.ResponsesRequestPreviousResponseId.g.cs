@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Not supported. The Responses API is stateless: no responses are stored, so a previous response cannot be referenced. Requests with a non-null value are rejected with a 400 error. Send the full conversation history in `input` instead.
+    /// Not supported on this proxy. Each response request is independent: no responses are stored, so a previous response cannot be referenced. Requests with a non-null value are rejected with a 400 error. Send the full conversation history in `input` instead.
     /// </summary>
     public sealed partial class ResponsesRequestPreviousResponseId
     {

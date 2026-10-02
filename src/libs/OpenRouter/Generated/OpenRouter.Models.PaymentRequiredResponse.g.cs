@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Payment Required - Insufficient credits or quota to complete request
+    /// Payment Required - Insufficient credits or quota to complete request<br/>
+    /// Example: {"error":{"code":402,"message":"Insufficient credits. Add more using https://openrouter.ai/credits"}}
     /// </summary>
     public sealed partial class PaymentRequiredResponse
     {
         /// <summary>
-        /// Error data for PaymentRequiredResponse
+        /// Error data for PaymentRequiredResponse<br/>
+        /// Example: {"code":402,"message":"Insufficient credits. Add more using https://openrouter.ai/credits"}
         /// </summary>
+        /// <example>{"code":402,"message":"Insufficient credits. Add more using https://openrouter.ai/credits"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.PaymentRequiredResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="PaymentRequiredResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for PaymentRequiredResponse
+        /// Error data for PaymentRequiredResponse<br/>
+        /// Example: {"code":402,"message":"Insufficient credits. Add more using https://openrouter.ai/credits"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

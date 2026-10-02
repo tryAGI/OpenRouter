@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reasoning effort configuration. Omitted for non-reasoning models and dynamic router models.
+    /// Reasoning effort configuration. Omitted for non-reasoning models and dynamic router models.<br/>
+    /// Example: {"default_effort":"medium","default_enabled":true,"mandatory":false,"supported_efforts":["high","medium","low","minimal"]}
     /// </summary>
     public sealed partial class ModelReasoning
     {
@@ -12,8 +13,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ReasoningEffortJsonConverter))]
-        public global::OpenRouter.ReasoningEffort? DefaultEffort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AllOfJsonConverter<global::OpenRouter.ReasoningEffort?, object>))]
+        public global::OpenRouter.AllOf<global::OpenRouter.ReasoningEffort?, object>? DefaultEffort { get; set; }
 
         /// <summary>
         /// Default reasoning enabled state when the client does not set `reasoning.enabled`.
@@ -32,7 +33,7 @@ namespace OpenRouter
         /// Allowed reasoning effort values for this model, in descending effort order (highest first). Null means no allowlist — all gateway effort values are accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supported_efforts")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningEffort>? SupportedEfforts { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.ReasoningEffort?>? SupportedEfforts { get; set; }
 
         /// <summary>
         /// Present and `true` when the model accepts `reasoning.max_tokens` in requests (Anthropic-style) instead of or in addition to `reasoning.effort`. Omitted otherwise.
@@ -67,9 +68,9 @@ namespace OpenRouter
 #endif
         public ModelReasoning(
             bool mandatory,
-            global::OpenRouter.ReasoningEffort? defaultEffort,
+            global::OpenRouter.AllOf<global::OpenRouter.ReasoningEffort?, object>? defaultEffort,
             bool? defaultEnabled,
-            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningEffort>? supportedEfforts,
+            global::System.Collections.Generic.IList<global::OpenRouter.ReasoningEffort?>? supportedEfforts,
             bool? supportsMaxTokens)
         {
             this.DefaultEffort = defaultEffort;

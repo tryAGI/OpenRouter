@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.
+    /// Provider-specific options keyed by provider slug. Only options for the matched provider are forwarded; the rest are ignored. Unrecognized keys are silently dropped.<br/>
+    /// Example: {"openai":{"max_tokens":1000}}
     /// </summary>
     public sealed partial class ProviderOptions
     {
@@ -47,6 +48,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("amazon-bedrock/claude-on-aws")]
+        public object? AmazonBedrockClaudeOnAws { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("amazon-nova")]
         public object? AmazonNova { get; set; }
 
@@ -65,6 +72,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("anthropic/2")]
+        public object? Anthropic2 { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anyscale")]
         public object? Anyscale { get; set; }
 
@@ -73,6 +86,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arcee-ai")]
         public object? ArceeAi { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("assemblyai")]
+        public object? Assemblyai { get; set; }
 
         /// <summary>
         ///
@@ -155,6 +174,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("claude-on-aws")]
+        public object? ClaudeOnAws { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cloudflare")]
         public object? Cloudflare { get; set; }
 
@@ -163,6 +188,18 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cohere")]
         public object? Cohere { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("coreweave")]
+        public object? Coreweave { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cosine")]
+        public object? Cosine { get; set; }
 
         /// <summary>
         ///
@@ -187,6 +224,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("darkbloom")]
         public object? Darkbloom { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("databricks")]
+        public object? Databricks { get; set; }
 
         /// <summary>
         ///
@@ -223,6 +266,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("digitalocean")]
         public object? Digitalocean { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("elevenlabs")]
+        public object? Elevenlabs { get; set; }
 
         /// <summary>
         ///
@@ -413,6 +462,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("makora")]
+        public object? Makora { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mancer")]
         public object? Mancer { get; set; }
 
@@ -485,6 +540,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("near-ai")]
+        public object? NearAi { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nebius")]
         public object? Nebius { get; set; }
 
@@ -523,6 +584,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("octoai")]
         public object? Octoai { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ollama")]
+        public object? Ollama { get; set; }
 
         /// <summary>
         ///
@@ -569,6 +636,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("primeintellect")]
+        public object? Primeintellect { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quiver")]
         public object? Quiver { get; set; }
 
@@ -611,6 +684,18 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("respan")]
+        public object? Respan { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("runway")]
+        public object? Runway { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sail-research")]
         public object? SailResearch { get; set; }
 
@@ -623,6 +708,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sakana-ai")]
+        public object? SakanaAi { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sambanova")]
         public object? Sambanova { get; set; }
 
@@ -631,6 +722,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sambanova-cloaked")]
         public object? SambanovaCloaked { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scaledown")]
+        public object? Scaledown { get; set; }
 
         /// <summary>
         ///
@@ -701,6 +798,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thinkingmachines")]
+        public object? Thinkingmachines { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("together")]
         public object? Together { get; set; }
 
@@ -713,8 +816,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("typesafe")]
+        public object? Typesafe { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ubicloud")]
         public object? Ubicloud { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unbiased")]
+        public object? Unbiased { get; set; }
 
         /// <summary>
         ///
@@ -731,6 +846,12 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voyageai")]
+        public object? Voyageai { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wafer")]
         public object? Wafer { get; set; }
 
@@ -739,6 +860,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wandb")]
         public object? Wandb { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wandb-legacy")]
+        public object? WandbLegacy { get; set; }
 
         /// <summary>
         ///
@@ -773,11 +900,14 @@ namespace OpenRouter
         /// <param name="akashml"></param>
         /// <param name="alibaba"></param>
         /// <param name="amazonBedrock"></param>
+        /// <param name="amazonBedrockClaudeOnAws"></param>
         /// <param name="amazonNova"></param>
         /// <param name="ambient"></param>
         /// <param name="anthropic"></param>
+        /// <param name="anthropic2"></param>
         /// <param name="anyscale"></param>
         /// <param name="arceeAi"></param>
+        /// <param name="assemblyai"></param>
         /// <param name="atlasCloud"></param>
         /// <param name="atoma"></param>
         /// <param name="avian"></param>
@@ -791,18 +921,23 @@ namespace OpenRouter
         /// <param name="chutes"></param>
         /// <param name="cirrascale"></param>
         /// <param name="clarifai"></param>
+        /// <param name="claudeOnAws"></param>
         /// <param name="cloudflare"></param>
         /// <param name="cohere"></param>
+        /// <param name="coreweave"></param>
+        /// <param name="cosine"></param>
         /// <param name="crofai"></param>
         /// <param name="crucible"></param>
         /// <param name="crusoe"></param>
         /// <param name="darkbloom"></param>
+        /// <param name="databricks"></param>
         /// <param name="decart"></param>
         /// <param name="deepgram"></param>
         /// <param name="deepinfra"></param>
         /// <param name="deepseek"></param>
         /// <param name="dekallm"></param>
         /// <param name="digitalocean"></param>
+        /// <param name="elevenlabs"></param>
         /// <param name="enfer"></param>
         /// <param name="fakeProvider"></param>
         /// <param name="featherless"></param>
@@ -834,6 +969,7 @@ namespace OpenRouter
         /// <param name="liquid"></param>
         /// <param name="lynn"></param>
         /// <param name="lynnPrivate"></param>
+        /// <param name="makora"></param>
         /// <param name="mancer"></param>
         /// <param name="mancerOld"></param>
         /// <param name="mara"></param>
@@ -846,6 +982,7 @@ namespace OpenRouter
         /// <param name="moonshotai"></param>
         /// <param name="morph"></param>
         /// <param name="ncompass"></param>
+        /// <param name="nearAi"></param>
         /// <param name="nebius"></param>
         /// <param name="nexAgi"></param>
         /// <param name="nextbit"></param>
@@ -853,6 +990,7 @@ namespace OpenRouter
         /// <param name="novita"></param>
         /// <param name="nvidia"></param>
         /// <param name="octoai"></param>
+        /// <param name="ollama"></param>
         /// <param name="openInference"></param>
         /// <param name="openai"></param>
         /// <param name="parasail"></param>
@@ -860,6 +998,7 @@ namespace OpenRouter
         /// <param name="perplexity"></param>
         /// <param name="phala"></param>
         /// <param name="poolside"></param>
+        /// <param name="primeintellect"></param>
         /// <param name="quiver"></param>
         /// <param name="recraft"></param>
         /// <param name="recursal"></param>
@@ -867,10 +1006,14 @@ namespace OpenRouter
         /// <param name="reka"></param>
         /// <param name="relace"></param>
         /// <param name="replicate"></param>
+        /// <param name="respan"></param>
+        /// <param name="runway"></param>
         /// <param name="sailResearch"></param>
         /// <param name="sakana"></param>
+        /// <param name="sakanaAi"></param>
         /// <param name="sambanova"></param>
         /// <param name="sambanovaCloaked"></param>
+        /// <param name="scaledown"></param>
         /// <param name="seed"></param>
         /// <param name="sfCompute"></param>
         /// <param name="siliconflow"></param>
@@ -882,13 +1025,18 @@ namespace OpenRouter
         /// <param name="targon"></param>
         /// <param name="tencent"></param>
         /// <param name="tenstorrent"></param>
+        /// <param name="thinkingmachines"></param>
         /// <param name="together"></param>
         /// <param name="togetherLite"></param>
+        /// <param name="typesafe"></param>
         /// <param name="ubicloud"></param>
+        /// <param name="unbiased"></param>
         /// <param name="upstage"></param>
         /// <param name="venice"></param>
+        /// <param name="voyageai"></param>
         /// <param name="wafer"></param>
         /// <param name="wandb"></param>
+        /// <param name="wandbLegacy"></param>
         /// <param name="xai"></param>
         /// <param name="xiaomi"></param>
         /// <param name="zAi"></param>
@@ -902,11 +1050,14 @@ namespace OpenRouter
             object? akashml,
             object? alibaba,
             object? amazonBedrock,
+            object? amazonBedrockClaudeOnAws,
             object? amazonNova,
             object? ambient,
             object? anthropic,
+            object? anthropic2,
             object? anyscale,
             object? arceeAi,
+            object? assemblyai,
             object? atlasCloud,
             object? atoma,
             object? avian,
@@ -920,18 +1071,23 @@ namespace OpenRouter
             object? chutes,
             object? cirrascale,
             object? clarifai,
+            object? claudeOnAws,
             object? cloudflare,
             object? cohere,
+            object? coreweave,
+            object? cosine,
             object? crofai,
             object? crucible,
             object? crusoe,
             object? darkbloom,
+            object? databricks,
             object? decart,
             object? deepgram,
             object? deepinfra,
             object? deepseek,
             object? dekallm,
             object? digitalocean,
+            object? elevenlabs,
             object? enfer,
             object? fakeProvider,
             object? featherless,
@@ -963,6 +1119,7 @@ namespace OpenRouter
             object? liquid,
             object? lynn,
             object? lynnPrivate,
+            object? makora,
             object? mancer,
             object? mancerOld,
             object? mara,
@@ -975,6 +1132,7 @@ namespace OpenRouter
             object? moonshotai,
             object? morph,
             object? ncompass,
+            object? nearAi,
             object? nebius,
             object? nexAgi,
             object? nextbit,
@@ -982,6 +1140,7 @@ namespace OpenRouter
             object? novita,
             object? nvidia,
             object? octoai,
+            object? ollama,
             object? openInference,
             object? openai,
             object? parasail,
@@ -989,6 +1148,7 @@ namespace OpenRouter
             object? perplexity,
             object? phala,
             object? poolside,
+            object? primeintellect,
             object? quiver,
             object? recraft,
             object? recursal,
@@ -996,10 +1156,14 @@ namespace OpenRouter
             object? reka,
             object? relace,
             object? replicate,
+            object? respan,
+            object? runway,
             object? sailResearch,
             object? sakana,
+            object? sakanaAi,
             object? sambanova,
             object? sambanovaCloaked,
+            object? scaledown,
             object? seed,
             object? sfCompute,
             object? siliconflow,
@@ -1011,13 +1175,18 @@ namespace OpenRouter
             object? targon,
             object? tencent,
             object? tenstorrent,
+            object? thinkingmachines,
             object? together,
             object? togetherLite,
+            object? typesafe,
             object? ubicloud,
+            object? unbiased,
             object? upstage,
             object? venice,
+            object? voyageai,
             object? wafer,
             object? wandb,
+            object? wandbLegacy,
             object? xai,
             object? xiaomi,
             object? zAi)
@@ -1028,11 +1197,14 @@ namespace OpenRouter
             this.Akashml = akashml;
             this.Alibaba = alibaba;
             this.AmazonBedrock = amazonBedrock;
+            this.AmazonBedrockClaudeOnAws = amazonBedrockClaudeOnAws;
             this.AmazonNova = amazonNova;
             this.Ambient = ambient;
             this.Anthropic = anthropic;
+            this.Anthropic2 = anthropic2;
             this.Anyscale = anyscale;
             this.ArceeAi = arceeAi;
+            this.Assemblyai = assemblyai;
             this.AtlasCloud = atlasCloud;
             this.Atoma = atoma;
             this.Avian = avian;
@@ -1046,18 +1218,23 @@ namespace OpenRouter
             this.Chutes = chutes;
             this.Cirrascale = cirrascale;
             this.Clarifai = clarifai;
+            this.ClaudeOnAws = claudeOnAws;
             this.Cloudflare = cloudflare;
             this.Cohere = cohere;
+            this.Coreweave = coreweave;
+            this.Cosine = cosine;
             this.Crofai = crofai;
             this.Crucible = crucible;
             this.Crusoe = crusoe;
             this.Darkbloom = darkbloom;
+            this.Databricks = databricks;
             this.Decart = decart;
             this.Deepgram = deepgram;
             this.Deepinfra = deepinfra;
             this.Deepseek = deepseek;
             this.Dekallm = dekallm;
             this.Digitalocean = digitalocean;
+            this.Elevenlabs = elevenlabs;
             this.Enfer = enfer;
             this.FakeProvider = fakeProvider;
             this.Featherless = featherless;
@@ -1089,6 +1266,7 @@ namespace OpenRouter
             this.Liquid = liquid;
             this.Lynn = lynn;
             this.LynnPrivate = lynnPrivate;
+            this.Makora = makora;
             this.Mancer = mancer;
             this.MancerOld = mancerOld;
             this.Mara = mara;
@@ -1101,6 +1279,7 @@ namespace OpenRouter
             this.Moonshotai = moonshotai;
             this.Morph = morph;
             this.Ncompass = ncompass;
+            this.NearAi = nearAi;
             this.Nebius = nebius;
             this.NexAgi = nexAgi;
             this.Nextbit = nextbit;
@@ -1108,6 +1287,7 @@ namespace OpenRouter
             this.Novita = novita;
             this.Nvidia = nvidia;
             this.Octoai = octoai;
+            this.Ollama = ollama;
             this.OpenInference = openInference;
             this.Openai = openai;
             this.Parasail = parasail;
@@ -1115,6 +1295,7 @@ namespace OpenRouter
             this.Perplexity = perplexity;
             this.Phala = phala;
             this.Poolside = poolside;
+            this.Primeintellect = primeintellect;
             this.Quiver = quiver;
             this.Recraft = recraft;
             this.Recursal = recursal;
@@ -1122,10 +1303,14 @@ namespace OpenRouter
             this.Reka = reka;
             this.Relace = relace;
             this.Replicate = replicate;
+            this.Respan = respan;
+            this.Runway = runway;
             this.SailResearch = sailResearch;
             this.Sakana = sakana;
+            this.SakanaAi = sakanaAi;
             this.Sambanova = sambanova;
             this.SambanovaCloaked = sambanovaCloaked;
+            this.Scaledown = scaledown;
             this.Seed = seed;
             this.SfCompute = sfCompute;
             this.Siliconflow = siliconflow;
@@ -1137,13 +1322,18 @@ namespace OpenRouter
             this.Targon = targon;
             this.Tencent = tencent;
             this.Tenstorrent = tenstorrent;
+            this.Thinkingmachines = thinkingmachines;
             this.Together = together;
             this.TogetherLite = togetherLite;
+            this.Typesafe = typesafe;
             this.Ubicloud = ubicloud;
+            this.Unbiased = unbiased;
             this.Upstage = upstage;
             this.Venice = venice;
+            this.Voyageai = voyageai;
             this.Wafer = wafer;
             this.Wandb = wandb;
+            this.WandbLegacy = wandbLegacy;
             this.Xai = xai;
             this.Xiaomi = xiaomi;
             this.ZAi = zAi;

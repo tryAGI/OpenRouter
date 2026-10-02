@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Audio output data or reference
+    /// Audio output data or reference<br/>
+    /// Example: {"data":"UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1f","expires_at":1677652400,"id":"audio_abc123","transcript":"Hello! How can I help you today?"}
     /// </summary>
     public sealed partial class ChatAudioOutput
     {

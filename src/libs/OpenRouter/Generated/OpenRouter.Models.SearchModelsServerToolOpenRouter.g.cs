@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
+    /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter<br/>
+    /// Example: {"parameters":{"max_results":5},"type":"openrouter:experimental__search_models"}
     /// </summary>
     public sealed partial class SearchModelsServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:experimental__search_models server tool
+        /// Configuration for the openrouter:experimental__search_models server tool<br/>
+        /// Example: {"max_results":5}
         /// </summary>
+        /// <example>{"max_results":5}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.SearchModelsServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SearchModelsServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:experimental__search_models server tool
+        /// Configuration for the openrouter:experimental__search_models server tool<br/>
+        /// Example: {"max_results":5}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for BadRequestResponse
+    /// Error data for BadRequestResponse<br/>
+    /// Example: {"code":400,"message":"Invalid request parameters"}
     /// </summary>
     public sealed partial class BadRequestResponseErrorData
     {

@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public enum OpenAiResponseFunctionToolCallOutputType
+    public enum OpenAIResponseFunctionToolCallOutputType
     {
         /// <summary>
         ///
@@ -17,27 +17,27 @@ namespace OpenRouter
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class OpenAiResponseFunctionToolCallOutputTypeExtensions
+    public static class OpenAIResponseFunctionToolCallOutputTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this OpenAiResponseFunctionToolCallOutputType value)
+        public static string ToValueString(this OpenAIResponseFunctionToolCallOutputType value)
         {
             return value switch
             {
-                OpenAiResponseFunctionToolCallOutputType.FunctionCallOutput => "function_call_output",
+                OpenAIResponseFunctionToolCallOutputType.FunctionCallOutput => "function_call_output",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OpenAiResponseFunctionToolCallOutputType? ToEnum(string value)
+        public static OpenAIResponseFunctionToolCallOutputType? ToEnum(string value)
         {
             return value switch
             {
-                "function_call_output" => OpenAiResponseFunctionToolCallOutputType.FunctionCallOutput,
+                "function_call_output" => OpenAIResponseFunctionToolCallOutputType.FunctionCallOutput,
                 _ => null,
             };
         }

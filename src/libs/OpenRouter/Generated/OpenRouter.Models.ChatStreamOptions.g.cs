@@ -6,13 +6,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Streaming configuration options
+    /// Streaming configuration options<br/>
+    /// Example: {"include_usage":true}
     /// </summary>
     public sealed partial class ChatStreamOptions
     {
         /// <summary>
-        /// Deprecated: This field has no effect. Full usage details are always included.
+        /// Deprecated: This field has no effect. Full usage details are always included.<br/>
+        /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_usage")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? IncludeUsage { get; set; }

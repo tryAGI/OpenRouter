@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Structured information about a refusal
+    /// Structured information about a refusal<br/>
+    /// Example: {"category":"cyber","explanation":"The request was refused due to policy.","type":"refusal"}
     /// </summary>
     public sealed partial class AnthropicRefusalStopDetails
     {
@@ -13,8 +14,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicRefusalStopDetailsCategoryJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicRefusalStopDetailsCategory Category { get; set; }
+        public global::OpenRouter.AnthropicRefusalStopDetailsCategory? Category { get; set; }
 
         /// <summary>
         ///
@@ -45,7 +45,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicRefusalStopDetails(
-            global::OpenRouter.AnthropicRefusalStopDetailsCategory category,
+            global::OpenRouter.AnthropicRefusalStopDetailsCategory? category,
             string? explanation,
             global::OpenRouter.AnthropicRefusalStopDetailsType type)
         {

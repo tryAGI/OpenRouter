@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Conflict - Resource conflict or concurrent modification
+    /// Conflict - Resource conflict or concurrent modification<br/>
+    /// Example: {"error":{"code":409,"message":"Resource conflict. Please try again later."}}
     /// </summary>
     public sealed partial class ConflictResponse
     {
         /// <summary>
-        /// Error data for ConflictResponse
+        /// Error data for ConflictResponse<br/>
+        /// Example: {"code":409,"message":"Resource conflict. Please try again later."}
         /// </summary>
+        /// <example>{"code":409,"message":"Resource conflict. Please try again later."}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ConflictResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ConflictResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for ConflictResponse
+        /// Error data for ConflictResponse<br/>
+        /// Example: {"code":409,"message":"Resource conflict. Please try again later."}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

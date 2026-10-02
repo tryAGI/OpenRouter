@@ -4,10 +4,23 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:files server tool output item
+    /// An openrouter:files server tool output item<br/>
+    /// Example: {"filename":"notes.txt","id":"fl_tmp_abc123","operation":"read","result":"{\u0022id\u0022:\u0022file_abc\u0022,\u0022filename\u0022:\u0022notes.txt\u0022,\u0022content\u0022:\u0022hello\u0022}","status":"completed","type":"openrouter:files"}
     /// </summary>
     public sealed partial class OutputFilesServerToolItem
     {
+        /// <summary>
+        /// The raw tool-call arguments string as emitted by the model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        public string? Arguments { get; set; }
+
+        /// <summary>
+        /// The model-generated tool call id from the originating turn.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        public string? CallId { get; set; }
+
         /// <summary>
         /// Error message when the file operation failed.
         /// </summary>
@@ -45,12 +58,20 @@ namespace OpenRouter
         public string? Result { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputFilesServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputFilesServerToolItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +82,15 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputFilesServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
+        /// <param name="arguments">
+        /// The raw tool-call arguments string as emitted by the model.
+        /// </param>
+        /// <param name="callId">
+        /// The model-generated tool call id from the originating turn.
+        /// </param>
         /// <param name="error">
         /// Error message when the file operation failed.
         /// </param>
@@ -78,18 +107,24 @@ namespace OpenRouter
         /// <param name="result">
         /// JSON-serialized result of the file operation.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputFilesServerToolItem(
             global::OpenRouter.ToolCallStatus status,
+            string? arguments,
+            string? callId,
             string? error,
             string? fileId,
             string? filename,
             string? id,
             string? operation,
-            string? result)
+            string? result,
+            global::OpenRouter.OutputFilesServerToolItemType type)
         {
+            this.Arguments = arguments;
+            this.CallId = callId;
             this.Error = error;
             this.FileId = fileId;
             this.Filename = filename;
@@ -97,6 +132,7 @@ namespace OpenRouter
             this.Operation = operation;
             this.Result = result;
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

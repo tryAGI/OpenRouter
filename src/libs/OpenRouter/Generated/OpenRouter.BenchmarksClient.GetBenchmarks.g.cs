@@ -27,17 +27,25 @@ namespace OpenRouter
             };
         partial void PrepareGetBenchmarksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::OpenRouter.BenchmarksGetParametersSource? source,
-            ref global::OpenRouter.BenchmarksGetParametersTaskType? taskType,
-            ref global::OpenRouter.BenchmarksGetParametersArena? arena,
+            ref global::OpenRouter.GetBenchmarksSource? source,
+            ref global::OpenRouter.GetBenchmarksTaskType? taskType,
+            ref global::OpenRouter.GetBenchmarksBenchmarkType? benchmarkType,
+            ref bool? includeRunConfig,
+            ref string? searchEngine,
+            ref global::OpenRouter.GetBenchmarksSearchSurface? searchSurface,
+            ref global::OpenRouter.GetBenchmarksArena? arena,
             ref string? category,
             ref int? maxResults);
         partial void PrepareGetBenchmarksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.BenchmarksGetParametersSource? source,
-            global::OpenRouter.BenchmarksGetParametersTaskType? taskType,
-            global::OpenRouter.BenchmarksGetParametersArena? arena,
+            global::OpenRouter.GetBenchmarksSource? source,
+            global::OpenRouter.GetBenchmarksTaskType? taskType,
+            global::OpenRouter.GetBenchmarksBenchmarkType? benchmarkType,
+            bool? includeRunConfig,
+            string? searchEngine,
+            global::OpenRouter.GetBenchmarksSearchSurface? searchSurface,
+            global::OpenRouter.GetBenchmarksArena? arena,
             string? category,
             int? maxResults);
         partial void ProcessGetBenchmarksResponse(
@@ -51,26 +59,56 @@ namespace OpenRouter
 
         /// <summary>
         /// List Benchmarks<br/>
-        /// Unified benchmark endpoint that aggregates scores from multiple benchmark sources (Artificial Analysis, Design Arena). Filter by source to reproduce the exact shapes from the legacy per-source endpoints, or use task_type to find models suited for specific workloads. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.
+        /// Unified benchmark endpoint that aggregates scores from multiple benchmark sources (Artificial Analysis, Design Arena, and OpenRouter's own tau-bench, GPQA, and web-search evals). Filter by source to reproduce the exact shapes from the legacy per-source endpoints, or use task_type to find models suited for specific workloads. Use task_type=search (or a search_* benchmark_type) for OpenRouter's search benchmarks, which publish each model's highest-scoring eligible evaluation configuration with same-configuration runs combined by task-weighted mean. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.
         /// </summary>
         /// <param name="source">
-        /// Benchmark source to query. Determines the shape of the returned items. When omitted, returns results from all sources.
+        /// Benchmark source to query. Determines the shape of the returned items. When omitted, returns results from all sources.<br/>
+        /// Example: artificial-analysis
         /// </param>
         /// <param name="taskType">
-        /// Filter results by task type. For Artificial Analysis, maps to the corresponding index. For Design Arena, maps to the matching category.
+        /// Filter results by task type. For Artificial Analysis, maps to the corresponding index. For Design Arena, maps to the matching category. `search` returns OpenRouter search benchmark results only.<br/>
+        /// Example: coding
+        /// </param>
+        /// <param name="benchmarkType">
+        /// Return results for one exact OpenRouter benchmark. A `search_*` value narrows the response to search results only; a classic value narrows the OpenRouter items and leaves other sources' items as they are.<br/>
+        /// Example: search_widesearch
+        /// </param>
+        /// <param name="includeRunConfig">
+        /// Search benchmarks only: include the published lane configuration whitelist in each search item. Defaults to false. The whitelist is limited to agent turn count, reasoning effort, and temperature so future harness configuration changes do not change the public contract.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="searchEngine">
+        /// OpenRouter search benchmarks only: filter by the search engine used.<br/>
+        /// Example: exa
+        /// </param>
+        /// <param name="searchSurface">
+        /// OpenRouter search benchmarks only: filter by the request surface the lane ran on.<br/>
+        /// Example: server-tool
         /// </param>
         /// <param name="arena">
-        /// Design Arena only: arena to query. Defaults to `models` when source is `design-arena`.
+        /// Design Arena only: arena to query. Defaults to `models` when source is `design-arena`.<br/>
+        /// Example: models
         /// </param>
-        /// <param name="category"></param>
-        /// <param name="maxResults"></param>
+        /// <param name="category">
+        /// Design Arena only: category within the arena (e.g. `codecategories`, `uicomponent`, `gamedev`, `3d`, `dataviz`, `image`, `video`, `svg`). When omitted, returns all categories.<br/>
+        /// Example: codecategories
+        /// </param>
+        /// <param name="maxResults">
+        /// Maximum number of items to return. When omitted, all matching results are returned.<br/>
+        /// Example: 50
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.UnifiedBenchmarksResponse> GetBenchmarksAsync(
-            global::OpenRouter.BenchmarksGetParametersSource? source = default,
-            global::OpenRouter.BenchmarksGetParametersTaskType? taskType = default,
-            global::OpenRouter.BenchmarksGetParametersArena? arena = default,
+            global::OpenRouter.GetBenchmarksSource? source = default,
+            global::OpenRouter.GetBenchmarksTaskType? taskType = default,
+            global::OpenRouter.GetBenchmarksBenchmarkType? benchmarkType = default,
+            bool? includeRunConfig = default,
+            string? searchEngine = default,
+            global::OpenRouter.GetBenchmarksSearchSurface? searchSurface = default,
+            global::OpenRouter.GetBenchmarksArena? arena = default,
             string? category = default,
             int? maxResults = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -79,6 +117,10 @@ namespace OpenRouter
             var __response = await GetBenchmarksAsResponseAsync(
                 source: source,
                 taskType: taskType,
+                benchmarkType: benchmarkType,
+                includeRunConfig: includeRunConfig,
+                searchEngine: searchEngine,
+                searchSurface: searchSurface,
                 arena: arena,
                 category: category,
                 maxResults: maxResults,
@@ -90,26 +132,56 @@ namespace OpenRouter
         }
         /// <summary>
         /// List Benchmarks<br/>
-        /// Unified benchmark endpoint that aggregates scores from multiple benchmark sources (Artificial Analysis, Design Arena). Filter by source to reproduce the exact shapes from the legacy per-source endpoints, or use task_type to find models suited for specific workloads. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.
+        /// Unified benchmark endpoint that aggregates scores from multiple benchmark sources (Artificial Analysis, Design Arena, and OpenRouter's own tau-bench, GPQA, and web-search evals). Filter by source to reproduce the exact shapes from the legacy per-source endpoints, or use task_type to find models suited for specific workloads. Use task_type=search (or a search_* benchmark_type) for OpenRouter's search benchmarks, which publish each model's highest-scoring eligible evaluation configuration with same-configuration runs combined by task-weighted mean. Authenticate with any valid OpenRouter API key. Rate-limited to 30 requests/minute per key and 500 requests/day per account.
         /// </summary>
         /// <param name="source">
-        /// Benchmark source to query. Determines the shape of the returned items. When omitted, returns results from all sources.
+        /// Benchmark source to query. Determines the shape of the returned items. When omitted, returns results from all sources.<br/>
+        /// Example: artificial-analysis
         /// </param>
         /// <param name="taskType">
-        /// Filter results by task type. For Artificial Analysis, maps to the corresponding index. For Design Arena, maps to the matching category.
+        /// Filter results by task type. For Artificial Analysis, maps to the corresponding index. For Design Arena, maps to the matching category. `search` returns OpenRouter search benchmark results only.<br/>
+        /// Example: coding
+        /// </param>
+        /// <param name="benchmarkType">
+        /// Return results for one exact OpenRouter benchmark. A `search_*` value narrows the response to search results only; a classic value narrows the OpenRouter items and leaves other sources' items as they are.<br/>
+        /// Example: search_widesearch
+        /// </param>
+        /// <param name="includeRunConfig">
+        /// Search benchmarks only: include the published lane configuration whitelist in each search item. Defaults to false. The whitelist is limited to agent turn count, reasoning effort, and temperature so future harness configuration changes do not change the public contract.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="searchEngine">
+        /// OpenRouter search benchmarks only: filter by the search engine used.<br/>
+        /// Example: exa
+        /// </param>
+        /// <param name="searchSurface">
+        /// OpenRouter search benchmarks only: filter by the request surface the lane ran on.<br/>
+        /// Example: server-tool
         /// </param>
         /// <param name="arena">
-        /// Design Arena only: arena to query. Defaults to `models` when source is `design-arena`.
+        /// Design Arena only: arena to query. Defaults to `models` when source is `design-arena`.<br/>
+        /// Example: models
         /// </param>
-        /// <param name="category"></param>
-        /// <param name="maxResults"></param>
+        /// <param name="category">
+        /// Design Arena only: category within the arena (e.g. `codecategories`, `uicomponent`, `gamedev`, `3d`, `dataviz`, `image`, `video`, `svg`). When omitted, returns all categories.<br/>
+        /// Example: codecategories
+        /// </param>
+        /// <param name="maxResults">
+        /// Maximum number of items to return. When omitted, all matching results are returned.<br/>
+        /// Example: 50
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.UnifiedBenchmarksResponse>> GetBenchmarksAsResponseAsync(
-            global::OpenRouter.BenchmarksGetParametersSource? source = default,
-            global::OpenRouter.BenchmarksGetParametersTaskType? taskType = default,
-            global::OpenRouter.BenchmarksGetParametersArena? arena = default,
+            global::OpenRouter.GetBenchmarksSource? source = default,
+            global::OpenRouter.GetBenchmarksTaskType? taskType = default,
+            global::OpenRouter.GetBenchmarksBenchmarkType? benchmarkType = default,
+            bool? includeRunConfig = default,
+            string? searchEngine = default,
+            global::OpenRouter.GetBenchmarksSearchSurface? searchSurface = default,
+            global::OpenRouter.GetBenchmarksArena? arena = default,
             string? category = default,
             int? maxResults = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -121,6 +193,10 @@ namespace OpenRouter
                 httpClient: HttpClient,
                 source: ref source,
                 taskType: ref taskType,
+                benchmarkType: ref benchmarkType,
+                includeRunConfig: ref includeRunConfig,
+                searchEngine: ref searchEngine,
+                searchSurface: ref searchSurface,
                 arena: ref arena,
                 category: ref category,
                 maxResults: ref maxResults);
@@ -154,6 +230,10 @@ namespace OpenRouter
                             __pathBuilder
                                 .AddOptionalParameter("source", source?.ToValueString())
                                 .AddOptionalParameter("task_type", taskType?.ToValueString())
+                                .AddOptionalParameter("benchmark_type", benchmarkType?.ToValueString())
+                                .AddOptionalParameter("include_run_config", includeRunConfig?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("search_engine", searchEngine)
+                                .AddOptionalParameter("search_surface", searchSurface?.ToValueString())
                                 .AddOptionalParameter("arena", arena?.ToValueString())
                                 .AddOptionalParameter("category", category)
                                 .AddOptionalParameter("max_results", maxResults?.ToString())
@@ -200,11 +280,13 @@ namespace OpenRouter
                     httpRequestMessage: __httpRequest,
                     source: source,
                     taskType: taskType,
+                    benchmarkType: benchmarkType,
+                    includeRunConfig: includeRunConfig,
+                    searchEngine: searchEngine,
+                    searchSurface: searchSurface,
                     arena: arena,
                     category: category,
                     maxResults: maxResults);
-
-                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"data":[{"allowed_passthrough_parameters":[],"canonical_slug":"google/veo-3.1","created":1700000000,"description":"Google video generation model","generate_audio":true,"id":"google/veo-3.1","name":"Veo 3.1","pricing_skus":{"generate":"0.50"},"seed":null,"supported_aspect_ratios":["16:9"],"supported_durations":[5,8],"supported_frame_images":["first_frame","last_frame"],"supported_resolutions":["720p"],"supported_sizes":null}]}
     /// </summary>
     public sealed partial class VideoModelsListResponse
     {

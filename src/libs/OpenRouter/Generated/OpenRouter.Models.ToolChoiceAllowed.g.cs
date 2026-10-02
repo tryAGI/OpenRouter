@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Constrains the model to a pre-defined set of allowed tools
+    /// Constrains the model to a pre-defined set of allowed tools<br/>
+    /// Example: {"mode":"auto","tools":[{"name":"get_weather","type":"function"}],"type":"allowed_tools"}
     /// </summary>
     public sealed partial class ToolChoiceAllowed
     {
@@ -12,9 +13,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolChoiceAllowedModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.ToolChoiceAllowedModeVariant1?, global::OpenRouter.ToolChoiceAllowedModeVariant2?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolChoiceAllowedMode Mode { get; set; }
+        public required global::OpenRouter.AnyOf<global::OpenRouter.ToolChoiceAllowedModeVariant1?, global::OpenRouter.ToolChoiceAllowedModeVariant2?> Mode { get; set; }
 
         /// <summary>
         ///
@@ -46,7 +47,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolChoiceAllowed(
-            global::OpenRouter.ToolChoiceAllowedMode mode,
+            global::OpenRouter.AnyOf<global::OpenRouter.ToolChoiceAllowedModeVariant1?, global::OpenRouter.ToolChoiceAllowedModeVariant2?> mode,
             global::System.Collections.Generic.IList<object> tools,
             global::OpenRouter.ToolChoiceAllowedType type)
         {

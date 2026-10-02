@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+    /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.<br/>
+    /// Example: {"diff":"@@ function main() {\n\u002B  console.log(\u0022hi\u0022);\n }","path":"/src/main.ts","type":"update_file"}
     /// </summary>
     public readonly partial struct ApplyPatchCallOperation : global::System.IEquatable<ApplyPatchCallOperation>
     {
@@ -15,12 +16,13 @@ namespace OpenRouter
         public global::OpenRouter.ApplyPatchCallOperationDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// The `create_file` variant of an `apply_patch_call.operation`. Carries a V4A diff describing the new file contents.
+        /// The `create_file` variant of an `apply_patch_call.operation`. Carries a V4A diff describing the new file contents.<br/>
+        /// Example: {"diff":"@@\n\u002Bconsole.log(\u0022hi\u0022);\n","path":"/src/main.ts","type":"create_file"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ApplyPatchCallOperationVariant1? CreateFile { get; init; }
+        public global::OpenRouter.ApplyPatchCreateFileOperation? CreateFile { get; init; }
 #else
-        public global::OpenRouter.ApplyPatchCallOperationVariant1? CreateFile { get; }
+        public global::OpenRouter.ApplyPatchCreateFileOperation? CreateFile { get; }
 #endif
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ApplyPatchCallOperationVariant1? value)
+            out global::OpenRouter.ApplyPatchCreateFileOperation? value)
         {
             value = CreateFile;
             return IsCreateFile;
@@ -47,54 +49,18 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApplyPatchCallOperationVariant1 PickCreateFile() => CreateFile is { } value
+        public global::OpenRouter.ApplyPatchCreateFileOperation PickCreateFile() => CreateFile is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateFile' but the value was {ToString()}.");
 
         /// <summary>
-        /// The `delete_file` variant of an `apply_patch_call.operation`. Identifies the file to remove; no diff is required.
+        /// The `update_file` variant of an `apply_patch_call.operation`. Carries a V4A diff describing edits to an existing file.<br/>
+        /// Example: {"diff":"@@ function main() {\n\u002B  console.log(\u0022hi\u0022);\n }","path":"/src/main.ts","type":"update_file"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ApplyPatchCallOperationVariant2? DeleteFile { get; init; }
+        public global::OpenRouter.ApplyPatchUpdateFileOperation? UpdateFile { get; init; }
 #else
-        public global::OpenRouter.ApplyPatchCallOperationVariant2? DeleteFile { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteFile))]
-#endif
-        public bool IsDeleteFile => DeleteFile != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickDeleteFile(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ApplyPatchCallOperationVariant2? value)
-        {
-            value = DeleteFile;
-            return IsDeleteFile;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ApplyPatchCallOperationVariant2 PickDeleteFile() => DeleteFile is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteFile' but the value was {ToString()}.");
-
-        /// <summary>
-        /// The `update_file` variant of an `apply_patch_call.operation`. Carries a V4A diff describing edits to an existing file.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ApplyPatchCallOperationVariant3? UpdateFile { get; init; }
-#else
-        public global::OpenRouter.ApplyPatchCallOperationVariant3? UpdateFile { get; }
+        public global::OpenRouter.ApplyPatchUpdateFileOperation? UpdateFile { get; }
 #endif
 
         /// <summary>
@@ -112,7 +78,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ApplyPatchCallOperationVariant3? value)
+            out global::OpenRouter.ApplyPatchUpdateFileOperation? value)
         {
             value = UpdateFile;
             return IsUpdateFile;
@@ -121,23 +87,61 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ApplyPatchCallOperationVariant3 PickUpdateFile() => UpdateFile is { } value
+        public global::OpenRouter.ApplyPatchUpdateFileOperation PickUpdateFile() => UpdateFile is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateFile' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// The `delete_file` variant of an `apply_patch_call.operation`. Identifies the file to remove; no diff is required.<br/>
+        /// Example: {"path":"/src/main.ts","type":"delete_file"}
         /// </summary>
-        public static implicit operator ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCallOperationVariant1 value) => new ApplyPatchCallOperation((global::OpenRouter.ApplyPatchCallOperationVariant1?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ApplyPatchDeleteFileOperation? DeleteFile { get; init; }
+#else
+        public global::OpenRouter.ApplyPatchDeleteFileOperation? DeleteFile { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ApplyPatchCallOperationVariant1?(ApplyPatchCallOperation @this) => @this.CreateFile;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteFile))]
+#endif
+        public bool IsDeleteFile => DeleteFile != null;
 
         /// <summary>
         ///
         /// </summary>
-        public ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCallOperationVariant1? value)
+        public bool TryPickDeleteFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ApplyPatchDeleteFileOperation? value)
+        {
+            value = DeleteFile;
+            return IsDeleteFile;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.ApplyPatchDeleteFileOperation PickDeleteFile() => DeleteFile is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteFile' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCreateFileOperation value) => new ApplyPatchCallOperation((global::OpenRouter.ApplyPatchCreateFileOperation?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ApplyPatchCreateFileOperation?(ApplyPatchCallOperation @this) => @this.CreateFile;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCreateFileOperation? value)
         {
             CreateFile = value;
         }
@@ -145,45 +149,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ApplyPatchCallOperation FromCreateFile(global::OpenRouter.ApplyPatchCallOperationVariant1? value) => new ApplyPatchCallOperation(value);
+        public static ApplyPatchCallOperation FromCreateFile(global::OpenRouter.ApplyPatchCreateFileOperation? value) => new ApplyPatchCallOperation(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCallOperationVariant2 value) => new ApplyPatchCallOperation((global::OpenRouter.ApplyPatchCallOperationVariant2?)value);
+        public static implicit operator ApplyPatchCallOperation(global::OpenRouter.ApplyPatchUpdateFileOperation value) => new ApplyPatchCallOperation((global::OpenRouter.ApplyPatchUpdateFileOperation?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ApplyPatchCallOperationVariant2?(ApplyPatchCallOperation @this) => @this.DeleteFile;
+        public static implicit operator global::OpenRouter.ApplyPatchUpdateFileOperation?(ApplyPatchCallOperation @this) => @this.UpdateFile;
 
         /// <summary>
         ///
         /// </summary>
-        public ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCallOperationVariant2? value)
-        {
-            DeleteFile = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ApplyPatchCallOperation FromDeleteFile(global::OpenRouter.ApplyPatchCallOperationVariant2? value) => new ApplyPatchCallOperation(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCallOperationVariant3 value) => new ApplyPatchCallOperation((global::OpenRouter.ApplyPatchCallOperationVariant3?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.ApplyPatchCallOperationVariant3?(ApplyPatchCallOperation @this) => @this.UpdateFile;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ApplyPatchCallOperation(global::OpenRouter.ApplyPatchCallOperationVariant3? value)
+        public ApplyPatchCallOperation(global::OpenRouter.ApplyPatchUpdateFileOperation? value)
         {
             UpdateFile = value;
         }
@@ -191,31 +172,54 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ApplyPatchCallOperation FromUpdateFile(global::OpenRouter.ApplyPatchCallOperationVariant3? value) => new ApplyPatchCallOperation(value);
+        public static ApplyPatchCallOperation FromUpdateFile(global::OpenRouter.ApplyPatchUpdateFileOperation? value) => new ApplyPatchCallOperation(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ApplyPatchCallOperation(global::OpenRouter.ApplyPatchDeleteFileOperation value) => new ApplyPatchCallOperation((global::OpenRouter.ApplyPatchDeleteFileOperation?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ApplyPatchDeleteFileOperation?(ApplyPatchCallOperation @this) => @this.DeleteFile;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ApplyPatchCallOperation(global::OpenRouter.ApplyPatchDeleteFileOperation? value)
+        {
+            DeleteFile = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ApplyPatchCallOperation FromDeleteFile(global::OpenRouter.ApplyPatchDeleteFileOperation? value) => new ApplyPatchCallOperation(value);
 
         /// <summary>
         ///
         /// </summary>
         public ApplyPatchCallOperation(
             global::OpenRouter.ApplyPatchCallOperationDiscriminatorType? type,
-            global::OpenRouter.ApplyPatchCallOperationVariant1? createFile,
-            global::OpenRouter.ApplyPatchCallOperationVariant2? deleteFile,
-            global::OpenRouter.ApplyPatchCallOperationVariant3? updateFile
+            global::OpenRouter.ApplyPatchCreateFileOperation? createFile,
+            global::OpenRouter.ApplyPatchUpdateFileOperation? updateFile,
+            global::OpenRouter.ApplyPatchDeleteFileOperation? deleteFile
             )
         {
             Type = type;
 
             CreateFile = createFile;
-            DeleteFile = deleteFile;
             UpdateFile = updateFile;
+            DeleteFile = deleteFile;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            UpdateFile as object ??
             DeleteFile as object ??
+            UpdateFile as object ??
             CreateFile as object
             ;
 
@@ -224,8 +228,8 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             CreateFile?.ToString() ??
-            DeleteFile?.ToString() ??
-            UpdateFile?.ToString()
+            UpdateFile?.ToString() ??
+            DeleteFile?.ToString()
             ;
 
         /// <summary>
@@ -233,16 +237,16 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsCreateFile && !IsDeleteFile && !IsUpdateFile || !IsCreateFile && IsDeleteFile && !IsUpdateFile || !IsCreateFile && !IsDeleteFile && IsUpdateFile;
+            return IsCreateFile && !IsUpdateFile && !IsDeleteFile || !IsCreateFile && IsUpdateFile && !IsDeleteFile || !IsCreateFile && !IsUpdateFile && IsDeleteFile;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ApplyPatchCallOperationVariant1, TResult>? createFile = null,
-            global::System.Func<global::OpenRouter.ApplyPatchCallOperationVariant2, TResult>? deleteFile = null,
-            global::System.Func<global::OpenRouter.ApplyPatchCallOperationVariant3, TResult>? updateFile = null,
+            global::System.Func<global::OpenRouter.ApplyPatchCreateFileOperation, TResult>? createFile = null,
+            global::System.Func<global::OpenRouter.ApplyPatchUpdateFileOperation, TResult>? updateFile = null,
+            global::System.Func<global::OpenRouter.ApplyPatchDeleteFileOperation, TResult>? deleteFile = null,
             bool validate = true)
         {
             if (validate)
@@ -254,13 +258,13 @@ namespace OpenRouter
             {
                 return createFile(__value0);
             }
-            else if (DeleteFile is { } __value1 && deleteFile != null)
+            else if (UpdateFile is { } __value1 && updateFile != null)
             {
-                return deleteFile(__value1);
+                return updateFile(__value1);
             }
-            else if (UpdateFile is { } __value2 && updateFile != null)
+            else if (DeleteFile is { } __value2 && deleteFile != null)
             {
-                return updateFile(__value2);
+                return deleteFile(__value2);
             }
 
             return default(TResult);
@@ -270,11 +274,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ApplyPatchCallOperationVariant1>? createFile = null,
+            global::System.Action<global::OpenRouter.ApplyPatchCreateFileOperation>? createFile = null,
 
-            global::System.Action<global::OpenRouter.ApplyPatchCallOperationVariant2>? deleteFile = null,
+            global::System.Action<global::OpenRouter.ApplyPatchUpdateFileOperation>? updateFile = null,
 
-            global::System.Action<global::OpenRouter.ApplyPatchCallOperationVariant3>? updateFile = null,
+            global::System.Action<global::OpenRouter.ApplyPatchDeleteFileOperation>? deleteFile = null,
             bool validate = true)
         {
             if (validate)
@@ -286,13 +290,13 @@ namespace OpenRouter
             {
                 createFile?.Invoke(__value0);
             }
-            else if (DeleteFile is { } __value1)
+            else if (UpdateFile is { } __value1)
             {
-                deleteFile?.Invoke(__value1);
+                updateFile?.Invoke(__value1);
             }
-            else if (UpdateFile is { } __value2)
+            else if (DeleteFile is { } __value2)
             {
-                updateFile?.Invoke(__value2);
+                deleteFile?.Invoke(__value2);
             }
         }
 
@@ -300,9 +304,9 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.ApplyPatchCallOperationVariant1>? createFile = null,
-            global::System.Action<global::OpenRouter.ApplyPatchCallOperationVariant2>? deleteFile = null,
-            global::System.Action<global::OpenRouter.ApplyPatchCallOperationVariant3>? updateFile = null,
+            global::System.Action<global::OpenRouter.ApplyPatchCreateFileOperation>? createFile = null,
+            global::System.Action<global::OpenRouter.ApplyPatchUpdateFileOperation>? updateFile = null,
+            global::System.Action<global::OpenRouter.ApplyPatchDeleteFileOperation>? deleteFile = null,
             bool validate = true)
         {
             if (validate)
@@ -314,13 +318,13 @@ namespace OpenRouter
             {
                 createFile?.Invoke(__value0);
             }
-            else if (DeleteFile is { } __value1)
+            else if (UpdateFile is { } __value1)
             {
-                deleteFile?.Invoke(__value1);
+                updateFile?.Invoke(__value1);
             }
-            else if (UpdateFile is { } __value2)
+            else if (DeleteFile is { } __value2)
             {
-                updateFile?.Invoke(__value2);
+                deleteFile?.Invoke(__value2);
             }
         }
 
@@ -332,11 +336,11 @@ namespace OpenRouter
             var fields = new object?[]
             {
                 CreateFile,
-                typeof(global::OpenRouter.ApplyPatchCallOperationVariant1),
-                DeleteFile,
-                typeof(global::OpenRouter.ApplyPatchCallOperationVariant2),
+                typeof(global::OpenRouter.ApplyPatchCreateFileOperation),
                 UpdateFile,
-                typeof(global::OpenRouter.ApplyPatchCallOperationVariant3),
+                typeof(global::OpenRouter.ApplyPatchUpdateFileOperation),
+                DeleteFile,
+                typeof(global::OpenRouter.ApplyPatchDeleteFileOperation),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +357,9 @@ namespace OpenRouter
         public bool Equals(ApplyPatchCallOperation other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallOperationVariant1?>.Default.Equals(CreateFile, other.CreateFile) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallOperationVariant2?>.Default.Equals(DeleteFile, other.DeleteFile) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCallOperationVariant3?>.Default.Equals(UpdateFile, other.UpdateFile)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchCreateFileOperation?>.Default.Equals(CreateFile, other.CreateFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchUpdateFileOperation?>.Default.Equals(UpdateFile, other.UpdateFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ApplyPatchDeleteFileOperation?>.Default.Equals(DeleteFile, other.DeleteFile)
                 ;
         }
 

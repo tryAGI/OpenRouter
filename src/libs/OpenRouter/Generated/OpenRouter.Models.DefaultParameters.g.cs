@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Default parameters for this model
+    /// Default parameters for this model<br/>
+    /// Example: {"frequency_penalty":0,"presence_penalty":0,"repetition_penalty":1,"temperature":0.7,"top_k":0,"top_p":0.9}
     /// </summary>
     public sealed partial class DefaultParameters
     {

@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container
+    /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container<br/>
+    /// Example: {"parameters":{"environment":{"type":"container_auto"}},"type":"openrouter:bash"}
     /// </summary>
     public sealed partial class BashServerTool
     {
         /// <summary>
-        /// Configuration for the openrouter:bash server tool
+        /// Configuration for the openrouter:bash server tool<br/>
+        /// Example: {"environment":{"type":"container_auto"}}
         /// </summary>
+        /// <example>{"environment":{"type":"container_auto"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.BashServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BashServerTool" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:bash server tool
+        /// Configuration for the openrouter:bash server tool<br/>
+        /// Example: {"environment":{"type":"container_auto"}}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

@@ -5,157 +5,157 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"cache_creation":null,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":100,"output_tokens":50,"type":"message"}
     /// </summary>
     public readonly partial struct AnthropicUsageIteration : global::System.IEquatable<AnthropicUsageIteration>
     {
         /// <summary>
-        ///
+        /// Example: {"cache_creation":null,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":50,"output_tokens":25,"type":"compaction"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCompactionUsageIteration? AnthropicCompactionUsageIteration { get; init; }
+        public global::OpenRouter.AnthropicCompactionUsageIteration? Compaction { get; init; }
 #else
-        public global::OpenRouter.AnthropicCompactionUsageIteration? AnthropicCompactionUsageIteration { get; }
+        public global::OpenRouter.AnthropicCompactionUsageIteration? Compaction { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicCompactionUsageIteration))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
 #endif
-        public bool IsAnthropicCompactionUsageIteration => AnthropicCompactionUsageIteration != null;
+        public bool IsCompaction => Compaction != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickAnthropicCompactionUsageIteration(
+        public bool TryPickCompaction(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.AnthropicCompactionUsageIteration? value)
         {
-            value = AnthropicCompactionUsageIteration;
-            return IsAnthropicCompactionUsageIteration;
+            value = Compaction;
+            return IsCompaction;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCompactionUsageIteration PickAnthropicCompactionUsageIteration() => AnthropicCompactionUsageIteration is { } value
+        public global::OpenRouter.AnthropicCompactionUsageIteration PickCompaction() => Compaction is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicCompactionUsageIteration' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Example: {"cache_creation":null,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":100,"output_tokens":50,"type":"message"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicMessageUsageIteration? AnthropicMessageUsageIteration { get; init; }
+        public global::OpenRouter.AnthropicMessageUsageIteration? Message { get; init; }
 #else
-        public global::OpenRouter.AnthropicMessageUsageIteration? AnthropicMessageUsageIteration { get; }
+        public global::OpenRouter.AnthropicMessageUsageIteration? Message { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicMessageUsageIteration))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
-        public bool IsAnthropicMessageUsageIteration => AnthropicMessageUsageIteration != null;
+        public bool IsMessage => Message != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickAnthropicMessageUsageIteration(
+        public bool TryPickMessage(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.AnthropicMessageUsageIteration? value)
         {
-            value = AnthropicMessageUsageIteration;
-            return IsAnthropicMessageUsageIteration;
+            value = Message;
+            return IsMessage;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicMessageUsageIteration PickAnthropicMessageUsageIteration() => AnthropicMessageUsageIteration is { } value
+        public global::OpenRouter.AnthropicMessageUsageIteration PickMessage() => Message is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicMessageUsageIteration' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Example: {"cache_creation":null,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":823,"model":"claude-opus-4-6","output_tokens":1612,"type":"advisor_message"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration? AnthropicAdvisorMessageUsageIteration { get; init; }
+        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration? AdvisorMessage { get; init; }
 #else
-        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration? AnthropicAdvisorMessageUsageIteration { get; }
+        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration? AdvisorMessage { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicAdvisorMessageUsageIteration))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorMessage))]
 #endif
-        public bool IsAnthropicAdvisorMessageUsageIteration => AnthropicAdvisorMessageUsageIteration != null;
+        public bool IsAdvisorMessage => AdvisorMessage != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickAnthropicAdvisorMessageUsageIteration(
+        public bool TryPickAdvisorMessage(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.AnthropicAdvisorMessageUsageIteration? value)
         {
-            value = AnthropicAdvisorMessageUsageIteration;
-            return IsAnthropicAdvisorMessageUsageIteration;
+            value = AdvisorMessage;
+            return IsAdvisorMessage;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration PickAnthropicAdvisorMessageUsageIteration() => AnthropicAdvisorMessageUsageIteration is { } value
+        public global::OpenRouter.AnthropicAdvisorMessageUsageIteration PickAdvisorMessage() => AdvisorMessage is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicAdvisorMessageUsageIteration' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorMessage' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Example: {"cache_creation":null,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":100,"output_tokens":50,"type":"unknown"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicUnknownUsageIteration? AnthropicUnknownUsageIteration { get; init; }
+        public global::OpenRouter.AnthropicUnknownUsageIteration? Unknown { get; init; }
 #else
-        public global::OpenRouter.AnthropicUnknownUsageIteration? AnthropicUnknownUsageIteration { get; }
+        public global::OpenRouter.AnthropicUnknownUsageIteration? Unknown { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicUnknownUsageIteration))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unknown))]
 #endif
-        public bool IsAnthropicUnknownUsageIteration => AnthropicUnknownUsageIteration != null;
+        public bool IsUnknown => Unknown != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickAnthropicUnknownUsageIteration(
+        public bool TryPickUnknown(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.AnthropicUnknownUsageIteration? value)
         {
-            value = AnthropicUnknownUsageIteration;
-            return IsAnthropicUnknownUsageIteration;
+            value = Unknown;
+            return IsUnknown;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicUnknownUsageIteration PickAnthropicUnknownUsageIteration() => AnthropicUnknownUsageIteration is { } value
+        public global::OpenRouter.AnthropicUnknownUsageIteration PickUnknown() => Unknown is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicUnknownUsageIteration' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Unknown' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -164,20 +164,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCompactionUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicCompactionUsageIteration;
+        public static implicit operator global::OpenRouter.AnthropicCompactionUsageIteration?(AnthropicUsageIteration @this) => @this.Compaction;
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicCompactionUsageIteration? value)
         {
-            AnthropicCompactionUsageIteration = value;
+            Compaction = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicUsageIteration FromAnthropicCompactionUsageIteration(global::OpenRouter.AnthropicCompactionUsageIteration? value) => new AnthropicUsageIteration(value);
+        public static AnthropicUsageIteration FromCompaction(global::OpenRouter.AnthropicCompactionUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
         ///
@@ -187,20 +187,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicMessageUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicMessageUsageIteration;
+        public static implicit operator global::OpenRouter.AnthropicMessageUsageIteration?(AnthropicUsageIteration @this) => @this.Message;
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicMessageUsageIteration? value)
         {
-            AnthropicMessageUsageIteration = value;
+            Message = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicUsageIteration FromAnthropicMessageUsageIteration(global::OpenRouter.AnthropicMessageUsageIteration? value) => new AnthropicUsageIteration(value);
+        public static AnthropicUsageIteration FromMessage(global::OpenRouter.AnthropicMessageUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
         ///
@@ -210,20 +210,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicAdvisorMessageUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicAdvisorMessageUsageIteration;
+        public static implicit operator global::OpenRouter.AnthropicAdvisorMessageUsageIteration?(AnthropicUsageIteration @this) => @this.AdvisorMessage;
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicAdvisorMessageUsageIteration? value)
         {
-            AnthropicAdvisorMessageUsageIteration = value;
+            AdvisorMessage = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicUsageIteration FromAnthropicAdvisorMessageUsageIteration(global::OpenRouter.AnthropicAdvisorMessageUsageIteration? value) => new AnthropicUsageIteration(value);
+        public static AnthropicUsageIteration FromAdvisorMessage(global::OpenRouter.AnthropicAdvisorMessageUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
         ///
@@ -233,55 +233,55 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicUnknownUsageIteration?(AnthropicUsageIteration @this) => @this.AnthropicUnknownUsageIteration;
+        public static implicit operator global::OpenRouter.AnthropicUnknownUsageIteration?(AnthropicUsageIteration @this) => @this.Unknown;
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicUsageIteration(global::OpenRouter.AnthropicUnknownUsageIteration? value)
         {
-            AnthropicUnknownUsageIteration = value;
+            Unknown = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicUsageIteration FromAnthropicUnknownUsageIteration(global::OpenRouter.AnthropicUnknownUsageIteration? value) => new AnthropicUsageIteration(value);
+        public static AnthropicUsageIteration FromUnknown(global::OpenRouter.AnthropicUnknownUsageIteration? value) => new AnthropicUsageIteration(value);
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicUsageIteration(
-            global::OpenRouter.AnthropicCompactionUsageIteration? anthropicCompactionUsageIteration,
-            global::OpenRouter.AnthropicMessageUsageIteration? anthropicMessageUsageIteration,
-            global::OpenRouter.AnthropicAdvisorMessageUsageIteration? anthropicAdvisorMessageUsageIteration,
-            global::OpenRouter.AnthropicUnknownUsageIteration? anthropicUnknownUsageIteration
+            global::OpenRouter.AnthropicCompactionUsageIteration? compaction,
+            global::OpenRouter.AnthropicMessageUsageIteration? message,
+            global::OpenRouter.AnthropicAdvisorMessageUsageIteration? advisorMessage,
+            global::OpenRouter.AnthropicUnknownUsageIteration? unknown
             )
         {
-            AnthropicCompactionUsageIteration = anthropicCompactionUsageIteration;
-            AnthropicMessageUsageIteration = anthropicMessageUsageIteration;
-            AnthropicAdvisorMessageUsageIteration = anthropicAdvisorMessageUsageIteration;
-            AnthropicUnknownUsageIteration = anthropicUnknownUsageIteration;
+            Compaction = compaction;
+            Message = message;
+            AdvisorMessage = advisorMessage;
+            Unknown = unknown;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            AnthropicUnknownUsageIteration as object ??
-            AnthropicAdvisorMessageUsageIteration as object ??
-            AnthropicMessageUsageIteration as object ??
-            AnthropicCompactionUsageIteration as object
+            Unknown as object ??
+            AdvisorMessage as object ??
+            Message as object ??
+            Compaction as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            AnthropicCompactionUsageIteration?.ToString() ??
-            AnthropicMessageUsageIteration?.ToString() ??
-            AnthropicAdvisorMessageUsageIteration?.ToString() ??
-            AnthropicUnknownUsageIteration?.ToString()
+            Compaction?.ToString() ??
+            Message?.ToString() ??
+            AdvisorMessage?.ToString() ??
+            Unknown?.ToString()
             ;
 
         /// <summary>
@@ -289,17 +289,17 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAnthropicCompactionUsageIteration && !IsAnthropicMessageUsageIteration && !IsAnthropicAdvisorMessageUsageIteration && !IsAnthropicUnknownUsageIteration || !IsAnthropicCompactionUsageIteration && IsAnthropicMessageUsageIteration && !IsAnthropicAdvisorMessageUsageIteration && !IsAnthropicUnknownUsageIteration || !IsAnthropicCompactionUsageIteration && !IsAnthropicMessageUsageIteration && IsAnthropicAdvisorMessageUsageIteration && !IsAnthropicUnknownUsageIteration || !IsAnthropicCompactionUsageIteration && !IsAnthropicMessageUsageIteration && !IsAnthropicAdvisorMessageUsageIteration && IsAnthropicUnknownUsageIteration;
+            return IsCompaction || IsMessage || IsAdvisorMessage || IsUnknown;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicCompactionUsageIteration, TResult>? anthropicCompactionUsageIteration = null,
-            global::System.Func<global::OpenRouter.AnthropicMessageUsageIteration, TResult>? anthropicMessageUsageIteration = null,
-            global::System.Func<global::OpenRouter.AnthropicAdvisorMessageUsageIteration, TResult>? anthropicAdvisorMessageUsageIteration = null,
-            global::System.Func<global::OpenRouter.AnthropicUnknownUsageIteration, TResult>? anthropicUnknownUsageIteration = null,
+            global::System.Func<global::OpenRouter.AnthropicCompactionUsageIteration?, TResult>? compaction = null,
+            global::System.Func<global::OpenRouter.AnthropicMessageUsageIteration?, TResult>? message = null,
+            global::System.Func<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?, TResult>? advisorMessage = null,
+            global::System.Func<global::OpenRouter.AnthropicUnknownUsageIteration?, TResult>? unknown = null,
             bool validate = true)
         {
             if (validate)
@@ -307,21 +307,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AnthropicCompactionUsageIteration is { } __value0 && anthropicCompactionUsageIteration != null)
+            if (Compaction is { } __value0 && compaction != null)
             {
-                return anthropicCompactionUsageIteration(__value0);
+                return compaction(__value0);
             }
-            else if (AnthropicMessageUsageIteration is { } __value1 && anthropicMessageUsageIteration != null)
+            else if (Message is { } __value1 && message != null)
             {
-                return anthropicMessageUsageIteration(__value1);
+                return message(__value1);
             }
-            else if (AnthropicAdvisorMessageUsageIteration is { } __value2 && anthropicAdvisorMessageUsageIteration != null)
+            else if (AdvisorMessage is { } __value2 && advisorMessage != null)
             {
-                return anthropicAdvisorMessageUsageIteration(__value2);
+                return advisorMessage(__value2);
             }
-            else if (AnthropicUnknownUsageIteration is { } __value3 && anthropicUnknownUsageIteration != null)
+            else if (Unknown is { } __value3 && unknown != null)
             {
-                return anthropicUnknownUsageIteration(__value3);
+                return unknown(__value3);
             }
 
             return default(TResult);
@@ -331,13 +331,13 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration>? anthropicCompactionUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration?>? compaction = null,
 
-            global::System.Action<global::OpenRouter.AnthropicMessageUsageIteration>? anthropicMessageUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicMessageUsageIteration?>? message = null,
 
-            global::System.Action<global::OpenRouter.AnthropicAdvisorMessageUsageIteration>? anthropicAdvisorMessageUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?>? advisorMessage = null,
 
-            global::System.Action<global::OpenRouter.AnthropicUnknownUsageIteration>? anthropicUnknownUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicUnknownUsageIteration?>? unknown = null,
             bool validate = true)
         {
             if (validate)
@@ -345,21 +345,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AnthropicCompactionUsageIteration is { } __value0)
+            if (Compaction is { } __value0)
             {
-                anthropicCompactionUsageIteration?.Invoke(__value0);
+                compaction?.Invoke(__value0);
             }
-            else if (AnthropicMessageUsageIteration is { } __value1)
+            else if (Message is { } __value1)
             {
-                anthropicMessageUsageIteration?.Invoke(__value1);
+                message?.Invoke(__value1);
             }
-            else if (AnthropicAdvisorMessageUsageIteration is { } __value2)
+            else if (AdvisorMessage is { } __value2)
             {
-                anthropicAdvisorMessageUsageIteration?.Invoke(__value2);
+                advisorMessage?.Invoke(__value2);
             }
-            else if (AnthropicUnknownUsageIteration is { } __value3)
+            else if (Unknown is { } __value3)
             {
-                anthropicUnknownUsageIteration?.Invoke(__value3);
+                unknown?.Invoke(__value3);
             }
         }
 
@@ -367,10 +367,10 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration>? anthropicCompactionUsageIteration = null,
-            global::System.Action<global::OpenRouter.AnthropicMessageUsageIteration>? anthropicMessageUsageIteration = null,
-            global::System.Action<global::OpenRouter.AnthropicAdvisorMessageUsageIteration>? anthropicAdvisorMessageUsageIteration = null,
-            global::System.Action<global::OpenRouter.AnthropicUnknownUsageIteration>? anthropicUnknownUsageIteration = null,
+            global::System.Action<global::OpenRouter.AnthropicCompactionUsageIteration?>? compaction = null,
+            global::System.Action<global::OpenRouter.AnthropicMessageUsageIteration?>? message = null,
+            global::System.Action<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?>? advisorMessage = null,
+            global::System.Action<global::OpenRouter.AnthropicUnknownUsageIteration?>? unknown = null,
             bool validate = true)
         {
             if (validate)
@@ -378,21 +378,21 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (AnthropicCompactionUsageIteration is { } __value0)
+            if (Compaction is { } __value0)
             {
-                anthropicCompactionUsageIteration?.Invoke(__value0);
+                compaction?.Invoke(__value0);
             }
-            else if (AnthropicMessageUsageIteration is { } __value1)
+            else if (Message is { } __value1)
             {
-                anthropicMessageUsageIteration?.Invoke(__value1);
+                message?.Invoke(__value1);
             }
-            else if (AnthropicAdvisorMessageUsageIteration is { } __value2)
+            else if (AdvisorMessage is { } __value2)
             {
-                anthropicAdvisorMessageUsageIteration?.Invoke(__value2);
+                advisorMessage?.Invoke(__value2);
             }
-            else if (AnthropicUnknownUsageIteration is { } __value3)
+            else if (Unknown is { } __value3)
             {
-                anthropicUnknownUsageIteration?.Invoke(__value3);
+                unknown?.Invoke(__value3);
             }
         }
 
@@ -403,13 +403,13 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                AnthropicCompactionUsageIteration,
+                Compaction,
                 typeof(global::OpenRouter.AnthropicCompactionUsageIteration),
-                AnthropicMessageUsageIteration,
+                Message,
                 typeof(global::OpenRouter.AnthropicMessageUsageIteration),
-                AnthropicAdvisorMessageUsageIteration,
+                AdvisorMessage,
                 typeof(global::OpenRouter.AnthropicAdvisorMessageUsageIteration),
-                AnthropicUnknownUsageIteration,
+                Unknown,
                 typeof(global::OpenRouter.AnthropicUnknownUsageIteration),
             };
             const int offset = unchecked((int)2166136261);
@@ -427,10 +427,10 @@ namespace OpenRouter
         public bool Equals(AnthropicUsageIteration other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCompactionUsageIteration?>.Default.Equals(AnthropicCompactionUsageIteration, other.AnthropicCompactionUsageIteration) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicMessageUsageIteration?>.Default.Equals(AnthropicMessageUsageIteration, other.AnthropicMessageUsageIteration) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?>.Default.Equals(AnthropicAdvisorMessageUsageIteration, other.AnthropicAdvisorMessageUsageIteration) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicUnknownUsageIteration?>.Default.Equals(AnthropicUnknownUsageIteration, other.AnthropicUnknownUsageIteration)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCompactionUsageIteration?>.Default.Equals(Compaction, other.Compaction) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicMessageUsageIteration?>.Default.Equals(Message, other.Message) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicAdvisorMessageUsageIteration?>.Default.Equals(AdvisorMessage, other.AdvisorMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicUnknownUsageIteration?>.Default.Equals(Unknown, other.Unknown)
                 ;
         }
 

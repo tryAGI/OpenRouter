@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter extension: force a specific server tool by naming it directly in `tool_choice.type` instead of wrapping it in `{ type: "function", function: { name } }`.
+    /// OpenRouter extension: force a specific server tool by naming it directly in `tool_choice.type` instead of wrapping it in `{ type: "function", function: { name } }`.<br/>
+    /// Example: {"type":"openrouter:web_search"}
     /// </summary>
     public sealed partial class ChatServerToolChoice
     {
         /// <summary>
-        /// OpenRouter server-tool type to force (e.g. `openrouter:web_search`, `web_search`, `web_search_preview`).
+        /// OpenRouter server-tool type to force (e.g. `openrouter:web_search`, `web_search`, `web_search_preview`).<br/>
+        /// Example: openrouter:web_search
         /// </summary>
+        /// <example>openrouter:web_search</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
@@ -25,7 +28,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatServerToolChoice" /> class.
         /// </summary>
         /// <param name="type">
-        /// OpenRouter server-tool type to force (e.g. `openrouter:web_search`, `web_search`, `web_search_preview`).
+        /// OpenRouter server-tool type to force (e.g. `openrouter:web_search`, `web_search`, `web_search_preview`).<br/>
+        /// Example: openrouter:web_search
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Image generation response
+    /// Image generation response<br/>
+    /// Example: {"created":1748372400,"data":[{"b64_json":"\u003Cbase64-encoded-image\u003E"}],"usage":{"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}}
     /// </summary>
     public sealed partial class ImageGenerationResponse
     {
         /// <summary>
-        /// Unix timestamp (seconds) when the image was generated
+        /// Unix timestamp (seconds) when the image was generated<br/>
+        /// Example: 1748372400
         /// </summary>
+        /// <example>1748372400</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -21,11 +24,13 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationResponseDataItems> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationResponseDataItem> Data { get; set; }
 
         /// <summary>
-        /// Token and cost usage for the image generation request, when available
+        /// Token and cost usage for the image generation request, when available<br/>
+        /// Example: {"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}
         /// </summary>
+        /// <example>{"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::OpenRouter.ImageGenerationUsage? Usage { get; set; }
 
@@ -39,20 +44,22 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ImageGenerationResponse" /> class.
         /// </summary>
         /// <param name="created">
-        /// Unix timestamp (seconds) when the image was generated
+        /// Unix timestamp (seconds) when the image was generated<br/>
+        /// Example: 1748372400
         /// </param>
         /// <param name="data">
         /// Generated images
         /// </param>
         /// <param name="usage">
-        /// Token and cost usage for the image generation request, when available
+        /// Token and cost usage for the image generation request, when available<br/>
+        /// Example: {"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageGenerationResponse(
             global::System.DateTimeOffset created,
-            global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationResponseDataItems> data,
+            global::System.Collections.Generic.IList<global::OpenRouter.ImageGenerationResponseDataItem> data,
             global::OpenRouter.ImageGenerationUsage? usage)
         {
             this.Created = created;

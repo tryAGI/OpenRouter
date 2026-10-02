@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"error_code":"unavailable","type":"web_search_tool_result_error"}
     /// </summary>
     public sealed partial class AnthropicWebSearchToolResultError
     {

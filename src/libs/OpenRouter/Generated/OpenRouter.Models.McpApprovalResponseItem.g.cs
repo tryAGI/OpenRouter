@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// User response to an MCP tool approval request
+    /// User response to an MCP tool approval request<br/>
+    /// Example: {"approval_request_id":"approval-abc123","approve":true,"reason":"Approved for execution","type":"mcp_approval_response"}
     /// </summary>
     public sealed partial class McpApprovalResponseItem
     {

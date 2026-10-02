@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"source":{"data":"Hello, world!","media_type":"text/plain","type":"text"},"type":"document"}
     /// </summary>
     public sealed partial class AnthropicDocumentBlockParam
     {
         /// <summary>
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
+        /// Example: {"type":"ephemeral"}
         /// </summary>
+        /// <example>{"type":"ephemeral"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
 
@@ -30,9 +32,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockParamSourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OneOfJsonConverter<global::OpenRouter.AnthropicBase64PdfSource, global::OpenRouter.AnthropicPlainTextSource, global::OpenRouter.AnthropicDocumentBlockParamSource, global::OpenRouter.AnthropicUrlPdfSource, global::OpenRouter.AnthropicFileDocumentSource>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicDocumentBlockParamSource Source { get; set; }
+        public required global::OpenRouter.OneOf<global::OpenRouter.AnthropicBase64PdfSource, global::OpenRouter.AnthropicPlainTextSource, global::OpenRouter.AnthropicDocumentBlockParamSource, global::OpenRouter.AnthropicUrlPdfSource, global::OpenRouter.AnthropicFileDocumentSource> Source { get; set; }
 
         /// <summary>
         ///
@@ -58,7 +60,8 @@ namespace OpenRouter
         /// </summary>
         /// <param name="source"></param>
         /// <param name="cacheControl">
-        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
+        /// Example: {"type":"ephemeral"}
         /// </param>
         /// <param name="citations"></param>
         /// <param name="context"></param>
@@ -68,7 +71,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicDocumentBlockParam(
-            global::OpenRouter.AnthropicDocumentBlockParamSource source,
+            global::OpenRouter.OneOf<global::OpenRouter.AnthropicBase64PdfSource, global::OpenRouter.AnthropicPlainTextSource, global::OpenRouter.AnthropicDocumentBlockParamSource, global::OpenRouter.AnthropicUrlPdfSource, global::OpenRouter.AnthropicFileDocumentSource> source,
             global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
             global::OpenRouter.AnthropicDocumentBlockParamCitations? citations,
             string? context,

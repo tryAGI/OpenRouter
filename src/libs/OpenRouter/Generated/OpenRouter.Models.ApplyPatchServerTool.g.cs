@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Apply patch tool configuration
+    /// Apply patch tool configuration<br/>
+    /// Example: {"type":"apply_patch"}
     /// </summary>
     public sealed partial class ApplyPatchServerTool
     {

@@ -1,398 +1,296 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace OpenRouter
 {
     /// <summary>
-    /// Complete non-streaming response from the Responses API
+    /// Complete non-streaming response from the Responses API<br/>
+    /// Example: {"completed_at":1704067210,"created_at":1704067200,"error":null,"frequency_penalty":null,"id":"resp-abc123","incomplete_details":null,"instructions":null,"max_output_tokens":null,"metadata":null,"model":"gpt-4","object":"response","output":[{"content":[{"annotations":[],"text":"Hello! How can I help you today?","type":"output_text"}],"id":"msg-abc123","role":"assistant","status":"completed","type":"message"}],"parallel_tool_calls":true,"presence_penalty":null,"status":"completed","temperature":null,"tool_choice":"auto","tools":[],"top_p":null,"usage":{"input_tokens":10,"input_tokens_details":{"cached_tokens":0},"output_tokens":25,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":35}}
     /// </summary>
-    public sealed partial class OpenResponsesResult
+    public readonly partial struct OpenResponsesResult : global::System.IEquatable<OpenResponsesResult>
     {
         /// <summary>
-        ///
+        /// Example: {"completed_at":1704067210,"created_at":1704067200,"error":null,"frequency_penalty":null,"id":"resp-abc123","incomplete_details":null,"instructions":null,"max_output_tokens":null,"metadata":null,"model":"gpt-4","object":"response","output":[],"parallel_tool_calls":true,"presence_penalty":null,"status":"completed","temperature":null,"tool_choice":"auto","tools":[],"top_p":null}
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("background")]
-        public bool? Background { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public int? CompletedAt { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreatedAt { get; set; }
-
-        /// <summary>
-        /// Error information returned from the API
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ResponsesErrorField Error { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
-        public double? FrequencyPenalty { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.IncompleteDetails IncompleteDetails { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.BaseInputsJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.BaseInputs Instructions { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        public int? MaxOutputTokens { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_tool_calls")]
-        public int? MaxToolCalls { get; set; }
-
-        /// <summary>
-        /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenResponsesResultObjectJsonConverter))]
-        public global::OpenRouter.OpenResponsesResultObject Object { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputItems> Output { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_text")]
-        public string? OutputText { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ParallelToolCalls { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
-        public double? PresencePenalty { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
-        public string? PreviousResponseId { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        public global::OpenRouter.StoredPromptTemplate? Prompt { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
-        public string? PromptCacheKey { get; set; }
-
-        /// <summary>
-        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
-        public global::OpenRouter.PromptCacheOptions? PromptCacheOptions { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
-        public global::OpenRouter.BaseReasoningConfig? Reasoning { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
-        public string? SafetyIdentifier { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ServiceTierJsonConverter))]
-        public global::OpenRouter.ServiceTier? ServiceTier { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponsesResponseStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OpenAIResponsesResponseStatus Status { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("store")]
-        public bool? Store { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; }
-
-        /// <summary>
-        /// Text output configuration including format and verbosity
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public global::OpenRouter.TextExtendedConfig? Text { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponsesToolChoiceJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OpenAIResponsesToolChoice ToolChoice { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OpenResponsesResultToolsItems> Tools { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
-        public int? TopLogprobs { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        public double? TopP { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.TruncationJsonConverter))]
-        public global::OpenRouter.Truncation? Truncation { get; set; }
-
-        /// <summary>
-        /// Token usage information for the response
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public global::OpenRouter.Usage? Usage { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public string? User { get; set; }
-
-        /// <summary>
-        /// Canonical OpenRouter error type, stable across all API formats
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApiErrorTypeJsonConverter))]
-        public global::OpenRouter.ApiErrorType? ErrorType { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("openrouter_metadata")]
-        public global::OpenRouter.OpenRouterMetadata? OpenrouterMetadata { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OpenResponsesResult" /> class.
-        /// </summary>
-        /// <param name="createdAt"></param>
-        /// <param name="error">
-        /// Error information returned from the API
-        /// </param>
-        /// <param name="id"></param>
-        /// <param name="incompleteDetails"></param>
-        /// <param name="instructions"></param>
-        /// <param name="model"></param>
-        /// <param name="output"></param>
-        /// <param name="parallelToolCalls"></param>
-        /// <param name="status"></param>
-        /// <param name="toolChoice"></param>
-        /// <param name="tools"></param>
-        /// <param name="background"></param>
-        /// <param name="completedAt"></param>
-        /// <param name="frequencyPenalty"></param>
-        /// <param name="maxOutputTokens"></param>
-        /// <param name="maxToolCalls"></param>
-        /// <param name="metadata">
-        /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
-        /// </param>
-        /// <param name="object"></param>
-        /// <param name="outputText"></param>
-        /// <param name="presencePenalty"></param>
-        /// <param name="previousResponseId"></param>
-        /// <param name="prompt"></param>
-        /// <param name="promptCacheKey"></param>
-        /// <param name="promptCacheOptions">
-        /// Request-level prompt-cache controls. `mode: "explicit"` disables OpenAI-managed breakpoints so only blocks marked with `prompt_cache_breakpoint` are cached. Only supported by OpenAI GPT-5.6 and newer.
-        /// </param>
-        /// <param name="reasoning"></param>
-        /// <param name="safetyIdentifier"></param>
-        /// <param name="serviceTier"></param>
-        /// <param name="store"></param>
-        /// <param name="temperature"></param>
-        /// <param name="text">
-        /// Text output configuration including format and verbosity
-        /// </param>
-        /// <param name="topLogprobs"></param>
-        /// <param name="topP"></param>
-        /// <param name="truncation"></param>
-        /// <param name="usage">
-        /// Token usage information for the response
-        /// </param>
-        /// <param name="user"></param>
-        /// <param name="errorType">
-        /// Canonical OpenRouter error type, stable across all API formats
-        /// </param>
-        /// <param name="openrouterMetadata"></param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.BaseResponsesResult? Base { get; init; }
+#else
+        public global::OpenRouter.BaseResponsesResult? Base { get; }
 #endif
-        public OpenResponsesResult(
-            int createdAt,
-            global::OpenRouter.ResponsesErrorField error,
-            string id,
-            global::OpenRouter.IncompleteDetails incompleteDetails,
-            global::OpenRouter.BaseInputs instructions,
-            string model,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItems> output,
-            bool parallelToolCalls,
-            global::OpenRouter.OpenAIResponsesResponseStatus status,
-            global::OpenRouter.OpenAIResponsesToolChoice toolChoice,
-            global::System.Collections.Generic.IList<global::OpenRouter.OpenResponsesResultToolsItems> tools,
-            bool? background,
-            int? completedAt,
-            double? frequencyPenalty,
-            int? maxOutputTokens,
-            int? maxToolCalls,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::OpenRouter.OpenResponsesResultObject @object,
-            string? outputText,
-            double? presencePenalty,
-            string? previousResponseId,
-            global::OpenRouter.StoredPromptTemplate? prompt,
-            string? promptCacheKey,
-            global::OpenRouter.PromptCacheOptions? promptCacheOptions,
-            global::OpenRouter.BaseReasoningConfig? reasoning,
-            string? safetyIdentifier,
-            global::OpenRouter.ServiceTier? serviceTier,
-            bool? store,
-            double? temperature,
-            global::OpenRouter.TextExtendedConfig? text,
-            int? topLogprobs,
-            double? topP,
-            global::OpenRouter.Truncation? truncation,
-            global::OpenRouter.Usage? usage,
-            string? user,
-            global::OpenRouter.ApiErrorType? errorType,
-            global::OpenRouter.OpenRouterMetadata? openrouterMetadata)
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
+#endif
+        public bool IsBase => Base != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.BaseResponsesResult? value)
         {
-            this.Background = background;
-            this.CompletedAt = completedAt;
-            this.CreatedAt = createdAt;
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.FrequencyPenalty = frequencyPenalty;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.IncompleteDetails = incompleteDetails ?? throw new global::System.ArgumentNullException(nameof(incompleteDetails));
-            this.Instructions = instructions;
-            this.MaxOutputTokens = maxOutputTokens;
-            this.MaxToolCalls = maxToolCalls;
-            this.Metadata = metadata;
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Object = @object;
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.OutputText = outputText;
-            this.ParallelToolCalls = parallelToolCalls;
-            this.PresencePenalty = presencePenalty;
-            this.PreviousResponseId = previousResponseId;
-            this.Prompt = prompt;
-            this.PromptCacheKey = promptCacheKey;
-            this.PromptCacheOptions = promptCacheOptions;
-            this.Reasoning = reasoning;
-            this.SafetyIdentifier = safetyIdentifier;
-            this.ServiceTier = serviceTier;
-            this.Status = status;
-            this.Store = store;
-            this.Temperature = temperature;
-            this.Text = text;
-            this.ToolChoice = toolChoice;
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.TopLogprobs = topLogprobs;
-            this.TopP = topP;
-            this.Truncation = truncation;
-            this.Usage = usage;
-            this.User = user;
-            this.ErrorType = errorType;
-            this.OpenrouterMetadata = openrouterMetadata;
+            value = Base;
+            return IsBase;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OpenResponsesResult" /> class.
+        ///
         /// </summary>
-        public OpenResponsesResult()
+        public global::OpenRouter.BaseResponsesResult PickBase() => Base is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.OpenResponsesResultVariant2? OpenResponsesResultVariant2 { get; init; }
+#else
+        public global::OpenRouter.OpenResponsesResultVariant2? OpenResponsesResultVariant2 { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenResponsesResultVariant2))]
+#endif
+        public bool IsOpenResponsesResultVariant2 => OpenResponsesResultVariant2 != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickOpenResponsesResultVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.OpenResponsesResultVariant2? value)
         {
+            value = OpenResponsesResultVariant2;
+            return IsOpenResponsesResultVariant2;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.OpenResponsesResultVariant2 PickOpenResponsesResultVariant2() => OpenResponsesResultVariant2 is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenResponsesResultVariant2' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator OpenResponsesResult(global::OpenRouter.BaseResponsesResult value) => new OpenResponsesResult((global::OpenRouter.BaseResponsesResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.BaseResponsesResult?(OpenResponsesResult @this) => @this.Base;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OpenResponsesResult(global::OpenRouter.BaseResponsesResult? value)
+        {
+            Base = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static OpenResponsesResult FromBase(global::OpenRouter.BaseResponsesResult? value) => new OpenResponsesResult(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator OpenResponsesResult(global::OpenRouter.OpenResponsesResultVariant2 value) => new OpenResponsesResult((global::OpenRouter.OpenResponsesResultVariant2?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.OpenResponsesResultVariant2?(OpenResponsesResult @this) => @this.OpenResponsesResultVariant2;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OpenResponsesResult(global::OpenRouter.OpenResponsesResultVariant2? value)
+        {
+            OpenResponsesResultVariant2 = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static OpenResponsesResult FromOpenResponsesResultVariant2(global::OpenRouter.OpenResponsesResultVariant2? value) => new OpenResponsesResult(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OpenResponsesResult(
+            global::OpenRouter.BaseResponsesResult? @base,
+            global::OpenRouter.OpenResponsesResultVariant2? openResponsesResultVariant2
+            )
+        {
+            Base = @base;
+            OpenResponsesResultVariant2 = openResponsesResultVariant2;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public object? Object =>
+            OpenResponsesResultVariant2 as object ??
+            Base as object
+            ;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string? ToString() =>
+            Base?.ToString() ??
+            OpenResponsesResultVariant2?.ToString()
+            ;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Validate()
+        {
+            return IsBase && IsOpenResponsesResultVariant2;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::OpenRouter.BaseResponsesResult, TResult>? @base = null,
+            global::System.Func<global::OpenRouter.OpenResponsesResultVariant2, TResult>? openResponsesResultVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (Base is { } __value0 && @base != null)
+            {
+                return @base(__value0);
+            }
+            else if (OpenResponsesResultVariant2 is { } __value1 && openResponsesResultVariant2 != null)
+            {
+                return openResponsesResultVariant2(__value1);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public void Match(
+            global::System.Action<global::OpenRouter.BaseResponsesResult>? @base = null,
+
+            global::System.Action<global::OpenRouter.OpenResponsesResultVariant2>? openResponsesResultVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (Base is { } __value0)
+            {
+                @base?.Invoke(__value0);
+            }
+            else if (OpenResponsesResultVariant2 is { } __value1)
+            {
+                openResponsesResultVariant2?.Invoke(__value1);
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.BaseResponsesResult>? @base = null,
+            global::System.Action<global::OpenRouter.OpenResponsesResultVariant2>? openResponsesResultVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (Base is { } __value0)
+            {
+                @base?.Invoke(__value0);
+            }
+            else if (OpenResponsesResultVariant2 is { } __value1)
+            {
+                openResponsesResultVariant2?.Invoke(__value1);
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Base,
+                typeof(global::OpenRouter.BaseResponsesResult),
+                OpenResponsesResultVariant2,
+                typeof(global::OpenRouter.OpenResponsesResultVariant2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(OpenResponsesResult other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BaseResponsesResult?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenResponsesResultVariant2?>.Default.Equals(OpenResponsesResultVariant2, other.OpenResponsesResultVariant2)
+                ;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(OpenResponsesResult obj1, OpenResponsesResult obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<OpenResponsesResult>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(OpenResponsesResult obj1, OpenResponsesResult obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is OpenResponsesResult o && Equals(o);
+        }
     }
 }

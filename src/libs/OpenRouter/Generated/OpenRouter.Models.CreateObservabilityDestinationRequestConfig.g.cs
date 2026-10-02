@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider-specific configuration. The shape depends on `type` and is validated server-side.
+    /// Provider-specific configuration. The shape depends on `type` and is validated server-side.<br/>
+    /// Example: {"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"}
     /// </summary>
     public sealed partial class CreateObservabilityDestinationRequestConfig
     {

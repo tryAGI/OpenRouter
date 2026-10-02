@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// The compression engine to use. Defaults to "middle-out".
+    /// The compression engine to use. Defaults to "middle-out".<br/>
+    /// Example: middle-out
     /// </summary>
     public enum ContextCompressionEngine
     {

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:image_generation server tool output item
+    /// An openrouter:image_generation server tool output item<br/>
+    /// Example: {"id":"ig_tmp_abc123","imageUrl":"https://example.com/image.png","result":"https://example.com/image.png","status":"completed","type":"openrouter:image_generation"}
     /// </summary>
     public sealed partial class OutputImageGenerationServerToolItem
     {
@@ -27,6 +28,12 @@ namespace OpenRouter
         public string? ImageUrl { get; set; }
 
         /// <summary>
+        /// The prompt (possibly rewritten) that the image was generated from.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
+
+        /// <summary>
         /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
@@ -39,12 +46,20 @@ namespace OpenRouter
         public string? RevisedPrompt { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ToolCallStatus Status { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputImageGenerationServerToolItemTypeJsonConverter))]
+        public global::OpenRouter.OutputImageGenerationServerToolItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,14 +70,20 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputImageGenerationServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="id"></param>
         /// <param name="imageB64"></param>
         /// <param name="imageUrl"></param>
+        /// <param name="prompt">
+        /// The prompt (possibly rewritten) that the image was generated from.
+        /// </param>
         /// <param name="result">
         /// The generated image as a base64-encoded string or URL, matching OpenAI image_generation_call format
         /// </param>
         /// <param name="revisedPrompt"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,15 +92,19 @@ namespace OpenRouter
             string? id,
             string? imageB64,
             string? imageUrl,
+            string? prompt,
             string? result,
-            string? revisedPrompt)
+            string? revisedPrompt,
+            global::OpenRouter.OutputImageGenerationServerToolItemType type)
         {
             this.Id = id;
             this.ImageB64 = imageB64;
             this.ImageUrl = imageUrl;
+            this.Prompt = prompt;
             this.Result = result;
             this.RevisedPrompt = revisedPrompt;
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

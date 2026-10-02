@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Shell tool configuration
+    /// Shell tool configuration<br/>
+    /// Example: {"type":"shell"}
     /// </summary>
     public sealed partial class ShellServerTool
     {

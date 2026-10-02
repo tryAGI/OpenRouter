@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Chat completion message with role-based discrimination
+    /// Chat completion message with role-based discrimination<br/>
+    /// Example: {"content":"What is the capital of France?","role":"user"}
     /// </summary>
     public readonly partial struct ChatMessages : global::System.IEquatable<ChatMessages>
     {
@@ -15,86 +16,13 @@ namespace OpenRouter
         public global::OpenRouter.ChatMessagesDiscriminatorRole? Role { get; }
 
         /// <summary>
-        /// Assistant message for requests and responses
+        /// System message for setting behavior<br/>
+        /// Example: {"content":"You are a helpful assistant.","name":"Assistant Config","role":"system"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatMessagesVariant1? Assistant { get; init; }
+        public global::OpenRouter.ChatSystemMessage? System { get; init; }
 #else
-        public global::OpenRouter.ChatMessagesVariant1? Assistant { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
-#endif
-        public bool IsAssistant => Assistant != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickAssistant(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ChatMessagesVariant1? value)
-        {
-            value = Assistant;
-            return IsAssistant;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ChatMessagesVariant1 PickAssistant() => Assistant is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
-
-        /// <summary>
-        /// Developer message
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatMessagesVariant2? Developer { get; init; }
-#else
-        public global::OpenRouter.ChatMessagesVariant2? Developer { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
-#endif
-        public bool IsDeveloper => Developer != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickDeveloper(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ChatMessagesVariant2? value)
-        {
-            value = Developer;
-            return IsDeveloper;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ChatMessagesVariant2 PickDeveloper() => Developer is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
-
-        /// <summary>
-        /// System message for setting behavior
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatMessagesVariant3? System { get; init; }
-#else
-        public global::OpenRouter.ChatMessagesVariant3? System { get; }
+        public global::OpenRouter.ChatSystemMessage? System { get; }
 #endif
 
         /// <summary>
@@ -112,7 +40,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatMessagesVariant3? value)
+            out global::OpenRouter.ChatSystemMessage? value)
         {
             value = System;
             return IsSystem;
@@ -121,54 +49,18 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatMessagesVariant3 PickSystem() => System is { } value
+        public global::OpenRouter.ChatSystemMessage PickSystem() => System is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
-        /// Tool response message
+        /// User message<br/>
+        /// Example: {"content":"What is the capital of France?","role":"user"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatMessagesVariant4? Tool { get; init; }
+        public global::OpenRouter.ChatUserMessage? User { get; init; }
 #else
-        public global::OpenRouter.ChatMessagesVariant4? Tool { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickTool(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.ChatMessagesVariant4? value)
-        {
-            value = Tool;
-            return IsTool;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.ChatMessagesVariant4 PickTool() => Tool is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
-
-        /// <summary>
-        /// User message
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatMessagesVariant5? User { get; init; }
-#else
-        public global::OpenRouter.ChatMessagesVariant5? User { get; }
+        public global::OpenRouter.ChatUserMessage? User { get; }
 #endif
 
         /// <summary>
@@ -186,7 +78,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatMessagesVariant5? value)
+            out global::OpenRouter.ChatUserMessage? value)
         {
             value = User;
             return IsUser;
@@ -195,69 +87,137 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatMessagesVariant5 PickUser() => User is { } value
+        public global::OpenRouter.ChatUserMessage PickUser() => User is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// Developer message<br/>
+        /// Example: {"content":"This is a message from the developer.","role":"developer"}
         /// </summary>
-        public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant1 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant1?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatDeveloperMessage? Developer { get; init; }
+#else
+        public global::OpenRouter.ChatDeveloperMessage? Developer { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatMessagesVariant1?(ChatMessages @this) => @this.Assistant;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
+#endif
+        public bool IsDeveloper => Developer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public ChatMessages(global::OpenRouter.ChatMessagesVariant1? value)
+        public bool TryPickDeveloper(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatDeveloperMessage? value)
         {
-            Assistant = value;
+            value = Developer;
+            return IsDeveloper;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatMessages FromAssistant(global::OpenRouter.ChatMessagesVariant1? value) => new ChatMessages(value);
+        public global::OpenRouter.ChatDeveloperMessage PickDeveloper() => Developer is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Assistant message for requests and responses<br/>
+        /// Example: {"content":"The capital of France is Paris.","model":"openai/gpt-4o","role":"assistant"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatAssistantMessage? Assistant { get; init; }
+#else
+        public global::OpenRouter.ChatAssistantMessage? Assistant { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant2 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant2?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
+#endif
+        public bool IsAssistant => Assistant != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatMessagesVariant2?(ChatMessages @this) => @this.Developer;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ChatMessages(global::OpenRouter.ChatMessagesVariant2? value)
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatAssistantMessage? value)
         {
-            Developer = value;
+            value = Assistant;
+            return IsAssistant;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatMessages FromDeveloper(global::OpenRouter.ChatMessagesVariant2? value) => new ChatMessages(value);
+        public global::OpenRouter.ChatAssistantMessage PickAssistant() => Assistant is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Tool response message<br/>
+        /// Example: {"content":"The weather in San Francisco is 72\u00B0F and sunny.","role":"tool","tool_call_id":"call_abc123"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatToolMessage? Tool { get; init; }
+#else
+        public global::OpenRouter.ChatToolMessage? Tool { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant3 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant3?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatMessagesVariant3?(ChatMessages @this) => @this.System;
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatToolMessage? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
 
         /// <summary>
         ///
         /// </summary>
-        public ChatMessages(global::OpenRouter.ChatMessagesVariant3? value)
+        public global::OpenRouter.ChatToolMessage PickTool() => Tool is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ChatMessages(global::OpenRouter.ChatSystemMessage value) => new ChatMessages((global::OpenRouter.ChatSystemMessage?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatSystemMessage?(ChatMessages @this) => @this.System;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChatMessages(global::OpenRouter.ChatSystemMessage? value)
         {
             System = value;
         }
@@ -265,45 +225,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ChatMessages FromSystem(global::OpenRouter.ChatMessagesVariant3? value) => new ChatMessages(value);
+        public static ChatMessages FromSystem(global::OpenRouter.ChatSystemMessage? value) => new ChatMessages(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant4 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant4?)value);
+        public static implicit operator ChatMessages(global::OpenRouter.ChatUserMessage value) => new ChatMessages((global::OpenRouter.ChatUserMessage?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatMessagesVariant4?(ChatMessages @this) => @this.Tool;
+        public static implicit operator global::OpenRouter.ChatUserMessage?(ChatMessages @this) => @this.User;
 
         /// <summary>
         ///
         /// </summary>
-        public ChatMessages(global::OpenRouter.ChatMessagesVariant4? value)
-        {
-            Tool = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ChatMessages FromTool(global::OpenRouter.ChatMessagesVariant4? value) => new ChatMessages(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ChatMessages(global::OpenRouter.ChatMessagesVariant5 value) => new ChatMessages((global::OpenRouter.ChatMessagesVariant5?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.ChatMessagesVariant5?(ChatMessages @this) => @this.User;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ChatMessages(global::OpenRouter.ChatMessagesVariant5? value)
+        public ChatMessages(global::OpenRouter.ChatUserMessage? value)
         {
             User = value;
         }
@@ -311,49 +248,118 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ChatMessages FromUser(global::OpenRouter.ChatMessagesVariant5? value) => new ChatMessages(value);
+        public static ChatMessages FromUser(global::OpenRouter.ChatUserMessage? value) => new ChatMessages(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ChatMessages(global::OpenRouter.ChatDeveloperMessage value) => new ChatMessages((global::OpenRouter.ChatDeveloperMessage?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatDeveloperMessage?(ChatMessages @this) => @this.Developer;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChatMessages(global::OpenRouter.ChatDeveloperMessage? value)
+        {
+            Developer = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatMessages FromDeveloper(global::OpenRouter.ChatDeveloperMessage? value) => new ChatMessages(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ChatMessages(global::OpenRouter.ChatAssistantMessage value) => new ChatMessages((global::OpenRouter.ChatAssistantMessage?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatAssistantMessage?(ChatMessages @this) => @this.Assistant;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChatMessages(global::OpenRouter.ChatAssistantMessage? value)
+        {
+            Assistant = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatMessages FromAssistant(global::OpenRouter.ChatAssistantMessage? value) => new ChatMessages(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ChatMessages(global::OpenRouter.ChatToolMessage value) => new ChatMessages((global::OpenRouter.ChatToolMessage?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatToolMessage?(ChatMessages @this) => @this.Tool;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChatMessages(global::OpenRouter.ChatToolMessage? value)
+        {
+            Tool = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatMessages FromTool(global::OpenRouter.ChatToolMessage? value) => new ChatMessages(value);
 
         /// <summary>
         ///
         /// </summary>
         public ChatMessages(
             global::OpenRouter.ChatMessagesDiscriminatorRole? role,
-            global::OpenRouter.ChatMessagesVariant1? assistant,
-            global::OpenRouter.ChatMessagesVariant2? developer,
-            global::OpenRouter.ChatMessagesVariant3? system,
-            global::OpenRouter.ChatMessagesVariant4? tool,
-            global::OpenRouter.ChatMessagesVariant5? user
+            global::OpenRouter.ChatSystemMessage? system,
+            global::OpenRouter.ChatUserMessage? user,
+            global::OpenRouter.ChatDeveloperMessage? developer,
+            global::OpenRouter.ChatAssistantMessage? assistant,
+            global::OpenRouter.ChatToolMessage? tool
             )
         {
             Role = role;
 
-            Assistant = assistant;
-            Developer = developer;
             System = system;
-            Tool = tool;
             User = user;
+            Developer = developer;
+            Assistant = assistant;
+            Tool = tool;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            User as object ??
             Tool as object ??
-            System as object ??
+            Assistant as object ??
             Developer as object ??
-            Assistant as object
+            User as object ??
+            System as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Assistant?.ToString() ??
-            Developer?.ToString() ??
             System?.ToString() ??
-            Tool?.ToString() ??
-            User?.ToString()
+            User?.ToString() ??
+            Developer?.ToString() ??
+            Assistant?.ToString() ??
+            Tool?.ToString()
             ;
 
         /// <summary>
@@ -361,18 +367,18 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsAssistant && !IsDeveloper && !IsSystem && !IsTool && !IsUser || !IsAssistant && IsDeveloper && !IsSystem && !IsTool && !IsUser || !IsAssistant && !IsDeveloper && IsSystem && !IsTool && !IsUser || !IsAssistant && !IsDeveloper && !IsSystem && IsTool && !IsUser || !IsAssistant && !IsDeveloper && !IsSystem && !IsTool && IsUser;
+            return IsSystem && !IsUser && !IsDeveloper && !IsAssistant && !IsTool || !IsSystem && IsUser && !IsDeveloper && !IsAssistant && !IsTool || !IsSystem && !IsUser && IsDeveloper && !IsAssistant && !IsTool || !IsSystem && !IsUser && !IsDeveloper && IsAssistant && !IsTool || !IsSystem && !IsUser && !IsDeveloper && !IsAssistant && IsTool;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatMessagesVariant1, TResult>? assistant = null,
-            global::System.Func<global::OpenRouter.ChatMessagesVariant2, TResult>? developer = null,
-            global::System.Func<global::OpenRouter.ChatMessagesVariant3, TResult>? system = null,
-            global::System.Func<global::OpenRouter.ChatMessagesVariant4, TResult>? tool = null,
-            global::System.Func<global::OpenRouter.ChatMessagesVariant5, TResult>? user = null,
+            global::System.Func<global::OpenRouter.ChatSystemMessage, TResult>? system = null,
+            global::System.Func<global::OpenRouter.ChatUserMessage, TResult>? user = null,
+            global::System.Func<global::OpenRouter.ChatDeveloperMessage, TResult>? developer = null,
+            global::System.Func<global::OpenRouter.ChatAssistantMessage, TResult>? assistant = null,
+            global::System.Func<global::OpenRouter.ChatToolMessage, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -380,25 +386,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (Assistant is { } __value0 && assistant != null)
+            if (System is { } __value0 && system != null)
             {
-                return assistant(__value0);
+                return system(__value0);
             }
-            else if (Developer is { } __value1 && developer != null)
+            else if (User is { } __value1 && user != null)
             {
-                return developer(__value1);
+                return user(__value1);
             }
-            else if (System is { } __value2 && system != null)
+            else if (Developer is { } __value2 && developer != null)
             {
-                return system(__value2);
+                return developer(__value2);
             }
-            else if (Tool is { } __value3 && tool != null)
+            else if (Assistant is { } __value3 && assistant != null)
             {
-                return tool(__value3);
+                return assistant(__value3);
             }
-            else if (User is { } __value4 && user != null)
+            else if (Tool is { } __value4 && tool != null)
             {
-                return user(__value4);
+                return tool(__value4);
             }
 
             return default(TResult);
@@ -408,15 +414,15 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatMessagesVariant1>? assistant = null,
+            global::System.Action<global::OpenRouter.ChatSystemMessage>? system = null,
 
-            global::System.Action<global::OpenRouter.ChatMessagesVariant2>? developer = null,
+            global::System.Action<global::OpenRouter.ChatUserMessage>? user = null,
 
-            global::System.Action<global::OpenRouter.ChatMessagesVariant3>? system = null,
+            global::System.Action<global::OpenRouter.ChatDeveloperMessage>? developer = null,
 
-            global::System.Action<global::OpenRouter.ChatMessagesVariant4>? tool = null,
+            global::System.Action<global::OpenRouter.ChatAssistantMessage>? assistant = null,
 
-            global::System.Action<global::OpenRouter.ChatMessagesVariant5>? user = null,
+            global::System.Action<global::OpenRouter.ChatToolMessage>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -424,25 +430,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (Assistant is { } __value0)
+            if (System is { } __value0)
             {
-                assistant?.Invoke(__value0);
+                system?.Invoke(__value0);
             }
-            else if (Developer is { } __value1)
+            else if (User is { } __value1)
             {
-                developer?.Invoke(__value1);
+                user?.Invoke(__value1);
             }
-            else if (System is { } __value2)
+            else if (Developer is { } __value2)
             {
-                system?.Invoke(__value2);
+                developer?.Invoke(__value2);
             }
-            else if (Tool is { } __value3)
+            else if (Assistant is { } __value3)
             {
-                tool?.Invoke(__value3);
+                assistant?.Invoke(__value3);
             }
-            else if (User is { } __value4)
+            else if (Tool is { } __value4)
             {
-                user?.Invoke(__value4);
+                tool?.Invoke(__value4);
             }
         }
 
@@ -450,11 +456,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.ChatMessagesVariant1>? assistant = null,
-            global::System.Action<global::OpenRouter.ChatMessagesVariant2>? developer = null,
-            global::System.Action<global::OpenRouter.ChatMessagesVariant3>? system = null,
-            global::System.Action<global::OpenRouter.ChatMessagesVariant4>? tool = null,
-            global::System.Action<global::OpenRouter.ChatMessagesVariant5>? user = null,
+            global::System.Action<global::OpenRouter.ChatSystemMessage>? system = null,
+            global::System.Action<global::OpenRouter.ChatUserMessage>? user = null,
+            global::System.Action<global::OpenRouter.ChatDeveloperMessage>? developer = null,
+            global::System.Action<global::OpenRouter.ChatAssistantMessage>? assistant = null,
+            global::System.Action<global::OpenRouter.ChatToolMessage>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -462,25 +468,25 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (Assistant is { } __value0)
+            if (System is { } __value0)
             {
-                assistant?.Invoke(__value0);
+                system?.Invoke(__value0);
             }
-            else if (Developer is { } __value1)
+            else if (User is { } __value1)
             {
-                developer?.Invoke(__value1);
+                user?.Invoke(__value1);
             }
-            else if (System is { } __value2)
+            else if (Developer is { } __value2)
             {
-                system?.Invoke(__value2);
+                developer?.Invoke(__value2);
             }
-            else if (Tool is { } __value3)
+            else if (Assistant is { } __value3)
             {
-                tool?.Invoke(__value3);
+                assistant?.Invoke(__value3);
             }
-            else if (User is { } __value4)
+            else if (Tool is { } __value4)
             {
-                user?.Invoke(__value4);
+                tool?.Invoke(__value4);
             }
         }
 
@@ -491,16 +497,16 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                Assistant,
-                typeof(global::OpenRouter.ChatMessagesVariant1),
-                Developer,
-                typeof(global::OpenRouter.ChatMessagesVariant2),
                 System,
-                typeof(global::OpenRouter.ChatMessagesVariant3),
-                Tool,
-                typeof(global::OpenRouter.ChatMessagesVariant4),
+                typeof(global::OpenRouter.ChatSystemMessage),
                 User,
-                typeof(global::OpenRouter.ChatMessagesVariant5),
+                typeof(global::OpenRouter.ChatUserMessage),
+                Developer,
+                typeof(global::OpenRouter.ChatDeveloperMessage),
+                Assistant,
+                typeof(global::OpenRouter.ChatAssistantMessage),
+                Tool,
+                typeof(global::OpenRouter.ChatToolMessage),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -517,11 +523,11 @@ namespace OpenRouter
         public bool Equals(ChatMessages other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant1?>.Default.Equals(Assistant, other.Assistant) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant2?>.Default.Equals(Developer, other.Developer) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant3?>.Default.Equals(System, other.System) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant4?>.Default.Equals(Tool, other.Tool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatMessagesVariant5?>.Default.Equals(User, other.User)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSystemMessage?>.Default.Equals(System, other.System) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatUserMessage?>.Default.Equals(User, other.User) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatDeveloperMessage?>.Default.Equals(Developer, other.Developer) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatAssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatToolMessage?>.Default.Equals(Tool, other.Tool)
                 ;
         }
 

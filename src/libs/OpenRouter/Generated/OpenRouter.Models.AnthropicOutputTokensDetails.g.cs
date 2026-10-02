@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"thinking_tokens":0}
     /// </summary>
     public sealed partial class AnthropicOutputTokensDetails
     {

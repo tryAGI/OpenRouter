@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"model":"openai/gpt-4o","provider":"OpenAI","selected":true}
     /// </summary>
     public sealed partial class EndpointInfo
     {

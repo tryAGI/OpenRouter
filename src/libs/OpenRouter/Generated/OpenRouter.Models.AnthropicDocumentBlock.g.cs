@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"citations":null,"source":{"data":"Hello, world!","media_type":"text/plain","type":"text"},"title":null,"type":"document"}
     /// </summary>
     public sealed partial class AnthropicDocumentBlock
     {
         /// <summary>
-        ///
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464<br/>
+        /// Example: {"enabled":true}
         /// </summary>
+        /// <example>{"enabled":true}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
         public global::OpenRouter.AnthropicCitationsConfig? Citations { get; set; }
 
@@ -18,9 +20,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicDocumentBlockSourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.AnthropicBase64PdfSource, global::OpenRouter.AnthropicPlainTextSource>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.AnthropicDocumentBlockSource Source { get; set; }
+        public required global::OpenRouter.AnyOf<global::OpenRouter.AnthropicBase64PdfSource, global::OpenRouter.AnthropicPlainTextSource> Source { get; set; }
 
         /// <summary>
         ///
@@ -45,14 +47,17 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="AnthropicDocumentBlock" /> class.
         /// </summary>
         /// <param name="source"></param>
-        /// <param name="citations"></param>
+        /// <param name="citations">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464<br/>
+        /// Example: {"enabled":true}
+        /// </param>
         /// <param name="title"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AnthropicDocumentBlock(
-            global::OpenRouter.AnthropicDocumentBlockSource source,
+            global::OpenRouter.AnyOf<global::OpenRouter.AnthropicBase64PdfSource, global::OpenRouter.AnthropicPlainTextSource> source,
             global::OpenRouter.AnthropicCitationsConfig? citations,
             string? title,
             global::OpenRouter.AnthropicDocumentBlockType type)

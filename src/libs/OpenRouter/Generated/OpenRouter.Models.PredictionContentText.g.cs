@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Text content part for a predicted output.
+    /// Text content part for a predicted output.<br/>
+    /// Example: {"text":"Expected response","type":"text"}
     /// </summary>
     public sealed partial class PredictionContentText
     {

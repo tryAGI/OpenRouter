@@ -4,20 +4,25 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// The provider sorting strategy (price, throughput, latency)
+    /// The provider sorting strategy (price, throughput, latency)<br/>
+    /// Example: {"by":"price","partition":"model"}
     /// </summary>
     public sealed partial class ProviderSortConfig
     {
         /// <summary>
-        /// The provider sorting strategy (price, throughput, latency)
+        /// The provider sorting strategy (price, throughput, latency)<br/>
+        /// Example: price
         /// </summary>
+        /// <example>price</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderSortConfigByJsonConverter))]
         public global::OpenRouter.ProviderSortConfigBy? By { get; set; }
 
         /// <summary>
-        /// Partitioning strategy for sorting: "model" (default) groups endpoints by model before sorting (fallback models remain fallbacks), "none" sorts all endpoints together regardless of model.
+        /// Partitioning strategy for sorting: "model" (default) groups endpoints by model before sorting (fallback models remain fallbacks), "none" sorts all endpoints together regardless of model.<br/>
+        /// Example: model
         /// </summary>
+        /// <example>model</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("partition")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ProviderSortConfigPartitionJsonConverter))]
         public global::OpenRouter.ProviderSortConfigPartition? Partition { get; set; }
@@ -32,10 +37,12 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ProviderSortConfig" /> class.
         /// </summary>
         /// <param name="by">
-        /// The provider sorting strategy (price, throughput, latency)
+        /// The provider sorting strategy (price, throughput, latency)<br/>
+        /// Example: price
         /// </param>
         /// <param name="partition">
-        /// Partitioning strategy for sorting: "model" (default) groups endpoints by model before sorting (fallback models remain fallbacks), "none" sorts all endpoints together regardless of model.
+        /// Partitioning strategy for sorting: "model" (default) groups endpoints by model before sorting (fallback models remain fallbacks), "none" sorts all endpoints together regardless of model.<br/>
+        /// Example: model
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Model architecture information
+    ///
     /// </summary>
     public sealed partial class ListEndpointsResponseArchitecture
     {
@@ -16,16 +16,19 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.InputModality> InputModalities { get; set; }
 
         /// <summary>
-        /// Instruction format type
+        /// Instruction format type<br/>
+        /// Example: chatml
         /// </summary>
+        /// <example>chatml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("instruct_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InstructTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.InstructType InstructType { get; set; }
+        public global::OpenRouter.InstructType? InstructType { get; set; }
 
         /// <summary>
-        /// Primary modality of the model
+        /// Primary modality of the model<br/>
+        /// Example: text
         /// </summary>
+        /// <example>text</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("modality")]
         public string? Modality { get; set; }
 
@@ -37,12 +40,10 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> OutputModalities { get; set; }
 
         /// <summary>
-        /// Tokenizer type used by the model
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ModelGroupJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ModelGroup Tokenizer { get; set; }
+        public global::OpenRouter.ModelGroup? Tokenizer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,27 +57,27 @@ namespace OpenRouter
         /// <param name="inputModalities">
         /// Supported input modalities
         /// </param>
-        /// <param name="instructType">
-        /// Instruction format type
-        /// </param>
         /// <param name="outputModalities">
         /// Supported output modalities
         /// </param>
-        /// <param name="tokenizer">
-        /// Tokenizer type used by the model
+        /// <param name="instructType">
+        /// Instruction format type<br/>
+        /// Example: chatml
         /// </param>
         /// <param name="modality">
-        /// Primary modality of the model
+        /// Primary modality of the model<br/>
+        /// Example: text
         /// </param>
+        /// <param name="tokenizer"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListEndpointsResponseArchitecture(
             global::System.Collections.Generic.IList<global::OpenRouter.InputModality> inputModalities,
-            global::OpenRouter.InstructType instructType,
             global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> outputModalities,
-            global::OpenRouter.ModelGroup tokenizer,
-            string? modality)
+            global::OpenRouter.InstructType? instructType,
+            string? modality,
+            global::OpenRouter.ModelGroup? tokenizer)
         {
             this.InputModalities = inputModalities ?? throw new global::System.ArgumentNullException(nameof(inputModalities));
             this.InstructType = instructType;

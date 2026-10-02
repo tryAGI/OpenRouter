@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for ConflictResponse
+    /// Error data for ConflictResponse<br/>
+    /// Example: {"code":409,"message":"Resource conflict. Please try again later."}
     /// </summary>
     public sealed partial class ConflictResponseErrorData
     {

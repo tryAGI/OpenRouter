@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:experimental__search_models server tool output item
+    /// An openrouter:experimental__search_models server tool output item<br/>
+    /// Example: {"arguments":"{\u0022query\u0022:\u0022Claude Opus\u0022}","id":"sm_tmp_abc123","query":"Claude Opus","status":"completed","type":"openrouter:experimental__search_models"}
     /// </summary>
     public sealed partial class OutputSearchModelsServerToolItem
     {
@@ -27,8 +28,9 @@ namespace OpenRouter
         public string? Query { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,7 +52,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputSearchModelsServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="arguments">
         /// The JSON arguments submitted to the search tool (e.g. {"query":"Claude"})
         /// </param>

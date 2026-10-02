@@ -19,7 +19,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputWebSearchServerToolItemActionSourcesItems>? Sources { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.OutputWebSearchServerToolItemActionSource>? Sources { get; set; }
 
         /// <summary>
         ///
@@ -45,7 +45,7 @@ namespace OpenRouter
 #endif
         public OutputWebSearchServerToolItemAction(
             string query,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputWebSearchServerToolItemActionSourcesItems>? sources,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputWebSearchServerToolItemActionSource>? sources,
             global::OpenRouter.OutputWebSearchServerToolItemActionType type)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));

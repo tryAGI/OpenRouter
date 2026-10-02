@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"assigned_count":3}
     /// </summary>
     public sealed partial class BulkAssignKeysResponse
     {
         /// <summary>
-        /// Number of keys successfully assigned
+        /// Number of keys successfully assigned<br/>
+        /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigned_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int AssignedCount { get; set; }
@@ -25,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkAssignKeysResponse" /> class.
         /// </summary>
         /// <param name="assignedCount">
-        /// Number of keys successfully assigned
+        /// Number of keys successfully assigned<br/>
+        /// Example: 3
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

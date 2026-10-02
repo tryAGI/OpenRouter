@@ -15,6 +15,10 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
+        File,
+        /// <summary>
+        ///
+        /// </summary>
         Url,
     }
 
@@ -31,6 +35,7 @@ namespace OpenRouter
             return value switch
             {
                 AnthropicImageBlockParamSourceDiscriminatorType.Base64 => "base64",
+                AnthropicImageBlockParamSourceDiscriminatorType.File => "file",
                 AnthropicImageBlockParamSourceDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace OpenRouter
             return value switch
             {
                 "base64" => AnthropicImageBlockParamSourceDiscriminatorType.Base64,
+                "file" => AnthropicImageBlockParamSourceDiscriminatorType.File,
                 "url" => AnthropicImageBlockParamSourceDiscriminatorType.Url,
                 _ => null,
             };

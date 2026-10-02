@@ -1,4 +1,3 @@
-#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -7,289 +6,59 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public readonly partial struct CodeInterpreterServerToolContainer : global::System.IEquatable<CodeInterpreterServerToolContainer>
+    public sealed partial class CodeInterpreterServerToolContainer
     {
         /// <summary>
         ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        public string? CodeInterpreterServerToolContainerVariant1 { get; init; }
-#else
-        public string? CodeInterpreterServerToolContainerVariant1 { get; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
+        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory_limit")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerMemoryLimitJsonConverter))]
+        public global::OpenRouter.CodeInterpreterServerToolContainerMemoryLimit? MemoryLimit { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerTypeJsonConverter))]
+        public global::OpenRouter.CodeInterpreterServerToolContainerType Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeInterpreterServerToolContainer" /> class.
+        /// </summary>
+        /// <param name="fileIds"></param>
+        /// <param name="memoryLimit"></param>
+        /// <param name="type"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerToolContainerVariant1))]
-#endif
-        public bool IsCodeInterpreterServerToolContainerVariant1 => CodeInterpreterServerToolContainerVariant1 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCodeInterpreterServerToolContainerVariant1(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out string? value)
-        {
-            value = CodeInterpreterServerToolContainerVariant1;
-            return IsCodeInterpreterServerToolContainerVariant1;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public string PickCodeInterpreterServerToolContainerVariant1() => CodeInterpreterServerToolContainerVariant1 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainerVariant1' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.CodeInterpreterServerToolContainer1? CodeInterpreterServerToolContainer1 { get; init; }
-#else
-        public global::OpenRouter.CodeInterpreterServerToolContainer1? CodeInterpreterServerToolContainer1 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerToolContainer1))]
-#endif
-        public bool IsCodeInterpreterServerToolContainer1 => CodeInterpreterServerToolContainer1 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCodeInterpreterServerToolContainer1(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.CodeInterpreterServerToolContainer1? value)
-        {
-            value = CodeInterpreterServerToolContainer1;
-            return IsCodeInterpreterServerToolContainer1;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.CodeInterpreterServerToolContainer1 PickCodeInterpreterServerToolContainer1() => CodeInterpreterServerToolContainer1 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainer1' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator CodeInterpreterServerToolContainer(string value) => new CodeInterpreterServerToolContainer((string?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator string?(CodeInterpreterServerToolContainer @this) => @this.CodeInterpreterServerToolContainerVariant1;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public CodeInterpreterServerToolContainer(string? value)
-        {
-            CodeInterpreterServerToolContainerVariant1 = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainerVariant1(string? value) => new CodeInterpreterServerToolContainer(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator CodeInterpreterServerToolContainer(global::OpenRouter.CodeInterpreterServerToolContainer1 value) => new CodeInterpreterServerToolContainer((global::OpenRouter.CodeInterpreterServerToolContainer1?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.CodeInterpreterServerToolContainer1?(CodeInterpreterServerToolContainer @this) => @this.CodeInterpreterServerToolContainer1;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public CodeInterpreterServerToolContainer(global::OpenRouter.CodeInterpreterServerToolContainer1? value)
-        {
-            CodeInterpreterServerToolContainer1 = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainer1(global::OpenRouter.CodeInterpreterServerToolContainer1? value) => new CodeInterpreterServerToolContainer(value);
-
-        /// <summary>
-        ///
-        /// </summary>
         public CodeInterpreterServerToolContainer(
-            string? codeInterpreterServerToolContainerVariant1,
-            global::OpenRouter.CodeInterpreterServerToolContainer1? codeInterpreterServerToolContainer1
-            )
+            global::System.Collections.Generic.IList<string>? fileIds,
+            global::OpenRouter.CodeInterpreterServerToolContainerMemoryLimit? memoryLimit,
+            global::OpenRouter.CodeInterpreterServerToolContainerType type)
         {
-            CodeInterpreterServerToolContainerVariant1 = codeInterpreterServerToolContainerVariant1;
-            CodeInterpreterServerToolContainer1 = codeInterpreterServerToolContainer1;
+            this.FileIds = fileIds;
+            this.MemoryLimit = memoryLimit;
+            this.Type = type;
         }
 
         /// <summary>
-        ///
+        /// Initializes a new instance of the <see cref="CodeInterpreterServerToolContainer" /> class.
         /// </summary>
-        public object? Object =>
-            CodeInterpreterServerToolContainer1 as object ??
-            CodeInterpreterServerToolContainerVariant1 as object
-            ;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public override string? ToString() =>
-            CodeInterpreterServerToolContainerVariant1?.ToString() ??
-            CodeInterpreterServerToolContainer1?.ToString()
-            ;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool Validate()
+        public CodeInterpreterServerToolContainer()
         {
-            return IsCodeInterpreterServerToolContainerVariant1 && !IsCodeInterpreterServerToolContainer1 || !IsCodeInterpreterServerToolContainerVariant1 && IsCodeInterpreterServerToolContainer1;
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        public TResult? Match<TResult>(
-            global::System.Func<string, TResult>? codeInterpreterServerToolContainerVariant1 = null,
-            global::System.Func<global::OpenRouter.CodeInterpreterServerToolContainer1, TResult>? codeInterpreterServerToolContainer1 = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (CodeInterpreterServerToolContainerVariant1 is { } __value0 && codeInterpreterServerToolContainerVariant1 != null)
-            {
-                return codeInterpreterServerToolContainerVariant1(__value0);
-            }
-            else if (CodeInterpreterServerToolContainer1 is { } __value1 && codeInterpreterServerToolContainer1 != null)
-            {
-                return codeInterpreterServerToolContainer1(__value1);
-            }
-
-            return default(TResult);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public void Match(
-            global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
-
-            global::System.Action<global::OpenRouter.CodeInterpreterServerToolContainer1>? codeInterpreterServerToolContainer1 = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (CodeInterpreterServerToolContainerVariant1 is { } __value0)
-            {
-                codeInterpreterServerToolContainerVariant1?.Invoke(__value0);
-            }
-            else if (CodeInterpreterServerToolContainer1 is { } __value1)
-            {
-                codeInterpreterServerToolContainer1?.Invoke(__value1);
-            }
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public void Switch(
-            global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
-            global::System.Action<global::OpenRouter.CodeInterpreterServerToolContainer1>? codeInterpreterServerToolContainer1 = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (CodeInterpreterServerToolContainerVariant1 is { } __value0)
-            {
-                codeInterpreterServerToolContainerVariant1?.Invoke(__value0);
-            }
-            else if (CodeInterpreterServerToolContainer1 is { } __value1)
-            {
-                codeInterpreterServerToolContainer1?.Invoke(__value1);
-            }
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public override int GetHashCode()
-        {
-            var fields = new object?[]
-            {
-                CodeInterpreterServerToolContainerVariant1,
-                typeof(string),
-                CodeInterpreterServerToolContainer1,
-                typeof(global::OpenRouter.CodeInterpreterServerToolContainer1),
-            };
-            const int offset = unchecked((int)2166136261);
-            const int prime = 16777619;
-            static int HashCodeAggregator(int hashCode, object? value) => value == null
-                ? (hashCode ^ 0) * prime
-                : (hashCode ^ value.GetHashCode()) * prime;
-
-            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool Equals(CodeInterpreterServerToolContainer other)
-        {
-            return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(CodeInterpreterServerToolContainerVariant1, other.CodeInterpreterServerToolContainerVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CodeInterpreterServerToolContainer1?>.Default.Equals(CodeInterpreterServerToolContainer1, other.CodeInterpreterServerToolContainer1)
-                ;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static bool operator ==(CodeInterpreterServerToolContainer obj1, CodeInterpreterServerToolContainer obj2)
-        {
-            return global::System.Collections.Generic.EqualityComparer<CodeInterpreterServerToolContainer>.Default.Equals(obj1, obj2);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static bool operator !=(CodeInterpreterServerToolContainer obj1, CodeInterpreterServerToolContainer obj2)
-        {
-            return !(obj1 == obj2);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public override bool Equals(object? obj)
-        {
-            return obj is CodeInterpreterServerToolContainer o && Equals(o);
-        }
     }
 }

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Local shell tool configuration
+    /// Local shell tool configuration<br/>
+    /// Example: {"type":"local_shell"}
     /// </summary>
     public sealed partial class CodexLocalShellTool
     {

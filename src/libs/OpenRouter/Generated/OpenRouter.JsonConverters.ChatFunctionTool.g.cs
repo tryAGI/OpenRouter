@@ -36,8 +36,6 @@ namespace OpenRouter.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("cache_control")) __score0++;
-            if (__jsonProps.Contains("cache_control.ttl")) __score0++;
-            if (__jsonProps.Contains("cache_control.type")) __score0++;
             if (__jsonProps.Contains("function")) __score0++;
             if (__jsonProps.Contains("function.description")) __score0++;
             if (__jsonProps.Contains("function.name")) __score0++;
@@ -49,19 +47,16 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("parameters.forward_transcript")) __score1++;
             if (__jsonProps.Contains("parameters.instructions")) __score1++;
             if (__jsonProps.Contains("parameters.max_completion_tokens")) __score1++;
-            if (__jsonProps.Contains("parameters.max_tool_calls")) __score1++;
             if (__jsonProps.Contains("parameters.model")) __score1++;
             if (__jsonProps.Contains("parameters.name")) __score1++;
             if (__jsonProps.Contains("parameters.reasoning")) __score1++;
             if (__jsonProps.Contains("parameters.stream")) __score1++;
             if (__jsonProps.Contains("parameters.temperature")) __score1++;
-            if (__jsonProps.Contains("parameters.tools")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("parameters")) __score2++;
             if (__jsonProps.Contains("parameters.engine")) __score2++;
             if (__jsonProps.Contains("parameters.environment")) __score2++;
-            if (__jsonProps.Contains("parameters.sleep_after_seconds")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("parameters")) __score3++;
@@ -91,10 +86,13 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
             if (__jsonProps.Contains("parameters")) __score8++;
+            if (__jsonProps.Contains("parameters.inherit_functions")) __score8++;
+            if (__jsonProps.Contains("parameters.inherited_function_names")) __score8++;
             if (__jsonProps.Contains("parameters.instructions")) __score8++;
             if (__jsonProps.Contains("parameters.max_completion_tokens")) __score8++;
             if (__jsonProps.Contains("parameters.max_tool_calls")) __score8++;
             if (__jsonProps.Contains("parameters.model")) __score8++;
+            if (__jsonProps.Contains("parameters.name")) __score8++;
             if (__jsonProps.Contains("parameters.reasoning")) __score8++;
             if (__jsonProps.Contains("parameters.temperature")) __score8++;
             if (__jsonProps.Contains("parameters.tools")) __score8++;
@@ -115,8 +113,11 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("parameters.max_characters")) __score10++;
             if (__jsonProps.Contains("parameters.max_results")) __score10++;
             if (__jsonProps.Contains("parameters.max_total_results")) __score10++;
+            if (__jsonProps.Contains("parameters.max_uses")) __score10++;
+            if (__jsonProps.Contains("parameters.mode")) __score10++;
             if (__jsonProps.Contains("parameters.search_context_size")) __score10++;
             if (__jsonProps.Contains("parameters.user_location")) __score10++;
+            if (__jsonProps.Contains("parameters.x_search")) __score10++;
             if (__jsonProps.Contains("type")) __score10++;
             var __score11 = 0;
             if (__jsonProps.Contains("allowed_domains")) __score11++;
@@ -125,6 +126,8 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("max_characters")) __score11++;
             if (__jsonProps.Contains("max_results")) __score11++;
             if (__jsonProps.Contains("max_total_results")) __score11++;
+            if (__jsonProps.Contains("max_uses")) __score11++;
+            if (__jsonProps.Contains("mode")) __score11++;
             if (__jsonProps.Contains("parameters")) __score11++;
             if (__jsonProps.Contains("parameters.allowed_domains")) __score11++;
             if (__jsonProps.Contains("parameters.engine")) __score11++;
@@ -132,8 +135,11 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("parameters.max_characters")) __score11++;
             if (__jsonProps.Contains("parameters.max_results")) __score11++;
             if (__jsonProps.Contains("parameters.max_total_results")) __score11++;
+            if (__jsonProps.Contains("parameters.max_uses")) __score11++;
+            if (__jsonProps.Contains("parameters.mode")) __score11++;
             if (__jsonProps.Contains("parameters.search_context_size")) __score11++;
             if (__jsonProps.Contains("parameters.user_location")) __score11++;
+            if (__jsonProps.Contains("parameters.x_search")) __score11++;
             if (__jsonProps.Contains("search_context_size")) __score11++;
             if (__jsonProps.Contains("type")) __score11++;
             if (__jsonProps.Contains("user_location")) __score11++;
@@ -142,6 +148,16 @@ namespace OpenRouter.JsonConverters
             if (__jsonProps.Contains("user_location.region")) __score11++;
             if (__jsonProps.Contains("user_location.timezone")) __score11++;
             if (__jsonProps.Contains("user_location.type")) __score11++;
+            if (__jsonProps.Contains("x_search")) __score11++;
+            if (__jsonProps.Contains("x_search.allowed_x_handles")) __score11++;
+            if (__jsonProps.Contains("x_search.enable_image_understanding")) __score11++;
+            if (__jsonProps.Contains("x_search.enable_video_understanding")) __score11++;
+            if (__jsonProps.Contains("x_search.excluded_x_handles")) __score11++;
+            if (__jsonProps.Contains("x_search.from_date")) __score11++;
+            if (__jsonProps.Contains("x_search.to_date")) __score11++;
+            var __score12 = 0;
+            if (__jsonProps.Contains("parameters")) __score12++;
+            if (__jsonProps.Contains("type")) __score12++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -156,28 +172,30 @@ namespace OpenRouter.JsonConverters
             if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
             if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
             if (__score11 > __bestScore) { __bestScore = __score11; __bestIndex = 11; }
+            if (__score12 > __bestScore) { __bestScore = __score12; __bestIndex = 12; }
 
-            global::OpenRouter.ChatFunctionTool0? chatFunctionTool0 = default;
-            global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerToolOpenRouter = default;
-            global::OpenRouter.BashServerTool? bashServerTool = default;
-            global::OpenRouter.DatetimeServerTool? datetimeServerTool = default;
-            global::OpenRouter.FilesServerTool? filesServerTool = default;
-            global::OpenRouter.FusionServerToolOpenRouter? fusionServerToolOpenRouter = default;
-            global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter = default;
-            global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool = default;
-            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerToolOpenRouter = default;
-            global::OpenRouter.WebFetchServerTool? webFetchServerTool = default;
-            global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool = default;
-            global::OpenRouter.ChatWebSearchShorthand? chatWebSearchShorthand = default;
+            global::OpenRouter.ChatFunctionToolVariant1? chatFunctionToolVariant1 = default;
+            global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerOpenRouter = default;
+            global::OpenRouter.BashServerTool? bashServer = default;
+            global::OpenRouter.DatetimeServerTool? datetimeServer = default;
+            global::OpenRouter.FilesServerTool? filesServer = default;
+            global::OpenRouter.FusionServerToolOpenRouter? fusionServerOpenRouter = default;
+            global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerOpenRouter = default;
+            global::OpenRouter.ChatSearchModelsServerTool? searchModelsServer = default;
+            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerOpenRouter = default;
+            global::OpenRouter.WebFetchServerTool? webFetchServer = default;
+            global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServer = default;
+            global::OpenRouter.ChatWebSearchShorthand? webSearchShorthand = default;
+            global::OpenRouter.ChatDynamicServerTool? dynamicServer = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionTool0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionTool0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionTool0).Name}");
-                        chatFunctionTool0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionToolVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionToolVariant1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionToolVariant1).Name}");
+                        chatFunctionToolVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -192,7 +210,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AdvisorServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AdvisorServerToolOpenRouter> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AdvisorServerToolOpenRouter).Name}");
-                        advisorServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        advisorServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -207,7 +225,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BashServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BashServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BashServerTool).Name}");
-                        bashServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        bashServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -222,7 +240,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
-                        datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        datetimeServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -237,7 +255,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FilesServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FilesServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FilesServerTool).Name}");
-                        filesServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        filesServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -252,7 +270,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FusionServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FusionServerToolOpenRouter> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FusionServerToolOpenRouter).Name}");
-                        fusionServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        fusionServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -267,7 +285,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerToolOpenRouter> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter).Name}");
-                        imageGenerationServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        imageGenerationServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -282,7 +300,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSearchModelsServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSearchModelsServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSearchModelsServerTool).Name}");
-                        chatSearchModelsServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        searchModelsServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -297,7 +315,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
-                        subagentServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        subagentServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -312,7 +330,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebFetchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebFetchServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebFetchServerTool).Name}");
-                        webFetchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        webFetchServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -327,7 +345,7 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenRouterWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenRouterWebSearchServerTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenRouterWebSearchServerTool).Name}");
-                        openRouterWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openRouterWebSearchServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -342,7 +360,22 @@ namespace OpenRouter.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchShorthand> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchShorthand).Name}");
-                        chatWebSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        webSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 12)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatDynamicServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatDynamicServerTool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatDynamicServerTool).Name}");
+                        dynamicServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -353,14 +386,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionTool0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionTool0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionTool0).Name}");
-                    chatFunctionTool0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionToolVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionToolVariant1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionToolVariant1).Name}");
+                    chatFunctionToolVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -370,14 +403,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AdvisorServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AdvisorServerToolOpenRouter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AdvisorServerToolOpenRouter).Name}");
-                    advisorServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    advisorServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -387,14 +420,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BashServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BashServerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BashServerTool).Name}");
-                    bashServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    bashServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -404,14 +437,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
-                    datetimeServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    datetimeServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -421,14 +454,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FilesServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FilesServerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FilesServerTool).Name}");
-                    filesServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    filesServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -438,14 +471,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FusionServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FusionServerToolOpenRouter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FusionServerToolOpenRouter).Name}");
-                    fusionServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    fusionServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -455,14 +488,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerToolOpenRouter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter).Name}");
-                    imageGenerationServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    imageGenerationServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -472,14 +505,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSearchModelsServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSearchModelsServerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSearchModelsServerTool).Name}");
-                    chatSearchModelsServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    searchModelsServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -489,14 +522,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
-                    subagentServerToolOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    subagentServerOpenRouter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -506,14 +539,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebFetchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebFetchServerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebFetchServerTool).Name}");
-                    webFetchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    webFetchServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -523,14 +556,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenRouterWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenRouterWebSearchServerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenRouterWebSearchServerTool).Name}");
-                    openRouterWebSearchServerTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openRouterWebSearchServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -540,14 +573,31 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (chatFunctionTool0 == null && advisorServerToolOpenRouter == null && bashServerTool == null && datetimeServerTool == null && filesServerTool == null && fusionServerToolOpenRouter == null && imageGenerationServerToolOpenRouter == null && chatSearchModelsServerTool == null && subagentServerToolOpenRouter == null && webFetchServerTool == null && openRouterWebSearchServerTool == null && chatWebSearchShorthand == null)
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchShorthand> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchShorthand).Name}");
-                    chatWebSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    webSearchShorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (chatFunctionToolVariant1 == null && advisorServerOpenRouter == null && bashServer == null && datetimeServer == null && filesServer == null && fusionServerOpenRouter == null && imageGenerationServerOpenRouter == null && searchModelsServer == null && subagentServerOpenRouter == null && webFetchServer == null && openRouterWebSearchServer == null && webSearchShorthand == null && dynamicServer == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatDynamicServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatDynamicServerTool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatDynamicServerTool).Name}");
+                    dynamicServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -558,29 +608,31 @@ namespace OpenRouter.JsonConverters
             }
 
             var __value = new global::OpenRouter.ChatFunctionTool(
-                chatFunctionTool0,
+                chatFunctionToolVariant1,
 
-                advisorServerToolOpenRouter,
+                advisorServerOpenRouter,
 
-                bashServerTool,
+                bashServer,
 
-                datetimeServerTool,
+                datetimeServer,
 
-                filesServerTool,
+                filesServer,
 
-                fusionServerToolOpenRouter,
+                fusionServerOpenRouter,
 
-                imageGenerationServerToolOpenRouter,
+                imageGenerationServerOpenRouter,
 
-                chatSearchModelsServerTool,
+                searchModelsServer,
 
-                subagentServerToolOpenRouter,
+                subagentServerOpenRouter,
 
-                webFetchServerTool,
+                webFetchServer,
 
-                openRouterWebSearchServerTool,
+                openRouterWebSearchServer,
 
-                chatWebSearchShorthand
+                webSearchShorthand,
+
+                dynamicServer
                 );
 
             return __value;
@@ -595,77 +647,83 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsChatFunctionTool0)
+            if (value.IsChatFunctionToolVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionTool0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionTool0?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionTool0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatFunctionTool0(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatFunctionToolVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatFunctionToolVariant1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatFunctionToolVariant1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatFunctionToolVariant1(), typeInfo);
             }
-            else if (value.IsAdvisorServerToolOpenRouter)
+            else if (value.IsAdvisorServerOpenRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AdvisorServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AdvisorServerToolOpenRouter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AdvisorServerToolOpenRouter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAdvisorServerToolOpenRouter(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAdvisorServerOpenRouter(), typeInfo);
             }
-            else if (value.IsBashServerTool)
+            else if (value.IsBashServer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BashServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BashServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BashServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBashServerTool(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBashServer(), typeInfo);
             }
-            else if (value.IsDatetimeServerTool)
+            else if (value.IsDatetimeServer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.DatetimeServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.DatetimeServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetimeServerTool(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetimeServer(), typeInfo);
             }
-            else if (value.IsFilesServerTool)
+            else if (value.IsFilesServer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FilesServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FilesServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FilesServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFilesServerTool(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFilesServer(), typeInfo);
             }
-            else if (value.IsFusionServerToolOpenRouter)
+            else if (value.IsFusionServerOpenRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.FusionServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.FusionServerToolOpenRouter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.FusionServerToolOpenRouter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFusionServerToolOpenRouter(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFusionServerOpenRouter(), typeInfo);
             }
-            else if (value.IsImageGenerationServerToolOpenRouter)
+            else if (value.IsImageGenerationServerOpenRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ImageGenerationServerToolOpenRouter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImageGenerationServerToolOpenRouter(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImageGenerationServerOpenRouter(), typeInfo);
             }
-            else if (value.IsChatSearchModelsServerTool)
+            else if (value.IsSearchModelsServer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatSearchModelsServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatSearchModelsServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatSearchModelsServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatSearchModelsServerTool(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSearchModelsServer(), typeInfo);
             }
-            else if (value.IsSubagentServerToolOpenRouter)
+            else if (value.IsSubagentServerOpenRouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.SubagentServerToolOpenRouter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.SubagentServerToolOpenRouter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.SubagentServerToolOpenRouter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSubagentServerToolOpenRouter(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSubagentServerOpenRouter(), typeInfo);
             }
-            else if (value.IsWebFetchServerTool)
+            else if (value.IsWebFetchServer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.WebFetchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.WebFetchServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.WebFetchServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebFetchServerTool(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebFetchServer(), typeInfo);
             }
-            else if (value.IsOpenRouterWebSearchServerTool)
+            else if (value.IsOpenRouterWebSearchServer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.OpenRouterWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.OpenRouterWebSearchServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.OpenRouterWebSearchServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenRouterWebSearchServerTool(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenRouterWebSearchServer(), typeInfo);
             }
-            else if (value.IsChatWebSearchShorthand)
+            else if (value.IsWebSearchShorthand)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatWebSearchShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatWebSearchShorthand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatWebSearchShorthand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatWebSearchShorthand(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearchShorthand(), typeInfo);
+            }
+            else if (value.IsDynamicServer)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ChatDynamicServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ChatDynamicServerTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ChatDynamicServerTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDynamicServer(), typeInfo);
             }
         }
     }

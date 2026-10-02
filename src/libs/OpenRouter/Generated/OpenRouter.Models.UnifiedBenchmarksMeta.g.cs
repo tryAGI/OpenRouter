@@ -4,20 +4,24 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"as_of":"2026-06-03T12:00:00Z","citation":"Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).","model_count":50,"source":"artificial-analysis","source_url":"https://artificialanalysis.ai","task_type":null,"version":"v1"}
     /// </summary>
     public sealed partial class UnifiedBenchmarksMeta
     {
         /// <summary>
-        /// ISO-8601 timestamp of when this data was last updated.
+        /// ISO-8601 timestamp of when this data was last updated.<br/>
+        /// Example: 2026-06-03T12:00:00Z
         /// </summary>
+        /// <example>2026-06-03T12:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AsOf { get; set; }
 
         /// <summary>
-        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).
+        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).<br/>
+        /// Example: Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).
         /// </summary>
+        /// <example>Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation")]
         public string? Citation { get; set; }
 
@@ -29,16 +33,19 @@ namespace OpenRouter
         public required int ModelCount { get; set; }
 
         /// <summary>
-        /// The source filter applied, or null when all sources are returned.
+        /// The source filter applied, or null when all sources are returned.<br/>
+        /// Example: artificial-analysis
         /// </summary>
+        /// <example>artificial-analysis</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnifiedBenchmarksMetaSourceJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.UnifiedBenchmarksMetaSource Source { get; set; }
+        public global::OpenRouter.UnifiedBenchmarksMetaSource? Source { get; set; }
 
         /// <summary>
-        /// URL of the upstream data source, or null when results span multiple sources.
+        /// URL of the upstream data source, or null when results span multiple sources.<br/>
+        /// Example: https://artificialanalysis.ai
         /// </summary>
+        /// <example>https://artificialanalysis.ai</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_url")]
         public string? SourceUrl { get; set; }
 
@@ -65,19 +72,23 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UnifiedBenchmarksMeta" /> class.
         /// </summary>
         /// <param name="asOf">
-        /// ISO-8601 timestamp of when this data was last updated.
+        /// ISO-8601 timestamp of when this data was last updated.<br/>
+        /// Example: 2026-06-03T12:00:00Z
         /// </param>
         /// <param name="modelCount">
         /// Number of unique models in the response.
         /// </param>
-        /// <param name="source">
-        /// The source filter applied, or null when all sources are returned.
-        /// </param>
         /// <param name="citation">
-        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).
+        /// Required attribution when republishing this data, or null when results span multiple sources (attribute each item individually by its `source` discriminator).<br/>
+        /// Example: Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).
+        /// </param>
+        /// <param name="source">
+        /// The source filter applied, or null when all sources are returned.<br/>
+        /// Example: artificial-analysis
         /// </param>
         /// <param name="sourceUrl">
-        /// URL of the upstream data source, or null when results span multiple sources.
+        /// URL of the upstream data source, or null when results span multiple sources.<br/>
+        /// Example: https://artificialanalysis.ai
         /// </param>
         /// <param name="taskType">
         /// The task_type filter applied, or null if showing all.
@@ -91,8 +102,8 @@ namespace OpenRouter
         public UnifiedBenchmarksMeta(
             string asOf,
             int modelCount,
-            global::OpenRouter.UnifiedBenchmarksMetaSource source,
             string? citation,
+            global::OpenRouter.UnifiedBenchmarksMetaSource? source,
             string? sourceUrl,
             string? taskType,
             global::OpenRouter.UnifiedBenchmarksMetaVersion version)

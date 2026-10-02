@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"call_id":"call-abc123","output":"patch applied successfully","type":"custom_tool_call_output"}
     /// </summary>
     public sealed partial class OpenAIResponseCustomToolCallOutput
     {
@@ -25,16 +25,16 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputOutputJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item3>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OpenAiResponseCustomToolCallOutputOutput Output { get; set; }
+        public required global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item3>> Output { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseCustomToolCallOutputTypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponseCustomToolCallOutputType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponseCustomToolCallOutputTypeJsonConverter))]
+        public global::OpenRouter.OpenAIResponseCustomToolCallOutputType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,9 +54,9 @@ namespace OpenRouter
 #endif
         public OpenAIResponseCustomToolCallOutput(
             string callId,
-            global::OpenRouter.OpenAiResponseCustomToolCallOutputOutput output,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.OutputVariant2Item3>> output,
             string? id,
-            global::OpenRouter.OpenAiResponseCustomToolCallOutputType type)
+            global::OpenRouter.OpenAIResponseCustomToolCallOutputType type)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id;

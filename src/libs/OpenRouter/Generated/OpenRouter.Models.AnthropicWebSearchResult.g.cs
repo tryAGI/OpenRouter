@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"encrypted_content":"enc_content_0","page_age":null,"title":"Example Page","type":"web_search_result","url":"https://example.com"}
     /// </summary>
     public sealed partial class AnthropicWebSearchResult
     {

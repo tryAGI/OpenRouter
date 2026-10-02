@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"allowed_domains":["example.com"],"blocked_domains":["spam.com"],"excluded_domains":["spam.com"]}
     /// </summary>
     public sealed partial class WebSearchDomainFilter
     {
@@ -13,6 +13,12 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("blocked_domains")]
+        public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
 
         /// <summary>
         ///
@@ -30,15 +36,18 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="WebSearchDomainFilter" /> class.
         /// </summary>
         /// <param name="allowedDomains"></param>
+        /// <param name="blockedDomains"></param>
         /// <param name="excludedDomains"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchDomainFilter(
             global::System.Collections.Generic.IList<string>? allowedDomains,
+            global::System.Collections.Generic.IList<string>? blockedDomains,
             global::System.Collections.Generic.IList<string>? excludedDomains)
         {
             this.AllowedDomains = allowedDomains;
+            this.BlockedDomains = blockedDomains;
             this.ExcludedDomains = excludedDomains;
         }
 

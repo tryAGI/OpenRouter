@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Fallback model to try when the primary model fails or refuses. Only the `model` field is supported; per-attempt overrides are rejected.
+    /// Fallback model to try when the primary model fails or refuses. Only the `model` field is supported; per-attempt overrides are rejected.<br/>
+    /// Example: {"model":"claude-opus-4-8"}
     /// </summary>
     public sealed partial class MessagesFallbackParam
     {

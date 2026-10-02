@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// JSON Schema object
+    /// JSON Schema object<br/>
+    /// Example: {"properties":{"answer":{"type":"number"}},"required":["answer"],"type":"object"}
     /// </summary>
     public sealed partial class ChatJsonSchemaConfigSchema
     {

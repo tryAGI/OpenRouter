@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration for the openrouter:files server tool
+    /// Configuration for the openrouter:files server tool<br/>
+    /// Example: {}
     /// </summary>
     public sealed partial class FilesServerToolConfig
     {

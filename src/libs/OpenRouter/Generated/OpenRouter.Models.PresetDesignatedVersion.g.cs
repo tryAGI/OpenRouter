@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A specific version of a preset, containing config and optional system prompt.
+    /// A specific version of a preset, containing config and optional system prompt.<br/>
+    /// Example: {"config":{"model":"openai/gpt-4o","temperature":0.7},"created_at":"2026-04-20T10:00:00Z","creator_id":"user_2dHFtVWx2n56w6HkM0000000000","id":"550e8400-e29b-41d4-a716-446655440000","preset_id":"650e8400-e29b-41d4-a716-446655440001","system_prompt":"You are a helpful assistant.","updated_at":"2026-04-20T10:00:00Z","version":1}
     /// </summary>
     public sealed partial class PresetDesignatedVersion
     {

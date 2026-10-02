@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Token and cost usage for the image generation request, when available
+    /// Token and cost usage for the image generation request, when available<br/>
+    /// Example: {"completion_tokens":4175,"cost":0.04,"prompt_tokens":0,"total_tokens":4175}
     /// </summary>
     public sealed partial class ImageGenerationUsage
     {
         /// <summary>
-        ///
+        /// Example: {"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":100}
         /// </summary>
+        /// <example>{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":100}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
         public global::OpenRouter.AnthropicCacheCreation? CacheCreation { get; set; }
 
@@ -34,8 +36,10 @@ namespace OpenRouter
         public double? Cost { get; set; }
 
         /// <summary>
-        /// Breakdown of upstream inference costs
+        /// Breakdown of upstream inference costs<br/>
+        /// Example: {"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}
         /// </summary>
+        /// <example>{"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
         public global::OpenRouter.CostDetails? CostDetails { get; set; }
 
@@ -77,8 +81,9 @@ namespace OpenRouter
         public string? ServiceTier { get; set; }
 
         /// <summary>
-        ///
+        /// Example: standard
         /// </summary>
+        /// <example>standard</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicSpeedJsonConverter))]
         public global::OpenRouter.AnthropicSpeed? Speed { get; set; }
@@ -108,13 +113,16 @@ namespace OpenRouter
         /// <param name="totalTokens">
         /// Sum of the above two fields
         /// </param>
-        /// <param name="cacheCreation"></param>
+        /// <param name="cacheCreation">
+        /// Example: {"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":100}
+        /// </param>
         /// <param name="completionTokensDetails"></param>
         /// <param name="cost">
         /// Cost of the completion
         /// </param>
         /// <param name="costDetails">
-        /// Breakdown of upstream inference costs
+        /// Breakdown of upstream inference costs<br/>
+        /// Example: {"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}
         /// </param>
         /// <param name="isByok">
         /// Whether a request was made using a Bring Your Own Key configuration
@@ -129,7 +137,9 @@ namespace OpenRouter
         /// <param name="serviceTier">
         /// The service tier used by the upstream provider for this request
         /// </param>
-        /// <param name="speed"></param>
+        /// <param name="speed">
+        /// Example: standard
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

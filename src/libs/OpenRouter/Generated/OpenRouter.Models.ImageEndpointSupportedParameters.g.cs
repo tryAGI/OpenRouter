@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// The definitive set of parameters this endpoint accepts for this model.
     /// </summary>
     public sealed partial class ImageEndpointSupportedParameters
     {

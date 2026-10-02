@@ -3,88 +3,238 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
     ///
     /// </summary>
-    public enum ResponsesErrorFieldCode
+    public readonly partial struct ResponsesErrorFieldCode : global::System.IEquatable<ResponsesErrorFieldCode>
     {
         /// <summary>
         ///
         /// </summary>
-        BioPolicy,
+        public ResponsesErrorFieldCode(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        EmptyImageFile,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        FailedToDownloadImage,
+        public static ResponsesErrorFieldCode BioPolicy { get; } = new("bio_policy");
+
         /// <summary>
         ///
         /// </summary>
-        ImageContentPolicyViolation,
+        public static ResponsesErrorFieldCode CyberPolicy { get; } = new("cyber_policy");
+
         /// <summary>
         ///
         /// </summary>
-        ImageFileNotFound,
+        public static ResponsesErrorFieldCode DataResidencyMismatch { get; } = new("data_residency_mismatch");
+
         /// <summary>
         ///
         /// </summary>
-        ImageFileTooLarge,
+        public static ResponsesErrorFieldCode EmptyImageFile { get; } = new("empty_image_file");
+
         /// <summary>
         ///
         /// </summary>
-        ImageParseError,
+        public static ResponsesErrorFieldCode FailedToDownloadImage { get; } = new("failed_to_download_image");
+
         /// <summary>
         ///
         /// </summary>
-        ImageTooLarge,
+        public static ResponsesErrorFieldCode ImageContentPolicyViolation { get; } = new("image_content_policy_violation");
+
         /// <summary>
         ///
         /// </summary>
-        ImageTooSmall,
+        public static ResponsesErrorFieldCode ImageFileNotFound { get; } = new("image_file_not_found");
+
         /// <summary>
         ///
         /// </summary>
-        InvalidBase64Image,
+        public static ResponsesErrorFieldCode ImageFileTooLarge { get; } = new("image_file_too_large");
+
         /// <summary>
         ///
         /// </summary>
-        InvalidImage,
+        public static ResponsesErrorFieldCode ImageParseError { get; } = new("image_parse_error");
+
         /// <summary>
         ///
         /// </summary>
-        InvalidImageFormat,
+        public static ResponsesErrorFieldCode ImageTooLarge { get; } = new("image_too_large");
+
         /// <summary>
         ///
         /// </summary>
-        InvalidImageMode,
+        public static ResponsesErrorFieldCode ImageTooSmall { get; } = new("image_too_small");
+
         /// <summary>
         ///
         /// </summary>
-        InvalidImageUrl,
+        public static ResponsesErrorFieldCode InvalidBase64Image { get; } = new("invalid_base64_image");
+
         /// <summary>
         ///
         /// </summary>
-        InvalidPrompt,
+        public static ResponsesErrorFieldCode InvalidImage { get; } = new("invalid_image");
+
         /// <summary>
         ///
         /// </summary>
-        RateLimitExceeded,
+        public static ResponsesErrorFieldCode InvalidImageFormat { get; } = new("invalid_image_format");
+
         /// <summary>
         ///
         /// </summary>
-        ServerError,
+        public static ResponsesErrorFieldCode InvalidImageMode { get; } = new("invalid_image_mode");
+
         /// <summary>
         ///
         /// </summary>
-        UnsupportedImageMediaType,
+        public static ResponsesErrorFieldCode InvalidImageUrl { get; } = new("invalid_image_url");
+
         /// <summary>
         ///
         /// </summary>
-        VectorStoreTimeout,
+        public static ResponsesErrorFieldCode InvalidPrompt { get; } = new("invalid_prompt");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponsesErrorFieldCode MisalignmentPolicyViolation { get; } = new("misalignment_policy_violation");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponsesErrorFieldCode RateLimitExceeded { get; } = new("rate_limit_exceeded");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponsesErrorFieldCode ServerError { get; } = new("server_error");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponsesErrorFieldCode UnsupportedImageMediaType { get; } = new("unsupported_image_media_type");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponsesErrorFieldCode VectorStoreTimeout { get; } = new("vector_store_timeout");
+        /// <summary>
+        ///
+        /// </summary>
+        public static ResponsesErrorFieldCode FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "bio_policy" => BioPolicy,
+                "cyber_policy" => CyberPolicy,
+                "data_residency_mismatch" => DataResidencyMismatch,
+                "empty_image_file" => EmptyImageFile,
+                "failed_to_download_image" => FailedToDownloadImage,
+                "image_content_policy_violation" => ImageContentPolicyViolation,
+                "image_file_not_found" => ImageFileNotFound,
+                "image_file_too_large" => ImageFileTooLarge,
+                "image_parse_error" => ImageParseError,
+                "image_too_large" => ImageTooLarge,
+                "image_too_small" => ImageTooSmall,
+                "invalid_base64_image" => InvalidBase64Image,
+                "invalid_image" => InvalidImage,
+                "invalid_image_format" => InvalidImageFormat,
+                "invalid_image_mode" => InvalidImageMode,
+                "invalid_image_url" => InvalidImageUrl,
+                "invalid_prompt" => InvalidPrompt,
+                "misalignment_policy_violation" => MisalignmentPolicyViolation,
+                "rate_limit_exceeded" => RateLimitExceeded,
+                "server_error" => ServerError,
+                "unsupported_image_media_type" => UnsupportedImageMediaType,
+                "vector_store_timeout" => VectorStoreTimeout,
+                _ => new ResponsesErrorFieldCode(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "bio_policy" => true,
+            "cyber_policy" => true,
+            "data_residency_mismatch" => true,
+            "empty_image_file" => true,
+            "failed_to_download_image" => true,
+            "image_content_policy_violation" => true,
+            "image_file_not_found" => true,
+            "image_file_too_large" => true,
+            "image_parse_error" => true,
+            "image_too_large" => true,
+            "image_too_small" => true,
+            "invalid_base64_image" => true,
+            "invalid_image" => true,
+            "invalid_image_format" => true,
+            "invalid_image_mode" => true,
+            "invalid_image_url" => true,
+            "invalid_prompt" => true,
+            "misalignment_policy_violation" => true,
+            "rate_limit_exceeded" => true,
+            "server_error" => true,
+            "unsupported_image_media_type" => true,
+            "vector_store_timeout" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(ResponsesErrorFieldCode other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ResponsesErrorFieldCode other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(ResponsesErrorFieldCode left, ResponsesErrorFieldCode right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(ResponsesErrorFieldCode left, ResponsesErrorFieldCode right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -96,58 +246,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this ResponsesErrorFieldCode value)
         {
-            return value switch
-            {
-                ResponsesErrorFieldCode.BioPolicy => "bio_policy",
-                ResponsesErrorFieldCode.EmptyImageFile => "empty_image_file",
-                ResponsesErrorFieldCode.FailedToDownloadImage => "failed_to_download_image",
-                ResponsesErrorFieldCode.ImageContentPolicyViolation => "image_content_policy_violation",
-                ResponsesErrorFieldCode.ImageFileNotFound => "image_file_not_found",
-                ResponsesErrorFieldCode.ImageFileTooLarge => "image_file_too_large",
-                ResponsesErrorFieldCode.ImageParseError => "image_parse_error",
-                ResponsesErrorFieldCode.ImageTooLarge => "image_too_large",
-                ResponsesErrorFieldCode.ImageTooSmall => "image_too_small",
-                ResponsesErrorFieldCode.InvalidBase64Image => "invalid_base64_image",
-                ResponsesErrorFieldCode.InvalidImage => "invalid_image",
-                ResponsesErrorFieldCode.InvalidImageFormat => "invalid_image_format",
-                ResponsesErrorFieldCode.InvalidImageMode => "invalid_image_mode",
-                ResponsesErrorFieldCode.InvalidImageUrl => "invalid_image_url",
-                ResponsesErrorFieldCode.InvalidPrompt => "invalid_prompt",
-                ResponsesErrorFieldCode.RateLimitExceeded => "rate_limit_exceeded",
-                ResponsesErrorFieldCode.ServerError => "server_error",
-                ResponsesErrorFieldCode.UnsupportedImageMediaType => "unsupported_image_media_type",
-                ResponsesErrorFieldCode.VectorStoreTimeout => "vector_store_timeout",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static ResponsesErrorFieldCode? ToEnum(string value)
         {
-            return value switch
-            {
-                "bio_policy" => ResponsesErrorFieldCode.BioPolicy,
-                "empty_image_file" => ResponsesErrorFieldCode.EmptyImageFile,
-                "failed_to_download_image" => ResponsesErrorFieldCode.FailedToDownloadImage,
-                "image_content_policy_violation" => ResponsesErrorFieldCode.ImageContentPolicyViolation,
-                "image_file_not_found" => ResponsesErrorFieldCode.ImageFileNotFound,
-                "image_file_too_large" => ResponsesErrorFieldCode.ImageFileTooLarge,
-                "image_parse_error" => ResponsesErrorFieldCode.ImageParseError,
-                "image_too_large" => ResponsesErrorFieldCode.ImageTooLarge,
-                "image_too_small" => ResponsesErrorFieldCode.ImageTooSmall,
-                "invalid_base64_image" => ResponsesErrorFieldCode.InvalidBase64Image,
-                "invalid_image" => ResponsesErrorFieldCode.InvalidImage,
-                "invalid_image_format" => ResponsesErrorFieldCode.InvalidImageFormat,
-                "invalid_image_mode" => ResponsesErrorFieldCode.InvalidImageMode,
-                "invalid_image_url" => ResponsesErrorFieldCode.InvalidImageUrl,
-                "invalid_prompt" => ResponsesErrorFieldCode.InvalidPrompt,
-                "rate_limit_exceeded" => ResponsesErrorFieldCode.RateLimitExceeded,
-                "server_error" => ResponsesErrorFieldCode.ServerError,
-                "unsupported_image_media_type" => ResponsesErrorFieldCode.UnsupportedImageMediaType,
-                "vector_store_timeout" => ResponsesErrorFieldCode.VectorStoreTimeout,
-                _ => null,
-            };
+            return ResponsesErrorFieldCode.FromValue(value);
         }
     }
 }

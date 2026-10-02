@@ -1,0 +1,45 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum MessagesToolAdditionBlockToolVariant2Type
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        McpToolReference,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class MessagesToolAdditionBlockToolVariant2TypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this MessagesToolAdditionBlockToolVariant2Type value)
+        {
+            return value switch
+            {
+                MessagesToolAdditionBlockToolVariant2Type.McpToolReference => "mcp_tool_reference",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static MessagesToolAdditionBlockToolVariant2Type? ToEnum(string value)
+        {
+            return value switch
+            {
+                "mcp_tool_reference" => MessagesToolAdditionBlockToolVariant2Type.McpToolReference,
+                _ => null,
+            };
+        }
+    }
+}

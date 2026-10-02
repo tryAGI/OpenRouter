@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for ServiceUnavailableResponse
+    /// Error data for ServiceUnavailableResponse<br/>
+    /// Example: {"code":503,"message":"Service temporarily unavailable"}
     /// </summary>
     public sealed partial class ServiceUnavailableResponseErrorData
     {

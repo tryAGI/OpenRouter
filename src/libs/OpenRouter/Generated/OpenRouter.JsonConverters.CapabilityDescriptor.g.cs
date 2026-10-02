@@ -21,35 +21,35 @@ namespace OpenRouter.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.CapabilityDescriptorDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenRouter.CapabilityDescriptorVariant1? boolean = default;
-            if (discriminator?.Type == global::OpenRouter.CapabilityDescriptorDiscriminatorType.Boolean)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.CapabilityDescriptorVariant1)}");
-                boolean = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::OpenRouter.CapabilityDescriptorVariant2? @enum = default;
+            global::OpenRouter.EnumCapability? @enum = default;
             if (discriminator?.Type == global::OpenRouter.CapabilityDescriptorDiscriminatorType.Enum)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.CapabilityDescriptorVariant2)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.EnumCapability), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.EnumCapability> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.EnumCapability)}");
                 @enum = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.CapabilityDescriptorVariant3? range = default;
+            global::OpenRouter.RangeCapability? range = default;
             if (discriminator?.Type == global::OpenRouter.CapabilityDescriptorDiscriminatorType.Range)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant3> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.CapabilityDescriptorVariant3)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.RangeCapability), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.RangeCapability> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.RangeCapability)}");
                 range = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::OpenRouter.BooleanCapability? boolean = default;
+            if (discriminator?.Type == global::OpenRouter.CapabilityDescriptorDiscriminatorType.Boolean)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BooleanCapability), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BooleanCapability> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.BooleanCapability)}");
+                boolean = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::OpenRouter.CapabilityDescriptor(
                 discriminator?.Type,
-                boolean,
-
                 @enum,
 
-                range
+                range,
+
+                boolean
                 );
 
             return __value;
@@ -64,23 +64,23 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsBoolean)
+            if (value.IsEnum)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CapabilityDescriptorVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBoolean(), typeInfo);
-            }
-            else if (value.IsEnum)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CapabilityDescriptorVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.EnumCapability), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.EnumCapability?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.EnumCapability).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
             else if (value.IsRange)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.CapabilityDescriptorVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.CapabilityDescriptorVariant3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.CapabilityDescriptorVariant3).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.RangeCapability), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.RangeCapability?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.RangeCapability).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRange(), typeInfo);
+            }
+            else if (value.IsBoolean)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.BooleanCapability), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.BooleanCapability?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.BooleanCapability).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBoolean(), typeInfo);
             }
         }
     }

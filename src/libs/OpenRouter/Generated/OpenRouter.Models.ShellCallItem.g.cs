@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A shell command execution call (newer variant)
+    /// A shell command execution call (newer variant)<br/>
+    /// Example: {"action":{"commands":["ls","-la"],"max_output_length":10000},"call_id":"call-abc123","status":"completed","type":"shell_call"}
     /// </summary>
     public sealed partial class ShellCallItem
     {
@@ -16,6 +17,12 @@ namespace OpenRouter
         public required global::OpenRouter.ShellCallItemAction Action { get; set; }
 
         /// <summary>
+        /// The raw tool-call arguments string as emitted by the model. Echo back unchanged when replaying history; used verbatim to preserve provider prompt-cache prefixes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        public string? Arguments { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
@@ -23,7 +30,7 @@ namespace OpenRouter
         public required string CallId { get; set; }
 
         /// <summary>
-        /// Any type
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         public object? Environment { get; set; }
@@ -58,9 +65,10 @@ namespace OpenRouter
         /// </summary>
         /// <param name="action"></param>
         /// <param name="callId"></param>
-        /// <param name="environment">
-        /// Any type
+        /// <param name="arguments">
+        /// The raw tool-call arguments string as emitted by the model. Echo back unchanged when replaying history; used verbatim to preserve provider prompt-cache prefixes.
         /// </param>
+        /// <param name="environment"></param>
         /// <param name="id"></param>
         /// <param name="status"></param>
         /// <param name="type"></param>
@@ -70,12 +78,14 @@ namespace OpenRouter
         public ShellCallItem(
             global::OpenRouter.ShellCallItemAction action,
             string callId,
+            string? arguments,
             object? environment,
             string? id,
             global::OpenRouter.ToolCallStatus? status,
             global::OpenRouter.ShellCallItemType type)
         {
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
+            this.Arguments = arguments;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Environment = environment;
             this.Id = id;

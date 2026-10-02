@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"type":"thinking_turns","value":3}
     /// </summary>
     public sealed partial class AnthropicThinkingTurns
     {

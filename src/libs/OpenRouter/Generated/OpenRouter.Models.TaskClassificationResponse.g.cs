@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"data":{"as_of":"2026-06-17","classifications":[{"category_token_share":0.48,"category_usage_share":0.51,"display_name":"Code Generation","macro_category":"code","models":[{"id":"openai/gpt-4.1-mini","tag_token_share":0.75,"tag_usage_share":0.55}],"tag":"code:general_impl","token_share":0.31,"usage_share":0.23}],"macro_categories":[{"key":"code","label":"Code","token_share":0.52,"usage_share":0.45}],"window_days":7}}
     /// </summary>
     public sealed partial class TaskClassificationResponse
     {

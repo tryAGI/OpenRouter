@@ -3,44 +3,148 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    /// The builtin filter identifier
+    /// The builtin filter identifier<br/>
+    /// Example: regex-prompt-injection
     /// </summary>
-    public enum ContentFilterBuiltinSlug
+    public readonly partial struct ContentFilterBuiltinSlug : global::System.IEquatable<ContentFilterBuiltinSlug>
     {
         /// <summary>
         ///
         /// </summary>
-        Address,
+        public ContentFilterBuiltinSlug(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        CreditCard,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        Email,
+        public static ContentFilterBuiltinSlug Address { get; } = new("address");
+
         /// <summary>
         ///
         /// </summary>
-        IpAddress,
+        public static ContentFilterBuiltinSlug CreditCard { get; } = new("credit-card");
+
         /// <summary>
         ///
         /// </summary>
-        PersonName,
+        public static ContentFilterBuiltinSlug Email { get; } = new("email");
+
         /// <summary>
         ///
         /// </summary>
-        Phone,
+        public static ContentFilterBuiltinSlug IpAddress { get; } = new("ip-address");
+
         /// <summary>
         ///
         /// </summary>
-        RegexPromptInjection,
+        public static ContentFilterBuiltinSlug PersonName { get; } = new("person-name");
+
         /// <summary>
         ///
         /// </summary>
-        Ssn,
+        public static ContentFilterBuiltinSlug Phone { get; } = new("phone");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentFilterBuiltinSlug RegexPromptInjection { get; } = new("regex-prompt-injection");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentFilterBuiltinSlug Secrets { get; } = new("secrets");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentFilterBuiltinSlug Ssn { get; } = new("ssn");
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentFilterBuiltinSlug FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "address" => Address,
+                "credit-card" => CreditCard,
+                "email" => Email,
+                "ip-address" => IpAddress,
+                "person-name" => PersonName,
+                "phone" => Phone,
+                "regex-prompt-injection" => RegexPromptInjection,
+                "secrets" => Secrets,
+                "ssn" => Ssn,
+                _ => new ContentFilterBuiltinSlug(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "address" => true,
+            "credit-card" => true,
+            "email" => true,
+            "ip-address" => true,
+            "person-name" => true,
+            "phone" => true,
+            "regex-prompt-injection" => true,
+            "secrets" => true,
+            "ssn" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(ContentFilterBuiltinSlug other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ContentFilterBuiltinSlug other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(ContentFilterBuiltinSlug left, ContentFilterBuiltinSlug right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(ContentFilterBuiltinSlug left, ContentFilterBuiltinSlug right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -52,36 +156,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this ContentFilterBuiltinSlug value)
         {
-            return value switch
-            {
-                ContentFilterBuiltinSlug.Address => "address",
-                ContentFilterBuiltinSlug.CreditCard => "credit-card",
-                ContentFilterBuiltinSlug.Email => "email",
-                ContentFilterBuiltinSlug.IpAddress => "ip-address",
-                ContentFilterBuiltinSlug.PersonName => "person-name",
-                ContentFilterBuiltinSlug.Phone => "phone",
-                ContentFilterBuiltinSlug.RegexPromptInjection => "regex-prompt-injection",
-                ContentFilterBuiltinSlug.Ssn => "ssn",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static ContentFilterBuiltinSlug? ToEnum(string value)
         {
-            return value switch
-            {
-                "address" => ContentFilterBuiltinSlug.Address,
-                "credit-card" => ContentFilterBuiltinSlug.CreditCard,
-                "email" => ContentFilterBuiltinSlug.Email,
-                "ip-address" => ContentFilterBuiltinSlug.IpAddress,
-                "person-name" => ContentFilterBuiltinSlug.PersonName,
-                "phone" => ContentFilterBuiltinSlug.Phone,
-                "regex-prompt-injection" => ContentFilterBuiltinSlug.RegexPromptInjection,
-                "ssn" => ContentFilterBuiltinSlug.Ssn,
-                _ => null,
-            };
+            return ContentFilterBuiltinSlug.FromValue(value);
         }
     }
 }

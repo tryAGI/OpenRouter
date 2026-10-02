@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"city":"San Francisco","country":"US","region":"California","timezone":"America/Los_Angeles","type":"approximate"}
     /// </summary>
     public sealed partial class AnthropicWebSearchToolUserLocation
     {

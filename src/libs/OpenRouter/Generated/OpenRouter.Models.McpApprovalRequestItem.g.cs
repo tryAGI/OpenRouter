@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Request for approval to execute an MCP tool
+    /// Request for approval to execute an MCP tool<br/>
+    /// Example: {"arguments":"{\u0022id\u0022:\u0022123\u0022}","id":"approval-abc123","name":"delete_record","server_label":"database-server","type":"mcp_approval_request"}
     /// </summary>
     public sealed partial class McpApprovalRequestItem
     {

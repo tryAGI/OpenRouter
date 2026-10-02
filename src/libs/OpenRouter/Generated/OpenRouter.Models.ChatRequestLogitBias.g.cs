@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Token logit bias adjustments
+    /// Token logit bias adjustments<br/>
+    /// Example: {"50256":-100}
     /// </summary>
     public sealed partial class ChatRequestLogitBias
     {

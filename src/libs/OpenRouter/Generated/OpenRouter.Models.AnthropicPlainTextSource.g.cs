@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"data":"Hello, world!","media_type":"text/plain","type":"text"}
     /// </summary>
     public sealed partial class AnthropicPlainTextSource
     {

@@ -5,12 +5,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"file_id":"file-abc123","filename":"research_paper.pdf","index":0,"type":"file_citation"}
     /// </summary>
     public readonly partial struct OpenAIResponsesAnnotation : global::System.IEquatable<OpenAIResponsesAnnotation>
     {
         /// <summary>
-        ///
+        /// Example: {"file_id":"file-abc123","filename":"research_paper.pdf","index":0,"type":"file_citation"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FileCitation? FileCitation { get; init; }
@@ -47,7 +47,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Example: {"content":"OpenRouter provides a unified API for accessing LLMs from multiple providers.","end_index":42,"start_index":0,"title":"OpenRouter Documentation","type":"url_citation","url":"https://openrouter.ai/docs"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.URLCitation? URLCitation { get; init; }
@@ -84,7 +84,7 @@ namespace OpenRouter
             : throw new global::System.InvalidOperationException($"Expected union variant 'URLCitation' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Example: {"file_id":"file-xyz789","index":0,"type":"file_path"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenRouter.FilePath? FilePath { get; init; }
@@ -225,7 +225,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsFileCitation && !IsURLCitation && !IsFilePath || !IsFileCitation && IsURLCitation && !IsFilePath || !IsFileCitation && !IsURLCitation && IsFilePath;
+            return IsFileCitation || IsURLCitation || IsFilePath;
         }
 
         /// <summary>

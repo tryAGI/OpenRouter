@@ -6,7 +6,7 @@ namespace OpenRouter
     /// <summary>
     ///
     /// </summary>
-    public enum OpenAiResponsesRefusalContentType
+    public enum OpenAIResponsesRefusalContentType
     {
         /// <summary>
         ///
@@ -17,27 +17,27 @@ namespace OpenRouter
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class OpenAiResponsesRefusalContentTypeExtensions
+    public static class OpenAIResponsesRefusalContentTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this OpenAiResponsesRefusalContentType value)
+        public static string ToValueString(this OpenAIResponsesRefusalContentType value)
         {
             return value switch
             {
-                OpenAiResponsesRefusalContentType.Refusal => "refusal",
+                OpenAIResponsesRefusalContentType.Refusal => "refusal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OpenAiResponsesRefusalContentType? ToEnum(string value)
+        public static OpenAIResponsesRefusalContentType? ToEnum(string value)
         {
             return value switch
             {
-                "refusal" => OpenAiResponsesRefusalContentType.Refusal,
+                "refusal" => OpenAIResponsesRefusalContentType.Refusal,
                 _ => null,
             };
         }

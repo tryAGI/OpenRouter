@@ -4,20 +4,25 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter pricing per token for this model. Null if pricing is unavailable.
+    /// OpenRouter pricing per token for this model. Null if pricing is unavailable.<br/>
+    /// Example: {"completion":"0.000015","prompt":"0.000003"}
     /// </summary>
     public sealed partial class UnifiedBenchmarkPricing
     {
         /// <summary>
-        /// Cost per output token (USD, decimal string).
+        /// Cost per output token (USD, decimal string).<br/>
+        /// Example: 0.000015
         /// </summary>
+        /// <example>0.000015</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Completion { get; set; }
 
         /// <summary>
-        /// Cost per input token (USD, decimal string).
+        /// Cost per input token (USD, decimal string).<br/>
+        /// Example: 0.000003
         /// </summary>
+        /// <example>0.000003</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
@@ -32,10 +37,12 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="UnifiedBenchmarkPricing" /> class.
         /// </summary>
         /// <param name="completion">
-        /// Cost per output token (USD, decimal string).
+        /// Cost per output token (USD, decimal string).<br/>
+        /// Example: 0.000015
         /// </param>
         /// <param name="prompt">
-        /// Cost per input token (USD, decimal string).
+        /// Cost per input token (USD, decimal string).<br/>
+        /// Example: 0.000003
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

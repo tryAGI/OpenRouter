@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Options for PDF parsing.
+    /// Options for PDF parsing.<br/>
+    /// Example: {"engine":"cloudflare-ai"}
     /// </summary>
     public sealed partial class PDFParserOptions
     {
         /// <summary>
-        /// The engine to use for parsing PDF files. "pdf-text" is deprecated and automatically redirected to "cloudflare-ai".
+        /// The engine to use for parsing PDF files. "pdf-text" is deprecated and automatically redirected to "cloudflare-ai".<br/>
+        /// Example: cloudflare-ai
         /// </summary>
+        /// <example>cloudflare-ai</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PDFParserEngineJsonConverter))]
         public global::OpenRouter.PDFParserEngine? Engine { get; set; }
@@ -25,7 +28,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="PDFParserOptions" /> class.
         /// </summary>
         /// <param name="engine">
-        /// The engine to use for parsing PDF files. "pdf-text" is deprecated and automatically redirected to "cloudflare-ai".
+        /// The engine to use for parsing PDF files. "pdf-text" is deprecated and automatically redirected to "cloudflare-ai".<br/>
+        /// Example: cloudflare-ai
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

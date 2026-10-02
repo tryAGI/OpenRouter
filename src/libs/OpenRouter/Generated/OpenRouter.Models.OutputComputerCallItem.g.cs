@@ -4,12 +4,12 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"action":{"type":"screenshot"},"call_id":"call-abc123","id":"cu-abc123","pending_safety_checks":[],"status":"completed","type":"computer_call"}
     /// </summary>
     public sealed partial class OutputComputerCallItem
     {
         /// <summary>
-        /// Any type
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         public object? Action { get; set; }
@@ -32,15 +32,22 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending_safety_checks")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems> PendingSafetyChecks { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.OutputComputerCallItemPendingSafetyCheck> PendingSafetyChecks { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputItemsDiscriminatorMappingComputerCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputComputerCallItemStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallStatus Status { get; set; }
+        public required global::OpenRouter.OutputComputerCallItemStatus Status { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputComputerCallItemTypeJsonConverter))]
+        public global::OpenRouter.OutputComputerCallItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,25 +61,26 @@ namespace OpenRouter
         /// <param name="callId"></param>
         /// <param name="pendingSafetyChecks"></param>
         /// <param name="status"></param>
-        /// <param name="action">
-        /// Any type
-        /// </param>
+        /// <param name="action"></param>
         /// <param name="id"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputComputerCallItem(
             string callId,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallPendingSafetyChecksItems> pendingSafetyChecks,
-            global::OpenRouter.OutputItemsDiscriminatorMappingComputerCallStatus status,
+            global::System.Collections.Generic.IList<global::OpenRouter.OutputComputerCallItemPendingSafetyCheck> pendingSafetyChecks,
+            global::OpenRouter.OutputComputerCallItemStatus status,
             object? action,
-            string? id)
+            string? id,
+            global::OpenRouter.OutputComputerCallItemType type)
         {
             this.Action = action;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id;
             this.PendingSafetyChecks = pendingSafetyChecks ?? throw new global::System.ArgumentNullException(nameof(pendingSafetyChecks));
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

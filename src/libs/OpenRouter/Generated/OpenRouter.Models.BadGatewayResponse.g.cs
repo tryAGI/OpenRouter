@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Bad Gateway - Provider/upstream API failure
+    /// Bad Gateway - Provider/upstream API failure<br/>
+    /// Example: {"error":{"code":502,"message":"Provider returned error"}}
     /// </summary>
     public sealed partial class BadGatewayResponse
     {
         /// <summary>
-        /// Error data for BadGatewayResponse
+        /// Error data for BadGatewayResponse<br/>
+        /// Example: {"code":502,"message":"Provider returned error"}
         /// </summary>
+        /// <example>{"code":502,"message":"Provider returned error"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.BadGatewayResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BadGatewayResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for BadGatewayResponse
+        /// Error data for BadGatewayResponse<br/>
+        /// Example: {"code":502,"message":"Provider returned error"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

@@ -21,26 +21,26 @@ namespace OpenRouter.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicToolSearchContentDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenRouter.AnthropicToolSearchContentVariant1? toolSearchToolResultError = default;
+            global::OpenRouter.AnthropicToolSearchResultError? toolSearchToolResultError1 = default;
             if (discriminator?.Type == global::OpenRouter.AnthropicToolSearchContentDiscriminatorType.ToolSearchToolResultError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchContentVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchContentVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicToolSearchContentVariant1)}");
-                toolSearchToolResultError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchResultError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchResultError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicToolSearchResultError)}");
+                toolSearchToolResultError1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.AnthropicToolSearchContentVariant2? toolSearchToolSearchResult = default;
-            if (discriminator?.Type == global::OpenRouter.AnthropicToolSearchContentDiscriminatorType.ToolSearchToolSearchResult)
+            global::OpenRouter.AnthropicToolSearchResult? toolSearchToolResultError2 = default;
+            if (discriminator?.Type == global::OpenRouter.AnthropicToolSearchContentDiscriminatorType.ToolSearchToolResultError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchContentVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchContentVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicToolSearchContentVariant2)}");
-                toolSearchToolSearchResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.AnthropicToolSearchResult)}");
+                toolSearchToolResultError2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::OpenRouter.AnthropicToolSearchContent(
                 discriminator?.Type,
-                toolSearchToolResultError,
+                toolSearchToolResultError1,
 
-                toolSearchToolSearchResult
+                toolSearchToolResultError2
                 );
 
             return __value;
@@ -55,17 +55,17 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsToolSearchToolResultError)
+            if (value.IsToolSearchToolResultError1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchContentVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchContentVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicToolSearchContentVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolSearchToolResultError(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchResultError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchResultError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicToolSearchResultError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolSearchToolResultError1(), typeInfo);
             }
-            else if (value.IsToolSearchToolSearchResult)
+            else if (value.IsToolSearchToolResultError2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchContentVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchContentVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicToolSearchContentVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolSearchToolSearchResult(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.AnthropicToolSearchResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.AnthropicToolSearchResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.AnthropicToolSearchResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolSearchToolResultError2(), typeInfo);
             }
         }
     }

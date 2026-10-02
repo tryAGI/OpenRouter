@@ -4,6 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
+    /// Public OpenRouter usage datasets. Data returned by these endpoints is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/): reuse and republish it, including commercially, with attribution to OpenRouter.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -37,6 +38,10 @@ namespace OpenRouter
         /// </summary>
         public global::OpenRouter.AutoSDKClientOptions Options { get; }
 
+        /// <summary>
+        /// Creates idempotency keys for generated idempotent requests when the caller does not provide one.
+        /// </summary>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; }
 
         /// <summary>
         ///

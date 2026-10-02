@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A function tool grouped inside a namespace tool
+    /// A function tool grouped inside a namespace tool<br/>
+    /// Example: {"name":"spawn_agent","type":"function"}
     /// </summary>
     public sealed partial class NamespaceFunctionTool
     {
@@ -12,7 +13,15 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.NamespaceFunctionToolAllowedCallersItems>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.NamespaceFunctionToolAllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
+        /// Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
 
         /// <summary>
         ///
@@ -69,6 +78,10 @@ namespace OpenRouter
         /// </summary>
         /// <param name="name"></param>
         /// <param name="allowedCallers"></param>
+        /// <param name="async">
+        /// Lets the model keep working after calling this tool instead of waiting for its output. The tool is still executed by the client; return the result in a later request as a `function_call_output` with the original `call_id`. Only honored by providers whose Responses API supports async tools; ignored elsewhere.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="deferLoading"></param>
         /// <param name="description"></param>
         /// <param name="outputSchema"></param>
@@ -80,7 +93,8 @@ namespace OpenRouter
 #endif
         public NamespaceFunctionTool(
             string name,
-            global::System.Collections.Generic.IList<global::OpenRouter.NamespaceFunctionToolAllowedCallersItems>? allowedCallers,
+            global::System.Collections.Generic.IList<global::OpenRouter.NamespaceFunctionToolAllowedCaller>? allowedCallers,
+            bool? async,
             bool? deferLoading,
             string? description,
             object? outputSchema,
@@ -89,6 +103,7 @@ namespace OpenRouter
             global::OpenRouter.NamespaceFunctionToolType type)
         {
             this.AllowedCallers = allowedCallers;
+            this.Async = async;
             this.DeferLoading = deferLoading;
             this.Description = description;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

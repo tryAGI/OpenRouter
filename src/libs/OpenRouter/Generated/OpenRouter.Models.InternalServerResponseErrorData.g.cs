@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for InternalServerResponse
+    /// Error data for InternalServerResponse<br/>
+    /// Example: {"code":500,"message":"Internal Server Error"}
     /// </summary>
     public sealed partial class InternalServerResponseErrorData
     {

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Usage for server-side tool execution (e.g., web search)
+    /// Usage for server-side tool execution (e.g., web search)<br/>
+    /// Example: {"tool_calls_executed":2,"tool_calls_requested":2,"web_search_requests":2}
     /// </summary>
     public sealed partial class ServerToolUseDetails
     {

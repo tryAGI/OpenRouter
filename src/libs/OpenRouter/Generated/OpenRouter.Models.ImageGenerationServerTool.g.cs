@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Image generation tool configuration
+    /// Image generation tool configuration<br/>
+    /// Example: {"quality":"high","type":"image_generation"}
     /// </summary>
     public sealed partial class ImageGenerationServerTool
     {

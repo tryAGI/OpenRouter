@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"unassigned_count":3}
     /// </summary>
     public sealed partial class BulkUnassignKeysResponse
     {
         /// <summary>
-        /// Number of keys successfully unassigned
+        /// Number of keys successfully unassigned<br/>
+        /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("unassigned_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int UnassignedCount { get; set; }
@@ -25,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkUnassignKeysResponse" /> class.
         /// </summary>
         /// <param name="unassignedCount">
-        /// Number of keys successfully unassigned
+        /// Number of keys successfully unassigned<br/>
+        /// Example: 3
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

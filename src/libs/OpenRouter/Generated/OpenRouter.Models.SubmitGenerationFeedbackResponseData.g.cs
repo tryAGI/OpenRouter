@@ -9,11 +9,13 @@ namespace OpenRouter
     public sealed partial class SubmitGenerationFeedbackResponseData
     {
         /// <summary>
-        /// Whether the feedback was recorded
+        /// Whether the feedback was recorded<br/>
+        /// Example: true
         /// </summary>
+        /// <default>true</default>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Success { get; set; }
+        public bool Success { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,13 +27,14 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="SubmitGenerationFeedbackResponseData" /> class.
         /// </summary>
         /// <param name="success">
-        /// Whether the feedback was recorded
+        /// Whether the feedback was recorded<br/>
+        /// Example: true
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SubmitGenerationFeedbackResponseData(
-            bool success)
+            bool success = true)
         {
             this.Success = success;
         }

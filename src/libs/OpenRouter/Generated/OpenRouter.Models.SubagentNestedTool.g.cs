@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A tool made available to the subagent. Only OpenRouter server tools (e.g. openrouter:web_search) are supported; function tools are rejected because the worker has no way to execute them. The subagent tool may not list itself.
+    /// A tool made available to the subagent. Only OpenRouter server tools (e.g. openrouter:web_search) are supported; function tools are rejected because the worker has no way to execute them. The subagent tool may not list itself.<br/>
+    /// Example: {"type":"openrouter:web_search"}
     /// </summary>
     public sealed partial class SubagentNestedTool
     {

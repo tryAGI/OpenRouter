@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// One billable pricing line for an image provider.
+    /// One billable pricing line for an image provider.<br/>
+    /// Example: {"billable":"output_image","cost_usd":0.05,"unit":"image"}
     /// </summary>
     public sealed partial class ImagePricingEntry
     {

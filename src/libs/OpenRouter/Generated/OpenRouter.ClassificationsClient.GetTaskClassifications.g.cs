@@ -27,11 +27,11 @@ namespace OpenRouter
             };
         partial void PrepareGetTaskClassificationsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::OpenRouter.ClassificationsTaskGetParametersWindow? window);
+            ref global::OpenRouter.GetTaskClassificationsWindow? window);
         partial void PrepareGetTaskClassificationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenRouter.ClassificationsTaskGetParametersWindow? window);
+            global::OpenRouter.GetTaskClassificationsWindow? window);
         partial void ProcessGetTaskClassificationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -60,13 +60,14 @@ namespace OpenRouter
         /// </summary>
         /// <param name="window">
         /// Trailing time window for the classification data. Currently only `7d` (trailing 7 days) is supported.<br/>
-        /// Default Value: 7d
+        /// Default Value: 7d<br/>
+        /// Example: 7d
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.TaskClassificationResponse> GetTaskClassificationsAsync(
-            global::OpenRouter.ClassificationsTaskGetParametersWindow? window = default,
+            global::OpenRouter.GetTaskClassificationsWindow? window = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,13 +98,14 @@ namespace OpenRouter
         /// </summary>
         /// <param name="window">
         /// Trailing time window for the classification data. Currently only `7d` (trailing 7 days) is supported.<br/>
-        /// Default Value: 7d
+        /// Default Value: 7d<br/>
+        /// Example: 7d
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.TaskClassificationResponse>> GetTaskClassificationsAsResponseAsync(
-            global::OpenRouter.ClassificationsTaskGetParametersWindow? window = default,
+            global::OpenRouter.GetTaskClassificationsWindow? window = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -183,8 +185,6 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     window: window);
-
-                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

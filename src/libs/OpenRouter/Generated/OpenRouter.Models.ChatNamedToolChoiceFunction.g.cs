@@ -9,8 +9,10 @@ namespace OpenRouter
     public sealed partial class ChatNamedToolChoiceFunction
     {
         /// <summary>
-        /// Function name to call
+        /// Function name to call<br/>
+        /// Example: get_weather
         /// </summary>
+        /// <example>get_weather</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -25,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatNamedToolChoiceFunction" /> class.
         /// </summary>
         /// <param name="name">
-        /// Function name to call
+        /// Function name to call<br/>
+        /// Example: get_weather
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

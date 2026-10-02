@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// JSON object response format
+    /// JSON object response format<br/>
+    /// Example: {"type":"json_object"}
     /// </summary>
     public sealed partial class FormatJsonObjectConfig
     {

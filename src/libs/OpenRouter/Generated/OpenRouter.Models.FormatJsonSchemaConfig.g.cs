@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// JSON schema constrained response format
+    /// JSON schema constrained response format<br/>
+    /// Example: {"description":"User information schema","name":"user_info","schema":{"properties":{"age":{"type":"number"},"name":{"type":"string"}},"required":["name"],"type":"object"},"type":"json_schema"}
     /// </summary>
     public sealed partial class FormatJsonSchemaConfig
     {

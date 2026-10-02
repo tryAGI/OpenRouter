@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.
+    /// Metadata key-value pairs for the request. Keys must be ≤64 characters and cannot contain brackets. Values must be ≤512 characters. Maximum 16 pairs allowed.<br/>
+    /// Example: {"session_id":"abc-def-ghi","user_id":"123"}
     /// </summary>
     public sealed partial class RequestMetadata
     {

@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public readonly partial struct StoredPromptTemplateVariables
+    public sealed partial class StoredPromptTemplateVariables
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.StoredPromptTemplateVariables),
-                jsonSerializerContext) as global::OpenRouter.StoredPromptTemplateVariables?;
+                jsonSerializerContext) as global::OpenRouter.StoredPromptTemplateVariables;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.StoredPromptTemplateVariables),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.StoredPromptTemplateVariables?;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.StoredPromptTemplateVariables;
         }
 
         /// <summary>

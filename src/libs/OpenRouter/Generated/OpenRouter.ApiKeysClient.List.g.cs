@@ -27,13 +27,13 @@ namespace OpenRouter
             };
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? includeDisabled,
+            ref bool? includeDisabled,
             ref int? offset,
             ref global::System.Guid? workspaceId);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? includeDisabled,
+            bool? includeDisabled,
             int? offset,
             global::System.Guid? workspaceId);
         partial void ProcessListResponse(
@@ -49,14 +49,23 @@ namespace OpenRouter
         /// List API keys<br/>
         /// List all API keys for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="includeDisabled"></param>
-        /// <param name="offset"></param>
-        /// <param name="workspaceId"></param>
+        /// <param name="includeDisabled">
+        /// Whether to include disabled API keys in the response<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="offset">
+        /// Number of API keys to skip for pagination<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="workspaceId">
+        /// Filter API keys by workspace ID. By default, keys in the default workspace are returned.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.ApiKeysListResponse200> ListAsync(
-            string? includeDisabled = default,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ListResponse> ListAsync(
+            bool? includeDisabled = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -76,14 +85,23 @@ namespace OpenRouter
         /// List API keys<br/>
         /// List all API keys for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="includeDisabled"></param>
-        /// <param name="offset"></param>
-        /// <param name="workspaceId"></param>
+        /// <param name="includeDisabled">
+        /// Whether to include disabled API keys in the response<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="offset">
+        /// Number of API keys to skip for pagination<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="workspaceId">
+        /// Filter API keys by workspace ID. By default, keys in the default workspace are returned.<br/>
+        /// Example: 0df9e665-d932-5740-b2c7-b52af166bc11
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ApiKeysListResponse200>> ListAsResponseAsync(
-            string? includeDisabled = default,
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListResponse>> ListAsResponseAsync(
+            bool? includeDisabled = default,
             int? offset = default,
             global::System.Guid? workspaceId = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -124,7 +142,7 @@ namespace OpenRouter
                                 path: "/keys",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("include_disabled", includeDisabled)
+                                .AddOptionalParameter("include_disabled", includeDisabled?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                                 ;
@@ -171,8 +189,6 @@ namespace OpenRouter
                     includeDisabled: includeDisabled,
                     offset: offset,
                     workspaceId: workspaceId);
-
-                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }
@@ -351,6 +367,43 @@ namespace OpenRouter
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Bad Request - Invalid request parameters or malformed input
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::OpenRouter.BadRequestResponse? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::OpenRouter.BadRequestResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::OpenRouter.ApiException<global::OpenRouter.BadRequestResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Unauthorized - Authentication required or invalid credentials
                             if ((int)__response.StatusCode == 401)
                             {
@@ -484,9 +537,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.ApiKeysListResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.ListResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ApiKeysListResponse200>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -516,9 +569,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.ApiKeysListResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.ListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ApiKeysListResponse200>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Tool definition for function calling (regular function or OpenRouter built-in server tool)
+    /// Tool definition for function calling (regular function or OpenRouter built-in server tool)<br/>
+    /// Example: {"function":{"description":"Get the current weather for a location","name":"get_weather","parameters":{"properties":{"location":{"description":"City name","type":"string"},"unit":{"enum":["celsius","fahrenheit"],"type":"string","x-speakeasy-unknown-values":"allow"}},"required":["location"],"type":"object"}},"type":"function"}
     /// </summary>
     public readonly partial struct ChatFunctionTool : global::System.IEquatable<ChatFunctionTool>
     {
@@ -13,467 +14,516 @@ namespace OpenRouter
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatFunctionTool0? ChatFunctionTool0 { get; init; }
+        public global::OpenRouter.ChatFunctionToolVariant1? ChatFunctionToolVariant1 { get; init; }
 #else
-        public global::OpenRouter.ChatFunctionTool0? ChatFunctionTool0 { get; }
+        public global::OpenRouter.ChatFunctionToolVariant1? ChatFunctionToolVariant1 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatFunctionTool0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatFunctionToolVariant1))]
 #endif
-        public bool IsChatFunctionTool0 => ChatFunctionTool0 != null;
+        public bool IsChatFunctionToolVariant1 => ChatFunctionToolVariant1 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatFunctionTool0(
+        public bool TryPickChatFunctionToolVariant1(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ChatFunctionTool0? value)
+            out global::OpenRouter.ChatFunctionToolVariant1? value)
         {
-            value = ChatFunctionTool0;
-            return IsChatFunctionTool0;
+            value = ChatFunctionToolVariant1;
+            return IsChatFunctionToolVariant1;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatFunctionTool0 PickChatFunctionTool0() => ChatFunctionTool0 is { } value
+        public global::OpenRouter.ChatFunctionToolVariant1 PickChatFunctionToolVariant1() => ChatFunctionToolVariant1 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFunctionTool0' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFunctionToolVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. The advisor may run as a sub-agent with its own tools. Include multiple entries to offer several named advisors; at most one entry may omit `name` to act as the default advisor.
+        /// OpenRouter built-in server tool: consults a higher-intelligence advisor model (any OpenRouter model) for guidance mid-generation and returns its response. Include multiple entries to offer several named advisors; at most one entry may omit `name` to act as the default advisor.<br/>
+        /// Example: {"parameters":{"model":"~anthropic/claude-opus-latest","name":"reviewer"},"type":"openrouter:advisor"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AdvisorServerToolOpenRouter? AdvisorServerToolOpenRouter { get; init; }
+        public global::OpenRouter.AdvisorServerToolOpenRouter? AdvisorServerOpenRouter { get; init; }
 #else
-        public global::OpenRouter.AdvisorServerToolOpenRouter? AdvisorServerToolOpenRouter { get; }
+        public global::OpenRouter.AdvisorServerToolOpenRouter? AdvisorServerOpenRouter { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorServerToolOpenRouter))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorServerOpenRouter))]
 #endif
-        public bool IsAdvisorServerToolOpenRouter => AdvisorServerToolOpenRouter != null;
+        public bool IsAdvisorServerOpenRouter => AdvisorServerOpenRouter != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickAdvisorServerToolOpenRouter(
+        public bool TryPickAdvisorServerOpenRouter(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.AdvisorServerToolOpenRouter? value)
         {
-            value = AdvisorServerToolOpenRouter;
-            return IsAdvisorServerToolOpenRouter;
+            value = AdvisorServerOpenRouter;
+            return IsAdvisorServerOpenRouter;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AdvisorServerToolOpenRouter PickAdvisorServerToolOpenRouter() => AdvisorServerToolOpenRouter is { } value
+        public global::OpenRouter.AdvisorServerToolOpenRouter PickAdvisorServerOpenRouter() => AdvisorServerOpenRouter is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorServerToolOpenRouter' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorServerOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container
+        /// OpenRouter built-in server tool: runs shell commands server-side in a sandboxed container<br/>
+        /// Example: {"parameters":{"environment":{"type":"container_auto"}},"type":"openrouter:bash"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.BashServerTool? BashServerTool { get; init; }
+        public global::OpenRouter.BashServerTool? BashServer { get; init; }
 #else
-        public global::OpenRouter.BashServerTool? BashServerTool { get; }
+        public global::OpenRouter.BashServerTool? BashServer { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashServerTool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashServer))]
 #endif
-        public bool IsBashServerTool => BashServerTool != null;
+        public bool IsBashServer => BashServer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickBashServerTool(
+        public bool TryPickBashServer(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.BashServerTool? value)
         {
-            value = BashServerTool;
-            return IsBashServerTool;
+            value = BashServer;
+            return IsBashServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.BashServerTool PickBashServerTool() => BashServerTool is { } value
+        public global::OpenRouter.BashServerTool PickBashServer() => BashServer is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'BashServerTool' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashServer' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: returns the current date and time
+        /// OpenRouter built-in server tool: returns the current date and time<br/>
+        /// Example: {"parameters":{"timezone":"America/New_York"},"type":"openrouter:datetime"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.DatetimeServerTool? DatetimeServerTool { get; init; }
+        public global::OpenRouter.DatetimeServerTool? DatetimeServer { get; init; }
 #else
-        public global::OpenRouter.DatetimeServerTool? DatetimeServerTool { get; }
+        public global::OpenRouter.DatetimeServerTool? DatetimeServer { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeServerTool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeServer))]
 #endif
-        public bool IsDatetimeServerTool => DatetimeServerTool != null;
+        public bool IsDatetimeServer => DatetimeServer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickDatetimeServerTool(
+        public bool TryPickDatetimeServer(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.DatetimeServerTool? value)
         {
-            value = DatetimeServerTool;
-            return IsDatetimeServerTool;
+            value = DatetimeServer;
+            return IsDatetimeServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.DatetimeServerTool PickDatetimeServerTool() => DatetimeServerTool is { } value
+        public global::OpenRouter.DatetimeServerTool PickDatetimeServer() => DatetimeServer is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServer' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: read, write, edit, and list workspace files via the Files API. Requires the `x-openrouter-file-ids: openrouter` request header.
+        /// OpenRouter built-in server tool: read, write, edit, and list workspace files via the Files API. Requires an authenticated request; files come from the API key's workspace (or the default workspace for keys without one).<br/>
+        /// Example: {"parameters":{},"type":"openrouter:files"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.FilesServerTool? FilesServerTool { get; init; }
+        public global::OpenRouter.FilesServerTool? FilesServer { get; init; }
 #else
-        public global::OpenRouter.FilesServerTool? FilesServerTool { get; }
+        public global::OpenRouter.FilesServerTool? FilesServer { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilesServerTool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilesServer))]
 #endif
-        public bool IsFilesServerTool => FilesServerTool != null;
+        public bool IsFilesServer => FilesServer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickFilesServerTool(
+        public bool TryPickFilesServer(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.FilesServerTool? value)
         {
-            value = FilesServerTool;
-            return IsFilesServerTool;
+            value = FilesServer;
+            return IsFilesServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FilesServerTool PickFilesServerTool() => FilesServerTool is { } value
+        public global::OpenRouter.FilesServerTool PickFilesServer() => FilesServer is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'FilesServerTool' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilesServer' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: fans out the user prompt to a panel of analysis models, then asks a judge model to summarize their collective output as structured JSON the outer model can synthesize from.
+        /// OpenRouter built-in server tool: fans out the user prompt to a panel of analysis models, then asks an analyst model to summarize their collective output as structured JSON the outer model can synthesize from.<br/>
+        /// Example: {"parameters":{"analysis_models":["~anthropic/claude-opus-latest","~openai/gpt-sol-latest"]},"type":"openrouter:fusion"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.FusionServerToolOpenRouter? FusionServerToolOpenRouter { get; init; }
+        public global::OpenRouter.FusionServerToolOpenRouter? FusionServerOpenRouter { get; init; }
 #else
-        public global::OpenRouter.FusionServerToolOpenRouter? FusionServerToolOpenRouter { get; }
+        public global::OpenRouter.FusionServerToolOpenRouter? FusionServerOpenRouter { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FusionServerToolOpenRouter))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FusionServerOpenRouter))]
 #endif
-        public bool IsFusionServerToolOpenRouter => FusionServerToolOpenRouter != null;
+        public bool IsFusionServerOpenRouter => FusionServerOpenRouter != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickFusionServerToolOpenRouter(
+        public bool TryPickFusionServerOpenRouter(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.FusionServerToolOpenRouter? value)
         {
-            value = FusionServerToolOpenRouter;
-            return IsFusionServerToolOpenRouter;
+            value = FusionServerOpenRouter;
+            return IsFusionServerOpenRouter;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.FusionServerToolOpenRouter PickFusionServerToolOpenRouter() => FusionServerToolOpenRouter is { } value
+        public global::OpenRouter.FusionServerToolOpenRouter PickFusionServerOpenRouter() => FusionServerOpenRouter is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'FusionServerToolOpenRouter' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FusionServerOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: generates images from text prompts using an image generation model
+        /// OpenRouter built-in server tool: generates images from text prompts using an image generation model<br/>
+        /// Example: {"parameters":{"model":"openai/gpt-5-image","quality":"high","size":"1024x1024"},"type":"openrouter:image_generation"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerToolOpenRouter { get; init; }
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerOpenRouter { get; init; }
 #else
-        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerToolOpenRouter { get; }
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter? ImageGenerationServerOpenRouter { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerToolOpenRouter))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerOpenRouter))]
 #endif
-        public bool IsImageGenerationServerToolOpenRouter => ImageGenerationServerToolOpenRouter != null;
+        public bool IsImageGenerationServerOpenRouter => ImageGenerationServerOpenRouter != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickImageGenerationServerToolOpenRouter(
+        public bool TryPickImageGenerationServerOpenRouter(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
         {
-            value = ImageGenerationServerToolOpenRouter;
-            return IsImageGenerationServerToolOpenRouter;
+            value = ImageGenerationServerOpenRouter;
+            return IsImageGenerationServerOpenRouter;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerToolOpenRouter() => ImageGenerationServerToolOpenRouter is { } value
+        public global::OpenRouter.ImageGenerationServerToolOpenRouter PickImageGenerationServerOpenRouter() => ImageGenerationServerOpenRouter is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerToolOpenRouter' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter
+        /// OpenRouter built-in server tool: searches and filters AI models available on OpenRouter<br/>
+        /// Example: {"parameters":{"max_results":5},"type":"openrouter:experimental__search_models"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatSearchModelsServerTool? ChatSearchModelsServerTool { get; init; }
+        public global::OpenRouter.ChatSearchModelsServerTool? SearchModelsServer { get; init; }
 #else
-        public global::OpenRouter.ChatSearchModelsServerTool? ChatSearchModelsServerTool { get; }
+        public global::OpenRouter.ChatSearchModelsServerTool? SearchModelsServer { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatSearchModelsServerTool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchModelsServer))]
 #endif
-        public bool IsChatSearchModelsServerTool => ChatSearchModelsServerTool != null;
+        public bool IsSearchModelsServer => SearchModelsServer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatSearchModelsServerTool(
+        public bool TryPickSearchModelsServer(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.ChatSearchModelsServerTool? value)
         {
-            value = ChatSearchModelsServerTool;
-            return IsChatSearchModelsServerTool;
+            value = SearchModelsServer;
+            return IsSearchModelsServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatSearchModelsServerTool PickChatSearchModelsServerTool() => ChatSearchModelsServerTool is { } value
+        public global::OpenRouter.ChatSearchModelsServerTool PickSearchModelsServer() => SearchModelsServer is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSearchModelsServerTool' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchModelsServer' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: delegates self-contained tasks to a smaller, cheaper, faster worker model (any OpenRouter model) mid-generation and returns its outcome. The worker may run as a sub-agent with its own tools.
+        /// OpenRouter built-in server tool: delegates self-contained tasks to a smaller, cheaper, faster worker model (any OpenRouter model) mid-generation and returns its outcome. The worker may run as a sub-agent with its own tools.<br/>
+        /// Example: {"parameters":{"model":"~anthropic/claude-haiku-latest"},"type":"openrouter:subagent"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerToolOpenRouter { get; init; }
+        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerOpenRouter { get; init; }
 #else
-        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerToolOpenRouter { get; }
+        public global::OpenRouter.SubagentServerToolOpenRouter? SubagentServerOpenRouter { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SubagentServerToolOpenRouter))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SubagentServerOpenRouter))]
 #endif
-        public bool IsSubagentServerToolOpenRouter => SubagentServerToolOpenRouter != null;
+        public bool IsSubagentServerOpenRouter => SubagentServerOpenRouter != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickSubagentServerToolOpenRouter(
+        public bool TryPickSubagentServerOpenRouter(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.SubagentServerToolOpenRouter? value)
         {
-            value = SubagentServerToolOpenRouter;
-            return IsSubagentServerToolOpenRouter;
+            value = SubagentServerOpenRouter;
+            return IsSubagentServerOpenRouter;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.SubagentServerToolOpenRouter PickSubagentServerToolOpenRouter() => SubagentServerToolOpenRouter is { } value
+        public global::OpenRouter.SubagentServerToolOpenRouter PickSubagentServerOpenRouter() => SubagentServerOpenRouter is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'SubagentServerToolOpenRouter' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SubagentServerOpenRouter' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)
+        /// OpenRouter built-in server tool: fetches full content from a URL (web page or PDF)<br/>
+        /// Example: {"parameters":{"max_uses":10},"type":"openrouter:web_fetch"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.WebFetchServerTool? WebFetchServerTool { get; init; }
+        public global::OpenRouter.WebFetchServerTool? WebFetchServer { get; init; }
 #else
-        public global::OpenRouter.WebFetchServerTool? WebFetchServerTool { get; }
+        public global::OpenRouter.WebFetchServerTool? WebFetchServer { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchServerTool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchServer))]
 #endif
-        public bool IsWebFetchServerTool => WebFetchServerTool != null;
+        public bool IsWebFetchServer => WebFetchServer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickWebFetchServerTool(
+        public bool TryPickWebFetchServer(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.WebFetchServerTool? value)
         {
-            value = WebFetchServerTool;
-            return IsWebFetchServerTool;
+            value = WebFetchServer;
+            return IsWebFetchServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.WebFetchServerTool PickWebFetchServerTool() => WebFetchServerTool is { } value
+        public global::OpenRouter.WebFetchServerTool PickWebFetchServer() => WebFetchServer is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchServerTool' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchServer' but the value was {ToString()}.");
 
         /// <summary>
-        /// OpenRouter built-in server tool: searches the web for current information
+        /// OpenRouter built-in server tool: searches the web for current information<br/>
+        /// Example: {"parameters":{"max_results":5},"type":"openrouter:web_search"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenRouterWebSearchServerTool? OpenRouterWebSearchServerTool { get; init; }
+        public global::OpenRouter.OpenRouterWebSearchServerTool? OpenRouterWebSearchServer { get; init; }
 #else
-        public global::OpenRouter.OpenRouterWebSearchServerTool? OpenRouterWebSearchServerTool { get; }
+        public global::OpenRouter.OpenRouterWebSearchServerTool? OpenRouterWebSearchServer { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenRouterWebSearchServerTool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenRouterWebSearchServer))]
 #endif
-        public bool IsOpenRouterWebSearchServerTool => OpenRouterWebSearchServerTool != null;
+        public bool IsOpenRouterWebSearchServer => OpenRouterWebSearchServer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenRouterWebSearchServerTool(
+        public bool TryPickOpenRouterWebSearchServer(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.OpenRouterWebSearchServerTool? value)
         {
-            value = OpenRouterWebSearchServerTool;
-            return IsOpenRouterWebSearchServerTool;
+            value = OpenRouterWebSearchServer;
+            return IsOpenRouterWebSearchServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServerTool() => OpenRouterWebSearchServerTool is { } value
+        public global::OpenRouter.OpenRouterWebSearchServerTool PickOpenRouterWebSearchServer() => OpenRouterWebSearchServer is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenRouterWebSearchServerTool' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenRouterWebSearchServer' but the value was {ToString()}.");
 
         /// <summary>
-        /// Web search tool using OpenAI Responses API syntax. Automatically converted to openrouter:web_search.
+        /// Web search tool using OpenAI Responses API syntax. Automatically converted to openrouter:web_search.<br/>
+        /// Example: {"type":"web_search_preview"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ChatWebSearchShorthand? ChatWebSearchShorthand { get; init; }
+        public global::OpenRouter.ChatWebSearchShorthand? WebSearchShorthand { get; init; }
 #else
-        public global::OpenRouter.ChatWebSearchShorthand? ChatWebSearchShorthand { get; }
+        public global::OpenRouter.ChatWebSearchShorthand? WebSearchShorthand { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatWebSearchShorthand))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchShorthand))]
 #endif
-        public bool IsChatWebSearchShorthand => ChatWebSearchShorthand != null;
+        public bool IsWebSearchShorthand => WebSearchShorthand != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickChatWebSearchShorthand(
+        public bool TryPickWebSearchShorthand(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.ChatWebSearchShorthand? value)
         {
-            value = ChatWebSearchShorthand;
-            return IsChatWebSearchShorthand;
+            value = WebSearchShorthand;
+            return IsWebSearchShorthand;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ChatWebSearchShorthand PickChatWebSearchShorthand() => ChatWebSearchShorthand is { } value
+        public global::OpenRouter.ChatWebSearchShorthand PickWebSearchShorthand() => WebSearchShorthand is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatWebSearchShorthand' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchShorthand' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// Generic OpenRouter server-tool envelope. `type` names a registered server tool (canonical `openrouter:*` form or a registered shorthand); `parameters` carries tool-specific configuration validated against the tool definition.<br/>
+        /// Example: {"parameters":{},"type":"openrouter:datetime_v2"}
         /// </summary>
-        public static implicit operator ChatFunctionTool(global::OpenRouter.ChatFunctionTool0 value) => new ChatFunctionTool((global::OpenRouter.ChatFunctionTool0?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.ChatDynamicServerTool? DynamicServer { get; init; }
+#else
+        public global::OpenRouter.ChatDynamicServerTool? DynamicServer { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatFunctionTool0?(ChatFunctionTool @this) => @this.ChatFunctionTool0;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DynamicServer))]
+#endif
+        public bool IsDynamicServer => DynamicServer != null;
 
         /// <summary>
         ///
         /// </summary>
-        public ChatFunctionTool(global::OpenRouter.ChatFunctionTool0? value)
+        public bool TryPickDynamicServer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.ChatDynamicServerTool? value)
         {
-            ChatFunctionTool0 = value;
+            value = DynamicServer;
+            return IsDynamicServer;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromChatFunctionTool0(global::OpenRouter.ChatFunctionTool0? value) => new ChatFunctionTool(value);
+        public global::OpenRouter.ChatDynamicServerTool PickDynamicServer() => DynamicServer is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicServer' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ChatFunctionTool(global::OpenRouter.ChatFunctionToolVariant1 value) => new ChatFunctionTool((global::OpenRouter.ChatFunctionToolVariant1?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatFunctionToolVariant1?(ChatFunctionTool @this) => @this.ChatFunctionToolVariant1;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChatFunctionTool(global::OpenRouter.ChatFunctionToolVariant1? value)
+        {
+            ChatFunctionToolVariant1 = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatFunctionTool FromChatFunctionToolVariant1(global::OpenRouter.ChatFunctionToolVariant1? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -483,20 +533,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AdvisorServerToolOpenRouter?(ChatFunctionTool @this) => @this.AdvisorServerToolOpenRouter;
+        public static implicit operator global::OpenRouter.AdvisorServerToolOpenRouter?(ChatFunctionTool @this) => @this.AdvisorServerOpenRouter;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.AdvisorServerToolOpenRouter? value)
         {
-            AdvisorServerToolOpenRouter = value;
+            AdvisorServerOpenRouter = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromAdvisorServerToolOpenRouter(global::OpenRouter.AdvisorServerToolOpenRouter? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromAdvisorServerOpenRouter(global::OpenRouter.AdvisorServerToolOpenRouter? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -506,20 +556,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.BashServerTool?(ChatFunctionTool @this) => @this.BashServerTool;
+        public static implicit operator global::OpenRouter.BashServerTool?(ChatFunctionTool @this) => @this.BashServer;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.BashServerTool? value)
         {
-            BashServerTool = value;
+            BashServer = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromBashServerTool(global::OpenRouter.BashServerTool? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromBashServer(global::OpenRouter.BashServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -529,20 +579,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.DatetimeServerTool?(ChatFunctionTool @this) => @this.DatetimeServerTool;
+        public static implicit operator global::OpenRouter.DatetimeServerTool?(ChatFunctionTool @this) => @this.DatetimeServer;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.DatetimeServerTool? value)
         {
-            DatetimeServerTool = value;
+            DatetimeServer = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromDatetimeServerTool(global::OpenRouter.DatetimeServerTool? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromDatetimeServer(global::OpenRouter.DatetimeServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -552,20 +602,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.FilesServerTool?(ChatFunctionTool @this) => @this.FilesServerTool;
+        public static implicit operator global::OpenRouter.FilesServerTool?(ChatFunctionTool @this) => @this.FilesServer;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.FilesServerTool? value)
         {
-            FilesServerTool = value;
+            FilesServer = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromFilesServerTool(global::OpenRouter.FilesServerTool? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromFilesServer(global::OpenRouter.FilesServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -575,20 +625,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.FusionServerToolOpenRouter?(ChatFunctionTool @this) => @this.FusionServerToolOpenRouter;
+        public static implicit operator global::OpenRouter.FusionServerToolOpenRouter?(ChatFunctionTool @this) => @this.FusionServerOpenRouter;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.FusionServerToolOpenRouter? value)
         {
-            FusionServerToolOpenRouter = value;
+            FusionServerOpenRouter = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromFusionServerToolOpenRouter(global::OpenRouter.FusionServerToolOpenRouter? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromFusionServerOpenRouter(global::OpenRouter.FusionServerToolOpenRouter? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -598,20 +648,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ImageGenerationServerToolOpenRouter?(ChatFunctionTool @this) => @this.ImageGenerationServerToolOpenRouter;
+        public static implicit operator global::OpenRouter.ImageGenerationServerToolOpenRouter?(ChatFunctionTool @this) => @this.ImageGenerationServerOpenRouter;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.ImageGenerationServerToolOpenRouter? value)
         {
-            ImageGenerationServerToolOpenRouter = value;
+            ImageGenerationServerOpenRouter = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromImageGenerationServerToolOpenRouter(global::OpenRouter.ImageGenerationServerToolOpenRouter? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromImageGenerationServerOpenRouter(global::OpenRouter.ImageGenerationServerToolOpenRouter? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -621,20 +671,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatSearchModelsServerTool?(ChatFunctionTool @this) => @this.ChatSearchModelsServerTool;
+        public static implicit operator global::OpenRouter.ChatSearchModelsServerTool?(ChatFunctionTool @this) => @this.SearchModelsServer;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.ChatSearchModelsServerTool? value)
         {
-            ChatSearchModelsServerTool = value;
+            SearchModelsServer = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromChatSearchModelsServerTool(global::OpenRouter.ChatSearchModelsServerTool? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromSearchModelsServer(global::OpenRouter.ChatSearchModelsServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -644,20 +694,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.SubagentServerToolOpenRouter?(ChatFunctionTool @this) => @this.SubagentServerToolOpenRouter;
+        public static implicit operator global::OpenRouter.SubagentServerToolOpenRouter?(ChatFunctionTool @this) => @this.SubagentServerOpenRouter;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.SubagentServerToolOpenRouter? value)
         {
-            SubagentServerToolOpenRouter = value;
+            SubagentServerOpenRouter = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromSubagentServerToolOpenRouter(global::OpenRouter.SubagentServerToolOpenRouter? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromSubagentServerOpenRouter(global::OpenRouter.SubagentServerToolOpenRouter? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -667,20 +717,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.WebFetchServerTool?(ChatFunctionTool @this) => @this.WebFetchServerTool;
+        public static implicit operator global::OpenRouter.WebFetchServerTool?(ChatFunctionTool @this) => @this.WebFetchServer;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.WebFetchServerTool? value)
         {
-            WebFetchServerTool = value;
+            WebFetchServer = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromWebFetchServerTool(global::OpenRouter.WebFetchServerTool? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromWebFetchServer(global::OpenRouter.WebFetchServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -690,20 +740,20 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenRouterWebSearchServerTool?(ChatFunctionTool @this) => @this.OpenRouterWebSearchServerTool;
+        public static implicit operator global::OpenRouter.OpenRouterWebSearchServerTool?(ChatFunctionTool @this) => @this.OpenRouterWebSearchServer;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.OpenRouterWebSearchServerTool? value)
         {
-            OpenRouterWebSearchServerTool = value;
+            OpenRouterWebSearchServer = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromOpenRouterWebSearchServerTool(global::OpenRouter.OpenRouterWebSearchServerTool? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromOpenRouterWebSearchServer(global::OpenRouter.OpenRouterWebSearchServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
@@ -713,87 +763,114 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ChatWebSearchShorthand?(ChatFunctionTool @this) => @this.ChatWebSearchShorthand;
+        public static implicit operator global::OpenRouter.ChatWebSearchShorthand?(ChatFunctionTool @this) => @this.WebSearchShorthand;
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(global::OpenRouter.ChatWebSearchShorthand? value)
         {
-            ChatWebSearchShorthand = value;
+            WebSearchShorthand = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ChatFunctionTool FromChatWebSearchShorthand(global::OpenRouter.ChatWebSearchShorthand? value) => new ChatFunctionTool(value);
+        public static ChatFunctionTool FromWebSearchShorthand(global::OpenRouter.ChatWebSearchShorthand? value) => new ChatFunctionTool(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ChatFunctionTool(global::OpenRouter.ChatDynamicServerTool value) => new ChatFunctionTool((global::OpenRouter.ChatDynamicServerTool?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.ChatDynamicServerTool?(ChatFunctionTool @this) => @this.DynamicServer;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChatFunctionTool(global::OpenRouter.ChatDynamicServerTool? value)
+        {
+            DynamicServer = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ChatFunctionTool FromDynamicServer(global::OpenRouter.ChatDynamicServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         ///
         /// </summary>
         public ChatFunctionTool(
-            global::OpenRouter.ChatFunctionTool0? chatFunctionTool0,
-            global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerToolOpenRouter,
-            global::OpenRouter.BashServerTool? bashServerTool,
-            global::OpenRouter.DatetimeServerTool? datetimeServerTool,
-            global::OpenRouter.FilesServerTool? filesServerTool,
-            global::OpenRouter.FusionServerToolOpenRouter? fusionServerToolOpenRouter,
-            global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerToolOpenRouter,
-            global::OpenRouter.ChatSearchModelsServerTool? chatSearchModelsServerTool,
-            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerToolOpenRouter,
-            global::OpenRouter.WebFetchServerTool? webFetchServerTool,
-            global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServerTool,
-            global::OpenRouter.ChatWebSearchShorthand? chatWebSearchShorthand
+            global::OpenRouter.ChatFunctionToolVariant1? chatFunctionToolVariant1,
+            global::OpenRouter.AdvisorServerToolOpenRouter? advisorServerOpenRouter,
+            global::OpenRouter.BashServerTool? bashServer,
+            global::OpenRouter.DatetimeServerTool? datetimeServer,
+            global::OpenRouter.FilesServerTool? filesServer,
+            global::OpenRouter.FusionServerToolOpenRouter? fusionServerOpenRouter,
+            global::OpenRouter.ImageGenerationServerToolOpenRouter? imageGenerationServerOpenRouter,
+            global::OpenRouter.ChatSearchModelsServerTool? searchModelsServer,
+            global::OpenRouter.SubagentServerToolOpenRouter? subagentServerOpenRouter,
+            global::OpenRouter.WebFetchServerTool? webFetchServer,
+            global::OpenRouter.OpenRouterWebSearchServerTool? openRouterWebSearchServer,
+            global::OpenRouter.ChatWebSearchShorthand? webSearchShorthand,
+            global::OpenRouter.ChatDynamicServerTool? dynamicServer
             )
         {
-            ChatFunctionTool0 = chatFunctionTool0;
-            AdvisorServerToolOpenRouter = advisorServerToolOpenRouter;
-            BashServerTool = bashServerTool;
-            DatetimeServerTool = datetimeServerTool;
-            FilesServerTool = filesServerTool;
-            FusionServerToolOpenRouter = fusionServerToolOpenRouter;
-            ImageGenerationServerToolOpenRouter = imageGenerationServerToolOpenRouter;
-            ChatSearchModelsServerTool = chatSearchModelsServerTool;
-            SubagentServerToolOpenRouter = subagentServerToolOpenRouter;
-            WebFetchServerTool = webFetchServerTool;
-            OpenRouterWebSearchServerTool = openRouterWebSearchServerTool;
-            ChatWebSearchShorthand = chatWebSearchShorthand;
+            ChatFunctionToolVariant1 = chatFunctionToolVariant1;
+            AdvisorServerOpenRouter = advisorServerOpenRouter;
+            BashServer = bashServer;
+            DatetimeServer = datetimeServer;
+            FilesServer = filesServer;
+            FusionServerOpenRouter = fusionServerOpenRouter;
+            ImageGenerationServerOpenRouter = imageGenerationServerOpenRouter;
+            SearchModelsServer = searchModelsServer;
+            SubagentServerOpenRouter = subagentServerOpenRouter;
+            WebFetchServer = webFetchServer;
+            OpenRouterWebSearchServer = openRouterWebSearchServer;
+            WebSearchShorthand = webSearchShorthand;
+            DynamicServer = dynamicServer;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            ChatWebSearchShorthand as object ??
-            OpenRouterWebSearchServerTool as object ??
-            WebFetchServerTool as object ??
-            SubagentServerToolOpenRouter as object ??
-            ChatSearchModelsServerTool as object ??
-            ImageGenerationServerToolOpenRouter as object ??
-            FusionServerToolOpenRouter as object ??
-            FilesServerTool as object ??
-            DatetimeServerTool as object ??
-            BashServerTool as object ??
-            AdvisorServerToolOpenRouter as object ??
-            ChatFunctionTool0 as object
+            DynamicServer as object ??
+            WebSearchShorthand as object ??
+            OpenRouterWebSearchServer as object ??
+            WebFetchServer as object ??
+            SubagentServerOpenRouter as object ??
+            SearchModelsServer as object ??
+            ImageGenerationServerOpenRouter as object ??
+            FusionServerOpenRouter as object ??
+            FilesServer as object ??
+            DatetimeServer as object ??
+            BashServer as object ??
+            AdvisorServerOpenRouter as object ??
+            ChatFunctionToolVariant1 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            ChatFunctionTool0?.ToString() ??
-            AdvisorServerToolOpenRouter?.ToString() ??
-            BashServerTool?.ToString() ??
-            DatetimeServerTool?.ToString() ??
-            FilesServerTool?.ToString() ??
-            FusionServerToolOpenRouter?.ToString() ??
-            ImageGenerationServerToolOpenRouter?.ToString() ??
-            ChatSearchModelsServerTool?.ToString() ??
-            SubagentServerToolOpenRouter?.ToString() ??
-            WebFetchServerTool?.ToString() ??
-            OpenRouterWebSearchServerTool?.ToString() ??
-            ChatWebSearchShorthand?.ToString()
+            ChatFunctionToolVariant1?.ToString() ??
+            AdvisorServerOpenRouter?.ToString() ??
+            BashServer?.ToString() ??
+            DatetimeServer?.ToString() ??
+            FilesServer?.ToString() ??
+            FusionServerOpenRouter?.ToString() ??
+            ImageGenerationServerOpenRouter?.ToString() ??
+            SearchModelsServer?.ToString() ??
+            SubagentServerOpenRouter?.ToString() ??
+            WebFetchServer?.ToString() ??
+            OpenRouterWebSearchServer?.ToString() ??
+            WebSearchShorthand?.ToString() ??
+            DynamicServer?.ToString()
             ;
 
         /// <summary>
@@ -801,25 +878,26 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && IsOpenRouterWebSearchServerTool && !IsChatWebSearchShorthand || !IsChatFunctionTool0 && !IsAdvisorServerToolOpenRouter && !IsBashServerTool && !IsDatetimeServerTool && !IsFilesServerTool && !IsFusionServerToolOpenRouter && !IsImageGenerationServerToolOpenRouter && !IsChatSearchModelsServerTool && !IsSubagentServerToolOpenRouter && !IsWebFetchServerTool && !IsOpenRouterWebSearchServerTool && IsChatWebSearchShorthand;
+            return IsChatFunctionToolVariant1 || IsAdvisorServerOpenRouter || IsBashServer || IsDatetimeServer || IsFilesServer || IsFusionServerOpenRouter || IsImageGenerationServerOpenRouter || IsSearchModelsServer || IsSubagentServerOpenRouter || IsWebFetchServer || IsOpenRouterWebSearchServer || IsWebSearchShorthand || IsDynamicServer;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ChatFunctionTool0, TResult>? chatFunctionTool0 = null,
-            global::System.Func<global::OpenRouter.AdvisorServerToolOpenRouter, TResult>? advisorServerToolOpenRouter = null,
-            global::System.Func<global::OpenRouter.BashServerTool, TResult>? bashServerTool = null,
-            global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServerTool = null,
-            global::System.Func<global::OpenRouter.FilesServerTool, TResult>? filesServerTool = null,
-            global::System.Func<global::OpenRouter.FusionServerToolOpenRouter, TResult>? fusionServerToolOpenRouter = null,
-            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerToolOpenRouter = null,
-            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool, TResult>? chatSearchModelsServerTool = null,
-            global::System.Func<global::OpenRouter.SubagentServerToolOpenRouter, TResult>? subagentServerToolOpenRouter = null,
-            global::System.Func<global::OpenRouter.WebFetchServerTool, TResult>? webFetchServerTool = null,
-            global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool, TResult>? openRouterWebSearchServerTool = null,
-            global::System.Func<global::OpenRouter.ChatWebSearchShorthand, TResult>? chatWebSearchShorthand = null,
+            global::System.Func<global::OpenRouter.ChatFunctionToolVariant1, TResult>? chatFunctionToolVariant1 = null,
+            global::System.Func<global::OpenRouter.AdvisorServerToolOpenRouter, TResult>? advisorServerOpenRouter = null,
+            global::System.Func<global::OpenRouter.BashServerTool, TResult>? bashServer = null,
+            global::System.Func<global::OpenRouter.DatetimeServerTool, TResult>? datetimeServer = null,
+            global::System.Func<global::OpenRouter.FilesServerTool, TResult>? filesServer = null,
+            global::System.Func<global::OpenRouter.FusionServerToolOpenRouter, TResult>? fusionServerOpenRouter = null,
+            global::System.Func<global::OpenRouter.ImageGenerationServerToolOpenRouter, TResult>? imageGenerationServerOpenRouter = null,
+            global::System.Func<global::OpenRouter.ChatSearchModelsServerTool, TResult>? searchModelsServer = null,
+            global::System.Func<global::OpenRouter.SubagentServerToolOpenRouter, TResult>? subagentServerOpenRouter = null,
+            global::System.Func<global::OpenRouter.WebFetchServerTool, TResult>? webFetchServer = null,
+            global::System.Func<global::OpenRouter.OpenRouterWebSearchServerTool, TResult>? openRouterWebSearchServer = null,
+            global::System.Func<global::OpenRouter.ChatWebSearchShorthand, TResult>? webSearchShorthand = null,
+            global::System.Func<global::OpenRouter.ChatDynamicServerTool, TResult>? dynamicServer = null,
             bool validate = true)
         {
             if (validate)
@@ -827,53 +905,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ChatFunctionTool0 is { } __value0 && chatFunctionTool0 != null)
+            if (ChatFunctionToolVariant1 is { } __value0 && chatFunctionToolVariant1 != null)
             {
-                return chatFunctionTool0(__value0);
+                return chatFunctionToolVariant1(__value0);
             }
-            else if (AdvisorServerToolOpenRouter is { } __value1 && advisorServerToolOpenRouter != null)
+            else if (AdvisorServerOpenRouter is { } __value1 && advisorServerOpenRouter != null)
             {
-                return advisorServerToolOpenRouter(__value1);
+                return advisorServerOpenRouter(__value1);
             }
-            else if (BashServerTool is { } __value2 && bashServerTool != null)
+            else if (BashServer is { } __value2 && bashServer != null)
             {
-                return bashServerTool(__value2);
+                return bashServer(__value2);
             }
-            else if (DatetimeServerTool is { } __value3 && datetimeServerTool != null)
+            else if (DatetimeServer is { } __value3 && datetimeServer != null)
             {
-                return datetimeServerTool(__value3);
+                return datetimeServer(__value3);
             }
-            else if (FilesServerTool is { } __value4 && filesServerTool != null)
+            else if (FilesServer is { } __value4 && filesServer != null)
             {
-                return filesServerTool(__value4);
+                return filesServer(__value4);
             }
-            else if (FusionServerToolOpenRouter is { } __value5 && fusionServerToolOpenRouter != null)
+            else if (FusionServerOpenRouter is { } __value5 && fusionServerOpenRouter != null)
             {
-                return fusionServerToolOpenRouter(__value5);
+                return fusionServerOpenRouter(__value5);
             }
-            else if (ImageGenerationServerToolOpenRouter is { } __value6 && imageGenerationServerToolOpenRouter != null)
+            else if (ImageGenerationServerOpenRouter is { } __value6 && imageGenerationServerOpenRouter != null)
             {
-                return imageGenerationServerToolOpenRouter(__value6);
+                return imageGenerationServerOpenRouter(__value6);
             }
-            else if (ChatSearchModelsServerTool is { } __value7 && chatSearchModelsServerTool != null)
+            else if (SearchModelsServer is { } __value7 && searchModelsServer != null)
             {
-                return chatSearchModelsServerTool(__value7);
+                return searchModelsServer(__value7);
             }
-            else if (SubagentServerToolOpenRouter is { } __value8 && subagentServerToolOpenRouter != null)
+            else if (SubagentServerOpenRouter is { } __value8 && subagentServerOpenRouter != null)
             {
-                return subagentServerToolOpenRouter(__value8);
+                return subagentServerOpenRouter(__value8);
             }
-            else if (WebFetchServerTool is { } __value9 && webFetchServerTool != null)
+            else if (WebFetchServer is { } __value9 && webFetchServer != null)
             {
-                return webFetchServerTool(__value9);
+                return webFetchServer(__value9);
             }
-            else if (OpenRouterWebSearchServerTool is { } __value10 && openRouterWebSearchServerTool != null)
+            else if (OpenRouterWebSearchServer is { } __value10 && openRouterWebSearchServer != null)
             {
-                return openRouterWebSearchServerTool(__value10);
+                return openRouterWebSearchServer(__value10);
             }
-            else if (ChatWebSearchShorthand is { } __value11 && chatWebSearchShorthand != null)
+            else if (WebSearchShorthand is { } __value11 && webSearchShorthand != null)
             {
-                return chatWebSearchShorthand(__value11);
+                return webSearchShorthand(__value11);
+            }
+            else if (DynamicServer is { } __value12 && dynamicServer != null)
+            {
+                return dynamicServer(__value12);
             }
 
             return default(TResult);
@@ -883,29 +965,31 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ChatFunctionTool0>? chatFunctionTool0 = null,
+            global::System.Action<global::OpenRouter.ChatFunctionToolVariant1>? chatFunctionToolVariant1 = null,
 
-            global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerOpenRouter = null,
 
-            global::System.Action<global::OpenRouter.BashServerTool>? bashServerTool = null,
+            global::System.Action<global::OpenRouter.BashServerTool>? bashServer = null,
 
-            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServer = null,
 
-            global::System.Action<global::OpenRouter.FilesServerTool>? filesServerTool = null,
+            global::System.Action<global::OpenRouter.FilesServerTool>? filesServer = null,
 
-            global::System.Action<global::OpenRouter.FusionServerToolOpenRouter>? fusionServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.FusionServerToolOpenRouter>? fusionServerOpenRouter = null,
 
-            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerOpenRouter = null,
 
-            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? searchModelsServer = null,
 
-            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerToolOpenRouter = null,
+            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerOpenRouter = null,
 
-            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServer = null,
 
-            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
+            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServer = null,
 
-            global::System.Action<global::OpenRouter.ChatWebSearchShorthand>? chatWebSearchShorthand = null,
+            global::System.Action<global::OpenRouter.ChatWebSearchShorthand>? webSearchShorthand = null,
+
+            global::System.Action<global::OpenRouter.ChatDynamicServerTool>? dynamicServer = null,
             bool validate = true)
         {
             if (validate)
@@ -913,53 +997,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ChatFunctionTool0 is { } __value0)
+            if (ChatFunctionToolVariant1 is { } __value0)
             {
-                chatFunctionTool0?.Invoke(__value0);
+                chatFunctionToolVariant1?.Invoke(__value0);
             }
-            else if (AdvisorServerToolOpenRouter is { } __value1)
+            else if (AdvisorServerOpenRouter is { } __value1)
             {
-                advisorServerToolOpenRouter?.Invoke(__value1);
+                advisorServerOpenRouter?.Invoke(__value1);
             }
-            else if (BashServerTool is { } __value2)
+            else if (BashServer is { } __value2)
             {
-                bashServerTool?.Invoke(__value2);
+                bashServer?.Invoke(__value2);
             }
-            else if (DatetimeServerTool is { } __value3)
+            else if (DatetimeServer is { } __value3)
             {
-                datetimeServerTool?.Invoke(__value3);
+                datetimeServer?.Invoke(__value3);
             }
-            else if (FilesServerTool is { } __value4)
+            else if (FilesServer is { } __value4)
             {
-                filesServerTool?.Invoke(__value4);
+                filesServer?.Invoke(__value4);
             }
-            else if (FusionServerToolOpenRouter is { } __value5)
+            else if (FusionServerOpenRouter is { } __value5)
             {
-                fusionServerToolOpenRouter?.Invoke(__value5);
+                fusionServerOpenRouter?.Invoke(__value5);
             }
-            else if (ImageGenerationServerToolOpenRouter is { } __value6)
+            else if (ImageGenerationServerOpenRouter is { } __value6)
             {
-                imageGenerationServerToolOpenRouter?.Invoke(__value6);
+                imageGenerationServerOpenRouter?.Invoke(__value6);
             }
-            else if (ChatSearchModelsServerTool is { } __value7)
+            else if (SearchModelsServer is { } __value7)
             {
-                chatSearchModelsServerTool?.Invoke(__value7);
+                searchModelsServer?.Invoke(__value7);
             }
-            else if (SubagentServerToolOpenRouter is { } __value8)
+            else if (SubagentServerOpenRouter is { } __value8)
             {
-                subagentServerToolOpenRouter?.Invoke(__value8);
+                subagentServerOpenRouter?.Invoke(__value8);
             }
-            else if (WebFetchServerTool is { } __value9)
+            else if (WebFetchServer is { } __value9)
             {
-                webFetchServerTool?.Invoke(__value9);
+                webFetchServer?.Invoke(__value9);
             }
-            else if (OpenRouterWebSearchServerTool is { } __value10)
+            else if (OpenRouterWebSearchServer is { } __value10)
             {
-                openRouterWebSearchServerTool?.Invoke(__value10);
+                openRouterWebSearchServer?.Invoke(__value10);
             }
-            else if (ChatWebSearchShorthand is { } __value11)
+            else if (WebSearchShorthand is { } __value11)
             {
-                chatWebSearchShorthand?.Invoke(__value11);
+                webSearchShorthand?.Invoke(__value11);
+            }
+            else if (DynamicServer is { } __value12)
+            {
+                dynamicServer?.Invoke(__value12);
             }
         }
 
@@ -967,18 +1055,19 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.ChatFunctionTool0>? chatFunctionTool0 = null,
-            global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerToolOpenRouter = null,
-            global::System.Action<global::OpenRouter.BashServerTool>? bashServerTool = null,
-            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServerTool = null,
-            global::System.Action<global::OpenRouter.FilesServerTool>? filesServerTool = null,
-            global::System.Action<global::OpenRouter.FusionServerToolOpenRouter>? fusionServerToolOpenRouter = null,
-            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerToolOpenRouter = null,
-            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? chatSearchModelsServerTool = null,
-            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerToolOpenRouter = null,
-            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServerTool = null,
-            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServerTool = null,
-            global::System.Action<global::OpenRouter.ChatWebSearchShorthand>? chatWebSearchShorthand = null,
+            global::System.Action<global::OpenRouter.ChatFunctionToolVariant1>? chatFunctionToolVariant1 = null,
+            global::System.Action<global::OpenRouter.AdvisorServerToolOpenRouter>? advisorServerOpenRouter = null,
+            global::System.Action<global::OpenRouter.BashServerTool>? bashServer = null,
+            global::System.Action<global::OpenRouter.DatetimeServerTool>? datetimeServer = null,
+            global::System.Action<global::OpenRouter.FilesServerTool>? filesServer = null,
+            global::System.Action<global::OpenRouter.FusionServerToolOpenRouter>? fusionServerOpenRouter = null,
+            global::System.Action<global::OpenRouter.ImageGenerationServerToolOpenRouter>? imageGenerationServerOpenRouter = null,
+            global::System.Action<global::OpenRouter.ChatSearchModelsServerTool>? searchModelsServer = null,
+            global::System.Action<global::OpenRouter.SubagentServerToolOpenRouter>? subagentServerOpenRouter = null,
+            global::System.Action<global::OpenRouter.WebFetchServerTool>? webFetchServer = null,
+            global::System.Action<global::OpenRouter.OpenRouterWebSearchServerTool>? openRouterWebSearchServer = null,
+            global::System.Action<global::OpenRouter.ChatWebSearchShorthand>? webSearchShorthand = null,
+            global::System.Action<global::OpenRouter.ChatDynamicServerTool>? dynamicServer = null,
             bool validate = true)
         {
             if (validate)
@@ -986,53 +1075,57 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (ChatFunctionTool0 is { } __value0)
+            if (ChatFunctionToolVariant1 is { } __value0)
             {
-                chatFunctionTool0?.Invoke(__value0);
+                chatFunctionToolVariant1?.Invoke(__value0);
             }
-            else if (AdvisorServerToolOpenRouter is { } __value1)
+            else if (AdvisorServerOpenRouter is { } __value1)
             {
-                advisorServerToolOpenRouter?.Invoke(__value1);
+                advisorServerOpenRouter?.Invoke(__value1);
             }
-            else if (BashServerTool is { } __value2)
+            else if (BashServer is { } __value2)
             {
-                bashServerTool?.Invoke(__value2);
+                bashServer?.Invoke(__value2);
             }
-            else if (DatetimeServerTool is { } __value3)
+            else if (DatetimeServer is { } __value3)
             {
-                datetimeServerTool?.Invoke(__value3);
+                datetimeServer?.Invoke(__value3);
             }
-            else if (FilesServerTool is { } __value4)
+            else if (FilesServer is { } __value4)
             {
-                filesServerTool?.Invoke(__value4);
+                filesServer?.Invoke(__value4);
             }
-            else if (FusionServerToolOpenRouter is { } __value5)
+            else if (FusionServerOpenRouter is { } __value5)
             {
-                fusionServerToolOpenRouter?.Invoke(__value5);
+                fusionServerOpenRouter?.Invoke(__value5);
             }
-            else if (ImageGenerationServerToolOpenRouter is { } __value6)
+            else if (ImageGenerationServerOpenRouter is { } __value6)
             {
-                imageGenerationServerToolOpenRouter?.Invoke(__value6);
+                imageGenerationServerOpenRouter?.Invoke(__value6);
             }
-            else if (ChatSearchModelsServerTool is { } __value7)
+            else if (SearchModelsServer is { } __value7)
             {
-                chatSearchModelsServerTool?.Invoke(__value7);
+                searchModelsServer?.Invoke(__value7);
             }
-            else if (SubagentServerToolOpenRouter is { } __value8)
+            else if (SubagentServerOpenRouter is { } __value8)
             {
-                subagentServerToolOpenRouter?.Invoke(__value8);
+                subagentServerOpenRouter?.Invoke(__value8);
             }
-            else if (WebFetchServerTool is { } __value9)
+            else if (WebFetchServer is { } __value9)
             {
-                webFetchServerTool?.Invoke(__value9);
+                webFetchServer?.Invoke(__value9);
             }
-            else if (OpenRouterWebSearchServerTool is { } __value10)
+            else if (OpenRouterWebSearchServer is { } __value10)
             {
-                openRouterWebSearchServerTool?.Invoke(__value10);
+                openRouterWebSearchServer?.Invoke(__value10);
             }
-            else if (ChatWebSearchShorthand is { } __value11)
+            else if (WebSearchShorthand is { } __value11)
             {
-                chatWebSearchShorthand?.Invoke(__value11);
+                webSearchShorthand?.Invoke(__value11);
+            }
+            else if (DynamicServer is { } __value12)
+            {
+                dynamicServer?.Invoke(__value12);
             }
         }
 
@@ -1043,30 +1136,32 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                ChatFunctionTool0,
-                typeof(global::OpenRouter.ChatFunctionTool0),
-                AdvisorServerToolOpenRouter,
+                ChatFunctionToolVariant1,
+                typeof(global::OpenRouter.ChatFunctionToolVariant1),
+                AdvisorServerOpenRouter,
                 typeof(global::OpenRouter.AdvisorServerToolOpenRouter),
-                BashServerTool,
+                BashServer,
                 typeof(global::OpenRouter.BashServerTool),
-                DatetimeServerTool,
+                DatetimeServer,
                 typeof(global::OpenRouter.DatetimeServerTool),
-                FilesServerTool,
+                FilesServer,
                 typeof(global::OpenRouter.FilesServerTool),
-                FusionServerToolOpenRouter,
+                FusionServerOpenRouter,
                 typeof(global::OpenRouter.FusionServerToolOpenRouter),
-                ImageGenerationServerToolOpenRouter,
+                ImageGenerationServerOpenRouter,
                 typeof(global::OpenRouter.ImageGenerationServerToolOpenRouter),
-                ChatSearchModelsServerTool,
+                SearchModelsServer,
                 typeof(global::OpenRouter.ChatSearchModelsServerTool),
-                SubagentServerToolOpenRouter,
+                SubagentServerOpenRouter,
                 typeof(global::OpenRouter.SubagentServerToolOpenRouter),
-                WebFetchServerTool,
+                WebFetchServer,
                 typeof(global::OpenRouter.WebFetchServerTool),
-                OpenRouterWebSearchServerTool,
+                OpenRouterWebSearchServer,
                 typeof(global::OpenRouter.OpenRouterWebSearchServerTool),
-                ChatWebSearchShorthand,
+                WebSearchShorthand,
                 typeof(global::OpenRouter.ChatWebSearchShorthand),
+                DynamicServer,
+                typeof(global::OpenRouter.ChatDynamicServerTool),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1083,18 +1178,19 @@ namespace OpenRouter
         public bool Equals(ChatFunctionTool other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFunctionTool0?>.Default.Equals(ChatFunctionTool0, other.ChatFunctionTool0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AdvisorServerToolOpenRouter?>.Default.Equals(AdvisorServerToolOpenRouter, other.AdvisorServerToolOpenRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BashServerTool?>.Default.Equals(BashServerTool, other.BashServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServerTool, other.DatetimeServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FilesServerTool?>.Default.Equals(FilesServerTool, other.FilesServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FusionServerToolOpenRouter?>.Default.Equals(FusionServerToolOpenRouter, other.FusionServerToolOpenRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ImageGenerationServerToolOpenRouter?>.Default.Equals(ImageGenerationServerToolOpenRouter, other.ImageGenerationServerToolOpenRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(ChatSearchModelsServerTool, other.ChatSearchModelsServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.SubagentServerToolOpenRouter?>.Default.Equals(SubagentServerToolOpenRouter, other.SubagentServerToolOpenRouter) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebFetchServerTool?>.Default.Equals(WebFetchServerTool, other.WebFetchServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServerTool, other.OpenRouterWebSearchServerTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatWebSearchShorthand?>.Default.Equals(ChatWebSearchShorthand, other.ChatWebSearchShorthand)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatFunctionToolVariant1?>.Default.Equals(ChatFunctionToolVariant1, other.ChatFunctionToolVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AdvisorServerToolOpenRouter?>.Default.Equals(AdvisorServerOpenRouter, other.AdvisorServerOpenRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.BashServerTool?>.Default.Equals(BashServer, other.BashServer) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.DatetimeServerTool?>.Default.Equals(DatetimeServer, other.DatetimeServer) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FilesServerTool?>.Default.Equals(FilesServer, other.FilesServer) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.FusionServerToolOpenRouter?>.Default.Equals(FusionServerOpenRouter, other.FusionServerOpenRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ImageGenerationServerToolOpenRouter?>.Default.Equals(ImageGenerationServerOpenRouter, other.ImageGenerationServerOpenRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatSearchModelsServerTool?>.Default.Equals(SearchModelsServer, other.SearchModelsServer) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.SubagentServerToolOpenRouter?>.Default.Equals(SubagentServerOpenRouter, other.SubagentServerOpenRouter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.WebFetchServerTool?>.Default.Equals(WebFetchServer, other.WebFetchServer) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenRouterWebSearchServerTool?>.Default.Equals(OpenRouterWebSearchServer, other.OpenRouterWebSearchServer) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatWebSearchShorthand?>.Default.Equals(WebSearchShorthand, other.WebSearchShorthand) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ChatDynamicServerTool?>.Default.Equals(DynamicServer, other.DynamicServer)
                 ;
         }
 

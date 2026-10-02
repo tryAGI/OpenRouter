@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public readonly partial struct FileSearchServerToolFilters
+    public sealed partial class FileSearchServerToolFilters
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.FileSearchServerToolFilters),
-                jsonSerializerContext) as global::OpenRouter.FileSearchServerToolFilters?;
+                jsonSerializerContext) as global::OpenRouter.FileSearchServerToolFilters;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.FileSearchServerToolFilters),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.FileSearchServerToolFilters?;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.FileSearchServerToolFilters;
         }
 
         /// <summary>

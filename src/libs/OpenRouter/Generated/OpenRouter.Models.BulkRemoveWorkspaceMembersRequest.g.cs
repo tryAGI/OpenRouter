@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"user_ids":["user_abc123","user_def456"]}
     /// </summary>
     public sealed partial class BulkRemoveWorkspaceMembersRequest
     {
         /// <summary>
-        /// List of user IDs to remove from the workspace
+        /// List of user IDs to remove from the workspace<br/>
+        /// Example: [user_abc123, user_def456]
         /// </summary>
+        /// <example>[user_abc123, user_def456]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> UserIds { get; set; }
@@ -25,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkRemoveWorkspaceMembersRequest" /> class.
         /// </summary>
         /// <param name="userIds">
-        /// List of user IDs to remove from the workspace
+        /// List of user IDs to remove from the workspace<br/>
+        /// Example: [user_abc123, user_def456]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

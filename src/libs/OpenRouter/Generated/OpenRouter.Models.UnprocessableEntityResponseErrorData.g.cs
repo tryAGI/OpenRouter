@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for UnprocessableEntityResponse
+    /// Error data for UnprocessableEntityResponse<br/>
+    /// Example: {"code":422,"message":"Invalid argument"}
     /// </summary>
     public sealed partial class UnprocessableEntityResponseErrorData
     {

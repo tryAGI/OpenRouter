@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Confirmation that the feedback was recorded
+    /// Confirmation that the feedback was recorded<br/>
+    /// Example: {"data":{"success":true}}
     /// </summary>
     public sealed partial class SubmitGenerationFeedbackResponse
     {

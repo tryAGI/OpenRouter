@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Static predicted output content. Supported models can use this to reduce latency when much of the response is known in advance.
+    /// Static predicted output content. Supported models can use this to reduce latency when much of the response is known in advance.<br/>
+    /// Example: {"content":"Expected response","type":"content"}
     /// </summary>
     public sealed partial class Prediction
     {
@@ -12,9 +13,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PredictionContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenRouter.PredictionContentText>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.PredictionContent Content { get; set; }
+        public required global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.PredictionContentText>> Content { get; set; }
 
         /// <summary>
         ///
@@ -38,7 +39,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Prediction(
-            global::OpenRouter.PredictionContent content,
+            global::OpenRouter.AnyOf<string, global::System.Collections.Generic.IList<global::OpenRouter.PredictionContentText>> content,
             global::OpenRouter.PredictionType type)
         {
             this.Content = content;

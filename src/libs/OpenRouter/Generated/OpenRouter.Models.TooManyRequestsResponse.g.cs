@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Too Many Requests - Rate limit exceeded
+    /// Too Many Requests - Rate limit exceeded<br/>
+    /// Example: {"error":{"code":429,"message":"Rate limit exceeded"}}
     /// </summary>
     public sealed partial class TooManyRequestsResponse
     {
         /// <summary>
-        /// Error data for TooManyRequestsResponse
+        /// Error data for TooManyRequestsResponse<br/>
+        /// Example: {"code":429,"message":"Rate limit exceeded"}
         /// </summary>
+        /// <example>{"code":429,"message":"Rate limit exceeded"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.TooManyRequestsResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="TooManyRequestsResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for TooManyRequestsResponse
+        /// Error data for TooManyRequestsResponse<br/>
+        /// Example: {"code":429,"message":"Rate limit exceeded"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

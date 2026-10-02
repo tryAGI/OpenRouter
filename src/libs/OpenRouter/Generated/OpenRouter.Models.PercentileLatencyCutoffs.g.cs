@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Percentile-based latency cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
+    /// Percentile-based latency cutoffs. All specified cutoffs must be met for an endpoint to be preferred.<br/>
+    /// Example: {"p50":5,"p90":10}
     /// </summary>
     public sealed partial class PercentileLatencyCutoffs
     {

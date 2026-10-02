@@ -4,27 +4,33 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"as_of":"2026-05-12T02:00:00.000Z","end_date":"2026-05-11","start_date":"2026-04-12","version":"v1"}
     /// </summary>
     public sealed partial class RankingsDailyMeta
     {
         /// <summary>
-        /// ISO-8601 timestamp of when the response was generated. Reflects data-freshness because the underlying materialized view continuously ingests upstream events.
+        /// ISO-8601 timestamp of when the response was generated. Reflects data-freshness because the underlying materialized view continuously ingests upstream events.<br/>
+        /// Example: 2026-05-12T02:00:00.000Z
         /// </summary>
+        /// <example>2026-05-12T02:00:00.000Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AsOf { get; set; }
 
         /// <summary>
-        /// Resolved end of the date window (UTC, inclusive).
+        /// Resolved end of the date window (UTC, inclusive).<br/>
+        /// Example: 2026-05-11
         /// </summary>
+        /// <example>2026-05-11</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_date")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EndDate { get; set; }
 
         /// <summary>
-        /// Resolved start of the date window (UTC, inclusive).
+        /// Resolved start of the date window (UTC, inclusive).<br/>
+        /// Example: 2026-04-12
         /// </summary>
+        /// <example>2026-04-12</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_date")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StartDate { get; set; }
@@ -46,13 +52,16 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="RankingsDailyMeta" /> class.
         /// </summary>
         /// <param name="asOf">
-        /// ISO-8601 timestamp of when the response was generated. Reflects data-freshness because the underlying materialized view continuously ingests upstream events.
+        /// ISO-8601 timestamp of when the response was generated. Reflects data-freshness because the underlying materialized view continuously ingests upstream events.<br/>
+        /// Example: 2026-05-12T02:00:00.000Z
         /// </param>
         /// <param name="endDate">
-        /// Resolved end of the date window (UTC, inclusive).
+        /// Resolved end of the date window (UTC, inclusive).<br/>
+        /// Example: 2026-05-11
         /// </param>
         /// <param name="startDate">
-        /// Resolved start of the date window (UTC, inclusive).
+        /// Resolved start of the date window (UTC, inclusive).<br/>
+        /// Example: 2026-04-12
         /// </param>
         /// <param name="version">
         /// Dataset version. Field names and grain are stable for the life of `v1`.

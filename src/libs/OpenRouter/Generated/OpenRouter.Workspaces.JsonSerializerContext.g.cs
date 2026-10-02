@@ -2,82 +2,7 @@
 #nullable enable
 
 namespace OpenRouter
-{
-    /// <summary>
-    ///
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-    )]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BadRequestResponseErrorData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BadRequestResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnauthorizedResponseErrorData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UnauthorizedResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ForbiddenResponseErrorData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ForbiddenResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.NotFoundResponseErrorData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.NotFoundResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InternalServerResponseErrorData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.InternalServerResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.Workspace))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListWorkspacesResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.Workspace>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateWorkspaceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateWorkspaceResponseData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.CreateWorkspaceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GetWorkspaceResponseData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.GetWorkspaceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DeleteWorkspaceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceResponseData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpdateWorkspaceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudgetResetInterval), TypeInfoPropertyName = "WorkspaceBudgetResetInterval2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudget))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListWorkspaceBudgetsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.WorkspaceBudget>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudgetInterval), TypeInfoPropertyName = "WorkspaceBudgetInterval2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval), TypeInfoPropertyName = "UpsertWorkspaceBudgetResponseDataResetInterval2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.DeleteWorkspaceBudgetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceMemberRole), TypeInfoPropertyName = "WorkspaceMemberRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceMember))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.ListWorkspaceMembersResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::OpenRouter.WorkspaceMember>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkAddWorkspaceMembersRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkAddWorkspaceMembersResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkRemoveWorkspaceMembersRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.BulkRemoveWorkspaceMembersResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudgetResetInterval?), TypeInfoPropertyName = "NullableWorkspaceBudgetResetInterval2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceBudgetInterval?), TypeInfoPropertyName = "NullableWorkspaceBudgetInterval2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?), TypeInfoPropertyName = "NullableUpsertWorkspaceBudgetResponseDataResetInterval2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenRouter.WorkspaceMemberRole?), TypeInfoPropertyName = "NullableWorkspaceMemberRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.Workspace>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WorkspaceBudget>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::OpenRouter.WorkspaceMember>))]
-    internal sealed partial class WorkspacesSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-    /// <summary>
+{    /// <summary>
     ///
     /// </summary>
     public sealed partial class WorkspacesSourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -121,8 +46,7 @@ namespace OpenRouter
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            options.Converters.Add(new global::OpenRouter.JsonConverters.UnixTimestampJsonConverter());
-            options.Converters.Add(new LazyEnumJsonConverterFactory());
+            global::OpenRouter.SourceGenerationContext.AddConverters(options);
         }
 
         private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
@@ -135,76 +59,6 @@ namespace OpenRouter
             AddConverters(options);
 
             return options;
-        }
-
-
-        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
-        {
-            public override bool CanConvert(global::System.Type typeToConvert)
-            {
-                return
-                    typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetResetInterval)
-
-                    || typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetResetInterval?)
-
-                    || typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetInterval)
-
-                    || typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetInterval?)
-
-                    || typeToConvert == typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval)
-
-                    || typeToConvert == typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?)
-
-                    || typeToConvert == typeof(global::OpenRouter.WorkspaceMemberRole)
-
-                    || typeToConvert == typeof(global::OpenRouter.WorkspaceMemberRole?);
-            }
-
-            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
-                global::System.Type typeToConvert,
-                global::System.Text.Json.JsonSerializerOptions options)
-            {
-                if (typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetResetInterval))
-                {
-                    return new global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetResetInterval?))
-                {
-                    return new global::OpenRouter.JsonConverters.WorkspaceBudgetResetIntervalNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetInterval))
-                {
-                    return new global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.WorkspaceBudgetInterval?))
-                {
-                    return new global::OpenRouter.JsonConverters.WorkspaceBudgetIntervalNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval))
-                {
-                    return new global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.UpsertWorkspaceBudgetResponseDataResetInterval?))
-                {
-                    return new global::OpenRouter.JsonConverters.UpsertWorkspaceBudgetResponseDataResetIntervalNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.WorkspaceMemberRole))
-                {
-                    return new global::OpenRouter.JsonConverters.WorkspaceMemberRoleJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::OpenRouter.WorkspaceMemberRole?))
-                {
-                    return new global::OpenRouter.JsonConverters.WorkspaceMemberRoleNullableJsonConverter();
-                }
-                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
-            }
         }
 
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
@@ -246,7 +100,7 @@ namespace OpenRouter
             {
                 return index switch
                 {
-                    0 => new WorkspacesSourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+                    0 => global::OpenRouter.SourceGenerationContext.TypeInfoResolver,
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }

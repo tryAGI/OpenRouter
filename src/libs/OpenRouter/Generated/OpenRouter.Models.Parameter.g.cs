@@ -3,116 +3,266 @@
 
 namespace OpenRouter
 {
+
     /// <summary>
-    ///
+    /// Example: temperature
     /// </summary>
-    public enum Parameter
+    public readonly partial struct Parameter : global::System.IEquatable<Parameter>
     {
         /// <summary>
         ///
         /// </summary>
-        FrequencyPenalty,
+        public Parameter(string value)
+        {
+            Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
         /// <summary>
         ///
         /// </summary>
-        IncludeReasoning,
+        public string Value { get; }
         /// <summary>
         ///
         /// </summary>
-        LogitBias,
+        public static Parameter FrequencyPenalty { get; } = new("frequency_penalty");
+
         /// <summary>
         ///
         /// </summary>
-        Logprobs,
+        public static Parameter IncludeReasoning { get; } = new("include_reasoning");
+
         /// <summary>
         ///
         /// </summary>
-        MaxCompletionTokens,
+        public static Parameter LogitBias { get; } = new("logit_bias");
+
         /// <summary>
         ///
         /// </summary>
-        MaxTokens,
+        public static Parameter Logprobs { get; } = new("logprobs");
+
         /// <summary>
         ///
         /// </summary>
-        MinP,
+        public static Parameter MaxCompletionTokens { get; } = new("max_completion_tokens");
+
         /// <summary>
         ///
         /// </summary>
-        ParallelToolCalls,
+        public static Parameter MaxTokens { get; } = new("max_tokens");
+
         /// <summary>
         ///
         /// </summary>
-        Prediction,
+        public static Parameter MinP { get; } = new("min_p");
+
         /// <summary>
         ///
         /// </summary>
-        PresencePenalty,
+        public static Parameter ParallelToolCalls { get; } = new("parallel_tool_calls");
+
         /// <summary>
         ///
         /// </summary>
-        Reasoning,
+        public static Parameter Prediction { get; } = new("prediction");
+
         /// <summary>
         ///
         /// </summary>
-        ReasoningEffort,
+        public static Parameter PresencePenalty { get; } = new("presence_penalty");
+
         /// <summary>
         ///
         /// </summary>
-        RepetitionPenalty,
+        public static Parameter Reasoning { get; } = new("reasoning");
+
         /// <summary>
         ///
         /// </summary>
-        ResponseFormat,
+        public static Parameter ReasoningEffort { get; } = new("reasoning_effort");
+
         /// <summary>
         ///
         /// </summary>
-        Seed,
+        public static Parameter RepetitionPenalty { get; } = new("repetition_penalty");
+
         /// <summary>
         ///
         /// </summary>
-        Stop,
+        public static Parameter ResponseFormat { get; } = new("response_format");
+
         /// <summary>
         ///
         /// </summary>
-        StructuredOutputs,
+        public static Parameter Seed { get; } = new("seed");
+
         /// <summary>
         ///
         /// </summary>
-        Temperature,
+        public static Parameter Stop { get; } = new("stop");
+
         /// <summary>
         ///
         /// </summary>
-        ToolChoice,
+        public static Parameter StructuredOutputs { get; } = new("structured_outputs");
+
         /// <summary>
         ///
         /// </summary>
-        Tools,
+        public static Parameter Temperature { get; } = new("temperature");
+
         /// <summary>
         ///
         /// </summary>
-        TopA,
+        public static Parameter ToolChoice { get; } = new("tool_choice");
+
         /// <summary>
         ///
         /// </summary>
-        TopK,
+        public static Parameter Tools { get; } = new("tools");
+
         /// <summary>
         ///
         /// </summary>
-        TopLogprobs,
+        public static Parameter TopA { get; } = new("top_a");
+
         /// <summary>
         ///
         /// </summary>
-        TopP,
+        public static Parameter TopK { get; } = new("top_k");
+
         /// <summary>
         ///
         /// </summary>
-        Verbosity,
+        public static Parameter TopLogprobs { get; } = new("top_logprobs");
+
         /// <summary>
         ///
         /// </summary>
-        WebSearchOptions,
+        public static Parameter TopP { get; } = new("top_p");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Parameter Verbosity { get; } = new("verbosity");
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Parameter WebSearchOptions { get; } = new("web_search_options");
+        /// <summary>
+        ///
+        /// </summary>
+        public static Parameter FromValue(string value)
+        {
+            value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+            return value switch
+            {
+                "frequency_penalty" => FrequencyPenalty,
+                "include_reasoning" => IncludeReasoning,
+                "logit_bias" => LogitBias,
+                "logprobs" => Logprobs,
+                "max_completion_tokens" => MaxCompletionTokens,
+                "max_tokens" => MaxTokens,
+                "min_p" => MinP,
+                "parallel_tool_calls" => ParallelToolCalls,
+                "prediction" => Prediction,
+                "presence_penalty" => PresencePenalty,
+                "reasoning" => Reasoning,
+                "reasoning_effort" => ReasoningEffort,
+                "repetition_penalty" => RepetitionPenalty,
+                "response_format" => ResponseFormat,
+                "seed" => Seed,
+                "stop" => Stop,
+                "structured_outputs" => StructuredOutputs,
+                "temperature" => Temperature,
+                "tool_choice" => ToolChoice,
+                "tools" => Tools,
+                "top_a" => TopA,
+                "top_k" => TopK,
+                "top_logprobs" => TopLogprobs,
+                "top_p" => TopP,
+                "verbosity" => Verbosity,
+                "web_search_options" => WebSearchOptions,
+                _ => new Parameter(value),
+            };
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool IsKnown => Value switch
+        {
+            "frequency_penalty" => true,
+            "include_reasoning" => true,
+            "logit_bias" => true,
+            "logprobs" => true,
+            "max_completion_tokens" => true,
+            "max_tokens" => true,
+            "min_p" => true,
+            "parallel_tool_calls" => true,
+            "prediction" => true,
+            "presence_penalty" => true,
+            "reasoning" => true,
+            "reasoning_effort" => true,
+            "repetition_penalty" => true,
+            "response_format" => true,
+            "seed" => true,
+            "stop" => true,
+            "structured_outputs" => true,
+            "temperature" => true,
+            "tool_choice" => true,
+            "tools" => true,
+            "top_a" => true,
+            "top_k" => true,
+            "top_logprobs" => true,
+            "top_p" => true,
+            "verbosity" => true,
+            "web_search_options" => true,
+            _ => false,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string ToString() => Value ?? string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(Parameter other)
+        {
+            return string.Equals(Value, other.Value, global::System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is Parameter other && Equals(other);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return global::System.StringComparer.Ordinal.GetHashCode(Value ?? string.Empty);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(Parameter left, Parameter right) => left.Equals(right);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(Parameter left, Parameter right) => !left.Equals(right);
     }
+
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
@@ -124,72 +274,15 @@ namespace OpenRouter
         /// </summary>
         public static string ToValueString(this Parameter value)
         {
-            return value switch
-            {
-                Parameter.FrequencyPenalty => "frequency_penalty",
-                Parameter.IncludeReasoning => "include_reasoning",
-                Parameter.LogitBias => "logit_bias",
-                Parameter.Logprobs => "logprobs",
-                Parameter.MaxCompletionTokens => "max_completion_tokens",
-                Parameter.MaxTokens => "max_tokens",
-                Parameter.MinP => "min_p",
-                Parameter.ParallelToolCalls => "parallel_tool_calls",
-                Parameter.Prediction => "prediction",
-                Parameter.PresencePenalty => "presence_penalty",
-                Parameter.Reasoning => "reasoning",
-                Parameter.ReasoningEffort => "reasoning_effort",
-                Parameter.RepetitionPenalty => "repetition_penalty",
-                Parameter.ResponseFormat => "response_format",
-                Parameter.Seed => "seed",
-                Parameter.Stop => "stop",
-                Parameter.StructuredOutputs => "structured_outputs",
-                Parameter.Temperature => "temperature",
-                Parameter.ToolChoice => "tool_choice",
-                Parameter.Tools => "tools",
-                Parameter.TopA => "top_a",
-                Parameter.TopK => "top_k",
-                Parameter.TopLogprobs => "top_logprobs",
-                Parameter.TopP => "top_p",
-                Parameter.Verbosity => "verbosity",
-                Parameter.WebSearchOptions => "web_search_options",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
+            return value.Value ?? throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null);
         }
+
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
         public static Parameter? ToEnum(string value)
         {
-            return value switch
-            {
-                "frequency_penalty" => Parameter.FrequencyPenalty,
-                "include_reasoning" => Parameter.IncludeReasoning,
-                "logit_bias" => Parameter.LogitBias,
-                "logprobs" => Parameter.Logprobs,
-                "max_completion_tokens" => Parameter.MaxCompletionTokens,
-                "max_tokens" => Parameter.MaxTokens,
-                "min_p" => Parameter.MinP,
-                "parallel_tool_calls" => Parameter.ParallelToolCalls,
-                "prediction" => Parameter.Prediction,
-                "presence_penalty" => Parameter.PresencePenalty,
-                "reasoning" => Parameter.Reasoning,
-                "reasoning_effort" => Parameter.ReasoningEffort,
-                "repetition_penalty" => Parameter.RepetitionPenalty,
-                "response_format" => Parameter.ResponseFormat,
-                "seed" => Parameter.Seed,
-                "stop" => Parameter.Stop,
-                "structured_outputs" => Parameter.StructuredOutputs,
-                "temperature" => Parameter.Temperature,
-                "tool_choice" => Parameter.ToolChoice,
-                "tools" => Parameter.Tools,
-                "top_a" => Parameter.TopA,
-                "top_k" => Parameter.TopK,
-                "top_logprobs" => Parameter.TopLogprobs,
-                "top_p" => Parameter.TopP,
-                "verbosity" => Parameter.Verbosity,
-                "web_search_options" => Parameter.WebSearchOptions,
-                _ => null,
-            };
+            return Parameter.FromValue(value);
         }
     }
 }

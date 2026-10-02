@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"web_fetch_requests":0,"web_search_requests":1}
     /// </summary>
     public sealed partial class AnthropicServerToolUsage
     {

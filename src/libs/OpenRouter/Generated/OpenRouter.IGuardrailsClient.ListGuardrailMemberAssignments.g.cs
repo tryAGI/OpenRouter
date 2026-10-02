@@ -8,12 +8,19 @@ namespace OpenRouter
         /// List member assignments for a guardrail<br/>
         /// List all organization member assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// The unique identifier of the guardrail<br/>
+        /// Example: 550e8400-e29b-41d4-a716-446655440000
+        /// </param>
         /// <param name="offset">
-        /// Default Value: 0
+        /// Number of records to skip for pagination<br/>
+        /// Default Value: 0<br/>
+        /// Example: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 50
+        /// Maximum number of records to return (max 100)<br/>
+        /// Default Value: 50<br/>
+        /// Example: 50
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -28,12 +35,19 @@ namespace OpenRouter
         /// List member assignments for a guardrail<br/>
         /// List all organization member assignments for a specific guardrail. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// The unique identifier of the guardrail<br/>
+        /// Example: 550e8400-e29b-41d4-a716-446655440000
+        /// </param>
         /// <param name="offset">
-        /// Default Value: 0
+        /// Number of records to skip for pagination<br/>
+        /// Default Value: 0<br/>
+        /// Example: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 50
+        /// Maximum number of records to return (max 100)<br/>
+        /// Default Value: 50<br/>
+        /// Example: 50
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

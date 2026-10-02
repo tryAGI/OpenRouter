@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Payload Too Large - Request payload exceeds size limits
+    /// Payload Too Large - Request payload exceeds size limits<br/>
+    /// Example: {"error":{"code":413,"message":"Request payload too large"}}
     /// </summary>
     public sealed partial class PayloadTooLargeResponse
     {
         /// <summary>
-        /// Error data for PayloadTooLargeResponse
+        /// Error data for PayloadTooLargeResponse<br/>
+        /// Example: {"code":413,"message":"Request payload too large"}
         /// </summary>
+        /// <example>{"code":413,"message":"Request payload too large"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.PayloadTooLargeResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="PayloadTooLargeResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for PayloadTooLargeResponse
+        /// Error data for PayloadTooLargeResponse<br/>
+        /// Example: {"code":413,"message":"Request payload too large"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

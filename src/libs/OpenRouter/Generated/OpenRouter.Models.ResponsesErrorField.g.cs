@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error information returned from the API
+    /// Error information returned from the API<br/>
+    /// Example: {"code":"rate_limit_exceeded","message":"Rate limit exceeded. Please try again later."}
     /// </summary>
     public sealed partial class ResponsesErrorField
     {

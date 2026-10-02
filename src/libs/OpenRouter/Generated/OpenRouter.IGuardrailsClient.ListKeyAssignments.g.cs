@@ -9,10 +9,14 @@ namespace OpenRouter
         /// List all API key guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
-        /// Default Value: 0
+        /// Number of records to skip for pagination<br/>
+        /// Default Value: 0<br/>
+        /// Example: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 50
+        /// Maximum number of records to return (max 100)<br/>
+        /// Default Value: 50<br/>
+        /// Example: 50
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -27,10 +31,14 @@ namespace OpenRouter
         /// List all API key guardrail assignments for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="offset">
-        /// Default Value: 0
+        /// Number of records to skip for pagination<br/>
+        /// Default Value: 0<br/>
+        /// Example: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 50
+        /// Maximum number of records to return (max 100)<br/>
+        /// Default Value: 50<br/>
+        /// Example: 50
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

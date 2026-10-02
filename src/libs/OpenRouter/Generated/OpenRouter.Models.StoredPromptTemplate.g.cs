@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"id":"prompt-abc123","variables":{"name":"John"}}
     /// </summary>
     public sealed partial class StoredPromptTemplate
     {
@@ -19,7 +19,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
-        public global::System.Collections.Generic.Dictionary<string, global::OpenRouter.StoredPromptTemplateVariables>? Variables { get; set; }
+        public object? Variables { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace OpenRouter
 #endif
         public StoredPromptTemplate(
             string id,
-            global::System.Collections.Generic.Dictionary<string, global::OpenRouter.StoredPromptTemplateVariables>? variables)
+            object? variables)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Variables = variables;

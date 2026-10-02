@@ -1,94 +1,274 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace OpenRouter
 {
     /// <summary>
-    /// A code interpreter execution call with outputs
+    /// A code interpreter execution call with outputs<br/>
+    /// Example: {"code":"print(\u0022hello\u0022)","container_id":"ctr-xyz789","id":"ci-abc123","outputs":[{"logs":"hello\n","type":"logs"}],"status":"completed","type":"code_interpreter_call"}
     /// </summary>
-    public sealed partial class OutputCodeInterpreterCallItem
+    public readonly partial struct OutputCodeInterpreterCallItem : global::System.IEquatable<OutputCodeInterpreterCallItem>
     {
         /// <summary>
-        ///
+        /// A code interpreter execution call with outputs<br/>
+        /// Example: {"code":"print(\u0022Hello, World!\u0022)","container_id":"container-xyz789","id":"code-abc123","outputs":[{"logs":"Hello, World!","type":"logs"}],"status":"completed","type":"code_interpreter_call"}
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string? Code { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ContainerId { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? Outputs { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.ToolCallStatus Status { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OutputCodeInterpreterCallItemTypeJsonConverter))]
-        public global::OpenRouter.OutputCodeInterpreterCallItemType Type { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OutputCodeInterpreterCallItem" /> class.
-        /// </summary>
-        /// <param name="containerId"></param>
-        /// <param name="id"></param>
-        /// <param name="status"></param>
-        /// <param name="code"></param>
-        /// <param name="outputs"></param>
-        /// <param name="type"></param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.CodeInterpreterCallItem? CodeInterpreterCallItem { get; init; }
+#else
+        public global::OpenRouter.CodeInterpreterCallItem? CodeInterpreterCallItem { get; }
 #endif
-        public OutputCodeInterpreterCallItem(
-            string containerId,
-            string id,
-            global::OpenRouter.ToolCallStatus status,
-            string? code,
-            global::System.Collections.Generic.IList<global::OpenRouter.OutputCodeInterpreterCallItemOutputsItems>? outputs,
-            global::OpenRouter.OutputCodeInterpreterCallItemType type)
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallItem))]
+#endif
+        public bool IsCodeInterpreterCallItem => CodeInterpreterCallItem != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCodeInterpreterCallItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.CodeInterpreterCallItem? value)
         {
-            this.Code = code;
-            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Outputs = outputs;
-            this.Status = status;
-            this.Type = type;
+            value = CodeInterpreterCallItem;
+            return IsCodeInterpreterCallItem;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutputCodeInterpreterCallItem" /> class.
+        ///
         /// </summary>
-        public OutputCodeInterpreterCallItem()
+        public global::OpenRouter.CodeInterpreterCallItem PickCodeInterpreterCallItem() => CodeInterpreterCallItem is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterCallItem' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public object? OutputCodeInterpreterCallItemVariant2 { get; init; }
+#else
+        public object? OutputCodeInterpreterCallItemVariant2 { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputCodeInterpreterCallItemVariant2))]
+#endif
+        public bool IsOutputCodeInterpreterCallItemVariant2 => OutputCodeInterpreterCallItemVariant2 != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickOutputCodeInterpreterCallItemVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
         {
+            value = OutputCodeInterpreterCallItemVariant2;
+            return IsOutputCodeInterpreterCallItemVariant2;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        public object PickOutputCodeInterpreterCallItemVariant2() => OutputCodeInterpreterCallItemVariant2 is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputCodeInterpreterCallItemVariant2' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator OutputCodeInterpreterCallItem(global::OpenRouter.CodeInterpreterCallItem value) => new OutputCodeInterpreterCallItem((global::OpenRouter.CodeInterpreterCallItem?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.CodeInterpreterCallItem?(OutputCodeInterpreterCallItem @this) => @this.CodeInterpreterCallItem;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OutputCodeInterpreterCallItem(global::OpenRouter.CodeInterpreterCallItem? value)
+        {
+            CodeInterpreterCallItem = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static OutputCodeInterpreterCallItem FromCodeInterpreterCallItem(global::OpenRouter.CodeInterpreterCallItem? value) => new OutputCodeInterpreterCallItem(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public OutputCodeInterpreterCallItem(
+            global::OpenRouter.CodeInterpreterCallItem? codeInterpreterCallItem,
+            object? outputCodeInterpreterCallItemVariant2
+            )
+        {
+            CodeInterpreterCallItem = codeInterpreterCallItem;
+            OutputCodeInterpreterCallItemVariant2 = outputCodeInterpreterCallItemVariant2;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public object? Object =>
+            OutputCodeInterpreterCallItemVariant2 as object ??
+            CodeInterpreterCallItem as object
+            ;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override string? ToString() =>
+            CodeInterpreterCallItem?.ToString() ??
+            OutputCodeInterpreterCallItemVariant2?.ToString()
+            ;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Validate()
+        {
+            return IsCodeInterpreterCallItem && IsOutputCodeInterpreterCallItemVariant2;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::OpenRouter.CodeInterpreterCallItem?, TResult>? codeInterpreterCallItem = null,
+            global::System.Func<object, TResult>? outputCodeInterpreterCallItemVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (CodeInterpreterCallItem is { } __value0 && codeInterpreterCallItem != null)
+            {
+                return codeInterpreterCallItem(__value0);
+            }
+            else if (OutputCodeInterpreterCallItemVariant2 is { } __value1 && outputCodeInterpreterCallItemVariant2 != null)
+            {
+                return outputCodeInterpreterCallItemVariant2(__value1);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public void Match(
+            global::System.Action<global::OpenRouter.CodeInterpreterCallItem?>? codeInterpreterCallItem = null,
+
+            global::System.Action<object>? outputCodeInterpreterCallItemVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (CodeInterpreterCallItem is { } __value0)
+            {
+                codeInterpreterCallItem?.Invoke(__value0);
+            }
+            else if (OutputCodeInterpreterCallItemVariant2 is { } __value1)
+            {
+                outputCodeInterpreterCallItemVariant2?.Invoke(__value1);
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::OpenRouter.CodeInterpreterCallItem?>? codeInterpreterCallItem = null,
+            global::System.Action<object>? outputCodeInterpreterCallItemVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (CodeInterpreterCallItem is { } __value0)
+            {
+                codeInterpreterCallItem?.Invoke(__value0);
+            }
+            else if (OutputCodeInterpreterCallItemVariant2 is { } __value1)
+            {
+                outputCodeInterpreterCallItemVariant2?.Invoke(__value1);
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                CodeInterpreterCallItem,
+                typeof(global::OpenRouter.CodeInterpreterCallItem),
+                OutputCodeInterpreterCallItemVariant2,
+                typeof(object),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool Equals(OutputCodeInterpreterCallItem other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.CodeInterpreterCallItem?>.Default.Equals(CodeInterpreterCallItem, other.CodeInterpreterCallItem) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(OutputCodeInterpreterCallItemVariant2, other.OutputCodeInterpreterCallItemVariant2)
+                ;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator ==(OutputCodeInterpreterCallItem obj1, OutputCodeInterpreterCallItem obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<OutputCodeInterpreterCallItem>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static bool operator !=(OutputCodeInterpreterCallItem obj1, OutputCodeInterpreterCallItem obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is OutputCodeInterpreterCallItem o && Equals(o);
+        }
     }
 }

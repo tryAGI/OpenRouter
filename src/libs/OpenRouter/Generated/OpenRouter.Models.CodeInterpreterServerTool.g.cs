@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Code interpreter tool configuration
+    /// Code interpreter tool configuration<br/>
+    /// Example: {"container":"auto","type":"code_interpreter"}
     /// </summary>
     public sealed partial class CodeInterpreterServerTool
     {
@@ -12,9 +13,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.CodeInterpreterServerToolContainerJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<string, global::OpenRouter.CodeInterpreterServerToolContainer>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.CodeInterpreterServerToolContainer Container { get; set; }
+        public required global::OpenRouter.AnyOf<string, global::OpenRouter.CodeInterpreterServerToolContainer> Container { get; set; }
 
         /// <summary>
         ///
@@ -38,7 +39,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeInterpreterServerTool(
-            global::OpenRouter.CodeInterpreterServerToolContainer container,
+            global::OpenRouter.AnyOf<string, global::OpenRouter.CodeInterpreterServerToolContainer> container,
             global::OpenRouter.CodeInterpreterServerToolType type)
         {
             this.Container = container;

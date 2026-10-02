@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Groups function/custom tools under a shared namespace
+    /// Groups function/custom tools under a shared namespace<br/>
+    /// Example: {"description":"Tools for spawning and managing sub-agents.","name":"multi_agent_v1","tools":[{"name":"spawn_agent","type":"function"}],"type":"namespace"}
     /// </summary>
     public sealed partial class NamespaceTool
     {
@@ -27,7 +28,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.NamespaceToolToolsItems> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.NamespaceFunctionTool, global::OpenRouter.CustomTool>> Tools { get; set; }
 
         /// <summary>
         ///
@@ -55,7 +56,7 @@ namespace OpenRouter
         public NamespaceTool(
             string description,
             string name,
-            global::System.Collections.Generic.IList<global::OpenRouter.NamespaceToolToolsItems> tools,
+            global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.NamespaceFunctionTool, global::OpenRouter.CustomTool>> tools,
             global::OpenRouter.NamespaceToolType type)
         {
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));

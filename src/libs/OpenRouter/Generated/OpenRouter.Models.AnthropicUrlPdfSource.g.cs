@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"type":"url","url":"https://example.com/document.pdf"}
     /// </summary>
     public sealed partial class AnthropicUrlPdfSource
     {

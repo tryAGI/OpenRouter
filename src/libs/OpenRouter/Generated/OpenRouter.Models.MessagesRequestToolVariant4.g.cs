@@ -1,0 +1,108 @@
+
+#nullable enable
+
+namespace OpenRouter
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class MessagesRequestToolVariant4
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
+        public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("blocked_domains")]
+        public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
+
+        /// <summary>
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
+        /// Example: {"type":"ephemeral"}
+        /// </summary>
+        /// <example>{"type":"ephemeral"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::OpenRouter.AnthropicCacheControlDirective? CacheControl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_uses")]
+        public int? MaxUses { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolVariant4NameJsonConverter))]
+        public global::OpenRouter.MessagesRequestToolVariant4Name Name { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesRequestToolVariant4TypeJsonConverter))]
+        public global::OpenRouter.MessagesRequestToolVariant4Type Type { get; set; }
+
+        /// <summary>
+        /// Example: {"city":"San Francisco","country":"US","region":"California","timezone":"America/Los_Angeles","type":"approximate"}
+        /// </summary>
+        /// <example>{"city":"San Francisco","country":"US","region":"California","timezone":"America/Los_Angeles","type":"approximate"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
+        public global::OpenRouter.AnthropicWebSearchToolUserLocation? UserLocation { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessagesRequestToolVariant4" /> class.
+        /// </summary>
+        /// <param name="allowedDomains"></param>
+        /// <param name="blockedDomains"></param>
+        /// <param name="cacheControl">
+        /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
+        /// Example: {"type":"ephemeral"}
+        /// </param>
+        /// <param name="maxUses"></param>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="userLocation">
+        /// Example: {"city":"San Francisco","country":"US","region":"California","timezone":"America/Los_Angeles","type":"approximate"}
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public MessagesRequestToolVariant4(
+            global::System.Collections.Generic.IList<string>? allowedDomains,
+            global::System.Collections.Generic.IList<string>? blockedDomains,
+            global::OpenRouter.AnthropicCacheControlDirective? cacheControl,
+            int? maxUses,
+            global::OpenRouter.MessagesRequestToolVariant4Name name,
+            global::OpenRouter.MessagesRequestToolVariant4Type type,
+            global::OpenRouter.AnthropicWebSearchToolUserLocation? userLocation)
+        {
+            this.AllowedDomains = allowedDomains;
+            this.BlockedDomains = blockedDomains;
+            this.CacheControl = cacheControl;
+            this.MaxUses = maxUses;
+            this.Name = name;
+            this.Type = type;
+            this.UserLocation = userLocation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessagesRequestToolVariant4" /> class.
+        /// </summary>
+        public MessagesRequestToolVariant4()
+        {
+        }
+
+    }
+}

@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: searches the web for current information
+    /// OpenRouter built-in server tool: searches the web for current information<br/>
+    /// Example: {"parameters":{"max_results":5},"type":"openrouter:web_search"}
     /// </summary>
     public sealed partial class WebSearchServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:web_search server tool
+        /// Configuration for the openrouter:web_search server tool<br/>
+        /// Example: {"max_results":5,"search_context_size":"medium"}
         /// </summary>
+        /// <example>{"max_results":5,"search_context_size":"medium"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.WebSearchServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="WebSearchServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:web_search server tool
+        /// Configuration for the openrouter:web_search server tool<br/>
+        /// Example: {"max_results":5,"search_context_size":"medium"}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

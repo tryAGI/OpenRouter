@@ -12,13 +12,13 @@ namespace OpenRouter
         /// Group results by custom classifier tags, breaking down metrics by the specified dimension values. Requires an active classifier on the workspace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifier_dimensions")]
-        public global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierDimensions? ClassifierDimensions { get; set; }
+        public global::OpenRouter.QueryAnalyticsRequestClassifierDimensions? ClassifierDimensions { get; set; }
 
         /// <summary>
         /// Filter results to generations with specific classifier tag values. Can be combined with classifier_dimensions (must use the same classifier_id) or used independently with standard dimensions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifier_filters")]
-        public global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierFilters? ClassifierFilters { get; set; }
+        public global::OpenRouter.QueryAnalyticsRequestClassifierFilters? ClassifierFilters { get; set; }
 
         /// <summary>
         ///
@@ -30,17 +30,21 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems>? Filters { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.QueryAnalyticsRequestFilter>? Filters { get; set; }
 
         /// <summary>
-        /// Time granularity
+        /// Time granularity<br/>
+        /// Example: day
         /// </summary>
+        /// <example>day</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("granularity")]
         public string? Granularity { get; set; }
 
         /// <summary>
-        /// Maximum rows per distinct combination of dimensions. When omitted on time-series queries (granularity + dimensions), auto-computed to avoid truncating time windows. Explicit values override the default and may truncate time buckets if set lower than the number of buckets in the range. Ignored when no dimensions are specified.
+        /// Maximum rows per distinct combination of dimensions. When omitted on time-series queries (granularity + dimensions), auto-computed to avoid truncating time windows. Explicit values override the default and may truncate time buckets if set lower than the number of buckets in the range. Ignored when no dimensions are specified.<br/>
+        /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_limit")]
         public int? GroupLimit { get; set; }
 
@@ -61,13 +65,13 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("order_by")]
-        public global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderBy? OrderBy { get; set; }
+        public global::OpenRouter.QueryAnalyticsRequestOrderBy? OrderBy { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("time_range")]
-        public global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaTimeRange? TimeRange { get; set; }
+        public global::OpenRouter.QueryAnalyticsRequestTimeRange? TimeRange { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -88,10 +92,12 @@ namespace OpenRouter
         /// <param name="dimensions"></param>
         /// <param name="filters"></param>
         /// <param name="granularity">
-        /// Time granularity
+        /// Time granularity<br/>
+        /// Example: day
         /// </param>
         /// <param name="groupLimit">
-        /// Maximum rows per distinct combination of dimensions. When omitted on time-series queries (granularity + dimensions), auto-computed to avoid truncating time windows. Explicit values override the default and may truncate time buckets if set lower than the number of buckets in the range. Ignored when no dimensions are specified.
+        /// Maximum rows per distinct combination of dimensions. When omitted on time-series queries (granularity + dimensions), auto-computed to avoid truncating time windows. Explicit values override the default and may truncate time buckets if set lower than the number of buckets in the range. Ignored when no dimensions are specified.<br/>
+        /// Example: 100
         /// </param>
         /// <param name="limit">
         /// Maximum total rows returned. Defaults to 1000. On time-series queries with dimensions and no explicit group_limit, the server may raise this to accommodate the expected number of unique time-bucket/dimension combinations.
@@ -103,15 +109,15 @@ namespace OpenRouter
 #endif
         public QueryAnalyticsRequest(
             global::System.Collections.Generic.IList<string> metrics,
-            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierDimensions? classifierDimensions,
-            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaClassifierFilters? classifierFilters,
+            global::OpenRouter.QueryAnalyticsRequestClassifierDimensions? classifierDimensions,
+            global::OpenRouter.QueryAnalyticsRequestClassifierFilters? classifierFilters,
             global::System.Collections.Generic.IList<string>? dimensions,
-            global::System.Collections.Generic.IList<global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaFiltersItems>? filters,
+            global::System.Collections.Generic.IList<global::OpenRouter.QueryAnalyticsRequestFilter>? filters,
             string? granularity,
             int? groupLimit,
             int? limit,
-            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaOrderBy? orderBy,
-            global::OpenRouter.AnalyticsQueryPostRequestBodyContentApplicationJsonSchemaTimeRange? timeRange)
+            global::OpenRouter.QueryAnalyticsRequestOrderBy? orderBy,
+            global::OpenRouter.QueryAnalyticsRequestTimeRange? timeRange)
         {
             this.ClassifierDimensions = classifierDimensions;
             this.ClassifierFilters = classifierFilters;

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Named tool choice for specific function
+    /// Named tool choice for specific function<br/>
+    /// Example: {"function":{"name":"get_weather"},"type":"function"}
     /// </summary>
     public sealed partial class ChatNamedToolChoice
     {

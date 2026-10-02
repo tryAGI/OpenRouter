@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: [{"content":"What is the weather today?","role":"user"}]
     /// </summary>
     public readonly partial struct BaseInputs : global::System.IEquatable<BaseInputs>
     {
@@ -50,38 +50,75 @@ namespace OpenRouter
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>? BaseInputs1 { get; init; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>? BaseInputsVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>? BaseInputs1 { get; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>? BaseInputsVariant2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputs1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsVariant2))]
 #endif
-        public bool IsBaseInputs1 => BaseInputs1 != null;
+        public bool IsBaseInputsVariant2 => BaseInputsVariant2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickBaseInputs1(
+        public bool TryPickBaseInputsVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>? value)
+            out global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>? value)
         {
-            value = BaseInputs1;
-            return IsBaseInputs1;
+            value = BaseInputsVariant2;
+            return IsBaseInputsVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items> PickBaseInputs1() => BaseInputs1 is { } value
+        public global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>> PickBaseInputsVariant2() => BaseInputsVariant2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputs1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public object? BaseInputsVariant3 { get; init; }
+#else
+        public object? BaseInputsVariant3 { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsVariant3))]
+#endif
+        public bool IsBaseInputsVariant3 => BaseInputsVariant3 != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickBaseInputsVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = BaseInputsVariant3;
+            return IsBaseInputsVariant3;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public object PickBaseInputsVariant3() => BaseInputsVariant3 is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -110,18 +147,21 @@ namespace OpenRouter
         /// </summary>
         public BaseInputs(
             string? baseInputsVariant1,
-            global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>? baseInputs1
+            global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>? baseInputsVariant2,
+            object? baseInputsVariant3
             )
         {
             BaseInputsVariant1 = baseInputsVariant1;
-            BaseInputs1 = baseInputs1;
+            BaseInputsVariant2 = baseInputsVariant2;
+            BaseInputsVariant3 = baseInputsVariant3;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            BaseInputs1 as object ??
+            BaseInputsVariant3 as object ??
+            BaseInputsVariant2 as object ??
             BaseInputsVariant1 as object
             ;
 
@@ -130,7 +170,8 @@ namespace OpenRouter
         /// </summary>
         public override string? ToString() =>
             BaseInputsVariant1?.ToString() ??
-            BaseInputs1?.ToString()
+            BaseInputsVariant2?.ToString() ??
+            BaseInputsVariant3?.ToString()
             ;
 
         /// <summary>
@@ -138,7 +179,7 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsBaseInputsVariant1 && !IsBaseInputs1 || !IsBaseInputsVariant1 && IsBaseInputs1;
+            return IsBaseInputsVariant1 || IsBaseInputsVariant2 || IsBaseInputsVariant3;
         }
 
         /// <summary>
@@ -146,7 +187,8 @@ namespace OpenRouter
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? baseInputsVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>, TResult>? baseInputs1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>, TResult>? baseInputsVariant2 = null,
+            global::System.Func<object, TResult>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +200,13 @@ namespace OpenRouter
             {
                 return baseInputsVariant1(__value0);
             }
-            else if (BaseInputs1 is { } __value1 && baseInputs1 != null)
+            else if (BaseInputsVariant2 is { } __value1 && baseInputsVariant2 != null)
             {
-                return baseInputs1(__value1);
+                return baseInputsVariant2(__value1);
+            }
+            else if (BaseInputsVariant3 is { } __value2 && baseInputsVariant3 != null)
+            {
+                return baseInputsVariant3(__value2);
             }
 
             return default(TResult);
@@ -172,7 +218,9 @@ namespace OpenRouter
         public void Match(
             global::System.Action<string>? baseInputsVariant1 = null,
 
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>>? baseInputs1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>>? baseInputsVariant2 = null,
+
+            global::System.Action<object>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -184,9 +232,13 @@ namespace OpenRouter
             {
                 baseInputsVariant1?.Invoke(__value0);
             }
-            else if (BaseInputs1 is { } __value1)
+            else if (BaseInputsVariant2 is { } __value1)
             {
-                baseInputs1?.Invoke(__value1);
+                baseInputsVariant2?.Invoke(__value1);
+            }
+            else if (BaseInputsVariant3 is { } __value2)
+            {
+                baseInputsVariant3?.Invoke(__value2);
             }
         }
 
@@ -195,7 +247,8 @@ namespace OpenRouter
         /// </summary>
         public void Switch(
             global::System.Action<string>? baseInputsVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>>? baseInputs1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>>? baseInputsVariant2 = null,
+            global::System.Action<object>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -207,9 +260,13 @@ namespace OpenRouter
             {
                 baseInputsVariant1?.Invoke(__value0);
             }
-            else if (BaseInputs1 is { } __value1)
+            else if (BaseInputsVariant2 is { } __value1)
             {
-                baseInputs1?.Invoke(__value1);
+                baseInputsVariant2?.Invoke(__value1);
+            }
+            else if (BaseInputsVariant3 is { } __value2)
+            {
+                baseInputsVariant3?.Invoke(__value2);
             }
         }
 
@@ -222,8 +279,10 @@ namespace OpenRouter
             {
                 BaseInputsVariant1,
                 typeof(string),
-                BaseInputs1,
-                typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>),
+                BaseInputsVariant2,
+                typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>),
+                BaseInputsVariant3,
+                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -241,7 +300,8 @@ namespace OpenRouter
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BaseInputsVariant1, other.BaseInputsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>?>.Default.Equals(BaseInputs1, other.BaseInputs1)
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>?>.Default.Equals(BaseInputsVariant2, other.BaseInputsVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BaseInputsVariant3, other.BaseInputsVariant3)
                 ;
         }
 

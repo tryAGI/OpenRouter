@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"content":[{"text":"Hello, how are you?","type":"input_text"}],"id":"msg-abc123","role":"user","type":"message"}
     /// </summary>
     public sealed partial class OpenAIResponseInputMessageItem
     {
@@ -13,7 +13,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseInputMessageItemContentItems> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ContentItem4> Content { get; set; }
 
         /// <summary>
         ///
@@ -26,16 +26,16 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant1?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant2?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant3?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.OpenAiResponseInputMessageItemRole Role { get; set; }
+        public required global::OpenRouter.AnyOf<global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant1?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant2?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant3?> Role { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAiResponseInputMessageItemTypeJsonConverter))]
-        public global::OpenRouter.OpenAiResponseInputMessageItemType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.OpenAIResponseInputMessageItemTypeJsonConverter))]
+        public global::OpenRouter.OpenAIResponseInputMessageItemType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,10 +54,10 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenAIResponseInputMessageItem(
-            global::System.Collections.Generic.IList<global::OpenRouter.OpenAiResponseInputMessageItemContentItems> content,
+            global::System.Collections.Generic.IList<global::OpenRouter.ContentItem4> content,
             string id,
-            global::OpenRouter.OpenAiResponseInputMessageItemRole role,
-            global::OpenRouter.OpenAiResponseInputMessageItemType? type)
+            global::OpenRouter.AnyOf<global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant1?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant2?, global::OpenRouter.OpenAIResponseInputMessageItemRoleVariant3?> role,
+            global::OpenRouter.OpenAIResponseInputMessageItemType? type)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

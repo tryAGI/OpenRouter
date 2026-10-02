@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A reference to a previous response item by ID
+    /// A reference to a previous response item by ID<br/>
+    /// Example: {"id":"msg-abc123","type":"item_reference"}
     /// </summary>
     public sealed partial class ItemReferenceItem
     {

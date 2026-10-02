@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A preset without version details.
+    /// A preset without version details.<br/>
+    /// Example: {"created_at":"2026-04-20T10:00:00Z","creator_user_id":"user_2dHFtVWx2n56w6HkM0000000000","description":null,"designated_version_id":"550e8400-e29b-41d4-a716-446655440000","id":"650e8400-e29b-41d4-a716-446655440001","name":"my-preset","slug":"my-preset","status":"active","status_updated_at":null,"updated_at":"2026-04-20T10:00:00Z","workspace_id":"750e8400-e29b-41d4-a716-446655440002"}
     /// </summary>
     public sealed partial class Preset
     {
@@ -55,8 +56,10 @@ namespace OpenRouter
         public required string Slug { get; set; }
 
         /// <summary>
-        /// The status of a preset.
+        /// The status of a preset.<br/>
+        /// Example: active
         /// </summary>
+        /// <example>active</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PresetStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -95,7 +98,8 @@ namespace OpenRouter
         /// <param name="name"></param>
         /// <param name="slug"></param>
         /// <param name="status">
-        /// The status of a preset.
+        /// The status of a preset.<br/>
+        /// Example: active
         /// </param>
         /// <param name="updatedAt"></param>
         /// <param name="creatorUserId"></param>

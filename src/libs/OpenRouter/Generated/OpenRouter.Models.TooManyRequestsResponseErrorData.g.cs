@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for TooManyRequestsResponse
+    /// Error data for TooManyRequestsResponse<br/>
+    /// Example: {"code":429,"message":"Rate limit exceeded"}
     /// </summary>
     public sealed partial class TooManyRequestsResponseErrorData
     {

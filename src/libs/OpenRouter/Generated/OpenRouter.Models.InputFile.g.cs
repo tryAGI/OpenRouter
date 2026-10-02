@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// File input content item
+    /// File input content item<br/>
+    /// Example: {"file_id":"file-abc123","filename":"document.pdf","type":"input_file"}
     /// </summary>
     public sealed partial class InputFile
     {
@@ -33,6 +34,13 @@ namespace OpenRouter
         public string? Filename { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InputFileTypeJsonConverter))]
+        public global::OpenRouter.InputFileType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,6 +53,7 @@ namespace OpenRouter
         /// <param name="fileId"></param>
         /// <param name="fileUrl"></param>
         /// <param name="filename"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,12 +61,14 @@ namespace OpenRouter
             string? fileData,
             string? fileId,
             string? fileUrl,
-            string? filename)
+            string? filename,
+            global::OpenRouter.InputFileType type)
         {
             this.FileData = fileData;
             this.FileId = fileId;
             this.FileUrl = fileUrl;
             this.Filename = filename;
+            this.Type = type;
         }
 
         /// <summary>

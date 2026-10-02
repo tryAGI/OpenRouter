@@ -5,7 +5,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Server-side execution environment for the shell tool. Only container-backed environments are supported; "local" shells are not.
+    /// Server-side execution environment for the shell tool. Only container-backed environments are supported; "local" shells are not.<br/>
+    /// Example: {"type":"container_auto"}
     /// </summary>
     public readonly partial struct ShellServerToolEnvironment : global::System.IEquatable<ShellServerToolEnvironment>
     {
@@ -15,12 +16,13 @@ namespace OpenRouter
         public global::OpenRouter.ShellServerToolEnvironmentDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// An OpenRouter-managed, auto-provisioned ephemeral container.
+        /// An OpenRouter-managed, auto-provisioned ephemeral container.<br/>
+        /// Example: {"type":"container_auto"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ShellServerToolEnvironmentVariant1? ContainerAuto { get; init; }
+        public global::OpenRouter.ContainerAutoEnvironment? ContainerAuto { get; init; }
 #else
-        public global::OpenRouter.ShellServerToolEnvironmentVariant1? ContainerAuto { get; }
+        public global::OpenRouter.ContainerAutoEnvironment? ContainerAuto { get; }
 #endif
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ShellServerToolEnvironmentVariant1? value)
+            out global::OpenRouter.ContainerAutoEnvironment? value)
         {
             value = ContainerAuto;
             return IsContainerAuto;
@@ -47,17 +49,18 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ShellServerToolEnvironmentVariant1 PickContainerAuto() => ContainerAuto is { } value
+        public global::OpenRouter.ContainerAutoEnvironment PickContainerAuto() => ContainerAuto is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerAuto' but the value was {ToString()}.");
 
         /// <summary>
-        /// Reference to a previously created container to reuse.
+        /// Reference to a container by its canonical id — a previously returned container_id or a fresh name to create a persistent container.<br/>
+        /// Example: {"container_id":"sess_abc123","type":"container_reference"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ShellServerToolEnvironmentVariant2? ContainerReference { get; init; }
+        public global::OpenRouter.ContainerReferenceEnvironment? ContainerReference { get; init; }
 #else
-        public global::OpenRouter.ShellServerToolEnvironmentVariant2? ContainerReference { get; }
+        public global::OpenRouter.ContainerReferenceEnvironment? ContainerReference { get; }
 #endif
 
         /// <summary>
@@ -75,7 +78,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.ShellServerToolEnvironmentVariant2? value)
+            out global::OpenRouter.ContainerReferenceEnvironment? value)
         {
             value = ContainerReference;
             return IsContainerReference;
@@ -84,23 +87,23 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ShellServerToolEnvironmentVariant2 PickContainerReference() => ContainerReference is { } value
+        public global::OpenRouter.ContainerReferenceEnvironment PickContainerReference() => ContainerReference is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant1 value) => new ShellServerToolEnvironment((global::OpenRouter.ShellServerToolEnvironmentVariant1?)value);
+        public static implicit operator ShellServerToolEnvironment(global::OpenRouter.ContainerAutoEnvironment value) => new ShellServerToolEnvironment((global::OpenRouter.ContainerAutoEnvironment?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ShellServerToolEnvironmentVariant1?(ShellServerToolEnvironment @this) => @this.ContainerAuto;
+        public static implicit operator global::OpenRouter.ContainerAutoEnvironment?(ShellServerToolEnvironment @this) => @this.ContainerAuto;
 
         /// <summary>
         ///
         /// </summary>
-        public ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant1? value)
+        public ShellServerToolEnvironment(global::OpenRouter.ContainerAutoEnvironment? value)
         {
             ContainerAuto = value;
         }
@@ -108,22 +111,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ShellServerToolEnvironment FromContainerAuto(global::OpenRouter.ShellServerToolEnvironmentVariant1? value) => new ShellServerToolEnvironment(value);
+        public static ShellServerToolEnvironment FromContainerAuto(global::OpenRouter.ContainerAutoEnvironment? value) => new ShellServerToolEnvironment(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant2 value) => new ShellServerToolEnvironment((global::OpenRouter.ShellServerToolEnvironmentVariant2?)value);
+        public static implicit operator ShellServerToolEnvironment(global::OpenRouter.ContainerReferenceEnvironment value) => new ShellServerToolEnvironment((global::OpenRouter.ContainerReferenceEnvironment?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ShellServerToolEnvironmentVariant2?(ShellServerToolEnvironment @this) => @this.ContainerReference;
+        public static implicit operator global::OpenRouter.ContainerReferenceEnvironment?(ShellServerToolEnvironment @this) => @this.ContainerReference;
 
         /// <summary>
         ///
         /// </summary>
-        public ShellServerToolEnvironment(global::OpenRouter.ShellServerToolEnvironmentVariant2? value)
+        public ShellServerToolEnvironment(global::OpenRouter.ContainerReferenceEnvironment? value)
         {
             ContainerReference = value;
         }
@@ -131,15 +134,15 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static ShellServerToolEnvironment FromContainerReference(global::OpenRouter.ShellServerToolEnvironmentVariant2? value) => new ShellServerToolEnvironment(value);
+        public static ShellServerToolEnvironment FromContainerReference(global::OpenRouter.ContainerReferenceEnvironment? value) => new ShellServerToolEnvironment(value);
 
         /// <summary>
         ///
         /// </summary>
         public ShellServerToolEnvironment(
             global::OpenRouter.ShellServerToolEnvironmentDiscriminatorType? type,
-            global::OpenRouter.ShellServerToolEnvironmentVariant1? containerAuto,
-            global::OpenRouter.ShellServerToolEnvironmentVariant2? containerReference
+            global::OpenRouter.ContainerAutoEnvironment? containerAuto,
+            global::OpenRouter.ContainerReferenceEnvironment? containerReference
             )
         {
             Type = type;
@@ -176,8 +179,8 @@ namespace OpenRouter
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.ShellServerToolEnvironmentVariant1, TResult>? containerAuto = null,
-            global::System.Func<global::OpenRouter.ShellServerToolEnvironmentVariant2, TResult>? containerReference = null,
+            global::System.Func<global::OpenRouter.ContainerAutoEnvironment, TResult>? containerAuto = null,
+            global::System.Func<global::OpenRouter.ContainerReferenceEnvironment, TResult>? containerReference = null,
             bool validate = true)
         {
             if (validate)
@@ -201,9 +204,9 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.ShellServerToolEnvironmentVariant1>? containerAuto = null,
+            global::System.Action<global::OpenRouter.ContainerAutoEnvironment>? containerAuto = null,
 
-            global::System.Action<global::OpenRouter.ShellServerToolEnvironmentVariant2>? containerReference = null,
+            global::System.Action<global::OpenRouter.ContainerReferenceEnvironment>? containerReference = null,
             bool validate = true)
         {
             if (validate)
@@ -225,8 +228,8 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.ShellServerToolEnvironmentVariant1>? containerAuto = null,
-            global::System.Action<global::OpenRouter.ShellServerToolEnvironmentVariant2>? containerReference = null,
+            global::System.Action<global::OpenRouter.ContainerAutoEnvironment>? containerAuto = null,
+            global::System.Action<global::OpenRouter.ContainerReferenceEnvironment>? containerReference = null,
             bool validate = true)
         {
             if (validate)
@@ -252,9 +255,9 @@ namespace OpenRouter
             var fields = new object?[]
             {
                 ContainerAuto,
-                typeof(global::OpenRouter.ShellServerToolEnvironmentVariant1),
+                typeof(global::OpenRouter.ContainerAutoEnvironment),
                 ContainerReference,
-                typeof(global::OpenRouter.ShellServerToolEnvironmentVariant2),
+                typeof(global::OpenRouter.ContainerReferenceEnvironment),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +274,8 @@ namespace OpenRouter
         public bool Equals(ShellServerToolEnvironment other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellServerToolEnvironmentVariant1?>.Default.Equals(ContainerAuto, other.ContainerAuto) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ShellServerToolEnvironmentVariant2?>.Default.Equals(ContainerReference, other.ContainerReference)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContainerAutoEnvironment?>.Default.Equals(ContainerAuto, other.ContainerAuto) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ContainerReferenceEnvironment?>.Default.Equals(ContainerReference, other.ContainerReference)
                 ;
         }
 

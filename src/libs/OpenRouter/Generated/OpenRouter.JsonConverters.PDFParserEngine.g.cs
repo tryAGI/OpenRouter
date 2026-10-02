@@ -29,7 +29,7 @@ namespace OpenRouter.JsonConverters
 
             var __score0 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine0), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant1), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -40,7 +40,7 @@ namespace OpenRouter.JsonConverters
             }
             var __score1 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine1), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant2), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -54,8 +54,8 @@ namespace OpenRouter.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::OpenRouter.PdfParserEngine0? pdfParserEngine0 = default;
-            global::OpenRouter.PdfParserEngine1? pdfParserEngine1 = default;
+            global::OpenRouter.PDFParserEngineVariant1? pDFParserEngineVariant1 = default;
+            global::OpenRouter.PDFParserEngineVariant2? pDFParserEngineVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -63,9 +63,9 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PdfParserEngine0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PdfParserEngine0).Name}");
-                        pdfParserEngine0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PDFParserEngineVariant1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PDFParserEngineVariant1).Name}");
+                        pDFParserEngineVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,9 +80,9 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PdfParserEngine1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PdfParserEngine1).Name}");
-                        pdfParserEngine1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PDFParserEngineVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PDFParserEngineVariant2).Name}");
+                        pDFParserEngineVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,14 +93,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (pdfParserEngine0 == null && pdfParserEngine1 == null)
+            if (pDFParserEngineVariant1 == null && pDFParserEngineVariant2 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PdfParserEngine0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PdfParserEngine0).Name}");
-                    pdfParserEngine0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PDFParserEngineVariant1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PDFParserEngineVariant1).Name}");
+                    pDFParserEngineVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,14 +110,14 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (pdfParserEngine0 == null && pdfParserEngine1 == null)
+            if (pDFParserEngineVariant1 == null && pDFParserEngineVariant2 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PdfParserEngine1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PdfParserEngine1).Name}");
-                    pdfParserEngine1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PDFParserEngineVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PDFParserEngineVariant2).Name}");
+                    pDFParserEngineVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -128,9 +128,9 @@ namespace OpenRouter.JsonConverters
             }
 
             var __value = new global::OpenRouter.PDFParserEngine(
-                pdfParserEngine0,
+                pDFParserEngineVariant1,
 
-                pdfParserEngine1
+                pDFParserEngineVariant2
                 );
 
             return __value;
@@ -145,17 +145,17 @@ namespace OpenRouter.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsPdfParserEngine0)
+            if (value.IsPDFParserEngineVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PdfParserEngine0> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PdfParserEngine0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPdfParserEngine0(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PDFParserEngineVariant1> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PDFParserEngineVariant1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPDFParserEngineVariant1(), typeInfo);
             }
-            else if (value.IsPdfParserEngine1)
+            else if (value.IsPDFParserEngineVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PdfParserEngine1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PdfParserEngine1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PdfParserEngine1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPdfParserEngine1(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.PDFParserEngineVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.PDFParserEngineVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.PDFParserEngineVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPDFParserEngineVariant2(), typeInfo);
             }
         }
     }

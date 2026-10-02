@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class SttRequestResponseFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.SttRequestResponseFormat?>
+    public sealed class STTRequestResponseFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.STTRequestResponseFormat?>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.SttRequestResponseFormat? Read(
+        public override global::OpenRouter.STTRequestResponseFormat? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,19 +18,14 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.SttRequestResponseFormatExtensions.ToEnum(stringValue);
+                        return global::OpenRouter.STTRequestResponseFormatExtensions.ToEnum(stringValue);
                     }
 
                     break;
                 }
-                case global::System.Text.Json.JsonTokenType.Number:
-                {
-                    var numValue = reader.GetInt32();
-                    return (global::OpenRouter.SttRequestResponseFormat)numValue;
-                }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.SttRequestResponseFormat?);
+                    return default(global::OpenRouter.STTRequestResponseFormat?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +37,7 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.SttRequestResponseFormat? value,
+            global::OpenRouter.STTRequestResponseFormat? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +48,7 @@ namespace OpenRouter.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenRouter.SttRequestResponseFormatExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenRouter.STTRequestResponseFormatExtensions.ToValueString(value.Value));
             }
         }
     }

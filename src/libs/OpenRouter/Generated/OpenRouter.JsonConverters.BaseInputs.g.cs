@@ -40,7 +40,7 @@ namespace OpenRouter.JsonConverters
             }
             var __score1 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -49,13 +49,26 @@ namespace OpenRouter.JsonConverters
                     }
                 }
             }
+            var __score2 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score2++;
+                    }
+                }
+            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             string? baseInputsVariant1 = default;
-            global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>? baseInputs1 = default;
+            global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>? baseInputsVariant2 = default;
+            object? baseInputsVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -80,9 +93,26 @@ namespace OpenRouter.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>).Name}");
-                        baseInputs1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>).Name}");
+                        baseInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                        baseInputsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +123,7 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsVariant1 == null && baseInputs1 == null)
+            if (baseInputsVariant1 == null && baseInputsVariant2 == null && baseInputsVariant3 == null)
             {
                 try
                 {
@@ -110,14 +140,31 @@ namespace OpenRouter.JsonConverters
                 }
             }
 
-            if (baseInputsVariant1 == null && baseInputs1 == null)
+            if (baseInputsVariant1 == null && baseInputsVariant2 == null && baseInputsVariant3 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>).Name}");
-                    baseInputs1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>).Name}");
+                    baseInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (baseInputsVariant1 == null && baseInputsVariant2 == null && baseInputsVariant3 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                    baseInputsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -130,7 +177,9 @@ namespace OpenRouter.JsonConverters
             var __value = new global::OpenRouter.BaseInputs(
                 baseInputsVariant1,
 
-                baseInputs1
+                baseInputsVariant2,
+
+                baseInputsVariant3
                 );
 
             return __value;
@@ -151,11 +200,17 @@ namespace OpenRouter.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsVariant1(), typeInfo);
             }
-            else if (value.IsBaseInputs1)
+            else if (value.IsBaseInputsVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.BaseInputsOneOf1Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputs1(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::OpenRouter.AnyOf<global::OpenRouter.BaseInputsVariant2Item2, global::OpenRouter.OpenAIResponseInputMessageItem, global::OpenRouter.OpenAIResponseFunctionToolCallOutput, global::OpenRouter.OpenAIResponseFunctionToolCall, global::OpenRouter.OutputItemImageGenerationCall, global::OpenRouter.OutputMessage, global::OpenRouter.OpenAIResponseCustomToolCall, global::OpenRouter.OpenAIResponseCustomToolCallOutput, global::OpenRouter.ApplyPatchCallItem, global::OpenRouter.ApplyPatchCallOutputItem, global::OpenRouter.ConfigurationUpdateItem>>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsVariant2(), typeInfo);
+            }
+            else if (value.IsBaseInputsVariant3)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsVariant3(), typeInfo);
             }
         }
     }

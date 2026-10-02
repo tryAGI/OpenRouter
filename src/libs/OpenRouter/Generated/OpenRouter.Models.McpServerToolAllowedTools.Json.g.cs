@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public readonly partial struct McpServerToolAllowedTools
+    public sealed partial class McpServerToolAllowedTools
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.McpServerToolAllowedTools),
-                jsonSerializerContext) as global::OpenRouter.McpServerToolAllowedTools?;
+                jsonSerializerContext) as global::OpenRouter.McpServerToolAllowedTools;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.McpServerToolAllowedTools),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.McpServerToolAllowedTools?;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.McpServerToolAllowedTools;
         }
 
         /// <summary>

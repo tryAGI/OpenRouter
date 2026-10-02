@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"member_user_ids":["user_abc123","user_def456"]}
     /// </summary>
     public sealed partial class BulkAssignMembersRequest
     {
         /// <summary>
-        /// Array of member user IDs to assign to the guardrail
+        /// Array of member user IDs to assign to the guardrail<br/>
+        /// Example: [user_abc123, user_def456]
         /// </summary>
+        /// <example>[user_abc123, user_def456]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("member_user_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> MemberUserIds { get; set; }
@@ -25,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkAssignMembersRequest" /> class.
         /// </summary>
         /// <param name="memberUserIds">
-        /// Array of member user IDs to assign to the guardrail
+        /// Array of member user IDs to assign to the guardrail<br/>
+        /// Example: [user_abc123, user_def456]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

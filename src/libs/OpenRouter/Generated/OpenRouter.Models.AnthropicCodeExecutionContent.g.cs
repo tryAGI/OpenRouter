@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"content":[],"return_code":0,"stderr":"","stdout":"Hello","type":"code_execution_result"}
     /// </summary>
     public readonly partial struct AnthropicCodeExecutionContent : global::System.IEquatable<AnthropicCodeExecutionContent>
     {
@@ -15,49 +15,12 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicCodeExecutionContentDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// code_execution_result variant
+        /// Example: {"error_code":"unavailable","type":"code_execution_tool_result_error"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant1? CodeExecutionResult { get; init; }
+        public global::OpenRouter.AnthropicCodeExecutionToolResultError? CodeExecutionToolResultError { get; init; }
 #else
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant1? CodeExecutionResult { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionResult))]
-#endif
-        public bool IsCodeExecutionResult => CodeExecutionResult != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickCodeExecutionResult(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.AnthropicCodeExecutionContentVariant1? value)
-        {
-            value = CodeExecutionResult;
-            return IsCodeExecutionResult;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant1 PickCodeExecutionResult() => CodeExecutionResult is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionResult' but the value was {ToString()}.");
-
-        /// <summary>
-        /// code_execution_tool_result_error variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant2? CodeExecutionToolResultError { get; init; }
-#else
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant2? CodeExecutionToolResultError { get; }
+        public global::OpenRouter.AnthropicCodeExecutionToolResultError? CodeExecutionToolResultError { get; }
 #endif
 
         /// <summary>
@@ -75,7 +38,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.AnthropicCodeExecutionContentVariant2? value)
+            out global::OpenRouter.AnthropicCodeExecutionToolResultError? value)
         {
             value = CodeExecutionToolResultError;
             return IsCodeExecutionToolResultError;
@@ -84,17 +47,54 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant2 PickCodeExecutionToolResultError() => CodeExecutionToolResultError is { } value
+        public global::OpenRouter.AnthropicCodeExecutionToolResultError PickCodeExecutionToolResultError() => CodeExecutionToolResultError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResultError' but the value was {ToString()}.");
 
         /// <summary>
-        /// encrypted_code_execution_result variant
+        /// Example: {"content":[],"return_code":0,"stderr":"","stdout":"Hello","type":"code_execution_result"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant3? EncryptedCodeExecutionResult { get; init; }
+        public global::OpenRouter.AnthropicCodeExecutionResult? CodeExecutionResult { get; init; }
 #else
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant3? EncryptedCodeExecutionResult { get; }
+        public global::OpenRouter.AnthropicCodeExecutionResult? CodeExecutionResult { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionResult))]
+#endif
+        public bool IsCodeExecutionResult => CodeExecutionResult != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCodeExecutionResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicCodeExecutionResult? value)
+        {
+            value = CodeExecutionResult;
+            return IsCodeExecutionResult;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::OpenRouter.AnthropicCodeExecutionResult PickCodeExecutionResult() => CodeExecutionResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Example: {"content":[],"encrypted_stdout":"enc_stdout","return_code":0,"stderr":"","type":"encrypted_code_execution_result"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicEncryptedCodeExecutionResult? EncryptedCodeExecutionResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicEncryptedCodeExecutionResult? EncryptedCodeExecutionResult { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.AnthropicCodeExecutionContentVariant3? value)
+            out global::OpenRouter.AnthropicEncryptedCodeExecutionResult? value)
         {
             value = EncryptedCodeExecutionResult;
             return IsEncryptedCodeExecutionResult;
@@ -121,46 +121,23 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicCodeExecutionContentVariant3 PickEncryptedCodeExecutionResult() => EncryptedCodeExecutionResult is { } value
+        public global::OpenRouter.AnthropicEncryptedCodeExecutionResult PickEncryptedCodeExecutionResult() => EncryptedCodeExecutionResult is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EncryptedCodeExecutionResult' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionContentVariant1 value) => new AnthropicCodeExecutionContent((global::OpenRouter.AnthropicCodeExecutionContentVariant1?)value);
+        public static implicit operator AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionToolResultError value) => new AnthropicCodeExecutionContent((global::OpenRouter.AnthropicCodeExecutionToolResultError?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCodeExecutionContentVariant1?(AnthropicCodeExecutionContent @this) => @this.CodeExecutionResult;
+        public static implicit operator global::OpenRouter.AnthropicCodeExecutionToolResultError?(AnthropicCodeExecutionContent @this) => @this.CodeExecutionToolResultError;
 
         /// <summary>
         ///
         /// </summary>
-        public AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionContentVariant1? value)
-        {
-            CodeExecutionResult = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static AnthropicCodeExecutionContent FromCodeExecutionResult(global::OpenRouter.AnthropicCodeExecutionContentVariant1? value) => new AnthropicCodeExecutionContent(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionContentVariant2 value) => new AnthropicCodeExecutionContent((global::OpenRouter.AnthropicCodeExecutionContentVariant2?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCodeExecutionContentVariant2?(AnthropicCodeExecutionContent @this) => @this.CodeExecutionToolResultError;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionContentVariant2? value)
+        public AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionToolResultError? value)
         {
             CodeExecutionToolResultError = value;
         }
@@ -168,22 +145,45 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicCodeExecutionContent FromCodeExecutionToolResultError(global::OpenRouter.AnthropicCodeExecutionContentVariant2? value) => new AnthropicCodeExecutionContent(value);
+        public static AnthropicCodeExecutionContent FromCodeExecutionToolResultError(global::OpenRouter.AnthropicCodeExecutionToolResultError? value) => new AnthropicCodeExecutionContent(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionContentVariant3 value) => new AnthropicCodeExecutionContent((global::OpenRouter.AnthropicCodeExecutionContentVariant3?)value);
+        public static implicit operator AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionResult value) => new AnthropicCodeExecutionContent((global::OpenRouter.AnthropicCodeExecutionResult?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicCodeExecutionContentVariant3?(AnthropicCodeExecutionContent @this) => @this.EncryptedCodeExecutionResult;
+        public static implicit operator global::OpenRouter.AnthropicCodeExecutionResult?(AnthropicCodeExecutionContent @this) => @this.CodeExecutionResult;
 
         /// <summary>
         ///
         /// </summary>
-        public AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionContentVariant3? value)
+        public AnthropicCodeExecutionContent(global::OpenRouter.AnthropicCodeExecutionResult? value)
+        {
+            CodeExecutionResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnthropicCodeExecutionContent FromCodeExecutionResult(global::OpenRouter.AnthropicCodeExecutionResult? value) => new AnthropicCodeExecutionContent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnthropicCodeExecutionContent(global::OpenRouter.AnthropicEncryptedCodeExecutionResult value) => new AnthropicCodeExecutionContent((global::OpenRouter.AnthropicEncryptedCodeExecutionResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicEncryptedCodeExecutionResult?(AnthropicCodeExecutionContent @this) => @this.EncryptedCodeExecutionResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AnthropicCodeExecutionContent(global::OpenRouter.AnthropicEncryptedCodeExecutionResult? value)
         {
             EncryptedCodeExecutionResult = value;
         }
@@ -191,22 +191,22 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicCodeExecutionContent FromEncryptedCodeExecutionResult(global::OpenRouter.AnthropicCodeExecutionContentVariant3? value) => new AnthropicCodeExecutionContent(value);
+        public static AnthropicCodeExecutionContent FromEncryptedCodeExecutionResult(global::OpenRouter.AnthropicEncryptedCodeExecutionResult? value) => new AnthropicCodeExecutionContent(value);
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicCodeExecutionContent(
             global::OpenRouter.AnthropicCodeExecutionContentDiscriminatorType? type,
-            global::OpenRouter.AnthropicCodeExecutionContentVariant1? codeExecutionResult,
-            global::OpenRouter.AnthropicCodeExecutionContentVariant2? codeExecutionToolResultError,
-            global::OpenRouter.AnthropicCodeExecutionContentVariant3? encryptedCodeExecutionResult
+            global::OpenRouter.AnthropicCodeExecutionToolResultError? codeExecutionToolResultError,
+            global::OpenRouter.AnthropicCodeExecutionResult? codeExecutionResult,
+            global::OpenRouter.AnthropicEncryptedCodeExecutionResult? encryptedCodeExecutionResult
             )
         {
             Type = type;
 
-            CodeExecutionResult = codeExecutionResult;
             CodeExecutionToolResultError = codeExecutionToolResultError;
+            CodeExecutionResult = codeExecutionResult;
             EncryptedCodeExecutionResult = encryptedCodeExecutionResult;
         }
 
@@ -215,16 +215,16 @@ namespace OpenRouter
         /// </summary>
         public object? Object =>
             EncryptedCodeExecutionResult as object ??
-            CodeExecutionToolResultError as object ??
-            CodeExecutionResult as object
+            CodeExecutionResult as object ??
+            CodeExecutionToolResultError as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            CodeExecutionResult?.ToString() ??
             CodeExecutionToolResultError?.ToString() ??
+            CodeExecutionResult?.ToString() ??
             EncryptedCodeExecutionResult?.ToString()
             ;
 
@@ -233,16 +233,16 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsCodeExecutionResult && !IsCodeExecutionToolResultError && !IsEncryptedCodeExecutionResult || !IsCodeExecutionResult && IsCodeExecutionToolResultError && !IsEncryptedCodeExecutionResult || !IsCodeExecutionResult && !IsCodeExecutionToolResultError && IsEncryptedCodeExecutionResult;
+            return IsCodeExecutionToolResultError && !IsCodeExecutionResult && !IsEncryptedCodeExecutionResult || !IsCodeExecutionToolResultError && IsCodeExecutionResult && !IsEncryptedCodeExecutionResult || !IsCodeExecutionToolResultError && !IsCodeExecutionResult && IsEncryptedCodeExecutionResult;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant1, TResult>? codeExecutionResult = null,
-            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant2, TResult>? codeExecutionToolResultError = null,
-            global::System.Func<global::OpenRouter.AnthropicCodeExecutionContentVariant3, TResult>? encryptedCodeExecutionResult = null,
+            global::System.Func<global::OpenRouter.AnthropicCodeExecutionToolResultError, TResult>? codeExecutionToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicCodeExecutionResult, TResult>? codeExecutionResult = null,
+            global::System.Func<global::OpenRouter.AnthropicEncryptedCodeExecutionResult, TResult>? encryptedCodeExecutionResult = null,
             bool validate = true)
         {
             if (validate)
@@ -250,13 +250,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (CodeExecutionResult is { } __value0 && codeExecutionResult != null)
+            if (CodeExecutionToolResultError is { } __value0 && codeExecutionToolResultError != null)
             {
-                return codeExecutionResult(__value0);
+                return codeExecutionToolResultError(__value0);
             }
-            else if (CodeExecutionToolResultError is { } __value1 && codeExecutionToolResultError != null)
+            else if (CodeExecutionResult is { } __value1 && codeExecutionResult != null)
             {
-                return codeExecutionToolResultError(__value1);
+                return codeExecutionResult(__value1);
             }
             else if (EncryptedCodeExecutionResult is { } __value2 && encryptedCodeExecutionResult != null)
             {
@@ -270,11 +270,11 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant1>? codeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionToolResultError>? codeExecutionToolResultError = null,
 
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant2>? codeExecutionToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionResult>? codeExecutionResult = null,
 
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant3>? encryptedCodeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicEncryptedCodeExecutionResult>? encryptedCodeExecutionResult = null,
             bool validate = true)
         {
             if (validate)
@@ -282,13 +282,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (CodeExecutionResult is { } __value0)
+            if (CodeExecutionToolResultError is { } __value0)
             {
-                codeExecutionResult?.Invoke(__value0);
+                codeExecutionToolResultError?.Invoke(__value0);
             }
-            else if (CodeExecutionToolResultError is { } __value1)
+            else if (CodeExecutionResult is { } __value1)
             {
-                codeExecutionToolResultError?.Invoke(__value1);
+                codeExecutionResult?.Invoke(__value1);
             }
             else if (EncryptedCodeExecutionResult is { } __value2)
             {
@@ -300,9 +300,9 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant1>? codeExecutionResult = null,
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant2>? codeExecutionToolResultError = null,
-            global::System.Action<global::OpenRouter.AnthropicCodeExecutionContentVariant3>? encryptedCodeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionToolResultError>? codeExecutionToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicCodeExecutionResult>? codeExecutionResult = null,
+            global::System.Action<global::OpenRouter.AnthropicEncryptedCodeExecutionResult>? encryptedCodeExecutionResult = null,
             bool validate = true)
         {
             if (validate)
@@ -310,13 +310,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (CodeExecutionResult is { } __value0)
+            if (CodeExecutionToolResultError is { } __value0)
             {
-                codeExecutionResult?.Invoke(__value0);
+                codeExecutionToolResultError?.Invoke(__value0);
             }
-            else if (CodeExecutionToolResultError is { } __value1)
+            else if (CodeExecutionResult is { } __value1)
             {
-                codeExecutionToolResultError?.Invoke(__value1);
+                codeExecutionResult?.Invoke(__value1);
             }
             else if (EncryptedCodeExecutionResult is { } __value2)
             {
@@ -331,12 +331,12 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                CodeExecutionResult,
-                typeof(global::OpenRouter.AnthropicCodeExecutionContentVariant1),
                 CodeExecutionToolResultError,
-                typeof(global::OpenRouter.AnthropicCodeExecutionContentVariant2),
+                typeof(global::OpenRouter.AnthropicCodeExecutionToolResultError),
+                CodeExecutionResult,
+                typeof(global::OpenRouter.AnthropicCodeExecutionResult),
                 EncryptedCodeExecutionResult,
-                typeof(global::OpenRouter.AnthropicCodeExecutionContentVariant3),
+                typeof(global::OpenRouter.AnthropicEncryptedCodeExecutionResult),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +353,9 @@ namespace OpenRouter
         public bool Equals(AnthropicCodeExecutionContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecutionContentVariant1?>.Default.Equals(CodeExecutionResult, other.CodeExecutionResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecutionContentVariant2?>.Default.Equals(CodeExecutionToolResultError, other.CodeExecutionToolResultError) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecutionContentVariant3?>.Default.Equals(EncryptedCodeExecutionResult, other.EncryptedCodeExecutionResult)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecutionToolResultError?>.Default.Equals(CodeExecutionToolResultError, other.CodeExecutionToolResultError) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicCodeExecutionResult?>.Default.Equals(CodeExecutionResult, other.CodeExecutionResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicEncryptedCodeExecutionResult?>.Default.Equals(EncryptedCodeExecutionResult, other.EncryptedCodeExecutionResult)
                 ;
         }
 

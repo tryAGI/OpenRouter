@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Usage and cost information for the video generation. Available once the job has completed.
+    /// Usage and cost information for the video generation. Available once the job has completed.<br/>
+    /// Example: {"cost":0.5,"is_byok":false}
     /// </summary>
     public sealed partial class VideoGenerationUsage
     {

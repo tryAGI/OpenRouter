@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Chat completion response
+    /// Chat completion response<br/>
+    /// Example: {"choices":[{"finish_reason":"stop","index":0,"message":{"content":"The capital of France is Paris.","role":"assistant"}}],"created":1677652288,"id":"chatcmpl-123","model":"openai/gpt-4","object":"chat.completion","system_fingerprint":"fp_44709d6fcb","usage":{"completion_tokens":15,"prompt_tokens":10,"total_tokens":25}}
     /// </summary>
     public sealed partial class ChatResult
     {
@@ -16,23 +17,29 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.ChatChoice> Choices { get; set; }
 
         /// <summary>
-        /// Unix timestamp of creation
+        /// Unix timestamp of creation<br/>
+        /// Example: 1677652288
         /// </summary>
+        /// <example>1677652288</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
-        /// Unique completion identifier
+        /// Unique completion identifier<br/>
+        /// Example: chatcmpl-123
         /// </summary>
+        /// <example>chatcmpl-123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// Model used for completion
+        /// Model used for completion<br/>
+        /// Example: openai/gpt-4
         /// </summary>
+        /// <example>openai/gpt-4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
@@ -45,26 +52,33 @@ namespace OpenRouter
         public global::OpenRouter.ChatResultObject Object { get; set; }
 
         /// <summary>
-        ///
+        /// Example: {"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}
         /// </summary>
+        /// <example>{"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("openrouter_metadata")]
         public global::OpenRouter.OpenRouterMetadata? OpenrouterMetadata { get; set; }
 
         /// <summary>
-        /// The service tier used by the upstream provider for this request
+        /// The service tier used by the upstream provider for this request<br/>
+        /// Example: default
         /// </summary>
+        /// <example>default</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         public string? ServiceTier { get; set; }
 
         /// <summary>
-        /// System fingerprint
+        /// System fingerprint<br/>
+        /// Example: fp_44709d6fcb
         /// </summary>
+        /// <example>fp_44709d6fcb</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]
         public string? SystemFingerprint { get; set; }
 
         /// <summary>
-        /// Token usage statistics
+        /// Token usage statistics<br/>
+        /// Example: {"completion_tokens":15,"completion_tokens_details":{"reasoning_tokens":5},"cost":0.0012,"cost_details":{"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008},"is_byok":false,"prompt_tokens":10,"prompt_tokens_details":{"cached_tokens":2},"server_tool_use_details":{"tool_calls_executed":2,"tool_calls_requested":2},"total_tokens":25}
         /// </summary>
+        /// <example>{"completion_tokens":15,"completion_tokens_details":{"reasoning_tokens":5},"cost":0.0012,"cost_details":{"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008},"is_byok":false,"prompt_tokens":10,"prompt_tokens_details":{"cached_tokens":2},"server_tool_use_details":{"tool_calls_executed":2,"tool_calls_requested":2},"total_tokens":25}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::OpenRouter.ChatUsage? Usage { get; set; }
 
@@ -81,24 +95,32 @@ namespace OpenRouter
         /// List of completion choices
         /// </param>
         /// <param name="created">
-        /// Unix timestamp of creation
+        /// Unix timestamp of creation<br/>
+        /// Example: 1677652288
         /// </param>
         /// <param name="id">
-        /// Unique completion identifier
+        /// Unique completion identifier<br/>
+        /// Example: chatcmpl-123
         /// </param>
         /// <param name="model">
-        /// Model used for completion
+        /// Model used for completion<br/>
+        /// Example: openai/gpt-4
         /// </param>
         /// <param name="object"></param>
-        /// <param name="openrouterMetadata"></param>
+        /// <param name="openrouterMetadata">
+        /// Example: {"attempt":1,"endpoints":{"available":[{"model":"openai/gpt-4o","provider":"OpenAI","selected":true}],"total":1},"generation_time":2016,"is_byok":false,"region":"iad","requested":"openai/gpt-4o","strategy":"direct","summary":"available=1, selected=OpenAI"}
+        /// </param>
         /// <param name="serviceTier">
-        /// The service tier used by the upstream provider for this request
+        /// The service tier used by the upstream provider for this request<br/>
+        /// Example: default
         /// </param>
         /// <param name="systemFingerprint">
-        /// System fingerprint
+        /// System fingerprint<br/>
+        /// Example: fp_44709d6fcb
         /// </param>
         /// <param name="usage">
-        /// Token usage statistics
+        /// Token usage statistics<br/>
+        /// Example: {"completion_tokens":15,"completion_tokens_details":{"reasoning_tokens":5},"cost":0.0012,"cost_details":{"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008},"is_byok":false,"prompt_tokens":10,"prompt_tokens_details":{"cached_tokens":2},"server_tool_use_details":{"tool_calls_executed":2,"tool_calls_requested":2},"total_tokens":25}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Advisor tool result from a prior assistant turn, replayed back to the model on the next turn. Mirrors the block Anthropic returns in assistant content when the `advisor_20260301` tool runs.
+    /// Advisor tool result from a prior assistant turn, replayed back to the model on the next turn. Mirrors the block Anthropic returns in assistant content when the `advisor_20260301` tool runs.<br/>
+    /// Example: {"content":{"text":"Advisor response text","type":"advisor_result"},"tool_use_id":"srvtoolu_01abc","type":"advisor_tool_result"}
     /// </summary>
     public sealed partial class MessagesAdvisorToolResultBlock
     {

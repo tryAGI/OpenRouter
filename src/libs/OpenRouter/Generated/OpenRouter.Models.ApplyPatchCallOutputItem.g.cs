@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// The client's echo of an `apply_patch_call` after applying the patch. `output` is an optional human-readable log; `status` is `completed` when the patch was applied successfully, `failed` otherwise.
+    /// The client's echo of an `apply_patch_call` after applying the patch. `output` is an optional human-readable log; `status` is `completed` when the patch was applied successfully, `failed` otherwise.<br/>
+    /// Example: {"call_id":"call_abc123","output":"Applied patch to /src/main.ts","status":"completed","type":"apply_patch_call_output"}
     /// </summary>
     public sealed partial class ApplyPatchCallOutputItem
     {

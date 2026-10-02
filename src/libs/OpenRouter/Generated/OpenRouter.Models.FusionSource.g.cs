@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A web page retrieved via web search during a fusion run.
+    /// A web page retrieved via web search during a fusion run.<br/>
+    /// Example: {"title":"Example article title","url":"https://example.com/article"}
     /// </summary>
     public sealed partial class FusionSource
     {
@@ -16,7 +17,7 @@ namespace OpenRouter
         public required string Title { get; set; }
 
         /// <summary>
-        /// URL of the web page a panel or the judge retrieved during the run.
+        /// URL of the web page a panel or the analyst retrieved during the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +36,7 @@ namespace OpenRouter
         /// Title of the retrieved web page.
         /// </param>
         /// <param name="url">
-        /// URL of the web page a panel or the judge retrieved during the run.
+        /// URL of the web page a panel or the analyst retrieved during the run.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

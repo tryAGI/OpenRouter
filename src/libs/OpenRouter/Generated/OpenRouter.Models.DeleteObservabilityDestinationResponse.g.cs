@@ -4,16 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"deleted":true}
     /// </summary>
     public sealed partial class DeleteObservabilityDestinationResponse
     {
         /// <summary>
         /// Always `true` on success.
         /// </summary>
+        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Deleted { get; set; }
+        public bool Deleted { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeleteObservabilityDestinationResponse(
-            bool deleted)
+            bool deleted = true)
         {
             this.Deleted = deleted;
         }

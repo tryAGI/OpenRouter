@@ -3,10 +3,10 @@
 namespace OpenRouter.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class UrlCitationTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.UrlCitationType>
+    public sealed class URLCitationTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.URLCitationType>
     {
         /// <inheritdoc />
-        public override global::OpenRouter.UrlCitationType Read(
+        public override global::OpenRouter.URLCitationType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenRouter.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenRouter.UrlCitationTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenRouter.URLCitationTypeExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace OpenRouter.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenRouter.UrlCitationType)numValue;
+                    return (global::OpenRouter.URLCitationType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::OpenRouter.UrlCitationType);
+                    return default(global::OpenRouter.URLCitationType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace OpenRouter.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenRouter.UrlCitationType value,
+            global::OpenRouter.URLCitationType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenRouter.UrlCitationTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::OpenRouter.URLCitationTypeExtensions.ToValueString(value));
         }
     }
 }

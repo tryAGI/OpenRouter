@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// User location information for web search
+    /// User location information for web search<br/>
+    /// Example: {"city":"San Francisco","country":"USA","region":"California","timezone":"America/Los_Angeles","type":"approximate"}
     /// </summary>
     public sealed partial class WebSearchUserLocation
     {

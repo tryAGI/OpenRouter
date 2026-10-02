@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"content":"OpenRouter provides a unified API for accessing LLMs from multiple providers.","end_index":42,"start_index":0,"title":"OpenRouter Documentation","type":"url_citation","url":"https://openrouter.ai/docs"}
     /// </summary>
     public sealed partial class URLCitation
     {
@@ -39,8 +39,8 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.UrlCitationTypeJsonConverter))]
-        public global::OpenRouter.UrlCitationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.URLCitationTypeJsonConverter))]
+        public global::OpenRouter.URLCitationType Type { get; set; }
 
         /// <summary>
         ///
@@ -73,7 +73,7 @@ namespace OpenRouter
             string title,
             string url,
             string? content,
-            global::OpenRouter.UrlCitationType type)
+            global::OpenRouter.URLCitationType type)
         {
             this.Content = content;
             this.EndIndex = endIndex;

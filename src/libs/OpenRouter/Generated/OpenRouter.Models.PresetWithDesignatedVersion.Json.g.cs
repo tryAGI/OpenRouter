@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class PresetWithDesignatedVersion
+    public readonly partial struct PresetWithDesignatedVersion
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.PresetWithDesignatedVersion),
-                jsonSerializerContext) as global::OpenRouter.PresetWithDesignatedVersion;
+                jsonSerializerContext) as global::OpenRouter.PresetWithDesignatedVersion?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.PresetWithDesignatedVersion),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.PresetWithDesignatedVersion;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.PresetWithDesignatedVersion?;
         }
 
         /// <summary>

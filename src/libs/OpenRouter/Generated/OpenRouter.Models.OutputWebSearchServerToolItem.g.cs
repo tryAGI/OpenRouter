@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:web_search server tool output item
+    /// An openrouter:web_search server tool output item<br/>
+    /// Example: {"action":{"query":"latest AI news","type":"search"},"id":"ws_tmp_abc123","status":"completed","type":"openrouter:web_search"}
     /// </summary>
     public sealed partial class OutputWebSearchServerToolItem
     {
@@ -21,8 +22,9 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -44,7 +46,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputWebSearchServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="action">
         /// The search action performed, matching OpenAI web_search_call.action shape. Includes the query the model issued and optional source URLs returned by the search provider.
         /// </param>

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Percentile-based throughput cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
+    /// Percentile-based throughput cutoffs. All specified cutoffs must be met for an endpoint to be preferred.<br/>
+    /// Example: {"p50":100,"p90":50}
     /// </summary>
     public sealed partial class PercentileThroughputCutoffs
     {

@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"logic":"and","rules":[{"field":"model","operator":"equals","value":"openai/gpt-4o"}]}
     /// </summary>
     public sealed partial class ObservabilityFilterRuleGroup
     {
@@ -20,7 +20,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRuleGroupRulesItems> Rules { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRuleGroupRule> Rules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ObservabilityFilterRuleGroup(
-            global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRuleGroupRulesItems> rules,
+            global::System.Collections.Generic.IList<global::OpenRouter.ObservabilityFilterRuleGroupRule> rules,
             global::OpenRouter.ObservabilityFilterRuleGroupLogic? logic)
         {
             this.Logic = logic;

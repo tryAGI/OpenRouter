@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Forbidden - Authentication successful but insufficient permissions
+    /// Forbidden - Authentication successful but insufficient permissions<br/>
+    /// Example: {"error":{"code":403,"message":"Only management keys can perform this operation"}}
     /// </summary>
     public sealed partial class ForbiddenResponse
     {
         /// <summary>
-        /// Error data for ForbiddenResponse
+        /// Error data for ForbiddenResponse<br/>
+        /// Example: {"code":403,"message":"Only management keys can perform this operation"}
         /// </summary>
+        /// <example>{"code":403,"message":"Only management keys can perform this operation"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ForbiddenResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ForbiddenResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for ForbiddenResponse
+        /// Error data for ForbiddenResponse<br/>
+        /// Example: {"code":403,"message":"Only management keys can perform this operation"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

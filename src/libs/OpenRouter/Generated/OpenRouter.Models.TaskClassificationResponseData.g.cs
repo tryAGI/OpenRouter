@@ -9,8 +9,10 @@ namespace OpenRouter
     public sealed partial class TaskClassificationResponseData
     {
         /// <summary>
-        /// UTC date (YYYY-MM-DD) of the window upper bound (yesterday). Data is exclusive of the current incomplete UTC day. This is the expected latest date in the snapshot; it does not confirm data presence for that date.
+        /// UTC date (YYYY-MM-DD) of the window upper bound (yesterday). Data is exclusive of the current incomplete UTC day. This is the expected latest date in the snapshot; it does not confirm data presence for that date.<br/>
+        /// Example: 2026-06-17
         /// </summary>
+        /// <example>2026-06-17</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AsOf { get; set; }
@@ -30,8 +32,10 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.TaskClassificationMacroCategory> MacroCategories { get; set; }
 
         /// <summary>
-        /// Number of trailing days covered by this snapshot.
+        /// Number of trailing days covered by this snapshot.<br/>
+        /// Example: 7
         /// </summary>
+        /// <example>7</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("window_days")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int WindowDays { get; set; }
@@ -46,7 +50,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="TaskClassificationResponseData" /> class.
         /// </summary>
         /// <param name="asOf">
-        /// UTC date (YYYY-MM-DD) of the window upper bound (yesterday). Data is exclusive of the current incomplete UTC day. This is the expected latest date in the snapshot; it does not confirm data presence for that date.
+        /// UTC date (YYYY-MM-DD) of the window upper bound (yesterday). Data is exclusive of the current incomplete UTC day. This is the expected latest date in the snapshot; it does not confirm data presence for that date.<br/>
+        /// Example: 2026-06-17
         /// </param>
         /// <param name="classifications">
         /// Per-task classification market-share data, sorted by usage_share descending.
@@ -55,7 +60,8 @@ namespace OpenRouter
         /// Aggregate market-share data per macro-category (code, data, agent, general).
         /// </param>
         /// <param name="windowDays">
-        /// Number of trailing days covered by this snapshot.
+        /// Number of trailing days covered by this snapshot.<br/>
+        /// Example: 7
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

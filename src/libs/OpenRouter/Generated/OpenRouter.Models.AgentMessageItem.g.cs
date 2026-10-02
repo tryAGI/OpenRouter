@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A message routed between agents in a multi-agent session
+    /// A message routed between agents in a multi-agent session<br/>
+    /// Example: {"author":"/root/worker","content":[{"text":"Task complete.","type":"input_text"}],"recipient":"/root","type":"agent_message"}
     /// </summary>
     public sealed partial class AgentMessageItem
     {
@@ -26,7 +27,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.AgentMessageItemContentItems> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.AgentMessageItemContentItem2>> Content { get; set; }
 
         /// <summary>
         ///
@@ -68,7 +69,7 @@ namespace OpenRouter
 #endif
         public AgentMessageItem(
             string author,
-            global::System.Collections.Generic.IList<global::OpenRouter.AgentMessageItemContentItems> content,
+            global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.AgentMessageItemContentItem2>> content,
             string recipient,
             global::OpenRouter.AgentMessageItemAgent? agent,
             string? id,

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// An openrouter:memory server tool output item
+    /// An openrouter:memory server tool output item<br/>
+    /// Example: {"action":"read","id":"mem_tmp_abc123","key":"user_preference","status":"completed","type":"openrouter:memory"}
     /// </summary>
     public sealed partial class OutputMemoryServerToolItem
     {
@@ -28,8 +29,9 @@ namespace OpenRouter
         public string? Key { get; set; }
 
         /// <summary>
-        ///
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -43,7 +45,7 @@ namespace OpenRouter
         public global::OpenRouter.OutputMemoryServerToolItemType Type { get; set; }
 
         /// <summary>
-        /// Any type
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public object? Value { get; set; }
@@ -57,14 +59,14 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputMemoryServerToolItem" /> class.
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
         /// <param name="action"></param>
         /// <param name="id"></param>
         /// <param name="key"></param>
         /// <param name="type"></param>
-        /// <param name="value">
-        /// Any type
-        /// </param>
+        /// <param name="value"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for PaymentRequiredResponse
+    /// Error data for PaymentRequiredResponse<br/>
+    /// Example: {"code":402,"message":"Insufficient credits. Add more using https://openrouter.ai/credits"}
     /// </summary>
     public sealed partial class PaymentRequiredResponseErrorData
     {

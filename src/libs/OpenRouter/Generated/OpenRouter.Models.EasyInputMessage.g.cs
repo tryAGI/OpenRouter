@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"content":"What is the weather today?","role":"user"}
     /// </summary>
     public sealed partial class EasyInputMessage
     {
@@ -12,21 +12,25 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::OpenRouter.EasyInputMessageContent? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile, global::OpenRouter.InputAudio, global::OpenRouter.InputVideo>>, string, object>))]
+        public global::OpenRouter.AnyOf<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile, global::OpenRouter.InputAudio, global::OpenRouter.InputVideo>>, string, object>? Content { get; set; }
 
         /// <summary>
-        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
+        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.<br/>
+        /// Example: final_answer
         /// </summary>
+        /// <example>final_answer</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        public global::OpenRouter.EasyInputMessagePhase? Phase { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.EasyInputMessagePhaseVariant1?, global::OpenRouter.EasyInputMessagePhaseVariant2?, object>))]
+        public global::OpenRouter.AnyOf<global::OpenRouter.EasyInputMessagePhaseVariant1?, global::OpenRouter.EasyInputMessagePhaseVariant2?, object>? Phase { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.EasyInputMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnyOfJsonConverter<global::OpenRouter.EasyInputMessageRoleVariant1?, global::OpenRouter.EasyInputMessageRoleVariant2?, global::OpenRouter.EasyInputMessageRoleVariant3?, global::OpenRouter.EasyInputMessageRoleVariant4?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenRouter.EasyInputMessageRole Role { get; set; }
+        public required global::OpenRouter.AnyOf<global::OpenRouter.EasyInputMessageRoleVariant1?, global::OpenRouter.EasyInputMessageRoleVariant2?, global::OpenRouter.EasyInputMessageRoleVariant3?, global::OpenRouter.EasyInputMessageRoleVariant4?> Role { get; set; }
 
         /// <summary>
         ///
@@ -47,16 +51,17 @@ namespace OpenRouter
         /// <param name="role"></param>
         /// <param name="content"></param>
         /// <param name="phase">
-        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.
+        /// The phase of an assistant message. Use `commentary` for an intermediate assistant message and `final_answer` for the final assistant message. For follow-up requests with models like `gpt-5.3-codex` and later, preserve and resend phase on all assistant messages. Omitting it can degrade performance. Not used for user messages.<br/>
+        /// Example: final_answer
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EasyInputMessage(
-            global::OpenRouter.EasyInputMessageRole role,
-            global::OpenRouter.EasyInputMessageContent? content,
-            global::OpenRouter.EasyInputMessagePhase? phase,
+            global::OpenRouter.AnyOf<global::OpenRouter.EasyInputMessageRoleVariant1?, global::OpenRouter.EasyInputMessageRoleVariant2?, global::OpenRouter.EasyInputMessageRoleVariant3?, global::OpenRouter.EasyInputMessageRoleVariant4?> role,
+            global::OpenRouter.AnyOf<global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.InputText, global::OpenRouter.AllOf<global::OpenRouter.InputImage, object>?, global::OpenRouter.InputFile, global::OpenRouter.InputAudio, global::OpenRouter.InputVideo>>, string, object>? content,
+            global::OpenRouter.AnyOf<global::OpenRouter.EasyInputMessagePhaseVariant1?, global::OpenRouter.EasyInputMessagePhaseVariant2?, object>? phase,
             global::OpenRouter.EasyInputMessageType? type)
         {
             this.Content = content;

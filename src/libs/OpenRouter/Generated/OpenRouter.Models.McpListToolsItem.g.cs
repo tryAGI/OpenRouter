@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// List of available MCP tools from a server
+    /// List of available MCP tools from a server<br/>
+    /// Example: {"id":"mcp-list-abc123","server_label":"database-server","tools":[{"description":"Execute a database query","input_schema":{"properties":{"query":{"type":"string"}},"type":"object"},"name":"query_database"}],"type":"mcp_list_tools"}
     /// </summary>
     public sealed partial class McpListToolsItem
     {
@@ -33,7 +34,7 @@ namespace OpenRouter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenRouter.McpListToolsItemToolsItems> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenRouter.McpListToolsItemTool> Tools { get; set; }
 
         /// <summary>
         ///
@@ -62,7 +63,7 @@ namespace OpenRouter
         public McpListToolsItem(
             string id,
             string serverLabel,
-            global::System.Collections.Generic.IList<global::OpenRouter.McpListToolsItemToolsItems> tools,
+            global::System.Collections.Generic.IList<global::OpenRouter.McpListToolsItemTool> tools,
             string? error,
             global::OpenRouter.McpListToolsItemType type)
         {

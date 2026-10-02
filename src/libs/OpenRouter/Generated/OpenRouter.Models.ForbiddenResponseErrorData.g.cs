@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for ForbiddenResponse
+    /// Error data for ForbiddenResponse<br/>
+    /// Example: {"code":403,"message":"Only management keys can perform this operation"}
     /// </summary>
     public sealed partial class ForbiddenResponseErrorData
     {

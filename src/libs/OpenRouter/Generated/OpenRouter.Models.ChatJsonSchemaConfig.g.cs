@@ -4,32 +4,41 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// JSON Schema configuration object
+    /// JSON Schema configuration object<br/>
+    /// Example: {"description":"A mathematical response","name":"math_response","schema":{"properties":{"answer":{"type":"number"}},"required":["answer"],"type":"object"},"strict":true}
     /// </summary>
     public sealed partial class ChatJsonSchemaConfig
     {
         /// <summary>
-        /// Schema description for the model
+        /// Schema description for the model<br/>
+        /// Example: A mathematical response
         /// </summary>
+        /// <example>A mathematical response</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Schema name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)
+        /// Schema name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)<br/>
+        /// Example: math_response
         /// </summary>
+        /// <example>math_response</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// JSON Schema object
+        /// JSON Schema object<br/>
+        /// Example: {"properties":{"answer":{"type":"number"}},"required":["answer"],"type":"object"}
         /// </summary>
+        /// <example>{"properties":{"answer":{"type":"number"}},"required":["answer"],"type":"object"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         public object? Schema { get; set; }
 
         /// <summary>
-        /// Enable strict schema adherence
+        /// Enable strict schema adherence<br/>
+        /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
         public bool? Strict { get; set; }
 
@@ -43,16 +52,20 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ChatJsonSchemaConfig" /> class.
         /// </summary>
         /// <param name="name">
-        /// Schema name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)
+        /// Schema name (a-z, A-Z, 0-9, underscores, dashes, max 64 chars)<br/>
+        /// Example: math_response
         /// </param>
         /// <param name="description">
-        /// Schema description for the model
+        /// Schema description for the model<br/>
+        /// Example: A mathematical response
         /// </param>
         /// <param name="schema">
-        /// JSON Schema object
+        /// JSON Schema object<br/>
+        /// Example: {"properties":{"answer":{"type":"number"}},"required":["answer"],"type":"object"}
         /// </param>
         /// <param name="strict">
-        /// Enable strict schema adherence
+        /// Enable strict schema adherence<br/>
+        /// Example: false
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

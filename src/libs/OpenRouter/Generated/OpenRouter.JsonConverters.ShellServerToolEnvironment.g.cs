@@ -21,18 +21,18 @@ namespace OpenRouter.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ShellServerToolEnvironmentDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenRouter.ShellServerToolEnvironmentVariant1? containerAuto = default;
+            global::OpenRouter.ContainerAutoEnvironment? containerAuto = default;
             if (discriminator?.Type == global::OpenRouter.ShellServerToolEnvironmentDiscriminatorType.ContainerAuto)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerToolEnvironmentVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerToolEnvironmentVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ShellServerToolEnvironmentVariant1)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ContainerAutoEnvironment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ContainerAutoEnvironment> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ContainerAutoEnvironment)}");
                 containerAuto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenRouter.ShellServerToolEnvironmentVariant2? containerReference = default;
+            global::OpenRouter.ContainerReferenceEnvironment? containerReference = default;
             if (discriminator?.Type == global::OpenRouter.ShellServerToolEnvironmentDiscriminatorType.ContainerReference)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerToolEnvironmentVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerToolEnvironmentVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ShellServerToolEnvironmentVariant2)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ContainerReferenceEnvironment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ContainerReferenceEnvironment> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenRouter.ContainerReferenceEnvironment)}");
                 containerReference = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -57,14 +57,14 @@ namespace OpenRouter.JsonConverters
 
             if (value.IsContainerAuto)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerToolEnvironmentVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerToolEnvironmentVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerToolEnvironmentVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ContainerAutoEnvironment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ContainerAutoEnvironment?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ContainerAutoEnvironment).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContainerAuto(), typeInfo);
             }
             else if (value.IsContainerReference)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ShellServerToolEnvironmentVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ShellServerToolEnvironmentVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ShellServerToolEnvironmentVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenRouter.ContainerReferenceEnvironment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenRouter.ContainerReferenceEnvironment?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenRouter.ContainerReferenceEnvironment).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContainerReference(), typeInfo);
             }
         }

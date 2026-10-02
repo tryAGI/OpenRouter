@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Token usage statistics
+    /// Token usage statistics<br/>
+    /// Example: {"completion_tokens":15,"completion_tokens_details":{"reasoning_tokens":5},"cost":0.0012,"cost_details":{"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008},"is_byok":false,"prompt_tokens":10,"prompt_tokens_details":{"cached_tokens":2},"server_tool_use_details":{"tool_calls_executed":2,"tool_calls_requested":2},"total_tokens":25}
     /// </summary>
     public sealed partial class ChatUsage
     {
@@ -28,8 +29,10 @@ namespace OpenRouter
         public double? Cost { get; set; }
 
         /// <summary>
-        /// Breakdown of upstream inference costs
+        /// Breakdown of upstream inference costs<br/>
+        /// Example: {"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}
         /// </summary>
+        /// <example>{"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
         public global::OpenRouter.CostDetails? CostDetails { get; set; }
 
@@ -53,8 +56,10 @@ namespace OpenRouter
         public global::OpenRouter.ChatUsagePromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
-        /// Usage for server-side tool execution (e.g., web search)
+        /// Usage for server-side tool execution (e.g., web search)<br/>
+        /// Example: {"tool_calls_executed":2,"tool_calls_requested":2,"web_search_requests":2}
         /// </summary>
+        /// <example>{"tool_calls_executed":2,"tool_calls_requested":2,"web_search_requests":2}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use_details")]
         public global::OpenRouter.ServerToolUseDetails? ServerToolUseDetails { get; set; }
 
@@ -90,7 +95,8 @@ namespace OpenRouter
         /// Cost of the completion
         /// </param>
         /// <param name="costDetails">
-        /// Breakdown of upstream inference costs
+        /// Breakdown of upstream inference costs<br/>
+        /// Example: {"upstream_inference_completions_cost":0.0004,"upstream_inference_cost":null,"upstream_inference_prompt_cost":0.0008}
         /// </param>
         /// <param name="isByok">
         /// Whether a request was made using a Bring Your Own Key configuration
@@ -99,7 +105,8 @@ namespace OpenRouter
         /// Detailed prompt token usage
         /// </param>
         /// <param name="serverToolUseDetails">
-        /// Usage for server-side tool execution (e.g., web search)
+        /// Usage for server-side tool execution (e.g., web search)<br/>
+        /// Example: {"tool_calls_executed":2,"tool_calls_requested":2,"web_search_requests":2}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

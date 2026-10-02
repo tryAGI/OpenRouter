@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration for the openrouter:image_generation server tool. Accepts all image_config params (aspect_ratio, quality, size, background, output_format, output_compression, moderation, etc.) plus a model field.
+    /// Configuration for the openrouter:image_generation server tool. Accepts all image_config params (aspect_ratio, quality, size, background, output_format, output_compression, moderation, etc.) plus a model field.<br/>
+    /// Example: {"aspect_ratio":"16:9","model":"openai/gpt-5-image","quality":"high"}
     /// </summary>
     public sealed partial class ImageGenerationServerToolConfig
     {
         /// <summary>
-        /// Which image generation model to use (e.g. "openai/gpt-5-image"). Defaults to "openai/gpt-5-image".
+        /// Which image generation model to use (e.g. "openai/gpt-5-image"). Defaults to "openai/gpt-5-image".<br/>
+        /// Example: openai/gpt-5-image
         /// </summary>
+        /// <example>openai/gpt-5-image</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
@@ -24,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ImageGenerationServerToolConfig" /> class.
         /// </summary>
         /// <param name="model">
-        /// Which image generation model to use (e.g. "openai/gpt-5-image"). Defaults to "openai/gpt-5-image".
+        /// Which image generation model to use (e.g. "openai/gpt-5-image"). Defaults to "openai/gpt-5-image".<br/>
+        /// Example: openai/gpt-5-image
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

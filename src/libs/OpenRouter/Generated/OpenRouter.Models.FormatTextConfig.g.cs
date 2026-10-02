@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Plain text response format
+    /// Plain text response format<br/>
+    /// Example: {"type":"text"}
     /// </summary>
     public sealed partial class FormatTextConfig
     {

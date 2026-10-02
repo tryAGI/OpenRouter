@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for NotFoundResponse
+    /// Error data for NotFoundResponse<br/>
+    /// Example: {"code":404,"message":"Resource not found"}
     /// </summary>
     public sealed partial class NotFoundResponseErrorData
     {

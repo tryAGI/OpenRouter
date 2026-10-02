@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"content":{"citations":null,"source":{"data":"","media_type":"text/plain","type":"text"},"title":null,"type":"document"},"retrieved_at":null,"type":"web_fetch_result","url":"https://example.com"}
     /// </summary>
     public readonly partial struct AnthropicWebFetchContent : global::System.IEquatable<AnthropicWebFetchContent>
     {
@@ -15,49 +15,12 @@ namespace OpenRouter
         public global::OpenRouter.AnthropicWebFetchContentDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// web_fetch_result variant
+        /// Example: {"error_code":"unavailable","type":"web_fetch_tool_result_error"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicWebFetchContentVariant1? WebFetchResult { get; init; }
+        public global::OpenRouter.AnthropicWebFetchToolResultError? WebFetchToolResultError { get; init; }
 #else
-        public global::OpenRouter.AnthropicWebFetchContentVariant1? WebFetchResult { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchResult))]
-#endif
-        public bool IsWebFetchResult => WebFetchResult != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickWebFetchResult(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::OpenRouter.AnthropicWebFetchContentVariant1? value)
-        {
-            value = WebFetchResult;
-            return IsWebFetchResult;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::OpenRouter.AnthropicWebFetchContentVariant1 PickWebFetchResult() => WebFetchResult is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchResult' but the value was {ToString()}.");
-
-        /// <summary>
-        /// web_fetch_tool_result_error variant
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::OpenRouter.AnthropicWebFetchContentVariant2? WebFetchToolResultError { get; init; }
-#else
-        public global::OpenRouter.AnthropicWebFetchContentVariant2? WebFetchToolResultError { get; }
+        public global::OpenRouter.AnthropicWebFetchToolResultError? WebFetchToolResultError { get; }
 #endif
 
         /// <summary>
@@ -75,7 +38,7 @@ namespace OpenRouter
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.AnthropicWebFetchContentVariant2? value)
+            out global::OpenRouter.AnthropicWebFetchToolResultError? value)
         {
             value = WebFetchToolResultError;
             return IsWebFetchToolResultError;
@@ -84,46 +47,60 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.AnthropicWebFetchContentVariant2 PickWebFetchToolResultError() => WebFetchToolResultError is { } value
+        public global::OpenRouter.AnthropicWebFetchToolResultError PickWebFetchToolResultError() => WebFetchToolResultError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResultError' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// Example: {"content":{"citations":null,"source":{"data":"","media_type":"text/plain","type":"text"},"title":null,"type":"document"},"retrieved_at":null,"type":"web_fetch_result","url":"https://example.com"}
         /// </summary>
-        public static implicit operator AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchContentVariant1 value) => new AnthropicWebFetchContent((global::OpenRouter.AnthropicWebFetchContentVariant1?)value);
+#if NET6_0_OR_GREATER
+        public global::OpenRouter.AnthropicWebFetchBlock? WebFetchResult { get; init; }
+#else
+        public global::OpenRouter.AnthropicWebFetchBlock? WebFetchResult { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicWebFetchContentVariant1?(AnthropicWebFetchContent @this) => @this.WebFetchResult;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchResult))]
+#endif
+        public bool IsWebFetchResult => WebFetchResult != null;
 
         /// <summary>
         ///
         /// </summary>
-        public AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchContentVariant1? value)
+        public bool TryPickWebFetchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::OpenRouter.AnthropicWebFetchBlock? value)
         {
-            WebFetchResult = value;
+            value = WebFetchResult;
+            return IsWebFetchResult;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicWebFetchContent FromWebFetchResult(global::OpenRouter.AnthropicWebFetchContentVariant1? value) => new AnthropicWebFetchContent(value);
+        public global::OpenRouter.AnthropicWebFetchBlock PickWebFetchResult() => WebFetchResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchResult' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchToolResultError value) => new AnthropicWebFetchContent((global::OpenRouter.AnthropicWebFetchToolResultError?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchContentVariant2 value) => new AnthropicWebFetchContent((global::OpenRouter.AnthropicWebFetchContentVariant2?)value);
+        public static implicit operator global::OpenRouter.AnthropicWebFetchToolResultError?(AnthropicWebFetchContent @this) => @this.WebFetchToolResultError;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.AnthropicWebFetchContentVariant2?(AnthropicWebFetchContent @this) => @this.WebFetchToolResultError;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchContentVariant2? value)
+        public AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchToolResultError? value)
         {
             WebFetchToolResultError = value;
         }
@@ -131,37 +108,60 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static AnthropicWebFetchContent FromWebFetchToolResultError(global::OpenRouter.AnthropicWebFetchContentVariant2? value) => new AnthropicWebFetchContent(value);
+        public static AnthropicWebFetchContent FromWebFetchToolResultError(global::OpenRouter.AnthropicWebFetchToolResultError? value) => new AnthropicWebFetchContent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchBlock value) => new AnthropicWebFetchContent((global::OpenRouter.AnthropicWebFetchBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::OpenRouter.AnthropicWebFetchBlock?(AnthropicWebFetchContent @this) => @this.WebFetchResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AnthropicWebFetchContent(global::OpenRouter.AnthropicWebFetchBlock? value)
+        {
+            WebFetchResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnthropicWebFetchContent FromWebFetchResult(global::OpenRouter.AnthropicWebFetchBlock? value) => new AnthropicWebFetchContent(value);
 
         /// <summary>
         ///
         /// </summary>
         public AnthropicWebFetchContent(
             global::OpenRouter.AnthropicWebFetchContentDiscriminatorType? type,
-            global::OpenRouter.AnthropicWebFetchContentVariant1? webFetchResult,
-            global::OpenRouter.AnthropicWebFetchContentVariant2? webFetchToolResultError
+            global::OpenRouter.AnthropicWebFetchToolResultError? webFetchToolResultError,
+            global::OpenRouter.AnthropicWebFetchBlock? webFetchResult
             )
         {
             Type = type;
 
-            WebFetchResult = webFetchResult;
             WebFetchToolResultError = webFetchToolResultError;
+            WebFetchResult = webFetchResult;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            WebFetchToolResultError as object ??
-            WebFetchResult as object
+            WebFetchResult as object ??
+            WebFetchToolResultError as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            WebFetchResult?.ToString() ??
-            WebFetchToolResultError?.ToString()
+            WebFetchToolResultError?.ToString() ??
+            WebFetchResult?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +169,15 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsWebFetchResult && !IsWebFetchToolResultError || !IsWebFetchResult && IsWebFetchToolResultError;
+            return IsWebFetchToolResultError && !IsWebFetchResult || !IsWebFetchToolResultError && IsWebFetchResult;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.AnthropicWebFetchContentVariant1, TResult>? webFetchResult = null,
-            global::System.Func<global::OpenRouter.AnthropicWebFetchContentVariant2, TResult>? webFetchToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicWebFetchToolResultError, TResult>? webFetchToolResultError = null,
+            global::System.Func<global::OpenRouter.AnthropicWebFetchBlock, TResult>? webFetchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -185,13 +185,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (WebFetchResult is { } __value0 && webFetchResult != null)
+            if (WebFetchToolResultError is { } __value0 && webFetchToolResultError != null)
             {
-                return webFetchResult(__value0);
+                return webFetchToolResultError(__value0);
             }
-            else if (WebFetchToolResultError is { } __value1 && webFetchToolResultError != null)
+            else if (WebFetchResult is { } __value1 && webFetchResult != null)
             {
-                return webFetchToolResultError(__value1);
+                return webFetchResult(__value1);
             }
 
             return default(TResult);
@@ -201,9 +201,9 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant1>? webFetchResult = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchToolResultError>? webFetchToolResultError = null,
 
-            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant2>? webFetchToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchBlock>? webFetchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -211,13 +211,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (WebFetchResult is { } __value0)
+            if (WebFetchToolResultError is { } __value0)
             {
-                webFetchResult?.Invoke(__value0);
+                webFetchToolResultError?.Invoke(__value0);
             }
-            else if (WebFetchToolResultError is { } __value1)
+            else if (WebFetchResult is { } __value1)
             {
-                webFetchToolResultError?.Invoke(__value1);
+                webFetchResult?.Invoke(__value1);
             }
         }
 
@@ -225,8 +225,8 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant1>? webFetchResult = null,
-            global::System.Action<global::OpenRouter.AnthropicWebFetchContentVariant2>? webFetchToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchToolResultError>? webFetchToolResultError = null,
+            global::System.Action<global::OpenRouter.AnthropicWebFetchBlock>? webFetchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -234,13 +234,13 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (WebFetchResult is { } __value0)
+            if (WebFetchToolResultError is { } __value0)
             {
-                webFetchResult?.Invoke(__value0);
+                webFetchToolResultError?.Invoke(__value0);
             }
-            else if (WebFetchToolResultError is { } __value1)
+            else if (WebFetchResult is { } __value1)
             {
-                webFetchToolResultError?.Invoke(__value1);
+                webFetchResult?.Invoke(__value1);
             }
         }
 
@@ -251,10 +251,10 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                WebFetchResult,
-                typeof(global::OpenRouter.AnthropicWebFetchContentVariant1),
                 WebFetchToolResultError,
-                typeof(global::OpenRouter.AnthropicWebFetchContentVariant2),
+                typeof(global::OpenRouter.AnthropicWebFetchToolResultError),
+                WebFetchResult,
+                typeof(global::OpenRouter.AnthropicWebFetchBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace OpenRouter
         public bool Equals(AnthropicWebFetchContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebFetchContentVariant1?>.Default.Equals(WebFetchResult, other.WebFetchResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebFetchContentVariant2?>.Default.Equals(WebFetchToolResultError, other.WebFetchToolResultError)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebFetchToolResultError?>.Default.Equals(WebFetchToolResultError, other.WebFetchToolResultError) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.AnthropicWebFetchBlock?>.Default.Equals(WebFetchResult, other.WebFetchResult)
                 ;
         }
 

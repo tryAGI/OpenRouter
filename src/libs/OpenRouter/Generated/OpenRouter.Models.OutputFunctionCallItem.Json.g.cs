@@ -2,7 +2,7 @@
 
 namespace OpenRouter
 {
-    public sealed partial class OutputFunctionCallItem
+    public readonly partial struct OutputFunctionCallItem
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace OpenRouter
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::OpenRouter.OutputFunctionCallItem),
-                jsonSerializerContext) as global::OpenRouter.OutputFunctionCallItem;
+                jsonSerializerContext) as global::OpenRouter.OutputFunctionCallItem?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace OpenRouter
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::OpenRouter.OutputFunctionCallItem),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.OutputFunctionCallItem;
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenRouter.OutputFunctionCallItem?;
         }
 
         /// <summary>

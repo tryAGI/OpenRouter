@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"input_modalities":["text","image"],"output_modalities":["image"]}
     /// </summary>
     public sealed partial class ImageModelArchitecture
     {

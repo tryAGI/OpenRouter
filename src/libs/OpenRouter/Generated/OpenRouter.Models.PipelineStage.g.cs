@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"data":{"action":"redacted","engines":["presidio"],"flagged":true,"matched_entity_types":["EMAIL","PHONE"]},"name":"content-filter","summary":"PII redacted via Presidio (EMAIL, PHONE)","type":"guardrail"}
     /// </summary>
     public sealed partial class PipelineStage
     {
@@ -46,8 +46,10 @@ namespace OpenRouter
         public string? Summary { get; set; }
 
         /// <summary>
-        /// Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.
+        /// Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.<br/>
+        /// Example: guardrail
         /// </summary>
+        /// <example>guardrail</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.PipelineStageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -64,7 +66,8 @@ namespace OpenRouter
         /// </summary>
         /// <param name="name"></param>
         /// <param name="type">
-        /// Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.
+        /// Categorical kind of a pipeline stage. Multiple plugins can share a type (e.g. all guardrail-level plugins emit `guardrail`); the `name` field disambiguates which plugin emitted it.<br/>
+        /// Example: guardrail
         /// </param>
         /// <param name="costUsd"></param>
         /// <param name="data"></param>

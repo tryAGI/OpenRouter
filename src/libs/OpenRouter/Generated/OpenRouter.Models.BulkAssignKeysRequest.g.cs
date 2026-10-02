@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"key_hashes":["c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93"]}
     /// </summary>
     public sealed partial class BulkAssignKeysRequest
     {
         /// <summary>
-        /// Array of API key hashes to assign to the guardrail
+        /// Array of API key hashes to assign to the guardrail<br/>
+        /// Example: [c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93]
         /// </summary>
+        /// <example>[c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_hashes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> KeyHashes { get; set; }
@@ -25,7 +27,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="BulkAssignKeysRequest" /> class.
         /// </summary>
         /// <param name="keyHashes">
-        /// Array of API key hashes to assign to the guardrail
+        /// Array of API key hashes to assign to the guardrail<br/>
+        /// Example: [c56454edb818d6b14bc0d61c46025f1450b0f4012d12304ab40aacb519fcbc93]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Tool call made by the assistant
+    /// Tool call made by the assistant<br/>
+    /// Example: {"function":{"arguments":"{\u0022location\u0022: \u0022Boston, MA\u0022}","name":"get_current_weather"},"id":"call_abc123","type":"function"}
     /// </summary>
     public sealed partial class ChatToolCall
     {

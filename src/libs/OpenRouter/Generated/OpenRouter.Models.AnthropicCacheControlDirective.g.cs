@@ -4,13 +4,15 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.
+    /// Enable automatic prompt caching. When set at the top level, the system automatically applies cache breakpoints to the last cacheable block in the request. When set on an individual content block, it marks an explicit cache breakpoint; block-level markers also work on OpenAI models that support explicit prompt caching — OpenRouter converts them to the provider's native format.<br/>
+    /// Example: {"type":"ephemeral"}
     /// </summary>
     public sealed partial class AnthropicCacheControlDirective
     {
         /// <summary>
-        ///
+        /// Example: 5m
         /// </summary>
+        /// <example>5m</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.AnthropicCacheControlTtlJsonConverter))]
         public global::OpenRouter.AnthropicCacheControlTtl? Ttl { get; set; }
@@ -31,7 +33,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="AnthropicCacheControlDirective" /> class.
         /// </summary>
-        /// <param name="ttl"></param>
+        /// <param name="ttl">
+        /// Example: 5m
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

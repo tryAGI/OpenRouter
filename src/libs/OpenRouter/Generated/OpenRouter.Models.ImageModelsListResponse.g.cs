@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// List of image generation models.
+    /// List of image generation models.<br/>
+    /// Example: {"data":[{"architecture":{"input_modalities":["text"],"output_modalities":["image"]},"created":1692901234,"description":"A text-to-image model.","endpoints":"/api/v1/images/models/bytedance-seed/seedream-4.5/endpoints","id":"bytedance-seed/seedream-4.5","name":"Seedream 4.5","supported_parameters":{"resolution":{"type":"enum","values":["1K","2K","4K"]}},"supports_streaming":false}]}
     /// </summary>
     public sealed partial class ImageModelsListResponse
     {

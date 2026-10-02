@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Service Unavailable - Service temporarily unavailable
+    /// Service Unavailable - Service temporarily unavailable<br/>
+    /// Example: {"error":{"code":503,"message":"Service temporarily unavailable"}}
     /// </summary>
     public sealed partial class ServiceUnavailableResponse
     {
         /// <summary>
-        /// Error data for ServiceUnavailableResponse
+        /// Error data for ServiceUnavailableResponse<br/>
+        /// Example: {"code":503,"message":"Service temporarily unavailable"}
         /// </summary>
+        /// <example>{"code":503,"message":"Service temporarily unavailable"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ServiceUnavailableResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ServiceUnavailableResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for ServiceUnavailableResponse
+        /// Error data for ServiceUnavailableResponse<br/>
+        /// Example: {"code":503,"message":"Service temporarily unavailable"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>

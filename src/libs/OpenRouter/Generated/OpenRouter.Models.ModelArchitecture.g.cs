@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Model architecture information
+    /// Model architecture information<br/>
+    /// Example: {"input_modalities":["text"],"instruct_type":"chatml","modality":"text-\u003Etext","output_modalities":["text"],"tokenizer":"GPT"}
     /// </summary>
     public sealed partial class ModelArchitecture
     {
@@ -16,15 +17,19 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.InputModality> InputModalities { get; set; }
 
         /// <summary>
-        /// Instruction format type
+        /// Instruction format type<br/>
+        /// Example: chatml
         /// </summary>
+        /// <example>chatml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("instruct_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.InstructTypeJsonConverter))]
         public global::OpenRouter.InstructType? InstructType { get; set; }
 
         /// <summary>
-        /// Primary modality of the model
+        /// Primary modality of the model<br/>
+        /// Example: text-&gt;text
         /// </summary>
+        /// <example>text-&gt;text</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("modality")]
         public string? Modality { get; set; }
 
@@ -36,8 +41,10 @@ namespace OpenRouter
         public required global::System.Collections.Generic.IList<global::OpenRouter.OutputModality> OutputModalities { get; set; }
 
         /// <summary>
-        /// Tokenizer type used by the model
+        /// Tokenizer type used by the model<br/>
+        /// Example: GPT
         /// </summary>
+        /// <example>GPT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ModelGroupJsonConverter))]
         public global::OpenRouter.ModelGroup? Tokenizer { get; set; }
@@ -58,13 +65,16 @@ namespace OpenRouter
         /// Supported output modalities
         /// </param>
         /// <param name="instructType">
-        /// Instruction format type
+        /// Instruction format type<br/>
+        /// Example: chatml
         /// </param>
         /// <param name="modality">
-        /// Primary modality of the model
+        /// Primary modality of the model<br/>
+        /// Example: text-&gt;text
         /// </param>
         /// <param name="tokenizer">
-        /// Tokenizer type used by the model
+        /// Tokenizer type used by the model<br/>
+        /// Example: GPT
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Provider-specific configuration fields to update. Masked values are ignored; unset fields keep their current value.
+    /// Provider-specific configuration fields to update. Masked values are ignored; unset fields keep their current value.<br/>
+    /// Example: {"baseUrl":"https://us.cloud.langfuse.com","publicKey":"pk-l...EfGh","secretKey":"sk-l...AbCd"}
     /// </summary>
     public sealed partial class UpdateObservabilityDestinationRequestConfig
     {

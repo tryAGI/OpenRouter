@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"generation_id":"gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","id":"gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","polling_url":"/api/v1/videos/gen-vid-1789480874-Ab3dEf9hIjKlMnOpQrSt","status":"pending"}
     /// </summary>
     public sealed partial class VideoGenerationResponse
     {
@@ -21,7 +21,7 @@ namespace OpenRouter
         public string? GenerationId { get; set; }
 
         /// <summary>
-        ///
+        /// The video job ID, in the `gen-vid-&lt;timestamp&gt;-&lt;20 alphanumerics&gt;` generation ID format. Pass it as `previous_job_id` to continue the generation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -49,8 +49,10 @@ namespace OpenRouter
         public global::System.Collections.Generic.IList<string>? UnsignedUrls { get; set; }
 
         /// <summary>
-        /// Usage and cost information for the video generation. Available once the job has completed.
+        /// Usage and cost information for the video generation. Available once the job has completed.<br/>
+        /// Example: {"cost":0.5,"is_byok":false}
         /// </summary>
+        /// <example>{"cost":0.5,"is_byok":false}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::OpenRouter.VideoGenerationUsage? Usage { get; set; }
 
@@ -63,7 +65,9 @@ namespace OpenRouter
         /// <summary>
         /// Initializes a new instance of the <see cref="VideoGenerationResponse" /> class.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// The video job ID, in the `gen-vid-&lt;timestamp&gt;-&lt;20 alphanumerics&gt;` generation ID format. Pass it as `previous_job_id` to continue the generation.
+        /// </param>
         /// <param name="pollingUrl"></param>
         /// <param name="status"></param>
         /// <param name="error"></param>
@@ -72,7 +76,8 @@ namespace OpenRouter
         /// </param>
         /// <param name="unsignedUrls"></param>
         /// <param name="usage">
-        /// Usage and cost information for the video generation. Available once the job has completed.
+        /// Usage and cost information for the video generation. Available once the job has completed.<br/>
+        /// Example: {"cost":0.5,"is_byok":false}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

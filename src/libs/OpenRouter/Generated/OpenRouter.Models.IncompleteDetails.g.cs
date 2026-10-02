@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"reason":"max_output_tokens"}
     /// </summary>
     public sealed partial class IncompleteDetails
     {

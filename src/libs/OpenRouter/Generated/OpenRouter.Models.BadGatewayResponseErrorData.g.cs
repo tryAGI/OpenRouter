@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Error data for BadGatewayResponse
+    /// Error data for BadGatewayResponse<br/>
+    /// Example: {"code":502,"message":"Provider returned error"}
     /// </summary>
     public sealed partial class BadGatewayResponseErrorData
     {

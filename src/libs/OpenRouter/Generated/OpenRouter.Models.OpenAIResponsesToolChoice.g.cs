@@ -5,7 +5,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: auto
     /// </summary>
     public readonly partial struct OpenAIResponsesToolChoice : global::System.IEquatable<OpenAIResponsesToolChoice>
     {
@@ -13,411 +13,412 @@ namespace OpenRouter
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenAiResponsesToolChoice0? OpenAiResponsesToolChoice0 { get; init; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant1? OpenAIResponsesToolChoiceVariant1 { get; init; }
 #else
-        public global::OpenRouter.OpenAiResponsesToolChoice0? OpenAiResponsesToolChoice0 { get; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant1? OpenAIResponsesToolChoiceVariant1 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice0))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesToolChoiceVariant1))]
 #endif
-        public bool IsOpenAiResponsesToolChoice0 => OpenAiResponsesToolChoice0 != null;
+        public bool IsOpenAIResponsesToolChoiceVariant1 => OpenAIResponsesToolChoiceVariant1 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenAiResponsesToolChoice0(
+        public bool TryPickOpenAIResponsesToolChoiceVariant1(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OpenAiResponsesToolChoice0? value)
+            out global::OpenRouter.OpenAIResponsesToolChoiceVariant1? value)
         {
-            value = OpenAiResponsesToolChoice0;
-            return IsOpenAiResponsesToolChoice0;
+            value = OpenAIResponsesToolChoiceVariant1;
+            return IsOpenAIResponsesToolChoiceVariant1;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponsesToolChoice0 PickOpenAiResponsesToolChoice0() => OpenAiResponsesToolChoice0 is { } value
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant1 PickOpenAIResponsesToolChoiceVariant1() => OpenAIResponsesToolChoiceVariant1 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice0' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant1' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenAiResponsesToolChoice1? OpenAiResponsesToolChoice1 { get; init; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant2? OpenAIResponsesToolChoiceVariant2 { get; init; }
 #else
-        public global::OpenRouter.OpenAiResponsesToolChoice1? OpenAiResponsesToolChoice1 { get; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant2? OpenAIResponsesToolChoiceVariant2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesToolChoiceVariant2))]
 #endif
-        public bool IsOpenAiResponsesToolChoice1 => OpenAiResponsesToolChoice1 != null;
+        public bool IsOpenAIResponsesToolChoiceVariant2 => OpenAIResponsesToolChoiceVariant2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenAiResponsesToolChoice1(
+        public bool TryPickOpenAIResponsesToolChoiceVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OpenAiResponsesToolChoice1? value)
+            out global::OpenRouter.OpenAIResponsesToolChoiceVariant2? value)
         {
-            value = OpenAiResponsesToolChoice1;
-            return IsOpenAiResponsesToolChoice1;
+            value = OpenAIResponsesToolChoiceVariant2;
+            return IsOpenAIResponsesToolChoiceVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponsesToolChoice1 PickOpenAiResponsesToolChoice1() => OpenAiResponsesToolChoice1 is { } value
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant2 PickOpenAIResponsesToolChoiceVariant2() => OpenAIResponsesToolChoiceVariant2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant2' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenAiResponsesToolChoice2? OpenAiResponsesToolChoice2 { get; init; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant3? OpenAIResponsesToolChoiceVariant3 { get; init; }
 #else
-        public global::OpenRouter.OpenAiResponsesToolChoice2? OpenAiResponsesToolChoice2 { get; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant3? OpenAIResponsesToolChoiceVariant3 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesToolChoiceVariant3))]
 #endif
-        public bool IsOpenAiResponsesToolChoice2 => OpenAiResponsesToolChoice2 != null;
+        public bool IsOpenAIResponsesToolChoiceVariant3 => OpenAIResponsesToolChoiceVariant3 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenAiResponsesToolChoice2(
+        public bool TryPickOpenAIResponsesToolChoiceVariant3(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OpenAiResponsesToolChoice2? value)
+            out global::OpenRouter.OpenAIResponsesToolChoiceVariant3? value)
         {
-            value = OpenAiResponsesToolChoice2;
-            return IsOpenAiResponsesToolChoice2;
+            value = OpenAIResponsesToolChoiceVariant3;
+            return IsOpenAIResponsesToolChoiceVariant3;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponsesToolChoice2 PickOpenAiResponsesToolChoice2() => OpenAiResponsesToolChoice2 is { } value
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant3 PickOpenAIResponsesToolChoiceVariant3() => OpenAIResponsesToolChoiceVariant3 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant3' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenAiResponsesToolChoice3? OpenAiResponsesToolChoice3 { get; init; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant4? OpenAIResponsesToolChoiceVariant4 { get; init; }
 #else
-        public global::OpenRouter.OpenAiResponsesToolChoice3? OpenAiResponsesToolChoice3 { get; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant4? OpenAIResponsesToolChoiceVariant4 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesToolChoiceVariant4))]
 #endif
-        public bool IsOpenAiResponsesToolChoice3 => OpenAiResponsesToolChoice3 != null;
+        public bool IsOpenAIResponsesToolChoiceVariant4 => OpenAIResponsesToolChoiceVariant4 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenAiResponsesToolChoice3(
+        public bool TryPickOpenAIResponsesToolChoiceVariant4(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OpenAiResponsesToolChoice3? value)
+            out global::OpenRouter.OpenAIResponsesToolChoiceVariant4? value)
         {
-            value = OpenAiResponsesToolChoice3;
-            return IsOpenAiResponsesToolChoice3;
+            value = OpenAIResponsesToolChoiceVariant4;
+            return IsOpenAIResponsesToolChoiceVariant4;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponsesToolChoice3 PickOpenAiResponsesToolChoice3() => OpenAiResponsesToolChoice3 is { } value
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant4 PickOpenAIResponsesToolChoiceVariant4() => OpenAIResponsesToolChoiceVariant4 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice3' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant4' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenAiResponsesToolChoice4? OpenAiResponsesToolChoice4 { get; init; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant5? OpenAIResponsesToolChoiceVariant5 { get; init; }
 #else
-        public global::OpenRouter.OpenAiResponsesToolChoice4? OpenAiResponsesToolChoice4 { get; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant5? OpenAIResponsesToolChoiceVariant5 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesToolChoiceVariant5))]
 #endif
-        public bool IsOpenAiResponsesToolChoice4 => OpenAiResponsesToolChoice4 != null;
+        public bool IsOpenAIResponsesToolChoiceVariant5 => OpenAIResponsesToolChoiceVariant5 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenAiResponsesToolChoice4(
+        public bool TryPickOpenAIResponsesToolChoiceVariant5(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OpenAiResponsesToolChoice4? value)
+            out global::OpenRouter.OpenAIResponsesToolChoiceVariant5? value)
         {
-            value = OpenAiResponsesToolChoice4;
-            return IsOpenAiResponsesToolChoice4;
+            value = OpenAIResponsesToolChoiceVariant5;
+            return IsOpenAIResponsesToolChoiceVariant5;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponsesToolChoice4 PickOpenAiResponsesToolChoice4() => OpenAiResponsesToolChoice4 is { } value
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant5 PickOpenAIResponsesToolChoiceVariant5() => OpenAIResponsesToolChoiceVariant5 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice4' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant5' but the value was {ToString()}.");
 
         /// <summary>
-        /// Constrains the model to a pre-defined set of allowed tools
+        /// Constrains the model to a pre-defined set of allowed tools<br/>
+        /// Example: {"mode":"auto","tools":[{"name":"get_weather","type":"function"}],"type":"allowed_tools"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.ToolChoiceAllowed? ToolChoiceAllowed { get; init; }
+        public global::OpenRouter.ToolChoiceAllowed? Allowed { get; init; }
 #else
-        public global::OpenRouter.ToolChoiceAllowed? ToolChoiceAllowed { get; }
+        public global::OpenRouter.ToolChoiceAllowed? Allowed { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceAllowed))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Allowed))]
 #endif
-        public bool IsToolChoiceAllowed => ToolChoiceAllowed != null;
+        public bool IsAllowed => Allowed != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickToolChoiceAllowed(
+        public bool TryPickAllowed(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::OpenRouter.ToolChoiceAllowed? value)
         {
-            value = ToolChoiceAllowed;
-            return IsToolChoiceAllowed;
+            value = Allowed;
+            return IsAllowed;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.ToolChoiceAllowed PickToolChoiceAllowed() => ToolChoiceAllowed is { } value
+        public global::OpenRouter.ToolChoiceAllowed PickAllowed() => Allowed is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceAllowed' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Allowed' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenAiResponsesToolChoice6? OpenAiResponsesToolChoice6 { get; init; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant7? OpenAIResponsesToolChoiceVariant7 { get; init; }
 #else
-        public global::OpenRouter.OpenAiResponsesToolChoice6? OpenAiResponsesToolChoice6 { get; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant7? OpenAIResponsesToolChoiceVariant7 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesToolChoiceVariant7))]
 #endif
-        public bool IsOpenAiResponsesToolChoice6 => OpenAiResponsesToolChoice6 != null;
+        public bool IsOpenAIResponsesToolChoiceVariant7 => OpenAIResponsesToolChoiceVariant7 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenAiResponsesToolChoice6(
+        public bool TryPickOpenAIResponsesToolChoiceVariant7(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OpenAiResponsesToolChoice6? value)
+            out global::OpenRouter.OpenAIResponsesToolChoiceVariant7? value)
         {
-            value = OpenAiResponsesToolChoice6;
-            return IsOpenAiResponsesToolChoice6;
+            value = OpenAIResponsesToolChoiceVariant7;
+            return IsOpenAIResponsesToolChoiceVariant7;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponsesToolChoice6 PickOpenAiResponsesToolChoice6() => OpenAiResponsesToolChoice6 is { } value
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant7 PickOpenAIResponsesToolChoiceVariant7() => OpenAIResponsesToolChoiceVariant7 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice6' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant7' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenRouter.OpenAiResponsesToolChoice7? OpenAiResponsesToolChoice7 { get; init; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant8? OpenAIResponsesToolChoiceVariant8 { get; init; }
 #else
-        public global::OpenRouter.OpenAiResponsesToolChoice7? OpenAiResponsesToolChoice7 { get; }
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant8? OpenAIResponsesToolChoiceVariant8 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIResponsesToolChoiceVariant8))]
 #endif
-        public bool IsOpenAiResponsesToolChoice7 => OpenAiResponsesToolChoice7 != null;
+        public bool IsOpenAIResponsesToolChoiceVariant8 => OpenAIResponsesToolChoiceVariant8 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOpenAiResponsesToolChoice7(
+        public bool TryPickOpenAIResponsesToolChoiceVariant8(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::OpenRouter.OpenAiResponsesToolChoice7? value)
+            out global::OpenRouter.OpenAIResponsesToolChoiceVariant8? value)
         {
-            value = OpenAiResponsesToolChoice7;
-            return IsOpenAiResponsesToolChoice7;
+            value = OpenAIResponsesToolChoiceVariant8;
+            return IsOpenAIResponsesToolChoiceVariant8;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::OpenRouter.OpenAiResponsesToolChoice7 PickOpenAiResponsesToolChoice7() => OpenAiResponsesToolChoice7 is { } value
+        public global::OpenRouter.OpenAIResponsesToolChoiceVariant8 PickOpenAIResponsesToolChoiceVariant8() => OpenAIResponsesToolChoiceVariant8 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice7' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponsesToolChoiceVariant8' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice0 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAiResponsesToolChoice0?)value);
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant1 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAIResponsesToolChoiceVariant1?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenAiResponsesToolChoice0?(OpenAIResponsesToolChoice @this) => @this.OpenAiResponsesToolChoice0;
+        public static implicit operator global::OpenRouter.OpenAIResponsesToolChoiceVariant1?(OpenAIResponsesToolChoice @this) => @this.OpenAIResponsesToolChoiceVariant1;
 
         /// <summary>
         ///
         /// </summary>
-        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice0? value)
+        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant1? value)
         {
-            OpenAiResponsesToolChoice0 = value;
+            OpenAIResponsesToolChoiceVariant1 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice0(global::OpenRouter.OpenAiResponsesToolChoice0? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromOpenAIResponsesToolChoiceVariant1(global::OpenRouter.OpenAIResponsesToolChoiceVariant1? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice1 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAiResponsesToolChoice1?)value);
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant2 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAIResponsesToolChoiceVariant2?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenAiResponsesToolChoice1?(OpenAIResponsesToolChoice @this) => @this.OpenAiResponsesToolChoice1;
+        public static implicit operator global::OpenRouter.OpenAIResponsesToolChoiceVariant2?(OpenAIResponsesToolChoice @this) => @this.OpenAIResponsesToolChoiceVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice1? value)
+        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant2? value)
         {
-            OpenAiResponsesToolChoice1 = value;
+            OpenAIResponsesToolChoiceVariant2 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice1(global::OpenRouter.OpenAiResponsesToolChoice1? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromOpenAIResponsesToolChoiceVariant2(global::OpenRouter.OpenAIResponsesToolChoiceVariant2? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice2 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAiResponsesToolChoice2?)value);
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant3 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAIResponsesToolChoiceVariant3?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenAiResponsesToolChoice2?(OpenAIResponsesToolChoice @this) => @this.OpenAiResponsesToolChoice2;
+        public static implicit operator global::OpenRouter.OpenAIResponsesToolChoiceVariant3?(OpenAIResponsesToolChoice @this) => @this.OpenAIResponsesToolChoiceVariant3;
 
         /// <summary>
         ///
         /// </summary>
-        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice2? value)
+        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant3? value)
         {
-            OpenAiResponsesToolChoice2 = value;
+            OpenAIResponsesToolChoiceVariant3 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice2(global::OpenRouter.OpenAiResponsesToolChoice2? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromOpenAIResponsesToolChoiceVariant3(global::OpenRouter.OpenAIResponsesToolChoiceVariant3? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice3 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAiResponsesToolChoice3?)value);
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant4 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAIResponsesToolChoiceVariant4?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenAiResponsesToolChoice3?(OpenAIResponsesToolChoice @this) => @this.OpenAiResponsesToolChoice3;
+        public static implicit operator global::OpenRouter.OpenAIResponsesToolChoiceVariant4?(OpenAIResponsesToolChoice @this) => @this.OpenAIResponsesToolChoiceVariant4;
 
         /// <summary>
         ///
         /// </summary>
-        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice3? value)
+        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant4? value)
         {
-            OpenAiResponsesToolChoice3 = value;
+            OpenAIResponsesToolChoiceVariant4 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice3(global::OpenRouter.OpenAiResponsesToolChoice3? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromOpenAIResponsesToolChoiceVariant4(global::OpenRouter.OpenAIResponsesToolChoiceVariant4? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice4 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAiResponsesToolChoice4?)value);
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant5 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAIResponsesToolChoiceVariant5?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenAiResponsesToolChoice4?(OpenAIResponsesToolChoice @this) => @this.OpenAiResponsesToolChoice4;
+        public static implicit operator global::OpenRouter.OpenAIResponsesToolChoiceVariant5?(OpenAIResponsesToolChoice @this) => @this.OpenAIResponsesToolChoiceVariant5;
 
         /// <summary>
         ///
         /// </summary>
-        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice4? value)
+        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant5? value)
         {
-            OpenAiResponsesToolChoice4 = value;
+            OpenAIResponsesToolChoiceVariant5 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice4(global::OpenRouter.OpenAiResponsesToolChoice4? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromOpenAIResponsesToolChoiceVariant5(global::OpenRouter.OpenAIResponsesToolChoiceVariant5? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
@@ -427,117 +428,117 @@ namespace OpenRouter
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.ToolChoiceAllowed?(OpenAIResponsesToolChoice @this) => @this.ToolChoiceAllowed;
+        public static implicit operator global::OpenRouter.ToolChoiceAllowed?(OpenAIResponsesToolChoice @this) => @this.Allowed;
 
         /// <summary>
         ///
         /// </summary>
         public OpenAIResponsesToolChoice(global::OpenRouter.ToolChoiceAllowed? value)
         {
-            ToolChoiceAllowed = value;
+            Allowed = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromToolChoiceAllowed(global::OpenRouter.ToolChoiceAllowed? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromAllowed(global::OpenRouter.ToolChoiceAllowed? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice6 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAiResponsesToolChoice6?)value);
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant7 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAIResponsesToolChoiceVariant7?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenAiResponsesToolChoice6?(OpenAIResponsesToolChoice @this) => @this.OpenAiResponsesToolChoice6;
+        public static implicit operator global::OpenRouter.OpenAIResponsesToolChoiceVariant7?(OpenAIResponsesToolChoice @this) => @this.OpenAIResponsesToolChoiceVariant7;
 
         /// <summary>
         ///
         /// </summary>
-        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice6? value)
+        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant7? value)
         {
-            OpenAiResponsesToolChoice6 = value;
+            OpenAIResponsesToolChoiceVariant7 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice6(global::OpenRouter.OpenAiResponsesToolChoice6? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromOpenAIResponsesToolChoiceVariant7(global::OpenRouter.OpenAIResponsesToolChoiceVariant7? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice7 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAiResponsesToolChoice7?)value);
+        public static implicit operator OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant8 value) => new OpenAIResponsesToolChoice((global::OpenRouter.OpenAIResponsesToolChoiceVariant8?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::OpenRouter.OpenAiResponsesToolChoice7?(OpenAIResponsesToolChoice @this) => @this.OpenAiResponsesToolChoice7;
+        public static implicit operator global::OpenRouter.OpenAIResponsesToolChoiceVariant8?(OpenAIResponsesToolChoice @this) => @this.OpenAIResponsesToolChoiceVariant8;
 
         /// <summary>
         ///
         /// </summary>
-        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAiResponsesToolChoice7? value)
+        public OpenAIResponsesToolChoice(global::OpenRouter.OpenAIResponsesToolChoiceVariant8? value)
         {
-            OpenAiResponsesToolChoice7 = value;
+            OpenAIResponsesToolChoiceVariant8 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice7(global::OpenRouter.OpenAiResponsesToolChoice7? value) => new OpenAIResponsesToolChoice(value);
+        public static OpenAIResponsesToolChoice FromOpenAIResponsesToolChoiceVariant8(global::OpenRouter.OpenAIResponsesToolChoiceVariant8? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         ///
         /// </summary>
         public OpenAIResponsesToolChoice(
-            global::OpenRouter.OpenAiResponsesToolChoice0? openAiResponsesToolChoice0,
-            global::OpenRouter.OpenAiResponsesToolChoice1? openAiResponsesToolChoice1,
-            global::OpenRouter.OpenAiResponsesToolChoice2? openAiResponsesToolChoice2,
-            global::OpenRouter.OpenAiResponsesToolChoice3? openAiResponsesToolChoice3,
-            global::OpenRouter.OpenAiResponsesToolChoice4? openAiResponsesToolChoice4,
-            global::OpenRouter.ToolChoiceAllowed? toolChoiceAllowed,
-            global::OpenRouter.OpenAiResponsesToolChoice6? openAiResponsesToolChoice6,
-            global::OpenRouter.OpenAiResponsesToolChoice7? openAiResponsesToolChoice7
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant1? openAIResponsesToolChoiceVariant1,
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant2? openAIResponsesToolChoiceVariant2,
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant3? openAIResponsesToolChoiceVariant3,
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant4? openAIResponsesToolChoiceVariant4,
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant5? openAIResponsesToolChoiceVariant5,
+            global::OpenRouter.ToolChoiceAllowed? allowed,
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant7? openAIResponsesToolChoiceVariant7,
+            global::OpenRouter.OpenAIResponsesToolChoiceVariant8? openAIResponsesToolChoiceVariant8
             )
         {
-            OpenAiResponsesToolChoice0 = openAiResponsesToolChoice0;
-            OpenAiResponsesToolChoice1 = openAiResponsesToolChoice1;
-            OpenAiResponsesToolChoice2 = openAiResponsesToolChoice2;
-            OpenAiResponsesToolChoice3 = openAiResponsesToolChoice3;
-            OpenAiResponsesToolChoice4 = openAiResponsesToolChoice4;
-            ToolChoiceAllowed = toolChoiceAllowed;
-            OpenAiResponsesToolChoice6 = openAiResponsesToolChoice6;
-            OpenAiResponsesToolChoice7 = openAiResponsesToolChoice7;
+            OpenAIResponsesToolChoiceVariant1 = openAIResponsesToolChoiceVariant1;
+            OpenAIResponsesToolChoiceVariant2 = openAIResponsesToolChoiceVariant2;
+            OpenAIResponsesToolChoiceVariant3 = openAIResponsesToolChoiceVariant3;
+            OpenAIResponsesToolChoiceVariant4 = openAIResponsesToolChoiceVariant4;
+            OpenAIResponsesToolChoiceVariant5 = openAIResponsesToolChoiceVariant5;
+            Allowed = allowed;
+            OpenAIResponsesToolChoiceVariant7 = openAIResponsesToolChoiceVariant7;
+            OpenAIResponsesToolChoiceVariant8 = openAIResponsesToolChoiceVariant8;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            OpenAiResponsesToolChoice7 as object ??
-            OpenAiResponsesToolChoice6 as object ??
-            ToolChoiceAllowed as object ??
-            OpenAiResponsesToolChoice4 as object ??
-            OpenAiResponsesToolChoice3 as object ??
-            OpenAiResponsesToolChoice2 as object ??
-            OpenAiResponsesToolChoice1 as object ??
-            OpenAiResponsesToolChoice0 as object
+            OpenAIResponsesToolChoiceVariant8 as object ??
+            OpenAIResponsesToolChoiceVariant7 as object ??
+            Allowed as object ??
+            OpenAIResponsesToolChoiceVariant5 as object ??
+            OpenAIResponsesToolChoiceVariant4 as object ??
+            OpenAIResponsesToolChoiceVariant3 as object ??
+            OpenAIResponsesToolChoiceVariant2 as object ??
+            OpenAIResponsesToolChoiceVariant1 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            OpenAiResponsesToolChoice0?.ToValueString() ??
-            OpenAiResponsesToolChoice1?.ToValueString() ??
-            OpenAiResponsesToolChoice2?.ToValueString() ??
-            OpenAiResponsesToolChoice3?.ToString() ??
-            OpenAiResponsesToolChoice4?.ToString() ??
-            ToolChoiceAllowed?.ToString() ??
-            OpenAiResponsesToolChoice6?.ToString() ??
-            OpenAiResponsesToolChoice7?.ToString()
+            OpenAIResponsesToolChoiceVariant1?.ToValueString() ??
+            OpenAIResponsesToolChoiceVariant2?.ToValueString() ??
+            OpenAIResponsesToolChoiceVariant3?.ToValueString() ??
+            OpenAIResponsesToolChoiceVariant4?.ToString() ??
+            OpenAIResponsesToolChoiceVariant5?.ToString() ??
+            Allowed?.ToString() ??
+            OpenAIResponsesToolChoiceVariant7?.ToString() ??
+            OpenAIResponsesToolChoiceVariant8?.ToString()
             ;
 
         /// <summary>
@@ -545,21 +546,21 @@ namespace OpenRouter
         /// </summary>
         public bool Validate()
         {
-            return IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed && !IsOpenAiResponsesToolChoice6 && !IsOpenAiResponsesToolChoice7 || !IsOpenAiResponsesToolChoice0 && IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed && !IsOpenAiResponsesToolChoice6 && !IsOpenAiResponsesToolChoice7 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed && !IsOpenAiResponsesToolChoice6 && !IsOpenAiResponsesToolChoice7 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed && !IsOpenAiResponsesToolChoice6 && !IsOpenAiResponsesToolChoice7 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed && !IsOpenAiResponsesToolChoice6 && !IsOpenAiResponsesToolChoice7 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && IsToolChoiceAllowed && !IsOpenAiResponsesToolChoice6 && !IsOpenAiResponsesToolChoice7 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed && IsOpenAiResponsesToolChoice6 && !IsOpenAiResponsesToolChoice7 || !IsOpenAiResponsesToolChoice0 && !IsOpenAiResponsesToolChoice1 && !IsOpenAiResponsesToolChoice2 && !IsOpenAiResponsesToolChoice3 && !IsOpenAiResponsesToolChoice4 && !IsToolChoiceAllowed && !IsOpenAiResponsesToolChoice6 && IsOpenAiResponsesToolChoice7;
+            return IsOpenAIResponsesToolChoiceVariant1 || IsOpenAIResponsesToolChoiceVariant2 || IsOpenAIResponsesToolChoiceVariant3 || IsOpenAIResponsesToolChoiceVariant4 || IsOpenAIResponsesToolChoiceVariant5 || IsAllowed || IsOpenAIResponsesToolChoiceVariant7 || IsOpenAIResponsesToolChoiceVariant8;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice0?, TResult>? openAiResponsesToolChoice0 = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice1?, TResult>? openAiResponsesToolChoice1 = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice2?, TResult>? openAiResponsesToolChoice2 = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice3, TResult>? openAiResponsesToolChoice3 = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice4, TResult>? openAiResponsesToolChoice4 = null,
-            global::System.Func<global::OpenRouter.ToolChoiceAllowed, TResult>? toolChoiceAllowed = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice6, TResult>? openAiResponsesToolChoice6 = null,
-            global::System.Func<global::OpenRouter.OpenAiResponsesToolChoice7, TResult>? openAiResponsesToolChoice7 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant1?, TResult>? openAIResponsesToolChoiceVariant1 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant2?, TResult>? openAIResponsesToolChoiceVariant2 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant3?, TResult>? openAIResponsesToolChoiceVariant3 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant4, TResult>? openAIResponsesToolChoiceVariant4 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant5, TResult>? openAIResponsesToolChoiceVariant5 = null,
+            global::System.Func<global::OpenRouter.ToolChoiceAllowed, TResult>? allowed = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant7, TResult>? openAIResponsesToolChoiceVariant7 = null,
+            global::System.Func<global::OpenRouter.OpenAIResponsesToolChoiceVariant8, TResult>? openAIResponsesToolChoiceVariant8 = null,
             bool validate = true)
         {
             if (validate)
@@ -567,37 +568,37 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (OpenAiResponsesToolChoice0 is { } __value0 && openAiResponsesToolChoice0 != null)
+            if (OpenAIResponsesToolChoiceVariant1 is { } __value0 && openAIResponsesToolChoiceVariant1 != null)
             {
-                return openAiResponsesToolChoice0(__value0);
+                return openAIResponsesToolChoiceVariant1(__value0);
             }
-            else if (OpenAiResponsesToolChoice1 is { } __value1 && openAiResponsesToolChoice1 != null)
+            else if (OpenAIResponsesToolChoiceVariant2 is { } __value1 && openAIResponsesToolChoiceVariant2 != null)
             {
-                return openAiResponsesToolChoice1(__value1);
+                return openAIResponsesToolChoiceVariant2(__value1);
             }
-            else if (OpenAiResponsesToolChoice2 is { } __value2 && openAiResponsesToolChoice2 != null)
+            else if (OpenAIResponsesToolChoiceVariant3 is { } __value2 && openAIResponsesToolChoiceVariant3 != null)
             {
-                return openAiResponsesToolChoice2(__value2);
+                return openAIResponsesToolChoiceVariant3(__value2);
             }
-            else if (OpenAiResponsesToolChoice3 is { } __value3 && openAiResponsesToolChoice3 != null)
+            else if (OpenAIResponsesToolChoiceVariant4 is { } __value3 && openAIResponsesToolChoiceVariant4 != null)
             {
-                return openAiResponsesToolChoice3(__value3);
+                return openAIResponsesToolChoiceVariant4(__value3);
             }
-            else if (OpenAiResponsesToolChoice4 is { } __value4 && openAiResponsesToolChoice4 != null)
+            else if (OpenAIResponsesToolChoiceVariant5 is { } __value4 && openAIResponsesToolChoiceVariant5 != null)
             {
-                return openAiResponsesToolChoice4(__value4);
+                return openAIResponsesToolChoiceVariant5(__value4);
             }
-            else if (ToolChoiceAllowed is { } __value5 && toolChoiceAllowed != null)
+            else if (Allowed is { } __value5 && allowed != null)
             {
-                return toolChoiceAllowed(__value5);
+                return allowed(__value5);
             }
-            else if (OpenAiResponsesToolChoice6 is { } __value6 && openAiResponsesToolChoice6 != null)
+            else if (OpenAIResponsesToolChoiceVariant7 is { } __value6 && openAIResponsesToolChoiceVariant7 != null)
             {
-                return openAiResponsesToolChoice6(__value6);
+                return openAIResponsesToolChoiceVariant7(__value6);
             }
-            else if (OpenAiResponsesToolChoice7 is { } __value7 && openAiResponsesToolChoice7 != null)
+            else if (OpenAIResponsesToolChoiceVariant8 is { } __value7 && openAIResponsesToolChoiceVariant8 != null)
             {
-                return openAiResponsesToolChoice7(__value7);
+                return openAIResponsesToolChoiceVariant8(__value7);
             }
 
             return default(TResult);
@@ -607,21 +608,21 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice0?>? openAiResponsesToolChoice0 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant1?>? openAIResponsesToolChoiceVariant1 = null,
 
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice1?>? openAiResponsesToolChoice1 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant2?>? openAIResponsesToolChoiceVariant2 = null,
 
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice2?>? openAiResponsesToolChoice2 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant3?>? openAIResponsesToolChoiceVariant3 = null,
 
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice3>? openAiResponsesToolChoice3 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant4>? openAIResponsesToolChoiceVariant4 = null,
 
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice4>? openAiResponsesToolChoice4 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant5>? openAIResponsesToolChoiceVariant5 = null,
 
-            global::System.Action<global::OpenRouter.ToolChoiceAllowed>? toolChoiceAllowed = null,
+            global::System.Action<global::OpenRouter.ToolChoiceAllowed>? allowed = null,
 
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice6>? openAiResponsesToolChoice6 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant7>? openAIResponsesToolChoiceVariant7 = null,
 
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice7>? openAiResponsesToolChoice7 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant8>? openAIResponsesToolChoiceVariant8 = null,
             bool validate = true)
         {
             if (validate)
@@ -629,37 +630,37 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (OpenAiResponsesToolChoice0 is { } __value0)
+            if (OpenAIResponsesToolChoiceVariant1 is { } __value0)
             {
-                openAiResponsesToolChoice0?.Invoke(__value0);
+                openAIResponsesToolChoiceVariant1?.Invoke(__value0);
             }
-            else if (OpenAiResponsesToolChoice1 is { } __value1)
+            else if (OpenAIResponsesToolChoiceVariant2 is { } __value1)
             {
-                openAiResponsesToolChoice1?.Invoke(__value1);
+                openAIResponsesToolChoiceVariant2?.Invoke(__value1);
             }
-            else if (OpenAiResponsesToolChoice2 is { } __value2)
+            else if (OpenAIResponsesToolChoiceVariant3 is { } __value2)
             {
-                openAiResponsesToolChoice2?.Invoke(__value2);
+                openAIResponsesToolChoiceVariant3?.Invoke(__value2);
             }
-            else if (OpenAiResponsesToolChoice3 is { } __value3)
+            else if (OpenAIResponsesToolChoiceVariant4 is { } __value3)
             {
-                openAiResponsesToolChoice3?.Invoke(__value3);
+                openAIResponsesToolChoiceVariant4?.Invoke(__value3);
             }
-            else if (OpenAiResponsesToolChoice4 is { } __value4)
+            else if (OpenAIResponsesToolChoiceVariant5 is { } __value4)
             {
-                openAiResponsesToolChoice4?.Invoke(__value4);
+                openAIResponsesToolChoiceVariant5?.Invoke(__value4);
             }
-            else if (ToolChoiceAllowed is { } __value5)
+            else if (Allowed is { } __value5)
             {
-                toolChoiceAllowed?.Invoke(__value5);
+                allowed?.Invoke(__value5);
             }
-            else if (OpenAiResponsesToolChoice6 is { } __value6)
+            else if (OpenAIResponsesToolChoiceVariant7 is { } __value6)
             {
-                openAiResponsesToolChoice6?.Invoke(__value6);
+                openAIResponsesToolChoiceVariant7?.Invoke(__value6);
             }
-            else if (OpenAiResponsesToolChoice7 is { } __value7)
+            else if (OpenAIResponsesToolChoiceVariant8 is { } __value7)
             {
-                openAiResponsesToolChoice7?.Invoke(__value7);
+                openAIResponsesToolChoiceVariant8?.Invoke(__value7);
             }
         }
 
@@ -667,14 +668,14 @@ namespace OpenRouter
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice0?>? openAiResponsesToolChoice0 = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice1?>? openAiResponsesToolChoice1 = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice2?>? openAiResponsesToolChoice2 = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice3>? openAiResponsesToolChoice3 = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice4>? openAiResponsesToolChoice4 = null,
-            global::System.Action<global::OpenRouter.ToolChoiceAllowed>? toolChoiceAllowed = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice6>? openAiResponsesToolChoice6 = null,
-            global::System.Action<global::OpenRouter.OpenAiResponsesToolChoice7>? openAiResponsesToolChoice7 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant1?>? openAIResponsesToolChoiceVariant1 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant2?>? openAIResponsesToolChoiceVariant2 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant3?>? openAIResponsesToolChoiceVariant3 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant4>? openAIResponsesToolChoiceVariant4 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant5>? openAIResponsesToolChoiceVariant5 = null,
+            global::System.Action<global::OpenRouter.ToolChoiceAllowed>? allowed = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant7>? openAIResponsesToolChoiceVariant7 = null,
+            global::System.Action<global::OpenRouter.OpenAIResponsesToolChoiceVariant8>? openAIResponsesToolChoiceVariant8 = null,
             bool validate = true)
         {
             if (validate)
@@ -682,37 +683,37 @@ namespace OpenRouter
                 Validate();
             }
 
-            if (OpenAiResponsesToolChoice0 is { } __value0)
+            if (OpenAIResponsesToolChoiceVariant1 is { } __value0)
             {
-                openAiResponsesToolChoice0?.Invoke(__value0);
+                openAIResponsesToolChoiceVariant1?.Invoke(__value0);
             }
-            else if (OpenAiResponsesToolChoice1 is { } __value1)
+            else if (OpenAIResponsesToolChoiceVariant2 is { } __value1)
             {
-                openAiResponsesToolChoice1?.Invoke(__value1);
+                openAIResponsesToolChoiceVariant2?.Invoke(__value1);
             }
-            else if (OpenAiResponsesToolChoice2 is { } __value2)
+            else if (OpenAIResponsesToolChoiceVariant3 is { } __value2)
             {
-                openAiResponsesToolChoice2?.Invoke(__value2);
+                openAIResponsesToolChoiceVariant3?.Invoke(__value2);
             }
-            else if (OpenAiResponsesToolChoice3 is { } __value3)
+            else if (OpenAIResponsesToolChoiceVariant4 is { } __value3)
             {
-                openAiResponsesToolChoice3?.Invoke(__value3);
+                openAIResponsesToolChoiceVariant4?.Invoke(__value3);
             }
-            else if (OpenAiResponsesToolChoice4 is { } __value4)
+            else if (OpenAIResponsesToolChoiceVariant5 is { } __value4)
             {
-                openAiResponsesToolChoice4?.Invoke(__value4);
+                openAIResponsesToolChoiceVariant5?.Invoke(__value4);
             }
-            else if (ToolChoiceAllowed is { } __value5)
+            else if (Allowed is { } __value5)
             {
-                toolChoiceAllowed?.Invoke(__value5);
+                allowed?.Invoke(__value5);
             }
-            else if (OpenAiResponsesToolChoice6 is { } __value6)
+            else if (OpenAIResponsesToolChoiceVariant7 is { } __value6)
             {
-                openAiResponsesToolChoice6?.Invoke(__value6);
+                openAIResponsesToolChoiceVariant7?.Invoke(__value6);
             }
-            else if (OpenAiResponsesToolChoice7 is { } __value7)
+            else if (OpenAIResponsesToolChoiceVariant8 is { } __value7)
             {
-                openAiResponsesToolChoice7?.Invoke(__value7);
+                openAIResponsesToolChoiceVariant8?.Invoke(__value7);
             }
         }
 
@@ -723,22 +724,22 @@ namespace OpenRouter
         {
             var fields = new object?[]
             {
-                OpenAiResponsesToolChoice0,
-                typeof(global::OpenRouter.OpenAiResponsesToolChoice0),
-                OpenAiResponsesToolChoice1,
-                typeof(global::OpenRouter.OpenAiResponsesToolChoice1),
-                OpenAiResponsesToolChoice2,
-                typeof(global::OpenRouter.OpenAiResponsesToolChoice2),
-                OpenAiResponsesToolChoice3,
-                typeof(global::OpenRouter.OpenAiResponsesToolChoice3),
-                OpenAiResponsesToolChoice4,
-                typeof(global::OpenRouter.OpenAiResponsesToolChoice4),
-                ToolChoiceAllowed,
+                OpenAIResponsesToolChoiceVariant1,
+                typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant1),
+                OpenAIResponsesToolChoiceVariant2,
+                typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant2),
+                OpenAIResponsesToolChoiceVariant3,
+                typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant3),
+                OpenAIResponsesToolChoiceVariant4,
+                typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant4),
+                OpenAIResponsesToolChoiceVariant5,
+                typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant5),
+                Allowed,
                 typeof(global::OpenRouter.ToolChoiceAllowed),
-                OpenAiResponsesToolChoice6,
-                typeof(global::OpenRouter.OpenAiResponsesToolChoice6),
-                OpenAiResponsesToolChoice7,
-                typeof(global::OpenRouter.OpenAiResponsesToolChoice7),
+                OpenAIResponsesToolChoiceVariant7,
+                typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant7),
+                OpenAIResponsesToolChoiceVariant8,
+                typeof(global::OpenRouter.OpenAIResponsesToolChoiceVariant8),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -755,14 +756,14 @@ namespace OpenRouter
         public bool Equals(OpenAIResponsesToolChoice other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice0?>.Default.Equals(OpenAiResponsesToolChoice0, other.OpenAiResponsesToolChoice0) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice1?>.Default.Equals(OpenAiResponsesToolChoice1, other.OpenAiResponsesToolChoice1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice2?>.Default.Equals(OpenAiResponsesToolChoice2, other.OpenAiResponsesToolChoice2) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice3?>.Default.Equals(OpenAiResponsesToolChoice3, other.OpenAiResponsesToolChoice3) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice4?>.Default.Equals(OpenAiResponsesToolChoice4, other.OpenAiResponsesToolChoice4) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceAllowed?>.Default.Equals(ToolChoiceAllowed, other.ToolChoiceAllowed) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice6?>.Default.Equals(OpenAiResponsesToolChoice6, other.OpenAiResponsesToolChoice6) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAiResponsesToolChoice7?>.Default.Equals(OpenAiResponsesToolChoice7, other.OpenAiResponsesToolChoice7)
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant1?>.Default.Equals(OpenAIResponsesToolChoiceVariant1, other.OpenAIResponsesToolChoiceVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant2?>.Default.Equals(OpenAIResponsesToolChoiceVariant2, other.OpenAIResponsesToolChoiceVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant3?>.Default.Equals(OpenAIResponsesToolChoiceVariant3, other.OpenAIResponsesToolChoiceVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant4?>.Default.Equals(OpenAIResponsesToolChoiceVariant4, other.OpenAIResponsesToolChoiceVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant5?>.Default.Equals(OpenAIResponsesToolChoiceVariant5, other.OpenAIResponsesToolChoiceVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.ToolChoiceAllowed?>.Default.Equals(Allowed, other.Allowed) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant7?>.Default.Equals(OpenAIResponsesToolChoiceVariant7, other.OpenAIResponsesToolChoiceVariant7) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenRouter.OpenAIResponsesToolChoiceVariant8?>.Default.Equals(OpenAIResponsesToolChoiceVariant8, other.OpenAIResponsesToolChoiceVariant8)
                 ;
         }
 

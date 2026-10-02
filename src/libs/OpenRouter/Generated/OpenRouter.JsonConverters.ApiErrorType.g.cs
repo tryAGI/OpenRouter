@@ -23,11 +23,6 @@ namespace OpenRouter.JsonConverters
 
                     break;
                 }
-                case global::System.Text.Json.JsonTokenType.Number:
-                {
-                    var numValue = reader.GetInt32();
-                    return (global::OpenRouter.ApiErrorType)numValue;
-                }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
                     return default(global::OpenRouter.ApiErrorType);

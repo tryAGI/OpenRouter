@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Reasoning configuration forwarded to the advisor call. Use this to control reasoning effort and token budget for models that support extended thinking.
+    /// Reasoning configuration forwarded to the advisor call. Use this to control reasoning effort and token budget for models that support extended thinking.<br/>
+    /// Example: {"effort":"high"}
     /// </summary>
     public sealed partial class AdvisorReasoning
     {

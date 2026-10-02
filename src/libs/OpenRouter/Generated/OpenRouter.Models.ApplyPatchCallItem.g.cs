@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// A tool call emitted by the model requesting a V4A patch operation. The client applies the patch and echoes an `apply_patch_call_output` on the next turn.
+    /// A tool call emitted by the model requesting a V4A patch operation. The client applies the patch and echoes an `apply_patch_call_output` on the next turn.<br/>
+    /// Example: {"call_id":"call_abc123","id":"apc_abc123","operation":{"diff":"@@ function main() {\n\u002B  console.log(\u0022hi\u0022);\n }","path":"/src/main.ts","type":"update_file"},"status":"completed","type":"apply_patch_call"}
     /// </summary>
     public sealed partial class ApplyPatchCallItem
     {
@@ -22,16 +23,20 @@ namespace OpenRouter
         public string? Id { get; set; }
 
         /// <summary>
-        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.<br/>
+        /// Example: {"diff":"@@ function main() {\n\u002B  console.log(\u0022hi\u0022);\n }","path":"/src/main.ts","type":"update_file"}
         /// </summary>
+        /// <example>{"diff":"@@ function main() {\n\u002B  console.log(\u0022hi\u0022);\n }","path":"/src/main.ts","type":"update_file"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallOperationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.ApplyPatchCallOperation Operation { get; set; }
 
         /// <summary>
-        /// Lifecycle state of an `apply_patch_call` output item.
+        /// Lifecycle state of an `apply_patch_call` output item.<br/>
+        /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ApplyPatchCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,10 +60,12 @@ namespace OpenRouter
         /// </summary>
         /// <param name="callId"></param>
         /// <param name="operation">
-        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.
+        /// The patch operation requested by an `apply_patch_call`. `create_file` and `update_file` carry a V4A diff; `delete_file` omits it.<br/>
+        /// Example: {"diff":"@@ function main() {\n\u002B  console.log(\u0022hi\u0022);\n }","path":"/src/main.ts","type":"update_file"}
         /// </param>
         /// <param name="status">
-        /// Lifecycle state of an `apply_patch_call` output item.
+        /// Lifecycle state of an `apply_patch_call` output item.<br/>
+        /// Example: completed
         /// </param>
         /// <param name="id"></param>
         /// <param name="type"></param>

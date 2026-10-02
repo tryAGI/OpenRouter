@@ -4,7 +4,7 @@
 namespace OpenRouter
 {
     /// <summary>
-    ///
+    /// Example: {"file_id":"file-abc123","filename":"research_paper.pdf","index":0,"type":"file_citation"}
     /// </summary>
     public sealed partial class FileCitation
     {

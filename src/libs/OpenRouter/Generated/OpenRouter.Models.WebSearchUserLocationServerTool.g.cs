@@ -4,7 +4,8 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Approximate user location for location-biased results.
+    /// Approximate user location for location-biased results.<br/>
+    /// Example: {"city":"San Francisco","country":"US","region":"California","timezone":"America/Los_Angeles","type":"approximate"}
     /// </summary>
     public sealed partial class WebSearchUserLocationServerTool
     {

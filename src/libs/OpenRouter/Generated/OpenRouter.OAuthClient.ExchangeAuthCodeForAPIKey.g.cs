@@ -49,7 +49,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForAPIKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse> ExchangeAuthCodeForAPIKeyAsync(
 
             global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -72,7 +72,7 @@ namespace OpenRouter
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenRouter.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>> ExchangeAuthCodeForAPIKeyAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse>> ExchangeAuthCodeForAPIKeyAsResponseAsync(
 
             global::OpenRouter.ExchangeAuthCodeForAPIKeyRequest request,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
@@ -159,8 +159,6 @@ namespace OpenRouter
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
-
-                global::OpenRouter.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }
@@ -472,9 +470,9 @@ namespace OpenRouter
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -504,9 +502,9 @@ namespace OpenRouter
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200>(
+                                    return new global::OpenRouter.AutoSDKHttpResponse<global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::OpenRouter.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -551,20 +549,23 @@ namespace OpenRouter
         /// Exchange an authorization code from the PKCE flow for a user-controlled API key
         /// </summary>
         /// <param name="code">
-        /// The authorization code received from the OAuth redirect
+        /// The authorization code received from the OAuth redirect<br/>
+        /// Example: auth_code_abc123def456
         /// </param>
         /// <param name="codeChallengeMethod">
-        /// The method used to generate the code challenge
+        /// The method used to generate the code challenge<br/>
+        /// Example: S256
         /// </param>
         /// <param name="codeVerifier">
-        /// The code verifier if code_challenge was used in the authorization request
+        /// The code verifier if code_challenge was used in the authorization request<br/>
+        /// Example: dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenRouter.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForAPIKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenRouter.ExchangeAuthCodeForAPIKeyResponse> ExchangeAuthCodeForAPIKeyAsync(
             string code,
-            global::OpenRouter.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod = default,
+            global::OpenRouter.ExchangeAuthCodeForAPIKeyRequestCodeChallengeMethod? codeChallengeMethod = default,
             string? codeVerifier = default,
             global::OpenRouter.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

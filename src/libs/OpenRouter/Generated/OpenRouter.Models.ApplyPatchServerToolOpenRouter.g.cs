@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// OpenRouter built-in server tool: validates V4A diff patches for file operations (create, update, delete). Restricted to the Responses API.
+    /// OpenRouter built-in server tool: validates V4A diff patches for file operations (create, update, delete). Restricted to the Responses API.<br/>
+    /// Example: {"type":"openrouter:apply_patch"}
     /// </summary>
     public sealed partial class ApplyPatchServerToolOpenRouter
     {
         /// <summary>
-        /// Configuration for the openrouter:apply_patch server tool
+        /// Configuration for the openrouter:apply_patch server tool<br/>
+        /// Example: {"engine":"auto"}
         /// </summary>
+        /// <example>{"engine":"auto"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::OpenRouter.ApplyPatchServerToolConfig? Parameters { get; set; }
 
@@ -31,7 +34,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="ApplyPatchServerToolOpenRouter" /> class.
         /// </summary>
         /// <param name="parameters">
-        /// Configuration for the openrouter:apply_patch server tool
+        /// Configuration for the openrouter:apply_patch server tool<br/>
+        /// Example: {"engine":"auto"}
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

@@ -12,7 +12,7 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edits")]
-        public global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestContextManagementEditsItems>? Edits { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagementEditVariant1, global::OpenRouter.MessagesRequestContextManagementEditVariant2, global::OpenRouter.MessagesRequestContextManagementEditVariant3>>? Edits { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace OpenRouter
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesRequestContextManagement(
-            global::System.Collections.Generic.IList<global::OpenRouter.MessagesRequestContextManagementEditsItems>? edits)
+            global::System.Collections.Generic.IList<global::OpenRouter.OneOf<global::OpenRouter.MessagesRequestContextManagementEditVariant1, global::OpenRouter.MessagesRequestContextManagementEditVariant2, global::OpenRouter.MessagesRequestContextManagementEditVariant3>>? edits)
         {
             this.Edits = edits;
         }

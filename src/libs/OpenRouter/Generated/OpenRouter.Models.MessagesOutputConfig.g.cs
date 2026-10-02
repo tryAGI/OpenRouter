@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Configuration for controlling output behavior. Supports the effort parameter and structured output format.
+    /// Configuration for controlling output behavior. Supports the effort parameter and structured output format.<br/>
+    /// Example: {"effort":"medium"}
     /// </summary>
     public sealed partial class MessagesOutputConfig
     {
         /// <summary>
-        /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
+        /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.<br/>
+        /// Example: medium
         /// </summary>
+        /// <example>medium</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.MessagesOutputConfigEffortJsonConverter))]
         public global::OpenRouter.MessagesOutputConfigEffort? Effort { get; set; }
@@ -22,8 +25,10 @@ namespace OpenRouter
         public global::OpenRouter.MessagesOutputConfigFormat? Format { get; set; }
 
         /// <summary>
-        /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.
+        /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.<br/>
+        /// Example: {"total":400000,"type":"tokens"}
         /// </summary>
+        /// <example>{"total":400000,"type":"tokens"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("task_budget")]
         public global::OpenRouter.MessagesOutputConfigTaskBudget? TaskBudget { get; set; }
 
@@ -37,13 +42,15 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="MessagesOutputConfig" /> class.
         /// </summary>
         /// <param name="effort">
-        /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
+        /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.<br/>
+        /// Example: medium
         /// </param>
         /// <param name="format">
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).
         /// </param>
         /// <param name="taskBudget">
-        /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.
+        /// Task budget for an agentic turn. The model sees a countdown of remaining tokens and uses it to prioritize work and wind down gracefully. Advisory — does not enforce a hard cap.<br/>
+        /// Example: {"total":400000,"type":"tokens"}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

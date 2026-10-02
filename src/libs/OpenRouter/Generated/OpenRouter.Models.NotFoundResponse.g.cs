@@ -4,13 +4,16 @@
 namespace OpenRouter
 {
     /// <summary>
-    /// Not Found - Resource does not exist
+    /// Not Found - Resource does not exist<br/>
+    /// Example: {"error":{"code":404,"message":"Resource not found"}}
     /// </summary>
     public sealed partial class NotFoundResponse
     {
         /// <summary>
-        /// Error data for NotFoundResponse
+        /// Error data for NotFoundResponse<br/>
+        /// Example: {"code":404,"message":"Resource not found"}
         /// </summary>
+        /// <example>{"code":404,"message":"Resource not found"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenRouter.NotFoundResponseErrorData Error { get; set; }
@@ -37,7 +40,8 @@ namespace OpenRouter
         /// Initializes a new instance of the <see cref="NotFoundResponse" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error data for NotFoundResponse
+        /// Error data for NotFoundResponse<br/>
+        /// Example: {"code":404,"message":"Resource not found"}
         /// </param>
         /// <param name="openrouterMetadata"></param>
         /// <param name="userId"></param>
