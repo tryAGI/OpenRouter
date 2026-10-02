@@ -14007,7 +14007,14 @@
         },
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/ObservabilityDestination"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ObservabilityDestination"
+              },
+              {
+                "description": "The newly created observability destination."
+              }
+            ]
           }
         },
         "required": [
@@ -18326,7 +18333,14 @@
         },
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/ObservabilityDestination"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ObservabilityDestination"
+              },
+              {
+                "description": "The observability destination."
+              }
+            ]
           }
         },
         "required": [
@@ -28097,6 +28111,21 @@
                   "x-speakeasy-unknown-values": "allow"
                 },
                 "operator": {
+                  "enum": [
+                    "equals",
+                    "not_equals",
+                    "contains",
+                    "not_contains",
+                    "regex",
+                    "starts_with",
+                    "ends_with",
+                    "gt",
+                    "lt",
+                    "gte",
+                    "lte",
+                    "exists",
+                    "not_exists"
+                  ],
                   "type": "string",
                   "x-speakeasy-unknown-values": "allow"
                 },
@@ -44685,7 +44714,14 @@
         },
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/ObservabilityDestination"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ObservabilityDestination"
+              },
+              {
+                "description": "The updated observability destination."
+              }
+            ]
           }
         },
         "required": [

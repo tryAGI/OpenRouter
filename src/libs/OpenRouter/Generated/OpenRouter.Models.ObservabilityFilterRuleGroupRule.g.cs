@@ -20,8 +20,9 @@ namespace OpenRouter
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenRouter.JsonConverters.ObservabilityFilterRuleGroupRuleOperatorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Operator { get; set; }
+        public required global::OpenRouter.ObservabilityFilterRuleGroupRuleOperator Operator { get; set; }
 
         /// <summary>
         ///
@@ -47,11 +48,11 @@ namespace OpenRouter
 #endif
         public ObservabilityFilterRuleGroupRule(
             global::OpenRouter.ObservabilityFilterRuleGroupRuleField field,
-            string @operator,
+            global::OpenRouter.ObservabilityFilterRuleGroupRuleOperator @operator,
             global::OpenRouter.AnyOf<string, double?>? value)
         {
             this.Field = field;
-            this.Operator = @operator ?? throw new global::System.ArgumentNullException(nameof(@operator));
+            this.Operator = @operator;
             this.Value = value;
         }
 

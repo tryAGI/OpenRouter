@@ -21,11 +21,7 @@ fetch_spec --fail --silent --show-error -L -o openapi.json https://openrouter.ai
 # Fix 2: Rename schemas with spaces ("API Keys_*" -> "ApiKeys*") to avoid C# compilation issues.
 # Fix 3: Remove per-operation "Authorization" header parameters (redundant with securitySchemes;
 #         causes generated methods to require an explicit authorization string parameter).
-# Fix 4: Flatten single-reference observability response wrappers; their allOf otherwise
-#         inherits from a sealed oneOf model in generated C#.
-# Fix 5: Keep observability rule operators as strings because the wire value "equals"
-#         collides with the generated C# value type's Equals members.
-# Fix 6: Replace credential-shaped upstream examples before persisting or generating code.
+# Fix 4: Replace credential-shaped upstream examples before persisting or generating code.
 jq '
   .security = [{"bearer": []}]
   | .components.schemas = (
@@ -48,11 +44,6 @@ jq '
         else . end
       )
     )
-  | (.components.schemas.CreateObservabilityDestinationResponse.properties.data,
-     .components.schemas.GetObservabilityDestinationResponse.properties.data,
-     .components.schemas.UpdateObservabilityDestinationResponse.properties.data) |=
-      {"$ref": "#/components/schemas/ObservabilityDestination"}
-  | del(.components.schemas.ObservabilityFilterRuleGroup.properties.rules.items.properties.operator.enum)
   | walk(
       if type == "string" and test("^sk-or-v1-[A-Za-z0-9]{20,}$") then
         "example-api-key"
