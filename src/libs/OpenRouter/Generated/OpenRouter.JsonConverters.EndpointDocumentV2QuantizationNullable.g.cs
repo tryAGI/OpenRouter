@@ -1,0 +1,55 @@
+#nullable enable
+
+namespace OpenRouter.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class EndpointDocumentV2QuantizationNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenRouter.EndpointDocumentV2Quantization?>
+    {
+        /// <inheritdoc />
+        public override global::OpenRouter.EndpointDocumentV2Quantization? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::OpenRouter.EndpointDocumentV2QuantizationExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::OpenRouter.EndpointDocumentV2Quantization?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::OpenRouter.EndpointDocumentV2Quantization? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::OpenRouter.EndpointDocumentV2QuantizationExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

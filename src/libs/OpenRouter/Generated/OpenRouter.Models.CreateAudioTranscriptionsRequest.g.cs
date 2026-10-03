@@ -46,7 +46,7 @@ namespace OpenRouter
         public required string Model { get; set; }
 
         /// <summary>
-        /// JSON-encoded provider preferences object, the same shape as the JSON body field: { "zdr": true, "data_collection": "deny", "options": { "&lt;provider-slug&gt;": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.
+        /// JSON-encoded provider preferences object, the same shape as the JSON body field: { "options": { "&lt;provider-slug&gt;": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         public string? Provider { get; set; }
@@ -122,7 +122,7 @@ namespace OpenRouter
         /// The language of the input audio (ISO-639-1).
         /// </param>
         /// <param name="provider">
-        /// JSON-encoded provider preferences object, the same shape as the JSON body field: { "zdr": true, "data_collection": "deny", "options": { "&lt;provider-slug&gt;": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.
+        /// JSON-encoded provider preferences object, the same shape as the JSON body field: { "options": { "&lt;provider-slug&gt;": { ... } } }. Only options for the matched provider are forwarded. Must decode to a JSON object.
         /// </param>
         /// <param name="responseFormat">
         /// The response format. "json" (default) returns { text, usage }; "verbose_json" additionally returns task, language, duration, and segment-level timestamps (OpenAI-compatible providers only).
